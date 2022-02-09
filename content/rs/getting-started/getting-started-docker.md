@@ -55,6 +55,8 @@ about installing Docker Engine:
 - [MacOS](https://docs.docker.com/docker-for-mac/install/)
 - [Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
+Please increase the memory size in the docker setting resources (8 GB is working, might need less.)
+
 ## Step 2: Run the container
 
 To pull and start the Redis Enterprise Software Docker container, run this
