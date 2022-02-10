@@ -55,3 +55,7 @@ After installation, create a new database and enable RedisGears:
 - [With Python]({{<relref "/modules/redisgears/python/install">}})
 
 - [With the JVM]({{<relref "/modules/redisgears/jvm/install">}})
+
+## Uninstall RedisGears
+
+To uninstall RedisGears, make a [`DELETE` request to the `/v2/modules` REST API endpoint]({{<relref "/rs/references/rest-api/requests/modules#delete-module-v2">}}).
