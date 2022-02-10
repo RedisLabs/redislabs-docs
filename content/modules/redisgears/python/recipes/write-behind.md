@@ -1,9 +1,11 @@
 ---
 Title: Write-behind caching
-description:
+linkTitle: Write-behind caching
+description: Write-behind and write-through caching between Redis and other databases (SQL or NoSQL).
 weight: 70
 alwaysopen: false
 categories: ["Modules"]
+aliases: /modules/redisgears/write-behind/
 ---
 
 Write-behind is a caching strategy in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed. Redis currently supports write-behind caching in [Redis Enterprise Software]({{< relref "/rs" >}}).
@@ -17,6 +19,122 @@ Here's how these caching patterns work:
 
 1. Your application reads from the cache. If there's a cache hit, the data is returned.
 1. If there's cache miss, the cache retrieves the data from your backing database (think Oracle, PostgreSQL, etc.). The data is then stored in the cache and returned. -->
+
+## Install the write-behind recipe
+
+The write-behind recipe comes with two types of dependencies:
+
+- Drivers to connect to the backend database
+- Python libraries for the RedisGears functions
+
+In most cases all of these can be provisioned to RedisGears before the functions are uploaded.
+However, root access for the driver on the host is required in some cases, for example with Oracle drivers.
+
+### Install Oracle driver (optional)
+
+If you want to do write-behind with an Oracle database:
+
+1. [Download the Oracle driver](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html).
+1. On each RS node in the cluster, follow the installation instructions on the download page for the Oracle driver.
+
+### Import requirements
+
+1. Install [Python 3](https://www.python.org/downloads/).
+1. To install the [gears-cli](https://pypi.org/project/gears-cli/), run: 
+    ```sh
+    pip install gears-cli
+    ```
+
+1. Download [rgsync offline package](https://redislabs.com/download-center/modules/).
+1. Import the requirements:
+
+    ```sh
+    # gears-cli import-requirements \
+        --host HOST [ --port PORT ] --password PASSWORD \
+        --requirements-path rgsync-99.99.99.linux-bionic-x64.zip
+    ```
+
+    {{< note >}}
+You can be more efficient and import only the requirements you need, but rgsync is always required and can be combined with one or more of these packages according to your backend database:
+
+- redisgears-requirement-v1-snowflake-sqlalchemy-linux-\<os>-x64.zip
+- redisgears-requirement-v1-PyMySQL-linux-\<os>-x64.zip
+- redisgears-requirement-v1-cx-Oracle-linux-\<os>-x64.zip
+- redisgears-requirement-v1-cassandra-driver-linux-\<os>-x64.zip
+
+This list can be different or more extensive in newer versions.
+The `module.json` file in the module package lists the dependencies for the module.
+
+    {{< /note >}}
+
+1. From the CLI of a node or of a client that is connected to the database, check that the requirements were imported successfully with: 
+
+    ```sh
+    redis-cli RG.PYDUMPREQS
+    ```
+
+    To connect to the database from a client, run:
+
+    ```sh
+    redis-cli -h <FQDN_of_node> -p <host> [-a <password>]
+    ```
+
+    This command returns a list of all available requirements.
+
+### Register the functions
+
+The following is a RedisGears recipe that shows how to use the write-behind pattern to map data from Redis hashes to MySQL tables.
+
+The recipe maps all Redis hashes with the prefix <nobr>`person:<id>`</nobr> to the MySQL table `persons`, with `<id>` being the primary key and mapped to the `person_id` column.
+Similarly, it maps all hashes with the prefix <nobr>`car:<id>`</nobr> to the `cars` table.
+
+```sh
+from rgsync import RGWriteBehind
+from rgsync.Connectors import MySqlConnector, MySqlConnection
+
+'''
+Create MySQL connection object
+'''
+connection = MySqlConnection('demouser', 'Password123!', 'localhost:3306/test')
+
+'''
+Create MySQL persons connector
+persons - MySQL table to put the data
+person_id - primary key
+'''
+personConnector = MySqlConnector(connection, 'persons', 'person_id')
+
+personsMappings = {
+	'first_name':'first',
+	'last_name':'last',
+	'age':'age'
+}
+
+RGWriteBehind(GB, keysPrefix='person', mappings=personsMappings, connector=personConnector, name='PersonsWriteBehind', version='99.99.99')
+
+'''
+Create MySQL car connector
+cars - MySQL table to put the data
+car_id - primary key
+'''
+carConnector = MySqlConnector(connection, 'cars', 'car_id')
+
+carsMappings = {
+	'id':'id',
+	'color':'color'
+}
+
+RGWriteBehind(GB, keysPrefix='cars', mappings=carsMappings, connector=carConnector, name='CarsWriteBehind', version='99.99.99')
+```
+
+Go to the [rgsync website](https://pypi.org/project/rgsync/) to get the replication options and the configuration options for the database and mapping.
+
+1. Create a Python file with the configuration mapping according to your specific needs.
+1. Run `gears-cli` with your custom file:
+
+    ```sh
+    gears-cli run --host <host> --port <post> --password <password> <yourfile>.py
+    ```
 
 ## Write-behind caching with RedisGears
 

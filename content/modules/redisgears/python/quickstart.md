@@ -1,17 +1,18 @@
 ---
-Title: RedisGears quick start tutorial
+Title: RedisGears Python quick start tutorial
 linkTitle: Quick start
-description:
-weight: 50
+description: A quick start tutorial to learn how to use RedisGears with Python.
+weight: 10
 alwaysopen: false
 categories: ["Modules"]
+aliases: /modules/redisgears/redisgears-quickstart/
 ---
-For this tutorial, you'll need one of the following:
+For this tutorial, you need:
 
 - Either:
-    - A Redis Enterprise cluster with [the RedisGear module installed]({{< relref "/modules/redisgears/installing-redisgears.md" >}}), [added to the cluster]({{< relref "/modules/add-module-to-cluster.md" >}}), and [added to a database]({{< relref "/modules/add-module-to-database.md" >}})
+    - A Redis Enterprise cluster with the [RedisGears module and Python plugin installed]({{<relref "/modules/redisgears/installing-redisgears#install-redisgears">}}) and [enabled on a database]({{<relref "/modules/redisgears/python/install">}})
     - An OSS Redis database with the RedisGears module
-- redis-cli with connectivity to a redis database
+- `redis-cli` with connectivity to a Redis database
 
 ## RedisGears basics
 
@@ -136,4 +137,4 @@ redis.cloud:6379> GET age:maximum
 
 ## Next steps
 
-You should now have a basic idea of how to run RedisGears functions for batch and event processing. But there's a lot more to RedisGears than this. To better understand it, see the [RedisGears tutorial](https://oss.redislabs.com/redisgears/intro.html). If you're interested in write-behind caching, see our [write-behind caching]({{< relref "/modules/redisgears/write-behind.md" >}}) overview.
+You should now have a basic idea of how to run RedisGears functions for batch and event processing. But there's a lot more to RedisGears than this. To better understand it, see the [RedisGears tutorial](https://oss.redislabs.com/redisgears/intro.html). If you're interested in write-behind caching, see our [write-behind caching]({{<relref "/modules/redisgears/python/recipes/write-behind">}}) overview.
