@@ -5,12 +5,12 @@ description:
 weight: 80
 alwaysopen: false
 categories: ["RC"]
-aliases: 
+aliases:
 ---
 
-A [VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) is a networking connection between two virtual PCs that uses private IP addresses to route traffice between them.  Instances in either VPC can communicate with each other as if they are within the same network. 
+A [VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) is a networking connection between two virtual PCs that uses private IP addresses to route traffic between them.  Instances in either VPC can communicate with each other as if they are within the same network.
 
-You can connect your VPC in the Redis Cloud subscription to the VPC of your application.  This lets your application connect securely to your Redis Cloud database using VPC Peering to optimize the performance of your application.
+You can connect your VPC in the Redis Cloud subscription to the VPC of your application. This lets your application connect securely to your Redis Cloud database using VPC Peering to optimize the performance of your application.
 
 {{< note >}}
 VPC peering is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
@@ -73,4 +73,4 @@ The VPC peering configuration requires you to initiate VPC peering on your Redis
 
 Now the VPC Peering request is accepted. Its status in the VPC Peering tab in the Redis Cloud subscription is updated to 'Peer Established'.
 
-Once peering is established, we recommend switching your application connection string to the private endpoint. 
+Once peering is established, we recommend switching your application connection string to the private endpoint.
