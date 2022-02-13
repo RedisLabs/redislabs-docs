@@ -30,7 +30,12 @@ This version features:
 
 - Refer to the [v6.2.4 release notes]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}) for important notes regarding the upgrade process.
 
-- Upgrades from versions earlier than v6.0 are not supported
+- When upgrading a cluster from Redis Enterprise 6.0.8 and earlier to 6.2.8 only, the DMC proxy might crash when proxy certificates contain additional text as comments.  Redis removes these comments during upgrade, but a change to the v6.2.8 internal upgrade action sequence might cause this problem. 
+
+
+    If you plan to upgrade from a pre-6.0.8 release to 6.2.8, check whether your proxy certificate includes additional comments and manually remove them.  The change was reverted in 6.2.10.
+
+- Upgrades from versions earlier than v6.0 are not supported.
 
 ### Product lifecycle updates
 
