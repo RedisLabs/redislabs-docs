@@ -61,8 +61,6 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 ## Additional enhancements
 
-- MD5 checksum values are now displayed in the [Download Center](https://redislabs.com/redis-enterprise-software/download-center/software/).
-
 - Added an option to run a connectivity health check for the management layer of Active-Active databases. Run the following REST API command:
 
     ```
