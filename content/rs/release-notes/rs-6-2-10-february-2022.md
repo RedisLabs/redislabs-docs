@@ -34,7 +34,7 @@ aliases: /rs/release-notes/rs-6-2-8-october-2021/
 
 ### Product lifecycle updates 
 
-Redis Enterprise Software v5.6.0 reached end of life (EOF) on October 31, 2021.
+Redis Enterprise Software v6.0.x will reach end of life (EOF) on May 31, 2022.
 
 To learn more, see the Redis Enterprise Software [product lifecycle](https://docs.redis.com/latest/rs/administering/product-lifecycle/), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
