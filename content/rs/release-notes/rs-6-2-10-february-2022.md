@@ -66,7 +66,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 - When choosing RedisJSON, the user interface (UI) now suggests RedisSearch as well. To learn more, see the [RedisJSON preview announcement](https://redis.com/blog/redisjson-public-preview-performance-benchmarking/), which details the benefits of combining [RedisJSON](http://redisjson.io/) and [RediSearch](http://redisearch.io/).
 - Adds the ability to sort the columns of the node list (RS48256).
-- When creating a new geo-distributed (Active-Active) database, an endpoint is no longer required.  The system assigns one if none if provided (RS27632).
+- When creating a new geo-distributed (Active-Active) database, an endpoint port is no longer required.  The system assigns one if none if provided (RS27632).
 
 ## Additional enhancements
 
@@ -80,11 +80,11 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 ## Resolved issues 
 
-- RS58219 - Fix a UI error message that showed a path instead of a relevant error message.
-- RS44958 - Fix incorrect description for the graph "incoming traffic" in Active-Active (geo-distributed) database UI Metrics.
-- RS66280 - Fixed the lexicographic [SORT](https://redis.io/commands/sort) command on Active-Active databases (e.g. `SORT mylist ALPHA`). The SORT command should only run on keys mapped to the same slot.
-- RS64575 - Fixed a bug in the replication between primary and replica shards of a destination Active-active database in the scenario of using Replica-Of from a single to an Active-Active database, where the syncer process went down during the full sync.
-- RS65370 - Added logic to remove old syncer entries in the cluster configuration during upgrades.
+- RS58219 - Fixes a UI error message that showed a path instead of a relevant error message.
+- RS44958 - Fixes incorrect description for the graph "incoming traffic" in Active-Active (geo-distributed) database UI Metrics.
+- RS66280 - Fixes the lexicographic [SORT](https://redis.io/commands/sort) command on Active-Active databases (e.g. `SORT mylist ALPHA`). The SORT command should only run on keys mapped to the same slot.
+- RS64575 - Fixes a bug in the replication between primary and replica shards of a destination Active-active database in the scenario of using Replica-Of from a single to an Active-Active database, where the syncer process went down during the full sync.
+- RS65370 - Adds logic to remove old syncer entries in the cluster configuration during upgrades.
 - RS67434 - Version 6.2.10 fixes the mTLS handshake between the [syncer process](https://docs.redis.com/latest/rs/administering/designing-production/active-active/#syncer-process) and the [proxy (DMC)](https://docs.redis.com/latest/rs/concepts/terminology/#proxy), where the proxy presented a leaf certificate without its full chain to the syncer. After upgrading to 6.2.10, syncer connections using invalid certificates will break the synchronization between Active-Active instances or deployments using Replica Of when TLS is enabled. To ensure certificates are valid before upgrading do the following: 
 
     - For Active-Active databases, run from one of the clusters:
