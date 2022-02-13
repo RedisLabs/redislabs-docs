@@ -87,12 +87,10 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS65370 - Adds logic to remove old syncer entries in the cluster configuration during upgrades.
 - RS67434 - Version 6.2.10 fixes the mTLS handshake between the [syncer process](https://docs.redis.com/latest/rs/administering/designing-production/active-active/#syncer-process) and the [proxy (DMC)](https://docs.redis.com/latest/rs/concepts/terminology/#proxy), where the proxy presented a leaf certificate without its full chain to the syncer. After upgrading to 6.2.10, syncer connections using invalid certificates will break the synchronization between Active-Active instances or deployments using Replica Of when TLS is enabled. To ensure certificates are valid before upgrading do the following: 
 
-    - For Active-Active databases, run from one of the clusters:
-       
-    ``` shell
-    crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
-    ```
-    
+    - For Active-Active databases, run the following command from one of the clusters:
+        
+        `crdb-cli crdb update --crdb-guid <CRDB-GUID> --force`
+         
     - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
 
 ## Security
