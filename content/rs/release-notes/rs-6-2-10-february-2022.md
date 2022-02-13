@@ -45,7 +45,7 @@ For Redis modules information and lifecycle, see [Module lifecycle](https://docs
 
 Redis Enterprise Software v6.2.10 includes the following Redis modules:
 
-- [RediSearch v2.2.5](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/)
+- [RediSearch v2.2.6](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/)
 - [RedisJSON v2.0.6](https://docs.redis.com/latest/modules/redisjson/release-notes/redisjson-2.0-release-notes/)
 - [RedisBloom v2.2.9](https://docs.redis.com/latest/modules/redisbloom/release-notes/redisbloom-2.2-release-notes/)
 - [RedisGraph v2.4.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/)
@@ -78,14 +78,9 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS66280 - Fixed the lexicographic [SORT](https://redis.io/commands/sort) command on Active-Active databases (e.g. `SORT mylist ALPHA`). The SORT command should only run on keys mapped to the same slot.
 - RS64575 - Fixed a bug in the replication between primary and replica shards of a destination Active-active database in the scenario of using Replica-Of from a single to an Active-Active database, where the syncer process went down during the full sync.
 - RS65370 - Added logic to remove old syncer entries in the cluster configuration during upgrades.
+- RS67434 -  fixes the mTLS handshake between the [syncer](https://docs.redis.com/latest/rs/administering/designing-production/active-active/#syncer-process) process and the [proxy](https://docs.redis.com/latest/rs/concepts/terminology/#proxy) (DMC), where the proxy presents a leaf certificate without its full chain to the syncer.
 
 ## Security
-
-### Syncer validation for the proxy certificate
-
-Release 6.2.10 fixes a latent bug in which the syncer accepts an invalid leaf proxy certificate (RS67434). Following the fix, we added a new flag that enables the syncer of the target database to accept a dummy or invalid certificate from the proxy of the source database. This feature can be used for development and test environments where you replicate the production configuration without access to the  production certificates. It is disabled by default for new databases.
-
-For seamless upgrade, the feature will be automatically enabled upon upgrade for Replica-Of and Active-Active TLS-enabled target databases. We recommend reviewing and validating your certificates in your production environments and then disabling the feature via the API.
 
 ### Open Source Redis Security fixes compatibility
 
