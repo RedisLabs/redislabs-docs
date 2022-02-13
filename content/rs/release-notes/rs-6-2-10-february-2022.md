@@ -16,7 +16,7 @@ aliases: /rs/release-notes/rs-6-2-8-october-2021/
 
 - Upgrade the Redis Enterprise infrastructure to [Python v3.9](https://www.python.org/).
 
--  Compatibility with [open source Redis 6.2.5](https://github.com/redis/redis).
+-  Compatibility with [open source Redis 6.2.5](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES).
 
 - Compatibility with the [security fixes](https://github.com/redis/redis/releases/tag/6.2.6) of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6).
 
