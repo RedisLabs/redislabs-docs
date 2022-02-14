@@ -35,6 +35,8 @@ The following table shows the MD5 checksums for the available packages.
 
 ### Prerequisites and notes 
 
+-  please refer to instructions in item RS67434 under the "Resolved issues" section on the bottom
+
 -  You can [upgrade to v6.2.10](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/) from Redis Enterprise Software v6.0 and later. 
 
 - Refer to [v6.2.4 release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/) for important notes regarding changes made to the upgrade. 
