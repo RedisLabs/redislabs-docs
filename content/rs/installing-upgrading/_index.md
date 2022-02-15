@@ -45,7 +45,7 @@ Before installing Redis Enterprise Software, you need to:
 
 To download the installation package for any of the supported platforms:
 
-1. Go to the [Redis download page](https://app.redislabs.com/#/sign-up/software?direct=true).
+1. Go to the [Redis download page](https://app.redislabs.com/#/rlec-downloads).
 1. Sign in with your Redis credentials or create a new account.
 1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform then select **Go**.
 
