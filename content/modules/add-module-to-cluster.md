@@ -9,23 +9,24 @@ aliases:
     - /rs/developing/modules/upgrading/
     - /modules/upgrading-rs/
 ---
-We are constantly working to improve the modules.
+
 To get the latest features and fixes for a module, you must upgrade the module in Redis.
 
-{{< note >}}
+{{<note>}}
 
 - Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
 - We recommend that you test module upgrade commands in a test environment before you upgrade modules in a production environment. The module upgrade arguments are not validated during the upgrade process and incorrect arguments can cause unexpected downtime.
 - Upgrading a cluster with a single node does not load the new modules that are bundled with the new cluster version.
-- Before you upgrade a database with RediSearch Module to Redis 5.0, you must upgrade the RediSearch Module to version 1.4.2 or above.
+- Before you upgrade a database with RediSearch module to Redis 5.0, you must upgrade the RediSearch module to version 1.4.2 or above.
 
-{{< /note >}}
+{{</note>}}
 
-## Get the packaged modules
+## Get packaged modules
 
-- Redis Enterprise modules - To download the upgrades to the modules,
-    go to the [Redis Download Center](https://redislabs.com/download-center/modules/).
-- Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
+To install or upgrade a module in a [Redis Enterprise]({{<relref "/rs">}}) cluster, you need a module package.
+
+- For Redis Enterprise modules, download packages from the [Redis Download Center](https://redislabs.com/download-center/modules/).
+- For custom-packaged modules, either download a [custom-packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{<relref "/modules/packaging-modules.md">}}).
 
 ## Add a module to a Redis Enterprise cluster
 
@@ -55,17 +56,26 @@ To add a module to the cluster using the REST API:
 
 ### Admin console method
 
-To add a module package to the cluster using the admin console:
+To add a module to the cluster using the admin console:
 
-1. In the Redis Enterprise admin console, go to the: **settings**
-1. In **redis modules**, click **Add Module**.
+1. In the Redis Enterprise admin console, select **settings**.
+1. From **redis modules**, select the **Add module** button:
 
-    ![upgrade_module](/images/rs/upgrade_module.png)
+    {{<image filename="images/rs/button-add-module.png" alt="The Add module button">}}{{</image>}}
 
-1. Browse to the packaged module and upload it.
-1. Note the version number of the new module version.
+1. Use the file browser to select the packaged module.
+1. Verify **Selected module** shows the correct filename and select the **Upload** button:
 
-    If you don't see the updated module version, refresh the page.
+    {{<image filename="images/rs/button-upload-module.png" alt="The Upload module button">}}{{</image>}}
+
+1. The new module version should appear in the list of Redis modules:
+
+
+    {{<image filename="images/rs/settings-modules-list.png" width="300px" alt="The Redis modules list">}}{{</image>}}
+
+    {{<note>}}
+If you don't see the updated module version, refresh the page.
+    {{</note>}}
 
 ## Upgrade the module for the database
 
@@ -119,11 +129,11 @@ To upgrade a module that is installed on a cluster:
         - `module_args keep_args` to use the existing module arguments.
     - If you want to update multiple modules, use the `and module` parameter for each module.
 
-## Examples
+### Examples
 
 Here are some examples of module upgrades:
 
-- To upgrade keep the current version of Redis and use the latest version of the modules that are used by the database:
+- To upgrade, keep the current version of Redis, and use the latest version of the modules that are used by the database:
 
     ```sh
     rladmin upgrade db shopping_cart keep_redis_version latest_with_modules
@@ -135,7 +145,7 @@ Here are some examples of module upgrades:
     rladmin upgrade db shopping_cart and module db_name shopping_cart module_name ft version 10607 module_args "PARTITIONS AUTO"
     ```
 
-- To upgrade the database to the latest redis and upgrade RedisBloom to version 2.2.1 without arguments:
+- To upgrade the database to the latest Redis version and upgrade RedisBloom to version 2.2.1 without arguments:
 
     ```sh
     rladmin upgrade db db:3 and module db_name shopping_cart module_name bf version 20201 module_args ""
