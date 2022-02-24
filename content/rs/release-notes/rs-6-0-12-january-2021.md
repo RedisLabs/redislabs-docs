@@ -13,7 +13,7 @@ This version includes the following new features and improvements:
 - [Synchronization]({{<relref "/rs/administering/designing-production/active-active#syncer-process">}}) can now be [distributed across the nodes]({{<relref "/rs/administering/cluster-operations/synchronization-mode.md">}}) of Active-Active or Active-Passive databases
 - You can [disable several internal RS services]({{<relref "/rs/administering/troubleshooting/disabling-services.md">}}) to free up more memory
 - User accounts can have multiple passwords to allow for [password rotation]({{<relref "/rs/administering/access-control/password-rotation.md">}})
-- [Dependencies are automatically installed]({{<relref "/modules/add-module-to-cluster#adding-a-module-using-the-rest-api">}}) when you add modules to a cluster
+- [Dependencies are automatically installed]({{<relref "/modules/install/add-module-to-cluster#rest-api-method">}}) when you add modules to a cluster
 - [Envoy replaces NGINX]({{<relref "/rs/administering/designing-production/networking/port-configurations.md">}}) for internal cluster administration
 - Automatic recovery of the [syncer process]({{<relref "/rs/administering/designing-production/active-active#syncer-process">}}) from out-of-memory (preview mode)
 
@@ -112,7 +112,7 @@ The following GA releases of Redis modules are bundled with RS 6.0.12:
 - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.4.7]({{<relref "/modules/redistimeseries/release-notes/_index.md">}})
 - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}})
 
-To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/add-module-to-cluster#upgrading-the-module-for-the-database">}}).
+To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/install/upgrade-module">}}).
 
 ### Additional capabilities
 
