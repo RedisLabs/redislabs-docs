@@ -69,7 +69,7 @@ If you are running an OpenShift 3 version, use the `bundle.yaml` file located in
 
     ```sh
     oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:redis-enterprise-operator
-    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:rec
+    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec>
     ```
 
     You can see the name of your project with the `oc project` command to replace `<my-project>` in the command above. Replace `rec` with the name of your Redis Enterprise cluster, if different.
