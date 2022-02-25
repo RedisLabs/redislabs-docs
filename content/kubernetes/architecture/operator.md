@@ -61,7 +61,7 @@ The operator creates the following resources:
 - Service account
 - Service account role
 - Service account role binding
-- Secret – holds the cluster username, password, and license
+- Secret – holds the cluster admin username and password
 - Statefulset – holds Redis Enterprise nodes
 - The Services Manager deployment – exposes databases and tags nodes
 - The Redis UI service
