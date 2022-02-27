@@ -30,7 +30,6 @@ An API object that represents a managed database in the cluster.
 }, ...]
 {{</code>}} | List of authorized CRDT certificates<br />**client_cert**: X.509 PEM (base64) encoded certificate |
 | authorized_names | array of strings | Additional certified names |
-| auto_upgrade | boolean (default:&nbsp;false) | Should upgrade automatically after a cluster upgrade |
 | avoid_nodes | array of strings | Cluster node UIDs to avoid when placing the database's shards and binding its endpoints |
 | background_op | {{<code>}}
 [{
