@@ -2,8 +2,8 @@
 Title: RedisTimeSeries 1.6 release notes
 linkTitle: v1.6 (January 2022)
 description: Added support for aggregating across multiple time series (multi-key). Can compute queries such as “the maximum observed value of a set of time series” server-side instead of client-side.
-min-version-db: "6.2.0"
-min-version-rs: "6.2.0"
+min-version-db: "6.0.16"
+min-version-rs: "6.2.8"
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
@@ -31,9 +31,6 @@ Details:
 
     - [#1056](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1056) Return an error when a shard is down (in v1.6.8, returned an empty result)
 
-{{<note>}}
-Minimum Redis version: 6.0.16
-{{</note>}}
 
 ## v1.6 GA (v1.6.8) (January 2022)
 
