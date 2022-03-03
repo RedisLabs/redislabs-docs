@@ -1,5 +1,6 @@
 ---
 Title: Package modules
+linkTitle: Package modules
 description:
 weight: 70
 alwaysopen: false
@@ -9,28 +10,29 @@ aliases: /modules/packaging
          /modules/packaging-modules/
 ---
 
+In addition to the modules packaged and certified by Redis, there are many custom modules that are compatible with Redis Enterprise. 
+
+To use custom modules with a Redis Enterprise database, you need to package them with the [RAMP](https://github.com/RedisLabs/RAMP) (Redis Automatic Module Packaging) utility before you install them on the cluster.
+
 {{<warning>}}
 Redis does not officially support third-party modules or databases created with them.
 {{</warning>}}
 
-## Package non-certified modules
+## Prerequisites
 
-In addition to the modules packaged and certified by Redis, there are
-other modules that can be installed and extend Redis databases in Redis
-Enterprise Software. While many are compatible with Redis Enterprise, not all of them
-are. If they work, they must be packaged so Redis Enterprise knows how to deploy and
-use them in the cluster.
+Install the `ramp-packer` utility:
 
-To deploy a custom module and enable it in a new database:
+```sh
+pip install ramp-packer
+```
 
-1. Get the module with `git`.
-1. Compile the module.
-1. Install the `ramp-packer` utility.
-1. Wrap the custom module using the RAMP utility.
-1. Deploy the custom module to the cluster using the admin console.
-1. Create a database and enable the module.
+## Package custom modules
 
-### Get the module from GitHub
+Before you can install and enable a custom module in a new database, you need to download, compile, and package it with the RAMP utility.
+
+### Download the module
+
+Download the module source code:
 
 ```sh
 git clone https://github.com/account/myModule.git
@@ -44,27 +46,17 @@ Compile the module with the following command:
 cd myModule/;make
 ```
 
-### Install `ramp-packer` utility
-
-[RAMP](https://github.com/RedisLabs/RAMP), or "Redis Automatic Module
-Packaging", is a utility created by Redis to package modules
-to be installed into Redis Enterprise.
-
-Run the following command to install `ramp-packer`:
+### Package the module with RAMP
 
 ```sh
-pip install ramp-packer
+$ ramp pack <PATH_TO_myModule.so> -a "Your Name" \
+    -e "yourname@emailaddress.com" -A "x86_64" -d "My Module" \
+    -h "https://www.mymodule.com/" -l "LicenseType" -r "4.0.2"
 ```
 
-### Wrap the custom module with RAMP
+See the [RAMP README](https://github.com/RedisLabsModules/RAMP#command-line-mode) for more information about RAMP's command-line options.
 
-```sh
-$ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"
--A "x86_64" -d "My Module" -h "https://www.mymodule.com/" -l "LicenseType"
--r "4.0.2"
-```
+## Next steps
 
-Go to [the RAMP GitHub page](https://github.com/RedisLabs/RAMP)
-for more information about RAMP's command-line options.
-
-To deploy the packaged module, see the [module installation guide]({{<relref "/modules/install/add-module-to-database">}}).
+1. [Install the custom module]({{<relref "/modules/install/add-module-to-cluster">}}) on the cluster.
+1. Create a database and [enable the custom module]({{<relref "/modules/install/add-module-to-database">}}).
