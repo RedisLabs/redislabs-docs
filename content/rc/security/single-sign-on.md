@@ -64,3 +64,61 @@ To migrate your account to GitHub social login:
 3. Enter your GitHub password to **Confirm access**
 4. A confirmation prompt will display and warn that you cannot revert to your old sign in method if you proceed with the migration to social login
 5. Select **Confirm** to continue migration
+
+## SAML single sign-on
+
+Redis Cloud also allows you to set up SSO with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
+
+### Set up SAML SSO
+
+1. Sign into your existing [Redis Cloud account](https://app.redislabs.com/#/login).
+
+1. Select **Access Management** from the admin console menu.
+
+1. Select **Single Sign-on**.
+
+1. Select the **Setup SSO** button:
+
+    <TODO: add button image here>
+
+1. [Configure identity provider metadata](#configure-idp)
+
+1. [Download service provider metadata](#download-sp)
+
+1. [Activate SAML SSO](#activate-saml-sso)
+
+#### Configure IdP metadata {#configure-idp}
+
+1. Configure the following **Identity Provider metadata** settings:
+
+    | Setting | Description |
+    |---------|-------------|
+    | **Issuer (IdP entity ID)** | |
+    | **IdP server URL** | |
+    | **Single logout URL** | |
+    | **Domain** | |
+    | **Assertion signing certificate** | |
+
+1. Select the **Enable** button:
+
+    <TODO: add button image here>
+
+1. From the **SAML activation** dialog box, select **Continue**:
+
+   <TODO: add button image here>
+
+#### Download service provider metadata {#download-sp}
+
+1. Select the **Download** button to download the service provider metadata in XML format.
+
+1. Configure your identity provider with the downloaded XML. <TODO: need to verify this> 
+
+#### Activate SAML SSO {#activate-saml-sso}
+
+TBA
+
+### Bind other accounts
+
+After you set up SAML SSO for one account, you can edit the SAML configuration to bind other accounts. This allows you to use the same domain for SSO across multiple accounts.
+
+TBA
