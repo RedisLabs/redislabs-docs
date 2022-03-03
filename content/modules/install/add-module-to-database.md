@@ -20,7 +20,7 @@ Modules add additional functionality to Redis databases for specific use cases. 
 ## Prerequisites
 
 - [Installed the module on the cluster]({{<relref "/modules/install/add-module-to-cluster">}})
-- [Upgraded the module]({{<relref "/modules/install/add-module-to-cluster">}}) to the latest version
+- [Upgraded the module]({{<relref "/modules/install/upgrade-module">}}) to the latest version
 
 ## Create a database with a module
 
