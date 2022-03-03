@@ -17,7 +17,7 @@ To collect  metrics data from your databases and Redis Enterprise cluster (REC),
 
 Before connecting Redis Enterprise to Prometheus on your Kubernetes cluster, make sure you've done the following:
 
-- [Deploy the Redis Enterprise operator]({{<relref "/kubernetes/deployment/quick-start.md">}}) (version 6.2.10-tbd or newer)
+- [Deploy the Redis Enterprise operator]({{<relref "/kubernetes/deployment/quick-start.md">}}) (version 6.2.10-4 or newer)
 - [Deploy the Prometheus operator](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md) (version 0.19.0 or newer)
 - [Create a Redis Enterprise cluster]({{<relref "/kubernetes/deployment/quick-start#create-a-redis-enterprise-cluster-rec">}})
 
