@@ -37,7 +37,7 @@ For details about individual modules, see the corresponding documentation.
 |-------------------------|:--------------:|:------------:|:------------:|
 | Active-Active (CRDB)    | Yes (v2.0)     | No           | No           |
 | Backup/Restore          | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
-| Clustering              | Yes (v1.6)     | Yes (v1.0)   | Yes (v2.2.3)[^1] |
+| Clustering              | Yes (v1.6)[^3] | Yes (v1.0)   | Yes (v2.2.3)[^1] |
 | Custom hashing policy   | Yes (v2.0)     | Yes (v1.0)   | Yes (v1.0)   |
 | Eviction expiration     | Yes (v2.0)     | Yes (v1.0)   | No           |
 | Failover/migration      | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
@@ -50,6 +50,10 @@ For details about individual modules, see the corresponding documentation.
 | Reshard/rebalance       | Yes (v2.0)     | Yes (v1.0)   | No           |
 
 [^1]: The RedisGraph module supports clustering; however, individual graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, [contact support](https://redis.com/company/support/).
+
+[^2]: In version 1.6, RediSearch supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
+
+[^3]: The ability to use the [OSS Cluster API]({{<relref "/rs/administering/designing-production/networking/using-oss-cluster-api">}}) with RediSearch depends on individual client support.
 
 | Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
 |-------------------------|:------------:|:------------:|:----------:|:----------:| 
@@ -67,7 +71,6 @@ For details about individual modules, see the corresponding documentation.
 | Replica Of              | Yes (v1.2)   | Yes (v2.0)   | No         | Yes (v1.0) | 
 | Reshard/rebalance       | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | No         | 
 
-[^2]: In version 1.6, RediSearch supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
 
 ## Feature descriptions
 

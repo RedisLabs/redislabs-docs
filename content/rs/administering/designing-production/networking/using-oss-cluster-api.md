@@ -7,6 +7,10 @@ categories: ["RS"]
 ---
 {{< embed-md "oss-cluster-api-intro.md"  >}}
 
+{{<note>}}
+The ability to use the OSS Cluster API with RediSearch depends on individual client support.
+{{</note>}}
+
 ## Prerequisites
 
 Before you enable Redis OSS Cluster API for a database, make sure that:
