@@ -93,7 +93,7 @@ Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Langu
     |---------|-------------|
     | **Issuer (IdP entity ID)** | |
     | **IdP server URL** | |
-    | **Single logout URL** | |
+    | **Single logout URL** | The URL used to sign out of the identity provider and connected applications |
     | **Domain** | |
     | **Assertion signing certificate** | |
 
@@ -113,11 +113,11 @@ To test and activate SAML SSO for your account:
 
 1. For **Activate SAML integration**, select the **Activate** button.
 
-1. From the **Logout notification** dialog, select **Continue**.
+1. From the **Logout notification** dialog, select **Continue**. This redirects you to your configured identity provider's sign in screen.
 
 1. Sign in with your identity provider.
 
-1. Select **Sign in with SSO** and enter your credentials.
+1. When redirected to the Redis Cloud sign in screen, select **Sign in with SSO** and enter your credentials.
 
     {{<note>}}
 If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign in screen, sign in with your previous credentials and review your SAML configuration for issues.
