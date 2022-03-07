@@ -91,11 +91,11 @@ Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Langu
 
     | Setting | Description |
     |---------|-------------|
-    | **Issuer (IdP entity ID)** | |
-    | **IdP server URL** | |
-    | **Single logout URL** | The URL used to sign out of the identity provider and connected applications |
-    | **Domain** | |
-    | **Assertion signing certificate** | |
+    | **Issuer (IdP entity ID)** | The entity ID for the identity provider |
+    | **IdP server URL** | The identity provider's HTTPS URL for SAML SSO |
+    | **Single logout URL** | The URL used to sign out of the identity provider and connected applications (optional) |
+    | **Domain** | The identity provider's domain |
+    | **Assertion signing certificate** | Public SHA-256 certificate used to validate SAML assertions from the identity provider |
 
 1. Select the **Enable** button.
 
