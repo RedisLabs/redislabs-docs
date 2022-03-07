@@ -9,7 +9,7 @@ categories: ["RS"]
 {{< embed-md "oss-cluster-api-intro.md"  >}}
 
 {{<note>}}
-The ability to use the OSS Cluster API with RediSearch depends on individual client support.
+You cannot use [RediSearch]({{<relref "/modules/redisearch">}}) with the OSS Cluster API.
 {{</note>}}
 
 ## Prerequisites
