@@ -7,11 +7,11 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-As an alternative to the traditional email/password account authentication method, you can create a Redis Cloud account and sign into the [admin console](https://app.redislabs.com/new/) with [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on). This allows you to use one set of credentials, managed by your [identity provider](https://en.wikipedia.org/wiki/Identity_provider), to access multiple websites.
+As an alternative to the traditional email/password account authentication method, you can create a Redis Cloud account and sign into the [admin console](https://app.redislabs.com/new/) with [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on). This lets you use one set of credentials, managed by your [identity provider](https://en.wikipedia.org/wiki/Identity_provider), to access multiple websites.
 
 ## Social login
 
-One SSO option that Redis Cloud offers is [social login](https://en.wikipedia.org/wiki/Social_login), which allows you to use an existing social media account to create or sign into your Redis Cloud account.
+One SSO option that Redis Cloud offers is [social login](https://en.wikipedia.org/wiki/Social_login), which lets you use an existing social media account to create or sign into your Redis Cloud account.
 
 Redis Cloud supports the following social logins:
 - [GitHub](https://github.com/)
@@ -67,7 +67,7 @@ To migrate your account to GitHub social login:
 
 ## SAML single sign-on
 
-Redis Cloud also allows you to set up SSO with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
+Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
 
 ### Set up SAML SSO
 
@@ -77,15 +77,13 @@ Redis Cloud also allows you to set up SSO with [SAML (Security Assertion Markup 
 
 1. Select **Single Sign-on**.
 
-1. Select the **Setup SSO** button:
+1. Select the **Setup SSO** button.
 
-    <TODO: add button image here>
+1. [Configure identity provider metadata](#configure-idp).
 
-1. [Configure identity provider metadata](#configure-idp)
+1. [Download service provider metadata](#download-sp).
 
-1. [Download service provider metadata](#download-sp)
-
-1. [Activate SAML SSO](#activate-saml-sso)
+1. [Activate SAML SSO](#activate-saml-sso).
 
 #### Configure IdP metadata {#configure-idp}
 
@@ -99,26 +97,42 @@ Redis Cloud also allows you to set up SSO with [SAML (Security Assertion Markup 
     | **Domain** | |
     | **Assertion signing certificate** | |
 
-1. Select the **Enable** button:
+1. Select the **Enable** button.
 
-    <TODO: add button image here>
-
-1. From the **SAML activation** dialog box, select **Continue**:
-
-   <TODO: add button image here>
+1. From the **SAML activation** dialog box, select **Continue**.
 
 #### Download service provider metadata {#download-sp}
 
 1. Select the **Download** button to download the service provider metadata in XML format.
 
-1. Configure your identity provider with the downloaded XML. <TODO: need to verify this> 
+1. Configure your identity provider with the downloaded XML. 
 
 #### Activate SAML SSO {#activate-saml-sso}
 
-TBA
+To test and activate SAML SSO for your account:
+
+1. For **Activate SAML integration**, select the **Activate** button.
+
+1. From the **Logout notification** dialog, select **Continue**.
+
+1. Sign in with your identity provider.
+
+1. Select **Sign in with SSO** and enter your credentials.
+
+    {{<note>}}
+If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign in screen, sign in with your previous credentials and review your SAML configuration for issues.
+    {{</note>}}
 
 ### Bind other accounts
 
-After you set up SAML SSO for one account, you can edit the SAML configuration to bind other accounts. This allows you to use the same domain for SSO across multiple accounts.
+After you set up SAML SSO for one account, you can edit the SAML configuration to bind other accounts. This lets you use the same domain for SSO across multiple accounts.
 
-TBA
+To bind other accounts to an existing SAML SSO configuration:
+
+1. Go to **Access Management > Single Sign-on** in the Redis Cloud admin console.
+
+1. For **Bind other accounts to SAML configuration**, select the checkboxes for the other accounts you want to bind to SAML SSO.
+
+1. Select **Save**.
+
+1. From the **Bind accounts** dialog, select **Continue** to enable SAML SSO for the selected accounts.
