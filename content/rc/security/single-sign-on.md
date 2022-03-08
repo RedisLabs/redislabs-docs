@@ -109,7 +109,23 @@ Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Langu
 
 1. Select the **Download** button to download the service provider metadata in XML format.
 
-1. Configure your identity provider with the downloaded XML. 
+1. Configure your identity provider with the downloaded XML.
+
+    Some identity providers let you upload the XML file directly. Others require you to enter the `entityID` and `Location` manually.
+
+    For example, if Okta is your identity provider:
+
+    1. Go to **Applications** and select the **SM Redis** application.
+
+    1. From **Sign On > Settings**, select **Edit**.
+    
+    1. Go to **Advanced Sign-on Settings**.
+
+    1. Enter the `entityID` from the XML file in the **Audience URI**.
+
+    1. Enter the `Location` from the XML file in the **Hub ACS URL**.
+
+    1. Select **Save**.
 
 #### Activate SAML SSO {#activate-saml-sso}
 
@@ -128,6 +144,22 @@ To test and activate SAML SSO for your account:
     {{<note>}}
 If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign in screen, sign in with your previous credentials and review your SAML configuration for issues.
     {{</note>}}
+
+### Add a SAML user
+
+To add a user to an account and enable SAML SSO for them:
+
+1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user.
+
+1. Select **Profile**.
+
+1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **smAccountMapping** field.
+
+    You can add the same user to multiple SAML-enabled accounts with a comma-separated list: 
+
+    12345=owner,54321=manager
+
+1. [Assign the **SM Redis** application](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
 
 ### Bind other accounts
 
