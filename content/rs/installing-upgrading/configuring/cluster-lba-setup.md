@@ -77,7 +77,7 @@ The following settings are needed to allow inbound connections to be terminated 
     rladmin cluster config handle_redirects enabled
 ```
 
-An additional setting can be done to allow (on average) closer termination of client connection to where Redis shard is located. This is an optinoal setting.
+An additional setting can be done to allow (on average) closer termination of client connection to where the Redis shard is located. This is an optional setting.
 
 ```sh
     # enable sparse placement by default
