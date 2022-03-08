@@ -16,7 +16,8 @@ aliases: /rv/administration/account-team-settings/
 The **Access management** screen helps you manage:
 
 - The team of users allowed to access your subscription and its databases
-- The API keys that authenticate application access to your account.
+- The API keys that authenticate application access to your account
+- [Single sign-on (SSO)]({{<relref "/rc/security/single-sign-on">}}) with [SAML]({{<relref "/rc/security/single-sign-on#saml-single-sign-on">}})
 
 Here, you learn how to manage your team's users.  
 
@@ -42,7 +43,7 @@ The list includes several buttons and icons to help you manage the list:
 | {{<image filename="images/rc/icon-list-filter.png" width="30px" alt="Use the Filter button to display team members that match specified conditions." >}}{{< /image >}} | **Filter** icons let you display team members matching conditions you specify |
 | <nobr>{{<image filename="images/rc/icon-list-sort-asc.png" width="30px" alt="The Sort ascending button displays members in ascending order according to the values of the selected field." >}}{{< /image >}}{{<image filename="images/rc/icon-list-sort-desc.png" width="30px" alt="The Sort descending button displays members in descending order according to the values of the selected field." >}}{{< /image >}}</nobr> | The **Sort ascending** and **Sort descending** icons display the list according to the selected order |
 
-If you have a large team, you can use the controls in the list footer to navigate quickly through the list.  These controls are disabled for small teams.
+If you have a large team, you can use the controls in the list footer to navigate quickly through the list.  These controls are deactivated for small teams.
 
 ### Add user
 
@@ -60,7 +61,7 @@ Use this dialog to specify the following values:
 | **Alert emails** | Enable to be notified when subscription databases cross certain thresholds, such as exceeding memory limits or latency requirements |
 | **Operational emails** | Notifications about subscription and database changes, such as creating or deleting a database |
 | **Billing emails** | Notifications when bills are issued, paid, and so on |
-| **Multi-factor authentication** | Whether MFA is enabled for the member.  This is disabled when members have not enabled or confirmed MFA in their user profile settings |
+| **Multi-factor authentication** | Whether MFA is enabled for the member.  This is deactivated when members have not enabled or confirmed MFA in their user profile settings |
 
 Use the **Add user** button to save your new team member details.
 
@@ -117,7 +118,7 @@ The following table shows each role's ability to perform common tasks using the 
 | Create database (Flexible) | <span title="Owners can create databases in Flexible subscriptions">&#x2705; Yes</span> | <span title="Managers can create databases in Flexible subscriptions">&#x2705; Yes</span> | <span title="Members may not create databases in Flexible subscriptions">&#x274c; No</span> | <span title="Viewers may not create databases in Flexible subscriptions">&#x274c; No</span> |
 | Edit database (affects cost) | <span title="Owners can edit databases in ways that impact subscription cost">&#x2705; Yes</span> | <span title="Managers can edit databases in ways that impact subscription costs">&#x2705; Yes</span> | <span title="Members may not edit databases in ways tht impact subscription cost">&#x274c; No</span> | <span title="Viewers may not edit databases in ways that impact subscription cost">&#x274c; No</span> |
 | Create database (Fixed) | <span title="Owners can create databases in Fixed subscriptions">&#x2705; Yes</span> | <span title="Managers can create databases in Fixed subscriptions">&#x2705; Yes</span> | <span title="Members can create databases in Fixed subscriptions">&#x2705; Yes</span> | <span title="Viewers may not create databases in Fixed subscriptions">&#x274c; No</span> |
-| Edit database (no cost impact ) | <span title="Owners can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Managers can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Members can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Viewers may not create databases in ways that do not affect subscription cost">&#x274c; No</span> | 
+| Edit database (no cost impact) | <span title="Owners can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Managers can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Members can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Viewers may not create databases in ways that do not affect subscription cost">&#x274c; No</span> | 
 | View subscription | <span title="Owners can view subscription details">&#x2705; Yes</span> | <span title="Managers can view subscription details">&#x2705; Yes</span> | <span title="Members can view subscription details">&#x2705; Yes</span> | <span title="Viewers can view subscription details">&#x2705; Yes</span> |
 | View database | <span title="Owners can view database details">&#x2705; Yes</span> | <span title="Managers can view database details">&#x2705; Yes</span> | <span title="Members can view database details">&#x2705; Yes</span> | <span title="Viewers can view database details">&#x2705; Yes</span> |
 
