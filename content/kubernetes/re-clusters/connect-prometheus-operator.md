@@ -54,7 +54,7 @@ spec:
     - <your_REC_namespace>
   selector:
     matchLabels:
-      app: redis.io/service=prom-metrics
+      redis.io/service: prom-metrics
 ```
 
 For more info about configuring the `ServiceMonitor` resource, see the [`ServiceMonitorSpec` API documentation](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#servicemonitorspec).
