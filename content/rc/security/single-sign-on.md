@@ -83,21 +83,25 @@ Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Langu
 
 1. [Configure identity provider metadata](#configure-idp).
 
-1. [Download service provider metadata](#download-sp).
+1. [Download service provider metadata](#download-sp) and upload it to your identity provider.
 
 1. [Activate SAML SSO](#activate-saml-sso).
 
 #### Configure IdP metadata {#configure-idp}
 
-1. Configure the following **Identity Provider metadata** settings:
+1. Get the following metadata values for your identity provider:
 
     | Setting | Description |
     |---------|-------------|
-    | **Issuer (IdP entity ID)** | The entity ID for the identity provider |
+    | **Issuer (IdP entity ID)** | The unique entity ID for the identity provider |
     | **IdP server URL** | The identity provider's HTTPS URL for SAML SSO |
     | **Single logout URL** | The URL used to sign out of the identity provider and connected applications (optional) |
     | **Domain** | The identity provider's domain |
     | **Assertion signing certificate** | Public SHA-256 certificate used to validate SAML assertions from the identity provider |
+
+    To find these metadata values, see your identity provider's documentation.
+
+1. From the **SAML** screen of the Redis Cloud admin console, configure the **Identity Provider metadata** settings.
 
     {{<image filename="images/rc/access-management-saml-config.png"  alt="SAML Single Sign-on configuration screen.">}}{{</image>}}
 
@@ -107,25 +111,17 @@ Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Langu
 
 #### Download service provider metadata {#download-sp}
 
-1. Select the **Download** button to download the service provider metadata in XML format.
+1. Select the **Download** button to download the service provider [metadata](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf) in XML format.
 
-1. Configure your identity provider with the downloaded XML.
+1. Sign into your identity provider's admin console.
 
-    Some identity providers let you upload the XML file directly. Others require you to enter the `entityID` and `Location` manually.
+1. Configure the **SM Redis** service provider application with the downloaded XML.
 
-    For example, if Okta is your identity provider:
-
-    1. Go to **Applications** and select the **SM Redis** application.
-
-    1. From **Sign On > Settings**, select **Edit**.
+    Some identity providers let you upload the XML file directly. 
     
-    1. Go to **Advanced Sign-on Settings**.
+    Others require you to manually configure the service provider application with specific metadata fields. For example, you might enter `entityID` for **Audience URI** and `Location` for **Hub ACS URL**.
 
-    1. Enter the `entityID` from the XML file in the **Audience URI**.
-
-    1. Enter the `Location` from the XML file in the **Hub ACS URL**.
-
-    1. Select **Save**.
+    To learn more about how to configure service provider applications, see your identity provider's documentation.
 
 #### Activate SAML SSO {#activate-saml-sso}
 
@@ -149,9 +145,7 @@ If you see a **SAML activation failed** notification when redirected to the Redi
 
 To add a user to an account and enable SAML SSO for them:
 
-1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user.
-
-1. Select **Profile**.
+1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user's profile.
 
 1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **smAccountMapping** field.
 
@@ -160,6 +154,8 @@ To add a user to an account and enable SAML SSO for them:
     12345=owner,54321=manager
 
 1. [Assign the **SM Redis** application](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
+
+To learn how to manage SAML user profiles, see your identity provider's documentation.
 
 ### Bind other accounts
 
