@@ -53,7 +53,7 @@ For any high availability needs, replication may also be used to further reduce 
 
 {{< note >}}
 For performance reasons, if you are going to be using AOF, it is highly recommended to make sure replication is enabled for that database as well. When these two features are enabled, persistence is
-performed on the database slave and does not impact performance on the master.
+performed on the database replica and does not impact performance on the master.
 {{< /note >}}
 
 **For use cases where data loss is tolerable or recoverable for extended periods of time:**
@@ -90,10 +90,10 @@ two:
 ## Data persistence and Redis on Flash
 
 If you are enabling data persistence for databases running on Redis
-Enterprise Flash, by default both master and slave shards are
+Enterprise Flash, by default both master and replica shards are
 configured to write to disk. This is unlike a standard Redis Enterprise
-Software database where only the slave shards persist to disk. This
-master and slave dual data persistence with replication is done to
+Software database where only the replica shards persist to disk. This
+master and replica dual data persistence with replication is done to
 better protect the database against node failures. Flash-based databases
 are expected to hold larger datasets and repair times for shards can
 be longer under node failures. Having dual-persistence provides better
