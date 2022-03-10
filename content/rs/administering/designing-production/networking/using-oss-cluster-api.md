@@ -8,10 +8,6 @@ categories: ["RS"]
 ---
 {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-{{<note>}}
-You cannot use [RediSearch]({{<relref "/modules/redisearch">}}) with the OSS Cluster API.
-{{</note>}}
-
 ## Prerequisites
 
 Before you enable Redis OSS Cluster API for a database, make sure that:
@@ -19,6 +15,7 @@ Before you enable Redis OSS Cluster API for a database, make sure that:
 - The database uses the standard hashing policy.
 - The database proxy policy is `all-master-shards`.
 - The database proxy policy does not use node `include` or `exclude`.
+- The database does not use [RediSearch]({{<relref "/modules/redisearch">}}).
 
 ## Enable OSS Cluster API support
 
