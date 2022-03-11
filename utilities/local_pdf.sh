@@ -1,4 +1,7 @@
-# Run this script while running your local Hugo server to create a single PDF on demand.
+# Run this script to create a PDF of a Redis doc on demand.
+# Prerequisites: 
+#   - Local Hugo server is running.
+#   - Installed wkhtmltopdf command-line utility.
 
 help=" Example commands: \n
 \n
@@ -26,7 +29,7 @@ srcpath=$1
 destpath=$2
 
 
-# Get the options
+# Get command options
 while getopts ":h" option; do
    case $option in
       h) # Display help
@@ -41,13 +44,17 @@ done
 echo "Creating helper HTML"
 echo
 
+# Helper HTML directories will start with pdf-gen-
 new_dir_name=$(echo $srcpath | sed 's#/content/#pdf-gen-#g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
 
+# Create a pdf-gen- layout directory
 mkdir $(echo $new_dir_name | sed 's#^#../layouts/#g')
 
+# Generate helper HTML from a template
 filepath_sub=$(echo $srcpath | sed 's#/content/##g')
 cat ./create_single_pdfs/list_template_single.html | sed "s#filepath#\"$filepath_sub\"#g" > ../layouts/$new_dir_name/list.html
 
+# Create a pdf-gen- content directory
 mkdir $(echo $new_dir_name | sed 's#^#../content/#g')
 touch ../content/$new_dir_name/_index.md
 
@@ -63,21 +70,21 @@ location=localhost:1313
 html_name=$new_dir_name
 
 if [ $# -eq 1 ]
-then
+then # Generate a PDF name from the source filepath if there's no destination filepath argument provided
     pdf_name=$(echo $srcpath | sed 's#/content/##g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
     pdf_path=$(echo $pdf_name.pdf)
-else
+else # Otherwise, use the provided PDF filepath
     pdf_path=$destpath
 fi
 
 echo "Generating $pdf_path"
 echo
 
+# Convert an HTML page to a PDF
 wkhtmltopdf http://$location/$html_name/ $pdf_path
 
 
 # Remove helper HTML
-
 rm -r ../layouts/$new_dir_name
 rm -r ../content/$new_dir_name
 
