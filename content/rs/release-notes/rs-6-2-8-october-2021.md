@@ -55,7 +55,7 @@ Redis Enterprise Software v6.2.8 includes the following Redis modules:
 - [RedisGraph v2.4.7]({{<relref "/modules/redisgraph/release-notes/redisgraph-2.4-release-notes.md">}})
 - [RedisTimeSeries v1.4.10]({{<relref "/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes.md">}})
 
-To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-module-to-cluster.md#upgrading-the-module-for-the-database.md#upgrading-the-module-for-the-database">}}).
+To learn more, see [Upgrade the module for a database]({{<relref "/modules/install/upgrade-module">}}).
 
 ## Resolved issues
 

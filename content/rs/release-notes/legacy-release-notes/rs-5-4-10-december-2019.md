@@ -89,7 +89,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
     To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower,
     you must [upgrade the CRDB protocol]({{< relref "/rs/installing-upgrading/upgrading#upgrading-crdbs" >}}).
 - Before you upgrade a database with RediSearch Module to Redis 5.0,
-    you must [upgrade the RediSearch Module]({{< relref "/modules/add-module-to-cluster.md" >}}) to version 1.4.2 or above.
+    you must [upgrade the RediSearch Module]({{<relref "/modules/install/upgrade-module">}}) to version 1.4.2 or above.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above
     by manually updating the certificates on the disk instead of [updating them through the API]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
     For assistance with this issue, [contact Redis support](https://redislabs.com/company/support/).
