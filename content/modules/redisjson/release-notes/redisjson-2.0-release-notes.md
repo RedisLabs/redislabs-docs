@@ -10,10 +10,31 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisJSON v2.0.5 requires:
+RedisJSON v2.0.7 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.0.7 (March 2022)
+
+This is a maintenance release for RedisJSON 2.0.
+
+Update urgency: `LOW` - No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+  - [#632](https://github.com/RedisJSON/RedisJSON/pull/632), [#605](https://github.com/RedisJSON/RedisJSON/pull/605) Support [`JSON.CLEAR`](https://oss.redis.com/redisjson/commands/#jsonclear) for string, bool, and numeric scalars (MOD-2394)
+  - [#637](https://github.com/RedisJSON/RedisJSON/pull/637) Add `intershard_tls_pass` support (MOD-2522)
+  - [#594](https://github.com/RedisJSON/RedisJSON/pull/594) Support for `MEMORY USAGE` and memory info in `JSON.DEBUG` (MOD- 2079)
+
+- Bug fixes:
+
+  - [#646](https://github.com/RedisJSON/RedisJSON/pull/646), [#644](https://github.com/RedisJSON/RedisJSON/pull/644) Do not fail `JSON.MGET` on wrong/unregistered key type (MOD-2511)
+  - [#643](https://github.com/RedisJSON/RedisJSON/pull/643) Null-terminate JSON string in `rdb_save`
+  - [#591](https://github.com/RedisJSON/RedisJSON/pull/591) Avoid crash on overflow in `JSON.NUMINCRBY` or `JSON.NUMMULTBY` (MOD-2513)
+  - [#593](https://github.com/RedisJSON/RedisJSON/pull/593) Return no updates when performing `JSON.SET` with `NX` to an existing array element (MOD-2512)
 
 ## v2.0.6 (December 2021)
 
