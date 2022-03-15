@@ -189,13 +189,13 @@ The configuration options that you can update are:
 |Flag and argument| Argument type| Description|
 |---|---|---|
 |`memory-size <ram_limit>`|string| Maximum memory in bytes| kilobytes (kb)| or gigabytes (gb)|
-|`causal-consistency <true | false>`|boolean| Database updates are applied to all instances in the order they were received|
-|`encryption <true | false>`| binary| Enable encryption|
+|`causal-consistency <true / false>`|boolean| Database updates are applied to all instances in the order they were received|
+|`encryption <true / false>`| binary| Enable encryption|
 |`compression (0-6)`| integer| The level of compression of data: 0=Compression disabled| 1=Low compression and resource load| 6=High compression and resource load (Default: 3)|
 |`credentials id=<instance_id>,username=<username>,password=<password>`|string|Update the credentials for the participating cluster|
-|`featureset-version <true | false>`|boolean|Update to latest FeatureSet version|
-|`oss-cluster <true | false>`|boolean|Enable or disable OSS cluster mode|
-|`bigstore <true | false>`|boolean|Use Redis on Flash to add flash memory to the database|
+|`featureset-version <true / false>`|boolean|Update to latest FeatureSet version|
+|`oss-cluster <true / false>`|boolean|Enable or disable OSS cluster mode|
+|`bigstore <true / false>`|boolean|Use Redis on Flash to add flash memory to the database|
 |`bigstore-ram-size <ram_limit>`|string|RAM limit for RoF database (bytes, MB, or GB)|
 |`with-module <module_name>`|text|The name of the module to add to the database|
 |`force`|no arguments|Increase the configuration version even if there are no configuration changes|
