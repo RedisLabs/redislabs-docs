@@ -10,10 +10,36 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.8 requires:
+RedisGraph v2.8.9 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.9 (March 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details: 
+
+- Features:
+
+    - [#2181](https://github.com/RedisGraph/RedisGraph/pull/2181), [#2182](https://github.com/RedisGraph/RedisGraph/pull/2182) Full support for ARM builds
+
+- Bug fixes:
+
+    - [#2167](https://github.com/RedisGraph/RedisGraph/pull/2167) Fixed a potential crash: filter placement in `OPTIONAL` subtrees
+    - [#2176](https://github.com/RedisGraph/RedisGraph/pull/2176) Fixed a potential crash: invalid memory access in nested `DISTINCT` functions
+    - [#2217](https://github.com/RedisGraph/RedisGraph/pull/2217) Fixed a potential crash: memory access after free on `FLUSHALL`
+    - [#2207](https://github.com/RedisGraph/RedisGraph/pull/2207) Fixed memory leak when `MAX_QUEUED_QUERIES` is used
+    - [#2220](https://github.com/RedisGraph/RedisGraph/pull/2220) `WITH * WHERE` - the `WHERE` filters were ignored
+    - [#2151](https://github.com/RedisGraph/RedisGraph/pull/2151) Return correct results for aggregations with no inputs
+    - [#2163](https://github.com/RedisGraph/RedisGraph/pull/2163) Emit error correctly on multi-query inputs
+
+- Improvements:
+
+    - [#2173](https://github.com/RedisGraph/RedisGraph/pull/2173) Improve performance of breadth-first search
 
 ## v2.8.8 (February 2022)
 
