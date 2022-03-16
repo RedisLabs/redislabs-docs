@@ -8,9 +8,7 @@ aliases:
 
 ---
 
-When you create a new subscription on Redis Cloud, you configure your subscription with Active-Active Redis under the Advanced options tab.
-
-Redis Enterprise Active-Active databases provide better scalability, performance, and availability than standalone databases. Active-Active databases use geo-distribution, multiple active proxies, conflict resolution, and automatic failover to provide you with a more durable and scalable database.
+When you create a new subscription on Redis Cloud, you can enable **Active-Active Redis** under the **Advanced** options tab. Redis Enterprise Active-Active databases provide better scalability, performance, and availability than standalone databases.
 
 Redis Enterprise Active-Active geo-replication distributes your replicated data across multiple nodes and availability zones. This increases the durability of your database by reducing the likelihood of data or availability loss.
 
@@ -30,9 +28,11 @@ Clustering also helps stop node failure from causing data availability loss. The
 
 ## Active-Active geo-distributed replication
 
+Active-Active databases use both clustering and replication to strengthen your database. Active-Active Redis also has additional features like geo-distribution, multiple active proxies, conflict resolution, and automatic failover to provide you with a more durable and scalable database.
+
 ### Multi-zone
 
-Geo-distributed replication maintains copies of both primary and replica shards in multiple clusters. These clusters can be spread across multiple availability zones as well.
+Geo-distributed replication maintains copies of both primary and replica shards in multiple clusters. These clusters can be spread across multiple availability zones as well. Active-Active Redis uses zone awareness to spread your primary and replica shards across zones, which helps protect against data loss from regional outages.
 
 ### Multiple active proxies
 
@@ -40,4 +40,8 @@ Active-Active databases use a multi-primary architecture, which lets you read an
 
 ### Conflict resolution
 
+Active-Active databases use special data types called conflict-free data types (CRDT). These automatically resolve conflicts that occur when writes are made to different clusters at the same time.
+
 ### Automatic failover
+
+After a failure at any level (process, node, or zone), Active-Active databases automatically promote replica shards to replace failed primaries, copy data to new replica shards, and migrate shards to new nodes as needed. This reduces downtime and makes the most of your computing resources, even in the event of a failure.  
