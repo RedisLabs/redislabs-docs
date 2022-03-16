@@ -1,14 +1,16 @@
 ---
 Title: Active-Active Redis
 description: Overview of the Active-Active feature for Redis Cloud.
-weight: 90
+weight: 35
 alwaysopen: false
 categories: ["RC"]
 aliases:
-[/rc/subscriptions/active-active-redis.md]
+[
+    /rc/subscriptions/active-active-redis.md,
+    ]
 ---
 
-When you create a new subscription on Redis Cloud, you can enable **Active-Active Redis** under the **Advanced** options tab. Redis Enterprise Active-Active databases provide better scalability, performance, and availability than standalone databases.
+When you create a new subscription on Redis Cloud, you can enable **Active-Active Redis** under the **Advanced options** tab. Redis Enterprise Active-Active databases provide better scalability, performance, and availability than standalone databases.
 
 Redis Enterprise Active-Active geo-replication distributes your replicated data across multiple nodes and availability zones. This increases the durability of your database by reducing the likelihood of data or availability loss.
 
