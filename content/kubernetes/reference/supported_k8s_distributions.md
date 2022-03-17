@@ -40,6 +40,9 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | Rancher 2.5 (K8s 1.18)          | deprecated     |
 | Rancher 2.5 (K8s 1.19)          | deprecated     |
 | Rancher 2.5 (K8s 1.20)          | deprecated     |
+| Rancher 2.6 (K8s 1.19)          | supported      |
+| Rancher 2.6 (K8s 1.20)          | supported      |
+| Rancher 2.6 (K8s 1.21)          | supported      |
 | VMWare TKGI 1.10 (K8s 1.19)     | supported      |
 | VMWare TKGI 1.11 (K8s 1.20)     | supported      |
 | AKS 1.19                        | deprecated     |
