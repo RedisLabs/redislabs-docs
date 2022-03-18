@@ -40,7 +40,7 @@ For RedisGears v1.0, you only need the Python dependency package.
 Skip this step unless your cluster does not have internet access. 
     {{</note>}}
 
-1. Add RedisGears to the cluster with a [`POST` request to the `/v2/modules` REST API endpoint]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}):
+1. Add RedisGears to the cluster with a `POST` request to the master node's [`/v2/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}) REST API endpoint:
 
     ```sh
     $ curl -k -u "<user>:<password>" -F "module=@/tmp/redisgears.linux-centos7-x64.1.2.1.zip" https://localhost:9443/v2/modules
