@@ -2,7 +2,7 @@
 Title: Delete custom resources
 linkTitle: Delete custom resources
 description: This article explains how to delete Redis Enterprise clusters and Redis Enterprise databases from your Kubernetes environment.
-weight: 80
+weight: 90
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
@@ -57,4 +57,18 @@ kubectl patch rec <your-rec-name> --type=json -p \
 
 ## Delete the operator
 
-Note: The Redis Enterprise CRDs are non-namespaced resources, meaning they are shared across your entire K8s cluster. Deleting CRDs in one namespace, will delete custom resources in every other namespace across the K8s cluster.
+To delete the operator from your K8s cluster and namespace, you can delete the operator bundle with `kubectl delete bundle.yaml`. This will remove the operator and it's custom resource definitions (CRDs) from your K8s cluster.
+
+{{<warning>}} The Redis Enterprise CRDs are non-namespaced resources, meaning they are shared across your entire K8s cluster. Deleting CRDs in one namespace, will delete custom resources in every other namespace across the K8s cluster.{{</warning>}}
+
+If you have Redis Enterprise clusters running in different namespaces on the same K8s cluster, deleting the entire operator bundle might cause data loss.
+
+To safely delete the operator from one namespace without affecting the others, delete the operator files individually, excluding the CRD files:
+
+```sh
+kubectl delete role.yaml
+kubectl delete role_binding.yaml
+kubectl delete service_account.yaml
+kubectl delete admission-service.yaml
+kubectl delete operator.yaml
+```
