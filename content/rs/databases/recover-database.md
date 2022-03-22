@@ -1,5 +1,6 @@
 ---
-Title: Recovering a Failed Database
+Title: Recover a failed database
+linktitle: Recover a database
 description: 
 weight: $weight
 alwaysopen: false
