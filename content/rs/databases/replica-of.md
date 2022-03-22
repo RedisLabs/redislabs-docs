@@ -1,6 +1,6 @@
 ---
-Title: Active-Passive Geo-Distributed Redis (Replica-Of)
-description:
+Title: Replica Of geo-distributed Redis
+description: Replica Of
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
