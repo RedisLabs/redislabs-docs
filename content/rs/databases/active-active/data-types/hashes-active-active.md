@@ -1,5 +1,5 @@
 ---
-Title: Developing with Hashes in an Active-Active database
+Title: Hashes in an Active-Active databases
 linkTitle: Hashes
 description:
 weight: $weight

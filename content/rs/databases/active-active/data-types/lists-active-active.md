@@ -1,5 +1,5 @@
 ---
-Title: Developing with Lists in an Active-Active Database
+Title: Lists in Active-Active Databases
 linkTitle: Lists
 description:
 weight: $weight
@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/developing/crdbs/developing-lists-crdb/
 ---
-Redis Lists are simply lists of strings, sorted by insertion order. It
+Redis lists are simply lists of strings, sorted by insertion order. It
 is possible to add elements to a Redis List that push new elements to
 the head (on the left) or to the tail (on the right) of the list. Redis
 Lists can be used to easily implement queues (using LPUSH and RPOP, for

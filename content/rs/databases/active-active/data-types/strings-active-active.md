@@ -1,5 +1,5 @@
 ---
-Title: Strings and Bitfields with Active-Active Databases
+Title: Strings and Bitfields in Active-Active databases
 linkTitle: Strings and bitfields
 description:
 weight: $weight

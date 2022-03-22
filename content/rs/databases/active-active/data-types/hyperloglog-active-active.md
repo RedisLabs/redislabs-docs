@@ -1,5 +1,5 @@
 ---
-Title: Developing with HyperLogLog in an Active-Active database
+Title: HyperLogLog in Active-Active databases
 linkTitle: HyperLogLog
 description:
 weight: $weight

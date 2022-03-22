@@ -1,5 +1,5 @@
 ---
-Title: Developing with Sets in an Active-Active database
+Title: Sets in Active-Active databases
 linkTitle: Sets
 description:
 weight: $weight

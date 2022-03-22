@@ -1,5 +1,5 @@
 ---
-Title: Streams with Active-Active databases
+Title: Streams in Active-Active databases
 linkTitle: Streams
 description:
 weight: $weight

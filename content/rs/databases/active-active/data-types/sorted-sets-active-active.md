@@ -1,5 +1,5 @@
 ---
-Title: Developing with Sorted Sets in an Active-Active database
+Title: Sorted sets in Active-Active databases
 linkTitle: Sorted sets
 description:
 weight: $weight

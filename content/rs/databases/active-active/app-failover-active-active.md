@@ -1,5 +1,5 @@
 ---
-Title: Active-Active region application failover
+Title: Application failover with Active-Active databases
 linkTitle: App failover
 description:
 weight: 1

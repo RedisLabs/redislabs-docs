@@ -1,7 +1,7 @@
 ---
-title: Developing applications with Active-Active databases
-linkTitle: Active-active database apps
-description:
+title: Develop applications with Active-Active databases
+linkTitle: Develop apps
+description: Overview of how developing applications differs for Active-Active databases from standalone Redis databases.
 weight: 85
 alwaysopen: false
 categories: ["RS"]
@@ -85,52 +85,6 @@ types and commands, the underlying types in RS are enhanced to maintain
 more metadata to create the conflict-free data type experience. This
 section explains what you need to know about developing with Active-Active databases on
 Redis Enterprise Software.
-
-## Compatibility
-
-Active-Active databases behave like standard Redis databases, except for a few
-differences:
-
-- Active-Active databases in this version support all major Redis data types. See the
-    list of types supported in Active-Active databases under the Data Types
-    section.
-- As conflict handling rules differ between data types, some commands
-    have slightly different requirements in Active-Active databases vs standard Redis
-    databases. (ex: String type)
-
-## Data types
-
-Even though the data types and methods look identical in standard Redis
-and Active-Active databases, there are specific rules that govern the handling of
-conflicting concurrent writes to each type.
-
-From a developer's perspective, most supported data types work the same
-as standard Redis. However, a few methods also come with specific
-requirements in Active-Active databases.
-
-Below is a table of the primary data types and their support levels,
-followed by descriptions:
-
-| **Data Type** | **Support Level** |
-|------------|-----------------|
-| Bitfield | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
-| Float Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-counter-support" >}}) |
-| Geospatial | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
-| Hashes | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hashes-active-active.md" >}}); Hash fields are treated as strings or counters |
-| Integer Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-counter-support" >}}) |
-| Lists | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-lists-active-active.md" >}}) |
-| Sets | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sets-active-active.md" >}}) |
-| Strings | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
-| Sorted Sets | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
-| HyperLogLog | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hll-active-active.md" >}}) |
-| Streams | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-streams-active-active.md" >}}) |
-| Bitsets | Not currently supported |
-
-### Other data types
-
-Bitmap and Bitfields, data types and operations are
-not currently supported in this version of
-Active-Active databases.
 
 ## Lua scripts
 
