@@ -1,22 +1,11 @@
 ---
-Title: Delete a Database
-description:
+Title: Delete an Active-Active database
+description: Delete Active-Active database
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/delete-crdb/
 ---
-When you delete a database, the database configuration and data are deleted.<!--more-->
-
-To delete a database in Redis Enterprise Software:
-
-1. Click the relevant database row in the **Databases** page. The
-    selected database page appears.
-1. Select the **Configuration** tab.
-1. Click **Delete** at the bottom of the page.
-1. Confirm the deletion.
-
-## Deleting an Active-Active database
 
 When you delete an Active-Active database (formerly known as CRDB),
 all instance of the Active-Active database are deleted from all participating clusters.

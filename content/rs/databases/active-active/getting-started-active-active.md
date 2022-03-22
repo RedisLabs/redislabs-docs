@@ -1,15 +1,15 @@
 ---
-Title: Getting Started with Redis Enterprise Active-Active Databases
+Title: Get Started with Redis Enterprise Active-Active databases
 linktitle: Active-Active databases
-description:
+description: Quick start guide to create an Active-Active database for test and development.
 weight: 30
 alwaysopen: false
 aliases: /rs/getting-started/creating-database/crdbs/
          /rs/getting-started/getting-started-crdbs/
 categories: ["RS"]
 ---
-In this guide, we'll set up an Active-Active database, formerly known as CRDB (Conflict-free
-Replicated DataBase) spanning across two Redis Enterprise Software
+
+To get you started, this article will help you set up a Active-Active database, formerly known as CRDB (conflict-free replicated database) spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
 - Step 1: Run two Redis Enterprise Software (RS) Docker containers

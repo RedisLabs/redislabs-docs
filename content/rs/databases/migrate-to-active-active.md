@@ -1,5 +1,6 @@
 ---
-Title: Migrate a Database to Active-Active
+Title: Migrate a database to Active-Active
+linktitle: Migrate to Active-Active
 description:
 weight: $weight
 alwaysopen: false

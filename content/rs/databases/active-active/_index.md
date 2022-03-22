@@ -1,5 +1,6 @@
 ---
-Title: Active-Active Geo-Distributed Redis
+Title: Active-Active geo-distributed Redis
+linktitle: Active-Active
 description:
 weight: $weight
 alwaysopen: false
