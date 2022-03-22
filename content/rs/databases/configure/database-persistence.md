@@ -1,5 +1,5 @@
 ---
-Title: Database persistence with Redis Enterprise Software
+Title: Configure atabase persistence
 linktitle: Database persistence
 description:
 weight: 30
@@ -19,6 +19,17 @@ is critical. Therefore, Redis Enterprise Software supports persisting data to di
 
 [Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be configured either at time of database creation or by editing an existing
 database's configuration. While the persistence model can be changed dynamically, just know that it can take time for your database to switch from one persistence model to the other. It depends on what you are switching from and to, but also on the size of your database.
+
+## Configuring persistence for your database
+
+1. In **databases**, either:
+        - Click **Add** (+) to create a new database.
+        - Click on the database that you want to configure and at the bottom of the page click edit.
+1. Navigate to Persistence
+1. Select your database persistence option
+1. Select save or update
+
+{{< video "/images/rs/persistence.mp4" "Persistence" >}}
 
 ## Options for configuring data persistence
 
@@ -75,17 +86,6 @@ two:
 |  Provides better durability (recover the latest point in time) | Less durable |
 |  Slower time to recover (Larger files) | Faster recovery time |
 |  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
-
-## Configuring persistence for your database
-
-1. In **databases**, either:
-        - Click **Add** (+) to create a new database.
-        - Click on the database that you want to configure and at the bottom of the page click edit.
-1. Navigate to Persistence
-1. Select your database persistence option
-1. Select save or update
-
-{{< video "/images/rs/persistence.mp4" "Persistence" >}}
 
 ## Data persistence and Redis on Flash
 
