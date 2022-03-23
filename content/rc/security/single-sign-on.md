@@ -87,7 +87,7 @@ Redis Cloud also supports SSO with [SAML (Security Assertion Markup Language)](h
 
 1. Sign into your existing [Redis Cloud account](https://app.redislabs.com/#/login).
 
-1. Select **Access Management** from the admin console menu.
+1. Select **Access Management** from the [admin console](https://app.redislabs.com) menu.
 
 1. Select **Single Sign-on**.
 
@@ -103,7 +103,7 @@ Redis Cloud also supports SSO with [SAML (Security Assertion Markup Language)](h
 
 #### Configure IdP metadata {#configure-idp}
 
-1. Get the following metadata values for your identity provider:
+1. You need the following metadata values from your identity provider:
 
     | Setting | Description |
     |---------|-------------|
@@ -115,7 +115,7 @@ Redis Cloud also supports SSO with [SAML (Security Assertion Markup Language)](h
 
     To find these metadata values, see your identity provider's documentation.
 
-1. From the **SAML** screen of the Redis Cloud admin console, configure the **Identity Provider metadata** settings.
+1. From the **SAML** screen of the Redis Cloud [admin console](https://app.redislabs.com), configure the **Identity Provider metadata** settings.
 
     {{<image filename="images/rc/access-management-saml-config.png"  alt="SAML Single Sign-on configuration screen.">}}{{</image>}}
 
@@ -184,7 +184,7 @@ After you set up SAML SSO for one account, you can edit the SAML configuration t
 
 To bind other accounts to an existing SAML SSO configuration:
 
-1. Go to **Access Management > Single Sign-on** in the Redis Cloud admin console.
+1. Go to **Access Management > Single Sign-on** in the Redis Cloud [admin console](https://app.redislabs.com).
 
 1. Select the **Edit** button.
 
@@ -202,7 +202,7 @@ A SAML-enabled account must have a local (non-SAML) user with the owner role ass
 
 To deactivate SAML for specific accounts:
 
-1. Go to **Access Management > Single Sign-on** in the Redis Cloud admin console.
+1. Go to **Access Management > Single Sign-on** in the Redis Cloud [admin console](https://app.redislabs.com).
 
 1. Select the **Edit** button.
 
