@@ -52,7 +52,7 @@ The constraint [scc.yaml](https://raw.githubuser.com/RedisLabs/redis-enterprise-
 can be downloaded and installed by a cluster administrator with the commands:
 
 ```sh
-curl -O https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml
+curl -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml
 oc apply -f scc.yaml
 ```
 
