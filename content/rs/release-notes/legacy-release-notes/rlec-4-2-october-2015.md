@@ -36,16 +36,11 @@ before running through the upgrade process.
     degraded due to reaching disk I/O limits.
 - Replica Of support for multiple sources - the Replica Of feature is
     enhanced to support creating a database that is a replica of
-    multiple source databases. For additional details, refer to the
-    [Replica
-    of]({{< relref "/rs/administering/designing-production/active-passive.md" >}})
-    section.
+    multiple source databases. For additional details, refer to the Replica Of section.
 - Cross cluster Replica Of - the Replica Of feature now supports
     defining a database that is a replica of databases that belong to a
     different RLEC cluster. For additional details, refer to the
-    [Replica
-    of]({{< relref "/rs/administering/designing-production/active-passive.md" >}})
-    section.
+    Replica Of section.
 - Multi-IP support - on a node that has multiple IPs, enables the
     administrator to specify which IP address is used for internal
     traffic and which IP addresses are used for external traffic. For

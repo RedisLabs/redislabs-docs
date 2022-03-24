@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Replicated databases, including those that use [Active-Passive]({{< relref "/rs/administering/designing-production/active-passive.md" >}}) and [Active-Active]({{< relref "/rs/administering/designing-production/active-active.md" >}}) replication,
+Replicated databases, including those that use [Replica Of]({{< relref "/rs/databases/replica-of.md" >}}) and [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) replication,
 use proxy endpoints to synchronize database changes with the databases on the other participating clusters.
 To improve the throughput and lower the latency for synchronization traffic,
 you can configure a replicated database to use distributed synchronization where any available proxy endpoint can manage synchronization traffic.

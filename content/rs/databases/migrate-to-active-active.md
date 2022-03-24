@@ -6,7 +6,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-With [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}), applications can read and write to the same data set from different geographical locations seamlessly and with latency less than 1 ms, without changing the way the application connects to the database.
+With [Active-Active databases]({{< relref "/rs/databases/replica-of.md" >}}), applications can read and write to the same data set from different geographical locations seamlessly and with latency less than 1 ms, without changing the way the application connects to the database.
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
 If you have data in a single-region Redis Enterprise Software database that you want to migrate to an Active-Active database,

@@ -24,9 +24,9 @@ all write commands are synchronized from the sources to the destination.
 Replica Of lets you distribute the read load of your application across multiple databases or
 synchronize the database, either within Redis Enterprise or external to Redis Enterprise, to another database.
 
-You can [create Active-Passive]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) databases on Redis Enterprise Software or Redis Cloud.
+You can [create Active-Passive]({{< relref "/rs/databases/create-replica-of.md" >}}) databases on Redis Enterprise Software or Redis Cloud.
 
-[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/administering/designing-production/active-active.md" >}})
+[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/databases/active-active/_index.md" >}})
 provides these benefits and also provides write access to all of the database replicas.
 
 {{< warning >}}
