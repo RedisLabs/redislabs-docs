@@ -1,5 +1,5 @@
 ---
-Title: Configure atabase persistence
+Title: Configure database persistence
 linktitle: Database persistence
 description:
 weight: 30
@@ -10,9 +10,12 @@ aliases: [
         /rs/concepts/data-access/persistence/,
         /rs/concepts/memory-performance/persistence.md,
         /rs/concepts/memory-performance/persistence/,
+        /rs/databases/configure/database-persistence.md,
+        /rs/databases/configure/database-persistence,
+
 ]
 ---
-All data is stored and managed exclusively in either RAM or RAM + Flash Memory ([Redis on
+All data is stored and managed exclusively in either RAM or RAM + flash Memory ([Redis on
 Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})) and therefore, is at risk of being lost upon a process or server
 failure. As Redis Enterprise Software is not just a caching solution, but also a full-fledged database, [persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) to disk
 is critical. Therefore, Redis Enterprise Software supports persisting data to disk on a per-database basis and in multiple ways.

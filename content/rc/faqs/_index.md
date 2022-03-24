@@ -152,7 +152,7 @@ Flexible plans run in dedicated VPCs and offer:
 - [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) - Recommended for datasets larger than 500GB
 - [Active-Active]({{< relref "/rs/administering/designing-production/active-active.md" >}}) and [Replica Of]({{< relref "/rs/databases/replica-of.md" >}}) Geo Distribution
 - Integration with [modules]({{< relref "/modules/_index.md" >}})
-- Encryption of [persistence data]({{< relref "/rs/concepts/memory-performance/persistence.md" >}})
+- Encryption of [persistence data]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - Redis Enterprise Cloud [REST API]({{< relref "/rc/api/_index.md" >}})
 
 Running Redis in a fully-automated manner with 24/7 expert support over Redis Enterprise Cloud is more cost effective than managing your own Redis instances on the cloud.
