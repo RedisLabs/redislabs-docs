@@ -4,7 +4,9 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: ["/rs/administering/cluster-operations/updating-certificates"]
+aliases: ["/rs/administering/cluster-operations/updating-certificates",
+"/rs/administering/cluster-operations/updating-certificates/",
+"/rs/administering/cluster-operations/updating-certificates.md"]
 ---
 
 Redis Enterprise Software uses self-signed certificates out-of-the-box to make sure that the product is secure by default.

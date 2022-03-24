@@ -1,10 +1,14 @@
 ---
 Title: Transport Layer Security (TLS)
 description:
-weight: 10
+weight: 70
 alwaysopen: false
 categories: ["RS"]
-aliases: ["/rs/administering/designing-production/security/tls-configuration", "/rs/administering/designing-production/security/client-connections"]
+aliases: ["/rs/administering/designing-production/security/tls-configuration", 
+"/rs/administering/designing-production/security/client-connections",
+"/rs/security/tls-ssl",
+"/rs/security/tls-ssl/",
+"/rs/security/tls-ssl.md"]
 ---
 Transport Layer Security (TLS), a successor to SSL, ensures the privacy of data sent between applications and their Redis databases. TLS also secures connections between Redis Enterprise Software nodes.
 

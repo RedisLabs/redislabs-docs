@@ -4,6 +4,9 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/security/admin-console-security/encryption",
+"/rs/security/admin-console-security/encryption/",
+"/rs/security/admin-console-security/encryption.md"]
 ---
 Redis Enterprise Software uses self-signed certificates by default ensure that the product is secure.
 
