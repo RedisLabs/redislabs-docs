@@ -10,10 +10,30 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.2.9 requires:
+RediSearch v2.2.10 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.2.10 (March 2022)
+
+This is a maintenance release for RediSearch 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Improvements:
+
+  - Mac M1 support
+  - [#2645](https://github.com/RediSearch/RediSearch/pull/2645) Ignore `NULL` values in JSON documents on indexing (prior behaviour would ignore the entire document)
+  - [#2623](https://github.com/RediSearch/RediSearch/pull/2623) Improved Multi Sortby error message for `FT.SEARCH`
+
+- Bug fixes:
+
+  - [#2641](https://github.com/RediSearch/RediSearch/pull/2641) Memory leak in Coordinator
+  - [#2651](https://github.com/RediSearch/RediSearch/pull/2651) Client freeze on docs expire during query
+  - [#2670](https://github.com/RediSearch/RediSearch/pull/2670) Memory leak in RediSearch found in Active-Active (MOD-2518)
 
 ## v2.2.9 (March 2022)
 
