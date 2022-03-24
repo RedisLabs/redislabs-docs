@@ -57,7 +57,7 @@ kubectl patch rec <your-rec-name> --type=json -p \
 
 ## Delete the operator
 
-To delete the operator from your K8s cluster and namespace, you can delete the operator bundle with `kubectl delete bundle.yaml`. This will remove the operator and it's custom resource definitions (CRDs) from your K8s cluster.
+To delete the operator from your K8s cluster and namespace, you can delete the operator bundle with `kubectl delete bundle.yaml`. This will remove the operator and its custom resource definitions (CRDs) from your K8s cluster.
 
 {{<warning>}} The Redis Enterprise CRDs are non-namespaced resources, meaning they are shared across your entire K8s cluster. Deleting CRDs in one namespace, will delete custom resources in every other namespace across the K8s cluster.{{</warning>}}
 
