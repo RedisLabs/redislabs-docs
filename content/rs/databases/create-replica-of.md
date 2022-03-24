@@ -4,10 +4,14 @@ description: Create Replica Of database
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/intercluster-replication/replica-of/
-        /rs/administering/database-operations/create-active-passive/
+aliases: [ 
+    /rs/administering/intercluster-replication/replica-of/, 
+    /rs/administering/database-operations/create-active-passive/,
+    /rs/databases/create-replica-of.md, 
+    /rs/databases/create-replica-of/,
+]
 ---
-[Active-Passive replicated databases]({{< relref "/rs/administering/designing-production/active-passive.md" >}}) (also known as Replica Of) give applications read-only access
+Active-Passive replicated databases (also known as Replica Of) give applications read-only access
 to replicas of the data that are hosted in different geographical locations.
 
 The source database can be located in the same Redis Enterprise Software (RS) cluster, in a different cluster, or in an OSS Redis database.

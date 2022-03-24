@@ -4,10 +4,17 @@ description: Replica Of
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/intercluster-replication/replica-of/
-        /rs/administering/active-passive/
+aliases: [
+    /rs/administering/intercluster-replication/replica-of/,
+    /rs/administering/active-passive/,
+    /rs/administering/designing-production/active-passive/,
+    /rs/administering/designing-production/active-passive.md,
+    /rs/databases/replica-of.md,
+    /rs/databases/replica-of/,
+
+]
 ---
-In Redis Enterprise, active-passive geo-distribution provides applications read-only access
+In Redis Enterprise, the Replica Of feature provides active-passive geo-distribution to applications  for read-only access
 to replicas of the data set from different geographical locations.
 The Redis Enterprise implementation of active-passive replication is called Replica Of.
 
