@@ -25,7 +25,7 @@ For production environments, the [install and setup]({{< relref "/rs/installing-
 
 Quick start guides are also available to help you:
 
-- Run Redis Software using a [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}), which lets you skip the installation process
+- Run Redis Software using a [Docker container]({{< relref "/rs/databases/get-started/get-started-docker.md" >}}), which lets you skip the installation process
 - Set up a [Redis on Flash cluster]({{< relref "/rs/getting-started/getting-started-redis-flash.md" >}}) to optimize  memory resources
 - Set up an [Active-Active cluster]({{< relref "/rs/getting-started/getting-started-active-active.md" >}}) to enable high availability
 - [Benchmark]({{< relref "/rs/getting-started/memtier-benchmark.md" >}}) Redis Enterprise Software performance.

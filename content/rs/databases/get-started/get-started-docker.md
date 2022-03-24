@@ -1,16 +1,22 @@
 ---
-Title: Getting Started with Redis Enterprise Software using Docker
+Title: Get started with Redis Enterprise Software using Docker
 linkTitle: Docker
 description:
 weight: 40
 alwaysopen: false
-aliases:
-    - /rs/getting-started/docker/windows/
-    - /rs/getting-started/docker/linux/
-    - /rs/getting-started/docker/macos/
-    - /rs/getting-started/docker/getting-started-docker/
-    - /rs/getting-started/docker/
 categories: ["RS"]
+aliases: [
+    /rs/getting-started/docker/windows/,
+    /rs/getting-started/docker/linux/,
+    /rs/getting-started/docker/macos/,
+    /rs/getting-started/docker/getting-started-docker/,
+    /rs/getting-started/docker/,
+    /rs/databases/get-started/getting-started-docker.md,
+    /rs/databases/get-started/getting-started-docker/,
+    /rs/databases/get-started/get-started-docker.md,
+    /rs/databases/get-started/get-started-docker/,
+]
+
 ---
 {{< warning >}}
 Docker containers are currently only supported for development and testing environments, not for production.
