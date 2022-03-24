@@ -66,9 +66,9 @@ If you have Redis Enterprise clusters running in different namespaces on the sam
 To safely delete the operator from one namespace without affecting the others, delete the operator files individually, excluding the CRD files:
 
 ```sh
-kubectl delete role.yaml
-kubectl delete role_binding.yaml
-kubectl delete service_account.yaml
-kubectl delete admission-service.yaml
-kubectl delete operator.yaml
+kubectl delete -f role.yaml
+kubectl delete -f role_binding.yaml
+kubectl delete -f service_account.yaml
+kubectl delete -f admission-service.yaml
+kubectl delete -f operator.yaml
 ```
