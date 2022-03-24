@@ -5,9 +5,13 @@ description:
 weight: 1
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/getting-started/quick-setup/
-         /rs/getting-started/
-         /rs/getting-started.md
+aliases: [
+    /rs/getting-started/quick-setup/,
+    /rs/getting-started/,
+    /rs/getting-started.md,
+    /rs/installing-upgrading/get-started-redis-enterprise-software.md,
+    /rs/installing-upgrading/get-started-redis-enterprise-software/,
+    ]
 ---
 This guide helps you install Redis Enterprise Software on a Linux host to test its capabilities.
 
