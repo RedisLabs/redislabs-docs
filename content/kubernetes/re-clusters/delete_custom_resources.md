@@ -15,15 +15,17 @@ aliases: [
 
 To delete a database managed by the Redis Enterprise Kubernetes operator, run `kubectl delete redb <your-db-name>` from your K8s cluster.
 
-When you delete a database, your data and the REDB custom resource file are also deleted.
+When you delete a database, your data and the REDB custom resource are also deleted.
 
 ### Troubleshoot REDB deletion
 
-After a deletion request, the operator attaches a finalizer to the Redis Enterprise database (REDB) object. This makes sure the database is deleted before the REDB custom resource is removed from the K8s cluster.
+The operator attaches a finalizer to the Redis Enterprise database (REDB) object. This makes sure the database is deleted before the REDB custom resource is removed from the K8s cluster.
 
 If the finalizer isn't removed automatically by the operator, you won't be able to delete your REDB resource.
 
-If this happens, you can remove the finalizer manually with the following command:
+If this happens, you can remove the finalizer manually.
+
+{{<warning>}} If you remove the finalizer manually, there is not guarantee that the underlying REC has been deleted. This may cause resource issues and require manual intervention. {{</warning>}}
 
 ```sh
 kubectl patch redb <your-db-name> --type=json -p \
@@ -40,15 +42,17 @@ To delete a Redis Enterprise cluster managed by the operator:
 
 1. Run `kubectl delete rec <your-rec-name>` from your K8s cluster.
 
-When you delete your cluster, your data and the REC custom resource file are also deleted.
+When you delete your cluster, your data and the REC custom resource are also deleted.
 
 ### Troubleshoot REC deletion
 
-After a deletion request, the operator attaches a finalizer to the Redis Enterprise cluster (REC) object. This makes sure the Redis cluster is deleted before the REC custom resource is removed from the K8s cluster.
+The operator attaches a finalizer to the Redis Enterprise cluster (REC) object. This makes sure the Redis cluster is deleted before the REC custom resource is removed from the K8s cluster.
 
 If the finalizer isn't removed automatically by the operator, you won't be able to delete your REC resource.
 
-If this happens, you can remove the finalizer manually with the following command:
+If this happens, you can remove the finalizer manually.
+
+{{<warning>}} If you remove the finalizer manually, there is not guarantee that the underlying REC has been deleted. This may cause resource issues and require manual intervention. {{</warning>}}
 
 ```sh
 kubectl patch rec <your-rec-name> --type=json -p \
