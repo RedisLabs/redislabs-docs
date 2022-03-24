@@ -2,7 +2,7 @@
 title: Get started with Redis Enterprise Software
 linkTitle: Get started
 description:
-weight: 30
+weight: 1
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/getting-started/quick-setup/
