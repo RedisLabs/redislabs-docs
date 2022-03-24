@@ -15,7 +15,7 @@ These databases can use Redis Enterprise features like:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
 - [High availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
-- [Data persistence]({{< relref "/rs/concepts/memory-performance/persistence.md" >}})
+- [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
 
 You can create databases according to the number of shards in your subscription
@@ -96,7 +96,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
 
         {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-    - [**Data persistence**]({{< relref "/rs/concepts/memory-performance/persistence.md" >}}) -
+    - [**Data persistence**]({{< relref "/rs/databases/configure/database-persistence.md" >}}) -
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File.
 
