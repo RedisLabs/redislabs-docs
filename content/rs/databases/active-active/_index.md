@@ -5,8 +5,13 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/intercluster-replication/crdbs/
-        /rs/administering/active-active/
+aliases: [
+    /rs/administering/intercluster-replication/crdbs/,
+    /rs/administering/active-active/,
+    /rs/databases/active-active/,
+    /rs/databases/active-active/_index.md,
+    /rs/databases/active-active/_index/
+    ]
 ---
 In Redis Enterprise, active-active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
 The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).

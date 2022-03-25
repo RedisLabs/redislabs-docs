@@ -5,7 +5,12 @@ description:
 weight: 1
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/developing/crdbs/region-application-failover-active-active/
+aliases: [
+    /rs/developing/crdbs/region-application-failover-active-active/,
+    /rs/databases/active-active/app-failover-active-active.md,
+    /rs/databases/active-active/app-failover-active-active/,
+]
+
 ---
 Active-Active Redis deployments don't have a built-in failover or failback mechanism.
 An application deployed with an Active-Active database connects to a replica of the database that is geographically nearby.
