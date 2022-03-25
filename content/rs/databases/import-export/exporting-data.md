@@ -4,8 +4,12 @@ description: You can export data to import it into a new database or to make a b
 weight: 60
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/import-export/exporting-data/
-        /rs/administering/database-operations/exporting-data/
+aliases: [
+    /rs/administering/import-export/exporting-data/,
+    /rs/administering/database-operations/exporting-data/,
+    /rs/databases/import-export/exporting-data.md,
+    /rs/databases/import-export/exporting-data/,
+]
 ---
 
 You can export the data from a specific database at any time.  The following destinations are supported:

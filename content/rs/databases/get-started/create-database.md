@@ -23,7 +23,7 @@ and the memory available on the machine.
 
 {{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
-[create an Active-Active database]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}).
+[create an Active-Active database]({{< relref "/rs/databases/active-active/create-active-active.md" >}}).
 {{< /note >}}
 
 ## Creating a new redis database
@@ -150,7 +150,7 @@ after the database is created.
 
     - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-    - [**Data eviction policy**]({{< relref "/rs/concepts/memory-performance/eviction-policy.md" >}}) -
+    - [**Data eviction policy**]({{< relref "/rs/databases/configure/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
@@ -162,7 +162,7 @@ after the database is created.
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
-    - [**Periodic backup**]({{< relref "/rs/administering/import-export/database-backup.md" >}}) -
+    - [**Periodic backup**]({{< relref "/rs/databases/import-export/database-backup.md" >}}) -
     You can configure periodic backups of the database, including the interval and backup location parameters.
 
     - [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -

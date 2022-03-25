@@ -50,7 +50,7 @@ A boolean that indicates whether [client authentication]({{< relref "/rs/securit
 
 ### `evictionPolicy`
 
-An [eviction policy]({{< relref "content/rs/concepts/memory-performance/eviction-policy.md">}}) (default: `volatile-lru`)
+An [eviction policy]({{< relref "/rs/databases/configure/eviction-policy.md">}}) (default: `volatile-lru`)
 
 ### `memorySize`
 
@@ -59,7 +59,7 @@ suffixed with a unit. For example, values like 1GB, 250MB, etc.
 
 ### `persistence`
 
-The value for the [database persistence]({{< relref "content/rs/databases/configure/database-persistence.md">}}) setting.
+The value for the [database persistence]({{< relref "/rs/databases/configure/database-persistence.md">}}) setting.
 
 The value is a keyword with the values:
 

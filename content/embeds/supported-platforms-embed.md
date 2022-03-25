@@ -17,7 +17,7 @@ Make sure your system meets these requirements:
 | RHEL/CentOS 8 | 8.0, 8.1, 8.2, 8.3, 8.4 |
 | Oracle Linux 7 | Based on the corresponding RHEL version |
 | Amazon Linux | Version 1 |
-| Docker | [Docker images]({{< relref "/rs/databases/get-started/getting-started-docker.md" >}}) of Redis Enterprise Software are certified for Development and Testing only. |
+| Docker | [Docker images]({{< relref "/rs/databases/get-started/get-started-docker.md" >}}) of Redis Enterprise Software are certified for Development and Testing only. |
 | Kubernetes | See the [Redis Enterprise Software on Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
 
 Be aware that Redis Enterprise Software relies on certain components that require support from the operating system.  You cannot enable support for components, services, protocols, or versions that aren't supported by the operating system running Redis Enterprise Software.  In addition, updates to the operating system or to Redis Enterprise Software can impact component support.
