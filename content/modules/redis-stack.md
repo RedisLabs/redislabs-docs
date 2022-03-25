@@ -25,6 +25,8 @@ This automatically adds the following modules to the new database:
 - RedisTimeSeries
 - RedisBloom
 
+Each module is available to the database, which means you can combine their capabilities to meet your needs.
+
 Redis Stack is not supported by Redis Enterprise Software at this time.
 
 To learn more, see:
