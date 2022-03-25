@@ -33,7 +33,7 @@ To prevent this from happening, make sure your database is large enough to hold 
 
 `volatile-lru` is the default eviction policy for most databases.
 
-For performance reasons, the default policy for [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}). 
+For performance reasons, the default policy for [Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}). 
 
 ## Active-Active database eviction
 The eviction policy mechanism for Active-Active databases kicks in earlier than for regular databases because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit. If memory usage continues to rise while the keys are being evicted, the rate of eviction will increase to prevent reaching the Out-of-Memory state.

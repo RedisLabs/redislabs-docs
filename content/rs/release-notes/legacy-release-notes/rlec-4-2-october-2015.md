@@ -54,14 +54,14 @@ before running through the upgrade process.
     support section.
 - Support for OpenStack Object Store ("Swift") location for import /
     export / backup. For additional details, refer to [Database
-    backup]({{< relref "/rs/administering/import-export/database-backup.md" >}})
+    backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
     and [Importing data to a
-    database]({{< relref "/rs/administering/import-export/importing-data.md" >}})
+    database]({{< relref "/rs/databases/import-export/importing-data.md" >}})
     sections.
 - Import of a sharded database - support for importing data of a
     sharded database by indicating multiple files paths. For additional
     details, refer to the [Importing data to a
-    database]({{< relref "/rs/administering/import-export/importing-data.md" >}})
+    database]({{< relref "/rs/databases/import-export/importing-data.md" >}})
     section.
 - Enable running the install script in silent mode using "-y"
     parameter for default answers ("Y") or "-c" for file path parameters

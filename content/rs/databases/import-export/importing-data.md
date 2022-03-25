@@ -8,8 +8,8 @@ linktitle: Import data
 aliases: /rs/administering/database-operations/importing-data/
         /rs/administering/database-operations/administering-database-operations-importing-data/
 ---
-You can import [export]({{< relref "/rs/administering/import-export/exporting-data.md" >}})
-or [backup]({{< relref "/rs/administering/import-export/database-backup.md" >}})
+You can import [export]({{< relref "/rs/databases/import-export/exporting-data.md" >}})
+or [backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
 files of a specific Redis Enterprise Software database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a clustered database.
@@ -156,7 +156,7 @@ Because Active-Active databases have a numeric counter data type,
 when you merge the imported data into the existing data RS increments counters by the value that is in the imported data.
 The import through the Redis Enterprise admin console handles these data types for you.
 
-You can import data into an Active-Active database [from the admin console]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
+You can import data into an Active-Active database [from the admin console]({{< relref "/rs/databases/import-export/importing-data.md" >}}).
 When you import data into an Active-Active database, there is a special prompt.
 
 ![Import into an Active-Active database](/images/rs/import-to-active-active-warning.png)
