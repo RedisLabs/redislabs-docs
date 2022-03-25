@@ -5,7 +5,13 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/developing/crdbs/developing-lists-crdb/
+aliases: [
+    /rs/developing/crdbs/developing-lists-crdb/,
+    /rs/references/developing-for-active-active/developing-lists-active-active/,
+    /rs/references/developing-for-active-active/developing-lists-active-active.md,
+    /rs/databases/active-active/data-types/lists-active-active.md,
+    /rs/databases/active-active/data-types/lists-active-active/,
+]
 ---
 Redis lists are simply lists of strings, sorted by insertion order. It
 is possible to add elements to a Redis List that push new elements to

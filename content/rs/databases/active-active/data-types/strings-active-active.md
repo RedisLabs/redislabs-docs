@@ -5,8 +5,14 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/references/developing-for-active-active/developing-strings-active-active.md/
-        /rs/developing/crdbs/strings/
+aliases: [
+        /rs/references/developing-for-active-active/developing-strings-active-active.md,
+        /rs/references/developing-for-active-active/developing-strings-active-active/,
+        /rs/developing/crdbs/strings/,
+        /rs/databases/active-active/data-types/strings-active-active.md,
+        /rs/databases/active-active/data-types/strings-active-active/,
+
+]
 ---
 Active-Active databases support both strings and bitfields.
 
