@@ -58,7 +58,7 @@ in between.
 
 [Learn more about
 synchronization]({{< relref "/rs/administering/designing-production/active-active.md" >}}) for
-each supported data type and [how to develop]({{< relref "/rs/references/developing-for-active-active/_index.md" >}}) with them on Redis Enterprise Software.
+each supported data type and [how to develop]({{< relref "/rs/databases/active-active/data-types/_index.md" >}}) with them on Redis Enterprise Software.
 
 ## Terminology
 

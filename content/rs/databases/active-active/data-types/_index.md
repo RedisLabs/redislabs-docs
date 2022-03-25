@@ -5,8 +5,12 @@ description: Introduction to differences in data types between standalone and Ac
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/database-operations/create-crdb/
-        /rs/administering/database-operations/create-active-active/
+aliases: [
+        /rs/references/developing-for-active-active/,
+        /rs/references/developing-for-active-active_index.md,
+        /rs/databases/active-active/data-types/_index.md,
+        /rs/databases/active-active/data-types/,
+]
 ---
 
 

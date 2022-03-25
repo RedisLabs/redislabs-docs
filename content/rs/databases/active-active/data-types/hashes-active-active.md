@@ -5,7 +5,13 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/developing/crdbs/developing-hashes-crdb/
+aliases: [
+    /rs/developing/crdbs/developing-hashes-crdb/,
+    /rs/references/developing-for-active-active/developing-hashes-active-active/,
+    /rs/references/developing-for-active-active/developing-hashes-active-active.md,
+    /rs/databases/active-active/data-types/hashes-active-active.md,
+    /rs/databases/active-active/data-types/hashes-active-active/,
+
 ---
 Hashes are great for structured data that contain a map of fields and
 values. They are used for managing distributed user or app session
