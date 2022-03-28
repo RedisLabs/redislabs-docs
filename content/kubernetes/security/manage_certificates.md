@@ -81,7 +81,7 @@ Check the operator logs and use the API to verify the certificate has been updat
 
 ## More info
 
-- [Updating SSL/TLS certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}})
-- [Installing your own certificates]({{< relref "/rs/security/tls-ssl#installing-your-own-certificates" >}})
-- [Manage TLS certificates]({{< relref "/rs/security/admin-console-security/encryption.md">}})
+- [Updating SSL/TLS certificates]({{<relref "/rs/security/certificates/updating-certificates">}})
+- [Installing your own certificates]({{<relref "/rs/security/tls#installing-your-own-certificates">}})
+- [Manage TLS certificates]({{<relref "/rs/security/certificates/encryption">}})
 - [Glossary/Transport Layer Security (TLS)]({{< relref "/glossary#letter-t">}})

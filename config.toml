@@ -14,7 +14,6 @@ enableMissingTranslationPlaceholders = false
 
 canonifyURLs = true
 relativeURLs = true
-refLinksErrorLevel = "WARNING"
 
 enableGitInfo = true
 
