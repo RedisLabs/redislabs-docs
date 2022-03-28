@@ -58,7 +58,7 @@ Resource limits are recommended to equal requests, see [quaranteed quality of se
 
 - [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec):
 
-    The max resources for a Redis node in integers (similar to pod limits).
+    The max resources (in integers) for a Redis node (similar to pod limits).
 
   For example:
       ```yaml
@@ -71,7 +71,7 @@ Resource limits are recommended to equal requests, see [quaranteed quality of se
 
 - [`requests`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec):
 
-  The minimum resources for a Redis node in integers (similar to pod requests).
+  The minimum resources (in integers) for a Redis node  (similar to pod requests).
 
   For example:
 
