@@ -10,10 +10,36 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisBloom v2.2.9 requires:
+RedisBloom v2.2.14 requires:
 
 - Minimum Redis compatibility version (database): 4.0.0
 - Minimum Redis Enterprise Software version (cluster): 5.0.0
+
+## v2.2.14 (March 2022)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#419](https://github.com/RedisBloom/RedisBloom/pull/419) [`CMS.INCRBY`](https://oss.redis.com/redisbloom/CountMinSketch_Commands/#cmsincrby) now returns an error on overflow
+    - [#412](https://github.com/RedisBloom/RedisBloom/pull/412) Fixed macOS build
+
+## v2.2.12 (February 2022)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#392](https://github.com/RedisBloom/RedisBloom/pull/392) Fixed a potential crash on Bloom filter expansion when loading from [AOF](https://redis.io/topics/persistence)
+    - [#404](https://github.com/RedisBloom/RedisBloom/pull/404) Fixed a potential crash on Cuckoo filter when calling [`CF.LOADCHUNK`](https://oss.redis.com/redisbloom/Cuckoo_Commands/#cfloadchunk) on a filter with `EXPANSION` greater than 1
 
 ## v2.2.9 (November 2021)
 

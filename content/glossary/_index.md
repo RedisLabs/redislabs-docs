@@ -51,6 +51,12 @@ More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persis
 
 ## C {#letter-c}
 
+{{%definition "causal consistency"%}}
+A distributed database is causally consistent if it maintains the same order of operations on a piece of data across all database copies.
+
+More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/administering/database-operations/causal-consistency-crdb">}})
+{{%/definition%}}
+
 {{%definition "CIDR allowlist"%}}
 Classless Inter-Domain Routing (CIDR) is a method to allocate and route IP addresses. A CIDR allowlist defines a range of IP addresses and permits connections to them.
 
@@ -100,6 +106,13 @@ More info: [Data Eviction Policy]({{<relref "/rc/databases/configuration/data-ev
 Naming system for computers, services, or other resources connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities.
 
 More info: [DNS wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
+{{%/definition%}}
+
+{{%definition "eventual consistency"%}}
+
+After updating data on one instance of a distributed database, the other database copies may have stale data for a short time while they sync. Eventual consistency means that the updated data will eventually be the same across all database copies.
+
+More info: [Eventual consistency wikipedia](https://en.wikipedia.org/wiki/Eventual_consistency)
 {{%/definition%}}
 
 {{%definition "`fysnc`"%}}
@@ -195,7 +208,7 @@ Node provisioned only for cluster operations that can be elected as a master nod
 ## R {#letter-r}
 
 {{%definition "rack-zone awareness"%}}
-Redis Enterprise feature that helps to ensure high-availability in the event of a rack or zone failure. In the event of a rack or zone failure, the slaves and endpoints in the remaining racks/zones will be promoted.
+Redis Enterprise feature that helps to ensure high availability in the event of a rack or zone failure. In the event of a rack or zone failure, the replicas and endpoints in the remaining racks/zones will be promoted.
 
 More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/concepts/high-availability/rack-zone-awareness.md">}})
 {{%/definition%}}

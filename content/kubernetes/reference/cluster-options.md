@@ -58,6 +58,10 @@ The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/comp
 We recommend that resource limits equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/topics.md#guaranteed-quality-of-service)).
 {{< /note >}}
 
+{{< note >}}
+Please note that Kubernetes accepts only integers as sizing numbers for requests and limits
+{{< /note >}}
+
 - [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec):
 
     The max resources for a Redis node (similar to pod limits).
