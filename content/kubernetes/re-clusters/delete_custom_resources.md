@@ -38,11 +38,9 @@ To delete a Redis Enterprise cluster managed by the operator:
 
 1. Delete all the databases in your cluster
 
-1. Delete all the PVC's you created for the cluster.
-
 1. Run `kubectl delete rec <your-rec-name>` from your K8s cluster.
 
-When you delete your cluster, your data and the REC custom resource are also deleted.
+When you delete your cluster, your data and the REC custom resource are also deleted. However, persistent volume claims (PVCs) for your cluster are not deleted in the process. If you want to delete your PVCs, you'll have to delete them manually.
 
 ### Troubleshoot REC deletion
 
