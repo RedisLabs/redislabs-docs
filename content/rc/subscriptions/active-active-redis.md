@@ -8,23 +8,12 @@ aliases:
 
 ---
 
-When you create a new subscription on Redis Cloud, you can enable **Active-Active Redis** under the **Advanced options** tab. Redis Enterprise Active-Active databases provide better scalability, performance, and availability than standalone databases.
+Active-Active databases store data across multiple regions and availability zones.  This improves scalability, performance, and availability, especially when compared to standalone databases.
+To create Active-Active databases, you need a Flexible (or Annual) Redis Enterprise Cloud subscription that enables Active-Active Redis and defines the regions for each copy of your databases.  This is defined when you create a new subscription.
 
-Redis Enterprise Active-Active geo-replication distributes your replicated data across multiple nodes and availability zones. This increases the durability of your database by reducing the likelihood of data or availability loss.
+Active-Active databases are distributed across multiple regions (geo-distribution).  This improves performance by reducing latency for nearby users and improves availability by protecting against data loss in case of network or resource failure.
 
-Active-Active databases use conflict-free data types (CRDTs) that allow reads and writes to be distributed across multiple zones with automatic conflict resolution.
-
-## Replication
-
-Replicating your database creates copies of each database instance (shard). Your database will then have one primary shard, and one or more replica shards. The primary handles both writes and reads from users. The replicas receive copies of changes from the primary to stay consistent with the primary.
-
-When a primary shard fails, Redis Enterprise automatically promotes the replica shard to primary. When the failed shard comes back into a stable state, the data is copied to it and it becomes the new replica
-
-## Clustering
-
-Clustering (or sharding) breaks your database into individual instances (shards) that are then spread across several nodes. As you increase the number of shards, your throughput and memory will also increase. Scaling out this way lets you increase memory for your database by adding shards to your cluster.
-
-Clustering also helps stop node failure from causing data availability loss. The cluster automatically syncs between nodes to make sure the replicas are up to date with their primary shards, even if they don’t reside on the same node.
+Active-Active databases allow read and write operations in each copy.  Each copy eventually reflects changes made in other copies (consistency).  Conflict-free data types (CRDTs) synchronize read and write operations between copies.  CRDTs ensure consistency and resolve conflicts.
 
 ## Active-Active geo-distributed replication
 
