@@ -9,11 +9,11 @@ aliases:
 ---
 
 Active-Active databases store data across multiple regions and availability zones.  This improves scalability, performance, and availability, especially when compared to standalone databases.
-To create Active-Active databases, you need a Flexible (or Annual) Redis Enterprise Cloud subscription that enables Active-Active Redis and defines the regions for each copy of your databases.  This is defined when you create a new subscription.
+To create Active-Active databases, you need a Flexible() (or Annual) [Redis Enterprise Cloud]({{<relref "/rc/subscriptions/">}}) subscription that enables Active-Active Redis and defines the regions for each copy of your databases.  This is defined when you [create a new subscription]({{<relref "rc/subscriptions/create-flexible-subscription">}}).
 
 Active-Active databases are distributed across multiple regions (geo-distribution).  This improves performance by reducing latency for nearby users and improves availability by protecting against data loss in case of network or resource failure.
 
-Active-Active databases allow read and write operations in each copy.  Each copy eventually reflects changes made in other copies (consistency).  Conflict-free data types (CRDTs) synchronize read and write operations between copies.  CRDTs ensure consistency and resolve conflicts.
+Active-Active databases allow read and write operations in each copy.  Each copy eventually reflects changes made in other copies ([consistency]({{<relref "/glossary#causal-consistency">}})).  Conflict-free data types (CRDTs) synchronize read and write operations between copies.  CRDTs ensure consistency and resolve conflicts.
 
 ## Active-Active geo-distributed replication
 
@@ -25,7 +25,7 @@ Geo-distributed replication maintains copies of both primary and replica shards 
 
 ### Multiple active proxies
 
-Active-Active databases use a multi-primary architecture, which lets you read and write to a primary shard in any of your participating clusters. Having multiple active proxies allows users to connect to the cluster closest to them, reducing latency.
+Active-Active databases use a multi-primary architecture, which lets you read and write to a primary shard in any of your participating clusters. Having [multiple active proxies]({{<relref "/rs/administering/designing-production/networking/multiple-active-proxy/">}}) allows users to connect to the cluster closest to them, reducing latency.
 
 ### Conflict resolution
 
