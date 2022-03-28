@@ -11,7 +11,7 @@ aliases: [
     /rs/references/developing-for-active-active/developing-hashes-active-active.md,
     /rs/databases/active-active/data-types/hashes-active-active.md,
     /rs/databases/active-active/data-types/hashes-active-active/,
-
+]
 ---
 Hashes are great for structured data that contain a map of fields and
 values. They are used for managing distributed user or app session

@@ -1,6 +1,7 @@
 ---
-Title: Create an Active-Active Geo-Replicated Database
-description:
+Title: Create an Active-Active geo-replicated database
+linkTitle: Create Active-Active database
+description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
