@@ -1,5 +1,5 @@
 ---
-Title: Manage TLS Certificates
+Title: Manage TLS certificates
 description:
 weight: 30
 alwaysopen: false
