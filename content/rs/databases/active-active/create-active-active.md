@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: /rs/administering/database-operations/create-crdb/
         /rs/administering/database-operations/create-active-active/
 ---
-[Active-Active geo-replicated databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) (formerly known as CRDBs) give applications write access
+[Active-Active geo-replicated databases]({{< relref "/rs/databases/active-active/_index.md" >}}) (formerly known as CRDBs) give applications write access
 to replicas of the dataset in different geographical locations.
 
 The participating Redis Enterprise Software (RS) clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).

@@ -1,19 +1,21 @@
 ---
 Title: Active-Active geo-distributed Redis
 linktitle: Active-Active
-description:
+description: Overview of the Active-Active database in Redis Enterprise Software
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
     /rs/administering/intercluster-replication/crdbs/,
     /rs/administering/active-active/,
+    /rs/administering/designing-production/active-active.md,
+    /rs/administering/designing-production/active-active/,
     /rs/databases/active-active/,
     /rs/databases/active-active/_index.md,
     /rs/databases/active-active/_index/
     ]
 ---
-In Redis Enterprise, active-active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
+In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
 The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
 With Active-Active databases, applications can read and write to the same data set from different geographical locations seamlessly and with latency less than one millisecond (ms),
 without changing the way the application connects to the database.
