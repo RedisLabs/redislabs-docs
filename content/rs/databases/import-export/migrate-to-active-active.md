@@ -27,7 +27,7 @@ to make sure the dataset is identical to the source database during the migratio
 
 To migrate an RS database to Active-Active:
 
-1. Create a new [Active-Active database]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}).
+1. Create a new [Active-Active database]({{< relref "/rs/databases/active-active/create-active-active.md" >}}).
 
     After the Active-Active database is activated, you see the database's configuration.
 

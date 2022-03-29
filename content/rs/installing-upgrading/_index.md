@@ -179,7 +179,7 @@ To install without answering the installation questions, either:
     or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing Redis Enterprise Software cluster.
 1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/databases/active-active/create-active-active.md" >}}) database.
 
 ## Permissions and access
 

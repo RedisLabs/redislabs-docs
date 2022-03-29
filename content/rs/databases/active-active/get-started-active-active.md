@@ -23,7 +23,7 @@ set up two RS installations and continue from Step 2.
 {{< note >}}
 This getting started guide is for development or demonstration environments.
 To set up an Active-Active database in a production environment, use the instructions for
-[creating an Active-Active database]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}).
+[creating an Active-Active database]({{< relref "/rs/databases/active-active/create-active-active.md" >}}).
 {{< /note >}}
 
 ## Step 1: Run two containers
