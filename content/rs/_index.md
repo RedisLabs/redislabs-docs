@@ -27,11 +27,11 @@ Redis Enterprise is available as software and as a hosted [cloud service]({{< re
 
 You can run Redis Enterprise Software in an on-premises data center or on your preferred cloud platform. 
 
-Redis Enterprise also works with [various container orchestrations systems]({{< relref "/platforms/_index.md" >}}), such as Kubernetes. See our docs on [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}}), [Openshift]({{< relref "/platforms/openshift/_index.md" >}}), [PKS]({{< relref "/platforms/pks/_index.md" >}}), and [PCF]({{< relref "/platforms/pcf/_index.md" >}}) for more details.
-
+Redis Enterprise also works with [various container orchestrations systems]({{< relref "/kubernetes" >}}), such as Kubernetes. See our docs on [Kubernetes]({{< relref "/kubernetes/_index.md" >}}), [Openshift]({{< relref "/kubernetes/deployment/openshift" >}}). 
+ 
 For development and testing, you can also run Redis Enterprise using [Docker containers]({{< relref "/rs/getting-started/getting-started-docker.md" >}}).
 
-If you prefer a managed version of Redis Enterprise, [Redis Enterprise Cloud]({{< relref "/rc/_index.md" >}}) provides all of the benfits of Redis Enterprise Software on all major public clouds.
+If you prefer a managed version of Redis Enterprise, [Redis Enterprise Cloud]({{< relref "/rc/_index.md" >}}) provides all of the benefits of Redis Enterprise Software on all major public clouds.
 
 ## Why Redis Enterprise Software?
 
