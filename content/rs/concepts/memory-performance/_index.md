@@ -33,7 +33,7 @@ Factors to consider when sizing your database:
 - [**database replication**]({{<relref "/rs/concepts/high-availability/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
 
-For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/memory-management.md">}}) or [Database memory limits]({{<relref "/rs/concepts/memory-performance/memory-limit.md">}}).
+For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/memory-management.md">}}) or [Database memory limits]({{<relref "/rs/databases/configure/memory-limit.md">}}).
 
 ## Eviction policies
 

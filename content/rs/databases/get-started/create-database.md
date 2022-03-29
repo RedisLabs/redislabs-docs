@@ -59,7 +59,7 @@ To create a new database:
 The database name is not case-sensitive
         {{< /note >}}
 
-    - **Memory limit** - The [database memory limits]({{< relref "/rs/concepts/memory-performance/memory-limit.md" >}}) includes all database replicas and shards,
+    - **Memory limit** - The [database memory limits]({{< relref "/rs/databases/configure/memory-limit.md" >}}) includes all database replicas and shards,
         including slave shards in database replication and database shards in database clustering.
         If the total size of the database in the cluster reaches the memory limit,
         then the data eviction policy for the database is enforced.
