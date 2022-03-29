@@ -8,10 +8,8 @@ db_type: database
 aliases: [
     /rs/administering/creating-databases/_index.md,
     /rs/administering/database-operations/creating-database/,
-    /rs/databases/get-started/_index.md,
-    /rs/databases/get-started/,
-    /rs/databases/get-started/_index.md,
-    /rs/databases/get-started/_index/,
+   
+  
 ]
 ---
 Redis Enterprise Software give you the ability to create databases that are are clustered and distributed across a single cluster.
