@@ -8,9 +8,13 @@ db_type: database
 aliases: [
     /rs/administering/creating-databases/_index.md,
     /rs/administering/database-operations/creating-database/,
+    /rs/databases/get-started/_index.md,
+    /rs/databases/get-started/,
+    /rs/databases/get-started/_index.md,
+    /rs/databases/get-started/_index/,
 ]
 ---
-You can create Redis databases that are are clustered and distributed across a single Redis Enterprise Software (RS) cluster.
+Redis Enterprise Software give you the ability to create databases that are are clustered and distributed across a single cluster.
 These databases can use Redis Enterprise features like:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
@@ -18,15 +22,12 @@ These databases can use Redis Enterprise features like:
 - [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
 
-You can create databases according to the number of shards in your subscription
-and the memory available on the machine.
-
 {{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
 [create an Active-Active database]({{< relref "/rs/databases/active-active/create-active-active.md" >}}).
 {{< /note >}}
 
-## Creating a new redis database
+## Create a database
 
 To create a new database:
 
