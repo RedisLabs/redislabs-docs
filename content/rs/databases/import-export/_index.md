@@ -1,9 +1,16 @@
 ---
-Title: Import and exporting data
+Title: Import and export data
+linkTitle: Import and export data
 description:
 weight: 65
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/import-export/,
+    /rs/administering/import-export/_index.md,
+    /rs/databases/import-export/_index.md,
+    /rs/databases/import-export/,
+]
 ---
 This section explains how you can:
 

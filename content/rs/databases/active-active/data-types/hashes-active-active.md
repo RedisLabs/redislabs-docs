@@ -1,7 +1,7 @@
 ---
 Title: Hashes in an Active-Active databases
 linkTitle: Hashes
-description:
+description: Information about using hashes with an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

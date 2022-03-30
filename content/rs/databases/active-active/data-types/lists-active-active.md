@@ -1,7 +1,7 @@
 ---
 Title: Lists in Active-Active Databases
 linkTitle: Lists
-description:
+description: Information about using list with an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

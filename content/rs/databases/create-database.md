@@ -1,5 +1,6 @@
 ---
 title: Create a Redis Enterprise Software database
+linkTitle: Create a database
 description: Create a database
 weight: 30
 alwaysopen: false

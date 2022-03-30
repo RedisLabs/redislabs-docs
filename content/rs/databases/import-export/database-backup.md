@@ -4,7 +4,12 @@ description: You can manually export your data from a specific Redis Enterprise 
 weight: 40
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/database-operations/database-backup/
+aliases: [
+    /rs/administering/database-operations/database-backup/,
+    /rs/administering/database-operations/database-backup.md,
+    /rs/databases/import-export/database-backup.md,
+    /rs/databases/import-export/database-backup/,
+]
 ---
 
 Periodic backups provide a way to restore data with minimal data loss.  With Redis Enterprise Software, you can schedule periodic backups to occur every once a day (every 24 hours), twice a day (every twelve hours), every four hours, or every hour.

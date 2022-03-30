@@ -1,10 +1,16 @@
 ---
 Title: Recover a failed database
 linktitle: Recover a database
-description: 
+description: Recover a database after the cluster fails or the database is corrupted.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/troubleshooting/database-recovery/,
+    /rs/administering/troubleshooting/database-recovery.md,
+    /rs/databases/recover-database.md,
+    /rs/databases/recover-database/,
+]
 ---
 When a cluster fails or a database is corrupted, you must:
 

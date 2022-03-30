@@ -4,6 +4,10 @@ description: Edit Active-Active database
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/databases/active-active/edit-aa-database.md,
+    /rs/databases/active-active/edit-aa-database/,
+]
 ---
 
 ## Editing Active-Active database configuration

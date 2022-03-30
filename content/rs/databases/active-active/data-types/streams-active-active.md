@@ -1,7 +1,7 @@
 ---
 Title: Streams in Active-Active databases
 linkTitle: Streams
-description:
+description: Information about using streams with an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

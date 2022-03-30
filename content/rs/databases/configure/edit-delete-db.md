@@ -4,6 +4,12 @@ description: Edit and delete databases
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/database-operations/updating-configurations/,
+    /rs/administering/database-operations/updating-configurations.md,
+    /rs/databases/configure/edit-delete-db.md,
+    /rs/databases/configure/edit-delete-db/,
+]
 ---
 ## Edit database configuration
 

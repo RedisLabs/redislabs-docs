@@ -12,7 +12,7 @@ aliases: [
     /rs/administering/designing-production/active-active/,
     /rs/databases/active-active/,
     /rs/databases/active-active/_index.md,
-    /rs/databases/active-active/_index/
+    /rs/databases/active-active/_index/,
     ]
 ---
 In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).

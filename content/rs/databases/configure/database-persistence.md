@@ -1,7 +1,7 @@
 ---
 Title: Configure database persistence
 linktitle: Database persistence
-description:
+description: How to configure database persistence with either an append-only file (AOF) or snapshots.
 weight: 30
 alwaysopen: false
 categories: ["RS"]

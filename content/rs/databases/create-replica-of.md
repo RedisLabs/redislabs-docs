@@ -1,5 +1,6 @@
 ---
 Title: Create a database with Replica Of
+linkTitle: Create Replica Of database
 description: Create Replica Of database
 weight: $weight
 alwaysopen: false

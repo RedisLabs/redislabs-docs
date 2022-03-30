@@ -5,8 +5,12 @@ weight: 20
 alwaysopen: false
 categories: ["RS"]
 linktitle: Import data
-aliases: /rs/administering/database-operations/importing-data/
-        /rs/administering/database-operations/administering-database-operations-importing-data/
+aliases: [ 
+    /rs/administering/database-operations/importing-data/,
+    /rs/administering/database-operations/administering-database-operations-importing-data/,
+    /rs/databases/import-export/importing-data.md,
+    /rs/databases/import-export/importing-data/,
+]
 ---
 You can import [export]({{< relref "/rs/databases/import-export/exporting-data.md" >}})
 or [backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})

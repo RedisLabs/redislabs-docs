@@ -1,7 +1,7 @@
 ---
 Title: Application failover with Active-Active databases
 linkTitle: App failover
-description:
+description: How to failover your application to connect to a remote replica.
 weight: 1
 alwaysopen: false
 categories: ["RS"]
@@ -12,7 +12,7 @@ aliases: [
 ]
 
 ---
-Active-Active Redis deployments don't have a built-in failover or failback mechanism.
+Active-Active Redis deployments don't have a built-in failover or failback mechanism for application connections.
 An application deployed with an Active-Active database connects to a replica of the database that is geographically nearby.
 If that replica is not available, the application can failover to a remote replica, and failback again if necessary.
 In this article we explain how this process works.

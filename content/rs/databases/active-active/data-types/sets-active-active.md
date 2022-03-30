@@ -1,7 +1,7 @@
 ---
 Title: Sets in Active-Active databases
 linkTitle: Sets
-description:
+description: Information about using sets with an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

@@ -1,5 +1,6 @@
 ---
 Title: Replica Of geo-distributed Redis
+linkTitle: Replica Of
 description: Replica Of
 weight: $weight
 alwaysopen: false
@@ -11,7 +12,6 @@ aliases: [
     /rs/administering/designing-production/active-passive.md,
     /rs/databases/replica-of.md,
     /rs/databases/replica-of/,
-
 ]
 ---
 In Redis Enterprise, the Replica Of feature provides active-passive geo-distribution to applications  for read-only access

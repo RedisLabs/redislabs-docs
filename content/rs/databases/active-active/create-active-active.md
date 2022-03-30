@@ -1,17 +1,22 @@
 ---
 Title: Create an Active-Active geo-replicated database
 linkTitle: Create Active-Active database
-description: 
+description: How to create an Active-Active database and things to consider when setting it up.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/database-operations/create-crdb/
-        /rs/administering/database-operations/create-active-active/
+aliases: [
+    /rs/administering/database-operations/create-crdb/,
+    /rs/administering/database-operations/create-active-active/,
+    /rs/databases/active-active/create-active-active.md,
+    /rs/databases/active-active/create-active-active/,
+
+]
 ---
 [Active-Active geo-replicated databases]({{< relref "/rs/databases/active-active/_index.md" >}}) (formerly known as CRDBs) give applications write access
 to replicas of the dataset in different geographical locations.
 
-The participating Redis Enterprise Software (RS) clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
+The participating Redis Enterprise Software clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
 Every instance of an Active-Active database can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication#example-of-synchronization" >}}) to all of the instances without conflict.
 
 ## Steps to create an Active-Active database

@@ -5,8 +5,14 @@ description: Overview of how developing applications differs for Active-Active d
 weight: 85
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/developing/crdbs/
-        /rs/developing/
+aliases: [
+    /rs/developing/crdbs/,
+    /rs/developing/,
+    /rs/references/developing-for-active-active/,
+    /rs/references/developing-for-active-active.md,
+    /rs/databases/active-active/develop-aa-apps.md,
+    /rs/databases/active-active/develop-aa-apps/,
+]
 ---
 Developing geo-distributed, multi-master applications can be difficult.
 Application developers may have to understand a large number of race

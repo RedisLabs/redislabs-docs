@@ -1,7 +1,7 @@
 ---
 Title: HyperLogLog in Active-Active databases
 linkTitle: HyperLogLog
-description:
+description: Information about using hyperloglog with an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

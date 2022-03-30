@@ -1,7 +1,7 @@
 ---
 Title: Sorted sets in Active-Active databases
 linkTitle: Sorted sets
-description:
+description: Information about using sorted sets with an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
