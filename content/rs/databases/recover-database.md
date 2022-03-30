@@ -2,7 +2,7 @@
 Title: Recover a failed database
 linktitle: Recover a database
 description: Recover a database after the cluster fails or the database is corrupted.
-weight: $weight
+weight: 70
 alwaysopen: false
 categories: ["RS"]
 aliases: [
