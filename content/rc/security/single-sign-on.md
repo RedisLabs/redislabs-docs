@@ -67,13 +67,27 @@ To migrate your account to GitHub social login:
 
 ## SAML single sign-on
 
-Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
+Redis Cloud also supports SSO with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
 
 ### Set up SAML SSO
 
+1. Sign into your identity provider's admin console.
+
+1. Add a SAML integration application for the service provider Redis Cloud.
+
+1. Create a custom SAML attribute called **smAccountMapping** in the service provider application:
+
+    | Field | Value |
+    |-------|-------|
+    | Name | smAccountMapping |
+    | Name format | Basic |
+    | Value | user.smAccountMapping |
+
+1. Add the **smAccountMapping** attribute to the default user profile.
+
 1. Sign into your existing [Redis Cloud account](https://app.redislabs.com/#/login).
 
-1. Select **Access Management** from the admin console menu.
+1. Select **Access Management** from the [admin console](https://app.redislabs.com) menu.
 
 1. Select **Single Sign-on**.
 
@@ -83,21 +97,25 @@ Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Langu
 
 1. [Configure identity provider metadata](#configure-idp).
 
-1. [Download service provider metadata](#download-sp).
+1. [Download service provider metadata](#download-sp) and upload it to your identity provider.
 
 1. [Activate SAML SSO](#activate-saml-sso).
 
 #### Configure IdP metadata {#configure-idp}
 
-1. Configure the following **Identity Provider metadata** settings:
+1. You need the following metadata values from your identity provider:
 
     | Setting | Description |
     |---------|-------------|
-    | **Issuer (IdP entity ID)** | The entity ID for the identity provider |
+    | **Issuer (IdP entity ID)** | The unique entity ID for the identity provider |
     | **IdP server URL** | The identity provider's HTTPS URL for SAML SSO |
     | **Single logout URL** | The URL used to sign out of the identity provider and connected applications (optional) |
     | **Domain** | The identity provider's domain |
     | **Assertion signing certificate** | Public SHA-256 certificate used to validate SAML assertions from the identity provider |
+
+    To find these metadata values, see your identity provider's documentation.
+
+1. From the **SAML** screen of the Redis Cloud [admin console](https://app.redislabs.com), configure the **Identity Provider metadata** settings.
 
     {{<image filename="images/rc/access-management-saml-config.png"  alt="SAML Single Sign-on configuration screen.">}}{{</image>}}
 
@@ -107,9 +125,24 @@ Redis Cloud also lets you set up SSO with [SAML (Security Assertion Markup Langu
 
 #### Download service provider metadata {#download-sp}
 
-1. Select the **Download** button to download the service provider metadata in XML format.
+1. Select the **Download** button to download the service provider [metadata](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf) in XML format.
 
-1. Configure your identity provider with the downloaded XML. 
+1. Sign into your identity provider's admin console.
+
+1. Configure the Redis Cloud service provider application with the downloaded XML.
+
+    - Some identity providers let you upload the XML file directly. 
+    
+    - Others require you to manually configure the service provider application with specific metadata fields, such as `entityID` and `AssertionConsumerService Location`.
+    
+        For example, your identity provider may require you to map the following metadata attributes and settings:
+
+        | XML attribute | Application setting |
+        |---------------|---------------------------|
+        | EntityDescriptor's **entityID** | Audience URI |
+        | AssertionConsumerService's **Location** | Hub ACS URL |
+
+    To learn more about how to configure service provider applications, see your identity provider's documentation.
 
 #### Activate SAML SSO {#activate-saml-sso}
 
@@ -129,13 +162,31 @@ To test and activate SAML SSO for your account:
 If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign in screen, sign in with your previous credentials and review your SAML configuration for issues.
     {{</note>}}
 
+### Add a SAML user
+
+To add a user to an account and enable SAML SSO for them:
+
+1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user's profile.
+
+1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **smAccountMapping** field.
+
+    You can add the same user to multiple SAML-enabled accounts with a comma-separated list: 
+
+    12345=owner,54321=manager
+
+1. [Assign the Redis Cloud application](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
+
+To learn how to manage SAML user profiles, see your identity provider's documentation.
+
 ### Bind other accounts
 
 After you set up SAML SSO for one account, you can edit the SAML configuration to bind other accounts. This lets you use the same domain for SSO across multiple accounts.
 
 To bind other accounts to an existing SAML SSO configuration:
 
-1. Go to **Access Management > Single Sign-on** in the Redis Cloud admin console.
+1. Go to **Access Management > Single Sign-on** in the Redis Cloud [admin console](https://app.redislabs.com).
+
+1. Select the **Edit** button.
 
 1. For **Bind other accounts to SAML configuration**, select the checkboxes for the other accounts you want to bind to SAML SSO.
 
@@ -144,3 +195,21 @@ To bind other accounts to an existing SAML SSO configuration:
 1. Select **Save**.
 
 1. From the **Bind accounts** dialog, select **Continue** to enable SAML SSO for the selected accounts.
+
+### Deactivate SAML SSO
+
+A SAML-enabled account must have a local (non-SAML) user with the owner role assigned before you can deactivate SAML SSO for that account.
+
+To deactivate SAML for specific accounts:
+
+1. Go to **Access Management > Single Sign-on** in the Redis Cloud [admin console](https://app.redislabs.com).
+
+1. Select the **Edit** button.
+
+1. For **Bind other accounts to SAML configuration**, clear the checkboxes for the accounts you want to unbind from SAML SSO.
+
+1. Select **Save**.
+
+1. From the **Bind accounts** dialog, select **Continue** to deactivate SAML SSO for the unbound accounts.
+
+To deactivate SAML for all bound accounts, select the **Deactivate SAML** button.
