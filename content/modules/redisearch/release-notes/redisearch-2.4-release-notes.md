@@ -27,7 +27,7 @@ It also introduces a new query syntax to address query parser inconsistencies fo
 
 All VSS queries or any query using the [`PARAMS`](https://oss.redis.com/redisearch/Commands/#ftsearch) option must use Dialect version 2.
 
-#### What's new in 2.4
+### What's new in 2.4
 
 - [`FT.CREATE`](https://oss.redis.com/redisearch/master/Commands/#ftcreate) is extended to support the creation of 2 popular types of vector indexes:
 
@@ -92,7 +92,7 @@ All VSS queries or any query using the [`PARAMS`](https://oss.redis.com/redisear
   - [#2645](https://github.com/RediSearch/RediSearch/pull/2645) Ignore NULL value on ingest
   - [#2654](https://github.com/RediSearch/RediSearch/pull/2654) VecSim hybrid query - return empty iterator for invalid intersection child iterator
 
-#### Introducing DIALECT
+### Introducing DIALECT
 
 RediSearch 2.4.3 introduces a new query syntax to address query parser inconsistencies found in previous versions of RediSearch. Users can now choose between:
 
@@ -103,7 +103,7 @@ RediSearch 2.4.3 introduces a new query syntax to address query parser inconsist
 Existing RediSearch 2.2 users will not have to modify their queries since the default dialect is 1.
 However, all RediSearch users should gradually update their queries to use dialect version 2.
 
-##### Background
+#### Background
 
 Under certain conditions, some query parsing rules did not behave as originally intended.
 Queries containing the following operators could return unexpected results:
@@ -119,7 +119,7 @@ To minimize the impact on existing, unaffected RediSearch users, a DIALECT setti
 - New queries to benefit from the updated query-parsing behavior (DIALECT 2)
 
 
-##### Examples of impacted queries
+#### Examples of impacted queries
 
 Your existing queries may behave differently under different DIALECT versions, if they fall into any of the following categories:
 
