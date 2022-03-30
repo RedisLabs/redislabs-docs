@@ -1,11 +1,16 @@
 ---
-Title: Recovering a Failed Cluster
-description: 
+Title: Recover a failed cluster
+linktitle: Recover a cluster
+description: How to use the cluster configuration file and database data to recover a failed cluster.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/troubleshooting/cluster-recovery.md,
+    /rs/administering/troubleshooting/cluster-recovery/,
+]
 ---
-When a Redis Enterprise Software (RS) cluster fails,
+When a Redis Enterprise Software cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
 {{< note >}}
@@ -29,7 +34,7 @@ The cluster recovery process includes:
 1. Mount the persistent storage with the recovery files from the original cluster to the nodes of the new cluster.
 1. Recover the cluster configuration on the first node in the new cluster.
 1. Join the remaining nodes to the new cluster.
-1. [Recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).
+1. [Recover the databases]({{< relref "/rs/databases/recover-database.md" >}}).
 
 ## Prerequisites
 
@@ -149,4 +154,4 @@ Make sure that you update your [DNS records]({{< relref "/rs/installing-upgradin
 with the IP addresses of the new nodes.
     {{< /note >}}
 
-After the cluster is recovered, you must [recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).
+After the cluster is recovered, you must [recover the databases]({{< relref "/rs/databases/recover-database.md" >}}).
