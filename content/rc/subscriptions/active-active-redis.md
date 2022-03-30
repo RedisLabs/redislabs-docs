@@ -17,7 +17,7 @@ Active-Active databases allow read and write operations in each copy.  Each copy
 
 ## Active-Active geo-distributed replication
 
-Active-Active databases use both clustering and replication to strengthen your database. Active-Active Redis also has additional features like geo-distribution, multiple active proxies, conflict resolution, and automatic failover to provide you with a more durable and scalable database.
+Active-Active databases use both clustering and replication to strengthen your database. Active-Active Redis has additional features like geo-distribution, multiple active proxies, conflict resolution, and automatic failover to provide you with a more durable and scalable database.
 
 ### Multi-zone
 
