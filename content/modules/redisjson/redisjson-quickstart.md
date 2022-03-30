@@ -13,7 +13,7 @@ For this quick start tutorial, you need:
     - A Redis Cloud database [with the RedisJSON module]({{< relref "/rc/databases/create-database.md" >}})
 
         You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
-    - A Redis Enterprise Software database [with the RedisJSON module]({{< relref "/modules/add-module-to-database.md" >}})
+    - A Redis Enterprise Software database [with the RedisJSON module]({{<relref "/modules/install/add-module-to-database" >}})
 - redis-cli with connectivity to a redis database
 
 ## Quick start with redis-cli

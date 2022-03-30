@@ -1,7 +1,7 @@
 ---
 Title: RedisBloom
 description:
-weight: 30
+weight: 60
 alwaysopen: false
 categories: ["Modules"]
 aliases:

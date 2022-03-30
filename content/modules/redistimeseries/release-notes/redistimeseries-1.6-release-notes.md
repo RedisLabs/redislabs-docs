@@ -2,20 +2,37 @@
 Title: RedisTimeSeries 1.6 release notes
 linkTitle: v1.6 (January 2022)
 description: Added support for aggregating across multiple time series (multi-key). Can compute queries such as “the maximum observed value of a set of time series” server-side instead of client-side.
-min-version-db: "6.2.0"
-min-version-rs: "6.2.0"
+min-version-db: "6.0.16"
+min-version-rs: "6.2.8"
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.6.8 requires:
+RedisTimeSeries v1.6.9 requires:
 
-- Minimum Redis compatibility version (database): 6.2.0
-- Minimum Redis Enterprise Software version (cluster): 6.2.0
+- Minimum Redis compatibility version (database): 6.0.16
+- Minimum Redis Enterprise Software version (cluster): 6.2.8
 
-## 1.6 GA (v1.6.8) (January 2022)
+## v1.6.9 (February 2022)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Security and privacy:
+
+    - [#1061](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1061) Internode communications encryption: support passphrases for PEM files
+
+- Bug fixes:
+
+    - [#1056](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1056) Return an error when a shard is down (in v1.6.8, returned an empty result)
+
+
+## v1.6 GA (v1.6.8) (January 2022)
 
 This is the General Availability release of RedisTimeSeries 1.6.
 

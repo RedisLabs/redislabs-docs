@@ -36,12 +36,16 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | GKE 1.20                        | supported      |
 | GKE 1.21                        | supported      |
 | GKE 1.22                        | supported      |
-| Rancher 2.5 (K8s 1.17)          | supported      |
-| Rancher 2.5 (K8s 1.18)          | supported      |
-| Rancher 2.5 (K8s 1.19)          | supported      |
-| Rancher 2.5 (K8s 1.20)          | supported      |
-| VMWare TKGI** 1.10 (K8s 1.19)   | supported      |
-| AKS 1.19                        | supported      |
+| Rancher 2.5 (K8s 1.17)          | deprecated     |
+| Rancher 2.5 (K8s 1.18)          | deprecated     |
+| Rancher 2.5 (K8s 1.19)          | deprecated     |
+| Rancher 2.5 (K8s 1.20)          | deprecated     |
+| Rancher 2.6 (K8s 1.19)          | supported      |
+| Rancher 2.6 (K8s 1.20)          | supported      |
+| Rancher 2.6 (K8s 1.21)          | supported      |
+| VMWare TKGI 1.10 (K8s 1.19)     | supported      |
+| VMWare TKGI 1.11 (K8s 1.20)     | supported      |
+| AKS 1.19                        | deprecated     |
 | AKS 1.20                        | supported      |
 | AKS 1.21                        | supported      |
 | AKS 1.22                        | supported      |
@@ -51,4 +55,3 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | EKS 1.21                        | supported      |
  
 \* No longer supported by the vendor  
-\*\* Tanzu Kubernetes Grid Integrated Edition

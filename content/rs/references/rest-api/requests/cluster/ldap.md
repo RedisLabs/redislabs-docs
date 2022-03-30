@@ -60,7 +60,7 @@ Returns an [LDAP object]({{<relref "/rs/references/rest-api/objects/ldap">}}).
    "data_plane": false,
    "dn_group_attr": "MemberOf",
    "dn_group_query": {},
-   "starttls": "disabled",
+   "starttls": false,
    "uris": ["ldap://ldap.example.org:636"],
    "user_dn_query": {},
    "user_dn_template": "cn=%u, ou=users,dc=example,dc=org"

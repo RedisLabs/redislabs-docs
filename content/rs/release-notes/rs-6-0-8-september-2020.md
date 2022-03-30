@@ -36,7 +36,7 @@ For more information about Redis 6.0.5, check out the [release notes](https://ra
 
 The [rladmin CLI]({{<relref "/rs/references/rladmin.md">}}) introduces several updates to the commands for upgrading modules.
 It is now easier to upgrade your modules to the latest module version.
-Find out more [here]({{<relref "/modules/add-module-to-cluster#upgrading-the-module-for-the-database">}}).
+Find out more [here]({{<relref "/modules/install/upgrade-module">}}).
 
 ## Redis modules
 
@@ -48,7 +48,7 @@ The following GA releases of Redis Modules are bundled in RS 6.0:
 - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}) (updated)
 - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md" >}}) (updated)
 
-To use the updated modules with a database, you must [upgrade the module on the database]({{< relref "/modules/add-module-to-cluster#upgrading-the-module-for-the-database" >}}).
+To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/install/upgrade-module">}}).
 
 ## Additional capabilities
 

@@ -11,7 +11,7 @@ categories: ["Modules"]
 
 For this quick start tutorial, you need:
 
-- A Redis Enterprise cluster with the [RedisGears module and JVM plugin installed]({{<relref "/modules/redisgears/jvm/install">}}) and enabled on a database
+- A Redis Enterprise cluster with the [RedisGears module and JVM plugin installed]({{<relref "/modules/redisgears/installing-redisgears#install-redisgears">}}) and [enabled on a database]({{<relref "/modules/redisgears/jvm/install">}})
 - `redis-cli` with connectivity to a Redis database
 
 ## Tutorial

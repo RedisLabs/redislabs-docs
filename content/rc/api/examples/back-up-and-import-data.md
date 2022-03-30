@@ -81,3 +81,14 @@ In the example above, that JSON document is stored in the `import-database-s3.js
 ```shell
 {{% embed-code "rv/api/import-database-s3.json" %}}
 ```
+
+You can specify the backup location with the `sourceType` and `importFromUri` values for these sources:
+
+|Data location|sourceType|importFromUri|
+|---|---|---|
+|Amazon AWS S3|aws-s3|s3://bucketname/[path/]filename.rdb[.gz]|
+|FTP|ftp|ftp://[username][:password]@[:port]/[path/]filename.rdb[.gz]|
+|Google Blob Storage|google-blob-storage|gs://bucketname/[path/]filename.rdb[.gz]|
+|Microsoft Azure Blob Storage|azure-blob-storage|abs://:storage_account_access_key@storage_account_name/[container/]filename.rdb[.gz]|
+|Redis server|redis|redis://[db_password]@[host]:[port]|
+|Web server|HTTP|HTTP://[username][:password]@[:port]/[path/]filename.rdb[.gz]|

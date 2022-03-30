@@ -1,7 +1,7 @@
 ---
 Title: RediSearch
 description:
-weight: 30
+weight: 20
 alwaysopen: false
 categories: ["Modules"]
 aliases:
@@ -49,6 +49,10 @@ You can now serve your index information from geo-distributed database instances
 By moving the index out of the keyspace and structuring the data as hashes, RediSearch 2.x makes it possible to reshard the database.
 When half of the data moves to the new shard, the index related to that data is created synchronously and RediSearch removes the keys from the index when it detects that the keys were deleted.
 Because the index on the new shard is created synchronously though, it's expected that the resharding process will take longer than resharding of a database without RediSearch.
+
+## Limitations
+
+- You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/administering/designing-production/networking/using-oss-cluster-api">}}).
 
 ## Related links
 
