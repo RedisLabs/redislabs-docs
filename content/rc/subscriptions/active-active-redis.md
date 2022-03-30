@@ -9,7 +9,7 @@ aliases:
 ---
 
 Active-Active databases store data across multiple regions and availability zones.  This improves scalability, performance, and availability, especially when compared to standalone databases.
-To create Active-Active databases, you need a Flexible() (or Annual) [Redis Enterprise Cloud]({{<relref "/rc/subscriptions/">}}) subscription that enables Active-Active Redis and defines the regions for each copy of your databases.  This is defined when you [create a new subscription]({{<relref "rc/subscriptions/create-flexible-subscription">}}).
+To create Active-Active databases, you need a Flexible (or Annual) [Redis Enterprise Cloud]({{<relref "/rc/subscriptions/">}}) subscription that enables Active-Active Redis and defines the regions for each copy of your databases.  This is defined when you [create a new subscription]({{<relref "rc/subscriptions/create-flexible-subscription">}}).
 
 Active-Active databases are distributed across multiple regions (geo-distribution).  This improves performance by reducing latency for nearby users and improves availability by protecting against data loss in case of network or resource failure.
 
