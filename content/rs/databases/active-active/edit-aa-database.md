@@ -1,7 +1,7 @@
 ---
 Title: Edit Active-Active database configuration
 description: Edit Active-Active database
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [

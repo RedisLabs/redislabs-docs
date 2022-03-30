@@ -2,7 +2,7 @@
 Title: Create an Active-Active geo-replicated database
 linkTitle: Create Active-Active database
 description: How to create an Active-Active database and things to consider when setting it up.
-weight: $weight
+weight: 25
 alwaysopen: false
 categories: ["RS"]
 aliases: [

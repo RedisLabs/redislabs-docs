@@ -2,7 +2,7 @@
 Title: Delete Active-Active databases
 linktitle: Delete Active-Active database
 description: Considerations while deleting Active-Active databases.
-weight: $weight
+weight: 35
 alwaysopen: false
 categories: ["RS"]
 aliases: [

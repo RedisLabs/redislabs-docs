@@ -2,7 +2,7 @@
 Title: Get Started with Redis Enterprise Active-Active databases
 linktitle: Get started with Active-Active
 description: Quick start guide to create an Active-Active database for test and development.
-weight: 30
+weight: 20
 alwaysopen: false
 aliases: [
     /rs/getting-started/creating-database/crdbs/,

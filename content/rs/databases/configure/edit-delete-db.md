@@ -1,7 +1,7 @@
 ---
 Title: Edit and delete databases 
 description: Edit and delete databases
-weight: $weight
+weight: 15
 alwaysopen: false
 categories: ["RS"]
 aliases: [

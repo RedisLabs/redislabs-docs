@@ -2,7 +2,7 @@
 Title: Application failover with Active-Active databases
 linkTitle: App failover
 description: How to failover your application to connect to a remote replica.
-weight: 1
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: [
