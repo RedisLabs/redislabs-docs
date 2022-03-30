@@ -1,6 +1,6 @@
 ---
 Title: Active-Active geo-distributed Redis
-linktitle: Active-Active
+linktitle: Active-Active databases
 description: Overview of the Active-Active database in Redis Enterprise Software
 weight: 61
 alwaysopen: false
