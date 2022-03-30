@@ -171,7 +171,7 @@ get key1
 Now that you have a database, if you'd like to generate load against the
 database or add a bunch of data for cluster testing,
 the [memtier_benchmark Quick
-Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}}) should
+Start]({{< relref "/rs/administering/memtier-benchmark.md" >}}) should
 help. However please note that to see the true performance and scale of
 Redis on Flash, you must tune your IO path and have the flash
 path set to the mounted path of SSD or NVMe flash memory as that is what

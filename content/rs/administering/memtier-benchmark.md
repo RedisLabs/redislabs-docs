@@ -5,6 +5,13 @@ description:
 weight: 50
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/getting-started/memtier-benchmark.md,
+    /rs/getting-started/memtier-benchmark/,
+    /rs/administering/memtier-benchmark.md,
+    /rs/administering/memtier-benchmark/,
+
+]
 ---
 
 Use the `memtier_benchmark` tool to perform a performance benchmark of Redis Enterprise Software.
@@ -15,7 +22,7 @@ Prerequisites:
 - A cluster configured
 - A database created
 
-For help with the prerequisites,see [Get started with Redis Enterprise Software]({{< relref "/rs/getting-started/_index.md" >}}).
+For help with the prerequisites,see [Get started with Redis Enterprise Software]({{< relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md" >}}).
 
 It is recommended to run memtier_benchmark on a separate node that is
 not part of the cluster being tested. If you run it on a node of the

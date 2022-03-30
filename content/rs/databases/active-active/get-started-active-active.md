@@ -1,11 +1,16 @@
 ---
 Title: Get Started with Redis Enterprise Active-Active databases
-linktitle: Active-Active databases
+linktitle: Get started with Active-Active
 description: Quick start guide to create an Active-Active database for test and development.
 weight: 30
 alwaysopen: false
-aliases: /rs/getting-started/creating-database/crdbs/
-         /rs/getting-started/getting-started-crdbs/
+aliases: [
+    /rs/getting-started/creating-database/crdbs/,
+    /rs/getting-started/getting-started-crdbs/,
+    /rs/databases/active-active/get-started-active-active.md,
+    /rs/databases/active-active/get-started-active-active/,
+
+]
 categories: ["RS"]
 ---
 
@@ -17,7 +22,7 @@ clusters for test and development environments. Here are the steps:
 - Step 3: Create a new Redis Enterprise Active-Active database
 - Step 4: Test connectivity to the Active-Active database
 
-To run an Active-Active database on installations from the [RS download package]({{< relref "/rs/getting-started/_index.md" >}}),
+To run an Active-Active database on installations from the [RS download package]({{< relref "rs/installing-upgrading/get-started-redis-enterprise-software.md" >}}),
 set up two RS installations and continue from Step 2.
 
 {{< note >}}

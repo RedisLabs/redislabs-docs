@@ -15,11 +15,11 @@ To connect an application to a Redis database hosted by Redis Enterprise Softwar
 
 You can also use the `redis-cli` utility to connect to a database from the command-line.
 
-For examples of each approach, see Get started using [Redis Enterprise Software]({{< relref "/rs/getting-started/" >}})
+For examples of each approach, see Get started using [Redis Enterprise Software]({{< relref "/" >}})
 
 Note: You cannot use client libraries to configure Redis Enterprise Software.  Instead, use:
 
-- The Redis Software [admin console]({{< relref "/rs/getting-started/" >}})
+- The Redis Software [admin console]({{< relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md" >}})
 - The [REST API]({{< relref "/rs/administering/" >}})
 - Appropriate command-line utilities, such as [`rladmin`]({{< relref "/rs/references/rladmin.md" >}})
 
