@@ -2,7 +2,7 @@
 Title: Get started with Redis Enterprise Software using Docker
 linkTitle: Docker
 description:
-weight: 40
+weight: 2
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -15,6 +15,8 @@ aliases: [
     /rs/databases/get-started/getting-started-docker/,
     /rs/databases/get-started/get-started-docker.md,
     /rs/databases/get-started/get-started-docker/,
+    /rs/installing-upgrading/get-started-docker.md,
+    /rs/installing-upgrading/get-started-docker/,
 ]
 
 ---

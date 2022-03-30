@@ -8,7 +8,8 @@ db_type: database
 aliases: [
     /rs/administering/creating-databases/_index.md,
     /rs/administering/database-operations/creating-database/,
-   
+    /rs/databases/create-database.md,
+    /rs/databases/create-database/,
   
 ]
 ---
