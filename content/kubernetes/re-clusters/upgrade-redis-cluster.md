@@ -2,7 +2,7 @@
 Title: Upgrade a Redis Enterprise cluster (REC) on Kubernetes
 linkTitle: Upgrade a Redis cluster
 description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
-weight: 10
+weight: 19
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [

@@ -3,7 +3,7 @@
 Title: Create Active-Active databases on Kubernetes
 linkTitle: Create Active-Active databases
 description: This section how to set up an Active-Active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
-weight: 50
+weight: 15
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [ 

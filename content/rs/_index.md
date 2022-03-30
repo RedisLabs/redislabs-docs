@@ -31,7 +31,7 @@ Redis Enterprise also works with [Kubernetes]({{< relref "/kubernetes/_index.md"
 
 For development and testing, you can also run Redis Enterprise using [Docker containers]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}).
 
-If you prefer a managed version of Redis Enterprise, [Redis Enterprise Cloud]({{< relref "/rc/_index.md" >}}) provides all of the benfits of Redis Enterprise Software on all major public clouds.
+If you prefer a managed version of Redis Enterprise, [Redis Enterprise Cloud]({{< relref "/rc/_index.md" >}}) provides all of the benefits of Redis Enterprise Software on all major public clouds.
 
 ## Why Redis Enterprise Software?
 
