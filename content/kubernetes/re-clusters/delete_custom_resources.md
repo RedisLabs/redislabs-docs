@@ -21,7 +21,7 @@ When you delete a database, your data and the REDB custom resource are also dele
 
 To delete a Redis Enterprise cluster managed by the operator:
 
-1. Delete all the databases in your cluster
+1. Delete all the databases in your cluster.
 
 1. Run `kubectl delete rec <your-rec-name>` from your K8s cluster.
 
