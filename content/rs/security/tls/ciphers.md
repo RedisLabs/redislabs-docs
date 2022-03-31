@@ -26,7 +26,7 @@ The communications for which you can modify ciphers are:
 
 You can configure ciphers with the `rladmin` commands shown here or with the REST API.
 
-When you modify your cipher suites, make sure that:
+When you modify your cipher suites, make sure:
 
 - The configured TLS version matches the required cipher suites.
 - The certificates in use are properly signed to support the required cipher suites.
