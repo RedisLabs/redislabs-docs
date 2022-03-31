@@ -10,10 +10,48 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.9 requires:
+RedisGraph v2.8.11 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.11 (March 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2259](https://github.com/RedisGraph/RedisGraph/issues/2259), [#2258](https://github.com/RedisGraph/RedisGraph/pull/2258) Fix memory leak and potential crash on [RDB](https://redis.io/docs/manual/persistence/) saving
+
+## v2.8.10 (March 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details: 
+
+- Features:
+
+    - [#2245](https://github.com/RedisGraph/RedisGraph/pull/2245) Support graphs [eviction](https://redis.io/docs/manual/eviction/)
+
+- Bug fixes:
+
+    - [#1493](https://github.com/RedisGraph/RedisGraph/issues/1493), [#2240](https://github.com/RedisGraph/RedisGraph/pull/2240) Fixed crash on certain queries
+    - [#2229](https://github.com/RedisGraph/RedisGraph/issues/2229), [#2222](https://github.com/RedisGraph/RedisGraph/pull/2222) Fixed crash on certain queries
+    - [#2209](https://github.com/RedisGraph/RedisGraph/issues/2209), [#2228](https://github.com/RedisGraph/RedisGraph/pull/2228) Fixed crash on certain invalid [`DELETE`](https://redis.io/commands/graph.query/#delete) queries
+    - [#2237](https://github.com/RedisGraph/RedisGraph/issues/2237), [#2242](https://github.com/RedisGraph/RedisGraph/pull/2242) Fixed crash on certain [`PROFILE`](https://redis.io/commands/graph.profile/) queries
+    - [#2230](https://github.com/RedisGraph/RedisGraph/issues/2230), [#2232](https://github.com/RedisGraph/RedisGraph/pull/2232) Fixed wrong number of reported deleted relationships on certain queries
+    - [#2233](https://github.com/RedisGraph/RedisGraph/pull/2233) Certain valid queries were reported invalid
+    - [#2246](https://github.com/RedisGraph/RedisGraph/issues/2246) Fixed memory leaks
+
+- Improvements:
+
+    - [#2235](https://github.com/RedisGraph/RedisGraph/pull/2235) Improved [RDB](https://redis.io/docs/manual/persistence/) loading performance
 
 ## v2.8.9 (March 2022)
 
