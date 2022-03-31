@@ -307,7 +307,7 @@ Data persistence file that performs a data dump every one, six, or twelve hours.
 {{%definition "Transport Layer Security (TLS)"%}}
 Protocols that provide communications security over a computer network.
 
-More info: [TLS wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security), [Cloud database TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}}), [Redis Enterprise TLS]({{<relref "/rs/security/tls">}}), [Manage TLS certificates]({{<relref "/rs/security/certificates/encryption.md">}}), [Updating SSL/TLS certificates]({{<relref "/rs/security/certificates/updating-certificates.md">}})
+More info: [TLS wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security), [Cloud database TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}}), [Redis Enterprise TLS]({{<relref "/rs/security/tls">}})
 {{%/definition%}}
 
 {{%definition "VPC peering"%}}

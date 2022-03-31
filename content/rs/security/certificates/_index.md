@@ -1,21 +1,21 @@
 ---
 Title: Certificates
 linkTitle: Certificates
-description: An overview of self-signed certificates in Redis Enterprise Software.
+description: An overview of certificates in Redis Enterprise Software.
 weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: 
 ---
 
-Redis Enterprise Software uses self-signed certificates by default to ensure that the product is secure.
+Redis Enterprise Software uses self-signed certificates by default to ensure that the product is secure. If using a self-signed certificate is not the right solution for you, you can import a certificate signed by a certificate authority of your choice.
 
 The self-signed certificates establish encryption-in-transit for the following cluster components:
 
 - The admin console
 - The REST API
-- The Proxy, which manages connections between clients and database endpoints
-- The Syncer, which synchronizes data between clusters (using either Active-Active or Active-Passive replication)
+- The proxy, which manages connections between clients and database endpoints
+- The syncer, which synchronizes data between clusters (using either Active-Active or Active-Passive replication)
 - The metrics exporter, which sends metrics to Prometheus
 
 These self-signed certificates are generated on the first node of each Redis Enterprise Software installation and are copied to all other nodes added to the cluster.

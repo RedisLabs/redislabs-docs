@@ -25,7 +25,7 @@ Follow these instructions to create your own certificates to install on your Red
     ```
 
     {{<note>}}
-You will be prompted for a Country Name, State or Province Name, Locality Name, Organization Name, Organizational Unit and Common Name.
+You will be prompted for a Country Name, State or Province Name, Locality Name, Organization Name, Organizational Unit, and Common Name.
 
 - You will need to check with your security team or certificate authority for the right values for your organization.
 

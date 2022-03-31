@@ -22,8 +22,8 @@ We recommend the following practices:
 
     By default, users are signed out after 15 minutes of inactivity.  You can set the [timeout period]({{< relref "/rs/security/admin-console-security/user-security#session-timeout" >}}).
 
-- **Require HTTPS for API endpoints** - Redis Enterprise comes with a REST API to help automate tasks. This API is available in both an encrypted and unencrypted endpoint for backward compatibility. You can [disable the unencrypted endpoint]({{<relref "/rs/security/certificates/encryption.md#requiring-https-for-api-endpoints">}}) with no loss in functionality.
+- **Require HTTPS for API endpoints** - Redis Enterprise comes with a REST API to help automate tasks. This API is available in both an encrypted and unencrypted endpoint for backward compatibility. You can [disable the unencrypted endpoint]({{<relref "/rs/security/admin-console-security/encryption#require-https-for-api-endpoints">}}) with no loss in functionality.
 
-- **Configure Transport Layer Security (TLS)** - A common compliance requirement is to [set a minimum version of TLS]({{<relref "rs/security/certificates/encryption#tls-configuration">}}). This helps to make sure that only secure versions of TLS are allowed when accessing the cluster.
+- **Configure Transport Layer Security (TLS)** - A common compliance requirement is to [set a minimum version of TLS]({{<relref "rs/security/tls/tls-protocols">}}). This helps to make sure that only secure versions of TLS are allowed when accessing the cluster.
 
-- **Install your own certificates** - Redis Enterprise comes with self-signed certificates by default; however, many organizations require that you [use specific CA signed certificates]({{<relref "/rs/security/certificates/encryption#requiring-https-for-api-endpoints">}}).
+- **Install your own certificates** - Redis Enterprise comes with self-signed certificates by default; however, many organizations require that you [use specific CA signed certificates]({{<relref "/rs/security/certificates/create-certificates">}}).
