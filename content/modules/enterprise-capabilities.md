@@ -17,13 +17,16 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 
 | Module | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
 |:-------|:-------------------------:|:-----------------------:|
-| [RediSearch]({{<relref "/modules/redisearch">}}) | Yes | Yes |
-| [RedisJSON]({{<relref "/modules/redisjson">}})   | Yes | Yes |
-| [RedisGraph]({{<relref "/modules/redisgraph">}}) | Yes | Yes |
-| [RedisTimeSeries]({{<relref "/modules/redistimeseries">}}) | Yes | Yes |
-| [RedisBloom]({{<relref "/modules/redisbloom">}}) | Yes | Yes |
-| [RedisGears]({{<relref "/modules/redisgears">}}) | Yes | No |
-| [RedisAI]({{<relref "/modules/redisai">}})       | Yes | No |
+| [Redis Stack]({{<relref "/modules/redis-stack">}}) | &#x274c; No | &#x2705; Yes[^4] |
+| [RediSearch]({{<relref "/modules/redisearch">}}) | &#x2705; Yes | &#x2705; Yes |
+| [RedisJSON]({{<relref "/modules/redisjson">}})   | &#x2705; Yes | &#x2705; Yes |
+| [RedisGraph]({{<relref "/modules/redisgraph">}}) | &#x2705; Yes | &#x2705; Yes |
+| [RedisTimeSeries]({{<relref "/modules/redistimeseries">}}) | &#x2705; Yes | &#x2705; Yes |
+| [RedisBloom]({{<relref "/modules/redisbloom">}}) | &#x2705; Yes | &#x2705; Yes |
+| [RedisGears]({{<relref "/modules/redisgears">}}) | &#x2705; Yes | &#x274c; No |
+| [RedisAI]({{<relref "/modules/redisai">}})       | &#x2705; Yes | &#x274c; No |
+
+[^4]: Redis Enterprise Cloud currently supports Redis Stack for Fixed and Free subscriptions only.  For details, see [Create database]({{< relref  "/rc/databases/create-database#fixed-and-free-module-options" >}}).
 
 ## Module feature support
 
@@ -37,7 +40,7 @@ For details about individual modules, see the corresponding documentation.
 |-------------------------|:--------------:|:------------:|:------------:|
 | Active-Active (CRDB)    | Yes (v2.0)     | No           | No           |
 | Backup/Restore          | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
-| Clustering              | Yes (v1.6)     | Yes (v1.0)   | Yes (v2.2.3)[^1] |
+| Clustering              | Yes (v1.6)[^3] | Yes (v1.0)   | Yes (v2.2.3)[^1] |
 | Custom hashing policy   | Yes (v2.0)     | Yes (v1.0)   | Yes (v1.0)   |
 | Eviction expiration     | Yes (v2.0)     | Yes (v1.0)   | No           |
 | Failover/migration      | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
@@ -50,6 +53,10 @@ For details about individual modules, see the corresponding documentation.
 | Reshard/rebalance       | Yes (v2.0)     | Yes (v1.0)   | No           |
 
 [^1]: The RedisGraph module supports clustering; however, individual graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, [contact support](https://redis.com/company/support/).
+
+[^2]: In version 1.6, RediSearch supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
+
+[^3]: You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/administering/designing-production/networking/using-oss-cluster-api">}}).
 
 | Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
 |-------------------------|:------------:|:------------:|:----------:|:----------:| 
@@ -67,7 +74,6 @@ For details about individual modules, see the corresponding documentation.
 | Replica Of              | Yes (v1.2)   | Yes (v2.0)   | No         | Yes (v1.0) | 
 | Reshard/rebalance       | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | No         | 
 
-[^2]: In version 1.6, RediSearch supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
 
 ## Feature descriptions
 

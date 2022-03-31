@@ -35,7 +35,31 @@ To run the Redis Documentation Center locally:
 1. Change directory to the redislabs-docs directory.
 1. Start the hugo web server: `hugo server`
 
-To access the site, go to: http://localhost:1313
+When the site builds successfully, open a browser window to http://localhost:1313 in order to preview your changes.
+
+
+## Resolving build errors
+
+If you receive build errors when trying to start the web server, you need to resolve the errors before you can preview your changes.
+
+Common errors involve invalid filenames, generally caused by typos in filename references associated with Hugo shortcodes (e.g. `relref`, `image`, and so on).  Use examples throughout the site to resolve such issues.  
+
+If you're running Windows, you might encounter the following errors when building the site:
+
+``` console
+Error <datetime stamp> Alias <filename> contains component with a trailing space or period, problematic on Windows
+Error: Error building site: cannot create <filename>: Windows filename restriction
+```
+
+If this happens, try adding the following to `\config.toml`, in the section _above_ the `[params]` section: 
+
+``` console
+disableAliases=true
+```
+
+Save your changes and then try rebuilding the site.  It should work.
+
+If you need to do this, please use care to _not_ check in your updated `config.toml`.  (Consider adding it to your local `.gitignore` file.)
 
 ## Publishing
 
@@ -49,11 +73,11 @@ The master branch is published to https://docs.redis.com/staging/dev and represe
 
 Whether you see a typo or you want to suggest a change to the technical content, we encourage you to fork this repository and submit a pull request.
 
-The "Edit on GitHub" link that is in the upper-left corner of every page opens the source file of that page so you can easily submit a change.
+An "Edit on GitHub" link appears in the upper-left corner of every page; it opens the source file in a GitHub editing session, which let you submit changes quickly and easily.
 
 ## Content organization
 
-Articles are organized in directories that present the articles in a heirarchy in the site sidebar. When you add a file to a directory, it is automatically listed in that section in the sidebar.
+Articles are organized in directories that present the articles in a hierarchy in the site sidebar. When you add a file to a directory, it is automatically listed in that section in the sidebar.
 
 The metadata (front matter) of a page is used to:
 

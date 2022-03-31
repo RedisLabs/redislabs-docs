@@ -90,7 +90,9 @@ Update the cluster services settings.
 
 ```json
 {
-     "cm_server": "disabled",
+     "cm_server": {
+         "operating_mode": "disabled"
+     },
      "// additional services..."
 }
 ```

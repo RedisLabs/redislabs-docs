@@ -17,7 +17,7 @@ For this quick start tutorial, you need:
 
     - A [Redis Cloud]({{<relref "/modules/modules-quickstart.md">}}) database
 
-    - A [Redis Enterprise Software]({{<relref "/modules/add-module-to-database.md">}}) database
+    - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
 - redis-cli command line tool
 

@@ -130,7 +130,7 @@ Redis Enterprise Software v6.2.4 includes the following Redis modules:
          
 To utilize data plane encryption for existing databases with modules, update the module to the latest version prior to enabling data plane encryption. 
 
-For help, see [Upgrade the module for a database]({{<relref "//modules/add-module-to-cluster.md#upgrading-the-module-for-the-database">}}).
+For help, see [Upgrade the module for a database]({{<relref "/modules/install/upgrade-module">}}).
 
 ### Module-related enhancements
 

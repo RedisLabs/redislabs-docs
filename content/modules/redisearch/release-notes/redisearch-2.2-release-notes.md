@@ -10,10 +10,53 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.2.7 requires:
+RediSearch v2.2.10 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.2.10 (March 2022)
+
+This is a maintenance release for RediSearch 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Improvements:
+
+  - Mac M1 support
+  - [#2645](https://github.com/RediSearch/RediSearch/pull/2645) Ignore `NULL` values in JSON documents on indexing (prior behaviour would ignore the entire document)
+  - [#2623](https://github.com/RediSearch/RediSearch/pull/2623) Improved Multi Sortby error message for `FT.SEARCH`
+
+- Bug fixes:
+
+  - [#2641](https://github.com/RediSearch/RediSearch/pull/2641) Memory leak in Coordinator
+  - [#2651](https://github.com/RediSearch/RediSearch/pull/2651) Client freeze on docs expire during query
+  - [#2670](https://github.com/RediSearch/RediSearch/pull/2670) Memory leak in RediSearch found in Active-Active (MOD-2518)
+
+## v2.2.9 (March 2022)
+
+This is a maintenance release for RediSearch 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Improvements:
+
+  - [#2605](https://github.com/RediSearch/RediSearch/pull/2605) Added support for `tls-key-file-pass` capability (MOD-2086)
+  - [#2583](https://github.com/RediSearch/RediSearch/pull/2583) Release index-specific information off the main thread (performance enhancement)
+
+- Bug fixes:
+
+  - [#2436](https://github.com/RediSearch/RediSearch/pull/2436) When indexing JSON documents, filters cause no documents to be indexed (MOD-2214)
+  - [#2507](https://github.com/RediSearch/RediSearch/pull/2507) `QUANTILE` aggregation function outputting wrong values (MOD-2432)
+  - [#2521](https://github.com/RediSearch/RediSearch/pull/2521) `contains()` with an empty string argument leaves Redis hanging at CPU 100% indefinitely (MOD-2428)
+  - [#2560](https://github.com/RediSearch/RediSearch/pull/2560) Free prefix and cursor efficiently for cases with many indices (MOD-2080)
+  - [#2541](https://github.com/RediSearch/RediSearch/pull/2541) Numeric types for `FT.INFO` on coordinator
+  - [#2553](https://github.com/RediSearch/RediSearch/pull/2553) Fix union high iterator
+  - [#2404](https://github.com/RediSearch/RediSearch/pull/2404) Update coordination strategy of `FlatSearchCommandHandler`
 
 ## v2.2.7 (February 2022)
 
