@@ -59,7 +59,7 @@ If the operator isn't running, or some other fatal error occurs, the finalizer i
 
 If this happens, you can remove the finalizer manually.
 
-{{<warning>}} If you remove the finalizer manually, there is not guarantee that the underlying REC has been deleted. This may cause resource issues and require manual intervention. {{</warning>}}
+{{<warning>}} If you remove the finalizer manually, there is no guarantee that the underlying REC has been deleted. This may cause resource issues and require manual intervention. {{</warning>}}
 
 ```sh
 kubectl patch redb <your-db-name> --type=json -p \
