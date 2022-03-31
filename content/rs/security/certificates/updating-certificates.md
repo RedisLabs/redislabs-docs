@@ -30,7 +30,7 @@ To replace certificates with the `rladmin` CLI, run:
  rladmin cluster certificate set <cert-name> certificate_file <cert-file-name>.pem key_file <key-file-name>.pem
 ```
 
-Where:
+Replace the following variables with your own values:
 
 - `<cert-name>` - The name of the certificate you want to replace:
   - For the admin console: `cm`
@@ -55,7 +55,7 @@ To replace a certificate using the REST API, run:
 curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
 ```
 
-Where:
+Replace the following variables with your own values:
 
 - `<cert_name>` - The name of the certificate to replace:
   - For the admin console: `cm`
