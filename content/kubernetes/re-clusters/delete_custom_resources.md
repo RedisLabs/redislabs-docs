@@ -49,7 +49,7 @@ kubectl delete -f admission-service.yaml
 kubectl delete -f operator.yaml
 ```
 
-You will also need to remove [the `namespaceSelector` section from the validating webhook]({{relref "kubernetes/deployment/quick-start#webhook"}}).
+You will also need to remove [the `namespaceSelector` section from the validating webhook]({{relref "/kubernetes/deployment/quick-start#webhook"}}).
 
 ### Troubleshoot REDB deletion
 
