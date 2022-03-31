@@ -40,5 +40,5 @@ For each client certificate you wish to use with your database, you need to crea
   ```yaml
    spec:
       clientAuthenticationCertificates:
-      - client-cert-secret
+      - <client-cert-secret>
   ```
