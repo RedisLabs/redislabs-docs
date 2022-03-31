@@ -11,7 +11,7 @@ aliases: [
 ]
 ---
 
-## Delete a database
+## Delete a database (REDB)
 
 To delete a database managed by the Redis Enterprise Kubernetes operator, run `kubectl delete redb <your-db-name>` from your K8s cluster.
 
