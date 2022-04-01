@@ -5,9 +5,7 @@ description: Create self-signed certificates to install on a Redis Enterprise cl
 weight: 10
 alwaysopen: false
 categories: ["RS"]
-aliases: ["/rs/security/admin-console-security/encryption",
-"/rs/security/admin-console-security/encryption/",
-"/rs/security/admin-console-security/encryption.md"]
+aliases: 
 ---
 
 Follow these instructions to create your own certificates to install on your Redis Enterprise cluster. Note that you can install a separate certificate per cluster component.
