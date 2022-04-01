@@ -190,7 +190,7 @@ The configuration options that you can update are:
 |---|---|---|
 |`memory-size <ram_limit>`|string| Maximum memory in bytes| kilobytes (kb)| or gigabytes (gb)|
 |`causal-consistency <true \| false>`|boolean| Database updates are applied to all instances in the order they were received|
-|`encryption <true \| false>`| binary| Enable encryption|
+|`encryption <true \| false>`| boolean| Enable encryption|
 |`compression (0-6)`| integer| The level of compression of data: 0=Compression disabled| 1=Low compression and resource load| 6=High compression and resource load (Default: 3)|
 |`credentials id=<instance_id>,username=<username>,password=<password>`|string|Update the credentials for the participating cluster|
 |`featureset-version <true \| false>`|boolean|Update to latest FeatureSet version|
