@@ -4,6 +4,10 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: rs/administering/designing-production/testing-client-connectivity/
+         rs/administering/designing-production/testing-client-connectivity.md
+         rs/connections/testing-client-connectivity/
+         rs/connections/testing-client-connectivity.md
 ---
 In various scenarios, such as after creating a new cluster or upgrading
 the cluster, it is highly advisable to verify client connectivity to the
