@@ -58,9 +58,10 @@ specifically recommend "[Storage Optimized I3 - High I/O
 Instances](https://aws.amazon.com/ec2/instance-types/#storage-optimized)"
 because of the performance of NVMe for flash memory.
 
-When running RoF on-premise, it is best to use local internal flash
-memory in each server (preferably NVMe SSDs for their exceptional
-performance). The Redis Enterprise Software database persistent and
+When running RoF on-premise, local SSD (preferably NVMe-based) should be used. 
+To be clear, running RoF over Network Attached Storage (NAS), Storage Area Network (SAN) or with local HDD drives isn’t supported.  
+
+The Redis Enterprise Software database persistent and
 ephemeral storage can be on different disks, either local or attached.
 
 When you begin planning the deployment of Redis on Flash in Production,
