@@ -1,7 +1,7 @@
 ---
 title: Manage databases
 linktitle: Databases
-description: 
+description: This page will help you find database management information in the Databases section. 
 weight: 37
 alwaysopen: false
 categories: ["RS"]
@@ -15,7 +15,7 @@ You can manage your Redis Enterprise Software databases with several different t
 
 - admin console (the web-based user interface)
 - CLI tools ([rladmin]({{<relref "/rs/references/rladmin.md">}}), [redis-cli](https://redis.io/docs/manual/cli/), [crdb-cli]({{<relref "/rs/references/crdb-cli-reference.md">}}))
-- [REST API]({{<relref "/rs/references/rest-api/_index.md">}}).
+- [REST API]({{<relref "/rs/references/rest-api/_index.md">}})
 
 ## Database settings
 
