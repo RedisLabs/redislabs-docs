@@ -14,7 +14,7 @@ You can use TLS authentication for one or more of the following types of communi
 - Communication from your database to other clusters for replication using [Replica Of]({{<relref "/rs/databases/replica-of.md">}})
 - Communication to and from your database to other clusters for synchronization using [Active-Active]({{<relref "/rs/databases/active-active/_index.md">}})
 
-## Enable TLS for client connections
+## Enable TLS for client connections {#client}
 
 You can enable TLS by editing the configuration of an existing database (as shown below) or by selecting **Advanced Options** when you are creating a new database.
 

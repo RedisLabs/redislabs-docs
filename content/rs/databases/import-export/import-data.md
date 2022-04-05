@@ -10,6 +10,8 @@ aliases: [
     /rs/administering/database-operations/administering-database-operations-importing-data/,
     /rs/databases/import-export/importing-data.md,
     /rs/databases/import-export/importing-data/,
+    /rs/databases/import-export/import-data.md,
+    /rs/databases/import-export/import-data/,
 ]
 ---
 You can import [export]({{< relref "/rs/databases/import-export/exporting-data.md" >}})

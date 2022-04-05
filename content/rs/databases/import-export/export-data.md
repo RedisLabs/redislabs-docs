@@ -9,6 +9,8 @@ aliases: [
     /rs/administering/database-operations/exporting-data/,
     /rs/databases/import-export/exporting-data.md,
     /rs/databases/import-export/exporting-data/,
+    /rs/databases/import-export/export-data.md,
+    /rs/databases/import-export/export-data/,
 ]
 ---
 
