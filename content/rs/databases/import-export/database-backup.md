@@ -16,7 +16,7 @@ Periodic backups provide a way to restore data with minimal data loss.  With Red
 
 As of v6.2.8, you can specify the start time for twenty-four or twelve hour backups.
 
-To make an on-demand backup, [export your data]({{< relref "/rs/databases/import-export/exporting-data.md" >}}).
+To make an on-demand backup, [export your data]({{< relref "/rs/databases/import-export/export-data.md" >}}).
 
 You can schedule backups to a variety of locations, including:
 
@@ -27,7 +27,7 @@ You can schedule backups to a variety of locations, including:
 - Azure Blob Storage
 - Google Cloud Storage
 
-The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/databases/import-export/importing-data.md" >}}). 
+The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/databases/import-export/import-data.md" >}}). 
 
 When you back up a database configured for database clustering,
 Redis Enterprise Software creates a backup file for each shard in the configuration.  All backup files are copied to the storage location.
