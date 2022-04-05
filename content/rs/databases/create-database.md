@@ -14,7 +14,7 @@ aliases: [
   
 ]
 ---
-Redis Enterprise Software give you the ability to create databases that are are clustered and distributed across a single cluster.
+Redis Enterprise Software lets you create databases and distribute them across a cluster of nodes.
 These databases can use Redis Enterprise features like:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
