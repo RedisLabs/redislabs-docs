@@ -31,7 +31,7 @@ When you delete your cluster, your databases and the REC custom resource are als
 
 To delete the operator from your K8s cluster and namespace, you can delete the operator bundle with:
 
-- `kubectl delete -f bundle.yaml` for vanilla K8s deployments
+- `kubectl delete -f bundle.yaml` for non-OpenShift K8s deployments
 - `kubectl delete -f openshift.bundle.yaml` for OpenShift deployments 
 
 This will remove the operator and its custom resource definitions (CRDs) from your K8s cluster.
