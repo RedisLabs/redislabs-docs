@@ -236,7 +236,7 @@ As part of the REC creation process, the operator stores the admission controlle
     kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
-### Limit the webhook to the relevant namespaces
+### Limit the webhook to the relevant namespaces {#webhook}
 
 The webhook will intercept requests from all namespaces unless you edit it to target a specific namespace. You can do this by adding the `namespaceSelector` section to the webhook spec to target a label on the namespace.
 
