@@ -8,7 +8,23 @@ aliases: [
     /platforms/kubernetes/reference/supported_k8s_distributions/,
     /platforms/kubernetes/reference/supported_k8s_distributions.md,
     /kubernetes/reference/supported_k8s_distributions.md,
-    /kubernetes/reference/supported_k8s_distributions/
+    /kubernetes/reference/supported_k8s_distributions/,
+    /rs/getting-started/pcf/,
+    /platforms/pcf/using-pcf/,
+    /platforms/pcf/using-pcf.md,
+    /kubernetes/deployment/tanzu/pcf/using-pcf.md,
+    /kubernetes/deployment/tanzu/pcf/using-pcf/,
+    /rs/getting-started/pcf/,
+    /platforms/pcf/backup-restore-pcf/,
+    /platforms/pcf/backup-restore-pcf.md,
+    /kubernetes/deployment/tanzu/pcf/backup-restore-pcf.md,
+    /kubernetes/deployment/tanzu/pcf/backup-restore-pcf/,
+    /platforms/pcf/installing-pcf/,
+    /platforms/pcf/,
+    /platforms/pcf/_index.md,
+    /kubernetes/deployment/tanzu/pcf/_index.md,
+    /kubernetes/deployment/tanzu/pcf/_index/,
+
 ]
 ---
 
