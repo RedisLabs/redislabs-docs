@@ -162,7 +162,7 @@ If you set the lockout duration to 0, then the account can be unlocked only when
 To unlock a user account or reset a user password from the CLI, run:
 
 ```sh
-rladmin cluster reset_password <username>
+rladmin cluster reset_password <user email>
 ```
 
 To unlock a user account or reset a user password from the REST API, run:
