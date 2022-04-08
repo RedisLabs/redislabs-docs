@@ -75,7 +75,7 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 |:---------|:-----------|
 | **Multi-AZ** | Determines if replication spans multiple Availablity Zones, which provides automatic failover when problems occur. |
 | **Cloud account** | To deploy this subscription to a specific cloud account, select it here.  Use the Add button to add a new cloud account. |
-| **VPC configuration** | Select _In a new VPC_ to deploy to a new Virtual Private Cloud.<br/><br/>To deploy this subscription to an existing Virtual Private Cloud , select _In existing VCP_ and then set VPC ID to the appropriate ID value.   |
+| **VPC configuration** | Select _In a new VPC_ to deploy to a new Virtual Private Cloud.<br/><br/>To deploy this subscription to an existing Virtual Private Cloud , select _In existing VCP_ and then set VPC ID to the appropriate ID value.  The existing VPC should not have any secondary CIDR.<br/><br/>Please note that Transit Gateway is not being supported, only VPC Peering is supported.  |
 | **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) subnet address for your deployment. Must not overlap other addresses used with your subscription.|
 | **Preferred Availability Zone(s)** | The [availability zone](https://cloud.google.com/compute/docs/regions-zones/#available) for your selected region.<br/><br/>If you choose *Select zone(s)*, you must choose at least one zone from **Zone Suffix**.  You can choose up to three preferred zones. |
 
