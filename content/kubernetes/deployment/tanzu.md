@@ -13,6 +13,7 @@ aliases: [
     /platforms/kubernetes/deployment/tanzu/_index.md,
     /kubernetes/deployment/tanzu/,
     /kubernetes/deployment/tanzu/_index.md,
+    
 
 ]
 ---
