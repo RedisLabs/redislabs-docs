@@ -16,10 +16,10 @@ The following table shows the MD5 checksums for the available packages.
 
 |Package| MD5 Checksum |
 |:------|:-------------|
-| Ubuntu 16 | `399b8f2a13130b3653dc45bca5e1fc7c` |
-| Ubuntu 18 | `7a3af28f24c7db7e0be538aadd502131` |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OEL) 7 | `53a6546faa49c63c21234a41ad947814` |
-| RHEL 8 | `65f7fe68b787f4d2f573012ce2cf1f8d` |
+| Ubuntu 16 | `3921666d59703fc3c9f829a37ee6e9a0` |
+| Ubuntu 18 | `9306dfe17127719d70f6850923aac783` |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OEL) 7 | `51dbcacca15d385e74c275aac32914dd` |
+| RHEL 8 | `84209373e83ca75fe3c080c5c990c8bb` |
 | K8s Ubuntu | `099192416a70a12790535bdcd78a6e87` |
 | K8s RHEL   | `f267abe81770ddf36f022232f4c2cb2e` |
 
@@ -95,9 +95,9 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
          
     - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
 
-## Known issues 
+## Resolved issues (build 100)
 
-A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+ - RS74171 - A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
 
 ## Security
 
