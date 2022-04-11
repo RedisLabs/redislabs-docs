@@ -19,5 +19,5 @@ Active-Active databases use conflict-free replicated data types (CRDTs). From a 
 Even though they look identical to standard Redis data types, there are specific rules that govern the handling of
 conflicting concurrent writes for each data type.
 
-As conflict handling rules differ between data types, some commands have slightly different requirements in Active-Active databases vs standard Redis databases.
+As conflict handling rules differ between data types, some commands have slightly different requirements in Active-Active databases versus standard Redis databases.
 

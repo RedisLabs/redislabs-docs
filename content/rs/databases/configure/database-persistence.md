@@ -20,21 +20,21 @@ Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})) and the
 failure. As Redis Enterprise Software is not just a caching solution, but also a full-fledged database, [persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) to disk
 is critical. Therefore, Redis Enterprise Software supports persisting data to disk on a per-database basis and in multiple ways.
 
-[Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be configured either at time of database creation or by editing an existing
+[Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be configured either during database creation or by editing an existing
 database's configuration. While the persistence model can be changed dynamically, just know that it can take time for your database to switch from one persistence model to the other. It depends on what you are switching from and to, but also on the size of your database.
 
-## Configuring persistence for your database
+## Configure persistence for your database
 
 1. In **databases**, either:
-        - Click **Add** (+) to create a new database.
-        - Click on the database that you want to configure and at the bottom of the page click edit.
+    - Click **Add** (+) to create a new database.
+    - Click on the database that you want to configure and at the bottom of the page click edit.
 1. Navigate to Persistence
 1. Select your database persistence option
 1. Select save or update
 
 {{< video "/images/rs/persistence.mp4" "Persistence" >}}
 
-## Options for configuring data persistence
+## Data persistence options
 
 There are six options for persistence in Redis Enterprise Software:
 

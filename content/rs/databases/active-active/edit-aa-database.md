@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-## Editing Active-Active database configuration
+## Edit Active-Active database configuration
 
 An Active-Active database (formerly known as CRDB) is a database that spans multiple Redis Enterprise clusters.
 The clusters that host instances of the Active-Active database are called participating clusters.

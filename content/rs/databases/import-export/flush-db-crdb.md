@@ -18,7 +18,7 @@ You can use the admin console to flush data from Active-Active databases.
 
 {{< warning title="Data Loss Warning" >}}
 The flush command deletes ALL in-memory and persistence data in the database.
-We recommend that you [backup your database]({{< relref "/rs/databases/import-export/database-backup.md" >}}) before you flush the data.
+We recommend that you [back up your database]({{< relref "/rs/databases/import-export/database-backup.md" >}}) before you flush the data.
 {{< /warning >}}
 
 ## Flush data from a database

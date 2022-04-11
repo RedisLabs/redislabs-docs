@@ -14,7 +14,7 @@ aliases: [
     /rs/databases/import-export/import-data/,
 ]
 ---
-You can import [export]({{< relref "/rs/databases/import-export/export-data.md" >}})
+You can import, [export]({{< relref "/rs/databases/import-export/export-data.md" >}}),
 or [backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
 files of a specific Redis Enterprise Software database to restore data.
 You can either import from a single file or from multiple files,

@@ -12,7 +12,7 @@ aliases: [
 ]
 ---
 
-Periodic backups provide a way to restore data with minimal data loss.  With Redis Enterprise Software, you can schedule periodic backups to occur every once a day (every 24 hours), twice a day (every twelve hours), every four hours, or every hour.
+Periodic backups provide a way to restore data with minimal data loss.  With Redis Enterprise Software, you can schedule periodic backups to occur once a day (every 24 hours), twice a day (every twelve hours), every four hours, or every hour.
 
 As of v6.2.8, you can specify the start time for twenty-four or twelve hour backups.
 

@@ -1,5 +1,5 @@
 ---
-Title: Get Started with Redis Enterprise Active-Active databases
+Title: Get started with Redis Enterprise Active-Active databases
 linktitle: Get started with Active-Active
 description: Quick start guide to create an Active-Active database for test and development.
 weight: 20

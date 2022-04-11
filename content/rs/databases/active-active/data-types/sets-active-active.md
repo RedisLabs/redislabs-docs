@@ -13,7 +13,7 @@ aliases: [
     /rs/databases/active-active/data-types/sets-active-active/,
 ]
 ---
-Redis Sets are an unordered collection of Strings. It is possible to
+A Redis set is an unordered collection of strings. It is possible to
 add, remove, and test for the existence of members with Redis commands.
 A Redis set maintains a unique collection of elements. Sets can be great
 for maintaining a list of events (click streams), users (in a group

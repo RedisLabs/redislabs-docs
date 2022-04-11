@@ -1,5 +1,5 @@
 ---
-Title: Lists in Active-Active Databases
+Title: Lists in Active-Active databases
 linkTitle: Lists
 description: Information about using list with an Active-Active database.
 weight: $weight
@@ -16,7 +16,7 @@ aliases: [
 Redis lists are simply lists of strings, sorted by insertion order. It
 is possible to add elements to a Redis List that push new elements to
 the head (on the left) or to the tail (on the right) of the list. Redis
-Lists can be used to easily implement queues (using LPUSH and RPOP, for
+lists can be used to easily implement queues (using LPUSH and RPOP, for
 example) and stacks (using LPUSH and LPOP, for
 example).
 
