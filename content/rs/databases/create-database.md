@@ -189,7 +189,7 @@ There are a few simple ways to check connectivity to your database:
 - Redis_cli
 - Using a simple application
 
-### Testing database connectivity with Telnet
+### Test database connectivity with Telnet
 
 As a quick smoke test, telnet to your endpoint and port for the database.
 Then run the redis PING command.
@@ -206,7 +206,7 @@ PING
 +PONG
 ```
 
-### Testing database connectivity with redis cli {#testing-database-connectivity-with-rediscli}
+### Test database connectivity with redis cli {#testing-database-connectivity-with-rediscli}
 
 The redis-cli utility is installed on each node in RS cluster with the rest of the utilities.
 
@@ -220,7 +220,7 @@ redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
 ```
 
-### Testing database connectivity with a simple application
+### Test database connectivity with a simple application
 
 You can also use a simple application to test connectivity to your database.
 Here is a simple python app that connects to the database by IP address.
