@@ -28,7 +28,7 @@ Get a health report for an Active-Active database.
 
 #### Example HTTP request
 
-    GET /crdbs/552bbccb-99f3-4142-bd17-93d245f0bc79/health_report
+    GET /crdbs/{crdb_guid}/health_report
 
 #### URL parameters
 
