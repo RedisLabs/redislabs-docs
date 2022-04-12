@@ -77,7 +77,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - Added an option to run a connectivity health check for the management layer of Active-Active databases. Run the following REST API command:
 
     ```
-    curl -k -X GET -u "demo@example.com:123456" https://127.0.0.1:9443/v1/crdb/<crdb_guid>/health_report
+    GET https:/[host][:port]/v1/crdb/<crdb_guid>/health_report
     ```
 
 - Added TLS handshake error messages to the DMC proxy log (RS59346).
