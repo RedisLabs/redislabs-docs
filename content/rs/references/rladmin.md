@@ -8,13 +8,14 @@ aliases: /rs/references/cli-reference/rladmin/
 ---
 `rladmin` is a command-line utility for performing administrative tasks such as failover, migration, and endpoint binding on a Redis Enterprise Software cluster. `rladmin` can also edit cluster and database configurations. Some of these tasks can also be performed through the admin console and some are unique to the `rladmin` CLI tool.
 
-## rladmin Commands
+## rladmin commands
 
 | Command | Description |
 | - | - |
 | [rladmin](#use-the-rladmin-shell) | Enter the `rladmin` shell |
 | [bind](#bind) | Bind an endpoint |
 | [cluster](#cluster) | Cluster management commands |
+| [cluster ocsp](#cluster-ocsp) | OCSP management commands |
 | [exit](#use-the-rladmin-shell)| Exit `rladmin` shell |
 | [failover](#failover) | Fail over a master shard to replica shard (previously slave shard) |
 | [help](#help) | Show available commands or specific command usage |
@@ -260,6 +261,52 @@ rladmin cluster recover
 | override_rack_id | Manually overrides the existing default rack ID |
 | persistent_path | Path to persistent storage location (defaults to /var/opt/redislabs/persist) |
 | rack_id | Rack ID of the rack |
+
+### `cluster ocsp`
+
+`rladmin cluster ocsp` manages OCSP configuration and administration.
+
+#### `cluster ocsp certificate_compatible`
+
+Check if the proxy certificate contains an OCSP URI. Returns the OCSP URI if it exists.
+
+```sh
+rladmin cluster ocsp certificate_compatible
+```
+
+#### `cluster ocsp config`
+
+`cluster ocsp config` displays or updates the OCSP configuration. Run the command without the set option to display the current configuration of a parameter.
+
+```sh
+rladmin cluster ocsp config <OCSP parameter>
+        [set <value>]
+```
+
+| Parameter | Type/Value | Description |
+|-----------|---------------|-------------|
+| ocsp_functionality | enabled<br></br>disabled | Enables or turns off OCSP for the cluster |
+| query_frequency | integer <nobr>(range: 60-86400)</nobr> <nobr>(default: 3600)</nobr> | The time interval in seconds between OCSP queries to the responder URI for a new status for the server certificate |
+| recovery_frequency | integer <nobr>(range: 60-86400)</nobr> <nobr>(default: 60)</nobr> | The time interval in seconds between retries after a failed query |
+| recovery_max_tries | integer <nobr>(range: 1-100)</nobr> <nobr>(default: 5)</nobr> | The number of retries before the validation query fails and invalidates the certificate |
+| responder_url | string | The OCSP server URL embedded in the proxy certificate. You cannot manually set this parameter. |
+| response_timeout | integer <nobr>(range: 1-60)</nobr> <nobr>(default: 1)</nobr> | The time interval in seconds to wait for a response before timing out |
+
+#### `cluster ocsp status`
+
+`cluster ocsp status` returns the latest status of the certificate's OCSP response.
+
+```sh
+rladmin cluster ocsp status
+```
+
+#### `cluster ocsp test_certificate`
+
+`cluster ocsp test_certificate` queries the OCSP server and returns the OCSP status of the certificate.
+
+```sh
+rladmin cluster ocsp test_certificate
+```
 
 ### `failover`
 
