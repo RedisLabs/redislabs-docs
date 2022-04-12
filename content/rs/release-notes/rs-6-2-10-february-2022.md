@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software Release Notes 6.2.10 (February 2022)
 linkTitle: 6.2.10 (February 2022)
-description: Python 3 support.
+description: Python 3 support.  RHEL 8.5 support.
 compatibleOSSVersion: Redis 6.2.5
 weight: 75
 alwaysopen: false
@@ -26,6 +26,8 @@ The following table shows the MD5 checksums for the available packages.
 ## Features and enhancements
 
 - Upgrade the Redis Enterprise infrastructure to [Python v3.9](https://www.python.org/).
+
+- [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
 
 -  Compatibility with [open source Redis 6.2.5](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES).
 
@@ -75,7 +77,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - Added an option to run a connectivity health check for the management layer of Active-Active databases. Run the following REST API command:
 
     ```
-    curl -k -X GET -u "demo@example.com:123456" https://127.0.0.1:9443/v1/crdb/<crdb_guid>/health_report
+    GET https:/[host][:port]/v1/crdb/<crdb_guid>/health_report
     ```
 
 - Added TLS handshake error messages to the DMC proxy log (RS59346).
