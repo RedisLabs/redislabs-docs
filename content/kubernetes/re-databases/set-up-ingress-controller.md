@@ -65,10 +65,8 @@ Install one of the supported ingress controllers:
     Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.  
 
     ``` sh
-    NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              
-    haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   
-    PORT(S)                      AGE
-    80:30610/TCP,443:31597/TCP   21m
+    NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE   
+    haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
     ```
 
 1. Choose the hostname you will use to access your database (this value will be represented in this article with `<my-db-hostname>`).  
