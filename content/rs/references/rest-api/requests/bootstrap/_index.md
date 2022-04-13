@@ -19,7 +19,7 @@ aliases: /rs/references/rest-api/bootstrap
 | [GET](#get-bootstrap) | `/v1/boostrap` | Get the local node's bootstrap status |
 | [POST](#post-bootstrap) | `/v1/bootstrap/{action}` | Initiate bootstrapping |
 
-## Get boostrap status {#get-bootstrap}
+## Get bootstrap status {#get-bootstrap}
 
 	GET /v1/bootstrap
 

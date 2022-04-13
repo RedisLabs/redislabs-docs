@@ -1,5 +1,5 @@
 ---
-Title: CRDB-CLI Commands
+Title: CRDB-CLI commands
 description:
 weight: $weight
 alwaysopen: false
@@ -18,7 +18,7 @@ Write conflicts are resolved using [CRDTs]({{< relref "/rs/administering/designi
 
 To programmatically maintain an Active-Active database and its instances, you can use the CRDB-CLI command-line tool.
 
-## Using the crdb-cli
+## Use the crdb-cli
 
 To use the CRDB-CLI tool, use SSH to log in to an RS host with a user that belongs to the group that RS was installed with (Default: **redislabs**).
 If you log in with a non-root user, you must add `/opt/redislabs/bin/` to your PATH environment variables.
@@ -39,7 +39,7 @@ For each CRDB-CLI command, you can use `--help` for additional information about
 
 Active-Active database operations affect the configuration and data of the database.
 
-### Creating an Active-Active database
+### Create an Active-Active database
 
 The `crdb create` command lets you create a customized Active-Active database and create instances of the database on specified participating clusters. Before you create an Active-Active database you must have:
 
@@ -120,7 +120,7 @@ The `crdb create` command supports several additional options:
 To create an Active-Active database with two shards in each instance and with encrypted traffic between the clusters:
 
 ```sh
-crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --shards-count 2 --encrypted true
+crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --shards-count 2 --encryption true
 ```
 
 To create an Active-Active database with two shards and with RediSearch 2.0.6 module:
@@ -132,7 +132,7 @@ crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance f
 To create an Active-Active database with two shards and with encrypted traffic between the clusters:
 
 ```sh
-crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --encrypted true --shards-count 2
+crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --encryption true --shards-count 2
 ```
 
 To create an Active-Active database with 1 shard in each instance and not wait for the response:
@@ -141,7 +141,7 @@ To create an Active-Active database with 1 shard in each instance and not wait f
 crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --no-wait
 ```
 
-### Showing the list of Active-Active databases
+### Show the list of Active-Active databases
 
 The `crdb list` command shows all Active-Active databases that the cluster participates in.
 Each database is represented with a unique GUID, the name of the database, an instance ID, and the FQDN of the cluster that hosts the instance.
@@ -160,7 +160,7 @@ e7ef4552-3705-4790-9f30-6a8e9f4bef28  shopping-cart  1        cluster1.local
 e7ef4552-3705-4790-9f30-6a8e9f4bef28  shopping-cart  2        cluster2.local
 ```
 
-### Updating the configuration of an Active-Active database
+### Update the configuration of an Active-Active database
 
 The `crdb update` command lets you change the configuration of the Active-Active instances of an existing Active-Active database.
 This command requires the CRDB-GUID of the database.
@@ -189,20 +189,20 @@ The configuration options that you can update are:
 |Flag and argument| Argument type| Description|
 |---|---|---|
 |`memory-size <ram_limit>`|string| Maximum memory in bytes| kilobytes (kb)| or gigabytes (gb)|
-|`causal-consistency <true | false>`|boolean| Database updates are applied to all instances in the order they were received|
-|`encryption <true | false>`| binary| Enable encryption|
+|`causal-consistency <true \| false>`|boolean| Database updates are applied to all instances in the order they were received|
+|`encryption <true \| false>`| boolean| Enable encryption|
 |`compression (0-6)`| integer| The level of compression of data: 0=Compression disabled| 1=Low compression and resource load| 6=High compression and resource load (Default: 3)|
 |`credentials id=<instance_id>,username=<username>,password=<password>`|string|Update the credentials for the participating cluster|
-|`featureset-version <true | false>`|boolean|Update to latest FeatureSet version|
-|`oss-cluster <true | false>`|boolean|Enable or disable OSS cluster mode|
-|`bigstore <true | false>`|boolean|Use Redis on Flash to add flash memory to the database|
+|`featureset-version <true \| false>`|boolean|Update to latest FeatureSet version|
+|`oss-cluster <true \| false>`|boolean|Enable or disable OSS cluster mode|
+|`bigstore <true \| false>`|boolean|Use Redis on Flash to add flash memory to the database|
 |`bigstore-ram-size <ram_limit>`|string|RAM limit for RoF database (bytes, MB, or GB)|
 |`with-module <module_name>`|text|The name of the module to add to the database|
 |`force`|no arguments|Increase the configuration version even if there are no configuration changes|
 <!-- |`default-db-config <options>`|text|Default database configuration options|
 |`default-db-config-file <filename>`|file path|Default database configuration options| -->
 
-### Flushing the data from an Active-Active database
+### Flush the data from an Active-Active database
 
 The `crdb flush` command deletes all data in all of the instances of an Active-Active database.
 This command requires the CRDB-GUID of the database.
@@ -218,7 +218,7 @@ To flush the data from an Active-Active database, run:
 crdb-cli crdb flush --crdb-guid <CRDB-GUID>
 ```
 
-### Deleting an Active-Active database
+### Delete an Active-Active database
 
 The `crdb delete` command deletes the Active-Active database and its data.
 This command requires the CRDB-GUID of the database.
@@ -238,7 +238,7 @@ If the data in your database is important, make sure you back it up before you d
 
 Active-Active instance operations affect the placement of database instances on participating clusters, but do not change the configuration or data in the database.
 
-### Adding an instance to an Active-Active database {#adding-an-instance-to-an-activeactive-database}
+### Add an instance to an Active-Active database {#adding-an-instance-to-an-activeactive-database}
 
 The `crdb add-instance` command lets you add instances to an existing Active-Active database in order to host the database on additional clusters.
 This creates a read-write copy of the database on the specified cluster.
@@ -250,7 +250,7 @@ When you add an instance to an Active-Active database, you must specify:
 |`crdb-guid <CRDB-GUID>`| string| The ID of the Active-Active database that you want to add the instance to|
 |`instance fqdn=<cluster_fqdn>,username=<username>,password=<password>`| strings| The connection information for the participating cluster that will host the new instance|
 
-### Removing an instance from an Active-Active database {#removing-an-instance-from-an-activeactive-database}
+### Remove an instance from an Active-Active database {#removing-an-instance-from-an-activeactive-database}
 
 The `remove-instance` command deletes all data from an Active-Active instance, deletes the instance from the participating cluster, and removes the instance from the list of instances for the Active-Active database.
 

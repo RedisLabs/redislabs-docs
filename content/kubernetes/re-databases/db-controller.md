@@ -51,10 +51,10 @@ Your Redis Enterprise database custom resource must be of the `kind: RedisEnterp
 
     To create a REDB in a different namespace from your REC, you need to specify the cluster with `redisEnterpriseCluster` in the `spec` section of your RedisEnterpriseDatabase custom resource.
 
-        ```yaml
-          redisEnterpriseCluster:
-            name: rec
-        ```
+     ```YAML
+     redisEnterpriseCluster:
+       name: rec
+     ```
 
 1. Apply the file in the namespace you want your database to be in.
 
