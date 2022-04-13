@@ -39,7 +39,7 @@ To create a cluster:
     1. In Cluster configuration, select **Create new cluster**.
 
     1. In **Cluster name (FQDN)**, enter a unique name for the cluster.
-        Also, make sure that you look at the [instructions for setting up DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}
+        Also, make sure that you look at the [instructions for setting up DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
         to make sure your cluster is reachable by name.
 
     1. Choose whether to [**Enable private & public endpoints support**]({{< relref "/rs/administering/designing-production/networking/private-public-endpoints.md" >}}).
