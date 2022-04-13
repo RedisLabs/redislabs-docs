@@ -264,11 +264,11 @@ rladmin cluster recover
 
 ### `cluster ocsp`
 
-`rladmin cluster ocsp` manages OCSP configuration and administration.
+Use the `rladmin cluster ocsp` commands to manage OCSP configuration and verify the status of a server certificate maintained by a third-party [certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority).
 
 #### `cluster ocsp certificate_compatible`
 
-Check if the proxy certificate contains an OCSP URI. Returns the OCSP URI if it exists.
+Checks if the proxy certificate contains an OCSP URI. Returns the OCSP URI if it exists.
 
 ```sh
 rladmin cluster ocsp certificate_compatible
@@ -276,7 +276,7 @@ rladmin cluster ocsp certificate_compatible
 
 #### `cluster ocsp config`
 
-`cluster ocsp config` displays or updates the OCSP configuration. Run the command without the set option to display the current configuration of a parameter.
+Displays or updates OCSP configuration. Run the command without the `set` option to display the current configuration of a parameter.
 
 ```sh
 rladmin cluster ocsp config <OCSP parameter>
@@ -286,15 +286,15 @@ rladmin cluster ocsp config <OCSP parameter>
 | Parameter | Type/Value | Description |
 |-----------|---------------|-------------|
 | ocsp_functionality | enabled<br></br>disabled | Enables or turns off OCSP for the cluster |
-| query_frequency | integer <nobr>(range: 60-86400)</nobr> <nobr>(default: 3600)</nobr> | The time interval in seconds between OCSP queries to the responder URI for a new status for the server certificate |
+| query_frequency | integer <nobr>(range: 60-86400)</nobr> <nobr>(default: 3600)</nobr> | The time interval in seconds between OCSP queries to check the certificate's status |
 | recovery_frequency | integer <nobr>(range: 60-86400)</nobr> <nobr>(default: 60)</nobr> | The time interval in seconds between retries after a failed query |
 | recovery_max_tries | integer <nobr>(range: 1-100)</nobr> <nobr>(default: 5)</nobr> | The number of retries before the validation query fails and invalidates the certificate |
-| responder_url | string | The OCSP server URL embedded in the proxy certificate. You cannot manually set this parameter. |
+| responder_url | string | The OCSP server URL embedded in the proxy certificate (you cannot manually set this parameter) |
 | response_timeout | integer <nobr>(range: 1-60)</nobr> <nobr>(default: 1)</nobr> | The time interval in seconds to wait for a response before timing out |
 
 #### `cluster ocsp status`
 
-`cluster ocsp status` returns the latest status of the certificate's OCSP response.
+Returns the latest cached status of the certificate's OCSP response.
 
 ```sh
 rladmin cluster ocsp status
@@ -302,7 +302,7 @@ rladmin cluster ocsp status
 
 #### `cluster ocsp test_certificate`
 
-`cluster ocsp test_certificate` queries the OCSP server and returns the OCSP status of the certificate.
+Queries the OCSP server for the certificate's latest status, then caches and displays the response.
 
 ```sh
 rladmin cluster ocsp test_certificate
