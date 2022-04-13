@@ -118,17 +118,17 @@ To test your external access to the database, you need a client that supports [T
 1. Get the default CA certificate from the `redis-enterprise-node` container on any of the Redis Enterprise pods.  
 
     ``` sh
-    kubectl exec -it <pod-name> -c redis-enterprise-node \
+    $ kubectl exec -it <pod-name> -c redis-enterprise-node \
                     -- cat /etc/opt/redislabs/proxy_cert.pem
     ```  
 
 1. Run the following `openssl` command, substituting your own values for `<my-db-hostname>`.  
 
     ``` sh
-    openssl s_client \
-    -connect <my-db-hostname>:443 \
-    -crlf -CAfile ./proxy_cert.pem \
-    -servername <my-db-hostname>
+    $ openssl s_client \
+      -connect <my-db-hostname>:443 \
+      -crlf -CAfile ./proxy_cert.pem \
+      -servername <my-db-hostname>
     ```  
 
     If you are connected to the database, you will receive `PONG` back, as shown below:  
@@ -160,10 +160,8 @@ print(r.info())
 Your output should look something like this:  
 
 ``` sh
-/Users/example-user/Documents/Projects/test_client/venv3.7/bin/python \
+$ /Users/example-user/Documents/Projects/test_client/venv3.7/bin/python \
     /Users/example-user/Documents/Projects/test_client/test_ssl.py
-```
-``` sh
 {
     'redis_version': '5.0.5',
     'redis_git_sha1': 0,
