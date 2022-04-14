@@ -36,16 +36,11 @@ before running through the upgrade process.
     degraded due to reaching disk I/O limits.
 - Replica Of support for multiple sources - the Replica Of feature is
     enhanced to support creating a database that is a replica of
-    multiple source databases. For additional details, refer to the
-    [Replica
-    of]({{< relref "/rs/administering/designing-production/active-passive.md" >}})
-    section.
+    multiple source databases. For additional details, refer to the Replica Of section.
 - Cross cluster Replica Of - the Replica Of feature now supports
     defining a database that is a replica of databases that belong to a
     different RLEC cluster. For additional details, refer to the
-    [Replica
-    of]({{< relref "/rs/administering/designing-production/active-passive.md" >}})
-    section.
+    Replica Of section.
 - Multi-IP support - on a node that has multiple IPs, enables the
     administrator to specify which IP address is used for internal
     traffic and which IP addresses are used for external traffic. For
@@ -59,14 +54,14 @@ before running through the upgrade process.
     support section.
 - Support for OpenStack Object Store ("Swift") location for import /
     export / backup. For additional details, refer to [Database
-    backup]({{< relref "/rs/administering/import-export/database-backup.md" >}})
+    backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
     and [Importing data to a
-    database]({{< relref "/rs/administering/import-export/importing-data.md" >}})
+    database]({{< relref "/rs/databases/import-export/import-data.md" >}})
     sections.
 - Import of a sharded database - support for importing data of a
     sharded database by indicating multiple files paths. For additional
     details, refer to the [Importing data to a
-    database]({{< relref "/rs/administering/import-export/importing-data.md" >}})
+    database]({{< relref "/rs/databases/import-export/import-data.md" >}})
     section.
 - Enable running the install script in silent mode using "-y"
     parameter for default answers ("Y") or "-c" for file path parameters

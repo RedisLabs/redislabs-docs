@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-An [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
+An [Active-Active database]({{< relref "/rs/databases/active-active/_index.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
 replicates your dataset across Redis Enterprise Software (RS) clusters located in geographically distributed regions.
 Active-Active databases allow read-write access in all locations, making them ideal for distributed applications that require the fastest response times, and also for disaster recovery.
 
@@ -14,7 +14,7 @@ Each cluster that hosts an instance is called a **participating cluster**.
 
 An Active-Active database requires two or more participating clusters.
 Each instance is responsible for updating the instances residing on other participating clusters with the transactions it receives.
-Write conflicts are resolved using [CRDTs]({{< relref "/rs/administering/designing-production/active-active.md" >}}).
+Write conflicts are resolved using [CRDTs]({{< relref "/rs/databases/active-active/_index.md" >}}).
 
 To programmatically maintain an Active-Active database and its instances, you can use the CRDB-CLI command-line tool.
 

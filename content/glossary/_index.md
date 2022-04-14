@@ -31,7 +31,7 @@ More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](h
 {{%definition "Active-Active database (CRDB)"%}}
 Geo-distributed databases that span multiple [Redis Enterprise Software]({{<relref "#redis-enterprise-software">}}) [clusters]({{<relref "#cluster">}}). Active-Active databases, also known as conflict-free replicated databases (CRDB), depend on [multi-master replication (MMR)]({{<relref "#multi-master-replication-mmr">}}) and [conflict-free replicated data types (CRDTs)]({{<relref "#conflict-free-replicated-data-types-crdt">}}) to power a simple development experience for geo-distributed applications.
 
-More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/administering/designing-production/active-active.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/concepts/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/references/developing-for-active-active/_index.md">}})
+More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/concepts/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/databases/active-active/data-types/_index.md">}})
 {{%/definition%}}
 
 {{%definition "Active-Active database instance"%}}
@@ -46,7 +46,7 @@ Provides applications read-only access to replicas of the data set from differen
 Log files that keep a record of data changes by writing to the end of a file. This happens with every write, or every second to allow data recovering the entire
 dataset by replaying the append-only log from the beginning to the end.
 
-More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/persistence.md" >}})
+More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "/rs/databases/configure/database-persistence.md" >}})
 {{%/definition%}}
 
 ## C {#letter-c}
@@ -85,7 +85,7 @@ Conflict-free replicated databases (CRDB) are an alternate name for [Active-Acti
 {{%definition "conflict-free replicated data types (CRDT)"%}}
 Techniques used by Redis data types in Active-Active databases that handle conflicting concurrent writes across member Active-Active databases. The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
 
-More info: [CRDT info]({{<relref "/rs/references/developing-for-active-active/#info" >}}), [Active-Active Geo-Distributed Redis]({{<relref "/rs/administering/designing-production/active-active.md">}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
+More info: [CRDT info]({{<relref "/rs/databases/active-active/data-types/#info" >}}), [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active/_index.md" >}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
 {{%/definition%}}
 
 {{%definition "CustomResourceDefinition (CRD)"%}}
@@ -248,14 +248,14 @@ Single-threaded Redis OSS database.
 {{%definition "Redis on Flash (RoF)"%}}
 Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Redis on Flash manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
 
-More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/getting-started/getting-started-redis-flash.md">}})
+More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/administering/cluster-operations/getting-started-redis-flash.md">}})
 {{%/definition%}}
 
 {{%definition "Replica Of"%}}
 The Redis Enterprise implementation of active-passive database replication.
 
-More info: [Active-Passive Geo-Distributed Redis (Replica-Of) 
-]({{<relref "/rs/administering/designing-production/active-passive.md">}})
+More info: [Replica-Of
+]({{<relref "/rs/databases/replica-of.md">}})
 {{%/definition%}}
 
 {{%definition "ReplicaSet"%}}

@@ -102,10 +102,10 @@ Some common cases that require you to update the LB are:
 After these changes, make sure that the redis connections in your applications can connect to the Redis database,
 especially if they are directly connected on IP addresses that have changed.
 
-## Inter Cluster communication considerations
+## Intercluster communication considerations
 
-Redis Enterprise supports several topologies that allow inter cluster replication, these include Active/Passive (https://docs.redislabs.com/latest/rs/administering/designing-production/active-passive/) and Active/Active (https://docs.redislabs.com/latest/rs/administering/designing-production/active-active/) deployment options.
-When your RS clusters are located behind load balancers, you must allow some network services to be open and defined in the load balancers to allow the replication to work.
+Redis Enterprise supports several topologies that allow inter cluster replication, these include Active/Passive (https://docs.redislabs.com/latest/rs/databases/replica-of/) and Active/Active (https://docs.redislabs.com/latest/rs/databases/active-active/) deployment options.
+When your Redis Enterprise software clusters are located behind load balancers, you must allow some network services to be open and defined in the load balancers to allow the replication to work.
 
 ### Active Passive 
 

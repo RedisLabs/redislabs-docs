@@ -11,7 +11,7 @@ aliases: [
     /kubernetes/re-clusters/create-aa-database.md,
 ]
 ---
-On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/administering/designing-production/active-active.md">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/administering/designing-production/active-active.md">}}).
+On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/_index.md">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/databases/active-active/_index.md">}}).
 
 Creating an Active-Active database requires [routing]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) network access between two Redis Enterprise clusters residing in two different Kubernetes clusters. Without the proper access configured for each cluster, syncing between the databases instances will fail.
 
@@ -193,4 +193,4 @@ See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">
 
 The easiest way to test your Active-Active database is to set a key-value pair in one database and retrieve it from the other.
 
-You can connect to your databases with the instructions in [Manage databases]({{<relref "/kubernetes/re-databases/db-controller.md#connect-to-a-database">}}). Set a test key with `SET foo bar` in the first database. If your Active-Active deployment is working properly, when connected to your second database, `GET foo` should output `bar`.
+You can connect to your databases with the instructions in [Manage databases]({{<relref "/kubernetes/re-databases/db-controller#connect-to-a-database">}}). Set a test key with `SET foo bar` in the first database. If your Active-Active deployment is working properly, when connected to your second database, `GET foo` should output `bar`.

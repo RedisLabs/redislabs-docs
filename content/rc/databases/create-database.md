@@ -126,7 +126,7 @@ Here are some general guidelines:
 
 - Modules also consume memory.
 
-Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/concepts/memory-performance/memory-limit.md" >}})
+Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/configure/memory-limit.md" >}})
 
 ## Durability section
 

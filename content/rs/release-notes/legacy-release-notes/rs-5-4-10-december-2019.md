@@ -20,7 +20,7 @@ Follow these [instructions]({{<relref "/rs/installing-upgrading/upgrading.md">}}
 
 ### Synchronization mechanism in Active-Active Redis and Replica-of
 
-RS 5.4.10 incorporates the improved [Redis synchronization mechanism]({{< relref "/rs/administering/designing-production/active-active#syncer-process" >}}) ([PSYNC2](https://redis.io/topics/replication)) for Active-Active Redis (CRDB) and Replica-of.
+RS 5.4.10 incorporates the improved [Redis synchronization mechanism](https://docs.redis.com/latest/rs/databases/active-active#syncer-process) ([PSYNC2](https://redis.io/topics/replication)) for Active-Active Redis (CRDB) and Replica-of.
 
 As a result, failure scenarios in any A-A replica (and the source database of Replica-of), require only partial synchronization between the cross-region replicas instead of full synchronization that can be costly in time and bandwidth.
 

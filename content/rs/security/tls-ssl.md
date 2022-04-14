@@ -11,10 +11,10 @@ Transport Layer Security (TLS), a successor to SSL, ensures the privacy of data 
 You can use TLS authentication for one or more of the following types of communication:
 
 - Communication from clients (applications) to your database
-- Communication from your database to other clusters for replication using [Replica Of]({{<relref "rs/administering/designing-production/active-passive.md">}})
-- Communication to and from your database to other clusters for synchronization using [Active-Active]({{<relref "rs/administering/designing-production/active-active.md">}})
+- Communication from your database to other clusters for replication using [Replica Of]({{<relref "/rs/databases/replica-of.md">}})
+- Communication to and from your database to other clusters for synchronization using [Active-Active]({{<relref "/rs/databases/active-active/_index.md">}})
 
-## Enable TLS for client connections
+## Enable TLS for client connections {#client}
 
 You can enable TLS by editing the configuration of an existing database (as shown below) or by selecting **Advanced Options** when you are creating a new database.
 
@@ -50,7 +50,7 @@ You cannot enable or disable TLS after the Active-Active database is created, bu
 
 ### Configure TLS certificates for Active-Active
 
-1. During database creation (see [Create an Active-Active Geo-Replicated Database]({{<relref "content/rs/administering/creating-databases/create-active-active.md" >}}), select **Edit** from the **configuration** tab.
+1. During database creation (see [Create an Active-Active Geo-Replicated Database]({{<relref "content/rs/databases/active-active/create-active-active.md" >}}), select **Edit** from the **configuration** tab.
 1. Enable **TLS**.
     - **Enforce client authentication** is selected by default. If you unselect this option, you will still enforce encryption, but TLS client authentication will be disabled.
 1. Select **Require TLS for CRDB communication only** from the dropdown menu.
