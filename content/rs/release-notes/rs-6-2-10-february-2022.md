@@ -102,9 +102,9 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 - RS67133 - An issue in Redis Enterprise Software affected replication in replica databases using RedisGraph, RediSearch, and RedisGears in specific scenarios.  The problem appeared when importing an RDB file or while synchronizing target Active-Passive (ReplicaOf) databases. 
 
-    This issue is fixed in Redis Enterprise Software v6.2.10-96 and RedisGraph v2.8.11.  We recommend upgrading to these versions at your earliest opportunity.  (Failure to upgrade can lead to data loss.)  In addition, you should test the secondary shards of your replica databases to see if they need to be restarted. 
-
-    Use `rlutil` to restart secondary shards:
+    This issue is fixed in Redis Enterprise Software v6.2.10-96 and RedisGraph v2.8.11.  We recommend upgrading to these versions at your earliest opportunity.  (Failure to upgrade can lead to data loss.)  
+    
+    Once the upgrades are complete, secondary shards might need to be restarted.  You can use `rlutil` to restart secondary shards:
 
     ``` sh
     rlutil redis_restart redis=<shard-id1>,<shard-id2>,...
