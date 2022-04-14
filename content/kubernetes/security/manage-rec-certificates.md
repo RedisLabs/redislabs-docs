@@ -1,6 +1,6 @@
 ---
 Title: Manage Redis Enterprise cluster (REC) certificates
-linkTitle: Manage certificates
+linkTitle: Manage REC certificates
 description: Install your own certificates to be used by the Redis Enterprise cluster's operator. 
 weight: 94
 alwaysopen: false
