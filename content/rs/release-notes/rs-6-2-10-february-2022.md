@@ -106,7 +106,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
     Use `rlutil` to restart secondary shards:
 
-    ```
+    ``` sh
     rlutil redis_restart redis=<shard-id1>,<shard-id2>,...
     ```
 
