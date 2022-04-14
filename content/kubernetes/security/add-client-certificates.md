@@ -10,7 +10,7 @@ aliases: [
 ]
 ---
 
-For each client certificate you wish to use with your database, you need to create a Kubernetes secret to hold it. You can then reference that secret in your Redis Enterprise database (REDB) custom resource spec.
+For each client certificate you want to use with your database, you need to create a Kubernetes secret to hold it. You can then reference that secret in your Redis Enterprise database (REDB) custom resource spec.
 
 ## Create a secret to hold the new certificate
 
