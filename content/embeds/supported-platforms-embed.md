@@ -14,7 +14,7 @@ Make sure your system meets these requirements:
 |------------|-----------------|
 | Ubuntu | 16.04, 18.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
 | RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
-| RHEL/CentOS 8 | 8.0, 8.1, 8.2, 8.3, 8.4 |
+| RHEL/CentOS 8 | 8.0, 8.1, 8.2, 8.3, 8.4, 8.5 |
 | Oracle Linux 7 | Based on the corresponding RHEL version |
 | Amazon Linux | Version 1 |
 | Docker | [Docker images]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) of Redis Enterprise Software are certified for Development and Testing only. |
