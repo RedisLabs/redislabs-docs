@@ -1,5 +1,5 @@
 ---
-Title: Testing client connectivity
+Title: Test client connectivity
 description: 
 weight: $weight
 alwaysopen: false
