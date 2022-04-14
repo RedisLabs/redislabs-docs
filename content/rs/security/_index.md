@@ -58,7 +58,7 @@ Redis Enterprise offers several database security controls to help protect your 
 
 - **Configure Transport Layer Security (TLS)**: Similar to the control plane, you can also [configure TLS protocols]({{<relref "/rs/security/tls/tls-protocols">}}) to help support your security and compliance needs.
 
-- **Configure and verify database backups**: Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports [database backups to many destinations]({{< relref "/rs/administering/import-export/database-backup.md" >}}).
+- **Configure and verify database backups**: Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports [database backups to many destinations]({{< relref "/rs/databases/import-export/database-backup.md" >}}).
 
 ## LDAP authentication
 

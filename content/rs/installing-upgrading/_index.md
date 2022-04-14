@@ -31,7 +31,7 @@ Before installing Redis Enterprise Software, you need to:
 
     - Multiple Linux distributions (Ubuntu, RedHat Enterprise Linux (RHEL)/IBM CentOS, Oracle Linux)
     - [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
-    - [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
+    - [Docker container]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) (for development and testing only)
     - [Kubernetes]({{< relref "/kubernetes/_index.md" >}})
 
     For complete details, see [Supported platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}})
@@ -179,7 +179,7 @@ To install without answering the installation questions, either:
     or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing Redis Enterprise Software cluster.
 1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/databases/active-active/create-active-active.md" >}}) database.
 
 ## Permissions and access
 

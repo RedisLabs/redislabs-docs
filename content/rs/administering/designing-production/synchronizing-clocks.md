@@ -22,6 +22,5 @@ For example, in Ubuntu, the following command can be used to synchronize a serve
 sudo /etc/network/if-up.d/ntpdate
 ```
 
-If you are using [Active-Active databases]({{< relref "/rs/concepts/intercluster-replication.md" >}}),
-you must use [Network Time Service (ntpd)]({{< relref "/rs/administering/designing-production/active-active#network-time-service-ntp-or-chrony" >}})
+If you are using Active-Active databases, you must use [Network Time Service (ntpd)]({{< relref "/rs/databases/active-active/_index.md#network-time-service-ntp-or-chrony" >}})
 to synchronize OS clocks consistent across clusters to handle conflict resolution according to the OS time.

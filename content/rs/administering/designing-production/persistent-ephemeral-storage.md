@@ -16,12 +16,12 @@ storage and ephemeral storage paths.
 - Persistent storage is mandatory. It is used by the cluster to store
     information that needs to persist even if a shard or a node fails,
     including server logs, configurations, files.
-    For example, if you configure [persistence]({{< relref "/rs/concepts/memory-performance/persistence.md" >}})
+    For example, if you configure [persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
     for a database,
     then the persistence information is stored in this location.
     
     The persistent volume must be a SAN (Storage Area Network)
-    using an EXT4 or XFS file system and be connected as an external storage volume. 
+    using an EXT4 or XFS file system and be connected as an external storage volume.
     
     When using AOF persistence, we recommend that you use flash-based storage
     for the persistent volume.

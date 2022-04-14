@@ -158,7 +158,7 @@ rladmin cluster debug_info [ path <path> ]
 ```text
 cluster create 
         name <cluster-name>
-        username <admin-user> 
+        username <admin-email> 
         password <admin-password> 
         [ node_uid <node-uid> ] 
         [ rack_aware ] 

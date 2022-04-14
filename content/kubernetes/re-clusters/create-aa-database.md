@@ -11,7 +11,7 @@ aliases: [
     /kubernetes/re-clusters/create-aa-database.md,
 ]
 ---
-On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/administering/designing-production/active-active.md">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/administering/designing-production/active-active.md">}}).
+On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/_index.md">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/databases/active-active/_index.md">}}).
 
 Creating an Active-Active database requires [routing]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) network access between two Redis Enterprise clusters residing in two different Kubernetes clusters. Without the proper access configured for each cluster, syncing between the databases instances will fail.
 
@@ -66,7 +66,7 @@ You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<i
   - Description: Combined with database name to create the Active-Active database hostname
   - Format: string
   - Example value: `-cluster.ijk.redisdemo.com`
-- [**REC admin credentials**]({{<relref "/kubernetes/security/manage_REC_credentials.md" >}}) `<username> <password>`:
+- [**REC admin credentials**]({{<relref "/kubernetes/security/manage-rec-credentials.md" >}}) `<username> <password>`:
   - Description: Admin username and password for the REC stored in a secret
   - Format: string
   - Example value: username: `user@redisdemo.com`, password: `something`
@@ -193,4 +193,4 @@ See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">
 
 The easiest way to test your Active-Active database is to set a key-value pair in one database and retrieve it from the other.
 
-You can connect to your databases with the instructions in [Manage databases]({{<relref "/kubernetes/re-databases/db-controller.md#connect-to-a-database">}}). Set a test key with `SET foo bar` in the first database. If your Active-Active deployment is working properly, when connected to your second database, `GET foo` should output `bar`.
+You can connect to your databases with the instructions in [Manage databases]({{<relref "/kubernetes/re-databases/db-controller#connect-to-a-database">}}). Set a test key with `SET foo bar` in the first database. If your Active-Active deployment is working properly, when connected to your second database, `GET foo` should output `bar`.
