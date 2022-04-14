@@ -2,10 +2,11 @@
 Title: Supported connection clients
 description:
 weight: $weight
-alwaysopen: false
 categories: ["RS"]
 aliases: rs/administering/designing-production/supported-clients-browsers/
          rs/administering/designing-production/supported-clients-browsers.md
+         rs/connections/supported-clients-browsers/
+         rs/connections/supported-clients-browsers.md
 ---
 You can connect to Redis Enterprise Software databases programmatically using client libraries.
 
