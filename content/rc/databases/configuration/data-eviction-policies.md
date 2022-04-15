@@ -35,5 +35,5 @@ to prevent data eviction but maintain high performance.
 RoF can extend your database across RAM and Flash Memory and intelligently manage "hot" (active) data in RAM and "cold" (less active) data in Flash memory (SSD).
 
 {{< note >}}
-[Active-Active Geo-Distributed CRDBs]({{< relref "/rs/administering/designing-production/active-active.md" >}}) always operates in noeviction mode.
+[Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}) always operates in noeviction mode.
 {{< /note >}}

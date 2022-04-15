@@ -42,7 +42,7 @@ spec:
 
 If you are using an existing REDB that was created with a YAML file, you cannot make edits to that database in the Redis Enterprise UI. All changes need to be made in the YAML file.  
 
-If you are using an existing database that is managed from the UI, see [Enable TLS for client connections]({{< relref "content/rs/security/tls-ssl.md" >}}) for more information on these security settings.  
+If you are using an existing database that is managed from the UI, see [Enable TLS for client connections]({{<relref "/rs/security/tls/enable-tls">}}) for more information on these security settings.  
 
 ### Ingress controller  
 

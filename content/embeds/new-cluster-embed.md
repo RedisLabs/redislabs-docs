@@ -16,7 +16,7 @@ To create a cluster:
     For example, if you installed RS on a machine with IP address 10.0.1.34, then navigate to <https://10.0.1.34:8443>.
 
     {{< note >}}
-- The RS management UI uses a [self-signed SSL/TLS encryption]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+- The RS management UI uses a [self-signed SSL/TLS encryption]({{<relref "/rs/security/certificates/updating-certificates">}}).
 - If the machine has both an internal IP address and an external IP address, use the external IP address to access the setup UI.
     {{< /note >}}
 
