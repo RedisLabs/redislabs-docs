@@ -264,7 +264,7 @@ rladmin cluster recover
 
 ### `cluster ocsp`
 
-Use the `rladmin cluster ocsp` commands to manage OCSP configuration and verify the status of a server certificate maintained by a third-party [certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority).
+Use the `rladmin cluster ocsp` commands to manage [OCSP]({{<relref "/rs/security/certificates/ocsp-stapling">}}) configuration and verify the status of a server certificate maintained by a third-party [certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority).
 
 #### `cluster ocsp certificate_compatible`
 
