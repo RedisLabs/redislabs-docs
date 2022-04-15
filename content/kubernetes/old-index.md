@@ -19,8 +19,7 @@ Redis is the most popular database used with Docker containers. Redis Enterprise
 
 We use the Docker container for 4.5 version of Redis Enterprise for the steps here. You can find more information on the container image on [Docker Hub](https://hub.docker.com/r/redislabs/redis/) and see details on how to deploy the container locally with Docker below:
 
-- [Working with Redis Enterprise and Docker]({{< relref "/rs/getting-started/docker/_index.md" >}})
-- [Getting Started with Redis Enterprise Software on Docker]({{< relref "/rs/getting-started/getting-started-docker.md" >}})
+- Getting Started with Redis Enterprise Software on Docker
 
 ## Deploying Redis Enterprise with Kubernetes on Google Cloud
 

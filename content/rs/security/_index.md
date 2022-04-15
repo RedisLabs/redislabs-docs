@@ -52,13 +52,13 @@ Redis Enterprise offers several database security controls to help protect your 
 
 - **Disable the default user**: Redis Enterprise comes with a "default" user for backwards compatibility with applications designed with versions of Redis prior to Redis Enterprise 6. The default user is turned on by default. This allows you to access the database without specifying a username and only using a shared secret. For applications designed to use access control lists, we recommend that you [disable the default user]({{< relref "/rs/security/passwords-users-roles.md#disabling-the-default-user" >}}).
 
-- **Enable client certificate authentication**: To prevent unauthorized access to your data, Redis Enterprise databases support the [TLS protocol]({{< relref "/rs/security/tls-ssl.md#client-certificate-authentication" >}}), which includes authentication and encryption. Client certificate authentication can be used to ensure only authorized hosts can access the database.
+- **Enable client certificate authentication**: To prevent unauthorized access to your data, Redis Enterprise databases support the [TLS protocol]({{<relref "/rs/security/tls#client-certificate-authentication">}}), which includes authentication and encryption. Client certificate authentication can be used to ensure only authorized hosts can access the database.
 
-- **Install trusted certificates**: Redis Implements self-signed certificates for the database proxy and replication service, but many organizations prefer to [use their own certificates]({{< relref "/rs/security/tls-ssl.md#installing-your-own-certificates" >}}).
+- **Install trusted certificates**: Redis implements self-signed certificates for the database proxy and replication service, but many organizations prefer to [use their own certificates]({{< relref "/rs/security/certificates/create-certificates" >}}).
 
-- **Configure Transport Layer Security (TLS)**: Similar to the control plane, you can also [configure TLS protocols]({{< relref "/rs/security/tls-ssl.md#configuring-tls-protocols" >}}) to help support your security and compliane needs.
+- **Configure Transport Layer Security (TLS)**: Similar to the control plane, you can also [configure TLS protocols]({{<relref "/rs/security/tls/tls-protocols">}}) to help support your security and compliance needs.
 
-- **Configure and verify database backups**: Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports [database backups to many destinations]({{< relref "/rs/administering/import-export/database-backup.md" >}}).
+- **Configure and verify database backups**: Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports [database backups to many destinations]({{< relref "/rs/databases/import-export/database-backup.md" >}}).
 
 ## LDAP authentication
 

@@ -16,7 +16,7 @@ To create a cluster:
     For example, if you installed RS on a machine with IP address 10.0.1.34, then navigate to <https://10.0.1.34:8443>.
 
     {{< note >}}
-- The RS management UI uses a [self-signed SSL/TLS encryption]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+- The RS management UI uses a [self-signed SSL/TLS encryption]({{<relref "/rs/security/certificates/updating-certificates">}}).
 - If the machine has both an internal IP address and an external IP address, use the external IP address to access the setup UI.
     {{< /note >}}
 
@@ -39,7 +39,7 @@ To create a cluster:
     1. In Cluster configuration, select **Create new cluster**.
 
     1. In **Cluster name (FQDN)**, enter a unique name for the cluster.
-        Also, make sure that you look at the [instructions for setting up DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}
+        Also, make sure that you look at the [instructions for setting up DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
         to make sure your cluster is reachable by name.
 
     1. Choose whether to [**Enable private & public endpoints support**]({{< relref "/rs/administering/designing-production/networking/private-public-endpoints.md" >}}).

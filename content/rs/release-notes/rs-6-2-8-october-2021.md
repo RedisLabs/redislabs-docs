@@ -17,7 +17,7 @@ aliases: /rs/release-notes/rs-6-2-8-october-2021/
 This version features:
 
 - Support for Red Hat Linux Edition (RHEL) 8
-- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/administering/import-export/database-backup.md">}}) 
+- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/databases/import-export/database-backup.md">}}) 
 - Compatibility with version of [open source Redis 6.2.3](https://github.com/redis/redis/releases/tag/6.2.3) (starting with [Redis Enterprise Software v6.2.4]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}))
 - Compatibility with the security fixes of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6)
 - Enhancements and bug fixes
@@ -93,6 +93,10 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/insta
     Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) from v6.2.4 have been fixed. 
+
+## Known issues 
+
+A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
 
 ## Security
 

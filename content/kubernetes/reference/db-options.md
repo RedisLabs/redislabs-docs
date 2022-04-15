@@ -46,11 +46,11 @@ also updated with the generated database password.
 
 ### `enforceClientAuthentication`
 
-A boolean that indicates whether [client authentication]({{< relref "/rs/security/tls-ssl.md">}}) should be enforced (default: `true`).
+A boolean that indicates whether [client authentication]({{<relref "/rs/security/tls">}}) should be enforced (default: `true`).
 
 ### `evictionPolicy`
 
-An [eviction policy]({{< relref "content/rs/concepts/memory-performance/eviction-policy.md">}}) (default: `volatile-lru`)
+An [eviction policy]({{< relref "/rs/databases/configure/eviction-policy.md">}}) (default: `volatile-lru`)
 
 ### `memorySize`
 
@@ -59,7 +59,7 @@ suffixed with a unit. For example, values like 1GB, 250MB, etc.
 
 ### `persistence`
 
-The value for the [database persistence]({{< relref "/rs/concepts/memory-performance/persistence.md">}}) setting.
+The value for the [database persistence]({{< relref "/rs/databases/configure/database-persistence.md">}}) setting.
 
 The value is a keyword with the values:
 
@@ -100,7 +100,7 @@ The number of [database shards]({{< relref "/rs/concepts/high-availability/clust
 
 ### `tlsMode`
 
-Controls SSL [authentication and encryption]({{< relref "/rs/security/tls-ssl.md">}}) for connections to the database.
+Controls SSL [authentication and encryption]({{<relref "/rs/security/tls">}}) for connections to the database.
 
 | Value | Description |
 | ----- | ----------- |
