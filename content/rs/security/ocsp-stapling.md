@@ -26,7 +26,7 @@ When a client or server needs to check whether a certificate is still valid or h
 
 To set up OCSP stapling for your Redis Enterprise cluster:
 
-1. Use [`rladmin`]({{<relref "/rs/references/rladmin#cluster-certificate">}}) or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/update-cert">}}) to [replace the proxy certificate]({{<relref "/rs/administering/cluster-operations/updating-certificates">}}) with a certificate signed by your third-party CA.
+1. Use [`rladmin`]({{<relref "/rs/references/rladmin#cluster-certificate">}}) or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/update-cert">}}) to [replace the proxy certificate]({{<relref "/rs/security/certificates/updating-certificates">}}) with a certificate signed by your third-party CA.
 
 1. Sign into the Redis Enterprise admin console.
 
