@@ -144,7 +144,7 @@ with 6.0.12-58:
 - When you upgrade an Active-Active Redis with active AOF from version [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}) or earlier to version [RS 5.4.4]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-4-june-2019.md">}}) or later:
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
-- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of [updating them through the API]({{<relref "/rs/administering/cluster-operations/updating-certificates.md">}}). For assistance with this issue, contact Support.
+- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of [updating them through the API]({{<relref "/rs/security/certificates/updating-certificates">}}). For assistance with this issue, contact Support.
 - Starting from [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}), to preserve the current Redis major.minor version during database upgrade you must use the keep_redis_version option instead of keep_current_version.
 
 #### Redis commands

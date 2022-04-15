@@ -25,7 +25,7 @@ The following are database settings configured specifically for each database:
 - [Data eviction]({{<relref "/rs/databases/configure/eviction-policy.md">}})
 - [Database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}})
 - Geo-distribution ([Active-Active]({{<relref "/rs/databases/active-active/_index.md">}}) or [ReplicaOf]({{<relref "/rs/databases/replica-of.md">}}))
-- [Client connection TLS encryption]({{<relref "/rs/security/tls-ssl#client">}})
+- [Client connection TLS encryption]({{<relref "/rs/security/tls/enable-tls#enable-tls-for-client-connections">}})
 
 Other settings are managed on the [cluster level]({{<relref "/rs/administering/cluster-operations">}}).
 

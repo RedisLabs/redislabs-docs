@@ -159,7 +159,7 @@ after the database is created.
     - [**Replica Of**]({{< relref "/rs/databases/create-replica-of.md" >}}) -
     You can make this database a repository for keys from other databases.
 
-- [**TLS**]({{< relref "/rs/security/tls-ssl.md" >}}) -
+- [**TLS**]({{<relref "/rs/security/tls/">}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
