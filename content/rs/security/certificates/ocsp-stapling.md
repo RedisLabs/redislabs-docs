@@ -1,6 +1,6 @@
 ---
-title: OCSP stapling
-linkTitle: OCSP stapling
+title: Enable OCSP stapling
+linkTitle: Enable OCSP stapling
 description: Use OCSP stapling to verify certificates maintained by a third-party CA and authenticate connection attempts between clients and servers.
 weight: 50
 alwaysopen: false
