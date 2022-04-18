@@ -63,7 +63,7 @@ To set up OCSP stapling with the [REST API]({{<relref "/rs/references/rest-api">
 
 1. Use the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/update-cert">}}) to [replace the proxy certificate]({{<relref "/rs/security/certificates/updating-certificates#use-the-rest-api">}}) with a certificate signed by your third-party CA.
 
-1. To configure and enable OCSP, send a `PUT` request to the `/v1/ocsp` endpoint and include an OCSP JSON object in the request body:
+1. To configure and enable OCSP, send a [`PUT` request to the `/v1/ocsp`]({{<relref "/rs/references/rest-api/requests/ocsp#put-ocsp">}}) endpoint and include an [OCSP JSON object]({{<relref "/rs/references/rest-api/objects/ocsp">}}) in the request body:
 
     ```json
     {
