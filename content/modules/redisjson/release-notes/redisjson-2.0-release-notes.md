@@ -10,7 +10,7 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisJSON v2.0.7 requires:
+RedisJSON v2.0.8 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
