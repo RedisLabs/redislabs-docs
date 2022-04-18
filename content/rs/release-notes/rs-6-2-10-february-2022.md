@@ -45,6 +45,8 @@ The following table shows the MD5 checksums for the available packages.
 
 - Upgrades from versions earlier than v6.0 are not supported.
 
+- If you are using Active-Active or Active-Passive (ReplicaOf) databases and experience synchronization issues as a result of the upgrade, see RS67434 details in [Resolved issues](#resolved-issues) for help resolving the problem.
+
 ### Product lifecycle updates 
 
 Redis Enterprise Software v6.0.x will reach end of life (EOF) on May 31, 2022.
@@ -52,7 +54,6 @@ Redis Enterprise Software v6.0.x will reach end of life (EOF) on May 31, 2022.
 To learn more, see the Redis Enterprise Software [product lifecycle](https://docs.redis.com/latest/rs/administering/product-lifecycle/), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
 For Redis modules information and lifecycle, see [Module lifecycle](https://docs.redis.com/latest/modules/modules-lifecycle/).
-
 
 ## Redis modules 
 
@@ -97,9 +98,22 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
          
     - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
 
-## Resolved issues (build 100)
+### Issues resolved in build 96
+
+- RS67133 - An issue in Redis Enterprise Software affected replication in replica databases using RedisGraph, RediSearch, and RedisGears in specific scenarios.  The problem appeared when importing an RDB file or while synchronizing target Active-Passive (ReplicaOf) databases. 
+
+    This issue is fixed in Redis Enterprise Software v6.2.10-96 and RedisGraph v2.8.11.  We recommend upgrading to these versions at your earliest opportunity.  (Failure to upgrade can lead to data loss.)  
+    
+    Once the upgrades are complete, secondary shards might need to be restarted.  You can use `rlutil` to restart secondary shards:
+
+    ``` sh
+    rlutil redis_restart redis=<shard-id1>,<shard-id2>,...
+    ```
+
+### Issues resolved in build 100
 
  - RS74171 - A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+
 
 ## Security
 
