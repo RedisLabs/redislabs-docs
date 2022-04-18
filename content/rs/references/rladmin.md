@@ -778,26 +778,3 @@ An endpoint is unbalanced in the following cases:
 ```text
 rladmin verify rack_aware
 ```
-
-## Use the rladmin shell
-
-To open the rladmin shell:
-
-1. Login to the Redis Enterprise Software host with an account that is a member of the **redislabs** OS group.
-
-    The rladmin binary is located in `/opt/redislabs/bin`. If you don't have this directory in your PATH, you may want to add it. Otherwise, you can use `bash -l <username>` to log in as a user with permissions to that directory.
-
-1. Run: `rladmin`
-
-    {{< note >}}
-If the CLI does not recognize the rladmin command,
-you run this command to load the needed configuration first: `bash -l`
-    {{< /note >}}
-
-In the rladmin shell you can:
-
-- Run a any `rladmin` command without prefacing it with `rladmin`.
-- Enter `?` to view the full list of available commands.
-- Enter `help` followed by the name of a command for a detailed explanation of the command and its usage.
-- Press the Tab key for command completion.
-- Enter `exit` or press Ctl+D to return to your terminal prompt.

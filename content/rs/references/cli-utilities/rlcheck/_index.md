@@ -1,15 +1,17 @@
 ---
-Title: Node Verification Utility (rlcheck)
-description:
+Title: rlcheck
+linkTitle: rlcheck (verify nodes)
+description: Verify nodes.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/references/cli-reference/rlcheck/
+aliases: ["/rs/references/cli-reference/rlcheck/",
+          "/rs/references/rlcheck/"]
 ---
-The `rlcheck` utility runs various health checks on an Redis Enterprise Software node and alerts on any issues found.
-This utility can be useful to confirm a successful installation or to verify that the node is functioning properly.
+The `rlcheck` utility runs various health checks on a Redis Enterprise Software node and reports any discovered issues.
+You can use this utility to confirm a successful installation or to verify that the node is functioning properly.
 
-You can access `rlcheck` from the host command-line interface (CLI).
+You can run `rlcheck` from the host's command-line interface (CLI).
 The output of `rlcheck` shows information specific to the host that you run it on.
 
 To open the `rladmin` CLI:
@@ -25,4 +27,4 @@ To see the `rlcheck` optional flags, run: `rlcheck --help`
 Specifically, the `--continue-on-error` flag runs all tests to completion and shows all errors when complete.
 {{< /note >}}
 
-To resolve issues reported by `rlcheck`, [contact Redis support](https://redislabs.com/company/support/).
+To resolve issues reported by `rlcheck`, [contact Redis support](https://redis.com/company/support/).

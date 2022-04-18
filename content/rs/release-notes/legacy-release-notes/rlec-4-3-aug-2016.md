@@ -44,8 +44,8 @@ upgrade to this version.
     administration functionalities.
 - rlcheck installation verification utility added to facilitate
     checking node health. For additional details, refer to [rlcheck
-    Installation Verification
-    Utility]({{< relref "/rs/references/rlcheck.md" >}}).
+    installation verification
+    utility](https://docs.redis.com/latest/rs/references/rlcheck).
 - Added the ability to allow the user to configure how machine IP
     addresses are used in Node Configuration setup in the management UI.
     For additional details, refer to [Initial setup - creating a new
