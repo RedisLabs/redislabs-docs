@@ -14,10 +14,28 @@ aliases: /modules/redisgears/release-notes/redisgears-1.2-release-notes/
 
 ## Requirements
 
-RedisGears v1.2.2 requires:
+RedisGears v1.2.3 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.12
+
+## v1.2.3 (April 2022)
+
+This is a maintenance release for RedisGears 1.2.
+
+Update urgency: `LOW` : No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+    - [#739](https://github.com/RedisGears/RedisGears/pull/739) Added TLS support
+    - [#734](https://github.com/RedisGears/RedisGears/pull/734) Pause/Unpause registrations
+    - [#741](https://github.com/RedisGears/RedisGears/pull/741) Added build for Python-only artifacts
+
+- Bug fixes:
+
+    - [#740](https://github.com/RedisGears/RedisGears/pull/740) Fix -nan value on registration stats
 
 ## v1.2.2 (February 2022)
 
