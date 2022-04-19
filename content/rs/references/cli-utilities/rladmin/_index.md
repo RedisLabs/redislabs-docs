@@ -1,7 +1,7 @@
 ---
 Title: rladmin
-linkTitle: rladmin (administer)
-description: Administer Redis Enterprise clusters and databases.
+linkTitle: rladmin (manage cluster)
+description: Manage Redis Enterprise clusters and databases.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
