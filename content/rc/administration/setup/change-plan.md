@@ -19,9 +19,9 @@ To do so:
 
     ![Select the target subscription from the list](/images/rc/subscription-list-select.png)
 
-1.  Select the **Change Subscription** button to list the available options.
+1.  Switch to **Overview** menu and click **Change plan** to list the available options.
 
-    ![The **Change Subscription** button appears below the list of subscriptions.](/images/rc/subscription-change-button.png)
+    ![The **Change Plan** button appears below the list of subscriptions.](/images/rc/subscription-change-button.png)
 
 
 1.  The first option you can change is type, which indicates whether the plan supports replication or data persistence.  
@@ -38,7 +38,7 @@ To do so:
 
     If you are upgrading a free plan, you need to select or add a payment method.
 
-1.  When finished, select the **Update** button.
+1.  When finished, select the **Change Plan** button.
 
 ## Troubleshooting
 
@@ -46,9 +46,9 @@ To do so:
 
 1.  Subscription updates happen in the background.  Changes may take several minutes to complete.  
 
-    If the **Change Subscription** button is disabled, it usually means earlier updates are still deploying.
+    If the **Change plan** button is disabled, it usually means earlier updates are still deploying.
 
-    ![The **Change Subscription** button is disabled during update deployment.](/images/rc/subscription-change-disabled.png)
+    ![The **Change plan** button is disabled during update deployment.](/images/rc/subscription-change-disabled.png)
 
     Refresh the page after a few moments.  If the problem persists, contact support.
 
