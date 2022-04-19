@@ -118,7 +118,7 @@ Select **Advanced options** to specify values for the following settings:
 | **OSS Cluster API** | Enable to use the open-source Redis Cluster API. |
 | **Protocol** | Set to _Memcached_ database to support the legacy database; otherwise leave at _Redis_ |
 | **Data Persistence** | Defines the data persistence policy, if any. See [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}) |
-| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2]({{< relref "/modules/redisearch/_index.md" >}}), [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}).<br/><br/>If you select RedisSearch 2, you also need to specify a value for **Number of Documents**.  This defines the maximum internal array size ([MAXDOCTABLESIZE](https://oss.redislabs.com/redisearch/Configuring/?_ga=2.155176508.524468484.1612194154-499260268.1607530891#maxdoctablesize)).|
+| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2]({{< relref "/modules/redisearch/_index.md" >}}), [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}).
 
 When finished, select **Save Database** to create your database.
 
