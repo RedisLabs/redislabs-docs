@@ -1,5 +1,5 @@
 ---
-Title: System logs
+Title: Service log
 description:
 weight: 60
 alwaysopen: false
