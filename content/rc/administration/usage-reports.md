@@ -1,5 +1,5 @@
 ---
-Title: Usage reports
+Title: Usage report
 description:
 weight: 70
 alwaysopen: false
