@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-A `state-machine` object tracks the creation of a database on a Redis Enterprise cluster. When you create a database on a Redis Enterprise cluster, Redis Enterprise creates a state machine that tracks the status of the database creation process.
+A state machine object tracks the creation of a database on a Redis Enterprise cluster.
 
 A state machine contains the following attributes:
 
