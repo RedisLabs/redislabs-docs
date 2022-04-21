@@ -43,7 +43,9 @@ GET /actions
 
 ### Response {#get-all-response}
 
-Returns a JSON array of [action objects]({{<relref "/rs/references/rest-api/objects/action">}}) and an array of [state-machine objects]({{<relref "/rs/references/rest-api/objects/state-machine">}}). Regardless of an action’s source, each action in the response contains the following attributes: `name`, `action_uid`, `status` and `progress`.
+Returns a JSON array of [action objects]({{<relref "/rs/references/rest-api/objects/action">}}) and an array of [state-machine objects]({{<relref "/rs/references/rest-api/objects/state-machine">}}).
+
+Regardless of an action’s source, each action in the response contains the following attributes: `name`, `action_uid`, `status`, and `progress`.
 
 #### Example JSON body
 
