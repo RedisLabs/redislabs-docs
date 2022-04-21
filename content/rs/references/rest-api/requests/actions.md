@@ -84,8 +84,8 @@ Returns a JSON array of [action objects]({{<relref "/rs/references/rest-api/obje
 
 | Code | Description |
 |------|-------------|
-| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, response provides info about an ongoing action. |
-| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Action does not exist (i.e. not currently running and no available status of last run). |
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, response provides info about an ongoing action |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Action does not exist (i.e. not currently running and no available status of last run).|
 
 ## Get a specific action {#get-action}
 
@@ -113,7 +113,7 @@ GET /actions/{uid}
 
 | Field | Type | Description |
 |-------|------|-------------|
-| uid | string | The action_uid to check. |
+| uid | string | The action_uid to check |
 
 ### Response {#get-response}
 
@@ -138,5 +138,5 @@ Regardless of an action’s source, each action contains the following attribute
 
 | Code | Description |
 |------|-------------|
-| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, response provides info about an ongoing action. |
-| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Action does not exist (i.e. not currently running and no available status of last run). |
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, response provides info about an ongoing action |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Action does not exist (i.e. not currently running and no available status of last run) |
