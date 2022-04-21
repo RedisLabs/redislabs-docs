@@ -25,7 +25,7 @@ aliases: /rs/references/rest-api/actions
 GET /v1/actions
 ```
 
-Get the status of all currently executing, queued, or completed actions on all entities (clusters, nodes, and databases). This API is used to track every long-lived API request which returns either a `task_id` or an `action_uid`.
+Get the status of all actions (executing, queued, or completed) on all entities (clusters, nodes, and databases). This API tracks long-lived API requests that return either a `task_id` or an `action_uid`.
 
 #### Required permissions
 
