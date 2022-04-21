@@ -119,7 +119,7 @@ GET /actions/{uid}
 
 Returns an [action object]({{<relref "/rs/references/rest-api/objects/action">}}).
 
-Regardless of an action’s source, each action contains the following attributes: `name`, `action_uid`, `status` and `progress`.
+Regardless of an action’s source, each action contains the following attributes: `name`, `action_uid`, `status`, and `progress`.
 
 #### Example JSON body
 
