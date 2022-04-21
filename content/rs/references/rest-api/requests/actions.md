@@ -25,7 +25,7 @@ aliases: /rs/references/rest-api/actions
 GET /v1/actions
 ```
 
-Get the status of all currently executing, queued, or completed actions on all entities (clusters, nodes, and bdbs). This API is used to track every long-lived API request which returns either a `task_id` or an `action_uid`
+Get the status of all currently executing, queued, or completed actions on all entities (clusters, nodes, and databases). This API is used to track every long-lived API request which returns either a `task_id` or an `action_uid`.
 
 #### Required permissions
 
@@ -38,27 +38,12 @@ Get the status of all currently executing, queued, or completed actions on all e
 #### Example HTTP request
 
 ```
-GET /cluster/actions
+GET /actions
 ```
 
 ### Response {#get-all-response}
 
-Returns a JSON array of [action objects]({{<relref "/rs/references/rest-api/objects/action">}}) and an array of state machine objects.
-
-The ‘state-machine’ object contains a list of pending, active, completed and failed state-machines.
-
-The following attributes appear for each such state-machine:
-
-| Name | Value |
-|------|-------|
-|action_uid|A globally unique identifier of the action|
-|object_name|Name of the object being manipulated by the state-machine|
-|status|‘pending’ (didn’t start yet), ‘active’, ‘completed’ or ‘failed’|
-|name|Name of the running (or failed) state-machine|
-|state|Current state within the state-machine, when known|
-|error|A descriptive error string for failed state-machine, when known|
-
-Regardless of an action’s source, each info entry is normalized to contain the following attributes: `name`, `action_uid`, `status` and `progress`.
+Returns a JSON array of [action objects]({{<relref "/rs/references/rest-api/objects/action">}}) and an array of [state-machine objects]({{<relref "/rs/references/rest-api/objects/state-machine">}}). Regardless of an action’s source, each action in the response contains the following attributes: `name`, `action_uid`, `status` and `progress`.
 
 #### Example JSON body
 
@@ -133,6 +118,8 @@ GET /actions/{uid}
 ### Response {#get-response}
 
 Returns an [action object]({{<relref "/rs/references/rest-api/objects/action">}}).
+
+Regardless of an action’s source, each action contains the following attributes: `name`, `action_uid`, `status` and `progress`.
 
 #### Example JSON body
 
