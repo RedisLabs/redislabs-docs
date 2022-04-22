@@ -14,9 +14,11 @@ aliases:
 
 ## `info db`
 
-`rladmin info db` lists configurable settings for all databases.
+`rladmin info db` lists configurable settings for databases.
 
-`rladmin info db <db:id | name>` lists configurable settings for the specified database.
+```sh
+rladmin info db [ {db:<id> | <name>} ]
+```
 
 ### Parameters
 
@@ -24,6 +26,12 @@ aliases:
 |-----------|-------------|
 | db:id     | database id of the specified database |
 | name      | database name of the specified database |
+
+### Returns
+
+Returns a list of configurable settings for all databases.
+
+If `db:<id>` or `<name>` is specified, returns a list of configurable settings for the specified database.
 
 ### Example
 
@@ -70,6 +78,18 @@ db:1 [database1]:
 
 `rladmin info proxy` lists configurable settings for the proxy.
 
+```sh
+rladmin info proxy
+```
+
+### Parameters
+
+None.
+
+### Returns
+
+Returns a list of configurable settings for the proxy.
+
 ### Example
 
 ``` sh
@@ -85,6 +105,18 @@ proxy:1
 ## `info cluster`
 
 `rladmin info cluster` lists configurable settings for the cluster.
+
+```sh
+rladmin info cluster
+```
+
+### Parameters
+
+None.
+
+### Returns
+
+Returns a list of configurable settings for the cluster.
 
 ### Example
 
@@ -131,13 +163,21 @@ Cluster configuration:
 
 `rladmin info node` lists configurable settings for all nodes.
 
-`rladmin info node <id>` lists configurable settings for a single node.
+```sh
+rladmin info db [ <id> ]
+```
 
 ### Parameters
 
 | Parameter | Description |
 |-----------|-------------|
 | id     | node id of the specified node |
+
+### Returns
+
+Returns a list of configurable settings for all nodes.
+
+If `<id>` is specified, returns a list of configurable settings for the specified node.
 
 ### Example
 

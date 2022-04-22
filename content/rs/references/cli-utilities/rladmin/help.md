@@ -12,7 +12,21 @@ aliases:
 
 `rladmin help` lists all options and parameters associated with the rladmin command.
 
-Use `rladmin help [command]` to get more information on a specific command.
+``` sh
+rladmin help [command]
+```
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| command   | rladmind command to display help |
+
+### Returns
+
+Returns a list of all the options and parameters associated with the rladmin command.
+
+If `[command]` is specified, returns a list of all the options and parameters associated with that rladmin command.
 
 ### Example
 
