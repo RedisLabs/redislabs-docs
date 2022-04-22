@@ -9,7 +9,7 @@ aliases: /rc/administration/security/securing-redis-cloud-connections
 
 Transport Layer Security (TLS) uses encryption to secure [network communication](https://en.wikipedia.org/wiki/Transport_Layer_Security).  
 
-Redis Cloud Flexible and Annual subscriptions can use TLS to encrypt data communications between applications and Redis databases.
+Redis Cloud Fixed, Flexible, and Annual subscriptions can use TLS to encrypt data communications between applications and Redis databases.
 
 ## Use TLS with Redis Cloud
 
