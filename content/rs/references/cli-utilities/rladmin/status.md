@@ -51,15 +51,15 @@ If `issues_only` is specified, only instances that do not have an "OK" status ar
 ``` sh
 $ rladmin status extra all
 CLUSTER:
-OK. Cluster master: 1 (172.17.0.2)
+OK. Cluster master: 1 (198.51.100.2)
 Cluster health: OK, [1, 0.13333333333333333, 0.03333333333333333]
 failures/minute - avg1 1.00, avg15 0.13, avg60 0.03.
 
 CLUSTER NODES:
 NODE:ID ROLE   ADDRESS    EXTERNAL_ADDRESS HOSTNAME     MASTERS SLAVES OVERBOOKING_DEPTH SHARDS CORES FREE_RAM        PROVISIONAL_RAM VERSION   SHA    RACK-ID STATUS
-node:1  master 172.17.0.2                  3d99db1fdf4b 4       0      10.91GB           4/100  6     14.91GB/19.54GB 10.91GB/16.02GB 6.2.12-37 5c2106 -       OK    
-node:2  slave  172.17.0.3                  fc7a3d332458 0       0      11.4GB            0/100  6     14.91GB/19.54GB 11.4GB/16.02GB  6.2.12-37 5c2106 -       OK    
-*node:3 slave  172.17.0.4                  b87cc06c830f 0       0      11.4GB            0/100  6     14.91GB/19.54GB 11.4GB/16.02GB  6.2.12-37 5c2106 -       OK    
+node:1  master 198.51.100.2                  3d99db1fdf4b 4       0      10.91GB           4/100  6     14.91GB/19.54GB 10.91GB/16.02GB 6.2.12-37 5c2106 -       OK    
+node:2  slave  198.51.100.3                  fc7a3d332458 0       0      11.4GB            0/100  6     14.91GB/19.54GB 11.4GB/16.02GB  6.2.12-37 5c2106 -       OK    
+*node:3 slave  198.51.100.4                  b87cc06c830f 0       0      11.4GB            0/100  6     14.91GB/19.54GB 11.4GB/16.02GB  6.2.12-37 5c2106 -       OK    
 
 DATABASES:
 DB:ID NAME      TYPE  STATUS SHARDS PLACEMENT REPLICATION PERSISTENCE ENDPOINT                        EXEC_STATE EXEC_STATE_MACHINE BACKUP_PROGRESS MISSING_BACKUP_TIME REDIS_VERSION
@@ -220,9 +220,9 @@ If `issues_only` is specified, only instances that do not have an "OK" status ar
 $ rladmin status nodes sort PROVISIONAL_RAM HOSTNAME
 CLUSTER NODES:
 NODE:ID     ROLE       ADDRESS          EXTERNAL_ADDRESS          HOSTNAME            SHARDS     CORES          FREE_RAM                 PROVISIONAL_RAM          VERSION        STATUS   
-node:1      master     172.17.0.2                                 3d99db1fdf4b        4/100      6              14.74GB/19.54GB          10.73GB/16.02GB          6.2.12-37      OK       
-*node:3     slave      172.17.0.4                                 b87cc06c830f        0/100      6              14.74GB/19.54GB          11.22GB/16.02GB          6.2.12-37      OK       
-node:2      slave      172.17.0.3                                 fc7a3d332458        0/100      6              14.74GB/19.54GB          11.22GB/16.02GB          6.2.12-37      OK       
+node:1      master     198.51.100.2                                 3d99db1fdf4b        4/100      6              14.74GB/19.54GB          10.73GB/16.02GB          6.2.12-37      OK       
+*node:3     slave      198.51.100.4                                 b87cc06c830f        0/100      6              14.74GB/19.54GB          11.22GB/16.02GB          6.2.12-37      OK       
+node:2      slave      198.51.100.3                                 fc7a3d332458        0/100      6              14.74GB/19.54GB          11.22GB/16.02GB          6.2.12-37      OK       
 ```
 
 ## `status shards`
