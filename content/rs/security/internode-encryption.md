@@ -79,7 +79,7 @@ The private CA is generated when a cluster is created or upgraded to 6.2.4.
 
 When nodes join the cluster, the cluster CA is used to generate certificates for the new node, one for each plane.  Certificates signed by the private CA are not shared between clusters and they're not exposed outside the cluster.
 
-All certificates signed by the internal CA are expire after ninety (90) days and automatically rotated every thirty (30) days.  Alerts also monitor certificate expiration and trigger should certificate expiration fall below 45 days.  If you receive such an alert, contact support.
+All certificates signed by the internal CA expire after ninety (90) days and automatically rotate every thirty (30) days.  Alerts also monitor certificate expiration and trigger when certificate expiration falls below 45 days.  If you receive such an alert, contact support.
 
 You can use the Redis Enterprise Software REST API to rotate certificates manually:
 
