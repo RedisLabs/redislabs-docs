@@ -14,7 +14,7 @@ aliases:
 
 ## `info db`
 
-`rladmin info db` lists configurable settings for databases.
+`rladmin info db` shows the current configuration for databases.
 
 ```sh
 rladmin info db [ {db:<id> | <name>} ]
@@ -29,9 +29,9 @@ rladmin info db [ {db:<id> | <name>} ]
 
 ### Returns
 
-Returns a list of configurable settings for all databases.
+Returns the current configuration for all databases.
 
-If `db:<id>` or `<name>` is specified, returns a list of configurable settings for the specified database.
+If `db:<id>` or `<name>` is specified, returns the current configuration for the specified database.
 
 ### Example
 
@@ -76,19 +76,24 @@ db:1 [database1]:
 
 ## `info proxy`
 
-`rladmin info proxy` lists configurable settings for the proxy.
+`rladmin info proxy` lists the current configuration for a proxy.
 
-```sh
-rladmin info proxy
+``` sh
+rladmin info proxy { <id> | all }
 ```
 
 ### Parameters
 
-None.
+| Parameter | Description |
+|-----------|-------------|
+| id      | ID of the specified proxy |
+| all       | Show current configuration for all proxies (optional) |
 
 ### Returns
 
-Returns a list of configurable settings for the proxy.
+If no parameter is specified or the `all` option is specified, `rladmin info proxy` returns the current configuration for all proxies.
+
+If `<id>`is specified, returns the current configuration for the specified proxy.
 
 ### Example
 
@@ -104,7 +109,7 @@ proxy:1
 
 ## `info cluster`
 
-`rladmin info cluster` lists configurable settings for the cluster.
+`rladmin info cluster` lists the current configuration for the cluster.
 
 ```sh
 rladmin info cluster
@@ -116,7 +121,7 @@ None
 
 ### Returns
 
-Returns a list of configurable settings for the cluster.
+Returns the current configuration for the cluster.
 
 ### Example
 
@@ -161,7 +166,7 @@ Cluster configuration:
 
 ## `info node`
 
-`rladmin info node` lists configurable settings for all nodes.
+`rladmin info node` lists the current configuration for all nodes.
 
 ```sh
 rladmin info db [ <id> ]
@@ -175,16 +180,16 @@ rladmin info db [ <id> ]
 
 ### Returns
 
-Returns a list of configurable settings for all nodes.
+Returns the current configuration for all nodes.
 
-If `<id>` is specified, returns a list of configurable settings for the specified node.
+If `<id>` is specified, returns the current configuration for the specified node.
 
 ### Example
 
 ``` sh
 $ rladmin info node 3
 Command Output: node:3
-    address: 172.31.42.179
+    address: 198.51.100.17
     external addresses: N/A
     recovery path: N/A
     quorum only: disabled
