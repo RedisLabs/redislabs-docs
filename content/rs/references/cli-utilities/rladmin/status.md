@@ -29,7 +29,7 @@ rladmin status
 | extra     | Extra options that show more information |
 | issues_only | Filter out all items that have an "OK" status  |
 
-| `extra` parameter | Description |
+| Extra parameter | Description |
 |-------------------|-------------|
 | extra all | Shows all `extra` information |
 | extra backups | Shows periodic backup status |
@@ -44,7 +44,7 @@ rladmin status
 
 Returns tables of the status of all nodes, databases, and database endpoints on the cluster.
 
-If `issues_only` is specified, only instances that do not have an "OK" status are shown.
+If `issues_only` is specified, it only shows instances that do not have an "OK" status.
 
 ### Example
 
@@ -114,7 +114,7 @@ Returns a table of the status of all databases on the cluster.
 
 If `sort <column_titles>` is specified, the result is sorted by the specified table columns.
 
-If `issues_only` is specified, only instances that do not have an "OK" status are shown.
+If `issues_only` is specified, it only shows databases that do not have an "OK" status.
 
 ### Example
 
@@ -132,6 +132,7 @@ Displays the current status of all endpoints on the cluster.
 
 ``` sh
 rladmin status endpoints
+        [ node <id> ]
         [ extra <parameters> ]
         [ sort <column_titles> ]
         [ issues_only ]
@@ -163,7 +164,7 @@ Returns a table of the status of all endpoints on the cluster.
 
 If `sort <column_titles>` is specified, the result is sorted by the specified table columns.
 
-If `issues_only` is specified, only instances that do not have an "OK" status are shown.
+If `issues_only` is specified, it only shows endpoints that do not have an "OK" status.
 
 ### Example
 
@@ -172,7 +173,7 @@ $ rladmin status endpoints
 DB:ID     NAME             ID                    NODE        ROLE        SSL    
 db:1      database1        endpoint:1:1          node:1      single      No     
 db:2      database2        endpoint:2:1          node:2      single      No     
-db:3      database3        endpoint:3:1          node:3      single      N
+db:3      database3        endpoint:3:1          node:3      single      No
 ```
 
 ## `status nodes`
@@ -212,7 +213,7 @@ Returns a table of the status of all nodes on the cluster.
 
 If `sort <column_titles>` is specified, the result is sorted by the specified table columns.
 
-If `issues_only` is specified, only instances that do not have an "OK" status are shown.
+If `issues_only` is specified, it only shows nodes that do not have an "OK" status.
 
 ### Example
 
@@ -231,6 +232,8 @@ Displays the current status of all shards on the cluster.
 
 ``` sh
 rladmin status shards
+        [ node <id> ] 
+        [ db <db:id | name> ]
         [ extra <parameters> ]
         [ sort <column_titles> ]
         [ issues_only ]
@@ -262,7 +265,7 @@ Returns a table of the status of all shards on the cluster.
 
 If `sort <column_titles>` is specified, the result is sorted by the specified table columns.
 
-If `issues_only` is specified, only instances that do not have an "OK" status are shown.
+If `issues_only` is specified, it only shows shards that do not have an "OK" status.
 
 ### Example
 
