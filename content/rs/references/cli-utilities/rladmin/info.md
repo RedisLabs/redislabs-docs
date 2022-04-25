@@ -169,7 +169,7 @@ Cluster configuration:
 `rladmin info node` lists the current configuration for all nodes.
 
 ```sh
-rladmin info db [ <id> ]
+rladmin info node [ <id> ]
 ```
 
 ### Parameters
