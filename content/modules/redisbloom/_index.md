@@ -104,3 +104,8 @@ have a good idea of how many items it is expected to contain. A filter
 whose initial layer can only contain a small number of elements will
 degrade performance significantly because it will take more layers to
 reach a larger capacity.
+
+## More info
+
+- [RedisBloom commands](https://redis.io/docs/stack/bloom/commands/)
+- [RedisBloom source](https://github.com/RedisBloom/RedisBloom/)

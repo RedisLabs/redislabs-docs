@@ -38,7 +38,7 @@ negative numbers, indicating indices starting at the end of the array.
 For example, -1 is the last element in the array, -2 the penultimate,
 and so on.'
 
-## A note about JSON key names and path compatibility
+## JSON key names and path compatibility
 
 By definition, a JSON key can be any valid JSON String. Paths, on the
 other hand, are traditionally based on JavaScript's (and in Java in
@@ -107,7 +107,7 @@ As you can see, you can easily traverse the document structure by path
 to get only the data you want, when you need it. You could also use this
 to increment or another operation on this object.
 
-## RedisJSON commands
+## More info
 
-For the authoritative list of RedisJSON commands, please go
-[here](http://redisjson.io/).
+- [RedisJSON commands](https://redis.io/docs/stack/json/commands/)
+- [RedisJSON source](https://github.com/RedisJSON/RedisJSON)
