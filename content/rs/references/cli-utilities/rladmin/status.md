@@ -248,7 +248,7 @@ rladmin status shards
 | issues_only | Filter out all items that have an "OK" status  |
 
 
-| `extra` parameter | Description |
+| Extra parameter | Description |
 |-------------------|-------------|
 | extra all | Shows all `extra` information |
 | extra backups | Shows periodic backup status |
