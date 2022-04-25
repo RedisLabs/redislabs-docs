@@ -345,7 +345,7 @@ The cluster will use default configuration for any missing database field. The c
 
 ```json
 {
-    "name": "test database",
+    "name": "test-database",
     "type": "redis",
     "memory_size": 1073741824
 }
@@ -383,7 +383,7 @@ The response includes the newly created [BDB object]({{<relref "/rs/references/r
 ```json
 {
     "uid": 1,
-    "name": "test database",
+    "name": "test-database",
     "type": "redis",
     "memory_size": 1073741824,
     "// additional fields..."
@@ -496,7 +496,7 @@ The response includes the newly created [BDB object]({{<relref "/rs/references/r
 ```json
 {
     "uid": 1,
-    "name": "test database",
+    "name": "test-database",
     "type": "redis",
     "memory_size": 1073741824,
     "shards_count": 1,
