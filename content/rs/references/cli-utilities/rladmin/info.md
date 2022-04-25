@@ -1,7 +1,7 @@
 ---
 Title: rladmin info
 linkTitle: info
-description: Lists configurable settings for specified databases, proxies, clusters, or nodes.
+description: Shows the current configuration of a cluster, database, node, or proxy.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin info` lists configurable settings for specified databases, proxies, clusters, or nodes.
+`rladmin info` shows the current configuration of specified databases, proxies, clusters, or nodes.
 
 ## `info db`
 
@@ -24,8 +24,8 @@ rladmin info db [ {db:<id> | <name>} ]
 
 | Parameter | Description |
 |-----------|-------------|
-| db:id     | database id of the specified database |
-| name      | database name of the specified database |
+| db:id     | ID of the specified database (optional) |
+| name      | Name of the specified database (optional) |
 
 ### Returns
 
@@ -112,7 +112,7 @@ rladmin info cluster
 
 ### Parameters
 
-None.
+None
 
 ### Returns
 
@@ -171,7 +171,7 @@ rladmin info db [ <id> ]
 
 | Parameter | Description |
 |-----------|-------------|
-| id     | node id of the specified node |
+| id     | ID of the specified node |
 
 ### Returns
 
