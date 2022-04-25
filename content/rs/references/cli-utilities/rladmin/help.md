@@ -1,7 +1,7 @@
 ---
 Title: rladmin help
 linkTitle: help
-description: List all options and parameters associated with the rladmin command.
+description: Shows available commands or specific command usage.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin help` lists all options and parameters associated with the rladmin command.
+`rladmin help` lists all options and parameters for `rladmin` commands.
 
 ``` sh
 rladmin help [command]
@@ -20,13 +20,13 @@ rladmin help [command]
 
 | Parameter | Description |
 |-----------|-------------|
-| command   | rladmind command to display help |
+|  command   |  Display help for this rladmin command (optional)  |
 
 ### Returns
 
-Returns a list of all the options and parameters associated with the rladmin command.
+Returns a list of available `rladmin` commands.
 
-If `[command]` is specified, returns a list of all the options and parameters associated with that rladmin command.
+If `[command]` is specified, returns a list of all the options and parameters for that `rladmin` command.
 
 ### Example
 
