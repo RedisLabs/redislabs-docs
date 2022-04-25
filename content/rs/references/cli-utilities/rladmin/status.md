@@ -27,7 +27,7 @@ rladmin status
 | Parameter | Description |
 |-----------|-------------|
 | extra     | Extra options that show more information |
-| issues_only | Filter out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an "OK" status  |
 
 | Extra parameter | Description |
 |-------------------|-------------|
@@ -94,7 +94,7 @@ rladmin status databases
 |-----------|-------------|
 | extra <parameter> | Extra options that show more information |
 | sort <column_titles> | Sort results by specified column titles |
-| issues_only | Filter out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an "OK" status  |
 
 
 | `extra` parameter | Description |
@@ -144,7 +144,7 @@ rladmin status endpoints
 |-----------|-------------|
 | extra <parameter> | Extra options that show more information |
 | sort <column_titles> | Sort results by specified column titles |
-| issues_only | Filter out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an "OK" status  |
 
 
 | `extra` parameter | Description |
@@ -193,7 +193,7 @@ rladmin status nodes
 |-----------|-------------|
 | extra <parameter> | Extra options that show more information |
 | sort <column_titles> | Sort results by specified column titles |
-| issues_only | Filter out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an "OK" status  |
 
 
 | `extra` parameter | Description |
@@ -245,7 +245,7 @@ rladmin status shards
 |-----------|-------------|
 | extra <parameter> | Extra options that show more information |
 | sort <column_titles> | Sort results by specified column titles |
-| issues_only | Filter out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an "OK" status  |
 
 
 | Extra parameter | Description |
