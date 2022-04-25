@@ -26,7 +26,7 @@ rladmin status
 
 | Parameter | Description |
 |-----------|-------------|
-| extra     | extra options that show more information |
+| extra     | Extra options that show more information |
 | issues_only | Filter out all items that have an "OK" status  |
 
 | `extra` parameter | Description |
@@ -56,7 +56,7 @@ Cluster health: OK, [1, 0.13333333333333333, 0.03333333333333333]
 failures/minute - avg1 1.00, avg15 0.13, avg60 0.03.
 
 CLUSTER NODES:
-NODE:ID ROLE   ADDRESS    EXTERNAL_ADDRESS HOSTNAME     MASTERS SLAVES OVERBOOKING_DEPTH SHARDS CORES FREE_RAM        PROVISIONAL_RAM VERSION   SHA    RACK-ID STATUS
+NODE:ID ROLE   ADDRESS      EXTERNAL_ADDRESS HOSTNAME     MASTERS SLAVES OVERBOOKING_DEPTH SHARDS CORES FREE_RAM        PROVISIONAL_RAM VERSION   SHA    RACK-ID STATUS
 node:1  master 198.51.100.2                  3d99db1fdf4b 4       0      10.91GB           4/100  6     14.91GB/19.54GB 10.91GB/16.02GB 6.2.12-37 5c2106 -       OK    
 node:2  slave  198.51.100.3                  fc7a3d332458 0       0      11.4GB            0/100  6     14.91GB/19.54GB 11.4GB/16.02GB  6.2.12-37 5c2106 -       OK    
 *node:3 slave  198.51.100.4                  b87cc06c830f 0       0      11.4GB            0/100  6     14.91GB/19.54GB 11.4GB/16.02GB  6.2.12-37 5c2106 -       OK    
@@ -92,8 +92,8 @@ rladmin status databases
 
 | Parameter | Description |
 |-----------|-------------|
-| extra <parameter> | extra options that show more information |
-| sort <column_titles> | sort results by specified column titles |
+| extra <parameter> | Extra options that show more information |
+| sort <column_titles> | Sort results by specified column titles |
 | issues_only | Filter out all items that have an "OK" status  |
 
 
@@ -141,8 +141,8 @@ rladmin status endpoints
 
 | Parameter | Description |
 |-----------|-------------|
-| extra <parameter> | extra options that show more information |
-| sort <column_titles> | sort results by specified column titles |
+| extra <parameter> | Extra options that show more information |
+| sort <column_titles> | Sort results by specified column titles |
 | issues_only | Filter out all items that have an "OK" status  |
 
 
@@ -190,8 +190,8 @@ rladmin status nodes
 
 | Parameter | Description |
 |-----------|-------------|
-| extra <parameter> | extra options that show more information |
-| sort <column_titles> | sort results by specified column titles |
+| extra <parameter> | Extra options that show more information |
+| sort <column_titles> | Sort results by specified column titles |
 | issues_only | Filter out all items that have an "OK" status  |
 
 
@@ -240,8 +240,8 @@ rladmin status shards
 
 | Parameter | Description |
 |-----------|-------------|
-| extra <parameter> | extra options that show more information |
-| sort <column_titles> | sort results by specified column titles |
+| extra <parameter> | Extra options that show more information |
+| sort <column_titles> | Sort results by specified column titles |
 | issues_only | Filter out all items that have an "OK" status  |
 
 
