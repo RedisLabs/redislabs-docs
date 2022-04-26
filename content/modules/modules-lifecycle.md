@@ -6,7 +6,7 @@ weight: 7
 alwaysopen: false
 categories: ["Modules"]
 ---
-Redis Enterprise Software follows the [Redis Enterprise lifecycle]({{< relref "/rs/administering/product-lifecycle.md" >}}).  (For complete details, see the Redis Enterprise Software [subscription agreement](https://redislabs.com/company/terms-of-use#software).)
+Redis Enterprise Software follows the [Redis Enterprise lifecycle]({{< relref "/rs/administering/product-lifecycle.md" >}}).  (For complete details, see the Redis Enterprise Software [subscription agreement](https://redis.com/company/software-subscription-agreement).)
 
 Redis modules also follow a release lifecycle and schedule.  Here, you'll find the "end-of-life" dates for each module and release.
 
@@ -27,7 +27,7 @@ The format is “Major1.Major2.Minor”.
 ## Modules end of life schedule {#modules-endoflife-schedule}
 
 End-of-Life for a given Major version is 18 months after the formal release of
-that version or 12 months after the release of the next-subsequent (following) version, whichever comes last.
+that version or 12 months after the release of the next subsequent (following) version, whichever comes last.
 
 ### RediSearch
 
@@ -48,3 +48,7 @@ that version or 12 months after the release of the next-subsequent (following) v
 ### RedisBloom
 
 {{< table-csv "redisbloom-lifecycle.csv" 2 >}}
+
+### RedisGears
+
+{{< table-csv "redisgears-lifecycle.csv" 2 >}}

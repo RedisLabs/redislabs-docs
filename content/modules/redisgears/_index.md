@@ -36,5 +36,5 @@ Redis publishes RedisGears recipes to support write-behind. You can learn how to
 
 ## More info
 
-- [RedisGears Introduction](https://oss.redis.com/redisgears/intro.html)
+- [RedisGears introduction](https://oss.redis.com/redisgears/intro.html)
 - [RedisGears source](https://github.com/RedisGears/RedisGears)
