@@ -121,9 +121,9 @@ If `issues_only` is specified, it only shows databases that do not have an "OK" 
 ``` sh
 $ rladmin status databases sort REPLICATION PERSISTENCE
 DB:ID NAME      TYPE  STATUS SHARDS PLACEMENT REPLICATION PERSISTENCE ENDPOINT                                       
-db:1  database1 redis active 1      dense     disabled    disabled    redis-10269.testdbd13186.qa.redislabs.com:10269
-db:2  database2 redis active 1      dense     disabled    snapshot    redis-13897.testdbd13186.qa.redislabs.com:13897
-db:3  database3 redis active 1      dense     enabled     snapshot    redis-19416.testdbd13186.qa.redislabs.com:19416
+db:1  database1 redis active 1      dense     disabled    disabled    redis-10269.testdbd11169.localhost:10269
+db:2  database2 redis active 1      dense     disabled    snapshot    redis-13897.testdbd11169.localhost:13897
+db:3  database3 redis active 1      dense     enabled     snapshot    redis-19416.testdbd13186.localhost:19416
 ```
 
 ## `status endpoints`
