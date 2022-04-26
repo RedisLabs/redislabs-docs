@@ -1,39 +1,39 @@
 ---
 Title: RedisGraph quick start tutorial
 linkTitle: Quick start
-description:
+description: RedisGraph quick start tutorial
 weight: 20
 alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redisgraph-quick-start/
 ---
+
+## Prerequisites
+
 For this quick start tutorial, you need:
 
-- Either:
-    - A Redis Cloud database [with the RedisGraph module]({{< relref "/rc/databases/create-database.md" >}})
+- A Redis database with the RedisGraph module enabled. You can use either:
 
-        You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
-    - A Redis Enterprise Software database [with the RedisGraph module]({{<relref "/modules/install/add-module-to-database">}})
-- `redis-cli` with connectivity to a Redis database
+    - A [Redis Cloud]({{<relref "/modules/modules-quickstart.md">}}) database
 
-## Develop with RedisGraph
+    - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-Before using RedisGraph, you should familiarize yourself with its commands and syntax as detailed in the
-[commands reference](https://oss.redis.com/redisgraph/commands/).
+- redis-cli command line tool
 
-After you load RedisGraph, you can interact with it using `redis-cli`.
+- [redis-py](https://github.com/redis/redis-py) client library v4.0.0 or greater
 
-Here we'll quickly create a small graph representing a subset of motorcycle riders and teams
-taking part in the MotoGP league. Once created, we'll start querying our data.
+## RedisGraph with `redis-cli`
 
-### Use `redis-cli`
+The `redis-cli` command line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RedisGraph commands.
 
-Connect to your Redis database with `redis-cli`:
+### Connect to a database
 
 ```sh
-$ redis-cli -p 12543
+$ redis-cli -h <endpoint> -p <port> -a <password>
 127.0.0.1:12543>
 ```
+
+### Create a graph
 
 Create a new graph with the `GRAPH.QUERY` command:
 
@@ -47,8 +47,13 @@ Create a new graph with the `GRAPH.QUERY` command:
    5) "Query internal execution time: 0.399000 milliseconds"
 ```
 
-Now that our MotoGP graph is created, we can start asking questions. For example:
-Who's riding for team Yamaha?
+This graph represents a subset of motorcycle riders and teams participating in the MotoGP league.
+
+### Query a graph
+
+After you create a graph, you can run queries against it.
+
+The following example returns which motorcycle riders are part of team Yamaha:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team) WHERE t.name = 'Yamaha' RETURN r,t"
@@ -59,7 +64,7 @@ Who's riding for team Yamaha?
 2) 1) "Query internal execution time: 0.122000 milliseconds"
 ```
 
-How many riders represent team Ducati?
+Use `count` to check how many riders represent team Ducati:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Ducati'}) RETURN count(r)"
@@ -68,32 +73,22 @@ How many riders represent team Ducati?
 2) 1) "Query internal execution time: 0.129000 milliseconds"
 ```
 
-### Use other client
+## RedisGraph with Python
 
 You can interact with RedisGraph using your client's ability to send raw Redis commands.
 The exact method for doing that depends on your client of choice.
 
-#### Python example
-
-This code snippet shows how to use RedisGraph with raw Redis commands from Python using
-[redis-py](https://github.com/andymccurdy/redis-py):
+This code snippet shows how to use RedisGraph with raw Redis commands from Python with [redis-py](https://github.com/redis/redis-py):
 
 ```python
 import redis
 
 r = redis.StrictRedis()
-reply = r.execute_command('GRAPH.QUERY', 'social', "CREATE (:person {name:'roi', age:33, gender:'male', status:'married')")
+reply = r.execute_command('GRAPH.QUERY', 'social', 
+         "CREATE (:person {name:'roi', age:33, gender:'male', status:'married')")
 ```
 
-### Client libraries
+## More info
 
-Some languages have client libraries that provide support for RedisGraph's commands:
-
-| Project | Language | License | Author | URL |
-| ------- | -------- | ------- | ------ | --- |
-| redisgraph-py | Python | BSD | [Redis](https://redislabs.com) | [GitHub](https://github.com/RedisLabs/redisgraph-py) |
-| JRedisGraph | Java | BSD | [Redis](https://redislabs.com) | [GitHub](https://github.com/RedisLabs/JRedisGraph) |
-| redisgraph-rb | Ruby | BSD | [Redis](https://redislabs.com) | [GitHub](https://github.com/RedisLabs/redisgraph-rb) |
-| redisgraph-go | Go | BSD | [Redis](https://redislabs.com) | [GitHub](https://github.com/RedisLabs/redisgraph-go) |
-| redisgraph.js | JavaScript | BSD | [Redis](https://redislabs.com) | [GitHub](https://github.com/RedisLabs/redisgraph.js) |
-| php-redis-graph | PHP | MIT | [KJDev](https://github.com/kjdev) | [GitHub](https://github.com/kjdev/php-redis-graph) |
+- [RedisGraph commands](https://redis.io/docs/stack/graph/commands/)
+- [RedisGraph client libraries](https://redis.io/docs/stack/graph/clients/)
