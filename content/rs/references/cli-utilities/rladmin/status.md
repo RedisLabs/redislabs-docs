@@ -97,7 +97,7 @@ rladmin status databases
 | issues_only | Filters out all items that have an "OK" status  |
 
 
-| `extra` parameter | Description |
+| Extra parameter | Description |
 |-------------------|-------------|
 | extra all | Shows all `extra` information |
 | extra backups | Shows periodic backup status |
@@ -147,7 +147,7 @@ rladmin status endpoints
 | issues_only | Filters out all items that have an "OK" status  |
 
 
-| `extra` parameter | Description |
+| Extra parameter | Description |
 |-------------------|-------------|
 | extra all | Shows all `extra` information |
 | extra backups | Shows periodic backup status |
@@ -196,7 +196,7 @@ rladmin status nodes
 | issues_only | Filters out all items that have an "OK" status  |
 
 
-| `extra` parameter | Description |
+| Extra parameter | Description |
 |-------------------|-------------|
 | extra all | Shows all `extra` information |
 | extra backups | Shows periodic backup status |
@@ -233,7 +233,7 @@ Displays the current status of all shards on the cluster.
 ``` sh
 rladmin status shards
         [ node <id> ] 
-        [ db <db:id | name> ]
+        [ db {db:<id> | <name>} ]
         [ extra <parameters> ]
         [ sort <column_titles> ]
         [ issues_only ]
