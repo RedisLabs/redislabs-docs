@@ -33,4 +33,3 @@ To learn more, see:
 
 - The [Redis Stack](https://redis.io/docs/stack) home page on redis.io.
 - The [Create database]({{< relref "/rc/databases/create-database" >}}) topic for Redis Enterprise Cloud.
-
