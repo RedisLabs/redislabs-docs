@@ -1,5 +1,6 @@
 ---
-Title: Supported Kubernetes distributions
+Title: Supported distributions
+linkTitle: Supported distributions
 description: Support matrix for the current Redis Enterprise K8s operator
 weight: 30
 alwaysopen: false
