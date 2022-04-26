@@ -10,21 +10,17 @@ Redis Enterprise Software follows the [Redis Enterprise lifecycle]({{< relref "/
 
 Redis modules also follow a release lifecycle and schedule.  Here, you'll find the "end-of-life" dates for each module and release.
 
-## Modules release numbering
+## Module release numbering
 
-Redis uses a three-place numbering scheme to identify released versions of its Redis Enterprise Modules.
+Redis modules use a three-place numbering scheme to identify released versions.
 
 The format is “Major1.Major2.Minor”.
 
-- Major sections of the version number represent fundamental changes and additions in
-    capabilities to the module. The _Major1_ and _Major2_ part of the
-    version number are incremented based on the size and scale of the changes in each
-    release.
-- The _Minor_ section of the version number represents quality improvements and fixes to
-    existing capabilities. We increment the minor number when many quality improvements
-    are added to the release.
+- Major sections of the version number represent fundamental changes to functionality and feature capabilities. The _Major1_ and _Major2_ part of the version number are incremented according to the size and scale of the changes in each release.
 
-## Modules end-of-life schedule {#modules-endoflife-schedule}
+- The _Minor_ section of the version number represents quality improvements and fixes to existing capabilities.  The minor release number is increased when release quality improves.
+
+## Module end-of-life schedule {#modules-endoflife-schedule}
 
 End-of-Life for a given Major version is 18 months after the formal release of
 that version or 12 months after the release of the next subsequent (following) version, whichever comes last.
