@@ -142,6 +142,7 @@ rladmin status endpoints
 
 | Parameter | Description |
 |-----------|-------------|
+| node <id> | Only show endpoints for the specified node ID |
 | extra <parameter> | Extra options that show more information |
 | sort <column_titles> | Sort results by specified column titles |
 | issues_only | Filters out all items that have an "OK" status  |
@@ -243,6 +244,9 @@ rladmin status shards
 
 | Parameter | Description |
 |-----------|-------------|
+| node <id> | Only show shards for the specified node ID |
+| db db:<id> | Only show shards for the specified database ID |
+| db <name> | Only show shards for the specified database name |
 | extra <parameter> | Extra options that show more information |
 | sort <column_titles> | Sort results by specified column titles |
 | issues_only | Filters out all items that have an "OK" status  |
