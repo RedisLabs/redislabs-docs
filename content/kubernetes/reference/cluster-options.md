@@ -1,5 +1,6 @@
 ---
-Title: Options for Redis Enterprise clusters
+Title: REC custom resource options
+linktitle: REC options
 description: A primer for the configuration options for Redis Enterprise cluster Custom Resource Definitions.
 weight: 32
 alwaysopen: false

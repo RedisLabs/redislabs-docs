@@ -1,5 +1,6 @@
 ---
-Title: Options for Redis Enterprise databases
+Title: REDB custom resource options
+linktitle: REDB options
 description: A primer for the configuration options for Redis Enterprise database custom resource definitions.
 weight: 35
 alwaysopen: false
