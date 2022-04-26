@@ -32,42 +32,19 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 
 - "supported" indicates this distribution is supported for this release.
 - "deprecated" indicates this distribution is supported for this release, but will be dropped in a future release.
-- "no longer supported" indicates support has been dropped for this distribution.
 - Any distribution not listed below is not supported for production workloads.
 
-| Distribution                    | Support Status |
-|---------------------------------|:--------------:|
-| Openshift 3.11 (K8s 1.11)       | deprecated     |
-| OpenShift 4.5  (K8s 1.18)       | supported      |
-| OpenShift 4.6  (K8s 1.19)       | supported      |
-| OpenShift 4.7  (K8s 1.20)       | supported      |
-| OpenShift 4.8  (K8s 1.21)       | supported      |
-| OpenShift 4.9  (K8s 1.22)       | supported      |
-| KOPS vanilla 1.18               | supported      |
-| KOPS vanilla 1.19               | supported      |
-| KOPS vanilla 1.20               | supported      |
-| KOPS vanilla 1.21               | supported      |
-| KOPS vanilla 1.22               | supported      |
-| GKE 1.19                        | supported      |
-| GKE 1.20                        | supported      |
-| GKE 1.21                        | supported      |
-| GKE 1.22                        | supported      |
-| Rancher 2.5 (K8s 1.17)          | deprecated     |
-| Rancher 2.5 (K8s 1.18)          | deprecated     |
-| Rancher 2.5 (K8s 1.19)          | deprecated     |
-| Rancher 2.5 (K8s 1.20)          | deprecated     |
-| Rancher 2.6 (K8s 1.19)          | supported      |
-| Rancher 2.6 (K8s 1.20)          | supported      |
-| Rancher 2.6 (K8s 1.21)          | supported      |
-| VMWare TKGI 1.10 (K8s 1.19)     | supported      |
-| VMWare TKGI 1.11 (K8s 1.20)     | supported      |
-| AKS 1.19                        | deprecated     |
-| AKS 1.20                        | supported      |
-| AKS 1.21                        | supported      |
-| AKS 1.22                        | supported      |
-| EKS 1.18                        | supported      |
-| EKS 1.19                        | supported      |
-| EKS 1.20                        | supported      |
-| EKS 1.21                        | supported      |
- 
-\* No longer supported by the vendor  
+
+| **Kubernetes version**  | 1.19       | 1.20       | 1.21       | 1.22       | 1.23       |
+|:------------------------|:----------:|:----------:|:----------:|:----------:|:----------:|
+| Community Kubernetes    | deprecated | deprecated | supported  | supported  | supported* |
+| Amazon EKS              | supported  | supported  | supported  |            |            |
+| Azure AKS               |            |            | supported  | supported  | supported* |
+| Google GKE              | supported  | supported  | supported  | supported  |            |
+| Rancher 2.6             | supported  | supported  | supported  | supported  |            |
+| **OpenShift version**   | **4.6**    | **4.7**    | **4.8**    | **4.9**    | **4.10**   |
+|                         | deprecated | deprecated | supported  | supported  | supported* |
+| **VMware TKGI version** | **1.10**   | **1.11**   | **1.12**   | **1.13**   |            |
+|                         | supported  | supported  | supported* |            |            |
+
+\* Support added in most recent release  
