@@ -24,7 +24,7 @@ The format is “Major1.Major2.Minor”.
     existing capabilities. We increment the minor number when many quality improvements
     are added to the release.
 
-## Modules end of life schedule {#modules-endoflife-schedule}
+## Modules end-of-life schedule {#modules-endoflife-schedule}
 
 End-of-Life for a given Major version is 18 months after the formal release of
 that version or 12 months after the release of the next subsequent (following) version, whichever comes last.
