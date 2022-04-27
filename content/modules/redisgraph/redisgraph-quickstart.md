@@ -39,12 +39,12 @@ Create a new graph with the `GRAPH.QUERY` command:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
-1) (empty list or set)
-2) 1) Labels added: 2
-   2) Nodes created: 6
-   3) Properties set: 6
-   4) Relationships created: 3
-   5) "Query internal execution time: 0.399000 milliseconds"
+1) 1) "Labels added: 2"
+   2) "Nodes created: 6"
+   3) "Properties set: 6"
+   4) "Relationships created: 3"
+   5) "Cached execution: 0"
+   6) "Query internal execution time: 10.036638 milliseconds"
 ```
 
 This graph represents a subset of motorcycle riders and teams participating in the MotoGP league.
@@ -73,20 +73,34 @@ The following example returns which motorcycle riders are part of team Yamaha:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team) WHERE t.name = 'Yamaha' RETURN r,t"
-1) 1) 1) "r.name"
-      2) "t.name"
-   2) 1) "Valentino Rossi"
-      2) "Yamaha"
-2) 1) "Query internal execution time: 0.122000 milliseconds"
+1) 1) "r"
+   2) "t"
+2) 1) 1) 1) 1) "id"
+            2) "0"
+         2) 1) "labels"
+            2) 1) "Rider"
+         3) 1) "properties"
+            2) 1) 1) "name"
+                  2) "Valentino Rossi"
+      2) 1) 1) "id"
+            2) "1"
+         2) 1) "labels"
+            2) 1) "Team"
+         3) 1) "properties"
+            2) 1) 1) "name"
+                  2) "Yamaha"
+3) 1) "Cached execution: 0"
+   2) "Query internal execution time: 6.655681 milliseconds"
 ```
 
 Use `count` to check how many riders represent team Ducati:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Ducati'}) RETURN count(r)"
-1) 1) 1) "count(r)"
-   2) 1) "1.000000"
-2) 1) "Query internal execution time: 0.129000 milliseconds"
+1) 1) "count(r)"
+2) 1) 1) "1"
+3) 1) "Cached execution: 0"
+   2) "Query internal execution time: 0.356560 milliseconds"
 ```
 
 ## RedisGraph with Python
