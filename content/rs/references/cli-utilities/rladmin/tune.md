@@ -1,7 +1,7 @@
 ---
 Title: rladmin tune
 linkTitle: tune
-description:
+description: Configures parameters for databases, proxies, nodes, and clusters.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -62,7 +62,7 @@ rladmin tune cluster
 | show_internals | Controls the visibility of internal databases that are only used for the cluster's management |
 | slave_ha | Activates or deactivates replica high availability |
 | slave_ha_bdb_cooldown_period | Time (in seconds) after shard relocation during which databases can't be relocated to another node |
-| slave_ha_cooldown_period | Time (in seconds) after shard relocation during which the replica high availibity mechanism can't relocate to another node  |
+| slave_ha_cooldown_period | Time (in seconds) after shard relocation during which the replica high availability mechanism can't relocate to another node  |
 | slave_ha_grace_period | Time (in seconds) between when a node fails and when replica high availability starts relocating shards to another node |
 | watchdog_profile | Activates pre-configured watchdog profiles (cloud or local-network) |
 
@@ -70,7 +70,7 @@ rladmin tune cluster
 
 `Finished successfully` if cluster configuration was changed, `Error: No changes specified` otherwise.
 
-Use [`rladmin info cluster`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-cluster">}}) to ensure the cluster configuration was changed.
+Use [`rladmin info cluster`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-cluster">}}) to verify the cluster configuration was changed.
 
 ### Example
 
@@ -135,7 +135,7 @@ rladmin tune db { db:<id> | <name> }
 | crdt_repl_backlog | Size of the Active-Active replication buffer (in MB or auto) |
 | crdt_xadd_id_uniqueness_mode | XADD's behavior in an Active-Active database, defined as liberal, semi-strict, or strict (see descriptions below) |
 | data_internode_encryption | Activates or deactivates [internode encryption]({{<relref "/rs/security/internode-encryption.md">}}) for the database |
-| db_conns_auditing | Activates or deactivates Database Connections Auditing for a database |
+| db_conns_auditing | Activates or deactivates database connections auditing for a database |
 | gradual_src_mode | Activates or deactivates gradual sync of sources |
 | gradual_sync_max_shards_per_source | Number of shards per sync source that can be replicated in parallel (positive integer) |
 | gradual_sync_mode | Activates, deactivates, or automatically determines gradual sync of source shards |
@@ -155,11 +155,11 @@ rladmin tune db { db:<id> | <name> }
 | repl_backlog | Size of the replication buffer (in MB or auto)|
 | repl_diskless | Activates or deactivates diskless replication (takes cluster setting by default) |
 | repl_timeout | Replication timeout (in seconds) |
-| schedpolicy | Controls how server side connections are used when forwarding traffic to shards (values are `cmp`, `mru`, `spread`, or `mnp`) |
+| schedpolicy | Controls how server-side connections are used when forwarding traffic to shards (values are `cmp`, `mru`, `spread`, or `mnp`) |
 | skip_import_analyze | Skips the analyzing step when importing a database |
 | slave_buffer | Redis replica output buffer limits (in MB or hard:soft:time) |
 | slave_ha | Activates or deactivates replica high availability (defaults to cluster setting) |
-| slave_ha_priority | Priority of database in replica high availability mechanism |
+| slave_ha_priority | Priority of database in replica high-availability mechanism |
 | syncer_mode | Configures syncer to run in distributed or centralized mode. For distributed syncer, DMC policy must be all-nodes or all-master-nodes |
 | syncer_monitoring | Activates syncer monitoring |
 
@@ -173,7 +173,7 @@ rladmin tune db { db:<id> | <name> }
 
 `Finished successfully` if database configuration was changed, `Error: No changes specified` otherwise.
 
-Use [`rladmin info db`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-db">}}) to ensure the database configuration was changed.
+Use [`rladmin info db`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-db">}}) to verify the database configuration was changed.
 
 ### Example
 
@@ -208,14 +208,14 @@ tune node  { <id> | all }
 | max_listeners | Maximum number of endpoints that may be bound to the node |
 | max_redis_forks | Maximum number of background processes forked from shards that may exist on the node at any given time |
 | max_redis_servers | Maximum number of shards allowed to reside on the node |
-| max_slave_full_syncs | aximum number of simultaneous replica full-syncs that may be running at any given time (0: Unlimited, -1: Use cluster settings) |
+| max_slave_full_syncs | Maximum number of simultaneous replica full-syncs that may be running at any given time (0: Unlimited, -1: Use cluster settings) |
 | quorum_only | If activated, configures the node as a [quorum-only node]({{< relref "/glossary/_index.md#letter-p" >}}) |
 
 ### Returns
 
 `Finished successfully` if node configuration was changed, `Error: No changes specified` otherwise.
 
-Use [`rladmin info node`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-node">}}) to ensure the node configuration was changed.
+Use [`rladmin info node`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-node">}}) to verify the node configuration was changed.
 
 ### Example
 
@@ -246,7 +246,7 @@ rladmin tune proxy { <id> | all }
 | id      | ID of the specified proxy |
 | all     | Configures settings for all proxies |
 | max_threads | Maximum number of threads allowed |
-| mode | Determines if proxy automatically adjusts number of threads based of size of the load |
+| mode | Determines if proxy automatically adjusts the number of threads based on load size |
 | scale_duration | Time (in seconds) of scale_threshold CPU utilization before automatic proxy automatically scales |
 | scale_threshold | CPU utilization threshold that triggers spawning new threads |
 | threads | Initial number of threads created at startup |
@@ -255,7 +255,7 @@ rladmin tune proxy { <id> | all }
 
 `OK` if proxy configuration was changed, `Error` otherwise.
 
-Use [`rladmin info proxy`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-proxy">}}) to ensure the proxy configuration was changed.
+Use [`rladmin info proxy`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-proxy">}}) to verify the proxy configuration was changed.
 
 ### Example
 
