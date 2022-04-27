@@ -97,7 +97,8 @@ rladmin tune db { db:<id> | <name> }
         [ maxclients <value> ]
         [ schedpolicy { cmp | mru | spread | mnp } ]
         [ max_shard_pipeline <value> ]
-        [ conns <value> ] [ conns_type <value> ]
+        [ conns <value> ]
+        [ conns_type <value> ]
         [ max_client_pipeline <value> ]
         [ max_connections <value> ]
         [ max_aof_file_size <size> ]
@@ -130,7 +131,7 @@ rladmin tune db { db:<id> | <name> }
 | name                                 | string                           | Name of the specified database                                                                                                        |
 | client_buffer                        | value in MB hard:soft:time       | Redis client output buffer limits                                                                                                     |
 | conns                                | integer                          | Size of internal connection pool, specified per-thread or per-shard depending on conns_type                                           |
-| conns_type                           | 'per thread'                     | Specifies connection pool size as either per-thread or per-shard                                                                      |
+| conns_type                           | 'per-thread'<br /> 'per-shard'   | Specifies connection pool size as either per-thread or per-shard                                                                      |
 | continue_on_error                    |                                  | Flag that skips tuning shards that can't be reached                                                                                   |
 | crdt_repl_backlog                    | value in MB<br /> 'auto'         | Size of the Active-Active replication buffer                                                                                          |
 | crdt_xadd_id_uniqueness_mode         | 'liberal'<br /> 'semi-strict'<br /> 'strict' | XADD's behavior in an Active-Active database, defined as liberal, semi-strict, or strict (see descriptions below)         |
