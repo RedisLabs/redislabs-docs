@@ -10,7 +10,7 @@ aliases: ["/rs/security/ocsp-stapling"]
 
 OCSP ([Online Certificate Status Protocol](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)) lets a client or server verify the status (valid, revoked, or unknown) of a certificate maintained by a third-party [certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority).
 
-When a client or server needs to check whether a certificate is still valid or has been revoked, it can send a request to the CA's OCSP server (also called an OCSP responder). The OCSP responder checks the certificate's status in the CA's [certificate revocation list](https://en.wikipedia.org/wiki/Certificate_revocation_list) and sends the status back as a signed and timestamped response.
+To check whether a certificate is still valid or has been revoked, a client or server can send a request to the CA's OCSP server (also called an OCSP responder). The OCSP responder checks the certificate's status in the CA's [certificate revocation list](https://en.wikipedia.org/wiki/Certificate_revocation_list) and sends the status back as a signed and timestamped response.
 
 ## OCSP stapling overview
 
@@ -28,7 +28,7 @@ The TLS handshake fails and the client blocks the connection to the server if th
 
 ## Set up OCSP stapling
 
-Configure and enable OCSP stapling for your Redis Enterprise cluster with the [admin console](#admin-console-method), the [REST API](#rest-api-method), or [`rladmin`](#rladmin-method).
+You can configure and enable OCSP stapling for your Redis Enterprise cluster with the [admin console](#admin-console-method), the [REST API](#rest-api-method), or [`rladmin`](#rladmin-method).
 
 While OCSP is enabled, the server always staples the cached OCSP status when a client tries to connect. It is the client's responsibility to use the stapled OCSP status. Some Redis clients, such as [Jedis](https://github.com/redis/jedis) and [redis-py](https://github.com/redis/redis-py), already support OCSP stapling, but others might require additional configuration.
 
