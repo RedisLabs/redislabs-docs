@@ -76,7 +76,7 @@ Install one of the supported ingress controllers:
 1. Create the ingress resource YAML file.  
 
     ``` YAML
-    apiVersion: networking.k8s.io/v1beta1
+    apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
       name: rec-ingress

@@ -98,3 +98,8 @@ Refer to these pages for more information on loading backends:
 
 - [`AI.CONFIG` command](https://oss.redislabs.com/redisai/commands#aiconfig)
 - [Backend configuration](https://oss.redislabs.com/redisai/configuration#backend)
+
+## More info
+
+- [RedisAI commands](https://oss.redis.com/redisai/commands/)
+- [RedisAI source](https://github.com/RedisAI/RedisAI/)

@@ -6,7 +6,7 @@ weight: 100
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise Software product lifecycle fully reflects our [subscription agreement](https://redislabs.com/wp-content/uploads/2019/11/redis-enterprise-software-subscription-agreement.pdf).
+Redis Enterprise Software product lifecycle fully reflects our [subscription agreement](https://redis.com/software-subscription-agreement).
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
 Redis Enterprise modules follow the [modules lifecycle]({{< relref "/modules/modules-lifecycle.md" >}}).

@@ -144,3 +144,8 @@ In both the Redis Streams and Sorted Set approaches, the samples were kept as a 
 RedisTimeSeries can be seen to dramatically reduce the memory consumption when compared against both Sorted Set approaches. Given the unbounded nature of time series data, this is typically a critical criteria to evaluate - the overall data set size that needs to be retained in memory. Redis Streams reduces the memory consumption further but would be equal or higher than RedisTimeSeries when more digits for a higher precision would be required.
 
 ![TimeSeries-UsedMemory](/images/rs/TimeSeries-UsedMemory.png)
+
+## More info
+
+- [RedisTimeSeries commands](https://redis.io/docs/stack/timeseries/commands/)
+- [RedisTimeSeries source](https://github.com/RedisTimeSeries/RedisTimeSeries)
