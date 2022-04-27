@@ -1,7 +1,7 @@
 ---
 Title: rladmin failover
 linkTitle: failover
-description: Fail-over primary shards of a database to their replicas
+description: Fail over primary shards of a database to their replicas
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -24,7 +24,7 @@ rladmin failover
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | db        | db:\<id\><br /> name           | Fail over shards for the specified database                                                   |
-| shard     | one or more primary shard ids  | Primary shard or shards to fail over                                                          |
+| shard     | one or more primary shard IDs  | Primary shard or shards to fail over                                                          |
 | immediate |                                | Perform failover without verifying the replica shards are in full sync with the master shards |
 
 ### Returns
