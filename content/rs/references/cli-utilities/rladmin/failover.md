@@ -29,7 +29,7 @@ rladmin failover
 
 ### Returns
 
-`Finished successfully` if failover completed, `ERROR` otherwise.
+`Finished successfully` if failover was completed, `ERROR` otherwise.
 
 Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-shards">}}) to verify the failover completed.
 
