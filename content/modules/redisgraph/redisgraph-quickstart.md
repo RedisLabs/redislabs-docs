@@ -49,7 +49,23 @@ Create a new graph with the `GRAPH.QUERY` command:
 
 This graph represents a subset of motorcycle riders and teams participating in the MotoGP league.
 
-### Query a graph
+### Insert data
+
+If you want to add more data to a previously created graph:
+
+```sh
+
+```
+
+### Add relationships
+
+To create relationshps between the nodes of a graph:
+
+```sh
+
+```
+
+### Query the graph
 
 After you create a graph, you can run queries against it.
 
@@ -87,6 +103,10 @@ r = redis.StrictRedis()
 reply = r.execute_command('GRAPH.QUERY', 'social', 
          "CREATE (:person {name:'roi', age:33, gender:'male', status:'married')")
 ```
+
+## Visualize graphs with RedisInsight
+
+You can use RedisInsight to visualize your graphs.
 
 ## More info
 
