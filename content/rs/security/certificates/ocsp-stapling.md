@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: ["/rs/security/ocsp-stapling"]
 ---
 
-OCSP ([Online Certificate Status Protocol](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)) lets a client or server verify the status (valid, revoked, or unknown) of a certificate maintained by a third-party [certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority).
+OCSP ([Online Certificate Status Protocol](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol)) lets a client or server verify the status (`GOOD`, `REVOKED`, or `UNKNOWN`) of a certificate maintained by a third-party [certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority).
 
 To check whether a certificate is still valid or has been revoked, a client or server can send a request to the CA's OCSP server (also called an OCSP responder). The OCSP responder checks the certificate's status in the CA's [certificate revocation list](https://en.wikipedia.org/wiki/Certificate_revocation_list) and sends the status back as a signed and timestamped response.
 
@@ -55,7 +55,7 @@ To set up OCSP stapling with the Redis Enterprise admin console:
     | **Recovery frequency** | 60 | The time interval in seconds between retries after a failed query. |
     | **Recovery maximum tries** | 5 | The number of retries before the validation query fails and invalidates the certificate. |
 
-1. Select the **Save** button.
+1. Select **Save**.
 
 ### REST API method
 
@@ -89,7 +89,7 @@ To set up OCSP stapling with the [`rladmin`]({{<relref "/rs/references/rladmin">
     rladmin cluster ocsp config recovery_frequency set 30
     ```
 
-1. Enable OCSP with the following command:
+1. Enable OCSP:
 
     ```sh
     rladmin cluster ocsp config ocsp_functionality set enabled

@@ -62,7 +62,7 @@ Returns an [OCSP status object]({{<relref "/rs/references/rest-api/objects/ocsp_
 
 ### Error codes {#post-error-codes} 
 
-When errors are reported, the server may return a JSON object with `error_code` and `message` fields that provide additional information. The following are possible `error_code` values:
+When errors occur, the server returns a JSON object with `error_code` and `message` fields that provide additional information. The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
