@@ -212,9 +212,16 @@ rladmin cluster join
         [ accept_servers <enable | disable> ]
         [ cmn_http_port <port> ]
 ```
+One of :
+|  Parameters | Description |
+| - | - |
+| name | The cluster FQDN |
+| nodes | Array of IP addresses of existing cluster nodes |
 
 | Optional Parameters | Description |
 | - | - |
+| name | The cluster FQDN |
+| nodes | Array of IP addresses of existing cluster nodes |
 | accept_servers | Allows allocation of resources on the new node |
 | addr | Internal IP addresses of the node |
 | ccs_persistent_path | Path to ccs snapshot location (defaults to /var/opt/redislabs/persist) |
