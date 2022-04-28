@@ -35,7 +35,7 @@ $ redis-cli -h <endpoint> -p <port> -a <password>
 
 ### Create a graph
 
-Create a new graph with the `GRAPH.QUERY` command:
+Use the [`CREATE`](https://redis.io/commands/graph.query/#create) query to create a new graph and populate it with a few nodes and relationships:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
@@ -49,17 +49,17 @@ Create a new graph with the `GRAPH.QUERY` command:
 
 This graph represents a subset of motorcycle riders and teams participating in the MotoGP league.
 
-### Insert data
+### Add nodes
 
-If you want to add more data to a previously created graph:
+To add a new node to a previously created graph:
 
 ```sh
-
+127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Jorge Lorenzo'})-[:rides]->(:Team {name:'Honda'})"
 ```
 
 ### Add relationships
 
-To create relationshps between the nodes of a graph:
+To create new relationshps between the nodes of a graph:
 
 ```sh
 
@@ -67,7 +67,7 @@ To create relationshps between the nodes of a graph:
 
 ### Query the graph
 
-After you create a graph, you can run queries against it.
+After you create a graph, you can use the [`GRAPH.QUERY`](https://redis.io/commands/graph.query/) command to query the graph's data.
 
 The following example returns which motorcycle riders are part of team Yamaha:
 
@@ -93,7 +93,9 @@ The following example returns which motorcycle riders are part of team Yamaha:
    2) "Query internal execution time: 6.655681 milliseconds"
 ```
 
-Use `count` to check how many riders represent team Ducati:
+You can also use [functions](https://redis.io/commands/graph.query/#functions) to create more complex queries.
+
+To check how many riders represent team Ducati, use the `count` function:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Ducati'}) RETURN count(r)"
@@ -101,6 +103,22 @@ Use `count` to check how many riders represent team Ducati:
 2) 1) 1) "1"
 3) 1) "Cached execution: 0"
    2) "Query internal execution time: 0.356560 milliseconds"
+```
+
+### Delete nodes
+
+Use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query to remove a specific node and its relationships from the graph:
+
+```sh
+127.0.0.1:12543> GRAPH.QUERY DEMO_GRAPH "MATCH (x:Y {propname: propvalue}) DELETE x"
+```
+
+### Delete a graph
+
+To delete an entire graph, run the [`GRAPH.DELETE`](https://redis.io/commands/graph.delete/) command:
+
+```sh
+127.0.0.1:12543> GRAPH.DELETE MotoGP
 ```
 
 ## RedisGraph with Python
@@ -120,7 +138,7 @@ reply = r.execute_command('GRAPH.QUERY', 'social',
 
 ## Visualize graphs with RedisInsight
 
-You can use RedisInsight to visualize your graphs.
+You can use [RedisInsight]({{<relref "/ri">}}) to visualize the relationships between the nodes of your graph.
 
 ## More info
 
