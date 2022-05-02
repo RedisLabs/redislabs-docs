@@ -1,7 +1,7 @@
 ---
 Title: rladmin restart
 linkTitle: restart
-description: Restarts the Redis software instance for a specific database.
+description: Restarts the Redis Enterprise Software instance for a specific database.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin restart` restarts the Redis software in use by a specific database
+`rladmin restart` restarts the Redis Enterprise Software instance for a specific database by scheduling a restart of the primary and replica processes.
 instance by scheduling a restart of the primary and replica processes.
 
 ``` sh
@@ -31,7 +31,7 @@ rladmin restart db { db:id | name }
 
 ### Returns
 
-`Done` if the restart completed successfully, `ERROR` otherwise.
+Returns `Done` if the restart completed successfully, `ERROR` otherwise.
 
 ### Example
 
