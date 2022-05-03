@@ -11,7 +11,6 @@ aliases:
 ---
 
 `rladmin restart` restarts the Redis Enterprise Software instance for a specific database by scheduling a restart of the primary and replica processes.
-instance by scheduling a restart of the primary and replica processes.
 
 ``` sh
 rladmin restart db { db:id | name }
