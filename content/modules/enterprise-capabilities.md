@@ -17,16 +17,16 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 
 | Module | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
 |:-------|:-------------------------:|:-----------------------:|
-| [Redis Stack]({{<relref "/modules/redis-stack">}}) | &#x2705; Yes[^4] | &#x2705; Yes[^4] |
+| [Redis Stack]({{<relref "/modules/redis-stack">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RediSearch]({{<relref "/modules/redisearch">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RedisJSON]({{<relref "/modules/redisjson">}})   | &#x2705; Yes | &#x2705; Yes |
-| [RedisGraph]({{<relref "/modules/redisgraph">}}) | &#x2705; Yes | &#x2705; Yes |
+| [RedisGraph]({{<relref "/modules/redisgraph">}})[^4] | &#x2705; Yes | &#x2705; Yes |
 | [RedisTimeSeries]({{<relref "/modules/redistimeseries">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RedisBloom]({{<relref "/modules/redisbloom">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RedisGears]({{<relref "/modules/redisgears">}}) | &#x2705; Yes | &#x274c; No |
 | [RedisAI]({{<relref "/modules/redisai">}})       | &#x2705; Yes | &#x274c; No |
 
-[^4]: At this time, RedisGraph cannot be combined with other modules in the same database.
+[^4]: At this time, RedisGraph cannot be combined with other modules in multi-sharded databases.
 
 ## Module feature support
 
