@@ -33,7 +33,7 @@ When creating new databases for Redis Enterprise Software or for Flexible/Annual
 
 Each module is available to the database; combine them to meet your needs.
 
-(At this time, RedisGraph cannot be combined with other modules in multi-sharded databases.)
+(At this time, RedisGraph cannot be combined with other modules in sharded databases.)
 
 To learn more, see:
 
