@@ -26,7 +26,7 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 | [RedisGears]({{<relref "/modules/redisgears">}}) | &#x2705; Yes | &#x274c; No |
 | [RedisAI]({{<relref "/modules/redisai">}})       | &#x2705; Yes | &#x274c; No |
 
-[^4]: At this time, RedisGraph cannot be combined with other modules in multi-sharded databases.
+[^4]: RedisGraph cannot be combined with other modules in multi-sharded databases.
 
 ## Module feature support
 

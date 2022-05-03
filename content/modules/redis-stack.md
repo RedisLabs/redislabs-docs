@@ -9,11 +9,11 @@ aliases: /modules/redis-stack/
          /modules/redis-stack.md
 ---
 
-[Redis Stack](https://redis.io/docs/stack) enables multiple modules to be used with open source Redis databases; it simplifies installation and deployment.
+[Redis Stack](https://redis.io/docs/stack) simplifies installation and deployment of multiple modules with open source Redis databases.
 
 Redis Enterprise Cloud and Redis Enterprise Software support all capabilities of [Redis Stack](https://redis.io/docs/stack).
 
-For Fixed for Free subscriptions, Redis Enterprise Cloud supports Redis Stack through the [Create database]({{< relref "/rc/databases/create-database" >}}) workflow.
+For Fixed or Free subscriptions, Redis Enterprise Cloud supports Redis Stack through the [Create database]({{< relref "/rc/databases/create-database" >}}) workflow.
 
 When you create a new database in a Fixed or Free Redis Enterprise Cloud subscription, you can set the **Type** property to _Redis Stack_.  
  
@@ -27,9 +27,13 @@ This automatically adds the following modules to the new database:
 - [RedisTimeSeries]({{< relref "/modules/redistimeseries/" >}})
 - [RedisBloom]({{< relref "/modules/redisbloom/" >}})
 
-Redis Enterprise Software and Redis Enterprise Flexible/Annual subscriptions also support all capabilities of Redis Stack.  Here, you select the specific modules that support your specific scenario.
+Flexible or Annual Redis Cloud subscriptions and Redis Enterprise Software also support all capabilities of Redis Stack.  
 
-Each module is available to the database and you can combine their capabilities to meet your needs.
+When creating new databases for Redis Enterprise Software or for Flexible/Annual Redis Enterprise Cloud subscriptions, you select the specific modules that support your specific scenario.
+
+Each module is available to the database; combine them to meet your needs.
+
+(At this time, RedisGraph cannot be combined with other modules in multi-sharded databases.)
 
 To learn more, see:
 
