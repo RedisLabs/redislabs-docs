@@ -1,7 +1,7 @@
 ---
 Title: rladmin placement
 linkTitle: placement
-description: Configures shard placement policy for a given database.
+description: Configures the shard placement policy for a database.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -28,9 +28,9 @@ rladmin placement
 
 ### Returns
 
-Returns the new shard placement policy if the policy was changed successfully, `ERROR` otherwise.
+Returns the new shard placement policy if the policy was changed successfully. Otherwise, it returns `ERROR`.
 
-Use [`rladmin status databses`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-databases">}}) to verify the failover completed.
+Use [`rladmin status databases`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-databases">}}) to verify that the failover completed.
 
 ### Example
 
