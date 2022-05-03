@@ -1,7 +1,7 @@
 ---
 Title: rladmin restart
 linkTitle: restart
-description: Restarts the Redis Enterprise Software instance for a specific database.
+description: Restarts Redis Enterprise Software processes for a specific database.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,10 +10,10 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin restart` restarts the Redis Enterprise Software instance for a specific database by scheduling a restart of the primary and replica processes.
+`rladmin restart` schedules a restart of the Redis Enterprise Software processes on primary and replica instances of a specific database.
 
 ``` sh
-rladmin restart db { db:id | name }
+rladmin restart db { db:<id> | <name> }
         [preserve_roles]
         [discard_data]
         [force_discard]
@@ -23,14 +23,14 @@ rladmin restart db { db:id | name }
 
 | Parameter      | Type/Value                     | Description                                                           |
 |----------------|--------------------------------|-----------------------------------------------------------------------|
-| db             | db:\<id\><br /> name           | Restarts the Redis Software for the specified database                |
+| db             | db:\<id\><br /> name           | Restarts Redis Enterprise Software processes for the specified database                |
 | discard_data   |                                | Allows discarding data if there is no persistence or replication      |
 | force_discard  |                                | Forcibly discards data even if there is persistence or replication    |
 | preserve_roles |                                | Performs an additional failover to maintain shard roles               |
 
 ### Returns
 
-Returns `Done` if the restart completed successfully, `ERROR` otherwise.
+Returns `Done` if the restart completed successfully. Otherwise, it returns `ERROR`.
 
 ### Example
 
