@@ -35,7 +35,13 @@ $ redis-cli -h <endpoint> -p <port> -a <password>
 
 ### Create a graph
 
-Use the [`CREATE`](https://redis.io/commands/graph.query/#create) query to create a new graph and populate it with a few nodes and relationships:
+When you create a graph, you can define nodes and the relationships between them with this format:
+
+`(:<node 1>)-[:<relationship>]->(:<node 2>)`
+
+To define multiple nodes and relationships in a single creation query, separate the entries with commas.
+
+Use the [`CREATE`](https://redis.io/commands/graph.query/#create) query to create a new graph of motorcycle riders and teams participating in the MotoGP league:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
@@ -44,25 +50,30 @@ Use the [`CREATE`](https://redis.io/commands/graph.query/#create) query to creat
    3) "Properties set: 6"
    4) "Relationships created: 3"
    5) "Cached execution: 0"
-   6) "Query internal execution time: 10.036638 milliseconds"
+   6) "Query internal execution time: 0.385472 milliseconds"
 ```
-
-This graph represents a subset of motorcycle riders and teams participating in the MotoGP league.
 
 ### Add nodes
 
 To add a new node to a previously created graph:
 
 ```sh
-127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Jorge Lorenzo'})-[:rides]->(:Team {name:'Honda'})"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Jorge Lorenzo'})"
+1) 1) "Nodes created: 1"
+   2) "Properties set: 1"
+   3) "Cached execution: 0"
+   4) "Query internal execution time: 0.185841 milliseconds"
 ```
 
 ### Add relationships
 
-To create new relationshps between the nodes of a graph:
+To create new relationships between nodes of a graph:
 
 ```sh
-
+127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider), (t:Team) WHERE r.name = 'Jorge Lorenzo' and t.name = 'Honda' CREATE (r)-[:rides]->(t)"
+1) 1) "Relationships created: 1"
+   2) "Cached execution: 0"
+   3) "Query internal execution time: 0.356578 milliseconds"
 ```
 
 ### Query the graph
@@ -90,19 +101,19 @@ The following example returns which motorcycle riders are part of team Yamaha:
             2) 1) 1) "name"
                   2) "Yamaha"
 3) 1) "Cached execution: 0"
-   2) "Query internal execution time: 6.655681 milliseconds"
+   2) "Query internal execution time: 0.500535 milliseconds"
 ```
 
 You can also use [functions](https://redis.io/commands/graph.query/#functions) to create more complex queries.
 
-To check how many riders represent team Ducati, use the `count` function:
+To check how many riders represent team Honda, use the `count` function:
 
 ```sh
-127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Ducati'}) RETURN count(r)"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Honda'}) RETURN count(r)"
 1) 1) "count(r)"
-2) 1) 1) "1"
+2) 1) 1) "2"
 3) 1) "Cached execution: 0"
-   2) "Query internal execution time: 0.356560 milliseconds"
+   2) "Query internal execution time: 0.445760 milliseconds"
 ```
 
 ### Delete nodes
@@ -110,7 +121,19 @@ To check how many riders represent team Ducati, use the `count` function:
 Use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query to remove a specific node and its relationships from the graph:
 
 ```sh
-127.0.0.1:12543> GRAPH.QUERY DEMO_GRAPH "MATCH (x:Y {propname: propvalue}) DELETE x"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider {name: 'Dani Pedrosa'}) DELETE r"
+1) 1) "Nodes deleted: 1"
+   2) "Relationships deleted: 1"
+   3) "Cached execution: 0"
+   4) "Query internal execution time: 0.276815 milliseconds"
+```
+
+### Delete relationships
+
+To delete a relationship without removing the nodes:
+
+```sh
+TBA
 ```
 
 ### Delete a graph
@@ -119,6 +142,7 @@ To delete an entire graph, run the [`GRAPH.DELETE`](https://redis.io/commands/gr
 
 ```sh
 127.0.0.1:12543> GRAPH.DELETE MotoGP
+"Graph removed, internal execution time: 0.013138 milliseconds"
 ```
 
 ## RedisGraph with Python
@@ -138,7 +162,29 @@ reply = r.execute_command('GRAPH.QUERY', 'social',
 
 ## Visualize graphs with RedisInsight
 
-You can use [RedisInsight]({{<relref "/ri">}}) to visualize the relationships between the nodes of your graph.
+You can use [RedisInsight]({{<relref "/ri">}}) workbench to visualize the relationships between the nodes of your graph.
+
+1. Connect to your database with RedisInsight. You can [connect manually]({{<relref "/ri/using-redisinsight/add-instance#add-a-standalone-redis-database">}}) or use the [auto-discovery]({{<relref "/ri/using-redisinsight/auto-discover-databases#auto-discovery-for-redis-cloud-databases">}}) feature.
+
+1. Select the **Workbench** button:
+
+   {{<image filename="images/ri/icon-workbench.png" width="30px" alt="The Workbench icon">}}{{</image>}}
+
+1. Enter a RedisGraph query in the text editor.
+
+   For example, this query returns all nodes and relationships in the graph:
+
+   ```sh
+   GRAPH.QUERY MotoGP "MATCH (n) RETURN n"
+   ```
+
+1. Select **Run**:
+
+   {{<image filename="images/ri/icon-run-command.png" width="30px" alt="The Run command icon">}}{{</image>}}
+
+After you run a query, the output log displays a visual representation of your graph's nodes and relationships:
+
+{{<image filename="images/modules/visualize-graph.png" alt="Visualize a graph with RedisInsight workbench.">}}{{</image>}}
 
 ## More info
 
