@@ -17,7 +17,7 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 
 | Module | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
 |:-------|:-------------------------:|:-----------------------:|
-| [Redis Stack]({{<relref "/modules/redis-stack">}}) | &#x274c; No | &#x2705; Yes[^4] |
+| [Redis Stack]({{<relref "/modules/redis-stack">}}) | &#x2705; Yes[^4] | &#x2705; Yes[^4] |
 | [RediSearch]({{<relref "/modules/redisearch">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RedisJSON]({{<relref "/modules/redisjson">}})   | &#x2705; Yes | &#x2705; Yes |
 | [RedisGraph]({{<relref "/modules/redisgraph">}}) | &#x2705; Yes | &#x2705; Yes |
@@ -26,7 +26,7 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 | [RedisGears]({{<relref "/modules/redisgears">}}) | &#x2705; Yes | &#x274c; No |
 | [RedisAI]({{<relref "/modules/redisai">}})       | &#x2705; Yes | &#x274c; No |
 
-[^4]: Redis Enterprise Cloud currently supports Redis Stack for Fixed and Free subscriptions only.  For details, see [Create database]({{< relref  "/rc/databases/create-database#fixed-and-free-module-options" >}}).
+[^4]: At this time, RedisGraph cannot be combined with other modules in the same database.
 
 ## Module feature support
 
