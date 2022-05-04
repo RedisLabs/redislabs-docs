@@ -21,7 +21,7 @@ When you create a new database in a Fixed or Free Redis Enterprise Cloud subscri
 
 This automatically adds the following modules to the new database:
 
-- [RediSearch 2]({{< relref "/modules/redisearch/" >}})
+- [RediSearch]({{< relref "/modules/redisearch/" >}})
 - [RedisJSON]({{< relref "/modules/redisjson/" >}})
 - [RedisGraph]({{< relref "/modules/redisgraph/" >}})
 - [RedisTimeSeries]({{< relref "/modules/redistimeseries/" >}})
