@@ -26,7 +26,7 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 | [RedisGears]({{<relref "/modules/redisgears">}}) | &#x2705; Yes | &#x274c; No |
 | [RedisAI]({{<relref "/modules/redisai">}})       | &#x2705; Yes | &#x274c; No |
 
-[^4]: Redis Enterprise Software supports all Redis Stack capabilities.  You can combine any  module part of Redis Stack.
+[^4]: Redis Enterprise Software supports all Redis Stack capabilities.  You can combine any  supportd module, except for RedisGraph.
 ## Module feature support
 
 The following tables show feature support for each Redis module.  
