@@ -18,13 +18,13 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-- redis-cli command line tool
+- `redis-cli` command line tool
 
-- [redis-py](https://github.com/redis/redis-py) client library v4.0.0 or greater
+- [`redis-py`](https://github.com/redis/redis-py) client library v4.1.0 or greater
 
 ## RedisGraph with `redis-cli`
 
-The `redis-cli` command line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RedisGraph commands.
+The [`redis-cli`](https://redis.io/docs/manual/cli/) command line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RedisGraph commands.
 
 ### Connect to a database
 
@@ -41,7 +41,7 @@ When you create a graph, you can define nodes and the relationships between them
 
 To define multiple nodes and relationships in a single creation query, separate the entries with commas.
 
-Use the [`CREATE`](https://redis.io/commands/graph.query/#create) query to create a new graph of motorcycle riders and teams participating in the MotoGP league:
+For example, use the [`CREATE`](https://redis.io/commands/graph.query/#create) query to create a new graph of motorcycle riders and teams participating in the MotoGP league:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
@@ -55,7 +55,7 @@ Use the [`CREATE`](https://redis.io/commands/graph.query/#create) query to creat
 
 ### Add nodes
 
-To add a new node to a previously created graph:
+You can add new nodes to a previously created graph:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Jorge Lorenzo'})"
@@ -80,7 +80,7 @@ To create new relationships between nodes of a graph:
 
 After you create a graph, you can use the [`GRAPH.QUERY`](https://redis.io/commands/graph.query/) command to query the graph's data.
 
-The following example returns which motorcycle riders are part of team Yamaha:
+The following example returns which motorcycle riders compete for team Yamaha:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team) WHERE t.name = 'Yamaha' RETURN r,t"
@@ -106,7 +106,7 @@ The following example returns which motorcycle riders are part of team Yamaha:
 
 You can also use [functions](https://redis.io/commands/graph.query/#functions) to create more complex queries.
 
-To check how many riders represent team Honda, use the `count` function:
+For example, you can use the `count` function to check how many riders represent team Honda:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Honda'}) RETURN count(r)"
@@ -118,7 +118,7 @@ To check how many riders represent team Honda, use the `count` function:
 
 ### Delete nodes
 
-Use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query to remove a specific node and its relationships from the graph:
+You can use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query to remove a specific node and its relationships from the graph:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider {name: 'Dani Pedrosa'}) DELETE r"
@@ -130,15 +130,18 @@ Use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query to remov
 
 ### Delete relationships
 
-To delete a relationship without removing the nodes:
+To delete a node's relationships without removing any nodes:
 
 ```sh
-TBA
+127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (:Rider {name: 'Valentino Rossi'})-[r:rides]->() DELETE r"
+1) 1) "Relationships deleted: 1"
+   2) "Cached execution: 0"
+   3) "Query internal execution time: 0.348346 milliseconds"
 ```
 
 ### Delete a graph
 
-To delete an entire graph, run the [`GRAPH.DELETE`](https://redis.io/commands/graph.delete/) command:
+To delete an entire graph, including all nodes and relationships, run the [`GRAPH.DELETE`](https://redis.io/commands/graph.delete/) command:
 
 ```sh
 127.0.0.1:12543> GRAPH.DELETE MotoGP
@@ -147,22 +150,77 @@ To delete an entire graph, run the [`GRAPH.DELETE`](https://redis.io/commands/gr
 
 ## RedisGraph with Python
 
-You can interact with RedisGraph using your client's ability to send raw Redis commands.
-The exact method for doing that depends on your client of choice.
+If you want to use RedisGraph within an application, you can use one of these [client libraries](https://redis.io/docs/stack/graph/clients/).
 
-This code snippet shows how to use RedisGraph with raw Redis commands from Python with [redis-py](https://github.com/redis/redis-py):
+The following example uses the Redis Python client library [redis-py](https://github.com/redis/redis-py), which supports RedisGraph commands as of v4.1.0.
+
+This Python code creates a graph that represents friendships between users on a social media website. It also shows how to run queries and change relationships between users.
 
 ```python
 import redis
+from redis.commands.graph.edge import Edge
+from redis.commands.graph.node import Node
 
-r = redis.StrictRedis()
-reply = r.execute_command('GRAPH.QUERY', 'social', 
-         "CREATE (:person {name:'roi', age:33, gender:'male', status:'married')")
+# Connect to a database
+r = redis.Redis(host="<endpoint>", port="<port>", 
+                password="<password>")
+
+# Create nodes that represent users
+users = { "Alex": Node(label="Person", properties={"name": "Alex", "age": 35}),
+          "Jun": Node(label="Person", properties={"name": "Jun", "age": 33}),
+          "Taylor": Node(label="Person", properties={"name": "Taylor", "age": 28}),
+          "Noor": Node(label="Person", properties={"name": "Noor", "age": 41}) }
+
+# Define a graph called SocialMedia
+social_graph = r.graph("SocialMedia")
+
+# Add users to the graph as nodes
+for key in users.keys():
+    social_graph.add_node(users[key])
+
+# Add relationships between user nodes
+social_graph.add_edge( Edge(users["Alex"], "friends", users["Jun"]) )
+# Make the relationship bidirectional
+social_graph.add_edge( Edge(users["Jun"], "friends", users["Alex"]) )
+
+social_graph.add_edge( Edge(users["Jun"], "friends", users["Taylor"]) )
+social_graph.add_edge( Edge(users["Taylor"], "friends", users["Jun"]) )
+
+social_graph.add_edge( Edge(users["Jun"], "friends", users["Noor"]) )
+social_graph.add_edge( Edge(users["Noor"], "friends", users["Jun"]) )
+
+social_graph.add_edge( Edge(users["Alex"], "friends", users["Noor"]) )
+social_graph.add_edge( Edge(users["Noor"], "friends", users["Alex"]) )
+
+# Create the graph in the database
+social_graph.commit()
+
+# Query the graph to find out how many friends Alex has
+result1 = social_graph.query("MATCH (p1:Person {name: 'Alex'})-[:friends]->(p2:Person) RETURN count(p2)")
+print("Alex's original friend count:", result1.result_set)
+
+# Delete a relationship without deleting any user nodes
+social_graph.query("MATCH (:Person {name: 'Alex'})<-[f:friends]->(:Person {name: 'Jun'}) DELETE f")
+
+# Query the graph again to see Alex's updated friend count
+result2 = social_graph.query("MATCH (p1:Person {name: 'Alex'})-[:friends]->(p2:Person) RETURN count(p2)")
+print("Alex's updated friend count:", result2.result_set)
+
+# Delete the entire graph
+social_graph.delete()
+```
+
+Example output:
+
+```text
+$ ./quick_start.py
+Alex's original friend count: [[2]]
+Alex's updated friend count: [[1]]
 ```
 
 ## Visualize graphs with RedisInsight
 
-You can use [RedisInsight]({{<relref "/ri">}}) workbench to visualize the relationships between the nodes of your graph.
+You can use the [RedisInsight]({{<relref "/ri">}}) workbench to visualize the relationships between the nodes of your graph.
 
 1. Connect to your database with RedisInsight. You can [connect manually]({{<relref "/ri/using-redisinsight/add-instance#add-a-standalone-redis-database">}}) or use the [auto-discovery]({{<relref "/ri/using-redisinsight/auto-discover-databases#auto-discovery-for-redis-cloud-databases">}}) feature.
 
