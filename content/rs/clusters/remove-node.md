@@ -27,7 +27,7 @@ You can configure [email alerts from the cluster]({{< relref "/rs/administering/
 **Make sure to read through these explanations thoroughly before taking
 any action.**
 
-## Permanently removing a node
+## Permanently remove a node
 
 Permanently removing a node means you are decreasing cluster capacity.
 Before trying to remove a node, make sure that the cluster has enough
@@ -47,7 +47,7 @@ and only then removes the node.
 If a cluster has only two nodes (which is not recommended for production
 deployments) and some databases have replication enabled, you cannot remove a node.
 
-## Replacing a faulty node
+## Replace a faulty node
 
 If the cluster has a faulty node that you would like to replace, you
 only need to add a new node to the cluster. The cluster recognizes the
@@ -57,7 +57,7 @@ with the new node.
 For guidelines, refer to [Replacing a faulty
 node]({{< relref "/rs/administering/cluster-operations/replacing-node.md" >}}).
 
-## Replacing a healthy node
+## Replace a healthy node
 
 If you would like to replace a healthy node with a different node, you
 must first add the new node to the cluster, migrate all the resources
@@ -74,7 +74,7 @@ You can migrate resources by using the *rladmin* command-line interface
 The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) must be updated each time a node is added or replaced.
 {{< /note >}}
 
-## Removing a node
+## Remove a node
 
 To remove a node using the admin console:
 
