@@ -25,7 +25,7 @@ such as database replication that provides high availability.
 
 To set up a new cluster, you must first [install the Redis Enterprise Software package]({{< relref "/rs/installing-upgrading/_index.md" >}})
 and then set up the cluster as described below.
-After the cluster is created you can [add multiple nodes to the cluster]({{< relref "/rs/administering/adding-node.md" >}}).
+After the cluster is created you can [add multiple nodes to the cluster]({{< relref "/rs/clusters/add-node.md" >}}).
 
 To create a cluster:
 
@@ -78,4 +78,4 @@ After a short wait, your cluster is created and you can log in to the RS admin c
 You can now access any of the management capabilities, including:
 
 - [Creating a new database]({{< relref "/rs/administering/creating-databases/_index.md" >}})
-- [Joining a new node to a cluster]({{< relref "/rs/administering/adding-node.md" >}})
+- [Joining a new node to a cluster]({{< relref "/rs/clusters/add-node.md" >}})

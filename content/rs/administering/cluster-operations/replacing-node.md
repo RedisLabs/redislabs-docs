@@ -25,7 +25,7 @@ you must make sure the required flash storage is set up on this new node.
     {{< /note >}}
 
 1. Add a new node, as described in [adding a new node to a
-    cluster]({{< relref "/rs/administering/adding-node.md" >}}).
+    cluster]({{< relref "/rs/clusters/add-node.md" >}}).
 1. Make sure the new node has as much available memory as the faulty
     node.
 1. A message appears, informing you that the cluster has a faulty node

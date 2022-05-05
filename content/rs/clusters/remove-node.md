@@ -64,7 +64,7 @@ must first add the new node to the cluster, migrate all the resources
 from the node you would like to remove, and only then remove the node.
 
 For further guidance, refer to [adding a new node to a
-cluster]({{< relref "/rs/administering/adding-node.md" >}}).
+cluster]({{< relref "/rs/clusters/add-node.md" >}}).
 
 You can migrate resources by using the *rladmin* command-line interface
 (CLI). For guidelines, refer to [*rladmin* command line interface

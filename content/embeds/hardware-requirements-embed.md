@@ -40,13 +40,13 @@ We recommend these hardware requirements for production systems or for developme
 
     - If some of the cluster nodes are utilizing more than 80% of the CPU, consider migrating busy resources to less busy nodes.
 
-    - If all the cluster nodes are utilizing over 80% of the CPU, consider scaling out the cluster by [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
+    - If all the cluster nodes are utilizing over 80% of the CPU, consider scaling out the cluster by [adding a node]({{< relref "/rs/clusters/add-node.md" >}}).
 
 - RAM:
     - Redis uses a relatively large number of buffers, which enable replica communication, client communication, pub/sub commands, and more.  As a result, you should ensure that 30% of the RAM is available on each node at any given time.
 
     - If one or more cluster nodes utilizes more than 65% of the RAM, consider migrating resources to less active nodes.
 
-    - If all cluster nodes are utilizing more than 70% of available RAM, consider [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
+    - If all cluster nodes are utilizing more than 70% of available RAM, consider [adding a node]({{< relref "/rs/clusters/add-node.md" >}}).
 
     - Do not run any other memory-intensive processes on the Redis Software node.

@@ -37,7 +37,7 @@ An Active-Active database is made up of instances of the data that are each stor
 Before configuring an Active-Active database, you must:
 
 - If the Active-Active database spans a WAN, establish a VPN between each network that hosts a cluster with an instance.
-- Setup [RS clusters]({{< relref "/rs/administering/new-cluster-setup.md" >}}) for each Active-Active database instance.
+- Setup [RS clusters]({{< relref "/rs/clusters/new-cluster-setup.md" >}}) for each Active-Active database instance.
 
     All clusters must have the same Redis Enterprise Software version.
 - Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.

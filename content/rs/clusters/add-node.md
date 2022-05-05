@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: [
     /rs/administering/cluster-operations/adding-node/,
-    /rs/administering/adding-node.md,
+    /rs/clusters/add-node.md,
     /rs/administering/adding-node/,
     /rs/clusters/add-node.md,
     /rs/clusters/add-node/,
