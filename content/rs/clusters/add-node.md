@@ -1,6 +1,7 @@
 ---
-Title: Adding a Cluster Node
-description:
+Title: Add a cluster node
+linktitle: Add a node
+description: Add a node to your existing Redis Enterprise cluster. 
 weight: 20
 alwaysopen: false
 categories: ["RS"]
@@ -8,10 +9,11 @@ aliases: [
     /rs/administering/cluster-operations/adding-node/,
     /rs/administering/adding-node.md,
     /rs/administering/adding-node/,
-    /rs/clusters/adding-node.md,
-    /rs/clusters/adding-node/,
+    /rs/clusters/add-node.md,
+    /rs/clusters/add-node/,
     /embeds/adding-node-embed.md,
-    /embeds/adding-node-embed/
+    /embeds/adding-node-embed/,
+
 ]
 ---
 When you install Redis Enterprise Software on the first node of a cluster, you create the new cluster.
