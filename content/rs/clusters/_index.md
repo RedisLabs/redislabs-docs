@@ -6,8 +6,11 @@ weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    content/rs/clusters/_index.md,
-    content/rs/clusters/,
+    /rs/clusters/_index.md,
+    /rs/clusters/,
+    /rs/administering/cluster-operations,
+    /rs/administering/cluster-operations.md,
+    
 ]
 ---
 

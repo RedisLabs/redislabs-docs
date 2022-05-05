@@ -139,7 +139,7 @@ before running through the upgrade process.
     [Upgrading
     nodes]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
     while the node is in the offline state (refer to [Taking a node
-    offline]({{< relref "/rs/administering/cluster-operations/removing-node.md" >}}),
+    offline]({{< relref "/rs/clusters/remove-node.md" >}}),
     the upgrade process succeeds but might result in an unstable
     cluster.
     
