@@ -4,6 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/synchronizing-clocks.md,
+    /rs/administering/designing-production/synchronizing-clocks,
+    /rs/clusters/synchronizing-clocks.md,
+    /rs/clusters/synchronizing-clocks,
+]
 ---
 To avoid problems with internal cluster communications that can impact your data integrity,
 make sure that the clocks on all of the cluster nodes are synchronized using Chrony and/or NTP.

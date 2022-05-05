@@ -4,9 +4,15 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/cluster-operations/settings/
-        /rs/administering/cluster-operations/settings/general/
-        /rs/administering/cluster-operations/settings/license-keys/
+aliases: [
+        /rs/administering/cluster-operations/settings/,
+        /rs/administering/cluster-operations/settings/general/,
+        /rs/administering/cluster-operations/settings/license-keys/,
+        /rs/administering/cluster-operations/cluster-settings.md,
+        /rs/administering/cluster-operations/cluster-settings/,
+        /rs/clusters/cluster-settings.md,
+        /rs/clusters/cluster-settings/,
+]
 ---
 You can view and set various cluster settings in the **Settings > General** page.
 
