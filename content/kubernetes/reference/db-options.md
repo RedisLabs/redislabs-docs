@@ -72,7 +72,7 @@ The value is a keyword with the values:
 | snapshotEvery6Hour | A snapshot of the database is created every 6 hours. |
 | snapshotEvery12Hour | A snapshot of the database is created every 12 hours. |
 
-### [`rackAware`]((https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec))
+### [`rackAware`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
 A boolean that indicates whether the database is [rack-zone aware]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md">}}) (default: the cluster setting)
 
