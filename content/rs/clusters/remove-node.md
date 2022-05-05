@@ -1,12 +1,19 @@
 ---
-Title: Removing a Cluster Node
-description:
+Title: Remove a cluster node
+linkTitle: Remove node
+description: Remove a node from your Redis Enterprise cluster. 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/cluster-operations/removing-node.md,
+    /rs/administering/cluster-operations/removing-node/,
+    /rs/clusters/remove-node.md,
+    /rs/clusters/remove-node/,
+]
 ---
 There are various reasons why you may want to remove a node in Redis
-Enterprise Software (RS):
+Enterprise Software:
 
 - You no longer need the extra capacity, meaning you want to permanently remove the node.
 - You would like to replace a faulty node with a healthy node.
