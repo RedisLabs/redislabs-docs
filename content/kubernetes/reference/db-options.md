@@ -90,11 +90,11 @@ redisEnterpriseCluster:
 
 ### `redisVersion`
 
-The [upgrade policy]({{<relref "/rs/installing-upgrading/upgrading/#redis-upgrade-policy">}}) specific to an REDB: `major` or `latest`.
+The [upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy/">}}) specific to an REDB: `major` or `latest`.
 
 Specifying this field during REDB creation will determine if the database version is the latest available, or the latest major version available.
 
-If it is not specified, the database will follow the [upgrade policy set on the cluster]({{<relref "/kubernetes/reference/cluster-options/#redisupgradepolicy">}}). If the cluster version is set to `major`, only `major` will be accepted on REDBs. If the cluster is set to `latest`, both `latest` and `major` are valid for the REDB.
+If it is not specified, the database will follow the [upgrade policy set on the cluster]({{<relref "/kubernetes/reference/cluster-options#redisupgradepolicy/">}}). If the cluster version is set to `major`, only `major` will be accepted on REDBs. If the cluster is set to `latest`, both `latest` and `major` are valid for the REDB.
 
 ### [`replication`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
