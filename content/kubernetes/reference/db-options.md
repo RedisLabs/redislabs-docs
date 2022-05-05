@@ -52,7 +52,7 @@ A boolean that indicates whether [client authentication]({{<relref "/rs/security
 
 An [eviction policy]({{< relref "/rs/databases/configure/eviction-policy.md">}}) (default: `volatile-lru`)
 
-### [`memorySize`]((https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec))
+### [`memorySize`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
 The amount of memory to allocate that is at least 100MB. Values are an integer
 suffixed with a unit. For example, values like 1GB, 250MB, etc.
