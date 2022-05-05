@@ -8,7 +8,7 @@ categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
+instructions](/rs/installing-upgrading/upgrading.md" >}})
 before running through the upgrade process.
 
 You can upgrade to this version from any 4.2 version. If you have a
@@ -49,7 +49,7 @@ upgrade to this version.
 - Added the ability to allow the user to configure how machine IP
     addresses are used in Node Configuration setup in the management UI.
     For additional details, refer to [Initial setup - creating a new
-    cluster.]({{< relref "/rs/administering/new-cluster-setup.md" >}})
+    cluster.](https://docs.redis.com/latest/rs/clusters/new-cluster-setup/)
 - Connection to database endpoint can now be encrypted with SSL. For
     additional details, refer to [Securing client connection with
     SSL](https://docs.redis.com/latest/rs/security/tls-ssl).
