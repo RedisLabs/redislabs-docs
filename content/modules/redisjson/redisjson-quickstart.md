@@ -275,14 +275,17 @@ pears_obj = {
     "count" : 3
 }
 
-r.json().arrappend('shopping-list:py', '.stores.grocery-store.items', pears_obj)
+r.json().arrappend('shopping-list:py', '.stores.grocery-store.items',
+                    pears_obj)
 reply = r.json().get('shopping-list:py', '.')
 print(json.dumps(reply, indent=4) + "\n")
 
 # Incrementing numerical values
 print("Changing item counts...")
-r.json().numincrby('shopping-list:py', '.stores.clothing-store.items[0].count', 2)
-r.json().numincrby('shopping-list:py', '.stores.grocery-store.items[1].count', -1)
+r.json().numincrby('shopping-list:py',
+                    '.stores.clothing-store.items[0].count', 2)
+r.json().numincrby('shopping-list:py',
+                    '.stores.grocery-store.items[1].count', -1)
 reply = r.json().get('shopping-list:py', '.')
 print(json.dumps(reply, indent=4) + "\n")
 
