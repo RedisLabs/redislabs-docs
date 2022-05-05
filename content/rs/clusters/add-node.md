@@ -22,7 +22,7 @@ After you install the first node, you can add more nodes to the cluster.
 {{< note >}}
 Before you add a node to the cluster:
 
-- The clocks on all nodes must always be [synchronized]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
+- The clocks on all nodes must always be [synchronized]({{< relref "/rs/clusters/sync-clocks.md" >}}).
 
     If the clock in the node you are trying to join to the cluster is not synchronized with the nodes already in the cluster,
     the action fails and an error message is shown indicating that you must synchronize the clocks first.

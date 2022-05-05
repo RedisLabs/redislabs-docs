@@ -1,5 +1,6 @@
 ---
-Title: Synchronizing cluster node clocks
+Title: Synchronize cluster node clocks
+linktitle: Sync node clocks
 description:
 weight: $weight
 alwaysopen: false
@@ -7,8 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/designing-production/synchronizing-clocks.md,
     /rs/administering/designing-production/synchronizing-clocks,
-    /rs/clusters/synchronizing-clocks.md,
-    /rs/clusters/synchronizing-clocks,
+    /rs/clusters/synch-clocks.md,
+    /rs/clusters/sync-clocks,
 ]
 ---
 To avoid problems with internal cluster communications that can impact your data integrity,
