@@ -29,11 +29,11 @@ There is a binding between the SCC and the service account. You can create this 
 
 This [must be an odd number](https://redislabs.com/redis-enterprise/technology/highly-available-redis/) that is 3 or higher.
 
-### [`uiServiceType`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec): `service_type`
+## [`uiServiceType`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec): `service_type`
 
 This controls how the Redis Enterprise UI is exposed on the cluster. The service_type must be either `ClusterIP` or `LoadBalancer` (default: `ClusterIP`). It is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/).
 
-### [`persistentSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
+## [`persistentSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
 
 You can add a `storageClassName` that specifies the [Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for your nodes’ persistent disks. For example, AWS uses “gp2” as a default, GKE uses “standard” and Azure uses "default".
 
@@ -46,13 +46,13 @@ persistentSpec:
   storageClassName: "gp2"
 ```
 
-### [`redisEnterpriseNodeResources`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
+## [`redisEnterpriseNodeResources`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
 
 The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node (see `limits` and `requests`). Kubernetes accepts only integers as sizing numbers for requests and limits.
 
 Resource limits are recommended to equal requests, see [quaranteed quality of service](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/topics.md#guaranteed-quality-of-service) for more info.
 
-#### [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
+### [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
 
 The max resources (in integers) for a Redis node (similar to pod limits).
 
@@ -66,7 +66,7 @@ limits:
 
 The default is 4 cores (4000m) and 4GB (4Gi).
 
-#### [`requests`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
+### [`requests`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
 
 The minimum resources (in integers) for a Redis node  (similar to pod requests).
 
@@ -80,7 +80,7 @@ requests:
 
 The default is 4 cores (4000m) and 4GB (4Gi).
 
-### [`redisEnterpriseImageSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#imagespec)
+## [`redisEnterpriseImageSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#imagespec)
 
 This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The Operator automatically uses the matching RHEL image version for the release.
 
@@ -94,7 +94,7 @@ imagePullPolicy: IfNotPresent
 
 The version tag is as it appears on your repository, such as in [DockerHub](https://hub.docker.com/r/redislabs/redis/).
 
-### `redisUpgradePolicy`
+## `redisUpgradePolicy`
 
 [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading.md#redis-upgrade-policy">}}) that controls the default Redis database version when creating or updating databases.
 
@@ -107,7 +107,7 @@ More info:
 - [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading.md#redis-upgrade-policy">}})
 - [Upgrade policy values]({{<relref "/rs/installing-upgrading/upgrading.md#upgrade-policy-values">}})
 
-### Sample REC custom resource
+## Sample REC custom resource
 
 ```yaml
 apiVersion: app.redislabs.com/v1
