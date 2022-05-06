@@ -246,5 +246,5 @@ After you run a query, the output log displays a visual representation of your g
 
 ## More info
 
-- [RedisGraph commands](https://redis.io/docs/stack/graph/commands/)
+- [RedisGraph commands](https://redis.io/commands/?group=graph)
 - [RedisGraph client libraries](https://redis.io/docs/stack/graph/clients/)
