@@ -23,7 +23,7 @@ For this quick start tutorial, you need:
 
 ## RedisJSON with redis-cli
 
-The `redis-cli` command line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RedisJSON commands.
+The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool is part of the Redis installation. You can use it to connect to your Redis database and test RedisJSON commands.
 
 In these examples, you will create a shopping list using a JSON document in Redis.
 
@@ -171,7 +171,7 @@ You can also use `JSON.GET` to read a single entity or multiple entities with th
 ]
 ```
 
-Use `JSON.TYPE` to check the JSON type of the key, or an entity inside the key.
+Use `JSON.TYPE` to check the JSON type of the key or an entity inside the key.
 
 ```sh
 127.0.0.1:12543> JSON.TYPE shopping-list
@@ -226,7 +226,7 @@ Use `JSON.DEL` with no specified path to delete the key.
 
 ## RedisJSON with Python
 
-If you want to use RediSearch within an application, you can use one of these [client libraries](https://redis.io/docs/stack/json/clients/).
+If you want to use RedisJSON within an application, you can use one of the [client libraries](https://redis.io/docs/stack/json/clients/).
 
 The following example uses the Redis Python client library [redis-py](https://github.com/redis/redis-py), which supports RedisJSON commands as of v4.0.0.
 
@@ -241,7 +241,7 @@ r = redis.Redis(host="<endpoint>", port="<port>",
     password="<password>")
 
 # Create a JSON document
-print("Creating Shopping list...")
+print("Creating shopping list...")
 list_obj = {
     'list-date': '05/05/2022'
 }
@@ -250,7 +250,7 @@ r.json().set('shopping-list:py', '.', list_obj)
 reply = r.json().get('shopping-list:py', '.')
 print(json.dumps(reply, indent=4) + "\n")
 
-# Adding info to the JSON document
+# Add info to the JSON document
 print("Adding stores and starting items...")
 stores_obj = {
     "grocery-store" : {
@@ -268,7 +268,7 @@ r.json().set('shopping-list:py', '.stores', stores_obj)
 reply = r.json().get('shopping-list:py', '.')
 print(json.dumps(reply, indent=4) + "\n")
 
-# Adding new items to the list
+# Add new items to the list
 print("Adding pears...")
 pears_obj = {
     "name" : "pears",
@@ -280,7 +280,7 @@ r.json().arrappend('shopping-list:py', '.stores.grocery-store.items',
 reply = r.json().get('shopping-list:py', '.')
 print(json.dumps(reply, indent=4) + "\n")
 
-# Incrementing numerical values
+# Increment item counts
 print("Changing item counts...")
 r.json().numincrby('shopping-list:py',
                     '.stores.clothing-store.items[0].count', 2)
@@ -289,19 +289,19 @@ r.json().numincrby('shopping-list:py',
 reply = r.json().get('shopping-list:py', '.')
 print(json.dumps(reply, indent=4) + "\n")
 
-# Getting all items no matter which heading they're under
+# Get all items no matter which heading they're under
 print("Getting all items...")
 reply = r.json().get('shopping-list:py', '$..items')
 print(json.dumps(reply, indent=4) + "\n")
 
-# Deleting portions of the document
+# Delete specific parts of the document
 print("Deleting clothing store and pears...")
 r.json().delete('shopping-list:py', '.stores.clothing-store')
 r.json().delete('shopping-list:py', '.stores.grocery-store.items[1]')
 reply = r.json().get('shopping-list:py', '.')
 print(json.dumps(reply, indent=4) + "\n")
 
-# Deleting the key
+# Delete the JSON document key
 print("Deleting shopping-list:py key...")
 r.json().delete('shopping-list:py')
 print("Done!")
@@ -310,7 +310,7 @@ print("Done!")
 Example output:
 ```sh
 $ python3 quick_start.py
-Creating Shopping list...
+Creating shopping list...
 {
     "list-date": "05/05/2022"
 }
