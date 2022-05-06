@@ -1,12 +1,19 @@
 ---
-Title: Replacing a Faulty Cluster Node
-description:
+Title: Replace a faulty cluster node
+linkTitle: Replace a node
+description: Replace a node in your cluster that is down. 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/cluster-administration/replacing-a-faulty-node
+aliases: [
+    /rs/cluster-administration/replacing-a-faulty-node,
+    /rs/administering/cluster-operations/replacing-node.md,
+    /rs/administering/cluster-operations/replacing-node/,
+    /rs/clusters/replace-node.md,
+    /rs/clusters/replace-node/,
+]
 ---
-If a node in your Redis Enterprise Software (RS)cluster is faulty, its status appears as **Down** in
+If a node in your Redis Enterprise Software cluster is faulty, its status appears as **Down** in
 the **Status** column of the **Nodes** page, and in the **Cluster \>
 Configuration** page.
 

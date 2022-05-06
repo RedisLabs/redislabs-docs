@@ -55,7 +55,7 @@ existence of a faulty node and automatically replaces the faulty node
 with the new node.
 
 For guidelines, refer to [Replacing a faulty
-node]({{< relref "/rs/administering/cluster-operations/replacing-node.md" >}}).
+node]({{< relref "/rs/clusters/replace-node.md" >}}).
 
 ## Replace a healthy node
 
