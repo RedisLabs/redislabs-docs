@@ -8,6 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/troubleshooting/cluster-recovery.md,
     /rs/administering/troubleshooting/cluster-recovery/,
+    /rs/clusters/cluster-recovery.md,
+    /rs/clusters/cluster-recovery/,
 ]
 ---
 When a Redis Enterprise Software cluster fails,
