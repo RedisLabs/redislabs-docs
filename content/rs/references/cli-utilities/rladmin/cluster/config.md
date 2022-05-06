@@ -13,34 +13,51 @@ aliases:
 
 ```sh
  rladmin cluster config 
-        [ cipher_suites <BoringSSL_cipher_list> ]
+        [ cipher_suites <BoringSSL cipher list> ]
         [ cm_port <number> ]
         [ cm_session_timeout <minutes> ]
         [ cnm_http_port <number> ]
         [ cnm_https_port <number>]
-        [ data_cipher_list <data-cipher-suites-str> ]
+        [ data_cipher_list <openSSL cipher list> ]
         [ debuginfo_path <path/to/directory> ]
-        [ handle_redirects <enabled/disabled>]
-        [ http_support <enabled/disabled>]
-        [ ipv6 <enabled/disabled> ]
+        [ handle_redirects { enabled | disabled } ]
+        [ http_support { enabled | disabled } ]
+        [ ipv6 { enabled | disabled } ]
         [ min_control_TLS_version <control_tls_version>]
         [ min_data_TLS_version <data_tls_version> ]
         [ min_sentinel_TLS_version <sentinel_tls_version> ]
         [ s3_url <url> ]
         [ saslauthd_ldap_conf </tmp/ldap.conf> ]
-        [ sentinel_ssl_policy <allowed/required/disabled> ]
-        [ data_cipher_list <openSSL_cipher_list> ]
-        [ sentinel_cipher_suites <golang_cipher_list>]
-        [ services <cm_server | crdb_coordinator | crdb_worker | mdns_server | pdns_server | saslauthd | stats_archiver> <enabled | disabled> ]
-        [ upgrade_mode < enabled | disabled> ]
+        [ sentinel_ssl_policy { allowed | required | disabled} ]
+        [ sentinel_cipher_suites <golang cipher list>]
+        [ services { cm_server | crdb_coordinator | crdb_worker | mdns_server | pdns_server | saslauthd | stats_archiver } { enabled | disabled } ]
+        [ upgrade_mode { enabled | disabled } ]
 ```
 
 ### Parameters
 
 | Parameter | Type/Value | Description |
 |-----------|------------|-------------|
-| param1 | Description |
-| param2 | Description |
+| cipher_suites | | Cipher suites used for TLS connections to the admin console; specified in the format understood by the BoringSSL library |
+| cm_port | | UI server listening port |
+| cm_session_timeout | | Timeout (in minutes) for the CM session
+| cmn_http_port | | HTTP REST API server listening port |
+| cnm_https_port | | HTTPS REST API server listening port |
+| data_cipher_list | | Cipher suites used by the the data plane; specified in the format understood by the OpenSSL library |
+| debuginfo_path | | Path to local directory to place file when generating support packages |
+| handle_redirects | | Enable or disable handling DNS redirects when DNS is not configured and running behind a load balancer |
+| http_support | | Enable or disable using HTTP for REST API connections (info cluster) |
+| ipv6 | | Enable or disable IPv6 connections to the RS admin console |
+| min_control_TLS_version | | The minimum version of TLS protocol which is supported at the control path |
+| min_data_TLS_version | | The minimum version of TLS protocol which is supported at the data path |
+| min_sentinel_TLS_version | | |
+| s3_url | | The URL of S3 export and import |
+| saslauthd_ldap_conf | | Updates LDAP authentication configuration for the cluster (see Cluster-based LDAP Authentication or Kubernetes LDAP configuration) |
+| sentinel_cipher_suites | | Cipher suites used by the sentinel service (supported ciphers are implemented by the golang.org cipher suites package) |
+| sentinel_ssl_policy | | Define SSL policy for the Discovery Service: required/disabled/allowed |
+| services | 'cm_server'<br />'crdb_coordinator'<br />'crdb_worker'<br />'mdns_server'<br />'pdns_server'<br />'saslauthd'<br />'stats_archiver'<br /><br />'enabled'<br />'disabled' | |
+| upgrade_mode | | |
+
 
 ### Returns
 
