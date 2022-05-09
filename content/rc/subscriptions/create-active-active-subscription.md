@@ -45,7 +45,7 @@ You can use a region's Remove button to remove it from the list.
 
 Active-Active database instances require unique CIDR address blocks to communicate securely.
 
-Use the **VCP configuration** section of the **Advanced options** to define unique address blocks for each region.
+Use the **VPC configuration** section of the **Advanced options** to define unique address blocks for each region.
 
 {{<image filename="images/rc/create-sub-active-active-cidr.png" width="75%" alt="Each region needs a unique CIDR address block to communicate securely with other instances." >}}{{< /image >}}
 
