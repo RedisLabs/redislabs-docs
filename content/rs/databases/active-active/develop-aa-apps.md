@@ -100,7 +100,7 @@ execute them in script-replication mode.
 
 ## Eviction
 
-Active-Active databases default eviction policy is _noeviction_ mode.
+The default policy for Active-Active databases is _noeviction_ mode.
 Read more about [eviction for Active-Active databases]({{< relref "/rs/databases/configure/eviction-policy.md" >}}).
 
 
