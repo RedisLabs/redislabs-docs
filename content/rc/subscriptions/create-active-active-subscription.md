@@ -43,7 +43,7 @@ You can use a region's Remove button to remove it from the list.
 
 ## Define CIDR addresses
 
-Active-Active database instances require unique CIDR address blocks to communicate securely.
+To allow proper routing of network traffic between each of the Active-Active database instances as well as to your consumer VPC should you choose to conect over VPC peering, you should specify unique CIDR address blocks. Make sure that the CIDR blocks dont overlap between the regions on the  for the Redis producer side nor with those of your application consumer VPCs.
 
 Use the **VPC configuration** section of the **Advanced options** to define unique address blocks for each region.
 
