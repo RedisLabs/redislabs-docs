@@ -100,9 +100,9 @@ execute them in script-replication mode.
 
 ## Eviction
 
-Active-Active databases always operate in no eviction mode. The reasoning is that if
-memory is low, eviction may not help (or even worse) until garbage
-collection takes place.
+Active-Active databases default eviction policy is _noeviction_ mode.
+Read more about [eviction for Active-Active databases]({{< relref "/rs/databases/configure/eviction-policy.md" >}}).
+
 
 ## Expiration
 
