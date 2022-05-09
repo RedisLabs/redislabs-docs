@@ -26,19 +26,9 @@ Details:
 - Bug fixes:
 
     - [#2278](https://github.com/RedisGraph/RedisGraph/issues/2278), [#2301](https://github.com/RedisGraph/RedisGraph/pull/2301) Potential crash on bulk update
-    - [#2262](https://github.com/RedisGraph/RedisGraph/issues/2262), [#2269](https://github.com/RedisGraph/RedisGraph/pull/2269) Crash on queries involving deletion after copying properties in `ON MATCH/ON CREATE`
-    - [#2271](https://github.com/RedisGraph/RedisGraph/issues/2271), [#2283](https://github.com/RedisGraph/RedisGraph/pull/2283) Crash on certain queries: fix inequality when cloning predicate in all operations
-    - [#2272](https://github.com/RedisGraph/RedisGraph/issues/2272), [#2277](https://github.com/RedisGraph/RedisGraph/pull/2277) Crash on certain queries: validate function return type
-    - [#2273](https://github.com/RedisGraph/RedisGraph/issues/2273), [#2280](https://github.com/RedisGraph/RedisGraph/pull/2280) Crash on certain queries: fix apply op when missing argument
-    - [#2282](https://github.com/RedisGraph/RedisGraph/issues/2282), [#2295](https://github.com/RedisGraph/RedisGraph/pull/2295) Crash on empty query
-    - [#2288](https://github.com/RedisGraph/RedisGraph/issues/2288), [#2296](https://github.com/RedisGraph/RedisGraph/pull/2296) Crash on certain queries: validate return column names
-    - [#2299](https://github.com/RedisGraph/RedisGraph/issues/2299), [#2310](https://github.com/RedisGraph/RedisGraph/pull/2310) Crash when some functions are used incorrectly
-    - [#2312](https://github.com/RedisGraph/RedisGraph/issues/2312), [#2311](https://github.com/RedisGraph/RedisGraph/pull/2311) Crash on certain queries involving unknown function
-    - [#2321](https://github.com/RedisGraph/RedisGraph/issues/2321), [#2336](https://github.com/RedisGraph/RedisGraph/pull/2336) Crash when incorrectly using `NOT` as a function name
-    - [#2325](https://github.com/RedisGraph/RedisGraph/issues/2325), [#2319](https://github.com/RedisGraph/RedisGraph/pull/2319) Crash on accessing [`UNWIND`](https://redis.io/commands/graph.query/#unwind) variable after free
-    - [#2323](https://github.com/RedisGraph/RedisGraph/issues/2323), [#2327](https://github.com/RedisGraph/RedisGraph/pull/2327) Potential crash on certain queries: assertion failed on NULL root in filter tree
-    - [#1441](https://github.com/RedisGraph/RedisGraph/issues/1441), [#2252](https://github.com/RedisGraph/RedisGraph/pull/2252) Query returns wrong result: projection before Cartesian product causes only one result to be returned
-    - [#2298](https://github.com/RedisGraph/RedisGraph/issues/2298), [#2319](https://github.com/RedisGraph/RedisGraph/pull/2319) Query returns wrong result: wrong value when fetching a string property from a map
+    - [#2262](https://github.com/RedisGraph/RedisGraph/issues/2262), [#2271](https://github.com/RedisGraph/RedisGraph/issues/2271), [#2272](https://github.com/RedisGraph/RedisGraph/issues/2272), [#2273](https://github.com/RedisGraph/RedisGraph/issues/2273), [#2282](https://github.com/RedisGraph/RedisGraph/issues/2282), [#2288](https://github.com/RedisGraph/RedisGraph/issues/2288), [#2299](https://github.com/RedisGraph/RedisGraph/issues/2299), [#2312](https://github.com/RedisGraph/RedisGraph/issues/2312), [#2321](https://github.com/RedisGraph/RedisGraph/issues/2321), [#2325](https://github.com/RedisGraph/RedisGraph/issues/2325), [#2323](https://github.com/RedisGraph/RedisGraph/issues/2323) Potential crash on certain queries
+    - [#1441](https://github.com/RedisGraph/RedisGraph/issues/1441) Query returns wrong result: projection before Cartesian product causes only one result to be returned
+    - [#2298](https://github.com/RedisGraph/RedisGraph/issues/2298) Query returns wrong result: wrong value when fetching a string property from a map
     - [#2318](https://github.com/RedisGraph/RedisGraph/pull/2318) Memory leak
 
 ## v2.8.11 (March 2022)
