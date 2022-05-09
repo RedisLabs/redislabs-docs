@@ -22,23 +22,23 @@ The following table elaborates on the privileges for each of these roles:
 
 {{< embed-html "account-role-table.html" >}}
 
-### Configuring users with roles
+### Configure users with roles
 
 To add a user to the cluster:
 
 1. Go to the access control tab
 1. Select ![Add](/images/rs/icon_add.png#no-click "Add")
-1. Enter the name, email and password of the new user and select the role to assign to the user.
+1. Enter the name, email and password of the new user and select the role to assign to the user
 1. Select the internal user type
 1. For email alerts, select "Edit" and then choose the alerts that the user should receive. You can select:
 
     - Receive alerts for databases - The alerts that are enabled for the selected databases will be sent to the user. You can either select "All databases", or you can select "Customize" and select the individual databases to send alerts for.
         - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
 
-1. Select the save icon.
+1. Select the save icon
 {{< video "/images/rs/new-user-add.mp4" "Create a new user" >}}
 
-## User Account Security
+## User account security
 
 Redis Enterprise supports the following user account security settings:
 
@@ -49,7 +49,7 @@ Redis Enterprise supports the following user account security settings:
 
 To enforce a more advanced password policy, we recommend using LDAP integration with an external identity provider, such as Active Directory.
 
-### Enabling the password complexity profile
+### Enable password complexity profile
 
 Redis Enterprise Software provides an optional password complexity profile
 that meets most organizational needs. When enabled, this password profile requires the following:
@@ -57,8 +57,10 @@ that meets most organizational needs. When enabled, this password profile requir
 - At least 8 characters
 - At least one uppercase character
 - At least one lowercase character
-- At least one number (not first or last character)
-- At least one special character (not first or last character)
+- At least one number
+- At least one special character
+
+These requirements reflect v6.2.12 and later.  Earlier versions did not support numbers or special characters as the first or the last character of a password.  This restriction was removed in v6.2.12.
 
 In addition, the password:
 
@@ -81,7 +83,7 @@ curl -k -X PUT -v -H "cache-control: no-cache"
 
 To disable the password complexity requirement, run the same command, but set "password_complexity" to "false".
 
-### Enabling password expiration
+### Enable password expiration
 
 To enforce an expiration of a user's password after a specified number of days, run the following command:
 
@@ -95,7 +97,7 @@ curl -k -X PUT -v -H "cache-control: no-cache"
 
 To disable password expiration, set the number of days to `0`.
 
-## User Login Lockout
+## User login lockout
 
 The parameters for the user login lockout are:
 
@@ -111,7 +113,7 @@ You can view the user login restrictions for your cluster with:
 rladmin info cluster | grep login_lockout
 ```
 
-### Change the login lockout threshold
+### Change login lockout threshold
 
 You can set the login lockout threshold with the command:
 
@@ -127,7 +129,7 @@ rladmin tune cluster login_lockout_threshold 10
 
 Setting the lockout threshold to 0 disables account lockout. In this case, the cluster settings show: login_lockout_threshold: disabled
 
-### Change the login lockout counter
+### Change login lockout counter
 
 You can set the login lockout reset counter in seconds with the command:
 
@@ -141,7 +143,7 @@ To set the lockout reset to 1 hour, run:
 rladmin tune cluster login_lockout_counter_reset_after 3600
 ```
 
-### Change the login lockout duration
+### Change login lockout duration
 
 You can set the login lockout duration in seconds with the command:
 
