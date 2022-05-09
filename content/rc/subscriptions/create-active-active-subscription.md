@@ -43,7 +43,9 @@ You can use a region's Remove button to remove it from the list.
 
 ## Define CIDR addresses
 
-To allow proper routing of network traffic between each of the Active-Active database instances as well as to your consumer VPC should you choose to conect over VPC peering, you should specify unique CIDR address blocks. Make sure that the CIDR blocks dont overlap between the regions on the  for the Redis producer side nor with those of your application consumer VPCs.
+To properly route network traffic between each Active-Active database instance and your consumer VPCs, use care to specify unique CIDR address blocks when using VPC Peering.  The block regions should _not_ overlap between the Redis server and your app consumer VPCs.
+
+In addition, CIDR blocks should not overlap between cluster instances.  Every CIDR block should be unique.
 
 Use the **VPC configuration** section of the **Advanced options** to define unique address blocks for each region.
 
