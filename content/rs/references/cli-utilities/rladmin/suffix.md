@@ -32,8 +32,8 @@ rladmin suffix add name <name>
 | name      | string           | DNS suffix to add to the cluster                                                             |
 | default   |                  | Sets the given suffix as default. If there is already a default set, this will overwrite it.  |
 | internal  |                  | Forces the given suffix to use private IPs                                                    |
-| mdns      |                  | Activates multicast DNS support on the given suffix                                           |
-| slaves    | one or more frontend DNS server IPv4 addresses | The given suffix will notify the frontend DNS servers when a change in frontend DNS has occured |
+| mdns      |                  | Activates multicast DNS support for the given suffix                                           |
+| slaves    | list of IPv4 addresses | The given suffix will notify the frontend DNS servers when a change in frontend DNS has occurred |
 | use_aaaa_ns |                | Activates IPv6 address support |
 
 ### Returns
