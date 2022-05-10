@@ -12,16 +12,16 @@ aliases:
 
 `rladmin bind` manages the proxy policy for a specific database endpoint.
 
-## `bind endpoint <id> { include | exclude }`
+## `bind endpoint exclude`
 
-Defines whether proxies should be included or excluded in the proxy policy for the specific database endpoint.
+Defines whether proxies should be excluded in the proxy policy for the specific database endpoint.
 
-The include and exclude commands are overwriting commands. Multiple include or exclude commands will overwrite the proxy policy.
+The exclude command is an overwriting command. Multiple include or exclude commands will overwrite the proxy policy.
 
 ```sh
 rladmin bind
         [ db { db:<id> | <name> } ]
-        endpoint <id> { include | exclude }
+        endpoint <id> exclude
         <proxy_id1 .. proxy_idN>
 ```
 
@@ -31,9 +31,7 @@ rladmin bind
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | db        | db:\<id\><br /> name           | Only allows endpoints for the specified database                                               |
 | endpoint  | endpoint ID                    | Changes proxy settings for the specified endpoint                              |
-| include   |                                | Includes proxies in the proxy policy |
-| exclude   |                                | Excludes proxies in the proxy policy                                                           |
-| proxy     | list of proxy IDs          | Proxies to include or exclude                                                           |
+| proxy     | list of proxy IDs          | Proxies to exclude                                                           |
 
 ### Returns
 
@@ -58,6 +56,50 @@ ENDPOINTS:
 DB:ID    NAME   ID                 NODE      ROLE                       SSL
 db:6     tr02   endpoint:6:1       node:1    all-nodes -2               No
 db:6     tr02   endpoint:6:1       node:3    all-nodes -2               No
+```
+
+## `bind endpoint include`
+
+Defines whether proxies should be included in the proxy policy for the specific database endpoint.
+
+The include command is an overwriting command. Multiple include or exclude commands will overwrite the proxy policy.
+
+```sh
+rladmin bind
+        [ db { db:<id> | <name> } ]
+        endpoint <id> include
+        <proxy_id1 .. proxy_idN>
+```
+
+### Parameters
+
+| Parameter | Type/Value                     | Description                                                                                   |
+|-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
+| db        | db:\<id\><br /> name           | Only allows endpoints for the specified database                                               |
+| endpoint  | endpoint ID                    | Changes proxy settings for the specified endpoint                              |
+| proxy     | list of proxy IDs          | Proxies to include                                                           |
+
+### Returns
+
+Returns `Finished successfully` if the proxy policy was successfully changed. Otherwise, it returns an error.
+
+Use [`rladmin status endpoints`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-endpoints">}}) to verify that the policy changed.
+
+### Example
+
+``` sh
+$ rladmin status endpoints db db:6
+ENDPOINTS:
+DB:ID    NAME   ID                 NODE      ROLE                       SSL
+db:6     tr02   endpoint:6:1       node:3    all-master-shards          No
+$ rladmin bind endpoint 6:1 include 3
+Executing bind endpoint: OOO.
+Finished successfully
+$ rladmin status endpoints db db:6
+ENDPOINTS:
+DB:ID   NAME   ID                NODE      ROLE                          SSL
+db:6    tr02   endpoint:6:1      node:1    all-master-shards +3          No
+db:6    tr02   endpoint:6:1      node:3    all-master-shards +3          No
 ```
 
 ## `bind endpoint policy`
