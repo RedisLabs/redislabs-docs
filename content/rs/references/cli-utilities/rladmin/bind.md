@@ -20,7 +20,7 @@ The include and exclude commands are overwriting commands. Multiple include or e
 
 ```sh
 rladmin bind
-        [ db <db:id | name> ]
+        [ db { db:<id> | <name> } ]
         endpoint <id> { include | exclude }
         <proxy_id1 .. proxy_idN>
 ```
@@ -33,7 +33,7 @@ rladmin bind
 | endpoint  | endpoint ID                    | Changes proxy settings for the specified endpoint                              |
 | include   |                                | Includes proxies in the proxy policy |
 | exclude   |                                | Excludes proxies in the proxy policy                                                           |
-| proxy     | One or more proxy IDs          | Proxies to include or exclude                                                           |
+| proxy     | list of proxy IDs          | Proxies to include or exclude                                                           |
 
 ### Returns
 
@@ -60,13 +60,13 @@ db:6     tr02   endpoint:6:1       node:1    all-nodes -2               No
 db:6     tr02   endpoint:6:1       node:3    all-nodes -2               No
 ```
 
-## `bind endpoint <id> policy`
+## `bind endpoint policy`
 
 Changes the overall proxy policy for a specific database endpoint.
 
 ```sh
 rladmin bind
-        [ db <db:id | name> ]
+        [ db { db:<id> | <name> } ]
         endpoint <id>
         policy { single | all-master-shards | all-nodes }
 ```
@@ -77,7 +77,7 @@ rladmin bind
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | db        | db:\<id\><br /> name           | Only allows endpoints for the specified database                                               |
 | endpoint  | endpoint ID                    | Changes proxy settings for the specified endpoint                              |
-| policy    | all-master-shards<br /> all-nodes<br /> single | Changes proxy policy to the specified policy (see below) |
+| policy    | `all-master-shards`<br /> `all-nodes`<br /> `single` | Changes proxy policy to the specified policy (see below) |
 
 
 | Proxy policy | Description |
