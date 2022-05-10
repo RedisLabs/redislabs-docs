@@ -1,7 +1,7 @@
 ---
-Title: RedisGraph quick start tutorial
+Title: RedisGraph quick start
 linkTitle: Quick start
-description: RedisGraph quick start tutorial
+description: RedisGraph quick start
 weight: 20
 alwaysopen: false
 categories: ["Modules"]
@@ -18,13 +18,13 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-- `redis-cli` command line tool
+- `redis-cli` command-line tool
 
 - [`redis-py`](https://github.com/redis/redis-py) client library v4.1.0 or greater
 
 ## RedisGraph with `redis-cli`
 
-The [`redis-cli`](https://redis.io/docs/manual/cli/) command line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RedisGraph commands.
+The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RedisGraph commands.
 
 ### Connect to a database
 
@@ -130,7 +130,7 @@ You can use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query 
 
 ### Delete relationships
 
-To delete a node's relationships without removing any nodes:
+You can also use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query to delete a node's relationships without removing any nodes:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (:Rider {name: 'Valentino Rossi'})-[r:rides]->() DELETE r"

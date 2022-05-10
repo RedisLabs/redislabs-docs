@@ -1,7 +1,7 @@
 ---
-Title: RedisJSON quick start tutorial
+Title: RedisJSON quick start
 linkTitle: Quick start
-description:
+description: RedisJSON quick start
 weight: 20
 alwaysopen: false
 categories: ["Modules"]
