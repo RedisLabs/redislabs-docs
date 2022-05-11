@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-`rladmin cluster certificate` sets the cluster certificate to a given file.
+Sets the cluster certificate to a specified file.
 
 ```sh
 rladmin cluster certificate 

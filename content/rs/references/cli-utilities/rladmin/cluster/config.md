@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-`rladmin cluster config` updates the cluster configuration.
+Updates the cluster configuration.
 
 ```sh
  rladmin cluster config 
@@ -19,7 +19,7 @@ aliases:
         [ cnm_http_port <number> ]
         [ cnm_https_port <number>]
         [ data_cipher_list <openSSL cipher list> ]
-        [ debuginfo_path <path/to/directory> ]
+        [ debuginfo_path <filepath> ]
         [ handle_redirects { enabled | disabled } ]
         [ http_support { enabled | disabled } ]
         [ ipv6 { enabled | disabled } ]
@@ -38,32 +38,33 @@ aliases:
 
 | Parameter | Type/Value | Description |
 |-----------|------------|-------------|
-| cipher_suites | | Cipher suites used for TLS connections to the admin console; specified in the format understood by the BoringSSL library |
+| cipher_suites | list of ciphers | Cipher suites used for TLS connections to the admin console; specified in the format understood by the BoringSSL library |
 | cm_port | integer | UI server listening port |
 | cm_session_timeout | integer | Timeout in minutes for the CM session
 | cmn_http_port | integer | HTTP REST API server listening port |
 | cnm_https_port | integer | HTTPS REST API server listening port |
-| data_cipher_list | | Cipher suites used by the the data plane; specified in the format understood by the OpenSSL library |
-| debuginfo_path | | Path to local directory to place file when generating support packages |
+| data_cipher_list | list of ciphers | Cipher suites used by the the data plane; specified in the format understood by the OpenSSL library |
+| debuginfo_path | filepath | Path to local directory to place file when generating support packages |
 | handle_redirects | 'enabled'<br />'disabled' | Enable or disable handling DNS redirects when DNS is not configured and running behind a load balancer |
 | http_support | 'enabled'<br />'disabled' | Enable or disable using HTTP for REST API connections (info cluster) |
 | ipv6 | 'enabled'<br />'disabled' | Enable or disable IPv6 connections to the RS admin console |
-| min_control_TLS_version | | The minimum version of TLS protocol which is supported at the control path |
-| min_data_TLS_version | | The minimum version of TLS protocol which is supported at the data path |
-| min_sentinel_TLS_version | | |
-| s3_url | | The URL of S3 export and import |
-| saslauthd_ldap_conf | | Updates LDAP authentication configuration for the cluster (see Cluster-based LDAP Authentication or Kubernetes LDAP configuration) |
-| sentinel_cipher_suites | | Cipher suites used by the sentinel service (supported ciphers are implemented by the golang.org cipher suites package) |
+| min_control_TLS_version | TLS protocol version | The minimum version of TLS protocol which is supported at the control path |
+| min_data_TLS_version | TLS protocol version | The minimum version of TLS protocol which is supported at the data path |
+| min_sentinel_TLS_version | TLS protocol version | The minimum version of TLS protocol which is supported in the sentinel service |
+| s3_url | string | The URL of S3 export and import |
+| saslauthd_ldap_conf | filepath | Updates LDAP authentication configuration for the cluster (see [cluster-based LDAP authentication]({{<relref "/rs/security/ldap/cluster-based-ldap-authentication">}}) or [Kubernetes LDAP configuration]({{<relref "/kubernetes/security/ldap-on-k8s">}})) |
+| sentinel_cipher_suites | list of ciphers | Cipher suites used by the sentinel service (supported ciphers are implemented by the [golang.org cipher suites package](https://golang.org/src/crypto/tls/cipher_suites.go)) |
 | sentinel_ssl_policy | 'allowed'<br />'required'<br />'disabled' | Define SSL policy for the Discovery Service: required/disabled/allowed |
-| services | 'cm_server'<br />'crdb_coordinator'<br />'crdb_worker'<br />'mdns_server'<br />'pdns_server'<br />'saslauthd'<br />'stats_archiver'<br /><br />'enabled'<br />'disabled' | |
-| upgrade_mode | 'enabled'<br />'disabled' | |
-
+| services | 'cm_server'<br />'crdb_coordinator'<br />'crdb_worker'<br />'mdns_server'<br />'pdns_server'<br />'saslauthd'<br />'stats_archiver'<br /><br />'enabled'<br />'disabled' | Enable or deactivate selected cluster services |
+| upgrade_mode | 'enabled'<br />'disabled' | Enable or deactivate upgrade mode on the cluster |
 
 ### Returns
+
+Reports whether the cluster was configured successfully. Displays an error message if the configuration attempt fails.
 
 ### Example
 
 ```sh
-$ rladmin command x
-response
+$ rladmin cluster config cm_session_timeout_minutes 20
+Cluster configured successfully
 ```

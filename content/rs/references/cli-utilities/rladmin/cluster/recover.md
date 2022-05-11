@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-`rladmin cluster recover` recovers a cluster from a backup file. The default location of the configuration backup file is `/var/opt/redislabs/persist/ccs/ccs-redis.rdb`.
+Recovers a cluster from a backup file. The default location of the configuration backup file is `/var/opt/redislabs/persist/ccs/ccs-redis.rdb`.
 
 ```sh
 rladmin cluster recover 
@@ -33,14 +33,14 @@ rladmin cluster recover
 | addr | IP address | Sets a node's internal address. If not provided, the node sets the address automatically. (optional) |
 | ccs_persistent_path | filepath | Path to the location of CCS snapshots (default is the same as persistent_path) (optional) |
 | external_addr | IP address | Sets a node's external address. If not provided, the node sets the address automatically. (optional) |
-| ephemeral_path | filepath (default:&nbsp;/var/opt/redislabs) | Path to an ephemeral storage location |
-| filename | | Backup file to use for recovery |
+| ephemeral_path | filepath (default:&nbsp;/var/opt/redislabs) | Path to an ephemeral storage location (optional) |
+| filename | filepath | Backup file to use for recovery |
 | flash_enabled | | Enables flash storage (optional) |
 | flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to a flash storage location (in case the node does not support CAPI) (required if flash_enabled) |
 | node_uid | integer (default:&nbsp;1) | Specifies which node will recover first and become master (optional) |
 | override_rack_id | | Changes to a new rack, specified by `rack_id` (optional) |
 | persistent_path | filepath | Path to a persistent storage location (optional) |
-| rack_id |  | Switches to this rack ID (optional) |
+| rack_id | string | Switches to this rack ID (optional) |
 
 ### Returns
 

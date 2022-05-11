@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-`rladmin cluster join` adds a node to an existing cluster.
+Adds a node to an existing cluster.
 
 ```sh
 rladmin cluster join 
@@ -44,13 +44,13 @@ rladmin cluster join
 | flash_enabled |  | Enables flash capabilities for a database (optional) |
 | flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to a flash storage location (in case the node does not support CAPI) (required if flash_enabled) |
 | name | string | Name of the cluster to join |
-| nodes |  | Internal IP address of an existing node in the cluster |
+| nodes | IP address | Internal IP address of an existing node in the cluster |
 | override_rack_id |  | Changes to a new rack, specified by `rack_id` (optional) |
 | override_repair |  | Enables joining a cluster with a dead node (optional) |
-| password |  | Admin user's password |
+| password | string | Admin user's password |
 | persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to a persistent storage location (optional) |
-| rack_id |  | Switches to this rack ID (optional) |
-| replace_node |  | Replaces the specified node with the new node (optional) |
+| rack_id | string | Switches to this rack ID (optional) |
+| replace_node | integer | Replaces the specified node with the new node (optional) |
 | username | email address | Admin user's email address |
 
 ### Returns

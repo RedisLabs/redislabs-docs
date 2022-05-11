@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-`rladmin cluster create` creates a new cluster. The node from which the command is executed becomes the first node of the new cluster.
+Creates a new cluster. The node from which the command is executed becomes the first node of the new cluster.
 
 ```sh
 cluster create 
@@ -34,18 +34,21 @@ cluster create
 
 | Parameter | Type/Value | Description |
 |-----------|------------|-------------|
-| addr | IP address | Internal IP addresses of the node |
-| ccs_persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to location of CCS snapshots |
-| ephemeral_path | filepath | Path to ephemeral storage location (defaults to /var/opt/redislabs) |
-| external_addr | IP address | External IP addresses of the node |
-| flash_enabled | | Enables flash storage |
-| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to flash storage location |
-| license_file | | Path to RLEC license file |
-| node_uid | | Unique node ID |
-| persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to persistent storage location |
-| rack_aware | | Enables/disables rack awareness |
-| rack_id | | Rack ID of the rack |
-| register_dns_suffix | | Enables database mapping to both internal and external IP |
+| addr | IP address | Internal IP addresses of the node (optional) |
+| ccs_persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to location of CCS snapshots (optional) |
+| ephemeral_path | filepath | Path to ephemeral storage location (defaults to /var/opt/redislabs) (optional) |
+| external_addr | IP address | External IP addresses of the node (optional) |
+| flash_enabled | | Enables flash storage (optional) |
+| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to flash storage location (optional) |
+| license_file | filepath | Path to RLEC license file (optional) |
+| name | string | Cluster name |
+| node_uid | integer | Unique node ID (optional) |
+| password | string | Admin user's password |
+| persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to persistent storage location (optional) |
+| rack_aware | | Activates or deactivates rack awareness (optional) |
+| rack_id | string | Rack ID of the rack (optional) |
+| register_dns_suffix | | Enables database mapping to both internal and external IP (optional) |
+| username | email address | Admin user's email address |
 
 ### Returns
 
