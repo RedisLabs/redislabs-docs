@@ -30,9 +30,9 @@
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
         {{- if ne $numberOfPages 0 }} haschildren{{end -}}
         {{- if $isCollapsed}} menu-collapsed {{else}} menu-expanded{{end -}}
-        {{- if (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/glossary/") (eq .RelPermalink "/kubernetes/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/"))}} menu-root {{end}}
+        {{- if (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/glossary/") (eq .RelPermalink "/kubernetes/") (eq .RelPermalink "/connect/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/"))}} menu-root {{end}}
         ">
-        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/glossary/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/kubernetes/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/")}}
+        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/glossary/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/kubernetes/") (eq .RelPermalink "/connect/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/")}}
           <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
         {{- end}}
 
@@ -43,7 +43,7 @@
           {{else}}
             <div class="children">
           {{end}}
-              {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/kubernetes/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/")}}          
+              {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/kubernetes/") (eq .RelPermalink "/connect/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/")}}          
                 <div class="menu-divider"></div>
                 
                 <span class="SideMenuToggle expander">
