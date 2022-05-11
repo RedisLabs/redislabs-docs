@@ -2,7 +2,7 @@
 Title: Redis Connect
 linkTitle: Redis Connect
 description:
-weight: 70
+weight: 71
 alwaysopen: false
 categories: ["Connect"]
 aliases: /connect/
