@@ -14,9 +14,9 @@ aliases:
 
 ## `bind endpoint exclude`
 
-Defines whether proxies should be excluded in the proxy policy for the specific database endpoint.
+Defines a list of nodes to exclude from the proxy policy for a specific database endpoint. When you exclude a node, the endpoint cannot bind to the node's proxy.
 
-The exclude command is an overwriting command. Multiple include or exclude commands will overwrite the proxy policy.
+Each time you run an exclude command, it overwrites the previous list of excluded nodes.
 
 ```sh
 rladmin bind
@@ -35,7 +35,7 @@ rladmin bind
 
 ### Returns
 
-Returns `Finished successfully` if the proxy policy was successfully changed. Otherwise, it returns an error.
+Returns `Finished successfully` if the list of excluded proxies was successfully changed. Otherwise, it returns an error.
 
 Use [`rladmin status endpoints`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-endpoints">}}) to verify that the policy changed.
 
@@ -60,9 +60,9 @@ db:6     tr02   endpoint:6:1       node:3    all-nodes -2               No
 
 ## `bind endpoint include`
 
-Defines whether proxies should be included in the proxy policy for the specific database endpoint.
+Defines a list of nodes to include in the proxy policy for the specific database endpoint.
 
-The include command is an overwriting command. Multiple include or exclude commands will overwrite the proxy policy.
+Each time you run an include command, it overwrites the previous list of included nodes.
 
 ```sh
 rladmin bind
@@ -81,7 +81,7 @@ rladmin bind
 
 ### Returns
 
-Returns `Finished successfully` if the proxy policy was successfully changed. Otherwise, it returns an error.
+Returns `Finished successfully` if the list of included proxies was successfully changed. Otherwise, it returns an error.
 
 Use [`rladmin status endpoints`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-endpoints">}}) to verify that the policy changed.
 
