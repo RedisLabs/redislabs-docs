@@ -12,6 +12,57 @@ aliases:
 
 `rladmin migrate` moves Redis Enterprise Software shards or endpoints to a new node in the same cluster.
 
+## `migrate all_master_shards`
+
+Moves all primary shards of a specified database or node to a new node in the same cluster.
+
+```sh
+rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
+        all_master_shards
+        target_node <id>
+        [ override_policy ]
+```
+
+### Parameters
+
+| Parameter                     | Type/Value             | Description                                                                     |
+|-------------------------------|------------------------|---------------------------------------------------------------------------------|
+| db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
+| node                          | node ID                | Limits migration to specific origin node                                        |
+| target_node                   | node ID                | Migration target node                                                           |
+| override_policy               |                        | Overrides rack aware policy and allows master and slave shards on the same node |
+
+### Returns
+
+Returns `Done` if the migration completed successfully. Otherwise, returns an error.
+
+Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-shards">}}) to verify the migration completed.
+
+### Example
+
+```sh
+$ rladmin status shards db db:6 sort ROLE
+SHARDS:
+DB:ID  NAME       ID         NODE    ROLE    SLOTS         USED_MEMORY   STATUS
+db:6   tr02       redis:14   node:3  master  0-4095        3.01MB        OK     
+db:6   tr02       redis:16   node:3  master  4096-8191     3.2MB         OK     
+db:6   tr02       redis:18   node:3  master  8192-12287    3.2MB         OK     
+db:6   tr02       redis:20   node:3  master  12288-16383   3.01MB        OK
+$ rladmin migrate db db:6 all_master_shards target_node 1
+Monitoring 8b0f28e2-4342-427a-a8e3-a68cba653ffe
+queued - migrate_shards
+running - migrate_shards
+Executing migrate_redis with shards_uids ['18', '14', '20', '16']
+Ocompleted - migrate_shards
+Done
+$ rladmin status shards node 1
+SHARDS:
+DB:ID  NAME       ID         NODE    ROLE    SLOTS         USED_MEMORY   STATUS
+db:6   tr02       redis:14   node:1  master  0-4095        3.22MB        OK     
+db:6   tr02       redis:16   node:1  master  4096-8191     3.22MB        OK     
+db:6   tr02       redis:18   node:1  master  8192-12287    3.22MB        OK     
+db:6   tr02       redis:20   node:1  master  12288-16383   2.99MB        OK  
+```
 ## `migrate all_shards`
 
 Moves all shards on a specified node to a new node in the same cluster.
@@ -65,58 +116,6 @@ db:6   tr02       redis:15   node:2  slave   0-4095        2.96MB        OK
 db:6   tr02       redis:17   node:2  slave   4096-8191     2.96MB        OK
 db:6   tr02       redis:19   node:2  slave   8192-12287    2.96MB        OK
 db:6   tr02       redis:21   node:2  slave   12288-16383   2.96MB        OK
-```
-
-## `migrate all_master_shards`
-
-Moves all primary shards of a specified database or node to a new node in the same cluster.
-
-```sh
-rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
-        all_master_shards
-        target_node <id>
-        [ override_policy ]
-```
-
-### Parameters
-
-| Parameter                     | Type/Value             | Description                                                                     |
-|-------------------------------|------------------------|---------------------------------------------------------------------------------|
-| db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
-| node                          | node ID                | Limits migration to specific origin node                                        |
-| target_node                   | node ID                | Migration target node                                                           |
-| override_policy               |                        | Overrides rack aware policy and allows master and slave shards on the same node |
-
-### Returns
-
-Returns `Done` if the migration completed successfully. Otherwise, returns an error.
-
-Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-shards">}}) to verify the migration completed.
-
-### Example
-
-```sh
-$ rladmin status shards db db:6 sort ROLE
-SHARDS:
-DB:ID  NAME       ID         NODE    ROLE    SLOTS         USED_MEMORY   STATUS
-db:6   tr02       redis:14   node:3  master  0-4095        3.01MB        OK     
-db:6   tr02       redis:16   node:3  master  4096-8191     3.2MB         OK     
-db:6   tr02       redis:18   node:3  master  8192-12287    3.2MB         OK     
-db:6   tr02       redis:20   node:3  master  12288-16383   3.01MB        OK
-$ rladmin migrate db db:6 all_master_shards target_node 1
-Monitoring 8b0f28e2-4342-427a-a8e3-a68cba653ffe
-queued - migrate_shards
-running - migrate_shards
-Executing migrate_redis with shards_uids ['18', '14', '20', '16']
-Ocompleted - migrate_shards
-Done
-$ rladmin status shards node 1
-SHARDS:
-DB:ID  NAME       ID         NODE    ROLE    SLOTS         USED_MEMORY   STATUS
-db:6   tr02       redis:14   node:1  master  0-4095        3.22MB        OK     
-db:6   tr02       redis:16   node:1  master  4096-8191     3.22MB        OK     
-db:6   tr02       redis:18   node:1  master  8192-12287    3.22MB        OK     
-db:6   tr02       redis:20   node:1  master  12288-16383   2.99MB        OK  
 ```
 
 ## `migrate all_slave_shards`
