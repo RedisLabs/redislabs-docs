@@ -19,14 +19,13 @@ The most common options are listed below. For a complete list of options, see [R
 
 ### `databasePort`
 
-
 Manually sets the TCP port on which the database is available. If the port number is not specified, it will be automatically generated.
 
 {{<warning>}}
 `databasePort` cannot be added, removed, or changed after database creation.
 {{</warning>}}
 
-If the admission controller is installed and configured, it will run validity checks before the REDB creation. If the port is not available, you'll get an error for "port is unavailable." If the port is not valid, you'll get an error for "change databasePort is not allowed." 
+If the admission controller is installed and configured, it will run validity checks before the REDB creation. If the port is not available, you'll get an error for "port is unavailable." If the port is not valid, you'll get an error for "change databasePort is not allowed."
 
 ### `databaseSecretName`
 
@@ -44,9 +43,6 @@ When the database is created, the secret is updated to include the port and serv
 but the password does not change. If you did not create the secret, it is
 also updated with the generated database password.
 
-### `enforceClientAuthentication`
-
-A boolean that indicates whether [client authentication]({{<relref "/rs/security/tls">}}) should be enforced (default: `true`).
 
 ### `evictionPolicy`
 
