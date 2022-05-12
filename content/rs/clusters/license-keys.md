@@ -1,9 +1,16 @@
 ---
-Title: Cluster License Keys
+Title: Cluster license keys
+linktitle: License keys
 description:
 weight: 20
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/cluster-operations/license-keys.md,
+    /rs/administering/cluster-operations/license-keys/,
+    /rs/clusters/license-keys.md,
+    /rs/clusters/license-keys/,
+]
 ---
 The cluster key (or license) enables features and capacity within Redis Enterprise Software (RS).
 You can add or update a cluster key at any time in a cluster lifecycle.
