@@ -1,5 +1,5 @@
 ---
-Title: Distributed synchronization for replicated databases
+Title: Configure distributed synchronization
 linktitle: Distributed synchronization
 description: How to configure distributed synchronization so that any available proxy endpoint can manage synchronization traffic. 
 weight: $weight
@@ -8,8 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/cluster-operations/synchronization-mode.md,
     /rs/administering/cluster-operations/synchronization-mode/,
-    /rs/databases/configure/synchronization-mode.md,
-    /rs/databases/configure/synchronization-mode/,
+    /rs/databases/active-active/synchronization-mode.md,
+    /rs/databases/active-active/synchronization-mode/,
 ]
 ---
 Replicated databases, including those that use [Replica Of]({{< relref "/rs/databases/replica-of.md" >}}) and [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) replication,
