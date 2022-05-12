@@ -30,7 +30,7 @@ rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
 | db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
 | node                          | node ID                | Limits migration to specific origin node                                        |
 | target_node                   | node ID                | Migration target node                                                           |
-| override_policy               |                        | Overrides rack aware policy and allows master and slave shards on the same node |
+| override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
 
@@ -81,7 +81,7 @@ rladmin migrate node <origin node:id>
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
 | node                          | node ID                | Limits migration to specific origin node                                        |
 | max_concurrent_bdb_migrations | integer                | Sets maximum number of concurrent endpoint migrations                           |
-| override_policy               |                        | Overrides rack aware policy and allows master and slave shards on the same node |
+| override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
 
@@ -136,7 +136,7 @@ rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
 | db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
 | node                          | node ID                | Limits migration to specific origin node                                        |
 | target_node                   | node ID                | Migration target node                                                           |
-| override_policy               |                        | Overrides rack aware policy and allows master and slave shards on the same node |
+| override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
 
@@ -236,7 +236,7 @@ rladmin migrate shard <id1.. idN>
 | shard                         | list of shard IDs      | Shards to migrate                                                               |
 | preserve_roles                |                        | Performs an additional failover to guarantee roles of primary shards are preserved |
 | target_node                   | node ID                | Migration target node                                                           |
-| override_policy               |                        | Overrides rack aware policy and allows master and slave shards on the same node |
+| override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
 
