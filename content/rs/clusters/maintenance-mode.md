@@ -1,13 +1,16 @@
 ---
 Title: Maintenance mode for cluster nodes
 linkTitle: Maintenance mode
-description: Prepare a node for maintenance
+description: Prepare a cluster node for maintenance.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: 
-        /rs/administering/cluster-operations/shutting-down-node.md
-        /rs/administering/cluster-operations/shutting-down-node/
+aliases: [
+        /rs/administering/cluster-operations/shutting-down-node.md,
+        /rs/administering/cluster-operations/shutting-down-node/,
+        /rs/clusters/maintenance-mode.md,
+        /rs/clusters/maintenance-mode/
+]
 ---
 
 Use maintenance mode to prevent data loss during hardware or operating system maintenance on Redis Enterprise servers. When maintenance mode is on, all shards move off of the node under maintenance and migrate to another available node.
@@ -165,7 +168,7 @@ Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> request to t
 curl -X POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on 
 -k -u <user>:<password> 
 --data '{"keep_slave_shards":true}' 
--H "Content-Type: application/json"
+-H "-Type: application/json"
 ```
 
 The `keep_slave_shards` boolean flag [prevents replica shard migration](#prevent-replica-shard-migration) when set to `true`.
@@ -187,7 +190,7 @@ Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> request to 
 curl -X POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_off 
 -k -u <user>:<password> 
 --data '{"skip_shards_restore":false}' 
--H "Content-Type: application/json"
+-H "-Type: application/json"
 ```
 
 The `skip_shards_restore` boolean flag allows the `maintenance_off` action to [skip shard restoration](#skip-shard-restoration) when set to `true`.
