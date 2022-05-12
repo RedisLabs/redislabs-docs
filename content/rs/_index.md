@@ -43,7 +43,7 @@ For more on scaling, high availability, and durability, see the [the Redis Enter
 
 ## Active-Active replicated Redis databases (CRDB) {#activeactive-replicated-redis-databases-crdb}
 
-[Active-Active databases]({{< relref "content/rs/databases/active-active/intercluster-replication.md" >}}) provide global, geo-distributed database replication with conflict-free local writes.
+[Active-Active databases]({{< relref "/rs/databases/active-active/intercluster-replication.md" >}}) provide global, geo-distributed database replication with conflict-free local writes.
 This greatly simplifies the development of globally distributed applications.
 Geo-distributed Active-Active databases combine [conflict-free replicated data types](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) with Redis data types to provide automatic conflict resolution based on each data type's semantics.
 
