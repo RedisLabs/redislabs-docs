@@ -1,9 +1,16 @@
 ---
-Title: Geo-Distributed Active-Active Redis Applications
+Title: Active-Active Redis applications
+linktitle: Active-Active applications
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliase: [
+    /rs/concepts/intercluster-replication.md,
+    /rs/concepts/intercluster-replication/,
+    /rs/databases/active-active/intercluster-replication.md,
+    /rs/databases/active-active/intercluster-replication/,
+]
 ---
 Developing globally distributed applications can be challenging, as
 developers have to think about race conditions and complex combinations
