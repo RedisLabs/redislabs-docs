@@ -25,7 +25,7 @@ rladmin node <id>
 
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
-| node      | node ID                        | Adds external IP address for the specified node                                               |
+| node      | integer                        | Adds external IP address for the specified node                                               |
 | ip_addr   | IP address                     | External IP address of the node                                                               |
 
 ### Returns
@@ -60,7 +60,7 @@ rladmin node <id>
 
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
-| node      | node ID                        | Sets external IP addresses for the specified node                                             |
+| node      | integer                        | Sets external IP addresses for the specified node                                             |
 | ip_addr   | list of IP addresses           | Sets specified IP addresses as external addresses                                                 |
 
 ### Returns
@@ -94,7 +94,7 @@ rladmin node <id>
 
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
-| node      | node ID                        | Removes external IP address for the specified node                                            |
+| node      | integer                        | Removes external IP address for the specified node                                            |
 | ip_addr   | IP address                     | Removes specified IP address of the node                                                      |
 
 ### Returns

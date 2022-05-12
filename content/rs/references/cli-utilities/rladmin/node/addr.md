@@ -21,7 +21,7 @@ rladmin node <id>
 
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
-| node      | node ID                        | Sets internal IP address of the specified node                                                |
+| node      | integer                        | Sets internal IP address of the specified node                                                |
 | ip_addr   | IP address                     | Sets specified IP address as the internal IP of the node                                      |
 
 ### Returns
