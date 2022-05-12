@@ -52,9 +52,13 @@ cluster create
 
 ### Returns
 
+Returns `ok` if the new cluster was created successfully. Otherwise, it returns an error message.
+
 ### Example
 
 ```sh
-$ rladmin command x
-response
+$ rladmin cluster create name cluster.local \
+        username admin@example.com \
+        password admin-password
+Creating a new cluster... ok
 ```

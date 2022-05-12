@@ -44,9 +44,11 @@ rladmin cluster recover
 
 ### Returns
 
+Returns `ok` if the cluster recovered successfully. Otherwise, it returns an error message.
+
 ### Example
 
 ```sh
-$ rladmin command x
-response
+$ rladmin cluster recover filename /tmp/persist/ccs/ccs-redis.rdb node_uid 1 rack_id 5
+Initiating cluster recovery... ok
 ```

@@ -55,9 +55,13 @@ rladmin cluster join
 
 ### Returns
 
+Returns `ok` if the node joined the cluster successfully. Otherwise, it returns an error message.
+
 ### Example
 
 ```sh
-$ rladmin command x
-response
+$ rladmin cluster join name cluster.local \
+        username admin@example.com \
+        password admin-password
+Joining cluster... ok
 ```
