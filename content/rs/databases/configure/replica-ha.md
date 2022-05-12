@@ -1,17 +1,25 @@
 ---
 Title: High availability for replica shards
-linkTitle: High availability for replicas
-description:
+linkTitle: Replica HA
+description: Configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: [/rs/administering/database-operations/slave-ha.md,
-         /rs/administering/database-operations/slave-ha/]
+aliases: [
+    /rs/administering/database-operations/slave-ha.md,
+    /rs/administering/database-operations/slave-ha/,
+    /rs/administering/database-operations/replica-ha.md,
+    /rs/administering/database-operations/replica-ha/,
+    /rs/databases/configure/replica-ha.md,
+    /rs/databases/configure/replica-ha/,
+    
+         
+]
 ---
 When you enable [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}),
 Redis Enterprise Software copies your data to a replica node to make your data highly available.
-If the replica node fails or if the master node fails and the replica is promoted to master,
-the remaining master node is a single point of failure.<!--more-->
+If the replica node fails or if the primary(master) node fails and the replica is promoted to primary,
+the remaining primary node is a single point of failure.<!--more-->
 
 You can configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.  This process is known as _replica high availability_ or _replica\_ha_ (also known as _slave\_ha_ or Slave HA in the UI).
 

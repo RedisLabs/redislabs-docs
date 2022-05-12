@@ -35,7 +35,7 @@ In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/datab
 
 ### High availability for replica shards
 
-When [replica high availability]({{< relref "/rs/administering/database-operations/replica-ha.md" >}}) is enabled and a master shard fails, a replica (formerly _slave_) shard is automatically promoted to a master shard to maintain data availability. This creates a single point of failure until a new replica shard is manually created.
+When [replica high availability]({{< relref "/rs/databases/configure/replica-ha.md" >}}) is enabled and a master shard fails, a replica (formerly _slave_) shard is automatically promoted to a master shard to maintain data availability. This creates a single point of failure until a new replica shard is manually created.
 
 RS 5.4 expands the high availability capabilities by adding the ability to automatically avoid this single point of failure by configuring the cluster to automatically migrate the replica shard to another available node. In practice, replica migration creates a new replica shard and replicates the data from the master shard to the new replica shard.
 
