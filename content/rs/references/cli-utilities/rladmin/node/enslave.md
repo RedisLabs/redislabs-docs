@@ -1,7 +1,7 @@
 ---
 Title: rladmin node enslave
 linkTitle: enslave
-description: Changes the role for all resources of a node to replica.
+description: Changes the resources of a node to replicas.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,11 +10,11 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node enslave` changes the role for resources of a node to replica (also known as `slave`).
+`rladmin node enslave` changes the resources of a node to replicas.
 
 ## `node enslave`
 
-Changes the role for all endpoints and shards of a node to replica.
+Changes all of the node's endpoints and shards to replicas.
 
 ``` sh
 $ rladmin node <id> enslave
@@ -26,8 +26,8 @@ $ rladmin node <id> enslave
 
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
-| node                  | integer                        | Changes the role of the shards and endpoints of the specified node to replica             |
-| demote_node           |                                | Demotes the role of the node to replica if the node is set to primary                     |
+| node                  | integer                        | Changes all of the node's endpoints and shards to replicas             |
+| demote_node           |                                | If the node is a primary node, changes the node to replica                     |
 | retry_timeout_seconds | integer                        | Retries any failures until the specified number of seconds has passed.                    |
 
 ### Returns
@@ -83,7 +83,7 @@ $ rladmin node <id> enslave endpoints_only
 
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
-| node                  | integer                        | Changes the role of the endpoints of the specified node to replica                        |
+| node                  | integer                        | Changes all of the node's endpoints to replicas                        |
 | retry_timeout_seconds | integer                        | Retries any failures until the specified number of seconds has passed.                    |
 
 ### Returns
@@ -123,7 +123,7 @@ $ rladmin node <id> enslave shards_only
 
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
-| node                  | integer                        | Changes the role of the shards of the specified node to replica                           |
+| node                  | integer                        | Changes all of the node's shards to replicas                          |
 | retry_timeout_seconds | integer                        | Retries any failures until the specified number of seconds has passed.                    |
 
 ### Returns
