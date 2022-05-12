@@ -51,7 +51,7 @@ destination database.
 {{< note >}}
 The Replica Of feature should not be confused with the
 in-memory [Database
-replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
+replication]({{< relref "/rs/databases/replication.md" >}})
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
 {{< /note >}}

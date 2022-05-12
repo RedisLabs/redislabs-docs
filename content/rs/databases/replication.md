@@ -4,6 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/concepts/high-availability/replication.md,
+    /rs/concepts/high-availability/replication/,
+    /rs/databases/replication.md,
+    /rs/databases/replication/,
+]
 ---
 Database replication helps ensure high availability.
 When replication is enabled, your dataset is replicated to a replica shard,

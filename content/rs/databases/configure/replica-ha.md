@@ -16,7 +16,7 @@ aliases: [
          
 ]
 ---
-When you enable [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}),
+When you enable [database replication]({{< relref "/rs/databases/replication.md" >}}),
 Redis Enterprise Software copies your data to a replica node to make your data highly available.
 If the replica node fails or if the primary(master) node fails and the replica is promoted to primary,
 the remaining primary node is a single point of failure.<!--more-->

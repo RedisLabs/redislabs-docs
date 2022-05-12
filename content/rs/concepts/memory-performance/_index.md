@@ -30,7 +30,7 @@ Factors to consider when sizing your database:
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
 - [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
 - [**database clustering**]({{<relref "/rs/concepts/high-availability/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
-- [**database replication**]({{<relref "/rs/concepts/high-availability/replication.md">}}): enabling replication doubles memory consumption
+- [**database replication**]({{<relref "/rs/databases/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
 
 For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/memory-management.md">}}) or [Database memory limits]({{<relref "/rs/databases/configure/memory-limit.md">}}).
