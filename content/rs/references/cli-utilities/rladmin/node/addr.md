@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node addr set` sets the internal IP address of a node. The internal IP address can only be set with `rladmin node addr` when the node is down.
+`rladmin node addr set` sets the internal IP address of a node. You can set the internal IP address using `rladmin node addr` only when the node is down.
 
 ```sh
 rladmin node <id>
