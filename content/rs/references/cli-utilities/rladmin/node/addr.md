@@ -26,7 +26,7 @@ rladmin node <id>
 
 ### Returns
 
-Returns `Updated successfully` if the IP address was set.
+Returns `Updated successfully` if the IP address was set. Otherwise, it returns an error.
 
 Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) to verify the internal IP address was changed.
 

@@ -30,7 +30,7 @@ rladmin node <id>
 
 ### Returns
 
-Returns `Updated successfully` if the IP address was added.
+Returns `Updated successfully` if the IP address was added. Otherwise, it returns an error.
 
 Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) to verify the external IP address was added.
 
@@ -65,7 +65,7 @@ rladmin node <id>
 
 ### Returns
 
-Returns `Updated successfully` if the IP addresses were set.
+Returns `Updated successfully` if the IP addresses were set. Otherwise, it returns an error.
 
 Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) to verify the external IP address was set.
 
@@ -99,7 +99,7 @@ rladmin node <id>
 
 ### Returns
 
-Returns `Updated successfully` if the IP address was removed.
+Returns `Updated successfully` if the IP address was removed. Otherwise, it returns an error.
 
 Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) to verify the external IP address was removed.
 
