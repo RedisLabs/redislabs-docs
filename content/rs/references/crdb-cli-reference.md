@@ -105,7 +105,7 @@ The `crdb create` command supports several additional options:
 |---|---|---|
 |`no-wait`| no arguments| Prevents CRDB-CLI from running another command before this command finishes|
 |`compression (0-6)`| integer| The level of data compression: 0=Compression disabled| 1=Low compression and resource load| 6=High compression and resource load (Default: 3)|
-|`causal-consistency true`| boolean| [Causal consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}}) applies updates to all instances in the order they were received|
+|`causal-consistency true`| boolean| [Causal consistency]({{< relref "/rs/databases/active-active/causal-consistency-crdb.md" >}}) applies updates to all instances in the order they were received|
 |`password <password>`| string| Password for access to the database|
 |`replication true`| boolean| Enables [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})| where every master shard replicates to a replica shard (We recommend that you use replication so that active-active database synchronization traffic is off-loaded to the slave shard)|
 |`encryption true`| boolean| Enable encryption|

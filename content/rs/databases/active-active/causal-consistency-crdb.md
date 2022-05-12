@@ -1,9 +1,15 @@
 ---
-Title: Causal Consistency in an Active-Active Database
-description:
+Title: Enable causal consistency in an Active-Active database
+linkTitle: Enable causal consistency
+description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/database-operations/causal-consistency-crdb/,
+    /rs/databases/active-active/causal-consistency-crdb.md,
+    /rs/databases/active-active/causal-consistency-crdb/,
+]
 ---
 When you enable Causal Consistency in Active-Active databases,
 the order of operations on a specific key are maintained across all Active-Active database instances.<!--more-->
