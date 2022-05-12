@@ -39,7 +39,7 @@ Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/st
 ### Example
 
 ```sh
-rladmin> status shards node 2
+$ rladmin status shards node 2
 SHARDS:
 DB:ID      NAME           ID               NODE         ROLE         SLOTS                  USED_MEMORY            STATUS
 db:6       tr02           redis:14         node:2       master       0-4095                 3.2MB                  OK
@@ -61,7 +61,7 @@ NODE:ID ROLE   ADDRESS    EXTERNAL_ADDRESS  HOSTNAME     SHARDS CORES       FREE
 *node:1 master 192.0.2.12 198.51.100.1      3d99db1fdf4b 1/100  6           14.72GB/19.54GB  10.91GB/16.02GB  6.2.12-37 OK
 node:2  slave  192.0.2.13 198.51.100.2      fc7a3d332458 4/100  6           14.72GB/19.54GB  11.17GB/16.02GB  6.2.12-37 OK
 node:3  slave  192.0.2.14                   b87cc06c830f 5/120  6           14.72GB/19.54GB  10.92GB/16.02GB  6.2.12-37 OK
-rladmin> status shards node 2
+$ rladmin status shards node 2
 SHARDS:
 DB:ID      NAME             ID               NODE         ROLE       SLOTS                  USED_MEMORY            STATUS
 db:6       tr02             redis:14         node:2       slave      0-4095                 2.99MB                 OK
@@ -95,15 +95,15 @@ Use [`rladmin status endpoints`]({{<relref "/rs/references/cli-utilities/rladmin
 ### Example
 
 ```sh
-rladmin> status endpoints
+$ rladmin status endpoints
 ENDPOINTS:
 DB:ID         NAME        ID                             NODE            ROLE                                       SSL       
 db:5          tr01        endpoint:5:1                   node:1          single                                     No        
 db:6          tr02        endpoint:6:1                   node:3          all-master-shards                          No        
-rladmin> node 1 enslave endpoints_only
+$ rladmin node 1 enslave endpoints_only
 Performing enslave_node action on node:1: 100%
 OK
-rladmin> status endpoints
+$ rladmin status endpoints
 ENDPOINTS:
 DB:ID         NAME        ID                             NODE            ROLE                                       SSL       
 db:5          tr01        endpoint:5:1                   node:3          single                                     No        
@@ -135,7 +135,7 @@ Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/st
 ### Example
 
 ```sh
-rladmin> status shards node 3
+$ rladmin status shards node 3
 SHARDS:
 DB:ID      NAME           ID               NODE         ROLE         SLOTS                  USED_MEMORY            STATUS     
 db:5       tr01           redis:12         node:3       master       0-16383                3.04MB                 OK         
@@ -143,10 +143,10 @@ db:6       tr02           redis:15         node:3       master       0-4095     
 db:6       tr02           redis:17         node:3       master       4096-8191              4.13MB                 OK         
 db:6       tr02           redis:19         node:3       master       8192-12287             4.13MB                 OK         
 db:6       tr02           redis:21         node:3       master       12288-16383            4.13MB                 OK         
-rladmin> node 3 enslave shards_only
+$ rladmin node 3 enslave shards_only
 Performing enslave_node action on node:3: 100%
 OK
-rladmin> status shards node 3
+$ rladmin status shards node 3
 SHARDS:
 DB:ID      NAME             ID               NODE         ROLE       SLOTS                  USED_MEMORY            STATUS     
 db:5       tr01             redis:12         node:3       slave      0-16383                2.98MB                 OK         
