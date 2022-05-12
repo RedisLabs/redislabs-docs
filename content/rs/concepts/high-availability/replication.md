@@ -17,7 +17,7 @@ guarantees that data is served with minimal interruption.
 You can tune your high availability configuration with:
 
 - [Rack/Zone
-Awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) - When rack-zone awareness is used additional logic ensures that master and replica shards never share the same rack, thus ensuring availability even under loss of an entire rack.
+Awareness]({{< relref "/rs/clusters/rack-zone-awareness.md" >}}) - When rack-zone awareness is used additional logic ensures that master and replica shards never share the same rack, thus ensuring availability even under loss of an entire rack.
 - [High Availability for Replica Shards]({{< relref "/rs/administering/database-operations/replica-ha.md" >}}) - When high availability
 for replica shards is used, the replica shard is automatically migrated on node failover to maintain high availability.
 

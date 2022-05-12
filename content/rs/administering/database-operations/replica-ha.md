@@ -17,7 +17,7 @@ You can configure high availability for replica shards so that the cluster autom
 
 An available node:
 
-1. Meets replica migration requirements, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
+1. Meets replica migration requirements, such as [rack-awareness]({{< relref "/rs/clusters/rack-zone-awareness.md" >}}).
 1. Has enough available RAM to store the replica shard.
 1. Does not also contain the master shard.
 
@@ -35,7 +35,7 @@ For example:
 1. The data from the master shard is replicated to the new replica shard.
 
 {{< note >}}
-- Replica HA follows all prerequisites of replica migration, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
+- Replica HA follows all prerequisites of replica migration, such as [rack-awareness]({{< relref "/rs/clusters/rack-zone-awareness.md" >}}).
 - Replica HA migrates as many shards as possible based on available DRAM in the target node. When no DRAM is available, replica HA stops migrating replica shards to that node.
 {{< /note >}}
 

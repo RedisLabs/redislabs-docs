@@ -97,7 +97,7 @@ in the new node.
 `<ephemeral_path>` (optional) - The location of the [ephemeral storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
+`<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/clusters/rack-zone-awareness.md" >}})
 was enabled in the cluster,
 you can use this parameter to override the rack ID value that was set for the node with ID 1 with a new rack ID.
 Otherwise, the node gets the same rack ID as the original node.
@@ -136,7 +136,7 @@ in the new node.
 `ephemeral_path` (optional) - The location of the [ephemeral storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`rack_id` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) was enabled in the cluster,
+`rack_id` (optional) - If [rack-zone awareness]({{< relref "/rs/clusters/rack-zone-awareness.md" >}}) was enabled in the cluster,
 use this parameter to set the rack ID to be the same as the rack ID
 of the old node. You can also change the value of the rack ID by
 providing a different value and using the `override_rack_id` flag.
