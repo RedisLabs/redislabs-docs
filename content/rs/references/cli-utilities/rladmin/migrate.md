@@ -28,7 +28,7 @@ rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
 | Parameter                     | Type/Value             | Description                                                                     |
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
 | db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
-| node                          | node ID                | Limits migration to specific origin node                                        |
+| node                          | integer                | Limits migration to specific origin node                                        |
 | target_node                   | node ID                | Migration target node                                                           |
 | override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
@@ -187,7 +187,7 @@ rladmin migrate db { db:<id> | <name> }
 | Parameter                     | Type/Value             | Description                                                                     |
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
 | db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
-| restrict_target_node          | node ID | Lets the automatic mechanism find the target node, but perform only action for this target node |
+| restrict_target_node          | integer | Lets the automatic mechanism find the target node, but perform only action for this target node |
 | commit                        |                        | Performs endpoint movement                                                      |
 | max_concurrent_bdb_migrations | integer                | Sets maximum number of concurrent endpoint migrations                           |
 
