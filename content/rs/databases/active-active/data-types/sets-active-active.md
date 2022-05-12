@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: [
     /rs/developing/crdbs/developing-sets-crdb/,
     /rs/references/developing-for-active-active/developing-sets-active-active/,
-    /rs/references/developing-for-active-active/developing-sets-active-active.md
+    /rs/references/developing-for-active-active/developing-sets-active-active.md,
     /rs/databases/active-active/data-types/sets-active-active.md,
     /rs/databases/active-active/data-types/sets-active-active/,
 ]

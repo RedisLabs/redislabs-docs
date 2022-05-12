@@ -9,7 +9,7 @@ aliases: [
     /rs/concepts/memory-architecture/_index.md,
     /rs/concepts/memory-architecture/_index/,
     /rs/administering/designing-production/performance/_index.md,
-    /rs/administering/designing-production/performance/_index./,
+    /rs/administering/designing-production/performance/_index/,
     /rs/concepts/memory-performance/_index.md,
     /rs/concepts/memory-performance/_index/,
 
