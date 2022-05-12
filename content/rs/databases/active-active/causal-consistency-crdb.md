@@ -27,7 +27,7 @@ where N represents the number of instances used by the Active-Active database.
 As a result, network traffic is increased by a factor of (N-2).
 The memory consumed by each instance and overall performance are also impacted when Causal Consistency is activated.
 
-### Enabling causal consistency
+### Enable causal consistency
 
 When you create an Active-Active database, Causal Consistency is set as:
 
