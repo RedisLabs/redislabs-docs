@@ -37,9 +37,9 @@ Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/sta
 ### Example
 
 ``` sh
-rladmin> node 1 external_addr add 198.51.100.1
+$ rladmin node 1 external_addr add 198.51.100.1
 Updated successfully.
-rladmin> status nodes
+$ rladmin status nodes
 CLUSTER NODES:
 NODE:ID ROLE   ADDRESS   EXTERNAL_ADDRESS  HOSTNAME     SHARDS CORES       FREE_RAM         PROVISIONAL_RAM  VERSION   STATUS
 *node:1 master 192.0.2.2 198.51.100.1      3d99db1fdf4b 5/100  6           14.75GB/19.54GB  11.15GB/16.02GB  6.2.12-37 OK
@@ -72,9 +72,9 @@ Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/sta
 ### Example
 
 ``` sh
-rladmin> node 2 external_addr set 198.51.100.2 198.51.100.3
+$ rladmin node 2 external_addr set 198.51.100.2 198.51.100.3
 Updated successfully.
-rladmin> status nodes
+$ rladmin status nodes
 CLUSTER NODES:
 NODE:ID ROLE   ADDRESS   EXTERNAL_ADDRESS          HOSTNAME     SHARDS CORES FREE_RAM        PROVISIONAL_RAM VERSION   STATUS
 *node:1 master 192.0.2.2 198.51.100.1              3d99db1fdf4b 5/100  6     14.75GB/19.54GB 11.15GB/16.02GB 6.2.12-37 OK
@@ -106,15 +106,15 @@ Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/sta
 ### Example
 
 ``` sh
-rladmin> status nodes
+$ rladmin status nodes
 CLUSTER NODES:
 NODE:ID ROLE   ADDRESS   EXTERNAL_ADDRESS          HOSTNAME     SHARDS CORES FREE_RAM        PROVISIONAL_RAM VERSION   STATUS
 *node:1 master 192.0.2.2 198.51.100.1              3d99db1fdf4b 5/100  6     14.75GB/19.54GB 11.15GB/16.02GB 6.2.12-37 OK
 node:2  slave  192.0.2.3 198.51.100.2,198.51.100.3 fc7a3d332458 0/100  6     14.75GB/19.54GB 11.23GB/16.02GB 6.2.12-37 OK
 node:3  slave  192.0.2.4                           b87cc06c830f 5/120  6     14.75GB/19.54GB 11.15GB/16.02GB 6.2.12-37 OK
-rladmin> node 2 external_addr remove 198.51.100.3
+$ rladmin node 2 external_addr remove 198.51.100.3
 Updated successfully.
-rladmin> status nodes
+$ rladmin status nodes
 CLUSTER NODES:
 NODE:ID ROLE   ADDRESS   EXTERNAL_ADDRESS  HOSTNAME     SHARDS CORES       FREE_RAM         PROVISIONAL_RAM  VERSION   STATUS
 *node:1 master 192.0.2.2 198.51.100.1      3d99db1fdf4b 5/100  6           14.74GB/19.54GB  11.14GB/16.02GB  6.2.12-37 OK    
