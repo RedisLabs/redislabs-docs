@@ -23,7 +23,7 @@ you can enter the key in the Cluster Key field, either during initial\
 cluster creation or at any time afterward. The key defines various
 cluster settings, such as the maximum number of shards you can have in
 the cluster. For more detailed information see [Cluster License
-Keys]({{< relref "/rs/administering/cluster-operations/license-keys.md" >}}).
+Keys]({{< relref "/rs/clusters/license-keys.md" >}}).
 
 ## Viewing the maximum number of allowed shards
 
