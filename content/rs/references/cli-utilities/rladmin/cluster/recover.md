@@ -5,6 +5,7 @@ description: Recovers a cluster from a backup file.
 weight: $weight
 alwaysopen: false
 toc: "true"
+tags: ["non-configured"]
 categories: ["RS"]
 aliases: 
 ---

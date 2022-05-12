@@ -5,6 +5,7 @@ description: Creates a support package.
 weight: $weight
 alwaysopen: false
 toc: "true"
+tags: ["configured"]
 categories: ["RS"]
 aliases: 
 ---

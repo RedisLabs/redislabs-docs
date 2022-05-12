@@ -5,6 +5,7 @@ description: Creates a new cluster.
 weight: $weight
 alwaysopen: false
 toc: "true"
+tags: ["non-configured"]
 categories: ["RS"]
 aliases: 
 ---

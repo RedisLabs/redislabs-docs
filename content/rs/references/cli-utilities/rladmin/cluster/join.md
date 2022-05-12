@@ -5,6 +5,7 @@ description: Adds a node to an existing cluster.
 weight: $weight
 alwaysopen: false
 toc: "true"
+tags: ["non-configured"]
 categories: ["RS"]
 aliases: 
 ---

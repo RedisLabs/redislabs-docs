@@ -5,6 +5,7 @@ description: Updates the cluster's configuration.
 weight: $weight
 alwaysopen: false
 toc: "true"
+tags: ["configured"]
 categories: ["RS"]
 aliases: 
 ---
