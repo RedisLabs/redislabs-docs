@@ -1,9 +1,16 @@
 ---
-Title: Distributed Synchronization for Replicated Databases
-description:
+Title: Distributed synchronization for replicated databases
+linktitle: Distributed synchronization
+description: How to configure distributed synchronization so that any available proxy endpoint can manage synchronization traffic. 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/cluster-operations/synchronization-mode.md,
+    /rs/administering/cluster-operations/synchronization-mode/,
+    /rs/databases/configure/synchronization-mode.md,
+    /rs/databases/configure/synchronization-mode/,
+]
 ---
 Replicated databases, including those that use [Replica Of]({{< relref "/rs/databases/replica-of.md" >}}) and [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) replication,
 use proxy endpoints to synchronize database changes with the databases on the other participating clusters.
@@ -15,7 +22,7 @@ and that proxy endpoint is used for database synchronization.
 This is called centralized synchronization.
 
 To prepare a database to use distributed synchronization you must first make sure that the database [proxy policy]({{< relref "/rs/administering/designing-production/networking/multiple-active-proxy.md" >}})
-is defined so that either each node has a proxy endpoint or each master shard has a proxy endpoint.
+is defined so that either each node has a proxy endpoint or each primary(master) shard has a proxy endpoint.
 After you have multiple proxies for the database,
 you can configure the database synchronization to use distributed synchronization.
 
