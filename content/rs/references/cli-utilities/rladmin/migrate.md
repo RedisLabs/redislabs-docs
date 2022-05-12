@@ -27,9 +27,9 @@ rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
 
 | Parameter                     | Type/Value             | Description                                                                     |
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
-| db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
-| node                          | integer                | Limits migration to specific origin node                                        |
-| target_node                   | node ID                | Migration target node                                                           |
+| db                            | db:\<id\><br /> name   | Limits migration to a specific database                                           |
+| node                          | integer                | Limits migration to a specific origin node                                        |
+| target_node                   | integer                | Migration target node                                                           |
 | override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
@@ -79,7 +79,7 @@ rladmin migrate node <origin node:id>
 
 | Parameter                     | Type/Value             | Description                                                                     |
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
-| node                          | node ID                | Limits migration to specific origin node                                        |
+| node                          | integer                | Limits migration to a specific origin node                                        |
 | max_concurrent_bdb_migrations | integer                | Sets maximum number of concurrent endpoint migrations                           |
 | override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
@@ -133,9 +133,9 @@ rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
 
 | Parameter                     | Type/Value             | Description                                                                     |
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
-| db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
-| node                          | node ID                | Limits migration to specific origin node                                        |
-| target_node                   | node ID                | Migration target node                                                           |
+| db                            | db:\<id\><br /> name   | Limits migration to a specific database                                           |
+| node                          | integer                | Limits migration to a specific origin node                                        |
+| target_node                   | integer                | Migration target node                                                           |
 | override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
@@ -175,7 +175,7 @@ db:6   tr02      redis:21   node:3  slave  12288-16383    3.04MB         OK
 Plans the movement of the endpoint of a database to the node where the majority of the primary shards are located.
 
 ```sh
-rladmin migrate db { db:<id> | <name> }
+rladmin migrate [ db { db:<id> | <name> } ]
             endpoint_to_shards
             [ restrict_target_node <id> ]
             [ commit ]
@@ -186,8 +186,8 @@ rladmin migrate db { db:<id> | <name> }
 
 | Parameter                     | Type/Value             | Description                                                                     |
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
-| db                            | db:\<id\><br /> name   | Limits migration to specific database                                           |
-| restrict_target_node          | integer | Lets the automatic mechanism find the target node, but perform only action for this target node |
+| db                            | db:\<id\><br /> name   | Limits migration to a specific database                                           |
+| restrict_target_node          | integer | Moves the endpoint only if the target node matches the specified node |
 | commit                        |                        | Performs endpoint movement                                                      |
 | max_concurrent_bdb_migrations | integer                | Sets maximum number of concurrent endpoint migrations                           |
 
@@ -235,7 +235,7 @@ rladmin migrate shard <id1.. idN>
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
 | shard                         | list of shard IDs      | Shards to migrate                                                               |
 | preserve_roles                |                        | Performs an additional failover to guarantee roles of primary shards are preserved |
-| target_node                   | node ID                | Migration target node                                                           |
+| target_node                   | integer                | Migration target node                                                           |
 | override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
