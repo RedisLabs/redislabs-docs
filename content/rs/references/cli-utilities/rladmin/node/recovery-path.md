@@ -22,7 +22,7 @@ rladmin node <id>
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | node      | integer                        | Sets the recovery path for the specified node                                            |
-| path      | file path                      | Path to the folder where persistence files are stored                                         |
+| path      | filepath                       | Path to the folder where persistence files are stored                                         |
 
 ### Returns
 
