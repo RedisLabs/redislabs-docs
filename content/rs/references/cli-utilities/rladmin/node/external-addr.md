@@ -1,6 +1,6 @@
 ---
 Title: rladmin node external_addr
-linkTitle: external-addr
+linkTitle: external_addr
 description: Configures the external IP addresses of a node.
 weight: $weight
 alwaysopen: false
@@ -25,7 +25,7 @@ rladmin node <id>
 
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
-| node      | integer                        | Adds external IP address for the specified node                                               |
+| node      | integer                        | Adds an external IP address for the specified node                                               |
 | ip_addr   | IP address                     | External IP address of the node                                                               |
 
 ### Returns
@@ -83,7 +83,7 @@ node:3  slave  192.0.2.4                           b87cc06c830f 5/120  6     14.
 ```
 ## `node external_addr remove`
 
-Adds an external IP address that accepts inbound user connections for the node.
+Removes the specified external IP address from the node.
 
 ```sh
 rladmin node <id>
@@ -94,8 +94,8 @@ rladmin node <id>
 
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
-| node      | integer                        | Removes external IP address for the specified node                                            |
-| ip_addr   | IP address                     | Removes specified IP address of the node                                                      |
+| node      | integer                        | Removes an external IP address for the specified node                                            |
+| ip_addr   | IP address                     | Removes the specified IP address of the node                                                      |
 
 ### Returns
 

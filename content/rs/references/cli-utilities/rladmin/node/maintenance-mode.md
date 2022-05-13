@@ -1,6 +1,6 @@
 ---
 Title: rladmin node maintenance_mode
-linkTitle: maintenance-mode
+linkTitle: maintenance_mode
 description: Configures quorum-only mode on a node.
 weight: $weight
 alwaysopen: false
@@ -14,7 +14,7 @@ aliases:
 
 ## `node maintenance_mode on`
 
-Migrates shards out of the node and prevents shards from returning to it by turning the node into a quorum node.
+Migrates shards out of the node and turns the node into a quorum node to prevent shards from returning to it.
 
 ```sh
 $ rladmin node <id> maintenance_mode on
@@ -26,15 +26,15 @@ $ rladmin node <id> maintenance_mode on
 
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
-| node                  | integer                        | Turns the specified node into a quorum node.                                              |
+| node                  | integer                        | Turns the specified node into a quorum node                                              |
 | demote_node           |                                | If the node is a primary node, changes the node to replica                                |
-| keep_slave_shards     |                                | Keeps replica shards in the node and demotes primary shards to replica                    |
+| keep_slave_shards     |                                | Keeps replica shards in the node and demotes primary shards to replicas                    |
 
 ### Returns
 
-Returns `OK` if the node was converted successfully. If the cluster does not have enough resources to migrate the shards, the process will return a warning.
+Returns `OK` if the node was converted successfully. If the cluster does not have enough resources to migrate the shards, the process returns a warning.
 
-Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) to verify the node was turned into a quorum node.
+Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) to verify the node became a quorum node.
 
 ### Example
 
@@ -56,7 +56,7 @@ node:4  slave  192.0.2.14                   6d754fe12cb9 5/100  6           14.2
 
 ## `node maintenance_mode off`
 
-Returns the node back to the state before quorum mode was turned on and turns quorum mode off.
+Turns maintenance mode off and returns the node to its previous state.
 
 ```sh
 $ rladmin node <id> maintenance_mode off

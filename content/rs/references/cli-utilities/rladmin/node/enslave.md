@@ -28,7 +28,7 @@ $ rladmin node <id> enslave
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 | node                  | integer                        | Changes all of the node's endpoints and shards to replicas             |
 | demote_node           |                                | If the node is a primary node, changes the node to replica                     |
-| retry_timeout_seconds | integer                        | Retries any failures until the specified number of seconds has passed.                    |
+| retry_timeout_seconds | integer                        | Retries on failure until the specified number of seconds has passed.                    |
 
 ### Returns
 
@@ -84,7 +84,7 @@ $ rladmin node <id> enslave endpoints_only
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 | node                  | integer                        | Changes all of the node's endpoints to replicas                        |
-| retry_timeout_seconds | integer                        | Retries any failures until the specified number of seconds has passed.                    |
+| retry_timeout_seconds | integer                        | Retries on failure until the specified number of seconds has passed.                    |
 
 ### Returns
 
@@ -124,7 +124,7 @@ $ rladmin node <id> enslave shards_only
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 | node                  | integer                        | Changes all of the node's shards to replicas                          |
-| retry_timeout_seconds | integer                        | Retries any failures until the specified number of seconds has passed.                    |
+| retry_timeout_seconds | integer                        | Retries on failure until the specified number of seconds has passed.                    |
 
 ### Returns
 

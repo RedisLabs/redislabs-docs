@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node snapshot` manages the [snapshots]({{<relref "/rs/databases/configure/database-persistence#append-only-file-aof-vs-snapshot-rdb">}}) of the state of a node's shards and endpoints.
+`rladmin node snapshot` manages [snapshots]({{<relref "/rs/databases/configure/database-persistence#append-only-file-aof-vs-snapshot-rdb">}}) of the state of a node's shards and endpoints.
 
 ## `node snapshot create`
 
@@ -41,7 +41,7 @@ Done.
 
 ## `node snapshot delete`
 
-Deletes a snapshot of a node that has already been created.
+Deletes an existing snapshot of a node.
 
 ```sh
 $ rladmin node <id> snapshot delete <name>
@@ -78,11 +78,11 @@ $ rladmin node <id> snapshot list
 
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
-| node                  | integer                        | Displays the snapshots of the specified node                    |
+| node                  | integer                        | Displays snapshots of the specified node                    |
 
 ### Returns
 
-Returns a list of the snapshots of the specified node.
+Returns a list of snapshots of the specified node.
 
 ### Example
 
@@ -94,7 +94,7 @@ snap2                                              2       2022-05-12T19:27:51Z
 
 ## `node snapshot restore`
 
-Restores a node as close to the stored snapshot as can be restored.
+Restores a node as close to the stored snapshot as possible.
 
 ```sh
 $ rladmin node <id> snapshot restore <name>
@@ -104,7 +104,8 @@ $ rladmin node <id> snapshot restore <name>
 
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
-| node                  | integer                        | Restore snapshot to the specified node.                    |
+| node                  | integer                        | Restore the specified node from a snapshot.                    |
+| restore              | string                           | Name of the snapshot used to restore the node.              |
 
 ### Returns
 

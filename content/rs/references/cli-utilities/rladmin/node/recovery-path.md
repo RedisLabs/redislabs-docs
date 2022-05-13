@@ -1,6 +1,6 @@
 ---
 Title: rladmin node recovery_path set
-linkTitle: recovery-path
+linkTitle: recovery_path
 description: Sets the local recovery path of the node.
 weight: $weight
 alwaysopen: false
@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node recovery_path set` sets the local recovery path of the node. The recovery path is the folder where [persistence files]({{<relref "/rs/databases/configure/database-persistence">}}) are stored. This is used to [recover a failed database]({<relref "/rs/databases/recover-database">}}).
+Sets the node's local recovery path, which specifies the directory where [persistence files]({{<relref "/rs/databases/configure/database-persistence">}}) are stored. You can use these persistence files to [recover a failed database]({{<relref "/rs/databases/recover-database">}}).
 
 ```sh
 rladmin node <id>
