@@ -28,7 +28,7 @@ To add a user to the cluster:
 
 1. Go to the access control tab
 1. Select ![Add](/images/rs/icon_add.png#no-click "Add")
-1. Enter the name, email and password of the new user and select the role to assign to the user
+1. Enter the name, email, and password of the new user and select the role to assign to the user
 1. Select the internal user type
 1. For email alerts, select "Edit" and then choose the alerts that the user should receive. You can select:
 
