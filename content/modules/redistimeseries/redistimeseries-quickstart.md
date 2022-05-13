@@ -1,7 +1,7 @@
 ---
-Title: RedisTimeSeries quick start tutorial
+Title: RedisTimeSeries quick start
 linkTitle: Quick start
-description:
+description: RedisTimeSeries quick start
 weight: 20
 alwaysopen: false
 categories: ["Modules"]

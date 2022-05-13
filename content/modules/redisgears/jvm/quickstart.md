@@ -1,7 +1,7 @@
 ---
-Title: RedisGears JVM quick start tutorial
+Title: RedisGears JVM quick start
 linkTitle: Quick start
-description: A quick start tutorial to learn how to use RedisGears with Java.
+description: A quick start to learn how to use RedisGears with Java.
 weight: 10
 alwaysopen: false
 categories: ["Modules"]
@@ -9,7 +9,7 @@ categories: ["Modules"]
 
 ## Prerequisites
 
-For this quick start tutorial, you need:
+For this quick start, you need:
 
 - A Redis Enterprise cluster with the [RedisGears module and JVM plugin installed]({{<relref "/modules/redisgears/installing-redisgears#install-redisgears">}}) and [enabled on a database]({{<relref "/modules/redisgears/jvm/install">}})
 - `redis-cli` with connectivity to a Redis database
