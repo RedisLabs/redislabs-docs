@@ -5,6 +5,7 @@ description: Recovers a cluster from a backup file.
 weight: $weight
 alwaysopen: false
 toc: "true"
+headerRange: "[1-2]"
 tags: ["non-configured"]
 categories: ["RS"]
 aliases: 
@@ -31,17 +32,17 @@ rladmin cluster recover
 
 | Parameter | Type/Value | Description |
 |-----------|------------|-------------|
-| addr | IP address | Sets a node's internal address. If not provided, the node sets the address automatically. (optional) |
+| addr | IP address | Sets a node's internal IP address. If not provided, the node sets the address automatically. (optional) |
 | ccs_persistent_path | filepath | Path to the location of CCS snapshots (default is the same as persistent_path) (optional) |
-| external_addr | IP address | Sets a node's external address. If not provided, the node sets the address automatically. (optional) |
+| external_addr | IP address | Sets a node's external IP address. If not provided, the node sets the address automatically. (optional) |
 | ephemeral_path | filepath (default:&nbsp;/var/opt/redislabs) | Path to an ephemeral storage location (optional) |
 | filename | filepath | Backup file to use for recovery |
 | flash_enabled | | Enables flash storage (optional) |
-| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to a flash storage location (in case the node does not support CAPI) (required if flash_enabled) |
+| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to the flash storage location (in case the node does not support CAPI) (required if flash_enabled) |
 | node_uid | integer (default:&nbsp;1) | Specifies which node will recover first and become master (optional) |
 | override_rack_id | | Changes to a new rack, specified by `rack_id` (optional) |
-| persistent_path | filepath | Path to a persistent storage location (optional) |
-| rack_id | string | Switches to this rack ID (optional) |
+| persistent_path | filepath | Path to the persistent storage location (optional) |
+| rack_id | string | Switches to the specified rack (optional) |
 
 ### Returns
 

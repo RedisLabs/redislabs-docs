@@ -5,6 +5,7 @@ description: Enables/deactivates the stats archiver.
 weight: $weight
 alwaysopen: false
 toc: "true"
+headerRange: "[1-2]"
 tags: ["configured"]
 categories: ["RS"]
 aliases: 

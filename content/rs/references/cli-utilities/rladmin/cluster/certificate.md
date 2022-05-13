@@ -5,6 +5,7 @@ description: Sets the cluster certificate.
 weight: $weight
 alwaysopen: false
 toc: "true"
+headerRange: "[1-2]"
 tags: ["configured"]
 categories: ["RS"]
 aliases: 

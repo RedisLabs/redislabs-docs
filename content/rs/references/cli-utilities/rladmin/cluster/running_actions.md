@@ -5,6 +5,7 @@ description: Lists all active tasks.
 weight: $weight
 alwaysopen: false
 toc: "true"
+headerRange: "[1-2]"
 tags: ["configured"]
 categories: ["RS"]
 aliases: 

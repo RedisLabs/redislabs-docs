@@ -5,6 +5,7 @@ description: Creates a new cluster.
 weight: $weight
 alwaysopen: false
 toc: "true"
+headerRange: "[1-2]"
 tags: ["non-configured"]
 categories: ["RS"]
 aliases: 
@@ -35,20 +36,20 @@ cluster create
 
 | Parameter | Type/Value | Description |
 |-----------|------------|-------------|
-| addr | IP address | Internal IP addresses of the node (optional) |
-| ccs_persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to location of CCS snapshots (optional) |
-| ephemeral_path | filepath | Path to ephemeral storage location (defaults to /var/opt/redislabs) (optional) |
-| external_addr | IP address | External IP addresses of the node (optional) |
+| addr | IP address | The node's internal IP address (optional) |
+| ccs_persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to the location of CCS snapshots (optional) |
+| ephemeral_path | filepath (default:&nbsp;/var/opt/redislabs) | Path to the ephemeral storage location (optional) |
+| external_addr | IP address | The node's external IP address (optional) |
 | flash_enabled | | Enables flash storage (optional) |
-| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to flash storage location (optional) |
-| license_file | filepath | Path to RLEC license file (optional) |
+| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to the flash storage location (optional) |
+| license_file | filepath | Path to the RLEC license file (optional) |
 | name | string | Cluster name |
 | node_uid | integer | Unique node ID (optional) |
 | password | string | Admin user's password |
-| persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to persistent storage location (optional) |
+| persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to the persistent storage location (optional) |
 | rack_aware | | Activates or deactivates rack awareness (optional) |
-| rack_id | string | Rack ID of the rack (optional) |
-| register_dns_suffix | | Enables database mapping to both internal and external IP (optional) |
+| rack_id | string | The rack's unique identifier (optional) |
+| register_dns_suffix | | Enables database mapping to both internal and external IP addresses (optional) |
 | username | email address | Admin user's email address |
 
 ### Returns

@@ -5,6 +5,7 @@ description: Changes the password for a given email.
 weight: $weight
 alwaysopen: false
 toc: "true"
+headerRange: "[1-2]"
 tags: ["configured"]
 categories: ["RS"]
 aliases: 
