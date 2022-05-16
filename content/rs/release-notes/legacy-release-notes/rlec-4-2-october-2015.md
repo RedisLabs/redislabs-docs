@@ -20,7 +20,7 @@ before running through the upgrade process.
     performance profiles that are optimized for either cloud or
     non-cloud environments. For additional details, refer to the
     [Performance
-    optimization]({{< relref "/rs/administering/designing-production/performance/optimization.md" >}})
+    optimization]({{< relref "/rs/clusters/optimization.md" >}})
     section.
 - SLA for AOF rewrite - enables the administrator to configure
     database parameters, by running the rladmin tune command, related to
