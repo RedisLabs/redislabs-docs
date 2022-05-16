@@ -57,4 +57,4 @@ For Redis on RAM databases with OSS cluster API enabled and for Redis on Flash d
 
 ## Related articles
 
-You can [configure the shard placement policy]({{< relref "/rs/administering/designing-production/performance/shard-placement.md" >}}) for each database.
+You can [configure the shard placement policy]({{< relref "/rs/clusters/shard-placement.md" >}}) for each database.

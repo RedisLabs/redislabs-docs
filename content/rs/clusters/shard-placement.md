@@ -1,9 +1,16 @@
 ---
-Title: Configuring Shard Placement
+Title: Configure shard placement
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/performance/shard-placement.md,
+    /rs/administering/designing-production/performance/shard-placement/,
+    /rs/clusters/shard-placement.md,
+    /rs/clusters/shard-placement/,
+
+]
 ---
 In Redis Enterprise Software , the location of master and slave shards on the cluster nodes can impact the database and node performance.
 Master shards and their corresponding slave shards are always placed on separate nodes for data resiliency.
