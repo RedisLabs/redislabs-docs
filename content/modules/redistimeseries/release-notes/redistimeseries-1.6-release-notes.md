@@ -10,10 +10,25 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.6.9 requires:
+RedisTimeSeries v1.6.10 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.6.10 (May 2022)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#1074](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1074) [`RANGE`](https://redis.io/commands/ts.range/), [`REVRANGE`](https://redis.io/commands/ts.revrange/), [`MRANGE`](https://redis.io/commands/ts.mrange/), and [`MREVRANGE`](https://redis.io/commands/ts.mrevrange/): Possibly incorrect result when using `ALIGN` and aggregating a bucket with a timestamp close to 0
+    - [#1094](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1094) [LibMR](https://github.com/RedisGears/LibMR): Potential memory leak; memory release delay
+    - [#1127](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1127) Memory leak on [`RANGE`](https://redis.io/commands/ts.range/) and [`REVRANGE`](https://redis.io/commands/ts.revrange/) when argument parsing fails
+    - [#1096](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1096) [`RANGE`](https://redis.io/commands/ts.range/), [`REVRANGE`](https://redis.io/commands/ts.revrange/), [`MRANGE`](https://redis.io/commands/ts.mrange/), and [`MREVRANGE`](https://redis.io/commands/ts.mrevrange/): Using `FILTER_BY_TS` without specifying timestamps now returns an error as expected
 
 ## v1.6.9 (February 2022)
 
