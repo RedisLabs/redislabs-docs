@@ -36,7 +36,7 @@ rladmin upgrade db { db:<id> | <name> }
 | Parameters                 | Type/Value               | Description                                                                                                            |
 |----------------------------|--------------------------|------------------------------------------------------------------------------------------------------------------------|
 | db                         | db:\<id\> <br />name     | Database to upgrade                                                                                                    |
-| and module | [upgrade module](#upgrade-module) command | Clause that allows upgrade of database and specified Redis module in a single step with only one restart (can be specified multiple times)  |
+| and module | [upgrade module](#upgrade-module) command | Clause that allows the upgrade of a database and a specified Redis module in a single step with only one restart (can be specified multiple times)  |
 | discard_data               |                          | Indicates that data will not be saved after the upgrade                                                                |
 | force                      |                          | Forces upgrade and skips warnings and confirmations                                                                    |
 | force_discard              |                          | Forces `discard_data` if replication or persistence is enabled                                                   |
