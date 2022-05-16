@@ -16,13 +16,13 @@ When a primary shard fails, Redis Enterprise automatically promotes the replica 
 
 For more details, see [Replication]({{<relref "/rs/databases/replication.md">}}).
 
-## [Clustering]({{<relref "/rs/concepts/high-availability/clustering.md">}})
+## [Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 
 Clustering (or sharding) breaks your database into individual instances (shards) that are then spread across several nodes. As you increase the number of shards, your throughput and memory will also increase. Scaling out this way allows you to scale your database as you add computing and resources to your cluster.
 
 Clustering also helps stop node failure from causing data availability loss. The cluster automatically syncs between nodes to make sure the replicas are up to date with their primary shards, even if they don’t reside on the same node.
 
-For more details, see [Clustering]({{<relref "/rs/concepts/high-availability/clustering.md">}}).
+For more details, see [Clustering]({{<relref "/rs/databases/configure/clustering.md">}}).
 
 ## [Database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}})
 

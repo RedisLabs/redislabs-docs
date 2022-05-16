@@ -96,7 +96,7 @@ When enabled, the database has a replica shard for every master.
 
 ### `shardCount`
 
-The number of [database shards]({{< relref "/rs/concepts/high-availability/clustering.md">}}) (default: `1`).
+The number of [database shards]({{< relref "/rs/databases/configure/clustering.md">}}) (default: `1`).
 
 ### `tlsMode`
 

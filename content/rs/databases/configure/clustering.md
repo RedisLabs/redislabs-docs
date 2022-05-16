@@ -1,9 +1,16 @@
 ---
 Title: Database clustering
+linktitle: Database clustering
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/concepts/high-availability/clustering.md,
+    /rs/concepts/high-availability/clustering/
+    /rs/databases/configure/clustering.md,
+    /rs/databases/configure/clustering/,
+]
 ---
 Open source [Redis](https://redislabs.com/redis-features/redis) is a single-threaded process
 to provide speed and simplicity.

@@ -110,7 +110,7 @@ The **Scalability** section is available only for Flexible and Annual plans.
 | **Hashing policy** | Defines the [hashing policy]({{< relref "rs/concepts/high-availability/clustering.md#changing-the-hashing-policy" >}}) |
 | **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 
-To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/configure/clustering.md" >}}).
 
 ### Memory size
 
