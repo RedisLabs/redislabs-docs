@@ -31,7 +31,7 @@ More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](h
 {{%definition "Active-Active database (CRDB)"%}}
 Geo-distributed databases that span multiple [Redis Enterprise Software]({{<relref "#redis-enterprise-software">}}) [clusters]({{<relref "#cluster">}}). Active-Active databases, also known as conflict-free replicated databases (CRDB), depend on [multi-master replication (MMR)]({{<relref "#multi-master-replication-mmr">}}) and [conflict-free replicated data types (CRDTs)]({{<relref "#conflict-free-replicated-data-types-crdt">}}) to power a simple development experience for geo-distributed applications.
 
-More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "content/rs/databases/active-active/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/databases/active-active/data-types/_index.md">}})
+More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/databases/active-active/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/databases/active-active/data-types/_index.md">}})
 {{%/definition%}}
 
 {{%definition "Active-Active database instance"%}}
@@ -54,7 +54,7 @@ More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persis
 {{%definition "causal consistency"%}}
 A distributed database is causally consistent if it maintains the same order of operations on a piece of data across all database copies.
 
-More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/administering/database-operations/causal-consistency-crdb">}})
+More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/databases/active-active/causal-consistency-crdb">}})
 {{%/definition%}}
 
 {{%definition "CIDR allowlist"%}}
