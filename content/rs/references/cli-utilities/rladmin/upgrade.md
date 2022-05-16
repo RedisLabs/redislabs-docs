@@ -1,7 +1,7 @@
 ---
 Title: rladmin upgrade
 linkTitle: upgrade
-description: Upgrades a database or a module to the latest Redis Enterprise Software version.
+description: Upgrades the version of a module or Redis Enterprise Software for a database.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,11 +10,11 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin upgrade` upgrades a database or a module to the latest Redis Enterprise Software version.
+Upgrades the version of a module or Redis Enterprise Software for a database.
 
 ## `upgrade db`
 
-Schedules a restart of the primary and replica processes of a database and then upgrades the database to the latest Redis Enterprise Software version.
+Schedules a restart of the primary and replica processes of a database and then upgrades the database to the latest version of Redis Enterprise Software.
 
 For more information, see [Upgrade an existing Redis Software Deployment]({{< relref "/rs/installing-upgrading/upgrading" >}}).
 
@@ -39,13 +39,13 @@ rladmin upgrade db { db:<id> | <name> }
 | and module | [upgrade module](#upgrade-module) command | Clause that allows upgrade of database and specified Redis module in a single step with only one restart (can be specified multiple times)  |
 | discard_data               |                          | Indicates that data will not be saved after the upgrade                                                                |
 | force                      |                          | Forces upgrade and skips warnings and confirmations                                                                    |
-| force_discard              |                          | Forces `discard_data` if there is replication or persistence enabled                                                   |
-| keep_crdt_protocol_version |                          | Keeps the current crdt protocol version                                                                                |
+| force_discard              |                          | Forces `discard_data` if replication or persistence is enabled                                                   |
+| keep_crdt_protocol_version |                          | Keeps the current CRDT protocol version                                                                                |
 | keep_current_version       |                          | Upgrades to a new patch release, not to the latest major.minor version                                                 |
-| latest_with_modules        |                          | Upgrades both the database and all modules in the database                                                             |
-| parallel_shards_upgrade    | Integer <br />all        | Maximum number of shards to upgrade all at once                                                                        |
-| preserve_roles             |                          | Performs an additional failover to guarantee roles of shards are preserved                                             |
-| redis_version              | Redis version            | Upgrades database to the specified version instead of the latest version                                               |
+| latest_with_modules        |                          | Upgrades the Redis Enterprise Software version and all modules in the database                                                             |
+| parallel_shards_upgrade    | integer <br />'all'        | Maximum number of shards to upgrade all at once                                                                        |
+| preserve_roles             |                          | Performs an additional failover to guarantee the shards' roles are preserved                                             |
+| redis_version              | Redis version            | Upgrades the database to the specified version instead of the latest version                                               |
 
 ### Returns
 
@@ -84,12 +84,12 @@ rladmin upgrade module
 
 | Parameters                 | Type/Value               | Description                                                                                                            |
 |----------------------------|--------------------------|------------------------------------------------------------------------------------------------------------------------|
-| db_name                    | db:\<id\> <br />name     | Database to with module to upgrade                                                                                     |
-| module_name                | Module name, such as: <br />ReJSON<br />graph<br />search<br />bf<br />timeseries | Redis module to upgrade                                       |
-| version                    | Module version number    | Upgrades module to the specified version                                                                               |
-| module_args                | keep_args<br />String    | Module configuration options                                                                                                       |
+| db_name                    | db:\<id\> <br />name     | Upgrade a module for the specified database                                                                                     |
+| module_name                | 'ReJSON'<br />'graph'<br />'search'<br />'bf'<br />'timeseries' | Redis module to upgrade                                       |
+| version                    | module version number    | Upgrades the module to the specified version                                                                               |
+| module_args                | 'keep_args'<br />string    | Module configuration options                                                                                                       |
 
-For more information about Module configuration options, see [Module configuration options]({{< relref "/modules/install/add-module-to-database#module-configuration-options" >}}).
+For more information about module configuration options, see [Module configuration options]({{< relref "/modules/install/add-module-to-database#module-configuration-options" >}}).
 
 ### Returns
 
