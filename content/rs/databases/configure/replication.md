@@ -1,5 +1,6 @@
 ---
 Title: Database replication
+linktitle: Replication
 description:
 weight: $weight
 alwaysopen: false
@@ -7,8 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/concepts/high-availability/replication.md,
     /rs/concepts/high-availability/replication/,
-    /rs/databases/replication.md,
-    /rs/databases/replication/,
+    /rs/databases/configure/replication.md,
+    /rs/databases/configure/replication/,
 ]
 ---
 Database replication helps ensure high availability.

@@ -73,7 +73,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
 
 1. Configure the {{< field "db_type" >}} options that you want for the database:
 
-    - [**Replication**]({{< relref "/rs/databases/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
+    - [**Replication**]({{< relref "/rs/databases/configure/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
 
         If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/clusters/rack-zone-awareness.md" >}}),
         you can also enable rack-zone awareness for the database.
