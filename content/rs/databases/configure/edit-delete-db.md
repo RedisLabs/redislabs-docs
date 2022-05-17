@@ -20,10 +20,10 @@ To edit the configuration of a database:
 1. Go to **Database** and select the database that you want to edit.
 1. Go to **Configuration** and click **Edit** at the bottom of the page.
     The database settings appear.
-1. Change any of the [configurable database settings]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
+1. Change any of the [configurable database settings]({{< relref "/rs/databases/configure/" >}}).
 
     {{< note >}}
-For [Active-Active database instances](#updating-crdb-configuration), most database settings only apply to the instance that you are editing.
+For [Active-Active database instances]({{<relref "/rs/databases/active-active">}}), most database settings only apply to the instance that you are editing.
     {{< /note >}}
 
 1. Click **Update**.
