@@ -34,7 +34,8 @@ Returns `Completed successfully` if the database was recovered. Otherwise, retur
 ### Example
 
 ```sh
-
+$ rladmin recover all
+Completed successfully
 ```
 
 ## `recover db`
@@ -60,7 +61,8 @@ Returns `Completed successfully` if the database was recovered. Otherwise, retur
 ### Example
 
 ```sh
-
+$ rladmin recover db db:5
+Completed successfully
 ```
 
 ## `recover list`
