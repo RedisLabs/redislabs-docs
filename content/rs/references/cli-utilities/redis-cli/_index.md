@@ -27,35 +27,53 @@ To learn how to install Redis and `redis-cli`, see the following installation gu
 
 ## Connect to a database
 
-Before you can run Redis commands, you need to use `redis-cli` to connect to your Redis database.
+To run Redis commands with `redis-cli`, you need to connect to your Redis database.
 
 ### Connect from a node
 
+If you have SSH access to a node in the Redis cluster, you can run `redis-cli` directly from the node:
+
 1. Use SSH to sign in to a node in your Redis Enterprise cluster.
 
-1. Start a `redis-cli` interactive session:
+1. Test your database connection with `redis-cli`:
 
     ```sh
-    $ redis-cli -p <port>
+    $ redis-cli -p <port> PING
+    PONG
     ```
 
 ### Connect remotely
 
-Connect to a Redis database with `redis-cli`:
+If you have `redis-cli` installed on your local machine, you can use it to connect to a remote Redis database. You will need to provide the database's connection details such as the hostname or IP address, port, and password.
 
 ```sh
 $ redis-cli -h <endpoint> -p <port> -a <password>
 ```
 
-You can also set the password with the `REDISCLI_AUTH` environment variable instead of providing the password with the `-a` option.
+You can also provide the password with the `REDISCLI_AUTH` environment variable instead of the `-a` option:
+
+```sh
+$ export REDISCLI_AUTH=<password>
+$ redis-cli -h <endpoint> -p <port>
+```
 
 ### Connect with Docker
 
-If you run Redis in Docker, you can [run `redis-cli` with `docker exec`](https://redis.io/docs/stack/get-started/install/docker/#connect-with-redis-cli).
+If you use Docker to run your Redis database, you can use `docker exec` to run `redis-cli` commands:
+
+```sh
+$ docker exec -it <Redis container name> redis-cli
+```
 
 ## Basic use
 
-Run `redis-cli` commands directly from the command-line terminal:
+You can run `redis-cli` commands directly from the command-line terminal:
+
+```sh
+$ redis-cli -p <port> <Redis command>
+```
+
+For example, you can use `redis-cli` to test your database connection and store a new Redis string in the database:
 
 ```sh
 $ redis-cli -p 12000 PING
@@ -78,7 +96,7 @@ In `redis-cli` [interactive mode](https://redis.io/docs/manual/cli/#interactive-
 - Press the `Tab` key for command completion.
 - Enter `exit` or `quit` or press `Control+D` to exit interactive mode and return to the terminal prompt.
 
-Activate [interactive mode](#interactive-mode) and run commands:
+This example shows how to start interactive mode and run Redis commands:
 
 ```sh
 $ redis-cli -p 12000
@@ -93,4 +111,4 @@ OK
 ## More info
 
 - [Redis CLI documentation](https://redis.io/docs/manual/cli/)
-- [Commands reference](https://redis.io/commands/)
+- [Redis commands reference](https://redis.io/commands/)
