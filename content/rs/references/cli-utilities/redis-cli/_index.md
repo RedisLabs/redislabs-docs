@@ -11,7 +11,7 @@ aliases:
 
 The `redis-cli` command-line utility lets you interact with a Redis database. With `redis-cli`, you can run [Redis commands](https://redis.io/commands/) directly from the command-line terminal or with [interactive mode](#interactive-mode).
 
-If you do not have access to `redis-cli`, the [RedisInsight CLI](https://redis.io/docs/stack/insight/#cli) is another option that lets you run Redis commands against a [connected database]({{<relref "/ri/using-redisinsight/add-instance">}}).
+If you want to run Redis commands without `redis-cli`, you can [connect to a database with RedisInsight]({{<relref "/ri/using-redisinsight/add-instance">}}) and use the built-in [CLI](https://redis.io/docs/stack/insight/#cli) prompt instead.
 
 ## Install `redis-cli`
 
@@ -31,20 +31,19 @@ To run Redis commands with `redis-cli`, you need to connect to your Redis databa
 
 ### Connect from a node
 
-If you have SSH access to a node in the Redis cluster, you can run `redis-cli` directly from the node:
+If you have SSH access to a node in a Redis cluster, you can run `redis-cli` directly from the node:
 
-1. Use SSH to sign in to a node in your Redis Enterprise cluster.
+1. Use SSH to sign in to a node in the Redis Enterprise cluster.
 
-1. Test your database connection with `redis-cli`:
+1. Connect to the database with `redis-cli`:
 
     ```sh
-    $ redis-cli -p <port> PING
-    PONG
+    $ redis-cli -p <port>
     ```
 
 ### Connect remotely
 
-If you have `redis-cli` installed on your local machine, you can use it to connect to a remote Redis database. You will need to provide the database's connection details such as the hostname or IP address, port, and password.
+If you have `redis-cli` installed on your local machine, you can use it to connect to a remote Redis database. You will need to provide the database's connection details, such as the hostname or IP address, port, and password.
 
 ```sh
 $ redis-cli -h <endpoint> -p <port> -a <password>
@@ -59,10 +58,10 @@ $ redis-cli -h <endpoint> -p <port>
 
 ### Connect with Docker
 
-If you use Docker to run your Redis database, you can use `docker exec` to run `redis-cli` commands:
+If your Redis database runs in a Docker container, you can use `docker exec` to run `redis-cli` commands:
 
 ```sh
-$ docker exec -it <Redis container name> redis-cli
+$ docker exec -it <Redis container name> redis-cli -p <port>
 ```
 
 ## Basic use
@@ -92,7 +91,7 @@ In `redis-cli` [interactive mode](https://redis.io/docs/manual/cli/#interactive-
 
 - Run any `redis-cli` command without prefacing it with `redis-cli`.
 - Enter `?` for more information about how to use the `HELP` command and [set `redis-cli` preferences](https://redis.io/docs/manual/cli/#preferences).
-- Enter [`HELP`](https://redis.io/docs/manual/cli/#showing-help-about-redis-commands) followed by the name of a command for a detailed explanation of the command and its usage.
+- Enter [`HELP`](https://redis.io/docs/manual/cli/#showing-help-about-redis-commands) followed by the name of a command for more information about the command and its options.
 - Press the `Tab` key for command completion.
 - Enter `exit` or `quit` or press `Control+D` to exit interactive mode and return to the terminal prompt.
 
