@@ -31,13 +31,6 @@ $ rladmin recover all
 
 Returns `Completed successfully` if the database was recovered. Otherwise, returns an error.
 
-### Example
-
-```sh
-$ rladmin recover all
-Completed successfully
-```
-
 ## `recover db`
 
 Recovers a specific database in recovery mode.
@@ -57,13 +50,6 @@ $ rladmin recover db { db<id> | <name> }
 ### Returns
 
 Returns `Completed successfully` if the database was recovered. Otherwise, returns an error.
-
-### Example
-
-```sh
-$ rladmin recover db db:5
-Completed successfully
-```
 
 ## `recover list`
 
@@ -89,37 +75,4 @@ DATABASES IN RECOVERY STATE:
 DB:ID  NAME  TYPE   SHARDS  REPLICATION  PERSISTENCE  STATUS
 db:5   tr01  redis  1       enabled      aof          missing-files
 db:6   tr02  redis  4       enabled      snapshot     ready
-```
-
-## `recover s3_import`
-
-Imports all current database snapshot files from an AWS S3 bucket to a directory on the node.
-
-```sh
-$ rladmin recover s3_import
-                  s3_bucket <bucket_name>
-                  [ s3_prefix <prefix> ]
-                  s3_access_key_id <access_key>
-                  s3_secret_access_key <secret_access_key>
-                  local_path <path>
-```
-
-### Parameters
-
-| Parameters           | Type/Value | Description                                                      |
-|----------------------|------------|------------------------------------------------------------------|
-| s3_bucket            | string     | S3 Bucket name                                                   |
-| s3_prefix            | string     | S3 Prefix in the bucket                                          |
-| s3_access_key_id     | string     | S3 Access key ID                                                 |
-| s3_secret_access_key | string     | S3 secret access key                                             |
-| s3_secret_access_key | filepath   | Local import path - all database snapshots will be imported here |
-
-### Returns
-
-Returns `Completed successfully` if the database files were imported. Otherwise, returns an error.
-
-### Example
-
-```sh
-
 ```
