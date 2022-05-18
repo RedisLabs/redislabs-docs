@@ -77,7 +77,7 @@ of the configuration and persistence files on each of the nodes.
     If you use local persistent storage, place all of the recovery files on each of the cluster nodes.
 
 1. To recover the cluster configuration from the original cluster to the first node in the new cluster,
-    from the [rladmin]({{< relref "/rs/references/rladmin.md" >}}) command-line interface (CLI):
+    from the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command-line interface (CLI):
 
     ```sh
     cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>

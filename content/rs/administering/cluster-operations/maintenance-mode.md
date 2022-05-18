@@ -25,7 +25,7 @@ Maintenance mode does not protect against quorum loss. If you turn on maintenanc
 1. Takes a snapshot of the node configuration to record which shards and endpoints are on the node.
 1. Marks the node as a quorum node to prevent shards and endpoints from migrating to it. 
     {{<note>}}
-If you run [`rladmin status`]({{<relref "/rs/references/rladmin#status">}}), the node's shards field is now yellow to show that shards cannot migrate to it.
+If you run [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}), the node's shards field is now yellow to show that shards cannot migrate to it.
     {{</note>}}
     ![maintenance_mode](/images/rs/maintenance_mode.png)
 1. Migrates shards and binds endpoints to other nodes, if space is available.
@@ -118,7 +118,7 @@ rladmin node <node_id> maintenance_mode off skip_shards_restore
 
 ## Cluster status example
 
-This example shows how the output of [`rladmin status`]({{<relref "/rs/references/rladmin#status">}}) changes when you turn on maintenance mode for a node.
+This example shows how the output of [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) changes when you turn on maintenance mode for a node.
 
 The cluster status before turning on maintenance mode:
 

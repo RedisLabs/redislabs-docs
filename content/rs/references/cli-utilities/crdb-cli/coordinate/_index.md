@@ -2,6 +2,7 @@
 Title: crdb-cli coordinate commands
 linkTitle: coordinate
 description: Set and read configuration parameters and statuses of CRDBs on the cluster.
+draft: true
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
