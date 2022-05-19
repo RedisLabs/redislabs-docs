@@ -17,7 +17,7 @@ aliases:
 Recovers all databases in recovery mode.
 
 ```sh
-$ rladmin recover all
+rladmin recover all
             [ only_configuration ]
 ```
 
@@ -36,7 +36,7 @@ Returns `Completed successfully` if the database was recovered. Otherwise, retur
 Recovers a specific database in recovery mode.
 
 ```sh
-$ rladmin recover db { db<id> | <name> }
+rladmin recover db { db:<id> | <name> }
                      [ only_configuration ]
 ```
 
@@ -56,7 +56,7 @@ Returns `Completed successfully` if the database was recovered. Otherwise, retur
 Shows a list of all databases that are currently in recovery mode.
 
 ```sh
-$ rladmin list
+rladmin recover list
 ```
 
 ### Parameters
@@ -65,7 +65,7 @@ None.
 
 ### Returns
 
-Displays a list of all recoverable databases. If no databases are in reovery mode, prints `No recoverable databases found`.
+Displays a list of all recoverable databases. If no databases are in recovery mode, prints `No recoverable databases found`.
 
 ### Example
 
