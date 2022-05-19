@@ -8,10 +8,10 @@ categories: ["RS"]
 aliases: [
     /rs/getting-started/memtier-benchmark.md,
     /rs/getting-started/memtier-benchmark/,
-    /rs/clusters/memtier-benchmark.md,
+    /rs/clusters/optimize/memtier-benchmark.md,
     /rs/administering/memtier-benchmark/,
-    /rs/clusters/memtier-benchmark.md,
-    /rs/clusters/memtier-benchmark/,
+    /rs/clusters/optimize/memtier-benchmark.md,
+    /rs/clusters/optimize/memtier-benchmark/,
 
 ]
 ---
