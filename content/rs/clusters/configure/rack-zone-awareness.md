@@ -8,8 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/concepts/high-availability/rack-zone-awareness.md,
     /rs/concepts/high-availability/rack-zone-awareness/,
-    /rs/clusters/rack-zone-awareness.md,
-    /rs/clusters/rack-zone-awareness.md/,
+    /rs/clusters/configure/rack-zone-awareness.md,
+    /rs/clusters/configure/rack-zone-awareness/,
 ]
 ---
 Rack-zone awareness is a Redis Enterprise feature that helps to ensure high-availability in the event of a rack or zone failure.

@@ -210,7 +210,7 @@ Node provisioned only for cluster operations that can be elected as a master nod
 {{%definition "rack-zone awareness"%}}
 Redis Enterprise feature that helps to ensure high availability in the event of a rack or zone failure. In the event of a rack or zone failure, the replicas and endpoints in the remaining racks/zones will be promoted.
 
-More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/clusters/rack-zone-awareness.md">}})
+More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}})
 {{%/definition%}}
 
 {{%definition "re-sharding"%}}

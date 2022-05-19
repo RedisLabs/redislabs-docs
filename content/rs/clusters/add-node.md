@@ -71,7 +71,7 @@ with a custom certificate.
 
 1. Click **Next**.
 
-    If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/clusters/rack-zone-awareness.md" >}}),
+    If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}}),
     you are redirected to a page in which you must set the Rack-zone ID for the new node.
 
 The node is added to the cluster.

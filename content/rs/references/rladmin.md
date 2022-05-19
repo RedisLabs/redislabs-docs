@@ -773,7 +773,7 @@ An endpoint is unbalanced in the following cases:
 
 #### `verify rack_aware`
 
-`rladmin verify rack_aware` verifies that the cluster complies with the rack awareness policy and reports any discovered rack collisions, if [rack-zone awareness]({{<relref "/rs/clusters/rack-zone-awareness.md">}}) is enabled.
+`rladmin verify rack_aware` verifies that the cluster complies with the rack awareness policy and reports any discovered rack collisions, if [rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}}) is enabled.
 
 ```text
 rladmin verify rack_aware

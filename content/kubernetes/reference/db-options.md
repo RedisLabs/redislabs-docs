@@ -74,7 +74,7 @@ The value is a keyword with the values:
 
 ### `rackAware`
 
-A boolean that indicates whether the database is [rack-zone aware]({{< relref "/rs/clusters/rack-zone-awareness.md">}}) (default: the cluster setting)
+A boolean that indicates whether the database is [rack-zone aware]({{< relref "/rs/clusters/configure/rack-zone-awareness.md">}}) (default: the cluster setting)
 
 ### `redisEnterpriseCluster`
 

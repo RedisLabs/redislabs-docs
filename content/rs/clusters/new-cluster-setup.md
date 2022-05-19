@@ -61,7 +61,7 @@ To create a cluster:
 
     1. Choose whether to [**Enable private & public endpoints support**]({{< relref "/rs/administering/designing-production/networking/private-public-endpoints.md" >}}).
 
-    1. Choose whether to [**Enable rack-zone awareness**]({{< relref "/rs/clusters/rack-zone-awareness.md" >}}).
+    1. Choose whether to [**Enable rack-zone awareness**]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}}).
         Enabling rack-zone awareness requires setting the **Rack-zone ID** for the node.
 
     1. Click **Next**.

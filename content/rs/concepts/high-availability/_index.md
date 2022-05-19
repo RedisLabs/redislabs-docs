@@ -36,8 +36,8 @@ Redis Enterprise Active-Active geo-replication distributes your replicated data 
 
 For more details, see [Active-Active geo-distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}).
 
-## [Rack-zone awareness]({{<relref "/rs/clusters/rack-zone-awareness.md">}})
+## [Rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}})
 
 Rack-zone awareness maps each node in your Redis Enterprise cluster to a physical rack or logical zone. The cluster then uses that information to distribute primary shards and their replica shards in different racks or zones. This protects your data and ensures data availability if there is rack or zone failure.
 
-For more details, see [Rack-zone awareness]({{<relref "/rs/clusters/rack-zone-awareness.md">}}).
+For more details, see [Rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}}).

@@ -75,7 +75,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
 
     - [**Replication**]({{< relref "/rs/databases/configure/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
 
-        If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/clusters/rack-zone-awareness.md" >}}),
+        If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}}),
         you can also enable rack-zone awareness for the database.
 
     - [**Redis Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - When you create a new in-memory database,
