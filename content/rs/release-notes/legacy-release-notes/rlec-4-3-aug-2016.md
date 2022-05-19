@@ -62,7 +62,7 @@ upgrade to this version.
 - Environment configuration profile with name "default" has been
     changed to "cloud" and the default value has been changed to
     "local-network". For additional details, refer to [Performance
-    optimization]({{< relref "/rs/clusters/optimization.md" >}})
+    optimization]({{< relref "/rs/clusters/optimize/optimization.md" >}})
     section.
 - In the REST API, when creating a database and not setting the
     database replication parameter to "true", the default value assigned

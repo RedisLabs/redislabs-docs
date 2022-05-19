@@ -8,8 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/designing-production/performance/optimization.md,
     /rs/administering/designing-production/performance/optimization/,
-    /rs/clusters/optimization.md,
-    /rs/clusters/optimization/,
+    /rs/clusters/optimize/optimization.md,
+    /rs/clusters/optimize/optimization/,
 ]
 ---
 Redis Enterprise Software employs various algorithms to optimize
