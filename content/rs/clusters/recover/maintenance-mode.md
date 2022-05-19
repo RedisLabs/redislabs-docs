@@ -8,8 +8,8 @@ categories: ["RS"]
 aliases: [
         /rs/administering/cluster-operations/shutting-down-node.md,
         /rs/administering/cluster-operations/shutting-down-node/,
-        /rs/clusters/maintenance-mode.md,
-        /rs/clusters/maintenance-mode/
+        /rs/clusters/recover/maintenance-mode.md,
+        /rs/clusters/recover/maintenance-mode/
 ]
 ---
 
