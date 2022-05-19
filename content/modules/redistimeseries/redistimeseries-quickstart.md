@@ -116,9 +116,7 @@ Use [`TS.GET`](https://redis.io/commands/ts.get/) to get the latest entry in the
 2) "21.7"
 ```
 
-Use [`TS.RANGE`](https://redis.io/commands/ts.range/) to get a range of timestamps and values in the time series, ordered from earliest to latest. [`TS.REVRANGE`](https://redis.io/commands/ts.revrange/) orders the values from latest to earliest.
-
-You can specify `0` and `+` for the starting and ending timestamps to get all of the entries in the time series.
+Use [`TS.RANGE`](https://redis.io/commands/ts.range/) to get a range of timestamps and values in the time series, ordered from earliest to latest.
 
 ```sh
 127.0.0.1:12543> TS.RANGE temperature:2:24 1652824475581 1652828015127
@@ -126,6 +124,13 @@ You can specify `0` and `+` for the starting and ending timestamps to get all of
    2) "18.3"
 2) 1) "1652828015127"
    2) "17.2"
+```
+
+[`TS.REVRANGE`](https://redis.io/commands/ts.revrange/) orders the values from latest to earliest.
+
+You can specify `0` and `+` for the starting and ending timestamps to get all of the entries in the time series.
+
+```sh
 127.0.0.1:12543> TS.REVRANGE temperature:2:24 0 +
 1) 1) "1652831657886"
    2) "16.7"
@@ -159,7 +164,7 @@ Use [`TS.MGET`](https://redis.io/commands/ts.mget/) to get the last entry in all
       2) "21.7"
 ```
 
-Use [`TS.MRANGE`](https://redis.io/commands/ts.mrange/) to get a range of entries in all time series keys with a `sensor_id` of 2 from earliest to latest. Then, use [`TS.MREVRANGE`](https://redis.io/commands/ts.mrevrange/) to get a range of entries in all time series keys that are humidity keys from latest to earliest.
+Use [`TS.MRANGE`](https://redis.io/commands/ts.mrange/) to get a range of entries in all time series keys with a `sensor_id` of 2 from earliest to latest.
 
 ```sh
 127.0.0.1:12543> TS.MRANGE 0 + filter sensor_id=2
@@ -179,6 +184,11 @@ Use [`TS.MRANGE`](https://redis.io/commands/ts.mrange/) to get a range of entrie
          2) "17.2"
       3) 1) "1652831657886"
          2) "16.7"
+```
+
+Then, use [`TS.MREVRANGE`](https://redis.io/commands/ts.mrevrange/) to get a range of entries in all time series keys that are humidity keys from latest to earliest.
+
+```sh
 127.0.0.1:12543> TS.MREVRANGE 0 + FILTER data_type=humidity
 1) 1) "humidity:1:20"
    2) (empty list or set)
