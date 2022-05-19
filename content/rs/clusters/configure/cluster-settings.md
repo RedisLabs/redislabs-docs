@@ -10,8 +10,8 @@ aliases: [
         /rs/administering/cluster-operations/settings/license-keys/,
         /rs/administering/cluster-operations/cluster-settings.md,
         /rs/administering/cluster-operations/cluster-settings/,
-        /rs/clusters/cluster-settings.md,
-        /rs/clusters/cluster-settings/,
+        /rs/clusters/configure/cluster-settings.md,
+        /rs/clusters/configure/cluster-settings/,
 ]
 ---
 You can view and set various cluster settings in the **Settings > General** page.
@@ -23,7 +23,7 @@ you can enter the key in the Cluster Key field, either during initial\
 cluster creation or at any time afterward. The key defines various
 cluster settings, such as the maximum number of shards you can have in
 the cluster. For more detailed information see [Cluster License
-Keys]({{< relref "/rs/clusters/license-keys.md" >}}).
+Keys]({{< relref "/rs/clusters/configure/license-keys.md" >}}).
 
 ## Viewing the maximum number of allowed shards
 

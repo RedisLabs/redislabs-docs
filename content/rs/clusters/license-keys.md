@@ -8,8 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/cluster-operations/license-keys.md,
     /rs/administering/cluster-operations/license-keys/,
-    /rs/clusters/license-keys.md,
-    /rs/clusters/license-keys/,
+    /rs/clusters/configure/license-keys.md,
+    /rs/clusters/configure/license-keys/,
 ]
 ---
 The cluster key (or license) enables features and capacity within Redis Enterprise Software (RS).
