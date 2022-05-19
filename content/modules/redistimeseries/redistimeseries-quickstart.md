@@ -7,6 +7,8 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redistimeseries/
 ---
+## Prerequisites
+
 For this quick start tutorial, you need:
 
 - A Redis database with the RedisTimeSeries module enabled. You can use either:
@@ -14,15 +16,15 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-- redis-cli command line tool
+- `redis-cli` command-line tool
 
-- [redis-py](https://github.com/redis/redis-py) client library v4.0.0 or greater
+- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or greater
 
 ## RedisTimeSeries with redis-cli
 
-The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool is part of the Redis installation. You can use it to connect to your Redis database and test RedisTimeSeries commands.
+The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool is included with the Redis installation. You can use it to connect to your Redis database and test RedisTimeSeries commands.
 
-In these examples, you'll create a time series representing weather measurements.
+The following examples show you how to create a time series that represents weather measurements.
 
 ### Connect to a database
 
@@ -33,7 +35,7 @@ $ redis-cli -h <endpoint> -p <port> -a <password>
 
 ### Create a time series
 
-Use `TS.CREATE` to create a Redis key with a time series value.
+Use [`TS.CREATE`](https://redis.io/commands/ts.create/) to create a Redis key with a time series value.
 
 Create a time series with the key name `temperature:1:20` to represent the temperatures at sensor 1 and area 20.
 
@@ -60,9 +62,9 @@ Create `temperature` and `humidity` time series keys for other temperature and h
 "OK"
 ```
 
-### Add new data to a time series
+### Add data to a time series
 
-Use `TS.ADD` to add new data to a time series.
+Use [`TS.ADD`](https://redis.io/commands/ts.add/) to add new data to a time series.
 
 Add a few temperature measurements from area 20 to `temperature:1:20`.
 
@@ -75,7 +77,7 @@ Add a few temperature measurements from area 20 to `temperature:1:20`.
 1652831657886
 ```
 
-The second argument in `TS.ADD` is the UNIX timestamp for the sample in milliseconds. You can also specify `*` for the current time on the Redis Server.
+The second argument in `TS.ADD` is the UNIX timestamp for the sample in milliseconds. You can also specify `*` for the current time on the Redis server.
 
 Add a few humidity measurements from area 20 to `humidity:1:20`.
 
@@ -88,7 +90,7 @@ Add a few humidity measurements from area 20 to `humidity:1:20`.
 1652831657886
 ```
 
-You can also update multiple time series at once with `TS.MADD`.
+You can also update multiple time series at once with [`TS.MADD`](https://redis.io/commands/ts.madd/).
 
 Use `TS.MADD` to add multiple measurements from area 24 to `temperature:2:24` and `humidity:2:24`.
 
@@ -106,7 +108,7 @@ Use `TS.MADD` to add multiple measurements from area 24 to `temperature:2:24` an
 
 ### Get data from a time series
 
-Use `TS.GET` to get the latest entry in the time series.
+Use [`TS.GET`](https://redis.io/commands/ts.get/) to get the latest entry in the time series.
 
 ```sh
 127.0.0.1:12543> TS.GET temperature:1:20
@@ -114,7 +116,7 @@ Use `TS.GET` to get the latest entry in the time series.
 2) "21.7"
 ```
 
-Use `TS.RANGE` to get a range of timestamps and values in the time series, ordered from earliest to latest. `TS.REVRANGE` orders the values from latest to earliest.
+Use [`TS.RANGE`](https://redis.io/commands/ts.range/) to get a range of timestamps and values in the time series, ordered from earliest to latest. [`TS.REVRANGE`](https://redis.io/commands/ts.revrange/) orders the values from latest to earliest.
 
 You can specify `0` and `+` for the starting and ending timestamps to get all of the entries in the time series.
 
@@ -133,7 +135,7 @@ You can specify `0` and `+` for the starting and ending timestamps to get all of
    2) "18.3"
 ```
 
-Use `TS.MGET` to get the last entry in all time series keys with an area_id of 20.
+Use [`TS.MGET`](https://redis.io/commands/ts.mget/) to get the last entry in all time series keys with an `area_id` of 20.
 
 ```sh
 127.0.0.1:12543> TS.MGET WITHLABELS FILTER area_id=20
@@ -157,7 +159,7 @@ Use `TS.MGET` to get the last entry in all time series keys with an area_id of 2
       2) "21.7"
 ```
 
-Use `TS.MRANGE` to get a range of entries in all time series keys with a sensor_id of 2 from earliest to latest. Then, use `TS.MREVRANGE` to get a range of entries in all time series keys that are humidity keys from latest to earliest.
+Use [`TS.MRANGE`](https://redis.io/commands/ts.mrange/) to get a range of entries in all time series keys with a `sensor_id` of 2 from earliest to latest. Then, use [`TS.MREVRANGE`](https://redis.io/commands/ts.mrevrange/) to get a range of entries in all time series keys that are humidity keys from latest to earliest.
 
 ```sh
 127.0.0.1:12543> TS.MRANGE 0 + filter sensor_id=2
@@ -198,7 +200,7 @@ Use `TS.MRANGE` to get a range of entries in all time series keys with a sensor_
 
 ### Delete data from a time series
 
-Use TS.DEL to delete all timestamps in a specified range from a time series.
+Use [`TS.DEL`](https://redis.io/commands/ts.del/) to delete all timestamps in a specified range from a time series.
 
 ```sh
 127.0.0.1:12543> TS.DEL temperature:1:20 1652824475581 1652828015127
@@ -210,7 +212,7 @@ Use TS.DEL to delete all timestamps in a specified range from a time series.
 
 ## RedisTimeSeries with Python
 
-If you want to use RedisTimeSeries within an application, you can use one of the [client libraries](https://redis.io/docs/stack/json/clients/).
+If you want to use RedisTimeSeries within an application, you can use one of the [client libraries](https://redis.io/docs/stack/timeseries/clients/).
 
 The following example uses the Redis Python client library [redis-py](https://github.com/redis/redis-py), which supports RedisTimeSeries commands as of v4.0.0.
 
@@ -218,9 +220,9 @@ This Python code adds multiple time series keys to Redis, adds data to the time 
 
 ```python
 import redis
-import json #For making the responses easier to read
+import json # To make the responses easier to read
 
-# JSON-like data from two sensors
+# Data from two sensors
 sensor1 = {
     "sensorId": 1,
     "areaId": 20,
@@ -251,8 +253,10 @@ sensors = [ sensor1, sensor2 ]
 r = redis.Redis(host="<endpoint>", port="<port>",
     password="<password>")
 
-key_list = [] #Creating a list of keys for later
-humidity_madd_list = [] #Creating a list of keys & values for madd
+# Create a list to store keys
+key_list = []
+# Create a list of keys and values for ts.madd
+humidity_madd_list = []
 # For each sensor:
 for sensor in sensors:
     # Create time series keys
@@ -280,7 +284,7 @@ for sensor in sensors:
         humidity_madd_list.append( (humidity_key, entry["timestamp"], entry["humidity"]))
 
 #Add humidity data to time series keys with ts.madd
-print("Add data with madd:\n{}".format(humidity_madd_list))
+print("Add data with ts.madd:\n{}".format(humidity_madd_list))
 r.ts().madd(humidity_madd_list)
 input("\nAdded all data. Press enter to continue...")
 
@@ -327,7 +331,7 @@ Create temperature-py:1:20 and humidity-py:1:20
 Add data to temperature-py:1:20
 Create temperature-py:2:24 and humidity-py:2:24
 Add data to temperature-py:2:24
-Add data with madd:
+Add data with ts.madd:
 [('humidity-py:1:20', 1652824475581, 29), ('humidity-py:1:20', 1652828015127, 27), ('humidity-py:1:20', 1652831657886, 28), ('humidity-py:1:20', 1652835287321, 35), ('humidity-py:1:20', 1652838756149, 40), ('humidity-py:2:24', 1652824475581, 51), ('humidity-py:2:24', 1652828015127, 54), ('humidity-py:2:24', 1652831657886, 56), ('humidity-py:2:24', 1652835287321, 60), ('humidity-py:2:24', 1652838756149, 65)]
 Added all data. Press enter to continue...
 Get the last value from temperature-py:1:20...
