@@ -35,7 +35,7 @@ $ redis-cli -h <endpoint> -p <port> -a <password>
 
 Use `TS.CREATE` to create a Redis key with a time series value.
 
-Create a Time Series with the key name `temprature:1:20` to represent the temperatures at sensor 1 and area 20.
+Create a time series with the key name `temperature:1:20` to represent the temperatures at sensor 1 and area 20.
 
 ```sh
 127.0.0.1:12543> TS.CREATE temperature:1:20 LABELS sensor_id 1 area_id 20 data_type "temperature"
@@ -44,14 +44,14 @@ Create a Time Series with the key name `temprature:1:20` to represent the temper
 
 The `LABELS` parameter allows you to label time series keys with metadata that can be filtered.
 
-Create a Time Series with the key name `humidity:1:20` to represent the humidity at sensor 1 and area 20.
+Create a time series with the key name `humidity:1:20` to represent the humidity at sensor 1 and area 20.
 
 ```sh
 127.0.0.1:12543> TS.CREATE humidity:1:20 LABELS sensor_id 1 area_id 20 data_type "humidity"
 "OK"
 ```
 
-Create `temperature` and `humidity` Time Series keys for other temperature and humidity sensors in a different area.
+Create `temperature` and `humidity` time series keys for other temperature and humidity sensors in a different area.
 
 ```sh
 127.0.0.1:12543> TS.CREATE humidity:2:24 LABELS sensor_id 2 area_id 24 data_type "humidity"
@@ -177,7 +177,7 @@ Use `TS.MRANGE` to get a range of entries in all time series keys with a sensor_
          2) "17.2"
       3) 1) "1652831657886"
          2) "16.7"
-127.0.0.1:12543> TS.MREVRANGE 0 + FILTER data_type=temperature
+127.0.0.1:12543> TS.MREVRANGE 0 + FILTER data_type=humidity
 1) 1) "humidity:1:20"
    2) (empty list or set)
    3) 1) 1) "1652831657886"
@@ -214,7 +214,7 @@ If you want to use RedisTimeSeries within an application, you can use one of the
 
 The following example uses the Redis Python client library [redis-py](https://github.com/redis/redis-py), which supports RedisTimeSeries commands as of v4.0.0.
 
-This Python code adds multiple time series keys to Redis, adds data to the time series, retrieves data from the time series, and then deletes the document.
+This Python code adds multiple time series keys to Redis, adds data to the time series, retrieves data from the time series, and then deletes the time series keys.
 
 ```python
 import redis
