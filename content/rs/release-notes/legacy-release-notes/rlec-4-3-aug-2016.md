@@ -33,7 +33,7 @@ upgrade to this version.
     latest 2.8 minor version, refer to the Known Issues section below.
 - Complete cluster failure recovery instructions added. For additional
     details, refer to [Cluster
-    Recovery]({{< relref "/rs/clusters/cluster-recovery.md" >}}).
+    Recovery]({{< relref "/rs/clusters/recover/cluster-recovery.md" >}}).
 - Major improvements made to database replication performance process
     by using diskless replication between master and slave shards. The
     data between the master and slave shards is streamed directly,
