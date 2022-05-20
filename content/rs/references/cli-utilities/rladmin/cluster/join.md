@@ -16,7 +16,7 @@ Adds a node to an existing cluster.
 ```sh
 rladmin cluster join 
         nodes <node IP address>
-        username <admin user> 
+        username <admin user email> 
         password <admin password>
         [ ephemeral_path <path> ]
         [ persistent_path <path> ]
