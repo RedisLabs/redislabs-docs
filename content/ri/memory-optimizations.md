@@ -69,7 +69,6 @@ You can follow one of these three steps to reclaim the memory:
 1. Restart your redis-server
 1. Increase memorysamples in redis conf. (default is 5, max is 10) so that expired keys are reclaimed faster.
 1. You can set up a cron job that runs the scan command after an interval which helps in reclaiming the memory of the expired keys.
-1. Alternatively, Increasing the expiry of keys also helps.
 
 #### Trade offs
 
