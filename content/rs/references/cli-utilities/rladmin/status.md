@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin status` displays the current cluster status and topology information.
+Displays the current cluster status and topology information.
 
 ## `status`
 

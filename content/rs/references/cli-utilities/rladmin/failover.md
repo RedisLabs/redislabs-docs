@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin failover` fails over one or more primary (also known as master) shards of a database, promoting their respective replicas to primary shards.
+Fails over one or more primary (also known as master) shards of a database, promoting their respective replicas to primary shards.
 
 ``` sh
 rladmin failover

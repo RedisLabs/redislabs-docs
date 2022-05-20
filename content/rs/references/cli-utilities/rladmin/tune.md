@@ -10,11 +10,11 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin tune` configures parameters for databases, proxies, nodes, and clusters.
+Configures parameters for databases, proxies, nodes, and clusters.
 
 ## `tune cluster`
 
-`rladmin tune cluster` configures cluster parameters.
+Configures cluster parameters.
 
 ``` sh
 rladmin tune cluster
@@ -89,7 +89,7 @@ $ rladmin info cluster | grep slave_ha
 
 ## `tune db`
 
-`rladmin tune db` configures database parameters.
+Configures database parameters.
 
 ``` sh
 rladmin tune db { db:<id> | <name> }
@@ -194,7 +194,7 @@ $ rladmin info db db:4 | grep repl_timeout
 
 ## `tune node`
 
-`rladmin tune node` configures node parameters.
+Configures node parameters.
 
 ``` sh
 tune node  { <id> | all }
@@ -235,7 +235,7 @@ $ rladmin info node 3 | grep "max redis servers"
 
 ## `tune proxy`
 
-`rladmin tune proxy` configures proxy parameters.
+Configures proxy parameters.
 
 ``` sh
 rladmin tune proxy { <id> | all }

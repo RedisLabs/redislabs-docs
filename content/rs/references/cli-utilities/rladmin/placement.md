@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin placement` configures the shard placement policy for a specified database.
+Configures the shard placement policy for a specified database.
 
 ``` sh
 rladmin placement

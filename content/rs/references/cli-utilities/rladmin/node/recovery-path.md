@@ -1,7 +1,7 @@
 ---
 Title: rladmin node recovery_path set
 linkTitle: recovery_path
-description: Sets the local recovery path of the node.
+description: Sets a node's local recovery path.
 weight: $weight
 alwaysopen: false
 toc: "true"

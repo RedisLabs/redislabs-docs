@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin recover` recovers databases in recovery mode.
+Recovers databases in recovery mode.
 
 ## `recover all`
 

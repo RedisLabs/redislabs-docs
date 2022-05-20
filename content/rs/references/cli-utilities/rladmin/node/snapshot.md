@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node snapshot` manages [snapshots]({{<relref "/rs/databases/configure/database-persistence#append-only-file-aof-vs-snapshot-rdb">}}) of the state of a node's shards and endpoints.
+Manages [snapshots]({{<relref "/rs/databases/configure/database-persistence#append-only-file-aof-vs-snapshot-rdb">}}) of the state of a node's shards and endpoints.
 
 ## `node snapshot create`
 

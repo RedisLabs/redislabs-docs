@@ -31,6 +31,8 @@ rladmin upgrade db { db:<id> | <name> }
                 [ { latest_with_modules | and module module_name <module name> version <version> module_args <arguments string> } ]
 ```
 
+As of v6.2.4, the default behavior for `upgrade db` has changed.  It is now controlled by a new parameter that sets the default upgrade policy used to create new databases and to upgrade ones already in the cluster.  To learn more, see [`tune cluster default_redis_version`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}).
+
 ### Parameters
 
 | Parameters                 | Type/Value               | Description                                                                                                            |

@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin migrate` moves Redis Enterprise Software shards or endpoints to a new node in the same cluster.
+Moves Redis Enterprise shards or endpoints to a new node in the same cluster.
 
 ## `migrate all_master_shards`
 
@@ -19,7 +19,7 @@ Moves all primary shards of a specified database or node to a new node in the sa
 ```sh
 rladmin migrate { db { db:<id> | <name> } | node <origin node ID> }
         all_master_shards
-        target_node <ID>
+        target_node <id>
         [ override_policy ]
 ```
 
@@ -68,7 +68,7 @@ db:6   tr02       redis:20   node:1  master  12288-16383   2.99MB        OK
 Moves all shards on a specified node to a new node in the same cluster.
 
 ``` sh
-rladmin migrate node <origin node:id>
+rladmin migrate node <origin node ID>
             [ max_concurrent_bdb_migrations <value> ]
             all_shards
             target_node <id>
@@ -123,7 +123,7 @@ db:6   tr02       redis:21   node:2  slave   12288-16383   2.96MB        OK
 Moves all replica shards of a specified database or node to a new node in the same cluster.
 
 ```sh
-rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
+rladmin migrate { db { db:<id> | <name> } | node <origin node ID> }
             all_slave_shards
             target_node <id>
             [ override_policy ]

@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin help` lists all options and parameters for `rladmin` commands.
+Lists all options and parameters for `rladmin` commands.
 
 ``` sh
 rladmin help [command]
@@ -26,7 +26,7 @@ rladmin help [command]
 
 Returns a list of available `rladmin` commands.
 
-If `[command]` is specified, returns a list of all the options and parameters for that `rladmin` command.
+If `command` is specified, returns a list of all the options and parameters for that `rladmin` command.
 
 ### Example
 

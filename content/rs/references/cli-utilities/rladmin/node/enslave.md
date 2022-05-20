@@ -1,7 +1,7 @@
 ---
 Title: rladmin node enslave
 linkTitle: enslave
-description: Changes the resources of a node to replicas.
+description: Changes a node's resources to replicas.
 weight: $weight
 alwaysopen: false
 toc: "true"

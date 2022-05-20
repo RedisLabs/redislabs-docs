@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin bind` manages the proxy policy for a specific database endpoint.
+Manages the proxy policy for a specific database endpoint.
 
 ## `bind endpoint exclude`
 

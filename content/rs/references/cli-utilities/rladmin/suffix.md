@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin suffix` manages the DNS suffixes in the cluster.
+Manages the DNS suffixes in the cluster.
 
 ## `suffix add`
 

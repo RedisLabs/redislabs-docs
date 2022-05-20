@@ -1,7 +1,7 @@
 ---
 Title: rladmin node addr set
 linkTitle: addr
-description: Sets the internal IP address of a node.
+description: Sets a node's internal IP address.
 weight: $weight
 alwaysopen: false
 toc: "true"

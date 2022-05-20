@@ -1,7 +1,7 @@
 ---
 Title: rladmin node external_addr
 linkTitle: external_addr
-description: Configures the external IP addresses of a node.
+description: Configures a node's external IP addresses.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node external_addr` configures the external IP addresses of a node.
+Configures a node's external IP addresses.
 
 ## `node external_addr add`
 

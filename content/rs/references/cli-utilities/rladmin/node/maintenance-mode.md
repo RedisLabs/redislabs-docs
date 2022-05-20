@@ -1,7 +1,7 @@
 ---
 Title: rladmin node maintenance_mode
 linkTitle: maintenance_mode
-description: Configures quorum-only mode on a node.
+description: Turns quorum-only mode on or off for a node.
 weight: $weight
 alwaysopen: false
 toc: "true"
