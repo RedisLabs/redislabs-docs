@@ -10,14 +10,14 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node maintenance_mode` configures [quorum-only mode]({{<relref "/rs/concepts/high-availability/rack-zone-awareness#node-layout">}}) on a node.
+Configures [quorum-only mode]({{<relref "/rs/concepts/high-availability/rack-zone-awareness#node-layout">}}) on a node.
 
 ## `node maintenance_mode on`
 
 Migrates shards out of the node and turns the node into a quorum node to prevent shards from returning to it.
 
 ```sh
-$ rladmin node <id> maintenance_mode on
+rladmin node <ID> maintenance_mode on
                 [keep_slave_shards]
                 [demote_node]
 ```
@@ -59,7 +59,7 @@ node:4  slave  192.0.2.14                   6d754fe12cb9 5/100  6           14.2
 Turns maintenance mode off and returns the node to its previous state.
 
 ```sh
-$ rladmin node <id> maintenance_mode off
+rladmin node <ID> maintenance_mode off
                 [ { snapshot_name <name> | skip_shards_restore } ]
 ```
 

@@ -25,7 +25,7 @@ rladmin tune cluster
         [ redis_migrate_node_threshold_percent <percent> ]
         [ max_simultaneous_backups <size> ]
         [ watchdog_profile { cloud | local-network } ]
-        [ slave_ha <enabled/disabled> ]
+        [ slave_ha { enabled | disabled } ]
         [ slave_ha_grace_period <seconds> ]
         [ slave_ha_cooldown_period <seconds> ]
         [ slave_ha_bdb_cooldown_period <seconds> ]
@@ -39,11 +39,17 @@ rladmin tune cluster
         [ data_internode_encryption { enabled | disabled } ]
 ```
 
+Redis cluster watchdog supports two preconfigured profiles:
+
+- The `cloud` profile is suitable for common cloud environments. It has a higher tolerance for network jitter.
+
+- The `local-network` profile is suitable for dedicated LANs. It has better failure detection and failover times.
+
 ### Parameters
 
 | Parameters                             | Type/Value                        | Description                                                                                                                  |
 |----------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| data_internode_encryption              | 'enabled'<br />'disabled'       | Activates or deactivates [internode encryption]({{ < relref "/rs/security/internode-encryption.md" >}}) for new databases    |
+| data_internode_encryption              | 'enabled'<br />'disabled'       | Activates or deactivates [internode encryption]({{<relref "/rs/security/internode-encryption">}}) for new databases    |
 | default_concurrent_restore_actions     | integer<br />'all'              | Default number of concurrent actions during node restore from a snapshot (positive integer or "all")                         |
 | default_redis_version                  | version number                    | The default Redis database compatibility version used to create new databases.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.<br/><br/>You cannot set _default_redis_version_ to a value higher than that supported by the current _redis_upgrade_policy_ value. |
 | expose_hostnames_for_all_suffixes      | 'enabled'<br />'disabled'       | Exposes hostnames for all DNS suffixes                                                                                       |
@@ -135,7 +141,7 @@ rladmin tune db { db:<id> | <name> }
 | continue_on_error                    |                                  | Flag that skips tuning shards that can't be reached                                                                                   |
 | crdt_repl_backlog                    | value in MB<br /> 'auto'         | Size of the Active-Active replication buffer                                                                                          |
 | crdt_xadd_id_uniqueness_mode         | 'liberal'<br /> 'semi-strict'<br /> 'strict' | XADD's behavior in an Active-Active database, defined as liberal, semi-strict, or strict (see descriptions below)         |
-| data_internode_encryption            | 'enabled'<br /> 'disabled'       | Activates or deactivates [internode encryption]({{< relref "/rs/security/internode-encryption.md" >}}) for the database               |
+| data_internode_encryption            | 'enabled'<br /> 'disabled'       | Activates or deactivates [internode encryption]({{<relref "/rs/security/internode-encryption">}}) for the database               |
 | db_conns_auditing                    | 'enabled'<br /> 'disabled'       | Activates or deactivates database connections auditing for a database                                                                 |
 | gradual_src_mode                     | 'enabled'<br /> 'disabled'       | Activates or deactivates gradual sync of sources                                                                                      |
 | gradual_sync_max_shards_per_source   | integer                          | Number of shards per sync source that can be replicated in parallel (positive integer)                                                |
@@ -149,8 +155,8 @@ rladmin tune db { db:<id> | <name> }
 | metrics_export_all                   | 'enabled'<br /> 'disabled'       | Activates the exporter to expose all shard metrics                                                                                    |
 | mkms                                 | 'enabled'<br /> 'disabled'       | Activates multi-key multi-slot commands                                                                                               |
 | module_name and module_config_params | string                           | Configures arguments of a module in runtime. The module_config_params should be inside 'quotation marks'                              |
-| mtls_allow_outdated_cert             | 'enabled'<br /> 'disabled'       | Activates outdated certificates in [mTLS connections]({{< relref "/rs/security/tls/_index.md" >}})                                    |
-| mtls_allow_weak_hashing              | 'enabled'<br /> 'disabled'       | Activates weak hashing (less than 2048 bits) in [mTLS connections]({{< relref "/rs/security/tls/_index.md" >}})                       |
+| mtls_allow_outdated_cert             | 'enabled'<br /> 'disabled'       | Activates outdated certificates in mTLS connections                                   |
+| mtls_allow_weak_hashing              | 'enabled'<br /> 'disabled'       | Activates weak hashing (less than 2048 bits) in mTLS connections                       |
 | oss_cluster                          | 'enabled'<br /> 'disabled'       | Activates OSS cluster API                                                                                                             |
 | oss_cluster_api_preferred_ip_type    | 'internal'<br /> 'external'      | IP type (internal or external) for endpoint and database in OSS cluster API (default is internal)                                     |
 | repl_backlog                         | size in MB<br /> 'auto'          | Size of the replication buffer (in MB or auto)                                                                                        |

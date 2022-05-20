@@ -13,7 +13,7 @@ aliases: ["/rs/references/cli-reference/rladmin/",
 
 Although you can use the admin console for some of these tasks, others are unique to the `rladmin` command-line tool.
 
-## rladmin commands
+## `rladmin` commands
 
 {{<table-children columnNames="Command,Description" columnSources="LinkTitle,Description" enableLinks="LinkTitle">}}
 

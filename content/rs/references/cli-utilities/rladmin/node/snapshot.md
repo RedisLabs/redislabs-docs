@@ -17,7 +17,7 @@ aliases:
 Creates a snapshot of a node's current state.
 
 ```sh
-$ rladmin node <id> snapshot create <name>
+rladmin node <ID> snapshot create <name>
 ```
 
 ### Parameters
@@ -44,7 +44,7 @@ Done.
 Deletes an existing snapshot of a node.
 
 ```sh
-$ rladmin node <id> snapshot delete <name>
+rladmin node <ID> snapshot delete <name>
 ```
 
 ### Parameters
@@ -71,7 +71,7 @@ Done.
 Displays a list of created snapshots for the specified node.
 
 ``` sh
-$ rladmin node <id> snapshot list
+rladmin node <ID> snapshot list
 ```
 
 ### Parameters
@@ -97,7 +97,7 @@ snap2                                              2       2022-05-12T19:27:51Z
 Restores a node as close to the stored snapshot as possible.
 
 ```sh
-$ rladmin node <id> snapshot restore <name>
+rladmin node <ID> snapshot restore <name>
 ```
 
 ### Parameters

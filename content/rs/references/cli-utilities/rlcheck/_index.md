@@ -14,7 +14,7 @@ You can use this utility to confirm a successful installation or to verify that 
 You can run `rlcheck` from the host's command-line interface (CLI).
 The output of `rlcheck` shows information specific to the host that you run it on.
 
-To open the `rladmin` CLI:
+To open the `rlcheck` CLI:
 
 1. Sign in to the Redis Enterprise Software host with an account that is a member of the **redislabs** operating system group.
 

@@ -17,9 +17,9 @@ aliases:
 Moves all primary shards of a specified database or node to a new node in the same cluster.
 
 ```sh
-rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
+rladmin migrate { db { db:<id> | <name> } | node <origin node ID> }
         all_master_shards
-        target_node <id>
+        target_node <ID>
         [ override_policy ]
 ```
 
@@ -172,7 +172,7 @@ db:6   tr02      redis:21   node:3  slave  12288-16383    3.04MB         OK
 
 ## `migrate endpoint_to_shards`
 
-Plans the movement of the endpoint of a database to the node where the majority of the primary shards are located.
+Moves database endpoints to the node where the majority of primary shards are located.
 
 ```sh
 rladmin migrate [ db { db:<id> | <name> } ]

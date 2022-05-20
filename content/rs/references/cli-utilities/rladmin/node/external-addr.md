@@ -17,8 +17,8 @@ aliases:
 Adds an external IP address that accepts inbound user connections for the node.
 
 ```sh
-rladmin node <id>
-        external_addr add <ip_addr>
+rladmin node <ID>
+        external_addr add <IP address>
 ```
 
 ### Parameters
@@ -52,8 +52,8 @@ node:3  slave  192.0.2.4                   b87cc06c830f 5/120  6           14.75
 Sets one or more external IP addresses that accepts inbound user connections for the node.
 
 ```sh
-rladmin node <id>
-        external_addr add <ip_addr1> .. <ip_addrN>
+rladmin node <ID>
+        external_addr set <IP address 1> ... <IP address N>
 ```
 
 ### Parameters
@@ -86,8 +86,8 @@ node:3  slave  192.0.2.4                           b87cc06c830f 5/120  6     14.
 Removes the specified external IP address from the node.
 
 ```sh
-rladmin node <id>
-        external_addr remove <ip_addr>
+rladmin node <ID>
+        external_addr remove <IP address>
 ```
 
 ### Parameters

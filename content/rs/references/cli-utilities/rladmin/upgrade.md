@@ -28,7 +28,7 @@ rladmin upgrade db { db:<id> | <name> }
                 [ keep_crdt_protocol_version ]
                 [ redis_version <version> ]
                 [ force ]
-                [ { latest_with_modules | and module module_name <mod_name> version <version> module_args <args_str> } ]
+                [ { latest_with_modules | and module module_name <module name> version <version> module_args <arguments string> } ]
 ```
 
 ### Parameters

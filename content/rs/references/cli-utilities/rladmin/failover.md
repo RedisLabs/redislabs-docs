@@ -14,7 +14,7 @@ aliases:
 
 ``` sh
 rladmin failover
-        [db { db:<id> | name }]
+        [db { db:<id> | <name> }]
         shard <id1 ... idN>
         [immediate]
 ```
