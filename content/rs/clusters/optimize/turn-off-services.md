@@ -7,8 +7,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/troubleshooting/disabling-services.md,
     /rs/administering/troubleshooting/disabling-services/,
-    /rs/clusters/configure/turn-off-services.md,
-    /rs/clusters/configure/turn-off-services/,
+    /rs/clusters/optimize/turn-off-services.md,
+    /rs/clusters/optimize/turn-off-services/,
 
 ]
 ---
