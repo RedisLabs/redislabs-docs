@@ -255,7 +255,7 @@ More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-fla
 The Redis Enterprise implementation of active-passive database replication.
 
 More info: [Replica-Of
-]({{<relref "/rs/databases/replica-of.md">}})
+]({{<relref "/rs/databases/import-export/replica-of.md">}})
 {{%/definition%}}
 
 {{%definition "ReplicaSet"%}}

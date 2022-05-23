@@ -156,7 +156,7 @@ after the database is created.
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-    - [**Replica Of**]({{< relref "/rs/databases/create-replica-of.md" >}}) -
+    - [**Replica Of**]({{< relref "/rs/databases/import-export/create-replica-of.md" >}}) -
     You can make this database a repository for keys from other databases.
 
 - [**TLS**]({{<relref "/rs/security/tls/">}}) -

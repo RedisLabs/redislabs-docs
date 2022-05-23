@@ -8,8 +8,8 @@ categories: ["RS"]
 aliases: [ 
     /rs/administering/intercluster-replication/replica-of/, 
     /rs/administering/database-operations/create-active-passive/,
-    /rs/databases/create-replica-of.md, 
-    /rs/databases/create-replica-of/,
+    /rs/databases/import-export/create-replica-of.md, 
+    /rs/databases/import-export/create-replica-of/,
 ]
 ---
 Active-Passive replicated databases (also known as Replica Of) give applications read-only access
@@ -75,7 +75,7 @@ If you regenerate the password, replication to existing destinations fails until
 
         {{< note >}}
 For a source database on a different RS cluster,
-you can [compress the replication data]({{< relref "/rs/databases/replica-of.md#data-compression-for-replica-of">}}) to save bandwidth.
+you can [compress the replication data]({{< relref "/rs/databases/import-export/replica-of.md#data-compression-for-replica-of">}}) to save bandwidth.
         {{< /note >}}
 
     - For a source database in an OSS Redis cluster - Enter the URL of the source endpoint in the format:

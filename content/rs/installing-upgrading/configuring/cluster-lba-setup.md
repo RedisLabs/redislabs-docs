@@ -104,7 +104,7 @@ especially if they are directly connected on IP addresses that have changed.
 
 ## Intercluster communication considerations
 
-Redis Enterprise supports several topologies that allow inter cluster replication, these include Active/Passive (https://docs.redislabs.com/latest/rs/databases/replica-of/) and Active/Active (https://docs.redislabs.com/latest/rs/databases/active-active/) deployment options.
+Redis Enterprise supports several topologies that allow inter cluster replication, these include Active/Passive (https://docs.redislabs.com/latest/rs/databases/import-export/replica-of/) and Active/Active (https://docs.redislabs.com/latest/rs/databases/active-active/) deployment options.
 When your Redis Enterprise software clusters are located behind load balancers, you must allow some network services to be open and defined in the load balancers to allow the replication to work.
 
 ### Active Passive 
