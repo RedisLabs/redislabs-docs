@@ -17,7 +17,7 @@ A DNS name such as `redis-12345.clustername.domain` gives clients access to the 
 - On failover or topology changes, the DNS name is automatically updated to reflect the live IP addresses.
 
 When DNS cannot be used, clients can still connect to the endpoints with the IP addresses,
-but the benefits of load balancing and automatically updates IP address are missing.
+but the benefits of load balancing and automatic updates to IP addresses won't be available.
 
 ## Network architecture with load balancer
 
@@ -86,8 +86,9 @@ An additional setting can be done to allow (on average) closer termination of cl
 
 ### RS database configuration
 
-After the cluster settings are updated and the LBs are configured,
-you can go to the RS admin console at <https://load-balancer-virtual-ip:8443/> and [create a new database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
+After the cluster settings are updated and the LBs are configured you can go to the RS admin console at https://load-balancer-virtual-ip:8443/ and [create a new database]({{<relref "/rs/databases/create-database.md">}}). 
+
+If you are creating an Active-Active database, you will need to use the`crdb-cli` utility. See the ['crdb-cli' reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more information about creating Active-Active databases from the command line.
 
 ### Keep LB configuration updated when the cluster configuration changes
 
