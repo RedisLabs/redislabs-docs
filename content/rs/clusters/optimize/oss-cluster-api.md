@@ -5,6 +5,12 @@ weight: $weight
 alwaysopen: false
 aliases: /rs/concepts/data-access/cluster-api/
 categories: ["RS"]
+aliases: [
+    /rs/concepts/data-access/oss-cluster-api.md,
+    /rs/concepts/data-access/oss-cluster-api/,
+    /rs/clusters/optimize/oss-cluster-api.md,
+    /rs/clusters/optimize/oss-cluster-api/,
+]
 ---
 {{< embed-md "oss-cluster-api-intro.md"  >}}
 
