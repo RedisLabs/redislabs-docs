@@ -30,7 +30,7 @@ rladmin restart db { db:<id> | <name> }
 
 ### Returns
 
-Returns `Done` if the restart completed successfully. Otherwise, it returns `ERROR`.
+Returns `Done` if the restart completed successfully. Otherwise, it returns an error.
 
 ### Example
 

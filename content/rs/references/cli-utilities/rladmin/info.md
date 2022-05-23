@@ -177,11 +177,11 @@ rladmin info proxy { <id> | all }
 | Parameter | Description |
 |-----------|-------------|
 | id      | ID of the specified proxy |
-| all       | Show current configuration for all proxies (optional) |
+| all       | Show the current configuration for all proxies (optional) |
 
 ### Returns
 
-If no parameter is specified or the `all` option is specified, `rladmin info proxy` returns the current configuration for all proxies.
+If no parameter is specified or the `all` option is specified, returns the current configuration for all proxies.
 
 If `<id>`is specified, returns the current configuration for the specified proxy.
 

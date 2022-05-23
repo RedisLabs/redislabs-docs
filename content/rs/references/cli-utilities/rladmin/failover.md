@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Fails over one or more primary (also known as master) shards of a database, promoting their respective replicas to primary shards.
+Fails over one or more primary (also known as master) shards of a database and promotes their respective replicas to primary shards.
 
 ``` sh
 rladmin failover
@@ -29,9 +29,9 @@ rladmin failover
 
 ### Returns
 
-`Finished successfully` if failover was completed, `ERROR` otherwise.
+Returns `Finished successfully` if the failover completed. Otherwise, it returns an error.
 
-Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-shards">}}) to verify the failover completed.
+Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-shards">}}) to verify that the failover completed.
 
 ### Example
 

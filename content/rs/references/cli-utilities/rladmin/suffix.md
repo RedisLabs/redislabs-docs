@@ -18,11 +18,11 @@ Adds a DNS suffix to the cluster.
 
 ``` sh
 rladmin suffix add name <name>
-                    [default]
-                    [internal]
-                    [mdns]
-                    [use_aaaa_ns]
-                    [slaves <ip>..]
+        [default]
+        [internal]
+        [mdns]
+        [use_aaaa_ns]
+        [slaves <ip>..]
 ```
 
 ### Parameters
@@ -30,10 +30,10 @@ rladmin suffix add name <name>
 | Parameter | Type/Value       | Description                                                                                   |
 |-----------|------------------|-----------------------------------------------------------------------------------------------|
 | name      | string           | DNS suffix to add to the cluster                                                             |
-| default   |                  | Sets the given suffix as default. If there is already a default set, this will overwrite it.  |
+| default   |                  | Sets the given suffix as the default. If a default already exists, this overwrites it.  |
 | internal  |                  | Forces the given suffix to use private IPs                                                    |
 | mdns      |                  | Activates multicast DNS support for the given suffix                                           |
-| slaves    | list of IPv4 addresses | The given suffix will notify the frontend DNS servers when a change in frontend DNS has occurred |
+| slaves    | list of IPv4 addresses | The given suffix will notify the frontend DNS servers when a change in the frontend DNS has occurred |
 | use_aaaa_ns |                | Activates IPv6 address support |
 
 ### Returns
@@ -82,7 +82,7 @@ rladmin suffix list
 
 ### Parameters
 
-None.
+None
 
 ### Returns
 

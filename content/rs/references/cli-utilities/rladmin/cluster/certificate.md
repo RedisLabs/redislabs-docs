@@ -15,9 +15,9 @@ Sets a cluster certificate to a specified PEM file.
 
 ```sh
 rladmin cluster certificate 
-       set <certificate name> 
-       certificate_file <certificate filepath> 
-       [ key_file <key filepath> ]
+        set <certificate name> 
+        certificate_file <certificate filepath> 
+        [ key_file <key filepath> ]
 ```
 
 To set a certificate for a specific service, use the corresponding certificate name:

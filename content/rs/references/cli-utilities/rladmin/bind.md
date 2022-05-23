@@ -119,10 +119,9 @@ rladmin bind
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | db        | db:\<id\><br /> name           | Only allows endpoints for the specified database                                               |
 | endpoint  | endpoint ID                    | Changes proxy settings for the specified endpoint                              |
-| policy    | `all-master-shards`<br /> `all-nodes`<br /> `single` | Changes proxy policy to the specified policy (see below) |
+| policy    | <nobr>'all-master-shards'</nobr><br /> <nobr>'all-nodes'</nobr><br /> 'single' | Changes the [proxy policy](#proxy-policies) to the specified policy |
 
-
-| Proxy policy | Description |
+| Proxy&nbsp;policy<a name="proxy-policies"> | Description |
 | - | - |
 | all-master-shards | Multiple proxies, one on each master node (best for high traffic and multiple master shards)                     |
 | all-nodes | Multiple proxies, one on each node of the cluster (increases traffic in the cluster, only used in special cases) |

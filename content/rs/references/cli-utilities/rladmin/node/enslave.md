@@ -18,8 +18,8 @@ Changes all of the node's endpoints and shards to replicas.
 
 ``` sh
 rladmin node <ID> enslave
-                [demote_node]
-                [retry_timeout_seconds <seconds>]
+        [demote_node]
+        [retry_timeout_seconds <seconds>]
 ```
 
 ### Parameters
@@ -76,7 +76,7 @@ Changes the role for all endpoints on a node to replica.
 
 ``` sh
 rladmin node <ID> enslave endpoints_only
-                [retry_timeout_seconds <seconds>]
+        [retry_timeout_seconds <seconds>]
 ```
 
 ### Parameters
@@ -116,7 +116,7 @@ Changes the role for all shards of a node to replica.
 
 ``` sh
 rladmin node <ID> enslave shards_only
-                [retry_timeout_seconds <seconds>]
+        [retry_timeout_seconds <seconds>]
 ```
 
 ### Parameters

@@ -18,7 +18,7 @@ Recovers all databases in recovery mode.
 
 ```sh
 rladmin recover all
-            [ only_configuration ]
+        [ only_configuration ]
 ```
 
 ### Parameters
@@ -37,7 +37,7 @@ Recovers a specific database in recovery mode.
 
 ```sh
 rladmin recover db { db:<id> | <name> }
-                     [ only_configuration ]
+        [ only_configuration ]
 ```
 
 ### Parameters
@@ -61,11 +61,11 @@ rladmin recover list
 
 ### Parameters
 
-None.
+None
 
 ### Returns
 
-Displays a list of all recoverable databases. If no databases are in recovery mode, prints `No recoverable databases found`.
+Displays a list of all recoverable databases. If no databases are in recovery mode, returns `No recoverable databases found`.
 
 ### Example
 

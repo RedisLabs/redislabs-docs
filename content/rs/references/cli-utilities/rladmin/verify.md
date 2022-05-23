@@ -16,7 +16,7 @@ Prints verification reports for the cluster.
 
 Prints a balance report that displays all of the unbalanced endpoints or nodes in the cluster.
 
-```text
+```sh
 rladmin verify balance [ node <ID> ]
 ```
 
@@ -67,7 +67,7 @@ NODE:ID  DB:ID  NAME  ENDPOINT:ID  PROXY_POLICY  LOCAL SHARDS   TOTAL SHARDS
 
 Verifies that the cluster complies with the rack awareness policy and reports any discovered rack collisions, if [rack-zone awareness]({{<relref "rs/concepts/high-availability/rack-zone-awareness.md">}}) is enabled.
 
-```text
+```sh
 rladmin verify rack_aware
 ```
 
