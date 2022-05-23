@@ -27,7 +27,7 @@ rladmin status
 | Parameter | Description |
 |-----------|-------------|
 | extra \<parameter\> | Extra options that show more information |
-| issues_only | Filters out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an `OK` status  |
 
 | Extra parameter | Description |
 |-------------------|-------------|
@@ -44,7 +44,7 @@ rladmin status
 
 Returns tables of the status of all nodes, databases, and database endpoints on the cluster.
 
-If `issues_only` is specified, it only shows instances that do not have an "OK" status.
+If `issues_only` is specified, it only shows instances that do not have an `OK` status.
 
 ### Example
 
@@ -94,7 +94,7 @@ rladmin status databases
 |-----------|-------------|
 | extra \<parameter\> | Extra options that show more information |
 | sort \<column_titles\> | Sort results by specified column titles |
-| issues_only | Filters out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an `OK` status  |
 
 
 | Extra parameter | Description |
@@ -114,7 +114,7 @@ Returns a table of the status of all databases on the cluster.
 
 If `sort <column_titles>` is specified, the result is sorted by the specified table columns.
 
-If `issues_only` is specified, it only shows databases that do not have an "OK" status.
+If `issues_only` is specified, it only shows databases that do not have an `OK` status.
 
 ### Example
 
@@ -145,7 +145,7 @@ rladmin status endpoints
 | node \<id\> | Only show endpoints for the specified node ID |
 | extra \<parameter\> | Extra options that show more information |
 | sort \<column_titles\> | Sort results by specified column titles |
-| issues_only | Filters out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an `OK` status  |
 
 
 | Extra parameter | Description |
@@ -165,7 +165,7 @@ Returns a table of the status of all endpoints on the cluster.
 
 If `sort <column_titles>` is specified, the result is sorted by the specified table columns.
 
-If `issues_only` is specified, it only shows endpoints that do not have an "OK" status.
+If `issues_only` is specified, it only shows endpoints that do not have an `OK` status.
 
 ### Example
 
@@ -194,7 +194,7 @@ rladmin status nodes
 |-----------|-------------|
 | extra \<parameter\> | Extra options that show more information |
 | sort \<column_titles\> | Sort results by specified column titles |
-| issues_only | Filters out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an `OK` status  |
 
 
 | Extra parameter | Description |
@@ -214,7 +214,7 @@ Returns a table of the status of all nodes on the cluster.
 
 If `sort <column_titles>` is specified, the result is sorted by the specified table columns.
 
-If `issues_only` is specified, it only shows nodes that do not have an "OK" status.
+If `issues_only` is specified, it only shows nodes that do not have an `OK` status.
 
 ### Example
 
@@ -249,7 +249,7 @@ rladmin status shards
 | db \<name\> | Only show shards for the specified database name |
 | extra \<parameter\> | Extra options that show more information |
 | sort \<column_titles\> | Sort results by specified column titles |
-| issues_only | Filters out all items that have an "OK" status  |
+| issues_only | Filters out all items that have an `OK` status  |
 
 
 | Extra parameter | Description |
@@ -269,7 +269,7 @@ Returns a table of the status of all shards on the cluster.
 
 If `sort <column_titles>` is specified, the result is sorted by the specified table columns.
 
-If `issues_only` is specified, it only shows shards that do not have an "OK" status.
+If `issues_only` is specified, it only shows shards that do not have an `OK` status.
 
 ### Example
 

@@ -1,7 +1,7 @@
 ---
 Title: rladmin failover
 linkTitle: failover
-description: Fail over primary shards of a database to their replicas
+description: Fail over primary shards of a database to their replicas.
 weight: $weight
 alwaysopen: false
 toc: "true"
