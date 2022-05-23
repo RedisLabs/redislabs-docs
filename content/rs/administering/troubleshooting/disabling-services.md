@@ -1,6 +1,6 @@
 ---
 Title: Disabling Services to Free System Memory
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -23,7 +23,7 @@ The services that you can disable are:
 
 To disable a service with the `rladmin cluster config` command, use the `services` parameter and the name of the service, followed by `disabled`.
 ```text
- rladmin cluster config 
+ rladmin cluster config
         [ services <service_name> <enabled | disabled> ]
 ```
 
@@ -34,10 +34,8 @@ For example:
 - To disable the RS Admin Console, issue this PUT request:
 
     ```sh
-    curl --request PUT \
-    --url https://localhost:9443/v1/cluster/services_configuration \
-    --header 'content-type: application/json' \
-    --data '{
+    PUT https://[host][:port]/v1/cluster/services_configuration
+    '{
         "cm_server":{
             "operating_mode":"disabled"
         }
@@ -47,10 +45,8 @@ For example:
 - To disable the CRDB services and enable the `stats_archiver` for cluster component statistics, issue this PUT request:
 
     ```sh
-    curl --request PUT \
-    --url https://localhost:9443/v1/cluster/services_configuration \
-    --header 'content-type: application/json' \
-    --data '{
+    PUT https://[host][:port]/v1/cluster/services_configuration
+    '{
         "crdb_coordinator":{
             "operating_mode":"disabled"
         },

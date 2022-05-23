@@ -82,12 +82,13 @@ To remove a node using the admin console:
 1. Once the process finishes, the node is no longer shown in
     the UI.
 
-To remove a node using the REST API, use the `/v1/nodes/3/actions/remove` endpoint with the JSON data and the "Content-Type: application/json" header.
+To remove a node using the REST API, use the `/v1/nodes/<node_id>/actions/remove` endpoint with the JSON data and the "Content-Type: application/json" header.
 
 For example:
 
 ```sh
-curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"
+POST "Content-Type: application/json" https://[host][:port]/v1/nodes/node_id/actions/remove
+"{}"
 ```
 
 {{< note >}}

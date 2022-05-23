@@ -101,13 +101,13 @@ To flush data from an Active-Active database:
     1. To find the ID of the Active-Active database, run:
 
         ```sh
-        curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
+        GET https://[host][:port]/v1/crdbs
         ```
 
     1. To flush the Active-Active database, run:
 
         ```sh
-        curl -v -u <username>:<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush
+        PUT https://[host][:port]/v1/crdbs/<guid>/flush
         ```
 
         The command output contains the task ID of the flush task.
@@ -115,5 +115,5 @@ To flush data from an Active-Active database:
     1. To check the status of the flush task, run:
 
         ```sh
-        curl -v -u <username>:<password> https://<cluster-fqdn>:9443/v1/crdb_tasks/<task-id>
+        GET https://[host][:port]/v1/crdb_tasks/<task-id>
         ```
