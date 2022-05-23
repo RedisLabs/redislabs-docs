@@ -107,7 +107,12 @@ RedisGraph 2.8 introduces multi-labeled nodes, indexes over relationship propert
 
 - Multi-labeled nodes
 
-  Note: the `labels` function's signature has changed: The function now returns a list of labels instead of a single label. If you are using this function and upgrading to RedisGraph 2.8, a simple fix would be to replace any call to `labels(x)` with `labels(x)[0]`. This will return the first label associated with node `x`, and for uni-labeled nodes - the result in RedisGraph 2.8 would be similar to the results of `labels(x)` in RedisGraph 2.4
+    {{<note>}}
+The `labels` function's signature has changed. The function now returns a list of labels instead of a single label.
+<br /><br />
+If you are using this function and upgrading to RedisGraph 2.8, a simple fix is to replace any call to `labels(x)` with `labels(x)[0]`. This returns the first label associated with node `x`. For uni-labeled nodes, the result in RedisGraph 2.8 is similar to the results of `labels(x)` in RedisGraph 2.4.
+    {{</note>}}
+  
 - Indexes over relationship properties
 - Enhanced full-text search
 - Delta matrices: node and relationships additions and deletions are much faster, as they are first updated in small delta matrices. The main matrices are then bulk-updated.
