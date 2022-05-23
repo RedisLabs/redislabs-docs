@@ -42,17 +42,16 @@ To add a user to the cluster:
 
 Redis Enterprise supports the following user account security settings:
 
-1. Password complexity
+1. Password complexity rules
 1. Password expiration
 1. User Lockouts
 1. Account inactivity timeout
 
 To enforce a more advanced password policy, we recommend using LDAP integration with an external identity provider, such as Active Directory.
 
-### Enable password complexity profile
+### Password complexity rules
 
-Redis Enterprise Software provides an optional password complexity profile
-that meets most organizational needs. When enabled, this password profile requires the following:
+Redis Enterprise Software provides optional password complexity rules that meet common requirements.  When enabled, these rules require passwords to have:
 
 - At least 8 characters
 - At least one uppercase character
@@ -67,35 +66,69 @@ In addition, the password:
 - Cannot contain the user ID or reverse of the user ID
 - Cannot have more than three repeating characters
 
-{{< note >}}
-The password complexity profile applies when a new user is added or an existing user changes their password. This profile does not apply to users authenticated through an external identity provider.
-{{< /note >}}
+The password complexity rules apply when a new user is added or an existing user changes their password. These rules do not apply to users who authenticate through an external identity provider.
 
-To enable the password complexity profile, run the following `curl` command against the REST API:
+You can use the admin console or the REST API to enable password complexity rules.
 
-```sh
-curl -k -X PUT -v -H "cache-control: no-cache" 
-                  -H "content-type: application/json" 
-                  -u "<administrator-user-email>:<password>" 
-                  -d '{"password_complexity":true}' 
-                  https://<RS_server_address>:9443/v1/cluster
+To enable password complexity rules using the admin console:
+
+1. Sign in to the Redis Enterprise Software admin console using an administrator account
+
+1. From the main menu, select **Settings** | **Preferences**
+
+    {{<image filename="images/rs/cluster-settings-preferences.png" alt="TPreferences settings in the Redis Software admin console." width="75%">}}{{< /image >}}
+
+1. Place a checkmark next to **Enable password complexity rules**
+
+1. Save your changes
+
+To use the REST API to enable password complexity rules:
+
+``` REST
+PUT https://[host][:port]/v1/cluster
+{"password_complexity":true}
 ```
 
-To disable the password complexity requirement, run the same command, but set "password_complexity" to "false".
+To deactivate password complexity rules:
 
-### Enable password expiration
+- Remove the checkmark from the **Enable password complexity rules** setting in the admin console
 
-To enforce an expiration of a user's password after a specified number of days, run the following command:
+- Use the `cluster` REST API endpoint to set `password_complexity` to `false`
 
-```sh
-curl -k -X PUT -v -H "cache-control: no-cache" 
-                  -H "content-type: application/json" 
-                  -u "<administrator_user>:<password>" 
-                  -d '{"password_expiration_duration":<number_of_days>}' 
-                  https://<RS_server_address>:9443/v1/cluster
-```
+### Password expiration
 
-To disable password expiration, set the number of days to `0`.
+To enforce an expiration of a user's password after a specified number of days:
+
+1. Use the admin console to place a checkmark next to the **Enable password expiration** preference setting
+
+1. Use the `cluster` endpoint of the REST API
+
+    ``` REST
+    PUT https://[host][:port]/v1/cluster
+    {"password_expiration_duration":<number_of_days>}
+    ```
+
+To deactivate password expiration:
+
+- Remove the checkmark next to the to the **Enable password expiration** preference setting
+
+- Use the `cluster` REST API endpoint to set `password_expiration_duration` to `0` (zero).
+
+### Session timeout
+
+By default, admin console sessions automatically sign out after 15 minutes of inactivity.
+
+To change this:
+
+- Use the admin console to update the value of the **Session timeout** preference setting.
+
+- Use `rladmin` to update the value of the `cm_session_timeout_minutes` cluster config setting
+
+     ```sh
+    rladmin cluster config cm_session_timeout_minutes <number_of_min>
+    ```
+
+    The value of the `<number_of_min>` parameter is an integer specifying the timeout period in minutes.
 
 ## User login lockout
 
@@ -177,19 +210,7 @@ curl -k -X PUT -v -H "cache-control: no-cache"
                   https://<RS_server_address>:9443/v1/users/<uid>
 ```
 
-### Session timeout
-
-The Redis Enterprise admin console supports session timeouts. By default, users are automatically logged out after 15 minutes of inactivity.
-
-To customize the session timeout you can run the following command:
-
-```sh
-rladmin cluster config cm_session_timeout_minutes <number_of_min>
-```
-
-Here, number_of_min is the number of minutes after which sessions will time out.
-
-## Update Active-Active cluster admin credentials
+## Update Active-Active admin credentials
 
 Active-Active databases use administrator credentials to manage operations for Active-Active database.
 To update the administrator user password on a cluster with Active-Active databases:
@@ -199,6 +220,6 @@ To update the administrator user password on a cluster with Active-Active databa
 
 ## LDAP integration
 
-As of version 6.0.20, Redis Enterprise Software integrates [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization into its [role-based access controls]({{<relref "rs/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC).  You can now use LDAP to authorize access to the admin console and to authorize database access.
+In version 6.0.20, Redis Enterprise Software integrated [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization into its [role-based access controls]({{<relref "rs/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC).  You can now use LDAP to authorize access to the admin console and to authorize database access.
 
 To learn more, including how to set up LDAP or to migrate an existing LDAP integration to the new mechanism, see [LDAP authentication]({{<relref "rs/security/ldap/">}}).
