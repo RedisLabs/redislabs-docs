@@ -146,7 +146,7 @@ You can view the user login restrictions for your cluster with:
 rladmin info cluster | grep login_lockout
 ```
 
-### Change login lockout threshold
+### Login lockout threshold
 
 You can set the login lockout threshold with the command:
 
@@ -162,7 +162,7 @@ rladmin tune cluster login_lockout_threshold 10
 
 Setting the lockout threshold to 0 disables account lockout. In this case, the cluster settings show: login_lockout_threshold: disabled
 
-### Change login lockout counter
+### Login lockout counter
 
 You can set the login lockout reset counter in seconds with the command:
 
@@ -176,7 +176,7 @@ To set the lockout reset to 1 hour, run:
 rladmin tune cluster login_lockout_counter_reset_after 3600
 ```
 
-### Change login lockout duration
+### Login lockout duration
 
 You can set the login lockout duration in seconds with the command:
 
@@ -200,17 +200,14 @@ To unlock a user account or reset a user password from the CLI, run:
 rladmin cluster reset_password <user email>
 ```
 
-To unlock a user account or reset a user password from the REST API, run:
+To unlock a user account or reset a user password from the REST API:
 
-```sh
-curl -k -X PUT -v -H "cache-control: no-cache" 
-                  -H "content-type: application/json" 
-                  -u "<administrator_user>:<password>" 
-                  -d '{"password": "<new_password>"}' 
-                  https://<RS_server_address>:9443/v1/users/<uid>
+``` REST
+PUT https://[host][:port]/v1/users/<uid>
+{"password": "<new_password>"}
 ```
 
-## Update Active-Active admin credentials
+## Active-Active admin credentials
 
 Active-Active databases use administrator credentials to manage operations for Active-Active database.
 To update the administrator user password on a cluster with Active-Active databases:
