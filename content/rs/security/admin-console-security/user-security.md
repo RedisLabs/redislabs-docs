@@ -44,8 +44,8 @@ Redis Enterprise supports the following user account security settings:
 
 1. Password complexity rules
 1. Password expiration
+1. Session inactivity timeout
 1. User Lockouts
-1. Account inactivity timeout
 
 To enforce a more advanced password policy, we recommend using LDAP integration with an external identity provider, such as Active Directory.
 
