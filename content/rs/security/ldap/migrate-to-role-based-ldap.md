@@ -7,19 +7,15 @@ categories: ["RS"]
 aliases: 
 ---
 
-As of v6.0.20, Redis Enterprise Software supports two LDAP authentication mechanisms: the [cluster-based mechanism]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) supported in earlier versions and a [role-based mechanism]({{< relref "/rs/security/ldap/" >}}).
+Redis Enterprise Software supports LDAP through a [role-based mechanism]({{< relref "/rs/security/ldap/" >}}), first introduced [in v6.0.20]({{< relref "rs/release-notes/rs-6-0-20-april-2021" >}}).
 
-If you currently rely on the cluster-based mechanism, you can continue to do so in the short term.  However:
+(Support for a earlier, [cluster-based mechanism]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) was removed in v6.2.12.)
 
-- You can only use one LDAP authorization mechanism at a time.
-
-- Support for the cluster-based mechanism is consider deprecated; it will be removed in a future version.
-
-At some point, you’ll want to migrate to role-based LDAP.
+If you're using the cluster-based mechanism to enable LDAP authentication, you need to migrate to the role-based mechanism before upgrading to Redis Enterprise Software v6.2.12 or later.
 
 ## Migration checklist
 
-This checklist covers the basic process:
+Here's the basic process:
 
 1.  Identify accounts per app (on the customer end).
 
@@ -43,9 +39,9 @@ This checklist covers the basic process:
 
  Because deployments and requirements vary, you’ll likely need to adjust these guidelines.
 
-## Ways to test access
+## Test LDAP access
 
-There are several ways to test your LDAP integration, including:
+To test your LDAP integration, including:
 
 - Connecting with `redis-cli` and using the AUTH command to test LDAP username/password credentials.
 

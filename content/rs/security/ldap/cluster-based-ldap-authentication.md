@@ -12,13 +12,13 @@ aliases: [
 ]
 ---
 {{<warning>}}
-This article describes features that are considered deprecated.  They will be removed in a future release of Redis Enterprise Software.<br/><br/>  
+As of v6.2.12, the features described in this article are [obsolete]({{< relref "/glossary/#obsolete" >}}); that is, they have been removed from the product.<br/><br/>  
   
-As of v6.0.20, Redis Software supports role-based [LDAP authentication]({{< relref "/rs/security/ldap/" >}}), which can be enabled using the admin console or the Redis Software REST API.<br/><br/>  
+A new role-based [LDAP integration]({{< relref "/rs/security/ldap/" >}}) was introduced [in v6.0.20]({{< relref "rs/release-notes/rs-6-0-20-april-2021" >}}) in order to replace the cluster-based integration described here.<br/><br/>
+
+At this time, the role-based integration is the proper way to enable LDAP authentication for Redis Enterprise Software.<br/><br/>  
   
-The features described in this article are still included with v6.0.20; however, they are considered obsolete and have been replaced by [role-based LDAP authentication]({{< relref "/rs/security/ldap/" >}}).<br/><br/>  
-  
-For now, you can continue to use cluster-based LDAP integration, however, support will be removed in a future version.  We strongly recommend migrating to role-base LDAP.
+This article has been archived and will no longer be maintained.
 {{</warning>}}
 
 Redis Enterprise Software supports Lightweight Directory Access Protocol (LDAP) admin console users.<!--more-->
@@ -28,6 +28,7 @@ Known Limitations:
 
 - LDAP access for database access is available only when using the role-based [LDAP authentication]({{< relref "/rs/security/ldap/" >}}).
 - This process does not apply when running Redis Enterprise on Kubernetes.
+- Support for this integration was removed from Redis Enterprise Software v6.2.12.
 {{< /note >}}
 
 ## Enabling LDAP
