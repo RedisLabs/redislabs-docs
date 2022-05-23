@@ -32,7 +32,7 @@ Several questions appear during installation:
 
     Redis Software requires that all cluster nodes have synchronized time.
     You can either let the installation process configure NTP
-    or you can [configure NTP manually]({{< relref "/rs/clusters/sync-clocks.md" >}}).
+    or you can [configure NTP manually]({{< relref "/rs/clusters/configure/sync-clocks.md" >}}).
 
 - **Firewall ports** - `Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?`
 

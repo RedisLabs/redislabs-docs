@@ -8,8 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/designing-production/synchronizing-clocks.md,
     /rs/administering/designing-production/synchronizing-clocks,
-    /rs/clusters/synch-clocks.md,
-    /rs/clusters/sync-clocks,
+    /rs/clusters/configure/sync-clocks.md,
+    /rs/clusters/configure/sync-clocks,
 ]
 ---
 To avoid problems with internal cluster communications that can impact your data integrity,
