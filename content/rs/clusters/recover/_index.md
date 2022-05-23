@@ -1,8 +1,8 @@
 ---
 Title: Recover clusters
-linktitle: Configure
+linktitle: Recover
 description: Information about cluster recovery and maintenance.  
-weight: 50
+weight: 55
 alwaysopen: false
 categories: ["RS"]
 aliases:
