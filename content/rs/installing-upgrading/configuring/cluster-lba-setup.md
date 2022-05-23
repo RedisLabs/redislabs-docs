@@ -17,7 +17,7 @@ A DNS name such as `redis-12345.clustername.domain` gives clients access to the 
 - On failover or topology changes, the DNS name is automatically updated to reflect the live IP addresses.
 
 When DNS cannot be used, clients can still connect to the endpoints with the IP addresses,
-but the benefits of load balancing and automatically updates IP address are missing.
+but the benefits of load balancing and automatic updates to IP addresses won't be available.
 
 ## Network architecture with load balancer
 
