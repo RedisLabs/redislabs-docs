@@ -14,10 +14,27 @@ aliases: /modules/redisgears/release-notes/redisgears-1.2-release-notes/
 
 ## Requirements
 
-RedisGears v1.2.3 requires:
+RedisGears v1.2.4 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.12
+
+## v1.2.4 (May 2022)
+
+This is a maintenance release for RedisGears 1.2.
+
+Update urgency: `LOW` : No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+    - [#772](https://github.com/RedisGears/RedisGears/pull/772) Added the ability to upgrade a dependency at runtime with `FORCE_REQUIREMENTS_REINSTALLATION` on `RG.PYEXECUTE`.
+    - [#765](https://github.com/RedisGears/RedisGears/pull/765) Allow deactivating [override Python allocators](https://oss.redis.com/redisgears/configuration.html#overridepythonallocators) for performance improvements.
+
+- Bug fixes:
+
+    - [#761](https://github.com/RedisGears/RedisGears/issues/761), [#760](https://github.com/RedisGears/RedisGears/issues/760), [#778](https://github.com/RedisGears/RedisGears/pull/778) [`StreamReader`](https://oss.redis.com/redisgears/readers.html#streamreader) fixes to pause and unregister stream processing.
 
 ## v1.2.3 (April 2022)
 
