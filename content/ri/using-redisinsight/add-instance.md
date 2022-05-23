@@ -19,9 +19,9 @@ Each of these database configurations requires specific steps to add them to Red
 - Redis with TLS authentication
 - Elasticache
 
-### Supported Redis Versions
-
+{{< note >}}
 Currently, RedisInsight supports Redis versions 4 and newer.
+{{< /note >}}
 
 ## Add a standalone Redis database
 
@@ -51,7 +51,7 @@ To add a standalone Redis database to RedisInsight:
          - `host:port`
     - **Port**: The port your Redis database is available on. The default port for Redis is `6379`.
     - **Name**: A name for your Redis database. It does not have to match the name of the database in the Redis cluster.
-    - **Username**: The username, if your database is ACL enabled, otherwise leave this field empty.
+    - **Username**: The username, if your database is ACL enabled, otherwise leave this field empty. (If you installed RedisInsight via Docker, see [Securing your database](#securing-your-database).)
     - **Password**: The password, if any, for your Redis database.
        If your database doesn't require a password, leave this field empty.
     - **Use TLS**: If your Redis database uses TLS to connect with clients, select this option.
@@ -61,6 +61,16 @@ To add a standalone Redis database to RedisInsight:
 Your newly added database is shown in the home screen.
 
 ![instance_overview_page](/images/ri/add-db-added-screen.png)
+
+### Securing your database
+
+If you installed your RedisInsight on Docker, you can enforce authentication of users who share your databases by running the Docker image with variables `RIAUTHPROMPT`,   `RIAUTHTIMER`, and `RILOGLEVEL`. For more information, see [Install RedisInsight on Docker](../../installing/install-docker#authentication-for-shared-databases).
+
+By setting the variables, enforce the prompt for username and password at a specific time interval. You can maintain multiple tabs with the same database without having to enter username and password in each one.
+
+{{< note >}}
+Do not store username and password in the browser.
+{{< /note >}}
 
 ## Add a Redis cluster database
 
@@ -78,7 +88,7 @@ To add a [Redis Cluster](https://redis.io/topics/cluster-tutorial) database:
     If you don't know which node to select or if there are no other clients for the database yet,
     select all of the nodes.
 
-### Add a Redis Sentinel database
+## Add a Redis Sentinel database
 
 [Redis Sentinel](https://redis.io/topics/sentinel) is often used for High Availability deployments of Redis.
 It provides automatic master-to-replica failover.
@@ -107,7 +117,7 @@ To add a Redis database with a [Redis Sentinel](https://redis.io/topics/sentinel
     A single set of Sentinel instances can monitor and manage the failover of multiple databases.
     If your database requires a password, enter the password and click **Add Selected Database**.
 
-### Add a Redis database that uses TLS
+## Add a Redis database that uses TLS
 
 Some configurations of Redis use SSL/TLS for network communication.
 
@@ -155,9 +165,9 @@ To add a TLS-enabled Redis database:
 
 ElastiCache Redis caches cannot be accessed from outside the VPC, as they don't have public IP addresses assigned to them.
 
-If you want to work with ElastiCache Redis caches with RedisInsight, you can either:
+If you want to work with ElastiCache Redis caches with RedisInsight, you can:
 
-- If you are not using Redis Cluster, you can [setup an SSH Tunnel](https://userify.com/blog/howto-connect-redis-ec2-ssh-tunnel-elasticache/) between RedisInsight and your ElastiCache instance:
+- If you are not using Redis Cluster, [set up an SSH Tunnel](https://userify.com/blog/howto-connect-redis-ec2-ssh-tunnel-elasticache/) between RedisInsight and your ElastiCache instance.
 
     1. To create an SSH tunnel, run:
 

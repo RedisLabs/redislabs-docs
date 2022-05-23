@@ -1,5 +1,5 @@
 ---
-Title: Configuring RedisInsight
+Title: Configure RedisInsight
 date: 2019-12-13 03:49:29 +0530
 weight: 60
 categories: ["RI"]
