@@ -6,8 +6,8 @@ compatibleOSSVersion: Redis 6.2.5
 weight: 75
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/release-notes/rs-6-2-8-october-2021/
-         /rs/release-notes/rs-6-2-8-october-2021.md
+aliases: /rs/release-notes/rs-6-2-10-february-2022/
+         /rs/release-notes/rs-6-2-10-february-2022.md
 ---
 
 [Redis Enterprise Software version 6.2.10](https://redislabs.com/redis-enterprise-software/download-center/software/) is now available! 
@@ -16,10 +16,10 @@ The following table shows the MD5 checksums for the available packages.
 
 |Package| MD5 Checksum |
 |:------|:-------------|
-| Ubuntu 16 | `3921666d59703fc3c9f829a37ee6e9a0` |
-| Ubuntu 18 | `9306dfe17127719d70f6850923aac783` |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OEL) 7 | `51dbcacca15d385e74c275aac32914dd` |
-| RHEL 8 | `84209373e83ca75fe3c080c5c990c8bb` |
+| Ubuntu 16 | `b8697811177f99c3e9e51e0d9d788634` |
+| Ubuntu 18 | `411e86daa5478bdb9a761ec68904bcbb` |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 | `84f35f3f3c9cf23c5bbf9b1da1048513` |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 | `db0fdb208a1bc45dae783258c6d79152` |
 | K8s Ubuntu | `099192416a70a12790535bdcd78a6e87` |
 | K8s RHEL   | `f267abe81770ddf36f022232f4c2cb2e` |
 
@@ -59,11 +59,19 @@ For Redis modules information and lifecycle, see [Module lifecycle](https://docs
 
 Redis Enterprise Software v6.2.10 includes the following Redis modules:
 
-- [RediSearch v2.2.6](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/)
-- [RedisJSON v2.0.6](https://docs.redis.com/latest/modules/redisjson/release-notes/redisjson-2.0-release-notes/)
-- [RedisBloom v2.2.9](https://docs.redis.com/latest/modules/redisbloom/release-notes/redisbloom-2.2-release-notes/)
-- [RedisGraph v2.4.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/)
-- [RedisTimeSeries v1.4.13](https://docs.redis.com/latest/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes/)
+- [RediSearch v2.2.6](https://docs.redis.com/latest/modules/redisearch/release-notes/)
+- [RedisJSON v2.0.6](https://docs.redis.com/latest/modules/redisjson/release-notes/)
+- [RedisBloom v2.2.9](https://docs.redis.com/latest/modules/redisbloom/release-notes/)
+- [RedisGraph v2.4.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/)
+- [RedisTimeSeries v1.4.13](https://docs.redis.com/latest/modules/redistimeseries/release-notes/)
+
+Starting with Redis Enterprise Software v6.2.10 build 121, the included modules versions are:
+
+- [RediSearch v2.4.6](https://docs.redis.com/latest/modules/redisearch/release-notes/)
+- [RedisJSON v2.0.8](https://docs.redis.com/latest/modules/redisjson/release-notes/)
+- [RedisBloom v2.2.14](https://docs.redis.com/latest/modules/redisbloom/release-notes/)
+- [RedisGraph v2.8.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/)
+- [RedisTimeSeries v1.6.9](https://docs.redis.com/latest/modules/redistimeseries/release-notes/)
 
 For help upgrading a module, see [Add a module to a cluster](https://docs.redis.com/latest/modules/add-module-to-cluster/#upgrading-the-module-for-the-database). 
 
@@ -112,8 +120,13 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 ### Issues resolved in build 100
 
- - RS74171 - A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+- RS74171 - A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
 
+### Issues resolved in build 121
+
+- RS68668, RS72082 - Improvements for internode encryption certification rotation
+- RS72304 - Avoid starting a master shard when both master and replica shards crash and the replica did not finish recovery
+- RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup```
 
 ## Security
 
