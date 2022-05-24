@@ -42,7 +42,7 @@ Every effort is made to adhere, where possible, to the specifications of open so
 
 - Redis clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
 
-- Redis clustering technology allows [multiple active proxies]({{<relref "rs/administering/designing-production/networking/multiple-active-proxy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
+- Redis clustering technology allows [multiple active proxies]({{<relref "rs/databases/configure/proxy-policy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
 
 - Commands that aren’t relevant for a hosted Redis service are blocked:
     - [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)

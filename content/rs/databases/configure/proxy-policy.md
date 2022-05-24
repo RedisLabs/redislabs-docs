@@ -1,55 +1,23 @@
 ---
-Title: Multiple Active Proxy Support
+Title: Proxy policy
+linktitle: Proxy policy
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+  /rs/administering/designing-production/networking/multiple-active-proxy.md,
+  /rs/administering/designing-production/networking/multiple-active-proxy/,
+  /rs/databases/configure/proxy-policy.md,
+  /rs/databases/configure/proxy-policy/,
+
+]
 ---
 Redis Enterprise Software (RS) provides high-performance data access
 through a proxy process that manages and optimizes access to shards
 within the RS cluster. Each node contains a single proxy process.
 Each proxy can be active and take incoming traffic or it can be passive
 and wait for failovers.
-
-RS allows multiple databases to be created. Each database gets an
-endpoint (a unique URL and port on the FQDN). This endpoint receives all
-the traffic for all operations for that database. By default, RS binds
-this database endpoint to one of the proxies on a single node in the
-cluster. This proxy becomes an active proxy and receives all the
-operations for the given database. (note that if the node with the
-active proxy fails, a new proxy on another node takes over as part of
-the failover process automatically).
-
-In most cases, a single proxy can handle a large number of operations
-without consuming additional resources. However, under high load,
-network bandwidth or a high rate of packets per second (PPS) on the
-single active proxy can become a bottleneck to how fast database
-operation can be performed. In such cases, having multiple active
-proxies, across multiple nodes, mapped to the same external database
-endpoint, can significantly improve throughput.
-
-With the multiple active proxies capability, RS enables you to configure
-a database to have multiple internal proxies in order to improve
-performance, in some cases. It is important to note that, even though
-multiple active proxies can help improve the throughput of database
-operations, configuring multiple active proxies may cause additional
-latency in operations as the shards and proxies are spread across
-multiple nodes in the cluster.
-
-{{< note >}}
-When the network on a single active proxy becomes the bottleneck,
-you might also look into enabling the multiple NIC support in RS. With
-nodes that have multiple physical NICs (Network Interface Cards), you
-can configure RS to separate internal and external traffic onto
-independent physical NICs. For more details, refer to [Multi-IP &
-IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}).
-{{< /note >}}
-
-Having multiple proxies for a database can improve RS's ability for fast
-failover in case of proxy and/or node failure. With multiple proxies for
-a database, there is no need for a client to wait for the cluster
-to spin up another proxy and a DNS change in most cases, the client
-just uses the next IP in the list to connect to another proxy.
 
 ## Proxy policies
 
@@ -134,3 +102,45 @@ attempts to prevent any existing client connections from being
 disconnected, and hence might not entirely enforce the policies. In such
 cases, you can enforce the policy using the appropriate rladmin
 commands.
+
+## About multiple active proxy support
+
+RS allows multiple databases to be created. Each database gets an
+endpoint (a unique URL and port on the FQDN). This endpoint receives all
+the traffic for all operations for that database. By default, RS binds
+this database endpoint to one of the proxies on a single node in the
+cluster. This proxy becomes an active proxy and receives all the
+operations for the given database. (note that if the node with the
+active proxy fails, a new proxy on another node takes over as part of
+the failover process automatically).
+
+In most cases, a single proxy can handle a large number of operations
+without consuming additional resources. However, under high load,
+network bandwidth or a high rate of packets per second (PPS) on the
+single active proxy can become a bottleneck to how fast database
+operation can be performed. In such cases, having multiple active
+proxies, across multiple nodes, mapped to the same external database
+endpoint, can significantly improve throughput.
+
+With the multiple active proxies capability, RS enables you to configure
+a database to have multiple internal proxies in order to improve
+performance, in some cases. It is important to note that, even though
+multiple active proxies can help improve the throughput of database
+operations, configuring multiple active proxies may cause additional
+latency in operations as the shards and proxies are spread across
+multiple nodes in the cluster.
+
+{{< note >}}
+When the network on a single active proxy becomes the bottleneck,
+you might also look into enabling the multiple NIC support in RS. With
+nodes that have multiple physical NICs (Network Interface Cards), you
+can configure RS to separate internal and external traffic onto
+independent physical NICs. For more details, refer to [Multi-IP &
+IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}).
+{{< /note >}}
+
+Having multiple proxies for a database can improve RS's ability for fast
+failover in case of proxy and/or node failure. With multiple proxies for
+a database, there is no need for a client to wait for the cluster
+to spin up another proxy and a DNS change in most cases, the client
+just uses the next IP in the list to connect to another proxy.

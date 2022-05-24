@@ -750,7 +750,7 @@ As of v6.2.4, the default behavior for `upgrade db` has changed.  It is now cont
 
 #### `verify balance`
 
-`rladmin verify balance` prints a balance report that displays all of the unbalanced endpoints or nodes in the cluster. The [proxy policy]({{<relref "/rs/administering/designing-production/networking/multiple-active-proxy#proxy-policies">}}) determines which nodes or endpoints to report as unbalanced.
+`rladmin verify balance` prints a balance report that displays all of the unbalanced endpoints or nodes in the cluster. The [proxy policy]({{<relref "/rs/databases/configure/proxy-policy#proxy-policies">}}) determines which nodes or endpoints to report as unbalanced.
 
 ```text
 rladmin verify balance [ node <id> ]
