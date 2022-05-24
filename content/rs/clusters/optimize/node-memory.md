@@ -1,8 +1,8 @@
 ---
-title: Memory management with Redis Enterprise Software
-linktitle: Memory management
+title: Manage node memory
+linktitle: Node memory
 description:
-weight: 15
+weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -10,6 +10,8 @@ aliases: [
     /rs/concepts/memory-architecture/memory-management.md,
     /rs/concepts/memory-performance/memory-management/,
     /rs/concepts/memory-performance/memory-management.md,
+    /rs/clusters/optimize/node-memory.md,
+    /rs/clusters/optimize/node-memory/,
 ]
 ---
 Redis Enterprise Software manages node memory so that data is entirely in RAM for improved database performance.
