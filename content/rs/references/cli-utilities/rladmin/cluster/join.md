@@ -44,7 +44,7 @@ rladmin cluster join
 | ephemeral_path | filepath | Path to the ephemeral storage location (optional) |
 | external_addr | IP address | Sets a node's external IP address. If not provided, the node sets the address automatically. (optional) |
 | flash_enabled |  | Enables flash capabilities for a database (optional) |
-| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to the flash storage location (in case the node does not support CAPI) (required if flash_enabled) |
+| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to the flash storage location in case the node does not support CAPI (required if flash_enabled) |
 | nodes | IP address | Internal IP address of an existing node in the cluster |
 | override_rack_id |  | Changes to a new rack, specified by `rack_id` (optional) |
 | override_repair |  | Enables joining a cluster with a dead node (optional) |

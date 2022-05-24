@@ -38,7 +38,7 @@ rladmin cluster recover
 | ephemeral_path | filepath (default:&nbsp;/var/opt/redislabs) | Path to an ephemeral storage location (optional) |
 | filename | filepath | Backup file to use for recovery |
 | flash_enabled | | Enables flash storage (optional) |
-| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to the flash storage location (in case the node does not support CAPI) (required if flash_enabled) |
+| flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to the flash storage location in case the node does not support CAPI (required if flash_enabled) |
 | node_uid | integer (default:&nbsp;1) | Specifies which node will recover first and become master (optional) |
 | override_rack_id | | Changes to a new rack, specified by `rack_id` (optional) |
 | persistent_path | filepath | Path to the persistent storage location (optional) |

@@ -11,7 +11,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-Creates a new cluster. The node from which the command is executed becomes the first node of the new cluster.
+Creates a new cluster. The node where you run `rladmin cluster create` becomes the first node of the new cluster.
 
 ```sh
 cluster create 

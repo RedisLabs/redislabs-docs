@@ -32,7 +32,7 @@ To set a certificate for a specific service, use the corresponding certificate n
 
 | Parameter | Type/Value | Description |
 |-----------|------------|-------------|
-| certificate name | 'cm'<br /> 'api'<br /> 'proxy'<br /> 'syncer'<br /> 'metrics_exporter' | Name of certificate to update |
+| certificate name | 'cm'<br /> 'api'<br /> 'proxy'<br /> 'syncer'<br /> 'metrics_exporter' | Name of the certificate to update |
 | certificate_file | filepath | Path to the certificate file |
 | key_file | filepath | Path to the key file (optional) |
 
