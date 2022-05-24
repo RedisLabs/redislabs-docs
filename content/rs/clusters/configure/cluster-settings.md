@@ -1,6 +1,7 @@
 ---
-Title: Cluster Name, Email Service, Time Zone, and License
-description:
+Title: Cluster settings
+linktitle: Cluster settings
+description: You can view and set various cluster settings such as cluster name, email service, time zone, and license.
 weight: 10
 alwaysopen: false
 categories: ["RS"]
@@ -14,7 +15,7 @@ aliases: [
         /rs/clusters/configure/cluster-settings/,
 ]
 ---
-You can view and set various cluster settings in the **Settings > General** page.
+You can view and set various cluster settings such as cluster name, email service, time zone, and license in the **Settings > General** page.
 
 ## Entering a cluster key
 
