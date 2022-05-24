@@ -1,6 +1,6 @@
 ---
 Title: Import and export data
-linkTitle: Import and export data
+linkTitle: Import and export 
 description:
 weight: 65
 alwaysopen: false
