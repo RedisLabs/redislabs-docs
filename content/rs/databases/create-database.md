@@ -149,7 +149,7 @@ after the database is created.
             can use [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}})
             without the limitations.
 
-    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
+    - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
     - [**Data eviction policy**]({{< relref "/rs/databases/configure/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys

@@ -1,10 +1,16 @@
 ---
-Title: Use the OSS Cluster API
-linkTitle: Use the OSS Cluster API
+Title: Enable OSS Cluster API
+linkTitle: Enable OSS Cluster API
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/networking/using-oss-cluster-api.md,
+    /rs/administering/designing-production/networking/using-oss-cluster-api/,
+    /rs/databases/configure/enable-oss-cluster-api.md,
+    /rs/databases/configure/enable-oss-cluster-api/,
+]
 ---
 {{< embed-md "oss-cluster-api-intro.md"  >}}
 
