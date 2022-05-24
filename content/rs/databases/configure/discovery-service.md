@@ -1,9 +1,16 @@
 ---
-Title: Discovery Service
+Title: Discovery service
+linktitle: Discovery service
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/concepts/data-access/discovery-service.md,
+    /rs/concepts/data-access/discovery-service/,
+    /rs/databases/configure/discovery-service.md,
+    /rs/databases/configure/discovery-service/
+]
 ---
 The Discovery Service provides an IP-based connection management service
 used when connecting to Redis Enterprise Software databases. When used
@@ -90,7 +97,7 @@ To use Redis Sentinel, every database name must be unique across the cluster.
 
 ## Redis client support
 
-We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) that uses the Redis Sentinel API:
+We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/databases/configure/discovery-service.md" >}}) that uses the Redis Sentinel API:
 
 {{< embed-md "discovery-clients.md" >}}
 

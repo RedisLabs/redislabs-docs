@@ -42,7 +42,7 @@ Before configuring an Active-Active database, you must:
     All clusters must have the same Redis Enterprise Software version.
 - Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.
 
-    Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) for inter-cluster communications,
+    Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/databases/configure/discovery-service.md" >}}) for inter-cluster communications,
     but are compatible with local application connections.
 - Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (9443) of each cluster.
 - Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.

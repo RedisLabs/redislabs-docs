@@ -26,7 +26,7 @@ Note: You cannot use client libraries to configure Redis Enterprise Software.  I
 
 ### Discovery service
 
-We recommend the following clients when using a [discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) based on the Redis Sentinel API:
+We recommend the following clients when using a [discovery service]({{< relref "/rs/databases/configure/discovery-service.md" >}}) based on the Redis Sentinel API:
 
 {{< embed-md "discovery-clients.md" >}}
 
