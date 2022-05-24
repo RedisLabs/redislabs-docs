@@ -18,8 +18,9 @@ Migrates shards out of the node and turns the node into a quorum node to prevent
 
 ```sh
 rladmin node <ID> maintenance_mode on
-                [keep_slave_shards]
-                [demote_node]
+        [ keep_slave_shards ]
+        [ demote_node ]
+        [ max_concurrent_actions <integer> ]
 ```
 
 ### Parameters
@@ -29,6 +30,7 @@ rladmin node <ID> maintenance_mode on
 | node                  | integer                        | Turns the specified node into a quorum node                                              |
 | demote_node           |                                | If the node is a primary node, changes the node to replica                                |
 | keep_slave_shards     |                                | Keeps replica shards in the node and demotes primary shards to replicas                    |
+| max_concurrent_actions | integer | Maximum number of concurrent actions during node maintenance |
 
 ### Returns
 
@@ -60,7 +62,8 @@ Turns maintenance mode off and returns the node to its previous state.
 
 ```sh
 rladmin node <ID> maintenance_mode off
-                [ { snapshot_name <name> | skip_shards_restore } ]
+        [ { snapshot_name <name> | skip_shards_restore } ]
+        [ max_concurrent_actions <integer> ]
 ```
 
 ### Parameters
@@ -68,8 +71,9 @@ rladmin node <ID> maintenance_mode off
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 | node                  | integer                        | Restores the node back to the previous state                                              |
-| snapshot_name         | string                         | Restores the node back to a state stored in the specified snapshot                        |
+| max_concurrent_actions | integer | Maximum number of concurrent actions during node maintenance |
 | skip_shards_restore   |                                | Does not restore shards back to the node                                                  |
+| snapshot_name         | string                         | Restores the node back to a state stored in the specified snapshot                        |
 
 ### Returns
 

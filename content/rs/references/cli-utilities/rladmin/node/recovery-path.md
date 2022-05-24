@@ -13,8 +13,7 @@ aliases:
 Sets the node's local recovery path, which specifies the directory where [persistence files]({{<relref "/rs/databases/configure/database-persistence">}}) are stored. You can use these persistence files to [recover a failed database]({{<relref "/rs/databases/recover-database">}}).
 
 ```sh
-rladmin node <ID>
-        recovery_path set <path>
+rladmin node <ID> recovery_path set <path>
 ```
 
 ### Parameters

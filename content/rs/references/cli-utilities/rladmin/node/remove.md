@@ -20,7 +20,7 @@ rladmin node <ID> remove
 
 | Parameter             | Type/Value                     | Description                                                 |
 |-----------------------|--------------------------------|-------------------------------------------------------------|
-| node                  | integer                        | Creates a snapshot of the specified node                    |
+| node                  | integer                        | The node to remove from the cluster                    |
 
 ### Returns
 

@@ -17,8 +17,8 @@ Configures a node's external IP addresses.
 Adds an external IP address that accepts inbound user connections for the node.
 
 ```sh
-rladmin node <ID>
-        external_addr add <IP address>
+rladmin node <ID> external_addr
+        add <IP address>
 ```
 
 ### Parameters
@@ -26,7 +26,7 @@ rladmin node <ID>
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | node      | integer                        | Adds an external IP address for the specified node                                               |
-| ip_addr   | IP address                     | External IP address of the node                                                               |
+| IP address | IP address                     | External IP address of the node                                                               |
 
 ### Returns
 
@@ -52,8 +52,8 @@ node:3  slave  192.0.2.4                   b87cc06c830f 5/120  6           14.75
 Sets one or more external IP addresses that accepts inbound user connections for the node.
 
 ```sh
-rladmin node <ID>
-        external_addr set <IP address 1> ... <IP address N>
+rladmin node <ID> external_addr
+        set <IP address 1> ... <IP address N>
 ```
 
 ### Parameters
@@ -61,7 +61,7 @@ rladmin node <ID>
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | node      | integer                        | Sets external IP addresses for the specified node                                             |
-| ip_addr   | list of IP addresses           | Sets specified IP addresses as external addresses                                                 |
+| IP address | list of IP addresses           | Sets specified IP addresses as external addresses                                                 |
 
 ### Returns
 
@@ -86,8 +86,8 @@ node:3  slave  192.0.2.4                           b87cc06c830f 5/120  6     14.
 Removes the specified external IP address from the node.
 
 ```sh
-rladmin node <ID>
-        external_addr remove <IP address>
+rladmin node <ID> external_addr
+        remove <IP address>
 ```
 
 ### Parameters
@@ -95,7 +95,7 @@ rladmin node <ID>
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | node      | integer                        | Removes an external IP address for the specified node                                            |
-| ip_addr   | IP address                     | Removes the specified IP address of the node                                                      |
+| IP address | IP address                     | Removes the specified IP address of the node                                                      |
 
 ### Returns
 

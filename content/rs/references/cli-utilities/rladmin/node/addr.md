@@ -13,8 +13,7 @@ aliases:
 Sets the internal IP address of a node. You can only set the internal IP address when the node is down.
 
 ```sh
-rladmin node <id>
-        addr set <ip_addr>
+rladmin node <ID> addr set <IP address>
 ```
 
 ### Parameters
@@ -22,7 +21,7 @@ rladmin node <id>
 | Parameter | Type/Value                     | Description                                                                                   |
 |-----------|--------------------------------|-----------------------------------------------------------------------------------------------|
 | node      | integer                        | Sets the internal IP address of the specified node                                                |
-| ip_addr   | IP address                     | Sets the node's internal IP address to the specified IP address                                      |
+| addr   | IP address                     | Sets the node's internal IP address to the specified IP address                                      |
 
 ### Returns
 
