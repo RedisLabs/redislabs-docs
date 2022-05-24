@@ -1,5 +1,6 @@
 ---
 Title: Redis OSS Cluster API Architecture
+linktitle: Redis OSS Cluster API
 description:
 weight: $weight
 alwaysopen: false

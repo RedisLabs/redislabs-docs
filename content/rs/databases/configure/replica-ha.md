@@ -1,6 +1,6 @@
 ---
 Title: High availability for replica shards
-linkTitle: Replica HA
+linkTitle: Replica high availability
 description: Configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.
 weight: $weight
 alwaysopen: false

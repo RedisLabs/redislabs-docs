@@ -1,6 +1,6 @@
 ---
 Title: Cluster environment optimization
-linktitle: Cluster environment optimization
+linktitle: Environment optimization
 description:
 weight: $weight
 alwaysopen: false

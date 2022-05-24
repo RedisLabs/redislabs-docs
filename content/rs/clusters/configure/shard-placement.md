@@ -1,5 +1,6 @@
 ---
 Title: Configure shard placement
+linktitle: Configure shard placement
 description:
 weight: $weight
 alwaysopen: false

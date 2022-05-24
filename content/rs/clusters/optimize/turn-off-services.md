@@ -1,6 +1,6 @@
 ---
 Title: Turn off services to free system memory
-description: Turn off services
+description: Free system memory
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
