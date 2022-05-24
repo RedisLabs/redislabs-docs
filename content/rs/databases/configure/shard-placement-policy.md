@@ -13,8 +13,8 @@ aliases: [
     /rs/concepts/memory-architecture/shard-placement-policy/,
     /rs/concepts/memory-performance/shard-placement-policy.md,
     /rs/concepts/memory-performance/shard-placement-policy/,
-    /rs/clusters/configure/shard-placement-policy.md,
-    /rs/clusters/configure/shard-placement-policy/,
+    /rs/databases/configure/shard-placement-policy.md,
+    /rs/databases/configure/shard-placement-policy/,
 ]
 ---
 In Redis Enterprise Software, the location of master and replica shards on the cluster nodes can impact the database and node performance.
@@ -59,4 +59,4 @@ For Redis on RAM databases with OSS cluster API enabled and for Redis on Flash d
 
 ## Related articles
 
-You can [configure the shard placement policy]({{< relref "/rs/clusters/configure/shard-placement.md" >}}) for each database.
+You can [configure the shard placement policy]({{< relref "/rs/databases/configure/shard-placement.md" >}}) for each database.
