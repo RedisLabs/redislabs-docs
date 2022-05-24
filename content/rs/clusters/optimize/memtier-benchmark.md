@@ -2,7 +2,7 @@
 Title: Benchmarking Redis Enterprise
 linkTitle: Benchmark
 description: Use the `memtier_benchmark` tool to perform a performance benchmark of Redis Enterprise Software.
-weight: 50
+weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [

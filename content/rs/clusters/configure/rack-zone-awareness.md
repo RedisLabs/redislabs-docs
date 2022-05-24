@@ -2,7 +2,7 @@
 Title: Rack-zone awareness in Redis Enterprise Software
 linkTitle: Rack-zone awareness
 description: Rack-zone awareness ensures high-availability in the event of a rack or zone failure.
-weight: $weight
+weight: 70
 alwaysopen: false
 categories: ["RS"]
 aliases: [

@@ -1,6 +1,6 @@
 ---
 title: Configure database settings
-linktitle: Configure database settings
+linktitle: Database settings
 description: Configure and learn about settings specific to each database.
 weight: 60
 alwaysopen: false

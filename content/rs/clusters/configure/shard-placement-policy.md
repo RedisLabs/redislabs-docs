@@ -2,7 +2,7 @@
 Title: Shard placement policy
 linkTitle: Shard placement policy
 description:
-weight: 50
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: [

@@ -2,7 +2,7 @@
 Title: Synchronize cluster node clocks
 linktitle: Sync node clocks
 description:
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [

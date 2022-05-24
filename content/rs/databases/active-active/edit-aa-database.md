@@ -1,6 +1,6 @@
 ---
 Title: Edit Active-Active database configuration
-description: Edit Active-Active database
+description: Edit database
 weight: 30
 alwaysopen: false
 categories: ["RS"]

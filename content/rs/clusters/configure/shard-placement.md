@@ -2,7 +2,7 @@
 Title: Configure shard placement
 linktitle: Configure shard placement
 description:
-weight: $weight
+weight: 61
 alwaysopen: false
 categories: ["RS"]
 aliases: [
