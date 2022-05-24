@@ -1,6 +1,6 @@
 ---
 Title: Disk sizing for heavy write scenarios
-linktitle: Disk sizing for heavy writes
+linktitle: Disk sizing
 description: Sizing considerations for persistent disk space for heavy throughput databases.
 weight: $weight
 alwaysopen: false
@@ -10,6 +10,9 @@ aliases: [
     /rs/administering/designing-production/performance/disk-sizing-heavy-write-scenarios/,
     /rs/concepts/memory-performance/disk-sizing-heavy-write-scenarios.md,
     /rs/concepts/memory-performance/disk-sizing-heavy-write-scenarios/,
+    /rs/clusters/optimize/disk-sizing-heavy-write-scenarios.md,
+    /rs/clusters/optimize/disk-sizing-heavy-write-scenarios/,
+
 
 ]
 ---
