@@ -10,10 +10,26 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.12 requires:
+RedisGraph v2.8.13 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.13 (May 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2351](https://github.com/RedisGraph/RedisGraph/pull/2351) Potential memory leak on query timeout
+    - [#2348](https://github.com/RedisGraph/RedisGraph/issues/2348) Crash when converting certain Cypher queries to RediSearch queries
+    - [#2331](https://github.com/RedisGraph/RedisGraph/pull/2331) Two memory leaks (one on failed RDB loading, one on certain invalid queries)
+    - [#2328](https://github.com/RedisGraph/RedisGraph/pull/2328), [#2306](https://github.com/RedisGraph/RedisGraph/issues/2306), [#2307](https://github.com/RedisGraph/RedisGraph/issues/2307), [#2326](https://github.com/RedisGraph/RedisGraph/issues/2326) Disallow redeclaration of variables; fixed false redeclaration errors
+    - [#2363](https://github.com/RedisGraph/RedisGraph/pull/2363) Nodes were sometimes created with more labels than those specified
 
 ## v2.8.12 (May 2022)
 
