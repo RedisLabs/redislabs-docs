@@ -1,5 +1,5 @@
 ---
-Title: Installing RedisInsight on AWS EC2
+Title: Install RedisInsight on AWS EC2
 date: 2018-06-05 03:49:29 +0530
 weight: 50
 categories: ["RI"]
