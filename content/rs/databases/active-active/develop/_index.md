@@ -1,8 +1,8 @@
 ---
 title: Develop applications with Active-Active databases
-linkTitle: Develop apps
+linkTitle: Develop applications
 description: Overview of how developing applications differs for Active-Active databases from standalone Redis databases.
-weight: 40
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: [

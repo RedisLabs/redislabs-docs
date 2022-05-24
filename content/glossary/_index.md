@@ -31,7 +31,7 @@ More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](h
 {{%definition "Active-Active database (CRDB)"%}}
 Geo-distributed databases that span multiple [Redis Enterprise Software]({{<relref "#redis-enterprise-software">}}) [clusters]({{<relref "#cluster">}}). Active-Active databases, also known as conflict-free replicated databases (CRDB), depend on [multi-master replication (MMR)]({{<relref "#multi-master-replication-mmr">}}) and [conflict-free replicated data types (CRDTs)]({{<relref "#conflict-free-replicated-data-types-crdt">}}) to power a simple development experience for geo-distributed applications.
 
-More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/databases/active-active/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/databases/active-active/data-types/_index.md">}})
+More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/databases/active-active/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/databases/active-active/develop/_index.md">}})
 {{%/definition%}}
 
 {{%definition "Active-Active database instance"%}}
@@ -85,7 +85,7 @@ Conflict-free replicated databases (CRDB) are an alternate name for [Active-Acti
 {{%definition "conflict-free replicated data types (CRDT)"%}}
 Techniques used by Redis data types in Active-Active databases that handle conflicting concurrent writes across member Active-Active databases. The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
 
-More info: [CRDT info]({{<relref "/rs/databases/active-active/data-types/#info" >}}), [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active/_index.md" >}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
+More info: [CRDT info]({{<relref "/rs/databases/active-active/develop/#info" >}}), [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active/_index.md" >}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
 {{%/definition%}}
 
 {{%definition "CustomResourceDefinition (CRD)"%}}

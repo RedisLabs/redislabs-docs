@@ -2,7 +2,7 @@
 Title: Data types for Active-Active databases
 linktitle: Data types
 description: Introduction to differences in data types between standalone and Active-Active Redis databases.
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -20,4 +20,6 @@ Even though they look identical to standard Redis data types, there are specific
 conflicting concurrent writes for each data type.
 
 As conflict handling rules differ between data types, some commands have slightly different requirements in Active-Active databases versus standard Redis databases.
+
+See the following articles for more information 
 

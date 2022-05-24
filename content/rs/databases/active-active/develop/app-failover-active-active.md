@@ -2,13 +2,15 @@
 Title: Application failover with Active-Active databases
 linkTitle: App failover
 description: How to failover your application to connect to a remote replica.
-weight: 60
+weight: 99
 alwaysopen: false
 categories: ["RS"]
 aliases: [
     /rs/developing/crdbs/region-application-failover-active-active/,
     /rs/databases/active-active/app-failover-active-active.md,
     /rs/databases/active-active/app-failover-active-active/,
+    /rs/databases/active-active/develop/app-failover-active-active.md,
+    /rs/databases/active-active/develop/app-failover-active-active/,
 ]
 
 ---
