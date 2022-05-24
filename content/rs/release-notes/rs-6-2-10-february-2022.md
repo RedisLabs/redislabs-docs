@@ -71,7 +71,7 @@ Starting with Redis Enterprise Software v6.2.10 build 121, the included modules 
 - [RedisJSON v2.0.8](https://docs.redis.com/latest/modules/redisjson/release-notes/)
 - [RedisBloom v2.2.14](https://docs.redis.com/latest/modules/redisbloom/release-notes/)
 - [RedisGraph v2.8.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/)
-- [RedisTimeSeries v1.4.13](https://docs.redis.com/latest/modules/redistimeseries/release-notes/)
+- [RedisTimeSeries v1.6.9](https://docs.redis.com/latest/modules/redistimeseries/release-notes/)
 
 For help upgrading a module, see [Add a module to a cluster](https://docs.redis.com/latest/modules/add-module-to-cluster/#upgrading-the-module-for-the-database). 
 
