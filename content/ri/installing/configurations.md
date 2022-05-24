@@ -68,7 +68,7 @@ The following environment variables can be set to configure RedisInsight:
 
 ### RIAUTHPROMPT
 
-**Description:** Enables Authentication prompt which asks for authentication before opening an instance or when the user is idle.
+**Description:** Enables authentication prompt that asks for authentication before opening an instance or when the user is idle.
 
 **Type:** Bool
 
