@@ -11,7 +11,7 @@ aliases: [
     /rs/databases/active-active/causal-consistency-crdb/,
 ]
 ---
-When you enable Causal Consistency in Active-Active databases,
+When you enable casual consistency in Active-Active databases,
 the order of operations on a specific key are maintained across all Active-Active database instances.<!--more-->
 
 For instance, if operations A and B were applied on the same key and the effect of A was observed by the instance that initiated B before B was applied to the key,
@@ -20,16 +20,16 @@ This way, any causal relationship between operations on the same key is also obs
 
 ### Causal consistency side effects
 
-When the Causal Consistency option is enabled, each instance maintains the order of operations it received from another instance
+When the causal consistency option is enabled, each instance maintains the order of operations it received from another instance
 and relays that information to all other N-2 instances,
 where N represents the number of instances used by the Active-Active database.
 
 As a result, network traffic is increased by a factor of (N-2).
-The memory consumed by each instance and overall performance are also impacted when Causal Consistency is activated.
+The memory consumed by each instance and overall performance are also impacted when casual consistency is activated.
 
 ### Enable causal consistency
 
-When you create an Active-Active database, Causal Consistency is set as:
+When you create an Active-Active database, casual consistency is set as:
 
 ![create_db_causal](/images/rs/create_db_causal.png)
 
