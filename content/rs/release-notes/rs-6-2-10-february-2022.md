@@ -124,7 +124,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 ### Issues resolved in build 121
 
-- RS68668, RS72082 - Fixes to the certificate rotation mechanism
+- RS68668, RS72082 - Improvements for internode encryption certification rotation
 - RS72304 - Avoid starting a master shard when both master and replica shards crash and the replica did not finish recovery
 - RS74469 - Fixes backup error in certain situations for active-active databases  
 
