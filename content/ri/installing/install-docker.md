@@ -55,21 +55,3 @@ You can use additional flags with the `docker run` command:
 
     For example: `-e AWS_ACCESS_KEY=<aws access key> -e AWS_SECRET_KEY=<aws secret access key>`
 
-### Authentication for shared databases
-
-If you plan to share RedisInsight across multiple users within the same project, you can can enforce reentry of database usernames and passwords:
-
-* For Windows and Linux:
-```bash
-docker run --net host -e RIPORT=9001 -e RILOGLEVEL=DEBUG -e RIAUTHPROMPT=t -e RIAUTHTIMER=1 redislabs/redisinsight:ask-creds-idle-timer-feature
-```
-
-* For Mac:
-```bash
-docker run -p 9001:8001 -e RILOGLEVEL=DEBUG -e RIAUTHPROMPT=t -e RIAUTHTIMER=1 redislabs/redisinsight:ask-creds-idle-timer-feature
-```
-
-Where:
-* `RIAUTHPROMPT` enables the mode to not persist passwords
-* `RIAUTHTIMER` sets authentication timeout value in minutes
-* `RILOGLEVEL` logs to console/file
