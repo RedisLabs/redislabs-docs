@@ -10,10 +10,28 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.3 requires:
+RediSearch v2.4.5 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.5 (April 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2702](https://github.com/RediSearch/RediSearch/pull/2702) `INKEYS` combined with Vector Similarity caused server unresponsiveness (MOD-2952)
+  - [#2705](https://github.com/RediSearch/RediSearch/pull/2705) Incorrect results when deleting a document that was skipped at index time
+  - [#2698](https://github.com/RediSearch/RediSearch/issues/2698) Synonyms in Chinese
+
+- Improvements:
+
+  - [#2694](https://github.com/RediSearch/RediSearch/pull/2694) Performance: In a `TEXT` field, skip term iterator if term does not appear in requested field
 
 ## v2.4.3 (March 2022)
 

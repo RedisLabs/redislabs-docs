@@ -10,10 +10,42 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.11 requires:
+RedisGraph v2.8.13 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.13 (May 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2351](https://github.com/RedisGraph/RedisGraph/pull/2351) Potential memory leak on query timeout
+    - [#2348](https://github.com/RedisGraph/RedisGraph/issues/2348) Crash when converting certain Cypher queries to RediSearch queries
+    - [#2331](https://github.com/RedisGraph/RedisGraph/pull/2331) Two memory leaks (one on failed RDB loading, one on certain invalid queries)
+    - [#2328](https://github.com/RedisGraph/RedisGraph/pull/2328), [#2306](https://github.com/RedisGraph/RedisGraph/issues/2306), [#2307](https://github.com/RedisGraph/RedisGraph/issues/2307), [#2326](https://github.com/RedisGraph/RedisGraph/issues/2326) Disallow redeclaration of variables; fixed false redeclaration errors
+    - [#2363](https://github.com/RedisGraph/RedisGraph/pull/2363) Nodes were sometimes created with more labels than those specified
+
+## v2.8.12 (May 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2278](https://github.com/RedisGraph/RedisGraph/issues/2278), [#2301](https://github.com/RedisGraph/RedisGraph/pull/2301) Potential crash on bulk update
+    - [#2262](https://github.com/RedisGraph/RedisGraph/issues/2262), [#2271](https://github.com/RedisGraph/RedisGraph/issues/2271), [#2272](https://github.com/RedisGraph/RedisGraph/issues/2272), [#2273](https://github.com/RedisGraph/RedisGraph/issues/2273), [#2282](https://github.com/RedisGraph/RedisGraph/issues/2282), [#2288](https://github.com/RedisGraph/RedisGraph/issues/2288), [#2299](https://github.com/RedisGraph/RedisGraph/issues/2299), [#2312](https://github.com/RedisGraph/RedisGraph/issues/2312), [#2321](https://github.com/RedisGraph/RedisGraph/issues/2321), [#2325](https://github.com/RedisGraph/RedisGraph/issues/2325), [#2323](https://github.com/RedisGraph/RedisGraph/issues/2323) Potential crash on certain queries
+    - [#1441](https://github.com/RedisGraph/RedisGraph/issues/1441) Query returns wrong result: projection before Cartesian product causes only one result to be returned
+    - [#2298](https://github.com/RedisGraph/RedisGraph/issues/2298) Query returns wrong result: wrong value when fetching a string property from a map
+    - [#2318](https://github.com/RedisGraph/RedisGraph/pull/2318) Memory leak
 
 ## v2.8.11 (March 2022)
 
@@ -90,6 +122,13 @@ RedisGraph 2.8 introduces multi-labeled nodes, indexes over relationship propert
 #### What's new in 2.8
 
 - Multi-labeled nodes
+
+    {{<note>}}
+The `labels` function's signature has changed. The function now returns a list of labels instead of a single label.
+<br /><br />
+If you are using this function and upgrading to RedisGraph 2.8, a simple fix is to replace any call to `labels(x)` with `labels(x)[0]`. This returns the first label associated with node `x`. For uni-labeled nodes, the result in RedisGraph 2.8 is similar to the results of `labels(x)` in RedisGraph 2.4.
+    {{</note>}}
+  
 - Indexes over relationship properties
 - Enhanced full-text search
 - Delta matrices: node and relationships additions and deletions are much faster, as they are first updated in small delta matrices. The main matrices are then bulk-updated.
