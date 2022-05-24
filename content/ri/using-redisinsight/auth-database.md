@@ -1,14 +1,14 @@
 ---
-Title: Secure Redis database
-linkTitle: Secure database
+Title: Authenticate database users
+linkTitle: Authenticate database users
 date: 2022-05-24 00:00:00 +0000
 weight: 17
 categories: ["RI"]
-aliases: /ri/using-redisinsight/secure-database/
+aliases: /ri/using-redisinsight/auth-database/
 ---
 You can enforce authentication of users who share your databases by running Redisinsight with variables `RIAUTHPROMPT`,   `RIAUTHTIMER`, and `RILOGLEVEL`. For more information on variables, see [Configure RedisInsight](../../installing/configurations).
 
-By setting the variables, enforce the prompt for username and password at a specific time interval. You can maintain multiple tabs with the same database without having to enter username and password in each one.
+By setting the variables, enforce the prompt for username and password each time the database is opened and at a specific time interval while users work with the database. You can maintain multiple tabs with the same database without having to enter username and password in each one.
 
 * For Windows and Linux:
 ```bash

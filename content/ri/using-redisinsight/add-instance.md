@@ -51,7 +51,7 @@ To add a standalone Redis database to RedisInsight:
          - `host:port`
     - **Port**: The port your Redis database is available on. The default port for Redis is `6379`.
     - **Name**: A name for your Redis database. It does not have to match the name of the database in the Redis cluster.
-    - **Username**: The username, if your database is ACL enabled, otherwise leave this field empty. (If you plan to share RedisInsight across multiple users within the same project, you can can enforce reentry of database usernames and passwords. For more information, see [Secure database](../secure-database).
+    - **Username**: The username, if your database is ACL enabled, otherwise leave this field empty. (If you plan to share RedisInsight across multiple users within the same project, you can can enforce reentry of database usernames and passwords. For more information, see [Authenticate database users](../auth-database).
     - **Password**: The password, if any, for your Redis database.
        If your database doesn't require a password, leave this field empty.
     - **Use TLS**: If your Redis database uses TLS to connect with clients, select this option.
