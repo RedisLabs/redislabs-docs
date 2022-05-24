@@ -77,7 +77,7 @@ The following environment variables can be set to configure RedisInsight:
 
 ### RIAUTHTIMER
 
-**Description:** Idle Timer value in minutes for Authentication prompt.
+**Description:** Idle timer value for authentication prompt, in minutes.
 
 **Type:** Bool
 
