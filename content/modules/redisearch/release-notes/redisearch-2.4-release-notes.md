@@ -10,10 +10,24 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.5 requires:
+RediSearch v2.4.6 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.6 (May 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2716](https://github.com/RediSearch/RediSearch/pull/2716) Removed assert statement that could cause crashes with replica of (MOD-3008, MOD-3012)
+  - [#2734](https://github.com/RediSearch/RediSearch/pull/2734) `ON_TIMEOUT RETURN` policy fix: return results obtained until timeout rather than discarding them
+  - [#2714](https://github.com/RediSearch/RediSearch/pull/2714) Memory leak on non-TLS setup in coordinator
 
 ## v2.4.5 (April 2022)
 
