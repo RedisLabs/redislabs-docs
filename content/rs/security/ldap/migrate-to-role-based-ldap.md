@@ -9,7 +9,7 @@ aliases:
 
 Redis Enterprise Software supports LDAP through a [role-based mechanism]({{< relref "/rs/security/ldap/" >}}), first introduced [in v6.0.20]({{< relref "rs/release-notes/rs-6-0-20-april-2021" >}}).
 
-(Support for a earlier, [cluster-based mechanism]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) was removed in v6.2.12.)
+(Support for an earlier, [cluster-based mechanism]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) was removed in v6.2.12.)
 
 If you're using the cluster-based mechanism to enable LDAP authentication, you need to migrate to the role-based mechanism before upgrading to Redis Enterprise Software v6.2.12 or later.
 
@@ -41,15 +41,15 @@ Here's the basic process:
 
 ## Test LDAP access
 
-To test your LDAP integration, including:
+To test your LDAP integration, you can:
 
-- Connecting with `redis-cli` and using the AUTH command to test LDAP username/password credentials.
+- Connect with `redis-cli` and use the [AUTH command](https://redis.io/commands/auth/) to test LDAP username/password credentials
 
-- Signing in to the admin console using LDAP username/password credentials authorized for the Administration role.
+- Sign in to the admin console using LDAP credentials authorized for admin access
 
--  Signing in to RedisInsight using authorized LDAP username/password credentials.
+- Use RedisInsight to access a database using authorized LDAP credentials
 
-- Using the REST API to connect using LDAP username/password credentials.
+- Use the REST API to connect using authorized LDAP credentials
 
 ## Related info
 

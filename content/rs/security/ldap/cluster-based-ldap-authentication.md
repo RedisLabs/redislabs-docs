@@ -12,7 +12,7 @@ aliases: [
 ]
 ---
 {{<warning>}}
-As of v6.2.12, the features described in this article are [obsolete]({{< relref "/glossary/#obsolete" >}}); that is, they have been removed from the product.<br/><br/>  
+As of v6.2.12, the features described in this article are [obsolete]({{< relref "/glossary/#obsolete" >}}) and have been removed from the product.<br/><br/>  
   
 A new role-based [LDAP integration]({{< relref "/rs/security/ldap/" >}}) was introduced [in v6.0.20]({{< relref "rs/release-notes/rs-6-0-20-april-2021" >}}) in order to replace the cluster-based integration described here.<br/><br/>
 
