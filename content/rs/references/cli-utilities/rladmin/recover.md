@@ -79,14 +79,14 @@ db:6   tr02  redis  4       enabled      snapshot     ready
 
 ## `recover s3_import`
 
-Imports current database snapshot files from an AWS S3 bucket to a folder on the node.
+Imports current database snapshot files from an AWS S3 bucket to a directory on the node.
 
 ```sh
 $ rladmin recover s3_import
-                  s3_bucket <bucket_name>
+                  s3_bucket <bucket name>
                   [ s3_prefix <prefix> ]
-                  s3_access_key_id <access_key>
-                  s3_secret_access_key <secret_access_key>
+                  s3_access_key_id <access key>
+                  s3_secret_access_key <secret access key>
                   local_path <path>
 ```
 
@@ -94,11 +94,11 @@ $ rladmin recover s3_import
 
 | Parameters           | Type/Value | Description                                                      |
 |----------------------|------------|------------------------------------------------------------------|
-| s3_bucket            | string     | S3 Bucket name                                                   |
-| s3_prefix            | string     | S3 Prefix in the bucket                                          |
-| s3_access_key_id     | string     | S3 Access key ID                                                 |
+| s3_bucket            | string     | S3 bucket name                                                   |
+| s3_prefix            | string     | S3 object prefix                                                 |
+| s3_access_key_id     | string     | S3 access key ID                                                 |
 | s3_secret_access_key | string     | S3 secret access key                                             |
-| local_path           | filepath   | Local import path - all database snapshots will be imported here |
+| local_path           | filepath   | Local import path where all database snapshots will be imported  |
 
 ### Returns
 
