@@ -182,7 +182,7 @@ The `maintenance_on` request returns a JSON response body:
 Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> request to turn off maintenance mode:
 
 ```
-POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_off
+POST https://[host][:port]/v1/nodes/node_id/actions/maintenance_off
      '{"skip_shards_restore":false}'
 ```
 
@@ -204,7 +204,7 @@ You can send a request to [<nobr>GET `/nodes/{node_uid}/actions/{action}`</nobr>
 This request returns the status of the `maintenance_on` action:
 
 ```
-GET https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_on
+GET https://[host][:port]/v1/nodes/node_id/actions/maintenance_on
 ```
 
 The response body:

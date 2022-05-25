@@ -35,22 +35,22 @@ The new password cannot already exist as a password for the user and must meet t
 
 To rotate the password of a user account:
 
-1. Add an additional password to a user account with this POST command:
+1. Add an additional password to a user account with [`POST v1/users/password`]({{< relref "/rs/references/rest-api/requests/users/password#add-password" >}}):
 
-```sh
-POST https://[host][:port]/v1/users/password
-'{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}'
-```
+    ```sh
+    POST https://[host][:port]/v1/users/password
+    '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}'
+    ```
 
     After you run this command, you can authenticate with both the old and the new password.
 
 1. Update the password in all database connections that connect with the user account.
-1. Delete the original password with this DELETE command:
+1. Delete the original password with [`DELETE v1/users/password`]({{< relref "/rs/references/rest-api/requests/users/password#delete-password" >}}):
 
-```sh
-DELETE https://[host][:port]/v1/users/password
-'{"username":"<username>", "old_password":"<an_existing_password>"}'
-```
+    ```sh
+    DELETE https://[host][:port]/v1/users/password
+    '{"username":"<username>", "old_password":"<an_existing_password>"}'
+    ```
 
 If there is only one valid password for a user account, you cannot delete that password.
 
@@ -59,7 +59,7 @@ If there is only one valid password for a user account, you cannot delete that p
 You can also replace all existing passwords for a user account with a single password that is not an existing password.
 This can be helpful if you suspect that your passwords are compromised and you want to quickly resecure the account.
 
-To replace all existing passwords for a user account with a single new password, use this PUT command:
+To replace all existing passwords for a user account with a single new password, use [`PUT /v1/users/password`]({{< relref "/rs/references/rest-api/requests/users/password#update-password" >}}):
 
 ```sh
 PUT https://[host][:port]/v1/users/password
