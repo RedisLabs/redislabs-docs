@@ -7,3 +7,4 @@ categories: ["RS"]
 aliases: /rs/administering/designing-production/supported-platforms/
 ---
 {{< embed-md "supported-platforms-embed.md">}}
+
