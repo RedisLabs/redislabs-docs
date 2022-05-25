@@ -10,10 +10,30 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.6 requires:
+RediSearch v2.4.8 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.8 (May 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+However, if you're using Vector Similarity (introduced in RediSearch 2.4), there are some critical bugs that may affect a subset of users. In this case, you should upgrade.
+
+Details:
+
+- Bug fixes:
+
+  - [#2739](https://github.com/RediSearch/RediSearch/pull/2739) Memory leak in coordinator related to Vector Similarity (MOD-3023)
+  - [#2736](https://github.com/RediSearch/RediSearch/pull/2736), [#2782](https://github.com/RediSearch/RediSearch/pull/2782) Memory allocation restrictions for Vector Similarity indices (causing OOM) (MOD-3195)
+  - [#2755](https://github.com/RediSearch/RediSearch/pull/2755) Compare the entire vector field name instead of a prefix when creating a new vector index
+  - [#2780](https://github.com/RediSearch/RediSearch/pull/2780) Initialize all variables in `EvalContext` (which might have led to crashes in clustered databases)
+
+- Improvements:
+
+  - [#2740](https://github.com/RediSearch/RediSearch/pull/2740) Performance optimization for hybrid vector queries
 
 ## v2.4.6 (May 2022)
 
