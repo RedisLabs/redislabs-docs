@@ -25,3 +25,6 @@ This is the General Availability (GA) release of RedisInsight 2.2.0
 - [#643](https://github.com/RedisInsight/RedisInsight/pull/643) Now you can work with the list of keys or key details in the full screen. To open the key list in the full screen, just close the key details. To open key details in the full screen use the new "Full Screen" control in key details.
 - [#633](https://github.com/RedisInsight/RedisInsight/pull/633) Now you can set the timer to automatically refresh the list of keys and key values. To do so, just enable the "Auto Refresh" mode by clicking the control next to the "Refresh" button and set the refresh rate.
 - [#634](https://github.com/RedisInsight/RedisInsight/pull/634) Removed limitation for the max value of the "Database Index" field in the form to add a new database
+
+**Bugs Fixed:**
+- [#656](https://github.com/RedisInsight/RedisInsight/pull/656) Binary key names will not trigger any errors in databases with endabled OSS Cluster API. Also you will be able to see the date type, TTL and size of such keys in all other databases (though it will still not be possible to see key details).
