@@ -1,0 +1,30 @@
+---
+Title: RedisInsight v2.2.0, May 2022
+linkTitle: v2.2.0 (May 2022)
+date: 2022-05-26 00:00:00 +0000
+description: RedisInsight v2.2.0
+weight: 90
+aliases: /ri/release-notes/v2.2.0/
+         /ri/release-notes/v2.2.0.md
+---
+
+## 2.2.0 (May 2022)
+This is the General Availability (GA) release of RedisInsight 2.2.0
+
+### Headlines:
+- SlowLog: Added a new tool that shows slow operations for your Redis instances
+- Streams: Added support for Redis Streams
+- Open the list of keys or key details in full screen
+- Auto-refresh the key list and key details
+
+
+### Details
+**Features and improvements:**
+- [#621](https://github.com/RedisInsight/RedisInsight/pull/621) , [#645](https://github.com/RedisInsight/RedisInsight/pull/645) , [#649](https://github.com/RedisInsight/RedisInsight/pull/649) Added SlowLog, an analysis tool that logs all commands that exceed a specified runtime to troubleshoot performance issues. You can specify both the runtime and the maximum length of SlowLog (which are server configurations) to configure the list of commands logged and set the auto-refresh interval to automatically update the list of commands displayed.
+- [#597](https://github.com/RedisInsight/RedisInsight/pull/597) , [#598](https://github.com/RedisInsight/RedisInsight/pull/598), [#601](https://github.com/RedisInsight/RedisInsight/pull/601) , [#603](https://github.com/RedisInsight/RedisInsight/pull/603) , [#608](https://github.com/RedisInsight/RedisInsight/pull/608) , [#613](https://github.com/RedisInsight/RedisInsight/pull/613) , [#614](https://github.com/RedisInsight/RedisInsight/pull/614) , [#632](https://github.com/RedisInsight/RedisInsight/pull/632) Support for Redis Streams: now you can work with Streams, including creation and deletion of Streams, addition and deletion of entries, and filtration of entries per timestamp. Support for Consumer Groups will be added in a future release.
+- [#643](https://github.com/RedisInsight/RedisInsight/pull/643) Now you can work with the list of keys or key details in full screen. To open the key list in full screen, close the key details. To open key details in full screen, use the new **Full Screen** control in key details.
+- [#633](https://github.com/RedisInsight/RedisInsight/pull/633) Now you can set the timer to automatically refresh the list of keys and key values. To do so, enable the **Auto Refresh** mode by clicking the control next to the **Refresh** button and set the refresh rate.
+- [#634](https://github.com/RedisInsight/RedisInsight/pull/634) Removed the max value limitation in the **Database Index** field of the form for adding a new database.
+
+**Bugs Fixed:**
+- [#656](https://github.com/RedisInsight/RedisInsight/pull/656) Binary key names will not trigger errors in databases with enabled OSS Cluster API. Also, you can see the date type, TTL, and size of such keys in all other databases (except for key details).
