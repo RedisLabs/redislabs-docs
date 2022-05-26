@@ -9,7 +9,7 @@ aliases: /connect/architecture/
          /connect/architecture.md
 ---
 
-Redis Connect relies on a variety components, as shown in the following figure:
+Redis Connect relies on a variety of components, as shown in the following figure:
 
 {{<image filename="images/connect/redis-connect-architecture.png" alt="Redis Connect architecture and components" width="75%">}}{{< /image >}}
 
