@@ -9,9 +9,9 @@ The Redis Enterprise Software cluster nodes host a range of services that suppor
 In most deployments, either all of these services are required,
 or there are enough memory resources on the nodes for the database requirements.
 
-In a deployment with limited memory resources, certain services can be turned off from API endpoint to free system memory or using the `rladmin` command.
+In a deployment with limited memory resources, you can use the REST API or `rladmin` to turn off certain services to free system memory.
 Before you turn off a service, make sure that your deployment does not depend on that service.
-After you turn off a service, you can re-enable in the same way.
+After you turn off a service, you can re-enable it in the same way.
 
 The services that you can disable are:
 
@@ -30,7 +30,7 @@ To disable a service with the `rladmin cluster config` command, use the `service
 To turn off a service with the API, use the [PUT `/v1/cluster/services_configuration`]({{< relref "/rs/references/rest-api/requests/cluster/services_configuration#put-cluster-services_config" >}}) endpoint with the name of the service and the operating mode (enabled/disabled) in JSON format.
 
 For example:
-- To turn off the RS Admin Console, issue this PUT request:
+- To turn off the Redis Enterprise admin console, use this `PUT` request:
 
     ```sh
     PUT https://[host][:port]/v1/cluster/services_configuration

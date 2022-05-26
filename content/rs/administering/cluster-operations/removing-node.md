@@ -82,12 +82,12 @@ To remove a node using the admin console:
 1. Once the process finishes, the node is no longer shown in
     the UI.
 
-To remove a node using the REST API, use the [`/v1/nodes/node_id/actions/remove`]({{< relref "/rs/references/rest-api/requests/nodes/actions#post-node-action" >}}) endpoint with the JSON data and the "Content-Type: application/json" header.
+To remove a node using the REST API, use the [`/v1/nodes/<node_id>/actions/remove`]({{< relref "/rs/references/rest-api/requests/nodes/actions#post-node-action" >}}) endpoint with the JSON data and the "Content-Type: application/json" header.
 
 For example:
 
 ```sh
-POST https://[host][:port]/v1/nodes/node_id/actions/remove
+POST https://[host][:port]/v1/nodes/<node_id>/actions/remove
 "{}"
 ```
 

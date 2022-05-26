@@ -107,7 +107,7 @@ To flush data from an Active-Active database:
     1. To flush the Active-Active database, use [`PUT /v1/crdbs/{guid}/flush`]({{< relref "/rs/references/rest-api/requests/crdbs/flush#put-crdbs-flush" >}}):
 
         ```sh
-        PUT https://[host][:port]/v1/crdbs/guid/flush
+        PUT https://[host][:port]/v1/crdbs/<guid>/flush
         ```
 
         The command output contains the task ID of the flush task.
