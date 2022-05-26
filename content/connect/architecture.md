@@ -29,7 +29,7 @@ The Redis Connect data transformation engine uses Redis Gears to perform two maj
 
     The Redis Connect Preview uses Debezium to extract data from relational database sources.  
     
-    Future versions will support additional data serialization options, such as Apache Avro, as well as denormalized data modules or sources.
+    Future versions will support additional data serialization options, such as [Apache Avro](https://avro.apache.org/), as well as denormalized data modules or sources
     
 - Writing data
 
@@ -39,15 +39,15 @@ The Redis Connect data transformation engine uses Redis Gears to perform two maj
 
 Redis Connect requires the following credentials and secrets:
 
-- The Redis Connect Data Transformation Engine requires the credentials and certificate to connect and write encrypted data to the target Redis database.
+- The Redis Connect Data Transformation Engine requires the credentials and certificate to connect and write encrypted data to the target Redis database
 
-- The Debezium Redis Sink Connector requires the credentials and certificate to connect and write data into the Redis Connect database.
+- The Debezium Redis Sink Connector requires the credentials and certificate to connect and write data into the Redis Connect database
 
-- The Debezium Source Connector requires read access to the source database, including related secrets.
+- The Debezium Source Connector requires read access to the source database, including related secrets
 
 - Redis Connect CLI requires a certificates needed to connect to the Redis Enterprise cluster 
 
-    In order to run the `create` command, Redis Connect CLI the credentials of a privileged user.  These credentials are not cached or stored.
+    In order to run the `create` command, Redis Connect CLI the credentials of a privileged user.  These credentials are not cached or stored
 
 There are several ways to provide required credentials and certificates:
 
@@ -58,28 +58,28 @@ There are several ways to provide required credentials and certificates:
 - Leverage a key management service, such as Google Cloud [Key Management](https://cloud.google.com/security-key-management), Microsoft Azure [Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/), [HashiCorp Vault](https://www.hashicorp.com/products/vault), [and others](https://en.wikipedia.org/wiki/Key_management)
   
 
-## Scalability and High Availability
+## Scalability and availability
 
 Redis Connect is highly available:
 
-- Debezium Server is deployed using [Kubernetes](https://kubernetes.io/) or [Pacemaker](https://clusterlabs.org/pacemaker/), when enables failover between stateless instances while securing state information in Redis.
+- Debezium Server is deployed using [Kubernetes](https://kubernetes.io/) or [Pacemaker](https://clusterlabs.org/pacemaker/), when enables failover between stateless instances while securing state information in Redis
 
-- Redis Connect relies on Redis Enterprise high availability mechanisms, such as replica shards, cluster configuration, and so on.
+- Redis Connect relies on Redis Enterprise high availability mechanisms, such as replica shards, cluster configuration, and so on
 
-- Horizontal scalability is handled by splitting incoming data streams across multiple shards and writing updates in parallel.  Original table order is retained.
+- Horizontal scalability is handled by splitting incoming data streams across multiple shards and writing updates in parallel.  Original table order is retained
 
 
-## Tested Topologies
+## Tested topologies
 
 Redis Connect runs on Redis Enterprise, which means it works on any deployment, whether "bare metal," virtual machines (VMs), or containers.  Redis Connect can be run on the same cluster as the target Redis database or update a database stored on a separate cluster.
 
 Debezium Server should run in "warm standby" [high availability](https://en.wikipedia.org/wiki/High_availability_software).  We recommend one of the following:
 
-- Run on two VMs using an active-passive configuration.  
+- Run using two VMs in an active-passive configuration.  /
 
-    Failover should be orchestrated by a high availability resource manager, such as  [Pacemaker](https://clusterlabs.org/pacemaker/doc/).
+    Failover should be orchestrated by a high availability resource manager, such as  [Pacemaker](https://clusterlabs.org/pacemaker/doc/)
 
-- Run as a [Kubernetes pod](https://en.wikipedia.org/wiki/Kubernetes#Pods) where Kubernetes monitors pod activity (liveliness and readiness) and recovers non-functioning pods.
+- Run as a [Kubernetes pod](https://en.wikipedia.org/wiki/Kubernetes#Pods) where Kubernetes monitors pod activity (liveliness and readiness) and recovers non-functioning pods
 
-    Note that Redis Connect stores state information in the Redis Connect instance.  No state information is stored at the connector level.  
+    Note that Redis Connect stores state information in the Redis Connect instance.  No state information is stored at the connector level  
 
