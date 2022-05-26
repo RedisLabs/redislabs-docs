@@ -9,19 +9,7 @@ aliases: /connect/
          /connect.md
 ---
 
-Redis Connect helps import (or _ingest_) existing data into Redis Enterprise.   
-
-Redis Connect extracts data from existing systems, such as relational database management systems (RDBMS).  The data is loaded into a Reds Connect instance and then transformed into a format suitable for a Redis database.
-
-To learn more, see one of the following:
-
-- How to install and set up Redis Connect
-
-- The Redis Connect architecture and components
-
-_\*snip*_
-
-, loads it into You can think of Redis Connect as a streaming [ELT process](https://en.wikipedia.org/wiki/Extract,_load,_transform) (extract, load, transform) where the original data is:
+Redis Connect help import (or _ingest_) data from existing systems into Redis Enterprise.   You can think of Redis Connect as a streaming [ELT process](https://en.wikipedia.org/wiki/Extract,_load,_transform) (extract, load, transform) where the original data is:
 
 - Extracted from the source database using a connector service, such as [Debezium](https://debezium.io/).
 - Loaded into Redis Connect, a Redis database instance that stores a copy of the original data in [Redis Streams](https://redis.io/docs/manual/data-types/streams/), along with required metadata.
@@ -37,16 +25,28 @@ Currently, Redis Connect transforms an incoming relational database row into a [
 
 To learn more, see [data types list](data-type-conversion.md) for the exact mappings.
 
+## Database support
+
+For preview, Redis Connect uses Debezium 1.9 connectors to support the following data sources:
+
+| Database   | Versions           |
+| ---------- | ------------------ |
+| Oracle     | 12c, 19c, 21c      |
+| MySQL      | 5.7, 8.0.x         |
+| Postgres   | 10, 11, 12, 13, 14 |
+| SQL Server | 2017, 2019         |
+
+_\*snip\*_
+
+
 ## Architecture and Components
 
+![Redis Connect Architer\cture](images/connect/redis-connect-architecture.png)
 
+## Feeders
 
-
-## Supported connectors
-
-Currently, Redis Connect supports the [Debezium Redis Sink Connector](https://debezium.io/documentation/reference/stable/operations/debezium-server.html#_redis_stream).
-
-Future plans include support for additional connectors and a related SDK.
+Currently the only source for Redis Connect is the [Debezium Redis Sink Connector](https://debezium.io/documentation/reference/stable/operations/debezium-server.html#_redis_stream).
+Other sources and SDK will be added in later versions.
 
 ## Redis Connect Data Plane
 
@@ -75,25 +75,11 @@ Redis Connect configuration is persisted at the cluster level. The configuration
 
 Redis Connect requires the following secrets:
 
-- The Redis Connect Data Transformation Engine requires the credentials and certificate to connect and write encrypted data to the target Redis database.
-
-- The Debezium Redis Sink Connector requires the credentials and certificate to connect and write data into the Redis Connect database.
-
-- The Debezium Source Connector requires read access to the source database, including related secrets.
-
-- Redis Connect CLI requires a certificates needed to connect to the Redis Enterprise cluster. 
-
-    In order to run the `create` command, Redis Connect CLI the credentials of a privileged user.  These credentials are not cached or stored.
-
-There are several ways to provide required credentials and certificates:
-
-- You can enter them manually when using Redis Connect CLI
-
-- Store them as environment variables
-
-- Leverage a key management service, such as Google Cloud [Key Management](https://cloud.google.com/security-key-management), Microsoft Azure [Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/), [HashiCorp Vault](https://www.hashicorp.com/products/vault), [and others](https://en.wikipedia.org/wiki/Key_management).
-  
-Credentials and certificate can be served in one of the following ways:
+- The Redis Connect Data Transformation Engine requires the credentials and certificate to connect and write encryipted data to the target Redis DB.
+- The Debezium Redis Sink Connector requires the credentials and certificate to connect and write data into Redis Connect DB.
+- The Debezium Source Connector requires the source DB secrets.
+- The Redis Connect CLI requires a Certificate to connect tothe Redis Enterprise cluster. For the create command it requires the credentials of a priveleged user but it does not cache or store these credentials.
+  Credential s and Certificate can be served in one of the following ways:
 - Entered manually as parameters to a CLI command (where applicable).
 - Stored in environment variables.
 - Injected to the temp file system by a secret store agent (e.g. Hashicorp Vault).
