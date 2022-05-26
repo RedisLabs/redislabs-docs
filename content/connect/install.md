@@ -120,6 +120,8 @@ applier:
     redis-connect deploy
     ```
 
+    The Redis Connect configuration files is saved (_persisted_) to the cluster, which helps configure new shards and recover in the event of shard or node failure.
+
 1.  Verify the install
 
     Use the `status` command to verify Redis Connect status.

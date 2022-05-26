@@ -5,8 +5,8 @@ description: Shows how to upgrade Redis Connect components, including the CLI, t
 weight: $weight
 alwaysopen: false
 categories: ["Connect"]
-aliases: /connect/install/
-         /connect/install.md
+aliases: /connect/upgrade/
+         /connect/upgrade.md
 ---
 
 Here, you learn how to upgrade Redis Connect components.
@@ -89,6 +89,8 @@ These steps provide more details:
     1.  Select the **Databases** menu of the admin console and then select redis-connect from the list of databases.  Select the **Configuration** tab and then locate the **Redis modules** section.
         
         If an information icon appears to the right of the RedisGears version, the update is available for use.
+
+        {{<image filename="images/connect/redis-connect-db-update-available.png" alt="When module updates are avilable, an information icon appears to the right of the current version displayed in the database configuration." width="75%">}}{{< /image >}}
         
     2.  You can also also use `rladmin` to display the RedisGears version for your Redis Connect instance:
         
