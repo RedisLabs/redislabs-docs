@@ -53,7 +53,7 @@ These steps provide more details:
     curl -s http://redismodules.s3.amazonaws.com/redisgears/snapshots/redisgears_python.Linux-ubuntu18.04-x86_64.master.zip -o /tmp/redisgears.zip
     ```
 
-2.  Use the `v2/modules/` REST endpoint to install the RedisGears update in your cluster
+2.  Use the `v2/modules/` REST API request to install the RedisGears update in your cluster
 
     ``` console
     curl -k -s -u "<CLUSTER_USER>:<CLUSTER_PASSWORD>" -F "module=@/tmp/redisgears.zip" https://<CLUSTER_HOST>:<CLUSTER_API_PORT>/v2/modules
@@ -66,7 +66,7 @@ These steps provide more details:
     curl -k -s -u "<CLUSTER_USER>:<CLUSTER_PASSWORD>" https://<CLUSTER_HOST>:<CLUSTER_API_PORT>/v1/actions/${action_uid}
     ```
 
-    This endpoint returns `complete` when installation is finished.
+    This request returns `complete` when installation is finished.
 
     Use the admin console to verify that the RedisGears update is available to your cluster
 
@@ -80,11 +80,11 @@ These steps provide more details:
     rladmin upgrade module db_name redis-connect module_name rg version 999999 module_args keep_args
     ```
 
-    The passed with the `rg version` parameter is the version number associated with the RedisGears update.  You can find this in the JSON file provided with your download.
+    The `rg version` parameter is the version number associated with the RedisGears update.  You can find this in the JSON file provided with your download.
 
     Be sure to specify the `keep_args` parameter; otherwise, the configuration will be reset, with unpredictable results.
 
-    To verify the RedisGears version used with your RedisConnect instance:
+    To verify the RedisGears version used with your Redis Connect instance:
     
     1.  Select the **Databases** menu of the admin console and then select redis-connect from the list of databases.  Select the **Configuration** tab and then locate the **Redis modules** section.
         
@@ -92,7 +92,7 @@ These steps provide more details:
 
         {{<image filename="images/connect/redis-connect-db-update-available.png" alt="When module updates are avilable, an information icon appears to the right of the current version displayed in the database configuration." width="75%">}}{{< /image >}}
         
-    2.  You can also also use `rladmin` to display the RedisGears version for your Redis Connect instance:
+    2.  You can also use `rladmin` to display the RedisGears version for your Redis Connect instance:
         
         ``` console
         rladmin status modules all

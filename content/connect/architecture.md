@@ -17,7 +17,7 @@ For Preview, Redis Connect uses [Debezium](https://debezium.io/) to load source 
 
 Currently, Redis Connect uses the [Debezium Redis Sink Connector](https://debezium.io/documentation/reference/stable/operations/debezium-server.html#_redis_stream).  Future plans include support for additional connectors and a related SDK.
 
-Once data in loaded into the Redis Connect instance, [Redis Gears recipes](https://developer.redis.com/howtos/redisgears/) transform it into a format appropriate to the target Redis database.
+Once data in loaded into the Redis Connect instance, [RedisGears recipes](https://developer.redis.com/howtos/redisgears/) transform it into a format appropriate to the target Redis database.
 
 Currently, incoming database rows are transformed into [Redis hashes](https://redis.io/docs/manual/data-types/#hashes) that incorporate the original table name into key names.  Future updates will add additional transformations, such as [RedisJSON documents](https://redis.io/docs/stack/json/).
 

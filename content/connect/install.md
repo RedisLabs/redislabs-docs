@@ -46,7 +46,7 @@ Once Redis Connect CLI is installed, you can use it to create a new Redis Connec
 
     - A Redis Enterprise cluster, v6.2 or later
 
-    - [Redis Gears](https://docs.redis.com/latest/modules/redisgears/) v1.2.4 or later must be installed on the cluster.
+    - [RedisGears](https://docs.redis.com/latest/modules/redisgears/) v1.2.4 or later must be installed on the cluster.
 
     - A target Redis database, which can be added after setting up Redis Connect.
 
@@ -247,7 +247,7 @@ As result, Debezium fails with an error.  If this happens:
 1.  Add the connector and the JDBC driver
 2.  Restart Debezium Server
 
-The following example shows one way to do this
+The following example shows one way to do this:
 
 ```bash
 mkdir oracle
