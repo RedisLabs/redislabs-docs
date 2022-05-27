@@ -11,7 +11,7 @@ aliases: /connect/install/
 
 Redis Connect helps connect traditional relational database systems (RDBMS) to Redis Enterprise.  It does this by ingesting (_importing_) row-based data into a target Redis database.
 
-The Redis Connect command-line interface (CLI) helps you set up a new Redis Connect instance and to configure the connections between your source data and Redis Enterprise.
+The Redis Connect command-line interface (CLI) helps you set up a new Redis Connect instance and configure the connections between your source data and Redis Enterprise.
 
 The Redis Connect CLI requires network access to the Redis Enterprise cluster API; it uses port 9443 by default.
 
@@ -23,14 +23,14 @@ Specific steps vary according to your operating system and environment.  The gen
 
 1.  Install or update to [Python 3.7 or later](https://www.python.org/downloads/)
 
-1.  Set up and activate a new virtual environment for Redis Connect
+1.  Set up and activate a new virtual environment for Redis Connect:
 
     ``` console
     python3 -m venv venv
     source venv/bin/activate
     ```
 
-1.  Install Redis Connect CLI.
+1.  Install Redis Connect CLI:
 
     ``` console
     pip3 install https://qa-onprem.s3.amazonaws.com/redis-connect/redis_connect_cli-latest-py3-none-any.whl
@@ -48,9 +48,9 @@ Once Redis Connect CLI is installed, you can use it to create a new Redis Connec
 
     - [RedisGears](https://docs.redis.com/latest/modules/redisgears/) v1.2.4 or later must be installed on the cluster.
 
-    - A target Redis database, which can be added after setting up Redis Connect.
+    - A target Redis database, which can be added after setting up Redis Connect
 
-1.  Use redis-connect CLI to create a new Redis Connect instance on your Redis Enterprise cluster
+1.  Use Redis Connect CLI to create a new Redis Connect instance on your Redis Enterprise cluster:
 
     ``` console
     redis-connect create
@@ -58,7 +58,7 @@ Once Redis Connect CLI is installed, you can use it to create a new Redis Connec
 
     This creates a database named `redis-connect` in your cluster
     
-    Your user account needs permission to create databases and to register Redis Gears recipes
+    Your user account needs permission to create databases and to register RedisGears recipes
 
 1.  Use the `scaffold` command to create the configuration files for your Redis Connect instance
 
@@ -66,7 +66,7 @@ Once Redis Connect CLI is installed, you can use it to create a new Redis Connec
     redis-connect scaffold <PROJECT_NAME>
     ```
 
-    This create a directory in the current location; this directory contains the following files:
+    This creates a directory in the current location; this directory contains the following files:
 
     ```bash
     ├── debezium
@@ -76,7 +76,7 @@ Once Redis Connect CLI is installed, you can use it to create a new Redis Connec
 
 1.  Update the configuration files
 
-    1.  The Redis Connect configuration file (`config.yaml`) file defines the connection between your source data and your Redis database 
+    1.  The Redis Connect configuration file (`config.yaml`) defines the connection between your source data and your Redis database 
 
         In `config.yaml`, update `connections.target` and other details to reflect your environment.  
     
@@ -120,7 +120,7 @@ applier:
     redis-connect deploy
     ```
 
-    The Redis Connect configuration files is saved (_persisted_) to the cluster, which helps configure new shards and recover in the event of shard or node failure.
+    The Redis Connect configuration file is saved (_persisted_) to the cluster, which helps configure new shards and recover in the event of shard or node failure.
 
 1.  Verify the install
 
@@ -160,17 +160,17 @@ Applier:
 ```
     {{%/expand%}}
 
-    If you receive a `No streams found` error, make sure that Debezium server is properly set up and connected to your source database.
+    If you receive a `No streams found` error, make sure that the Debezium server is properly set up and connected to your source database.
     
     For help, see [Install Debezium Server](#install-debezium-server).
 
 ## Install Debezium Server
 
-The follow steps provide a high level overview to the Debezium setup process.  For a detailed look, see the [Debezium docs](https://debezium.io/documentation/).
+The following steps provide a high level overview to the Debezium setup process.  For a detailed look, see the [Debezium docs](https://debezium.io/documentation/).
 
 1.  _(Optional)_ Set up an example database
 
-    The Debezium project includes preconfigured examples for many relational database.
+    The Debezium project includes preconfigured examples for many relational databases.
 
     To set up a Postgres example database:
 
@@ -242,7 +242,7 @@ quarkus.log.console.json=false
 
 If you are using Oracle as your source database, be aware that Debezium Server does _not_ include the Oracle Debezium Connector or the related JDBC driver.
 
-As result, Debezium fails with an error.  If this happens:
+As a result, Debezium fails with an error.  If this happens:
 
 1.  Add the connector and the JDBC driver
 2.  Restart Debezium Server
