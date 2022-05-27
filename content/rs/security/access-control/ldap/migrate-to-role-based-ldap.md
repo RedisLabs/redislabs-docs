@@ -4,10 +4,12 @@ description: Describes how to migrate existing cluster-based LDAP deployments to
 weight: 55
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: [
+    "/rs/security/ldap/migrate-to-role-based-ldap/"
+]
 ---
 
-As of v6.0.20, Redis Enterprise Software supports two LDAP authentication mechanisms: the [cluster-based mechanism]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) supported in earlier versions and a [role-based mechanism]({{< relref "/rs/security/ldap/" >}}).
+As of v6.0.20, Redis Enterprise Software supports two LDAP authentication mechanisms: the [cluster-based mechanism]({{<relref "/rs/security/access-control/ldap/cluster-based-ldap-authentication">}}) supported in earlier versions and a [role-based mechanism]({{<relref "/rs/security/access-control/ldap/">}}).
 
 If you currently rely on the cluster-based mechanism, you can continue to do so in the short term.  However:
 
@@ -43,7 +45,7 @@ This checklist covers the basic process:
 
  Because deployments and requirements vary, you’ll likely need to adjust these guidelines.
 
-## Ways to test access
+## Test LDAP access
 
 There are several ways to test your LDAP integration, including:
 
@@ -57,7 +59,7 @@ There are several ways to test your LDAP integration, including:
 
 ## Related info
 
-- Enable and configure [role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}})
-- Map LDAP groups to [access control roles]({{< relref "/rs/security/ldap/map-ldap-groups-to-roles.md" >}})
-- Update database ACLs to [authorize LDAP access]({{< relref "/rs/security/ldap/update-database-acls.md" >}})
-- Learn more about Redis Software [security & practices]({{< relref "/rs/security/" >}})
+- Enable and configure [role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}})
+- Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}})
+- Update database ACLs to [authorize LDAP access]({{<relref "/rs/security/access-control/ldap/update-database-acls">}})
+- Learn more about Redis Software [security and practices]({{<relref "/rs/security/">}})

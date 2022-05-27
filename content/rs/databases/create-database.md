@@ -115,14 +115,14 @@ If you are creating a Memcached database, enter a username and password for SASL
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/passwords-users-roles.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that apply to those connections.
+    - **Access Control List** - You can specify the [user roles]({{<relref "/rs/security/access-control/create-roles">}}) that have access to the database
+        and the [Redis ACLs]({{<relref "/rs/security/access-control/configure-acl">}}) that apply to those connections.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [role]({{<relref "/rs/security/passwords-users-roles#configuring-roles-and-users">}}) that you want to have access to the database.
-        1. Select the [ACL]({{<relref "/rs/security/passwords-users-roles#redis-acl-command-syntax">}}) that you want the role to have in the database.
+        1. Select the [role]({{<relref "/rs/security/access-control/create-roles">}}) that you want to have access to the database.
+        1. Select the [ACL]({{<relref "/rs/security/access-control/configure-acl">}}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 

@@ -4,7 +4,9 @@ description: Describes how to use Settings | LDAP to enable role-based LDAP auth
 weight: 25
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: [
+   "/rs/security/ldap/enable-role-based-ldap/" 
+]
 ---
 
 Redis Enterprise Software uses a role-based mechanism to enable LDAP authentication and authorization.  
@@ -13,21 +15,21 @@ When a user attempts to access Redis Software resources using LDAP credentials, 
 
 Role-based LDAP lets you authorize admin console admins (previously known as _external users_) as well as database users.  As with any access control role, you can define the level of access authorized by the role.
 
-## Enable and set up LDAP connection
+## Set up LDAP connection
 
 To enable and configure LDAP, sign into the Redis Software admin console and then select **Settings** | **LDAP**.
 
 {{<image filename="images/rs/rs-settings-ldap-configure.png" width="75%" alt="The LDAP configuration screen in the Redis Software admin console" >}}{{< /image >}}
 
 {{<warning>}}
-If LDAP is already enabled, you may already be using the cluster-based LDAP integration.  If so, follow the [migration process]({{< relref "/rs/security/ldap/migrate-to-role-based-ldap" >}}) to enable role-based LDAP.  (External users must be deleted from the admin console before enabling role-based LDAP.)
+If LDAP is already enabled, you may already be using the cluster-based LDAP integration.  If so, follow the [migration process]({{<relref "/rs/security/access-control/ldap/migrate-to-role-based-ldap">}}) to enable role-based LDAP.  (External users must be deleted from the admin console before enabling role-based LDAP.)
 {{</warning>}}
 
 When LDAP is enabled, use the info you gathered to populate the following settings:
 
-### **LDAP Server** settings
+### LDAP server settings
 
-The **LDAP Server** settings define the communiction settings used for LDAP authentication and authorization.  These include:
+The **LDAP Server** settings define the communication settings used for LDAP authentication and authorization. These include:
 
 | _Setting_ | _Description_ | 
 |:----------|:--------------|
@@ -38,7 +40,7 @@ The **LDAP Server** settings define the communiction settings used for LDAP auth
 
 When defining multiple LDAP hosts, the organization tree structure must be identical for all hosts.
 
-### **Bind credentials**
+### Bind credentials
 
 These settings define the credentials for the bind query:
 
@@ -50,7 +52,7 @@ These settings define the credentials for the bind query:
 | **Client public key** | _(LDAPS or STARTTLS protocols only)_ The client public key for authentication |
 | **Client private key** | _(LDAPS or STARTTLS protocols only)_ The client private key for authentication |
 
-### **Authentication Query**
+### Authentication query
 
 These settings define the authentication query:
 
@@ -64,7 +66,7 @@ These settings define the authentication query:
 
 In this example, `%u` is replaced by the username attempting to access the Redis Software resource.
 
-### **Authorization Query**
+### Authorization query
 
 These settings define the group authorization query:
 
@@ -78,12 +80,12 @@ These settings define the group authorization query:
 
 In this example, `%D` is replaced by the Distinguished Name of the user attempting to access the Redis Software resource.
 
-### Saving results
+### Save settings
 
 When finished, use the **Save** button to save your changes.
 
 ## Related info
 
-- Map LDAP groups to [access control roles]({{< relref "/rs/security/ldap/map-ldap-groups-to-roles.md" >}})
-- Update database ACLs to [authorize LDAP access]({{< relref "/rs/security/ldap/update-database-acls.md" >}})
-- Learn more about Redis Software [security & practices]({{< relref "/rs/security/" >}})
+- Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}})
+- Update database ACLs to [authorize LDAP access]({{<relref "/rs/security/access-control/ldap/update-database-acls">}})
+- Learn more about Redis Software [security and practices]({{<relref "/rs/security/">}})

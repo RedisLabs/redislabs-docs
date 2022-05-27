@@ -44,13 +44,13 @@ For antivirus solutions that intercept processes, binary files may have to be ex
 
 Redis Enterprise offers several database security controls to help protect your data against unauthroized access and to improve the operational security of your databse. The following section details configurable security controls availible for implementation.
 
-- **Implement role-based access for users**: With [role-based access control (RBAC)]({{< relref "/rs/security/passwords-users-roles.md" >}}), you can manage ACLs for the entire cluster. You can reuse ACL templates across users, accounts, and multiple databases to precisely scale complex security configurations with a few simple clicks. RBAC lets you set permissions for your databases and for the Redis Enterprise management console itself, providing a complete security-management solution for your cluster.
+- **Implement role-based access for users**: With [role-based access control (RBAC)]({{<relref "/rs/security/access-control">}}), you can manage ACLs for the entire cluster. You can reuse ACL templates across users, accounts, and multiple databases to precisely scale complex security configurations with a few simple clicks. RBAC lets you set permissions for your databases and for the Redis Enterprise management console itself, providing a complete security-management solution for your cluster.
 
-- **Prevent database users from logging into the admin console**: Redis Enterprise allows users to be provisioned with both control plane access and access to the database. In some senarios this may be helpful for administrative users, but for applications we recommend that you [disable their access to the control plane]({{< relref "/rs/security/passwords-users-roles.md#configuring-roles-and-users" >}}).
+- **Prevent database users from logging into the admin console**: Redis Enterprise allows users to be provisioned with both control plane access and access to the database. In some senarios this may be helpful for administrative users, but for applications we recommend that you [disable their access to the control plane]({{<relref "/rs/security/access-control/manage-users">}}).
 
 - **Use strong Redis passwords**: A frequent recommendation in the security industry is to use strong passwords to authenticate users. This helps to prevent brute force password guessing attacks against your database. Its important to check that your password aligns with your organizations security policy.
 
-- **Disable the default user**: Redis Enterprise comes with a "default" user for backwards compatibility with applications designed with versions of Redis prior to Redis Enterprise 6. The default user is turned on by default. This allows you to access the database without specifying a username and only using a shared secret. For applications designed to use access control lists, we recommend that you [disable the default user]({{< relref "/rs/security/passwords-users-roles.md#disabling-the-default-user" >}}).
+- **Disable the default user**: Redis Enterprise comes with a "default" user for backwards compatibility with applications designed with versions of Redis prior to Redis Enterprise 6. The default user is turned on by default. This allows you to access the database without specifying a username and only using a shared secret. For applications designed to use access control lists, we recommend that you [disable the default user]({{<relref "/rs/security/access-control/manage-users#disable-default-user">}}).
 
 - **Enable client certificate authentication**: To prevent unauthorized access to your data, Redis Enterprise databases support the [TLS protocol]({{<relref "/rs/security/tls#client-certificate-authentication">}}), which includes authentication and encryption. Client certificate authentication can be used to ensure only authorized hosts can access the database.
 
@@ -62,5 +62,5 @@ Redis Enterprise offers several database security controls to help protect your 
 
 ## LDAP authentication
 
-If your organization uses the Lightweight Directory Access Protocol (LDAP), we recommend enabling Redis Software support for role-based [LDAP authentication]({{< relref "/rs/security/ldap/" >}}).
+If your organization uses the Lightweight Directory Access Protocol (LDAP), we recommend enabling Redis Software support for role-based [LDAP authentication]({{<relref "/rs/security/access-control/ldap/">}}).
 

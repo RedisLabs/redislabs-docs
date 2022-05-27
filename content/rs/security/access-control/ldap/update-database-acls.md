@@ -4,7 +4,9 @@ description: Describes how to use the admin console to update database access co
 weight: 45
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: [
+    "/rs/security/ldap/update-database-acls/"
+]
 ---
 
 To grant LDAP users access to a database, assign the mapped access role to the access control list (ACL) for the database.
@@ -34,6 +36,6 @@ As a result, we recommend ordering roles so that higher access roles appear befo
 
 ## Related info
 
-- Enable and configure [role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}})
-- Map LDAP groups to [access control roles]({{< relref "/rs/security/ldap/map-ldap-groups-to-roles.md" >}})
-- Learn more about Redis Software [security & practices]({{< relref "/rs/security/" >}})
+- Enable and configure [role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap.md">}})
+- Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles.md">}})
+- Learn more about Redis Software [security and practices]({{<relref "/rs/security/">}})
