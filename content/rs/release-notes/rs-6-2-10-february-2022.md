@@ -29,11 +29,13 @@ The following table shows the MD5 checksums for the available packages.
 
 - [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
 
--  Compatibility with [open source Redis 6.2.5](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES).
+- [Oracle Linux v8](https://docs.oracle.com/en/operating-systems/oracle-linux/8/)) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
+
+- Compatibility with [open source Redis 6.2.5](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES).
 
 - Compatibility with the [security fixes](https://github.com/redis/redis/releases/tag/6.2.6) of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6).
 
--  Enhancements and bug fixes.
+- Enhancements and bug fixes.
 
 ## Version changes 
 
@@ -126,7 +128,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 - RS68668, RS72082 - Improvements for internode encryption certification rotation
 - RS72304 - Avoid starting a master shard when both master and replica shards crash and the replica did not finish recovery
-- RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup```
+- RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup
 
 ## Security
 
