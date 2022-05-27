@@ -10,17 +10,13 @@ aliases: /rs/administering/designing-production/security/ldap-integration/
          /rs/security/ldap/
 ---
 
-As of version 6.0.20, Redis Enterprise Software integrates [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization into its [role-based access controls]({{<relref "rs/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC).  You can now use LDAP to authorize access to the admin console and to authorize database access.
+Redis Enterprise Software supports [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization through its [role-based access controls]({{<relref "rs/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC).  You can use LDAP to authorize access to the admin console and to control database access.
 
-Furthermore, you can configure LDAP roles using the admin console or the Redis Software REST API.
+You can configure LDAP roles using the admin console or the Redis Software REST API.
 
-Previously, you could enable LDAP authentication for admin console users by [configuring a cluster]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) either through the command-line or the REST API.   
+Previously, you could enable LDAP authentication for admin console users by [configuring a cluster]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}); however, support for this approach was removed in v6.2.12.
 
-The cluster-based LDAP mechanism is supported in v6.0.20; however, the mechanism is deprecated and will be removed in a future update.
-
-Note that the cluster-based mechanism is not compatible with the new role-based approach. You can use either for now, but not both at the same time.
-
-If you are using the earlier LDAP mechanism, you will need to migrate to role-based LDAP at some point in the near future.  For help, see [Migrate to role-based LDAP]({{< relref "/rs/security/ldap/migrate-to-role-based-ldap" >}}).
+If you are using the earlier cluster-based LDAP mechanism, you need to [migrate to role-based LDAP]({{<relref "rs/security/ldap/migrate-to-role-based-ldap">}}) before upgrading to v6.2.12.
 
 ## How it works
 

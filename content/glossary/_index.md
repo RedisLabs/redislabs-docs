@@ -102,6 +102,12 @@ Defines how excess data is handled when the database exceeds the memory limit.
 More info: [Data Eviction Policy]({{<relref "/rc/databases/configuration/data-eviction-policies.md">}})
 {{%/definition%}}
 
+{{%definition "deprecated"%}}
+Features are marked as _deprecated_ when they're scheduled to be removed from our products, generally because they've been replaced by new features.
+
+For details, see [obsolete](#obsolete).
+{{%/definition%}}
+
 {{%definition "Domain Name Service (DNS)"%}}
 Naming system for computers, services, or other resources connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities.
 
@@ -179,6 +185,16 @@ Multi-directional replication that power the efficient replication required to a
 An abstraction used by Kubernetes to support multiple virtual clusters on the same physical cluster.
 
 More info: [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+{{%/definition%}}
+
+{{%definition "obsolete"%}}
+When features are removed from our products, they're generally replaced by new features that provide a better experience, more functionality, improved security, and other benefits.  
+
+To provide a transition period, we mark older features as _deprecated_ when introducing replacement features.  This gives you time to adjust your deployments, apps, and processes to support the new features.  During this transition, the older features continue to work as a courtesy.
+
+Eventually, older features are removed from the product.  When this happens, they're considered _obsolete_, partly because they can no longer be used.  
+
+For best results, we advise against relying on deprecated features for any length of time.  
 {{%/definition%}}
 
 {{%definition "operator"%}}
