@@ -2,7 +2,7 @@
 Title: Data type conversion
 linkTitle: Data type conversion
 description: Describes how Redis Connect converts source data types to Redis data types.
-x-headerrange: "3"
+headerrange: "2"
 weight: 100
 alwaysopen: false
 categories: ["Connect"]
@@ -16,7 +16,7 @@ Redis Connect converts source data to Redis data types.  The specific conversion
 
 This section describes data type conversions from different sources, including:
 
-- Common/ANSI SQL data types:
+- Common/ANSI SQL types:
 
     [array](#array), [bigint](#bigint), [binary](#binary), [bitstring](#bitstring), [blob](#blob), [boolean](#boolean), [char](#char)   
 
@@ -24,21 +24,39 @@ This section describes data type conversions from different sources, including:
 
     [text](#text), [timestamp](#timestamp-and-variants), [timetz](#timetz), [varbinary](#varbinary), [varchar](#varchar), [xml](#xml)  
 
-- MySQL specific data types:
+- MySQL specific types:
 
     [enum](#m-enum), [geometry](#m-geometry), [geometrycollection](#m-geometrycollection), [json](#m-json), [linestring](#m-linestring)  
 
     [multilinestring](#m-multilinestring), [multipoint](#m-multipoint), [multipolygon](#m-multipolygon), [polygon](#m-polygon), [set](#m-set)
 
-- Oracle specific data types:
-- PostgreSQL specific data types:
+- Oracle specific types:
+
+    [bfile](#o-bfile), [binary_double](#o-binary-double), [binary_float](#o-binary-float), [clob](#o-clob), [float, real, double precision](#o-float)  
+
+    [long_raw](#o-long-raw), [nchar](#o-nchar), [nclob](#o-nclob), [number](#o-number), [nvarchar](#o-nvarchar)  
+
+    [raw](#o-raw), [rowid](#o-rowid), [timestamp with tz](#o-timestamp), [urowid](#o-urowid)
+
+- PostgreSQL specific types:
+
+    [box](#p-box), [cidr](#p-cidr), [circle](#p-circle), [domain](#p_domain), [hstore](#p-hstore), [inet](#p-inet), [line](#p-line)  
+
+    [macaddr](#p-macaddr), [money](#p-money), [path](#p-path), [json](#p-json), [point](#p-point), [polygon](#p-polygon), [uuid](#p-uuid)
+
 - Microsoft SQL Server specific data types:
+
+    [bit](#s-bit), [datetime2](#s-datetime2), [datetimmeoffset](#s-datetimeoffset), [decimal, float, real](#s-decimal), [image](#s-image)  
+
+    [nchar](#s-nchar), [nvarchar](#n-nvarchar), [numeric](#s-numeric), [rowversion](#s-rowversion), [smalldatetime](#s-smalldatetime), [smallmoney](#smallmoney)  
+
+    [Spatial geometry types](#s-geometry), [Spatial geography types](#s-geography), [table](#s-table), [text](#s-text), [uniqueidentifier](#s-uniqueidentifier)
 
 Currently, Redis Connect stores incoming values as hashes.  As a result, all supported incoming values are converted to a string type.  The initial conversion is handled by the connector (Debezium).
 
 Fields with unsupported data types do not appear in the target Redis database.
 
-## Common/ANSI SQL data types
+## Common/ANSI SQL types
 
 This sections describes data types common to many relational databases systems. 
 
@@ -190,26 +208,172 @@ Example:
 </contact-info>"
 ```
 
-## MySQL specific data types
+## MySQL specific types
 
 MySQL supports several data types beyond the traditional ANSI data types.  Here's how Redis Connect converts these for Redis databases.
 
 ### enum {#m-enum}
 
+Target data type (hash): string
+
+Example: A MySQL value of `"cat"` is stored in a target Redis database as `"cat`".
+
 ### geometry {#m-geometry}
+
+Not supported
 
 ### geometrycollection {#m-geometrycollection}
 
+Not supported
+
 ### json {#m-json}
+
+Target data type (hash): string
+
+Example: `{"pid": 101, "key1": "value1", "key2": "value2"}`
 
 ### linestring {#m-linestring}
 
+Not supported
+
 ### multilinestring {#m-multilinestring}
+
+Not supported
 
 ### multipoint {#m-multipoint}
 
+Not supported
+
 ### multipolygon {#m-multipolygon}
+
+Not supported
 
 ### polygon {#m-polygon}
 
+Not supported
+
 ### set {#m-set}
+
+Target data type (hash): string
+
+Example: A MySQL value of `"1,2,3"` is stored in a target Redis database as  `"1,2,3"`.
+
+## Oracle specific types
+
+### bfile {#o-bfile}
+
+Not supported
+
+### binary_double {#o-binary-double}
+
+Target data type (hash): string
+
+Example: `"1.7E+308"`
+
+### binary_float {#o-binary-float}
+
+Target data type (hash): string
+
+Example: `"3.40282E38"`
+
+### clob {#o-clob}
+
+Target data type (hash): string
+
+### float, real, double precision {#o-float}
+
+Target data type (hash): string  
+
+Example: real-FLOAT(63), double precision - FLOAT(126)
+
+The `handle.decimal.mode` Debezium connector configuration setting affects this.  When it's  to `double`, an input value of `-3.402E+38` is saved to the target Redis database as  `-340200000000000000000000000000000000000`.
+
+### long_raw {#o-long-raw}
+
+Not supported
+
+### nchar {#o-nchar}
+
+### nclob {#o-nclob}
+
+Not supported
+
+### number {#o-number}
+
+### nvarchar {#o-nvarchar}
+
+### raw {#o-raw}
+
+Not supported
+
+### rowid {#o-rowid}
+
+### timestamp with tz {#o-timestamp}
+
+### urowid {#o-urowid}
+
+Not supported
+
+## PostgreSQL specific types
+
+### box {#p-box}
+
+### cidr {#p-cidr}
+
+### circle {#p-circle}
+
+### domain {#p_domain}
+
+### hstore {#p-hstore}
+
+### inet {#p-inet}
+
+### line {#p-line}
+
+### macaddr {#p-macaddr}
+
+### money {#p-money}
+
+### path {#p-path}
+
+### json {#p-json}
+
+### point {#p-point}
+
+### polygon {#p-polygon}
+
+### uuid {#p-uuid}
+
+## SQL Server types
+
+### bit {#s-bit}
+
+### datetime2 {#s-datetime2}
+
+### datetimmeoffset {#s-datetimeoffset}
+
+### decimal, float, real {#s-decimal}
+
+### image {#s-image}
+
+### nchar {#s-nchar}
+
+### nvarchar {#n-nvarchar}
+
+### numeric {#s-numeric}
+
+### rowversion {#s-rowversion}
+
+### smalldatetime {#s-smalldatetime}
+
+### smallmoney {#smallmoney}
+
+### Spatial geometry types {#s-geometry}
+
+### Spatial geography types {#s-geography}
+
+### table {#s-table}
+
+### text {#s-text}
+
+### uniqueidentifier {#s-uniqueidentifier}

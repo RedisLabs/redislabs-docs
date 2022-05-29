@@ -2,7 +2,7 @@
 Title: Redis Connect architecture and components
 linkTitle: Architecture & components
 description: Describes the architecture and components of Redis Connect
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["Connect"]
 aliases: /connect/architecture/

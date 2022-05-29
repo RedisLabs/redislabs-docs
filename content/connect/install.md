@@ -2,7 +2,7 @@
 Title: Install and set up Redis Connect
 linkTitle: Install and set up
 description: Shows how to install Redis Connect CLI and use it to create a new Redis Connect instance.
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["Connect"]
 aliases: /connect/install/

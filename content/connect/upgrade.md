@@ -2,7 +2,7 @@
 Title: Upgrade Redis Connect components
 linkTitle: Upgrade components
 description: Shows how to upgrade Redis Connect components, including the CLI, the transformation engine, and RedisGears.
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["Connect"]
 aliases: /connect/upgrade/
