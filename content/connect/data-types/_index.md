@@ -294,13 +294,25 @@ Not supported
 
 ### nchar {#o-nchar}
 
+Target data type (hash): string supporting Unicode characters  
+
+Example: An Oracle input value of "Peace in Hebrew is שלום" is saved to the Redis database as `"Peace in Hebrew is \xd7\xa9\xd7\x9c\xd7\x95\xd7\x9d"`.  Trailing spaces are added to fill the field value.
+
 ### nclob {#o-nclob}
 
 Not supported
 
-### number {#o-number}
+### number(p, s) {#o-number}
+
+Target data type (hash): string  
+
+Example: `"10385274000.32"`
 
 ### nvarchar {#o-nvarchar}
+
+Target data type (hash): string supporting Unicode characters  
+
+Example: An Oracle input value of "Peace in Hebrew is שלום" is saved to the Redis database as `"Peace in Hebrew is \xd7\xa9\xd7\x9c\xd7\x95\xd7\x9d"`.
 
 ### raw {#o-raw}
 
@@ -308,7 +320,15 @@ Not supported
 
 ### rowid {#o-rowid}
 
+Target data type (hash): string  
+
+Example: `"AAAR1QAAOAAAACFAAA"`
+
 ### timestamp with tz {#o-timestamp}
+
+Target data type (hash): string  
+
+Example: Debezium converts an an Oracle input value of `2021-12-30 14:23:46` to `"2021-12-30T14:23:46+02:00"`.  This is stored in the target Redis database as `"1611878400000"`, which represents the milliseconds since the the Epoch.
 
 ### urowid {#o-urowid}
 
