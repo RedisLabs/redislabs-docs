@@ -40,7 +40,7 @@ To import data into a database:
 
 You can import data from a variety of services, ranging from local servers to cloud services.
 
-Earlier versions of Redis Enterprise Software supported OpenStack Swift as an storage location; however, that support ended [30 November 2020]({{< relref "/rs/release-notes/rs-5-6-0-april-2020#end-of-life" >}}).  As a result, that option is no longer available.
+Earlier versions of Redis Enterprise Software supported OpenStack Swift a storage location; however, that support ended [30 November 2020]({{< relref "/rs/release-notes/rs-5-6-0-april-2020#end-of-life" >}}).  As a result, that option is no longer available.
 
 ### HTTP server
 
@@ -143,9 +143,8 @@ Before you choose to import from Google Cloud Storage, make sure that you have:
 
 When importing data into an Active-Active database, there are two options:
 
-- Perform a `flushall` to the database, thus deleting all data.
-    Then import the data into the Active-Active database.
-- Import data but merge it into the existing or add new data from the import file.
+- Use `flushall` to delete all data from the Active-Active database, then import the data into the database.
+- Import data but merge it into the existing data or add new data from the import file.
 
 Because Active-Active databases have a numeric counter data type,
 when you merge the imported data into the existing data RS increments counters by the value that is in the imported data.
