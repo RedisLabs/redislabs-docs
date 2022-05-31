@@ -1,6 +1,6 @@
 ---
-Title: Manage cloud accounts
-LinkTitle: Cloud accounts
+Title: Manage AWS cloud accounts
+LinkTitle: AWS cloud accounts
 description: Describes how to provision your Redis Enterprise Cloud subscription to use existing cloud provider accounts.
 weight: 40
 alwaysopen: false
@@ -25,7 +25,9 @@ You need to create:
 1. A programmatic user and provide us with the access key and secret access key for that user.
 1. A console role and provide us with that role name.
 
-These resources need to exist before adding the cloud account to your subscription.  To learn more, see [Create IAM resources]({{<relref "/rc/cloud-accounts/iam-resources/">}}).
+These resources need to exist before adding the cloud account to your subscription.  To learn more, see [Create IAM resources]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/iam-resources">}}).
+
+
 
 {{<note>}}
 Once an AWS account has been configured as a cloud account, you must _not_:
@@ -60,4 +62,4 @@ Use the **Delete** button to remove a cloud account from your subscription.
 
 We recommend creating dedicated identity and access management (IAM) resources to manage the infrastructure of your subscriptions.
 
-To learn more, see [Create IAM resources for AWS cloud accounts]({{<relref "/rc/cloud-accounts/iam-resources/">}}).
+To learn more, see [Create IAM resources for AWS cloud accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/iam-resources">}}).
