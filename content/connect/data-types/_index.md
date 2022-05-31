@@ -25,7 +25,9 @@ Currently, Redis Connect stores incoming values as hashes.  As a result, all sup
 
 Fields with unsupported data types do not appear in the target Redis database.
 
-## Common/ANSI SQL types
+{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
+
+## Common/ANSI SQL types {#ansi-types}
 
 This sections describes data types common to many relational databases systems, including:
 
@@ -55,9 +57,9 @@ Target data type (hash): bytes string
 
 The binary value is either base64-encoded or hex-encoded, based on the value of the `binary.handling.mode` property in the connector configuration.
 
-Example: When `binary.handling.mode` is set to `bytes`, the value is saved as a binary string and then transformed into the Redis data type
+Example: When `binary.handling.mode` is set to `bytes`, the value is saved as a binary string and then transformed into the Redis data type.
     
-To illustrate, the value `hello` is added to the table as a binary string (`0x68656C6C6F`).  This is stored in the Redis Connect instance as `aGVsbG8AAAAAAAAAAAAAAAAAAAA=`, which is also the value passed to the Redis database.
+To illustrate, the value `hello` is added to the table as a binary string (`0x68656C6C6F`).  This is stored in the Redis Connect instance as `"aGVsbG8AAAAAAAAAAAAAAAAAAAA="`, which is also the value passed to the Redis database.
     
 ### bitstring
 
@@ -81,7 +83,7 @@ Example:  True values are stored as `"1"` (one); false values are stored as `"0"
 
 Target data type (hash): string, includes support for [UTF-8](https://en.wikipedia.org/wiki/UTF-8) and [Unicode](https://home.unicode.org/basic-info/faq/)
 
-Example:  PostgreSQL fixed length strings (example: `char(14)`) are space padded to full length.  For example, `"hello world"` is saved as `"hello world  "` in the example declaration shown here.  To learn more, see [Character types](https://www.postgresql.org/docs/current/datatype-character.html).
+Example:  PostgreSQL fixed length strings, such as `char(14)`, are space padded to full length.  For example, `"hello world"` is saved as `"hello world  "` (two spaces are added to the end of the strng).  To learn more, see [Character types](https://www.postgresql.org/docs/current/datatype-character.html).
 
 Padded string values carry through to the Redis database.
 
@@ -89,13 +91,13 @@ Padded string values carry through to the Redis database.
 
 Target data type (hash): string representing microsecond epoch time.
 
-Example: PostgreSQL date values (example: `2021-01-29`) are converted by Debezium to integer values representing the days since the epoch.  These values are converted to milliseconds since the epoch and then stored as strings (`1611878400000`).
+Example: PostgreSQL date values (`2021-01-29`) are converted by Debezium to integer values representing the days [since the Epoch](https://en.wikipedia.org/wiki/Unix_time).  These values are converted to milliseconds since the Epoch and then stored as strings (`1611878400000`).
 
 ### integer
 
 Target data type (hash): string
 
-Example:  `2147483640` is stored as '"2147483640"'
+Example:  `2147483640` is stored as `"2147483640"`
 
 ### interval
 
@@ -109,9 +111,9 @@ Fields with null values are not added to the target database.
 
 Target data type (hash): string
 
-The `handling.decimal.mode` Debezium configuration parameter determines how the connector maps decimal values.  When this is set to 'precision', the binary string received by Debezium is converted to its corresponding numeric value.
+The `handling.decimal.mode` Debezium configuration parameter determines how the connector maps decimal values.  When this is set to `precision`, the binary string received by Debezium is converted to its corresponding numeric value.
 
-Example:  Debezium converts a PostgreSQL field value of `4521398.56` to a binary string (`GvMbUA==`).  This is then converted to a numeric value and stored in the target Redis database as `"4521398.56"`.
+Example:  Debezium converts a PostgreSQL field value of `4521398.56` to a binary string (`"GvMbUA=="`).  This is then converted to a numeric value and stored in the target Redis database as `"4521398.56"`.
 
 ### smallint
 
@@ -133,19 +135,19 @@ Example: An input value of `14:23:46` is converted to `"51826000000"`
 
 ### timestamp (and variants)
 
-Specific handling depends on the source data type.
+Target data type (hash): string
 
-Target data type (hash): String
+Specific handling depends on the source data type:
 
 - PostgreSQL and Oracle timestamp, MySQL and Microsoft SQL Server datetime:
 
-    The input value is converted to a string reprsenting the number of milliseconds since the epoch.  
+    The input value is converted to a string representing the number of milliseconds since the Epoch.  
         
-    The Microsoft SQL Server datetime format is YYYY-MM-DD hh:mm:ss\[.nnn] and ranges from 1753-01-01 through 9999-12-31.
+    The Microsoft SQL Server datetime format is <nobr>`YYYY-MM-DD hh:mm:ss[.nnn]`</nobr> and ranges from `1753-01-01` through `9999-12-31`.
 
 - PostgreSQL timestamptz, Oracle timestamp with local timezone, MySQL timestamp:
 
-    The input value is converted to UTC and stored as an integer representing the number of microseconds since the epoch.
+    The input value is converted to UTC and stored as an integer representing the number of microseconds since the Epoch.
 
 Example: A PostgreSQL input value of `2018-06-20 15:13:16.945104` is stored in the target Redis database as `"1529507596945.104"`.
 
@@ -153,21 +155,21 @@ Example: A PostgreSQL input value of `2018-06-20 15:13:16.945104` is stored in t
 
 Target data type (hash): string representing the number of seconds past midnight
 
-Example: An input PostgreSQL field value of '14:23:46.12345' is converted by Debezium to `"12:23:46.12345Z"` and stored in th target Redis database as redis target as: `44638.345"`.
+Example: An input PostgreSQL field value of `14:23:46.12345` is converted by Debezium to `"12:23:46.12345Z"` and stored in the target Redis database as `"44638.345"`.
 
 ### varbinary
 
 Target data type (hash): bytes string
 
-The binary value is either base64-encoded or hex-encoded, based on the value of the `binary.handling.mode` property in the connector configuration.
+The binary value is either [base64-encoded](https://en.wikipedia.org/wiki/Base64) or hex-encoded, based on the value of the `binary.handling.mode` property in the connector configuration.
 
-Example: When `binary.handling.mode` is set to `bytes`, the string `hello` is added to the table as a binary string (`0x68656C6C6F`).  This is converted to `aGVsbG8=`, which is stored in the Redis database.
+Example: When `binary.handling.mode` is set to `bytes`, the string `hello` is added to the table as a binary string (`0x68656C6C6F`).  This is converted to `"aGVsbG8="`, which is stored in the Redis database.
 
 ### varchar
 
 Target data type (hash): string, includes support for [UTF-8](https://en.wikipedia.org/wiki/UTF-8) and [Unicode](https://home.unicode.org/basic-info/faq/)
 
-Example: An input value of `"hello world"` is saved to the target Redis database as `"hello world"` 
+Example: An input value of `"hello world"` is saved to the target Redis database as `"hello world"`.
 
 ### xml
 
@@ -175,7 +177,7 @@ Target data type (hash): string
 
 Example: 
 
-``` xml
+``` console
 "<contact-info>
    <name>J. Doe</name>
    <company>Redis, Inc.</company> 
@@ -183,9 +185,9 @@ Example:
 </contact-info>"
 ```
 
-## MySQL specific types
+## MySQL specific types {#mysql-types}
 
-MySQL supports several data types beyond the traditional ANSI data types, including:
+MySQL supports several data types beyond the traditional [ANSI data types](#ansi-types), including:
 
 &nbsp; &nbsp;[enum](#m-enum), [geometry](#m-geometry), [geometrycollection](#m-geometrycollection), [json](#m-json), [linestring](#m-linestring)  
 
@@ -239,13 +241,13 @@ Example: A MySQL value of `"1,2,3"` is stored in a target Redis database as  `"1
 
 ## Oracle specific types
 
-Oracle supports several data types beyond the traditional ANSI data types, including:
+Oracle supports several data types beyond the traditional [ANSI data types](#ansi-types), including:
 
-    [bfile](#o-bfile), [binary_double](#o-binary-double), [binary_float](#o-binary-float), [clob](#o-clob), [float, real, double precision](#o-float)  
+&nbsp; &nbsp;[bfile](#o-bfile), [binary_double](#o-binary-double), [binary_float](#o-binary-float), [clob](#o-clob), [float, real, double precision](#o-float)  
 
-    [long_raw](#o-long-raw), [nchar](#o-nchar), [nclob](#o-nclob), [number](#o-number), [nvarchar](#o-nvarchar)  
+&nbsp; &nbsp;[long_raw](#o-long-raw), [nchar](#o-nchar), [nclob](#o-nclob), [number](#o-number), [nvarchar](#o-nvarchar)  
 
-    [raw](#o-raw), [rowid](#o-rowid), [timestamp with tz](#o-timestamp), [urowid](#o-urowid)
+&nbsp; &nbsp;[raw](#o-raw), [rowid](#o-rowid), [timestamp with tz](#o-timestamp), [urowid](#o-urowid)
 
 ### bfile {#o-bfile}
 
@@ -273,7 +275,7 @@ Target data type (hash): string
 
 Example: real-FLOAT(63), double precision - FLOAT(126)
 
-The `handle.decimal.mode` Debezium connector configuration setting affects this.  When it's  to `double`, an input value of `-3.402E+38` is saved to the target Redis database as  `-340200000000000000000000000000000000000`.
+The `decimal.handling.mode` Debezium connector configuration setting affects this.  When set to `double`, an input value of `-3.402E+38` is saved to the target Redis database as  `"-340200000000000000000000000000000000000"`.
 
 ### long_raw {#o-long-raw}
 
@@ -323,7 +325,7 @@ Not supported
 
 ## PostgreSQL specific types
 
-PostgreSQL supports several data types beyond the traditional ANSI data types, including:
+PostgreSQL supports several data types beyond the traditional [ANSI data types](#ansi-types), including:
 
 &nbsp; &nbsp;[box](#p-box), [cidr](#p-cidr), [circle](#p-circle), [domain](#p_domain), [hstore](#p-hstore), [inet](#p-inet), [line](#p-line)  
 
@@ -371,7 +373,7 @@ Target data type (hash): string
 
 The `handling.decimal.mode` Debezium configuration parameter string controls the conversion.  When set to `precision`, the input value is converted to a decimal value.  
 
-When the parameter is set to `string`, the input value is converted to byte array.
+When the parameter is set to `string`, the input value is converted to a byte array.
 
 ### path {#p-path}
 
@@ -399,7 +401,7 @@ Example: `"12345678-90ab-cdef-1234-aabbccddeeff"`
 
 ## SQL Server types
 
-Microsoft SQL Server supports several data types beyond the traditional ANSI data types, including:
+Microsoft SQL Server supports several data types beyond the traditional [ANSI data types](#ansi-types), including:
 
 &nbsp; &nbsp;[bit](#s-bit), [datetime2](#s-datetime2), [datetimmeoffset](#s-datetimeoffset), [decimal, float, real](#s-decimal), [image](#s-image), [money](#s-money)  
 
@@ -411,38 +413,41 @@ Microsoft SQL Server supports several data types beyond the traditional ANSI dat
 
 Target data type (hash): string 
 
-Values greater than zero (`> 0`) are converted to `true` by Debezium; they're saved to the target Redis database as `1`.  Debezium converts values of zero (`0`) to `false`, which are saved as `"0"` in the target Redis database. 
+Values greater than zero (`> 0`) are converted to `true` by Debezium; they're saved to the target Redis database as `"1"`.  Debezium converts values of zero (`0`) to `false`, which are saved as `"0"` in the target Redis database. 
 
 ### datetime2 {#s-datetime2}
 
-Target data type (hash): string representing the number of milliseconds since the Epoch.  Does not include timezone
+Target data type (hash): string representing the number of milliseconds since the Epoch.  Does not include timezone.
 
-Example: Debezium uses the `time.precision.mode` configuration parameter to control the conversion.  When set to `connect`, an input value of `2018-06-20 15:13:16.945104` is converted to `1529507596945104` by Debezium and saved to the target Redis database as `"1529507596945.104"`.
+Example: Debezium uses the `time.precision.mode` configuration parameter to control the conversion.  When set to `connect`, an input value of <nobr>`2018-06-20 15:13:16.945104`</nobr> is converted to `1529507596945104` by Debezium and saved to the target Redis database as `"1529507596945.104"`.
 
 ### datetimmeoffset {#s-datetimeoffset}
 
 Target data type (hash): string
 
-Example: Debezium uses the `decimal.handling.mode` configuration parameter to control the conversion.  When set to `precision`, an input value of `12-10-25 12:32:10 +01:00` is converted to `2025-12-10T12:32:10+01:00` by Debezium, which is saved to the target Redis database as `"1765366330000"`.
+Example: Debezium uses the `decimal.handling.mode` configuration parameter to control the conversion.  When set to `precision`, an input value of <nobr>`12-10-25 12:32:10 +01:00` is converted to `2025-12-10T12:32:10+01:00`</nobr> by Debezium, which is saved to the target Redis database as `"1765366330000"`.
 
 ### decimal, float, real {#s-decimal}
 
 Target data type (hash): string 
 
 Range:
- - _decimal:_ -10^38 +1 to 10^38
- - _float:_ -1.79E+308 to -2.23E-308, 0, and 2.23E-308 to 1.79E+308
- - _real:_ -3.40E+38 to -1.18E-38, 0, and 1.18E-38 to 3.40E+38
+ - _decimal:_ `-10^38+1` to `10^38`
+ - _float:_ `-1.79E+308` to `-2.23E-308`, `0`, and `2.23E-308` to `1.79E+308`
+ - _real:_ `-3.40E+38` to `-1.18E-38`, `0`, and `1.18E-38 to 3.40E+38`
 
-Example: Debezium uses the `decimal.handling.mode` configuration parameter to control the conversion.  When set to `precision`, an input value of `-3.402E+38` is converted to a binary string value of `/wAP3QCzc/wpiIGe8AAAAAA=`.  The value saved to the target Redis database is `"-340200000000000000000000000000000000000"`.
+Example: Debezium uses the `decimal.handling.mode` configuration parameter to control the conversion.  When set to `precision`, an input value of `-3.402E+38` is converted to a binary string value of `"/wAP3QCzc/wpiIGe8AAAAAA="`.  The value saved to the target Redis database is `"-340200000000000000000000000000000000000"`.
 
 ### image {#s-image}
 
-Target data type (hash): string containing variable-length binary data, up to 2,147,483,647  bytes in size.
+Target data type (hash): string containing variable-length binary data, up to 2,147,483,647  bytes in size
 
 ### money {#s-money}
 
-Target data type (hash): string containing variable-length binary data, up to 2,147,483,647  bytes in size.
+Target data type (hash): string, ranging from `
+-922,337,203,685,477,5808` to `922,337,203,685,477.5807`
+
+Example: When the `decimal.handling.mode` Debezium configuration parameter is set to `precision`, an input value of `922337203685477.5807` is converted to a binary string value of `"f/////////8="`.  This is saved to the target Redis database as `"922337203685477.5807"`.
 
 ### nchar {#s-nchar}
 
@@ -454,9 +459,9 @@ Target data type (hash): variable-size string that can contain Unicode character
 
 ### numeric {#s-numeric}
 
-Target data type (hash): string, ranging from -10^38+1 to 10^38
+Target data type (hash): string, ranging from `-10^38+1` to `10^38`
 
-Affected by two configuration settings.  When `time.precision.mode` is set to `connect` and `decimal.handling.mode` equals `precision`, Debezium converts an input value of `1.00E+33` to the binary string `"SztMqFqGw1MAAAAAAAAAAA==`.  This is saved to the target Redis database as `"`1000000000000000000000000000000000"`.
+Affected by two configuration settings.  When `time.precision.mode` is set to `connect` and `decimal.handling.mode` equals `precision`, Debezium converts an input value of `1.00E+33` to the binary string `"SztMqFqGw1MAAAAAAAAAAA=="`.  This is saved to the target Redis database as `"1000000000000000000000000000000000"`.
 
 ### rowversion {#s-rowversion}
 
@@ -468,13 +473,13 @@ Example: `"0x00000000000007D0"`
 
 Target data type (hash): string representing the miliseconds since the Epoch and does not include the timezone.  
 
-Example: An iput value of '2018-06-20 15:13:16' is saved to the target Redis database as `"1529507580000"`.  The number of seconds (`16`) is not retained.
+Example: An input value of `2018-06-20 15:13:16` is saved to the target Redis database as `"1529507580000"`.  The number of seconds (`16`) is not retained.
 
 ### smallmoney {#s-smallmoney}
 
-Target data type (hash): string, ranging from -214,748.3648 to 214,748.3647
+Target data type (hash): string, ranging from `-214,748.3648` to `214,748.3647`
 
-Example: When the `decimal.handling.mode` Deezium configuraion parameter is set to `string`,an inut value of `-214748.3648` is saved to the target Redis database as  `"-214748.3648"`
+Example: When the `decimal.handling.mode` Deezium configuraion parameter is set to `string`,an input value of `-214748.3648` is saved to the target Redis database as  `"-214748.3648"`
 
 ### Spatial geometry types {#s-geometry}
 

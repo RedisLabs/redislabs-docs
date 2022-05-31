@@ -15,6 +15,8 @@ The Redis Connect command-line interface (CLI) helps you set up a new Redis Conn
 
 The Redis Connect CLI requires network access to the Redis Enterprise cluster API; it uses port 9443 by default.
 
+{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
+
 ## Install Redis Connect CLI
 
 Redis Connect CLI requires Python 3.7 or later.  If your operating system relies on a different version of Python, we recommend installing the latest version of Python and using [virtual environments](https://docs.python.org/3/library/venv.html) to manage Python.

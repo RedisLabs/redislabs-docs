@@ -11,6 +11,8 @@ aliases: /connect/upgrade/
 
 Here, you learn how to upgrade Redis Connect components.
 
+{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
+
 ## Upgrade Redis Connect CLI
 
 To upgrade the Redis Connect command-line interface (CLI), use the `--upgrade` switch to install the current version of the Python package:

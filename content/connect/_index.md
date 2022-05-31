@@ -23,6 +23,7 @@ To learn more, see:
 
 - [Upgrade Redis Connect components]({{<relref "connect/upgrade">}})
 
+{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
 
 ## Database support
 

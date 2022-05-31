@@ -21,6 +21,9 @@ Once data in loaded into the Redis Connect instance, [RedisGears recipes](https:
 
 Currently, incoming database rows are transformed into [Redis hashes](https://redis.io/docs/manual/data-types/#hashes) that incorporate the original table name into key names.  Future updates will add additional transformations, such as [RedisJSON documents](https://redis.io/docs/stack/json/).
 
+{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
+
+
 ## Data transformation engine
 
 The Redis Connect data transformation engine uses RedisGears to perform two major functions:
