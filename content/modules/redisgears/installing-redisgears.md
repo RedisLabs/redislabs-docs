@@ -1,5 +1,5 @@
 ---
-Title: Install RedisGears 
+Title: Install RedisGears
 linkTitle: Install
 description:
 weight: 60
@@ -37,13 +37,14 @@ For RedisGears v1.0, you only need the Python dependency package.
     ```
 
     {{<note>}}
-Skip this step unless your cluster does not have internet access. 
+Skip this step unless your cluster does not have internet access.
     {{</note>}}
 
 1. Add RedisGears to the cluster with a `POST` request to the master node's [`/v2/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}) REST API endpoint:
 
     ```sh
-    $ curl -k -u "<user>:<password>" -F "module=@/tmp/redisgears.linux-centos7-x64.1.2.1.zip" https://localhost:9443/v2/modules
+    POST https://[host][:port]/v2/modules
+    "module=@/tmp/redisgears.linux-centos7-x64.1.2.1.zip"
     ```
 
 After the install is complete, RedisGears will appear in the list of available modules on the **settings** and **create database** pages of the Redis Enterprise admin console.
