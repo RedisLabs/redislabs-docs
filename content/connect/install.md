@@ -190,7 +190,7 @@ The following steps provide a high level overview to the Debezium setup process.
     The following example configures a Postgres database.
     {{%expand "Example Postgres database"%}}
 
-``` java
+``` console
 debezium.sink.type=redis
 debezium.sink.redis.address=localhost:12001
 #debezium.sink.redis.password=<REDIS_CONNECT_PASSWORD>
@@ -251,7 +251,7 @@ As a result, Debezium fails with an error.  If this happens:
 
 The following example shows one way to do this:
 
-```bash
+``` bash
 mkdir oracle
 DEBEZIUM_VERSION="1.9.2.Final" # change to the latest Debezium version
 wget -P oracle https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar https://repo1.maven.org/maven2/io/debezium/debezium-connector-oracle/${DEBEZIUM_VERSION}/debezium-connector-oracle-${DEBEZIUM_VERSION}.jar

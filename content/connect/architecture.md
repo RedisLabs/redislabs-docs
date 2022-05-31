@@ -23,7 +23,6 @@ Currently, incoming database rows are transformed into [Redis hashes](https://re
 
 {{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
 
-
 ## Data transformation engine
 
 The Redis Connect data transformation engine uses RedisGears to perform two major functions:
@@ -85,4 +84,3 @@ Debezium Server should run in "warm standby" [high availability](https://en.wiki
 - Run as a [Kubernetes pod](https://en.wikipedia.org/wiki/Kubernetes#Pods) where Kubernetes monitors pod activity (liveliness and readiness) and recovers non-functioning pods
 
     Note that Redis Connect stores state information in the Redis Connect instance.  No state information is stored at the connector level.  
-

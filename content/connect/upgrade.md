@@ -99,5 +99,4 @@ These steps provide more details:
         ``` console
         rladmin status modules all
         ```
-        
 Updating a database configuration restarts shards associated with the database, which briefly interrupts availability across the cluster.
