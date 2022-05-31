@@ -1,7 +1,7 @@
 ---
 Title: rladmin cluster ocsp
 linkTitle: ocsp
-description: Manage OCSP.
+description: Manages OCSP.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -11,11 +11,11 @@ categories: ["RS"]
 aliases: 
 ---
 
-Use the `rladmin cluster ocsp` commands to manage OCSP configuration and verify the status of a server certificate maintained by a third-party [certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority).
+Manages OCSP configuration and verifies the status of a server certificate maintained by a third-party [certificate authority (CA)](https://en.wikipedia.org/wiki/Certificate_authority).
 
 ## `ocsp certificate_compatible`
 
-Checks if the proxy certificate contains an OCSP URI. Returns the OCSP URI if it exists.
+Checks if the proxy certificate contains an OCSP URI.
 
 ```sh
 rladmin cluster ocsp certificate_compatible
@@ -23,12 +23,17 @@ rladmin cluster ocsp certificate_compatible
 
 ### Parameters
 
+None
+
 ### Returns
+
+Returns the OCSP URI if it exists. Otherwise, it returns an error.
 
 ### Example
 
 ```sh
-$ rladmin
+$ rladmin cluster ocsp certificate_compatible
+Success. OCSP URI is http://responder.ocsp.url.com
 ```
 
 ## `ocsp config`
@@ -53,10 +58,16 @@ rladmin cluster ocsp config <OCSP parameter>
 
 ### Returns
 
+If you run the `ocsp config` command without the `set` option, it displays the specified parameter's current configuration.
+
 ### Example
 
 ```sh
-$ rladmin
+$ rladmin cluster ocsp config recovery_frequency
+Recovery frequency of the OCSP server is 60 seconds
+$ rladmin cluster ocsp config recovery_frequency set 30
+$ rladmin cluster ocsp config recovery_frequency
+Recovery frequency of the OCSP server is 30 seconds
 ```
 
 ## `ocsp status`
@@ -68,12 +79,21 @@ rladmin cluster ocsp status
 ```
 ### Parameters
 
+None
+
 ### Returns
+
+Returns the latest cached status of the certificate's OCSP response.
 
 ### Example
 
 ```sh
-$ rladmin
+$ rladmin cluster ocsp status
+OCSP certificate status is: REVOKED
+produced_at: Wed, 22 Dec 2021 12:50:11 GMT
+responder_url: http://responder.ocsp.url.com
+revocation_time: Wed, 22 Dec 2021 12:50:04 GMT
+this_update: Wed, 22 Dec 2021 12:50:11 GMT
 ```
 
 ## `ocsp test_certificate`
@@ -86,10 +106,20 @@ rladmin cluster ocsp test_certificate
 
 ### Parameters
 
+None
+
 ### Returns
+
+Returns the latest status of the certificate's OCSP response.
 
 ### Example
 
 ```sh
-$ rladmin
+$ rladmin cluster ocsp test_certificate
+Initiating a query to OCSP server
+...OCSP certificate status is: REVOKED
+produced_at: Wed, 22 Dec 2021 12:50:11 GMT
+responder_url: http://responder.ocsp.url.com
+revocation_time: Wed, 22 Dec 2021 12:50:04 GMT
+this_update: Wed, 22 Dec 2021 12:50:11 GMT
 ```
