@@ -399,7 +399,7 @@ Target data type (hash): string
 
 Example: `"12345678-90ab-cdef-1234-aabbccddeeff"`
 
-## SQL Server types
+## SQL Server specific types
 
 Microsoft SQL Server supports several data types beyond the traditional [ANSI data types](#ansi-types), including:
 
