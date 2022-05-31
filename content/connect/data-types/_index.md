@@ -83,7 +83,7 @@ Example:  True values are stored as `"1"` (one); false values are stored as `"0"
 
 Target data type (hash): string, includes support for [UTF-8](https://en.wikipedia.org/wiki/UTF-8) and [Unicode](https://home.unicode.org/basic-info/faq/)
 
-Example:  PostgreSQL fixed length strings, such as `char(14)`, are space padded to full length.  For example, `"hello world"` is saved as `"hello world  "` (two spaces are added to the end of the string).  To learn more, see [Character types](https://www.postgresql.org/docs/current/datatype-character.html).
+Example:  PostgreSQL fixed-length strings, such as `char(14)`, are space padded to full length.  For example, `"hello world"` is saved as `"hello world  "` (two spaces are added to the end of the string).  To learn more, see [Character types](https://www.postgresql.org/docs/current/datatype-character.html).
 
 Padded string values carry through to the Redis database.
 
