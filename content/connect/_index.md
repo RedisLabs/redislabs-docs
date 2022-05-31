@@ -8,7 +8,6 @@ categories: ["Connect"]
 aliases: /connect/
          /connect.md
 ---
-
 Redis Connect helps import (or _ingest_&nbsp;) existing data into Redis Enterprise.   
 
 Redis Connect extracts data from existing systems, such as relational database management systems (RDBMS).  The data is loaded into a Redis Connect instance and then transformed into a format suitable for a Redis database.
@@ -23,6 +22,7 @@ To learn more, see:
 
 - [Upgrade Redis Connect components]({{<relref "connect/upgrade">}})
 
+{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
 
 ## Database support
 

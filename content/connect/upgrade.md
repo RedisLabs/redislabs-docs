@@ -2,7 +2,7 @@
 Title: Upgrade Redis Connect components
 linkTitle: Upgrade components
 description: Shows how to upgrade Redis Connect components, including the CLI, the transformation engine, and RedisGears.
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["Connect"]
 aliases: /connect/upgrade/
@@ -10,6 +10,8 @@ aliases: /connect/upgrade/
 ---
 
 Here, you learn how to upgrade Redis Connect components.
+
+{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
 
 ## Upgrade Redis Connect CLI
 
@@ -97,5 +99,4 @@ These steps provide more details:
         ``` console
         rladmin status modules all
         ```
-        
 Updating a database configuration restarts shards associated with the database, which briefly interrupts availability across the cluster.

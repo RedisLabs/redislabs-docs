@@ -2,7 +2,7 @@
 Title: Redis Connect architecture and components
 linkTitle: Architecture & components
 description: Describes the architecture and components of Redis Connect
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["Connect"]
 aliases: /connect/architecture/
@@ -20,6 +20,8 @@ Currently, Redis Connect uses the [Debezium Redis Sink Connector](https://debezi
 Once data in loaded into the Redis Connect instance, [RedisGears recipes](https://developer.redis.com/howtos/redisgears/) transform it into a format appropriate to the target Redis database.
 
 Currently, incoming database rows are transformed into [Redis hashes](https://redis.io/docs/manual/data-types/#hashes) that incorporate the original table name into key names.  Future updates will add additional transformations, such as [RedisJSON documents](https://redis.io/docs/stack/json/).
+
+{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
 
 ## Data transformation engine
 
@@ -82,4 +84,3 @@ Debezium Server should run in "warm standby" [high availability](https://en.wiki
 - Run as a [Kubernetes pod](https://en.wikipedia.org/wiki/Kubernetes#Pods) where Kubernetes monitors pod activity (liveliness and readiness) and recovers non-functioning pods
 
     Note that Redis Connect stores state information in the Redis Connect instance.  No state information is stored at the connector level.  
-
