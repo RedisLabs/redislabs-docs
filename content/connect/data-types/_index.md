@@ -15,11 +15,11 @@ Redis Connect converts source data to Redis data types.  The specific conversion
 
 This section describes data type conversions from different sources, including:
 
-- Common/ANSI SQL types:
-- MySQL specific types:
-- Oracle specific types:
-- PostgreSQL specific types:
-- Microsoft SQL Server specific data types:
+- Common/ANSI SQL types
+- MySQL specific types
+- Oracle specific types
+- PostgreSQL specific types
+- Microsoft SQL Server specific data types
 
 Currently, Redis Connect stores incoming values as hashes.  As a result, all supported incoming values are converted to a string type.  The initial conversion is handled by the connector (Debezium).
 
@@ -29,7 +29,7 @@ Fields with unsupported data types do not appear in the target Redis database.
 
 ## Common/ANSI SQL types {#ansi-types}
 
-This sections describes data types common to many relational databases systems, including:
+This section describes data types common to many relational databases, including:
 
 &nbsp; &nbsp;[array](#array), [bigint](#bigint), [binary](#binary), [bitstring](#bitstring), [blob](#blob), [boolean](#boolean), [char](#char)   
 
@@ -83,7 +83,7 @@ Example:  True values are stored as `"1"` (one); false values are stored as `"0"
 
 Target data type (hash): string, includes support for [UTF-8](https://en.wikipedia.org/wiki/UTF-8) and [Unicode](https://home.unicode.org/basic-info/faq/)
 
-Example:  PostgreSQL fixed length strings, such as `char(14)`, are space padded to full length.  For example, `"hello world"` is saved as `"hello world  "` (two spaces are added to the end of the strng).  To learn more, see [Character types](https://www.postgresql.org/docs/current/datatype-character.html).
+Example:  PostgreSQL fixed length strings, such as `char(14)`, are space padded to full length.  For example, `"hello world"` is saved as `"hello world  "` (two spaces are added to the end of the string).  To learn more, see [Character types](https://www.postgresql.org/docs/current/datatype-character.html).
 
 Padded string values carry through to the Redis database.
 
@@ -317,7 +317,7 @@ Example: `"AAAR1QAAOAAAACFAAA"`
 
 Target data type (hash): string  
 
-Example: Debezium converts an an Oracle input value of `2021-12-30 14:23:46` to `"2021-12-30T14:23:46+02:00"`.  This is stored in the target Redis database as `"1611878400000"`, which represents the milliseconds since the the Epoch.
+Example: Debezium converts an Oracle input value of `2021-12-30 14:23:46` to `"2021-12-30T14:23:46+02:00"`.  This is stored in the target Redis database as `"1611878400000"`, which represents the milliseconds since the the Epoch.
 
 ### urowid {#o-urowid}
 
@@ -471,7 +471,7 @@ Example: `"0x00000000000007D0"`
 
 ### smalldatetime {#s-smalldatetime}
 
-Target data type (hash): string representing the miliseconds since the Epoch and does not include the timezone.  
+Target data type (hash): string representing the milliseconds since the Epoch and does not include the timezone.  
 
 Example: An input value of `2018-06-20 15:13:16` is saved to the target Redis database as `"1529507580000"`.  The number of seconds (`16`) is not retained.
 
@@ -479,7 +479,7 @@ Example: An input value of `2018-06-20 15:13:16` is saved to the target Redis da
 
 Target data type (hash): string, ranging from `-214,748.3648` to `214,748.3647`
 
-Example: When the `decimal.handling.mode` Deezium configuraion parameter is set to `string`,an input value of `-214748.3648` is saved to the target Redis database as  `"-214748.3648"`
+Example: When the `decimal.handling.mode` Debezium configuration parameter is set to `string`,an input value of `-214748.3648` is saved to the target Redis database as  `"-214748.3648"`
 
 ### Spatial geometry types {#s-geometry}
 
@@ -495,7 +495,7 @@ Not supported
 
 ### text {#s-text}
 
-Target data type (hash): string containing variable length Unicode data
+Target data type (hash): string containing variable-length Unicode data
 
 ### uniqueidentifier {#s-uniqueidentifier}
 
