@@ -1,7 +1,7 @@
 ---
 Title: Synchronize cluster node clocks
 linktitle: Sync node clocks
-description:
+description: Sync node clocks to avoid problems with internal custer communication.
 weight: 30
 alwaysopen: false
 categories: ["RS"]

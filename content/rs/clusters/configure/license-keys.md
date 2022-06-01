@@ -1,7 +1,7 @@
 ---
 Title: Cluster license keys
 linktitle: License keys
-description:
+description: The cluster key (or license) enables features and capacity within Redis Enterprise Software
 weight: 20
 alwaysopen: false
 categories: ["RS"]

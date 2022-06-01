@@ -1,7 +1,7 @@
 ---
 Title: Turn off services to free system memory
 linktitle: Free system memory
-description: 
+description: Turn off services to free memory and improve performance. 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

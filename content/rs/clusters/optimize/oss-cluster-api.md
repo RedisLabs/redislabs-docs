@@ -1,7 +1,7 @@
 ---
 Title: Redis OSS Cluster API Architecture
 linktitle: Redis OSS Cluster API
-description:
+description: You can use Redis OSS Cluster API improve performance and let applications stay current with cluster topology changes.
 weight: $weight
 alwaysopen: false
 aliases: /rs/concepts/data-access/cluster-api/

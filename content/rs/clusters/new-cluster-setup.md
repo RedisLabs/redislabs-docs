@@ -1,7 +1,7 @@
 ---
 Title: Set up a new cluster
 linktitle: Set up cluster
-description:
+description: How to set up a new cluster using the management UI.
 weight: 10
 alwaysopen: false
 categories: ["RS"]

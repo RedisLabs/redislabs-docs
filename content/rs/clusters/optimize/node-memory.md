@@ -1,7 +1,7 @@
 ---
 title: Manage node memory
 linktitle: Node memory
-description:
+description: Information about managing, monitoring, and freeing your node memory when RAM is low.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

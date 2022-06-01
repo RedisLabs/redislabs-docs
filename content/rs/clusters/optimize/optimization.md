@@ -1,7 +1,7 @@
 ---
 Title: Cluster environment optimization
 linktitle: Environment optimization
-description:
+description: Optimize your cluster environments for better performance.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
