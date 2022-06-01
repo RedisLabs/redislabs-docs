@@ -18,7 +18,7 @@ Redis Enterprise Software lets you create databases and distribute them across a
 These databases can use Redis Enterprise features like:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
-- [High availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
+- [High availability]({{< relref "/rs/databases/durability-ha.md" >}})
 - [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
 
