@@ -5,5 +5,9 @@ description: Configuration changes and information you can use to optimize your 
 weight: 50
 alwaysopen: false
 categories: ["RS"]
-aliases:
+aliases: [
+    /rs/clusters/optimize/_index.md,
+    /rs/clusters/optimize/,
+]
 ---
+{{< allchildren style="h2" description="true" />}}
