@@ -5,6 +5,13 @@ description: Overview of Redis Enterprise durability features such as replicatio
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/concepts/high-availability/_index.md,
+    /rs/concepts/high-availability/,
+    /rs/databases/durability-ha.md,
+    /rs/databases/durability-ha/,
+
+]
 ---
 Redis Enterprise Software comes with several features that make your data more durable and accessible. The following features can help protect your data in cases of failures or outages and help keep your data available when you need it.
 
