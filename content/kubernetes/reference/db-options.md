@@ -18,8 +18,8 @@ These options include options that you can change and options that are created b
 
 The most common options are listed below. For a complete list of options, see [Redis Enterprise Database API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md).
 
-### [`databasePort`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
+### [`databasePort`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
 Manually sets the TCP port on which the database is available. If the port number is not specified, it will be automatically generated.
 
