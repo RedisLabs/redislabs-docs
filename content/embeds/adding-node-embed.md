@@ -26,7 +26,7 @@ To add a node in RS:
 
     {{< tip >}}
 The RS management UI uses SSL encryption with a default certificate.
-You can also [replace the TLS certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}})
+You can also [replace the TLS certificate]({{<relref "/rs/security/certificates/updating-certificates">}})
 with a custom certificate.
     {{< /tip >}}
 

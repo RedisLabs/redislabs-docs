@@ -1,7 +1,7 @@
 ---
-Title: RedisBloom quick start tutorial
+Title: RedisBloom quick start
 linkTitle: Quick start
-description:
+description: RedisBloom quick start
 weight: 20
 alwaysopen: false
 categories: ["Modules"]

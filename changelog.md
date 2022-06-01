@@ -14,7 +14,7 @@ The docs are updated regularly; here are some recent highlights:
 
 - Redis Enterprise Software updates
 
-   - [Get started](https://docs.redis.com/latest/rs/getting-started/) was updated to reflect the current UX ([PR #1766](https://github.com/RedisLabs/redislabs-docs/pull/1766)) 
+   - [Get started](https://docs.redis.com/latest/rs/installing-upgrading/get-started-redis-enterprise-software) was updated to reflect the current UX ([PR #1766](https://github.com/RedisLabs/redislabs-docs/pull/1766)) 
 
    - [Install and setup](https://docs.redis.com/latest/rs/installing-upgrading/) now includes the [command-line options](https://docs.redis.com/latest/rs/installing-upgrading/#install-command-line-options) for the install script ([PR #1765](https://github.com/RedisLabs/redislabs-docs/pull/1765))
 

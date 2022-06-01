@@ -10,10 +10,62 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.3 requires:
+RediSearch v2.4.8 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.8 (May 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+However, if you're using Vector Similarity (introduced in RediSearch 2.4), there are some critical bugs that may affect a subset of users. In this case, you should upgrade.
+
+Details:
+
+- Bug fixes:
+
+  - [#2739](https://github.com/RediSearch/RediSearch/pull/2739) Memory leak in coordinator related to Vector Similarity (MOD-3023)
+  - [#2736](https://github.com/RediSearch/RediSearch/pull/2736), [#2782](https://github.com/RediSearch/RediSearch/pull/2782) Memory allocation restrictions for Vector Similarity indices (causing OOM) (MOD-3195)
+  - [#2755](https://github.com/RediSearch/RediSearch/pull/2755) Compare the entire vector field name instead of a prefix when creating a new vector index
+  - [#2780](https://github.com/RediSearch/RediSearch/pull/2780) Initialize all variables in `EvalContext` (which might have led to crashes in clustered databases)
+
+- Improvements:
+
+  - [#2740](https://github.com/RediSearch/RediSearch/pull/2740) Performance optimization for hybrid vector queries
+
+## v2.4.6 (May 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2716](https://github.com/RediSearch/RediSearch/pull/2716) Removed assert statement that could cause crashes with replica of (MOD-3008, MOD-3012)
+  - [#2734](https://github.com/RediSearch/RediSearch/pull/2734) `ON_TIMEOUT RETURN` policy fix: return results obtained until timeout rather than discarding them
+  - [#2714](https://github.com/RediSearch/RediSearch/pull/2714) Memory leak on non-TLS setup in coordinator
+
+## v2.4.5 (April 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2702](https://github.com/RediSearch/RediSearch/pull/2702) `INKEYS` combined with Vector Similarity caused server unresponsiveness (MOD-2952)
+  - [#2705](https://github.com/RediSearch/RediSearch/pull/2705) Incorrect results when deleting a document that was skipped at index time
+  - [#2698](https://github.com/RediSearch/RediSearch/issues/2698) Synonyms in Chinese
+
+- Improvements:
+
+  - [#2694](https://github.com/RediSearch/RediSearch/pull/2694) Performance: In a `TEXT` field, skip term iterator if term does not appear in requested field
 
 ## v2.4.3 (March 2022)
 

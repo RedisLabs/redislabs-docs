@@ -38,7 +38,7 @@ kubectl describe rec <my-cluster-name>
 
 The cluster admin user password is created by the operator during the deployment of the Redis Enterprise cluster (REC) and is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
-See [Manage REC credentials]({{< relref "/kubernetes/security/manage_REC_credentials">}}) for instructions on changing the admin password.
+See [Manage REC credentials]({{< relref "/kubernetes/security/manage-rec-credentials">}}) for instructions on changing the admin password.
 
 ## How is using Redis Enterprise operator superior to using Helm charts?
 

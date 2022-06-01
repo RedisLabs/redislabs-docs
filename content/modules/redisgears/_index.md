@@ -33,3 +33,8 @@ To learn more about the RedisGears API and understand how it works under the hoo
 Redis users typically implement caching by using the look-aside pattern. However, with RedisGears, you can implement write-behind caching strategies as well.
 
 Redis publishes RedisGears recipes to support write-behind. You can learn how to use these recipes in our write-behind caching guides for [Python]({{<relref "/modules/redisgears/python/recipes/write-behind">}}) and [Java]({{<relref "/modules/redisgears/jvm/recipes/write-behind">}}).
+
+## More info
+
+- [RedisGears introduction](https://oss.redis.com/redisgears/intro.html)
+- [RedisGears source](https://github.com/RedisGears/RedisGears)

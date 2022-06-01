@@ -97,4 +97,4 @@ When using the IP-based connection method, you can use the [Discovery Service]({
 to discover the database endpoint for a given database name as long as you have an IP address for at least one of the nodes in the cluster.
 The API used for discovery service is compliant with the Redis Sentinel API.
 
-To test your connection, try pinging the service.  For help, see [Connect to your database]({{< relref "rs/getting-started/#step-4-connect-to-your-database" >}}).
+To test your connection, try pinging the service.  For help, see [Connect to your database]({{< relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md#step-4-connect-to-your-database" >}}).

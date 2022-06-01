@@ -1,7 +1,7 @@
 ---
-Title: RediSearch quick start tutorial
+Title: RediSearch quick start
 linkTitle: Quick start
-description:
+description: RediSearch quick start
 weight: 20
 alwaysopen: false
 categories: ["Modules"]
@@ -19,13 +19,13 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-- redis-cli command line tool
+- `redis-cli` command-line tool
 
-- [redis-py](https://github.com/redis/redis-py) client library v4.0.0 or greater
+- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or greater
 
-## RediSearch with redis-cli
+## RediSearch with `redis-cli`
 
-The `redis-cli` command line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RediSearch commands.
+The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RediSearch commands.
 
 ### Connect to a database
 
@@ -204,5 +204,5 @@ $ python3 quick_start.py
 
 ## More info
 
-- [RediSearch commands](https://oss.redis.com/redisearch/Commands/)
-- [RediSearch client libraries](https://oss.redis.com/redisearch/Clients/)
+- [RediSearch commands](https://redis.io/commands/?group=search)
+- [RediSearch client libraries](https://redis.io/docs/stack/search/clients/)
