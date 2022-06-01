@@ -92,7 +92,7 @@ storageClassName must be specified for this deployment type.
 {{< /note >}}
 
 {{< warning >}}
-Be aware the storage class cannot be changed after deployment. Trying to change this value after deployment could result in unexpected and potentially damaging behavior.
+The storage class cannot be changed after deployment. Trying to change this value after deployment could result in unexpected and potentially damaging behavior.
 {{< /warning >}}
 
 Example of the redisEnterpriseNodeResources definition:
