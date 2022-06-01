@@ -2,7 +2,7 @@
 Title: Durability and high availability
 linktitle: Durability and availability
 description: Overview of Redis Enterprise durability features such as replication, clustering, and rack-zone awareness. 
-weight: $weight
+weight: 62
 alwaysopen: false
 categories: ["RS"]
 aliases: [
