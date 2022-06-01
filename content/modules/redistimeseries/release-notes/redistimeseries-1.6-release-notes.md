@@ -10,10 +10,24 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.6.10 requires:
+RedisTimeSeries v1.6.11 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.6.11 (May 2022)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#1166](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1166) Stop forwarding multi-shard commands during cluster resharding and upgrade (MOD-3154)
+    - [#1165](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1165) Stop forwarding multi-shard commands during transactions (`MULTI EXEC`) (MOD-3182)
+    - [LibMR](https://github.com/RedisGears/LibMR): Fixed crash on multi-shard commands in some rare scenarios (MOD-3182)
 
 ## v1.6.10 (May 2022)
 

@@ -23,7 +23,7 @@ In the new AWS account, you need to create:
 - A user with an **access key**
 - A role that grants **AWS console access**
 
-Save the access key in a secure location so that you can enter it when you [register the cloud account]({{<relref "/rc/cloud-accounts/">}}) with your the Redis Enterprise Cloud subscription.
+Save the access key in a secure location so that you can enter it when you [register the cloud account]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/">}}) with your the Redis Enterprise Cloud subscription.
 
 {{< warning >}}
 We use the provided credentials to configure your AWS environment and provision required resources.
@@ -38,6 +38,6 @@ For help creating an AWS user, see the [AWS IAM documentation](https://docs.aws.
 
 You can use one of the following tools to create IAM resources:
 
-- [CloudFormation]({{<relref "/rc/cloud-accounts/iam-resources/cloudformation.md">}}) - The AWS automation tool
-- [Terraform]({{<relref "/rc/cloud-accounts/iam-resources/terraform.md">}}) - Widely supported in the Redis community for additional automation
-- The [AWS Console]({{<relref "/rc/cloud-accounts/iam-resources/aws-console.md">}})
+- [CloudFormation]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/iam-resources/cloudformation.md">}}) - The AWS automation tool
+- [Terraform]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/iam-resources/terraform.md">}}) - Widely supported in the Redis community for additional automation
+- The [AWS Console]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/iam-resources/aws-console.md">}})

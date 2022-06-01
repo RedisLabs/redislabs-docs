@@ -12,8 +12,6 @@ aliases: /ri/install/install-ec2/
 ---
 This tutorial shows how to install RedisInsight on an AWS EC2 instance and manage ElastiCache Redis instances using RedisInsight. To complete this tutorial you must have access to the AWS Console and permissions to launch EC2 instances.
 
-As an alternative, you can also use our 1-click cloudformation launch wizard to automatically perform these steps for you.
-
 Step 1: Create a new IAM Role (Optional)
 --------------
 
