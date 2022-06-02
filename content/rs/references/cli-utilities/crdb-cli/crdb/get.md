@@ -18,7 +18,7 @@ crdb-cli crdb get --crdb_guid <guid>
 
 | Parameter           | Value  | Description                         |
 |---------------------|--------|-------------------------------------|
-| crdb_guid <guid>    | string | The GUID of the database (required) |
+| crdb_guid \<guid\>  | string | The GUID of the database (required) |
 
 ### Returns
 
