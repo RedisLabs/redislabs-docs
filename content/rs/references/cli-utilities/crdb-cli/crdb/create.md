@@ -21,14 +21,14 @@ crdb-cli crdb create --name <name> /
 [--compression (0-6)] /
 [--causal-consistency true] /
 [--password <password>] /
-[--replication true] /
-[--encryption true] /
-[--sharding false] /
+[--replication { true | false } ] /
+[--encryption { true | false } ] /
+[--sharding { false | true } ] /
 [-- shards-count <number_of_shards>] /
 [--shard-key-regex <regex_rule>] /
-[--oss-sharding BOOLEAN] /
-[--oss-cluster true]
-[--bigstore true]
+[--oss-sharding { true | false } ] /
+[--oss-cluster { true | false } ] /
+[--bigstore { true | false }]
 [--bigstore-ram-size <maximum_memory>]
 [--with-module name=<module_name>,version=<module_version>,args=<module_args>]
 ```
@@ -57,7 +57,10 @@ Before you create an Active-Active database, you must have:
 | sharding                                                                      | true <br> <br/> **false**                         | Activates or deactivates sharding (also known as [database clustering]({{< relref "/rs/concepts/high-availability/replication.md" >}})) so that there is only one shard for the database                                        |
 | shards-count \<number\>                                                      | integer                                         | If sharding is enabled, this specifies the number of Redis shards for each database instance                                                                                                                                 |
 | shard-key-regex \<regex_rule\>                                               | string                                          | If clustering is enabled, this defines a regex rule (also known as a [hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard |
+| bigstore                                                                      | true <br> <br/> **false**                         | If true, the database uses Reids on Flash to add Flash memory to the database                                        |
+| bigstore-ram-size                                                         | size in bytes, kilobytes (KB) or gigabytes (GB) | Maximum RAM limit for the Redis on Flash database                                                                                                                                                                                           |
 | --with-module name=\<module_name\>,version=\<module_version\>,args=\<module_args\> | strings | Creates a database with a specific module |
+
 
 
 ### Returns
