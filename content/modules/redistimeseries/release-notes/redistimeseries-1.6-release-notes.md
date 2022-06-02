@@ -10,10 +10,23 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.6.11 requires:
+RedisTimeSeries v1.6.13 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.6.13 (June 2022)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#1176](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1176), [#1187](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1187) When executing [`DEL`](https://redis.io/commands/ts.del/), chunk index could be set to a wrong value and cause some data to be inaccessible
+    - [#1180](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1180) When executing [`MADD`](https://redis.io/commands/ts.madd/), make sure that only successful insertions are replicated
 
 ## v1.6.11 (May 2022)
 
