@@ -15,12 +15,14 @@ aliases: [
     /rs/databases/active-active/_index/,
     ]
 ---
-In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
+In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)(conflict-free replicated data type).
 The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
-With Active-Active databases, applications can read and write to the same data set from different geographical locations seamlessly and with latency less than one millisecond (ms),
+With Active-Active databases, applications can read and write to the same data set from different geographical locations seamlessly and with low latency,
 without changing the way the application connects to the database.
 
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
+
+Active-Active databases are build upon other Redis Enterprise [high availability features](). Each Active-Active database is made up of instances of the data; each instance is stored on an Redis Enterprise cluster. Using [replication]() and [clustering] together aids in disaster recovery. Active-Active's multi-master replication and [multiple active proxies]() provide accelerated data access for geographically distributed users.
 
 {{< note >}}
 Active-Active databases do not replicate the entire database, only the data.
@@ -100,8 +102,6 @@ The endpoint port that you configure when you create the Active-Active database 
 
 ### Data persistence
 
-You can set the data persistence configuration, including AOF (Append-Only File) data persistence and snapshot,
-for each participating cluster.
 
 ## Syncer process
 
