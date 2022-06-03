@@ -2,12 +2,12 @@
 Title: RedisJSON in Active-Active databases
 linkTitle: Active-Active databases
 description: RedisJSON support and conflict resolution rules for Active-Active databases.
-weight: 30
+weight: 50
 alwaysopen: false
 categories: ["Modules"]
 ---
 
-RedisJSON v2.x added support for using RedisJSON commands in Active-Active databases.
+RedisJSON v2.x added support for RedisJSON in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
 
 ## Command differences
 
@@ -15,7 +15,7 @@ Several RedisJSON commands work differently for Active-Active databases.
 
 ### `JSON.CLEAR`
 
-[`JSON.CLEAR`](https://redis.io/commands/json.clear/) is a new command added to support concurrent updates to JSON data from different replicas in an Active-Active database.
+[`JSON.CLEAR`](https://redis.io/commands/json.clear/) is a new command that resets JSON arrays and objects. It supports concurrent updates to JSON documents from different instances in an Active-Active database and allows the results to be merged.
 
 ### `JSON.NUMMULTBY`
 
@@ -23,7 +23,7 @@ Active-Active databases do not support [`JSON.NUMMULTBY`](https://redis.io/comma
 
 ## Conflict resolution rules
 
-The following conflict resolution rules show how Active-Active databases resolve conflicts that arise when RedisJSON commands concurrently run on different instances, operating on the same data, and then attempt to sync.
+With Active-Active databases, it's possible for two different instances to try to run write operations on the same data at the same time. If this happens, conflicts can arise when the replicas attempt to sync these changes with each other. Conflict resolution rules determine how the database handles conflicting operations.
 
 There are two types of conflict resolution:
 
@@ -31,7 +31,7 @@ There are two types of conflict resolution:
 
     - The operations are associative.
 
-    - The results of both operations are merged.
+    - Merges the results of both operations.
 
 1. Win over:
 
@@ -39,7 +39,9 @@ There are two types of conflict resolution:
 
     - One operation wins the conflict and sets the value.
 
-    - The losing operation is ignored.
+    - Ignores the losing operation.
+
+The following conflict resolution rules show how Active-Active databases resolve conflicts for various RedisJSON commands.
 
 ### Create versus create
 
