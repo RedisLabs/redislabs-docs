@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-RedisJSON v2.x added support for RedisJSON in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
+RedisJSON v2.x adds support for RedisJSON in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
 
 ## Command differences
 
@@ -43,11 +43,17 @@ There are two types of conflict resolution:
 
 The following conflict resolution rules show how Active-Active databases resolve conflicts for various RedisJSON commands.
 
-### Create versus create
+### Assign different types to a key
 
 **Conflict**
 
-Two instances concurrently assign a new JSON document to the same key with `JSON.SET`.
+Two instances concurrently assign values of different types to the same key within a JSON document.
+
+For example:
+
+Instance 1 assigns a map to a key within a JSON document.
+
+Instance 2 assigns an array to the same key.
 
 **Resolution type**
 
@@ -55,7 +61,21 @@ Win over
 
 **Resolution rule**
 
-The instance with the smaller replica ID wins.
+The instance with the smaller ID wins, so the key becomes a map in the given example.
+
+### Create versus create
+
+**Conflict**
+
+Two instances concurrently use `JSON.SET` to assign a new JSON document to the same key.
+
+**Resolution type**
+
+Win over
+
+**Resolution rule**
+
+The instance with the smaller ID wins.
 
 ### Create versus update
 
@@ -63,7 +83,7 @@ The instance with the smaller replica ID wins.
 
 Instance 1 creates a new document and assigns it to an existing key with `JSON.SET`.
 
-Instance 2 updates the content of an existing document with `JSON.SET`.
+Instance 2 updates the existing content of the same key with `JSON.SET`.
 
 **Resolution type**
 
@@ -77,9 +97,9 @@ The operation that creates a new document wins.
 
 **Conflict**
 
-Instance 1 deletes a JSON document.
+Instance 1 deletes a JSON document with `JSON.DEL`.
 
-Instance 2 creates a new JSON document and assigns it to the key deleted by instance 1.
+Instance 2 uses `JSON.SET` to create a new JSON document and assign it to the key deleted by instance 1.
 
 **Resolution type**
 
@@ -109,9 +129,9 @@ Document deletion wins over updates.
 
 **Conflict**
 
-Instance 1 updates a field inside a JSON document.
+Instance 1 updates a field inside a JSON document with `JSON.SET`.
 
-Instance 2 updates the same field.
+Instance 2 updates the same field with a different value.
 
 **Resolution type**
 
@@ -119,29 +139,37 @@ Win over
 
 **Resolution rule**
 
-The instance with the smallest replica ID wins.
+The instance with the smallest ID wins.
 
-### Reset JSON document
+### Update versus clear
 
-With the previous version RedisJSON, there were two different ways to reset the content of a map:
+The version of RedisJSON prior to v2.x has two different ways to reset the content of a JSON object:
 
-- Assign a new empty JSON object: `JSON.SET doc $.colors '{}'`
+- Assign a new empty JSON object:
+    
+    ```sh
+    JSON.SET doc $.colors '{}'
+    ```
 
-- Remove the items key by key: `JSON.DEL doc $.colors.blue`
+    If you use this method, it cannot be merged with a concurrent update.
 
-When you assign a new empty map, it cannot be merged with a concurrent update.
+- For each key, remove it with `JSON.DEL`:
 
-If you remove the elements instead, it can be merged with concurrent updates.
+    ```sh
+    JSON.DEL doc $.colors.blue
+    ```
 
-You can use the `JSON.CLEAR` command to reset the JSON document without removing each key manually. This method also lets concurrent updates be merged.
+    With this method, it can merge the reset with concurrent updates.
 
-#### Assign empty map
+As of RedisJSON v2.x, you can use the `JSON.CLEAR` command to reset the JSON document without removing each key manually. This method also lets concurrent updates be merged.
+
+#### Assign an empty object
 
 **Conflict**
 
-Instance 1 adds "red" to the existing "colors" map.
+Instance 1 adds "red" to the existing "colors" map with `JSON.SET`.
 
-Instance 2 assigns a new empty map for "colors" and adds "green" to "colors".
+Instance 2 assigns a new empty map for "colors".
 
 **Resolution type**
 
@@ -149,15 +177,15 @@ Win over
 
 **Resolution rule**
 
-Document creation wins over the update.
+Document creation wins over the update, so the result will be an empty map.
 
 #### Use `JSON.CLEAR`
 
 **Conflict**
 
-Instance 1 adds "red" to the existing "colors" map.
+Instance 1 adds "red" to the existing "colors" map with `JSON.SET`.
 
-Instance 2 clears the map "colors" and adds "green" to "colors".
+Instance 2 clears the "colors" map with `JSON.CLEAR` and adds "green" to "colors".
 
 **Resolution type**
 
@@ -167,33 +195,7 @@ Merge
 
 Merges the results of all operations.
 
-### Update ordered array with same map key
-
-Two replicas concurrently update ordered lists under the same map key.
-
-#### Win over conflict resolution
-
-**Conflict**
-
-Two instances create a new array with different content.
-
-**Resolution rule**
-
-On concurrent creation, the instance with the smaller replica ID wins.
-
-#### Merge conflict resolution
-
-For merged content, both instances have to manipulate a previously synchronized array.
-
-**Conflict**
-
-Both instances update the same grocery array with different content.
-
-**Resolution rule**
-
-When instances update the same map, the result of all the operations is merged.
-
-### Update ordered array
+### Update versus update array
 
 **Conflict**
 
@@ -205,33 +207,13 @@ Merge
 
 **Resolution rule**
 
-Merges the results of all operations on the list of characters. Preserves the original element order on each instance.
+Merges the results of all operations on the array. Preserves the original element order from each instance.
 
-### Assign different types to same map key
-
-**Conflict**
-
-Two instances concurrently assign values of different types to the same key within a JSON document.
-
-For example:
-
-Instance 1 assigns a map to a key within a JSON document.
-
-Instance 2 assigns an array to the same key.
-
-**Resolution type**
-
-Win over
-
-**Resolution rule**
-
-The instance with the smaller replica ID wins, so the key becomes a map in the given example.
-
-### Delete versus update array element
+### Update versus delete array element
 
 **Conflict**
 
-Instance 1 removes an element from a JSON array.
+Instance 1 removes an element from a JSON array with `JSON.ARRPOP`.
 
 Instance 2 updates the same element that instance 1 removes.
 
@@ -242,3 +224,17 @@ Win over
 **Resolution rule**
 
 Deletion wins over updates.
+
+### Update versus update map
+
+**Conflict**
+
+Both instances update the same existing map with different content.
+
+**Resolution type**
+
+Merge
+
+**Resolution rule**
+
+Merges the results of all operations on the map.
