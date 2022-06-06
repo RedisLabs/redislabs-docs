@@ -25,7 +25,7 @@ and relays that information to all other N-2 instances,
 where N represents the number of instances used by the Active-Active database.
 
 As a result, network traffic is increased by a factor of (N-2).
-The memory consumed by each instance and overall performance are also impacted when casual consistency is activated.
+The memory consumed by each instance and overall performance are also impacted when causal consistency is activated.
 
 ### Enable causal consistency
 
