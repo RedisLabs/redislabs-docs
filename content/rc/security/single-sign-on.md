@@ -7,18 +7,18 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-As an alternative to the traditional email/password account authentication method, you can create a Redis Cloud account and sign into the [admin console](https://app.redislabs.com/new/) with [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on). This lets you use one set of credentials, managed by your [identity provider](https://en.wikipedia.org/wiki/Identity_provider), to access multiple websites.
+As an alternative to the traditional email/password account authentication method, you can create a Redis Cloud account and sign in to the [admin console](https://app.redislabs.com/new/) with [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on). This lets you use one set of credentials, managed by your [identity provider](https://en.wikipedia.org/wiki/Identity_provider), to access multiple websites.
 
 ## Social login
 
-One SSO option that Redis Cloud offers is [social login](https://en.wikipedia.org/wiki/Social_login), which lets you use an existing social media account to create or sign into your Redis Cloud account.
+One SSO option that Redis Cloud offers is [social login](https://en.wikipedia.org/wiki/Social_login), which lets you use an existing social media account to create or sign in to your Redis Cloud account.
 
 Redis Cloud supports the following social logins:
 - [GitHub](https://github.com/)
 - [Google](https://accounts.google.com/)
 
 {{<note>}}
-If your Google and GitHub accounts share an email address (such as Gmail), you can use either one to sign into the same Redis Cloud account.
+If your Google and GitHub accounts share an email address (such as Gmail), you can use either one to sign in to the same Redis Cloud account.
 {{</note>}}
 
 ### Create a new account with social login
@@ -71,25 +71,25 @@ Redis Cloud also supports SSO with [SAML (Security Assertion Markup Language)](h
 
 ### Set up SAML SSO
 
-1. Sign into your identity provider's admin console.
+1. Sign in to your identity provider's admin console.
 
 1. Add a SAML integration application for the service provider Redis Cloud.
 
-1. Create a custom SAML attribute called **smAccountMapping** in the service provider application:
+1. Create a custom SAML attribute called **redisAccountMapping** in the service provider application:
 
     | Field | Value |
     |-------|-------|
-    | Name | smAccountMapping |
+    | Name | redisAccountMapping |
     | Name format | Basic |
-    | Value | user.smAccountMapping |
+    | Value | user.redisAccountMapping |
 
-1. Add the **smAccountMapping** attribute to the default user profile.
+1. Add the **redisAccountMapping** attribute to the default user profile.
 
-1. Sign into your existing [Redis Cloud account](https://app.redislabs.com/#/login).
+1. Sign in to your existing [Redis Cloud account](https://app.redislabs.com/#/login).
 
 1. Select **Access Management** from the [admin console](https://app.redislabs.com) menu.
 
-1. Select **Single Sign-on**.
+1. Select **Single Sign-On**.
 
 1. Select the **Setup SSO** button:
 
@@ -110,7 +110,7 @@ Redis Cloud also supports SSO with [SAML (Security Assertion Markup Language)](h
     | **Issuer (IdP entity ID)** | The unique entity ID for the identity provider |
     | **IdP server URL** | The identity provider's HTTPS URL for SAML SSO |
     | **Single logout URL** | The URL used to sign out of the identity provider and connected applications (optional) |
-    | **Domain** | The identity provider's domain |
+    | **Email domain binding** | The identity provider's domain |
     | **Assertion signing certificate** | Public SHA-256 certificate used to validate SAML assertions from the identity provider |
 
     To find these metadata values, see your identity provider's documentation.
@@ -127,7 +127,7 @@ Redis Cloud also supports SSO with [SAML (Security Assertion Markup Language)](h
 
 1. Select the **Download** button to download the service provider [metadata](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf) in XML format.
 
-1. Sign into your identity provider's admin console.
+1. Sign in to your identity provider's admin console.
 
 1. Configure the Redis Cloud service provider application with the downloaded XML.
 
@@ -168,7 +168,7 @@ To add a user to an account and enable SAML SSO for them:
 
 1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user's profile.
 
-1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **smAccountMapping** field.
+1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **redisAccountMapping** field.
 
     You can add the same user to multiple SAML-enabled accounts with a comma-separated list: 
 
@@ -188,7 +188,7 @@ To bind other accounts to an existing SAML SSO configuration:
 
 1. Select the **Edit** button.
 
-1. For **Bind other accounts to SAML configuration**, select the checkboxes for the other accounts you want to bind to SAML SSO.
+1. For **Bind other accounts to SAML config**, select the checkboxes for the other accounts you want to bind to SAML SSO.
 
     {{<image filename="images/rc/access-management-saml-bind-accounts.png"  alt="Bind other accounts to SAML configuration screen.">}}{{</image>}}
 
