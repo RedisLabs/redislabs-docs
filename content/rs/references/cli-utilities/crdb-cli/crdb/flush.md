@@ -24,7 +24,7 @@ crdb-cli crdb flush --crdb_guid <guid>
 
 ### Returns
 
-Returns the task ID of the task that is clearing the database. If --no-wait is specified, the command exits. Otherwise, it will wait for the database to be cleared and return `finished`.
+Returns the task ID of the task clearing the database. If `--no-wait` is specified, the command exits. Otherwise, it will wait for the database to be cleared and return `finished`.
 
 ### Example
 
