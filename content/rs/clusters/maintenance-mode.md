@@ -168,7 +168,7 @@ Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> request to t
 curl -X POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on 
 -k -u <user>:<password> 
 --data '{"keep_slave_shards":true}' 
--H "-Type: application/json"
+-H "Content-Type: application/json"
 ```
 
 The `keep_slave_shards` boolean flag [prevents replica shard migration](#prevent-replica-shard-migration) when set to `true`.
