@@ -8,7 +8,7 @@ categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
+instructions](/rs/installing-upgrading/upgrading.md" >}})
 before running through the upgrade process.
 
 You can upgrade to this version from any 4.2 version. If you have a
@@ -33,7 +33,7 @@ upgrade to this version.
     latest 2.8 minor version, refer to the Known Issues section below.
 - Complete cluster failure recovery instructions added. For additional
     details, refer to [Cluster
-    Recovery]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}).
+    Recovery]({{< relref "/rs/clusters/cluster-recovery.md" >}}).
 - Major improvements made to database replication performance process
     by using diskless replication between master and slave shards. The
     data between the master and slave shards is streamed directly,
@@ -49,7 +49,7 @@ upgrade to this version.
 - Added the ability to allow the user to configure how machine IP
     addresses are used in Node Configuration setup in the management UI.
     For additional details, refer to [Initial setup - creating a new
-    cluster.]({{< relref "/rs/administering/new-cluster-setup.md" >}})
+    cluster.](https://docs.redis.com/latest/rs/clusters/new-cluster-setup/)
 - Connection to database endpoint can now be encrypted with SSL. For
     additional details, refer to [Securing client connection with
     SSL](https://docs.redis.com/latest/rs/security/tls-ssl).
@@ -62,7 +62,7 @@ upgrade to this version.
 - Environment configuration profile with name "default" has been
     changed to "cloud" and the default value has been changed to
     "local-network". For additional details, refer to [Performance
-    optimization]({{< relref "/rs/administering/designing-production/performance/optimization.md" >}})
+    optimization]({{< relref "/rs/clusters/optimize/optimization.md" >}})
     section.
 - In the REST API, when creating a database and not setting the
     database replication parameter to "true", the default value assigned

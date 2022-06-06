@@ -43,7 +43,7 @@ For more on scaling, high availability, and durability, see the [the Redis Enter
 
 ## Active-Active replicated Redis databases (CRDB) {#activeactive-replicated-redis-databases-crdb}
 
-[Active-Active databases]({{< relref "/rs/concepts/intercluster-replication.md" >}}) provide global, geo-distributed database replication with conflict-free local writes.
+[Active-Active databases]({{< relref "/rs/databases/active-active/intercluster-replication.md" >}}) provide global, geo-distributed database replication with conflict-free local writes.
 This greatly simplifies the development of globally distributed applications.
 Geo-distributed Active-Active databases combine [conflict-free replicated data types](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) with Redis data types to provide automatic conflict resolution based on each data type's semantics.
 
@@ -75,7 +75,7 @@ If a node fails, the data is seamlessly served from a replacement node in the cl
 Redis Enterprise can automatically handle node failures, Redis process failures, and proxy failures.
 Failover typically completes within a few seconds.
 
-[Learn more about High Availability]({{< relref "/rs/concepts/high-availability/_index.md" >}}).
+[Learn more about High Availability]({{< relref "/rs/databases/durability-ha.md" >}}).
 
 {{< youtube qIZuW_8bPtQ >}}
 
