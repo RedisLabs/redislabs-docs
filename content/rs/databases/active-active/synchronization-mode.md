@@ -22,7 +22,7 @@ and that proxy endpoint is used for database synchronization.
 This is called centralized synchronization.
 
 To prepare a database to use distributed synchronization you must first make sure that the database [proxy policy]({{< relref "/rs/databases/configure/proxy-policy.md" >}})
-is defined so that either each node has a proxy endpoint or each primary(master) shard has a proxy endpoint.
+is defined so that either each node has a proxy endpoint or each primary (master) shard has a proxy endpoint.
 After you have multiple proxies for the database,
 you can configure the database synchronization to use distributed synchronization.
 
