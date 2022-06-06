@@ -14,7 +14,7 @@ aliases: [
 ---
 When a cluster fails or a database is corrupted, you must:
 
-1. [Restore the cluster configuration]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}) from the CCS files
+1. [Restore the cluster configuration]({{< relref "/rs/clusters/cluster-recovery.md" >}}) from the CCS files
 1. Recover the databases with their previous configuration and data
 
 To restore the data that was in the databases to databases in the new cluster
@@ -23,7 +23,7 @@ These files are stored in the [persistence storage location]({{< relref "/rs/adm
 
 The database recovery process includes:
 
-1. If the cluster failed, [recover the cluster]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}).
+1. If the cluster failed, [recover the cluster]({{< relref "/rs/clusters/cluster-recovery.md" >}}).
 1. Identify recoverable databases.
 1. Restore the database data.
 1. Verify that the databases are active.
@@ -32,7 +32,7 @@ The database recovery process includes:
 
 - Before you start database recovery, make sure that the cluster that hosts the database is healthy.
     In the case of a cluster failure,
-    you must [recover the cluster]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}) before you recover the databases.
+    you must [recover the cluster]({{< relref "/rs/clusters/cluster-recovery.md" >}}) before you recover the databases.
 
 - We recommend that you allocate new persistent storage drives for the new cluster nodes.
     If you use the original storage drives,
