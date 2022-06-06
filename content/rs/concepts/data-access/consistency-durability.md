@@ -5,6 +5,10 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/concepts/data-access/consistency-durability.md,
+    /rs/concepts/data-access/consistency-durability/,
+]
 ---
 Redis Enterprise Software comes with the ability to replicate data
 to another replica for high availability and persist in-memory data on

@@ -72,7 +72,7 @@ The value is a keyword with the values:
 
 ### [`rackAware`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-A boolean that indicates whether the database is [rack-zone aware]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md">}}) (default: the cluster setting)
+A boolean that indicates whether the database is [rack-zone aware]({{< relref "/rs/clusters/configure/rack-zone-awareness.md">}}) (default: the cluster setting)
 
 ### [`redisEnterpriseCluster`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
@@ -96,13 +96,13 @@ If it is not specified, the database will follow the [upgrade policy set on the 
 
 ### [`replication`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-A boolean that indicates whether in-memory [database replication]({{< relref "/rs/concepts/high-availability/replication.md">}}) is enabled (default: `false`).
+A boolean that indicates whether in-memory [database replication]({{< relref "/rs/databases/configure/replication.md">}}) is enabled (default: `false`).
 
 When enabled, the database has a replica shard for every master.
 
 ### [`shardCount`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-The number of [database shards]({{< relref "/rs/concepts/high-availability/clustering.md">}}) (default: `1`).
+The number of [database shards]({{< relref "/rs/databases/configure/clustering.md">}}) (default: `1`).
 
 ### [`tlsMode`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
