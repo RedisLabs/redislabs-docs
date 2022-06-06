@@ -26,6 +26,9 @@ To illustrate, version 6.2.8 of Redis Enterprise Software removed support for TL
 
 If you have trouble enabling specific components, features, or versions, verify that they're supported by your operating system and that they're configured correctly.
 
+### Upgrading RHEL OS for clusters hosting databases with Modules
+RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules.
+Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 ## VMware
 
