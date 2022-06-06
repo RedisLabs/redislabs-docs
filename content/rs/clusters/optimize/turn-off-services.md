@@ -44,7 +44,7 @@ For example:
     ```sh
     curl --request PUT \
     --url https://localhost:9443/v1/cluster/services_configuration \
-    --header '-type: application/json' \
+    --header 'content-type: application/json' \
     --data '{
         "cm_server":{
             "operating_mode":"disabled"
