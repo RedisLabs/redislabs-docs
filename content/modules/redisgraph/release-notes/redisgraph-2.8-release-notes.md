@@ -147,7 +147,7 @@ If you are using this function and upgrading to RedisGraph 2.8, a simple fix is 
     - [#2088](https://github.com/RedisGraph/RedisGraph/pull/2088) Introduce pattern comprehensions
     - [#2051](https://github.com/RedisGraph/RedisGraph/pull/2051) Allow copying of entity attribute sets in [`SET`](https://oss.redis.com/redisgraph/commands/#set) clauses
     - [#2067](https://github.com/RedisGraph/RedisGraph/pull/2067) Allow modification of virtual key entity count (`VKEY_MAX_ENTITY_COUNT`) at runtime
-    - [#2102](https://github.com/RedisGraph/RedisGraph/pull/2102) New load time configuration option `NODE_CREATION_BUFFER` - see [documentation](https://github.com/RedisGraph/RedisGraph/blob/master/docs/configuration.md#node_creation_buffer) (MOD-2348)
+    - [#2102](https://github.com/RedisGraph/RedisGraph/pull/2102) New load time configuration option `NODE_CREATION_BUFFER` - see [documentation](https://github.com/RedisGraph/RedisGraph/blob/master/docs/docs/configuration.md#node_creation_buffer) (MOD-2348)
     - [#2049](https://github.com/RedisGraph/RedisGraph/pull/2049) [RediSearch](https://oss.redis.com/redisearch/) supports field definitions
 
 - Performance improvements (since 2.8-M02):
