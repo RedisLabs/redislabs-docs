@@ -33,7 +33,7 @@ Returns the task ID of the task that is adding the new instance. If --no-wait is
 ### Example
 
 ```sh
-$ crdb-cli crdb add-instance --crdb-guid db6365b5-8aca-4055-95d8-7eb0105c0b35 --instance fqdn=north.rlabs.org,username=admin@rlabs.org,password=admin
+$ crdb-cli crdb add-instance --crdb-guid db6365b5-8aca-4055-95d8-7eb0105c0b35 --instance fqdn=cluster2.redis.local,username=admin@redis.local,password=admin
 Task f809fae7-8e26-4c8f-9955-b74dbbd47949 created
   ---> Status changed: queued -> started
   ---> Status changed: started -> finished
