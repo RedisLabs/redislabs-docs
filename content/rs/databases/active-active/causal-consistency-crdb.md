@@ -11,7 +11,7 @@ aliases: [
     /rs/databases/active-active/causal-consistency-crdb/,
 ]
 ---
-When you enable casual consistency in Active-Active databases,
+When you enable causal consistency in Active-Active databases,
 the order of operations on a specific key are maintained across all Active-Active database instances.<!--more-->
 
 For instance, if operations A and B were applied on the same key and the effect of A was observed by the instance that initiated B before B was applied to the key,
