@@ -21,7 +21,7 @@ crdb-cli crdb purge-instance --crdb_guid <guid> /
 | Parameter                 | Value  | Description                                      |
 |---------------------------|--------|--------------------------------------------------|
 | crdb_guid \<guid\>        | string | The GUID of the database (required)              |
-| instance_id \<instance\>  | string | The instance ID of the local instance (required) |
+| instance_id \<instance-id\>  | string | The instance ID of the local instance (required) |
 | no-wait                   |        | Does not wait for the task to complete           |
 
 ### Returns
