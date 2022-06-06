@@ -41,7 +41,7 @@ This checklist covers the basic process:
 
 1.  Test application connectivity using the LDAP credentials of an app team member.
 
-1.  _(Recommended)_ Disable default access for the database to avoid anonymous client connections.
+1.  _(Recommended)_ Turn off default access for the database to avoid anonymous client connections.
 
  Because deployments and requirements vary, you’ll likely need to adjust these guidelines.
 
@@ -57,7 +57,7 @@ There are several ways to test your LDAP integration, including:
 
 - Using the REST API to connect using LDAP username/password credentials.
 
-## Related info
+## More info
 
 - Enable and configure [role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}})
 - Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}})

@@ -110,7 +110,7 @@ Note there are other methods to decode secrets.
 ### Replace the REC username and password
 
 1. Sign in to the Redis Enterprise cluster console.
-1. [Add another admin user]({{< relref "rs/security/admin-console-security/user-security#configuring-users-with-roles" >}}) and choose a password.
+1. [Add another admin user]({{<relref "/rs/security/access-control/manage-users#add-users">}}) and choose a password.
 1. Set the new username in the REC spec username field.
 1. Update the REC credential secret:
        1. Save the existing username to a text file.

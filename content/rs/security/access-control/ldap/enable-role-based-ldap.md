@@ -84,7 +84,7 @@ In this example, `%D` is replaced by the Distinguished Name of the user attempti
 
 When finished, use the **Save** button to save your changes.
 
-## Related info
+## More info
 
 - Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}})
 - Update database ACLs to [authorize LDAP access]({{<relref "/rs/security/access-control/ldap/update-database-acls">}})

@@ -26,21 +26,21 @@ If you are using the earlier LDAP mechanism, you will need to migrate to role-ba
 
 Here's how role-based LDAP integration works:
 
-1.  User signs in using their LDAP credentials.  
+1.  A user signs in with their LDAP credentials.  
 
     Based on the LDAP configuration details, the username is mapped to an LDAP Distinguished Name.
 
 1.  A simple [LDAP bind request](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol#Bind_(authenticate)) is attempted using the Distinguished Name and the password.  The sign-in fails if the bind fails.
 
-1.  Obtain user’s LDAP group memberships.
+1.  Obtain the user’s LDAP group memberships.
 
     Using configured LDAP details, obtain a list of the user’s group memberships.
 
 1.  Compare the user’s LDAP group memberships to those mapped to local roles.
 
-1.  Determine if one of the user's groups is authorized to access the target resource.  if so, the user is granted the level of access authorized to the role.  
+1.  Determine if one of the user's groups is authorized to access the target resource.  If so, the user is granted the level of access authorized to the role.  
 
-To access the admin console, the user needs to belong to an LDAP group mapped to an Administrative role.  
+To access the admin console, the user needs to belong to an LDAP group mapped to an administrative role.  
 
 For database access, the user needs to belong to an LDAP group mapped to a role listed in database’s access control list (ACL).  The rights granted to the group determine the user's level of access. 
 
@@ -73,7 +73,7 @@ To enable LDAP:
 
 If you already have appropriate roles, you can update them to include LDAP groups.
 
-## Related info
+## More info
 
 - Enable and configure [role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}})
 - Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}})

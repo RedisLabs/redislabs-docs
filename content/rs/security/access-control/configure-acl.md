@@ -12,7 +12,7 @@ aliases:
 Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 
 {{<note>}}
-Redis Enterprise Modules are not currently assigned a command category.
+Redis Enterprise modules are not currently assigned a command category.
 {{</note>}}
 
 Redis Enterprise allows you to:
