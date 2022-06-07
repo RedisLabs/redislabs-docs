@@ -13,39 +13,47 @@ aliases:
 ```sh
 crdb-cli crdb update --crdb-guid <guid> /
 [--no-wait] [--force] /
-[--db-config-json <file_content>] /
-[--db-config-json-file <filename>] /
+[--default-db-config <configuration> ] /
+[--default-db-config-file <filename>] /
 [--compression (0-6)] /
 [--causal-consistency { true | false } ] /
-[--password <password>] /
+[--credentials id=<id>,username=<username>,password=<password> ] /
 [--encryption { true | false } ] /
-[--oss-cluster { true | false } ]
-[--bigstore-ram-size <maximum_memory>]
+[--oss-cluster { true | false } ] /
+[--featureset-version { true | false } ] /
+[--memory-size <maximum_memory>]
+[--bigstore-ram-size <maximum_memory>] /
+[--update-module name=<name>,featureset_version=<version>]
 ```
-
 
 ### Parameters
 
-| Parameter                          | Value                                           | Description                                                                                                                                                              |
-|------------------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| crdb-guid \<\guid\>                | string                                          | GUID of the Active-Active database (required)                                                                                                                            |
-| db-config-json \<\file_content\>   | JSON value                                      |                                                                                                                                                                          |
-| db-config-json-file \<\filename\>  | filepath                                        |                                                                                                                                                                          |
-| no-wait                            |                                                 | Prevents CRDB-CLI from running another command before this command finishes                                                                                              |
-| compression                        | 0-6                                             | The level of data compression: 0=Compression disabled <br> <br> 6=High compression and resource load (Default: 3)                                                        |
-| causal-consistency                 | true <br> <br>false                             | [Causal consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}}) applies updates to all instances in the order they were received |
-| password \<\password\>             | string                                          | Updates the password for access to the database                                                                                                                          |
-| encryption                         | true <br> <br>false                             | Activates or deactivates encryption                                                                                                                                      |
-| oss-cluster                        | true <br> <br>false                             | Activates or deactivates OSS Cluster mode                                                                                                                                |
-| bigstore-ram-size                  | size in bytes, kilobytes (KB) or gigabytes (GB) | Maximum RAM limit for the Redis on Flash database, if activated                                                                                                          |
-| force                              |                                                 | Increase the configuration version even if there are no changes                                                                                                          |
+| Parameter                                                           | Value                                                                                                                         | Description                                                                                                                                                              |
+|---------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| crdb-guid \<guid\>                                                 | string                                                                                                                        | GUID of the Active-Active database (required)                                                                                                                            |
+| bigstore-ram-size \<maximum_memory\>                                                  | size in bytes, kilobytes (KB) or gigabytes (GB)                                                                               | Maximum RAM limit for the Redis on Flash database, if activated                                                                                                          |
+| memory-size \<maximum_memory\>                                                                | size in bytes, kilobytes (KB) or gigabytes (GB) | Maximum database memory (required)                                                                                                                                                                                           |
+| causal-consistency                                                  | true <br> <br>false                                                                                                           | [Causal consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}}) applies updates to all instances in the order they were received |
+| compression                                                         | 0-6                                                                                                                           | The level of data compression: 0=Compression disabled <br> <br> 6=High compression and resource load (Default: 3)                                                        |
+| credentials id=\<id\>,username=\<username\>,password=\<password\> | strings                                                                                                                       | Updates the credentials for access to the instance                                                                                                                       |
+| default-db-config \<configuration\>                                                  |                                                                                                                               | Default database configuration from stdin                                                                                                                                |
+| default-db-config-file \<filename\>                                | filepath                                                                                                                      | Default database configuration from file                                                                                                                                 |
+| encryption                                                          | true <br> <br>false                                                                                                           | Activates or deactivates encryption                                                                                                                                      |
+| force                                                               |                                                                                                                               | Force an update even if there are no changes                                                                                                                             |
+| no-wait                                                             |                                                                                                                               | Do not wait for the command to finish                                                                                                                                    |
+| oss-cluster                                                         | true <br> <br>false                                                                                                           | Activates or deactivates OSS Cluster mode                                                                                                                                |
+| eviction-policy                                                     | noeviction<br>allkeys-lru<br>allkeys-lfu<br>allkeys-random<br>volatile-lru<br>volatile-lfu<br>volatile-random<br>volatile-ttl | Updates [Eviction policy]({{< relref "/rs/databases/configure/eviction-policy" >}})                                                                                                          |
+| featureset-version                                                  | true<br><br>false                                                                                                             | Updates to latest FeatureSet version                                                                                                                                     |
+| update-module name=\<name>,featureset_version=\<version\>         | strings                                                                                                                       | Update a module to the specified version                                                                                                                                 |
 
 ### Returns
 
-
+Returns the task ID of the task that is updating the database. If --no-wait is specified, the command exits. Otherwise, it will wait for the database to be updated and then return "finished."
 
 ### Example
 
 ```sh
-
+$ crdb-cli crdb update --crdb-guid 968d586c-e12d-4b8f-8473-42eb88d0a3a2 --memory-size 2GBTask 7e98efc1-8233-4578-9e0c-cdc854b8af9e created
+  ---> Status changed: queued -> started
+  ---> Status changed: started -> finished
 ```
