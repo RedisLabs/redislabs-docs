@@ -157,7 +157,9 @@ To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrad
 
 ## Known issues 
 
-A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+- A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+
+- The ZRANGESTORE command, with a special _zset-max-ziplist-entries_ configuration can crash Redis 6.2. See more on the [Redis repository 10767] (https://github.com/redis/redis/pull/10767)
 
 ## Security
 
