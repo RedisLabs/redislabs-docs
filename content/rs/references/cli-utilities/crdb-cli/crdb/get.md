@@ -1,14 +1,14 @@
 ---
 Title: crdb-cli crdb get
 linkTitle: get
-description: Gets the configuration of an Active-Active database.
+description: Shows the current configuration of an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli crdb get` gets the configuration of an Active-Active database.
+`crdb-cli crdb get` shows the current configuration of an Active-Active database.
 
 ```sh
 crdb-cli crdb get --crdb_guid <guid>
