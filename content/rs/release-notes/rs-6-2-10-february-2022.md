@@ -130,6 +130,10 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS72304 - Avoid starting a master shard when both master and replica shards crash and the replica did not finish recovery
 - RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup
 
+## Known issues
+
+- The ZRANGESTORE command, with a special _zset-max-ziplist-entries_ configuration can crash Redis 6.2. See more on the [Redis repository 10767] (https://github.com/redis/redis/pull/10767)
+
 ## Security
 
 ### Open Source Redis Security fixes compatibility
