@@ -49,7 +49,7 @@ There are several methods for accessing the admin console. Port forwarding is th
     ```
 
     {{<note>}}
-    The default port is 8843.
+    The default port is 8443.
     {{</note>}}
 
 1. Use `kubectl port-forward` to forward your local port to the service port.
