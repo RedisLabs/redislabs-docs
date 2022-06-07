@@ -15,7 +15,7 @@ Several RedisJSON commands work differently for Active-Active databases.
 
 ### `JSON.CLEAR`
 
-[`JSON.CLEAR`](https://redis.io/commands/json.clear/) is a new command that resets JSON arrays and objects. It supports concurrent updates to JSON documents from different instances in an Active-Active database and allows the results to be merged.
+[`JSON.CLEAR`](https://redis.io/commands/json.clear/) resets JSON arrays and objects. It supports concurrent updates to JSON documents from different instances in an Active-Active database and allows the results to be merged.
 
 ### `JSON.NUMMULTBY`
 
@@ -63,6 +63,15 @@ Win over
 
 The instance with the smaller ID wins, so the key becomes a map in the given example.
 
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | Set the same key to a map or an array | JSON.SET doc $.a '{}' | JSON.SET doc $.a '[]' |
+| t2 | Add data to the map and array | <nobr>JSON.SET doc  $.a.x '“y”'</nobr> <br /><br /> Result: <br /> {"a": {"x": "y"}} | <nobr>JSON.SET doc $.a '["z"]'</nobr> <br /><br /> Result: <br /> {“a”: ["z"]} |
+| t3 | Active-Active synchronization | – Sync – | – Sync – |
+| t4 | Instance 1 wins | JSON.GET doc $ <br /><br /> Result: <br /> {"a": {"x": "y"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"a": {"x": "y"}} |
+
 ### Create versus create
 
 **Conflict**
@@ -76,6 +85,14 @@ Win over
 **Resolution rule**
 
 The instance with the smaller ID wins.
+
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | Create a new JSON document | <nobr>JSON.SET doc $ '{"field": "a"}'</nobr> | <nobr>JSON.SET doc $ '{"field": "b"}'</nobr> |
+| t2 | Active-Active synchronization | – Sync – | – Sync – |
+| t3 | Instance 1 wins | JSON.GET doc $ <br /><br /> Result: <br /> {"field": "a"} | JSON.GET doc $ <br /><br /> Result: <br /> {"field": "a"} |
 
 ### Create versus update
 
@@ -93,6 +110,15 @@ Win over
 
 The operation that creates a new document wins.
 
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br />  {"field1": "value1"} | JSON.GET doc $ <br /><br /> Result: <br />  {"field1": "value1"} |
+| t2 | Instance 1 creates a new document; instance 2 updates the existing document | <nobr>JSON.SET doc $ '{"field2": "value2"}'</nobr> | <nobr>JSON.SET doc $.field1 '[1, 2, 3]'</nobr> |
+| t3 | Active-Active synchronization | – Sync – | – Sync – |
+| t4 | Instance 1 wins | JSON.GET doc . <br /><br /> Result: <br /> {"field2": "value2"} | JSON.GET doc . <br /><br /> Result: <br /> {"field2": "value2"} |
+
 ### Delete versus create
 
 **Conflict**
@@ -108,6 +134,15 @@ Win over
 **Resolution rule**
 
 Document creation wins over deletion.
+
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> {"field1": "value1"} | JSON.GET doc $ <br /><br /> Result: <br /> {"field1": "value1"} |
+| t2 | Instance 1 deletes the document; instance 2 creates a new document | JSON.DEL doc | <nobr>JSON.SET doc $ '{"field1": "value2"}'</nobr> |
+| t3 | Active-Active synchronization | – Sync – | – Sync – |
+| t4 | Instance 2 wins | JSON.GET doc $ <br /><br /> Result: <br /> <nobr>{"field1": "value2"}</nobr> | JSON.GET doc $ <br /><br /> Result: <br /> {"field1": "value2"} |
 
 ### Delete versus update
 
@@ -125,6 +160,15 @@ Win over
 
 Document deletion wins over updates.
 
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> <nobr>{"field1": "value1"}</nobr> | JSON.GET doc $ <br /><br /> Result: <br /> {"field1": "value1"} |
+| t2 | Instance 1 deletes the document; instance 2 updates it | JSON.DEL doc | <nobr>JSON.SET doc $.field1 '[1, 2, 3]'</nobr> |
+| t3 | Active-Active synchronization | – Sync – | – Sync – |
+| t4 | Instance 1 wins | JSON.GET doc $ <br /><br /> Result: <br /> (nil) | JSON.GET doc $ <br /><br /> Result: <br /> (nil) |
+
 ### Update versus update
 
 **Conflict**
@@ -140,6 +184,15 @@ Win over
 **Resolution rule**
 
 The instance with the smallest ID wins.
+
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> {"field": "a"} | JSON.GET doc $ <br /><br /> Result: <br /> {"field": "a"} |
+| t2 | Update the same field with different data | <nobr>JSON.SET doc $.field "b"</nobr> | <nobr>JSON.SET doc $.field "c"</nobr> |
+| t3 | Active-Active synchronization | – Sync – | – Sync – |
+| t4 | Instance 1 wins | JSON.GET doc $ <br /><br /> Result: <br /> {"field": "b"} | JSON.GET doc $ <br /><br /> Result: <br /> {"field": "b"} |
 
 ### Update versus clear
 
@@ -179,6 +232,17 @@ Win over
 
 Document creation wins over the update, so the result will be an empty map.
 
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff"}} |
+| t2 | Instance 1 adds a new color; instance 2 resets colors to an empty map | <nobr>JSON.SET doc $.colors.red ‘#ff0000’</nobr> | JSON.SET doc $.colors ‘{}’ |
+| t3 | Instance 2 adds a new color |  | <nobr>JSON.SET doc $.colors.green ‘#00ff00’</nobr> |
+| t4 |  | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff", "red": "#ff0000"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"green": "#00ff00"}} |
+| t5 | Active-Active synchronization | – Sync – | – Sync – |
+| t6 | Instance 2 wins | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"green": "#00ff00"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"green": "#00ff00"}} |
+
 #### Use `JSON.CLEAR`
 
 **Conflict**
@@ -195,6 +259,18 @@ Merge
 
 Merges the results of all operations.
 
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff"}} |
+| t2 | Instance 1 adds a new color; instance 2 resets the colors | <nobr>JSON.SET doc $.colors.red ‘#ff0000’</nobr> | JSON.CLEAR doc $.colors |
+| t3 |  | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff", "red": "#ff0000"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {}} |
+| t4 | Instance 2 adds a new color |  | <nobr>JSON.SET doc $.colors.green ‘#00ff00’</nobr> |
+| t5 |  |  | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"green": "#00ff00"}} |
+| t6 | Active-Active synchronization | – Sync – | – Sync – |
+| t7 | Merges the results of both instances | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"red": "#ff0000", "green": "#00ff00"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"red": "#ff0000", "green": "#00ff00"}} |
+
 ### Update versus update array
 
 **Conflict**
@@ -208,6 +284,16 @@ Merge
 **Resolution rule**
 
 Merges the results of all operations on the array. Preserves the original element order from each instance.
+
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> '["a", "b", "c"]' | JSON.GET doc $ <br /><br /> Result: <br /> '["a", "b", "c"]' |
+| t2 | Instance 1 removes an array element; instance 2 adds one | JSON.ARRPOP doc $ 1 <br /><br /> Result: <br /> ["a", "c"] | <nobr>JSON.ARRINSERT doc $ 0 ‘“y”’</nobr> <br /><br /> Result: <br /> ["y", "a", "b", "c"] |
+| t3 | Both instances add another element to the array | <nobr>JSON.ARRINSERT doc $ 1 ‘“x”’</nobr> <br /><br /> Result: <br /> ["a", "x", "c"] | <nobr>JSON.ARRINSERT doc $ 2 ‘“z”’</nobr> <br /><br /> Result: <br /> ["y", "a", "z", "b", "c"] |
+| t4 | Active-Active synchronization | – Sync – | – Sync – |
+| t5 | Merge results from both instances | JSON.GET doc $ <br /><br /> Result: <br /> ["y", "a", "x", "z", "c"] | JSON.GET doc $ <br /><br /> Result: <br /> ["y", "a", "x", "z", "c"] |
 
 ### Update versus delete array element
 
@@ -225,6 +311,16 @@ Win over
 
 Deletion wins over updates.
 
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> {“todo”: [{“title”: “buy milk”, “done”: false}]} | JSON.GET doc $ <br /><br /> Result: <br /> {“todo”: [{“title”: “buy milk”, “done”: false}]} |
+| t2 | Instance 1 removes an array element; instance 2 updates the same element | <nobr>JSON.ARRPOP doc $.todo 0</nobr> | <nobr>JSON.SET doc '$.todo[0]["done"]' 'true'’</nobr> |
+| t3 |  | JSON.GET doc $ <br /><br /> Result: <br /> {“todo”: []} | JSON.GET doc $ <br /><br /> Result: <br /> [{“title”: “buy milk”, “done”: true}]} |
+| t4 | Active-Active synchronization | – Sync – | – Sync – |
+| t5 | Instance 1 wins | JSON.GET doc $ <br /><br /> Result: <br /> doc = {“todo”: []} | JSON.GET doc $ <br /><br /> Result: <br /> doc = {“todo”: []} |
+
 ### Update versus update map
 
 **Conflict**
@@ -238,3 +334,14 @@ Merge
 **Resolution rule**
 
 Merges the results of all operations on the map.
+
+**Example**
+
+| Time  | Description | Instance 1 | Instance 2 |
+| :---: | :--- | :--- | :--- |
+| t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> '{"grocery": []}' | JSON.GET doc $ <br /><br /> Result: <br /> '{"grocery": []}' |
+| t2 | Add new elements to the array | <nobr>JSON.ARRAPPEND doc $.grocery ‘“eggs”’</nobr> | JSON.ARRAPPEND doc $.grocery ‘“milk”’ |
+| t3 | Add new elements to the array | JSON.ARRAPPEND doc $.grocery ‘“ham”’ | <nobr>JSON.ARRAPPEND doc $.grocery ‘“flour”’</nobr> |
+| t4 |  | JSON.GET doc $ <br /><br /> Result: <br /> {"grocery":["eggs", "ham"]} | JSON.GET doc $ <br /><br /> Result: <br /> {"grocery":["milk", "flour"]} |
+| t5 | Active-Active synchronization | – Sync – | – Sync – |
+| t6 | Merges the results from both instances | JSON.GET doc . <br /><br /> Result: <br /> {"grocery":["eggs","ham","milk", "flour"]} | JSON.GET doc . <br /><br /> Result: <br /> {"grocery":["eggs","ham","milk", "flour" ]} |
