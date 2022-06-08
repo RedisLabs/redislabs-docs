@@ -11,11 +11,11 @@ aliases: [
 
 As of v6.0.20, Redis Enterprise Software supports two LDAP authentication mechanisms: the [cluster-based mechanism]({{<relref "/rs/security/access-control/ldap/cluster-based-ldap-authentication">}}) supported in earlier versions and a [role-based mechanism]({{<relref "/rs/security/access-control/ldap/">}}).
 
-If you currently rely on the cluster-based mechanism, you can continue to do so in the short term.  However:
+If you currently rely on the cluster-based mechanism, you can continue to use it in the short term.  However:
 
 - You can only use one LDAP authorization mechanism at a time.
 
-- Support for the cluster-based mechanism is consider deprecated; it will be removed in a future version.
+- Support for the cluster-based mechanism is deprecated and will be removed in a future version.
 
 At some point, you’ll want to migrate to role-based LDAP.
 
@@ -23,19 +23,19 @@ At some point, you’ll want to migrate to role-based LDAP.
 
 This checklist covers the basic process:
 
-1.  Identify accounts per app (on the customer end).
+1.  Identify accounts per app on the customer end.
 
-1.  Create (or identify) an LDAP user account on the appropriate server, e.g. the one responsible for LDAP authentication and authorization.
+1.  Create or identify an LDAP user account on the server that is responsible for LDAP authentication and authorization.
 
-1.  Create (or identify) an LDAP group that contains the app team members.
+1.  Create or identify an LDAP group that contains the app team members.
 
-1.  Verify/configure the Redis Software ACLs.
+1.  Verify or configure the Redis Enterprise ACLs.
 
 1.  Configure each database ACL.
 
-1.  Remove the earlier "external" (LDAP) users from Redis Software.
+1.  Remove the earlier "external" (LDAP) users from Redis Enterprise.
 
-1.  Use **Settings** | **LDAP** to enable role-based LDAP.
+1.  Use **Settings > LDAP** to enable role-based LDAP.
 
 1.  Map your LDAP groups to access control roles.
 
@@ -47,19 +47,19 @@ This checklist covers the basic process:
 
 ## Test LDAP access
 
-There are several ways to test your LDAP integration, including:
+To test your LDAP integration, you can:
 
-- Connecting with `redis-cli` and using the AUTH command to test LDAP username/password credentials.
+- Connect with `redis-cli` and use the [`AUTH` command](https://redis.io/commands/auth/) to test LDAP username/password credentials.
 
-- Signing in to the admin console using LDAP username/password credentials authorized for the Administration role.
+- Sign in to the admin console using LDAP credentials authorized for admin access.
 
--  Signing in to RedisInsight using authorized LDAP username/password credentials.
+- Use [RedisInsight]({{<relref "/ri">}}) to access a database using authorized LDAP credentials.
 
-- Using the REST API to connect using LDAP username/password credentials.
+- Use the [REST API]({{<relref "/rs/references/rest-api">}}) to connect using authorized LDAP credentials.
 
 ## More info
 
 - Enable and configure [role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}})
 - Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}})
 - Update database ACLs to [authorize LDAP access]({{<relref "/rs/security/access-control/ldap/update-database-acls">}})
-- Learn more about Redis Software [security and practices]({{<relref "/rs/security/">}})
+- Learn more about Redis Enterprise Software [security and practices]({{<relref "/rs/security/">}})

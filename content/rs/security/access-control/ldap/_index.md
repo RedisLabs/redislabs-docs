@@ -14,7 +14,7 @@ As of version 6.0.20, Redis Enterprise Software integrates [Lightweight Director
 
 Furthermore, you can configure LDAP roles using the Redis Enterprise admin console or REST API.
 
-Previously, you could enable LDAP authentication for admin console users by [configuring a cluster]({{<relref "/rs/security/access-control/ldap/cluster-based-ldap-authentication">}}) either through the command-line or the REST API.   
+Previously, you could enable LDAP authentication for admin console users by [configuring a cluster]({{<relref "/rs/security/access-control/ldap/cluster-based-ldap-authentication">}}) either through the command line or the REST API.   
 
 The cluster-based LDAP mechanism is supported in v6.0.20; however, the mechanism is deprecated and will be removed in a future update.
 
@@ -42,17 +42,17 @@ Here's how role-based LDAP integration works:
 
 To access the admin console, the user needs to belong to an LDAP group mapped to an administrative role.  
 
-For database access, the user needs to belong to an LDAP group mapped to a role listed in database’s access control list (ACL).  The rights granted to the group determine the user's level of access. 
+For database access, the user needs to belong to an LDAP group mapped to a role listed in the database’s access control list (ACL).  The rights granted to the group determine the user's level of access. 
 
 ## Prerequisites 
 
-Before enabling LDAP in Redis Enterprise, you should verify a few things:
+Before you enable LDAP in Redis Enterprise, you need:
 
-1.  You’ll need to know the LDAP groups that correspond to the levels of access you wish to authorize.  Each LDAP group will be mapped to a Redis Enterprise access control role.
+1. The LDAP groups that correspond to the levels of access you wish to authorize.  Each LDAP group will be mapped to a Redis Enterprise access control role.
 
-1.  You’ll also need a Redis Enterprise access control role for each LDAP group.  If you haven’t already set up [role-based access controls]({{<relref "rs/security/access-control">}}) (RBAC), you should do so before enabling LDAP.
+1. A Redis Enterprise access control role for each LDAP group. Before you enable LDAP, you need to set up [role-based access controls]({{<relref "rs/security/access-control">}}) (RBAC).
 
-1.  Finally, you need the the following LDAP info:
+1. The following LDAP details:
 
     - Server URI, including host, port, and protocol details.  
     - Certificate details for secure protocols.  
@@ -65,7 +65,7 @@ Before enabling LDAP in Redis Enterprise, you should verify a few things:
 
 To enable LDAP:
 
-1.  Use **Settings** | **LDAP** to [enable LDAP access]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
+1.  From **Settings > LDAP** in the admin console, [enable LDAP access]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
 
 1.  Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}}).
 

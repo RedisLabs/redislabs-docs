@@ -1,6 +1,6 @@
 ---
 Title: Map LDAP groups to roles
-description: Describes how to map LDAP authorization groups to Redis Software roles using the Redis Software admin console.
+description: Describes how to map LDAP authorization groups to Redis Enterprise roles using the admin console.
 weight: 35
 alwaysopen: false
 categories: ["RS"]
@@ -15,16 +15,16 @@ Once LDAP is enabled, you need to map LDAP groups to Redis Enterprise access con
 
 ## Map LDAP groups to roles
 
-To map an LDAP groups to access control roles:
+To map LDAP groups to access control roles:
 
-1. From the admin console menu, select **Access control** | **LDAP mappings**.
+1. From the admin console menu, select **Access control > LDAP mappings**.
 
     {{<image filename="images/rs/rs-access-control-ldap-mappings.png" width="75%" alt="The Access control | LDAP mappings screen in the Redis Software admin console" >}}{{< /image >}}
 
 
-   If you see an "LDAP configuration is disabled" message, use **Settings** | **LDAP** to [enable role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
+   If you see an "LDAP configuration is disabled" message, go to **Settings > LDAP** to [enable role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
 
-   You can map LDAP roles when LDAP configuration is not enabled; they will have no effect until LDAP is properly configured and enabled.
+   You can map LDAP roles when LDAP configuration is not enabled, but they won't have any effect until you configure and enable LDAP.
 
 1.  Select the **Add** button to create a new mapping and then enter the following details:
 
@@ -32,13 +32,13 @@ To map an LDAP groups to access control roles:
 |:----------|:--------------|
 | **Name** | A descriptive, unique name for the mapping |
 | **Distinguished Name** | The distinguished name of the LDAP group to be mapped.  <br/>Example: `cn=admins,ou=groups,dc=example,dc=com` |
-| **Role** | The Redis Software access control role defined for this group. |
-| **Notified email** | _(Optional)_) An address to receive alerts|
+| **Role** | The Redis Software access control role defined for this group |
+| **Notified email** | _(Optional)_ An address to receive alerts|
 | **Email alerts**  | Selections identifying the desired alerts.  Select **Edit** to change. |
 
 1.  When finished, select the **Save** button.
 
-Create a mapping for each LDAP group used to authenticate and/or authorize access to Redis Software resources.
+Create a mapping for each LDAP group used to authenticate and/or authorize access to Redis Enterprise Software resources.
 
 The scope of the authorization depends on the access control role:
 
@@ -52,4 +52,4 @@ The scope of the authorization depends on the access control role:
 
 - Enable and configure [role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}})
 - Update database ACLs to [authorize LDAP access]({{<relref "/rs/security/access-control/ldap/update-database-acls">}})
-- Learn more about Redis Software [security and practices]({{<relref "/rs/security/">}})
+- Learn more about Redis Enterprise Software [security and practices]({{<relref "/rs/security/">}})
