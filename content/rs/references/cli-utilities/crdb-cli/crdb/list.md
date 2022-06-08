@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli crdb list` shows a list of all Active-Active databases.
+Shows a list of all Active-Active databases.
 
 ```sh
 crdb-cli crdb list
@@ -16,7 +16,7 @@ crdb-cli crdb list
 
 ### Parameters
 
-None.
+None
 
 ### Returns
 

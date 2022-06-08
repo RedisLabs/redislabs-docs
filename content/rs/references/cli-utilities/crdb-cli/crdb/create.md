@@ -1,7 +1,7 @@
 ---
 Title: crdb-cli crdb create
 linkTitle: create
-description: Create an Active-Active database.
+description: Creates an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

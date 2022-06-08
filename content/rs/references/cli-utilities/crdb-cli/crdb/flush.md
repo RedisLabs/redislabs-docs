@@ -8,23 +8,25 @@ categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli crdb flush` clears all keys from an Active-Active database.
+Clears all keys from an Active-Active database.
 
 ```sh
-crdb-cli crdb flush --crdb_guid <guid>
-                    [ --no-wait ]
+crdb-cli crdb flush --crdb-guid <guid>
+         [ --no-wait ]
 ```
 
 ### Parameters
 
 | Parameter           | Value  | Description                         |
 |---------------------|--------|-------------------------------------|
-| crdb_guid \<guid\>  | string | The GUID of the database (required) |
+| crdb-guid  | string | The GUID of the database (required) |
 | no-wait             |        | Does not wait for the task to complete |
 
 ### Returns
 
-Returns the task ID of the task clearing the database. If `--no-wait` is specified, the command exits. Otherwise, it will wait for the database to be cleared and return `finished`.
+Returns the task ID of the task clearing the database.
+
+If `--no-wait` is specified, the command exits. Otherwise, it will wait for the database to be cleared and return `finished`.
 
 ### Example
 

@@ -8,17 +8,17 @@ categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli crdb health-report` shows the health report of an Active-Active database.
+Shows the health report of an Active-Active database.
 
 ```sh
-crdb-cli crdb health-report --crdb_guid <guid>
+crdb-cli crdb health-report --crdb-guid <guid>
 ```
 
 ### Parameters
 
 | Parameter           | Value  | Description                         |
 |---------------------|--------|-------------------------------------|
-| crdb_guid \<guid\>  | string | The GUID of the database (required) |
+| crdb-guid  | string | The GUID of the database (required) |
 
 ### Returns
 

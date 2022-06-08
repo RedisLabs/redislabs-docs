@@ -8,17 +8,17 @@ categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli crdb get` shows the current configuration of an Active-Active database.
+Shows the current configuration of an Active-Active database.
 
 ```sh
-crdb-cli crdb get --crdb_guid <guid>
+crdb-cli crdb get --crdb-guid <guid>
 ```
 
 ### Parameters
 
 | Parameter           | Value  | Description                         |
 |---------------------|--------|-------------------------------------|
-| crdb_guid \<guid\>  | string | The GUID of the database (required) |
+| crdb-guid  | string | The GUID of the database (required) |
 
 ### Returns
 
@@ -67,7 +67,7 @@ Instance:
     Replication TLS SNI: <Default>
   Compression: 3
   DB-Config:
-    authentication_admin_pass: ZWVmNDk1MTJiMjZmZGYxNDU2N2NhOGNmOWM5MDhjZGRkOTQ1
+    authentication_admin_pass: 
     replication: None
     rack_aware: None
     memory_size: None
@@ -97,7 +97,7 @@ Instance:
     Replication TLS SNI: <Default>
   Compression: 3
   DB-Config:
-    authentication_admin_pass: YWE3MTQwY2M5ODRkZjFhNmQzODAwNjVmNjE4ZWE5MTA4YTFh
+    authentication_admin_pass: 
     replication: None
     rack_aware: None
     memory_size: None

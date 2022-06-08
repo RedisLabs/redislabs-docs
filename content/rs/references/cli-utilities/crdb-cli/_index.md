@@ -21,6 +21,10 @@ Write conflicts are resolved using [CRDTs]({{< relref "/rs/databases/active-acti
 
 To programmatically maintain an Active-Active database and its instances, you can use the `crdb-cli` command-line tool.
 
+## `crdb-cli` commands
+
+{{<table-children columnNames="Command,Description" columnSources="LinkTitle,Description" enableLinks="LinkTitle">}}
+
 ## Use the crdb-cli
 
 To use the `crdb-cli` tool, use SSH to sign in to a Redis Enterprise host with a user that belongs to the group that Redis Enterprise Software was installed with (Default: **redislabs**).
@@ -28,12 +32,12 @@ If you sign in with a non-root user, you must add `/opt/redislabs/bin/` to your 
 
 `crdb-cli` commands use the syntax: `crdb-cli <command> <arguments>` to let you:
 
-- Create, list, update, flush, or delete an Active-Active database
-- Add or remove an instance of the Active-Active database on a specific cluster
+- Create, list, update, flush, or delete an Active-Active database.
+- Add or remove an instance of the Active-Active database on a specific cluster.
 
 Each command creates a task.
 By default, the command runs immediately and displays the result in the output.
-If you use the `--no-wait` flag, the command runs in the background so that your application is not delayed by the response.
-You can track the task with [`crdb-cli task status`](#active-active-task-status).
+If you use the <nobr>`--no-wait`</nobr> flag, the command runs in the background so that your application is not delayed by the response.
+You can track the task with [`crdb-cli task status`]({{<relref "/rs/references/cli-utilities/crdb-cli/task-status">}}).
 
-For each `crdb-cli` command, you can use `--help` for additional information about the command.
+For each `crdb-cli` command, you can use <nobr>`--help`</nobr> for additional information about the command.

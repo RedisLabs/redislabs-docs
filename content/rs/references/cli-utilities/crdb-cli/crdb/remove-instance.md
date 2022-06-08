@@ -8,28 +8,30 @@ categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli crdb remove-instance` deletes all data from an Active-Active instance, deletes the instance from the participating cluster, and removes the instance from the list of instances for the Active-Active database.
+Deletes all data from an Active-Active instance, deletes the instance from the participating cluster, and removes the instance from the list of instances for the Active-Active database.
 
 ```sh
-crdb-cli crdb remove-instance --crdb_guid <guid> /
-                    --instance-id <instance-id> /
-                    [ { --ordered | --unordered } ] /
-                    [ --force ] /
-                    [ --no-wait ]
+crdb-cli crdb remove-instance --crdb-guid <guid> 
+         --instance-id <instance-id> 
+         [ { --ordered | --unordered } ] 
+         [ --force ] 
+         [ --no-wait ]
 ```
 
 ### Parameters
 
 | Parameter                    | Value  | Description                                                                                                                                                      |
 |------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| crdb_guid \<guid\>          | string | The GUID of the database (required)                                                                                                                              |
-| instance_id \<instance-id\> | string | The instance ID of the local instance (required)                                                                                                                 |
+| crdb-guid         | string | The GUID of the database (required)                                                                                                                              |
+| instance-id | string | The ID of the local instance (required)                                                                                                                 |
 | force                        |        | Removes the instance without purging data from the instance. <br>If --force is specified, you must run [`crdb-cli crdb purge-instance`]({{<relref "/rs/references/cli-utilities/crdb-cli/crdb/purge-instance">}}) from the removed instance. |
 | no-wait                      |        | Does not wait for the task to complete                                                                                                                           |
 
 ### Returns
 
-Returns the task ID of the task that is getting rid of the local instance. If --no-wait is specified, the command exits. Otherwise, it will wait for the instance to be purged and return `finished`.
+Returns the task ID of the task that is getting rid of the local instance. 
+
+If `--no-wait` is specified, the command exits. Otherwise, it will wait for the instance to be removed and return `finished`.
 
 ### Example
 
