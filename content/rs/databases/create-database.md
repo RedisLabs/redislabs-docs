@@ -18,7 +18,7 @@ Redis Enterprise Software lets you create databases and distribute them across a
 These databases can use Redis Enterprise features like:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
-- [High availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
+- [High availability]({{< relref "/rs/databases/durability-ha.md" >}})
 - [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
 
@@ -73,9 +73,9 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
 
 1. Configure the {{< field "db_type" >}} options that you want for the database:
 
-    - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
+    - [**Replication**]({{< relref "/rs/databases/configure/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
 
-        If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
+        If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}}),
         you can also enable rack-zone awareness for the database.
 
     - [**Redis Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - When you create a new in-memory database,
@@ -135,28 +135,28 @@ after the database is created.
         {{< /note >}}
 
     - **Database clustering** - You can either:
-        - Enable [database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+        - Enable [database clustering]({{< relref "/rs/databases/configure/clustering.md" >}})
             and select the number of shards that you want to have in the database.
             When database clustering is enabled, databases are subject to limitations on
-            [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+            [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}}).
             You can increase the number of shards in the database at any time.
 
-            You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering#standard-hashing-policy" >}})
-            or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}})
+            You can accept the [standard hashing policy]({{< relref "/rs/databases/configure/clustering#standard-hashing-policy" >}})
+            or define a [custom hashing policy]({{< relref "/rs/databases/configure/clustering#custom-hashing-policy" >}})
             to define where keys are located in the clustered database.
 
         - Clear the **Database clustering** option to use only one shard so that you
-            can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+            can use [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}})
             without the limitations.
 
-    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
+    - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
     - [**Data eviction policy**]({{< relref "/rs/databases/configure/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-    - [**Replica Of**]({{< relref "/rs/databases/create-replica-of.md" >}}) -
+    - [**Replica Of**]({{< relref "/rs/databases/import-export/create-replica-of.md" >}}) -
     You can make this database a repository for keys from other databases.
 
 - [**TLS**]({{<relref "/rs/security/tls/">}}) -
