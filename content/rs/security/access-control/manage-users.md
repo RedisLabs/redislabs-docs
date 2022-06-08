@@ -15,27 +15,27 @@ aliases: ["/rs/administering/access-control/password-rotation/",
 
 To add a user to the cluster:
 
-1. Go to the access control tab
-1. Select ![Add](/images/rs/icon_add.png#no-click "Add")
-1. Enter the name, email and password of the new user and select the role to assign to the user.
-1. Select the internal user type
-1. For email alerts, select "Edit" and then choose the alerts that the user should receive. You can select:
+1. From the **access control** tab in the admin console, select ![Add](/images/rs/icon_add.png#no-click "Add").
+1. Enter the name, email, and password of the new user and select a role to assign to the user.
+1. Select **internal** for **Authentication**.
+1. For **Email Alerts**, select **Edit** and then choose the alerts that the user should receive. You can select:
 
-    - Receive alerts for databases - The alerts that are enabled for the selected databases will be sent to the user. You can either select "All databases", or you can select "Customize" and select the individual databases to send alerts for.
-        - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
+    - **Receive alerts for databases** - The alerts that are enabled for the selected databases will be sent to the user. You can either select **All databases**, or you can select **Customize** and select the individual databases to send alerts for.
+    
+    - **Receive cluster alerts** - The alerts that are enabled for the cluster in **settings > alerts** are sent to the user.
 
 1. Select the save icon.
 {{< video "/images/rs/new-user-add.mp4" "Create a new user" >}}
 
 ## Deactivate default user
 
-When you provision a database, default user will be enabled. This allows for backwards compatibility with versions of Redis before Redis 6.
+When you provision a database, the default user will be enabled. This allows for backwards compatibility with versions of Redis before Redis 6.
 
 To deactivate the default user:
 
-1. Select the configuration tab.
-1. Find the Default database access setting.
-1. Deselect the checkbox.
+1. Select the **configuration** tab.
+1. Clear the checkbox for **Default database access**.
+1. Select **Save**.
 
 {{<note>}}
 We recommend that you deactivate the default user when using ACLs with your database and backwards compatibility is not required.
@@ -47,10 +47,10 @@ We recommend that you deactivate the default user when using ACLs with your data
 
 Redis Enterprise supports the following user account security settings:
 
-1. Password complexity
-1. Password expiration
-1. User Lockouts
-1. Account inactivity timeout
+- Password complexity
+- Password expiration
+- User lockouts
+- Account inactivity timeout
 
 To enforce a more advanced password policy, we recommend using LDAP integration with an external identity provider, such as Active Directory.
 
@@ -67,8 +67,8 @@ that meets most organizational needs. When enabled, this password profile requir
 
 In addition, the password:
 
-- Cannot contain the user ID or reverse of the user ID
-- Cannot have more than three repeating characters
+- Cannot contain the user ID or reverse of the user ID.
+- Cannot have more than three repeating characters.
 
 {{< note >}}
 The password complexity profile applies when a new user is added or an existing user changes their password. This profile does not apply to users authenticated through an external identity provider.
@@ -88,7 +88,7 @@ To turn off the password complexity requirement, run the same command but set `"
 
 ### Enable password expiration
 
-To enforce an expiration of a user's password after a specified number of days, run the following command:
+To enforce an expiration of a user's password after a specified number of days, use the following REST API request:
 
 ```sh
 curl -k -X PUT -v -H "cache-control: no-cache" 
@@ -102,7 +102,7 @@ To turn off password expiration, set the number of days to `0`.
 
 ## User password rotation
 
-Redis Enterprise Software lets you implement password rotation policies using its API.
+Redis Enterprise Software lets you implement password rotation policies using its [REST API]({{<relref "/rs/references/rest-api">}}).
 
 You can add a new password for a database user without immediately invalidating the old one (which might cause authentication errors in production).
 
@@ -131,16 +131,16 @@ The new password cannot already exist as a password for the user and must meet t
 
 To rotate the password of a user account:
 
-1. Add an additional password to a user account with this POST command:
+1. Add an additional password to a user account with this `POST` request:
 
     ```sh
     curl -k -v -X POST -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}' https://<RS_server_address>:9443/v1/users/password
     ```
 
-    After you run this command, you can authenticate with both the old and the new password.
+    After you send this request, you can authenticate with both the old and the new password.
 
 1. Update the password in all database connections that connect with the user account.
-1. Delete the original password with this DELETE command:
+1. Delete the original password with this `DELETE` request:
 
 ```sh
 curl -k -v -X DELETE -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>"}' https://<RS_server_address>:9443/v1/users/password
@@ -150,10 +150,10 @@ If there is only one valid password for a user account, you cannot delete that p
 
 ### Replace all passwords
 
-You can also replace all existing passwords for a user account with a single password that is not an existing password.
+You can also replace all existing passwords for a user account with a single password that does not match any existing passwords.
 This can be helpful if you suspect that your passwords are compromised and you want to quickly resecure the account.
 
-To replace all existing passwords for a user account with a single new password, use this PUT command:
+To replace all existing passwords for a user account with a single new password, use this `PUT` request:
 
 ```sh
 curl -k -v -X PUT -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}' https://<RS_server_address>:9443/v1/users/password
@@ -169,7 +169,7 @@ If you run the above command without `-X PUT`, the new password is added to the 
 
 The parameters for the user login lockout are:
 
-- **Login Lockout Threshold** - The number of failed login attempts allowed before the user account is locked. (Default: 5)
+- **Login Lockout Threshold** - The number of failed login attempts allowed before the user account is locked. (Default: 5 minutes)
 - **Login Lockout Counter Reset** - The amount of time during which failed login attempts are counted. (Default: 15 minutes)
 - **Login Lockout Duration** - The amount of time that the user account is locked after excessive failed login attempts. (Default: 30 minutes)
 
@@ -189,13 +189,13 @@ You can set the login lockout threshold with the command:
 rladmin tune cluster login_lockout_threshold <login_lockout_threshold>
 ```
 
-For example, to set the lockout threshold to 10 failed login attempts.
+For example, to set the lockout threshold to 10 failed login attempts, run:
 
 ```sh
 rladmin tune cluster login_lockout_threshold 10
 ```
 
-Setting the lockout threshold to 0 turns off account lockout. In this case, the cluster settings show: `login_lockout_threshold: disabled`.
+If you set the lockout threshold to 0, it turns off account lockout. In this case, the cluster settings show `login_lockout_threshold: disabled`.
 
 ### Change the login lockout counter
 
@@ -219,23 +219,23 @@ You can set the login lockout duration in seconds with the command:
 rladmin tune cluster login_lockout_duration <login_lockout_duration>
 ```
 
-For example, to set the lockout duration to 1 hour use the command:
+For example, to set the lockout duration to 1 hour, run:
 
 ```sh
 rladmin tune cluster login_lockout_duration 3600
 ```
 
-If you set the lockout duration to 0, then the account can be unlocked only when an administrator changes the account's password. In this case, the cluster settings show: login_lockout_duration: admin-release
+If you set the lockout duration to 0, then the account can be unlocked only when an administrator changes the account's password. In this case, the cluster settings show `login_lockout_duration: admin-release`.
 
-#### Unlock locked user accounts
+### Unlock locked user accounts
 
-To unlock a user account or reset a user password from the CLI, run:
+To unlock a user account or reset a user password with `rladmin`, run:
 
 ```sh
 rladmin cluster reset_password <user email>
 ```
 
-To unlock a user account or reset a user password from the REST API, run:
+To unlock a user account or reset a user password with the REST API, run:
 
 ```sh
 curl -k -X PUT -v -H "cache-control: no-cache" 
@@ -245,14 +245,14 @@ curl -k -X PUT -v -H "cache-control: no-cache"
                   https://<RS_server_address>:9443/v1/users/<uid>
 ```
 
-### Session timeout
+## Session timeout
 
 The Redis Enterprise admin console supports session timeouts. By default, users are automatically logged out after 15 minutes of inactivity.
 
-To customize the session timeout you can run the following command:
+To customize the session timeout, run:
 
 ```sh
 rladmin cluster config cm_session_timeout_minutes <number_of_min>
 ```
 
-Here, number_of_min is the number of minutes after which sessions will time out.
+The `number_of_min` is the number of minutes after which sessions will time out.
