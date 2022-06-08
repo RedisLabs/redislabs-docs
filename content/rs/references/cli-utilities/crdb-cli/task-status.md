@@ -11,14 +11,14 @@ aliases:
 Shows the status of a specified Active-Active database task.
 
 ```sh
-crdb-cli task status --task_id <task_id>
+crdb-cli task status --task-id <task_id>
 ```
 
 ### Parameters
 
 | Parameter           | Value  | Description                         |
 |---------------------|--------|-------------------------------------|
-| task_id \<task_id\>  | string | An Active-Active database task ID (required) |
+| task-id \<task_id\>  | string | An Active-Active database task ID (required) |
 
 ### Returns
 
