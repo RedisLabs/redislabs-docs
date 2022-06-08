@@ -1,14 +1,14 @@
 ---
 Title: crdb-cli task status
-linkTitle: status
-description: Shows the status of a specifed Active-Active database task.
+linkTitle: task status
+description: Shows the status of a specified Active-Active database task.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli task status` shows the status of a specifed Active-Active database task.
+Shows the status of a specified Active-Active database task.
 
 ```sh
 crdb-cli task status --task_id <task_id>
@@ -18,11 +18,11 @@ crdb-cli task status --task_id <task_id>
 
 | Parameter           | Value  | Description                         |
 |---------------------|--------|-------------------------------------|
-| crdb_guid \<task_id\>  | string | The Task ID of an Active-Active database task (required) |
+| task_id \<task_id\>  | string | An Active-Active database task ID (required) |
 
 ### Returns
 
-Returns the status of the Active-Active database task.
+Returns the status of an Active-Active database task.
 
 ### Example
 
