@@ -88,12 +88,12 @@ Install one of the supported ingress controllers:
         http:
           paths:
           - path: /
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: <db-name>
                 port:
-                  number: <db-port>
+                  name: redis
     ```  
 
     For HAProxy, insert the following into the `annotations` section:  
