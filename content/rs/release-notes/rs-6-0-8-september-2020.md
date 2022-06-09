@@ -56,7 +56,7 @@ To use the updated modules with a database, you must [upgrade the module on the 
 
 - RS DEB packages (for Ubuntu) and RPM packages (for RHEL) are now signed with a GPG key so customers can verify that the package is authentic and has not been tampered with. You can access the GPG on the [installaion page]({{<relref "/rs/installing-upgrading#installing-rs-on-linux">}}).
 
-- The [crdb-cli]({{<relref "/rs/references/crdb-cli-reference.md">}}) history log is now being added to support packages.
+- The [crdb-cli]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) history log is now being added to support packages.
 
 ## Important fixes
 

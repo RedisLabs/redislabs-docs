@@ -6,7 +6,7 @@ description: This section how to set up an Active-Active Redis Enterprise databa
 weight: 15
 alwaysopen: false
 categories: ["Platforms"]
-aliases: [ 
+aliases: [
     /kubernetes/re-clusters/create-aa-database/,
     /kubernetes/re-clusters/create-aa-database.md,
 ]
@@ -56,7 +56,7 @@ You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<i
   - Example value: `rec01.ns01.svc.cluster.local`
   - How to get it: List all your Redis Enterprise clusters
       ```bash
-      kubectl get rec 
+      kubectl get rec
       ```
 - **API hostname** `<api-hostname>`:
   - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster
@@ -177,7 +177,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{< relref "/kubernetes/re-clusters/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
 
 ```sh
-crdb-cli crdb create 
+crdb-cli crdb create
   --name <db-name> \
   --memory-size <mem-size> \
   --encryption yes \
@@ -187,7 +187,7 @@ crdb-cli crdb create
 
 To create a database that syncs between more than two instances, add additional `--instance` arguments.
 
-See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more options.
+See the [`crdb-cli` reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more options.
 
 ## Test your database
 
