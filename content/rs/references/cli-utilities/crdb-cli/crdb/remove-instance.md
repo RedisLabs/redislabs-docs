@@ -11,10 +11,9 @@ aliases:
 Deletes all data from an Active-Active instance, deletes the instance from the participating cluster, and removes the instance from the list of instances for the Active-Active database.
 
 ```sh
-crdb-cli crdb remove-instance --crdb-guid <guid> 
-         --instance-id <instance-id> 
-         [ { --ordered | --unordered } ] 
-         [ --force ] 
+crdb-cli crdb remove-instance --crdb-guid <guid>
+         --instance-id <instance-id>
+         [ --force ]
          [ --no-wait ]
 ```
 
@@ -35,7 +34,7 @@ If the cluster cannot communicate with the instance that you want to remove, you
 
 ### Returns
 
-Returns the task ID of the task that is getting rid of the local instance. 
+Returns the task ID of the task that is getting rid of the local instance.
 
 If `--no-wait` is specified, the command exits. Otherwise, it will wait for the instance to be removed and return `finished`.
 
