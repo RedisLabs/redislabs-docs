@@ -15,6 +15,8 @@ crdb-cli crdb delete --crdb-guid <guid>
          [ --no-wait ]
 ```
 
+This command is irreversible. If the data in your database is important, back it up before you delete the database.
+
 ### Parameters
 
 | Parameter           | Value  | Description                         |

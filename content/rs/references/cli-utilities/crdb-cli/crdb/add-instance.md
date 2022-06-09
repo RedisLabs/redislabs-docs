@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Adds a peer replica to an Active-Active database.
+Adds a peer replica to an existing Active-Active database in order to host the database on another cluster. This creates a read-write copy of the database on the specified cluster.
 
 ```sh
 crdb-cli crdb add-instance --crdb-guid <guid> 

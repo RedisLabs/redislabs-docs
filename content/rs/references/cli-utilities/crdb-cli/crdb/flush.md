@@ -15,6 +15,8 @@ crdb-cli crdb flush --crdb-guid <guid>
          [ --no-wait ]
 ```
 
+This command is irreversible. If the data in your database is important, back it up before you flush the database.
+
 ### Parameters
 
 | Parameter           | Value  | Description                         |
