@@ -8,27 +8,27 @@ categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli crdb create` creates an Active-Active database.
+Creates an Active-Active database.
 
 ```sh
-crdb-cli crdb create --name <name> /
---memory-size <maximum_memory> /
---instance fqdn=<cluster_fqdn>,username=<username>,password=<password> /
---instance fqdn=<cluster_fqdn>,username=<username>,password=<password> /
-[--port <port_number>] /
-[--no-wait] /
-[--default-db-config <configuration>] /
-[--default-db-config-file <filename>] /
-[--compression (0-6)] /
-[--causal-consistency { true | false } ] /
-[--password <password>] /
-[--replication { true | false } ] /
-[--encryption { true | false } ] /
-[--sharding { false | true } ] /
-[--shards-count <number_of_shards>] /
-[--shard-key-regex <regex_rule>] /
-[--oss-sharding { true | false } ] /
-[--oss-cluster { true | false } ] /
+crdb-cli crdb create --name <name>
+--memory-size <maximum_memory>
+--instance fqdn=<cluster_fqdn>,username=<username>,password=<password>
+--instance fqdn=<cluster_fqdn>,username=<username>,password=<password>
+[--port <port_number>]
+[--no-wait]
+[--default-db-config <configuration>]
+[--default-db-config-file <filename>]
+[--compression (0-6)]
+[--causal-consistency { true | false } ]
+[--password <password>]
+[--replication { true | false } ]
+[--encryption { true | false } ]
+[--sharding { false | true } ]
+[--shards-count <number_of_shards>]
+[--shard-key-regex <regex_rule>]
+[--oss-sharding { true | false } ]
+[--oss-cluster { true | false } ]
 [--bigstore { true | false }]
 [--bigstore-ram-size <maximum_memory>]
 [--with-module name=<module_name>,version=<module_version>,args=<module_args>]
@@ -75,7 +75,7 @@ Before you create an Active-Active database, you must have:
 
 Returns the task ID of the task that is creating the database. If --no-wait is specified, the command exits. Otherwise, it will wait for the database to be created and then return the CRDB GUID.
 
-### Example
+### Examples
 
 ```sh
 $ crdb-cli crdb create --name database1 --memory-size 1GB --port 12000 \
@@ -85,4 +85,28 @@ Task 633aaea3-97ee-4bcb-af39-a9cb25d7d4da created
   ---> Status changed: queued -> started
   ---> CRDB GUID Assigned: crdb:d84f6fe4-5bb7-49d2-a188-8900e09c6f66
   ---> Status changed: started -> finished
+```
+
+To create an Active-Active database with two shards in each instance and with encrypted traffic between the clusters:
+
+```sh
+crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.redis.local,username=admin@redis.local,password=admin --instance fqdn=cluster2.redis.local,username=admin@redis.local,password=admin --shards-count 2 --encryption true
+```
+
+To create an Active-Active database with two shards and with RediSearch 2.0.6 module:
+
+```sh
+crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.redis.local,username=admin@redis.local,password=admin --instance fqdn=cluster2.redis.local,username=admin@redis.local,password=admin --shards-count 2 --with-module name=search,version="2.0.6",args="PARTITIONS AUTO"
+```
+
+To create an Active-Active database with two shards and with encrypted traffic between the clusters:
+
+```sh
+crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.redis.local,username=admin@redis.local,password=admin --instance fqdn=cluster2.redis.local,username=admin@redis.local,password=admin --encryption true --shards-count 2
+```
+
+To create an Active-Active database with 1 shard in each instance and not wait for the response:
+
+```sh
+crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.redis.local,username=admin@redis.local,password=admin --instance fqdn=cluster2.redis.local,username=admin@redis.local,password=admin --no-wait
 ```

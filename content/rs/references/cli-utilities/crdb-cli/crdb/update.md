@@ -8,21 +8,21 @@ categories: ["RS"]
 aliases:
 ---
 
-`crdb-cli crdb update` changes the configuration of an Active-Active database.
+Updates the configuration of an Active-Active database.
 
 ```sh
-crdb-cli crdb update --crdb-guid <guid> /
-[--no-wait] [--force] /
-[--default-db-config <configuration> ] /
-[--default-db-config-file <filename>] /
-[--compression (0-6)] /
-[--causal-consistency { true | false } ] /
-[--credentials id=<id>,username=<username>,password=<password> ] /
-[--encryption { true | false } ] /
-[--oss-cluster { true | false } ] /
-[--featureset-version { true | false } ] /
+crdb-cli crdb update --crdb-guid <guid>
+[--no-wait] [--force]
+[--default-db-config <configuration> ]
+[--default-db-config-file <filename>]
+[--compression (0-6)]
+[--causal-consistency { true | false } ]
+[--credentials id=<id>,username=<username>,password=<password> ]
+[--encryption { true | false } ]
+[--oss-cluster { true | false } ]
+[--featureset-version { true | false } ]
 [--memory-size <maximum_memory>]
-[--bigstore-ram-size <maximum_memory>] /
+[--bigstore-ram-size <maximum_memory>]
 [--update-module name=<name>,featureset_version=<version>]
 ```
 
