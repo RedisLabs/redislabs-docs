@@ -27,7 +27,7 @@ Returns the status of an Active-Active database task.
 ### Example
 
 ```sh
-$ crdb-cli crdb flush --crdb-guid db6365b5-8aca-4055-95d8-7eb0105c0b35 --no-wait        
+$ crdb-cli crdb update --crdb-guid db6365b5-8aca-4055-95d8-7eb0105c0b35 --memory-size 2GB --no-wait        
 Task 2901c2a3-2828-4717-80c0-6f27f1dd2d7c created
 $ crdb-cli task status --task-id 2901c2a3-2828-4717-80c0-6f27f1dd2d7c
 Task-ID: 2901c2a3-2828-4717-80c0-6f27f1dd2d7c
