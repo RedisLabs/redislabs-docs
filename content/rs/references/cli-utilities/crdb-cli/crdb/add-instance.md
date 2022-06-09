@@ -11,8 +11,8 @@ aliases:
 Adds a peer replica to an existing Active-Active database in order to host the database on another cluster. This creates a read-write copy of the database on the specified cluster.
 
 ```sh
-crdb-cli crdb add-instance --crdb-guid <guid> 
-         --instance fqdn=<cluster_fqdn>,username=<username>,password=<password> 
+crdb-cli crdb add-instance --crdb-guid <guid>
+         --instance fqdn=<cluster_fqdn>,username=<username>,password=<password>[,url=<url>,replication_endpoint=<endpoint>]
          [ --compression <0-6> ]
          [ --no-wait ]
 ```

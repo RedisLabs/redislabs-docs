@@ -13,8 +13,8 @@ Creates an Active-Active database.
 ```sh
 crdb-cli crdb create --name <name>
          --memory-size <maximum_memory>
-         --instance fqdn=<cluster_fqdn>,username=<username>,password=<password>
-         --instance fqdn=<cluster_fqdn>,username=<username>,password=<password>
+         --instance fqdn=<cluster_fqdn>,username=<username>,password=<password>[,url=<url>,replication_endpoint=<endpoint>]
+         --instance fqdn=<cluster_fqdn>,username=<username>,password=<password>[,url=<url>,replication_endpoint=<endpoint>]
          [--port <port_number>]
          [--no-wait]
          [--default-db-config <configuration>]
