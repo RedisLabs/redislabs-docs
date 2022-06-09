@@ -7,7 +7,7 @@ alwaysopen: false
 toc: "true"
 headerRange: "[1-2]"
 categories: ["RS"]
-aliases: 
+aliases:
 ---
 
 `rladmin verify` prints verification reports for the cluster.
@@ -20,15 +20,15 @@ aliases:
 rladmin verify balance [ node <ID> ]
 ```
 
-The [proxy policy]({{<relref "/rs/administering/designing-production/networking/multiple-active-proxy#proxy-policies">}}) determines which nodes or endpoints to report as unbalanced.
+The [proxy policy]({{<relref "/rs/databases/configure/proxy-policy">}}) determines which nodes or endpoints to report as unbalanced.
 
 A node is unbalanced if:
 - `all-nodes` proxy policy and the node has no endpoint
 
 An endpoint is unbalanced in the following cases:
 - `single` proxy policy and one of the following is true:  
-    - Shard placement is [`sparse`]({{<relref "/rs/concepts/memory-performance/shard-placement-policy#sparse-shard-placement-policy">}}) and none of the master shards are on the node
-    - Shard placement is [`dense`]({{<relref "/rs/concepts/memory-performance/shard-placement-policy#dense-shard-placement-policy">}}) and some master shards are on a different node from the endpoint
+    - Shard placement is [`sparse`]({{<relref "/rs/databases/configure/shard-placement-policy#sparse-shard-placement-policy">}}) and none of the master shards are on the node
+    - Shard placement is [`dense`]({{<relref "/rs/databases/configure/shard-placement-policy#dense-shard-placement-policy">}}) and some master shards are on a different node from the endpoint
 - `all-master-shards` proxy policy and one of the following is true:  
     - None of the master shards are on the node
     - Some master shards are on a different node from the endpoint
@@ -65,7 +65,7 @@ NODE:ID  DB:ID  NAME  ENDPOINT:ID  PROXY_POLICY  LOCAL SHARDS   TOTAL SHARDS
 
 ## `verify rack_aware`
 
-`rladmin verify rack_aware` verifies that the cluster complies with the rack awareness policy and reports any discovered rack collisions, if [rack-zone awareness]({{<relref "rs/concepts/high-availability/rack-zone-awareness.md">}}) is enabled.
+`rladmin verify rack_aware` verifies that the cluster complies with the rack awareness policy and reports any discovered rack collisions, if [rack-zone awareness]({{<relref "rs/clusters/configure/rack-zone-awareness.md">}}) is enabled.
 
 ```text
 rladmin verify rack_aware

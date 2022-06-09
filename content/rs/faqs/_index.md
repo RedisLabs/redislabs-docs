@@ -34,7 +34,7 @@ A shard is any type of provisioned Redis instance, such as a master
 copy, slave copy, database shard that is part of a clustered database,
 etc.
 
-To learn more, see [Database clustering]({{<relref "rs/concepts/high-availability/clustering.md">}}).
+To learn more, see [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}}).
 
 ### What client can I use to connect to the databases in Redis Enterprise Software
 

@@ -10,10 +10,38 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisJSON v2.0.7 requires:
+RedisJSON v2.0.9 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.0.9 (June 2022)
+
+This is a maintenance release for RedisJSON 2.0.
+
+Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Bug fixes:
+
+  - [#721](https://github.com/RedisJSON/RedisJSON/pull/721) Skip String and Boolean scalars in `JSON.CLEAR` (MOD-3136)
+
+- Improvements:
+
+  - [#709](https://github.com/RedisJSON/RedisJSON/pull/709) Allow internal JSON API's `getdouble` to succeed with integer values
+
+## v2.0.8 (April 2022)
+
+This is a maintenance release for RedisJSON 2.0.
+
+Update urgency: `LOW` - No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Bug fixes:
+
+  - [#691](https://github.com/RedisJSON/RedisJSON/pull/691), [#667](https://github.com/RedisJSON/RedisJSON/issues/667) Duplicate results in JSONPath query
 
 ## v2.0.7 (March 2022)
 

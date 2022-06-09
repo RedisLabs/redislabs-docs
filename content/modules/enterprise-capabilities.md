@@ -17,7 +17,7 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 
 | Module | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
 |:-------|:-------------------------:|:-----------------------:|
-| [Redis Stack]({{<relref "/modules/redis-stack">}}) | &#x274c; No | &#x2705; Yes[^4] |
+| [Redis Stack]({{<relref "/modules/redis-stack">}}) | &#x2705; Yes[^4] | &#x2705; Yes[^4] |
 | [RediSearch]({{<relref "/modules/redisearch">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RedisJSON]({{<relref "/modules/redisjson">}})   | &#x2705; Yes | &#x2705; Yes |
 | [RedisGraph]({{<relref "/modules/redisgraph">}}) | &#x2705; Yes | &#x2705; Yes |
@@ -26,7 +26,7 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 | [RedisGears]({{<relref "/modules/redisgears">}}) | &#x2705; Yes | &#x274c; No |
 | [RedisAI]({{<relref "/modules/redisai">}})       | &#x2705; Yes | &#x274c; No |
 
-[^4]: Redis Enterprise Cloud currently supports Redis Stack for Fixed and Free subscriptions only.  For details, see [Create database]({{< relref  "/rc/databases/create-database#fixed-and-free-module-options" >}}).
+[^4]: Redis Enterprise Software supports all Redis Stack capabilities.  You can combine any  supported module, except for RedisGraph.
 
 ## Module feature support
 
@@ -56,7 +56,7 @@ For details about individual modules, see the corresponding documentation.
 
 [^2]: In version 1.6, RediSearch supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
 
-[^3]: You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/administering/designing-production/networking/using-oss-cluster-api">}}).
+[^3]: You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/databases/configure/enable-oss-cluster-api">}}).
 
 | Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
 |-------------------------|:------------:|:------------:|:----------:|:----------:| 
