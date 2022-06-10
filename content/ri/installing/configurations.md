@@ -1,5 +1,5 @@
 ---
-Title: Configuring RedisInsight
+Title: Configure RedisInsight
 date: 2019-12-13 03:49:29 +0530
 weight: 60
 categories: ["RI"]
@@ -64,6 +64,25 @@ The following environment variables can be set to configure RedisInsight:
 **Type:**        String
 
 **Default:**     `"WARNING"`
+
+
+### RIAUTHPROMPT
+
+**Description:** Enables authentication prompt that asks for authentication before opening an instance or when the user is idle.
+
+**Type:** Bool
+
+**Default:** `false`
+
+
+### RIAUTHTIMER
+
+**Description:** Idle timer value for authentication prompt, in minutes.
+
+**Type:** Bool
+
+**Default:** `30`
+
 
 ### REDISINSIGHT_PORT (DEPRECATED)
 

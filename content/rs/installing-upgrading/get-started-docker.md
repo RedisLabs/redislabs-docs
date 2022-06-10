@@ -185,5 +185,5 @@ get key1
 
 Now you have a Redis Enterprise cluster ready to go. You can connect to it with
 a [redis client](https://redis.io/clients) to start loading it with data or
-you can use the [memtier_benchmark Quick Start]({{< relref "/rs/administering/memtier-benchmark.md" >}})
+you can use the [memtier_benchmark Quick Start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}})
 to check the cluster performance.

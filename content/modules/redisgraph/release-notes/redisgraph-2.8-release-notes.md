@@ -10,10 +10,26 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.12 requires:
+RedisGraph v2.8.13 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.13 (May 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2351](https://github.com/RedisGraph/RedisGraph/pull/2351) Potential memory leak on query timeout
+    - [#2348](https://github.com/RedisGraph/RedisGraph/issues/2348) Crash when converting certain Cypher queries to RediSearch queries
+    - [#2331](https://github.com/RedisGraph/RedisGraph/pull/2331) Two memory leaks (one on failed RDB loading, one on certain invalid queries)
+    - [#2328](https://github.com/RedisGraph/RedisGraph/pull/2328), [#2306](https://github.com/RedisGraph/RedisGraph/issues/2306), [#2307](https://github.com/RedisGraph/RedisGraph/issues/2307), [#2326](https://github.com/RedisGraph/RedisGraph/issues/2326) Disallow redeclaration of variables; fixed false redeclaration errors
+    - [#2363](https://github.com/RedisGraph/RedisGraph/pull/2363) Nodes were sometimes created with more labels than those specified
 
 ## v2.8.12 (May 2022)
 
@@ -26,19 +42,9 @@ Details:
 - Bug fixes:
 
     - [#2278](https://github.com/RedisGraph/RedisGraph/issues/2278), [#2301](https://github.com/RedisGraph/RedisGraph/pull/2301) Potential crash on bulk update
-    - [#2262](https://github.com/RedisGraph/RedisGraph/issues/2262), [#2269](https://github.com/RedisGraph/RedisGraph/pull/2269) Crash on queries involving deletion after copying properties in `ON MATCH/ON CREATE`
-    - [#2271](https://github.com/RedisGraph/RedisGraph/issues/2271), [#2283](https://github.com/RedisGraph/RedisGraph/pull/2283) Crash on certain queries: fix inequality when cloning predicate in all operations
-    - [#2272](https://github.com/RedisGraph/RedisGraph/issues/2272), [#2277](https://github.com/RedisGraph/RedisGraph/pull/2277) Crash on certain queries: validate function return type
-    - [#2273](https://github.com/RedisGraph/RedisGraph/issues/2273), [#2280](https://github.com/RedisGraph/RedisGraph/pull/2280) Crash on certain queries: fix apply op when missing argument
-    - [#2282](https://github.com/RedisGraph/RedisGraph/issues/2282), [#2295](https://github.com/RedisGraph/RedisGraph/pull/2295) Crash on empty query
-    - [#2288](https://github.com/RedisGraph/RedisGraph/issues/2288), [#2296](https://github.com/RedisGraph/RedisGraph/pull/2296) Crash on certain queries: validate return column names
-    - [#2299](https://github.com/RedisGraph/RedisGraph/issues/2299), [#2310](https://github.com/RedisGraph/RedisGraph/pull/2310) Crash when some functions are used incorrectly
-    - [#2312](https://github.com/RedisGraph/RedisGraph/issues/2312), [#2311](https://github.com/RedisGraph/RedisGraph/pull/2311) Crash on certain queries involving unknown function
-    - [#2321](https://github.com/RedisGraph/RedisGraph/issues/2321), [#2336](https://github.com/RedisGraph/RedisGraph/pull/2336) Crash when incorrectly using `NOT` as a function name
-    - [#2325](https://github.com/RedisGraph/RedisGraph/issues/2325), [#2319](https://github.com/RedisGraph/RedisGraph/pull/2319) Crash on accessing [`UNWIND`](https://redis.io/commands/graph.query/#unwind) variable after free
-    - [#2323](https://github.com/RedisGraph/RedisGraph/issues/2323), [#2327](https://github.com/RedisGraph/RedisGraph/pull/2327) Potential crash on certain queries: assertion failed on NULL root in filter tree
-    - [#1441](https://github.com/RedisGraph/RedisGraph/issues/1441), [#2252](https://github.com/RedisGraph/RedisGraph/pull/2252) Query returns wrong result: projection before Cartesian product causes only one result to be returned
-    - [#2298](https://github.com/RedisGraph/RedisGraph/issues/2298), [#2319](https://github.com/RedisGraph/RedisGraph/pull/2319) Query returns wrong result: wrong value when fetching a string property from a map
+    - [#2262](https://github.com/RedisGraph/RedisGraph/issues/2262), [#2271](https://github.com/RedisGraph/RedisGraph/issues/2271), [#2272](https://github.com/RedisGraph/RedisGraph/issues/2272), [#2273](https://github.com/RedisGraph/RedisGraph/issues/2273), [#2282](https://github.com/RedisGraph/RedisGraph/issues/2282), [#2288](https://github.com/RedisGraph/RedisGraph/issues/2288), [#2299](https://github.com/RedisGraph/RedisGraph/issues/2299), [#2312](https://github.com/RedisGraph/RedisGraph/issues/2312), [#2321](https://github.com/RedisGraph/RedisGraph/issues/2321), [#2325](https://github.com/RedisGraph/RedisGraph/issues/2325), [#2323](https://github.com/RedisGraph/RedisGraph/issues/2323) Potential crash on certain queries
+    - [#1441](https://github.com/RedisGraph/RedisGraph/issues/1441) Query returns wrong result: projection before Cartesian product causes only one result to be returned
+    - [#2298](https://github.com/RedisGraph/RedisGraph/issues/2298) Query returns wrong result: wrong value when fetching a string property from a map
     - [#2318](https://github.com/RedisGraph/RedisGraph/pull/2318) Memory leak
 
 ## v2.8.11 (March 2022)
@@ -116,6 +122,13 @@ RedisGraph 2.8 introduces multi-labeled nodes, indexes over relationship propert
 #### What's new in 2.8
 
 - Multi-labeled nodes
+
+    {{<note>}}
+The `labels` function's signature has changed. The function now returns a list of labels instead of a single label.
+<br /><br />
+If you are using this function and upgrading to RedisGraph 2.8, a simple fix is to replace any call to `labels(x)` with `labels(x)[0]`. This returns the first label associated with node `x`. For uni-labeled nodes, the result in RedisGraph 2.8 is similar to the results of `labels(x)` in RedisGraph 2.4.
+    {{</note>}}
+  
 - Indexes over relationship properties
 - Enhanced full-text search
 - Delta matrices: node and relationships additions and deletions are much faster, as they are first updated in small delta matrices. The main matrices are then bulk-updated.
@@ -134,7 +147,7 @@ RedisGraph 2.8 introduces multi-labeled nodes, indexes over relationship propert
     - [#2088](https://github.com/RedisGraph/RedisGraph/pull/2088) Introduce pattern comprehensions
     - [#2051](https://github.com/RedisGraph/RedisGraph/pull/2051) Allow copying of entity attribute sets in [`SET`](https://oss.redis.com/redisgraph/commands/#set) clauses
     - [#2067](https://github.com/RedisGraph/RedisGraph/pull/2067) Allow modification of virtual key entity count (`VKEY_MAX_ENTITY_COUNT`) at runtime
-    - [#2102](https://github.com/RedisGraph/RedisGraph/pull/2102) New load time configuration option `NODE_CREATION_BUFFER` - see [documentation](https://github.com/RedisGraph/RedisGraph/blob/master/docs/configuration.md#node_creation_buffer) (MOD-2348)
+    - [#2102](https://github.com/RedisGraph/RedisGraph/pull/2102) New load time configuration option `NODE_CREATION_BUFFER` - see [documentation](https://github.com/RedisGraph/RedisGraph/blob/master/docs/docs/configuration.md#node_creation_buffer) (MOD-2348)
     - [#2049](https://github.com/RedisGraph/RedisGraph/pull/2049) [RediSearch](https://oss.redis.com/redisearch/) supports field definitions
 
 - Performance improvements (since 2.8-M02):

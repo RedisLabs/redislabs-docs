@@ -133,10 +133,9 @@ below.
         1. "host_name" should be a unique value.
         1. "display_name " should be updated to a user-friendly name
             to show in the UI.
-        1. "_RLECID " should be the database's internal id that can
+        1. "_RLECID " should be the database's internal ID that can
             be retrieved from
-            [rladmin]({{< relref "/rs/references/rladmin.md" >}})
-            status command output.
+            [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) command output.
     1. "nodes.cfg " ­ holds configuration details of the nodes in the
         cluster. The "define host" section should be duplicated for
         every node in the cluster.
@@ -145,10 +144,9 @@ below.
             to show in the UI.
         1. "address" should be updated to the DNS name mapped to the
             IP address of the node, or to the IP address itself.
-        1. "_RLECID " should be the node's internal id that can be
+        1. "_RLECID " should be the node's internal ID that can be
             retrieved
-            from [rladmin]({{< relref "/rs/references/rladmin.md" >}})
-            status command output.
+            from [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) command output.
     1. Under the "/rlec_obj" folder:
         1. "rlec_cmd.cfg" ­ holds configuration details of how to
             activate the plugin. No need to make any updates to it.

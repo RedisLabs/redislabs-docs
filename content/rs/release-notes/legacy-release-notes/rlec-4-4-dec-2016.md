@@ -22,7 +22,7 @@ upgrade to this version.
     version and then upgrade existing databases, the databases will be
     updated to use the Single proxy policy and Dense shard placement
     policy. For additional details, refer to [Multiple active
-    proxies]({{< relref "/rs/administering/designing-production/networking/multiple-active-proxy.md" >}}).
+    proxies]({{< relref "/rs/databases/configure/proxy-policy.md" >}}).
 - Support for Redis version 3.2 added. When you install or upgrade the
     cluster the new default version for Redis databases will be 3.2 and
     when you upgrade the databases they will be updated to this version.

@@ -1,5 +1,5 @@
 ---
-Title: Installing RedisInsight on Kubernetes
+Title: Install RedisInsight on Kubernetes
 date: 2018-06-05 03:49:29 +0530
 weight: 40
 categories: ["RI"]
