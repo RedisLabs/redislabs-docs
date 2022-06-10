@@ -20,7 +20,7 @@ See [Active-Active Redis]({{<relref "">}}) for more information about geo-distri
 
 ## Clusters
 
-For Active-Active databases, you need to [set up your participating clusters]({{<relref "/rs/clusters/new-cluster-setup.md.md">}}). You need at least two, but can connect with up to five participating clusters. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage-aa#participating-clusters/">}}) after database creation.
+For Active-Active databases, you need to [set up your participating clusters]({{<relref "/rs/clusters/new-cluster-setup.md">}}). You need at least two, but can connect with up to five participating clusters. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage-aa#participating-clusters/">}}) after database creation.
 
 Changes made from the admin console to an Active-Active database configuration only apply to the cluster you are editing. For global configuration changes across all clusters, use the `crrdb-cli` command line utility.
 
