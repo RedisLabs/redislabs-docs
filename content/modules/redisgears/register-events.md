@@ -46,4 +46,4 @@ For the list of event types you can register on, see the [Redis keyspace notific
 
 In addition to standard Redis [events](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands), [Redis Enterprise Active-Active databases]({{<relref "/rs/databases/active-active">}}) also support the registration of RedisGears functions for the following event types:
 
-- `change` for key change events in an Active-Active database.
+- `change`: This event occurs when a key changes on another replica of the Active-Active database.
