@@ -1,12 +1,14 @@
 ---
-Title: Edit Active-Active database configuration
-description: Edit database
+Title: Manage Active-Active databases 
+description: Manage Active-Active
 weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [
     /rs/databases/active-active/edit-aa-database.md,
     /rs/databases/active-active/edit-aa-database/,
+    /rs/databases/active-active/manage-aa.md,
+    /rs/databases/active-active/manage-aa/,
 ]
 ---
 
