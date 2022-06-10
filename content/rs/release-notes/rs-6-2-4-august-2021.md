@@ -136,12 +136,12 @@ For help, see [Upgrade the module for a database]({{<relref "/modules/install/up
 
 Added the capability to update current module arguments for an existing database. 
 In earlier versions, you could do this only when upgrading a module.
-To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrade">}}).
+To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}).
 
 ## Resolved issues
 
 - RS39954 - Changed the UI status indication for the 
-[default user]({{<relref "/rs/references/rladmin#upgrade">}}) from `Active/Inactive` to `Enabled/Disabled` 
+[default user]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}) from `Active/Inactive` to `Enabled/Disabled` 
 
 - RS42626 - Increased the max length for modules commands from 23 characters to 64 characters
 

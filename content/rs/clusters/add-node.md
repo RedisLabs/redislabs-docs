@@ -80,6 +80,6 @@ You can see it in the list of nodes in the cluster.
 If you see an error when you add the node, try adding the node again.
 
 {{< tip >}}
-We recommend that you run the [rlcheck utility]({{< relref "/rs/references/rlcheck.md" >}}) to verify that the node is functioning properly.
+We recommend that you run the [rlcheck utility]({{<relref "/rs/references/cli-utilities/rlcheck">}}) to verify that the node is functioning properly.
 {{< /tip >}}
 

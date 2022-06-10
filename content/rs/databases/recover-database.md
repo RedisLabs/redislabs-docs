@@ -41,7 +41,7 @@ The database recovery process includes:
 ## Recovering the databases
 
 After you prepare the cluster that hosts the database,
-you can run the recovery process from the [rladmin]({{< relref "/rs/references/rladmin.md" >}})
+you can run the recovery process from the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}})
 command-line interface (CLI).
 
 To recover the database:
