@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin restart` schedules a restart of the Redis Enterprise Software processes on primary and replica instances of a specific database.
+Schedules a restart of the Redis Enterprise Software processes on primary and replica instances of a specific database.
 
 ``` sh
 rladmin restart db { db:<id> | <name> }
@@ -30,7 +30,7 @@ rladmin restart db { db:<id> | <name> }
 
 ### Returns
 
-Returns `Done` if the restart completed successfully. Otherwise, it returns `ERROR`.
+Returns `Done` if the restart completed successfully. Otherwise, it returns an error.
 
 ### Example
 

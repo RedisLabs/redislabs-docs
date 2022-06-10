@@ -1,7 +1,7 @@
 ---
 Title: rladmin node maintenance_mode
 linkTitle: maintenance_mode
-description: Configures quorum-only mode on a node.
+description: Turns quorum-only mode on or off for a node.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,16 +10,17 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node maintenance_mode` configures [quorum-only mode]({{<relref "rs/clusters/configure/rack-zone-awareness.md#node-layout">}}) on a node.
+Configures [quorum-only mode]({{<relref "/rs/clusters/configure/rack-zone-awareness#node-layout">}}) on a node.
 
 ## `node maintenance_mode on`
 
 Migrates shards out of the node and turns the node into a quorum node to prevent shards from returning to it.
 
 ```sh
-$ rladmin node <id> maintenance_mode on
-                [keep_slave_shards]
-                [demote_node]
+rladmin node <ID> maintenance_mode on
+        [ keep_slave_shards ]
+        [ demote_node ]
+        [ max_concurrent_actions <integer> ]
 ```
 
 ### Parameters
@@ -29,6 +30,7 @@ $ rladmin node <id> maintenance_mode on
 | node                  | integer                        | Turns the specified node into a quorum node                                              |
 | demote_node           |                                | If the node is a primary node, changes the node to replica                                |
 | keep_slave_shards     |                                | Keeps replica shards in the node and demotes primary shards to replicas                    |
+| max_concurrent_actions | integer | Maximum number of concurrent actions during node maintenance |
 
 ### Returns
 
@@ -59,8 +61,9 @@ node:4  slave  192.0.2.14                   6d754fe12cb9 5/100  6           14.2
 Turns maintenance mode off and returns the node to its previous state.
 
 ```sh
-$ rladmin node <id> maintenance_mode off
-                [ { snapshot_name <name> | skip_shards_restore } ]
+rladmin node <ID> maintenance_mode off
+        [ { snapshot_name <name> | skip_shards_restore } ]
+        [ max_concurrent_actions <integer> ]
 ```
 
 ### Parameters
@@ -68,8 +71,9 @@ $ rladmin node <id> maintenance_mode off
 | Parameter             | Type/Value                     | Description                                                                               |
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 | node                  | integer                        | Restores the node back to the previous state                                              |
-| snapshot_name         | string                         | Restores the node back to a state stored in the specified snapshot                        |
+| max_concurrent_actions | integer | Maximum number of concurrent actions during node maintenance |
 | skip_shards_restore   |                                | Does not restore shards back to the node                                                  |
+| snapshot_name         | string                         | Restores the node back to a state stored in the specified snapshot                        |
 
 ### Returns
 

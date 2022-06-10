@@ -1,7 +1,7 @@
 ---
 Title: rladmin failover
 linkTitle: failover
-description: Fail over primary shards of a database to their replicas
+description: Fail over primary shards of a database to their replicas.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,11 +10,11 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin failover` fails over one or more primary (also known as master) shards of a database, promoting their respective replicas to primary shards.
+Fails over one or more primary (also known as master) shards of a database and promotes their respective replicas to primary shards.
 
 ``` sh
 rladmin failover
-        [db { db:<id> | name }]
+        [db { db:<id> | <name> }]
         shard <id1 ... idN>
         [immediate]
 ```
@@ -29,9 +29,9 @@ rladmin failover
 
 ### Returns
 
-`Finished successfully` if failover was completed, `ERROR` otherwise.
+Returns `Finished successfully` if the failover completed. Otherwise, it returns an error.
 
-Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-shards">}}) to verify the failover completed.
+Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-shards">}}) to verify that the failover completed.
 
 ### Example
 

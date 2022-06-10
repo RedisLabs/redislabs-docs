@@ -1,7 +1,7 @@
 ---
 Title: rladmin node enslave
 linkTitle: enslave
-description: Changes the resources of a node to replicas.
+description: Changes a node's resources to replicas.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,16 +10,16 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node enslave` changes the resources of a node to replicas.
+Changes the resources of a node to replicas.
 
 ## `node enslave`
 
 Changes all of the node's endpoints and shards to replicas.
 
 ``` sh
-$ rladmin node <id> enslave
-                [demote_node]
-                [retry_timeout_seconds <seconds>]
+rladmin node <ID> enslave
+        [demote_node]
+        [retry_timeout_seconds <seconds>]
 ```
 
 ### Parameters
@@ -75,8 +75,8 @@ db:6       tr02             redis:20         node:2       slave      12288-16383
 Changes the role for all endpoints on a node to replica.
 
 ``` sh
-$ rladmin node <id> enslave endpoints_only
-                [retry_timeout_seconds <seconds>]
+rladmin node <ID> enslave endpoints_only
+        [retry_timeout_seconds <seconds>]
 ```
 
 ### Parameters
@@ -115,8 +115,8 @@ db:6          tr02        endpoint:6:1                   node:3          all-mas
 Changes the role for all shards of a node to replica.
 
 ``` sh
-$ rladmin node <id> enslave shards_only
-                [retry_timeout_seconds <seconds>]
+rladmin node <ID> enslave shards_only
+        [retry_timeout_seconds <seconds>]
 ```
 
 ### Parameters

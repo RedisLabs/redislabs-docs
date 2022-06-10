@@ -14,10 +14,9 @@ aliases: [
 You can manage your Redis Enterprise Software databases with several different tools:
 
 - Admin console (the web-based user interface)
-- Command-line tools ([rladmin]({{<relref "/rs/references/rladmin.md">}}), [redis-cli](https://redis.io/docs/manual/cli/), [crdb-cli]({{<relref "/rs/references/cli-utilities/crdb-cli">}}))
+- Command-line tools ([`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}), [`redis-cli`](https://redis.io/docs/manual/cli/), [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}))
 - [REST API]({{<relref "/rs/references/rest-api/_index.md">}})
 
 ## Database settings
 
 {{< allchildren style="h2" description="true" />}}
-

@@ -10,13 +10,17 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node remove` removes the specified node from the cluster.
+Removes the specified node from the cluster.
+
+```sh
+rladmin node <ID> remove
+```
 
 ### Parameters
 
 | Parameter             | Type/Value                     | Description                                                 |
 |-----------------------|--------------------------------|-------------------------------------------------------------|
-| node                  | integer                        | Creates a snapshot of the specified node                    |
+| node                  | integer                        | The node to remove from the cluster                    |
 
 ### Returns
 

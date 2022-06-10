@@ -5,7 +5,7 @@ description: Manage Active-Active databases.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases:
 ---
 
 Use `crdb-cli crdb` commands to manage Active-Active databases.

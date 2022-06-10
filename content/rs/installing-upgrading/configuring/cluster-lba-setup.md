@@ -88,7 +88,7 @@ An additional setting can be done to allow (on average) closer termination of cl
 
 After the cluster settings are updated and the LBs are configured you can go to the RS admin console at https://load-balancer-virtual-ip:8443/ and [create a new database]({{<relref "/rs/databases/create-database.md">}}).
 
-If you are creating an Active-Active database, you will need to use the`crdb-cli` utility. See the ['crdb-cli' reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more information about creating Active-Active databases from the command line.
+If you are creating an Active-Active database, you will need to use the `crdb-cli` utility. See the [`crdb-cli` reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more information about creating Active-Active databases from the command line.
 
 ### Keep LB configuration updated when the cluster configuration changes
 

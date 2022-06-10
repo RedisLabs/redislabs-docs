@@ -26,7 +26,7 @@ most database settings only apply to the Active-Active database instance that yo
 - TLS mode
 - Periodic backup
 
-You can change the global configuration of the Active-Active database from the command-line with the [crdb-cli]({{< relref "rs/references/cli-utilities/crdb-cli" >}}).
+You can change the global configuration of the Active-Active database from the command line with [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}).
 
 ## Participating clusters
 
@@ -54,7 +54,7 @@ The joined participating clusters reject updates sent from the removed participa
 
 Redis databases that use [replication for high availability]({{< relref "/rs/databases/configure/replication.md" >}}) maintain a replication backlog (per shard) to synchronize the primary and replica shards of a database.
 By default, the replication backlog is set to one percent (1%) of the database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
-Use the [rladmin]({{< relref "rs/references/rladmin.md" >}}) and the [crdb-cli]({{< relref "rs/references/cli-utilities/crdb-cli" >}}) utilities to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
+Use the [`rladmin`]({{<relref "rs/references/cli-utilities/rladmin">}}) and the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) utilities to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
 
 The syntax varies between regular and Active-Active databases.
 
@@ -72,7 +72,7 @@ crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"repl_backlo
 
 In addition to the database replication backlog, Active-Active databases maintain a CRDT replication backlog (per shard) to synchronize the database instances between clusters.
 By default, the CRDT replication backlog is set to one percent (1%) of the Active-Active database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
-Use the [crdb-cli]({{< relref "rs/references/cli-utilities/crdb-cli" >}}) utility to control the size of the CRDT replication backlog. You can set it to `auto` or set a specific size:  
+Use the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) utility to control the size of the CRDT replication backlog. You can set it to `auto` or set a specific size:  
 
 ```text
 crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_backlog_size\": <size in MB | 'auto'>}"
@@ -82,7 +82,7 @@ crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_b
 
 In addition to the database replication backlog, Active-Passive databases maintain a replication backlog (per shard) to synchronize the database instances between clusters.
 By default, the replication backlog is set to one percent (1%) of the database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
-Use the [rladmin]({{< relref "rs/references/rladmin.md" >}}) utility to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
+Use the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) utility to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
 
 For an Active-Passive database:
 ```text
@@ -95,7 +95,7 @@ On an Active-Passive database, the replication backlog configuration applies to 
 
 **For Redis Software versions earlier than 6.0.20:**
 The replication backlog and the CRDT replication backlog defaults are set to 1MB and cannot be set dynamically with 'auto' mode.
-To control the size of the replication log, use [rladmin]({{< relref "rs/references/rladmin.md" >}}) to tune the local database instance in each cluster.
+To control the size of the replication log, use [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) to tune the local database instance in each cluster.
 ```text
 rladmin tune db <db:id | name> repl_backlog <Backlog size in MB (or if ending with bytes, KB or GB, in the respective unit)>
 ```

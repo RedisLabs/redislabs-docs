@@ -10,14 +10,14 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin migrate` moves Redis Enterprise Software shards or endpoints to a new node in the same cluster.
+Moves Redis Enterprise shards or endpoints to a new node in the same cluster.
 
 ## `migrate all_master_shards`
 
 Moves all primary shards of a specified database or node to a new node in the same cluster.
 
 ```sh
-rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
+rladmin migrate { db { db:<id> | <name> } | node <origin node ID> }
         all_master_shards
         target_node <id>
         [ override_policy ]
@@ -30,7 +30,7 @@ rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
 | db                            | db:\<id\><br /> name   | Limits migration to a specific database                                           |
 | node                          | integer                | Limits migration to a specific origin node                                        |
 | target_node                   | integer                | Migration target node                                                           |
-| override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
+| override_policy               |                        | Overrides the rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
 
@@ -68,7 +68,7 @@ db:6   tr02       redis:20   node:1  master  12288-16383   2.99MB        OK
 Moves all shards on a specified node to a new node in the same cluster.
 
 ``` sh
-rladmin migrate node <origin node:id>
+rladmin migrate node <origin node ID>
             [ max_concurrent_bdb_migrations <value> ]
             all_shards
             target_node <id>
@@ -80,8 +80,8 @@ rladmin migrate node <origin node:id>
 | Parameter                     | Type/Value             | Description                                                                     |
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
 | node                          | integer                | Limits migration to a specific origin node                                        |
-| max_concurrent_bdb_migrations | integer                | Sets maximum number of concurrent endpoint migrations                           |
-| override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
+| max_concurrent_bdb_migrations | integer                | Sets the maximum number of concurrent endpoint migrations                           |
+| override_policy               |                        | Overrides the rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
 
@@ -123,7 +123,7 @@ db:6   tr02       redis:21   node:2  slave   12288-16383   2.96MB        OK
 Moves all replica shards of a specified database or node to a new node in the same cluster.
 
 ```sh
-rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
+rladmin migrate { db { db:<id> | <name> } | node <origin node ID> }
             all_slave_shards
             target_node <id>
             [ override_policy ]
@@ -136,7 +136,7 @@ rladmin migrate { db { db:<id> | <name> } | node <origin node:id> }
 | db                            | db:\<id\><br /> name   | Limits migration to a specific database                                           |
 | node                          | integer                | Limits migration to a specific origin node                                        |
 | target_node                   | integer                | Migration target node                                                           |
-| override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
+| override_policy               |                        | Overrides the rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
 
@@ -172,7 +172,7 @@ db:6   tr02      redis:21   node:3  slave  12288-16383    3.04MB         OK
 
 ## `migrate endpoint_to_shards`
 
-Plans the movement of the endpoint of a database to the node where the majority of the primary shards are located.
+Moves database endpoints to the node where the majority of primary shards are located.
 
 ```sh
 rladmin migrate [ db { db:<id> | <name> } ]
@@ -189,7 +189,7 @@ rladmin migrate [ db { db:<id> | <name> } ]
 | db                            | db:\<id\><br /> name   | Limits migration to a specific database                                           |
 | restrict_target_node          | integer | Moves the endpoint only if the target node matches the specified node |
 | commit                        |                        | Performs endpoint movement                                                      |
-| max_concurrent_bdb_migrations | integer                | Sets maximum number of concurrent endpoint migrations                           |
+| max_concurrent_bdb_migrations | integer                | Sets the maximum number of concurrent endpoint migrations                           |
 
 
 ### Returns
@@ -234,9 +234,9 @@ rladmin migrate shard <id1.. idN>
 | Parameter                     | Type/Value             | Description                                                                     |
 |-------------------------------|------------------------|---------------------------------------------------------------------------------|
 | shard                         | list of shard IDs      | Shards to migrate                                                               |
-| preserve_roles                |                        | Performs an additional failover to guarantee roles of primary shards are preserved |
+| preserve_roles                |                        | Performs an additional failover to guarantee the primary shards' roles are preserved |
 | target_node                   | integer                | Migration target node                                                           |
-| override_policy               |                        | Overrides rack aware policy and allows primary and replica shards on the same node |
+| override_policy               |                        | Overrides the rack aware policy and allows primary and replica shards on the same node |
 
 ### Returns
 

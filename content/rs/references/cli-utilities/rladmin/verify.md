@@ -10,17 +10,17 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin verify` prints verification reports for the cluster.
+Prints verification reports for the cluster.
 
 ## `verify balance`
 
-`rladmin verify balance` prints a balance report that displays all of the unbalanced endpoints or nodes in the cluster.
+Prints a balance report that displays all of the unbalanced endpoints or nodes in the cluster.
 
-```text
+```sh
 rladmin verify balance [ node <ID> ]
 ```
 
-The [proxy policy]({{<relref "/rs/databases/configure/proxy-policy">}}) determines which nodes or endpoints to report as unbalanced.
+The [proxy policy]({{<relref "/rs/databases/configure/proxy-policy#proxy-policies">}}) determines which nodes or endpoints to report as unbalanced.
 
 A node is unbalanced if:
 - `all-nodes` proxy policy and the node has no endpoint
@@ -65,9 +65,9 @@ NODE:ID  DB:ID  NAME  ENDPOINT:ID  PROXY_POLICY  LOCAL SHARDS   TOTAL SHARDS
 
 ## `verify rack_aware`
 
-`rladmin verify rack_aware` verifies that the cluster complies with the rack awareness policy and reports any discovered rack collisions, if [rack-zone awareness]({{<relref "rs/clusters/configure/rack-zone-awareness.md">}}) is enabled.
+Verifies that the cluster complies with the rack awareness policy and reports any discovered rack collisions, if [rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) is enabled.
 
-```text
+```sh
 rladmin verify rack_aware
 ```
 

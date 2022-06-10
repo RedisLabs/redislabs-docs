@@ -10,11 +10,11 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin info` shows the current configuration of specified databases, proxies, clusters, or nodes.
+Shows the current configuration of specified databases, proxies, clusters, or nodes.
 
 ## `info cluster`
 
-`rladmin info cluster` lists the current configuration for the cluster.
+Lists the current configuration for the cluster.
 
 ```sh
 rladmin info cluster
@@ -71,7 +71,7 @@ Cluster configuration:
 
 ## `info db`
 
-`rladmin info db` shows the current configuration for databases.
+Shows the current configuration for databases.
 
 ```sh
 rladmin info db [ {db:<id> | <name>} ]
@@ -133,7 +133,7 @@ db:1 [database1]:
 
 ## `info node`
 
-`rladmin info node` lists the current configuration for all nodes.
+Lists the current configuration for all nodes.
 
 ```sh
 rladmin info node [ <id> ]
@@ -166,7 +166,7 @@ Command Output: node:3
 
 ## `info proxy`
 
-`rladmin info proxy` lists the current configuration for a proxy.
+Lists the current configuration for a proxy.
 
 ``` sh
 rladmin info proxy { <id> | all }
@@ -177,11 +177,11 @@ rladmin info proxy { <id> | all }
 | Parameter | Description |
 |-----------|-------------|
 | id      | ID of the specified proxy |
-| all       | Show current configuration for all proxies (optional) |
+| all       | Show the current configuration for all proxies (optional) |
 
 ### Returns
 
-If no parameter is specified or the `all` option is specified, `rladmin info proxy` returns the current configuration for all proxies.
+If no parameter is specified or the `all` option is specified, returns the current configuration for all proxies.
 
 If `<id>`is specified, returns the current configuration for the specified proxy.
 

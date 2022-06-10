@@ -10,6 +10,6 @@ categories: ["RS"]
 aliases:
 ---
 
-`rladmin node` manages nodes in the cluster.
+`rladmin node` commands manage nodes in the cluster.
 
-{{<table-children columnNames="Command,Description" columnSources="Title,Description" enableLinks="Title">}}
+{{<table-children columnNames="Command,Description" columnSources="LinkTitle,Description" enableLinks="LinkTitle">}}

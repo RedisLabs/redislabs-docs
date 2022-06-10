@@ -66,9 +66,9 @@ from the node you would like to remove, and only then remove the node.
 For further guidance, refer to [adding a new node to a
 cluster]({{< relref "/rs/clusters/add-node.md" >}}).
 
-You can migrate resources by using the *rladmin* command-line interface
-(CLI). For guidelines, refer to [*rladmin* command line interface
-(CLI)]({{< relref "/rs/references/rladmin.md" >}}).
+You can migrate resources by using the `rladmin` command-line interface
+(CLI). For guidelines, refer to [`rladmin` command-line interface
+(CLI)]({{<relref "/rs/references/cli-utilities/rladmin">}}).
 
 {{< note >}}
 The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) must be updated each time a node is added or replaced.

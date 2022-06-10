@@ -8,27 +8,27 @@ toc: "true"
 headerRange: "[1-2]"
 tags: ["non-configured"]
 categories: ["RS"]
-aliases: 
+aliases:
 ---
 
-Creates a new cluster. The node from which the command is executed becomes the first node of the new cluster.
+Creates a new cluster. The node where you run `rladmin cluster create` becomes the first node of the new cluster.
 
 ```sh
-cluster create 
+cluster create
         name <cluster name>
-        username <admin email> 
-        password <admin password> 
+        username <admin email>
+        password <admin password>
         [ node_uid <node UID> ] 
-        [ rack_aware ] 
-        [ rack_id <node rack ID> ] 
-        [ license_file <file> ] 
-        [ ephemeral_path <path> ] 
+        [ rack_aware ]
+        [ rack_id <node rack ID> ]
+        [ license_file <file> ]
+        [ ephemeral_path <path> ]
         [ persistent_path <path> ]
-        [ ccs_persistent_path <path> ] 
-        [ register_dns_suffix ] 
-        [ flash_enabled ] 
-        [ flash_path <path> ] 
-        [ addr <IP address> ] 
+        [ ccs_persistent_path <path> ]
+        [ register_dns_suffix ]
+        [ flash_enabled ]
+        [ flash_path <path> ]
+        [ addr <IP address> ]
         [ external_addr <IP address> ]
 ```
 
