@@ -20,7 +20,7 @@ See [Active-Active Redis]({{<relref "">}}) for more information about geo-distri
 
 ## Clusters
 
-For Active-Active databases, you need to [set up your participating clusters]({{<relref "/rs/administering/new-cluster-setup.md">}}). You need at least two, but can connect with up to five participating clusters. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage-aa#participating-clusters/">}}) after database creation.
+For Active-Active databases, you need to [set up your participating clusters]({{<relref "/rs/clusters/new-cluster-setup.md.md">}}). You need at least two, but can connect with up to five participating clusters. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage-aa#participating-clusters/">}}) after database creation.
 
 Changes made from the admin console to an Active-Active database configuration only apply to the cluster you are editing. For global configuration changes across all clusters, use the `crrdb-cli` command line utility.
 
@@ -46,7 +46,7 @@ Every node must have access to the REST API ports of every other node as well as
 Active-Active databases require a time service like NTP or Chrony to make sure the clocks on all cluster nodes are synchronized.
 This is critical to avoid problems with internal cluster communications that can impact your data integrity.
 
-See [Synchronizing cluster node clocks]({{<relref "/rs/administering/designing-production/synchronizing-clocks.md">}}) for more information.
+See [Synchronizing cluster node clocks]({{<relref "/rs/clusters/configure/sync-clocks.md">}}) for more information.
 
 ## Memory limits
 
@@ -65,4 +65,4 @@ Active-Active databases support only [compatible Redis modules]({{< relref "/mod
 - The RS admin console is limited to five participating clusters or instances in an Active-Active database.
 - An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database, you must create a new Active-Active database and migrate the data.
 - Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
-- Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/databases/replica-of.md" >}}).
+- Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/databases/import-export/replica-of.md" >}}).
