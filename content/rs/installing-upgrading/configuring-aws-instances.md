@@ -27,7 +27,7 @@ persistence storage]({{< relref "/rs/administering/designing-production/persiste
 
 {{< note >}}
 After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the instance
-and **before** running through [the setup process]({{< relref "/rs/administering/new-cluster-setup.md" >}}),
+and **before** running through [the setup process]({{< relref "/rs/clusters/new-cluster-setup.md" >}}),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
 `chown redislabs:redislabs /< ebs folder name>`
@@ -74,4 +74,4 @@ When configuring the Security Group:
 After successfully launching the instances:
 
 1. Install Redis Enterprise Software from the [Linux package or AWS AMI]({{< relref "/rs/installing-upgrading/_index.md" >}}).
-2. [Set up the cluster]({{< relref "/rs/administering/new-cluster-setup.md" >}}).
+2. [Set up the cluster]({{< relref "/rs/clusters/new-cluster-setup.md" >}}).

@@ -2,14 +2,14 @@
 Title: Eviction policy
 linkTitle: Eviction policy
 description: The eviction policy determines what happens when a database reaches its memory limit. 
-weight: 25
+weight: $weight
 alwaysOpen: false
 categories: ["RS"]
 aliases: [
     /rs/administering/database-operations/eviction-policy.md,
     /rs/administering/database-operations/eviction-policy/,
     /rs/concepts/memory-performance/eviction-policy.md,
-    /rs/concepts/memory-performance/eviction-policy/
+    /rs/concepts/memory-performance/eviction-policy/,
     /rs/databases/configure/eviction-policy.md,
     /rs/databases/configure/eviction-policy/,
 ]

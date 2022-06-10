@@ -42,7 +42,7 @@ Every effort is made to adhere, where possible, to the specifications of open so
 
 - Redis clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
 
-- Redis clustering technology allows [multiple active proxies]({{<relref "rs/administering/designing-production/networking/multiple-active-proxy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
+- Redis clustering technology allows [multiple active proxies]({{<relref "rs/databases/configure/proxy-policy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
 
 - Commands that aren’t relevant for a hosted Redis service are blocked:
     - [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)
@@ -150,7 +150,7 @@ Briefly, Redis Enterprise Cloud Flexible and Fixed plans are fully-managed Redis
 Flexible plans run in dedicated VPCs and offer:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) - Recommended for datasets larger than 500GB
-- [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) and [Replica Of]({{< relref "/rs/databases/replica-of.md" >}}) Geo Distribution
+- [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) and [Replica Of]({{< relref "/rs/databases/import-export/replica-of.md" >}}) Geo Distribution
 - Integration with [modules]({{< relref "/modules/_index.md" >}})
 - Encryption of [persistence data]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - Redis Enterprise Cloud [REST API]({{< relref "/rc/api/_index.md" >}})
