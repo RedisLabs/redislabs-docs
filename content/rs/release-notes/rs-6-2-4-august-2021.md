@@ -66,7 +66,7 @@ Redis Enterprise modules have individual release numbers [and lifecycles]({{<rel
 
 ### Deprecation notices
 
-- [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), the SASL-based LDAP mechanism was deprecated in favor of a new [RBAC-based approach]({{<relref "/rs/security/ldap/">}}).  As of v.6.2.4, support for the older mechanism has been removed.
+- [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), the SASL-based LDAP mechanism was deprecated in favor of a new [RBAC-based approach]({{<relref "/rs/security/ldap/">}}).  As of v6.2.12, support for the older mechanism has been removed.
 
     For help migrating to the LDAP-based mechanism, see [Migrate to role-based LDAP]({{<relref "/rs/security/ldap/migrate-to-role-based-ldap.md">}}).
     

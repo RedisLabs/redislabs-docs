@@ -18,6 +18,13 @@ aliases: [
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps: upgrading the Redis Enterprise operator, and upgrading the Redis Enterprise cluster version.
 
+{{<warning>}}
+  **Do not** upgrade to the 6.2.10-34 release if you are an **OpenShift** customer and **also use modules**. 
+  
+  There was a change in 6.2.10-34 to a new RHEL 8 base image for the Redis Server image. Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules. 
+  
+  This message will be updated as remediation plans and new steps are available to address this situation. Please contact support if you have further questions. {{</warning>}}
+
 ## 1- Upgrade Redis Enterprise
 
 ### Download the bundle

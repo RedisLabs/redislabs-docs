@@ -61,7 +61,7 @@ Where:
 
 {{< note >}}
 While [joining a new node to a
-cluster]({{< relref "/rs/administering/adding-node.md" >}})
+cluster]({{< relref "/rs/clusters/add-node.md" >}})
 during the node bootstrap process,
 when prompted to provide an IP of an existing node in the cluster,
 if you use the node's IP, provide the node's internal IP address.

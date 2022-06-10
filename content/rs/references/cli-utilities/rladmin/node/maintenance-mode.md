@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Configures [quorum-only mode]({{<relref "/rs/concepts/high-availability/rack-zone-awareness#node-layout">}}) on a node.
+Configures [quorum-only mode]({{<relref "/rs/clusters/configure/rack-zone-awareness#node-layout">}}) on a node.
 
 ## `node maintenance_mode on`
 

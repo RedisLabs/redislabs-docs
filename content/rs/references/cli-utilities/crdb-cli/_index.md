@@ -110,13 +110,13 @@ The `crdb create` command supports several additional options:
 |---|---|---|
 |`no-wait`| no arguments| Prevents CRDB-CLI from running another command before this command finishes|
 |`compression (0-6)`| integer| The level of data compression: 0=Compression disabled| 1=Low compression and resource load| 6=High compression and resource load (Default: 3)|
-|`causal-consistency true`| boolean| [Causal consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}}) applies updates to all instances in the order they were received|
+|`causal-consistency true`| boolean| [Causal consistency]({{< relref "/rs/databases/active-active/causal-consistency-crdb.md" >}}) applies updates to all instances in the order they were received|
 |`password <password>`| string| Password for access to the database|
-|`replication true`| boolean| Enables [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})| where every master shard replicates to a replica shard (We recommend that you use replication so that active-active database synchronization traffic is off-loaded to the slave shard)|
+|`replication true`| boolean| Enables [database replication]({{< relref "/rs/databases/configure/replication.md" >}})| where every master shard replicates to a replica shard (We recommend that you use replication so that active-active database synchronization traffic is off-loaded to the slave shard)|
 |`encryption true`| boolean| Enable encryption|
-|`sharding disable`| string| Disable sharding (also known as [database clustering]({{< relref "/rs/concepts/high-availability/replication.md" >}})) so that there is only one shard for the database|
+|`sharding disable`| string| Disable sharding (also known as [database clustering]({{< relref "/rs/databases/configure/replication.md" >}})) so that there is only one shard for the database|
 |`shards-count <number>`| integer| If clustering is enabled this specifies the number of Redis shards for each database instance|
-|`shard-key-regex <regex_rule>`| string| If clustering is enabled this defines a regex rule (also known as a [hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard|
+|`shard-key-regex <regex_rule>`| string| If clustering is enabled this defines a regex rule (also known as a [hashing policy]({{< relref "/rs/databases/configure/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard|
 <!-- |`default-db-config <options>`|text|Default database configuration options|
 |`default-db-config-file <filename>`|file path|Default database configuration options| -->
 
