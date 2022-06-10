@@ -77,7 +77,7 @@ before running through the upgrade process.
 - rladmin command-line-interface can only be run under user root or
     redislabs. For additional details, refer to the [rladmin
     command-line
-    interface (CLI)]({{< relref "/rs/references/rladmin.md" >}})
+    interface (CLI)](https://docs.redis.com/latest/rs/references/rladmin/)
     section.
 - Import / export / backup to/from Amazon S3 requires supplying the
     credentials per usage instance; it does not use central cloud

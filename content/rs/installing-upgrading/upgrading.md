@@ -82,7 +82,7 @@ Before upgrading a cluster:
 
 - Identify the cluster master node and upgrade that node first.
 
-    Use the [`rladmin status nodes`]({{< relref "/rs/references/rladmin.md#status" >}}) command to identify the master node.
+    Use the [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) command to identify the master node.
 
 ## Cluster upgrade process
 

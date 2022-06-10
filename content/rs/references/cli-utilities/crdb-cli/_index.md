@@ -1,39 +1,44 @@
 ---
-Title: CRDB-CLI commands
-description:
+Title: crdb-cli
+linkTitle: crdb-cli (manage Active-Active)
+description: Manage Active-Active databases.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/references/crdb-cli-reference/"]
 ---
-An [Active-Active database]({{< relref "/rs/databases/active-active/_index.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
-replicates your dataset across Redis Enterprise Software (RS) clusters located in geographically distributed regions.
-Active-Active databases allow read-write access in all locations, making them ideal for distributed applications that require the fastest response times, and also for disaster recovery.
+
+An [Active-Active database]({{<relref "/rs/databases/active-active/_index.md">}}) (also known as CRDB or Conflict-free, Replicated DataBase)
+replicates your dataset across Redis Enterprise Software clusters located in geographically distributed regions.
+Active-Active databases allow read-write access in all locations, making them ideal for distributed applications that require fast response times and disaster recovery.
 
 The Active-Active database on an individual cluster is called an **instance**.
 Each cluster that hosts an instance is called a **participating cluster**.
 
 An Active-Active database requires two or more participating clusters.
-Each instance is responsible for updating the instances residing on other participating clusters with the transactions it receives.
+Each instance is responsible for updating the instances that reside on other participating clusters with the transactions it receives.
 Write conflicts are resolved using [CRDTs]({{< relref "/rs/databases/active-active/_index.md" >}}).
 
-To programmatically maintain an Active-Active database and its instances, you can use the CRDB-CLI command-line tool.
+To programmatically maintain an Active-Active database and its instances, you can use the `crdb-cli` command-line tool.
 
 ## Use the crdb-cli
 
-To use the CRDB-CLI tool, use SSH to log in to an RS host with a user that belongs to the group that RS was installed with (Default: **redislabs**).
-If you log in with a non-root user, you must add `/opt/redislabs/bin/` to your PATH environment variables.
+To use the `crdb-cli` tool, use SSH to sign in to a Redis Enterprise host with a user that belongs to the group that Redis Enterprise Software was installed with (Default: **redislabs**).
+If you sign in with a non-root user, you must add `/opt/redislabs/bin/` to your `PATH` environment variables.
 
-CRDB-CLI commands use the syntax: `crdb-cli <command> <arguments>` to let you:
+`crdb-cli` commands use the syntax: `crdb-cli <command> <arguments>` to let you:
 
 - Create, list, update, flush, or delete an Active-Active database
 - Add or remove an instance of the Active-Active database on a specific cluster
 
 Each command creates a task.
-By default, the command runs immediately and you see the result of the command in the command output.
+By default, the command runs immediately and displays the result in the output.
 If you use the `--no-wait` flag, the command runs in the background so that your application is not delayed by the response.
 You can track the task with [`crdb-cli task status`](#active-active-task-status).
 
-For each CRDB-CLI command, you can use `--help` for additional information about the command.
+For each `crdb-cli` command, you can use `--help` for additional information about the command.
+
+<!-- The section below this line will eventually move to other pages as part of the ongoing reorg. -->
 
 ## Active-Active database operations
 
