@@ -35,7 +35,7 @@ How you create, manage, and develop for Active-Active geo-distributed databases 
 
 - [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started-active-active.md">}})
 - [Create Active-Active databases]({{<relref "/rs/databases/active-active/create-active-active.md">}})
-- [Edit Active-Active database settings]({{<relref "/rs/databases/active-active/edit-aa-database.md">}})
+- [Edit Active-Active database settings]({{<relref "/rs/databases/active-active/manage-aa.md">}})
 - [Develop applications for Active-Active]({{<relref "/rs/databases/active-active/develop-aa-apps.md">}})
 - [Active-Active data types]({{<relref "/rs/databases/active-active/data-types/_index.md">}})
 - [Delete Active-Active databases]({{<relref "/rs/databases/active-active/delete-aa-database.md">}})

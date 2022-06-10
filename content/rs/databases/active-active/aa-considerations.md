@@ -20,9 +20,11 @@ See [Active-Active Redis]({{<relref "">}}) for more information about geo-distri
 
 ## Clusters
 
-For Active-Active databases, you need to [set up your participating clusters]({{<relref "/rs/administering/new-cluster-setup.md">}}). You need at least two, but can connect with up to five participating clusters. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/edit-aa-database#participating-clusters/">}}) after database creation.
+For Active-Active databases, you need to [set up your participating clusters]({{<relref "/rs/administering/new-cluster-setup.md">}}). You need at least two, but can connect with up to five participating clusters. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage-aa#participating-clusters/">}}) after database creation.
 
 Changes made from the admin console to an Active-Active database configuration only apply to the cluster you are editing. For global configuration changes across all clusters, use the `crrdb-cli` command line utility.
+
+### Hardware requirements
 
 ## Networking
 
@@ -46,49 +48,16 @@ This is critical to avoid problems with internal cluster communications that can
 
 See [Synchronizing cluster node clocks]({{<relref "/rs/administering/designing-production/synchronizing-clocks.md">}}) for more information.
 
-### Proxy policy
+## Memory limits
 
-You'll need to change your proxy policy from the default `single`, to `all-nodes` or `all-master-shards`. You'll also need to change the [`syncer_mode`]({{<relref "/rs/administering/cluster-operations/synchronization-mode.md">}}) to `distributed`.
 
-Active-Active databases use [multiple proxy endpoints]({{<relref "/rs/administering/cluster-operations/synchronization-mode.md">}}) to sync changes between participating clusters. To ensure every node or every master shard has a proxy endpoint, the [proxy policy]({{<relref "/rs/administering/designing-production/networking/multiple-active-proxy.md">}}) for the Active-Active database must be `all-nodes` or `all-master-shards`.
-
-See [Distributed synchronization for replicated databases]({{<relref "/rs/administering/cluster-operations/synchronization-mode.md">}}) for more information.
-
-## Security
-
-### Access control
-
-### Certificates
-
-### Admin credentials
-
-## Moving data
-
-## Data persistence
-
-You can set the data persistence configuration, either Append-only file (AOF) or snapshot (RDB), for each participating cluster individually. See [Configure database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}}) for more details.
-
-## Memory management
-
-### Memory limits
-
-### Eviction policies
-
-### Replication backlogs
-
-Redis Enterprise Software maintains a [replication backlog]({{<relref "/rs/databases/active-active/edit-aa-database#database-replication-backlog/">}}) for synchronization between shards and an [Active-Active CRDT replication backlog]({{<relref "/rs/databases/active-active/edit-aa-database#active-active-crdt-replication-backlog/">}}) for synchronization between clusters. This can range from 1MB to 250MB per shard. To configure the replication backlogs, see [Edit Active-Active database configuration]({{<relref "/rs/databases/active-active/edit-aa-database.md">}}).
-
-## Metrics
-
-## Redis OSS Cluster API
-
-## Data types
+Redis Enterprise Software maintains a [replication backlog]({{<relref "/rs/databases/active-active/manage-aa#database-replication-backlog/">}}) for synchronization between shards and an [Active-Active CRDT replication backlog]({{<relref "/rs/databases/active-active/manage-aa#active-active-crdt-replication-backlog/">}}) for synchronization between clusters. This can range from 1MB to 250MB per shard. To configure the replication backlogs, see [Edit Active-Active database configuration]({{<relref "/rs/databases/active-active/manage-aa.md">}}).
 
 ### Redis Modules {#redis-modules}
 
 Active-Active databases support only [compatible Redis modules]({{< relref "/modules/enterprise-capabilities.md" >}}).
 
-- [RediSearch 2.x in Redis Enterprise Software 6.0 and higher]({{< relref "/modules/redisearch/redisearch-active-active.md" >}}). 
+- [RediSearch 2.x in Redis Enterprise Software 6.0 and higher]({{< relref "/modules/redisearch/redisearch-active-active.md" >}}).
 - RedisGears
 
 ## Active-Active database limitations
