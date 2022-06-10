@@ -81,7 +81,7 @@ To set up OCSP stapling with the [`rladmin`]({{<relref "/rs/references/cli-utili
 
 1. Use [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) to [replace the proxy certificate]({{<relref "http://localhost:1313/rs/security/certificates/updating-certificates#use-the-cli">}}) with a certificate signed by your third-party CA.
 
-1. Update the cluster's OCSP settings with the [`rladmin cluster ocsp config`]({{<relref "/rs/references/cli-utilities/rladmin#cluster-ocsp-config">}}) command if you don't want to use their default values.
+1. Update the cluster's OCSP settings with the [`rladmin cluster ocsp config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/ocsp#ocsp-config">}}) command if you don't want to use their default values.
 
     For example: 
 
