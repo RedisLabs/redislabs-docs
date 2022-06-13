@@ -43,9 +43,11 @@ The following table shows the MD5 checksums for the available packages.
 
 -  You can [upgrade to v6.2.10](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/) from Redis Enterprise Software v6.0 and later. 
 
-- Refer to [v6.2.4 release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/) for important notes regarding changes made to the upgrade. 
+- Refer to [v6.2.4 release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/) for important notes regarding changes made to the upgrade.
 
 - Upgrades from versions earlier than v6.0 are not supported.
+
+- If you plan to upgrade your cluster to RHEL 8, refer to [v6.2.8 release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-8-october-2022/) for known limitations.
 
 - If you are using Active-Active or Active-Passive (ReplicaOf) databases and experience synchronization issues as a result of the upgrade, see RS67434 details in [Resolved issues](#resolved-issues) for help resolving the problem.
 
