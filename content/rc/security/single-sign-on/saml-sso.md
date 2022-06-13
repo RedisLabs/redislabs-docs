@@ -9,13 +9,31 @@ categories: ["RC"]
 
 Redis Cloud supports [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
 
+When SAML SSO is enabled, the identity provider admin manages any SAML users instead of the owner of the Redis Cloud account.
+
+After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. The identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud account and role before they can sign in to Redis Cloud.
+
+The account owner remains a local user and should set up [multi-factor authentication (MFA)]({{<relref "/rc/security/multi-factor-authentication">}}) to help secure their account. After SAML activation, the account owner can set up additional local bypass users with MFA enabled.
+
 ## Set up SAML SSO
+
+1. From your identity provider's admin console, [set up a Redis Cloud SAML integration app](#set-up-redis-cloud-app).
+
+1. [Create a SAML user](#add-saml-users) and set the **redisAccountMapping** attribute to map the Redis Cloud account to the **owner** role.
+
+1. [Configure SAML in Redis Cloud](#configure-idp).
+
+1. [Download service provider metadata](#download-sp) and upload it to your identity provider.
+
+1. [Activate SAML SSO](#activate-saml-sso).
+
+### Set up Redis Cloud app
 
 1. Sign in to your identity provider's admin console.
 
-1. Add a SAML integration application for the service provider Redis Cloud.
+1. Create or add a SAML integration app for the service provider Redis Cloud.
 
-1. Create a custom SAML attribute called **redisAccountMapping** in the service provider application:
+1. Create a custom SAML attribute called **redisAccountMapping** in the service provider app:
 
     | Field | Value |
     |-------|-------|
@@ -25,7 +43,9 @@ Redis Cloud supports [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single
 
 1. Add the **redisAccountMapping** attribute to the default user profile.
 
-1. Sign in to your existing [Redis Cloud account](https://app.redislabs.com/#/login).
+### Configure SAML in Redis Cloud {#configure-idp}
+
+1. Sign in to [Redis Cloud](https://app.redislabs.com/#/login) with the email address associated with the SAML user you set up with your identity provider.
 
 1. Select **Access Management** from the [admin console](https://app.redislabs.com) menu.
 
@@ -34,14 +54,6 @@ Redis Cloud supports [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single
 1. Select the **Setup SSO** button:
 
     {{<image filename="images/rc/button-access-management-sso-setup.png" alt="Setup SSO button">}}{{</image>}}
-
-1. [Configure identity provider metadata](#configure-idp).
-
-1. [Download service provider metadata](#download-sp) and upload it to your identity provider.
-
-1. [Activate SAML SSO](#activate-saml-sso).
-
-### Configure IdP metadata {#configure-idp}
 
 1. You need the following metadata values from your identity provider:
 
@@ -102,7 +114,7 @@ To test and activate SAML SSO for your account:
 If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign in screen, sign in with your previous credentials and review your SAML configuration for issues.
     {{</note>}}
 
-## Add a SAML user
+## Add SAML users
 
 To add a user to an account and enable SAML SSO for them:
 
@@ -116,11 +128,13 @@ To add a user to an account and enable SAML SSO for them:
 
 1. [Assign the Redis Cloud application](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
 
+1. The user can now sign in to Redis Cloud with SAML SSO.
+
 To learn how to manage SAML user profiles, see your identity provider's documentation.
 
 ## Bind other accounts
 
-After you set up SAML SSO for one account, you can edit the SAML configuration to bind other accounts. This lets you use the same domain for SSO across multiple accounts.
+After you set up SAML SSO for one account, you can edit the SAML configuration to bind other accounts where you are an account owner. This lets you use the same domain for SSO across multiple accounts.
 
 To bind other accounts to an existing SAML SSO configuration:
 
