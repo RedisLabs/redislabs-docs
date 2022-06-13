@@ -110,7 +110,7 @@ OK
 
 ### Auto-complete
 
-You can use RediSearch suggestion commands to implement [auto-complete](https://oss.redislabs.com/redisearch/master/Overview/#auto-completion).
+You can use RediSearch suggestion commands to implement [auto-complete](https://redis.io/docs/stack/search/design/overview/#auto-completion).
 
 {{<note>}}
 Active-Active databases do not support RediSearch suggestions.

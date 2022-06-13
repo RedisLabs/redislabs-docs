@@ -202,9 +202,9 @@ removed as soon as the new one is submitted.
 
 Currently supported actions are: 
 - `remove`: Removes the node from the cluster after migrating all bound resources to other nodes. As soon as a successful remove request is received, the cluster will no longer automatically migrate resources (shards/endpoints) to the node, even if the remove task fails at some point. 
-- `maintenance_on`: Creates a snapshot of the node, migrates shards to other nodes, and prepares the node for maintenance. See [maintenance mode]({{<relref "/rs/administering/cluster-operations/maintenance-mode">}}) for more information.
+- `maintenance_on`: Creates a snapshot of the node, migrates shards to other nodes, and prepares the node for maintenance. See [maintenance mode]({{<relref "/rs/clusters/maintenance-mode">}}) for more information.
     - If there aren't enough resources to migrate shards out of the maintained node, set `"keep_slave_shards":`&nbsp;`true` to keep the replica shards in place but demote any master shards.
-- `maintenance_off`: Restores node to its previous state before maintenance started. See [maintenance mode]({{<relref "/rs/administering/cluster-operations/maintenance-mode">}}) for more information.
+- `maintenance_off`: Restores node to its previous state before maintenance started. See [maintenance mode]({{<relref "/rs/clusters/maintenance-mode">}}) for more information.
     - By default, it uses the latest node snapshot.
     - Use `"snapshot_name":`&nbsp;`"..."` to restore the state from a specific snapshot.
     - To avoid restoring shards at the node, use `"skip_shards_restore":`&nbsp;`true`. 

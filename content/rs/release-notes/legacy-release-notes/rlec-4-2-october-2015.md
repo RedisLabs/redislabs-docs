@@ -20,7 +20,7 @@ before running through the upgrade process.
     performance profiles that are optimized for either cloud or
     non-cloud environments. For additional details, refer to the
     [Performance
-    optimization]({{< relref "/rs/administering/designing-production/performance/optimization.md" >}})
+    optimization]({{< relref "/rs/clusters/optimize/optimization.md" >}})
     section.
 - SLA for AOF rewrite - enables the administrator to configure
     database parameters, by running the rladmin tune command, related to
@@ -77,7 +77,7 @@ before running through the upgrade process.
 - rladmin command-line-interface can only be run under user root or
     redislabs. For additional details, refer to the [rladmin
     command-line
-    interface (CLI)]({{< relref "/rs/references/rladmin.md" >}})
+    interface (CLI)](https://docs.redis.com/latest/rs/references/rladmin/)
     section.
 - Import / export / backup to/from Amazon S3 requires supplying the
     credentials per usage instance; it does not use central cloud
@@ -139,7 +139,7 @@ before running through the upgrade process.
     [Upgrading
     nodes]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
     while the node is in the offline state (refer to [Taking a node
-    offline]({{< relref "/rs/administering/cluster-operations/removing-node.md" >}}),
+    offline]({{< relref "/rs/clusters/remove-node.md" >}}),
     the upgrade process succeeds but might result in an unstable
     cluster.
     

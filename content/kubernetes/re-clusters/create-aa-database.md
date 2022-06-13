@@ -187,7 +187,7 @@ crdb-cli crdb create
 
 To create a database that syncs between more than two instances, add additional `--instance` arguments.
 
-See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more options.
+See the [`crdb-cli` reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more options.
 
 ## Test your database
 

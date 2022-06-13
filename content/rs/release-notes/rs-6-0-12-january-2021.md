@@ -10,8 +10,8 @@ categories: ["RS"]
 [Redis Enterprise Software (RS) 6.0.12](https://redislabs.com/download-center/#downloads) is now available!
 This version includes the following new features and improvements:
 
-- [Synchronization](https://docs.redis.com/latest/rs/databases/active-active#syncer-process) can now be [distributed across the nodes]({{<relref "/rs/administering/cluster-operations/synchronization-mode.md">}}) of Active-Active or Active-Passive databases
-- You can [disable several internal RS services]({{<relref "/rs/administering/troubleshooting/disabling-services.md">}}) to free up more memory
+- [Synchronization](https://docs.redis.com/latest/rs/databases/active-active#syncer-process) can now be [distributed across the nodes]({{<relref "/rs/databases/active-active/synchronization-mode.md">}}) of Active-Active or Active-Passive databases
+- You can [disable several internal RS services]({{<relref "/rs/clusters/optimize/turn-off-services.md">}}) to free up more memory
 - User accounts can have multiple passwords to allow for [password rotation]({{<relref "/rs/administering/access-control/password-rotation.md">}})
 - [Dependencies are automatically installed]({{<relref "/modules/install/add-module-to-cluster#rest-api-method">}}) when you add modules to a cluster
 - [Envoy replaces NGINX]({{<relref "/rs/administering/designing-production/networking/port-configurations.md">}}) for internal cluster administration
@@ -42,11 +42,11 @@ And other functional and stability improvements.
 
 #### Distributed Syncer
 
-The syncer process now supports running in a [distributed mode]({{<relref "/rs/administering/cluster-operations/synchronization-mode.md">}}). This option can improve the latency for Active-Active databases with a very high throughput profile. You can configure a replicated database to use distributed synchronization so that any available proxy endpoint can manage synchronization traffic.
+The syncer process now supports running in a [distributed mode]({{<relref "/rs/databases/active-active/synchronization-mode.md">}}). This option can improve the latency for Active-Active databases with a very high throughput profile. You can configure a replicated database to use distributed synchronization so that any available proxy endpoint can manage synchronization traffic.
 
 #### Disabling RS services to free memory
 
-Redis Software users can now use the REST API to [disable the following services]({{<relref "/rs/administering/troubleshooting/disabling-services.md">}}):
+Redis Software users can now use the REST API to [disable the following services]({{<relref "/rs/clusters/optimize/turn-off-services.md">}}):
 
 - cm_server
 - mdns_server

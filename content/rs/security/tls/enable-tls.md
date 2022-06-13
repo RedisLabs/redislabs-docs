@@ -12,7 +12,7 @@ aliases: ["/rs/administering/designing-production/security/tls-configuration",
 You can use TLS authentication for one or more of the following types of communication:
 
 - Communication from clients (applications) to your database
-- Communication from your database to other clusters for replication using [Replica Of]({{<relref "/rs/databases/replica-of.md">}})
+- Communication from your database to other clusters for replication using [Replica Of]({{<relref "/rs/databases/import-export/replica-of.md">}})
 - Communication to and from your database to other clusters for synchronization using [Active-Active]({{<relref "/rs/databases/active-active/_index.md">}})
 
 ## Enable TLS for client connections {#client}

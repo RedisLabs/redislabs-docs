@@ -10,10 +10,30 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.4.13 requires:
+RedisGraph v2.4.14 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.8
+
+## v2.4.14 (May 2022)
+
+This is a maintenance release for RedisGraph 2.4.
+
+Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Bug fixes:
+
+    - [#2072](https://github.com/RedisGraph/RedisGraph/issues/2072), [#2081](https://github.com/RedisGraph/RedisGraph/pull/2081) CRLF sequences embedded in strings no longer trigger a protocol error when being emitted
+
+- Improvements:
+
+    - [#2102](https://github.com/RedisGraph/RedisGraph/pull/2102) New load-time configuration option `NODE_CREATION_BUFFER` - see [documentation](https://github.com/RedisGraph/RedisGraph/blob/master/docs/docs/configuration.md#node_creation_buffer) (MOD-2348)
+
+{{<note>}}
+For Redis Enterprise users who want to upgrade to this patch, this version requires being on version 6.2.8 or later.
+{{</note>}}
 
 ## v2.4.13 (December 2021)
 
