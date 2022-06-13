@@ -131,7 +131,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup
 
 ## Known issues, starting with build 100
-- RS78364 - When using rladmin command `tune db` to change the slave-buffer size, the command logs the value to the ccs and reports success but the new value does not take affect. The issue will be fixed in a future build of 6.2.10 and in the next Redis Enterprise Software version 6.2.12.     
+- RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).     
 
 ## Security
 
