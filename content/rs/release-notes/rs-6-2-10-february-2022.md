@@ -130,8 +130,8 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS72304 - Avoid starting a master shard when both master and replica shards crash and the replica did not finish recovery
 - RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup
 
-## Known issues, starting with build 100
-- RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).     
+## Known issues
+- RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
 
 ## Security
 
