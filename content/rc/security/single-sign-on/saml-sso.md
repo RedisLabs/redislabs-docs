@@ -9,15 +9,17 @@ categories: ["RC"]
 
 Redis Cloud supports [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
 
-When SAML SSO is enabled, the identity provider admin manages any SAML users instead of the owner of the Redis Cloud account.
+When SAML SSO is enabled, the [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider) admin handles SAML user management instead of the Redis Cloud account owner.
 
-After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. The identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud account and role before they can sign in to Redis Cloud.
+After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud account and role.
 
 The account owner remains a local user and should set up [multi-factor authentication (MFA)]({{<relref "/rc/security/multi-factor-authentication">}}) to help secure their account. After SAML activation, the account owner can set up additional local bypass users with MFA enabled.
 
 ## Set up SAML SSO
 
-1. From your identity provider's admin console, [set up a Redis Cloud SAML integration app](#set-up-redis-cloud-app).
+To set up SAML single sign-on for a Redis Cloud account:
+
+1. From your identity provider's admin console, [set up a Redis Cloud SAML integration app](#set-up-rc-app).
 
 1. [Create a SAML user](#add-saml-users) and set the **redisAccountMapping** attribute to map the Redis Cloud account to the **owner** role.
 
@@ -27,7 +29,9 @@ The account owner remains a local user and should set up [multi-factor authentic
 
 1. [Activate SAML SSO](#activate-saml-sso).
 
-### Set up Redis Cloud app
+### Set up Redis Cloud app {#set-up-rc-app}
+
+First, set up a Redis Cloud SAML integration app for your identity provider:
 
 1. Sign in to your identity provider's admin console.
 
@@ -45,6 +49,8 @@ The account owner remains a local user and should set up [multi-factor authentic
 
 ### Configure SAML in Redis Cloud {#configure-idp}
 
+After you set up the SAML integration app and create a SAML user in your identity provider, you need to configure the Redis Cloud account with some identity provider metadata:
+
 1. Sign in to [Redis Cloud](https://app.redislabs.com/#/login) with the email address associated with the SAML user you set up with your identity provider.
 
 1. Select **Access Management** from the [admin console](https://app.redislabs.com) menu.
@@ -61,7 +67,7 @@ The account owner remains a local user and should set up [multi-factor authentic
     |---------|-------------|
     | **Issuer (IdP entity ID)** | The unique entity ID for the identity provider |
     | **IdP server URL** | The identity provider's HTTPS URL for SAML SSO |
-    | **Single logout URL** | The URL used to sign out of the identity provider and connected applications (optional) |
+    | **Single logout URL** | The URL used to sign out of the identity provider and connected apps (optional) |
     | **Email domain binding** | The identity provider's domain |
     | **Assertion signing certificate** | Public SHA-256 certificate used to validate SAML assertions from the identity provider |
 
@@ -77,44 +83,46 @@ The account owner remains a local user and should set up [multi-factor authentic
 
 ### Download service provider metadata {#download-sp}
 
+Next, you need to download the service provider metadata for Redis Cloud and use it to finish configuring the SAML integration app for your identity provider:
+
 1. Select the **Download** button to download the service provider [metadata](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf) in XML format.
 
 1. Sign in to your identity provider's admin console.
 
-1. Configure the Redis Cloud service provider application with the downloaded XML.
+1. Configure the Redis Cloud service provider app with the downloaded XML.
 
     - Some identity providers let you upload the XML file directly. 
     
-    - Others require you to manually configure the service provider application with specific metadata fields, such as `entityID` and `AssertionConsumerService Location`.
+    - Others require you to manually configure the service provider app with specific metadata fields, such as `entityID` and `AssertionConsumerService Location`.
     
         For example, your identity provider may require you to map the following metadata attributes and settings:
 
-        | XML attribute | Application setting |
-        |---------------|---------------------------|
+        | XML attribute | App setting |
+        |---------------|-------------|
         | EntityDescriptor's **entityID** | Audience URI |
         | AssertionConsumerService's **Location** | Hub ACS URL |
 
-    To learn more about how to configure service provider applications, see your identity provider's documentation.
+    To learn more about how to configure service provider apps, see your identity provider's documentation.
 
 ### Activate SAML SSO {#activate-saml-sso}
 
-To test and activate SAML SSO for your account:
+After you finish the required SAML SSO configuration between your identity provider and Redis Cloud account, you can test and activate SAML SSO:
 
 1. For **Activate SAML integration**, select the **Activate** button.
 
-1. From the **Logout notification** dialog, select **Continue**. This redirects you to your configured identity provider's sign in screen.
+1. From the **Logout notification** dialog, select **Continue**. This redirects you to your configured identity provider's sign-in screen.
 
 1. Sign in with your identity provider.
 
-1. When redirected to the Redis Cloud sign in screen, select **Sign in with SSO** and enter your credentials.
+1. When redirected to the Redis Cloud sign-in screen, select **Sign in with SSO** and enter your credentials.
 
     {{<image filename="images/rc/button-sign-in-sso.png" alt="Sign in with SSO button">}}{{</image>}}
 
     {{<note>}}
-If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign in screen, sign in with your previous credentials and review your SAML configuration for issues.
+If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign-in screen, sign in with your previous credentials and review your SAML configuration for issues.
     {{</note>}}
 
-## Add SAML users
+## Add SAML users {#add-saml-users}
 
 To add a user to an account and enable SAML SSO for them:
 
@@ -126,7 +134,7 @@ To add a user to an account and enable SAML SSO for them:
 
     12345=owner,54321=manager
 
-1. [Assign the Redis Cloud application](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
+1. [Assign the Redis Cloud SAML integration app](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
 
 1. The user can now sign in to Redis Cloud with SAML SSO.
 
