@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: [
         configuring-aws-route53-dns-redis-enterprise,
         /rs/installing-upgrading/configuring/,cluster-name-dns-connection-management/,configuring-aws-route53-dns-redis-enterprise/,
-        content/rs/networking/configuring-aws-route53-dns-redis-enterprise/,
+        /rs/networking/configuring-aws-route53-dns-redis-enterprise/,
         ]
 ---
 Redis Enterprise Software requires DNS to be properly configured to

@@ -1,9 +1,14 @@
 ---
 Title: Multi-IP and IPv6
-description:
+linkTitle: Multi-IP and IPv6
+description: Information and requirements for using multiple IP addresses or IPv6 addresses with Redis Enterprise Software.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/networking/multi-ip-ipv6/,
+    /rs/networking/multi-ip-ipv6/
+]
 ---
 Redis Enterprise Software (RS) supports server/instances/VMs with
 multiple IP addresses, as well as IPv6 addresses.
