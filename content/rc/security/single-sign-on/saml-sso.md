@@ -162,16 +162,18 @@ To bind other accounts to an existing SAML SSO configuration:
 
 A SAML-enabled account must have a local (non-SAML) user with the owner role assigned before you can deactivate SAML SSO for that account.
 
-To deactivate SAML for specific accounts:
+To deactivate SAML SSO for a specific account:
 
-1. Go to **Access Management > Single Sign-on** in the Redis Cloud [admin console](https://app.redislabs.com).
+1. In the Redis Cloud [admin console](https://app.redislabs.com), select your name to display your available accounts.
+
+1. If the relevant account is not already selected, you need to select it from the **Switch account** list.
+
+1. Go to **Access Management > Single Sign-on**.
 
 1. Select the **Edit** button.
 
-1. For **Bind other accounts to SAML configuration**, clear the checkboxes for the accounts you want to unbind from SAML SSO.
+1. For **Bind other accounts to SAML configuration**, clear the checkbox for the relevant account to unbind it from SAML SSO.
 
 1. Select **Save**.
 
-1. From the **Bind accounts** dialog, select **Continue** to deactivate SAML SSO for the unbound accounts.
-
-To deactivate SAML for all bound accounts, select the **Deactivate SAML** button.
+1. From the **Bind accounts** dialog, select **Continue** to deactivate SAML SSO for the unbound account.
