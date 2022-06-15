@@ -229,7 +229,7 @@ More info is available to help with customization and related questions:
 - [Supported platforms]({{<relref "rs/installing-upgrading/supported-platforms.md">}})
 - [Linux swap space configuration]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
 - [Manage installation questions]({{<relref "rs/installing-upgrading/manage-installation-questions.md">}})
-- [mDNS client prerequisites]({{< relref "rs/installing-upgrading/configuring/mdns.md" >}})
+- [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
 - [Offline installation]({{<relref "rs/installing-upgrading/offline-installation.md">}})
 - [User and group ownership]({{<relref "rs/installing-upgrading/customize-user-and-group.md">}})
 
