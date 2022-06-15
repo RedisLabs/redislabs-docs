@@ -69,7 +69,7 @@ When configuring the Security Group:
     you need to define a security group that has an All TCP rule for all ports, 0 - 65535,
     and add it to all instances that are part of the cluster.
     This makes sure that all nodes are able to communicate with each other.
-    To limit the number of open ports, you can open just the [ports used by RS]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+    To limit the number of open ports, you can open just the [ports used by RS]({{< relref "/rs/networking/port-configurations.md" >}}).
 
 After successfully launching the instances:
 

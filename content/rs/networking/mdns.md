@@ -44,7 +44,7 @@ To prepare a client or node for mDNS:
         $ service avahi-daemon start
         ```
 
-1. If you are using [mDNS with IPv6 addresses]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}),
+1. If you are using [mDNS with IPv6 addresses]({{< relref "/rs/networking/multi-ip-ipv6.md" >}}),
     update the hosts line in `/etc/nsswitch.conf`to:
 
     ```yaml

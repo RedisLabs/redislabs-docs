@@ -36,7 +36,7 @@ Before installing Redis Enterprise Software, you need to:
 
     For complete details, see [Supported platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}})
 
-- Open appropriate [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
+- Open appropriate [network ports]({{< relref "/rs/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
 
 - Configure [cluster DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}}) so that cluster nodes can reach each other by DNS names.
 - By default, the install process requires an Internet connection to install dependencies and to synchronize the operating system clock.  To learn more, see [Offline installation]({{<relref "/rs/installing-upgrading/offline-installation">}}).
@@ -94,7 +94,7 @@ Before installing, review these notes:
     1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
     1. Run: `sudo service systemd-resolved restart`
 
-- Make sure that the ports [Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) are available; that is, they're not being used by the operating system or other processes.
+- Make sure that the ports [Redis assigns to databases]({{< relref "/rs/networking/port-configurations.md" >}}) are available; that is, they're not being used by the operating system or other processes.
 
     To avoid port collision, we recommend updating `/etc/sysctl.conf` to include:  
     ``` sh

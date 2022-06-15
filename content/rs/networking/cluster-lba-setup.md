@@ -49,7 +49,7 @@ The architecture is shown in the following diagram with 3 nodes Redis Enterprise
     - Rest API service (Secured - 9443; Non-secured - 8080)
     - Database ports (In the range of 10000-19999)
 
-Other ports are shown in the list of [RS network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+Other ports are shown in the list of [RS network ports]({{< relref "/rs/networking/port-configurations.md" >}}).
 
 {{< note >}}
 Sticky, secured connections are needed only for RS admin console service (provided on port 8443).
@@ -114,5 +114,5 @@ For Active Passive communication to work, you will need to expose database port(
 
 ### Active Active
 
-For Active Active communication to work, you will need to expose several ports, every database port and several control plane ports as defined in https://docs.redislabs.com/latest/rs/administering/designing-production/networking/port-configurations/. Pay attention to services that are marked with Connection Source as "Active-Active". These ports should be allowed through firewalls that may be positioned between the clusters.
+For Active Active communication to work, you will need to expose several ports, every database port and several control plane ports as defined in https://docs.redislabs.com/latest/rs/networking/port-configurations/. Pay attention to services that are marked with Connection Source as "Active-Active". These ports should be allowed through firewalls that may be positioned between the clusters.
 

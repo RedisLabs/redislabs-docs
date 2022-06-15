@@ -130,7 +130,7 @@ If you are creating a Memcached database, enter a username and password for SASL
         or a port is randomly selected.
 
         {{< note >}}
-You cannot change the [port number]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
+You cannot change the [port number]({{< relref "/rs/networking/port-configurations.md" >}})
 after the database is created.
         {{< /note >}}
 

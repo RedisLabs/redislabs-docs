@@ -4,6 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/networking/,
+    /rs/administering/designing-production/networking/_index.md,
+    /rs/networking/_index.md,
+    /rs/networking/,
+]
 ---
 When designing a Redis Enterprise Software solution, there are some
 specific networking features that are worth your time to understand and
