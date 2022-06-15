@@ -1,5 +1,6 @@
 ---
-Title: Networking
+Title: Manage networks
+linktitle: Networking
 description:
 weight: $weight
 alwaysopen: false
