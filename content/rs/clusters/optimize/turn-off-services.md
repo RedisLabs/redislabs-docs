@@ -26,7 +26,7 @@ The services that you can turn off are:
 - RS Admin Console - `cm_server`
 - Logs in CSV format - `stats_archiver`
 - [LDAP authentication]({{< relref "/rs/security/ldap/_index.md" >}}) - `saslauthd`
-- [Discovery service]({{< relref "rs/installing-upgrading/configuring/cluster-dns.md" >}})- `mdns_server`, `pdns_server`
+- [Discovery service]({{< relref "rs/networking/cluster-dns.md" >}})- `mdns_server`, `pdns_server`
 - [Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}) - `crdb_coordinator`, `crdb_worker`
 
 To turn off a service with the `rladmin cluster config` command, use the `services` parameter and the name of the service, followed by `disabled`.
