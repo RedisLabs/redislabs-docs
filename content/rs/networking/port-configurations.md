@@ -1,15 +1,21 @@
 ---
-Title: Network Port Configurations
-description:
+Title: Network port configurations
+linkTitle: Network ports
+description: This document describes the various network port ranges and their uses.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/networking/port-configurations/,
+    /rs/networking/port-configurations/,
+
+]
 ---
 
 All Redis Enterprise Software deployments span multiple physical/virtual nodes. You'll need to keep several ports open between these nodes. This document describes the various port ranges and their uses.
 
 {{< note >}}
-Whenever you create a new database, you must verify that the ports assigned to the new database's endpoints are open. The cluster will not perform this verification for you. 
+Whenever you create a new database, you must verify that the ports assigned to the new database's endpoints are open. The cluster will not perform this verification for you.
 {{< /note >}}
 
 ## Ports and port ranges used by Redis Enterprise Software
