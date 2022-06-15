@@ -1,10 +1,14 @@
 ---
 Title: Set up cluster behind a load balancer
 linkTitle: Cluster load balancer setup
-description:
+description: Set up a cluster using a load balancer instead of DS to direct traffic to cluster nodes.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/networking/cluster-lba-setup/,
+    /rs/installing-upgrading/configuring/cluster-lba-setup/,
+]
 ---
 When you want to setup a Redis Enterprise cluster in an environment that doesn't allow DNS, you can use a load balancer (LB) to direct traffic to the cluster nodes.
 

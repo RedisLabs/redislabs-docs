@@ -224,7 +224,7 @@ More info is available to help with customization and related questions:
 - [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/installing-upgrading/configuring/cluster-dns.md" >}})
-- [Cluster load balancer setup]({{< relref "rs/installing-upgrading/configuring/cluster-lba-setup.md" >}})
+- [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})
 - [File locations]({{<relref "rs/installing-upgrading/file-locations.md">}})
 - [Supported platforms]({{<relref "rs/installing-upgrading/supported-platforms.md">}})
 - [Linux swap space configuration]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
