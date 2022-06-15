@@ -1,8 +1,8 @@
 ---
 Title: Manage networks
 linktitle: Networking
-description:
-weight: $weight
+description: Networking features and considerations designing your Redis Enteprise Software deployment.
+weight: 39
 alwaysopen: false
 categories: ["RS"]
 aliases: [
