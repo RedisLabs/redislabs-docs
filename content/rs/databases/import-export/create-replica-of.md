@@ -96,7 +96,7 @@ you can [compress the replication data]({{< relref "/rs/databases/import-export/
 
 {{< note >}}
 If you used the mDNS protocol for the cluster name (FQDN),
-make sure that the [client mDNS prerequisites]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}) are met.
+make sure that the [client mDNS prerequisites]({{< relref "/rs/networking/mdns.md" >}}) are met.
 {{< /note >}}
 
 ## Configuring TLS for Replica Of traffic on the destination database

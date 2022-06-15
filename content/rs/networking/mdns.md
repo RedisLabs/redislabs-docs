@@ -7,6 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: [
     /rs/administering/installing-upgrading/configuring/mdns/,
+    /rs/installing-upgrading/configuring/mdns,
     /rs/networking/mdns/,
 ]
 ---

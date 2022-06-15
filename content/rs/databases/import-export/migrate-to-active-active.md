@@ -94,7 +94,7 @@ you can [compress the replication data]({{< relref "/rs/databases/import-export/
 
     {{< note >}}
 If you used the mDNS protocol for the cluster name (FQDN),
-the [client mDNS prerequisites]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}) must be met in order to communicate with other clusters.
+the [client mDNS prerequisites]({{< relref "/rs/networking/mdns.md" >}}) must be met in order to communicate with other clusters.
     {{< /note >}}
 
 1. Click **Update** at the bottom of the page.
