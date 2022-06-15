@@ -1,11 +1,14 @@
 ---
 Title: Client Prerequisites for mDNS
 linkTitle: mDNS client prerequisites
-description:
+description: Requirements for using the mDNS protocol in development and testing environments.s
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/installing-upgrading/configuring/mdns/
+aliases: [
+    /rs/administering/installing-upgrading/configuring/mdns/,
+    /rs/networking/mdns/,
+]
 ---
 {{< note >}}
 mDNS is only supported for development and testing environments.
