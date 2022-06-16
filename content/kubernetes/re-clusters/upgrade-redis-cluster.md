@@ -83,9 +83,15 @@ customresourcedefinition.apiextensions.k8s.io/redisenterprisedatabases.app.redis
 deployment.apps/redis-enterprise-operator configured
 ```
 
- {{< warning >}}
- We recommend upgrading the REC as soon after the operator as possible to avoid availability issues. After the operator is upgraded, the REC enters a freeze state until the REC upgrade is complete. The REC will be unavailable the completes successfully.
- {{< /warning >}}
+### Reapply other manual configurations
+
+When upgrading your cluster, you need to manually reapply the `ValidatingWebhookConfiguration` for the admission controller. See the [Enable the admission controller]({{<relref "/kubernetes/deployment/quick-start#enable-the-admission-controller">}}) step during deployment for more details.
+s
+If you are using Openshift, you will also need to manually reapply the scc (ecurity context constraint) file.
+
+```sh
+oc apply -f openshift/scc.yaml
+```
 
 ### Verify the operator is running
 
@@ -101,6 +107,14 @@ You should see a result similar to this:
 NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
 redis-enterprise-operator   1/1     1            1           0m36s
 ```
+
+### Next steps
+
+{{< warning >}}
+ We recommend upgrading the REC as soon as possible after updating the operator. After the operator upgrade completes, the REC is considered frozen. The operator will no longer manage the REC and the REC and its REDB can't be modified until the REC upgrade completes.
+ {{< /warning >}}
+
+ If you have `autoUpgradeRedisEnterprise: true` specified in your REC spec, the operator will automatically trigger the REC upgrade after the operator upgrade completes.
 
 ## Upgrade the Redis Enterprise cluster (REC)
 
@@ -148,6 +162,12 @@ To see the status of the current rolling upgrade, run:
 ```sh
 kubectl rollout status sts <REC_name>
 ```
+
+### Upgrade databases
+
+After the cluster is upgraded, you can upgrade your databases. The process for upgrading databases is the same for both Kubernetes and non-Kubernetes deployments. More details on how to [upgrade a database]({{<relref "/rs/installing-upgrading/upgrading#upgrade-a-database">}}) in the [Upgrade an existing Redis Enterprise Software deployment]({{<relref ""/rs/installing-upgrading/upgrading.md">}}) documentation.
+
+Note that if your cluster [`redisUpgradePolicy]({{<relref "/kubernetes/reference/cluster-options#redisupgradepolicy">}}) or your database [`redisVersion`]({{<relref "">}}) are set to `major`, you won't be able to upgrade those databases to minor versions. See [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy">}}) for more details.
 
 ## How does the REC upgrade work?
 
