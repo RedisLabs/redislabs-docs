@@ -8,8 +8,8 @@ categories: ["RS"]
 aliases: ["/rs/references/crdb-cli-reference/"]
 ---
 
-An [Active-Active database]({{<relref "/rs/databases/active-active/_index.md">}}) (also known as CRDB or Conflict-free, Replicated DataBase)
-replicates your dataset across Redis Enterprise Software clusters located in geographically distributed regions.
+An [Active-Active database]({{<relref "/rs/databases/active-active/_index.md">}}) (also known as CRDB or conflict-free replicated database)
+replicates your data across Redis Enterprise Software clusters located in geographically distributed regions.
 Active-Active databases allow read-write access in all locations, making them ideal for distributed applications that require fast response times and disaster recovery.
 
 The Active-Active database on an individual cluster is called an **instance**.
