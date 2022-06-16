@@ -8,6 +8,8 @@ categories: ["RS"]
 aliases: 
 ---
 
+## Users, roles, and Redis ACLs
+
 Users, roles, and Redis ACLs are cluster-level entities. Therefore they are applied per local participating cluster and Active-Active database instance, and they are not replicated or propagated to the other participating clusters and instances.
 ACLs will be enforced according to the instance the client is connected to. The Active-Active replication mechanism will propagate all the effects of the operation.
 
