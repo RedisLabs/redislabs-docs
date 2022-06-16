@@ -86,8 +86,9 @@ deployment.apps/redis-enterprise-operator configured
 ### Reapply other manual configurations
 
 When upgrading your cluster, you need to manually reapply the `ValidatingWebhookConfiguration` for the admission controller. See the [Enable the admission controller]({{<relref "/kubernetes/deployment/quick-start#enable-the-admission-controller">}}) step during deployment for more details.
-s
-If you are using Openshift, you will also need to manually reapply the scc (ecurity context constraint) file.
+
+
+If you are using Openshift, you will also need to manually reapply the [Security context constraint](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})).
 
 ```sh
 oc apply -f openshift/scc.yaml
