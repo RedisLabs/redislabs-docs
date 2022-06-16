@@ -11,15 +11,11 @@ RedisJSON v2.x adds support for RedisJSON in [Active-Active Redis Enterprise dat
 
 ## Command differences
 
-Several RedisJSON commands work differently for Active-Active databases.
+Some RedisJSON commands work differently for Active-Active databases.
 
 ### `JSON.CLEAR`
 
 [`JSON.CLEAR`](https://redis.io/commands/json.clear/) resets JSON arrays and objects. It supports concurrent updates to JSON documents from different instances in an Active-Active database and allows the results to be merged.
-
-### `JSON.NUMMULTBY`
-
-Active-Active databases do not support [`JSON.NUMMULTBY`](https://redis.io/commands/json.nummultby/).
 
 ## Conflict resolution rules
 
