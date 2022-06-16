@@ -108,8 +108,6 @@ NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
 redis-enterprise-operator   1/1     1            1           0m36s
 ```
 
-### Next steps
-
 {{< warning >}}
  We recommend upgrading the REC as soon as possible after updating the operator. After the operator upgrade completes, the REC is considered frozen. The operator will no longer manage the REC and the REC and its REDB can't be modified until the REC upgrade completes.
  {{< /warning >}}
@@ -126,20 +124,19 @@ After the operator upgrade is complete, you can upgrade Redis Enterprise cluster
 
 1. Edit the REC custom resource YAML file.
 
-```sh
-kubectl edit rec <your-rec.yaml>
-```
+    ```sh
+    kubectl edit rec <your-rec.yaml>
+    ```
 
 1. Replace the `image:` declaration under `redisEnterpriseImageSpec` with the new version tag.
 
-```YAML
-spec:
-  redisEnterpriseImageSpec:
-    imagePullPolicy:  IfNotPresent
-    repository:       redislabs/redis
-    versionTag:       <new-version-tag>
-  
-```
+    ```YAML
+    spec:
+      redisEnterpriseImageSpec:
+        imagePullPolicy:  IfNotPresent
+        repository:       redislabs/redis
+        versionTag:       <new-version-tag>
+    ```
 
 1. Save the changes to apply.
 
@@ -165,7 +162,7 @@ kubectl rollout status sts <REC_name>
 
 ### Upgrade databases
 
-After the cluster is upgraded, you can upgrade your databases. The process for upgrading databases is the same for both Kubernetes and non-Kubernetes deployments. More details on how to [upgrade a database]({{<relref "/rs/installing-upgrading/upgrading#upgrade-a-database">}}) in the [Upgrade an existing Redis Enterprise Software deployment]({{<relref ""/rs/installing-upgrading/upgrading.md">}}) documentation.
+After the cluster is upgraded, you can upgrade your databases. The process for upgrading databases is the same for both Kubernetes and non-Kubernetes deployments. More details on how to [upgrade a database]({{<relref "/rs/installing-upgrading/upgrading#upgrade-a-database">}}) in the [Upgrade an existing Redis Enterprise Software deployment]({{<relref "/rs/installing-upgrading/upgrading.md">}}) documentation.
 
 Note that if your cluster [`redisUpgradePolicy]({{<relref "/kubernetes/reference/cluster-options#redisupgradepolicy">}}) or your database [`redisVersion`]({{<relref "">}}) are set to `major`, you won't be able to upgrade those databases to minor versions. See [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy">}}) for more details.
 
