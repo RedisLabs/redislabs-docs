@@ -10,7 +10,9 @@ aliases:
 
 Redis Enterprise Software includes a REST API that allows you to automate certain tasks.
 
-## REST API fundamentals
+## Fundamentals
+
+No matter which method you use to send API requests, there are a few common concepts to remember.
 
 ### Authentication
 
@@ -21,6 +23,29 @@ If the username and password is incorrect or missing, the request will fail with
 An admin user can access any endpoint on the API. Other users can access endpoints that correspond to their assigned roles. If a user attempts to access an endpoint that is not allowed in their role, the request will fail with a [`403 Forbidden`](https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden) status code. For more details on which user roles can access certain endpoints, see [Permissions]({{<relref "/rs/references/rest-api/permissions">}}).
 
 The Redis Enterprise Software REST API uses [Self-signed certificates]({{<relref "/rs/security/certificates">}}) to ensure the product is secure. When you use the default self-signed certificates, the HTTPS requests will fail with `SSL certificate problem: self signed certificate` unless you turn off SSL certificate verification. The examples in this tutorial turn off SSL certificate verification.
+
+### Ports
+
+All calls must be made over SSL to port 9443. For the API to work, port 9443 must be exposed to incoming traffic or mapped to a different port.
+
+If you are using a [Redis Enterprise Software Docker image]({{<relref "/rs/installing-upgrading/get-started-docker">}}), run the following command to start the Docker image with port 9443 exposed:
+
+```sh
+docker run -p 9443:9443 redislabs/redis
+```
+
+### Versions
+
+All API requests are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
+
+For the Redis Enterprise Software API, specify version 1 or version 2 in the [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier).
+
+| Request path | Description |
+|--------------|-------------|
+| `POST /v1/bdbs` | A version 1 request for the `/bdbs` endpoint. |
+| `POST /v2/bdbs` | A version 2 request for the `/bdbs` endpoint. |
+
+When an endpoint supports more than one version, the endpoint's request page documents both versions.  For example, the [bdbs request]({{<relref "/rs/references/rest-api/requests/bdbs/" >}}) page documents POST requests for [version 1]({{<relref "/rs/references/rest-api/requests/bdbs/#post-bdbs-v1" >}}) and [version 2]({{<relref "/rs/references/rest-api/requests/bdbs/#post-bdbs-v2" >}}).
 
 ### Headers
 
@@ -52,30 +77,7 @@ The most common responses for a Redis Enterprise API request are:
 
 Some endpoints may have different response codes. The request page of these endpoints document these special cases.
 
-### Ports
-
-All calls must be made over SSL to port 9443. For the API to work, port 9443 must be exposed to incoming traffic or mapped to a different port.
-
-If you are using a [Redis Enterprise Software Docker image]({{<relref "/rs/installing-upgrading/get-started-docker">}}), run the following command to start the Docker image with port 9443 exposed:
-
-```sh
-docker run -p 9443:9443 redislabs/redis
-```
-
-### Versions
-
-All API requests are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
-
-For the Redis Enterprise Software API, specify version 1 or version 2 in the [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier).
-
-| Request path | Description |
-|--------------|-------------|
-| POST `/v1/bdbs` | A version 1 request for the `/bdbs` endpoint. |
-| POST `/v2/bdbs` | A version 2 request for the `/bdbs` endpoint. |
-
-When an endpoint supports more than one version, the endpoint's request page documents both versions.  For example, the [bdbs request]({{<relref "/rs/references/rest-api/requests/bdbs/" >}}) page documents POST requests for [version 1]({{<relref "/rs/references/rest-api/requests/bdbs/#post-bdbs-v1" >}}) and [version 2]({{<relref "/rs/references/rest-api/requests/bdbs/#post-bdbs-v2" >}}).
-
-## Send API requests with cURL
+## Example requests: cURL
 
 [cURL](https://curl.se/) is a command-line tool that allows you to send HTTP requests from a terminal.
 
@@ -92,7 +94,7 @@ See the [cURL documentation](https://curl.se/docs/) for more info.
 
 ### GET request
 
-Use the following cURL command to get a list of databases with the [GET `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#get-all-bdbs" >}}) endpoints.
+Use the following cURL command to get a list of databases with the [GET `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#get-all-bdbs" >}}) endpoint.
 
 ```sh
 $ curl -X GET -H "accept: application/json" \
@@ -121,11 +123,13 @@ x-envoy-upstream-service-time: 25
 ]
 ```
 
+In this object, the `uid` is the database ID. You can use the database ID to view or update the database using the API.
+
 For more info on the fields returned by [GET `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#get-all-bdbs" >}}), see the [`bdbs` object]({{<relref "/rs/references/rest-api/objects/bdb/" >}}).
 
 ### PUT request
 
-Once you have the `uid` of a database, you can use [PUT `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#put-bdbs" >}}) to update the configuration of the database.
+Once you have the database ID, you can use [PUT `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#put-bdbs" >}}) to update the configuration of the database.
 
 ```sh
 $ curl -X PUT -H "accept: application/json" \
@@ -154,7 +158,7 @@ x-envoy-upstream-service-time: 159
 
 For more info on the fields required by [PUT `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#put-bdbs" >}}), see the [`bdbs` object]({{<relref "/rs/references/rest-api/objects/bdb/" >}}).
 
-## Send API requests with code
+## More examples
 
 To follow these examples, you need:
 
@@ -179,9 +183,9 @@ bdbs_uri = "https://{}:{}/v1/bdbs".format(host, port)
 
 print("GET {}".format(bdbs_uri))
 get_resp = requests.get(bdbs_uri,
-                        auth = (username, password),
-                        headers = { "accept" : "application/json" },
-                        verify = False)
+        auth = (username, password),
+        headers = { "accept" : "application/json" },
+        verify = False)
 
 print("{} {}".format(get_resp.status_code, get_resp.reason))
 for header in get_resp.headers.keys():
@@ -199,10 +203,10 @@ for bdb in get_resp.json():
     print("PUT {} {}".format(put_uri, json.dumps(put_data)))
 
     put_resp = requests.put(put_uri,
-                            data = json.dumps(put_data),
-                            auth = (username, password),
-                            headers = { "content-type" : "application/json" },
-                            verify = False)
+        data = json.dumps(put_data),
+        auth = (username, password),
+        headers = { "content-type" : "application/json" },
+        verify = False)
 
     print("{} {}".format(put_resp.status_code, put_resp.reason))
     for header in put_resp.headers.keys():
@@ -219,7 +223,9 @@ See the [Python requests library documentation](https://requests.readthedocs.io/
 $ python rs_api.py
 python rs_api.py
 GET https://[host]:[port]/v1/bdbs
-InsecureRequestWarning: Unverified HTTPS request is being made to host '[host]'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+InsecureRequestWarning: Unverified HTTPS request is being made to host '[host]'.
+Adding certificate verification is strongly advised.
+See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(
 200 OK
 server: envoy
@@ -243,7 +249,9 @@ x-envoy-upstream-service-time: 27
 ]
 
 PUT https://[host]:[port]/v1/bdbs/1 {"slave_ha": true}
-InsecureRequestWarning: Unverified HTTPS request is being made to host '[host]'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+InsecureRequestWarning: Unverified HTTPS request is being made to host '[host]'.
+Adding certificate verification is strongly advised.
+See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(
 200 OK
 server: envoy
