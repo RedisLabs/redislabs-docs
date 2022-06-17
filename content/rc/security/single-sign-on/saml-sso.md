@@ -19,9 +19,9 @@ The account owner remains a local user and should set up [multi-factor authentic
 
 To set up SAML single sign-on for a Redis Cloud account:
 
-1. From your identity provider's admin console, [set up a Redis Cloud SAML integration app](#set-up-rc-app).
+1. [Set up a SAML app](#set-up-app) to integrate Redis Cloud with your identity provider.
 
-1. [Create a SAML user](#add-saml-users) and set the **redisAccountMapping** attribute to map the Redis Cloud account to the **owner** role.
+1. For existing users with access to the Redis Cloud account, [set up SAML users](#add-saml-users) for them in your identity provider's admin console.
 
 1. [Configure SAML in Redis Cloud](#configure-idp).
 
@@ -29,23 +29,33 @@ To set up SAML single sign-on for a Redis Cloud account:
 
 1. [Activate SAML SSO](#activate-saml-sso).
 
-### Set up Redis Cloud app {#set-up-rc-app}
+### Set up SAML app {#set-up-app}
 
-First, set up a Redis Cloud SAML integration app for your identity provider:
+First, set up a SAML app to integrate Redis Cloud with your identity provider:
 
 1. Sign in to your identity provider's admin console.
 
 1. Create or add a SAML integration app for the service provider Redis Cloud.
 
-1. Create a custom SAML attribute called **redisAccountMapping** in the service provider app:
+1. Create a custom SAML attribute called **redisAccountMapping** in the service provider app.
 
-    | Field | Value |
-    |-------|-------|
-    | Name | redisAccountMapping |
-    | Name format | Basic |
-    | Value | user.redisAccountMapping |
+1. Set up any additional configuration required by your identity provider to ensure you can configure the **redisAccountMapping** attribute for SAML users.
 
-1. Add the **redisAccountMapping** attribute to the default user profile.
+### Create SAML users {#add-saml-users}
+
+To create a SAML user and add them to a Redis Cloud account:
+
+1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user's profile.
+
+1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **redisAccountMapping** field.
+
+    You can add the same user to multiple SAML-enabled accounts with a comma-separated list: 
+
+    12345=owner,54321=manager
+
+1. [Assign the Redis Cloud SAML integration app](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
+
+To learn how to manage users in more detail, see your identity provider's documentation.
 
 ### Configure SAML in Redis Cloud {#configure-idp}
 
@@ -68,7 +78,6 @@ After you set up the SAML integration app and create a SAML user in your identit
     | **Issuer (IdP entity ID)** | The unique entity ID for the identity provider |
     | **IdP server URL** | The identity provider's HTTPS URL for SAML SSO |
     | **Single logout URL** | The URL used to sign out of the identity provider and connected apps (optional) |
-    | **Email domain binding** | The identity provider's domain |
     | **Assertion signing certificate** | Public SHA-256 certificate used to validate SAML assertions from the identity provider |
 
     To find these metadata values, see your identity provider's documentation.
@@ -122,27 +131,9 @@ After you finish the required SAML SSO configuration between your identity provi
 If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign-in screen, sign in with your previous credentials and review your SAML configuration for issues.
     {{</note>}}
 
-## Add SAML users {#add-saml-users}
-
-To add a user to an account and enable SAML SSO for them:
-
-1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user's profile.
-
-1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **redisAccountMapping** field.
-
-    You can add the same user to multiple SAML-enabled accounts with a comma-separated list: 
-
-    12345=owner,54321=manager
-
-1. [Assign the Redis Cloud SAML integration app](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
-
-1. The user can now sign in to Redis Cloud with SAML SSO.
-
-To learn how to manage SAML user profiles, see your identity provider's documentation.
-
 ## Bind other accounts
 
-After you set up SAML SSO for one account, you can edit the SAML configuration to bind other accounts where you are an account owner. This lets you use the same domain for SSO across multiple accounts.
+After you set up SAML SSO for one account, you can bind other accounts you own to the existing SAML configuration. This lets you use the same SAML configuration for SSO across multiple accounts.
 
 To bind other accounts to an existing SAML SSO configuration:
 
@@ -160,13 +151,13 @@ To bind other accounts to an existing SAML SSO configuration:
 
 ## Deactivate SAML SSO
 
-A SAML-enabled account must have a local (non-SAML) user with the owner role assigned before you can deactivate SAML SSO for that account.
+Before you can deactivate SAML SSO for an account, it must have a local (non-SAML) user with the owner role assigned. You can only deactivate SAML SSO for the account you are currently signed in to.
 
 To deactivate SAML SSO for a specific account:
 
 1. In the Redis Cloud [admin console](https://app.redislabs.com), select your name to display your available accounts.
 
-1. If the relevant account is not already selected, you need to select it from the **Switch account** list.
+1. If the relevant account is not already selected, select it from the **Switch account** list.
 
 1. Go to **Access Management > Single Sign-on**.
 
