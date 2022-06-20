@@ -68,11 +68,6 @@ For example:
 rladmin cluster config min_data_TLS_version 1.2
 ```
 
-For your changes to take effect on the discovery service, restart the service with this command:
-
-```sh
-supervisorctl restart sentinel_service
-```
 
 ### Discovery service
 
