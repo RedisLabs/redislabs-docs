@@ -209,7 +209,7 @@ Returns the updated [user object]({{<relref "/rs/references/rest-api/objects/use
 ```
 
 {{<note>}}
-For [RBAC-enabled clusters]({{<relref "/rs/security/passwords-users-roles">}}), the returned user details include `role_uids` instead of `role`.
+For [RBAC-enabled clusters]({{<relref "/rs/security/access-control">}}), the returned user details include `role_uids` instead of `role`.
 {{</note>}}
 
 ### Error codes {#put-error-codes} 
@@ -276,7 +276,7 @@ Create a new user.
 Include a single [user object]({{<relref "/rs/references/rest-api/objects/user">}}), with an email and a password, in the request body.
 
 {{<note>}}
-For [RBAC-enabled clusters]({{<relref "/rs/security/passwords-users-roles">}}), use `role_uids` instead of `role` in the request body.
+For [RBAC-enabled clusters]({{<relref "/rs/security/access-control">}}), use `role_uids` instead of `role` in the request body.
 {{</note>}}
 
 `email_alerts` can be configured either as: 
