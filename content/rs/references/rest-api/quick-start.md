@@ -82,13 +82,16 @@ Some endpoints may have different response codes. The request page of these endp
 [cURL](https://curl.se/) is a command-line tool that allows you to send HTTP requests from a terminal.
 
 A cURL request includes the following options:
-- -X: Method (GET, PUT, PATCH, POST, or DELETE)
-- -H: Header
-- -u: username and password information
-- -k: turn off SSL verification
-- -i: Show headers and status code as well as the body response
-- -d: JSON data for PUT or POST requests
-- -F: Form data for PUT or POST requests, such as for the [POST `/v1/modules`]({{<relref "/rs/references/rest-api/requests/modules/#post-module" >}}) or [POST `/v2/modules`]({{<relref "/rs/references/rest-api/requests/modules/#post-module-v2" >}}) endpoint
+
+| Option | Description |
+|--------|-------------|
+| -X     | Method (GET, PUT, PATCH, POST, or DELETE) |
+| -H     | Request header, can be specified multiple times |
+| -u     | Username and password information |
+| -d     | JSON data for PUT or POST requests |
+| -F     | Form data for PUT or POST requests, such as for the [`POST /v1/modules`]({{<relref "/rs/references/rest-api/requests/modules/#post-module" >}}) or [`POST /v2/modules`]({{<relref "/rs/references/rest-api/requests/modules/#post-module-v2" >}}) endpoint |
+| -k     | Turn off SSL  verification |
+| -i     | Show headers and status code as well as the response body |
 
 See the [cURL documentation](https://curl.se/docs/) for more info.
 
@@ -164,7 +167,7 @@ To follow these examples, you need:
 
 - A [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software">}}) node
 - Python 3 and the [requests](https://pypi.org/project/requests/) Python library
-- [node.js](https://nodejs.dev/)
+- [node.js](https://nodejs.dev/) and [node-fetch](https://www.npmjs.com/package/node-fetch)
 
 ### Python
 
@@ -195,7 +198,7 @@ print("\n" + json.dumps(get_resp.json(), indent=4))
 
 # Update all databases with slave_ha = true using PUT /v1/bdbs
 for bdb in get_resp.json():
-    uid = bdb["uid"]
+    uid = bdb["uid"] #get the database ID from the json response
 
     put_uri = "{}/{}".format(bdbs_uri, uid)
     put_data = { "slave_ha" : True }
@@ -276,33 +279,93 @@ x-envoy-upstream-service-time: 128
 ### node.js
 
 ```js
-const https = require('https');
+import fetch, { Headers } from 'node-fetch';
+import * as https from 'https';
 
-const options = {
-    host: '[host]',
-    port: '[port]',
-    path: '/v1/bdbs',
-    method: 'GET',
-    auth: '[username]:[password]',
+const HOST = '[host]';
+const PORT = '[port]';
+const USERNAME = '[username]';
+const PASSWORD = '[password]';
+
+// Get list of databases using GET /v1/bdbs
+const BDBS_URI = `https://${HOST}:${PORT}/v1/bdbs`;
+const USER_CREDENTIALS = Buffer.from(`${USERNAME}:${PASSWORD}`).toString('base64');
+const AUTH_HEADER = `Basic ${USER_CREDENTIALS}`;
+
+console.log(`GET ${BDBS_URI}`);
+
+const HTTPS_AGENT = new https.Agent({
     rejectUnauthorized: false
-};
-
-const req = https.request(options, (res) => {
-  console.log('statusCode:', res.statusCode);
-  console.log('headers:', res.headers);
-
-  res.on('data', (d) => {
-    process.stdout.write(d);
-  });
 });
 
-req.on('error', (e) => {
-  console.error(e.message);
+const response = await fetch(BDBS_URI, {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json',
+        'Authorization': AUTH_HEADER
+    },
+    agent: HTTPS_AGENT
 });
-req.end();
+
+const responseObject = await response.json();
+console.log(`${response.status}: ${response.statusText}`);
+console.log(responseObject);
+
+// Update all databases with slave_ha = true using PUT /v1/bdbs/<database uid>
+for (const database of responseObject) {
+    const DATABASE_URI = `${BDBS_URI}/${database.uid}`;
+
+    console.log(`PUT ${DATABASE_URI}`);
+
+    const response = await fetch(DATABASE_URI, {
+        method: 'PUT',
+        headers: {
+            'Authorization': AUTH_HEADER,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'slave_ha': true
+        }),
+        agent: HTTPS_AGENT
+    });
+
+    console.log(`${response.status}: ${response.statusText}`);
+    console.log(await(response.json()));
+}
 ```
 
-See the [node.js https class documentation](https://nodejs.org/api/https.html#httpsrequestoptions-callback) for more info.
+See the [node-fetch documentation](https://www.npmjs.com/package/node-fetch) for more info.
+
+#### Output
+```sh
+$ node rs_api_simon.js
+GET https://[host]:[port]/v1/bdbs
+200: OK
+[
+    {
+        ...
+        "name": "tr01",
+        ...
+        "slave_ha" : false,
+        ...
+        "uid": 1,
+        "version": "6.0.16",
+        "wait_command": true
+    }
+]
+PUT https://[host]:[port]/v1/bdbs/1
+200: OK
+{
+    ...
+    "name" : "tr01",
+    ...
+    "slave_ha" : true,
+    ...
+    "uid" : 1,
+    "version" : "6.0.16",
+    "wait_command" : true
+}
+```
 
 ## More info
 
