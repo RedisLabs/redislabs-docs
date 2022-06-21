@@ -44,8 +44,10 @@ Skip this step unless your cluster does not have internet access.
 
     ```sh
     POST https://[host][:port]/v2/modules
-    "module=@/tmp/redisgears.linux-centos7-x64.1.2.1.zip"
+    {"module=@/tmp/redisgears.linux-centos7-x64.1.2.1.zip"}
     ```
+
+Here, the *module* parameter specifies the full path of the module package and must be submitted as form-data. In addition, the package must be available and accessible to the server processing the request.
 
 After the install is complete, RedisGears will appear in the list of available modules on the **settings** and **create database** pages of the Redis Enterprise admin console.
 
