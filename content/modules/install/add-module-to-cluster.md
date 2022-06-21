@@ -49,7 +49,7 @@ To add a module to the cluster using the REST API:
     {"module=@/tmp/redisearch.Linux-ubuntu16.04-x86_64.2.2.6.zip"}
     ```
 
-Here, the *module* parameter specifies the full path of the module package and must be submitted as form-data. In addition, the package must be available and accessible to the server processing the request.
+    Here, the *module* parameter specifies the full path of the module package and must be submitted as form-data. In addition, the package must be available and accessible to the server processing the request.
 
 1. If the module installation succeeds, the `POST` request returns a [JSON object]({{<relref "/rs/references/rest-api/objects/module">}}) that represents the new module. If it fails, it may return a JSON object with an `error_code` and `description` with more details.
 
