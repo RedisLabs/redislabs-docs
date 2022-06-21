@@ -37,7 +37,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
 
 1. Create or add a SAML integration app for the service provider Redis Cloud.
 
-1. Create a custom SAML attribute called **redisAccountMapping** in the service provider app.
+1. Create a custom SAML attribute called **redisAccountMapping** in the service provider app. This attribute lets you map a user to multiple Redis Cloud accounts and roles as a comma-separated list.
 
 1. Set up any additional configuration required by your identity provider to ensure you can configure the **redisAccountMapping** attribute for SAML users.
 
@@ -47,6 +47,8 @@ To create a SAML user and add them to a Redis Cloud account:
 
 1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user's profile.
 
+    The username configured in the identity provider must match the email address that the SAML user will use to sign in to Redis Cloud.
+
 1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **redisAccountMapping** field.
 
     You can add the same user to multiple SAML-enabled accounts with a comma-separated list: 
@@ -54,6 +56,8 @@ To create a SAML user and add them to a Redis Cloud account:
     12345=owner,54321=manager
 
 1. [Assign the Redis Cloud SAML integration app](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
+
+If your identity provider lets you configure custom attributes with workflows or group rules, you can set up automation to configure the **redisAccountMapping** field automatically instead of manually.
 
 To learn how to manage users in more detail, see your identity provider's documentation.
 
@@ -82,7 +86,9 @@ After you set up the SAML integration app and create a SAML user in your identit
 
     To find these metadata values, see your identity provider's documentation.
 
-1. From the **SAML** screen of the Redis Cloud [admin console](https://app.redislabs.com), configure the **Identity Provider metadata** settings.
+1. From the **SAML** screen of the Redis Cloud [admin console](https://app.redislabs.com), configure the **Identity Provider metadata** settings. 
+
+    **Email domain binding** should match the email domain that SAML users will use to sign in to Redis Cloud.
 
     {{<image filename="images/rc/access-management-saml-config.png"  alt="SAML Single Sign-On configuration screen.">}}{{</image>}}
 
