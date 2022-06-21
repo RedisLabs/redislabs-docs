@@ -84,7 +84,7 @@ After you set up the SAML integration app and create a SAML user in your identit
 
 1. From the **SAML** screen of the Redis Cloud [admin console](https://app.redislabs.com), configure the **Identity Provider metadata** settings.
 
-    {{<image filename="images/rc/access-management-saml-config.png"  alt="SAML Single Sign-on configuration screen.">}}{{</image>}}
+    {{<image filename="images/rc/access-management-saml-config.png"  alt="SAML Single Sign-On configuration screen.">}}{{</image>}}
 
 1. Select the **Enable** button.
 
@@ -137,7 +137,7 @@ After you set up SAML SSO for one account, you can bind other accounts you own t
 
 To bind other accounts to an existing SAML SSO configuration:
 
-1. Go to **Access Management > Single Sign-on** in the Redis Cloud [admin console](https://app.redislabs.com).
+1. Go to **Access Management > Single Sign-On** in the Redis Cloud [admin console](https://app.redislabs.com).
 
 1. Select the **Edit** button.
 
@@ -159,7 +159,7 @@ To deactivate SAML SSO for a specific account:
 
 1. If the relevant account is not already selected, select it from the **Switch account** list.
 
-1. Go to **Access Management > Single Sign-on**.
+1. Go to **Access Management > Single Sign-On**.
 
 1. Select the **Edit** button.
 
