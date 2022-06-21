@@ -55,7 +55,7 @@ Redis Enterprise REST API requests support the following HTTP headers:
 |--------|---------------------------|
 | Accept | `application/json` |
 | Content-Length | Length (in bytes) of request message |
-| Content-Type | `application/json` |
+| Content-Type | `application/json` (required for PUT or POST requests) |
 
 If the client specifies an invalid header, the request will fail with a [`400 Bad Request`](https://www.rfc-editor.org/rfc/rfc9110.html#name-400-bad-request) status code.
 
@@ -117,8 +117,6 @@ x-envoy-upstream-service-time: 25
         ...
         "name": "tr01",
         ...
-        "slave_ha" : false,
-        ...
         "uid": 1,
         "version": "6.0.16",
         "wait_command": true
@@ -136,9 +134,10 @@ Once you have the database ID, you can use [PUT `/v1/bdbs/`]({{<relref "/rs/refe
 
 ```sh
 $ curl -X PUT -H "accept: application/json" \
-               -u "[username]:[password]" \
-               https://[host][:port]/v1/bdbs/1 \
-               -d '{ "slave_ha": true }' -k -i
+            -H "content-type: application/json" \
+            -u "cameron.bates@redis.com:test123" \
+            https://[host]:[port]/v1/bdbs/1 \
+            -d '{ "name": "database1" }' -k -i
 HTTP/1.1 200 OK
 server: envoy
 date: Tue, 14 Jun 2022 20:00:25 GMT
@@ -149,9 +148,7 @@ x-envoy-upstream-service-time: 159
 
 {
     ...
-    "name" : "tr01",
-    ...
-    "slave_ha" : true,
+    "name" : "database1",
     ...
     "uid" : 1,
     "version" : "6.0.16",
@@ -196,12 +193,13 @@ for header in get_resp.headers.keys():
 
 print("\n" + json.dumps(get_resp.json(), indent=4))
 
-# Update all databases with slave_ha = true using PUT /v1/bdbs
+# Update all databases with a new name using PUT /v1/bdbs
 for bdb in get_resp.json():
     uid = bdb["uid"] #get the database ID from the json response
 
     put_uri = "{}/{}".format(bdbs_uri, uid)
-    put_data = { "slave_ha" : True }
+    new_name = "database{}".format(uid)
+    put_data = { "name" : new_name }
 
     print("PUT {} {}".format(put_uri, json.dumps(put_data)))
 
@@ -243,15 +241,13 @@ x-envoy-upstream-service-time: 27
         ...
         "name": "tr01",
         ...
-        "slave_ha" : false,
-        ...
         "uid": 1,
         "version": "6.0.16",
         "wait_command": true
     }
 ]
 
-PUT https://[host]:[port]/v1/bdbs/1 {"slave_ha": true}
+PUT https://[host]:[port]/v1/bdbs/1 {"name": "database1"}
 InsecureRequestWarning: Unverified HTTPS request is being made to host '[host]'.
 Adding certificate verification is strongly advised.
 See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
@@ -266,9 +262,7 @@ x-envoy-upstream-service-time: 128
 
 {
     ...
-    "name" : "tr01",
-    ...
-    "slave_ha" : true,
+    "name" : "database1",
     ...
     "uid" : 1,
     "version" : "6.0.16",
@@ -311,9 +305,10 @@ const responseObject = await response.json();
 console.log(`${response.status}: ${response.statusText}`);
 console.log(responseObject);
 
-// Update all databases with slave_ha = true using PUT /v1/bdbs/<database uid>
+// Update all databases with a new name using PUT /v1/bdbs
 for (const database of responseObject) {
     const DATABASE_URI = `${BDBS_URI}/${database.uid}`;
+    const new_name = `database${database.uid}`;
 
     console.log(`PUT ${DATABASE_URI}`);
 
@@ -324,7 +319,7 @@ for (const database of responseObject) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            'slave_ha': true
+            'name': new_name
         }),
         agent: HTTPS_AGENT
     });
