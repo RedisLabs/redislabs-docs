@@ -333,7 +333,7 @@ See the [node-fetch documentation](https://www.npmjs.com/package/node-fetch) for
 
 #### Output
 ```sh
-$ node rs_api_simon.js
+$ node rs_api.js
 GET https://[host]:[port]/v1/bdbs
 200: OK
 [
