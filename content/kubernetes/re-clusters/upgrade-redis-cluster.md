@@ -18,6 +18,13 @@ aliases: [
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps: upgrading the Redis Enterprise operator, and upgrading the Redis Enterprise cluster version.
 
+{{<warning>}}
+  **Do not** upgrade to the 6.2.10-34 release if you are an **OpenShift** customer and **also use modules**.
+
+  There was a change in 6.2.10-34 to a new RHEL 8 base image for the Redis Server image. Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.
+
+  This message will be updated as remediation plans and new steps are available to address this situation. Please contact support if you have further questions. {{</warning>}}
+
 ## 1- Upgrade Redis Enterprise
 
 ### Download the bundle
@@ -27,14 +34,14 @@ or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#rel
 
 You can download the bundle for the latest release by issuing the following `curl` command:
 
-```
-VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
-curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
+```sh
+VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`  
+curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml    
 ```
 For openshift environments, the name of the bundle is openshift.bundle.yaml, and so the curl command to run is:
 
-```
-curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/openshift.bundle.yaml
+```sh
+curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/openshift.bundle.yaml   
 ```
 
 If you need a different release, replace `VERSION` in the above with a specific release tag.
@@ -47,22 +54,22 @@ Applying the bundle applies the changes made in the new release to custom resour
 If you are not pulling images from Docker Hub, update the operator image spec to point to your private repository.
 If you have made changes to the role, role binding, rbac or crd in the previous version you must merge them with the updated declarations in the new version files.
 {{< /note >}}
-    
+
 You can upgrade the bundle and operator with a single apply command, passing in the bundle YAML file:
 
-```
+```sh
 kubectl apply -f bundle.yaml
 ```
 
 If you are using openshift, run this instead:
 
-```
+```sh
 kubectl apply -f openshift.bundle.yaml
 ```
 
 After running this command, you should see a result similar to this:
 
-```
+```sh
 role.rbac.authorization.k8s.io/redis-enterprise-operator configured
 serviceaccount/redis-enterprise-operator configured
 rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator configured
@@ -75,13 +82,13 @@ deployment.apps/redis-enterprise-operator configured
 
 You can verify the operator is running in your namespace by checking the deployment as follows:
 
-```
+```sh
 kubectl get deployment/redis-enterprise-operator
 ```
 
 You should see a result similar to this:
 
-```
+```sh
 NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
 redis-enterprise-operator   1/1     1            1           0m36s
 ```

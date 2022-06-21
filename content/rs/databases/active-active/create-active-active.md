@@ -16,8 +16,8 @@ aliases: [
 [Active-Active geo-replicated databases]({{< relref "/rs/databases/active-active/_index.md" >}}) (formerly known as CRDBs) give applications write access
 to replicas of the dataset in different geographical locations.
 
-The participating Redis Enterprise Software clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
-Every instance of an Active-Active database can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication#example-of-synchronization" >}}) to all of the instances without conflict.
+The participating Redis Enterprise Software clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/databases/active-active/intercluster-replication.md" >}}).
+Every instance of an Active-Active database can receive write operations, and all operations are [synchronized]({{< relref "/rs/databases/active-active/intercluster-replication#example-of-synchronization" >}}) to all of the instances without conflict.
 
 ## Steps to create an Active-Active database
 
@@ -75,9 +75,9 @@ Every instance of an Active-Active database can receive write operations, and al
 
     {{< /note >}}
 
-    - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that all Active-Active database use replication for best intercluster synchronization performance.
+    - [**Replication**]({{< relref "/rs/databases/configure/replication.md" >}}) - We recommend that all Active-Active database use replication for best intercluster synchronization performance.
         When replication is enabled, every Active-Active database master shard is replicated to a corresponding replica shard. The replica shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
-        We also recommend that you enable [replica HA]({{< relref "/rs/administering/database-operations/replica-ha.md" >}}) to ensure that the replica shards are highly-available for this synchronization.
+        We also recommend that you enable [replica HA]({{< relref "/rs/databases/configure/replica-ha.md" >}}) to ensure that the replica shards are highly-available for this synchronization.
 
     - [**Data persistence**]({{< relref "/rs/databases/configure/database-persistence.md" >}}) -
         To protect against loss of data stored in RAM,
@@ -91,15 +91,15 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/passwords-users-roles.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that apply to those connections.
+    - **Access Control List** - You can specify the [user roles]({{<relref "/rs/security/access-control/create-roles">}}) that have access to the database
+        and the [Redis ACLs]({{<relref "/rs/security/access-control/configure-acl">}}) that apply to those connections.
         You can only configure access control after the Active-Active database is created.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [role]({{< relref "/rs/security/passwords-users-roles.md" >}}) that you want to have access to the database.
-        1. Select the [ACL]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that you want the role to have in the database.
+        1. Select the [role]({{<relref "/rs/security/access-control/create-roles">}}) that you want to have access to the database.
+        1. Select the [ACL]({{<relref "/rs/security/access-control/configure-acl">}}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
@@ -109,13 +109,13 @@ Every instance of an Active-Active database can receive write operations, and al
 
         - Make sure the Database clustering is enabled and select the number of shards
         that you want to have in the database. When database clustering is enabled,
-        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
         - Clear the **Database clustering** option to use only one shard so that you
-        can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+        can use [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}})
         without the limitations.
 
-    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
+    - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
     - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
 
@@ -125,7 +125,7 @@ Every instance of an Active-Active database can receive write operations, and al
         1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn>:9443`),
             enter the credentials (email address and password) for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    - **[Causal Consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}})** -
+    - **[Causal Consistency]({{< relref "/rs/databases/active-active/causal-consistency-crdb.md" >}})** -
         Causal Consistency in an Active-Active database guarantees that the order of operations
         on a specific key is maintained across all instances of an Active-Active database.
         To enable Causal Consistency for an existing Active-Active database, use the REST API.

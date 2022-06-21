@@ -44,6 +44,6 @@ For disk size requirements, see:
     for general guidelines regarding the ideal disk size each type of
     storage
 - [Disk size requirements for extreme write
-    scenarios]({{< relref "/rs/concepts/memory-performance/disk-sizing-heavy-write-scenarios.md" >}})
+    scenarios]({{< relref "/rs/clusters/optimize/disk-sizing-heavy-write-scenarios.md" >}})
     for special considerations when dealing with a high rate of write
     commands

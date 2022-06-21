@@ -31,8 +31,8 @@ addresses for internal traffic use, and assign one or more IPv4/IPv6
 addresses for external traffic.
 
 If at a later stage you would like to update the IP address allocation,
-run the relevant commands in [rladmin command-line interface
-(CLI)]({{< relref "/rs/references/rladmin.md" >}}).
+run the relevant commands in [`rladmin` command-line interface
+(CLI)]({{<relref "/rs/references/cli-utilities/rladmin">}}).
 
 If you need to update the internal IP address in the OS, you must remove
 that node from the RS cluster, make the IP change, and then add the node
@@ -61,7 +61,7 @@ Where:
 
 {{< note >}}
 While [joining a new node to a
-cluster]({{< relref "/rs/administering/adding-node.md" >}})
+cluster]({{< relref "/rs/clusters/add-node.md" >}})
 during the node bootstrap process,
 when prompted to provide an IP of an existing node in the cluster,
 if you use the node's IP, provide the node's internal IP address.

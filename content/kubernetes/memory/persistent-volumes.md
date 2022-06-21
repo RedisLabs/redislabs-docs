@@ -91,6 +91,10 @@ Below is an example of a response to the command.
 storageClassName must be specified for this deployment type.
 {{< /note >}}
 
+{{< warning >}}
+The storage class cannot be changed after deployment. Trying to change this value after deployment could result in unexpected and potentially damaging behavior.
+{{< /warning >}}
+
 Example of the redisEnterpriseNodeResources definition:
 
     redisEnterpriseNodeResources:

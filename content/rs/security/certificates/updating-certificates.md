@@ -80,7 +80,7 @@ Replace the following variables with your own values:
 To update the proxy certificate on clusters running Active-Passive (Replica Of) databases:
 
 - **Step 1:**  Use `rladmin` or the REST API to update the proxy certificate on the source database cluster.
-- **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "/rs/databases/create-replica-of#configuring-tls-for-replica-of-traffic-on-the-destination-database">}}).
+- **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "/rs/databases/import-export/create-replica-of#configuring-tls-for-replica-of-traffic-on-the-destination-database">}}).
 
 {{<note>}}
 - Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established.
@@ -93,7 +93,7 @@ To update the proxy certificate on clusters running Active-Passive (Replica Of) 
 To update proxy certificate on clusters running Active-Active databases:
 
 - **Step 1:** Use `rladmin` or the REST API to update proxy certificates on a single cluster, multiple clusters, or all participating clusters.
-- **Step 2:** Use the [`crdb-cli`]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility to update Active-Active database configuration from the command line. Run the following command once for each Active-Active database residing on the modified clusters:
+- **Step 2:** Use the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) utility to update Active-Active database configuration from the command line. Run the following command once for each Active-Active database residing on the modified clusters:
 
     ```sh
     crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
@@ -109,7 +109,7 @@ To update proxy certificate on clusters running Active-Active databases:
 To update your syncer certificate on clusters running Active-Active databases, follow these steps:
 
 - **Step 1:** Update your syncer certificate on one or more of the participating clusters using the `rladmin` command, REST API, or admin console. You can update a single cluster, multiple clusters, or all participating clusters.
-- **Step 2:** Update the Active-Active database configuration from the command line with the [`crdb-cli`]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility. Run this command once for each Active-Active database that resides on the modified clusters:
+- **Step 2:** Update the Active-Active database configuration from the command line with the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) utility. Run this command once for each Active-Active database that resides on the modified clusters:
 
     ```sh
     crdb-cli crdb update --crdb-guid <CRDB-GUID> --force

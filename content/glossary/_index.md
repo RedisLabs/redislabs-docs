@@ -24,14 +24,14 @@ More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/ac
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
-More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Update database ACLs]({{<relref "/rs/security/ldap/update-database-acls.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
+More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/access-control">}}); [Update database ACLs]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
 {{%/definition%}}
 
 <a name="active-active"></a>
 {{%definition "Active-Active database (CRDB)"%}}
 Geo-distributed databases that span multiple [Redis Enterprise Software]({{<relref "#redis-enterprise-software">}}) [clusters]({{<relref "#cluster">}}). Active-Active databases, also known as conflict-free replicated databases (CRDB), depend on [multi-master replication (MMR)]({{<relref "#multi-master-replication-mmr">}}) and [conflict-free replicated data types (CRDTs)]({{<relref "#conflict-free-replicated-data-types-crdt">}}) to power a simple development experience for geo-distributed applications.
 
-More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/concepts/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/databases/active-active/data-types/_index.md">}})
+More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/databases/active-active/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/databases/active-active/develop/_index.md">}})
 {{%/definition%}}
 
 {{%definition "Active-Active database instance"%}}
@@ -54,7 +54,7 @@ More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persis
 {{%definition "causal consistency"%}}
 A distributed database is causally consistent if it maintains the same order of operations on a piece of data across all database copies.
 
-More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/administering/database-operations/causal-consistency-crdb">}})
+More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/databases/active-active/causal-consistency-crdb">}})
 {{%/definition%}}
 
 {{%definition "CIDR allowlist"%}}
@@ -85,7 +85,7 @@ Conflict-free replicated databases (CRDB) are an alternate name for [Active-Acti
 {{%definition "conflict-free replicated data types (CRDT)"%}}
 Techniques used by Redis data types in Active-Active databases that handle conflicting concurrent writes across member Active-Active databases. The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
 
-More info: [CRDT info]({{<relref "/rs/databases/active-active/data-types/#info" >}}), [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active/_index.md" >}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
+More info: [CRDT info]({{<relref "/rs/databases/active-active/develop/#info" >}}), [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active/_index.md" >}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
 {{%/definition%}}
 
 {{%definition "CustomResourceDefinition (CRD)"%}}
@@ -126,13 +126,13 @@ More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.htm
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
-More info: [Database Clustering]({{<relref "content/rs/concepts/high-availability/clustering.md">}})
+More info: [Database Clustering]({{<relref "content/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "hash tag"%}}
 A part of the key that is used in the hash calculation.
 
-More info: [Database Clustering]({{<relref "content/rs/concepts/high-availability/clustering.md">}})
+More info: [Database Clustering]({{<relref "content/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "ingress"%}}
@@ -210,7 +210,7 @@ Node provisioned only for cluster operations that can be elected as a master nod
 {{%definition "rack-zone awareness"%}}
 Redis Enterprise feature that helps to ensure high availability in the event of a rack or zone failure. In the event of a rack or zone failure, the replicas and endpoints in the remaining racks/zones will be promoted.
 
-More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/concepts/high-availability/rack-zone-awareness.md">}})
+More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}})
 {{%/definition%}}
 
 {{%definition "re-sharding"%}}
@@ -255,7 +255,7 @@ More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-fla
 The Redis Enterprise implementation of active-passive database replication.
 
 More info: [Replica-Of
-]({{<relref "/rs/databases/replica-of.md">}})
+]({{<relref "/rs/databases/import-export/replica-of.md">}})
 {{%/definition%}}
 
 {{%definition "ReplicaSet"%}}
@@ -267,13 +267,13 @@ More info: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controller
 {{%definition "replication"%}}
 Database replication provides a mechanism to ensure high availability.
 
-More info: [Database replication]({{<relref "/rs/concepts/high-availability/replication.md">}})
+More info: [Database replication]({{<relref "/rs/databases/configure/replication.md">}})
 {{%/definition%}}
 
 {{%definition "role-based access control (RBAC)"%}}
 A security approach that restricts system access to authorized users.
 
-More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
+More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/access-control">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
 {{%/definition%}}
 
 ## S {#letter-s}
@@ -285,7 +285,7 @@ Kubernetes term for object that stores sensitive information, such as passwords,
 {{%definition "shard"%}}
 Redis process that is part of the Redis clustered database.
 
-More info: [Database clustering]({{<relref "/rs/concepts/high-availability/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "sharding"%}}
