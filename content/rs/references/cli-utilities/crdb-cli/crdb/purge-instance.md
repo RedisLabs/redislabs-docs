@@ -1,18 +1,18 @@
 ---
 Title: crdb-cli crdb purge-instance
 linkTitle: purge-instance
-description: Purges a local instance from an Active-Active database.
+description: Deletes data from a local instance and removes it from the active-active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases:
 ---
 
-Purges the local instance from an existing Active-Active database.
+Deletes data from a local instance and removes it from the active-active database.
 
 ```sh
-crdb-cli crdb purge-instance --crdb-guid <guid> 
-         --instance-id <instance-id> 
+crdb-cli crdb purge-instance --crdb-guid <guid>
+         --instance-id <instance-id>
          [ --no-wait ]
 ```
 
@@ -26,9 +26,11 @@ crdb-cli crdb purge-instance --crdb-guid <guid>
 
 ### Returns
 
-Returns the task ID of the task that is purging the local instance. 
+Returns the task ID of the task that is purging the local instance.
 
 If `--no-wait` is specified, the command exits. Otherwise, it will wait for the instance to be purged and return `finished`.
+
+Once this command finishes, the other replicas must remove this instance with [`crdb-cli crdb remove-instance --force`]({{<relref "/rs/references/cli-utilities/crdb-cli/crdb/remove-instance">}}).
 
 ### Example
 

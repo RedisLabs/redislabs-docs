@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Deletes all data from an Active-Active instance, deletes the instance from the participating cluster, and removes the instance from the list of instances for the Active-Active database.
+Removes a peer replica instance from the Active-Active database and deletes the instance and its data from the participating cluster.
 
 ```sh
 crdb-cli crdb remove-instance --crdb-guid <guid>
