@@ -11,7 +11,7 @@ aliases: /rs/references/rest-api/permissions/
 
 Some Redis Enterprise [REST API requests]({{<relref "/rs/references/rest-api/requests">}}) may require the user to have specific permissions.
 
-Administrators can assign a predefined role to a user via the [admin console]({{<relref "/rs/security/admin-console-security/user-security">}}) or a [<nobr>`PUT /users/{uid}`</nobr> API request]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) in order to grant necessary permissions to them.
+Administrators can assign a predefined role to a user via the [admin console]({{<relref "/rs/security/access-control/manage-users/add-users">}}) or a [<nobr>`PUT /users/{uid}`</nobr> API request]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) in order to grant necessary permissions to them.
 
 ## Roles
 

@@ -29,7 +29,7 @@ The following table shows the MD5 checksums for the available packages.
 
 - [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
 
-- [Oracle Linux v8](https://docs.oracle.com/en/operating-systems/oracle-linux/8/)) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
+- [Oracle Linux v8](https://docs.oracle.com/en/operating-systems/oracle-linux/8/) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
 
 - Compatibility with [open source Redis 6.2.5](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES).
 
@@ -129,6 +129,9 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS68668, RS72082 - Improvements for internode encryption certification rotation
 - RS72304 - Avoid starting a master shard when both master and replica shards crash and the replica did not finish recovery
 - RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup
+
+## Known issues
+- RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
 
 ## Security
 
