@@ -49,7 +49,7 @@ To prepare a client or node for mDNS:
         ```
 
 1. If you are using [mDNS with IPv6 addresses]({{< relref "/rs/networking/multi-ip-ipv6.md" >}}),
-    update the hosts line in `/etc/nsswitch.conf`to:
+    update the hosts line in `/etc/nsswitch.conf` to:
 
     ```yaml
     hosts: files mdns4_minimal
