@@ -66,7 +66,7 @@ Upgrade the bundle and operator with a single command, passing in the bundle YAM
 kubectl apply -f bundle.yaml
 ```
 
-If you are using openshift, run this instead:
+If you are using OpenShift, run this instead:
 
 ```sh
 kubectl apply -f openshift.bundle.yaml
