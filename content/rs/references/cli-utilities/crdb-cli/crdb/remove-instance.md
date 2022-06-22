@@ -34,7 +34,7 @@ If the cluster cannot communicate with the instance that you want to remove, you
 
 ### Returns
 
-Returns the task ID of the task that is getting rid of the local instance.
+Returns the task ID of the task that is deleting the instance.
 
 If `--no-wait` is specified, the command exits. Otherwise, it will wait for the instance to be removed and return `finished`.
 
