@@ -1,5 +1,5 @@
 ---
-Title: Client Prerequisites for mDNS
+Title: Client prerequisites for mDNS
 linkTitle: mDNS client prerequisites
 description: Requirements for using the mDNS protocol in development and testing environments.
 weight: $weight
