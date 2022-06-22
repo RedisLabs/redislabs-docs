@@ -116,7 +116,7 @@ When your Redis Enterprise software clusters are located behind load balancers, 
 
 For Active Passive communication to work, you will need to expose database port(s) locally in each cluster (as defined above) but also allow these ports through firewalls that may be positioned between the clusters.
 
-### Active Active
+### Active-Active
 
 For Active Active communication to work, you will need to expose several ports, every database port and several control plane ports as defined in [Network port configurations]({{<relref "rs/networking/port-configurations.md">}}). Pay attention to services that are marked with Connection Source as "Active-Active". These ports should be allowed through firewalls that may be positioned between the clusters.
 
