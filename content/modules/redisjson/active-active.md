@@ -47,7 +47,7 @@ Two instances concurrently assign values of different types to the same key with
 
 For example:
 
-Instance 1 assigns a map to a key within a JSON document.
+Instance 1 assigns an object to a key within a JSON document.
 
 Instance 2 assigns an array to the same key.
 
@@ -57,14 +57,14 @@ Win over
 
 **Resolution rule**
 
-The instance with the smaller ID wins, so the key becomes a map in the given example.
+The instance with the smaller ID wins, so the key becomes an object in the given example.
 
 **Example**
 
 | Time  | Description | Instance 1 | Instance 2 |
 | :---: | :--- | :--- | :--- |
-| t1 | Set the same key to a map or an array | JSON.SET doc $.a '{}' | JSON.SET doc $.a '[]' |
-| t2 | Add data to the map and array | <nobr>JSON.SET doc  $.a.x '“y”'</nobr> <br /><br /> Result: <br /> {"a": {"x": "y"}} | <nobr>JSON.SET doc $.a '["z"]'</nobr> <br /><br /> Result: <br /> {“a”: ["z"]} |
+| t1 | Set the same key to an object or an array | JSON.SET doc $.a '{}' | JSON.SET doc $.a '[]' |
+| t2 | Add data to the object and array | <nobr>JSON.SET doc  $.a.x '“y”'</nobr> <br /><br /> Result: <br /> {"a": {"x": "y"}} | <nobr>JSON.SET doc $.a '["z"]'</nobr> <br /><br /> Result: <br /> {“a”: ["z"]} |
 | t3 | Active-Active synchronization | – Sync – | – Sync – |
 | t4 | Instance 1 wins | JSON.GET doc $ <br /><br /> Result: <br /> {"a": {"x": "y"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"a": {"x": "y"}} |
 
@@ -216,9 +216,9 @@ As of RedisJSON v2.x, you can use the `JSON.CLEAR` command to reset the JSON doc
 
 **Conflict**
 
-Instance 1 adds "red" to the existing "colors" map with `JSON.SET`.
+Instance 1 adds "red" to the existing "colors" object with `JSON.SET`.
 
-Instance 2 assigns a new empty map for "colors".
+Instance 2 assigns a new empty object for "colors".
 
 **Resolution type**
 
@@ -226,14 +226,14 @@ Win over
 
 **Resolution rule**
 
-Document creation wins over the update, so the result will be an empty map.
+Document creation wins over the update, so the result will be an empty object.
 
 **Example**
 
 | Time  | Description | Instance 1 | Instance 2 |
 | :---: | :--- | :--- | :--- |
 | t1 | The document exists on both instances | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff"}} |
-| t2 | Instance 1 adds a new color; instance 2 resets colors to an empty map | <nobr>JSON.SET doc $.colors.red ‘#ff0000’</nobr> | JSON.SET doc $.colors ‘{}’ |
+| t2 | Instance 1 adds a new color; instance 2 resets colors to an empty object | <nobr>JSON.SET doc $.colors.red ‘#ff0000’</nobr> | JSON.SET doc $.colors ‘{}’ |
 | t3 | Instance 2 adds a new color |  | <nobr>JSON.SET doc $.colors.green ‘#00ff00’</nobr> |
 | t4 |  | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"blue": "#0000ff", "red": "#ff0000"}} | JSON.GET doc $ <br /><br /> Result: <br /> {"colors": {"green": "#00ff00"}} |
 | t5 | Active-Active synchronization | – Sync – | – Sync – |
@@ -243,9 +243,9 @@ Document creation wins over the update, so the result will be an empty map.
 
 **Conflict**
 
-Instance 1 adds "red" to the existing "colors" map with `JSON.SET`.
+Instance 1 adds "red" to the existing "colors" object with `JSON.SET`.
 
-Instance 2 clears the "colors" map with `JSON.CLEAR` and adds "green" to "colors".
+Instance 2 clears the "colors" object with `JSON.CLEAR` and adds "green" to "colors".
 
 **Resolution type**
 
@@ -317,11 +317,11 @@ Deletion wins over updates.
 | t4 | Active-Active synchronization | – Sync – | – Sync – |
 | t5 | Instance 1 wins | JSON.GET doc $ <br /><br /> Result: <br /> doc = {“todo”: []} | JSON.GET doc $ <br /><br /> Result: <br /> doc = {“todo”: []} |
 
-### Update versus update map
+### Update versus update object
 
 **Conflict**
 
-Both instances update the same existing map with different content.
+Both instances update the same existing object with different content.
 
 **Resolution type**
 
@@ -329,7 +329,7 @@ Merge
 
 **Resolution rule**
 
-Merges the results of all operations on the map.
+Merges the results of all operations on the object.
 
 **Example**
 
