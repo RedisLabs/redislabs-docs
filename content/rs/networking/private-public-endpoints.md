@@ -5,6 +5,10 @@ description: Describes how to enable public and private endpoints for databases 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/networking/private-public-endpoints/,
+    /rs/networking/private-public-endpoints/,
+]
 ---
 By default, Redis Enterprise Software databases expose a single endpoint.
 

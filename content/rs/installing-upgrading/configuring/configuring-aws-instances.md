@@ -5,7 +5,10 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/installing-upgrading/configuring-aws-instances/
+aliases: [
+    /rs/administering/installing-upgrading/configuring-aws-instances/,
+    /rs/installing-upgrading/configuring/configuring-aws-instances/,
+]
 ---
 There are some special considerations that are important when installing
 and running Redis Enterprise Software on Amazon Web Services (AWS), whether Amazon Electric Cloud Compute (EC2) AWS Outposts.  
@@ -64,12 +67,12 @@ When configuring the Security Group:
     access the UI.
 - If you are using the DNS resolving option with RS, define a DNS UDP
     rule for port 53 to allow access to the databases' endpoints by
-    using the [DNS resolving mechanism]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}).
+    using the [DNS resolving mechanism]({{< relref "/rs/networking/cluster-dns/_index.md" >}}).
 - To create a cluster that has multiple nodes all running as instances on AWS,
     you need to define a security group that has an All TCP rule for all ports, 0 - 65535,
     and add it to all instances that are part of the cluster.
     This makes sure that all nodes are able to communicate with each other.
-    To limit the number of open ports, you can open just the [ports used by RS]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+    To limit the number of open ports, you can open just the [ports used by RS]({{< relref "/rs/networking/port-configurations.md" >}}).
 
 After successfully launching the instances:
 

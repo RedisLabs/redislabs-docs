@@ -18,6 +18,7 @@ aliases: [
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps:
 
+
   1. Upgrade the Redis Enterprise operator
   2. Upgrade the Redis Enterprise cluster (REC)
 
@@ -25,7 +26,7 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
   **Do not** upgrade to the 6.2.10-34 release if you are an **OpenShift** customer and **also use modules**.
   
   There was a change in 6.2.10-34 to a new RHEL 8 base image for the Redis Server image. Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.
-  
+
   This message will be updated as remediation plans and new steps are available to address this situation. Please contact support if you have further questions. {{</warning>}}
 
 ## Upgrade the operator
@@ -42,6 +43,7 @@ You can download the bundle for the latest release with the following `curl` com
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
 curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
+
 
 For OpenShift environments, the name of the bundle is `openshift.bundle.yaml`, and so the `curl` command to run is:
 
@@ -61,6 +63,7 @@ If you have made changes to the role, role binding, RBAC or custom resource defi
 {{< /note >}}
 
 Upgrade the bundle and operator with a single command, passing in the bundle YAML file:
+
 
 ```sh
 kubectl apply -f bundle.yaml
@@ -98,6 +101,7 @@ oc apply -f openshift/scc.yaml
 ### Verify the operator is running
 
 You can check your deployment to verify the operator is running in your namespace.
+
 
 ```sh
 kubectl get deployment/redis-enterprise-operator

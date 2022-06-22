@@ -1,15 +1,21 @@
 ---
-Title: Network Port Configurations
-description:
+Title: Network port configurations
+linkTitle: Network ports
+description: This document describes the various network port ranges and their uses.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/networking/port-configurations/,
+    /rs/networking/port-configurations/,
+
+]
 ---
 
 All Redis Enterprise Software deployments span multiple physical/virtual nodes. You'll need to keep several ports open between these nodes. This document describes the various port ranges and their uses.
 
 {{< note >}}
-Whenever you create a new database, you must verify that the ports assigned to the new database's endpoints are open. The cluster will not perform this verification for you. 
+Whenever you create a new database, you must verify that the ports assigned to the new database's endpoints are open. The cluster will not perform this verification for you.
 {{< /note >}}
 
 ## Ports and port ranges used by Redis Enterprise Software
@@ -26,7 +32,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 8070, 8071 | Internal, External | Metrics exported and managed by the web proxy |
 | TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
 | TCP | 9081 | Internal | Active-Active management (internal) |
-| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
+| TCP | 9443 (Recommended), 8080 | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
 | UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
 | ICMP | * | Internal | Connectivity checking between nodes |

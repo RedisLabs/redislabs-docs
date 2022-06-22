@@ -80,7 +80,7 @@ curl -u "demo@redislabs.com:password" \
     https://localhost:9443/v1/bdbs
 ```
 
-By default, the admin user is authorized for access.  Use [role-based access controls]({{< relref "/rs/security/admin-console-security/user-security.md" >}}) and [role permissions]({{<relref "/rs/references/rest-api/permissions/_index.md" >}}) to manage access.
+By default, the admin user is authorized for access.  Use [role-based access controls]({{<relref "/rs/security/access-control">}}) and [role permissions]({{<relref "/rs/references/rest-api/permissions/_index.md" >}}) to manage access.
 
 ## Common responses
 
