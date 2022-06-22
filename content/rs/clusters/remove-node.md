@@ -1,7 +1,7 @@
 ---
 Title: Remove a cluster node
 linkTitle: Remove node
-description: Remove a node from your Redis Enterprise cluster. 
+description: Remove a node from your Redis Enterprise cluster.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -89,12 +89,13 @@ To remove a node using the admin console:
 1. Once the process finishes, the node is no longer shown in
     the UI.
 
-To remove a node using the REST API, use the `/v1/nodes/3/actions/remove` endpoint with the JSON data and the "Content-Type: application/json" header.
+To remove a node using the REST API, use `POST /v1/nodes/<node_id>/actions/remove` endpoint with the following JSON data and the "Content-Type: application/json" header.
 
 For example:
 
 ```sh
-curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"
+POST https://[host][:port]/v1/nodes/<node_id>/actions/remove
+     "{}"
 ```
 
 {{< note >}}

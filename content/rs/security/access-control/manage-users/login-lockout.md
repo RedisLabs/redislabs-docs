@@ -79,14 +79,11 @@ To unlock a user account or reset a user password with `rladmin`, run:
 rladmin cluster reset_password <user email>
 ```
 
-To unlock a user account or reset a user password with the REST API, run:
+To unlock a user account or reset a user password with the REST API, use [`PUT /v1/users`]({{< relref "/rs/references/rest-api/requests/users#put-user" >}}):
 
 ```sh
-curl -k -X PUT -v -H "cache-control: no-cache" 
-                  -H "content-type: application/json" 
-                  -u "<administrator_user>:<password>" 
-                  -d '{"password": "<new_password>"}' 
-                  https://<RS_server_address>:9443/v1/users/<uid>
+PUT https://[host][:port]/v1/users
+    '{"password": "<new_password>"}'
 ```
 
 ## Session timeout
