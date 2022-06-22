@@ -129,7 +129,7 @@ After the operator upgrade is complete, you can upgrade Redis Enterprise cluster
     kubectl edit rec <your-rec.yaml>
     ```
 
-1. Replace the `image:` declaration under `redisEnterpriseImageSpec` with the new version tag.
+1. Replace the `versionTag:` declaration under `redisEnterpriseImageSpec` with the new version tag.
 
     ```YAML
     spec:
