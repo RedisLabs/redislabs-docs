@@ -43,7 +43,7 @@ VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k
 curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
 
-For Openshift environments, the name of the bundle is openshift.bundle.yaml, and so the curl command to run is:
+For OpenShift environments, the name of the bundle is `openshift.bundle.yaml`, and so the `curl` command to run is:
 
 ```sh
 curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/openshift.bundle.yaml
