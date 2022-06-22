@@ -24,7 +24,7 @@ Whether you're administering Redis Enterprise Software or accessing databases, t
 
 - URL-based connections - URL-based connections use DNS to resolve the fully qualified cluster domain name (FQDN).  This means that DNS records might need to be updated when topology changes, such as adding (or removing) nodes from the cluster.  
 
-    Because apps and other clients connections rely on the URL (rather than the address), they do not need to be modified when topology changes.  
+    Because apps and other client connections rely on the URL (rather than the address), they do not need to be modified when topology changes.  
 
 - IP-based connections - IP-based connections do not require DNS setup, as they rely on the underlying TCP/IP addresses.  As long as topology changes do not change the address of the cluster nodes, no configuration changes are needed, DNS or otherwise.  
 
