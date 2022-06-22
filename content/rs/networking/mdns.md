@@ -1,7 +1,7 @@
 ---
 Title: Client Prerequisites for mDNS
 linkTitle: mDNS client prerequisites
-description: Requirements for using the mDNS protocol in development and testing environments.s
+description: Requirements for using the mDNS protocol in development and testing environments.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
