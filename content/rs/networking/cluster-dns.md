@@ -1,6 +1,6 @@
 ---
-Title: Configure Cluster DNS
-linkTitle: Configure Cluster DNS
+Title: Configure cluster DNS
+linkTitle: Configure cluster DNS
 description: Configure DNS to communicate between nodes in your cluster.
 weight: $weight
 alwaysopen: false
