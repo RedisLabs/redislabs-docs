@@ -85,8 +85,9 @@ deployment.apps/redis-enterprise-operator configured
 
 ### Reapply other manual configurations
 
-When upgrading your cluster, you need to manually reapply the `ValidatingWebhookConfiguration` for the admission controller. See the [Enable the admission controller]({{<relref "/kubernetes/deployment/quick-start#enable-the-admission-controller">}}) step during deployment for more details.
+When upgrading the operator, there are few configurations you'll need to reapply.
 
+If you have the admission controller enabled, you need to manually reapply the `ValidatingWebhookConfiguration`. See the [Enable the admission controller]({{<relref "/kubernetes/deployment/quick-start#enable-the-admission-controller">}}) step during deployment for more details.
 
 If you are using OpenShift, you will also need to manually reapply the [Security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})).
 
@@ -110,12 +111,12 @@ redis-enterprise-operator   1/1     1            1           0m36s
 ```
 
 {{< warning >}}
- We recommend upgrading the REC as soon as possible after updating the operator. After the operator upgrade completes, the REC is considered frozen. The operator will no longer manage the REC and the REC and its REDB can't be modified until the REC upgrade completes.
+ We recommend upgrading the REC as soon as possible after updating the operator. After the operator upgrade completes, the operator suspends the management of the REC and its associated REDBs, until the REC upgrade completes.
  {{< /warning >}}
 
- If you have `autoUpgradeRedisEnterprise: true` specified in your REC spec, the operator will automatically trigger the REC upgrade after the operator upgrade completes.
-
 ## Upgrade the Redis Enterprise cluster (REC)
+
+The Redis Enterprise cluster (REC) can be updated automatically or manually. To trigger automatic upgrade of the REC after the operator upgrade completes, specify `autoUpgradeRedisEnterprise: true` in your REC spec. If you don't have automatic upgrade enabled, follow the below steps for the manual upgrade.
 
 Before beginning the upgrade of the Redis Enterprise cluster, check the K8s operator release notes to find the Redis Enterprise image tag. For example, in Redis Enterprise K8s operator release [6.0.12-5](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases/tag/v6.0.12-5), the `Images` section shows the Redis Enterprise tag is `6.0.12-57`.
 
@@ -165,13 +166,13 @@ kubectl rollout status sts <REC_name>
 
 After the cluster is upgraded, you can upgrade your databases. The process for upgrading databases is the same for both Kubernetes and non-Kubernetes deployments. More details on how to [upgrade a database]({{<relref "/rs/installing-upgrading/upgrading#upgrade-a-database">}}) in the [Upgrade an existing Redis Enterprise Software deployment]({{<relref "/rs/installing-upgrading/upgrading.md">}}) documentation.
 
-Note that if your cluster [`redisUpgradePolicy]({{<relref "/kubernetes/reference/cluster-options#redisupgradepolicy">}}) or your database [`redisVersion`]({{<relref "">}}) are set to `major`, you won't be able to upgrade those databases to minor versions. See [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy">}}) for more details.
+Note that if your cluster [`redisUpgradePolicy]({{<relref "/kubernetes/reference/cluster-options#redisupgradepolicy">}}) or your database [`redisVersion`]({{<relref "/kubernetes/reference/db-options#redisversion">}}) are set to `major`, you won't be able to upgrade those databases to minor versions. See [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy">}}) for more details.
 
 ## How does the REC upgrade work?
 
 The Redis Enterprise cluster (REC) uses a rolling upgrade, meaning it upgrades pods one by one. Each pod is updated after the last one completes successfully. This helps keep your cluster available for use.
 
-To upgrade, the cluster terminates each pod and deploys a new pod based off the new image.
+To upgrade, the cluster terminates each pod and deploys a new pod based on the new image.
   Before each pod goes down, the operator checks if the pod is a primary (master) for the cluster, and if it hosts any primary (master) shards. If so, a replica on a different pod is promoted to primary. Then when the pod is terminated, the API remains available through the newly promoted primary pod.
 
 After a pod is updated, the next pod is terminated and updated.
