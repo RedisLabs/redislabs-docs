@@ -14,7 +14,7 @@ This version includes the following new features and improvements:
 - You can [disable several internal RS services]({{<relref "/rs/clusters/optimize/turn-off-services.md">}}) to free up more memory
 - User accounts can have multiple passwords to allow for [password rotation]({{<relref "/rs/security/access-control/manage-users/manage-passwords#user-password-rotation">}})
 - [Dependencies are automatically installed]({{<relref "/modules/install/add-module-to-cluster#rest-api-method">}}) when you add modules to a cluster
-- [Envoy replaces NGINX]({{<relref "/rs/administering/designing-production/networking/port-configurations.md">}}) for internal cluster administration
+- [Envoy replaces NGINX]({{<relref "/rs/networking/port-configurations.md">}}) for internal cluster administration
 - Automatic recovery of the [syncer process](https://docs.redis.com/latest/rs/databases/active-active#syncer-process)s from out-of-memory (preview mode)
 
 And other functional and stability improvements.

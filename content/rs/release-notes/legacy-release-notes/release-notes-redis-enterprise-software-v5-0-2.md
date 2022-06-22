@@ -22,7 +22,7 @@ version older than 4.4.2, you must first upgrade to at least 5.0.
 Starting from RS 5.0.2, ports 3338 and 3339 should also be opened
 on each node for the purpose of internal cluster communication.
 For more information, check the ['network port
-configurations']({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
+configurations']({{< relref "/rs/networking/port-configurations.md" >}})
 page
 {{< /note >}}
 

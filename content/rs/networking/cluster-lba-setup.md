@@ -1,10 +1,14 @@
 ---
 Title: Set up cluster behind a load balancer
 linkTitle: Cluster load balancer setup
-description:
+description: Set up a cluster using a load balancer instead of DS to direct traffic to cluster nodes.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/networking/cluster-lba-setup/,
+    /rs/installing-upgrading/configuring/cluster-lba-setup/,
+]
 ---
 When you want to setup a Redis Enterprise cluster in an environment that doesn't allow DNS, you can use a load balancer (LB) to direct traffic to the cluster nodes.
 
@@ -49,7 +53,7 @@ The architecture is shown in the following diagram with 3 nodes Redis Enterprise
     - Rest API service (Secured - 9443; Non-secured - 8080)
     - Database ports (In the range of 10000-19999)
 
-Other ports are shown in the list of [RS network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+Other ports are shown in the list of [RS network ports]({{< relref "/rs/networking/port-configurations.md" >}}).
 
 {{< note >}}
 Sticky, secured connections are needed only for RS admin console service (provided on port 8443).
@@ -105,14 +109,14 @@ especially if they are directly connected on IP addresses that have changed.
 
 ## Intercluster communication considerations
 
-Redis Enterprise supports several topologies that allow inter cluster replication, these include Active/Passive (https://docs.redislabs.com/latest/rs/databases/import-export/replica-of/) and Active/Active (https://docs.redislabs.com/latest/rs/databases/active-active/) deployment options.
+Redis Enterprise supports several topologies that allow inter cluster replication, these include [Active/Passive]({{<relref "/rs/databases/import-export/replica-of.md">}}) and [Active/Active]({{<relref "/rs/databases/active-active/">}}) for deployment options.
 When your Redis Enterprise software clusters are located behind load balancers, you must allow some network services to be open and defined in the load balancers to allow the replication to work.
 
 ### Active Passive 
 
 For Active Passive communication to work, you will need to expose database port(s) locally in each cluster (as defined above) but also allow these ports through firewalls that may be positioned between the clusters.
 
-### Active Active
+### Active-Active
 
-For Active Active communication to work, you will need to expose several ports, every database port and several control plane ports as defined in https://docs.redislabs.com/latest/rs/administering/designing-production/networking/port-configurations/. Pay attention to services that are marked with Connection Source as "Active-Active". These ports should be allowed through firewalls that may be positioned between the clusters.
+For Active-Active communication to work, you need to expose several ports, including every database port and several control plane ports as defined in [Network port configurations]({{<relref "rs/networking/port-configurations.md">}}). Pay attention to services that are marked with Connection Source as "Active-Active". These ports should be allowed through firewalls that may be positioned between the clusters.
 

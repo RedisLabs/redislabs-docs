@@ -1,17 +1,21 @@
 ---
-Title: Client Prerequisites for mDNS
+Title: Client prerequisites for mDNS
 linkTitle: mDNS client prerequisites
-description:
+description: Requirements for using the mDNS protocol in development and testing environments.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/installing-upgrading/configuring/mdns/
+aliases: [
+    /rs/administering/installing-upgrading/configuring/mdns/,
+    /rs/installing-upgrading/configuring/mdns,
+    /rs/networking/mdns/,
+]
 ---
 {{< note >}}
 mDNS is only supported for development and testing environments.
 {{< /note >}}
 
-If you choose to use the mDNS protocol when [you set the cluster name]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}),
+If you choose to use the mDNS protocol when [you set the cluster name]({{< relref "/rs/networking/cluster-dns/_index.md" >}}),
 make sure that the configurations and prerequisites for resolving database endpoints are met on the client machines.
 If you have [Replica Of]({{< relref "/rs/databases/import-export/replica-of.md" >}}) databases on the cluster,
 the configurations and prerequisites are also required for the Redis Enterprise Software nodes.
@@ -44,8 +48,8 @@ To prepare a client or node for mDNS:
         $ service avahi-daemon start
         ```
 
-1. If you are using [mDNS with IPv6 addresses]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}),
-    update the hosts line in `/etc/nsswitch.conf`to:
+1. If you are using [mDNS with IPv6 addresses]({{< relref "/rs/networking/multi-ip-ipv6.md" >}}),
+    update the hosts line in `/etc/nsswitch.conf` to:
 
     ```yaml
     hosts: files mdns4_minimal
