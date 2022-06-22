@@ -15,6 +15,8 @@ After you activate SAML SSO for a Redis Cloud account, all existing local users 
 
 The account owner remains a local user and should set up [multi-factor authentication (MFA)]({{<relref "/rc/security/multi-factor-authentication">}}) to help secure their account. After SAML activation, the account owner can set up additional local bypass users with MFA enabled.
 
+If MFA enforcement is enabled, note that Redis Cloud does not enforce MFA for SAML users since the identity provider is expected to handle MFA management and enforcement.
+
 ## Set up SAML SSO
 
 To set up SAML single sign-on for a Redis Cloud account:
@@ -121,7 +123,11 @@ Next, you need to download the service provider metadata for Redis Cloud and use
 
 ### Activate SAML SSO {#activate-saml-sso}
 
-After you finish the required SAML SSO configuration between your identity provider and Redis Cloud account, you can test and activate SAML SSO:
+After you finish the required SAML SSO configuration between your identity provider and Redis Cloud account, you can test and activate SAML SSO.
+
+ All users associated with the account, excluding the local user you used to set up SAML SSO, are converted to SAML users on successful activation. They can no longer sign in with their previous sign-in method and must use SAML SSO instead.
+
+To activate SAML SSO:
 
 1. For **Activate SAML integration**, select the **Activate** button.
 
@@ -129,13 +135,21 @@ After you finish the required SAML SSO configuration between your identity provi
 
 1. Sign in with your identity provider.
 
-1. When redirected to the Redis Cloud sign-in screen, select **Sign in with SSO** and enter your credentials.
+1. When redirected to the Redis Cloud sign-in screen, you can either:
 
-    {{<image filename="images/rc/button-sign-in-sso.png" alt="Sign in with SSO button">}}{{</image>}}
+    - Sign in with your local credentials as usual.
+
+    - Select **Sign in with SSO** and enter the email address associated with the SAML user configured in your identity provider:
+
+        {{<image filename="images/rc/button-sign-in-sso.png" alt="Sign in with SSO button">}}{{</image>}}
+
+        This will convert your user to a SAML user in Redis Cloud, so do not use this method if you want your user account to remain a local bypass user.
 
     {{<note>}}
-If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign-in screen, sign in with your previous credentials and review your SAML configuration for issues.
+If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign-in screen, sign in with your local user credentials and review the SAML configuration for issues.
     {{</note>}}
+
+After you activate SAML SSO, [add a few local bypass users]({{<relref "/rc/administration/access-management#manage-team-access">}}) from the **Team** tab. Local bypass users should [set up MFA]({{<relref "/rc/security/multi-factor-authentication">}}) for additional security.
 
 ## Bind other accounts
 
@@ -174,3 +188,7 @@ To deactivate SAML SSO for a specific account:
 1. Select **Save**.
 
 1. From the **Bind accounts** dialog, select **Continue** to deactivate SAML SSO for the unbound account.
+
+## Deprovision SAML users
+
+To deprovision SAML users upon deletion, the identity provider admin can set up a webhook to automatically make the appropriate API requests.
