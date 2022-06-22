@@ -42,7 +42,7 @@ To turn off the password complexity requirement, run the same command but set `"
 
 ## Enable password expiration
 
-To enforce an expiration of a user's password after a specified number of days, use the following REST API request:
+To enforce an expiration of a user's password after a specified number of days, use [`PUT /v1/cluster`]({{< relref "/rs/references/rest-api/requests/cluster#put-cluster" >}}):
 
 ```sh
 PUT https://[host][:port]/v1/cluster
@@ -94,12 +94,12 @@ To rotate the password of a user account:
 1. Update the password in all database connections that connect with the user account.
 1. Delete the original password with [`DELETE /v1/users/password`]({{< relref "/rs/references/rest-api/requests/users/password#update-password" >}}):
 
-```sh
-DELETE https://[host][:port]/v1/users/password
-       '{"username":"<username>", "old_password":"<an_existing_password>"}'
-```
+    ```sh
+    DELETE https://[host][:port]/v1/users/password
+           '{"username":"<username>", "old_password":"<an_existing_password>"}'
+    ```
 
-If there is only one valid password for a user account, you cannot delete that password.
+    If there is only one valid password for a user account, you cannot delete that password.
 
 ### Replace all passwords
 
