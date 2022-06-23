@@ -59,7 +59,7 @@ Apply the bundle to deploy the new operator binary. This will also apply any cha
 
 {{< note >}}
 If you are not pulling images from Docker Hub, update the operator image spec to point to your private repository.
-If you have made changes to the role, role binding, RBAC or custom resource definition (CRD) in the previous version, merge them with the updated declarations in the new version files.
+If you have made changes to the role, role binding, RBAC, or custom resource definition (CRD) in the previous version, merge them with the updated declarations in the new version files.
 {{< /note >}}
 
 Upgrade the bundle and operator with a single command, passing in the bundle YAML file:
