@@ -23,10 +23,7 @@ The API operation for querying the system service log is `GET /logs`.
 For example, the following request returns the latest 100 system log entries, in descending order:
 
 ```shell
-curl -X GET "https://$HOST/logs?limit=100&offset=0" \
-    -H "accept: application/json" \
-    -H "x-api-key: $ACCOUNT_KEY" \
-    -H "x-api-secret-key: $SECRET_KEY"
+GET "https://[host]/v1/logs?limit=100&offset=0"
 ```
 
 The `/logs` API operation accepts the following parameters:
