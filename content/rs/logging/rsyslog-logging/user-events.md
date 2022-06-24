@@ -6,8 +6,10 @@ weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    content/rs/administering/logging/rsyslog-logging/user-events.md,
-    content/rs/administering/logging/rsyslog-logging/user-events/,
+    /rs/administering/logging/rsyslog-logging/user-events.md,
+    /rs/administering/logging/rsyslog-logging/user-events/,
+    /rs/logging/rsyslog-logging/user-events.md,
+    /rs/logging/rsyslog-logging/user-events/,
 ]
 ---
 

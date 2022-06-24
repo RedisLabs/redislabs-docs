@@ -6,10 +6,10 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    content/rs/administering/logging/redis-slow-log.md,
-    content/rs/administering/logging/redis-slow-log/,
-    content/rs/logging/redis-slow-log.md,
-    content/rs/logging/redis-slow-log/,
+    /rs/administering/logging/redis-slow-log.md,
+    /rs/administering/logging/redis-slow-log/,
+    /rs/logging/redis-slow-log.md,
+    /rs/logging/redis-slow-log/,
 ]
 ---
 On the **Database** \> **Slow Log** page, you can view Slow Log details

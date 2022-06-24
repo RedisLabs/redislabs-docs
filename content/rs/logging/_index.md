@@ -6,8 +6,10 @@ weight: 70
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    content/rs/administering/logging/_index.md,
-    content/rs/administering/logging/,
+    /rs/administering/logging/_index.md,
+    /rs/administering/logging/,
+    /rs/logging/_index.md,
+    /rs/logging/,
 ]
 ---
 Management actions performed with Redis Enterprise are audited in order

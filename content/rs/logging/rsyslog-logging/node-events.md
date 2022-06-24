@@ -6,8 +6,11 @@ weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-   content/rs/administering/logging/rsyslog-logging/node-events.md,
-   content/rs/administering/logging/rsyslog-logging/node-events, 
+   /rs/administering/logging/rsyslog-logging/node-events.md,
+   /rs/administering/logging/rsyslog-logging/node-events, 
+   /rs/logging/rsyslog-logging/node-events.md,
+   /rs/logging/rsyslog-logging/node-events, 
+
 ]
 ---
 

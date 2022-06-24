@@ -6,8 +6,10 @@ weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    content/rs/administering/logging/rsyslog-logging/cluster-events.md,
-    content/rs/administering/logging/rsyslog-logging/cluster-events/,
+    /rs/administering/logging/rsyslog-logging/cluster-events.md,
+    /rs/administering/logging/rsyslog-logging/cluster-events/,
+    /rs/logging/rsyslog-logging/cluster-events.md,
+    /rs/logging/rsyslog-logging/cluster-events/,
 ]
 ---
 

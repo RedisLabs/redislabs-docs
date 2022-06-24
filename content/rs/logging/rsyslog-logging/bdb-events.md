@@ -6,8 +6,10 @@ weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-   content/rs/administering/logging/rsyslog-logging/bdb-events.md,
-   content/rs/administering/logging/rsyslog-logging/bdb-events/, 
+   /rs/administering/logging/rsyslog-logging/bdb-events.md,
+   /rs/administering/logging/rsyslog-logging/bdb-events/,
+   /rs/logging/rsyslog-logging/bdb-events.md,
+   /rs/logging/rsyslog-logging/bdb-events/, 
 ]
 ---
 
