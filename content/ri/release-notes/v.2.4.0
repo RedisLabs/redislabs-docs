@@ -1,0 +1,29 @@
+---
+Title: RedisInsight v2.4.0, June 2022
+linkTitle: v2.4.0 (June 2022)
+date: 2022-06-27 00:00:00 +0000
+description: RedisInsight v2.4.0
+weight: 1
+aliases: /ri/release-notes/v2.4.0/
+         /ri/release-notes/v2.4.0.md
+---
+
+## 2.4.0 (June 2022)
+This is the General Availability (GA) release of RedisInsight 2.4.0
+
+### Headlines:
+- Pub/Sub: Support for [Redis Pub/Sub](https://redis.io/docs/manual/pubsub/) to subscribe to all the channels and post a message to the given channel.
+- Consumer groups: Added [Streams Consumer groups](https://redis.io/docs/manual/data-types/streams/#consumer-groups) to work with Consumer groups for the same stream, inspect and investigate the list of consumers and pending items.
+- Search per database: Search per the list of databases added to RedisInsight to quickly find the database needed.
+
+
+### Details
+**Features and improvements:**
+- [#760](https://github.com/RedisInsight/RedisInsight/pull/760), [#737] (https://github.com/RedisInsight/RedisInsight/pull/737), [#773] (https://github.com/RedisInsight/RedisInsight/pull/773) Support for [Redis Pub/Sub](https://redis.io/docs/manual/pubsub/) to subscribe to all the channels and see messages posted by other clients as well as posting messages to the given channel. Currently does not support sharded channels.
+- [#754](https://github.com/RedisInsight/RedisInsight/pull/754) New "All Relationship" toggle for **RedisGraph** visualizations in **Workbench**. Enable it to see all relationships between your nodes.
+- [#717](https://github.com/RedisInsight/RedisInsight/pull/717), [#683](https://github.com/RedisInsight/RedisInsight/pull/683), [#684](https://github.com/RedisInsight/RedisInsight/pull/684), [#688](https://github.com/RedisInsight/RedisInsight/pull/688), [#720](https://github.com/RedisInsight/RedisInsight/pull/720), Added [Streams Consumer groups](https://redis.io/docs/manual/data-types/streams/#consumer-groups) to manage different groups and consumers for the same stream, explicit acknowledgment of processed items, ability to inspect the pending items, claiming of unprocessed messages, and coherent history visibility for each single client.
+- [#788](https://github.com/RedisInsight/RedisInsight/pull/788) Quickly search the list of databases added to RedisInsight per database alias, host:port, or the last connection to find the database needed.
+- [#788](https://github.com/RedisInsight/RedisInsight/pull/788) Overview displays the number of keys per the logical database connected if this number is not equal to the total number in the database.
+
+**Bugs Fixed:**
+- [#774](https://github.com/RedisInsight/RedisInsight/pull/774) Fixed cases when not all parameters are recieved in Overview
