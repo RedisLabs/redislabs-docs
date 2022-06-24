@@ -32,7 +32,7 @@ All log entries displayed in the admin console are also written to `syslog`.  Yo
 
 Log entries are categorized into events and alerts. Both types of entries appear in the logs, but alert log entries also include a boolean `"state"` parameter that indicates whether the alert is enabled or disabled.
 
-Log entries include information about the specific event that occurred. See the log entry tables for [clusters]({{<relref "/rs/administering/logging/rsyslog-logging/cluster-events">}}), [databases]({{<relref "/rs/administering/logging/rsyslog-logging/bdb-events">}}), [nodes]({{<relref "/rs/administering/logging/rsyslog-logging/node-events">}}), and [users]({{<relref "/rs/administering/logging/rsyslog-logging/user-events">}}) for more details.
+Log entries include information about the specific event that occurred. See the log entry tables for [clusters]({{<relref "/rs/logging/rsyslog-logging/cluster-events">}}), [databases]({{<relref "/rs/logging/rsyslog-logging/bdb-events">}}), [nodes]({{<relref "/rs/logging/rsyslog-logging/node-events">}}), and [users]({{<relref "/rs/logging/rsyslog-logging/user-events">}}) for more details.
 
 ### Severity
 
@@ -69,13 +69,13 @@ The log entries have the following basic structure:
 - **process id­**: The ID of the logging process
 - **list of key-value pairs in any order**:­ A list of key-value pairs that describe the specific event. They can appear in any order. Some key­-value pairs are always shown, and some appear depending on the specific event.
     - **Key-­value pairs that always appear:**
-        - `"type"`: A unique code­ name for the logged event. For the list of codenames, see the logged events and alerts tables for [clusters]({{<relref "/rs/administering/logging/rsyslog-logging/cluster-events">}}), [databases]({{<relref "/rs/administering/logging/rsyslog-logging/bdb-events">}}), [nodes]({{<relref "/rs/administering/logging/rsyslog-logging/node-events">}}), and [users]({{<relref "/rs/administering/logging/rsyslog-logging/user-events">}}).
+        - `"type"`: A unique code­ name for the logged event. For the list of codenames, see the logged events and alerts tables for [clusters]({{<relref "/rs/logging/rsyslog-logging/cluster-events">}}), [databases]({{<relref "/rs/logging/rsyslog-logging/bdb-events">}}), [nodes]({{<relref "/rs/logging/rsyslog-logging/node-events">}}), and [users]({{<relref "/rs/logging/rsyslog-logging/user-events">}}).
         - `"object"`: Defines the object type and ID (if relevant) of the object this event relates to, such as cluster, node with ID, BDB with ID, etc. Has the format of <nobr>`<object type>[:<id>]`</nobr>. 
         - `"time"`: Unix epoch time but can be ignored in this context.
     - **Key-­value pairs that might appear depending on the specific entry:**
         - `"state"`: A boolean where `true` means the alert is enabled, and `false` means the alert is disabled. This is only relevant for alert log entries.
         - `"global_threshold"`: The value of a threshold for alerts related to cluster or node objects.
-        - `"threshold"`: The value of a threshold for [alerts related to a BDB object]({{<relref "/rs/administering/logging/rsyslog-logging/bdb-events">}}).
+        - `"threshold"`: The value of a threshold for [alerts related to a BDB object]({{<relref "/rs/logging/rsyslog-logging/bdb-events">}}).
 
 ## Log entry samples
 
@@ -111,7 +111,7 @@ In this example, the storage utilization on node 1 reached the value of ~90%, wh
 - `"object":"node:1"`­ - The object related to this alert
 - `"state":true­` - Current state of the alert
 - `"time":1434282560­` - Can be ignored
-- `"type":"ephemeral_storage"` - The code name of this specific event. See [logged node alerts and events]({{<relref "/rs/administering/logging/rsyslog-logging/node-events">}}) for more details.
+- `"type":"ephemeral_storage"` - The code name of this specific event. See [logged node alerts and events]({{<relref "/rs/logging/rsyslog-logging/node-events">}}) for more details.
 
 #### "Alert off" log entry sample
 
@@ -141,7 +141,7 @@ This log entry is an example of when the alert for the node with ID 1 "Ephemeral
 - `"object":"node:1"` -­ The object related to this alert
 - `"state":false­` - Current state of the alert
 - `"time":1434283480­` - Can be ignored
-- `"type":"ephemeral_storage"` -­ The code name identifier of this specific event. See [logged node alerts and events]({{<relref "/rs/administering/logging/rsyslog-logging/node-events">}}) for more details.
+- `"type":"ephemeral_storage"` -­ The code name identifier of this specific event. See [logged node alerts and events]({{<relref "/rs/logging/rsyslog-logging/node-events">}}) for more details.
 
 ### Odd number of nodes with a minimum of three nodes alert
 
@@ -171,7 +171,7 @@ This log entry is an example of when the alert for "True high availability requi
 - `"state":true` -­ Current state of the alert
 - `"time":1434284700­` - Can be ignored
 - `"node_count":1­` - The number of nodes in the cluster
-- `"type":"even_node_count"­` - The code name identifier of this specific event. See [logged cluster alerts and events]({{<relref "/rs/administering/logging/rsyslog-logging/cluster-events">}}) for more details.
+- `"type":"even_node_count"­` - The code name identifier of this specific event. See [logged cluster alerts and events]({{<relref "/rs/logging/rsyslog-logging/cluster-events">}}) for more details.
 
 #### "Alert off" log entry sample
 
@@ -199,7 +199,7 @@ This log entry is an example of when the alert for "True high availability requi
 - `"state":false­` - Current state of the alert
 - `"time":1434285200­` - Can be ignored
 - `"node_count":3­` - The number of nodes in the cluster
-- `"type":"even_node_count"` -­ The code name of this specific event. See [logged cluster alerts and events]({{<relref "/rs/administering/logging/rsyslog-logging/cluster-events">}}) for more details.
+- `"type":"even_node_count"` -­ The code name of this specific event. See [logged cluster alerts and events]({{<relref "/rs/logging/rsyslog-logging/cluster-events">}}) for more details.
 
 ### Node has insufficient disk space for AOF rewrite
 
@@ -238,7 +238,7 @@ This log entry is an example of when the alert for "Node has insufficient disk s
 - `"state":true­` - Current state of the alert
 - `"time":1434365483` -­ Can be ignored
 - `"disk":705667072­` - The total size in bytes of the persistent storage
-- `"type":"insufficient_disk_aofrw"­` - The code name of this specific event. See [logged node alerts and events]({{<relref "/rs/administering/logging/rsyslog-logging/node-events">}}) for more details.
+- `"type":"insufficient_disk_aofrw"­` - The code name of this specific event. See [logged node alerts and events]({{<relref "/rs/logging/rsyslog-logging/node-events">}}) for more details.
 
 #### "Alert off" log entry sample
 
@@ -271,4 +271,4 @@ daemon.info: Jun 15 13:51:11 node1 event_log[34252]:
 - `"state":false­` - Current state of the alert
 - `"time":1434365471­` - Can be ignored
 - `"disk":705667072­` - The total size in bytes of the persistent storage
-- `"type":"insufficient_disk_aofrw"`­ - The code name of this specific event. See [logged node alerts and events]({{<relref "/rs/administering/logging/rsyslog-logging/node-events">}}) for more details.
+- `"type":"insufficient_disk_aofrw"`­ - The code name of this specific event. See [logged node alerts and events]({{<relref "/rs/logging/rsyslog-logging/node-events">}}) for more details.

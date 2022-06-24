@@ -39,8 +39,8 @@ If you need to look at the audit log of what a user on the cluster has
 done, e.g. edited a DB configuration, this is where you could look.
 
 - [Redis slow
-    log]({{< relref "/rs/administering/logging/redis-slow-log.md" >}})
-- [rsyslog logging]({{<relref "/rs/administering/logging/rsyslog-logging/">}})
+    log]({{< relref "/rs/logging/redis-slow-log.md" >}})
+- [rsyslog logging]({{<relref "/rs/logging/rsyslog-logging/">}})
 
 ## Viewing logs in the admin console
 
