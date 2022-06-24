@@ -17,7 +17,7 @@ aliases: [
 This document explains the structure of Redis Enterprise Software log entries in `rsyslog` and how to use these log entries to identify events.
 
 {{<note>}}
-You can also [secure your logs]({{<relref "/rs/security/logging.md">}}) with a remote logging server and log rotation.
+You can also [secure your logs]({{<relref "/rs/logging/log-security.md">}}) with a remote logging server and log rotation.
 {{</note>}}
 
 ## Log concepts
