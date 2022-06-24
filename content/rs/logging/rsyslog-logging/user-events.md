@@ -1,10 +1,14 @@
 ---
-Title: Logged user events
+Title: User event logs
 linkTitle: User events
 description: Logged user events
 weight: 50
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    content/rs/administering/logging/rsyslog-logging/user-events.md,
+    content/rs/administering/logging/rsyslog-logging/user-events/,
+]
 ---
 
 The following user events can appear in `syslog`.

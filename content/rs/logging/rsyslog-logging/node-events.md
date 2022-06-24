@@ -1,10 +1,14 @@
 ---
-Title: Logged node alerts and events
+Title: Node alert and event logs
 linkTitle: Node alerts/events
 description: Logged node alerts and events
 weight: 50
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+   content/rs/administering/logging/rsyslog-logging/node-events.md,
+   content/rs/administering/logging/rsyslog-logging/node-events, 
+]
 ---
 
 The following node alerts and events can appear in `syslog`.

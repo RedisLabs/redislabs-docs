@@ -1,10 +1,14 @@
 ---
-Title: Logged cluster alerts and events
+Title: Cluster alert and event logs
 linkTitle: Cluster alerts/events
 description: Logged cluster alerts and events
 weight: 50
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    content/rs/administering/logging/rsyslog-logging/cluster-events.md,
+    content/rs/administering/logging/rsyslog-logging/cluster-events/,
+]
 ---
 
 The following cluster alerts and events can appear in `syslog`.

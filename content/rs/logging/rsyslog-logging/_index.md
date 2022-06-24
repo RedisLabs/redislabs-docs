@@ -1,12 +1,15 @@
 ---
 Title: rsyslog logging
+linktitle: rsyslog
 description: This document explains the structure of Redis Enterprise Software log entries in `rsyslog` and how to use these log entries to identify events.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/logging/rsyslog-logging/
-         /rs/administering/logging/rsyslog-logging.md
-         /rs/administering/logging/rsyslog-logging/_index.md
+aliases: [
+    /rs/administering/logging/rsyslog-logging/,
+    /rs/administering/logging/rsyslog-logging.md,
+    /rs/administering/logging/rsyslog-logging/_index.md
+]
 ---
 This document explains the structure of Redis Enterprise Software log entries in `rsyslog` and how to use these log entries to identify events.
 
