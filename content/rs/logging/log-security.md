@@ -1,11 +1,18 @@
 ---
 Title: Log security
+linktitle: Log security
 description:
 weight: 50
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+  /rs/security/logging.md,
+  /rs/security/logging/,
+  /rs/logging/log-security.md,
+  /rs/logging/log-security/,
+]
 ---
-Redis Enterprise comes with [a set of logs]({{< relref "/rs/administering/logging/_index.md" >}}) on the server and available through the user interface to assist users in investigating actions taken on the server and to troubleshoot issues.
+Redis Enterprise comes with [a set of logs]({{< relref "/rs/logging/_index.md" >}}) on the server and available through the user interface to assist users in investigating actions taken on the server and to troubleshoot issues.
 
 ## Sending logs to a remote logging server
 

@@ -1,10 +1,16 @@
 ---
-Title: Logged database alerts and events
+Title: Database alert and event logs
 linkTitle: Database alerts/events
 description: Logged database alerts and events
 weight: 50
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+   /rs/administering/logging/rsyslog-logging/bdb-events.md,
+   /rs/administering/logging/rsyslog-logging/bdb-events/,
+   /rs/logging/rsyslog-logging/bdb-events.md,
+   /rs/logging/rsyslog-logging/bdb-events/, 
+]
 ---
 
 The following database (BDB) alerts and events can appear in `syslog`.

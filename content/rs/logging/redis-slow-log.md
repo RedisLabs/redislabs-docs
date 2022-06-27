@@ -1,9 +1,16 @@
 ---
-Title: Viewing Redis Slow Log
+Title: View Redis slow log
+linkTitle: Slow log
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/logging/redis-slow-log.md,
+    /rs/administering/logging/redis-slow-log/,
+    /rs/logging/redis-slow-log.md,
+    /rs/logging/redis-slow-log/,
+]
 ---
 On the **Database** \> **Slow Log** page, you can view Slow Log details
 for Redis Enterprise Software (RS) databases.
