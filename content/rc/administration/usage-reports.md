@@ -13,6 +13,6 @@ The **Usage Report** can be used to view the daily memory usage and shard usage 
 You can filter the data by using:
 * The **View Statement For** menu and selecting a month/year to view the daily memory usage during a specific month
 * The **Subscription** menu and selecting a subscription to view the daily memory usage of a specific subscription associated with you account
-* The **Database** menu and selecting a database to view teh daily memory usage of a specific database
+* The **Database** menu and selecting a database to view the daily memory usage of a specific database
 
 You can also hold the pointer over each bar in the graph to view the precise memory usage on that day.
