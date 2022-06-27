@@ -27,4 +27,4 @@ This is the General Availability (GA) release of RedisInsight 2.4.0
 
 **Bugs Fixed:**
 - [#774](https://github.com/RedisInsight/RedisInsight/pull/774) Fixed cases when not all parameters are recieved in Overview.
-- [#810](https://github.com/RedisInsight/RedisInsight/pull/810) Display several Streams values added with the same timestamp.
+- [#810](https://github.com/RedisInsight/RedisInsight/pull/810) Display several streams values with the same timestamp.
