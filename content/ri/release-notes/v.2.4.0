@@ -12,7 +12,7 @@ aliases: /ri/release-notes/v2.4.0/
 This is the General Availability (GA) release of RedisInsight 2.4.0
 
 ### Headlines:
-- Pub/Sub: Support for [Redis Pub/Sub](https://redis.io/docs/manual/pubsub/) to subscribe to all the channels and post a message to the given channel.
+- Pub/Sub: Added support for [Redis pub/sub](https://redis.io/docs/manual/pubsub/) enabling subscription to channels and posting messages to channels.
 - Consumer groups: Added [Streams Consumer groups](https://redis.io/docs/manual/data-types/streams/#consumer-groups) to work with Consumer groups for the same stream, inspect and investigate the list of consumers and pending items.
 - Search per database: Search per the list of databases added to RedisInsight to quickly find the database needed.
 
