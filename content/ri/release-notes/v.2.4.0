@@ -26,5 +26,5 @@ This is the General Availability (GA) release of RedisInsight 2.4.0
 - [#788](https://github.com/RedisInsight/RedisInsight/pull/788) Overview displays the number of keys per the logical database connected if this number is not equal to the total number in the database.
 
 **Bugs Fixed:**
-- [#774](https://github.com/RedisInsight/RedisInsight/pull/774) Fixed cases when not all parameters are recieved in Overview.
+- [#774](https://github.com/RedisInsight/RedisInsight/pull/774) Fixed cases when not all parameters are received in Overview.
 - [#810](https://github.com/RedisInsight/RedisInsight/pull/810) Display several streams values with the same timestamp.
