@@ -1,9 +1,16 @@
 ---
 Title: Metrics in Prometheus
-description:
+linkTitle: Prometheus metrics
+description: The metrics available to Prometheus.
 weight: 45
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/monitoring-metrics/prometheus-metrics-definitions.md,
+    /rs/administering/monitoring-metrics/prometheus-metrics-definitions/,
+    /rs/monitoring-metrics/prometheus-metrics-definitions/,
+    /rs/monitoring-metrics/prometheus-metrics-definitions.md,
+]
 ---
 The [integration with Prometheus]({{< relref "/rs/administering/monitoring-metrics/prometheus-integration.md" >}})
 lets you create dashboards that highlight the metrics that are important to you.

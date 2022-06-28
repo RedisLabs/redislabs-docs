@@ -1,10 +1,18 @@
 ---
-title: Redis Enterprise Software Integration with Nagios
-description:
+title: Nagios integration with Redis Enterprise Software
+linkTitle: Nagios
+description: The Redis Enterprise Software (RS) Nagios plugin enables you to monitor the status of RS related
+objects and alerts. The RS alerts can be related to the cluster, nodes,
+or databases.
 weight: 90
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/monitoring-metrics/nagios-plugin/
+aliases: [
+    /rs/administering/monitoring-metrics/nagios-plugin/,
+    /rs/administering/monitoring-metrics/nagios-plugin.md,
+    /rs/monitoring-metrics/prometheus-integration.md,
+    /rs/monitoring-metrics/prometheus-integration/,
+]
 ---
 The Redis Enterprise Software (RS) Nagios plugin enables you to monitor the status of RS related
 objects and alerts. The RS alerts can be related to the cluster, nodes,
