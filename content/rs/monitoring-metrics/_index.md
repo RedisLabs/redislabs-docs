@@ -1,8 +1,7 @@
 ---
 Title: Monitoring with metrics and alerts
 linkTitle: Monitoring
-description: You can use the metrics that measure the performance of your Redis Enterprise Software (RS) clusters, nodes, databases and shards
-to keep an eye on the performance of your databases.
+description: You can use the metrics that measure the performance of your Redis Enterprise Software (RS) clusters, nodes, databases and shards to keep an eye on the performance of your databases.
 weight: 60
 alwaysopen: false
 categories: ["RS"]
@@ -16,9 +15,9 @@ You can use the metrics that measure the performance of your Redis Enterprise So
 to keep an eye on the performance of your databases.
 In the RS admin console, you can see the real-time metrics and you can configure alerts that send notifications based on alert parameters.
 
-You can also access the metrics and configure alerts through the REST API so that you can integrate the RS metrics into your monitoring environment, for example [using Prometheus and Grafana]({{< relref "/rs/administering/monitoring-metrics/prometheus-integration.md" >}}).
+You can also access the metrics and configure alerts through the REST API so that you can integrate the RS metrics into your monitoring environment, for example [using Prometheus and Grafana]({{< relref "/rs/monitoring-metrics/prometheus-integration.md" >}}).
 
-Make sure you read the [definition of each metric]({{< relref "/rs/administering/monitoring-metrics/console-metrics-definitions.md" >}})
+Make sure you read the [definition of each metric]({{< relref "/rs/monitoring-metrics/console-metrics-definitions.md" >}})
 so that you understand exactly what it represents.
 
 ## Real-time metrics

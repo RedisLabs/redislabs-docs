@@ -1,8 +1,7 @@
 ---
 Title: Prometheus integration with Redis Enterprise Software
 linkTitle: Prometheus
-description: To collect and display metrics data from your databases and other cluster components,
-you can connect your Prometheus or Grafana server to your Redis Enterprise cluster.
+description: To collect and display metrics data from your databases and other cluster components, you can connect your Prometheus or Grafana server to your Redis Enterprise cluster.
 weight: 30
 alwaysopen: false
 categories: ["RS"]

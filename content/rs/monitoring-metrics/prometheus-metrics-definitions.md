@@ -12,7 +12,7 @@ aliases: [
     /rs/monitoring-metrics/prometheus-metrics-definitions.md,
 ]
 ---
-The [integration with Prometheus]({{< relref "/rs/administering/monitoring-metrics/prometheus-integration.md" >}})
+The [integration with Prometheus]({{< relref "/rs/monitoring-metrics/prometheus-integration.md" >}})
 lets you create dashboards that highlight the metrics that are important to you.
 
 Here are the metrics available to Prometheus:
