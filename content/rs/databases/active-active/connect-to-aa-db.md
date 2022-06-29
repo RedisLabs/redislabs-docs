@@ -2,7 +2,7 @@
 Title: Connect to your Active-Active databases
 linkTitle: Connect to database
 description: How to connect to an Active-Active database using redis-cli or a sample Python application.
-weight: 55
+weight: 26
 alwaysopen: false
 categories: ["RS"]
 aliases: [

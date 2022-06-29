@@ -2,7 +2,7 @@
 Title: Active-Active Redis applications
 linktitle: Active-Active applications
 description:
-weight: $weight
+weight: 98
 alwaysopen: false
 categories: ["RS"]
 aliases: [
