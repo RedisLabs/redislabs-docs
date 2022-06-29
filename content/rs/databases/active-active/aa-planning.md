@@ -41,6 +41,8 @@ Factors to consider when sizing your database:
 - [**database replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#database-replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
 - [**Active-Active replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#active-active-crdt-replication-backlog/">}}) for synchronization between clusters. By default, this is set to 1% of the database size.
 
+It's also important to know Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit. 
+
 For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/clusters/optimize/node-memory.md">}}), [Memory and performance]({{< relref "/rs/concepts/memory-performance/">}}), or [Database memory limits]({{<relref "/rs/databases/configure/memory-limit.md">}}).
 
 ## Networking
