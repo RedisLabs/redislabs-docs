@@ -49,10 +49,11 @@ rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 
 ### Use the REST API
 
-To replace a certificate using the REST API, run:
+To replace a certificate using the REST API, use [`PUT /v1/cluster/update_cert`]({{< relref "/rs/references/rest-api/requests/cluster/update-cert#put-cluster-update_cert" >}}):
 
 ```sh
-curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+PUT https://[host][:port]/v1/cluster/update_cert
+    '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }'
 ```
 
 Replace the following variables with your own values:
@@ -93,7 +94,7 @@ To update the proxy certificate on clusters running Active-Passive (Replica Of) 
 To update proxy certificate on clusters running Active-Active databases:
 
 - **Step 1:** Use `rladmin` or the REST API to update proxy certificates on a single cluster, multiple clusters, or all participating clusters.
-- **Step 2:** Use the [`crdb-cli`]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility to update Active-Active database configuration from the command line. Run the following command once for each Active-Active database residing on the modified clusters:
+- **Step 2:** Use the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) utility to update Active-Active database configuration from the command line. Run the following command once for each Active-Active database residing on the modified clusters:
 
     ```sh
     crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
@@ -109,7 +110,7 @@ To update proxy certificate on clusters running Active-Active databases:
 To update your syncer certificate on clusters running Active-Active databases, follow these steps:
 
 - **Step 1:** Update your syncer certificate on one or more of the participating clusters using the `rladmin` command, REST API, or admin console. You can update a single cluster, multiple clusters, or all participating clusters.
-- **Step 2:** Update the Active-Active database configuration from the command line with the [`crdb-cli`]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility. Run this command once for each Active-Active database that resides on the modified clusters:
+- **Step 2:** Update the Active-Active database configuration from the command line with the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) utility. Run this command once for each Active-Active database that resides on the modified clusters:
 
     ```sh
     crdb-cli crdb update --crdb-guid <CRDB-GUID> --force

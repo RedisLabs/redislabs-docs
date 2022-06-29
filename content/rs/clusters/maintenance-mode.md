@@ -26,9 +26,9 @@ Maintenance mode does not protect against quorum loss. If you turn on maintenanc
     {{</warning>}}
 
 1. Takes a snapshot of the node configuration to record which shards and endpoints are on the node.
-1. Marks the node as a quorum node to prevent shards and endpoints from migrating to it. 
+1. Marks the node as a quorum node to prevent shards and endpoints from migrating to it.
     {{<note>}}
-If you run [`rladmin status`]({{<relref "/rs/references/rladmin#status">}}), the node's shards field is now yellow to show that shards cannot migrate to it.
+If you run [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}), the node's shards field is now yellow to show that shards cannot migrate to it.
     {{</note>}}
     ![maintenance_mode](/images/rs/maintenance_mode.png)
 1. Migrates shards and binds endpoints to other nodes, if space is available.
@@ -121,7 +121,7 @@ rladmin node <node_id> maintenance_mode off skip_shards_restore
 
 ## Cluster status example
 
-This example shows how the output of [`rladmin status`]({{<relref "/rs/references/rladmin#status">}}) changes when you turn on maintenance mode for a node.
+This example shows how the output of [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) changes when you turn on maintenance mode for a node.
 
 The cluster status before turning on maintenance mode:
 
@@ -156,7 +156,7 @@ After turning on maintenance mode for node 2, Redis Enterprise saves a snapshot 
 
 Now node 2 has `0/0` shards because shards cannot migrate to it while it is in maintenance mode.
 
-## Toggle maintenance mode via API 
+## Toggle maintenance mode via API
 
 You can also turn maintenance mode on or off via [REST API requests]({{<relref "/rs/references/rest-api">}}) to [<nobr>POST `/nodes/{node_uid}/actions/{action}`</nobr>]({{<relref "/rs/references/rest-api/requests/nodes/actions#post-node-action">}}).
 
@@ -165,10 +165,8 @@ You can also turn maintenance mode on or off via [REST API requests]({{<relref "
 Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> request to turn on maintenance mode:
 
 ```
-curl -X POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on 
--k -u <user>:<password> 
---data '{"keep_slave_shards":true}' 
--H "Content-Type: application/json"
+POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_on
+     '{"keep_slave_shards":true}'
 ```
 
 The `keep_slave_shards` boolean flag [prevents replica shard migration](#prevent-replica-shard-migration) when set to `true`.
@@ -187,10 +185,8 @@ The `maintenance_on` request returns a JSON response body:
 Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> request to turn off maintenance mode:
 
 ```
-curl -X POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_off 
--k -u <user>:<password> 
---data '{"skip_shards_restore":false}' 
--H "-Type: application/json"
+POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_off
+     '{"skip_shards_restore":false}'
 ```
 
 The `skip_shards_restore` boolean flag allows the `maintenance_off` action to [skip shard restoration](#skip-shard-restoration) when set to `true`.
@@ -211,8 +207,7 @@ You can send a request to [<nobr>GET `/nodes/{node_uid}/actions/{action}`</nobr>
 This request returns the status of the `maintenance_on` action:
 
 ```
-curl https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on 
--k -u <user>:<password>
+GET https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on
 ```
 
 The response body:

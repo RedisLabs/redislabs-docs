@@ -32,7 +32,7 @@ Quick start guides are also available to help you:
 - Run Redis Software using a [Docker container]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}), which lets you skip the installation process
 - Set up a [Redis on Flash cluster]({{< relref "/rs/administering/cluster-operations/getting-started-redis-flash.md" >}}) to optimize  memory resources
 - Set up an [Active-Active cluster]({{< relref "/rs/databases/active-active/get-started-active-active.md" >}}) to enable high availability
-- [Benchmark]({{< relref "content/rs/clusters/optimize/memtier-benchmark.md" >}}) Redis Enterprise Software performance.
+- [Benchmark]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) Redis Enterprise Software performance.
 
 ## Step 1: Install Redis Enterprise Software
 
@@ -181,5 +181,5 @@ The following browsers have been tested with the current version of the admin co
 
 Now you have a Redis Enterprise cluster ready to go. You can connect to it with
 a [redis client](https://redis.io/clients) to start loading it with data or
-you can use the [memtier_benchmark Quick Start]({{< relref "content/rs/clusters/optimize/memtier-benchmark.md" >}})
+you can use the [memtier_benchmark Quick Start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}})
 to check the cluster performance.

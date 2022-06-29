@@ -6,8 +6,8 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    content/rs/administering/designing-production/persistent-ephemeral-storage.md,
-    content/rs/administering/designing-production/persistent-ephemeral-storage/,
+    /rs/administering/designing-production/persistent-ephemeral-storage.md,
+    /rs/administering/designing-production/persistent-ephemeral-storage/,
 ]
 ---
 For each node in the cluster, you can configure both persistent

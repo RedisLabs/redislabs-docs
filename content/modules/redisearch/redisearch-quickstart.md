@@ -83,7 +83,7 @@ To do so, use the `score_attribute` set by the `SCORE_FIELD` option during index
 
 ### Search an index
 
-Search the index for any documents that contain the word "primary":
+Search the index for any documents that contain the words "search engine":
 
 ```sh
 127.0.0.1:12543> FT.SEARCH database_idx "search engine" LIMIT 0 10

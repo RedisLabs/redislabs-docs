@@ -12,9 +12,9 @@ This version includes the following new features and improvements:
 
 - [Synchronization](https://docs.redis.com/latest/rs/databases/active-active#syncer-process) can now be [distributed across the nodes]({{<relref "/rs/databases/active-active/synchronization-mode.md">}}) of Active-Active or Active-Passive databases
 - You can [disable several internal RS services]({{<relref "/rs/clusters/optimize/turn-off-services.md">}}) to free up more memory
-- User accounts can have multiple passwords to allow for [password rotation]({{<relref "/rs/administering/access-control/password-rotation.md">}})
+- User accounts can have multiple passwords to allow for [password rotation]({{<relref "/rs/security/access-control/manage-users/manage-passwords#user-password-rotation">}})
 - [Dependencies are automatically installed]({{<relref "/modules/install/add-module-to-cluster#rest-api-method">}}) when you add modules to a cluster
-- [Envoy replaces NGINX]({{<relref "/rs/administering/designing-production/networking/port-configurations.md">}}) for internal cluster administration
+- [Envoy replaces NGINX]({{<relref "/rs/networking/port-configurations.md">}}) for internal cluster administration
 - Automatic recovery of the [syncer process](https://docs.redis.com/latest/rs/databases/active-active#syncer-process)s from out-of-memory (preview mode)
 
 And other functional and stability improvements.
@@ -70,7 +70,7 @@ For users of Redis 6 and RS 6.0 and above, you can now add more security to your
 As of RS 6.0, you can assign specific data access permissions (Redis ACLs) and cluster administration permissions to users.
 Password rotation is especially helpful so that you can do a rolling update of the passwords in the application clients that connect to the Redis databases.
 
-In this version, you can only configure multiple passwords [using the REST API]({{<relref "/rs/administering/access-control/password-rotation.md">}}).
+In this version, you can only configure multiple passwords [using the REST API]({{<relref "/rs/security/access-control/manage-users/manage-passwords#user-password-rotation">}}).
 
 #### Redis Modules dependencies management
 

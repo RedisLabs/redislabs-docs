@@ -10,7 +10,7 @@ aliases: [
     /rs/references/developing-for-active-active/developing-hll-active-active/,
     /rs/references/developing-for-active-active/developing-hll-active-active.md,
     /rs/databases/active-active/data-types/hyperloglog-active-active.md,
-    content/rs/databases/active-active/data-types/hyperloglog-active-active/,
+    /rs/databases/active-active/data-types/hyperloglog-active-active/,
 ]
 ---
 **HyperLogLog** is an algorithm that addresses the [count-distinct problem](https://en.wikipedia.org/wiki/Count-distinct_problem).

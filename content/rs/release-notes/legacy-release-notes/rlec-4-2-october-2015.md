@@ -45,12 +45,12 @@ before running through the upgrade process.
     administrator to specify which IP address is used for internal
     traffic and which IP addresses are used for external traffic. For
     additional details, refer to [Multi-IP &
-    IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}})
+    IPv6]({{< relref "/rs/networking/multi-ip-ipv6.md" >}})
     support.
 - IPv6 support for external traffic - on a node that has multiple
     IPs, external IP addresses can be of IPv6 type. For additional
     details, refer to [Multi-IP &
-    IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}})
+    IPv6]({{< relref "/rs/networking/multi-ip-ipv6.md" >}})
     support section.
 - Support for OpenStack Object Store ("Swift") location for import /
     export / backup. For additional details, refer to [Database
@@ -77,7 +77,7 @@ before running through the upgrade process.
 - rladmin command-line-interface can only be run under user root or
     redislabs. For additional details, refer to the [rladmin
     command-line
-    interface (CLI)]({{< relref "/rs/references/rladmin.md" >}})
+    interface (CLI)](https://docs.redis.com/latest/rs/references/rladmin/)
     section.
 - Import / export / backup to/from Amazon S3 requires supplying the
     credentials per usage instance; it does not use central cloud

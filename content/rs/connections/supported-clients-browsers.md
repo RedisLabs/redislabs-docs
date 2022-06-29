@@ -22,7 +22,7 @@ Note: You cannot use client libraries to configure Redis Enterprise Software.  I
 
 - The Redis Software [admin console]({{< relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md" >}})
 - The [REST API]({{<relref "/rs/references/rest-api">}})
-- Command-line utilities, such as [`rladmin`]({{< relref "/rs/references/rladmin.md" >}})
+- Command-line utilities, such as [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}})
 
 ### Discovery service
 

@@ -79,7 +79,7 @@ of the configuration and persistence files on each of the nodes.
     If you use local persistent storage, place all of the recovery files on each of the cluster nodes.
 
 1. To recover the cluster configuration from the original cluster to the first node in the new cluster,
-    from the [rladmin]({{< relref "/rs/references/rladmin.md" >}}) command-line interface (CLI):
+    from the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command-line interface (CLI):
 
     ```sh
     cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
@@ -121,7 +121,7 @@ Otherwise, the node gets the same rack ID as the original node.
     {{% expand "Command syntax" %}}
 `nodes` - The IP address of a node in the cluster that this node is joining.
 
-`name` - The [FQDN name]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
+`name` - The [FQDN name]({{< relref "/rs/networking/cluster-dns/_index.md" >}})
 of the cluster this node is joining.
 
 `username` - The email address of the cluster administrator.
@@ -152,7 +152,7 @@ providing a different value and using the `override_rack_id` flag.
     and that the databases are pending recovery.
 
     {{< note >}}
-Make sure that you update your [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
+Make sure that you update your [DNS records]({{< relref "/rs/networking/cluster-dns/_index.md" >}})
 with the IP addresses of the new nodes.
     {{< /note >}}
 
