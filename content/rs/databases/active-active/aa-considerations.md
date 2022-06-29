@@ -56,7 +56,7 @@ Networking between the clusters must be configured before creating an Active-Act
 
 ### Network ports
 
-Every node must have access to the REST API ports of every other node as well as other ports for proxies, VPNs, and the admin console. See [Network port configurations]({{<relref "/rs/administering/designing-production/networking/port-configurations.md">}}) for more details. These ports should be allowed through firewalls that may be positioned between the clusters.
+Every node must have access to the REST API ports of every other node as well as other ports for proxies, VPNs, and the admin console. See [Network port configurations]({{<relref "/rs/networking/port-configurations.md">}}) for more details. These ports should be allowed through firewalls that may be positioned between the clusters.
 
 ### Network Time Service {#network-time-service}
 
