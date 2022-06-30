@@ -12,7 +12,17 @@ aliases: [
 ]
 ---
 
-You can change the global configuration of the Active-Active database from the command line with the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}).
+You can configure and manage your Active-Active database from either the admin console or the command line
+
+When you edit the database configurations of an Active-Active database with the admin console or the `rladmin` CLI, the changes will only apply to the Active-Active database instance you are currently editing.
+
+To change the global configuration of the Active-Active database, use the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}).
+
+## Database settings
+
+Following table shows a list of database settings, tools you can use to change those settings, and links to more information.
+
+Much of the Active-Active database settings can be changed after the database has been created. One notable exception is database clustering. Database clustering can't be turned on or off after the database has been created and will remain the same through the lifetime of the database.
 
 ## Participating clusters
 
@@ -60,4 +70,13 @@ Update the Active-Active (CRDT) replication backlog with the command shown below
 ```text
 crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_backlog_size\": <size in MB | 'auto'>}"
 ```
+
+## Data persistence
+
+You can set the data persistence configuration, including AOF (Append-Only File) data persistence and snapshot,
+for each participating cluster.
+
+## Eviction policy
+
+## Proxy policy
 

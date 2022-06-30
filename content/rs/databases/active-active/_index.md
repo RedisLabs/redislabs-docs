@@ -101,11 +101,6 @@ You must also open ports for [VPNs and Security groups]({{< relref "/rs/networki
 For synchronization, Active-Active databases operate over the standard endpoint ports.
 The endpoint port that you configure when you create the Active-Active database is the endpoint port of the proxy for that Active-Active database on each cluster.
 
-### Data persistence
-
-You can set the data persistence configuration, including AOF (Append-Only File) data persistence and snapshot,
-for each participating cluster.
-
 ## Syncer process
 
 Each node in a cluster containing an instance of an Active-Active database hosts a process called syncer.
