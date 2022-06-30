@@ -28,6 +28,32 @@ Details:
     - [#2241](https://github.com/RedisGraph/RedisGraph/issues/2241) Possible crash on queries with `MERGE` operation in a Cartesian product (MOD-3500)
     - [#2394](https://github.com/RedisGraph/RedisGraph/issues/2394) Possible crash when freeing an index immediately after its creation
 
+## v2.8.14 (June 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Features:
+
+    - [#2403](https://github.com/RedisGraph/RedisGraph/pull/2403) Introduce `toFloat` function
+    - [#2365](https://github.com/RedisGraph/RedisGraph/issues/2365) Commands that don't execute on the main thread now also appear in [SLOWLOG](https://redis.io/commands/slowlog/)
+
+- Bug fixes:
+
+    - [#2381](https://github.com/RedisGraph/RedisGraph/pull/2381) Rare data corruption on data encoding
+    - [#2393](https://github.com/RedisGraph/RedisGraph/issues/2393), [#2395](https://github.com/RedisGraph/RedisGraph/issues/2395) Crash when searching an index for a runtime-determined value
+    - [#2377](https://github.com/RedisGraph/RedisGraph/issues/2377) Crash on `INT_MIN % -1`
+    - [#2390](https://github.com/RedisGraph/RedisGraph/issues/2390) Crash on distance filter
+    - [#2407](https://github.com/RedisGraph/RedisGraph/issues/2407) Crash on double to string
+    - [#2422](https://github.com/RedisGraph/RedisGraph/pull/2422) `toJSON` returned floating points cropped to 6 decimals
+
+{{<note>}}
+New RDB version (v12). RDB files created with v2.8.14 or later are not backward compatible.
+{{</note>}}
+
 ## v2.8.13 (May 2022)
 
 This is a maintenance release for RedisGraph 2.8.
