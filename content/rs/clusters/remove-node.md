@@ -22,7 +22,7 @@ Enterprise Software:
 The following section explains how each of these actions can be
 achieved, as well as their impact and considerations.
 
-You can configure [email alerts from the cluster]({{< relref "/rs/administering/monitoring-metrics/_index.md#cluster-alerts" >}}) to notify you of cluster changes, including when a node is removed.
+You can configure [email alerts from the cluster]({{< relref "/rs/monitoring-metrics/_index.md#cluster-alerts" >}}) to notify you of cluster changes, including when a node is removed.
 
 **Make sure to read through these explanations thoroughly before taking
 any action.**

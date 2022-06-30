@@ -1,7 +1,7 @@
 ---
 Title: FAQs
 description: Answers frequently asked questions regarding Redis Enterprise Software.
-weight: 70
+weight: 90
 alwaysopen: false
 categories: ["RS"]
 ---
