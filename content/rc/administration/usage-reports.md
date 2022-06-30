@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/usage-reports/
 ---
-The **Usage Report** can be used to view the daily memory usage and shard usage of all databases from the subscriptions associated with your account.
+The **Usage Report** shows the daily memory usage and shard usage of all databases from the subscriptions associated with your account.
 
 ![usage_report](/images/rc/usage-report-memory-usage.png)
 
