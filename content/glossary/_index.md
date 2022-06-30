@@ -24,7 +24,7 @@ More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/ac
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
-More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Update database ACLs]({{<relref "/rs/security/ldap/update-database-acls.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
+More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/access-control">}}); [Update database ACLs]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
 {{%/definition%}}
 
 <a name="active-active"></a>
@@ -66,7 +66,7 @@ More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
 
-More info: [Database Clustering]({{<relref "content/rc/databases/configuration/clustering.md" >}})
+More info: [Database Clustering]({{<relref "/rc/databases/configuration/clustering.md" >}})
 {{%/definition%}}
 
 {{%definition "Cluster Configuration Store (CSS)"%}}
@@ -126,13 +126,13 @@ More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.htm
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
-More info: [Database Clustering]({{<relref "content/rs/databases/configure/clustering.md">}})
+More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "hash tag"%}}
 A part of the key that is used in the hash calculation.
 
-More info: [Database Clustering]({{<relref "content/rs/databases/configure/clustering.md">}})
+More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "ingress"%}}
@@ -273,7 +273,7 @@ More info: [Database replication]({{<relref "/rs/databases/configure/replication
 {{%definition "role-based access control (RBAC)"%}}
 A security approach that restricts system access to authorized users.
 
-More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
+More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/access-control">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
 {{%/definition%}}
 
 ## S {#letter-s}

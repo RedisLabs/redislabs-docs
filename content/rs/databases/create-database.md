@@ -11,7 +11,7 @@ aliases: [
     /rs/administering/database-operations/creating-database/,
     /rs/databases/create-database.md,
     /rs/databases/create-database/,
-  
+    /rs/administering/creating-databases/
 ]
 ---
 Redis Enterprise Software lets you create databases and distribute them across a cluster of nodes.
@@ -115,14 +115,14 @@ If you are creating a Memcached database, enter a username and password for SASL
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/passwords-users-roles.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that apply to those connections.
+    - **Access Control List** - You can specify the [user roles]({{<relref "/rs/security/access-control/create-roles">}}) that have access to the database
+        and the [Redis ACLs]({{<relref "/rs/security/access-control/configure-acl">}}) that apply to those connections.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [role]({{<relref "/rs/security/passwords-users-roles#configuring-roles-and-users">}}) that you want to have access to the database.
-        1. Select the [ACL]({{<relref "/rs/security/passwords-users-roles#redis-acl-command-syntax">}}) that you want the role to have in the database.
+        1. Select the [role]({{<relref "/rs/security/access-control/create-roles">}}) that you want to have access to the database.
+        1. Select the [ACL]({{<relref "/rs/security/access-control/configure-acl">}}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
@@ -130,7 +130,7 @@ If you are creating a Memcached database, enter a username and password for SASL
         or a port is randomly selected.
 
         {{< note >}}
-You cannot change the [port number]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
+You cannot change the [port number]({{< relref "/rs/networking/port-configurations.md" >}})
 after the database is created.
         {{< /note >}}
 
@@ -166,7 +166,7 @@ after the database is created.
     - [**Periodic backup**]({{< relref "/rs/databases/import-export/database-backup.md" >}}) -
     You can configure periodic backups of the database, including the interval and backup location parameters.
 
-    - [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -
+    - [**Alerts**]({{< relref "/rs/monitoring-metrics/_index.md#database-alerts" >}}) -
     You can select alerts to show in the database status and configure their thresholds.
     You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}).
 

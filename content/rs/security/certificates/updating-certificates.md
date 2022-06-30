@@ -49,10 +49,11 @@ rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 
 ### Use the REST API
 
-To replace a certificate using the REST API, run:
+To replace a certificate using the REST API, use [`PUT /v1/cluster/update_cert`]({{< relref "/rs/references/rest-api/requests/cluster/update-cert#put-cluster-update_cert" >}}):
 
 ```sh
-curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+PUT https://[host][:port]/v1/cluster/update_cert
+    '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }'
 ```
 
 Replace the following variables with your own values:

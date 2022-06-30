@@ -93,7 +93,7 @@ The setup of the Active-Active database fails if there is no connectivity betwee
 ## Network ports
 
 For initial configuration and ongoing maintenance of an Active-Active database, every node must have access to the REST API ports of every other node.
-You must also open ports for [VPNs and Security groups]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+You must also open ports for [VPNs and Security groups]({{< relref "/rs/networking/port-configurations.md" >}}).
 
 For synchronization, Active-Active databases operate over the standard endpoint ports.
 The endpoint port that you configure when you create the Active-Active database is the endpoint port of the proxy for that Active-Active database on each cluster.

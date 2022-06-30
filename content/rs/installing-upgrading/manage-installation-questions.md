@@ -36,7 +36,7 @@ Several questions appear during installation:
 
 - **Firewall ports** - `Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?`
 
-    Redis Enterprise Software requires that all nodes have [specific network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) open.
+    Redis Enterprise Software requires that all nodes have [specific network ports]({{< relref "/rs/networking/port-configurations.md" >}}) open.
     You can either:
 
     - Answer `Y` to let the installation process open these ports.

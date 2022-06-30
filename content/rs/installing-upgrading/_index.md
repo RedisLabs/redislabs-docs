@@ -36,9 +36,9 @@ Before installing Redis Enterprise Software, you need to:
 
     For complete details, see [Supported platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}})
 
-- Open appropriate [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
+- Open appropriate [network ports]({{< relref "/rs/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
 
-- Configure [cluster DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}}) so that cluster nodes can reach each other by DNS names.
+- Configure [cluster DNS]({{< relref "/rs/networking/cluster-dns.md" >}}) so that cluster nodes can reach each other by DNS names.
 - By default, the install process requires an Internet connection to install dependencies and to synchronize the operating system clock.  To learn more, see [Offline installation]({{<relref "/rs/installing-upgrading/offline-installation">}}).
 
 ## Download the installation package
@@ -94,7 +94,7 @@ Before installing, review these notes:
     1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
     1. Run: `sudo service systemd-resolved restart`
 
-- Make sure that the ports [Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) are available; that is, they're not being used by the operating system or other processes.
+- Make sure that the ports [Redis assigns to databases]({{< relref "/rs/networking/port-configurations.md" >}}) are available; that is, they're not being used by the operating system or other processes.
 
     To avoid port collision, we recommend updating `/etc/sysctl.conf` to include:  
     ``` sh
@@ -220,16 +220,16 @@ If you've already installed Redis Enterprise Software, you can also:
 
 More info is available to help with customization and related questions:
 
-- [AWS EC2 configuration]({{<relref "rs/installing-upgrading/configuring-aws-instances.md">}})
+- [AWS EC2 configuration]({{<relref "rs/installing-upgrading/configuring/configuring-aws-instances.md">}})
 - [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
-- [Cluster DNS configuration]({{< relref "rs/installing-upgrading/configuring/cluster-dns.md" >}})
-- [Cluster load balancer setup]({{< relref "rs/installing-upgrading/configuring/cluster-lba-setup.md" >}})
+- [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
+- [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})
 - [File locations]({{<relref "rs/installing-upgrading/file-locations.md">}})
 - [Supported platforms]({{<relref "rs/installing-upgrading/supported-platforms.md">}})
 - [Linux swap space configuration]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
 - [Manage installation questions]({{<relref "rs/installing-upgrading/manage-installation-questions.md">}})
-- [mDNS client prerequisites]({{< relref "rs/installing-upgrading/configuring/mdns.md" >}})
+- [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
 - [Offline installation]({{<relref "rs/installing-upgrading/offline-installation.md">}})
 - [User and group ownership]({{<relref "rs/installing-upgrading/customize-user-and-group.md">}})
 
@@ -237,6 +237,6 @@ More info is available to help with customization and related questions:
 
 Now that your cluster is set up with nodes, you can:
 
-- [Add users]({{< relref "/rs/security/passwords-users-roles.md" >}}) to the cluster with specific permissions.  To begin, start with [Authentication and authorization]({{< relref "/rs/security/admin-console-security/user-security" >}}).
+- [Add users]({{<relref "/rs/security/access-control/manage-users/add-users">}}) to the cluster with specific permissions.  To begin, start with [Access control]({{<relref "/rs/security/access-control">}}).
 - [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
 
