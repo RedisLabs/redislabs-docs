@@ -39,7 +39,7 @@ crdb-cli crdb create --name <name>
 Before you create an Active-Active database, you must have:
 
 - At least two participating clusters
-- [Network connectivity]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) between the participating clusters
+- [Network connectivity]({{< relref "/rs/networking/port-configurations" >}}) between the participating clusters
 
 ### Parameters
 
