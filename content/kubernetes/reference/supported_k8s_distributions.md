@@ -36,16 +36,16 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 - Any distribution not listed below is not supported for production workloads.
 
 
-| **Kubernetes version**  | 1.19       | 1.20       | 1.21       | 1.22       | 1.23       |
-|:------------------------|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Community Kubernetes    | deprecated | deprecated | supported  | supported  | supported* |
-| Amazon EKS              | supported  | supported  | supported  |            |            |
-| Azure AKS               |            |            | supported  | supported  | supported* |
-| Google GKE              | supported  | supported  | supported  | supported  |            |
-| Rancher 2.6             | supported  | supported  | supported  | supported  |            |
+| **Kubernetes version**  | 1.19       | 1.20       | 1.21       | 1.22       | 1.23       | 1.24       |
+|:------------------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
+| Community Kubernetes    |            |            | deprecated | supported  | supported  | supported* |
+| Amazon EKS              | deprecated | deprecated | supported  | supported* |            |
+| Azure AKS               |            |            | deprecated | supported  | supported  |
+| Google GKE              | deprecated | deprecated | supported  | supported  |supported*  |
+| Rancher 2.6             | deprecated | deprecated | supported  | supported  |            |
 | **OpenShift version**   | **4.6**    | **4.7**    | **4.8**    | **4.9**    | **4.10**   |
-|                         | deprecated | deprecated | supported  | supported  | supported* |
+|                         |            | deprecated | deprecated | supported  | supported  |
 | **VMware TKGI version** | **1.10**   | **1.11**   | **1.12**   | **1.13**   |            |
-|                         | supported  | supported  | supported* |            |            |
+|                         | deprecated | deprecated | supported* | supported* |            |
 
 \* Support added in most recent release  
