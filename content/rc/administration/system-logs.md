@@ -19,7 +19,7 @@ You can:
 
   {{<image filename="images/rc/system-logs-export.png" alt="Use the export all button in the top right to export all logs to a CSV file">}}{{< /image >}} 
 
-* Use the refresh button displayed in the top right of the page to refresh the system logs.
+* Use the refresh button to refresh the system logs.
 
   {{<image filename="images/rc/system-logs-refresh.png" alt="Use the refresh button in the top right to refresh the system logs">}}{{< /image >}}
 
