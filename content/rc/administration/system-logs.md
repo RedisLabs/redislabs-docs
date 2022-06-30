@@ -13,7 +13,7 @@ The **Logs** page contains events, alerts, and logs from the activities, databas
 You can:
 * Sort the list by a specific field in descending or ascending order. Supported fields include **Time, Originator, Database name,** and **Activity.**  
 {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}    
-    Select the arrow icon to change the sort order.  One sort order can be active at any given time.
+    Select the arrow icon to change the sort order.  You can only sort by one field at a time.
 
 * Use the export all button displayed in the top right of the page to export all logs as a CSV file for use in other systems and programs.
 
