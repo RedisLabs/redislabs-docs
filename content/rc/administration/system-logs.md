@@ -15,7 +15,7 @@ You can:
 {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}    
     Select the arrow icon to change the sort order.  You can only sort by one field at a time.
 
-* Use the export all button displayed in the top right of the page to export all logs as a CSV file for use in other systems and programs.
+* Use the **Export all** button to export all logs as a CSV file for use in other systems and programs.
 
   {{<image filename="images/rc/system-logs-export.png" alt="Use the export all button in the top right to export all logs to a CSV file">}}{{< /image >}} 
 
