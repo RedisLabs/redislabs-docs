@@ -23,4 +23,4 @@ You can:
 
   {{<image filename="images/rc/system-logs-refresh.png" alt="Use the refresh button in the top right to refresh the system logs">}}{{< /image >}}
 
-* Use the search bar displayed in the top right of the page to search for specific logs. Supported fields include **Originator, Database name,Activity,** and **Description.**
+* Use the search bar to search for specific logs. Supported fields include **Originator, Database name, Activity,** and **Description.**
