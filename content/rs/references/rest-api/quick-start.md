@@ -8,74 +8,21 @@ categories: ["RS"]
 aliases:
 ---
 
-Redis Enterprise Software includes a REST API that allows you to automate certain tasks.
+Redis Enterprise Software includes a REST API that allows you to automate certain tasks. This article contains examples of ways to send a Redis Enterprise Software REST API request.
 
 ## Fundamentals
 
 No matter which method you use to send API requests, there are a few common concepts to remember.
 
-### Authentication
+| Type | Description |
+|------|-------------|
+| [Authentication]({{<relref "/rs/references/rest-api#authentication">}}) | Use [Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) with your cluster username and password |
+| [Ports]({{<relref "/rs/references/rest-api#ports">}}) | All calls are made to port 9443 by default |
+| [Versions]({{<relref "/rs/references/rest-api#ports">}}) | Specify the version in the request [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) |
+| [Headers]({{<relref "/rs/references/rest-api#headers">}}) | `Accept` and `Content-Type` should be `application/json` |
+| [Response types and error codes]({{<relref "/rs/references/rest-api#response-types-and-error-codes">}}) | A response of `200 OK` means success, otherwise, there was an error |  
 
-Authentication to the Redis Enterprise Software API occurs via [Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication). Provide your username and password as the basic auth credentials.
-
-If the username and password is incorrect or missing, the request will fail with a [`401 Unauthorized`](https://www.rfc-editor.org/rfc/rfc9110.html#name-401-unauthorized) status code.
-
-An admin user can access any endpoint on the API. Other users can access endpoints that correspond to their assigned roles. If a user attempts to access an endpoint that is not allowed in their role, the request will fail with a [`403 Forbidden`](https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden) status code. For more details on which user roles can access certain endpoints, see [Permissions]({{<relref "/rs/references/rest-api/permissions">}}).
-
-The Redis Enterprise Software REST API uses [Self-signed certificates]({{<relref "/rs/security/certificates">}}) to ensure the product is secure. When you use the default self-signed certificates, the HTTPS requests will fail with `SSL certificate problem: self signed certificate` unless you turn off SSL certificate verification. The examples in this tutorial turn off SSL certificate verification.
-
-### Ports
-
-All calls must be made over SSL to port 9443. For the API to work, port 9443 must be exposed to incoming traffic or mapped to a different port.
-
-If you are using a [Redis Enterprise Software Docker image]({{<relref "/rs/installing-upgrading/get-started-docker">}}), run the following command to start the Docker image with port 9443 exposed:
-
-```sh
-docker run -p 9443:9443 redislabs/redis
-```
-
-### Versions
-
-All API requests are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
-
-For the Redis Enterprise Software API, specify version 1 or version 2 in the [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier).
-
-| Request path | Description |
-|--------------|-------------|
-| `POST /v1/bdbs` | A version 1 request for the `/bdbs` endpoint. |
-| `POST /v2/bdbs` | A version 2 request for the `/bdbs` endpoint. |
-
-When an endpoint supports more than one version, the endpoint's request page documents both versions.  For example, the [bdbs request]({{<relref "/rs/references/rest-api/requests/bdbs/" >}}) page documents POST requests for [version 1]({{<relref "/rs/references/rest-api/requests/bdbs/#post-bdbs-v1" >}}) and [version 2]({{<relref "/rs/references/rest-api/requests/bdbs/#post-bdbs-v2" >}}).
-
-### Headers
-
-Redis Enterprise REST API requests support the following HTTP headers:
-
-| Header | Supported/Required Values |
-|--------|---------------------------|
-| Accept | `application/json` |
-| Content-Length | Length (in bytes) of request message |
-| Content-Type | `application/json` (required for PUT or POST requests) |
-
-If the client specifies an invalid header, the request will fail with a [`400 Bad Request`](https://www.rfc-editor.org/rfc/rfc9110.html#name-400-bad-request) status code.
-
-### Response types and error codes
-
-[HTTP Status Codes](https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes) describe the result of an API request. This can be `200 OK` if the server accepted the request, or it can be one of many error codes.
-
-The most common responses for a Redis Enterprise API request are:
-
-| Response | Condition/Required handling |
-|----------|-----------------------------|
-| [200 OK](https://www.rfc-editor.org/rfc/rfc9110.html#name-200-ok) | Success |
-| [400 Bad Request](https://www.rfc-editor.org/rfc/rfc9110.html#name-400-bad-request) | The request failed, generally due to a typo or other mistake. |
-| [401 Unauthorized](https://www.rfc-editor.org/rfc/rfc9110.html#name-401-unauthorized) | The request failed because the authentication information was missing or incorrect. |
-| [403 Forbidden](https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden) | The user cannot access the specified [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier). |
-| [404 Not Found](https://www.rfc-editor.org/rfc/rfc9110.html#name-404-not-found) | The [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) does not exist. |
-| [503 Service Unavailable](https://www.rfc-editor.org/rfc/rfc9110.html#name-503-service-unavailable) | The node is not responding, or is not a memeber of a cluster. |
-| [505&nbsp;HTTP&nbsp;Version&nbsp;Not&nbsp;Supported](https://www.rfc-editor.org/rfc/rfc9110.html#name-505-http-version-not-suppor) | An unsupported `x-api-version` was used. See [Versions](#versions). |
-
-Some endpoints may have different response codes. The request page of these endpoints document these special cases.
+For more info on Redis Enterprise Software API fundamentals, see [Redis Enterprise Software REST API]({{<relref "/rs/references/rest-api/">}}).
 
 ## Example requests: cURL
 
@@ -332,6 +279,7 @@ for (const database of responseObject) {
 See the [node-fetch documentation](https://www.npmjs.com/package/node-fetch) for more info.
 
 #### Output
+
 ```sh
 $ node rs_api.js
 GET https://[host]:[port]/v1/bdbs
