@@ -10,10 +10,23 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.13 requires:
+RedisGraph v2.8.15 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.15 (June 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2241](https://github.com/RedisGraph/RedisGraph/issues/2241) Possible crash on queries with `MERGE` operation in a Cartesian product (MOD-3500)
+    - [#2394](https://github.com/RedisGraph/RedisGraph/issues/2394) Possible crash when freeing an index immediately after its creation
 
 ## v2.8.13 (May 2022)
 
