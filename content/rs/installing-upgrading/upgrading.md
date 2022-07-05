@@ -97,7 +97,7 @@ Starting with the master node, follow these steps for every node in the cluster.
 1.  Verify node operation with the following commands:
 
     ``` shell
-    rlcheck
+    sudo $bindir/rlcheck
     rladmin status extra all
     ```
 
