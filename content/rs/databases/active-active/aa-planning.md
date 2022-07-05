@@ -12,7 +12,7 @@ aliases: [
 
 ---
 
-In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)(conflict-free replicated data type). Compared to databases without geo-distribution, Active-Active databases have more complex replication and networking, as well as a different data type.
+In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) (conflict-free replicated data type). Compared to databases without geo-distribution, Active-Active databases have more complex replication and networking, as well as a different data type.
 
 Because of the complexities of Active-Active databases, there are  special considerations to keep in mind while planning your Active-Active database.
 
@@ -26,7 +26,7 @@ Changes made from the admin console to an Active-Active database configuration o
 
 ## Memory limits
 
-Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "rs/concepts/terminology.md#redis-instance-shard">}}) on the cluster. Your memory limit will also determine the number of shards you'll need.
+Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "rs/concepts/terminology#redis-instance-shard">}}) on the cluster. Your memory limit will also determine the number of shards you'll need.
 
 Besides your dataset, the memory limit must also account for replication, Active-Active overhead, and module overhead. These features can significantly increase your database size, sometimes increasing it by four times or more.
 
@@ -38,7 +38,7 @@ Factors to consider when sizing your database:
 - [**database clustering**]({{<relref "/rs/databases/configure/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
 - [**database replication**]({{<relref "/rs/databases/configure/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
-- [**database replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#database-replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
+- [**database replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
 - [**Active-Active replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#active-active-crdt-replication-backlog/">}}) for synchronization between clusters. By default, this is set to 1% of the database size.
 
 It's also important to know Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit. 
@@ -67,16 +67,16 @@ This is critical to avoid problems with internal cluster communications that can
 
 See [Synchronizing cluster node clocks]({{<relref "/rs/clusters/configure/sync-clocks.md">}}) for more information.
 
-## Redis Modules {#redis-modules}
+## Redis modules {#redis-modules}
 
 Not all Redis modules are compatible with Active-Active databases. Below is a list of [compatible Redis modules]({{< relref "/modules/enterprise-capabilities.md" >}}).
 
-- [RediSearch 2.x in Redis Enterprise Software 6.0 and higher]({{< relref "/modules/redisearch/redisearch-active-active.md" >}}).
+- [RediSearch 2.x in Redis Enterprise Software 6.0 and higher]({{< relref "/modules/redisearch/redisearch-active-active.md" >}})
 - RedisGears
 
 ## Limitations
 
-The following are limitations current limitations for Active-Active databases:
+Active-Active databases have the following limitations:
 
 - An existing database can't be changed into an Active-Active database. To move data from an existing database to an Active-Active database, you must [create a new Active-Active database]({{< relref "/rs/databases/active-active/create-active-active.md" >}}) and [migrate the data]({{< relref "/rs/databases/import-export/migrate-to-active-active.md">}}).
 - [Discovery service]({{< relref "/rs/databases/configure/discovery-service.md" >}}) is not supported with Active-Active databases. Active-Active databases require FQDNs or [mDNS]({{< relref "/rs/networking/mdns.md">}}).
