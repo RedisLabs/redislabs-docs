@@ -24,7 +24,7 @@ No matter which method you use to send API requests, there are a few common conc
 
 For more information, see [Redis Enterprise Software REST API]({{<relref "/rs/references/rest-api/">}}).
 
-## cURL Example Requests
+## cURL example requests
 
 [cURL](https://curl.se/) is a command-line tool that allows you to send HTTP requests from a terminal.
 
