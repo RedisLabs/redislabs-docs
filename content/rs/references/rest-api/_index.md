@@ -57,7 +57,7 @@ If you are using a [Redis Enterprise Software Docker image]({{<relref "/rs/insta
 docker run -p 9443:9443 redislabs/redis
 ```
 
-## JSON Requests
+## JSON requests and responses
 
 The Redis Enterprise Software REST API uses [JavaScript Object Notation (JSON)](http://www.json.org) for requests and responses. See the [RFC 4627 technical specifications](http://www.ietf.org/rfc/rfc4627.txt) for additional information about JSON.
 
@@ -107,7 +107,7 @@ Redis Enterprise REST API responses support the following HTTP headers:
 
 ## Response types and error codes
 
-[HTTP Status Codes](https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes) describe the result of an API request. This can be `200 OK` if the server accepted the request, or it can be one of many error codes.
+[HTTP status codes](https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes) indicate the result of an API request. This can be `200 OK` if the server accepted the request, or it can be one of many error codes.
 
 The most common responses for a Redis Enterprise API request are:
 
@@ -118,7 +118,7 @@ The most common responses for a Redis Enterprise API request are:
 | [401 Unauthorized](https://www.rfc-editor.org/rfc/rfc9110.html#name-401-unauthorized) | The request failed because the authentication information was missing or incorrect. |
 | [403 Forbidden](https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden) | The user cannot access the specified [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier). |
 | [404 Not Found](https://www.rfc-editor.org/rfc/rfc9110.html#name-404-not-found) | The [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) does not exist. |
-| [503 Service Unavailable](https://www.rfc-editor.org/rfc/rfc9110.html#name-503-service-unavailable) | The node is not responding, or is not a memeber of a cluster. |
-| [505&nbsp;HTTP&nbsp;Version&nbsp;Not&nbsp;Supported](https://www.rfc-editor.org/rfc/rfc9110.html#name-505-http-version-not-suppor) | An unsupported `x-api-version` was used. See [Versions](#versions). |
+| [503 Service Unavailable](https://www.rfc-editor.org/rfc/rfc9110.html#name-503-service-unavailable) | The node is not responding or is not a member of the cluster. |
+| [505&nbsp;HTTP&nbsp;Version&nbsp;Not&nbsp;Supported](https://www.rfc-editor.org/rfc/rfc9110.html#name-505-http-version-not-suppor) | An unsupported `x-api-version` was used. See [versions](#versions). |
 
-Some endpoints may have different response codes. The request page of these endpoints document these special cases.
+Some endpoints return different response codes. The request references for these endpoints document these special cases.

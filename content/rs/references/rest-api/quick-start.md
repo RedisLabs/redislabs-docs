@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Software REST API quick start
-linkTitle: Quick Start
+linkTitle: Quick start
 description: Redis Enterprise Software REST API quick start
 weight: 20
 alwaysopen: false
@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Redis Enterprise Software includes a REST API that allows you to automate certain tasks. This article contains examples of ways to send a Redis Enterprise Software REST API request.
+Redis Enterprise Software includes a REST API that allows you to automate certain tasks. This article shows you how to send a request to the Redis Enterprise Software REST API.
 
 ## Fundamentals
 
@@ -16,19 +16,19 @@ No matter which method you use to send API requests, there are a few common conc
 
 | Type | Description |
 |------|-------------|
-| [Authentication]({{<relref "/rs/references/rest-api#authentication">}}) | Use [Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) with your cluster username and password |
+| [Authentication]({{<relref "/rs/references/rest-api#authentication">}}) | Use [Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) with your cluster username (email) and password |
 | [Ports]({{<relref "/rs/references/rest-api#ports">}}) | All calls are made to port 9443 by default |
-| [Versions]({{<relref "/rs/references/rest-api#ports">}}) | Specify the version in the request [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) |
+| [Versions]({{<relref "/rs/references/rest-api#versions">}}) | Specify the version in the request [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) |
 | [Headers]({{<relref "/rs/references/rest-api#headers">}}) | `Accept` and `Content-Type` should be `application/json` |
-| [Response types and error codes]({{<relref "/rs/references/rest-api#response-types-and-error-codes">}}) | A response of `200 OK` means success, otherwise, there was an error |  
+| [Response types and error codes]({{<relref "/rs/references/rest-api#response-types-and-error-codes">}}) | A response of `200 OK` means success; otherwise, the request failed due to an error |  
 
-For more info on Redis Enterprise Software API fundamentals, see [Redis Enterprise Software REST API]({{<relref "/rs/references/rest-api/">}}).
+For more information, see [Redis Enterprise Software REST API]({{<relref "/rs/references/rest-api/">}}).
 
 ## Example requests: cURL
 
 [cURL](https://curl.se/) is a command-line tool that allows you to send HTTP requests from a terminal.
 
-A cURL request includes the following options:
+You can use the following options to build a cURL request:
 
 | Option | Description |
 |--------|-------------|
@@ -40,7 +40,7 @@ A cURL request includes the following options:
 | -k     | Turn off SSL  verification |
 | -i     | Show headers and status code as well as the response body |
 
-See the [cURL documentation](https://curl.se/docs/) for more info.
+See the [cURL documentation](https://curl.se/docs/) for more information.
 
 ### GET request
 
@@ -71,13 +71,15 @@ x-envoy-upstream-service-time: 25
 ]
 ```
 
-In this object, the `uid` is the database ID. You can use the database ID to view or update the database using the API.
+In the response body, the `uid` is the database ID. You can use the database ID to view or update the database using the API.
 
-For more info on the fields returned by [GET `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#get-all-bdbs" >}}), see the [`bdbs` object]({{<relref "/rs/references/rest-api/objects/bdb/" >}}).
+For more information about the fields returned by [GET `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#get-all-bdbs" >}}), see the [`bdbs` object]({{<relref "/rs/references/rest-api/objects/bdb/" >}}).
 
 ### PUT request
 
 Once you have the database ID, you can use [PUT `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#put-bdbs" >}}) to update the configuration of the database.
+
+For example, you can pass the database `uid` 1 as a URL parameter and use the `-d` option to specify the new `name` when you send the request. This changes the database's `name` from `tr01` to `database1`:
 
 ```sh
 $ curl -X PUT -H "accept: application/json" \
@@ -103,9 +105,9 @@ x-envoy-upstream-service-time: 159
 }
 ```
 
-For more info on the fields required by [PUT `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#put-bdbs" >}}), see the [`bdbs` object]({{<relref "/rs/references/rest-api/objects/bdb/" >}}).
+For more information about the fields you can update with [PUT `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#put-bdbs" >}}), see the [`bdbs` object]({{<relref "/rs/references/rest-api/objects/bdb/" >}}).
 
-## More examples
+## Client examples
 
 To follow these examples, you need:
 
@@ -119,13 +121,13 @@ To follow these examples, you need:
 import json
 import requests
 
-# Information needed for this example - replace with your host, port, username, and password
+# Required connection information - replace with your host, port, username, and password
 host = "[host]"
 port = "[port]"
 username = "[username]"
 password = "[password]"
 
-# Get list of databases using GET /v1/bdbs
+# Get the list of databases using GET /v1/bdbs
 bdbs_uri = "https://{}:{}/v1/bdbs".format(host, port)
 
 print("GET {}".format(bdbs_uri))
@@ -140,9 +142,9 @@ for header in get_resp.headers.keys():
 
 print("\n" + json.dumps(get_resp.json(), indent=4))
 
-# Update all databases with a new name using PUT /v1/bdbs
+# Rename all databases using PUT /v1/bdbs
 for bdb in get_resp.json():
-    uid = bdb["uid"] #get the database ID from the json response
+    uid = bdb["uid"] # Get the database ID from the JSON response
 
     put_uri = "{}/{}".format(bdbs_uri, uid)
     new_name = "database{}".format(uid)
@@ -163,7 +165,7 @@ for bdb in get_resp.json():
     print("\n" + json.dumps(put_resp.json(), indent=4))
 ```
 
-See the [Python requests library documentation](https://requests.readthedocs.io/en/latest/) for more info.
+See the [Python requests library documentation](https://requests.readthedocs.io/en/latest/) for more information.
 
 #### Output
 
@@ -228,7 +230,7 @@ const PORT = '[port]';
 const USERNAME = '[username]';
 const PASSWORD = '[password]';
 
-// Get list of databases using GET /v1/bdbs
+// Get the list of databases using GET /v1/bdbs
 const BDBS_URI = `https://${HOST}:${PORT}/v1/bdbs`;
 const USER_CREDENTIALS = Buffer.from(`${USERNAME}:${PASSWORD}`).toString('base64');
 const AUTH_HEADER = `Basic ${USER_CREDENTIALS}`;
@@ -252,7 +254,7 @@ const responseObject = await response.json();
 console.log(`${response.status}: ${response.statusText}`);
 console.log(responseObject);
 
-// Update all databases with a new name using PUT /v1/bdbs
+// Rename all databases using PUT /v1/bdbs
 for (const database of responseObject) {
     const DATABASE_URI = `${BDBS_URI}/${database.uid}`;
     const new_name = `database${database.uid}`;
@@ -313,4 +315,4 @@ PUT https://[host]:[port]/v1/bdbs/1
 ## More info
 
 - [Redis Enterprise Software REST API]({{<relref "/rs/references/rest-api/">}})
-- [Redis Enterprise Software REST API Requests]({{<relref "/rs/references/rest-api/requests/">}})
+- [Redis Enterprise Software REST API requests]({{<relref "/rs/references/rest-api/requests/">}})
