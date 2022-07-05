@@ -24,7 +24,7 @@ No matter which method you use to send API requests, there are a few common conc
 
 For more information, see [Redis Enterprise Software REST API]({{<relref "/rs/references/rest-api/">}}).
 
-## Example requests: cURL
+## cURL Example Requests
 
 [cURL](https://curl.se/) is a command-line tool that allows you to send HTTP requests from a terminal.
 
@@ -108,6 +108,8 @@ x-envoy-upstream-service-time: 159
 For more information about the fields you can update with [PUT `/v1/bdbs/`]({{<relref "/rs/references/rest-api/requests/bdbs/#put-bdbs" >}}), see the [`bdbs` object]({{<relref "/rs/references/rest-api/objects/bdb/" >}}).
 
 ## Client examples
+
+You can also use client libraries to make API requests in your preferred language.
 
 To follow these examples, you need:
 

@@ -57,18 +57,6 @@ If you are using a [Redis Enterprise Software Docker image]({{<relref "/rs/insta
 docker run -p 9443:9443 redislabs/redis
 ```
 
-## JSON requests and responses
-
-The Redis Enterprise Software REST API uses [JavaScript Object Notation (JSON)](http://www.json.org) for requests and responses. See the [RFC 4627 technical specifications](http://www.ietf.org/rfc/rfc4627.txt) for additional information about JSON.
-
-Some responses may have an empty body but indicate the response with standard [HTTP codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
-
-Both requests and responses may include zero or more objects.
-
-If the request is for a single entity, the response returns a single JSON object or none. If the request is for a list of entities, the response returns a JSON array with zero or more elements.
-
-If you omit certain JSON object fields from a request, they may be assigned default values, which often indicate that these fields are not in use.
-
 ## Versions
 
 All API requests are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
@@ -104,6 +92,18 @@ Redis Enterprise REST API responses support the following HTTP headers:
 |--------|---------------------------|
 | Content-Type | `application/json` |
 | Content-Length | Length (in bytes) of response message |
+
+## JSON requests and responses
+
+The Redis Enterprise Software REST API uses [JavaScript Object Notation (JSON)](http://www.json.org) for requests and responses. See the [RFC 4627 technical specifications](http://www.ietf.org/rfc/rfc4627.txt) for additional information about JSON.
+
+Some responses may have an empty body but indicate the response with standard [HTTP codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+
+Both requests and responses may include zero or more objects.
+
+If the request is for a single entity, the response returns a single JSON object or none. If the request is for a list of entities, the response returns a JSON array with zero or more elements.
+
+If you omit certain JSON object fields from a request, they may be assigned default values, which often indicate that these fields are not in use.
 
 ## Response types and error codes
 
