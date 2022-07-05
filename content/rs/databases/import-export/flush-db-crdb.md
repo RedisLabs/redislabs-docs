@@ -98,22 +98,22 @@ To flush data from an Active-Active database:
 
 - REST API
 
-    1. To find the ID of the Active-Active database, run:
+    1. To find the ID of the Active-Active database, use [`GET /v1/crdbs`]({{< relref "/rs/references/rest-api/requests/crdbs#get-all-crdbs" >}}):
 
         ```sh
-        curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
+        GET https://[host][:port]/v1/crdbs
         ```
 
-    1. To flush the Active-Active database, run:
+    1. To flush the Active-Active database, use [`PUT /v1/crdbs/{guid}/flush`]({{< relref "/rs/references/rest-api/requests/crdbs/flush#put-crdbs-flush" >}}):
 
         ```sh
-        curl -v -u <username>:<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush
+        PUT https://[host][:port]/v1/crdbs/<guid>/flush
         ```
 
         The command output contains the task ID of the flush task.
 
-    1. To check the status of the flush task, run:
+    1. To check the status of the flush task, use [`GET /v1/crdb_tasks`]({{< relref "/rs/references/rest-api/requests/crdb_tasks#get-crdb_task" >}}):
 
         ```sh
-        curl -v -u <username>:<password> https://<cluster-fqdn>:9443/v1/crdb_tasks/<task-id>
+        GET https://[host][:port]/v1/crdb_tasks/<task-id>
         ```

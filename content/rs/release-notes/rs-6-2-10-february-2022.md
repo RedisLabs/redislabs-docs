@@ -16,10 +16,10 @@ The following table shows the MD5 checksums for the available packages.
 
 |Package| MD5 Checksum |
 |:------|:-------------|
-| Ubuntu 16 | `b8697811177f99c3e9e51e0d9d788634` |
-| Ubuntu 18 | `411e86daa5478bdb9a761ec68904bcbb` |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 | `84f35f3f3c9cf23c5bbf9b1da1048513` |
-| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 | `db0fdb208a1bc45dae783258c6d79152` |
+| Ubuntu 16 | `531cea69a58fbc1125bc5f76ba01da7f` |
+| Ubuntu 18 | `ec9ac6e0111dc85605d3b98e83f50150` |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 | `2f7572caab9600417ef8b4ee474d6768` |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 | `377a539ee050515e1e0640dec1e04129` |
 | K8s Ubuntu | `099192416a70a12790535bdcd78a6e87` |
 | K8s RHEL   | `f267abe81770ddf36f022232f4c2cb2e` |
 

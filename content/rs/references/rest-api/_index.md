@@ -39,7 +39,7 @@ For more examples, see the [Redis Enterprise Software REST API quick start]({{<r
 
 ### Permissions
 
-By default, the admin user is authorized for access to all endpoints. Use [role-based access controls]({{< relref "/rs/security/admin-console-security/user-security.md" >}}) and [role permissions]({{<relref "/rs/references/rest-api/permissions/_index.md" >}}) to manage access.
+By default, the admin user is authorized for access to all endpoints. Use [role-based access controls]({{< relref "/rs/security/access-control" >}}) and [role permissions]({{<relref "/rs/references/rest-api/permissions/_index.md" >}}) to manage access.
 
 If a user attempts to access an endpoint that is not allowed in their role, the request will fail with a [`403 Forbidden`](https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden) status code. For more details on which user roles can access certain endpoints, see [Permissions]({{<relref "/rs/references/rest-api/permissions">}}).
 
