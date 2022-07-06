@@ -191,4 +191,6 @@ To deactivate SAML SSO for a specific account:
 
 ## Deprovision SAML users
 
-To deprovision SAML users upon deletion, the identity provider admin can set up a webhook to automatically make the appropriate API requests.
+To deprovision SAML users upon deletion, the identity provider admin can set up a webhook to automatically make the appropriate Cloud API requests.
+
+See the [Cloud API Swagger UI](https://api.redislabs.com/v1/swagger-ui.html#/Users) for more information about how to manage users with API requests.
