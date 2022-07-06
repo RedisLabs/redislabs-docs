@@ -35,10 +35,9 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 - "deprecated" indicates this distribution is supported for this release, but will be dropped in a future release.
 - Any distribution not listed below is not supported for production workloads.
 
-
 | **Kubernetes version**  | 1.19       | 1.20       | 1.21       | 1.22       | 1.23       | 1.24       |
 |:------------------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Community Kubernetes    |            |            | deprecated | supported  | supported  | supported* |
+| Community Kubernetes    |            | deprecated | deprecated | supported  | supported  | supported* |
 | Amazon EKS              | deprecated | deprecated | supported  | supported* |            |
 | Azure AKS               |            |            | deprecated | supported  | supported  |
 | Google GKE              | deprecated | deprecated | supported  | supported  |supported*  |
