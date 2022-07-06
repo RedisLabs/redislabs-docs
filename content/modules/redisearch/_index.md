@@ -1,5 +1,6 @@
 ---
 Title: RediSearch
+linkTitle: RediSearch
 description:
 weight: 20
 alwaysopen: false
@@ -11,9 +12,9 @@ aliases:
   - /redis_search/
   - /rs/developing/modules/redisearch/
 ---
-The [RediSearch 2.x module](https://redislabs.com/blog/introducing-redisearch-2-0/) is a source-available project that lets you build powerful searches for open-source Redis databases.
-When combined with Redis Enterprise Software (RS), you can use the same RediSearch protocols and commands
-to get a geo-replicated query, and full-text search over efficient in-memory indexes.
+The [RediSearch 2.x module](https://redis.com/blog/introducing-redisearch-2-0/) is a source-available project that lets you build powerful search queries for open source Redis databases.
+When combined with Redis Enterprise Software, you can use the same RediSearch protocols and commands
+to run geo-replicated queries and full-text searches over efficient in-memory indexes.
 
 You can index more than one field per document, and these fields can represent text, numeric, or geospatial data types.
 With RediSearch indexes you can do language-aware fuzzy matching, fast auto-complete, exact phrase matching, numeric filtering, and geo-radius queries.
@@ -22,10 +23,10 @@ As the documents in your database change, the index automatically processes thes
 You can also limit the index to only contain the index structure so that the results return a unique docID.
 
 For full-text searches, you can customize the field queries and ranking of the search results.
-When querying, you can use multiple predicates that query both text, numeric, and geospatial fields in one query.
+When querying, you can use multiple predicates that query text, numeric, and geospatial fields in one query.
 You can also sort by a specific field and limit the results with an offset to easily produce customized results pages.
 
-RediSearch supports [over 15 natural languages](https://oss.redislabs.com/redisearch/Stemming/#supported_languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://oss.redislabs.com/redisearch/master/Commands/#ftsugadd).
+RediSearch supports [over 15 natural languages](https://redis.io/docs/stack/search/reference/stemming#supported-languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://redis.io/commands/ft.sugadd/).
 
 ## Storing documents
 
@@ -41,7 +42,7 @@ If the user needs to retrieve a specific document by its ID, a simple HGETALL ca
 
 ## RediSearch in Active-Active databases
 
-As a result of the new RediSearch architecture and methodology, [RediSearch 2.x supports Active-Active databases]({{< relref "/modules/redisearch/redisearch-active-active.md" >}}).
+As a result of the new RediSearch architecture and methodology, [RediSearch 2.x supports Active-Active databases]({{<relref "/modules/redisearch/redisearch-active-active">}}).
 You can now serve your index information from geo-distributed database instances.
 
 ## Resharding and RediSearch
@@ -56,8 +57,8 @@ Because the index on the new shard is created synchronously though, it's expecte
 
 ## More info
 
-- [Getting Started with RediSearch 2.0](https://redislabs.com/blog/getting-started-with-redisearch-2-0/)
-- [RediSearch Quick Start Guide]({{< relref "/modules/redisearch/redisearch-quickstart.md" >}})
-- [Configuring RediSearch](https://oss.redislabs.com/redisearch/Configuring/)
+- [Getting Started with RediSearch 2.0](https://redis.com/blog/getting-started-with-redisearch-2-0/)
+- [RediSearch quick start]({{<relref "/modules/redisearch/redisearch-quickstart">}})
+- [Configure RediSearch](https://redis.io/docs/stack/search/configuring/)
 - [RediSearch commands](https://redis.io/docs/stack/search/commands/)
 - [RediSearch source](https://github.com/RediSearch/RediSearch)
