@@ -76,7 +76,7 @@ The following settings are needed to allow inbound connections to be terminated 
 ```sh
     # enable all-node proxy policy by default
     rladmin tune cluster default_sharded_proxy_policy all-nodes
-    
+
     # ensure we redirect where necessary when running behind an LBA
     rladmin cluster config handle_redirects enabled
 ```
@@ -90,9 +90,9 @@ An additional setting can be done to allow (on average) closer termination of cl
 
 ### RS database configuration
 
-After the cluster settings are updated and the LBs are configured you can go to the RS admin console at https://load-balancer-virtual-ip:8443/ and [create a new database]({{<relref "/rs/databases/create-database.md">}}). 
+After the cluster settings are updated and the LBs are configured you can go to the RS admin console at https://load-balancer-virtual-ip:8443/ and [create a new database]({{<relref "/rs/databases/create-database.md">}}).
 
-If you are creating an Active-Active database, you will need to use the`crdb-cli` utility. See the [`crdb-cli` reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more information about creating Active-Active databases from the command line.
+If you are creating an Active-Active database, you will need to use the `crdb-cli` utility. See the [`crdb-cli` reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more information about creating Active-Active databases from the command line.
 
 ### Keep LB configuration updated when the cluster configuration changes
 
@@ -112,11 +112,10 @@ especially if they are directly connected on IP addresses that have changed.
 Redis Enterprise supports several topologies that allow inter cluster replication, these include [Active/Passive]({{<relref "/rs/databases/import-export/replica-of.md">}}) and [Active/Active]({{<relref "/rs/databases/active-active/">}}) for deployment options.
 When your Redis Enterprise software clusters are located behind load balancers, you must allow some network services to be open and defined in the load balancers to allow the replication to work.
 
-### Active Passive 
+### Active Passive
 
 For Active Passive communication to work, you will need to expose database port(s) locally in each cluster (as defined above) but also allow these ports through firewalls that may be positioned between the clusters.
 
 ### Active-Active
 
 For Active-Active communication to work, you need to expose several ports, including every database port and several control plane ports as defined in [Network port configurations]({{<relref "rs/networking/port-configurations.md">}}). Pay attention to services that are marked with Connection Source as "Active-Active". These ports should be allowed through firewalls that may be positioned between the clusters.
-

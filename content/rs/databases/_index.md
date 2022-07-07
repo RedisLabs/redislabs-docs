@@ -1,7 +1,7 @@
 ---
 title: Manage databases
 linktitle: Databases
-description: This page will help you find database management information in the Databases section. 
+description: This page will help you find database management information in the Databases section.
 weight: 37
 alwaysopen: false
 categories: ["RS"]
