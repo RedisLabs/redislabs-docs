@@ -8,15 +8,15 @@ toc: "true"
 headerRange: "[1-2]"
 tags: ["non-configured"]
 categories: ["RS"]
-aliases: 
+aliases:
 ---
 
 Adds a node to an existing cluster.
 
 ```sh
-rladmin cluster join 
+rladmin cluster join
         nodes <node IP address>
-        username <admin user email> 
+        username <admin user email>
         password <admin password>
         [ ephemeral_path <path> ]
         [ persistent_path <path> ]

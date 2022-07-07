@@ -8,15 +8,15 @@ toc: "true"
 headerRange: "[1-2]"
 tags: ["configured"]
 categories: ["RS"]
-aliases: 
+aliases:
 ---
 
 Sets a cluster certificate to a specified PEM file.
 
 ```sh
-rladmin cluster certificate 
-        set <certificate name> 
-        certificate_file <certificate filepath> 
+rladmin cluster certificate
+        set <certificate name>
+        certificate_file <certificate filepath>
         [ key_file <key filepath> ]
 ```
 
