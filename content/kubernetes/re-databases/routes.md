@@ -30,12 +30,12 @@ By default, REDB creates a `ClusterIP` type service, which exposes a cluster-int
 
 1. Select **Create route** and fill out the following fields:
 
-  - Name: Choose any name you want as the first part of your generated hostname.
-  - Hostname: Leave blank.
-  - Path: Leave as is ("/").
-  - Service: Select the service for the database you want to access.
-  - TLS Termination: Choose **passthrough**.
-  - Insecure Traffic: Select "None".
+  - **Name**: Choose any name you want as the first part of your generated hostname
+  - **Hostname**: Leave blank
+  - **Path**: Leave as is ("/")
+  - **Service**: Select the service for the database you want to access
+  - **TLS Termination**: Choose "passthrough"
+  - **Insecure Traffic**: Select "None"
 
   Select **Create**.
 
