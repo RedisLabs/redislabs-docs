@@ -27,17 +27,23 @@ You can also sort by a specific field and limit the results with an offset to ea
 
 RediSearch supports [over 15 natural languages](https://oss.redislabs.com/redisearch/Stemming/#supported_languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://oss.redislabs.com/redisearch/master/Commands/#ftsugadd).
 
-## Storing documents
+## Store documents
 
-The RediSearch engine indexes "documents", which are a list of field-value pairs.
-The index knows how to index each field, but that's not enough.
-We need to actually store the data for retrieval.
-In a simple use case, you can just push documents to the database and RediSearch creates a complete index and document database.
+The RediSearch engine indexes documents, which are lists of field-value pairs.
+Although the index knows how to index each field, we also need to store the data for retrieval.
+In a simple use case, you can just push documents to the database, and RediSearch creates a complete index and document database.
 
-For storing documents, the RediSearch engine relies on Redis hashes,
-where each document is represented by a single key, and each property and its value by a hash key and element.
-For retrieval, you simply perform an HGETALL query on each retrieved document, returning its entire data.
-If the user needs to retrieve a specific document by its ID, a simple HGETALL can be performed by the user.
+You can store documents as Redis [hashes](https://redis.io/docs/manual/data-types/#hashes) or JSON if you also have the [RedisJSON]({{<relref "/modules/redisjson">}}) module enabled.
+
+### JSON documents
+
+With [RedisJSON]({{<relref "/modules/redisjson">}}) enabled, you can store documents as JSON and retrieve them with search queries.
+
+### Hash documents
+
+With Redis [hashes](https://redis.io/docs/manual/data-types/#hashes), each document is represented by a single key, and each property and its value by a hash key and element.
+You can run [`HGETALL`](https://redis.io/commands/hgetall/) for each retrieved document to return its entire data.
+To retrieve a specific document by its ID, run `HGETALL`.
 
 ## RediSearch in Active-Active databases
 
