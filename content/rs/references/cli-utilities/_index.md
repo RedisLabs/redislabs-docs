@@ -5,7 +5,7 @@ description: Documents the command-line utilities included with Redis Enterprise
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases:
 ---
 
 Redis Enterprise Software includes a set of utilities to help you manage and test your cluster. To use a utility, run it from the command line.
