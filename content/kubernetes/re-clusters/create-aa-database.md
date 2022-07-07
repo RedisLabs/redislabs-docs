@@ -177,7 +177,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{< relref "/kubernetes/re-clusters/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
 
 ```sh
-crdb-cli crdb create
+crdb-cli crdb create \
   --name <db-name> \
   --memory-size <mem-size> \
   --encryption yes \
