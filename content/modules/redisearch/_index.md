@@ -16,35 +16,42 @@ The [RediSearch 2.x module](https://redis.com/blog/introducing-redisearch-2-0/) 
 When combined with Redis Enterprise Software, you can use the same RediSearch protocols and commands
 to run geo-replicated queries and full-text searches over efficient in-memory indexes.
 
-You can index more than one field per document, and these fields can represent text, numeric, or geospatial data types.
-With RediSearch indexes you can do language-aware fuzzy matching, fast auto-complete, exact phrase matching, numeric filtering, and geo-radius queries.
+## Index documents
 
-As the documents in your database change, the index automatically processes these changes to keep your searches updated.
-You can also limit the index to only contain the index structure so that the results return a unique docID.
+The RediSearch engine indexes documents, which are objects that represent data as field-value pairs. You can index more than one field per document, and these fields can represent text, numeric, or geospatial data types.
 
-For full-text searches, you can customize the field queries and ranking of the search results.
-When querying, you can use multiple predicates that query text, numeric, and geospatial fields in one query.
-You can also sort by a specific field and limit the results with an offset to easily produce customized results pages.
+As the documents in your database change, the index automatically processes these changes to keep the search results up to date.
 
-RediSearch supports [over 15 natural languages](https://redis.io/docs/stack/search/reference/stemming#supported-languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://redis.io/commands/ft.sugadd/).
+With RediSearch indexes, you can do:
+- Language-aware [fuzzy matching](https://redis.io/docs/stack/search/reference/query_syntax/#fuzzy-matching)
+- Fast [auto-complete](https://redis.io/docs/stack/search/design/overview/#auto-completion)
+- [Exact phrase matching](https://redis.io/docs/stack/search/reference/query_syntax/)
+- [Numeric filtering](https://redis.io/docs/stack/search/reference/query_syntax/#numeric-filters-in-query)
+- [Geo-radius queries](https://redis.io/docs/stack/search/reference/query_syntax/#geo-filters-in-query)
 
-## Store documents
+## Supported document types
 
-The RediSearch engine indexes documents, which are lists of field-value pairs.
-Although the index knows how to index each field, we also need to store the data for retrieval.
-In a simple use case, you can just push documents to the database, and RediSearch creates a complete index and document database.
-
-You can store documents as Redis [hashes](https://redis.io/docs/manual/data-types/#hashes) or JSON if you also have the [RedisJSON]({{<relref "/modules/redisjson">}}) module enabled.
-
-### JSON documents
-
-With [RedisJSON]({{<relref "/modules/redisjson">}}) enabled, you can store documents as JSON and retrieve them with search queries.
+You can store documents as Redis [hashes](https://redis.io/docs/manual/data-types/#hashes) or [JSON](http://www.json.org/). To use JSON documents with RediSearch, you also need to enable the [RedisJSON]({{<relref "/modules/redisjson">}}) module in your database.
 
 ### Hash documents
 
-With Redis [hashes](https://redis.io/docs/manual/data-types/#hashes), each document is represented by a single key, and each property and its value by a hash key and element.
-You can run [`HGETALL`](https://redis.io/commands/hgetall/) for each retrieved document to return its entire data.
-To retrieve a specific document by its ID, run `HGETALL`.
+With Redis [hashes](https://redis.io/docs/manual/data-types/#hashes), each document is assigned to a single key and uses field-value pairs to represent the document's contents.
+
+You can run [`HGETALL`](https://redis.io/commands/hgetall/) to retrieve the entire hash document.
+
+### JSON documents
+
+If a database has [RedisJSON]({{<relref "/modules/redisjson">}}) enabled, you can store documents as JSON and use RediSearch to index and search for them.
+
+For more information about how to use RediSearch with JSON documents, see [Indexing JSON](https://redis.io/docs/stack/search/indexing_json/).
+
+## Search features
+
+For full-text searches, you can customize the field queries and ranking of the search results.
+When querying, you can use multiple predicates that query text, numeric, and geospatial fields in one query.
+You can also sort by a specific field and limit the results with an offset to produce customized results pages.
+
+RediSearch supports [over 15 natural languages](https://redis.io/docs/stack/search/reference/stemming#supported-languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://redis.io/commands/ft.sugadd/).
 
 ## RediSearch in Active-Active databases
 
@@ -67,4 +74,5 @@ Because the index on the new shard is created synchronously though, it's expecte
 - [RediSearch quick start]({{<relref "/modules/redisearch/redisearch-quickstart">}})
 - [Configure RediSearch](https://redis.io/docs/stack/search/configuring/)
 - [RediSearch commands](https://redis.io/docs/stack/search/commands/)
+- [RediSearch references](https://redis.io/docs/stack/search/reference/)
 - [RediSearch source](https://github.com/RediSearch/RediSearch)
