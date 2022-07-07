@@ -16,7 +16,7 @@ In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology
 
 Because of the complexities of Active-Active databases, there are  special considerations to keep in mind while planning your Active-Active database.
 
-See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more information about geo-distributed replication. For more info on other high availability features, see [Durability and high availability]({{<relref "/rs/databases/durability-ha/">}}).
+See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more information about geo-distributed replication. For more info on other high availability features, see [Durability and high availability]({{<relref "/rs/databases/durability-ha.md">}}).
 
 ## Participating clusters
 
@@ -39,7 +39,7 @@ Factors to consider when sizing your database:
 - [**database replication**]({{<relref "/rs/databases/configure/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
 - [**database replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
-- [**Active-Active replication backlog**]({{<relref "/rs/databases/active-active/manage-aa">}}) for synchronization between clusters. By default, this is set to 1% of the database size.
+- [**Active-Active replication backlog**]({{<relref "/rs/databases/active-active/manage-aa.md">}}) for synchronization between clusters. By default, this is set to 1% of the database size.
 
 It's also important to know Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit. 
 
