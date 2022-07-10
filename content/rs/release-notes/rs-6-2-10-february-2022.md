@@ -133,6 +133,12 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 ## Known issues
 - RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
 
+### Issues resolved in build 129
+
+- RS77003 - Add grace time to job scheduler to allow certificate rotation in case of failure due to scheduling conflicts.
+- RS71112 - Update validation during db configuration to not fail due to ports associated with nodes that are no longer in the cluster. This was done to allow db configuration during adding and removing nodes as part of load balancing.
+- RS78486 - Fix known issue from 6.2.10 build 100 - When using rladmin tune db to change the replica buffer size, the command appears to succeed, but the change does not take effect. 
+
 ## Security
 
 ### Open Source Redis Security fixes compatibility
