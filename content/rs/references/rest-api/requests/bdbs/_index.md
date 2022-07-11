@@ -26,89 +26,89 @@ aliases: /rs/references/rest-api/bdbs
 
 ## Get all databases {#get-all-bdbs}
 
-	GET /v1/bdbs
+```sh
+GET /v1/bdbs
+```
 
 Get all databases in the cluster.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_all_bdbs_info]({{<relref "/rs/references/rest-api/permissions#view_all_bdbs_info">}}) |
+| Permission name | Roles   |
+|-----------------|---------|
+| [view_all_bdbs_info]({{<relref "/rs/references/rest-api/permissions#view_all_bdbs_info">}}) |  admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
-#### Example HTTP request
+#### Headers
 
-	GET /bdbs?fields=uid,name 
+| Key | Value |
+|-----|-------|
+| Host | The domain name or IP of the cluster |
+| Accept | application/json |
 
-
-#### Request headers
-
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
-
-
-#### Query parameters
+#### Parameters
 
 | Field | Type | Description |
 |-------|------|-------------|
 | fields | string | Comma-separated list of field names to return (by default all fields are returned). (optional) |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 The response body contains a JSON array with all databases, represented as [BDB objects]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
-#### Example JSON body
-
-```json
-[
-    {
-        "uid": 1,
-        "name": "name of database #1",
-        "// additional fields..."
-    },
-    {
-        "uid": 2,
-        "name": "name of database #2",
-        "// additional fields..."
-    }
-]
-```
-
-### Status codes {#get-all-status-codes} 
+#### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 
+### cURL example
+
+```sh
+$ curl -k -X GET -u "[username]:[password]" \
+       -H "accept: application/json" \
+       https://[host][:port]/v1/bdbs?fields=uid,name
+[
+    {
+        "uid": 1,
+        "name": "database1"
+    },
+    {
+        "uid": 2,
+        "name":  "database2"
+    }
+]
+```
+
 ## Get a database {#get-bdbs}
 
-	GET /v1/bdbs/{int: uid}
+```sh
+GET /v1/bdbs/{int: uid}
+```
 
 Get a single database.
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /bdbs/1 
-
+```sh
+GET /bdbs/1
+```
 
 #### Request headers
 
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
+| Key | Value |
+|-----|-------|
+| Host | The domain name or IP of the cluster |
+| Accept | application/json |
 
 
 #### URL parameters
@@ -124,7 +124,7 @@ Get a single database.
 |-------|------|-------------|
 | fields | string | Comma-separated list of field names to return (by default all fields are returned). (optional) |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
@@ -138,7 +138,7 @@ Returns a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 }
 ```
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -147,8 +147,9 @@ Returns a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
 ## Update database configuration {#put-bdbs}
 
-	PUT /v1/bdbs/{int: uid}
-
+```sh
+PUT /v1/bdbs/{int: uid}
+```
 Update the configuration of an active database.
 
 This is the basic version of the update request which contains no
@@ -158,16 +159,17 @@ To track this request's progress, poll the [`/actions/<action_uid>` endpoint]({{
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [update_bdb]({{<relref "/rs/references/rest-api/permissions#update_bdb">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_bdb]({{<relref "/rs/references/rest-api/permissions#update_bdb">}}) | admin<br />cluster_member<br />db_member |
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /bdb/1 
-
+```sh
+PUT /bdb/1
+```
 #### Example JSON body
 
 ```json
@@ -181,10 +183,10 @@ The above request attempts to modify a database configuration to enable in-memor
 
 #### Request headers
 
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
+| Key | Value |
+|-----|-------|
+| Host | The domain name or IP of the cluster |
+| Accept | application/json |
 
 
 #### URL parameters
@@ -197,7 +199,7 @@ The above request attempts to modify a database configuration to enable in-memor
 
 Include a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) with updated fields in the request body.
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Returns the updated [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
@@ -212,7 +214,7 @@ Returns the updated [BDB object]({{<relref "/rs/references/rest-api/objects/bdb"
 }
 ```
 
-### Status codes {#put-status-codes} 
+### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -223,24 +225,26 @@ Returns the updated [BDB object]({{<relref "/rs/references/rest-api/objects/bdb"
 
 ## Update database and perform action {#put-bdbs-action}
 
-	PUT /v1/bdbs/{int: uid}/{action}
-
+```sh
+PUT /v1/bdbs/{int: uid}/{action}
+```
 Update the configuration of an active database and perform an additional action.
 
 If called with the `dry_run` URL query string, the function will validate the [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) against the existing database, but will not invoke the state machine that will update it.
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [update_bdb_with_action]({{<relref "/rs/references/rest-api/permissions#update_bdb_with_action">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_bdb_with_action]({{<relref "/rs/references/rest-api/permissions#update_bdb_with_action">}}) | admin<br />cluster_member<br />db_member |
 
-### Request {#put-request-action} 
+### Request {#put-request-action}
 
 #### Example HTTP request
 
-	PUT /bdbs/1 
-
+```sh
+PUT /bdbs/1
+```
 #### Example JSON body
 
 ```json
@@ -252,16 +256,16 @@ If called with the `dry_run` URL query string, the function will validate the [B
 
 The above request attempts to modify a database configuration to enable in-memory data replication and append-only file data persistence.
 
-{{<note>}} 
+{{<note>}}
 To change the shard hashing policy, you must flush all keys from the database.
 {{</note>}}
 
 #### Request headers
 
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
+| Key | Value |
+|-----|-------|
+| Host | The domain name or IP of the cluster |
+| Accept | application/json |
 
 #### URL parameters
 
@@ -269,23 +273,23 @@ To change the shard hashing policy, you must flush all keys from the database.
 |-------|------|-------------|
 | uid | integer | The unique ID of the database to update. |
 | action | string | Additional action to perform. Currently supported actions are: `flush`, `reset_admin_pass`. |
-| dry_run | string | Validate the new [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) but don't apply the update. |
+| dry_run |       | Validate the new [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) but don't apply the update. |
 
 #### Request body
 
 Include a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) with updated fields in the request body.
 
-### Response {#put-response-action} 
+### Response {#put-response-action}
 
 Returns a status code. If an error occurs, the response body may include an error code and message with more details.
 
-### Error codes {#put-error-codes-action} 
+### Error codes {#put-error-codes-action}
 
 When errors are reported, the server may return a JSON object with    `error_code` and `message` field that provide additional information.    The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
-| rack_awareness_violation | • Non rack-aware cluster.<br></br>• Not enough nodes in unique racks. |
+| rack_awareness_violation | • Non rack-aware cluster.<br />• Not enough nodes in unique racks. |
 | invalid_certificate | SSL client certificate is missing or malformed.|
 | certificate_expired | SSL client certificate has expired. |
 | duplicated_certs | An SSL client certificate appears more than once. |
@@ -305,7 +309,7 @@ When errors are reported, the server may return a JSON object with    `error_cod
 | unsupported_module_capabilities | Not all modules configured for the database support the capabilities needed for the database configuration. |
 | redis_acl_unsupported | Redis ACL is not supported for this database. |
 
-### Status codes {#put-status-codes-action} 
+### Status codes {#put-status-codes-action}
 
 | Code | Description |
 |------|-------------|
@@ -317,11 +321,19 @@ When errors are reported, the server may return a JSON object with    `error_cod
 
 ## Create database v1 {#post-bdbs-v1}
 
-	POST /v1/bdbs
-
+```sh
+POST /v1/bdbs
+```
 Create a new database in the cluster.
 
 The request must contain a single JSON [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) with the configuration parameters for the new database.
+
+The following parameters are required to create the database:
+
+| Paramter | Type/Value | Description |
+|----------|------------|-------------|
+| name     | string     | Name of the new database |
+| memory_size | integer | Size of the database, in bites |
 
 If passed with the `dry_run` URL query string, the function will validate the [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}), but will not invoke the state machine that will create it.
 
@@ -331,16 +343,17 @@ The cluster will use default configuration for any missing database field. The c
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [create_bdb]({{<relref "/rs/references/rest-api/permissions#create_bdb">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [create_bdb]({{<relref "/rs/references/rest-api/permissions#create_bdb">}}) | admin<br />cluster_member<br />db_member |
 
-### Request {#post-request-v1} 
+### Request {#post-request-v1}
 
 #### Example HTTP request
 
-	POST /bdbs 
-
+```sh
+POST /bdbs
+```
 #### Example JSON body
 
 ```json
@@ -359,22 +372,22 @@ Defaults are used for all other configuration parameters.
 
 #### Request headers
 
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
+| Key | Value |
+|-----|-------|
+| Host | The domain name or IP of the cluster |
+| Accept | application/json |
 
 #### URL parameters
 
 | Field | Type | Description |
 |-------|------|-------------|
-| dry_run | string | Validate the new [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) but don't create the database. |
+| dry_run |    | Validate the new [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) but don't create the database. |
 
 #### Request body
 
 Include a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) in the request body.
 
-### Response {#post-response-v1} 
+### Response {#post-response-v1}
 
 The response includes the newly created [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
@@ -390,7 +403,7 @@ The response includes the newly created [BDB object]({{<relref "/rs/references/r
 }
 ```
 
-### Error codes {#post-error-codes-v1} 
+### Error codes {#post-error-codes-v1}
 
 When errors are reported, the server may return a JSON object with `error_code` and `message` field that provide additional information. The following are possible `error_code` values:
 
@@ -411,7 +424,7 @@ When errors are reported, the server may return a JSON object with `error_code` 
 | invalid_sasl_credentials | SASL credentials are missing or invalid. |
 | invalid_replication | Not enough nodes to perform replication. |
 | insufficient_resources | Not enough resources in cluster to host the database. |
-| rack_awareness_violation | • Rack awareness violation.<br><br>• Not enough nodes in unique racks. |
+| rack_awareness_violation | • Rack awareness violation.<br/>• Not enough nodes in unique racks. |
 | invalid_certificate | SSL client certificate is missing or malformed. |
 | certificate_expired | SSL client certificate has expired. |
 | duplicated_certs | An SSL client certificate appears more than once. |
@@ -425,7 +438,7 @@ When errors are reported, the server may return a JSON object with `error_code` 
 | unsupported_module_capabilities | Not all modules configured for the database support the capabilities needed for the database configuration. |
 | redis_acl_unsupported | Redis ACL is not supported for this database. |
 
-### Status codes {#post-status-codes-v1} 
+### Status codes {#post-status-codes-v1}
 
 | Code | Description |
 |------|-------------|
@@ -436,24 +449,26 @@ When errors are reported, the server may return a JSON object with `error_code` 
 
 ## Create database v2 {#post-bdbs-v2}
 
-	POST /v2/bdbs
-
+```sh
+POST /v2/bdbs
+```
 Create a new database in the cluster. See [`POST /v1/bdbs`]({{<relref "/rs/references/rest-api/requests/bdbs#post-bdbs-v1">}}) for more information.
 
 The database's configuration should be under the "bdb" field.
 
-If you include a recovery_plan within the request body, the database will be loaded from the persistence files according to the recovery plan. The recovery plan must match the number of shards requested for the database. 
+If you include a recovery_plan within the request body, the database will be loaded from the persistence files according to the recovery plan. The recovery plan must match the number of shards requested for the database.
 
 The persistence files must exist in the locations specified by the recovery plan. The persistence files must belong to a database with the same shard settings as the one being created (slot range distribution and shard_key_regex); otherwise, the operation will fail or yield unpredictable results.
 
 If you create a database with a shards_blueprint and a recovery plan, the shard placement may not fully follow the shards_blueprint.
 
-### Request {#post-request-v2} 
+### Request {#post-request-v2}
 
 #### Example HTTP request
 
-	POST /v2/bdbs 
-
+```sh
+POST /v2/bdbs
+```
 #### Example JSON body
 
 ```json
@@ -478,16 +493,16 @@ If you create a database with a shards_blueprint and a recovery plan, the shard 
 
 #### Request headers
 
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
+| Key | Value |
+|-----|-------|
+| Host | The domain name or IP of the cluster |
+| Accept | application/json |
 
 #### Request body
 
 Include a JSON object that contains a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) and an optional `recovery_plan` object in the request body.
 
-### Response {#post-response-v2} 
+### Response {#post-response-v2}
 
 The response includes the newly created [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
@@ -506,28 +521,30 @@ The response includes the newly created [BDB object]({{<relref "/rs/references/r
 
 ## Delete database {#delete-bdbs}
 
-	DELETE /v1/bdbs/{int: uid}
-
+```sh
+DELETE /v1/bdbs/{int: uid}
+```
 Delete an active database.
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [delete_bdb]({{<relref "/rs/references/rest-api/permissions#delete_bdb">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [delete_bdb]({{<relref "/rs/references/rest-api/permissions#delete_bdb">}}) | admin<br />cluster_member<br />db_member |
 
-### Request {#delete-request} 
+### Request {#delete-request}
 
 #### Example HTTP request
 
-	DELETE /bdbs/1 
-
+```sh
+DELETE /bdbs/1
+```
 #### Request headers
 
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
+| Key | Value |
+|-----|-------|
+| Host | The domain name or IP of the cluster |
+| Accept | application/json |
 
 #### URL parameters
 
@@ -535,11 +552,11 @@ Delete an active database.
 |-------|------|-------------|
 | uid | integer | The unique ID of the database to delete. |
 
-### Response {#delete-response} 
+### Response {#delete-response}
 
 Returns a status code that indicates the database deletion success or failure.
 
-### Status codes {#delete-status-codes} 
+### Status codes {#delete-status-codes}
 
 | Code | Description |
 |------|-------------|
