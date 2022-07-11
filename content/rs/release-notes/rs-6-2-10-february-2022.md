@@ -130,8 +130,18 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS72304 - Avoid starting a master shard when both master and replica shards crash and the replica did not finish recovery
 - RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup
 
-## Known issues
+## Known limitations
 - RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
+
+- RS63258 - Redis Enterprise Software is not currently supported on RHEL 8 with FIPS enabled.
+
+    FIPS changes system-generated keys, which can limit secure access to the cluster or the admin console via port 8443.
+
+- RS63375 - RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules.
+
+    Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
+
+All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) listed in the v6.2.4 release notes have been addressed.
 
 ## Security
 
