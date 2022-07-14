@@ -53,7 +53,7 @@ GET /v1/bdbs?fields=uid,name
 | Host | The domain name or IP of the cluster |
 | Accept | application/json |
 
-#### Query Parameters
+#### Query parameters
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -86,7 +86,7 @@ The response body contains a JSON array with all databases, represented as [BDB 
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 
-### Example Requests
+### Example requests
 
 #### cURL
 
@@ -329,7 +329,7 @@ The above request resets the admin password after updating the database.
 | uid | integer | The unique ID of the database to update. |
 | action | string | Additional action to perform. Currently supported actions are: `flush`, `reset_admin_pass`. |
 
-#### Query Parameters
+#### Query parameters
 
 | Field   | Type | Description |
 |---------|------|---------------|
@@ -405,7 +405,7 @@ The request must contain a single JSON [BDB object]({{<relref "/rs/references/re
 
 The following parameters are required to create the database:
 
-| Paramter | Type/Value | Description |
+| Parameter | Type/Value | Description |
 |----------|------------|-------------|
 | name     | string     | Name of the new database |
 | memory_size | integer | Size of the database, in bytes |
