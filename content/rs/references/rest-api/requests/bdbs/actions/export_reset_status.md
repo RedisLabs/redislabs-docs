@@ -24,17 +24,19 @@ aliases: /rs/references/rest-api/bdbs/actions/export_reset_status
 
 Resets the database's `export_status` to idle if an export is not in progress and clears the value of the `export_failure_reason` field.
 
-#### Required permissions
+### Permissions
 
 | Permission name |
 |-----------------|
 | [reset_bdb_current_export_status]({{<relref "/rs/references/rest-api/permissions#reset_bdb_current_export_status">}}) |
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /bdbs/1/actions/export_reset_status 
+```sh
+PUT /bdbs/1/actions/export_reset_status
+```
 
 #### Request headers
 
@@ -43,18 +45,17 @@ Resets the database's `export_status` to idle if an export is not in progress an
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
 
-
 #### URL parameters
 
 | Field | Type | Description |
 |-------|------|-------------|
 | uid | integer | The unique ID of the database |
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Returns a status code.
 
-### Status codes {#put-status-codes} 
+#### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|

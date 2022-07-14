@@ -24,20 +24,22 @@ aliases: /rs/references/rest-api/bdbs/actions/import_reset_status
 
 Reset the database’s `import_status` to idle if a backup is not in progress and clears the value of the `import_failure_reason` field.
 
-#### Required permissions
+### Permissions
 
 | Permission name |
 |-----------------|
 | [reset_bdb_current_import_status]({{<relref "/rs/references/rest-api/permissions#reset_bdb_current_import_status">}}) |
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /bdbs/1/actions/import_reset_status 
+```sh
+PUT /bdbs/1/actions/import_reset_status
+```
 
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -51,11 +53,11 @@ Reset the database’s `import_status` to idle if a backup is not in progress an
 |-------|------|-------------|
 | uid | integer | The unique ID of the database |
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Returns a status code.
 
-### Status codes {#put-status-codes} 
+### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
