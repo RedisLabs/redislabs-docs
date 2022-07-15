@@ -153,7 +153,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 
 1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the route IP address. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
-1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
+1. If your cluster uses [OpenShift routes]({{<relref "/kubernetes/re-databases/routes.md">}}), add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
 
       ```sh
       activeActive:
