@@ -19,9 +19,9 @@ This account has a profile with settings that you can manage using the Profile c
 
 When you open the Profile control, you can:
 
-- Review and manage your user account profile
+- Review and manage your user account profile.
 
-- Sign out from the admin console
+- Sign out from the admin console.
 
 - Switch between Redis Cloud subscriptions administered by your user account.
 
@@ -35,13 +35,13 @@ This screen contains up to three sections, including:
 
 - The *User details* section includes basic information about your account, including _Name_, _Job title_, _Email_, and the date the account was created.  _Name_ and _Job title_ can be edited; the other settings are read-only.
 
-- The *Password* lets you change the password for for accounts created and managed by Redis Cloud. 
+- The *Password* section lets you change the password for accounts created and managed by Redis Cloud. 
 
-    If you're using single sign-on, you cannot change the password using the *User Profile* screen.  Such accounts are managed by an identity provider (IdP).  For help changing (or revoering) the passwords on these accounts, consult your identity provider docs.
+    If you're using single sign-on, you cannot change the password using the *User Profile* screen.  Such accounts are managed by an identity provider (IdP).  For help changing (or recovering) the passwords for these accounts, consult your identity provider docs.
 
 - The **Multi-factor authentication (MFA)** section lets you manage MFA settings for the current user account.  
 
-    When you activate a mobile device, you can use SMS MFA to as a second authentication factor.
+    When you activate a mobile device, you can use SMS MFA as a second authentication factor.
 
     To use an authentication app as the factor, you need to activate a mobile device and then use that device to enable the app.
 

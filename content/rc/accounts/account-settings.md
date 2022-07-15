@@ -20,7 +20,7 @@ The available tabs depend on your subscription type and may include:
 
 - The **Account** tab displays basic information associated with your account, including general info, address details, time zone setting, security settings, and provider integration details.
 
-- The **Cloud Accounts** tab is displayed for Flexible (or Annual) subscriptions hosted on Amazon Web Services (AWS).  To learn more, see [Manage AWS cloud accounts]({{<relref "rc/cloud-integrations/aws-cloud-accounts/">}})  
+- The **Cloud Account** tab is displayed for Flexible (or Annual) subscriptions hosted on Amazon Web Services (AWS).  To learn more, see [Manage AWS cloud accounts]({{<relref "rc/cloud-integrations/aws-cloud-accounts/">}}).  
     
 ## Account info settings
 
@@ -33,13 +33,13 @@ The **Account Info** section provides basic details about your account, includin
 | _Date created_ | Date the user's Redis Cloud account was created, which may differ from the organization account creation date |
 | <nobr>_Owner email address_</nobr> | Email address used to create the owner's account |
 | _Account number_ | Internal ID of the owner's account |
-| _Last updated_ | Date of the last administrative change to the owner's account, typically reflect access changes or other administrative updates | 
+| _Last updated_ | Date of the last administrative change to the owner's account, typically reflects access changes or other administrative updates | 
 
 You cannot change the email address associated with a Redis Cloud account.  Instead, create a new account with the updated email address, assign it as an administrator to the organization account, and then use the new account to delete the account with the invalid email address.
 
 ## Account address settings
 
-The **Account address** section shows the address associate with the current Redis Cloud account and the current time zone. 
+The **Account address** section shows the address associated with the current Redis Cloud account and the current time zone. 
 
 To update the time zone, select the desired time zone from the **Time zone** drop-down.
 
@@ -49,9 +49,7 @@ When updating details in this section, pay particular attention to prompts and e
 
 ## Security settings
 
-The security section lets you:
-
-The security section lets you:
+The **Security** section lets you:
 
 - Manage [multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}}) (MFA) for your Redis Cloud account 
 
@@ -59,15 +57,15 @@ The security section lets you:
 
 ## Integration settings
 
-The **Integrations settings** section includes settings that help you manage the integration of your Redis Cloud account with your underlying cloud provider.  For example, subscriptions hosted on AWS can [map their accounts]({{<relref "/rc/administration/aws-zone-mapping">}}) to specific availability zones.
+The **Integration** section includes settings that help you manage the integration of your Redis Cloud account with your underlying cloud provider.  For example, subscriptions hosted on AWS can [map their accounts]({{<relref "/rc/administration/aws-zone-mapping">}}) to specific availability zones.
 
-If this section doesn't appear on the **Account Settings** screen, it generally means that there aren't any settings for current account to manage.
+If this section doesn't appear on the **Account Settings** screen, it generally means that there aren't any settings to manage for the current account.
 
 ## Save or discard changes
 
-Few account settings can be changed, however, you can update a few details, such as **Time Zone**, **MFA enforcement**, and AWS availability zone mapping.
+Few account settings can be changed; however, you can update a few details, such as **Time Zone**, **MFA enforcement**, and AWS availability zone mapping.
 
-Use the **Save changes** button to save changes or the **Discard changes** to revert them.
+Use the **Save changes** button to save changes or **Discard changes** to revert them.
 
 {{<image filename="images/rc/account-settings-buttons-save-discard.png" alt="Use the Discard Changes and the Save Changes buttons to manage changes to account settings." width="300px">}}{{< /image >}}
 

@@ -37,7 +37,7 @@ Once an AWS account has been configured as a cloud account, you must _not_:
 
 To create or edit a cloud account in Redis Enterprise Cloud:
 
-1. Sign into the [admin console](https://app.redislabs.com/) and then select the target subscription.
+1. Sign in to the [admin console](https://app.redislabs.com/) and then select the target subscription.
 
 1. From the console menu, select **Account Settings** and then select the **Cloud Account** tab.
 
@@ -72,7 +72,7 @@ Use the **Add account** button to save your cloud account details.
 
 {{<image filename="images/rc/button-cloud-account-add.png" alt="Use the Add account button to save the details of your new cloud account." width="140px">}}{{< /image >}}
 
-Be sure to create the resources before adding the cloud account to your subscription, as they're used to verify access to the cloud account.  The details can be saved oly after access is verified.
+Be sure to create the resources before adding the cloud account to your subscription, as they're used to verify access to the cloud account.  The details can be saved only after access is verified.
 
 When problems occur, an information icon appears and the field is highlighted in red.  When this happens, the icon includes a tooltip that explains the issue.
 
@@ -92,7 +92,7 @@ To update the details of a cloud account associated with your Redis Cloud subscr
 
 {{<image filename="images/rc/icon-cloud-account-edit.png" alt="Use the Edit button to update cloud account details." width="36px">}}{{< /image >}}
 
-This displays the **Edit cloud account dialog**:
+This displays the **Edit cloud account** dialog:
 
 {{<image filename="images/rc/account-settings-prompt-edit-cloud-account.png" alt="Use the Edit cloud account prompt to update the details of the cloud account." width="50%">}}{{< /image >}}
 
@@ -104,7 +104,7 @@ This displays the **Edit cloud account dialog**:
 | <nobr>_AWS console username_</nobr> | The username for the AWS console |
 | _AWS console password_ | The password for AWS console access |
 
-Use the **Update account** button so save your changes.
+Use the **Update account** button to save your changes.
 
 {{<image filename="images/rc/button-cloud-account-update.png" alt="Use the Update account button to save the updated cloud account details." width="140px">}}{{< /image >}}
 
@@ -116,6 +116,6 @@ To remove a cloud account from your Redis cloud subscription, select the cloud a
 
 ## Dedicated IAM resources
 
-We strongly recommend using dedicated identity and access management (IAM) resources to manage your ASW cloud accounts.  These resources should not be shared with any other task, account, or process.
+We strongly recommend using dedicated identity and access management (IAM) resources to manage your AWS cloud accounts.  These resources should not be shared with any other task, account, or process.
 
 To learn more, see [Create IAM resources for AWS cloud accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/iam-resources">}}).
