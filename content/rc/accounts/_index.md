@@ -1,5 +1,5 @@
 ---
-Title: Manage accounts and settingd
+Title: Manage accounts and settings
 linkTitle: Accounts & settings
 description: Describes how to work with Redis Cloud accounts and manage their settings. 
 weight: 39
@@ -8,12 +8,10 @@ categories: ["RC"]
 aliases: 
 ---
 
-Here, you learn how to manage Redis Cloud accounts and their settings.
+Here, you learn how to manage Redis Cloud accounts and their settings:
 
-Here are some common tasks:
+- Manage [account settings]({{<relref "rc/accounts/account-settings">}})
 
-- Manage [account settings]({{<relref "rc/accounts/account-settings.md">}})
+- Update [user profile]({{<relref "rc/accounts/user-profile">}})
 
-- Update user profile
-
-- Manage multiple Redis Cloud accounts
+- Switch between [Redis Cloud accounts]({{<relref "rc/accounts/user-profile#switch-redis-cloud-accounts">}})

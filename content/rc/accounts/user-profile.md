@@ -1,18 +1,19 @@
 ---
-Title: Manage user accounts and profile
-LinkTitle: User accounts and profile
-description: Describes the how to manage user profile settings and how to switch between Redis Cloud accounts.
+Title: Manage user account and profile
+LinkTitle: User account and profile
+description: Describes the how to manage your user account profile and how to switch between Redis Cloud accounts.
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 aliases: [ 
    "/rc/accounts/user-profile-settings.md",
+   "/rc/administration/multiple-accounts/",
+   "/rc/administration/multiple-accounts.md",
 ]
 ---
+When you sign in to the Redis Cloud [admin console](https://app.redislabs.com/), you use a profile associated with one or more Redis Cloud accounts.  
 
-When you sign in to the Redis Cloud [admin console](https://app.redislabs.com/), you use a profile associated with one or more Redis Cloud subscription.  
-
-This account has profile settings that you can manage using the profile control located near the top, right corner of the admin console:
+This account has a profile with settings that you can manage using the Profile control located near the top, right corner of the admin console:
 
 {{<image filename="images/rc/account-selector-single-account.png" alt="Use the Profile control to manage your user account profile and to switch between Redis Cloud accounts." width="300px">}}{{< /image >}}
 
@@ -59,17 +60,3 @@ To switch accounts, select the desired account from the list shown in the Profil
 ## Save or discard changes
 
 Use the **Discard changes** button to cancel user profile setting changes or the **Save changes** button to save changes.
-
-{{<image filename="images/rc/user-profile-setting-buttons.png" alt="Use Save Changes button to save user profle setting changes or the Discard changes button to revert them." width="300px">}}{{< /image >}}
-
-[Manage AWS cloud accounts]({{<relref "rc/cloud-integrations/aws-cloud-accounts/">}})  
-    
-| Setting | Description |
-|---------|-------------|
-| _Owner name_ | Person associated with the Redis Cloud account |
-| _Account name_ | Organization associated with the Redis Cloud account | 
-| _Date created_ | Date the user's Redis Cloud account was created, which may differ from the organization account creation date |
-| <nobr>_Owner email address_</nobr> | Email address used to create the owner's account |
-| _Account number_ | Internal ID of the owner's account |
-| _Last updated_ | Date of the last administrative change to the owner's account, typically reflect access changes or other administrative updates | 
-

@@ -71,5 +71,5 @@ Use the **Save changes** button to save changes or the **Discard changes** to re
 
 {{<image filename="images/rc/account-settings-buttons-save-discard.png" alt="Use the Discard Changes and the Save Changes buttons to manage changes to account settings." width="300px">}}{{< /image >}}
 
-For help changing other settings, [contact Support](https://support.redislabs.com).
+For help changing other settings, [contact Support](https://redis.com/company/support/).
 
