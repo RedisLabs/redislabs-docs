@@ -11,9 +11,9 @@ aliases: [
 ]
 ---
 
-Every time a Redis Enterprise database (REDB) is created with the Redis Enterprise operator, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
+Every time the Redis Enterprise operator creates a Redis Enterprise database (REDB), it creates a [service](https://kubernetes.io/docs/concepts/services-networking/service/) that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
 
-By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the cluster. OpenShift routes allow requests to be routed to the REDB from outside the cluster. For OpenShift deployments, routes provides a preferred alternative to an ingress.
+By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the cluster. OpenShift routes allow requests to be routed to the REDB from outside the cluster. For OpenShift deployments, routes provide a preferred alternative to an ingress.
 
 ## Prerequisites
 
@@ -37,15 +37,15 @@ By default, REDB creates a `ClusterIP` type service, which exposes a cluster-int
   - **TLS Termination**: Choose "passthrough"
   - **Insecure Traffic**: Select "None"
 
-  Select **Create**.
+1. Select **Create**.
 
-1. Find the hostname for your new route. After route creation, it will be in the "Host" field.
+1. Find the hostname for your new route. After route creation, it appears in the "Host" field.
 
 1. Verify you have a DNS entry to resolve the hostname for your new route to the cluster's load balancer.
 
 ## Access database
 
-1. Use the `openssl` command to access the database from outside the cluster.
+Use the `openssl` command to access the database from outside the cluster.
 
   ```sh
   openssl s_client -connect <hostname>:443 -crlf -CAfile ./ca.pem -servername <hostname>
