@@ -5,7 +5,7 @@ description:
 weight: 98
 alwaysopen: false
 categories: ["RS"]
-aliase: [
+aliases: [
     /rs/concepts/intercluster-replication.md,
     /rs/concepts/intercluster-replication/,
     /rs/databases/active-active/intercluster-replication.md,
