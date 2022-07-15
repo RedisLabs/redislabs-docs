@@ -471,5 +471,5 @@ Done!
 
 ## More info
 
-- [RedisJSON commands](https://redis.io/commands/?group=json)
+- [RedisJSON commands]({{<relref "/modules/redisjson/commands">}})
 - [RedisJSON client libraries](https://redis.io/docs/stack/json/clients/)

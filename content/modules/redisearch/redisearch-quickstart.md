@@ -204,5 +204,5 @@ $ python3 quick_start.py
 
 ## More info
 
-- [RediSearch commands](https://redis.io/commands/?group=search)
+- [RediSearch commands]({{<relref "/modules/redisearch/commands">}})
 - [RediSearch client libraries](https://redis.io/docs/stack/search/clients/)

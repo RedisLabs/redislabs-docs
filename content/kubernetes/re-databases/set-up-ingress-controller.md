@@ -2,7 +2,7 @@
 Title: Establish external routing with an ingress controller
 linkTitle: Ingress routing
 description: Configure an ingress controller to access your Redis Enterprise databases from outside the Kubernetes cluster.
-weight: 25
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
