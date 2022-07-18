@@ -28,9 +28,9 @@ Initiate a manual import process.
 
 ### Permissions
 
-| Permission name |
-|-----------------|
-| [start_bdb_import]({{<relref "/rs/references/rest-api/permissions#start_bdb_import">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [start_bdb_import]({{<relref "/rs/references/rest-api/permissions#start_bdb_import">}}) | admin<br />cluster_member<br />db_member |
 
 ### Request {#post-request}
 

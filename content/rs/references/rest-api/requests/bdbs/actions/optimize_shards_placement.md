@@ -29,9 +29,9 @@ Get optimized shards placement for the given database.
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
 ### Request {#get-request}
 

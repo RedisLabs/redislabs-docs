@@ -28,9 +28,9 @@ Initiate a database export.
 
 ### Permissions
 
-| Permission name |
-|-----------------|
-| [start_bdb_export]({{<relref "/rs/references/rest-api/permissions#start_bdb_export">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [start_bdb_export]({{<relref "/rs/references/rest-api/permissions#start_bdb_export">}}) | admin<br />cluster_member<br />db_member |
 
 ### Request {#post-request}
 

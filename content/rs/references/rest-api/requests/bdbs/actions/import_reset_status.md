@@ -26,9 +26,9 @@ Reset the database’s `import_status` to idle if a backup is not in progress an
 
 ### Permissions
 
-| Permission name |
-|-----------------|
-| [reset_bdb_current_import_status]({{<relref "/rs/references/rest-api/permissions#reset_bdb_current_import_status">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [reset_bdb_current_import_status]({{<relref "/rs/references/rest-api/permissions#reset_bdb_current_import_status">}}) | admin<br />cluster_member<br />db_member |
 
 ### Request {#put-request}
 
