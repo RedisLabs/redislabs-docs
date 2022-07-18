@@ -21,21 +21,25 @@ aliases: /rs/references/rest-api/bdbs/sync_source_stats
 
 ## Get all syncer source stats {#get-all-bdbs-sync_source_stats}
 
-	GET /v1/bdbs/{bdb_uid}/sync_source_stats
+```sh
+GET /v1/bdbs/{bdb_uid}/sync_source_stats
+```
 
 Get stats for all syncer sources of a local database.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
-	GET /bdbs/1/sync_source_stats?interval=5min 
+```sh
+GET /bdbs/1/sync_source_stats?interval=5min
+```
 
 #### Request headers
 
@@ -58,7 +62,7 @@ Get stats for all syncer sources of a local database.
 | stime | ISO_8601 | Start time from which we want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 | etime | ISO_8601 | Optional end time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all syncer sources.
 
@@ -91,7 +95,7 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
  }
 ```
 
-### Status codes {#get-all-status-codes} 
+### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -100,23 +104,27 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
 
 ## Get syncer instance stats {#get-bdbs-sync_source_stats}
 
-	GET /v1/bdbs/{bdb_uid}/sync_source_stats/{int: uid}
+```sh
+GET /v1/bdbs/{bdb_uid}/sync_source_stats/{int: uid}
+```
 
 Get stats for a specific syncer (Replica Of) instance.
 
-#### Required permissions
+#### Permissions
 
-| Permission name |
-|-----------------|
-| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /bdbs/1/sync_source_stats/1?interval=5min 
+```sh
+GET /bdbs/1/sync_source_stats/1?interval=5min
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -138,7 +146,7 @@ Get stats for a specific syncer (Replica Of) instance.
 | stime | ISO_8601 | Optional start time from which we want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 | etime | ISO_8601 | Optional end time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for a specific syncer instance.
 
@@ -168,7 +176,7 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
 }
 ```
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
