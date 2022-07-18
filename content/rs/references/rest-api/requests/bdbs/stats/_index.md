@@ -138,6 +138,28 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | No bdbs exist |
 
+### Example requests
+
+#### cURL
+
+```sh
+$ curl -k -u "[username]:[password]" -X GET
+        https://[host][:port]/v1/bdbs/stats?interval=1hour
+```
+
+#### Python
+
+```python
+import requests
+
+url = "https://[host][:port]/v1/bdbs/stats?interval=1hour"
+auth = ("[username]", "[password]")
+
+response = requests.request("GET", url, auth=auth)
+
+print(response.text)
+```
+
 ## Get database stats {#get-bdbs-stats}
 
 ```sh
