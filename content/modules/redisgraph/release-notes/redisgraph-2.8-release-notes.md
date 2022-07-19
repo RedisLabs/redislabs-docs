@@ -87,7 +87,7 @@ Details:
     - [#2318](https://github.com/RedisGraph/RedisGraph/pull/2318) Memory leak
 
 {{<note>}}
-Duplicate column names in a query result is now considered invalid. For example, the query `GRAPH.QUERY g "MATCH (e) RETURN e, e"` is invalid. If it is required to return the same column twice, a simple rewrite would be `GRAPH.QUERY g "MATCH (e) RETURN e, e as e2"`
+Duplicate column names in a query are no longer valid. For example, the query `GRAPH.QUERY g "MATCH (e) RETURN e, e"` is not valid. If you need to return the same column twice, you can rewrite the query as `GRAPH.QUERY g "MATCH (e) RETURN e, e as e2"`.
 {{</note>}}
 
 ## v2.8.11 (March 2022)
