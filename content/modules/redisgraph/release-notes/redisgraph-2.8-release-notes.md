@@ -86,6 +86,10 @@ Details:
     - [#2298](https://github.com/RedisGraph/RedisGraph/issues/2298) Query returns wrong result: wrong value when fetching a string property from a map
     - [#2318](https://github.com/RedisGraph/RedisGraph/pull/2318) Memory leak
 
+{{<note>}}
+Duplicate column names in a query are no longer valid. For example, the query `GRAPH.QUERY g "MATCH (e) RETURN e, e"` is not valid. If you need to return the same column twice, you can rewrite the query as `GRAPH.QUERY g "MATCH (e) RETURN e, e as e2"`.
+{{</note>}}
+
 ## v2.8.11 (March 2022)
 
 This is a maintenance release for RedisGraph 2.8.
