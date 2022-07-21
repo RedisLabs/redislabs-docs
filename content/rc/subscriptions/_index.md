@@ -34,9 +34,9 @@ Here's a quick comparison:
 
 | Feature | Free plan | Fixed plan | Flexible/<br/>Annual plan |
 |:-----|:-------:|:----:|:-----:|
-| Number of databases | 1 | 4 | Unlimited |
-| Memory size (max) | 30 MB | 10 GB | 50 TB |
-| Concurrent connections | 30 | 256 | Unlimited |
+| Number of databases | 1 | 4-64 | Unlimited |
+| Memory size | 30 MB | 100 MB-10 GB | 50 TB |
+| Concurrent connections | 30 | 256-10,000 | Unlimited |
 | Security | role-based auth<br/>password protection<br/>encryption in transit | role-based auth<br/>password protection<br/>SSL & SIP auth<br/>encryption in transit | role-based auth<br/>password protection<br/>SSL & SAIP auth<br/>encryption in transit<br/>encryption at rest |
 | Admin REST API | No | No | Yes |  
 | Support | Best effort | Basic | Flexible: Standard<br/>Annual: Premium |
