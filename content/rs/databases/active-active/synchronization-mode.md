@@ -2,7 +2,7 @@
 Title: Configure distributed synchronization
 linktitle: Distributed synchronization
 description: How to configure distributed synchronization so that any available proxy endpoint can manage synchronization traffic. 
-weight: 40
+weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [

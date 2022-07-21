@@ -2,7 +2,7 @@
 Title: Enable causal consistency in an Active-Active database
 linkTitle: Enable causal consistency
 description: 
-weight: 41
+weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
