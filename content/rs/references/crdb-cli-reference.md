@@ -44,7 +44,7 @@ Active-Active database operations affect the configuration and data of the datab
 The `crdb create` command lets you create a customized Active-Active database and create instances of the database on specified participating clusters. Before you create an Active-Active database you must have:
 
 - At least two participating clusters
-- [Network connectivity]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) between the participating clusters
+- [Network connectivity]({{< relref "rs/networking/port-configurations.md" >}}) between the participating clusters
 
 When you create an Active-Active database, you must specify:
 
