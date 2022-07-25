@@ -25,8 +25,6 @@ This is the General Availability (GA) release of RedisInsight 2.6.0
 - [#862](https://github.com/RedisInsight/RedisInsight/pull/862), [#840](https://github.com/RedisInsight/RedisInsight/pull/840), Added in-app notifications to inform about any important changes, updates or announces. Notifications are always available in the Notification center, and can be displayed with or without preview.
 - [#830](https://github.com/RedisInsight/RedisInsight/pull/830), Stream entry ID and controls to remove the Stream entry are always displayed irregardless of the number of fields to comfortably explore and work with Stream data
 - [#928](https://github.com/RedisInsight/RedisInsight/pull/928), Remember the sorting on the list of databases
-- [#937](https://github.com/RedisInsight/RedisInsight/pull/937), Do not require permissions for the DBSIZE command to connect to Redis database
 
 **Bugs Fixed:**
 - [#932](https://github.com/RedisInsight/RedisInsight/pull/932), Refresh the JSON value in Browser/Tree view
-
