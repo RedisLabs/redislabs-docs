@@ -10,10 +10,22 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.6.16 requires:
+RedisTimeSeries v1.6.17 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.6.17 (July 2022)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#1240](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1240) Compaction rules are not saved to [RoF](https://docs.redis.com/latest/rs/concepts/memory-performance/redis-flash/) (Redis Enterprise)
 
 ## v1.6.16 (June 2022)
 
