@@ -122,14 +122,6 @@ and to support its commands and data types at any dataset size.
 All you need to do is select a plan that fits your dataset size.
 If your dataset is expected to grow or occasionally varies in size, we recommend using a Flexible plan, which charges according to the number of shards or the throughput.
 
-## Why should I map availability zones (AWS)
-
-While different AWS accounts may refer to the same AWS availability zone resource names, the underlying resources can be deployed to different physical infrastructure.  
-
-When different accounts refer to resources located on different physical infrastructure, communication latency  occurs as resources locations are resolved.
-
-The mapping process lets us unambiguously identify your availability zone, so we can serve your Redis data from the same physical zone, minimizing inter-zone latencies.
-
 ## Are dataset setup or endpoints affected by subscription changes?
 
 If your subscription change is a simple upgrade or downgrading, it won't impact your databases or our configuration.

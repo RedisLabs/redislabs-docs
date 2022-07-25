@@ -7,6 +7,10 @@ alwaysopen: false
 categories: ["RC"]
 aliases: [ 
    "/rc/accounts/account-settings.md",
+   "/rc/how-to/aws-zone-mapping/",
+   "/rc/how-to/aws-zone-mapping.md",
+   "/rc/administration/aws-zone-mapping/",
+   "/rc/administration/aws-zone-mapping.md",
 ]
 ---
 
@@ -57,13 +61,13 @@ The **Security** section lets you:
 
 ## Integration settings
 
-The **Integration** section includes settings that help you manage the integration of your Redis Cloud account with your underlying cloud provider.  For example, subscriptions hosted on AWS can [map their accounts]({{<relref "/rc/administration/aws-zone-mapping">}}) to specific availability zones.
+The **Integration** section includes settings that help you manage the integration of your Redis Cloud account with your underlying cloud provider.  Specific settings vary according to the cloud provider.
 
-If this section doesn't appear on the **Account Settings** screen, it generally means that there aren't any settings to manage for the current account.
+If this section doesn't appear on the **Account Settings** screen, it generally means that there aren't any integration settings to manage.
 
 ## Save or discard changes
 
-Few account settings can be changed; however, you can update a few details, such as **Time Zone**, **MFA enforcement**, and AWS availability zone mapping.
+Few account settings can be changed; however, you can update a few details, such as **Time Zone** and **MFA enforcement**.  Available settings vary according to your subscription and the underlying cloud provider.  
 
 Use the **Save changes** button to save changes or **Discard changes** to revert them.
 
