@@ -10,10 +10,24 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.15 requires:
+RedisGraph v2.8.16 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.16 (July 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2478](https://github.com/RedisGraph/RedisGraph/pull/2478) Potential crash with concurrent connections due to missing lock
+    - [#2370](https://github.com/RedisGraph/RedisGraph/issues/2370) Wrong results / warning messages when using edge indexes
+    - [#2473](https://github.com/RedisGraph/RedisGraph/issues/2473) Crash on invalid `distance()` query with index
 
 ## v2.8.15 (June 2022)
 
