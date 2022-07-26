@@ -34,7 +34,7 @@ To get started with custom monitoring:
 
     {{< note >}}
 
-This is for deveopment testing only (running in docker)
+This is for development testing only (running in docker).
 
     {{< /note >}}
 
