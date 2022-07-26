@@ -19,7 +19,7 @@ This is the General Availability (GA) release of RedisInsight 2.6.0
 
 ### Details
 **Features and improvements:**
-- [#890](https://github.com/RedisInsight/RedisInsight/pull/890), [#883](https://github.com/RedisInsight/RedisInsight/pull/883), [#875](https://github.com/RedisInsight/RedisInsight/pull/875), Bulk delete is available in Browser and Tree view to delete keys in bulk from your Redis database according to filters set by key name or data type.
+- [#890](https://github.com/RedisInsight/RedisInsight/pull/890), [#883](https://github.com/RedisInsight/RedisInsight/pull/883), [#875](https://github.com/RedisInsight/RedisInsight/pull/875) Delete keys in bulk from your Redis database in Browser and Tree view based on filters you set by key name or data type.
 - [#878](https://github.com/RedisInsight/RedisInsight/pull/878), Multiline support for key values in Browser and Tree View - click on the truncated value to expand the row and see the full value, click one more time to collapse it
 - [#837](https://github.com/RedisInsight/RedisInsight/pull/837), [#838](https://github.com/RedisInsight/RedisInsight/pull/838), Added [pipeline](https://redis.io/docs/manual/pipelining/) support for commands run in Workbench to optimize round-trip times. Default number of commands sent in a pipeline is 5, and is configurable in the "Advanced" section on the Settings page. 
 - [#862](https://github.com/RedisInsight/RedisInsight/pull/862), [#840](https://github.com/RedisInsight/RedisInsight/pull/840), Added in-app notifications to inform about any important changes, updates or announces. Notifications are always available in the Notification center, and can be displayed with or without preview.
