@@ -26,5 +26,5 @@ This is the General Availability (GA) release of RedisInsight 2.6.0
 - [#830](https://github.com/RedisInsight/RedisInsight/pull/830), Stream entry ID and controls to remove the Stream entry are always displayed irregardless of the number of fields to comfortably explore and work with Stream data
 - [#928](https://github.com/RedisInsight/RedisInsight/pull/928), Remember the sorting on the list of databases
 
-**Bugs Fixed:**
+**Bugs fixed:**
 - [#932](https://github.com/RedisInsight/RedisInsight/pull/932), Refresh the JSON value in Browser/Tree view
