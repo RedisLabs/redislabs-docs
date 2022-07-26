@@ -27,4 +27,4 @@ This is the General Availability (GA) release of RedisInsight 2.6.0
 - [#928](https://github.com/RedisInsight/RedisInsight/pull/928), Remember the sorting on the list of databases
 
 **Bugs fixed:**
-- [#932](https://github.com/RedisInsight/RedisInsight/pull/932), Refresh the JSON value in Browser/Tree view
+- [#932](https://github.com/RedisInsight/RedisInsight/pull/932) Refresh the JSON value in Browser/Tree view.
