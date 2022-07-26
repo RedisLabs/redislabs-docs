@@ -30,7 +30,7 @@ To get started with custom monitoring:
 1. Create a directory called 'prometheus' on your local machine:
 
     - Within that directory, create a file called `prometheus.yml`.
-    - Copy and paste the following contents into the yml file, replacing `<cluster_name>` with your redis cluster FQDN:
+    - Add the following contents to the yml file and replace `<cluster_name>` with your Redis cluster's FQDN:
 
     {{< note >}}
 
