@@ -27,10 +27,16 @@ In each cluster, the metrics_exporter component listens on port 8070 and serves 
 
 To get started with custom monitoring:
 
-1. Copy this Prometheus configuration into `./prometheus/prometheus.yml` in your current folder:
+1. Create a folder called 'prometheus' on your local machine:
 
-    - If you already have Prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration and skip the next step.
-    - Replace `<cluster_name>` with your actual cluster FQDN.
+    - Within that folder, create a file called 'prometheus.yml'
+    - Copy and paste the following contents into the yml file, replacing `<cluster_name>` with your redis cluster FQDN:
+
+    {{< note >}}
+
+This is for deveopment testing only (running in docker)
+
+    {{< /note >}}
 
     ```yml
     global:
