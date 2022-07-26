@@ -15,7 +15,7 @@ This is the General Availability (GA) release of RedisInsight 2.6.0
 - Bulk actions: Delete the keys in bulk based on the filters set in Browser or Tree view
 - Multiline support for key values in Browser and Tree View: Click the key value to see it in full
 - [Pipeline](https://redis.io/docs/manual/pipelining/) support in Workbench: Batch Redis commands in Workbench to optimize round-trip times
-- In-app notifications: added a mechanism to inform about important changes, updates or announces inside of the application. Notifications are always available in the Notification center, and can be displayed with or without preview.
+- In-app notifications: Receive messages about important changes, updates, or announcements inside the application. Notifications are always available in the Notification center, and can be displayed with or without preview.
 
 ### Details
 **Features and improvements:**
