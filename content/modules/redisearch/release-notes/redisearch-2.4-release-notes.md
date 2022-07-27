@@ -10,10 +10,30 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.10 requires:
+RediSearch v2.4.11 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.11 (July 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2892](https://github.com/RediSearch/RediSearch/pull/2892) Combining `SORTBY` with `MAX` on `FT.SEARCH` (which is not supported) caused an inconsistent response and out-of-memory error (MOD-3540, MOD-3644)
+  - [VecSim v0.3.1](https://github.com/RedisAI/VectorSimilarity/releases/tag/v0.3.1)
+    - HNSW indices: reclaim memory upon deletion - HNSW index's data structures now reclaim memory and shrink upon deletion
+
+- Improvements:
+
+  - [VecSim v0.3.1](https://github.com/RedisAI/VectorSimilarity/releases/tag/v0.3.1)
+    - HNSW indices: delete procedure is up to 40% faster
+    - More accurate memory consumption reporting for HNSW indices
 
 ## v2.4.10 (July 2022)
 
