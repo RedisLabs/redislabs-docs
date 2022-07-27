@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-RedisJSON v2.x adds support for RedisJSON in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
+RedisJSON v2.2 adds support for RedisJSON in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
 
 ## Command differences
 
@@ -192,7 +192,7 @@ The instance with the smallest ID wins.
 
 ### Update versus clear
 
-The version of RedisJSON prior to v2.x has two different ways to reset the content of a JSON object:
+The version of RedisJSON prior to v2.2 has two different ways to reset the content of a JSON object:
 
 - Assign a new empty JSON object:
     
@@ -210,7 +210,7 @@ The version of RedisJSON prior to v2.x has two different ways to reset the conte
 
     With this method, it can merge the reset with concurrent updates.
 
-As of RedisJSON v2.x, you can use the `JSON.CLEAR` command to reset the JSON document without removing each key manually. This method also lets concurrent updates be merged.
+As of RedisJSON v2.2, you can use the `JSON.CLEAR` command to reset the JSON document without removing each key manually. This method also lets concurrent updates be merged.
 
 #### Assign an empty object
 
