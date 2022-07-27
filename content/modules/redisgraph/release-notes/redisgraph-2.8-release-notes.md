@@ -10,10 +10,24 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.16 requires:
+RedisGraph v2.8.17 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.17 (July 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2499](https://github.com/RedisGraph/RedisGraph/pull/2499) Potential crash with concurrent connections due to missing lock - additional fixes
+    - [#2424](https://github.com/RedisGraph/RedisGraph/issues/2424) Potential crash when using `ORDER BY`
+    - [#2491](https://github.com/RedisGraph/RedisGraph/issues/2491) Whitespaces between `MATCH` terms can render the query invalid
 
 ## v2.8.16 (July 2022)
 
