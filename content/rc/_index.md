@@ -16,6 +16,12 @@ aliases: /rv/
 ---
 [Redis Enterprise Cloud](https://redis.com/redis-enterprise-cloud/overview/) delivers a fully managed Redis database offering hosted on major public cloud services.
 
+With Redis Enterprise Cloud, you get:
+- Infinite and automatic scalability
+- Instant failover and backup recovery
+- Predictable high performance
+- 24/7 monitoring and support
+
 ## Get started
 Create a free subscription and create your first database.
 - [Quick start]({{<relref "/rc/rc-quickstart">}})
