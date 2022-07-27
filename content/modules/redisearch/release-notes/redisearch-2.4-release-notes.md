@@ -10,10 +10,24 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.9 requires:
+RediSearch v2.4.10 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.10 (July 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2863](https://github.com/RediSearch/RediSearch/pull/2863) Crash due to too high (Levenshtein) `DISTANCE` in `FT.SPELLCHECK`. This fix limits the `DISTANCE` to 4. (MOD-3563)
+  - [#2875](https://github.com/RediSearch/RediSearch/pull/2875) Not all documents with vector fields were indexed with Redis on Flash (MOD-3584)
+  - [#2846](https://github.com/RediSearch/RediSearch/pull/2846) Enforce Redis Enterprise memory limit for vector indices
 
 ## v2.4.9 (June 2022)
 
