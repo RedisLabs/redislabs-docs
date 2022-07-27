@@ -1,8 +1,8 @@
 ---
 Title: Active-Active geo-distributed Redis
-linktitle: Active-Active databases
+linktitle: Active-Active 
 description: Overview of the Active-Active database in Redis Enterprise Software
-weight: 61
+weight: 65
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -37,12 +37,12 @@ An Active-Active database is made up of instances of the data that are each stor
 Before configuring an Active-Active database, you must:
 
 - If the Active-Active database spans a WAN, establish a VPN between each network that hosts a cluster with an instance.
-- Set up [Redis Enterprise clusters]({{< relref "/rs/administering/new-cluster-setup.md" >}}) for each Active-Active database instance.
+- Setup [RS clusters]({{< relref "/rs/clusters/new-cluster-setup.md" >}}) for each Active-Active database instance.
 
     All clusters must have the same Redis Enterprise Software version.
 - Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.
 
-    Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) for inter-cluster communications,
+    Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/databases/configure/discovery-service.md" >}}) for inter-cluster communications,
     but are compatible with local application connections.
 - Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (9443) of each cluster.
 - Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.
@@ -58,7 +58,7 @@ Active-Active databases support only compatible [Redis modules]({{< relref "/mod
 1. The Redis Enterprise admin console is limited to five participating clusters or instances in an Active-Active database.
 1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database, you must create a new Active-Active database and migrate the data.
 1. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
-1. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/databases/replica-of.md" >}}).
+1. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/databases/import-export/replica-of.md" >}}).
 
 ## Network Time Service (NTP or Chrony)
 
@@ -94,7 +94,7 @@ The setup of the Active-Active database fails if there is no connectivity betwee
 ## Network ports
 
 For initial configuration and ongoing maintenance of an Active-Active database, every node must have access to the REST API ports of every other node.
-You must also open ports for [VPNs and Security groups]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+You must also open ports for [VPNs and Security groups]({{< relref "/rs/networking/port-configurations.md" >}}).
 
 For synchronization, Active-Active databases operate over the standard endpoint ports.
 The endpoint port that you configure when you create the Active-Active database is the endpoint port of the proxy for that Active-Active database on each cluster.

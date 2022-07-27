@@ -83,7 +83,7 @@ To do so, use the `score_attribute` set by the `SCORE_FIELD` option during index
 
 ### Search an index
 
-Search the index for any documents that contain the word "primary":
+Search the index for any documents that contain the words "search engine":
 
 ```sh
 127.0.0.1:12543> FT.SEARCH database_idx "search engine" LIMIT 0 10
@@ -110,7 +110,7 @@ OK
 
 ### Auto-complete
 
-You can use RediSearch suggestion commands to implement [auto-complete](https://oss.redislabs.com/redisearch/master/Overview/#auto-completion).
+You can use RediSearch suggestion commands to implement [auto-complete](https://redis.io/docs/stack/search/design/overview/#auto-completion).
 
 {{<note>}}
 Active-Active databases do not support RediSearch suggestions.
@@ -204,5 +204,5 @@ $ python3 quick_start.py
 
 ## More info
 
-- [RediSearch commands](https://redis.io/commands/?group=search)
+- [RediSearch commands]({{<relref "/modules/redisearch/commands">}})
 - [RediSearch client libraries](https://redis.io/docs/stack/search/clients/)
