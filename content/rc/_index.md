@@ -18,31 +18,31 @@ aliases: /rv/
 
 ## Get started
 Create a free subscription and create your first database.
-- [Quick start]({{<relref "/rc/rc-quickstart"}})
+- [Quick start]({{<relref "/rc/rc-quickstart">}})
 
 ## Subscriptions
 Create a fixed or flexible cloud subscription.
-- [Create a fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription"}})
-- [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription"}})
+- [Create a fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription">}})
+- [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}})
 
 ## Databases
 Create and manage a Redis database in the cloud.
-- [Create database]({{<relref "/rc/databases/create-database"}})
-- [View and edit databases]({{<relref "/rc/databases/view-edit-database"}})
-- [Monitor performance]({{<relref "/rc/databases/monitor-performance"}})
-- [Configuration]({{<relref "/rc/databases/configuration"}})
+- [Create database]({{<relref "/rc/databases/create-database">}})
+- [View and edit databases]({{<relref "/rc/databases/view-edit-database">}})
+- [Monitor performance]({{<relref "/rc/databases/monitor-performance">}})
+- [Configuration]({{<relref "/rc/databases/configuration">}})
 
 ## Security
 Manage secure connections to the cloud database.
-- [Access management]({{<relref "/rc/administration/access-management"}})
-- [Cloud database security]({{<relref "/rc/security/database-security"}})
-- [Multi-Factor authentication]({{<relref "/rc/security/multi-factor-authentication"}})
-- [Single sign-on]({{<relref "/rc/security/single-sign-on"}})
+- [Access management]({{<relref "/rc/administration/access-management">}})
+- [Cloud database security]({{<relref "/rc/security/database-security">}})
+- [Multi-Factor authentication]({{<relref "/rc/security/multi-factor-authentication">}})
+- [Single sign-on]({{<relref "/rc/security/single-sign-on">}})
 
 ## Reference
 Use the REST API and Redis commands to manage the database.
-- [Get started with the REST API]({{<relref "/rc/api/get-started"}})
-- REST API [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) & [examples]({{<relref "/rc/api/examples"}})
+- [Get started with the REST API]({{<relref "/rc/api/get-started">}})
+- REST API [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) & [examples]({{<relref "/rc/api/examples">}})
 - [Redis Commands](https://redis.io/commands/)
 
 ## More info
