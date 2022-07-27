@@ -29,10 +29,10 @@ Database configurations, LUA scripts, and other support info are not replicated.
 
 You can create Active-Active databases on Redis Enterprise Software or Redis Cloud.
 
-## Considerations for Active-Active Databases {#considerations-for-activeactive-databases}
+## Considerations for Active-Active databases {#considerations-for-activeactive-databases}
 
 Active-Active databases are based on multi-master replication that is configured to run on each database.
-An Active-Active database is made up of instances of the data that are each stored on an RS cluster.
+An Active-Active database is made up of instances of the data that are each stored on a Redis Enterprise cluster.
 
 Before configuring an Active-Active database, you must:
 
@@ -47,14 +47,15 @@ Before configuring an Active-Active database, you must:
 - Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (9443) of each cluster.
 - Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.
 
-### Redis Modules on Active-Active Databases {#redis-modules-on-activeactive-databases}
+### Redis modules on Active-Active databases {#redis-modules-on-activeactive-databases}
 Active-Active databases support only compatible [Redis modules]({{< relref "/modules/_index.md" >}}).
-- [RediSearch 2.x in Redis Enterprise Software (RS) 6.0 and higher]({{< relref "/modules/redisearch/redisearch-active-active.md" >}}). 
+- [RediSearch 2.x in Redis Enterprise Software 6.0 and later]({{<relref "/modules/redisearch/redisearch-active-active">}}). 
+- [RedisJSON 2.x and later]({{<relref "/modules/redisjson/active-active">}})
 - RedisGears
 
 ## Active-Active database current limitations
 
-1. The RS admin console is limited to five participating clusters or instances in an Active-Active database.
+1. The Redis Enterprise admin console is limited to five participating clusters or instances in an Active-Active database.
 1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database, you must create a new Active-Active database and migrate the data.
 1. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
 1. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/databases/import-export/replica-of.md" >}}).
@@ -65,11 +66,11 @@ For Active-Active databases, you must use a time service like NTP or Chrony.
 This is critical to minimize time drift both intercluster and intracluster for Active-Active databases on an ongoing basis.
 
 There may be times that the OS system time is used for conflict resolution between instances of an Active-Active database, although that rarely happens.
-The built-in vector clocks tell RS the order of operations, or identifies that the data operations were concurrent.
+The built-in vector clocks tell Redis Enterprise the order of operations or identifies that the data operations were concurrent.
 When there is no option to intelligently handle conflicting writes, OS timestamps are used in resolving the conflict.
 For example, in certain cases "string type" uses timestamps to resolve conflicts.
 
-The RS installation checks if there is a network time service installed, running, and configured to start on boot.
+The Redis Enterprise installation checks if there is a network time service installed, running, and configured to start on boot.
 
 - If no network time service is found, the installation asks if you want to "tune the system".
 - If you answer yes, you are prompted to install and configure a network time service.
@@ -86,7 +87,7 @@ Do you want to set up NTP time synchronization now [Y/N]? Y
 
 ## Network configurations
 
-RS assumes that networking between the clusters is already configured when you create an Active-Active database.
+Redis Enterprise assumes that networking between the clusters is already configured when you create an Active-Active database.
 For security purposes, we recommend that you configure a secure VPN between all clusters that host an instance of an Active-Active database.
 The setup of the Active-Active database fails if there is no connectivity between the clusters.
 
@@ -122,7 +123,7 @@ In a full sync, the data from the master is transferred to the replica as an RDB
 
 Partial synchronization requires a backlog large enough to store the data operations until connection is restored.
 
-### Syncer in Active-Active Replication
+### Syncer in Active-Active replication
 
 In the case of an Active-Active database:
 

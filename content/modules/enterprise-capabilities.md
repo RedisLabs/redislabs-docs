@@ -38,7 +38,7 @@ For details about individual modules, see the corresponding documentation.
 
 | Feature name/capability | [RediSearch]({{< relref  "/modules/redisearch" >}}) | [RedisJSON]({{< relref  "/modules/redisjson" >}})    |  [RedisGraph]({{< relref  "/modules/redisgraph" >}})   | 
 |-------------------------|:--------------:|:------------:|:------------:|
-| Active-Active (CRDB)    | Yes (v2.0)     | No           | No           |
+| Active-Active (CRDB)    | Yes (v2.0)     | Yes (v2.2)   | No           |
 | Backup/Restore          | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
 | Clustering              | Yes (v1.6)[^3] | Yes (v1.0)   | Yes (v2.2.3)[^1] |
 | Custom hashing policy   | Yes (v2.0)     | Yes (v1.0)   | Yes (v1.0)   |
