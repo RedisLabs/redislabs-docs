@@ -23,81 +23,46 @@ without changing the way the application connects to the database.
 
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
-Active-Active databases are build upon other Redis Enterprise [high availability features](). Each Active-Active database is made up of instances of the data; each instance is stored on an Redis Enterprise cluster. Using [replication]() and [clustering] together aids in disaster recovery. Active-Active's multi-master replication and [multiple active proxies]() provide accelerated data access for geographically distributed users.
+## High availability
+
+The [high availability]({{<relref "/rs/databases/durability-ha.md">}}) that Active-Active replication provides is built upon a number of Redis Enterprise Software’s features (such as [clustering]({{<relref "">}}), [replication]({{<relref "">}}), and [replicaHA]({{<relref "">}})) as well as some features unique to Active-Active ([multi-master replication]({{<relref "">}}), [automatic conflict resolution]({{<relref "">}}), and [strong eventual consistency]({{<relref "">}})).
+
+[Clustering] and [replication] are used together in Active-Active databases to distribute multiple copies of the dataset across multiple nodes and multiple clusters. This helps reduce the risk of a node or cluster becoming a single point of failure. If a primary node or primary shard fails, a replica will automatically be promoted to primary. The [replicaHA] feature (enabled by default), will automatically migrate replica shards to available nodes to avoid one node holding all copies of certain data.
+
+## Multi-master replication (#mmr)
+
+In Redis Enterprise Software, replication copies data from primary shards to replica shards. Active-Active geo-distributed replication also copies both primary and replica shards to other clusters. Each Active-Active database needs to span at least two clusters; these are called participating clusters.
+
+Each participating cluster hosts an instance of your database, and each instance has its own primary node. Having multiple primary nodes means you can connect to the proxy in any of your participating clusters. Connecting to the closest cluster geographically enables near-local latency. Multiple primary nodes also means that your users still have access to the database if one of the participating clusters fails.
 
 {{< note >}}
 Active-Active databases do not replicate the entire database, only the data.
 Database configurations, LUA scripts, and other support info are not replicated.
 {{< /note >}}
 
-You can create Active-Active databases on Redis Enterprise Software or Redis Cloud.
+## Syncer
 
-## Considerations for Active-Active Databases {#considerations-for-activeactive-databases}
+Keeping multiple copies of the dataset consistent across multiple clusters is no small task. Redis Active-Active geo-distributed replication uses a process called the [syncer]({{<relref "">}}), to achieve [consistency] between participating clusters.
 
-Active-Active databases are based on multi-master replication that is configured to run on each database.
-An Active-Active database is made up of instances of the data that are each stored on an RS cluster.
+The syncer keeps a [replication backlog]({{<relref "">}}), which stores changes to the dataset that the syncer sends to other participating clusters. The syncer uses partial syncs to keep replicas up to date with changes, or a full sync in the event a replica or primary is lost.
 
-Before configuring an Active-Active database, you must:
+## Conflict resolution
 
-- If the Active-Active database spans a WAN, establish a VPN between each network that hosts a cluster with an instance.
-- Setup [RS clusters]({{< relref "/rs/clusters/new-cluster-setup.md" >}}) for each Active-Active database instance.
+Because you can connect to any participating cluster to perform a write operation, concurrent and conflicting writes are always possible. Conflict resolution is an important part of the Active-Active technology. Active-Active databases only use [conflict-free replicated data types (CRDTs)](). These data types provide a predictable conflict resolution and don't require any additional work from the application or client side.
 
-    All clusters must have the same Redis Enterprise Software version.
-- Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.
+There are some important differences to consider when developing with CRDTs for Active-Active databases. See [Develop applications with Active-Active databases]({{<relref "">}}) for more detail.
 
-    Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/databases/configure/discovery-service.md" >}}) for inter-cluster communications,
-    but are compatible with local application connections.
-- Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (9443) of each cluster.
-- Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.
 
-### Redis Modules on Active-Active Databases {#redis-modules-on-activeactive-databases}
-Active-Active databases support only compatible [Redis modules]({{< relref "/modules/_index.md" >}}).
-- [RediSearch 2.x in Redis Enterprise Software (RS) 6.0 and higher]({{< relref "/modules/redisearch/redisearch-active-active.md" >}}). 
-- RedisGears
+## Strong eventual consistency
 
-## Active-Active database current limitations
+Maintaining strict strong consistency for replicated databases comes with trades off in scalability and availability. Redis Active-Active databases use a strong eventual consistency model, which means that local values may differ across replicas for short periods of time, but they will all eventually converge to one consistent state. Redis uses vector clocks and the CRDT conflict resolution to strengthen consistency between replicas. You can also enable the causal consistency feature to preserve the order of operations as they are synchronized among replicas.
 
-1. The RS admin console is limited to five participating clusters or instances in an Active-Active database.
-1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database, you must create a new Active-Active database and migrate the data.
-1. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
-1. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/databases/import-export/replica-of.md" >}}).
+## Combine with other features
 
-## Network Time Service (NTP or Chrony)
+Other Redis Enterprise Software features can also be used to enhance the performance, scalability, or durability of your Active-Active database. These include [data persistence]({{<relref "">}}), [multiple active proxies]({{<relref "">}}), [distributed synchronization]({{<relref "">}}), [the OSS Cluster API]({{<relref "">}}), and [rack-zone awareness]({{<relref "">}}).
 
-For Active-Active databases, you must use a time service like NTP or Chrony.
-This is critical to minimize time drift both intercluster and intracluster for Active-Active databases on an ongoing basis.
+## Next steps
 
-There may be times that the OS system time is used for conflict resolution between instances of an Active-Active database, although that rarely happens.
-The built-in vector clocks tell RS the order of operations, or identifies that the data operations were concurrent.
-When there is no option to intelligently handle conflicting writes, OS timestamps are used in resolving the conflict.
-For example, in certain cases "string type" uses timestamps to resolve conflicts.
-
-The RS installation checks if there is a network time service installed, running, and configured to start on boot.
-
-- If no network time service is found, the installation asks if you want to "tune the system".
-- If you answer yes, you are prompted to install and configure a network time service.
-- If you answer yes, the NTP is installed.
-
-For example:
-
-```sh
-2017-10-30 11:24:07 [?] Do you want to automatically tune the system for best performance [Y/N]? Y
-2017-10-30 11:24:15 [?] Cluster nodes must have their system time synchronized.
-Do you want to set up NTP time synchronization now [Y/N]? Y
-2017-10-30 11:24:19 [.] Making sure NTP is installed and time is set.
-```
-
-## Network configurations
-
-RS assumes that networking between the clusters is already configured when you create an Active-Active database.
-For security purposes, we recommend that you configure a secure VPN between all clusters that host an instance of an Active-Active database.
-The setup of the Active-Active database fails if there is no connectivity between the clusters.
-
-## Network ports
-
-For initial configuration and ongoing maintenance of an Active-Active database, every node must have access to the REST API ports of every other node.
-You must also open ports for [VPNs and Security groups]({{< relref "/rs/networking/port-configurations.md" >}}).
-
-For synchronization, Active-Active databases operate over the standard endpoint ports.
-The endpoint port that you configure when you create the Active-Active database is the endpoint port of the proxy for that Active-Active database on each cluster.
-
+- Plan your Active-Active deployment
+- Get Started with Active-Active
+- Create an Active-Active database
