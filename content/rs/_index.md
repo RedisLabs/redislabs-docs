@@ -13,7 +13,15 @@ aliases: /rs/
          /redis_enterprise_software/
 ---
 
-[Redis Enterprise](https://redis.com/redis-enterprise/advantages/) is a self-managed, enterprise-grade version of Redis. You can run Redis Enterprise Software in an on-premises data center or on your preferred cloud platform.
+[Redis Enterprise](https://redis.com/redis-enterprise/advantages/) is a self-managed, enterprise-grade version of Redis.
+
+With Redis Enterprise, you get many enterprise-grade capabilities, including:
+- Linear scalability
+- High availability, backups, and recovery
+- Predictable performance
+- 24/7 suppport
+
+You can run Redis Enterprise Software in an on-premises data center or on your preferred cloud platform.
 
 ## Get started
 Build a small-scale cluster with the Redis Enterprise Software container image.
