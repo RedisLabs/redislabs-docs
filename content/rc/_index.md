@@ -26,15 +26,15 @@ With Redis Enterprise Cloud, you get all of the features of Redis Enterprise, in
 ## Get started
 Use the [Quick start]({{<relref "/rc/rc-quickstart">}}) to create a free subscription and create your first database.
 - [Connect with redis-cli]({{<relref "/rc/rc-quickstart#using-rediscli">}})
-- [Connect with code (python)]({{<relref "/rc/rc-quickstart#use-code-python">}})
+- [Connect with code (Python)]({{<relref "/rc/rc-quickstart#use-code-python">}})
 - [Redis clients](https://redis.io/docs/clients/) (redis.io)
 
 ## Subscriptions
-Learn about the [types of subscriptions]({{<relref "/rc/subscriptions/create-fixed-subscription">}})
+Learn about the [types of subscriptions]({{<relref "/rc/subscriptions">}}).
 - [Create a fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription">}})
 - [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}})
 
-# Accounts & settings
+## Accounts & settings
 Manage Redis Cloud [accounts and settings]({{<relref "/rc/accounts">}}).
 - [Billing and payments]({{<relref "/rc/billing-and-payments">}})
 - [Manage cloud integrations]({{<relref "/rc/cloud-integrations">}})
@@ -45,7 +45,7 @@ Create and manage [Redis databases]({{<relref "/rc/databases">}}) in the cloud.
 - [View and edit databases]({{<relref "/rc/databases/view-edit-database">}})
 - [Monitor performance]({{<relref "/rc/databases/monitor-performance">}})
 - [Manage databases]({{<relref "/rc/databases/configuration">}})
-- [Redis Commands](https://redis.io/commands/)
+- [Redis commands](https://redis.io/commands/)
 
 ## Security
 Manage [secure connections]({{<relref "/rc/security">}}) to cloud databases.
@@ -57,11 +57,11 @@ Manage [secure connections]({{<relref "/rc/security">}}) to cloud databases.
 ## REST API
 Use the [REST API]({{<relref "/rc/api">}}) to manage the database.
 - [Get started with the REST API]({{<relref "/rc/api/get-started">}})
-- REST API [Reference](https://api.redislabs.com/v1/swagger-ui.html) & [examples]({{<relref "/rc/api/examples">}})
+- REST API [reference](https://api.redislabs.com/v1/swagger-ui.html) & [examples]({{<relref "/rc/api/examples">}})
 
 
 ## Related info
-- [Redis Enterprise]({{<relref "/rs">}})
-- [Open Source Redis](https://redis.io/) (redis.io)
+- [Redis Enterprise Software]({{<relref "/rs">}})
+- [Open source Redis](https://redis.io/) (redis.io)
 - [Redis Stack & modules]({{<relref "/modules">}})
 - [Glossary]({{<relref "/glossary">}})
