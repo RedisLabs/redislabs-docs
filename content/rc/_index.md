@@ -25,7 +25,7 @@ With Redis Enterprise Cloud, you get all of the features of Redis Enterprise, in
 
 ## Get started
 Use the [Quick start]({{<relref "/rc/rc-quickstart">}}) to create a free subscription and create your first database.
-- [Connect with redis-cli]({{<relref "/rc/rc-quickstart#using-rediscli">}}) http://localhost:1313/rc/rc-quickstart/#using-rediscli
+- [Connect with redis-cli]({{<relref "/rc/rc-quickstart#using-rediscli">}})
 - [Connect with code (python)]({{<relref "/rc/rc-quickstart#use-code-python">}})
 - [Redis clients](https://redis.io/docs/clients/) (redis.io)
 
