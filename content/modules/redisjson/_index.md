@@ -12,7 +12,7 @@ aliases:
   - /rs/developing/modules/redisjson/
 ---
 
-The [RedisJSON](https://redis.io/docs/stack/json/) module adds support for the JSON data structure to Redis databases.
+The [RedisJSON](https://redis.io/docs/stack/json/) module adds support for the [JSON data structure](http://www.json.org/) to Redis databases.
 
 Applications developed with the [open source version of RedisJSON](https://github.com/RedisJSON/RedisJSON) are 100%
 compatible with RedisJSON in Redis Enterprise Software.
