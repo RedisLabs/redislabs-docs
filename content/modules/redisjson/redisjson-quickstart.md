@@ -17,13 +17,13 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-- [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool
+- [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
 
 - [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or greater
 
 ## RedisJSON with `redis-cli`
 
-The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test RedisJSON commands.
+The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test RedisJSON commands.
 
 ### Connect to a database
 
