@@ -36,42 +36,69 @@ The `--raw` option forces the command to return raw output.
 
 ### Create JSON documents
 
-You can use the [`JSON.SET`](https://redis.io/commands/json.set) command to create a JSON document.
+You can use the [`JSON.SET`](https://redis.io/commands/json.set) command to create a [JSON](https://www.json.org) document.
 
-Create a JSON document that represents a `shopping_list`:
+Here's an example JSON document that represents a shopping list:
+
+```json
+{
+  "list_date": "05/05/2022",
+  "stores": {
+    "grocery_store": {
+      "items": [
+        {
+          "name": "apples",
+          "count": 5
+        }
+      ]
+    }
+  }
+}
+```
+
+To create this JSON document in your database, run [`JSON.SET`](https://redis.io/commands/json.set):
 
 ```sh
-127.0.0.1:12543> JSON.SET shopping_list $ '{"list_date" : "05/05/2022", "stores": {}'
+127.0.0.1:12543> JSON.SET shopping_list $ '{"list_date": "05/05/2022", "stores": {"grocery_store": {"items": [{"name": "apples", "count": 5}]}}}'
 OK
 ```
 
-The second argument in `JSON.SET` is the [JSON path](https://redis.io/docs/stack/json/path/). The `$` or `.` character represents the root of the JSON document. All elements with a JSON document are relative to the root.
+[`JSON.SET`](https://redis.io/commands/json.set) accepts a [JSON path](https://redis.io/docs/stack/json/path) as a parameter. Paths must start with a `$` ([JSONPath syntax](https://redis.io/docs/stack/json/path/#jsonpath-syntax)) or `.` ([legacy path syntax](https://redis.io/docs/stack/json/path/#legacy-path-syntax)) character, which represents the root of the JSON document. All elements within a JSON document are relative to the root.
 
 ### Modify JSON documents
 
-You can also use [`JSON.SET`](https://redis.io/commands/json.set) to modify existing JSON documents and elements.
+You can also use [`JSON.SET`](https://redis.io/commands/json.set) to modify existing JSON documents and elements. To modify specific JSON elements, you need to provide the [path](https://redis.io/docs/stack/json/path) to the target JSON element as a parameter.
 
-Add each store with an array of `items` that you need to buy:
+Add a new store to the shopping list and provide an array of `items` that you need to buy from there:
 
 ``` sh
-127.0.0.1:12543> JSON.SET shopping_list $.stores.grocery_store '{ "items": [ { "name": "apples", "count": 5 } ] }'
-OK
 127.0.0.1:12543> JSON.SET shopping_list $.stores.clothing_store '{ "items": [ { "name": "socks", "count": 2 } ] }'
 OK
 ```
 
-Use [`JSON.ARRAPPEND`](https://redis.io/commands/json.arrappend) to add more items to the `items` arrays. `JSON.ARRAPPEND` returns the number of objects in the array.
+You can use [`JSON.ARRAPPEND`](https://redis.io/commands/json.arrappend) to add a new element to an array.
+
+For example, add `pears` to the `grocery_store` list:
 
 ``` sh
 127.0.0.1:12543> JSON.ARRAPPEND shopping_list $.stores.grocery_store.items '{ "name" : "pears", "count" : 3 }'    
 2
 ```
 
-Use [`JSON.NUMINCRBY`](https://redis.io/commands/json.numincrby) to change the number of a specific item that you need. This returns the new value of the item.
+The output number indicates how many items are currently in the array.
+
+[`JSON.NUMINCRBY`](https://redis.io/commands/json.numincrby) lets you change an item's `count` by a specific number and display the updated value.
+
+Increase an item count by 2:
 
 ```sh
 127.0.0.1:12543> JSON.NUMINCRBY shopping_list $.stores.clothing_store.items[0].count 2    
 4
+```
+
+Decrease an item count by 1:
+
+```sh
 127.0.0.1:12543> JSON.NUMINCRBY shopping_list $.stores.grocery_store.items[1].count -1
 2
 ```
