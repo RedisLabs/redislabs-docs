@@ -40,7 +40,7 @@ Details:
 - Bug fixes:
 
     - [#2478](https://github.com/RedisGraph/RedisGraph/pull/2478) Potential crash with concurrent connections due to missing lock
-    - [#2370](https://github.com/RedisGraph/RedisGraph/issues/2370) Wrong results / warning messages when using edge indexes
+    - [#2370](https://github.com/RedisGraph/RedisGraph/issues/2370) Potential crash / wrong results / warning messages when using edge indexes
     - [#2473](https://github.com/RedisGraph/RedisGraph/issues/2473) Crash on invalid `distance()` query with index
 
 ## v2.8.15 (June 2022)
