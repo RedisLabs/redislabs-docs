@@ -15,6 +15,8 @@ aliases: [
     /rs/databases/active-active/develop/sets-active-active/,
     /rs/databases/active-active/develop/sets.md,
     /rs/databases/active-active/develop/sets/,
+    /rs/databases/active-active/develop/data-types/sets.md,
+    /rs/databases/active-active/develop/data-types/sets/,
 ]
 ---
 A Redis set is an unordered collection of strings. It is possible to

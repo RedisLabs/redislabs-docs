@@ -15,6 +15,8 @@ aliases: [
     /rs/databases/active-active/develop/streams-active-active/,
     /rs/databases/active-active/develop/streams.md,
     /rs/databases/active-active/develop/streams/,
+    /rs/databases/active-active/develop/data-types/streams.md,
+    /rs/databases/active-active/develop/data-types/streams/,
 
 
 ]

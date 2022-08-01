@@ -10,6 +10,8 @@ aliases: [
         /rs/references/developing-for-active-active_index.md,
         /rs/databases/active-active/develop/data-types.md,
         /rs/databases/active-active/develop/data-types/,
+        /rs/databases/active-active/develop/data-types/_index.md,
+        /rs/databases/active-active/develop/data-types/,
      
 ]
 ---
