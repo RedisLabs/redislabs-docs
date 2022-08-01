@@ -132,7 +132,7 @@ Docker provides a convenient way to run `redis-cli` without the full installatio
 
 When you run the `redis` Docker image, you can open a bash shell instance and run `redis-cli` from the container.
 
-1.  To begin, pull and start the `redis` Docker image by using the following Docker command in the terminal or command-line for your operating system:
+1.  Enter this command in your command-line interface. A bash prompt opens in your Docker image.
 
     ``` sh
     $ docker pull redis
