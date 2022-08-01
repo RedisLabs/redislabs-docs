@@ -76,7 +76,7 @@ If a node fails, the data is seamlessly served from a replacement node in the cl
 Redis Enterprise can automatically handle node failures, Redis process failures, and proxy failures.
 Failover typically completes within a few seconds.
 
-[Learn more about High Availability]({{< relref "/rs/databases/durability-ha.md" >}}).
+[Learn more about High Availability]({{< relref "/rs/databases/configure/durability-ha.md" >}}).
 
 {{< youtube qIZuW_8bPtQ >}}
 

@@ -16,7 +16,7 @@ In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology
 
 Because of the complexities of Active-Active databases, there are  special considerations to keep in mind while planning your Active-Active database.
 
-See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more information about geo-distributed replication. For more info on other high availability features, see [Durability and high availability]({{<relref "/rs/databases/durability-ha.md">}}).
+See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more information about geo-distributed replication. For more info on other high availability features, see [Durability and high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}).
 
 ## Participating clusters
 
