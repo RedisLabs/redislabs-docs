@@ -11,8 +11,6 @@ aliases: [
         /rs/developing/crdbs/strings/,
         /rs/databases/active-active/data-types/strings-active-active.md,
         /rs/databases/active-active/data-types/strings-active-active/,
-        /rs/databases/active-active/develop/streams-active-active.md,
-        /rs/databases/active-active/develop/streams-active-active/,
         /rs/databases/active-active/develop/strings.md,
         /rs/databases/active-active/develop/strings/,
 
