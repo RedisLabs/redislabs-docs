@@ -19,13 +19,13 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-- `redis-cli` command-line tool
+- [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
 
 - [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or greater
 
 ## RediSearch with `redis-cli`
 
-The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RediSearch commands.
+The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RediSearch commands.
 
 ### Connect to a database
 
@@ -44,7 +44,7 @@ The schema for this example has four fields:
 - `url` (`TEXT`)
 - `visits` (`NUMERIC`)
 
-Use `FT.CREATE` to create an index and define the schema:
+Use [`FT.CREATE`](https://redis.io/commands/ft.create) to create an index and define the schema:
 
 ```sh
 127.0.0.1:12543> FT.CREATE database_idx PREFIX 1 "doc:" SCORE 0.5 SCORE_FIELD "doc_score" SCHEMA title TEXT body TEXT url TEXT visits NUMERIC
@@ -60,7 +60,7 @@ If you want to allow document-specific scores, use the <nobr>`SCORE_FIELD <score
 
 After you create an index, you can add documents to the index.
 
-Use the `HSET` command to add a hash with the key "`doc:1`" and the fields:
+Use the [`HSET`](https://redis.io/commands/hset) command to add a hash with the key "`doc:1`" and the fields:
 
 - title: "RediSearch"
 - body: "RediSearch is a powerful indexing, querying, and full-text search engine for Redis"
@@ -83,7 +83,7 @@ To do so, use the `score_attribute` set by the `SCORE_FIELD` option during index
 
 ### Search an index
 
-Search the index for any documents that contain the words "search engine":
+Use [`FT.SEARCH`](https://redis.io/commands/ft.search) to search the index for any documents that contain the words "search engine":
 
 ```sh
 127.0.0.1:12543> FT.SEARCH database_idx "search engine" LIMIT 0 10
@@ -101,7 +101,7 @@ Search the index for any documents that contain the words "search engine":
 
 ### Drop an index
 
-You can remove the index without deleting any associated documents with the `FT.DROPINDEX` command:
+You can remove the index without deleting any associated documents with the [`FT.DROPINDEX`](https://redis.io/commands/ft.dropindex) command:
 
 ```sh
 127.0.0.1:12543> FT.DROPINDEX database_idx
@@ -116,14 +116,14 @@ You can use RediSearch suggestion commands to implement [auto-complete](https://
 Active-Active databases do not support RediSearch suggestions.
 {{</note>}}
 
-Add a phrase for the search engine to suggest during auto-completion:
+Use [`FT.SUGADD`](https://redis.io/commands/ft.sugadd) to add a phrase for the search engine to suggest during auto-completion:
 
 ```sh
 127.0.0.1:12543> FT.SUGADD autocomplete "primary and caching" 100
 "(integer)" 1
 ```
 
-Test auto-complete suggestions:
+Test auto-complete suggestions with [`FT.SUGGET`](https://redis.io/commands/ft.sugget):
 
 ```sh
 127.0.0.1:12543> FT.SUGGET autocomplete "pri"
@@ -183,7 +183,6 @@ doc2 = { "title": "Redis",
 r.hset("py_doc:1", mapping = doc1)
 r.hset("py_doc:2", mapping = doc2)
 
-
 # Search the index for a string; paging limits the search results to 10
 result = r.ft("py_idx").search(Query("search engine").paging(0, 10))
 
@@ -205,4 +204,6 @@ $ python3 quick_start.py
 ## More info
 
 - [RediSearch commands]({{<relref "/modules/redisearch/commands">}})
+- [RediSearch query syntax](https://redis.io/docs/stack/search/reference/query_syntax/)
+- [Details about RediSearch query features](https://redis.io/docs/stack/search/reference/)
 - [RediSearch client libraries](https://redis.io/docs/stack/search/clients/)
