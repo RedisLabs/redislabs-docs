@@ -11,6 +11,8 @@ aliases: [
     /rs/references/developing-for-active-active/developing-sorted-sets-active-active.md,
     /rs/databases/active-active/data-types/sorted-sets-active-active.md,
     /rs/databases/active-active/data-types/sorted-sets-active-active/,
+    /rs/databases/active-active/develop/sorted-sets-active-active,
+    /rs/databases/active-active/develop/sorted-sets-active-active.md,
 ]
 ---
 {{< note >}}

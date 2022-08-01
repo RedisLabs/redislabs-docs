@@ -8,8 +8,9 @@ categories: ["RS"]
 aliases: [
         /rs/references/developing-for-active-active/,
         /rs/references/developing-for-active-active_index.md,
-        /rs/databases/active-active/data-types/_index.md,
-        /rs/databases/active-active/data-types/,
+        /rs/databases/active-active/develop/data-types.md,
+        /rs/databases/active-active/develop/data-types/,
+     
 ]
 ---
 

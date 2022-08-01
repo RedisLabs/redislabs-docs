@@ -2,7 +2,7 @@
 title: Develop applications with Active-Active databases
 linkTitle: Develop for Active-Active
 description: Overview of how developing applications differs for Active-Active databases from standalone Redis databases.
-weight: 10
+weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -12,8 +12,8 @@ aliases: [
     /rs/references/developing-for-active-active.md,
     /rs/databases/active-active/develop-aa-apps.md,
     /rs/databases/active-active/develop-aa-apps/,
-    /rs/databases/active-active/develop-for-aa.md,
-    /rs/databases/active-active/develop-for-aa/,
+    /rs/databases/active-active/develop/develop-for-aa.md,
+    /rs/databases/active-active/develop/develop-for-aa/,
 ]
 ---
 Developing geo-distributed, multi-master applications can be difficult.

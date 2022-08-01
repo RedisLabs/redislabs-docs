@@ -10,7 +10,9 @@ aliases: [
     /rs/references/developing-for-active-active/developing-streams-active-active/,
     /rs/references/developing-for-active-active/developing-streams-active-active.md,
     /rs/databases/active-active/data-types/streams-active-active.md,
-    /rs/databases/active-active/data-types/streams-active-active/
+    /rs/databases/active-active/data-types/streams-active-active/,
+    /rs/databases/active-active/develop/streams-active-active.md,
+    /rs/databases/active-active/develop/streams-active-active/,
 
 ]
 ---
