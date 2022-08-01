@@ -12,6 +12,8 @@ aliases: [
     /rs/databases/active-active/data-types/hyperloglog-active-active.md,
     /rs/databases/active-active/data-types/hyperloglog-active-active/,
     content/rs/databases/active-active/develop/hyperloglog-active-active.md,
+    content/rs/databases/active-active/develop/hyperloglog.md,
+    content/rs/databases/active-active/develop/hyperloglog/,
     
 ]
 ---
