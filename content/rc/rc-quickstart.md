@@ -103,13 +103,13 @@ At this point, you're viewing the **Configuration** details for your new databas
 
 To connect to your database, you need the following info:
 
-- The public endpoint for your database
+- The hostname for your database
 - The port number
 - The database password
 
 These are displayed in the **Configuration** tab.  
 
-- In the **General** section, the **Public endpoint** setting shows the URI for your database and the port number.  Use the **Copy** button to copy these values to the Clipboard.
+- In the **General** section, the **Public endpoint** setting shows the hostname for your database and the port number.
 
 - The **Security** section contains your **Default user password**.  By default, this is masked.  Select the eye icon to show or hide the password.    
 
@@ -132,7 +132,7 @@ Docker provides a convenient way to run `redis-cli` without the full installatio
 
 When you run the `redis` Docker image, you can open a bash shell instance and run `redis-cli` from the container.
 
-1.  To begin, pull the `redis` docker image and run it with default options:
+1.  To begin, pull and start the `redis` Docker image by using the following Docker command in the terminal or command-line for your operating system:
 
     ``` sh
     $ docker pull redis
@@ -143,11 +143,10 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
 2.  This gives you a bash prompt running within your Docker image.  From here, you can connect to your database:
 
     ``` sh
-    # redis-cli -h <endpoint> -p <port> -a <password>
-    xxx:yyy> 
+    # redis-cli -h <host> -p <port> -a <password>
     ```
 
-    Replace `<endpoint>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
+    Replace `<host>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
 
 3.  You should now be connected to your database and can perform basic Redis commands:
 
