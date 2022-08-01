@@ -140,7 +140,7 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
     $ docker exec -it redis1 bash
     ```
 
-2.  This gives you a bash prompt running within your Docker image.  From here, you can connect to your database:
+2. Connect to your database.
 
     ``` sh
     # redis-cli -h <host> -p <port> -a <password>
