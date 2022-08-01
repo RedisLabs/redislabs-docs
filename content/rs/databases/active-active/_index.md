@@ -18,16 +18,16 @@ aliases: [
 
 In Redis Enterprise, Active-Active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)(conflict-free replicated data type).
 The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
-With Active-Active databases, applications can read and write to the same data set from different geographical locations seamlessly and with low latency,
-without changing the way the application connects to the database.
+
+With Active-Active databases, applications can read and write to the same data set from different geographical locations seamlessly and with low latency, without changing the way the application connects to the database.
 
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
 ## High availability
 
-The [high availability]({{<relref "/rs/databases/durability-ha.md">}}) that Active-Active replication provides is built upon a number of Redis Enterprise Software’s features (such as [clustering]({{<relref "">}}), [replication]({{<relref "">}}), and [replicaHA]({{<relref "">}})) as well as some features unique to Active-Active ([multi-master replication]({{<relref "">}}), [automatic conflict resolution]({{<relref "">}}), and [strong eventual consistency]({{<relref "">}})).
+The [high availability]({{<relref "/rs/databases/durability-ha.md">}}) that Active-Active replication provides is built upon a number of Redis Enterprise Software’s features (such as [clustering]({{<relref "">}}), [replication]({{<relref "">}}), and [replicaHA]({{<relref "/rs/databases/configure/replica-ha.md">}})) as well as some features unique to Active-Active ([multi-primary replication]({{<relref "">}}), [automatic conflict resolution]({{<relref "">}}), and [strong eventual consistency]({{<relref "">}})).
 
-[Clustering] and [replication] are used together in Active-Active databases to distribute multiple copies of the dataset across multiple nodes and multiple clusters. This helps reduce the risk of a node or cluster becoming a single point of failure. If a primary node or primary shard fails, a replica will automatically be promoted to primary. The [replicaHA] feature (enabled by default), will automatically migrate replica shards to available nodes to avoid one node holding all copies of certain data.
+[Clustering]({{<relref "">}}) and [replication]({{<relref "">}}) are used together in Active-Active databases to distribute multiple copies of the dataset across multiple nodes and multiple clusters. This helps reduce the risk of a node or cluster becoming a single point of failure. If a primary node or primary shard fails, a replica will automatically be promoted to primary. The [replicaHA]({{<relref "/rs/databases/configure/replica-ha.md">}}) feature (enabled by default), will automatically migrate replica shards to available nodes to avoid one node holding all copies of certain data.
 
 ## Multi-master replication (#mmr)
 
@@ -42,16 +42,15 @@ Database configurations, LUA scripts, and other support info are not replicated.
 
 ## Syncer
 
-Keeping multiple copies of the dataset consistent across multiple clusters is no small task. Redis Active-Active geo-distributed replication uses a process called the [syncer]({{<relref "">}}), to achieve [consistency] between participating clusters.
+Keeping multiple copies of the dataset consistent across multiple clusters is no small task. Redis Active-Active geo-distributed replication uses a process called the [syncer]({{<relref "content/rs/databases/active-active/syncer.md">}}), to achieve consistency between participating clusters.
 
 The syncer keeps a [replication backlog]({{<relref "">}}), which stores changes to the dataset that the syncer sends to other participating clusters. The syncer uses partial syncs to keep replicas up to date with changes, or a full sync in the event a replica or primary is lost.
 
 ## Conflict resolution
 
-Because you can connect to any participating cluster to perform a write operation, concurrent and conflicting writes are always possible. Conflict resolution is an important part of the Active-Active technology. Active-Active databases only use [conflict-free replicated data types (CRDTs)](). These data types provide a predictable conflict resolution and don't require any additional work from the application or client side.
+Because you can connect to any participating cluster to perform a write operation, concurrent and conflicting writes are always possible. Conflict resolution is an important part of the Active-Active technology. Active-Active databases only use [conflict-free replicated data types (CRDTs)](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type). These data types provide a predictable conflict resolution and don't require any additional work from the application or client side.
 
 There are some important differences to consider when developing with CRDTs for Active-Active databases. See [Develop applications with Active-Active databases]({{<relref "">}}) for more detail.
-
 
 ## Strong eventual consistency
 
@@ -63,6 +62,6 @@ Other Redis Enterprise Software features can also be used to enhance the perform
 
 ## Next steps
 
-- Plan your Active-Active deployment
-- Get Started with Active-Active
-- Create an Active-Active database
+- [Plan your Active-Active deployment]({{<relref "">}})
+- [Get Started with Active-Active]({{<relref "">}})
+- [Create an Active-Active database]({{<relref "">}})
