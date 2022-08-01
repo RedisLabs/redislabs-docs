@@ -13,6 +13,8 @@ aliases: [
     /rs/databases/active-active/data-types/sorted-sets-active-active/,
     /rs/databases/active-active/develop/sorted-sets-active-active,
     /rs/databases/active-active/develop/sorted-sets-active-active.md,
+    /rs/databases/active-active/develop/sorted-sets.md,
+    /rs/databases/active-active/develop/sorted-sets/,
 ]
 ---
 {{< note >}}
