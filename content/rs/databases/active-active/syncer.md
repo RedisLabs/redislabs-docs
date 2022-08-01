@@ -13,7 +13,7 @@ aliases: [
 
 ## Syncer process
 
-Each node in a cluster containing an instance of an Active-Active database hosts a process called syncer.
+Each node in a cluster containing an instance of an Active-Active database hosts a process called the syncer.
 The syncer process:
 
 1. Connects to the proxy on another participating cluster
