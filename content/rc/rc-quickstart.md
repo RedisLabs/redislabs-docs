@@ -148,7 +148,7 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
 
     Replace `<host>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
 
-3.  You should now be connected to your database and can perform basic Redis commands:
+3. You should now be connected to your database. Try these basic Redis commands.
 
     ``` sh
     xxx:yyy> ping
