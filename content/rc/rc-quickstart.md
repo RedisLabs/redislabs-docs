@@ -1,10 +1,10 @@
 ---
-Title: Redis Cloud Quick Start
+Title: Redis Cloud quick start
 description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
-linktitle: "Quick Start"
+linktitle: "Quick start"
 aliases: /rv/quick-setup/
          /rc/quick-setup-redis-cloud/
          /rc/quick-setup/
