@@ -2,7 +2,7 @@
 Title: Data types for Active-Active databases
 linktitle: Data types
 description: Introduction to differences in data types between standalone and Active-Active Redis databases.
-weight: 20
+weight: 90
 alwaysopen: false
 categories: ["RS"]
 aliases: [

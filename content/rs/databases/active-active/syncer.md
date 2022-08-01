@@ -2,7 +2,7 @@
 Title: Syncer process
 linktitle: Syncer process
 description: 
-weight: 39
+weight: 75
 alwaysopen: false
 categories: ["RS"]
 aliases: [
