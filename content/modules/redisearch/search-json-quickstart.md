@@ -1,7 +1,7 @@
 ---
-Title: RediSearch with JSON quick start
+Title: Search JSON quick start
 linkTitle: Quick start (with JSON)
-description: Quick start for indexing and searching JSON documents.
+description: RediSearch quick start on how to index JSON documents and run search queries.
 weight: 22
 alwaysopen: false
 categories: ["Modules"]
@@ -9,15 +9,20 @@ module: RediSearch
 aliases: /modules/redisearch/search-json-quickstart/
 ---
 
+This quick start shows you how to index documents stored as JSON documents and run search queries against the index.
+
 ## Prerequisites
 
 For this quick start tutorial, you need:
 
-- A Redis database with the RediSearch and [RedisJSON]({{<relref "/modules/redisjson">}}) modules enabled. You can use either:
+- Either:
 
-    - A [Redis Cloud]({{<relref "/modules/modules-quickstart.md">}}) database
+    - A [Redis Cloud]({{<relref "/modules/modules-quickstart.md">}}) database with [Redis Stack]({{<relref "/modules/redis-stack">}})
 
-    - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
+    - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database with:
+    
+        - RediSearch v2.2 or later
+        - RedisJSON v2.0 or later
 
 - [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
 
@@ -25,33 +30,41 @@ For this quick start tutorial, you need:
 
 ## Search JSON with `redis-cli`
 
-The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RediSearch commands.
+The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and try out RediSearch with RedisJSON.
 
-### Connect to a database
-
-```sh
-$ redis-cli -h <endpoint> -p <port> -a <password>
-127.0.0.1:12543>
-```
+To begin, [connect to your database]({{<relref "/rs/references/cli-utilities/redis-cli#connect-to-a-database">}}) with `redis-cli`.
 
 ### Create an index
 
-The schema for this example has three fields: 
-- `name` (`TEXT`)
-- `description` (`TEXT`)
-- `price` (`NUMERIC`)
+To create an index for JSON documents with [`FT.CREATE`](https://redis.io/commands/ft.create), use the <nobr>`ON JSON`</nobr> keyword.
 
-<!-- TODO: mention/link to JSONPath -->
+You also need to include a schema definition that indicates which JSON elements to index. When you define the schema, use a [JSON path]({{<relref "/modules/redisjson#redisjson-paths">}}) expression to map a specific JSON element to a schema field:
 
-Use [`FT.CREATE`](https://redis.io/commands/ft.create) to create an index and define the schema:
-
-```sh
-127.0.0.1:12543> FT.CREATE itemIdx ON JSON PREFIX 1 item: SCHEMA $.name AS name TEXT $.description as description TEXT $.price AS price NUMERIC
+```sql
+SCHEMA <JSONPath> AS <field_name> <TYPE>
 ```
 
-See [Index limitations](https://redis.io/docs/stack/search/indexing_json/#index-limitations) for more details about JSON index SCHEMA restrictions.
+The examples in this tutorial use the extended [JSONPath syntax]({{<relref "/modules/redisjson#jsonpath-syntax">}}).
+
+The schema for this example includes four fields: 
+- `name` (`TEXT`)
+- `description` (`TEXT`)
+- `connectionType` (`TEXT`)
+- `price` (`NUMERIC`)
+
+This example defines the schema and creates the index:
+
+```sh
+127.0.0.1:12543> FT.CREATE itemIdx ON JSON PREFIX 1 item: SCHEMA $.name AS name TEXT $.description as description TEXT $.connection.type AS connectionType TEXT $.price AS price NUMERIC
+```
+
+After you create the index, it automatically adds all existing and future JSON documents prefixed with `item:` to the index.
+
+See [Index limitations](https://redis.io/docs/stack/search/indexing_json/#index-limitations) for more details about schema restrictions for JSON document indexes.
 
 ### Add JSON documents
+
+You can use the [`JSON.SET`](https://redis.io/commands/json.set) command to create and store JSON documents in the database.
 
 The following examples use these JSON documents to represent individual inventory items.
 
@@ -93,7 +106,7 @@ Item 2 JSON document:
 }
 ```
 
-Use [`JSON.SET`](https://redis.io/commands/json.set) to store these documents in the database:
+To store these JSON documents in the database, run:
 
 ```sh
 127.0.0.1:12543> JSON.SET item:1 $ '{"name":"Noise-cancelling Bluetooth headphones","description":"Wireless Bluetooth headphones with noise-cancelling technology","connection":{"wireless":true,"type":"Bluetooth"},"price":99.98,"stock":25,"colors":["black","silver"]}'
@@ -104,7 +117,81 @@ Use [`JSON.SET`](https://redis.io/commands/json.set) to store these documents in
 
 ### Search the index
 
-TBA
+To search the index for JSON documents that match some condition, use the [`FT.SEARCH`](https://redis.io/commands/ft.search) command. You can search any field defined in the index schema.
+
+For more information about search queries, see [Search query syntax](https://redis.io/docs/stack/search/reference/query_syntax).
+
+#### Return the entire document
+
+Search query results include entire JSON documents by default.
+
+Search for Bluetooth headphones with a price less than 70:
+
+```sh
+127.0.0.1:6379> FT.SEARCH itemIdx '@description:(headphones) @connectionType:(bluetooth) @price:[0 70]'
+1) "1"
+2) "item:2"
+3) 1) "$"
+   2) "{\"name\":\"Wireless earbuds\",\"description\":\"Wireless Bluetooth in-ear headphones\",\"connection\":{\"wireless\":true,\"connection\":\"Bluetooth\"},\"price\":64.99,\"stock\":17,\"colors\":[\"black\",\"white\"]}"
+```
+
+#### Return specific fields
+
+You can use [field projection](https://redis.io/docs/stack/search/indexing_json/#field-projection) to limit the search results to include only specific parts of a JSON document. Use the `RETURN` option to specify which fields to include in the search results.
+
+The following query uses the JSONPath expression `$.stock` to return each item's stock in addition to the name and price:
+
+```sh
+127.0.0.1:6379> FT.SEARCH itemIdx '@description:(headphones)' RETURN 5 name price $.stock AS stock
+1) "2"
+2) "item:1"
+3) 1) "name"
+   2) "Noise-cancelling Bluetooth headphones"
+   3) "price"
+   4) "99.98"
+   5) "stock"
+   6) "25"
+4) "item:2"
+5) 1) "name"
+   2) "Wireless earbuds"
+   3) "price"
+   4) "64.99"
+   5) "stock"
+   6) "17"
+```
+### Aggregate search results
+
+The [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate) command lets you run a search query and modify the search results with operations such as `SORTBY`, `REDUCE`, `LIMIT`, `FILTER`, and more. For a detailed list of available operations and examples, see [Aggregations](https://redis.io/docs/stack/search/reference/aggregations).
+
+You can use [JSON path]({{<relref "/modules/redisjson#redisjson-paths">}}) expressions with the `LOAD` option to run aggregations on JSON documents. You can use any JSON element, even elements that are not included in the index schema.
+
+This example uses aggregation operations to calculate a 10% price discount for each item and sorts the items from least expensive to most expensive:
+
+```sh
+127.0.0.1:6379> FT.AGGREGATE itemIdx '*' LOAD 4 name $.price AS originalPrice APPLY '@originalPrice - (@originalPrice * 0.10)' AS salePrice SORTBY 2 @salePrice ASC
+1) "2"
+2) 1) "name"
+   2) "Wireless earbuds"
+   3) "originalPrice"
+   4) "64.99"
+   5) "salePrice"
+   6) "58.491"
+3) 1) "name"
+   2) "Noise-cancelling Bluetooth headphones"
+   3) "originalPrice"
+   4) "99.98"
+   5) "salePrice"
+   6) "89.982"
+```
+
+### Drop the index
+
+You can remove the index without deleting any associated documents with the [`FT.DROPINDEX`](https://redis.io/commands/ft.dropindex) command:
+
+```sh
+127.0.0.1:12543> FT.DROPINDEX itemIdx
+OK
+```
 
 ## Search JSON with Python
 
