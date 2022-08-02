@@ -9,7 +9,7 @@ aliases: [
     /rs/administering/database-operations/updating-configurations.md,
     /rs/databases/configure/edit-delete-db.md,
     /rs/databases/configure/edit-delete-db/,
-    /rs/databases/edit-delete-db
+    /rs/databases/edit-delete-db/,
 ]
 ---
 ## Edit database configuration
