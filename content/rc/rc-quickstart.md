@@ -126,7 +126,7 @@ Here's an example of each.
 
 ### Use redis-cli (via Docker){#using-rediscli}
 
-The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands]({{<relref "/rs/references/cli-utilities/redis-cli/">}}).
+The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands/).
 
 [Docker](https://www.docker.com/) provides a convenient way to run `redis-cli` without the full installation experience.
 
