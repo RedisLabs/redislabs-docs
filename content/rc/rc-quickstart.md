@@ -126,21 +126,28 @@ Here's an example of each.
 
 ### Use redis-cli (via Docker){#using-rediscli}
 
-The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands).
+The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands]({{<relref "/rs/references/cli-utilities/redis-cli/">}}).
 
-Docker provides a convenient way to run `redis-cli` without the full installation experience.
+[Docker](https://www.docker.com/) provides a convenient way to run `redis-cli` without the full installation experience.
 
-When you run the `redis` Docker image, you can open a bash shell instance and run `redis-cli` from the container.
+Run the following commands to create a `redis` Docker container and connect to a bash prompt within the container.
 
-1.  Enter this command in your command-line interface. A bash prompt opens in your Docker image.
+1.  Download the `redis` Docker image.
 
     ``` sh
     $ docker pull redis
+    ```
+2.  Start a container created from the image.
+
+    ``` sh
     $ docker run -d --name redis1 redis
+    ```
+3.  Connect to a bash prompt running in the container.
+    ``` sh
     $ docker exec -it redis1 bash
     ```
 
-2. Connect to your database.
+4. Connect to your database.
 
     ``` sh
     # redis-cli -h <host> -p <port> -a <password>
@@ -148,7 +155,7 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
 
     Replace `<host>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
 
-3. You should now be connected to your database. Try these basic Redis commands.
+5. You should now be connected to your database. Try these basic Redis commands.
 
     ``` sh
     xxx:yyy> ping
