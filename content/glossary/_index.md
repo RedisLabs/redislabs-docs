@@ -108,8 +108,14 @@ More info: [CustomResourceDefinition](https://kubernetes.io/docs/reference/gloss
 {{%definition "data eviction policy"%}}
 Defines how excess data is handled when the database exceeds the memory limit.
 
-More info: [Data Eviction Policy]({{<relref "/rc/databases/configuration/data-eviction-policies.md">}})
+More info: [Data eviction policy]({{<relref "/rc/databases/configuration/data-eviction-policies.md">}})
 {{%/definition%}}
+
+{{%definition "distributed synchronization"%}}
+Setting that gives distributed databases the ability to use any available proxy endpoint to manage synchronization traffic.
+
+More info: [Configure distributed synchronization]({{<relref "/rs/databases/active-active/synchronization-mode.md">}})
+{{%definition%}}
 
 {{%definition "Domain Name Service (DNS)"%}}
 Naming system for computers, services, or other resources connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities.
