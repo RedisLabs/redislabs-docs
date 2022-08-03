@@ -63,6 +63,13 @@ Classless Inter-Domain Routing (CIDR) is a method to allocate and route IP addre
 More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [Configure CIDR allowlist]({{<relref "/rc/security/cidr-whitelist.md">}})
 {{%/definition%}}
 
+{{%definition "consistency"%}}
+Consistency models describe the way a distributed system keeps replicated data consistent between copies. 
+
+More info: [Consistency models](https://en.wikipedia.org/wiki/Consistency_model)
+
+{{%definition%}}
+
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
 
