@@ -41,7 +41,7 @@ Get stats for all syncer sources of a local database.
 GET /bdbs/1/sync_source_stats?interval=5min
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
