@@ -225,7 +225,7 @@ PUT /bdbs/1
 |-------|------|-------------|
 | uid | integer | The unique ID of the database for which update is requested. |
 
-#### Request body
+#### Body
 
 Include a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) with updated fields in the request body.
 
@@ -299,7 +299,7 @@ Update the configuration of an active database and perform an additional action.
 
 If called with the `dry_run` URL query string, the function will validate the [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) against the existing database, but will not invoke the state machine that will update it.
 
-#### Required permissions
+#### Permissions
 
 | Permission name | Roles |
 |-----------------|-------|
@@ -335,7 +335,7 @@ The above request resets the admin password after updating the database.
 |---------|------|---------------|
 | dry_run |       | Validate the new [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) but don't apply the update. |
 
-#### Request body
+#### Body
 
 Include a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) with updated fields in the request body.
 
