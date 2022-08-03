@@ -31,7 +31,7 @@ Get statistics for all databases.
 
 | Permission name | Roles |
 |-----------------|-------|
-| [view_all_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_all_bdb_stats">}}) | | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
+| [view_all_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_all_bdb_stats">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
 ### Request {#get-all-request}
 
