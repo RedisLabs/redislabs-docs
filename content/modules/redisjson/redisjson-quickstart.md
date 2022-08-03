@@ -69,12 +69,16 @@ OK
 
 You can also use [`JSON.SET`](https://redis.io/commands/json.set) to modify existing JSON documents and elements. To modify a specific JSON element, you need to provide the [path](https://redis.io/docs/stack/json/path) to the element as a parameter.
 
+#### Add a new JSON object
+
 Add a new store named `clothing_store` to the shopping list and provide an array of `items` that you need to buy from there:
 
 ``` sh
 127.0.0.1:12543> JSON.SET shopping_list $.stores.clothing_store '{ "items": [ { "name": "socks", "count": 2 } ] }'
 OK
 ```
+
+#### Append to an array
 
 You can use [`JSON.ARRAPPEND`](https://redis.io/commands/json.arrappend) to add a new element to an existing array.
 
@@ -87,6 +91,8 @@ For example, add a new item named `pears` to the `grocery_store` list:
 
 The output number indicates how many items are currently in the array.
 
+#### Increase or decrease a number
+
 [`JSON.NUMINCRBY`](https://redis.io/commands/json.numincrby) lets you increase (or decrease) a number by a specified value.
 
 Increase the `count` of the first item on the `clothing_store` list by 2:
@@ -95,6 +101,8 @@ Increase the `count` of the first item on the `clothing_store` list by 2:
 127.0.0.1:12543> JSON.NUMINCRBY shopping_list $.stores.clothing_store.items[0].count 2    
 [4]
 ```
+
+#### Conditional update
 
 You can also use filter expressions `?()` in the JSONPath to modify JSON elements that match some condition.
 
@@ -107,9 +115,11 @@ The following example filters on `grocery_store` item names to decrease the `cou
 
 To use double quotes in a filter expression, you must enclose the path within single quotes.
 
-### Read JSON elements
+### Read JSON
 
 The [`JSON.GET`](https://redis.io/commands/json.get) command lets you retrieve JSON documents stored in the database. If you run `redis-cli` with the `--raw` option, you can format the response with the `INDENT`, `NEWLINE`, and `SPACE` options.
+
+#### Read entire document
 
 To retrieve the entire JSON document, run [`JSON.GET`](https://redis.io/commands/json.get) with root `$` as the path:
 
@@ -143,6 +153,8 @@ To retrieve the entire JSON document, run [`JSON.GET`](https://redis.io/commands
   }
 ]
 ```
+
+#### Read specific elements
 
 You can also use [`JSON.GET`](https://redis.io/commands/json.get) to retrieve specific elements within a JSON document.
 
@@ -203,42 +215,44 @@ integer
 
 ### Delete JSON elements
 
-Use [`JSON.DEL`](https://redis.io/commands/json.del) to delete parts of the JSON document.
+Use [`JSON.DEL`](https://redis.io/commands/json.del) to delete parts of the JSON document:
 
-Remove the `clothing_store` JSON object:
+1. Remove the `clothing_store` JSON object:
 
-```sh
-127.0.0.1:12543> JSON.DEL shopping_list $.stores.clothing_store
-1
-```
+    ```sh
+    127.0.0.1:12543> JSON.DEL shopping_list $.stores.clothing_store
+    1
+    ```
 
-Then remove the second item from the `grocery_store` list:
+1. Then remove the second item from the `grocery_store` list:
 
-```sh
-127.0.0.1:12543> JSON.DEL shopping_list $.stores.grocery_store.items[1]
-1
-```
+    ```sh
+    127.0.0.1:12543> JSON.DEL shopping_list $.stores.grocery_store.items[1]
+    1
+    ```
 
-If you run [`JSON.GET`](https://redis.io/commands/json.get), you can verify the removal of the expected JSON elements:
+1. If you run [`JSON.GET`](https://redis.io/commands/json.get), you can verify the removal of the expected JSON elements:
 
-```sh
-127.0.0.1:12543> JSON.GET shopping_list $ INDENT "\t" NEWLINE "\n"
-[
-  {
-    "list_date": "05/05/2022",
-    "stores": {
-      "grocery_store": {
-        "items": [
-          {
-            "name": "apples",
-            "count": 5
+    ```sh
+    127.0.0.1:12543> JSON.GET shopping_list $ INDENT "\t" NEWLINE "\n"
+    [
+      {
+        "list_date": "05/05/2022",
+        "stores": {
+          "grocery_store": {
+            "items": [
+              {
+                "name": "apples",
+                "count": 5
+              }
+            ]
           }
-        ]
+        }
       }
-    }
-  }
-]
-```
+    ]
+    ```
+
+### Delete JSON document
 
 If you run [`JSON.DEL`](https://redis.io/commands/json.del) but don't specify a path, it will delete the entire JSON document:
 
