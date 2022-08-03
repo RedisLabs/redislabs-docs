@@ -200,9 +200,6 @@ Method of authenticating users with pieces of evidence of the user's identity. W
 More info: [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication.md">}})
 {{%/definition%}}
 
-{{%definition "multi-master replication (MMR)"%}}
-
-{{%/definition%}}
 
 {{%definition "multi-primary replication"%}}
 Also known as multi-master replication, Active-Active databases have multiple primary nodes (one on each participating cluster) to enable concurrent writes operations.
@@ -230,7 +227,7 @@ If a member Active-Active database is in an out of memory situation, that member
 ## P - Q {#letter-p}
 
 {{%definition "participating clusters"%}}
-Clusters participating in the multi-master replication of an Active-Active database.
+Clusters participating in the multi-primary replication of an Active-Active database.
 {{%/definition%}}
 
 {{%definition "provisioning"%}}
@@ -286,6 +283,12 @@ Enables your Redis databases to span both RAM and dedicated flash memory (SSD). 
 
 More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/administering/cluster-operations/getting-started-redis-flash.md">}})
 {{%/definition%}}
+
+{{%definition "replica high availability (replicaHA)"%}}
+High availability feature of Redis Enterprise Software. After a node failure, the cluster automatically migrates remaining replica shards available nodes. Previously known as "Slave HA" or `slave_ha`.
+
+More info: [High availability for replica shards]({{<relref "https://docs.redis.com/latest/rs/databases/configure/replica-ha/">}})
+{{%definition%}}
 
 {{%definition "Replica Of"%}}
 The Redis Enterprise implementation of active-passive database replication.
