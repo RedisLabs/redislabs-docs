@@ -15,12 +15,6 @@ aliases: /glossary/
 
 ## A, B {#letter-a}
 
-{{%definition "admission controller"%}}
-A piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object.
-
-More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
-{{%/definition%}}
-
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
@@ -40,6 +34,13 @@ A “member database” of a global Active-Active database which is made up of i
 
 {{%definition "active-passive database replication"%}}
 Provides applications read-only access to replicas of the data set from different geographical locations. The Redis Enterprise implementation of active-passive replication is called [Replica Of]({{<relref "#replica-of">}}).
+
+{{%/definition%}}
+
+{{%definition "admission controller"%}}
+A piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object.
+
+More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
 {{%/definition%}}
 
 {{%definition "append-only file (AoF)"%}}
@@ -64,7 +65,8 @@ More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain
 {{%/definition%}}
 
 {{%definition "consistency"%}}
-Consistency models describe the way a distributed system keeps replicated data consistent between copies. 
+
+Consistency models describe the way a distributed system keeps replicated data consistent between copies.
 
 More info: [Consistency models](https://en.wikipedia.org/wiki/Consistency_model)
 
@@ -73,7 +75,7 @@ More info: [Consistency models](https://en.wikipedia.org/wiki/Consistency_model)
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
 
-More info: [Database Clustering]({{<relref "/rc/databases/configuration/clustering.md" >}})
+More info: [Database clustering]({{<relref "/rc/databases/configuration/clustering.md" >}})
 {{%/definition%}}
 
 {{%definition "Cluster Configuration Store (CSS)"%}}
@@ -120,6 +122,13 @@ More info: [DNS wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 After updating data on one instance of a distributed database, the other database copies may have stale data for a short time while they sync. Eventual consistency means that the updated data will eventually be the same across all database copies.
 
 More info: [Eventual consistency wikipedia](https://en.wikipedia.org/wiki/Eventual_consistency)
+{{%/definition%}}
+
+{{%definition "Fully qualified domain name (FQDN)"%}}
+A domain name that includes a list of domain labels to specify the exact location in the DNS.
+
+More info: [FQDN wikipedia](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)
+
 {{%/definition%}}
 
 {{%definition "`fysnc`"%}}
@@ -171,13 +180,19 @@ More info: [LDAP wikipedia](https://en.wikipedia.org/wiki/Lightweight_Directory_
 
 ## M - O {#letter-m}
 
-{{%definition "Master node"%}}
-Node that operates as the leader of a cluster
+{{%definition "master node"%}}
+Node that operates as the leader of a cluster. Also known as the primary node.
 {{%/definition%}}
 
 {{%definition "migration"%}}
 Deciding when and where shards will be moved if more network throughput, memory, or CPU resources are needed
 {{%/definition%}}
+
+{{%definition "multicast DNS (mDNS)"%}}
+Protocol that resolves hostnames to the IP adressess that do not include a local name server.
+
+More info: [multicast DNS wikipedia](https://en.wikipedia.org/wiki/Multicast_DNS)
+{{%definition%}}
 
 {{%definition "multi-factor authentication (MFA)"%}}
 Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Enterprise Cloud, users must enter their username, password, and an authentication code when logging in.
@@ -186,8 +201,15 @@ More info: [Multi-factor authentication]({{<relref "/rc/security/multi-factor-au
 {{%/definition%}}
 
 {{%definition "multi-master replication (MMR)"%}}
-Multi-directional replication that power the efficient replication required to achieve active-active concurrent writes in Active-Active databases.
+
 {{%/definition%}}
+
+{{%definition "multi-primary replication"%}}
+Also known as multi-master replication, Active-Active databases have multiple primary nodes (one on each participating cluster) to enable concurrent writes operations.
+
+More info: [Multi-primary replication]({{<relref "/rs/databases/active-active/#multi-primary-replication">}})
+
+{{%definition%}}
 
 {{%definition "namespace"%}}
 An abstraction used by Kubernetes to support multiple virtual clusters on the same physical cluster.
