@@ -344,6 +344,12 @@ More info: [SASL wikipedia](https://en.wikipedia.org/wiki/Simple_Authentication_
 Data persistence file that performs a data dump every one, six, or twelve hours.
 {{%/definition%}}
 
+{{%definition "syncer"%}}
+Process on each node hosting an Active-Active database instance that synchronizes a backlog of operations between participating clusters.
+
+More info: [Syncer process]({{<relref "/rs/databases/active-active/syncer.md">}})
+{{%definition%}}
+
 ## T - Z {#letter-t}
 
 {{%definition "Transport Layer Security (TLS)"%}}
