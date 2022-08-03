@@ -237,7 +237,7 @@ The body content may provide additional action details.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Action initiated successfully. |
 | [409 Conflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | Only a single instance of any action type can be invoked at the same time. |
 
-### Example Requests
+### Example requests
 
 #### cURL
 
