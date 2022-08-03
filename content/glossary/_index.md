@@ -145,13 +145,13 @@ More info: [Redis Enterprise durability and high availability]({{<relref "/rs/da
 {{%definition "ingress"%}}
 An API object that manages external access to the services in a Kubernetes cluster, typically HTTP.
 
-More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [Ingress routing for Redis Enterprise Software on Kubernetes]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}})
 {{%/definition%}}
 
 ## K, L {#letter-k}
 
 {{%definition "kubectl"%}}
-A command line tool for communicating with a Kubernetes API server. 
+A command line tool for communicating with a Kubernetes API server.
 
 More info: [Overview of kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)
 {{%/definition%}}
@@ -261,18 +261,21 @@ More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-fla
 {{%definition "Replica Of"%}}
 The Redis Enterprise implementation of active-passive database replication.
 
-More info: [Replica-Of
+More info: [Replica Of
 ]({{<relref "/rs/databases/import-export/replica-of.md">}})
 {{%/definition%}}
 
 {{%definition "ReplicaSet"%}}
-In Kubernetes, a ReplicaSet (aims to) maintain a set of replica Pods running at any given time.
+A ReplicaSet is a type of Kubernetes resource that (aims to) maintain a set of replica pods running at any given time.
 
 More info: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 {{%/definition%}}
 
 {{%definition "replication"%}}
-Database replication provides a mechanism to ensure high availability.
+
+Database replication provides a mechanism to ensure high availability. When replication is enabled, your dataset is replicated to a replica shard,
+which is constantly synchronized with the primary shard. If the primary 
+shard fails, an automatic failover happens and the replica shard is promoted.
 
 More info: [Database replication]({{<relref "/rs/databases/configure/replication.md">}})
 {{%/definition%}}
