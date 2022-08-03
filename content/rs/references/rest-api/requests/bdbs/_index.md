@@ -202,7 +202,7 @@ To track this request's progress, poll the [`/actions/<action_uid>` endpoint]({{
 #### Example HTTP request
 
 ```sh
-PUT /bdb/1
+PUT /bdbs/1
 ```
 
 #### Headers
@@ -213,7 +213,7 @@ PUT /bdb/1
 | Accept | application/json |
 | Content-type | application/json |
 
-#### Query Parameters
+#### Query parameters
 
 | Field   | Type | Description |
 |---------|------|---------------|
