@@ -3,7 +3,7 @@ Title: RedisJSON 2.2 release notes
 linkTitle: v2.2 (July 2022)
 description: Active-Active support for JSON.
 min-version-db: "6.0.0"
-min-version-rs: "6.0.0"
+min-version-rs: "6.2.12"
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
@@ -13,7 +13,7 @@ categories: ["Modules"]
 RedisJSON v2.2.0 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
-- Minimum Redis Enterprise Software version (cluster): 6.0.0
+- Minimum Redis Enterprise Software version (cluster): 6.2.12
 
 ## v2.2.0 (July 2022)
 
