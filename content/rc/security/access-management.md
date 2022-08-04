@@ -4,13 +4,15 @@ description: Access management
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-aliases: /rv/administration/account-team-settings/
-         /rc/administration/account-team-settings/
-         /rc/administration/account-team-settings.md
-         /rc/security/admin-console-security/user-team-management/
-         /rc/security/admin-console-security/user-team-management.md
-         /rc/administration/account-team-settings/
-         /rc/administration/account-team-settings.md
+aliases: [ "/rv/administration/account-team-settings/",
+         "/rc/administration/account-team-settings/",
+         "/rc/administration/account-team-settings.md",
+         "/rc/security/admin-console-security/user-team-management/",
+         "/rc/security/admin-console-security/user-team-management.md",
+         "/rc/administration/account-team-settings/",
+         "/rc/administration/account-team-settings.md",
+         "/rc/administration/access-management/",
+         "/rc/administration/access-management.md" ]
 ---
 
 The **Access management** screen helps you manage:
@@ -18,7 +20,7 @@ The **Access management** screen helps you manage:
 - The team of users allowed to access your subscription and its databases
 - The API keys that authenticate application access to your account.
 
-Here, you learn how to manage your team's users.  
+Here, you learn how to manage your team's users and to control their level of access. 
 
 If your Redis Enterprise Cloud subscription is managed through Google Cloud Platform (GCP) marketplace, see [GCP Marketplace team management](#gcp-team-management) for help.
 
