@@ -5,12 +5,16 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 linktitle: View Fixed subscription
-aliases: /rv/administration/setup_and_editing/view-edit-subscription/
-         /rc/administration/setup-and-editing/viewing-subscription/
-         /rc/administration/setup-and-editing/changing-subscription-plan/
-         /rc/administration/setup-and-editing/changing-subscription-plan/
-         /rc/administration/setup/edit-subscription/
-         /rc/administration/setup/edit-subscription.md
+aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
+           /rc/administration/setup-and-editing/viewing-subscription/,
+           /rc/administration/setup-and-editing/changing-subscription-plan/,
+           /rc/administration/setup-and-editing/changing-subscription-plan/,
+           /rc/administration/setup/edit-subscription/,
+           /rc/administration/setup/edit-subscription.md,
+           /rc/administration/setup-and-editing/changing-subscription-plan.md,
+           /rc/administration/setup-and-editing/changing-subscription-plan/,
+           /rc/administration/setup/change-plan.md,
+           /rc/administration/setup/change-plan/ ]
 
 ---
 To view the details of a Fixed subscription:
