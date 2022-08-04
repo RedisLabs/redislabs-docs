@@ -1,7 +1,7 @@
 ---
 Title: Access management
 description: Access management
-weight: 40
+weight: 15
 alwaysopen: false
 categories: ["RC"]
 aliases: [ "/rv/administration/account-team-settings/",
