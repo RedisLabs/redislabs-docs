@@ -204,8 +204,9 @@ This Python code creates an index, adds documents to the index, displays search 
 ```python
 import redis
 from redis.commands.search.field import TextField, NumericField
-from redis.commands.search.indexDefinition import IndexDefinition
+from redis.commands.search.indexDefinition import IndexDefinition, IndexType
 from redis.commands.search.query import Query
+from redis.commands.search.aggregation import AggregateRequest, Asc
 
 # Connect to a database
 r = redis.Redis(host="<endpoint>", port="<port>", 
@@ -213,26 +214,28 @@ r = redis.Redis(host="<endpoint>", port="<port>",
 
 # Options for index creation
 index_def = IndexDefinition(
-                prefix = ["item:"],
+                index_type=IndexType.JSON,
+                prefix = ['item:'],
                 score = 0.5,
-                score_field = "doc_score"
+                score_field = 'doc_score'
 )
 
 # Schema definition
-schema = ( TextField("name"),
-           TextField("description"),
-           NumericField("price")
+schema = ( TextField('$.name', as_name='name'),
+           TextField('$.description', as_name='description'),
+           TextField('$.connection.type', as_name='connectionType'),
+           NumericField('$.price', as_name='price')
 )
 
 # Create an index and pass in the schema
-r.ft("py_idx").create_index(schema, definition = index_def)
+r.ft('py_item_idx').create_index(schema, definition = index_def)
 
-# A dictionary that represents a JSON document
+# Dictionaries that represent JSON documents
 doc1 = {
   "name": "Noise-cancelling Bluetooth headphones",
   "description": "Wireless Bluetooth headphones with noise-cancelling technology",
   "connection": {
-    "wireless": true,
+    "wireless": True,
     "type": "Bluetooth"
   },
   "price": 99.98,
@@ -247,7 +250,7 @@ doc2 = {
   "name": "Wireless earbuds",
   "description": "Wireless Bluetooth in-ear headphones",
   "connection": {
-    "wireless": true,
+    "wireless": True,
     "type": "Bluetooth"
   },
   "price": 64.99,
@@ -259,24 +262,46 @@ doc2 = {
 }
 
 # Add documents to the database and index them
-r.hset("item:1", mapping = doc1)
-r.hset("item:2", mapping = doc2)
+r.json().set('item:1', '$', doc1)
+r.json().set('item:2', '$', doc2)
 
-# Search the index for a string; paging limits the search results to 10
-result = r.ft("py_idx").search(Query("search engine").paging(0, 10))
+# Search the index for a string
+search_result = r.ft('py_item_idx').search(Query('@name:(earbuds)')
+          .return_field('name')
+          .return_field('price')
+          .return_field('$.stock', as_field='stock'))
 
 # The result has the total number of search results and a list of documents
-print(result.total)
-print(result.docs)
+print('Results for "earbuds":')
+print(search_result.total)
+for doc in search_result.docs:
+    print(doc)
+print()
+
+# Use aggregation to calculate a 10% price discount for each item
+aggregate_query = AggregateRequest('*').load('name', 'price').apply(salePrice='@price - (@price * 0.10)').sort_by(Asc('@salePrice'))
+aggregate_result = r.ft('py_item_idx').aggregate(aggregate_query).rows
+
+# Display the aggregation result
+print('Aggregation result:')
+for result in aggregate_result:
+    print(result)
 
 # Delete the index; set delete_documents to True to delete indexed documents as well
-r.ft("py_idx").dropindex(delete_documents=False)
+r.ft('py_item_idx').dropindex(delete_documents=False)
 ```
 
 Example output:
+
 ```sh
 $ python3 quick_start.py 
-TBA
+Results for "earbuds":
+1
+Document {'id': 'item:2', 'payload': None, 'name': 'Wireless earbuds', 'price': '64.99', 'stock': '17'}
+
+Aggregation result:
+[b'name', b'Wireless earbuds', b'price', b'64.99', b'salePrice', b'58.491']
+[b'name', b'Noise-cancelling Bluetooth headphones', b'price', b'99.98', b'salePrice', b'89.982']
 ```
 
 ## More info
