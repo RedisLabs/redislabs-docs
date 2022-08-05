@@ -13,11 +13,19 @@ aliases: [
 ]
 ---
 To collect and display metrics data from your databases and other cluster components,
-you can connect your Prometheus or Grafana server to your Redis Enterprise cluster.
+you can connect your Prometheus or Grafana server to your Redis Enterprise Software (RS) cluster.
 Metrics are exposed at the node, database, shard and proxy levels.
 
 - [Prometheus](https://prometheus.io/) is an open-source systems monitoring and alerting toolkit that can scrape metrics from different sources.
 - [Grafana](https://grafana.com/) is an open-source, feature-rich metrics dashboard and graph editor that can process Prometheus data.
+
+-  Common use cases for Prometheus and Grafana together with RS are:  
+    - To collect and display data metrics not available in the [admin console]({{< relref "/rs/monitoring-metrics/console-metrics-definitions.md" >}}).
+
+    - To set up automatic alerts for node or cluster events.
+
+    - To display RS metric data alongside data from other applications.
+
 
 ![grafana-prometheus](/images/rs/grafana-prometheus.png)
 
