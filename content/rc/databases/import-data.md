@@ -1,7 +1,7 @@
 ---
 Title: Import data into a database
 description:
-weight: 70
+weight: 35
 alwaysopen: false
 categories: ["RC"]
 linktitle: Import data

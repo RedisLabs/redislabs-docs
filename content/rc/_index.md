@@ -4,14 +4,16 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
-aliases: /rv/
-         /rc/
-         /rediscloud
-         /redis-cloud
-         /redis_cloud
-         /redisenterprisecloud
-         /redis-enterprise-cloud
-         /redis_enterprise_cloud
+aliases: [ "/rv/",
+           "/rc/",
+           "/rediscloud",
+           "/redis-cloud",
+           "/redis_cloud",
+           "/redisenterprisecloud",
+           "/redis-enterprise-cloud",
+           "/redis_enterprise_cloud",
+           "/rc/administration/",
+           "/rc/administration.md" ]
 
 ---
 [Redis Enterprise Cloud](https://redis.com/redis-enterprise-cloud/overview/) delivers a fully managed Redis database offering hosted on major public cloud services.
@@ -49,7 +51,7 @@ Create and manage [Redis databases]({{<relref "/rc/databases">}}) in the cloud.
 
 ## Security
 Manage [secure connections]({{<relref "/rc/security">}}) to cloud databases.
-- [Access management]({{<relref "/rc/administration/access-management">}})
+- [Access management]({{<relref "/rc/security/access-management">}})
 - [Cloud database security]({{<relref "/rc/security/database-security">}})
 - [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}})
 - [Single sign-on]({{<relref "/rc/security/single-sign-on">}})
