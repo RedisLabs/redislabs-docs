@@ -37,7 +37,7 @@ Clustering and replication are used together in Active-Active databases to distr
 
 In Redis Enterprise Software, replication copies data from primary shards to replica shards. Active-Active geo-distributed replication also copies both primary and replica shards to other clusters. Each Active-Active database needs to span at least two clusters; these are called participating clusters.
 
-Each participating cluster hosts an instance of your database, and each instance has its own primary node. Having multiple primary nodes means you can connect to the proxy in any of your participating clusters. Connecting to the closest cluster geographically enables near-local latency. Multi-primary replication (previous referred to as multi-master replication) also means that your users still have access to the database if one of the participating clusters fails.
+Each participating cluster hosts an instance of your database, and each instance has its own primary node. Having multiple primary nodes means you can connect to the proxy in any of your participating clusters. Connecting to the closest cluster geographically enables near-local latency. Multi-primary replication (previously referred to as multi-master replication) also means that your users still have access to the database if one of the participating clusters fails.
 
 {{< note >}}
 Active-Active databases do not replicate the entire database, only the data.
