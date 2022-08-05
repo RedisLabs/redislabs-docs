@@ -17,7 +17,6 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 
 | Module | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
 |:-------|:-------------------------:|:-----------------------:|
-| [Redis Stack]({{<relref "/modules/redis-stack">}}) | &#x2705; Yes[^4] | &#x2705; Yes[^4] |
 | [RediSearch]({{<relref "/modules/redisearch">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RedisJSON]({{<relref "/modules/redisjson">}})   | &#x2705; Yes | &#x2705; Yes |
 | [RedisGraph]({{<relref "/modules/redisgraph">}}) | &#x2705; Yes | &#x2705; Yes |
@@ -38,7 +37,7 @@ For details about individual modules, see the corresponding documentation.
 
 | Feature name/capability | [RediSearch]({{< relref  "/modules/redisearch" >}}) | [RedisJSON]({{< relref  "/modules/redisjson" >}})    |  [RedisGraph]({{< relref  "/modules/redisgraph" >}})   | 
 |-------------------------|:--------------:|:------------:|:------------:|
-| Active-Active (CRDB)    | Yes (v2.0)     | Yes (v2.2)   | No           |
+| Active-Active (CRDB)[^5]    | Yes (v2.0)     | Yes (v2.2)   | No           |
 | Backup/Restore          | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
 | Clustering              | Yes (v1.6)[^3] | Yes (v1.0)   | Yes (v2.2.3)[^1] |
 | Custom hashing policy   | Yes (v2.0)     | Yes (v1.0)   | Yes (v1.0)   |
@@ -58,9 +57,11 @@ For details about individual modules, see the corresponding documentation.
 
 [^3]: You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/databases/configure/enable-oss-cluster-api">}}).
 
+[^5]: You cannot combine Redis on Flash and Active-Active with modules in Redis Cloud.
+
 | Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
 |-------------------------|:------------:|:------------:|:----------:|:----------:| 
-| Active-Active (CRDB)    | No           | No           | Yes (v1.0) | No         | 
+| Active-Active (CRDB)[^5]    | No           | No           | Yes (v1.0) | No         | 
 | Backup/Restore          | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
 | Clustering              | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
 | Custom hashing policy   | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
