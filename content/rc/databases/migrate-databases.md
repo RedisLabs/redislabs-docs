@@ -2,7 +2,7 @@
 Title: Migrate data to new subscription
 linkTitle: Migrate databases
 description: Shows two ways to migrate data to a database in a new subscription.
-weight: 75
+weight: 35
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/databases/migrate-databases/

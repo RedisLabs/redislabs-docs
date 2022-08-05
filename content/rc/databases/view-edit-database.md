@@ -1,5 +1,6 @@
 ---
 Title: View and edit databases
+linkTitle: "Edit and view"
 description:
 weight: 20
 alwaysopen: false
