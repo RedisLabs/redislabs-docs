@@ -46,7 +46,7 @@ Database configurations, LUA scripts, and other support info are not replicated.
 
 ## Syncer
 
-Keeping multiple copies of the dataset consistent across multiple clusters is no small task. Redis Active-Active geo-distributed replication uses a process called the [syncer]({{<relref "content/rs/databases/active-active/syncer.md">}}), to achieve consistency between participating clusters.
+Keeping multiple copies of the dataset consistent across multiple clusters is no small task. To achieve consistency between participating clusters, Redis Active-Active replication uses a process called the [syncer]({{<relref "content/rs/databases/active-active/syncer.md">}}). 
 
 The syncer keeps a [replication backlog]({{<relref "/rs/databases/active-active/manage-aa#replication-backlog/">}}), which stores changes to the dataset that the syncer sends to other participating clusters. The syncer uses partial syncs to keep replicas up to date with changes, or a full sync in the event a replica or primary is lost.
 

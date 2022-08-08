@@ -27,7 +27,7 @@ Much of the Active-Active database settings can be changed after the database ha
 ## Participating clusters
 
 You can add and remove participating clusters of an Active-Active database to change the topology.
-Use the participating clusters list to manage the changes to Active-Active topology in the UI.
+To manage the changes to Active-Active topology, use the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli/">}}) tool or the participating clusters list in the admin console.
 You can make multiple changes at once and changes will be committed when the database configuration is saved.
 
 ![add-active-active-participants](/images/rs/add-active-active-participants.png)

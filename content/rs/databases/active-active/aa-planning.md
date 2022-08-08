@@ -20,7 +20,7 @@ See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more 
 
 ## Participating clusters
 
-For Active-Active databases, you need to [set up your participating clusters]({{<relref "/rs/clusters/new-cluster-setup.md">}}). You need at least two participating clusters, but we recommend contacting Redis support for databases with more than ten. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage-aa#participating-clusters/">}}) after database creation.
+For Active-Active databases, you need to [set up your participating clusters]({{<relref "/rs/clusters/new-cluster-setup.md">}}). At least two participating clusters. If your database requires more than ten participating clusters, contact Redis support. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage-aa#participating-clusters/">}}) after database creation.
 
 Changes made from the admin console to an Active-Active database configuration only apply to the cluster you are editing. For global configuration changes across all clusters, use the `crdb-cli` command-line utility.
 
@@ -28,7 +28,7 @@ Changes made from the admin console to an Active-Active database configuration o
 
 Database memory limits define the maximum size of your database across all database replicas and [shards]({{<relref "rs/concepts/terminology#redis-instance-shard">}}) on the cluster. Your memory limit also determines the number of shards.
 
-Besides your dataset, the memory limit must also account for replication, Active-Active overhead, and module overhead. These features can significantly increase your database size, sometimes increasing it by four times or more.
+Besides your dataset, the memory limit must also account for replication, Active-Active metadata, and module overhead. These features can increase your database size, sometimes increasing it by two times or more.
 
 Factors to consider when sizing your database:
 
@@ -37,7 +37,7 @@ Factors to consider when sizing your database:
 - [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
 - [**database clustering**]({{<relref "/rs/databases/configure/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
 - [**database replication**]({{<relref "/rs/databases/configure/replication.md">}}): enabling replication doubles memory consumption
-- [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
+- [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to two times (2x) the original data size per instance.
 - [**database replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
 - [**Active-Active replication backlog**]({{<relref "/rs/databases/active-active/manage-aa.md">}}) for synchronization between clusters. By default, this is set to 1% of the database size.
 
@@ -50,7 +50,6 @@ For more information on memory limits, see [Memory management with Redis Enterpr
 Network requirements for Active-Active databases include:
 
 - A VPN between each network that hosts a cluster with an instance (if your database spans WAN).
-- At least two (but no more than five) participating clusters.
 - A network connection to [several ports](#network-ports) on each cluster from all nodes in all participating clusters.
 - A [network time service](#network-time-service) running on each node in all clusters.
 
