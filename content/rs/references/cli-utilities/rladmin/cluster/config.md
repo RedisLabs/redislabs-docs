@@ -54,7 +54,7 @@ Updates the cluster configuration.
 | min_data_TLS_version | TLS protocol version | The minimum TLS protocol version that is supported for the data path |
 | min_sentinel_TLS_version | TLS protocol version | The minimum TLS protocol version that is supported for the discovery service |
 | s3_url | string | The URL of S3 export and import |
-| saslauthd_ldap_conf | filepath | Updates LDAP authentication configuration for the cluster (see [cluster-based LDAP authentication]({{<relref "/rs/security/access-control/ldap/cluster-based-ldap-authentication">}}) or [Kubernetes LDAP configuration]({{<relref "/kubernetes/security/ldap-on-k8s">}})) |
+| saslauthd_ldap_conf | filepath | Updates LDAP authentication configuration for the cluster (see [cluster-based LDAP authentication]({{<relref "/rs/security/access-control/ldap/cluster-based-ldap-authentication">}})
 | sentinel_cipher_suites | list of ciphers | Cipher suites used by the discovery service (supported ciphers are implemented by the [golang.org cipher suites package](https://golang.org/src/crypto/tls/cipher_suites.go)) |
 | sentinel_ssl_policy | 'allowed'<br />'required'<br />'disabled' | Define the SSL policy for the discovery service |
 | services | 'cm_server'<br />'crdb_coordinator'<br />'crdb_worker'<br />'mdns_server'<br />'pdns_server'<br />'saslauthd'<br />'stats_archiver'<br /><br />'enabled'<br />'disabled' | Enable or deactivate selected cluster services |
