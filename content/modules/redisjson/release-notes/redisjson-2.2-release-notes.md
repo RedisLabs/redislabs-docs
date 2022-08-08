@@ -1,9 +1,9 @@
 ---
 Title: RedisJSON 2.2 release notes
 linkTitle: v2.2 (July 2022)
-description: Active-Active support for JSON.
+description: Preview of Active-Active support for JSON.
 min-version-db: "6.0.0"
-min-version-rs: "6.0.0"
+min-version-rs: "6.2.12"
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
@@ -13,15 +13,17 @@ categories: ["Modules"]
 RedisJSON v2.2.0 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
-- Minimum Redis Enterprise Software version (cluster): 6.0.0
+- Minimum Redis Enterprise Software version (cluster): 6.2.12
 
 ## v2.2.0 (July 2022)
 
-This is the General Availability release of RedisJSON 2.2.
+A preview of RedisJSON 2.2 is available for Free and Fixed subscription plans in Redis Cloud.
 
 ### Headlines
 
-This release adds support for the JSON data structure as a CRDT (Conflict-free Replicated Data Type) when used with Redis Enterprise [Active-Active databases](https://docs.redis.com/latest/rs/databases/active-active/develop/).
+This release adds support for the JSON data structure as a CRDT (Conflict-free Replicated Data Type) when used with Redis Enterprise [Active-Active databases](https://docs.redis.com/latest/modules/redisjson/active-active/).
+
+Active-Active JSON requires Redis Enterprise Software v6.2.12. Contact your account manager or support to access the preview of Redis Enterprise v6.2.12.
 
 ### Details
 

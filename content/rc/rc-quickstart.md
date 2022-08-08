@@ -1,10 +1,10 @@
 ---
-Title: Redis Cloud Quick Start
+Title: Redis Cloud quick start
 description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
-linktitle: "Quick Start"
+linktitle: "Quick start"
 aliases: /rv/quick-setup/
          /rc/quick-setup-redis-cloud/
          /rc/quick-setup/
@@ -103,13 +103,13 @@ At this point, you're viewing the **Configuration** details for your new databas
 
 To connect to your database, you need the following info:
 
-- The public endpoint for your database
+- The hostname for your database
 - The port number
 - The database password
 
 These are displayed in the **Configuration** tab.  
 
-- In the **General** section, the **Public endpoint** setting shows the URI for your database and the port number.  Use the **Copy** button to copy these values to the Clipboard.
+- In the **General** section, the **Public endpoint** setting shows the hostname for your database and the port number.
 
 - The **Security** section contains your **Default user password**.  By default, this is masked.  Select the eye icon to show or hide the password.    
 
@@ -126,30 +126,36 @@ Here's an example of each.
 
 ### Use redis-cli (via Docker){#using-rediscli}
 
-The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands).
+The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands/).
 
-Docker provides a convenient way to run `redis-cli` without the full installation experience.
+[Docker](https://www.docker.com/) provides a convenient way to run `redis-cli` without the full installation experience.
 
-When you run the `redis` Docker image, you can open a bash shell instance and run `redis-cli` from the container.
+Run the following commands to create a `redis` Docker container and connect to your database with `redis-cli`:
 
-1.  To begin, pull the `redis` docker image and run it with default options:
+1.  Download the `redis` Docker image:
 
     ``` sh
     $ docker pull redis
+    ```
+2.  Start a container created from the image:
+
+    ``` sh
     $ docker run -d --name redis1 redis
+    ```
+3.  Connect to a bash prompt running in the container:
+    ``` sh
     $ docker exec -it redis1 bash
     ```
 
-2.  This gives you a bash prompt running within your Docker image.  From here, you can connect to your database:
+4. Connect to your database with `redis-cli`:
 
     ``` sh
-    # redis-cli -h <endpoint> -p <port> -a <password>
-    xxx:yyy> 
+    # redis-cli -h <host> -p <port> -a <password>
     ```
 
-    Replace `<endpoint>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
+    Replace `<host>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
 
-3.  You should now be connected to your database and can perform basic Redis commands:
+5. After you connect to your database, try these basic Redis commands:
 
     ``` sh
     xxx:yyy> ping
