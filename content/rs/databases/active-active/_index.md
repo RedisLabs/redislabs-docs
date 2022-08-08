@@ -54,17 +54,17 @@ The syncer keeps a [replication backlog]({{<relref "/rs/databases/active-active/
 
 Because you can connect to any participating cluster to perform a write operation, concurrent and conflicting writes are always possible. Conflict resolution is an important part of the Active-Active technology. Active-Active databases only use [conflict-free replicated data types (CRDTs)](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type). These data types provide a predictable conflict resolution and don't require any additional work from the application or client side.
 
-There are some important differences to consider when developing with CRDTs for Active-Active databases. See [Develop applications with Active-Active databases]({{<relref "/rs/databases/active-active/develop/_index.md">}}) for more detail.
+When developing with CRDTs for Active-Active databases, you need to consider some important differences. See [Develop applications with Active-Active databases]({{<relref "/rs/databases/active-active/develop/_index.md">}}) for related information.
 
 
 ## Strong eventual consistency
 
-Maintaining strict strong consistency for replicated databases comes with trades off in scalability and availability. Redis Active-Active databases use a strong eventual consistency model, which means that local values may differ across replicas for short periods of time, but they will all eventually converge to one consistent state. Redis uses vector clocks and the CRDT conflict resolution to strengthen consistency between replicas. You can also enable the causal consistency feature to preserve the order of operations as they are synchronized among replicas.
+Maintaining strong consistency for replicated databases comes with tradeoffs in scalability and availability. Redis Active-Active databases use a strong eventual consistency model, which means that local values may differ across replicas for short periods of time, but they all eventually converge to one consistent state. Redis uses vector clocks and the CRDT conflict resolution to strengthen consistency between replicas. You can also enable the causal consistency feature to preserve the order of operations as they are synchronized among replicas.
 
 Other Redis Enterprise Software features can also be used to enhance the performance, scalability, or durability of your Active-Active database. These include [data persistence]({{<relref "/rs/databases/configure/database-persistence.md">}}), [multiple active proxies]({{<relref "/rs/databases/configure/proxy-policy.md">}}), [distributed synchronization]({{<relref "/rs/databases/active-active/synchronization-mode.md">}}), [the OSS Cluster API]({{<relref "/rs/databases/configure/enable-oss-cluster-api.md">}}), and [rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}}).
 
 ## Next steps
 
 - [Plan your Active-Active deployment]({{<relref "/rs/databases/active-active/aa-planning.md">}})
-- [Get Started with Active-Active]({{<relref "/rs/databases/active-active/get-started-active-active.md">}})
+- [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started-active-active.md">}})
 - [Create an Active-Active database]({{<relref "/rs/databases/active-active/create-active-active.md">}})

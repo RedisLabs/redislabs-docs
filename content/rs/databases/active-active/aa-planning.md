@@ -1,7 +1,7 @@
 ---
 Title: Considerations for planning Active-Active databases
 linktitle: Planning considerations
-description: Information about Active-Active database to take into consideration while planning a deployment, such as compatibility, limitations, and special configuration.
+description: Information about Active-Active database to take into consideration while planning a deployment, such as compatibility, limitations, and special configuration
 weight: 22
 alwaysopen: false
 categories: ["RS"]
