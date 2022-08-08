@@ -23,7 +23,7 @@ For this tutorial, you need:
 
 - [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
 
-- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or greater
+- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or later
 
 ## RediSearch with `redis-cli`
 

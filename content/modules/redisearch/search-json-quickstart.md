@@ -9,7 +9,7 @@ module: RediSearch
 aliases: /modules/redisearch/search-json-quickstart/
 ---
 
-This quick start shows you how to index documents stored as JSON documents and run search queries against the index.
+This quick start shows you how to index documents stored as JSON and run search queries against the index.
 
 ## Prerequisites
 
@@ -19,14 +19,11 @@ For this quick start tutorial, you need:
 
     - A [Redis Cloud]({{<relref "/modules/modules-quickstart.md">}}) database with [Redis Stack]({{<relref "/modules/redis-stack">}})
 
-    - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database with:
-    
-        - RediSearch v2.2 or later
-        - RedisJSON v2.0 or later
+    - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database with RediSearch (v2.2 or later) and RedisJSON (v2.0 or later)
 
 - [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
 
-- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or greater
+- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or later
 
 ## Search JSON with `redis-cli`
 
@@ -106,7 +103,7 @@ Item 2 JSON document:
 }
 ```
 
-To store these JSON documents in the database, run:
+To store these JSON documents in the database, run the following commands:
 
 ```sh
 127.0.0.1:12543> JSON.SET item:1 $ '{"name":"Noise-cancelling Bluetooth headphones","description":"Wireless Bluetooth headphones with noise-cancelling technology","connection":{"wireless":true,"type":"Bluetooth"},"price":99.98,"stock":25,"colors":["black","silver"]}'
@@ -117,7 +114,7 @@ To store these JSON documents in the database, run:
 
 ### Search the index
 
-To search the index for JSON documents that match some condition, use the [`FT.SEARCH`](https://redis.io/commands/ft.search) command. You can search any field defined in the index schema.
+To search the index for JSON documents that match a specified condition, use the [`FT.SEARCH`](https://redis.io/commands/ft.search) command. You can search any field defined in the index schema.
 
 For more information about search queries, see [Search query syntax](https://redis.io/docs/stack/search/reference/query_syntax).
 
@@ -125,7 +122,7 @@ For more information about search queries, see [Search query syntax](https://red
 
 Search query results include entire JSON documents by default.
 
-Search for Bluetooth headphones with a price less than 70:
+For example, search for Bluetooth headphones with a price less than 70:
 
 ```sh
 127.0.0.1:6379> FT.SEARCH itemIdx '@description:(headphones) @connectionType:(bluetooth) @price:[0 70]'
@@ -161,11 +158,11 @@ The following query uses the JSONPath expression `$.stock` to return each item's
 ```
 ### Aggregate search results
 
-The [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate) command lets you run a search query and modify the search results with operations such as `SORTBY`, `REDUCE`, `LIMIT`, `FILTER`, and more. For a detailed list of available operations and examples, see [Aggregations](https://redis.io/docs/stack/search/reference/aggregations).
+The [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate) command lets you run a search query and modify the results with operations such as `SORTBY`, `REDUCE`, `LIMIT`, `FILTER`, and more. For a detailed list of available operations and examples, see [Aggregations](https://redis.io/docs/stack/search/reference/aggregations).
 
 You can use [JSON path]({{<relref "/modules/redisjson#redisjson-paths">}}) expressions with the `LOAD` option to run aggregations on JSON documents. You can use any JSON element, even elements that are not included in the index schema.
 
-This example uses aggregation operations to calculate a 10% price discount for each item and sorts the items from least expensive to most expensive:
+This example uses aggregation operations to calculate a 10% price discount for each item and then sorts the items from least expensive to most expensive:
 
 ```sh
 127.0.0.1:6379> FT.AGGREGATE itemIdx '*' LOAD 4 name $.price AS originalPrice APPLY '@originalPrice - (@originalPrice * 0.10)' AS salePrice SORTBY 2 @salePrice ASC
@@ -199,7 +196,7 @@ If you want to use RediSearch within an application, you can use one of these [c
 
 The following example uses the Redis Python client library [`redis-py`](https://github.com/redis/redis-py), which supports RediSearch commands as of v4.0.0.
 
-This Python code creates an index, adds documents to the index, displays search results, and then deletes the index:
+This Python code indexes JSON documents, runs [search](https://redis.io/docs/stack/search/reference/query_syntax) and [aggregation](https://redis.io/docs/stack/search/reference/aggregations) queries, and then deletes the index:
 
 ```python
 import redis
@@ -278,7 +275,7 @@ for doc in search_result.docs:
     print(doc)
 print()
 
-# Use aggregation to calculate a 10% price discount for each item
+# Use aggregation to calculate a 10% price discount for each item and sort them from least expensive to most expensive
 aggregate_query = AggregateRequest('*').load('name', 'price').apply(salePrice='@price - (@price * 0.10)').sort_by(Asc('@salePrice'))
 aggregate_result = r.ft('py_item_idx').aggregate(aggregate_query).rows
 
