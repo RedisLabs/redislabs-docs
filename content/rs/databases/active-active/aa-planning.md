@@ -14,7 +14,7 @@ aliases: [
 
 In Redis Enterprise, Active-Active geo-distribution is based on [conflict-free replicated data type (CRDT) technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type). Compared to databases without geo-distribution, Active-Active databases have more complex replication and networking, as well as a different data type.
 
-Because of the complexities of Active-Active databases, there are  special considerations to keep in mind while planning your Active-Active database.
+Because of the complexities of Active-Active databases, there are special considerations to keep in mind while planning your Active-Active database.
 
 See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more information about geo-distributed replication. For more info on other high availability features, see [Durability and high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}).
 
