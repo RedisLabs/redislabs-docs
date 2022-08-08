@@ -527,7 +527,7 @@ To remove the Redis Enterprise cluster from your PKS deployment:
 
 1. [Delete]({{< relref "/rs/databases/edit-delete-db.md" >}}) any databases you created.
 
-1. Delete the REC custom resource. This removes the pods on the cluster nodes and all related services and deployments, except for the Operator deployment itself.
+1. Delete the REC custom resource. This removes the pods from the cluster nodes including all related services and deployments, except for the Operator deployment itself.
 
     ```sh
     kubectl delete rec rec-pks
