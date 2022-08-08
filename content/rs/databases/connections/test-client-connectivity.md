@@ -8,6 +8,8 @@ aliases: rs/administering/troubleshooting/testing-client-connectivity/
          rs/administering/troubleshooting/testing-client-connectivity.md
          rs/connections/testing-client-connectivity/
          rs/connections/testing-client-connectivity.md
+         /rs/databases/connections/test-client-connectivity.md
+         /rs/databases/connections/test-client-connectivity
 ---
 In various scenarios, such as after creating a new cluster or upgrading
 the cluster, it is highly advisable to verify client connectivity to the

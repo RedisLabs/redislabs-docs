@@ -7,6 +7,8 @@ aliases: rs/administering/designing-production/supported-clients-browsers/
          rs/administering/designing-production/supported-clients-browsers.md
          rs/connections/supported-clients-browsers/
          rs/connections/supported-clients-browsers.md
+         /rs/databases/connections/supported-clients-browsers.md
+         /rs/databases/connections/supported-clients-browsers/
 ---
 You can connect to Redis Enterprise Software databases programmatically using client libraries.
 
