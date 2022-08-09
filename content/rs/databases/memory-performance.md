@@ -11,7 +11,9 @@ aliases: [
     /rs/administering/designing-production/performance/_index.md,
     /rs/administering/designing-production/performance/_index/,
     /rs/concepts/memory-performance/_index.md,
-    /rs/concepts/memory-performance/_index/,
+    /rs/concepts/memory-performance/,
+    /rs/databases/memory-performance.md,
+    /rs/databases/memory-performance/,
 
 ]
 ---

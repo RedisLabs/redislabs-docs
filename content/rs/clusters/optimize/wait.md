@@ -1,6 +1,6 @@
 ---
-Title: Consistency and durability
-linkTitle: Consistency and durability
+Title: Use the WAIT command to control consistency
+linkTitle: WAIT command
 description:
 weight: $weight
 alwaysopen: false
@@ -8,6 +8,7 @@ categories: ["RS"]
 aliases: [
     /rs/concepts/data-access/consistency-durability.md,
     /rs/concepts/data-access/consistency-durability/,
+
 ]
 ---
 Redis Enterprise Software comes with the ability to replicate data

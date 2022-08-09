@@ -4,6 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/concepts/compatibility.md,
+    /rs/concepts/compatibility/,
+    /rs/references/compatibility.md,
+    /rs/references/compatibility/,
+]
 ---
 Redis Enterprise Software is compatible with open source
 Redis (OSS Redis). Redis contributes extensively to the open source Redis
