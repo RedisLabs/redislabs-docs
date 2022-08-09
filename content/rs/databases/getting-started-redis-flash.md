@@ -7,6 +7,12 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/getting-started/creating-database/redis-flash/
          /rs/getting-started/creating-database/
+         /rs/administering/cluster-operations/getting-started-redis-flash.md
+         /rs/administering/cluster-operations/getting-started-redis-flash/
+         /rs/databases/getting-started-redis-flash.md
+         /rs/databases/getting-started-redis-flash/
+         
+
 ---
 The steps to set up a Redis Enterprise Software cluster using [Redis on
 Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
