@@ -33,7 +33,7 @@ To begin, [connect to your database]({{<relref "/rs/references/cli-utilities/red
 
 The [`FT.CREATE`](https://redis.io/commands/ft.create) command lets you create an index. It indexes Redis [hashes](https://redis.io/docs/manual/data-types/#hashes) by default. However, as of RediSearch v2.2, you can also [index JSON documents]({{<relref "/modules/redisearch/search-json-quickstart">}}) if you have the [RedisJSON]({{<relref "/modules/redisjson">}}) module enabled.
 
-You can use the optional `LANGUAGE` keyword to set the language used for indexing and [stemming](https://redis.io/docs/stack/search/reference/stemming). If you do not specify a language, it defaults to English. See [Supported languages](https://redis.io/docs/stack/search/reference/stemming/#supported-languages) for additional language options.
+To set the language used for indexing and [stemming](https://redis.io/docs/stack/search/reference/stemming), include the optional `LANGUAGE` keyword. If you do not specify a language, it defaults to English. See [Supported languages](https://redis.io/docs/stack/search/reference/stemming/#supported-languages) for additional language options.
 
 When you define an index, you also need to define the schema, or structure, of the data you want to add to the index.
 
@@ -100,7 +100,7 @@ Use [`FT.SEARCH`](https://redis.io/commands/ft.search) to search the index for a
 
 ### Drop an index
 
-You can remove the index without deleting any associated documents with the [`FT.DROPINDEX`](https://redis.io/commands/ft.dropindex) command:
+To remove the index without deleting any associated documents, run the [`FT.DROPINDEX`](https://redis.io/commands/ft.dropindex) command:
 
 ```sh
 127.0.0.1:12543> FT.DROPINDEX database_idx
@@ -131,7 +131,7 @@ Test auto-complete suggestions with [`FT.SUGGET`](https://redis.io/commands/ft.s
 
 ## RediSearch with Python
 
-If you want to use RediSearch within an application, you can use one of these [client libraries](https://oss.redis.com/redisearch/Clients/).
+If you want to use RediSearch within an application, these [client libraries](https://oss.redis.com/redisearch/Clients/) are available.
 
 The following example uses the Redis Python client library [redis-py](https://github.com/redis/redis-py), which supports RediSearch commands as of v4.0.0.
 

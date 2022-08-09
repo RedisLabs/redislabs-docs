@@ -60,7 +60,7 @@ See [Index limitations](https://redis.io/docs/stack/search/indexing_json/#index-
 
 ### Add JSON documents
 
-You can use the [`JSON.SET`](https://redis.io/commands/json.set) command to create and store JSON documents in the database.
+You can create and store JSON documents in the database with the [`JSON.SET`](https://redis.io/commands/json.set) command.
 
 The following examples use these JSON documents to represent individual inventory items.
 
@@ -133,7 +133,7 @@ For example, search for Bluetooth headphones with a price less than 70:
 
 #### Return specific fields
 
-You can use [field projection](https://redis.io/docs/stack/search/indexing_json/#field-projection) to limit the search results to include only specific parts of a JSON document. Use the `RETURN` option to specify which fields to include in the search results.
+If you want to limit the search results to include only specific parts of a JSON document, use [field projection](https://redis.io/docs/stack/search/indexing_json/#field-projection). The `RETURN` option lets you specify which fields to include.
 
 The following query uses the JSONPath expression `$.stock` to return each item's stock in addition to the name and price:
 
@@ -159,7 +159,7 @@ The following query uses the JSONPath expression `$.stock` to return each item's
 
 The [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate) command lets you run a search query and modify the results with operations such as `SORTBY`, `REDUCE`, `LIMIT`, `FILTER`, and more. For a detailed list of available operations and examples, see [Aggregations](https://redis.io/docs/stack/search/reference/aggregations).
 
-You can use [JSON path]({{<relref "/modules/redisjson#redisjson-paths">}}) expressions with the `LOAD` option to run aggregations on JSON documents. You can use any JSON element, even elements that are not included in the index schema.
+To run aggregations on JSON documents, pass [JSON path]({{<relref "/modules/redisjson#redisjson-paths">}}) expressions to the `LOAD` option. You can use any JSON element, even elements that are not included in the index schema.
 
 This example uses aggregation operations to calculate a 10% price discount for each item and then sorts the items from least expensive to most expensive:
 
@@ -182,7 +182,7 @@ This example uses aggregation operations to calculate a 10% price discount for e
 
 ### Drop the index
 
-You can remove the index without deleting any associated documents with the [`FT.DROPINDEX`](https://redis.io/commands/ft.dropindex) command:
+To remove the index without deleting any associated documents, run the [`FT.DROPINDEX`](https://redis.io/commands/ft.dropindex) command:
 
 ```sh
 127.0.0.1:12543> FT.DROPINDEX itemIdx
@@ -191,7 +191,7 @@ OK
 
 ## Search JSON with Python
 
-If you want to use RediSearch within an application, you can use one of these [client libraries](https://oss.redis.com/redisearch/Clients/).
+If you want to use RediSearch within an application, these [client libraries](https://oss.redis.com/redisearch/Clients/) are available.
 
 The following example uses the Redis Python client library [`redis-py`](https://github.com/redis/redis-py), which supports RediSearch commands as of v4.0.0.
 
