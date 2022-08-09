@@ -5,6 +5,12 @@ description: Explains terms used in Redis Enterprise Software and its docs.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/concepts/terminology.md,
+    /rs/concepts/terminology/,
+    /rs/references/terminology.md,
+    /rs/references/terminology/,
+]
 ---
 Here are explanations of some of the terms used in Redis Enterprise Software.
 
