@@ -10,6 +10,9 @@ aliases: [
     /rs/administering/logging/,
     /rs/logging/_index.md,
     /rs/logging/,
+    /rs/clusters/logging/,
+    /rs/clusters/logging/_index.md,
+
 ]
 ---
 Management actions performed with Redis Enterprise are audited in order

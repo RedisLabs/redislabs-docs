@@ -11,6 +11,8 @@ aliases: [
     /rs/administering/logging/rsyslog-logging/_index.md,
     /rs/logging/rsyslog-logging/_index.md,
     /rs/logging/rsyslog-logging/,
+    /rs/clusters/logging/rsyslog-logging/_index.md,
+    /rs/clusters/logging/rsyslog-logging/,
 
 ]
 ---

@@ -10,6 +10,8 @@ aliases: [
     /rs/administering/logging/redis-slow-log/,
     /rs/logging/redis-slow-log.md,
     /rs/logging/redis-slow-log/,
+    /rs/clusters/logging/redis-slow-log.md,
+    /rs/clusters/logging/redis-slow-log/,
 ]
 ---
 On the **Database** \> **Slow Log** page, you can view Slow Log details

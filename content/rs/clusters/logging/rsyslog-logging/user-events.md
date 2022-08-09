@@ -10,6 +10,8 @@ aliases: [
     /rs/administering/logging/rsyslog-logging/user-events/,
     /rs/logging/rsyslog-logging/user-events.md,
     /rs/logging/rsyslog-logging/user-events/,
+    /rs/clusters/logging/rsyslog-logging/user-events.md,
+    /rs/clusters/logging/rsyslog-logging/user-events/,
 ]
 ---
 

@@ -10,6 +10,8 @@ aliases: [
    /rs/administering/logging/rsyslog-logging/bdb-events/,
    /rs/logging/rsyslog-logging/bdb-events.md,
    /rs/logging/rsyslog-logging/bdb-events/, 
+   /rs/clusters/logging/rsyslog-logging/bdb-events.md,
+   /rs/clusters/logging/rsyslog-logging/bdb-events/,
 ]
 ---
 
