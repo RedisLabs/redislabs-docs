@@ -27,8 +27,6 @@ For this tutorial, you need:
 
 ## RediSearch with `redis-cli`
 
-The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RediSearch commands.
-
 To begin, [connect to your database]({{<relref "/rs/references/cli-utilities/redis-cli#connect-to-a-database">}}) with `redis-cli`.
 
 ### Create an index

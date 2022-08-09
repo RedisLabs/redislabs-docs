@@ -9,7 +9,7 @@ module: RediSearch
 aliases: /modules/redisearch/search-json-quickstart/
 ---
 
-This quick start shows you how to index documents stored as JSON and run search queries against the index.
+This quick start shows you how to index JSON documents and run search queries against the index.
 
 ## Prerequisites
 
@@ -21,13 +21,12 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database with RediSearch (v2.2 or later) and RedisJSON (v2.0 or later)
 
-- [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
+- And:
+  - [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
 
-- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or later
+  - [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or later
 
 ## Search JSON with `redis-cli`
-
-The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and try out RediSearch with RedisJSON.
 
 To begin, [connect to your database]({{<relref "/rs/references/cli-utilities/redis-cli#connect-to-a-database">}}) with `redis-cli`.
 
@@ -55,7 +54,7 @@ This example defines the schema and creates the index:
 127.0.0.1:12543> FT.CREATE itemIdx ON JSON PREFIX 1 item: SCHEMA $.name AS name TEXT $.description as description TEXT $.connection.type AS connectionType TEXT $.price AS price NUMERIC
 ```
 
-After you create the index, it automatically adds all existing and future JSON documents prefixed with `item:` to the index.
+After you create the index, RediSearch automatically adds all existing and future JSON documents prefixed with `item:` to the index.
 
 See [Index limitations](https://redis.io/docs/stack/search/indexing_json/#index-limitations) for more details about schema restrictions for JSON document indexes.
 
