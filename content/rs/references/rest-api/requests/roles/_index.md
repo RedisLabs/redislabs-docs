@@ -24,31 +24,34 @@ aliases: /rs/references/rest-api/roles
 
 ## Get all roles {#get-all-roles}
 
-	GET /v1/roles
+```sh
+GET /v1/roles
+```
 
 Get all roles' details.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_all_roles_info]({{<relref "/rs/references/rest-api/permissions#view_all_roles_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_all_roles_info]({{<relref "/rs/references/rest-api/permissions#view_all_roles_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
-	GET /roles 
+```sh
+GET /roles
+```
 
-
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns a JSON array of [role objects]({{<relref "/rs/references/rest-api/objects/role">}}).
 
@@ -94,7 +97,7 @@ Returns a JSON array of [role objects]({{<relref "/rs/references/rest-api/object
 ]
 ```
 
-### Status codes {#get-all-status-codes} 
+#### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -103,24 +106,28 @@ Returns a JSON array of [role objects]({{<relref "/rs/references/rest-api/object
 
 ## Get role
 
-	GET /v1/roles/{int: uid}
+```sh
+GET /v1/roles/{int: uid}
+```
 
 Get the details of a single role.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_role_info]({{<relref "/rs/references/rest-api/permissions#view_role_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_role_info]({{<relref "/rs/references/rest-api/permissions#view_role_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /roles/1 
+```sh
+GET /roles/1
+```
 
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -134,7 +141,7 @@ Get the details of a single role.
 |-------|------|-------------|
 | uid | integer | The role's unique ID. |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns a [role object]({{<relref "/rs/references/rest-api/objects/role">}}).
 
@@ -148,7 +155,7 @@ Returns a [role object]({{<relref "/rs/references/rest-api/objects/role">}}).
 }
 ```
 
-### Status codes {#get-status-codes} 
+#### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -159,21 +166,25 @@ Returns a [role object]({{<relref "/rs/references/rest-api/objects/role">}}).
 
 ## Update role {#put-role}
 
-	PUT /v1/roles/{int: uid}
+```sh
+PUT /v1/roles/{int: uid}
+```
 
 Update an existing role's details.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [update_role]({{<relref "/rs/references/rest-api/permissions#update_role">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_role]({{<relref "/rs/references/rest-api/permissions#update_role">}}) | admin |
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /roles/17 
+```sh
+PUT /roles/17
+```
 
 #### Example JSON body
 
@@ -183,7 +194,7 @@ Update an existing role's details.
 }
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -191,11 +202,11 @@ Update an existing role's details.
 | Accept | application/json | Accepted media type |
 
 
-#### Request body
+#### Body
 
 Include a [role object]({{<relref "/rs/references/rest-api/objects/role">}}) with updated fields in the request body.
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Returns a [role object]({{<relref "/rs/references/rest-api/objects/role">}}) with the updated fields.
 
@@ -209,17 +220,17 @@ Returns a [role object]({{<relref "/rs/references/rest-api/objects/role">}}) wit
 }
 ```
 
-### Error codes {#put-error-codes} 
+### Error codes {#put-error-codes}
 
 Possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
-| unsupported_resource | The cluster is not yet able to handle this resource type. This could happen in a partially upgraded cluster, where some of the nodes are still on a previous version.| 
-| name_already_exists | An object of the same type and name exists.| 
-| change_last_admin_role_not_allowed | At least one user with admin role should exist.| 
+| unsupported_resource | The cluster is not yet able to handle this resource type. This could happen in a partially upgraded cluster, where some of the nodes are still on a previous version.|
+| name_already_exists | An object of the same type and name exists.|
+| change_last_admin_role_not_allowed | At least one user with admin role should exist.|
 
-### Status codes {#put-status-codes} 
+#### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -230,21 +241,25 @@ Possible `error_code` values:
 
 ## Create role {#post-role}
 
-	POST /v1/roles
+```sh
+POST /v1/roles
+```
 
 Create a new role.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [create_role]({{<relref "/rs/references/rest-api/permissions#create_role">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [create_role]({{<relref "/rs/references/rest-api/permissions#create_role">}}) | admin |
 
-### Request {#post-request} 
+### Request {#post-request}
 
 #### Example HTTP request
 
-	POST /roles 
+```sh
+POST /roles
+```
 
 #### Example JSON body
 
@@ -255,7 +270,7 @@ Create a new role.
 }
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -263,11 +278,11 @@ Create a new role.
 | Accept | application/json | Accepted media type |
 
 
-#### Request body
+#### Body
 
 Include a [role object]({{<relref "/rs/references/rest-api/objects/role">}}) in the request body.
 
-### Response {#post-response} 
+### Response {#post-response}
 
 Returns the newly created [role object]({{<relref "/rs/references/rest-api/objects/role">}}).
 
@@ -281,17 +296,17 @@ Returns the newly created [role object]({{<relref "/rs/references/rest-api/objec
 }
 ```
 
-### Error codes {#post-error-codes} 
+### Error codes {#post-error-codes}
 
 Possible `error_code`values:
 
 | Code | Description |
 |------|-------------|
-| unsupported_resource | The cluster is not yet able to handle this resource type. This could happen in a partially upgraded cluster, where some of the nodes are still on a previous version. | 
-| name_already_exists | An object of the same type and name exists | 
-| missing_field | A needed field is missing | 
+| unsupported_resource | The cluster is not yet able to handle this resource type. This could happen in a partially upgraded cluster, where some of the nodes are still on a previous version. |
+| name_already_exists | An object of the same type and name exists |
+| missing_field | A needed field is missing |
 
-### Status codes {#post-status-codes} 
+#### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -299,26 +314,59 @@ Possible `error_code`values:
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad or missing configuration parameters. |
 | [501 Not Implemented](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2) | Cluster doesn't support roles yet. |
 
+### Examples
+
+#### cURL
+
+```sh
+$ curl -k -u "[username]:[password]" -X POST
+       -d "{ 'name': 'DBA', 'management': 'admin' }"
+       https://[host][:port]/v1/roles
+```
+
+#### Python
+
+```python
+import requests
+import json
+
+url = "https://[host][:port]/v1/roles"
+
+payload = json.dumps({
+    "name": "DBA",
+    "management": "admin"
+})
+auth=("[username]", "[password]")
+
+response = requests.request("POST", url,
+                            auth=auth, payload=payload, verify=False)
+
+print(response.text)
+```
+
 ## Delete role {#delete-role}
 
-	DELETE /v1/roles/{int: uid}
+```sh
+DELETE /v1/roles/{int: uid}
+```
 
 Delete a role object.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [delete_role]({{<relref "/rs/references/rest-api/permissions#delete_role">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [delete_role]({{<relref "/rs/references/rest-api/permissions#delete_role">}}) | admin |
 
-### Request {#delete-request} 
+### Request {#delete-request}
 
 #### Example HTTP request
 
-	DELETE /roles/1 
+```sh
+DELETE /roles/1
+```
 
-
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -332,11 +380,11 @@ Delete a role object.
 |-------|------|-------------|
 | uid | integer | The role unique ID. |
 
-### Response {#delete-response} 
+### Response {#delete-response}
 
 Returns a status code to indicate role deletion success or failure.
 
-### Status codes {#delete-status-codes} 
+#### Status codes {#delete-status-codes}
 
 | Code | Description |
 |------|-------------|
