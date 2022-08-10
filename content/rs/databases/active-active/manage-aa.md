@@ -14,9 +14,9 @@ aliases: [
 
 You can configure and manage your Active-Active database from either the admin console or the command line.
 
-When you edit the database configurations of an Active-Active database with the admin console or the `rladmin` CLI, the changes will only apply to the Active-Active database instance you are currently editing.
-
 To change the global configuration of the Active-Active database, use the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}).
+
+If you need to apply changes locally to one database instance, you use the admin console or the `rladmin` CLI.
 
 ## Database settings
 
@@ -48,6 +48,7 @@ If you must remove offline participating clusters, you can do this with forced r
 If a participating cluster that was removed forcefully returns attempts to re-join the cluster,
 it will have an out of date on Active-Active database membership.
 The joined participating clusters reject updates sent from the removed participating cluster.
+To avoid re-join attempts, purge the forcefully removed instance from the participating cluster.
 
 ## Replication backlog
 

@@ -35,7 +35,7 @@ Factors to consider when sizing your database:
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
 - [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
-- [**database clustering**]({{<relref "/rs/databases/configure/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
+- [**database clustering**]({{<relref "/rs/databases/configure/clustering.md">}}): enables you to spread your data into shards across multiple nodes (scale out).
 - [**database replication**]({{<relref "/rs/databases/configure/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to two times (2x) the original data size per instance.
 - [**database replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
@@ -79,3 +79,6 @@ Active-Active databases have the following limitations:
 
 - An existing database can't be changed into an Active-Active database. To move data from an existing database to an Active-Active database, you must [create a new Active-Active database]({{< relref "/rs/databases/active-active/create-active-active.md" >}}) and [migrate the data]({{< relref "/rs/databases/import-export/migrate-to-active-active.md">}}).
 - [Discovery service]({{< relref "/rs/databases/configure/discovery-service.md" >}}) is not supported with Active-Active databases. Active-Active databases require FQDNs or [mDNS]({{< relref "/rs/networking/mdns.md">}}).
+- The `FLUSH` command is not supported from the CLI. To flush your database, use the API or admin console.
+- Cross slot multi commands (such as `MSET`) are not supported with Active-Active databases.
+- The hashing policy can't be changed after database creation.
