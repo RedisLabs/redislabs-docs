@@ -319,9 +319,10 @@ Possible `error_code`values:
 #### cURL
 
 ```sh
-$ curl -k -u "[username]:[password]" -X POST
-       -d "{ 'name': 'DBA', 'management': 'admin' }"
-       https://[host][:port]/v1/roles
+curl -k -u "[username]:[password]" -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{ "name": "DBA", "management": "admin" }' \
+     https://[host][:port]/v1/roles
 ```
 
 #### Python
@@ -332,6 +333,10 @@ import json
 
 url = "https://[host][:port]/v1/roles"
 
+headers = {
+  'Content-Type': 'application/json'
+}
+
 payload = json.dumps({
     "name": "DBA",
     "management": "admin"
@@ -339,7 +344,7 @@ payload = json.dumps({
 auth=("[username]", "[password]")
 
 response = requests.request("POST", url,
-                            auth=auth, payload=payload, verify=False)
+           auth=auth, headers=headers, payload=payload, verify=False)
 
 print(response.text)
 ```
