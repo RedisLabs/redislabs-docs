@@ -69,7 +69,7 @@ You can only use a path to access JSON keys if they follow these name syntax rul
 
 If a Redis database has both RedisJSON and [RediSearch]({{<relref "/modules/redisearch">}}) modules enabled, you can index and search stored JSON documents.
 
-For more information about how to use RediSearch with JSON documents, see [Index and search JSON documents](https://redis.io/docs/stack/search/indexing_json/).
+For more information about how to use RediSearch with JSON documents, see the [Search JSON quick start]({{<relref "/modules/redisearch/search-json-quickstart">}}).
 
 ## RedisJSON in Active-Active databases
 

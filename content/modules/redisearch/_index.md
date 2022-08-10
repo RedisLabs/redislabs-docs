@@ -43,7 +43,7 @@ You can run [`HGETALL`](https://redis.io/commands/hgetall/) to retrieve the enti
 
 If a database has [RedisJSON]({{<relref "/modules/redisjson">}}) enabled, you can store documents as JSON and use RediSearch to index and search for them.
 
-For more information about how to use RediSearch with JSON documents, see [Indexing JSON documents](https://redis.io/docs/stack/search/indexing_json/).
+For more information about how to use RediSearch with JSON documents, see the [Search JSON quick start]({{<relref "/modules/redisearch/search-json-quickstart">}}).
 
 ## Search features
 
