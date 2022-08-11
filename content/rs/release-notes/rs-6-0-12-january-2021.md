@@ -138,6 +138,8 @@ with 6.0.12-58:
 
 ### Known limitations
 
+-RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
 #### Upgrade
 
 - [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}) introduced new Active-Active Redis Database capabilities that improve its compatibility with open source Redis. Now the string data-type in Active-Active Redis Database is implicitly and dynamically typed, just like open source Redis. To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower, you must [upgrade the Active-Active Redis Database protocol]({{<relref "/rs/installing-upgrading/upgrading#upgrading-crdbs">}}).

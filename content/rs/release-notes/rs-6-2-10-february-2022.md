@@ -140,6 +140,8 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 ## Known limitations
 
+-RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
 - RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
 
 - RS63258 - Redis Enterprise Software is not currently supported on RHEL 8 with FIPS enabled.
