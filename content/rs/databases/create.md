@@ -20,7 +20,7 @@ Redis Enterprise Software lets you create databases and distribute them across a
 These databases can use Redis Enterprise features like:
 
 - [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
-- [High availability]({{< relref "/rs/databases/durability-ha/" >}})
+- [High availability]({{< relref "/rs/databases/configure/durability-ha/" >}})
 - [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
 
@@ -153,7 +153,7 @@ after the database is created.
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-    - [**Data eviction policy**]({{< relref "/rs/databases/memory-performance/eviction-policy.md" >}}) -
+    - [**Data eviction policy**]({{< relref "/rs/databases/configure/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.

@@ -11,6 +11,13 @@ aliases: [
     /rs/references/developing-for-active-active/developing-lists-active-active.md,
     /rs/databases/active-active/data-types/lists-active-active.md,
     /rs/databases/active-active/data-types/lists-active-active/,
+    /rs/databases/active-active/develop/lists-active-active/,
+    /rs/databases/active-active/develop/lists.md,
+    /rs/databases/active-active/develop/lists/,
+    /rs/databases/active-active/develop/data-types/lists.md,
+    /rs/databases/active-active/develop/data-types/lists/
+    
+
 ]
 ---
 Redis lists are simply lists of strings, sorted by insertion order. It

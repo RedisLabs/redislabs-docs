@@ -2,14 +2,17 @@
 Title: Data types for Active-Active databases
 linktitle: Data types
 description: Introduction to differences in data types between standalone and Active-Active Redis databases.
-weight: 20
+weight: 90
 alwaysopen: false
 categories: ["RS"]
 aliases: [
         /rs/references/developing-for-active-active/,
         /rs/references/developing-for-active-active_index.md,
-        /rs/databases/active-active/data-types/_index.md,
-        /rs/databases/active-active/data-types/,
+        /rs/databases/active-active/develop/data-types.md,
+        /rs/databases/active-active/develop/data-types/,
+        /rs/databases/active-active/develop/data-types/_index.md,
+        /rs/databases/active-active/develop/data-types/,
+     
 ]
 ---
 

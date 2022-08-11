@@ -212,3 +212,18 @@ When you failover to the destination database for write operations,
 make sure that you disable **Replica Of** before you direct clients to the destination database.
 This avoids a full sync that can overwrite your data.
 {{% /warning %}}
+
+## Active-Passive replication backlog
+
+In addition to the [database replication backlog]({{<relref "">}}), active-passive databases maintain a replication backlog (per shard) to synchronize the database instances between clusters.
+By default, the replication backlog is set to one percent (1%) of the database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
+Use the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) utility to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
+
+For an Active-Passive database:
+```text
+rladmin tune db <db:id | name> repl_backlog <Backlog size in MB or 'auto'>
+```
+
+    {{< note >}}
+On an Active-Passive database, the replication backlog configuration applies to both the replication backlog for shards synchronization and for synchronization of database instances between clusters.
+    {{< /note >}}

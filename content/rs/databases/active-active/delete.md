@@ -1,6 +1,6 @@
 ---
 Title: Delete Active-Active databases
-linktitle: Delete Active-Active database
+linktitle: Delete Active-Active 
 description: Considerations while deleting Active-Active databases.
 weight: 35
 alwaysopen: false

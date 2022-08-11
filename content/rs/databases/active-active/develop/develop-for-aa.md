@@ -1,6 +1,6 @@
 ---
 title: Develop applications with Active-Active databases
-linkTitle: Develop applications
+linkTitle: Develop for Active-Active
 description: Overview of how developing applications differs for Active-Active databases from standalone Redis databases.
 weight: 10
 alwaysopen: false
@@ -12,49 +12,87 @@ aliases: [
     /rs/references/developing-for-active-active.md,
     /rs/databases/active-active/develop-aa-apps.md,
     /rs/databases/active-active/develop-aa-apps/,
+    /rs/databases/active-active/develop/develop-for-aa.md,
+    /rs/databases/active-active/develop/develop-for-aa/,
 ]
 ---
-Developing globally distributed applications can be challenging, as
-developers have to think about race conditions and complex combinations
-of events under geo-failovers and cross-region write conflicts. In Redis Enterprise Software (RS), Active-Active databases
-simplify developing such applications by directly using built-in smarts
-for handling conflicting writes based on the data type in use. Instead
-of depending on just simplistic "last-writer-wins" type conflict
-resolution, geo-distributed Active-Active databases (formerly known as CRDBs) combines techniques defined in CRDT
-(conflict-free replicated data types) research with Redis types to
-provide smart and automatic conflict resolution based on the data types
-intent.
+Developing geo-distributed, multi-master applications can be difficult.
+Application developers may have to understand a large number of race
+conditions between updates to various sites, network, and cluster
+failures that could reorder the events and change the outcome of the
+updates performed across geo-distributed writes.
 
-An Active-Active database is a globally distributed database that spans multiple Redis
-Enterprise Software clusters. Each Active-Active database can have many Active-Active database instances
-that come with added smarts for handling globally distributed writes
-using the proven
-[CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
-approach.
-[CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
-research describes a set of techniques for creating systems that can
-handle conflicting writes. CRDBs are powered by Multi-Master Replication
-(MMR) provides a straightforward and effective way to replicate your
-data between regions and simplify development of complex applications
-that can maintain correctness under geo-failovers and concurrent
-cross-region writes to the same data.
+Active-Active databases (formerly known as CRDB) are geo-distributed databases that span multiple Redis Enterprise Software (RS) clusters.
+Active-Active databases depend on multi-master replication (MMR) and Conflict-free
+Replicated Data Types (CRDTs) to power a simple development experience
+for geo-distributed applications. Active-Active databases allow developers to use existing
+Redis data types and commands, but understand the developers intent and
+automatically handle conflicting concurrent writes to the same key
+across multiple geographies. For example, developers can simply use the
+INCR or INCRBY method in Redis in all instances of the geo-distributed
+application, and Active-Active databases handle the additive nature of INCR to reflect the
+correct final value. The following example displays a sequence of events
+over time : t1 to t9. This Active-Active database has two member Active-Active databases : member CRDB1 and
+member CRDB2. The local operations executing in each member Active-Active database is
+listed under the member Active-Active database name. The "Sync" even represent the moment
+where synchronization catches up to distribute all local member Active-Active database
+updates to other participating clusters and other member Active-Active databases.
 
-![geo replication world
-map](/images/rs/crdbs.png)
+|  **Time** | **Member CRDB1** | **Member CRDB2** |
+|  :------: | :------: | :------: |
+|  t1 | INCRBY key1 7 |  |
+|  t2 |  | INCRBY key1 3 |
+|  t3 | GET key1<br/>7 | GET key1<br/>3 |
+|  t4 | — Sync — | — Sync — |
+|  t5 | GET key1<br/>10 | GET key1<br/>10 |
+|  t6 | DECRBY key1 3 |  |
+|  t7 |  | INCRBY key1 6 |
+|  t8 | — Sync — | — Sync — |
+|  t9 | GET key1<br/>13 | GET key1<br/>13 |
 
-Active-Active databases replicate data between multiple Redis Enterprise Software
-clusters. Common uses for Active-Active databases include disaster recovery,
-geographically redundant applications, and keeping data closer to your
-user's locations. MMR is always multi-directional amongst the clusters
-configured in the Active-Active database. For unidirectional replication, please see the
-Replica Of capabilities in Redis Enterprise Software.
+Databases provide various approaches to address some of these concerns:
 
-## Example of synchronization
+- Active-Passive Geo-distributed deployments: With active-passive
+    distributions, all writes go to an active cluster. Redis Enterprise
+    provides a "Replica Of" capability that provides a similar approach.
+    This can be employed when the workload is heavily balanced towards
+    read and few writes. However, WAN performance and availability
+    is quite flaky and traveling large distances for writes take away
+    from application performance and availability.
+- Two-phase Commit (2PC): This approach is designed around a protocol
+    that commits a transaction across multiple transaction managers.
+    Two-phase commit provides a consistent transactional write across
+    regions but fails transactions unless all participating transaction
+    managers are "available" at the time of the transaction. The number
+    of messages exchanged and its cross-regional availability
+    requirement make two-phase commit unsuitable for even moderate
+    throughputs and cross-geo writes that go over WANs.
+- Sync update with Quorum-based writes: This approach synchronously
+    coordinates a write across majority number of replicas across
+    clusters spanning multiple regions. However, just like two-phase
+    commit, number of messages exchanged and its cross-regional
+    availability requirement make geo-distributed quorum writes
+    unsuitable for moderate throughputs and cross geo writes that go
+    over WANs.
+- Last-Writer-Wins (LWW) Conflict Resolution: Some systems provide
+    simplistic conflict resolution for all types of writes where the
+    system clocks are used to determine the winner across conflicting
+    writes. LWW is lightweight and can be suitable for simpler data.
+    However, LWW can be destructive to updates that are not necessarily
+    conflicting. For example adding a new element to a set across two
+    geographies concurrently would result in only one of these new
+    elements appearing in the final result with LWW.
+- MVCC (multi-version concurrency control): MVCC systems maintain
+    multiple versions of data and may expose ways for applications to
+    resolve conflicts. Even though MVCC system can provide a flexible
+    way to resolve conflicting writes, it comes at a cost of great
+    complexity in the development of a solution.
 
-In the example below, database writes are concurrent at the point in
-times t1 and t2 and happen before a sync can communicate the changes.
-However, writes at times t4 and t6 are not concurrent as a sync happened
-in between.
+Even though types and commands in Active-Active databases look identical to standard Redis
+types and commands, the underlying types in RS are enhanced to maintain
+more metadata to create the conflict-free data type experience. This
+section explains what you need to know about developing with Active-Active databases on
+Redis Enterprise Software.
 
 ## Lua scripts
 
@@ -65,7 +103,7 @@ execute them in script-replication mode.
 ## Eviction
 
 The default policy for Active-Active databases is _noeviction_ mode.
-For details, see [eviction for Active-Active databases]({{< relref "/rs/databases/memory-performance/eviction-policy.md" >}}).
+For details, see [eviction for Active-Active databases]({{< relref "/rs/databases/configure/eviction-policy.md" >}}).
 
 
 ## Expiration
@@ -133,11 +171,10 @@ Keys are counted differently for Active-Active databases:
     until it is collected by the garbage collector.
 - The Expires average TTL (in `bdb-cli info`) is computed for local expires only.
 
-[Learn more about
-synchronization]({{< relref "/rs/databases/active-active/_index.md" >}}) for
-each supported data type and [how to develop]({{< relref "/rs/databases/active-active/develop/_index.md" >}}) with them on Redis Enterprise Software.
+## INFO
 
-## Terminology
+The INFO command has an additional crdt section which provides advanced
+troubleshooting information (applicable to support etc.):
 
 |  **Section** | **Field** | **Description** |
 |  ------ | ------ | ------ |
