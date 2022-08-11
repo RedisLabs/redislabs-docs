@@ -22,10 +22,6 @@ without changing the way the application connects to the database.
 
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
-{{< note >}}
-Active-Active databases do not replicate the entire database, only the data.
-Database configurations, LUA scripts, and other support info are not replicated.
-{{< /note >}}
 
 ## High availability
 
