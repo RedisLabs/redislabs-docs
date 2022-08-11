@@ -41,6 +41,11 @@ Replace the following variables with your own values:
 - `<cert-file-name>` - The name of your certificate file
 - `<key-file-name>` - The name of your key file
 
+{{<note>}}
+- The new certificates should be placed in a temporary location on one of the cluster nodes, for example under /tmp.
+  The files under the /etc/opt/redislabs path should not be overwritten manually.
+{{<note>}}
+
 For example, to replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem":
 
 ```sh
