@@ -9,49 +9,92 @@ categories: ["RS"]
 aliases: ["/rs/administering/access-control/password-rotation/"]
 ---
 
-To enforce a more advanced password policy, we recommend using LDAP integration with an external identity provider, such as Active Directory.
+Redis Enterprise Software provides several ways to manage the passwords of local accounts, including:
 
-## Enable the password complexity profile
+- [Password complexity rules](#password-complexity-rules)
 
-Redis Enterprise Software provides an optional password complexity profile
-that meets most organizational needs. When enabled, this password profile requires the following:
+- [Password expiration](#password-expiration)
+
+- [Password rotation policies](#password-rotation-policies)
+
+You can also manage a user's ability [to sign in]({{<relref "rs/security/access-control/manage-users/login-lockout#user-login-lockout">}}) and control [session timeout]({{<relref "rs/security/access-control/manage-users/login-lockout#session-timeout">}}).
+
+To enforce more advanced password policies, we recommend using LDAP integration with an external identity provider, such as Active Directory.
+
+## Password complexity rules
+
+Redis Enterprise Software provides optional password complexity rules that meet common requirements.  When enabled, these rules require the password to have:
 
 - At least 8 characters
 - At least one uppercase character
 - At least one lowercase character
-- At least one number (not first or last character)
-- At least one special character (not first or last character)
+- At least one number
+- At least one special character 
+
+These requirements reflect v6.2.12 and later. Earlier versions did not support numbers or special characters as the first or the last character of a password. This restriction was removed in v6.2.12.
 
 In addition, the password:
 
 - Cannot contain the user ID or reverse of the user ID.
 - Cannot have more than three repeating characters.
 
-{{< note >}}
-The password complexity profile applies when a new user is added or an existing user changes their password. This profile does not apply to users authenticated through an external identity provider.
-{{< /note >}}
+Password complexity rules apply complexity rules are applied when a new user account is created and when the password is changed.  Password complexity rules are not applied to accounts authenticated by an external identity provider.  
 
-To enable the password complexity profile, use [`PUT /v1/cluster`]({{< relref "/rs/references/rest-api/requests/cluster#put-cluster" >}}):
+You can use the admin console or the REST API to enable password complexity rules.
 
-```sh
+### Enable using the admin console
+
+To enable password complexity rules using the admin console:
+
+1. Sign in to the Redis Enterprise Software admin console using an administrator account
+
+1. From the main menu, select **Settings** | **Preferences**
+
+    {{<image filename="images/rs/cluster-settings-preferences.png" alt="Preference settings in the Redis Software admin console." width="75%">}}{{< /image >}}
+
+1. Place a checkmark next to **Enable password complexity rules**
+
+1. Save your changes
+
+### Enable using the REST API
+
+To use the REST API to enable password complexity rules:
+
+``` REST
 PUT https://[host][:port]/v1/cluster
-    '{"password_complexity":true}'
+{"password_complexity":true}
 ```
 
-To turn off the password complexity requirement, run the same command but set `"password_complexity"` to `false`.
+### Deactivate password complexity rules
 
-## Enable password expiration
+To deactivate password complexity rules:
 
-To enforce an expiration of a user's password after a specified number of days, use [`PUT /v1/cluster`]({{< relref "/rs/references/rest-api/requests/cluster#put-cluster" >}}):
+- Remove the checkmark from the **Enable password complexity rules** setting in the admin console
 
-```sh
-PUT https://[host][:port]/v1/cluster
-    '{"password_expiration_duration":<number_of_days>}'
-```
+- Use the `cluster` REST API endpoint to set `password_complexity` to `false`
 
-To turn off password expiration, set the number of days to `0`.
+## Password expiration
 
-## User password rotation
+To enforce an expiration of a user's password after a specified number of days:
+
+1. Use the admin console to place a checkmark next to the **Enable password expiration** preference setting
+
+1. Use the `cluster` endpoint of the REST API
+
+    ``` REST
+    PUT https://[host][:port]/v1/cluster
+    {"password_expiration_duration":<number_of_days>}
+    ```
+
+To deactivate password expiration:
+
+- Remove the checkmark next to the to the **Enable password expiration** preference setting.
+
+    For help locating the setting, see [Password complexity rules](#password-complexity-rules).
+
+- Use the `cluster` REST API endpoint to set `password_expiration_duration` to `0` (zero).
+
+## Password rotation policies
 
 Redis Enterprise Software lets you implement password rotation policies using its [REST API]({{<relref "/rs/references/rest-api">}}).
 
@@ -63,12 +106,13 @@ Password rotation does not work for the default user. [Add additional users]({{<
 
 For user access to the Redis Enterprise Software admin console,
 you can set a [password expiration policy](#enable-password-expiration) to prompt the user to change their password.
+
 However, for database connections that rely on password authentication,
 you need to allow for authentication with the existing password while you roll out the new password to your systems.
 
 With the Redis Enterprise Software REST API, you can add additional passwords to a user account for authentication to the database or the admin console and API.
-After the old password is replaced in the database connections,
-just delete the old password to finish the password rotation process.
+
+Once the old password is replaced in the database connections, you can delete the old password to finish the password rotation process.
 
 {{< warning >}}
 Multiple passwords are only supported using the REST API.
