@@ -13,22 +13,23 @@ aliases: [
 ]
 ---
 {{<warning>}}
-This article describes features that are considered deprecated.  They will be removed in a future release of Redis Enterprise Software.<br/><br/>  
+As of v6.2.12, the features described in this article are [obsolete]({{< relref "/glossary/#obsolete" >}}) and have been removed from Redis Enterprise Software.<br/><br/>  
   
-As of v6.0.20, Redis Software supports role-based [LDAP authentication]({{<relref "/rs/security/access-control/ldap/">}}), which can be enabled using the admin console or the Redis Software REST API.<br/><br/>  
+[Version 6.0.20]({{< relref "rs/release-notes/rs-6-0-20-april-2021" >}}) introduced a [role-based LDAP integration]({{< relref "/rs/security/access-control/ldap/" >}}) that  replaced the cluster-based integration described here.<br/><br/>
+
+At the time, the earlier integration remained in order to provide a transition period for migration.  That period has now passed and the cluster-based integration has been removed.<br/><br/>  
   
-The features described in this article are still included with v6.0.20; however, they are considered obsolete and have been replaced by [role-based LDAP authentication]({{<relref "/rs/security/access-control/ldap/">}}).<br/><br/>  
-  
-For now, you can continue to use cluster-based LDAP integration, however, support will be removed in a future version.  We strongly recommend migrating to role-base LDAP.
+This article has been archived and will no longer be maintained.
 {{</warning>}}
 
-Redis Enterprise Software supports Lightweight Directory Access Protocol (LDAP) admin console users.<!--more-->
+Redis Enterprise Software supports Lightweight Directory Access Protocol (LDAP).<!--more-->
 
 {{< note >}}
 Known Limitations:
 
 - LDAP access for database access is available only when using the role-based [LDAP authentication]({{<relref "/rs/security/access-control/ldap/">}}).
 - This process does not apply when running Redis Enterprise on Kubernetes.
+- Support for this integration was removed from Redis Enterprise Software v6.2.12.
 {{< /note >}}
 
 ## Enable LDAP
@@ -83,6 +84,6 @@ ldap_bind_dn: cn=admin,dc=company,dc=com
 ldap_password: secretSquirrel
 ```
 
-### Set up LDAP users in Redis Enterprise
+## Set up LDAP users in Redis Enterprise
 
 To set up an LDAP user, simply select an external account type when configuring the user following the procedure to configure users.
