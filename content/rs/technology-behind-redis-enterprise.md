@@ -65,7 +65,7 @@ or decreases.
 
 ### Monitoring and alerting
 
-Monitoring and alerting are built-in and configurable. You can use the included dashboards to monitor your cluster, and you can also [integrate with Nagios, Prometheus, and Grafana]({{< relref "/rs/administering/monitoring-metrics/_index.md" >}}).
+Monitoring and alerting are built-in and configurable. You can use the included dashboards to monitor your cluster, and you can also [integrate with Nagios, Prometheus, and Grafana]({{< relref "/rs/monitoring-metrics/_index.md" >}}).
 
 ### Admin console, APIs, and CLIs
 

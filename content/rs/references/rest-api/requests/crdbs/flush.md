@@ -20,17 +20,21 @@ aliases: /rs/references/rest-api/crdbs/flush
 
 ## Flush an Active-Active database {#put-crdbs-flush}
 
-	PUT /v1/crdbs/{crdb_guid}/flush
+```sh
+PUT /v1/crdbs/{crdb_guid}/flush
+```
 
 Flush an Active-Active database.
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-    PUT /crdbs/1/flush
+```sh
+PUT /crdbs/552bbccb-99f3-4142-bd17-93d245f0bc79/flush
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -43,11 +47,11 @@ Flush an Active-Active database.
 |-------|------|-------------|
 | crdb_guid | string | Globally unique Active-Active database ID (GUID) |
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Returns a [CRDB task object]({{<relref "/rs/references/rest-api/objects/crdb_task">}}).
 
-### Status codes {#put-status-codes} 
+#### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|

@@ -8,23 +8,23 @@ toc: "true"
 headerRange: "[1-2]"
 tags: ["non-configured"]
 categories: ["RS"]
-aliases: 
+aliases:
 ---
 
 Recovers a cluster from a backup file. The default location of the configuration backup file is `/var/opt/redislabs/persist/ccs/ccs-redis.rdb`.
 
 ```sh
-rladmin cluster recover 
-        filename <recovery filename> 
-        [ ephemeral_path <path> ] 
+rladmin cluster recover
+        filename <recovery filename>
+        [ ephemeral_path <path> ]
         [ persistent_path <path> ]
         [ ccs_persistent_path <path> ]
-        [ rack_id <ID> ] 
-        [ override_rack_id ] 
-        [ node_uid <number> ] 
-        [ flash_enabled ] 
-        [ flash_path <path> ] 
-        [ addr <IP address> ] 
+        [ rack_id <ID> ]
+        [ override_rack_id ]
+        [ node_uid <number> ]
+        [ flash_enabled ]
+        [ flash_path <path> ]
+        [ addr <IP address> ]
         [ external_addr <IP address> ]
 ```
 

@@ -10,10 +10,44 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.6.13 requires:
+RedisTimeSeries v1.6.17 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.6.17 (July 2022)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#1240](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1240) Compaction rules are not saved to [RoF](https://docs.redis.com/latest/rs/concepts/memory-performance/redis-flash/) (Redis Enterprise)
+
+## v1.6.16 (June 2022)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Features:
+
+    - [#1193](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1193) Commands that don’t execute on the main thread now appear in [SLOWLOG](https://redis.io/commands/slowlog/)
+
+- Bug fixes:
+
+    - [#1203](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1203) Compaction rules are not replicated (Replica Of) on Redis Enterprise
+    - [#1204](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1204) When the last sample is deleted with [`TS.DEL`](https://redis.io/commands/ts.del/), it may still be accessible with [`TS.GET`](https://redis.io/commands/ts.get/)
+    - [#1226](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1226) [`TS.MRANGE`](https://redis.io/commands/ts.mrange/), [`TS.MREVRANGE`](https://redis.io/commands/ts.mrevrange/): on a multi-shard environment, some chunks may be skipped
+
+{{<note>}}
+New RDB version (v5). RDB files created with 1.6.16 are not backward compatible.
+{{</note>}}
 
 ## v1.6.13 (June 2022)
 

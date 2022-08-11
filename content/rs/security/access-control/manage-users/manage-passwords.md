@@ -31,28 +31,22 @@ In addition, the password:
 The password complexity profile applies when a new user is added or an existing user changes their password. This profile does not apply to users authenticated through an external identity provider.
 {{< /note >}}
 
-To enable the password complexity profile, run the following `curl` command against the REST API:
+To enable the password complexity profile, use [`PUT /v1/cluster`]({{< relref "/rs/references/rest-api/requests/cluster#put-cluster" >}}):
 
 ```sh
-curl -k -X PUT -v -H "cache-control: no-cache" 
-                  -H "content-type: application/json" 
-                  -u "<administrator-user-email>:<password>" 
-                  -d '{"password_complexity":true}' 
-                  https://<RS_server_address>:9443/v1/cluster
+PUT https://[host][:port]/v1/cluster
+    '{"password_complexity":true}'
 ```
 
 To turn off the password complexity requirement, run the same command but set `"password_complexity"` to `false`.
 
 ## Enable password expiration
 
-To enforce an expiration of a user's password after a specified number of days, use the following REST API request:
+To enforce an expiration of a user's password after a specified number of days, use [`PUT /v1/cluster`]({{< relref "/rs/references/rest-api/requests/cluster#put-cluster" >}}):
 
 ```sh
-curl -k -X PUT -v -H "cache-control: no-cache" 
-                  -H "content-type: application/json" 
-                  -u "<administrator_user>:<password>" 
-                  -d '{"password_expiration_duration":<number_of_days>}' 
-                  https://<RS_server_address>:9443/v1/cluster
+PUT https://[host][:port]/v1/cluster
+    '{"password_expiration_duration":<number_of_days>}'
 ```
 
 To turn off password expiration, set the number of days to `0`.
@@ -88,36 +82,39 @@ The new password cannot already exist as a password for the user and must meet t
 
 To rotate the password of a user account:
 
-1. Add an additional password to a user account with this `POST` request:
+1. Add an additional password to a user account with [`POST /v1/users/password`]({{< relref "/rs/references/rest-api/requests/users/password#add-password" >}}):
 
     ```sh
-    curl -k -v -X POST -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}' https://<RS_server_address>:9443/v1/users/password
+    POST https://[host][:port]/v1/users/password
+         '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}'
     ```
 
     After you send this request, you can authenticate with both the old and the new password.
 
 1. Update the password in all database connections that connect with the user account.
-1. Delete the original password with this `DELETE` request:
+1. Delete the original password with [`DELETE /v1/users/password`]({{< relref "/rs/references/rest-api/requests/users/password#update-password" >}}):
 
-```sh
-curl -k -v -X DELETE -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>"}' https://<RS_server_address>:9443/v1/users/password
-```
+    ```sh
+    DELETE https://[host][:port]/v1/users/password
+           '{"username":"<username>", "old_password":"<an_existing_password>"}'
+    ```
 
-If there is only one valid password for a user account, you cannot delete that password.
+    If there is only one valid password for a user account, you cannot delete that password.
 
 ### Replace all passwords
 
 You can also replace all existing passwords for a user account with a single password that does not match any existing passwords.
 This can be helpful if you suspect that your passwords are compromised and you want to quickly resecure the account.
 
-To replace all existing passwords for a user account with a single new password, use this `PUT` request:
+To replace all existing passwords for a user account with a single new password, use [`PUT /v1/users/password`]({{< relref "/rs/references/rest-api/requests/users/password#delete-password" >}}):
 
 ```sh
-curl -k -v -X PUT -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}' https://<RS_server_address>:9443/v1/users/password
+PUT https://[host][:port]/v1/users/password
+    '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}'
 ```
 
 All of the existing passwords are deleted and only the new password is valid.
 
 {{<note>}}
-If you run the above command without `-X PUT`, the new password is added to the list of existing passwords.
+If you send the above request without specifying it is a `PUT` request, the new password is added to the list of existing passwords.
 {{</note>}}

@@ -20,4 +20,3 @@ You can manage your Redis Enterprise Software databases with several different t
 ## Database settings
 
 {{< allchildren style="h2" description="true" />}}
-

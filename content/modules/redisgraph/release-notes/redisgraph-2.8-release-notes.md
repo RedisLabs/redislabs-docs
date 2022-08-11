@@ -10,10 +10,77 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.13 requires:
+RedisGraph v2.8.17 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.17 (July 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2499](https://github.com/RedisGraph/RedisGraph/pull/2499) Potential crash with concurrent connections due to missing lock - additional fixes
+    - [#2424](https://github.com/RedisGraph/RedisGraph/issues/2424) Potential crash when using `ORDER BY`
+    - [#2491](https://github.com/RedisGraph/RedisGraph/issues/2491) Whitespaces between `MATCH` terms can render the query invalid
+
+## v2.8.16 (July 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2478](https://github.com/RedisGraph/RedisGraph/pull/2478) Potential crash with concurrent connections due to missing lock
+    - [#2370](https://github.com/RedisGraph/RedisGraph/issues/2370) Potential crash / wrong results / warning messages when using edge indexes
+    - [#2473](https://github.com/RedisGraph/RedisGraph/issues/2473) Crash on invalid `distance()` query with index
+
+## v2.8.15 (June 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2241](https://github.com/RedisGraph/RedisGraph/issues/2241) Possible crash on queries with `MERGE` operation in a Cartesian product (MOD-3500)
+    - [#2394](https://github.com/RedisGraph/RedisGraph/issues/2394) Possible crash when freeing an index immediately after its creation
+
+## v2.8.14 (June 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Features:
+
+    - [#2403](https://github.com/RedisGraph/RedisGraph/pull/2403) Introduce `toFloat` function
+    - [#2365](https://github.com/RedisGraph/RedisGraph/issues/2365) Commands that don't execute on the main thread now also appear in [SLOWLOG](https://redis.io/commands/slowlog/)
+
+- Bug fixes:
+
+    - [#2381](https://github.com/RedisGraph/RedisGraph/pull/2381) Rare data corruption on data encoding
+    - [#2393](https://github.com/RedisGraph/RedisGraph/issues/2393), [#2395](https://github.com/RedisGraph/RedisGraph/issues/2395) Crash when searching an index for a runtime-determined value
+    - [#2377](https://github.com/RedisGraph/RedisGraph/issues/2377) Crash on `INT_MIN % -1`
+    - [#2390](https://github.com/RedisGraph/RedisGraph/issues/2390) Crash on distance filter
+    - [#2407](https://github.com/RedisGraph/RedisGraph/issues/2407) Crash on double to string
+    - [#2422](https://github.com/RedisGraph/RedisGraph/pull/2422) `toJSON` returned floating points cropped to 6 decimals
+
+{{<note>}}
+New RDB version (v12). RDB files created with v2.8.14 or later are not backward compatible.
+{{</note>}}
 
 ## v2.8.13 (May 2022)
 
@@ -46,6 +113,10 @@ Details:
     - [#1441](https://github.com/RedisGraph/RedisGraph/issues/1441) Query returns wrong result: projection before Cartesian product causes only one result to be returned
     - [#2298](https://github.com/RedisGraph/RedisGraph/issues/2298) Query returns wrong result: wrong value when fetching a string property from a map
     - [#2318](https://github.com/RedisGraph/RedisGraph/pull/2318) Memory leak
+
+{{<note>}}
+Duplicate column names in a query are no longer valid. For example, the query `GRAPH.QUERY g "MATCH (e) RETURN e, e"` is not valid. If you need to return the same column twice, you can rewrite the query as `GRAPH.QUERY g "MATCH (e) RETURN e, e as e2"`.
+{{</note>}}
 
 ## v2.8.11 (March 2022)
 

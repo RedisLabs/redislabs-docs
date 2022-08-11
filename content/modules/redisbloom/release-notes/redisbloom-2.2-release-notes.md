@@ -10,10 +10,23 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisBloom v2.2.17 requires:
+RedisBloom v2.2.18 requires:
 
 - Minimum Redis compatibility version (database): 4.0.0
 - Minimum Redis Enterprise Software version (cluster): 5.0.0
+
+## v2.2.18 (July 2022)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#481](https://github.com/RedisBloom/RedisBloom/issues/481) CF crashes on expansion 0
+    - [#478](https://github.com/RedisBloom/RedisBloom/pull/478) [`BF.INFO`](https://redis.io/commands/bf.info/) reports an inaccurate result about the memory footprint
 
 ## v2.2.17 (June 2022)
 

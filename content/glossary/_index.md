@@ -66,7 +66,7 @@ More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
 
-More info: [Database Clustering]({{<relref "content/rc/databases/configuration/clustering.md" >}})
+More info: [Database Clustering]({{<relref "/rc/databases/configuration/clustering.md" >}})
 {{%/definition%}}
 
 {{%definition "Cluster Configuration Store (CSS)"%}}
@@ -132,13 +132,13 @@ More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.htm
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
-More info: [Database Clustering]({{<relref "content/rs/databases/configure/clustering.md">}})
+More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "hash tag"%}}
 A part of the key that is used in the hash calculation.
 
-More info: [Database Clustering]({{<relref "content/rs/databases/configure/clustering.md">}})
+More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "ingress"%}}

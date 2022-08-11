@@ -26,7 +26,7 @@ most database settings only apply to the Active-Active database instance that yo
 - TLS mode
 - Periodic backup
 
-You can change the global configuration of the Active-Active database from the command line with the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}).
+You can change the global configuration of the Active-Active database from the command line with [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}).
 
 ## Participating clusters
 
@@ -56,7 +56,7 @@ Redis databases that use [replication for high availability]({{< relref "/rs/dat
 By default, the replication backlog is set to one percent (1%) of the database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
 Use the [`rladmin`]({{<relref "rs/references/cli-utilities/rladmin">}}) and the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) utilities to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
 
-The syntax varies between regular and Active-Active databases. 
+The syntax varies between regular and Active-Active databases.
 
 For a regular Redis database:
 ```text

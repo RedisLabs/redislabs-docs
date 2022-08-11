@@ -1,7 +1,7 @@
 ---
 Title: Back up a database
 description:
-weight: 40
+weight: 35
 alwaysopen: false
 categories: ["RC"]
 linktitle: Back up data

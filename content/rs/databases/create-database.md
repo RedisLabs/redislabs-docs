@@ -130,7 +130,7 @@ If you are creating a Memcached database, enter a username and password for SASL
         or a port is randomly selected.
 
         {{< note >}}
-You cannot change the [port number]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
+You cannot change the [port number]({{< relref "/rs/networking/port-configurations.md" >}})
 after the database is created.
         {{< /note >}}
 
@@ -166,7 +166,7 @@ after the database is created.
     - [**Periodic backup**]({{< relref "/rs/databases/import-export/database-backup.md" >}}) -
     You can configure periodic backups of the database, including the interval and backup location parameters.
 
-    - [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -
+    - [**Alerts**]({{< relref "/rs/monitoring-metrics/_index.md#database-alerts" >}}) -
     You can select alerts to show in the database status and configure their thresholds.
     You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}).
 

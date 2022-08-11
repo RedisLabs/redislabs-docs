@@ -1,7 +1,7 @@
 ---
 Title: Remove a cluster node
 linkTitle: Remove node
-description: Remove a node from your Redis Enterprise cluster. 
+description: Remove a node from your Redis Enterprise cluster.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -22,7 +22,7 @@ Enterprise Software:
 The following section explains how each of these actions can be
 achieved, as well as their impact and considerations.
 
-You can configure [email alerts from the cluster]({{< relref "/rs/administering/monitoring-metrics/_index.md#cluster-alerts" >}}) to notify you of cluster changes, including when a node is removed.
+You can configure [email alerts from the cluster]({{< relref "/rs/monitoring-metrics/_index.md#cluster-alerts" >}}) to notify you of cluster changes, including when a node is removed.
 
 **Make sure to read through these explanations thoroughly before taking
 any action.**
@@ -71,7 +71,7 @@ You can migrate resources by using the `rladmin` command-line interface
 (CLI)]({{<relref "/rs/references/cli-utilities/rladmin">}}).
 
 {{< note >}}
-The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) must be updated each time a node is added or replaced.
+The [DNS records]({{< relref "/rs/networking/cluster-dns/_index.md" >}}) must be updated each time a node is added or replaced.
 {{< /note >}}
 
 ## Remove a node
@@ -89,12 +89,13 @@ To remove a node using the admin console:
 1. Once the process finishes, the node is no longer shown in
     the UI.
 
-To remove a node using the REST API, use the `/v1/nodes/3/actions/remove` endpoint with the JSON data and the "Content-Type: application/json" header.
+To remove a node using the REST API, use [`POST /v1/nodes/<node_id>/actions/remove`]({{< relref "/rs/references/rest-api/requests/nodes/actions#post-node-action" >}}) with the following JSON data and the "Content-Type: application/json" header.
 
 For example:
 
 ```sh
-curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"
+POST https://[host][:port]/v1/nodes/<node_id>/actions/remove
+     "{}"
 ```
 
 {{< note >}}
