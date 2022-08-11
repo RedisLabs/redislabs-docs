@@ -1,6 +1,6 @@
 ---
 Title: Manage user login
-linkTitle: Manage user login
+linkTitle: Manage user login and session
 description: Manage user login lockout and session timeout.
 weight: 40
 alwaysopen: false
@@ -8,6 +8,14 @@ toc: "true"
 categories: ["RS"]
 aliases: ["/rs/administering/designing-production/security/login-lockout"]
 ---
+
+Redis Enterprise Software secures user access in a few different ways, including automatically:
+
+- Locking user accounts after a series of authentication failures (invalid passwords)
+
+- Signing sessions out after a period of inactivity
+
+Here, you learn how to configure the relevant settings.
 
 ## User login lockout
 

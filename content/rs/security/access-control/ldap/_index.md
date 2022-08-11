@@ -18,7 +18,6 @@ Previously, Redis Enterprise Software supported a [cluster-based LDAP integratio
 
 If you are using the earlier cluster-based LDAP mechanism, you need to [migrate to role-based LDAP]({{<relref "/rs/security/access-control/ldap/migrate-to-role-based-ldap">}}) before upgrading to v6.2.12.
 
-
 ## How it works
 
 Here's how role-based LDAP integration works:
