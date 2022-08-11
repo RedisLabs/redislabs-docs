@@ -2,7 +2,7 @@
 title: Configure database settings
 linktitle: Configure
 description: Configure and learn about settings specific to each database.
-weight: 60
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [

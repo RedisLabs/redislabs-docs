@@ -11,6 +11,10 @@ aliases: [
     /rs/references/developing-for-active-active/developing-hashes-active-active.md,
     /rs/databases/active-active/data-types/hashes-active-active.md,
     /rs/databases/active-active/data-types/hashes-active-active/,
+    /rs/databases/active-active/develop/hashes.md,
+    /rs/databases/active-active/develop/hashes/,
+    /rs/databases/active-active/develop/data-types/hashes.md,
+    /rs/databases/active-active/develop/data-types/hashes/
 ]
 ---
 Hashes are great for structured data that contain a map of fields and
