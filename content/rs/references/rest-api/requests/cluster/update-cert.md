@@ -24,19 +24,21 @@ aliases: /rs/references/rest-api/cluster/update_cert
 
 Replaces an existing certificate on all nodes within the cluster with a new certificate. The new certificate must pass validation before it can replace the old certificate.
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /cluster/update_cert
+```sh
+PUT /cluster/update_cert
+```
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Responds with the `200 OK` status code if the certificate replacement succeeds across the entire cluster.
 
 Otherwise, retry the certificate update in case the failure was due to a temporary issue in the cluster.
 
-### Status codes {#put-status-codes} 
+### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
