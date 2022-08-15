@@ -20,7 +20,7 @@ You can:
     
     Select the arrow icon to change the sort order.  You can only sort by one field at a time.
 
-* Use the **Export all** button to export all logs as a comma-separated, variable text (CSV) file for use in other systems and programs.
+* Use the **Export all** button to export all logs as a comma-separated values (CSV) file for use in other systems and programs.
 
     {{<image filename="images/rc/system-logs-export.png" alt="Use the export all button in the top right to export all logs to a CSV file" width="130px">}}{{< /image >}} 
 

@@ -12,7 +12,7 @@ aliases: /rv/api/how-to/view-auditing-using-system-log/
 ---
 Service logs collect and report actions performed on various entities in your Redis Enterprise Cloud subscription.  These entities include the account itself, users, API Keys, subscriptions, databases, accounts, payment methods, and more. For each entity, various lifecycle events are logged in the system log.
 
-To view the log, sign into the Redis Cloud [admin console]() and then select Logs from the main menu.
+To view the log, sign in to the Redis Cloud [admin console](https://app.redislabs.com/) and then select **Logs** from the main menu.
 
 {{<image filename="images/rc/system-logs.png" alt="Choose the Logs command from the Redis Cloud admin console menu to view your subscription system log." width="75%">}}{{< /image >}} 
 
