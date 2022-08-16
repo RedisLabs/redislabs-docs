@@ -89,7 +89,7 @@ If you decided to require client authentication, you also need the public (`redi
 
 ### Connect with the Redis CLI
 
-Here's how to use the Redis CLI to connect to a TLS-enabled Redis Cloud database.
+Here's how to use the [Redis CLI]({{<relref "/rs/references/cli-utilities/redis-cli">}}) to connect to a TLS-enabled Redis Cloud database.
 
 #### Without client authentication
 
