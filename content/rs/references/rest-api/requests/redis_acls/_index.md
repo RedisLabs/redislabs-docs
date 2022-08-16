@@ -99,9 +99,9 @@ Get a single Redis ACL object.
 
 ### Permissions
 
-| Permission name |
-|-----------------|
-| [view_redis_acl_info]({{<relref "/rs/references/rest-api/permissions#view_redis_acl_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_redis_acl_info]({{<relref "/rs/references/rest-api/permissions#view_redis_acl_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
 ### Request {#get-request}
 
@@ -158,9 +158,9 @@ Update an existing Redis ACL object.
 
 ### Permissions
 
-| Permission name |
-|-----------------|
-| [update_redis_acl]({{<relref "/rs/references/rest-api/permissions#update_redis_acl">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_redis_acl]({{<relref "/rs/references/rest-api/permissions#update_redis_acl">}}) | admin |
 
 ### Request {#put-request}
 
@@ -232,9 +232,9 @@ Create a new Redis ACL object.
 
 ### Permissions
 
-| Permission name |
-|-----------------|
-| [create_redis_acl]({{<relref "/rs/references/rest-api/permissions#create_redis_acl">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [create_redis_acl]({{<relref "/rs/references/rest-api/permissions#create_redis_acl">}}) | admin |
 
 ### Request {#post-request}
 
@@ -343,9 +343,9 @@ Delete a Redis ACL object.
 
 ### Permissions
 
-| Permission name |
-|-----------------|
-| [delete_redis_acl]({{<relref "/rs/references/rest-api/permissions#delete_redis_acl">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [delete_redis_acl]({{<relref "/rs/references/rest-api/permissions#delete_redis_acl">}}) | admin |
 
 ### Request {#delete-request}
 
