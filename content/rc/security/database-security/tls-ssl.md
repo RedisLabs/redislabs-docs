@@ -89,20 +89,24 @@ If you decided to require client authentication, you also need the public (`redi
 
 ### Connect with the Redis CLI
 
-Here's how to use the Redis CLI to connect to a TLS-enabled Redis Cloud database:
+Here's how to use the Redis CLI to connect to a TLS-enabled Redis Cloud database.
+
+#### Without client authentication
 
 If you're not requiring client authentication, then you need to provide the host, port, and the Redis Cloud CA certificate:
 
 ```sh
 redis-cli -h redis.123.cloud.rlrcp.com -p 16257 --tls
-    --cacert redislabs_ca.pem
+    --cacert redis_ca.pem
 ```
+
+#### With client authentication
 
 If you've enabled client authentication, then you also need to provide your client's private and public keys:
 
 ```sh
-redis-cli -h redis.123.cloud.rlrcp.com -p 16257 --tls --cacert redislabs_ca.pem
-    --cert redislabs_user.crt --key redislabs_user_private.key
+redis-cli -h redis.123.cloud.rlrcp.com -p 16257 --tls --cacert redis_ca.pem
+    --cert redis_user.crt --key redis_user_private.key
 ```
 
-Endpoint and port details are available from the **Databases** list or the database's configuration screen.
+Endpoint and port details are available from the **Databases** list or the database's **Configuration** screen.
