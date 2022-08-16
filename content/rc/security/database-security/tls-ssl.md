@@ -15,7 +15,7 @@ Redis Cloud Fixed, Flexible, and Annual subscriptions can use TLS to encrypt dat
 
 TLS is not enabled by default.  
 
-When you enable TLS, you also need to decide whether to enable client authentication, which requires that all database clients present a valid client certificate for authentication.
+When you enable TLS, you also need to decide whether to enable client authentication (also known as "mutual authentication"), which requires that all database clients present a valid client certificate for authentication.
 
 Client authentication is not required by Redis Cloud; however, it is strongly recommended.
 
@@ -25,30 +25,32 @@ To enable TLS for a Redis Cloud database:
 
 1. Select **Databases** from the [admin console](https://app.redislabs.com/) menu and then select your database from the list.
 
-2. Select the **Edit database** button to edit the database:
+2. From the database's **Configuration** screen, select the **Edit database** button:
 
     {{<image filename="images/rc/button-database-edit.png" alt="The Edit database button lets you change selected database properties." >}}{{< /image >}}
 
-3. In the **Security** section, select the **TLS client authentication** checkbox.
+3. In the **Security** section, use the **Transport layer security (TLS)** toggle to enable TLS.
 
-4. Decide whether you want to enforce client authentication (also known as "mutual authentication"). By
-enabling client authentication, only those clients that present a valid certificate will be able to connect. If you do not want to require client authentication, skip to **step 8**.
+4. Decide whether you want to enforce client authentication:
 
-5. To require client authentication, select **Enforce client authentication**.
+    - If you only want clients that present a valid certificate to be able to connect, continue to the next step.
+    
+    - If you do not want to require client authentication, skip to the final step to apply your changes.
 
-    ![Enforce Client Authentication](/images/rc/enforce-client-auth.png "SSL Client Authentication")
+5. To require client authentication, select the **TLS client authentication** checkbox.
 
-6. Next, either provide an X.509 certificate containing a public key for your client or use the 
-**Generate Client Certificate** button to generate one.
+6. Next, either provide an [X.509 certificate](https://en.wikipedia.org/wiki/X.509) containing a public key for your client or select 
+**Generate certificate** to create one.
 
-7. If you generate your certificate using the admin console, then a download will begin containing the following artifacts:
-   * `redislabs_user.crt` – the certificate's public key.
-   * `redislabs_user_private.key` – the certificate's private key.
-   * `redislabs_ca.pem` – the Redis Cloud CA certificate.
+    If you generate your certificate using the admin console, then a download will begin containing the following files:
 
-8. Select the **Update** button to apply your changes and enable TLS.
+    - `redis_user.crt` – the certificate's public key.
 
-    ![Cancel / Update](/images/rc/cancel-update.png "Cancel / Update")
+    - `redis_user_private.key` – the certificate's private key.
+
+8. To apply your changes and enable TLS, select the **Save database** button:
+
+    {{<image filename="images/rc/button-database-save.png" alt="Use the Save database button to save database changes." >}}{{< /image >}}
 
 
 {{<note>}}
@@ -72,7 +74,17 @@ console:
 
 1. For **Redis Cloud certificate authority**, select the **Download** button to download the certificate.
 
-If you're requiring client authentication, you'll also need public and private client keys. See
+The download contains a file called `redis_ca.pem`. This file includes three public root CA certificates:
+
+- Redis Cloud Fixed plan
+
+- Redis Cloud Flexible plan
+
+- GlobalSign
+
+You can add `redis_ca.pem` to the trust store or pass it directly to a Redis client.
+
+If you decided to require client authentication, you also need the public (`redis_user.crt`) and private (`redis_user_private.key`) client keys. See
 [Enable TLS](#enable-tls) for details.
 
 ### Connect with the Redis CLI
