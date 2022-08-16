@@ -92,6 +92,28 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
 }
 ```
 
+### Example requests
+
+#### cURL
+
+```sh
+$ curl -k -u "[username]:[password]" -X GET
+        https://[host][:port]/v1/cluster/stats?interval=1hour
+```
+
+#### Python
+
+```python
+import requests
+
+url = "https://[host][:port]/v1/cluster/stats?interval=1hour"
+auth = ("[username]", "[password]")
+
+response = requests.request("GET", url, auth=auth)
+
+print(response.text)
+```
+
 ### Status codes {#get-status-codes}
 
 | Code | Description |
