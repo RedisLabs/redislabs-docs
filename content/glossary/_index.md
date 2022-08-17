@@ -15,12 +15,6 @@ aliases: /glossary/
 
 ## A, B {#letter-a}
 
-{{%definition "admission controller"%}}
-A piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object.
-
-More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
-{{%/definition%}}
-
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
@@ -40,6 +34,13 @@ A “member database” of a global Active-Active database which is made up of i
 
 {{%definition "active-passive database replication"%}}
 Provides applications read-only access to replicas of the data set from different geographical locations. The Redis Enterprise implementation of active-passive replication is called [Replica Of]({{<relref "#replica-of">}}).
+
+{{%/definition%}}
+
+{{%definition "admission controller"%}}
+A piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object.
+
+More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
 {{%/definition%}}
 
 {{%definition "append-only file (AoF)"%}}
@@ -63,10 +64,18 @@ Classless Inter-Domain Routing (CIDR) is a method to allocate and route IP addre
 More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [Configure CIDR allowlist]({{<relref "/rc/security/cidr-whitelist.md">}})
 {{%/definition%}}
 
+{{%definition "consistency"%}}
+
+Consistency models describe the way a distributed system keeps replicated data consistent between copies.
+
+More info: [Consistency models](https://en.wikipedia.org/wiki/Consistency_model)
+
+{{%/definition%}}
+
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
 
-More info: [Database Clustering]({{<relref "/rc/databases/configuration/clustering.md" >}})
+More info: [Database clustering]({{<relref "/rc/databases/configuration/clustering.md" >}})
 {{%/definition%}}
 
 {{%definition "Cluster Configuration Store (CSS)"%}}
@@ -121,6 +130,13 @@ After updating data on one instance of a distributed database, the other databas
 More info: [Eventual consistency wikipedia](https://en.wikipedia.org/wiki/Eventual_consistency)
 {{%/definition%}}
 
+{{%definition "Fully qualified domain name (FQDN)"%}}
+A domain name that includes a list of domain labels to specify the exact location in the DNS.
+
+More info: [FQDN wikipedia](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)
+
+{{%/definition%}}
+
 {{%definition "`fysnc`"%}}
 Linux command to synchronize a file's in-core state with a storage device
 
@@ -132,25 +148,32 @@ More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.htm
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
-More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "hash tag"%}}
 A part of the key that is used in the hash calculation.
 
-More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+{{%/definition%}}
+
+{{%definition "high availability"%}}
+
+High availability (HA) is a characteristic of distributed systems that keeps systems available for users for longer than normal periods of time. This is done by reducing single points of failure, increasing redundancy, and making recovering from failures easier.
+
+More info: [Redis Enterprise durability and high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}), [High availability wikipedia](https://en.wikipedia.org/wiki/High_availability)
 {{%/definition%}}
 
 {{%definition "ingress"%}}
 An API object that manages external access to the services in a Kubernetes cluster, typically HTTP.
 
-More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [Ingress routing for Redis Enterprise Software on Kubernetes]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}})
 {{%/definition%}}
 
 ## K, L {#letter-k}
 
 {{%definition "kubectl"%}}
-A command line tool for communicating with a Kubernetes API server. 
+A command line tool for communicating with a Kubernetes API server.
 
 More info: [Overview of kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)
 {{%/definition%}}
@@ -163,13 +186,19 @@ More info: [LDAP wikipedia](https://en.wikipedia.org/wiki/Lightweight_Directory_
 
 ## M - O {#letter-m}
 
-{{%definition "Master node"%}}
-Node that operates as the leader of a cluster
+{{%definition "master node"%}}
+Node that operates as the leader of a cluster. Also known as the primary node.
 {{%/definition%}}
 
 {{%definition "migration"%}}
 Deciding when and where shards will be moved if more network throughput, memory, or CPU resources are needed
 {{%/definition%}}
+
+{{%definition "multicast DNS (mDNS)"%}}
+Protocol that resolves hostnames to the IP adressess that do not include a local name server.
+
+More info: [multicast DNS wikipedia](https://en.wikipedia.org/wiki/Multicast_DNS)
+{{%definition%}}
 
 {{%definition "multi-factor authentication (MFA)"%}}
 Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Enterprise Cloud, users must enter their username, password, and an authentication code when logging in.
@@ -177,9 +206,12 @@ Method of authenticating users with pieces of evidence of the user's identity. W
 More info: [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication.md">}})
 {{%/definition%}}
 
-{{%definition "multi-master replication (MMR)"%}}
-Multi-directional replication that power the efficient replication required to achieve active-active concurrent writes in Active-Active databases.
-{{%/definition%}}
+{{%definition "multi-primary replication"%}}
+Also known as multi-master replication, Active-Active databases have multiple primary nodes (one on each participating cluster) to enable concurrent writes operations.
+
+More info: [Multi-primary replication]({{<relref "/rs/databases/active-active/#multi-primary-replication">}})
+
+{{%definition%}}
 
 {{%definition "namespace"%}}
 An abstraction used by Kubernetes to support multiple virtual clusters on the same physical cluster.
@@ -210,11 +242,17 @@ If a member Active-Active database is in an out of memory situation, that member
 ## P - Q {#letter-p}
 
 {{%definition "participating clusters"%}}
-Clusters participating in the multi-master replication of an Active-Active database.
+Clusters participating in the multi-primary replication of an Active-Active database.
 {{%/definition%}}
 
 {{%definition "provisioning"%}}
 Deciding where shards will be created and placed.
+{{%/definition%}}
+
+{{%definition "proxy policy"%}}
+Determines the number and location of active proxies tied to a single endpoint that receive incoming traffic for a database.
+
+For more info, see [Proxy policy]({{<relref "/rs/databases/configure/proxy-policy.md">}}).
 {{%/definition%}}
 
 {{%definition "quorum node"%}}
@@ -227,6 +265,10 @@ Node provisioned only for cluster operations that can be elected as a master nod
 Redis Enterprise feature that helps to ensure high availability in the event of a rack or zone failure. In the event of a rack or zone failure, the replicas and endpoints in the remaining racks/zones will be promoted.
 
 More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}})
+{{%/definition%}}
+
+{{%definition "replication backlog"%}}
+Databases using replication or Active-Active maintain a backlog to synchronize the primary and replica shards.
 {{%/definition%}}
 
 {{%definition "re-sharding"%}}
@@ -267,21 +309,30 @@ Enables your Redis databases to span both RAM and dedicated flash memory (SSD). 
 More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/administering/cluster-operations/getting-started-redis-flash.md">}})
 {{%/definition%}}
 
+{{%definition "replica high availability (replicaHA)"%}}
+High availability feature of Redis Enterprise Software. After a node failure, the cluster automatically migrates remaining replica shards available nodes. Previously known as "Slave HA" or `slave_ha`.
+
+More info: [High availability for replica shards]({{<relref "/rs/databases/configure/replica-ha.md">}})
+{{%definition%}}
+
 {{%definition "Replica Of"%}}
 The Redis Enterprise implementation of active-passive database replication.
 
-More info: [Replica-Of
+More info: [Replica Of
 ]({{<relref "/rs/databases/import-export/replica-of.md">}})
 {{%/definition%}}
 
 {{%definition "ReplicaSet"%}}
-In Kubernetes, a ReplicaSet (aims to) maintain a set of replica Pods running at any given time.
+A ReplicaSet is a type of Kubernetes resource that (aims to) maintain a set of replica pods running at any given time.
 
 More info: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 {{%/definition%}}
 
 {{%definition "replication"%}}
-Database replication provides a mechanism to ensure high availability.
+
+Database replication provides a mechanism to ensure high availability. When replication is enabled, your dataset is replicated to a replica shard,
+which is constantly synchronized with the primary shard. If the primary 
+shard fails, an automatic failover happens and the replica shard is promoted.
 
 More info: [Database replication]({{<relref "/rs/databases/configure/replication.md">}})
 {{%/definition%}}
@@ -318,7 +369,19 @@ More info: [SASL wikipedia](https://en.wikipedia.org/wiki/Simple_Authentication_
 Data persistence file that performs a data dump every one, six, or twelve hours.
 {{%/definition%}}
 
+{{%definition "syncer"%}}
+Process on each node hosting an Active-Active database instance that synchronizes a backlog of operations between participating clusters.
+
+More info: [Syncer process]({{<relref "/rs/databases/active-active/syncer.md">}})
+{{%definition%}}
+
 ## T - Z {#letter-t}
+
+{{%definition "tombstone"%}}
+
+A key that is logically deleted but stays in memory until it is collected by the garbage collector.
+
+{{%/definition%}}
 
 {{%definition "Transport Layer Security (TLS)"%}}
 Protocols that provide communications security over a computer network.
