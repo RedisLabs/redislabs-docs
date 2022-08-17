@@ -206,7 +206,6 @@ Method of authenticating users with pieces of evidence of the user's identity. W
 More info: [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication.md">}})
 {{%/definition%}}
 
-
 {{%definition "multi-primary replication"%}}
 Also known as multi-master replication, Active-Active databases have multiple primary nodes (one on each participating cluster) to enable concurrent writes operations.
 
@@ -238,6 +237,12 @@ Clusters participating in the multi-primary replication of an Active-Active data
 
 {{%definition "provisioning"%}}
 Deciding where shards will be created and placed.
+{{%/definition%}}
+
+{{%definition "proxy policy"%}}
+Determines the number and location of active proxies tied to a single endpoint that receive incoming traffic for a database.
+
+For more info, see [Proxy policy]({{<relref "/rs/databases/configure/proxy-policy.md">}}).
 {{%/definition%}}
 
 {{%definition "quorum node"%}}
