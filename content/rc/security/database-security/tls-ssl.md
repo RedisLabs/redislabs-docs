@@ -89,13 +89,19 @@ console:
 
     {{<image filename="images/rc/button-account-settings-security-ca-download.png" width="140px" alt="Use the Download button to download the Redis Cloud CA certificate." >}}{{< /image >}}
 
-The download contains a file called `redis_ca.pem`. This file includes three public root CA certificates and their corresponding intermediate certificates:
+The download contains a file called `redis_ca.pem`, which includes the following certificates:
+   
+- Self-signed Redis Cloud Fixed plan root CA (deprecated but still in use)
 
-- Redis Cloud Fixed plan
+- Self-signed Redis Cloud Flexible plan root CA and intermediate CA (deprecated but still in use)
 
-- Redis Cloud Flexible plan
+- Publicly trusted GlobalSign root CA and intermediate CA
 
-- GlobalSign
+To inspect the certificates in `redis_ca.pem`, run the `keytool` command:
+
+```sh
+keytool -printcert -file ./redis_ca.pem | grep "Owner:"
+```
 
 You can add `redis_ca.pem` to the trust store or pass it directly to a Redis client.
 
