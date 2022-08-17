@@ -167,7 +167,7 @@ More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.m
 
 High availability (HA) is a characteristic of distributed systems that keeps systems available for users for longer than normal periods of time. This is done by reducing single points of failure, increasing redundancy, and making recovering from failures easier.
 
-More info: [Redis Enterprise durability and high availability]({{<relref "/rs/databases/durability-ha.md">}}), [High availability wikipedia](https://en.wikipedia.org/wiki/High_availability)
+More info: [Redis Enterprise durability and high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}), [High availability wikipedia](https://en.wikipedia.org/wiki/High_availability)
 {{%/definition%}}
 
 {{%definition "ingress"%}}
@@ -318,7 +318,7 @@ More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-fla
 {{%definition "replica high availability (replicaHA)"%}}
 High availability feature of Redis Enterprise Software. After a node failure, the cluster automatically migrates remaining replica shards available nodes. Previously known as "Slave HA" or `slave_ha`.
 
-More info: [High availability for replica shards]({{<relref "https://docs.redis.com/latest/rs/databases/configure/replica-ha/">}})
+More info: [High availability for replica shards]({{<relref "/rs/databases/configure/replica-ha.md">}})
 {{%/definition%}}
 
 {{%definition "Replica Of"%}}
