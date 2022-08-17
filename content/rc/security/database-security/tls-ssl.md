@@ -13,7 +13,7 @@ Redis Cloud Fixed, Flexible, and Annual subscriptions can use TLS to encrypt dat
 
 ## Use TLS with Redis Cloud
 
-TLS is not enabled by default.  
+TLS is not enabled by default. Redis recommends to enable TLS if you are connecting over a public endpoint. Enabling TLS does have an impact on performance, therefore if you connect over a private endpoint such as with VPC peering, you should consider your needs for security vs. performance.
 
 When you enable TLS, you also need to decide whether to enable client authentication (also known as "mutual authentication"), which requires that all database clients present a valid client certificate for authentication.
 
