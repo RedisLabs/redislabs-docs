@@ -70,7 +70,7 @@ Consistency models describe the way a distributed system keeps replicated data c
 
 More info: [Consistency models](https://en.wikipedia.org/wiki/Consistency_model)
 
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
