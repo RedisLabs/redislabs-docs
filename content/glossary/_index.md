@@ -115,7 +115,7 @@ More info: [Data eviction policy]({{<relref "/rc/databases/configuration/data-ev
 Setting that gives distributed databases the ability to use any available proxy endpoint to manage synchronization traffic.
 
 More info: [Configure distributed synchronization]({{<relref "/rs/databases/active-active/synchronization-mode.md">}})
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "Domain Name Service (DNS)"%}}
 Naming system for computers, services, or other resources connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities.
@@ -157,12 +157,12 @@ A part of the key that is used in the hash calculation.
 More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
-{{%/definition "high availability"%}}
+{{%definition "high availability"%}}
 
 High availability (HA) is a characteristic of distributed systems that keeps systems available for users for longer than normal periods of time. This is done by reducing single points of failure, increasing redundancy, and making recovering from failures easier.
 
 More info: [Redis Enterprise durability and high availability]({{<relref "/rs/databases/durability-ha.md">}}), [High availability wikipedia](https://en.wikipedia.org/wiki/High_availability)
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "ingress"%}}
 An API object that manages external access to the services in a Kubernetes cluster, typically HTTP.
@@ -198,7 +198,7 @@ Deciding when and where shards will be moved if more network throughput, memory,
 Protocol that resolves hostnames to the IP adressess that do not include a local name server.
 
 More info: [multicast DNS wikipedia](https://en.wikipedia.org/wiki/Multicast_DNS)
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "multi-factor authentication (MFA)"%}}
 Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Enterprise Cloud, users must enter their username, password, and an authentication code when logging in.
@@ -211,7 +211,7 @@ Also known as multi-master replication, Active-Active databases have multiple pr
 
 More info: [Multi-primary replication]({{<relref "/rs/databases/active-active/#multi-primary-replication">}})
 
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "namespace"%}}
 An abstraction used by Kubernetes to support multiple virtual clusters on the same physical cluster.
@@ -303,7 +303,7 @@ More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-fla
 High availability feature of Redis Enterprise Software. After a node failure, the cluster automatically migrates remaining replica shards available nodes. Previously known as "Slave HA" or `slave_ha`.
 
 More info: [High availability for replica shards]({{<relref "https://docs.redis.com/latest/rs/databases/configure/replica-ha/">}})
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "Replica Of"%}}
 The Redis Enterprise implementation of active-passive database replication.
@@ -363,7 +363,7 @@ Data persistence file that performs a data dump every one, six, or twelve hours.
 Process on each node hosting an Active-Active database instance that synchronizes a backlog of operations between participating clusters.
 
 More info: [Syncer process]({{<relref "/rs/databases/active-active/syncer.md">}})
-{{%definition%}}
+{{%/definition%}}
 
 ## T - Z {#letter-t}
 
