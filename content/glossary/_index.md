@@ -257,6 +257,10 @@ Redis Enterprise feature that helps to ensure high availability in the event of 
 More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}})
 {{%/definition%}}
 
+{{%definition "replication backlog"%}}
+Databases using replication or Active-Active maintain a backlog to synchronize the primary and replica shards.
+{{%/definition%}}
+
 {{%definition "re-sharding"%}}
 Distributing keys and their values among new shards.
 {{%/definition%}}
