@@ -13,9 +13,19 @@ Redis Cloud Fixed, Flexible, and Annual subscriptions can use TLS to encrypt dat
 
 ## Use TLS with Redis Cloud
 
-TLS is not enabled by default.  
+TLS is not enabled by default.
 
-When you enable TLS, you also need to decide whether to enable client authentication (also known as "mutual authentication"), which requires that all database clients present a valid client certificate for authentication.
+Because TLS has an impact on performance, you need to determine whether the added security of TLS is worth the performance impact. TLS recommendations depend on the subscription plan and whether clients connect to your database using public or private endpoints.
+
+This table shows the TLS recommendations:
+
+| Subscription | Public&nbsp;endpoint | Private endpoint |
+|--------------|----------------------|------------|
+| Fixed        | Enable TLS           | Enable TLS |
+| Flexible     | Enable TLS           | Enable TLS if security outweighs performance impact |
+| Annual       | Enable TLS           | Enable TLS if security outweighs performance impact |
+
+When you enable TLS, you can also enable client authentication (also known as "mutual authentication"), which requires that all database clients present a valid client certificate for authentication.
 
 Client authentication is not required by Redis Cloud; however, it is strongly recommended.
 
@@ -79,7 +89,7 @@ console:
 
     {{<image filename="images/rc/button-account-settings-security-ca-download.png" width="140px" alt="Use the Download button to download the Redis Cloud CA certificate." >}}{{< /image >}}
 
-The download contains a file called `redis_ca.pem`. This file includes three public root CA certificates:
+The download contains a file called `redis_ca.pem`. This file includes three public root CA certificates and their corresponding intermediate certificates:
 
 - Redis Cloud Fixed plan
 
