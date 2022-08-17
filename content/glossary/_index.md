@@ -363,6 +363,12 @@ More info: [Syncer process]({{<relref "/rs/databases/active-active/syncer.md">}}
 
 ## T - Z {#letter-t}
 
+{{%definition "tombstone"%}}
+
+A key that is logically deleted but stays in memory until it is collected by the garbage collector.
+
+{{%/definition%}}
+
 {{%definition "Transport Layer Security (TLS)"%}}
 Protocols that provide communications security over a computer network.
 
