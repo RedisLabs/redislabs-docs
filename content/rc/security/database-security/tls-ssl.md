@@ -7,7 +7,7 @@ categories: ["RC"]
 aliases: /rc/administration/security/securing-redis-cloud-connections
 ---
 
-Transport Layer Security (TLS) uses encryption to secure [network communication](https://en.wikipedia.org/wiki/Transport_Layer_Security).  
+Transport Layer Security (TLS) uses encryption to secure [network communications](https://en.wikipedia.org/wiki/Transport_Layer_Security).  
 
 Redis Cloud Fixed, Flexible, and Annual subscriptions can use TLS to encrypt data communications between applications and Redis databases.
 
@@ -15,9 +15,11 @@ Redis Cloud Fixed, Flexible, and Annual subscriptions can use TLS to encrypt dat
 
 TLS is not enabled by default.
 
-Because TLS has an impact on performance, you need to determine whether the added security of TLS is worth the performance impact. TLS recommendations depend on the subscription plan and whether clients connect to your database using public or private endpoints.
+### TLS recommendations
 
-This table shows the TLS recommendations:
+Because TLS has an impact on performance, you need to determine whether the security benefits of TLS are worth the performance impact. TLS recommendations depend on the subscription plan and whether clients connect to your database using public or private endpoints.
+
+This table shows TLS recommendations:
 
 | Subscription | Public&nbsp;endpoint | Private endpoint |
 |--------------|----------------------|------------|
@@ -25,7 +27,9 @@ This table shows the TLS recommendations:
 | Flexible     | Enable TLS           | Enable TLS if security outweighs performance impact |
 | Annual       | Enable TLS           | Enable TLS if security outweighs performance impact |
 
-When you enable TLS, you can also enable client authentication (also known as "mutual authentication"), which requires that all database clients present a valid client certificate for authentication.
+### Client authentication
+
+When you enable TLS, you can optionally require client authentication (also known as "mutual authentication"). If enabled, all clients must present a valid client certificate when they connect to the database.
 
 Client authentication is not required by Redis Cloud; however, it is strongly recommended.
 
@@ -47,7 +51,7 @@ To enable TLS for a Redis Cloud database:
 
     {{<image filename="images/rc/button-database-config-security-server-ca-download.png" width="250px" alt="Use the Download server certificate button to download the Redis Cloud CA certificates." >}}{{< /image >}}
 
-1. Decide whether you want to enforce client authentication:
+1. Decide whether you want to require client authentication:
 
     - If you only want clients that present a valid certificate to be able to connect, continue to the next step.
     
@@ -55,12 +59,11 @@ To enable TLS for a Redis Cloud database:
 
 1. To require client authentication, select the **TLS client authentication** checkbox.
 
-1. Next, either provide an [X.509 certificate](https://en.wikipedia.org/wiki/X.509) containing a public key for your client or select 
-**Generate certificate** to create one:
+1. Either provide an [X.509 certificate](https://en.wikipedia.org/wiki/X.509) that contains a public key for your client or select **Generate certificate** to create one:
 
     {{<image filename="images/rc/database-details-configuration-tab-security-tls-client-auth-certificate.png" width="300px" alt="Provide or generate a certificate for TLS client authentication." >}}{{< /image >}}
 
-    If you generate your certificate using the admin console, then a download will begin containing the following files:
+    If you generate your certificate from the admin console, a ZIP file download will start. The download contains:
 
     - `redis_user.crt` – the certificate's public key.
 
@@ -77,10 +80,10 @@ will no longer be permitted.
 
 ## Connect over TLS
 
-To connect to a Redis Cloud database over TLS, you will need:
+To connect to a Redis Cloud database over TLS, you need:
 
 * A Redis client that supports TLS
-* The Redis Cloud CA certificates
+* Redis Cloud CA certificates
 
 ### Download certificates
 
@@ -92,7 +95,7 @@ If you don't have the Redis Cloud CA certificates, you can download them from th
 
 1. For **Redis Cloud certificate authority**, either:
 
-    - Select the **Download** button to download the certificate from **Account Settings**:
+    - Select the **Download** button to download the certificates from **Account Settings**:
 
         {{<image filename="images/rc/button-account-settings-security-ca-download.png" width="140px" alt="Use the Download button to download the Redis Cloud CA certificates." >}}{{< /image >}}
 
@@ -116,29 +119,28 @@ keytool -printcert -file ./redis_ca.pem | grep "Owner:"
 
 You can add `redis_ca.pem` to the trust store or pass it directly to a Redis client.
 
-If you decided to require client authentication, you also need the public (`redis_user.crt`) and private (`redis_user_private.key`) client keys. See
+If your database requires client authentication, you also need the public (`redis_user.crt`) and private (`redis_user_private.key`) client keys. See
 [Enable TLS](#enable-tls) for details.
 
 ### Connect with the Redis CLI
 
 Here's how to use the [Redis CLI]({{<relref "/rs/references/cli-utilities/redis-cli">}}) to connect to a TLS-enabled Redis Cloud database.
 
+Endpoint and port details are available from the **Databases** list or the database's **Configuration** screen.
+
 #### Without client authentication
 
-If you're not requiring client authentication, then you need to provide the host, port, and the Redis Cloud CA certificate:
+If your database doesn't require client authentication, then provide the Redis Cloud CA certificate bundle (`redis_ca.pem`) when you connect:
 
 ```sh
-redis-cli -h redis.123.cloud.rlrcp.com -p 16257 --tls
-    --cacert redis_ca.pem
+redis-cli -h <endpoint> -p <port> --tls --cacert redis_ca.pem
 ```
 
 #### With client authentication
 
-If you've enabled client authentication, then you also need to provide your client's private and public keys:
+If your database requires client authentication, then you also need to provide your client's private and public keys:
 
 ```sh
-redis-cli -h redis.123.cloud.rlrcp.com -p 16257 --tls --cacert redis_ca.pem
+redis-cli -h <endpoint> -p <port> --tls --cacert redis_ca.pem \
     --cert redis_user.crt --key redis_user_private.key
 ```
-
-Endpoint and port details are available from the **Databases** list or the database's **Configuration** screen.
