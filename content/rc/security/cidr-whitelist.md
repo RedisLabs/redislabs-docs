@@ -1,20 +1,14 @@
 ---
 Title: Configure CIDR allow list
 linkTitle: CIDR allow list
-description:
+description: The CIDR allow list permits traffic between a range of IP addresses and the Redis Cloud VPC.
 weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: 
 ---
 
-If you are deploying Redis Cloud on your own infrastructure, you can configure your deployment to permit traffic between a specific set of IP addresses.  The list of allowed addresses is called the _CIDR allow list_.
-
-The CIDR allow list defines a range of IP addresses and AWS security groups that control inbound
-and outbound traffic to the Redis Cloud VPC. When you manage the CIDR allow list with security groups you
-can easily use the same security groups to manage access to your application.
-
-## Define CIDR allow list
+If you use your own infrastructure to deploy Redis Cloud, you can configure your deployment to permit inbound and outbound traffic between a specific range of IP addresses and the Redis Cloud [VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud). The list of allowed addresses is called the _CIDR allow list_.
 
 To define the CIDR allow list:
 
@@ -26,15 +20,21 @@ To define the CIDR allow list:
 
 1. In the **Security** section, turn on the **CIDR allow list** toggle:
 
-    {{<image filename="images/rc/database-details-configuration-tab-security-cidr-allowlist-toggle.png" width="140px" alt="CIDR allow list toggle." >}}{{< /image >}}
+    {{<image filename="images/rc/database-details-configuration-tab-security-cidr-allowlist-toggle.png" width="140px" alt="Turn on the CIDR allow list toggle." >}}{{< /image >}}
 
-1. If there are no CIDR allow list entries yet, enter the first IP address (in CIDR format) you want to allow and then select the checkmark to add it to the allow list:
+1. Enter the first IP address (in CIDR format) you want to allow in the text box and then select the check mark to add it to the allow list:
 
-    TODO: add screenshot
+    {{<image filename="images/rc/database-details-configuration-tab-security-cidr-allowlist-add-first-ip.png" width="300px" alt="Add the first IP address to the CIDR allow list." >}}{{< /image >}}
    
-1. To add another IP address to the CIDR allow list, select the **Add CIDR** button:
+1. To allow additional IP addresses:
 
-    TODO: add button
+    1. Select the **Add CIDR** button:
+
+        {{<image filename="images/rc/button-database-config-security-add-cidr.png" width="140px" alt="Add another IP address to the CIDR allow list." >}}{{< /image >}}
+
+    1. Enter the new IP address in the text box and then select the check mark to add it to the allow list:
+
+        {{<image filename="images/rc/database-details-configuration-tab-security-cidr-allowlist-add-more-ips.png" width="300px" alt="Add a new IP address to the CIDR allow list." >}}{{< /image >}}
 
 1. Select the **Save database** button to apply your changes:
 
