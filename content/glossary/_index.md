@@ -173,7 +173,7 @@ More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ing
 ## K, L {#letter-k}
 
 {{%definition "kubectl"%}}
-A command line tool for communicating with a Kubernetes API server.
+A command-line tool for communicating with a Kubernetes API server.
 
 More info: [Overview of kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)
 {{%/definition%}}
