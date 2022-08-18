@@ -195,7 +195,7 @@ Deciding when and where shards will be moved if more network throughput, memory,
 {{%/definition%}}
 
 {{%definition "multicast DNS (mDNS)"%}}
-Protocol that resolves hostnames to the IP adressess that do not include a local name server.
+Protocol that resolves hostnames to the IP addresses that do not include a local name server.
 
 More info: [multicast DNS wikipedia](https://en.wikipedia.org/wiki/Multicast_DNS)
 {{%definition%}}
@@ -310,7 +310,7 @@ More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-fla
 {{%/definition%}}
 
 {{%definition "replica high availability (replicaHA)"%}}
-High availability feature of Redis Enterprise Software. After a node failure, the cluster automatically migrates remaining replica shards available nodes. Previously known as "Slave HA" or `slave_ha`.
+High availability feature of Redis Enterprise Software. After a node failure, the cluster automatically migrates remaining replica shards to available nodes. Previously known as "Slave HA" or `slave_ha`.
 
 More info: [High availability for replica shards]({{<relref "/rs/databases/configure/replica-ha.md">}})
 {{%definition%}}
