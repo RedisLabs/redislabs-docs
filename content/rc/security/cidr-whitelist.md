@@ -8,30 +8,34 @@ categories: ["RC"]
 aliases: 
 ---
 
-### CIDR Whitelist
+If you are deploying Redis Cloud on your own infrastructure, you can configure your deployment to permit traffic between a specific set of IP addresses.  The list of allowed addresses is called the _CIDR allow list_.
 
-If you are deploying Redis Cloud on your own infrastructure, you can configure your deployment to permit traffic between a specific set of IP addresses.  The list of allowed addresses is called the _CIDR Whitelist_.
-
-The CIDR whitelist defines a range of IP addresses and AWS security groups that control inbound
-and outbound traffic to the Redis Cloud VPC. When you manage the CIDR whitelist with security groups you
+The CIDR allow list defines a range of IP addresses and AWS security groups that control inbound
+and outbound traffic to the Redis Cloud VPC. When you manage the CIDR allow list with security groups you
 can easily use the same security groups to manage access to your application.
 
-To define the CIDR whitelist:
+## Define CIDR allow list
 
-1. In **Subscriptions**, click on the subscription for VPC peering.
-1. Go to: **Security** > **CIDR Whitelist**
-1. If there are no CIDR whitelist entries, click ![Add](/images/rs/icon_add.png#no-click "Add")
-   to create a CIDR whitelist. Otherwise, click ![Add](/images/rs/icon_add.png#no-click "Add")
-   under the list of CIDR whitelist entries to add another entry.
-1. Specify a whitelist entry as either:
-    - IP Address:
-        1. For the type, select **IP Address**.
-        1. For the value, enter the IP address in CIDR format for the traffic that
-            you want to allow access for.
-    - Security Group:
-        1. For the type, select **Security Group**.
-        1. For the value, enter the ID of the AWS security group to grant access to.
-1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
-1. Either:
-   1. Add more whitelist entries - Click ![Add](/images/rs/icon_add.png#no-click "Add").
-   1. Apply the changes to the whitelist - Click **Apply all changes**.
+To define the CIDR allow list:
+
+1. Select **Databases** from the [admin console](https://app.redislabs.com/) menu and then select your database from the list.
+
+1. From the database's **Configuration** screen, select the **Edit database** button:
+
+    {{<image filename="images/rc/button-database-edit.png" width="140px" alt="The Edit database button lets you change selected database properties." >}}{{< /image >}}
+
+1. In the **Security** section, turn on the **CIDR allow list** toggle:
+
+    {{<image filename="images/rc/database-details-configuration-tab-security-cidr-allowlist-toggle.png" width="140px" alt="CIDR allow list toggle." >}}{{< /image >}}
+
+1. If there are no CIDR allow list entries yet, enter the first IP address (in CIDR format) you want to allow and then select the checkmark to add it to the allow list:
+
+    TODO: add screenshot
+   
+1. To add another IP address to the CIDR allow list, select the **Add CIDR** button:
+
+    TODO: add button
+
+1. Select the **Save database** button to apply your changes:
+
+    {{<image filename="images/rc/button-database-save.png" width="140px" alt="Use the Save database button to save database changes." >}}{{< /image >}}

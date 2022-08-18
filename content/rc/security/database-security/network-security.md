@@ -121,29 +121,6 @@ Once your VPC peering request is accepted, the status in your subscription's **V
 If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
 please don't hesitate to [contact Redis support](https://redislabs.com/company/support/).
 
-#### Configure the CIDR whitelist
-
-The **CIDR whitelist** defines a range of IP addresses and/or AWS security groups permitted to access
-databases in the Redis Cloud VPC.
-
-To define the CIDR whitelist:
-
-1. In **Subscriptions**, click on the subscription for VPC peering.
-1. Go to: **Security** > **CIDR Whitelist**.
-1. If there are no CIDR whitelist entries, click ![Add](/images/rs/icon_add.png#no-click "Add"). You'll see
-   a form similar to this:
-
-   ![CIDR Whitelist](/images/rc/cidr-whitelist.png "CIDR Whitelist")
-
-1. Specify the **Type** of whitelist entry as either:
-    - **IP Address**: For the value, enter the IP block in CIDR format for the traffic that
-            you want to allow access for.
-    - **Security Group**: For the value, enter the ID of the AWS security group to grant access to.
-1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
-1. Next, either:
-   1. Add more whitelist entries by clicking ![Add](/images/rs/icon_add.png#no-click "Add").
-   1. Or apply the changes to the whitelist by selecting **Apply all changes**.
-
 #### Deploy in your own VPC
 
 As an alternative to VPC peering, you can create and deploy a Flexible subscription directly in your own AWS VPC. You need to do this at the time you create your subscription.
