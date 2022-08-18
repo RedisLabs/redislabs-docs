@@ -23,7 +23,7 @@ This table shows TLS recommendations:
 
 | Subscription | Public&nbsp;endpoint | Private endpoint |
 |--------------|----------------------|------------|
-| Fixed        | Enable TLS           | Enable TLS |
+| Fixed        | Enable TLS           | N/A |
 | Flexible     | Enable TLS           | Enable TLS if security outweighs performance impact |
 | Annual       | Enable TLS           | Enable TLS if security outweighs performance impact |
 
