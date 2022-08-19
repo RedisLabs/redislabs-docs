@@ -55,7 +55,7 @@ When all **Deployment CIDR** regions display a green checkmark, you're ready to 
 
 {{<image filename="images/rc/icon-cidr-address-ok.png" width="30px" alt="Greem chackmarks indicate valid CIDR address values." >}}{{< /image >}}
 
-Red exclamation marks indicate error conditions; the tool tip provides additional details.
+Red exclamation marks indicate error conditions; the tooltip provides additional details.
 
 {{<image filename="images/rc/icon-cidr-address-error.png" width="30px" alt="Red exclamation points indicate CIDR address problems." >}}{{< /image >}}
 
@@ -64,7 +64,7 @@ Red exclamation marks indicate error conditions; the tool tip provides additiona
 
 Each Active-Active instance coordinates changes with every other instance, which increases memory use and throughput.
 
-When create an Active-Active database, you define the throughput for each instance.  
+When you create an Active-Active database, you define the throughput for each instance.  
 
 {{<image filename="images/rc/create-database-active-active.png" width="75%" alt="When you create an Active-Active database, you define throughput for each region." >}}{{< /image >}}
 
