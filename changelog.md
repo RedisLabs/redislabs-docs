@@ -14,7 +14,7 @@ The docs are updated regularly; here are some recent highlights:
 
 - Redis Enterprise Software updates
 
-   - [Get started](https://docs.redis.com/latest/rs/getting-started/) was updated to reflect the current UX ([PR #1766](https://github.com/RedisLabs/redislabs-docs/pull/1766)) 
+   - [Get started](https://docs.redis.com/latest/rs/installing-upgrading/get-started-redis-enterprise-software) was updated to reflect the current UX ([PR #1766](https://github.com/RedisLabs/redislabs-docs/pull/1766)) 
 
    - [Install and setup](https://docs.redis.com/latest/rs/installing-upgrading/) now includes the [command-line options](https://docs.redis.com/latest/rs/installing-upgrading/#install-command-line-options) for the install script ([PR #1765](https://github.com/RedisLabs/redislabs-docs/pull/1765))
 
@@ -106,7 +106,7 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
     - The [Redis client](https://docs.redis.com/latest/rs/references/client_references/) reference docs have been updated ([PR #1630](https://github.com/RedisLabs/redislabs-docs/pull/1630))
 
-    - The cluster [maintenance mode](https://docs.redis.com/latest/rs/administering/cluster-operations/maintenance-mode/) article has been updated ([PR #1647](https://github.com/RedisLabs/redislabs-docs/pull/1647))
+    - The cluster [maintenance mode](https://docs.redis.com/latest/rs/clusters/maintenance-mode/) article has been updated ([PR #1647](https://github.com/RedisLabs/redislabs-docs/pull/1647))
 
     - [System log docs](https://docs.redis.com/latest/rs/administering/logging/rsyslog-logging/) have been updated and expanded, including details describing alerts and events for databases, clusters, and nodes ([PR #1631](https://github.com/RedisLabs/redislabs-docs/pull/1631))
 

@@ -33,7 +33,7 @@ If you're running either OpenShift or VMWare Tanzu, we provide specific getting 
 
 To deploy the Redis Enterprise operator, you'll need:
 
-* a Kubernetes cluster in a [supported distribution]({{<relref "content/kubernetes/reference/supported_k8s_distributions.md">}})
+* a Kubernetes cluster in a [supported distribution]({{<relref "/kubernetes/reference/supported_k8s_distributions.md">}})
 * a minimum of three worker nodes
 * a Kubernetes client (kubectl)
 * access to DockerHub, RedHat Container Catalog, or a private repository that can hold the required images.
@@ -67,25 +67,22 @@ The Redis Enterprise operator implementation is published as a Docker container.
 The operator [definition and reference materials](https://github.com/RedisLabs/redis-enterprise-k8s-docs) are available on GitHub. The operator definitions are [packaged as a single generic YAML file](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
 
 {{<note>}}
-If you do not pull images from DockerHub or another public registry, you'll need additional configuration in your operator deployment file and your Redis Enterprise cluster resource file. See [Manage image sources]({{<relref "/kubernetes/deployment/container-images.md#manage-image-sources">}}) for more info.
+If you do not pull images from DockerHub or another public registry, you'll need additional configuration in your operator deployment file and your Redis Enterprise cluster resource file. See [Manage image sources]({{<relref "/kubernetes/deployment/container-images#manage-image-sources">}}) for more info.
 {{</note>}}
 
-### Download the operator bundle
+### Deploy the operator bundle
 
 To ensure that you pull the correct version of the bundle, check versions tags listed with the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases)
 or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases).
 
 ```sh
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
-curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
 
-If you need a different release, replace `VERSION` in the above with a specific release tag.
-
-### Deploy the operator bundle
+If you need a different release, replace `VERSION` in the above with a specific release tag. Now deploy the operator with 
 
 ```sh
-kubectl apply -f bundle.yaml
+kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
 
   You should see a result similar to this:
@@ -236,7 +233,7 @@ As part of the REC creation process, the operator stores the admission controlle
     kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
-### Limit the webhook to the relevant namespaces
+### Limit the webhook to the relevant namespaces {#webhook}
 
 The webhook will intercept requests from all namespaces unless you edit it to target a specific namespace. You can do this by adding the `namespaceSelector` section to the webhook spec to target a label on the namespace.
 

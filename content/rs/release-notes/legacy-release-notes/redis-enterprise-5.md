@@ -31,7 +31,7 @@ on. The result is that for all but the initial call to get the cluster
 topology or reacquire the location of the master shard, the client will
 connect to the RS endpoint proxy where the master shard is located.
 [Learn more about the Cluster API
-implementation]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}).
+implementation]({{< relref "/rs/clusters/optimize/oss-cluster-api.md" >}}).
 
 ### Geo-distributed Active-Active conflict-free replicated databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-databases-crdb}
 
@@ -87,8 +87,8 @@ available to pull from Docker hub. With the official image, you can
 easily and quickly test several containers to build the scalable
 and highly available cluster Redis Enterprise Software is famous for.
 
-For more information, go to [quick start with Redis Enterprise Pack on
-Docker.]({{< relref "/rs/getting-started/docker/_index.md" >}})
+For more information, go to [quick start with Redis Enterprise on
+Docker.]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}})
 
 ## LDAP Integration
 
@@ -99,7 +99,7 @@ accounts can be used for administering resources on the cluster via
 command line, Rest API, or admin console.
 
 For more information see [LDAP
-Integration]({{< relref "/rs/security/passwords-users-roles.md#setting-up-ldap" >}}).
+Integration](https://docs.redis.com/latest/rs/security/ldap/).
 
 ## Additional capabilities
 

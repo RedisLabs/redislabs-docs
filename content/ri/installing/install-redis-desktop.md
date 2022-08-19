@@ -47,7 +47,7 @@ chmod +x redisinsight-linux64-<version>
 ## Install RedisInsight on MacOS
 
 {{<warning>}}
-RedisInsight is only supported on Mac hardware with Intel chips. Mac hardware with the Apple M1 (ARM) chip is not supported.
+RedisInsight V1 is supported on Mac hardware with Intel chips, and does not have specific support for the Apple M1 (ARM) chip. You can download a special build of [RedisInsight V2](https://redis.com/redis-enterprise/redis-insight/#insight-form) for the Apple M1 (ARM) chip.
 {{</warning>}}
 
 1. [Download RedisInsight](https://redislabs.com/redisinsight/).

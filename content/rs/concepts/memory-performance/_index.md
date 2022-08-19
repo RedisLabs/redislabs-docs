@@ -9,7 +9,7 @@ aliases: [
     /rs/concepts/memory-architecture/_index.md,
     /rs/concepts/memory-architecture/_index/,
     /rs/administering/designing-production/performance/_index.md,
-    /rs/administering/designing-production/performance/_index./,
+    /rs/administering/designing-production/performance/_index/,
     /rs/concepts/memory-performance/_index.md,
     /rs/concepts/memory-performance/_index/,
 
@@ -29,11 +29,11 @@ Factors to consider when sizing your database:
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
 - [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
-- [**database clustering**]({{<relref "/rs/concepts/high-availability/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
-- [**database replication**]({{<relref "/rs/concepts/high-availability/replication.md">}}): enabling replication doubles memory consumption
-- [**Active-Active replication**]({{<relref "/rs/administering/designing-production/active-active.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
+- [**database clustering**]({{<relref "/rs/databases/configure/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
+- [**database replication**]({{<relref "/rs/databases/configure/replication.md">}}): enabling replication doubles memory consumption
+- [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
 
-For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/memory-management.md">}}) or [Database memory limits]({{<relref "/rs/concepts/memory-performance/memory-limit.md">}}).
+For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/clusters/optimize/node-memory.md">}}) or [Database memory limits]({{<relref "/rs/databases/configure/memory-limit.md">}}).
 
 ## Eviction policies
 
@@ -41,7 +41,7 @@ When a database exceeds its memory limit, eviction policies determine which data
 
 The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the ‘expire’ field set. The default for Active-Active databases is `noeviction`.
 
-For more information, see [eviction policies]({{<relref "/rs/concepts/memory-performance/eviction-policy.md">}}).
+For more information, see [eviction policies]({{<relref "/rs/databases/configure/eviction-policy.md">}}).
 
 ## Database persistence
 
@@ -53,7 +53,7 @@ Append-only files (AoF) keep a record of data changes and writes each change to 
 
 Snapshots capture all the data as it exists in one moment in time and writes it to disk, allowing you to recover the entire dataset as it existed at that moment in time.
 
-For more info on data persistence see [Database persistence with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/persistence.md">}}) or [Durable Redis](https://redis.com/redis-enterprise/technology/durable-redis/).
+For more info on data persistence see [Database persistence with Redis Enterprise Software]({{<relref "/rs/databases/configure/database-persistence.md">}}) or [Durable Redis](https://redis.com/redis-enterprise/technology/durable-redis/).
 
 ## Redis on Flash (RoF)
 
@@ -72,7 +72,7 @@ Redis Enterprise Software has two shard placement policies available:
 - **dense**: puts as many shards as possible on the smallest number of nodes
 - **sparse**: spread the shards across as many nodes as possible
 
-For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/concepts/memory-performance/shard-placement-policy.md">}})
+For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/databases/configure/shard-placement-policy.md">}})
 
 ## Metrics
 
@@ -80,4 +80,4 @@ From the Redis Enterprise Software admin console, you can monitor the performanc
 
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 
-For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/administering/monitoring-metrics/_index.md">}}), and [Memory statistics]({{<relref "/rs/concepts/memory-performance/memory-management.md#memory-statistics">}}).
+For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/monitoring-metrics/_index.md">}}), and [Memory statistics]({{<relref "/rs/clusters/optimize/node-memory.md#memory-statistics">}}).

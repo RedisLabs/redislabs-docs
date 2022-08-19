@@ -1,13 +1,13 @@
 ---
 Title: Redis Enterprise Software Release Notes 6.2.10 (February 2022)
 linkTitle: 6.2.10 (February 2022)
-description: Python 3 support.
+description: Python 3 support.  RHEL 8.5 support.
 compatibleOSSVersion: Redis 6.2.5
 weight: 75
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/release-notes/rs-6-2-8-october-2021/
-         /rs/release-notes/rs-6-2-8-october-2021.md
+aliases: /rs/release-notes/rs-6-2-10-february-2022/
+         /rs/release-notes/rs-6-2-10-february-2022.md
 ---
 
 [Redis Enterprise Software version 6.2.10](https://redislabs.com/redis-enterprise-software/download-center/software/) is now available! 
@@ -16,20 +16,26 @@ The following table shows the MD5 checksums for the available packages.
 
 |Package| MD5 Checksum |
 |:------|:-------------|
-| Ubuntu 16 | `96878e07195fe13addacb667ad0ac2af` |
-| Ubuntu 18 | `6d45d1768de50fc939c7f876a7601089` |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OEL) 7 | `4fefb86f403e1df41af9b3d20a6699f9` |
-| RHEL 8 | `b5bac4f870042260bc1565eb8eac2d94` |
+| Ubuntu 16 | `531cea69a58fbc1125bc5f76ba01da7f` |
+| Ubuntu 18 | `ec9ac6e0111dc85605d3b98e83f50150` |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 | `2f7572caab9600417ef8b4ee474d6768` |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 | `377a539ee050515e1e0640dec1e04129` |
+| K8s Ubuntu | `099192416a70a12790535bdcd78a6e87` |
+| K8s RHEL   | `f267abe81770ddf36f022232f4c2cb2e` |
 
 ## Features and enhancements
 
 - Upgrade the Redis Enterprise infrastructure to [Python v3.9](https://www.python.org/).
 
--  Compatibility with [open source Redis 6.2.5](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES).
+- [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
+
+- [Oracle Linux v8](https://docs.oracle.com/en/operating-systems/oracle-linux/8/) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
+
+- Compatibility with [open source Redis 6.2.5](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES).
 
 - Compatibility with the [security fixes](https://github.com/redis/redis/releases/tag/6.2.6) of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6).
 
--  Enhancements and bug fixes.
+- Enhancements and bug fixes.
 
 ## Version changes 
 
@@ -37,9 +43,13 @@ The following table shows the MD5 checksums for the available packages.
 
 -  You can [upgrade to v6.2.10](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/) from Redis Enterprise Software v6.0 and later. 
 
-- Refer to [v6.2.4 release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/) for important notes regarding changes made to the upgrade. 
+- Refer to [v6.2.4 release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/) for important notes regarding changes made to the upgrade.
 
 - Upgrades from versions earlier than v6.0 are not supported.
+
+- If you plan to upgrade your cluster to RHEL 8, refer to [v6.2.8 release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-8-october-2022/) for known limitations.
+
+- If you are using Active-Active or Active-Passive (ReplicaOf) databases and experience synchronization issues as a result of the upgrade, see RS67434 details in [Resolved issues](#resolved-issues) for help resolving the problem.
 
 ### Product lifecycle updates 
 
@@ -49,16 +59,23 @@ To learn more, see the Redis Enterprise Software [product lifecycle](https://doc
 
 For Redis modules information and lifecycle, see [Module lifecycle](https://docs.redis.com/latest/modules/modules-lifecycle/).
 
-
 ## Redis modules 
 
 Redis Enterprise Software v6.2.10 includes the following Redis modules:
 
-- [RediSearch v2.2.6](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/)
-- [RedisJSON v2.0.6](https://docs.redis.com/latest/modules/redisjson/release-notes/redisjson-2.0-release-notes/)
-- [RedisBloom v2.2.9](https://docs.redis.com/latest/modules/redisbloom/release-notes/redisbloom-2.2-release-notes/)
-- [RedisGraph v2.4.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/)
-- [RedisTimeSeries v1.4.13](https://docs.redis.com/latest/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes/)
+- [RediSearch v2.2.6](https://docs.redis.com/latest/modules/redisearch/release-notes/)
+- [RedisJSON v2.0.6](https://docs.redis.com/latest/modules/redisjson/release-notes/)
+- [RedisBloom v2.2.9](https://docs.redis.com/latest/modules/redisbloom/release-notes/)
+- [RedisGraph v2.4.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/)
+- [RedisTimeSeries v1.4.13](https://docs.redis.com/latest/modules/redistimeseries/release-notes/)
+
+Starting with Redis Enterprise Software v6.2.10 build 121, the included modules versions are:
+
+- [RediSearch v2.4.6](https://docs.redis.com/latest/modules/redisearch/release-notes/)
+- [RedisJSON v2.0.8](https://docs.redis.com/latest/modules/redisjson/release-notes/)
+- [RedisBloom v2.2.14](https://docs.redis.com/latest/modules/redisbloom/release-notes/)
+- [RedisGraph v2.8.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/)
+- [RedisTimeSeries v1.6.9](https://docs.redis.com/latest/modules/redistimeseries/release-notes/)
 
 For help upgrading a module, see [Add a module to a cluster](https://docs.redis.com/latest/modules/add-module-to-cluster/#upgrading-the-module-for-the-database). 
 
@@ -72,8 +89,8 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 - Added an option to run a connectivity health check for the management layer of Active-Active databases. Run the following REST API command:
 
-    ```
-    curl -k -X GET -u "demo@example.com:123456" https://127.0.0.1:9443/v1/crdb/<crdb_guid>/health_report
+    ```sh
+    GET https:/[host][:port]/v1/crdbs/<crdb_guid>/health_report
     ```
 
 - Added TLS handshake error messages to the DMC proxy log (RS59346).
@@ -85,13 +102,57 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS66280 - Fixes the lexicographic [SORT](https://redis.io/commands/sort) command on Active-Active databases (e.g. `SORT mylist ALPHA`). The SORT command should only run on keys mapped to the same slot.
 - RS64575 - Fixes a bug in the replication between primary and replica shards of a destination Active-active database in the scenario of using Replica-Of from a single to an Active-Active database, where the syncer process went down during the full sync.
 - RS65370 - Adds logic to remove old syncer entries in the cluster configuration during upgrades.
-- RS67434 - Version 6.2.10 fixes the mTLS handshake between the [syncer process](https://docs.redis.com/latest/rs/administering/designing-production/active-active/#syncer-process) and the [proxy (DMC)](https://docs.redis.com/latest/rs/concepts/terminology/#proxy), where the proxy presented a leaf certificate without its full chain to the syncer. After upgrading to 6.2.10, syncer connections using invalid certificates will break the synchronization between Active-Active instances or deployments using Replica Of when TLS is enabled. To ensure certificates are valid before upgrading do the following: 
+- RS67434 - Version 6.2.10 fixes the mTLS handshake between the [syncer process](https://docs.redis.com/latest/rs/databases/active-active/#syncer-process) and the [proxy (DMC)](https://docs.redis.com/latest/rs/concepts/terminology/#proxy), where the proxy presented a leaf certificate without its full chain to the syncer. After upgrading to 6.2.10, syncer connections using invalid certificates will break the synchronization between Active-Active instances or deployments using Replica Of when TLS is enabled. To ensure certificates are valid before upgrading do the following: 
 
     - For Active-Active databases, run the following command from one of the clusters:
         
         `crdb-cli crdb update --crdb-guid <CRDB-GUID> --force`
          
     - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
+
+### Issues resolved in build 96
+
+- RS67133 - An issue in Redis Enterprise Software affected replication in replica databases using RedisGraph, RediSearch, and RedisGears in specific scenarios.  The problem appeared when importing an RDB file or while synchronizing target Active-Passive (ReplicaOf) databases. 
+
+    This issue is fixed in Redis Enterprise Software v6.2.10-96 and RedisGraph v2.8.11.  We recommend upgrading to these versions at your earliest opportunity.  (Failure to upgrade can lead to data loss.)  
+    
+    Once the upgrades are complete, secondary shards might need to be restarted.  You can use `rlutil` to restart secondary shards:
+
+    ``` sh
+    rlutil redis_restart redis=<shard-id1>,<shard-id2>,...
+    ```
+
+### Issues resolved in build 100
+
+- RS74171 - A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+
+### Issues resolved in build 121
+
+- RS68668, RS72082 - Improvements for internode encryption certification rotation
+- RS72304 - Avoid starting a master shard when both master and replica shards crash and the replica did not finish recovery
+- RS74469 - Fix for some Redis Active-Active + Redis Streams scenarios that could lead to shard crash during backup; failure to backup
+
+### Issues resolved in build 129
+
+- RS77003 - Add grace time to job scheduler to allow certificate rotation in case of failure due to scheduling conflicts.
+- RS71112 - Update validation during db configuration to not fail due to ports associated with nodes that are no longer in the cluster. This was done to allow db configuration during adding and removing nodes as part of load balancing.
+- RS78486 - Fix known issue from 6.2.10 build 100 - When using rladmin tune db to change the replica buffer size, the command appears to succeed, but the change does not take effect. 
+
+## Known limitations
+
+-RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
+- RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
+
+- RS63258 - Redis Enterprise Software is not currently supported on RHEL 8 with FIPS enabled.
+
+    FIPS changes system-generated keys, which can limit secure access to the cluster or the admin console via port 8443.
+
+- RS63375 - RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules.
+
+    Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
+
+All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) listed in the v6.2.4 release notes have been addressed.
 
 ## Security
 

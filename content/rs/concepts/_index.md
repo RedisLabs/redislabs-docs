@@ -42,7 +42,7 @@ master replica.
 Besides the intra-cluster replication, Redis Enterprise also has
 built-in WAN-based replication for Redis deployments across multiple
 data centers. WAN-based replication mechanisms in Redis Enterprise are
-designed, protect against total Data Center or wider network failures.
+designed to protect against total Data Center or wider network failures.
 
 ## Scaling databases
 

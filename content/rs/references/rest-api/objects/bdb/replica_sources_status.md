@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-The `replica_sources` status field relates to the [Replica Of]({{<relref "/rs/administering/creating-databases/create-active-passive">}}) feature, which enables the creation of a Redis database (single- or multi-shard) that synchronizes data from another Redis database (single- or multi-shard).
+The `replica_sources` status field relates to the [Replica Of]({{<relref "/rs/databases/import-export/create-replica-of.md">}}) feature, which enables the creation of a Redis database (single- or multi-shard) that synchronizes data from another Redis database (single- or multi-shard).
 
 The status field represents the Replica Of sync status for a specific sync source.
 

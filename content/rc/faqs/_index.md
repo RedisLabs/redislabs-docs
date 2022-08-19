@@ -42,7 +42,7 @@ Every effort is made to adhere, where possible, to the specifications of open so
 
 - Redis clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
 
-- Redis clustering technology allows [multiple active proxies]({{<relref "rs/administering/designing-production/networking/multiple-active-proxy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
+- Redis clustering technology allows [multiple active proxies]({{<relref "rs/databases/configure/proxy-policy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
 
 - Commands that aren’t relevant for a hosted Redis service are blocked:
     - [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)
@@ -122,14 +122,6 @@ and to support its commands and data types at any dataset size.
 All you need to do is select a plan that fits your dataset size.
 If your dataset is expected to grow or occasionally varies in size, we recommend using a Flexible plan, which charges according to the number of shards or the throughput.
 
-## Why should I map availability zones (AWS)
-
-While different AWS accounts may refer to the same AWS availability zone resource names, the underlying resources can be deployed to different physical infrastructure.  
-
-When different accounts refer to resources located on different physical infrastructure, communication latency  occurs as resources locations are resolved.
-
-The mapping process lets us unambiguously identify your availability zone, so we can serve your Redis data from the same physical zone, minimizing inter-zone latencies.
-
 ## Are dataset setup or endpoints affected by subscription changes?
 
 If your subscription change is a simple upgrade or downgrading, it won't impact your databases or our configuration.
@@ -150,9 +142,9 @@ Briefly, Redis Enterprise Cloud Flexible and Fixed plans are fully-managed Redis
 Flexible plans run in dedicated VPCs and offer:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) - Recommended for datasets larger than 500GB
-- [Active-Active]({{< relref "/rs/administering/designing-production/active-active.md" >}}) and [Active-Passive]({{< relref "/rs/administering/designing-production/active-passive.md" >}}) Geo Distribution
+- [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) and [Replica Of]({{< relref "/rs/databases/import-export/replica-of.md" >}}) Geo Distribution
 - Integration with [modules]({{< relref "/modules/_index.md" >}})
-- Encryption of [persistence data]({{< relref "/rs/concepts/memory-performance/persistence.md" >}})
+- Encryption of [persistence data]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - Redis Enterprise Cloud [REST API]({{< relref "/rc/api/_index.md" >}})
 
 Running Redis in a fully-automated manner with 24/7 expert support over Redis Enterprise Cloud is more cost effective than managing your own Redis instances on the cloud.

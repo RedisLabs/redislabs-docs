@@ -1,4 +1,4 @@
-By default, Redis Enterprise Software deployments use DNS to communicate between nodes.  You can also use the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), which uses IP addresses to connect and complies with the [Redis Sentinel API](https://redis.io/topics/sentinel) supported by open source Redis.
+By default, Redis Enterprise Software deployments use DNS to communicate between nodes.  You can also use the [Discovery Service]({{< relref "/rs/databases/configure/discovery-service.md" >}}), which uses IP addresses to connect and complies with the [Redis Sentinel API](https://redis.io/topics/sentinel) supported by open source Redis.
 
 Each node in a Redis Enterprise cluster includes a small DNS server to manage internal functions, such as high availability, automatic failover, automatic migration, and so on.
 Nodes should only run the DNS server included with the software.  Running additional DNS servers can lead to unexpected behavior.
@@ -93,8 +93,8 @@ However, as the topology of the cluster changes and node with the given IP addre
 you need to remember the IP address of another node participating in this cluster to connect to the admin console and manage the cluster.
 
 Applications connecting to Redis Software databases have the same constraints.
-When using the IP-based connection method, you can use the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})
+When using the IP-based connection method, you can use the [Discovery Service]({{< relref "/rs/databases/configure/discovery-service.md" >}})
 to discover the database endpoint for a given database name as long as you have an IP address for at least one of the nodes in the cluster.
 The API used for discovery service is compliant with the Redis Sentinel API.
 
-To test your connection, try pinging the service.  For help, see [Connect to your database]({{< relref "rs/getting-started/#step-4-connect-to-your-database" >}}).
+To test your connection, try pinging the service.  For help, see [Connect to your database]({{< relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md#step-4-connect-to-your-database" >}}).

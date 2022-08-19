@@ -20,13 +20,17 @@ To create a database in your Redis Enterprise Cloud [subscription]({{< relref "r
 
 3. Select the **New database** button.
 
-    {{<image filename="images/rc/button-database-new.png" alt="The New Database button creates a new database for your subscription." >}}{{< /image >}}
+    {{<image filename="images/rc/button-database-new.png" alt="The New Database button creates a new database for your subscription." width="120px">}}{{< /image >}}
 
-This displays the **Create database** screen, which varies according to your subscription plan.
+This displays the **New database** screen, which varies according to your subscription plan.
 
-{{<image filename="images/rc/database-create-general-flexible.png" alt="Use the New Database screen to create a new database for your subscription." >}}{{< /image >}}
+{{<image filename="images/rc/database-new-flexible.png" alt="Use the New Database screen to create a new database for your subscription." >}}{{< /image >}}
 
-The **Create database** screen is divided into sections, each dedicated to a specific category of settings.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
+The **New database** screen is divided into sections, each dedicated to a specific category of settings.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
+
+When you've configured your new database, use the **Activate database** button to create and activate it.
+
+{{<image filename="images/rc/button-database-activate.png" alt="Use the Activate database button to create and activate your database." width="150px">}}{{< /image >}}
 
 ## General section
 
@@ -40,14 +44,61 @@ The available settings vary according to your subscription plan:
 | **Active-Active Redis** | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_) |
 | **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
 | **Database Name** | A name for your database (_required_) |
-| **Protocol**  | Set to _Redis_ unless you need to support legacy memcached databases |
+| **Type**  | Controls optional capabilities, such as modules or protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
 | **Modules** | Extend core Redis functionality using [modules]({{<relref "modules/">}}).  Redis Enterprise Cloud supports selected modules; for details, see [Redis Enterprise module support]({{<relref "modules/enterprise-capabilities#redis-enterprise-module-support">}}) |
+
+### Modules
+
+Modules extend Redis database functionality by adding new data types and options.  
+
+Available options depend on your subscription and your database **Type**.
+
+#### Fixed (and Free) module options
+
+Fixed and Free subscriptions support [Redis Stack](https://redis.io/docs/stack/), which enables the most frequently used modules.
+
+{{<image filename="images/rc/new-database-general-type-free-stack.png" alt="For Fixed and Free subscriptions, the Type setting in the General section includes an option for Redis Stack." width="75%">}}{{< /image >}}
+
+When the database **Type** is set to _Redis Stack_, the modules section of the database details page displays the modules included with the database and their versions.
+
+{{<image filename="images/rc/database-details-modules-stack-free.png" alt="For Fixed and Free subscriptions, the Database details page lists the modules and versions added by Redis Stack." width="75%">}}{{< /image >}}
+
+Redis Enterprise Cloud is updated on a regular basis, which includes the modules supported by the service.  Module versions displayed by the admin console may vary from those shown above.  For the latest details of any module, see [Redis modules]({{<relref "modules/">}}). 
+
+Redis Stack is available only for Fixed and Free subscriptions.
+
+#### Flexible and Annual module options
+
+Flexible and Annual subscriptions let you choose modules for each database.
+
+{{<image filename="images/rc/database-details-redis-module-select-flexible.png" alt="For Flexible and Annual subscriptions, you can select the modules included in your database." width="75%">}}{{< /image >}}
+
+You can select more than one module for a database, though there are limits:
+
+- The following modules can be combined in Flexible and Annual subscriptions:
+
+    - RediSearch 2
+    - RedisJSON
+    - RedisTimeSeries
+    - RedisBloom
+
+- RedisGraph cannot be combined with other modules
+
+- When you select RedisJSON, RediSearch 2 is automatically added because the modules complement each other.  
+
+    You can remove RediSearch 2 if you prefer.
+
+You don't have to combine modules.  To remove a selected module, either clear the checkbox in the menu or select the module's **Delete** icon.  
+
+<nobr>{{<image filename="images/rc/icon-checkbox-clear.png" alt="To remove a selected module, clear the checkbox in the menu." width="30px">}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-module-delete.png" alt="You can also use the delete icon to remove a module." width="30px">}}{{< /image >}}</nobr>
+
+To learn more, see [Redis Stack](https://redis.io/docs/stack/) and [Redis modules]({{<relref "modules/">}}).
 
 ## Scalability section
 
 The **Scalability** section lets you manage the maximum size, throughput, and hashing policy for a database.
 
-{{<image filename="images/rc/database-create-scalability-flexible.png" alt="Use the Scalability section to control the size, throughput, and hashing policy for a database." >}}{{< /image >}}
+{{<image filename="images/rc/database-new-flexible-scalability.png" alt="Use the Scalability section to control the size, throughput, and hashing policy for a database." >}}{{< /image >}}
 
 The **Scalability** section is available only for Flexible and Annual plans.
 
@@ -56,10 +107,10 @@ The **Scalability** section is available only for Flexible and Annual plans.
 | **Memory size** | Maximum size (in GB) for your database |
 | **Throughput** | Defines throughput in terms of maximum operations per second for the database
 | **Shards** | Defines the throughput in terms of shards dedicated to the database
-| **Hashing policy** | Defines the [hashing policy]({{< relref "rs/concepts/high-availability/clustering.md#changing-the-hashing-policy" >}}) |
-| **Cluster OSS** | Enables the [OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
+| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/configure/clustering.md#changing-the-hashing-policy" >}}) |
+| **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 
-To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/configure/clustering.md" >}}).
 
 ### Memory size
 
@@ -75,13 +126,13 @@ Here are some general guidelines:
 
 - Modules also consume memory.
 
-Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/concepts/memory-performance/memory-limit.md" >}})
+Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/configure/memory-limit.md" >}})
 
 ## Durability section
 
 The **Durability** section helps you keep your database (and your data) available when problems occur.
 
-{{<image filename="images/rc/database-create-durability-flexible.png" alt="Use the Durability settings to keep your database (and data) available when problems occur." >}}{{< /image >}}
+{{<image filename="images/rc/database-new-flexible-durability.png" alt="Use the Durability settings to keep your database (and data) available when problems occur." >}}{{< /image >}}
 
 
 |Setting name|Description|
@@ -90,13 +141,13 @@ The **Durability** section helps you keep your database (and your data) availabl
 | **Data persistence** | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type |
 | **Data eviction policy** | Defines what happens when your database reaches its [memory size limit]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) |
 | **Remote backup** | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}). |
-| **Active-passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
+| **Active-Passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
 
 ## Security section
 
 The **Security** section helps you control access to your database.
 
-{{<image filename="images/rc/database-create-security-flexible.png" alt="Use the Security settings to control access to your database." >}}{{< /image >}}
+{{<image filename="images/rc/database-new-flexible-security.png" alt="Use the Security settings to control access to your database." >}}{{< /image >}}
 
 
 |Setting name|Description|
@@ -111,17 +162,17 @@ The **Security** section helps you control access to your database.
 
 The **Alerts** section defines notification emails sent to your account and the conditions that trigger them.
 
-{{<image filename="images/rc/database-create-alerts-flexible.png" alt="The Alerts section defines the notification emails and their triggering conditions." >}}{{< /image >}}
+{{<image filename="images/rc/database-new-flexible-alerts.png" alt="The Alerts section defines the notification emails and their triggering conditions." >}}{{< /image >}}
 
 The available alerts vary according to the subscription type.
 
 |Setting name|Description|
 |:-----------|:----------|
-| **Dataset size has reached** | When enabled, sends an an email when the database reaches the defined memory size _(Free, Flexible, or Annuals plans only_)|
-| **Total size of datasets under this plan reached** | When enabled, sends an an email when the database reaches the defined memory size _(paid Fixed plans only_)|
-| **Throughput is higher than** | When enabled, sends an email when the operations per second exceed the defined threshold _(paid Fixed, Flexible, or Annuals plans only_)|
-| **Throughput is lower than** | When enabled, sends an email when the operations per second falls below the defined threshold _(paid Fixed, Flexible, or Annuals plans only_)|
+| **Dataset size has reached** | When enabled, sends an an email when the database reaches the defined memory size _(Free, Flexible, or Annual plans only_)|
 | **Latency is higher than** | When enabled, sends an an email when the latency exceeds the defined memory size _(paid Fixed plans only_)|
 | **Number of connections** | When enabled, sends an email when the connections exceeds the defined limit.  _(Free and Fixed plans only)_|
-| **Replica Of - database unable to sync with source** | When enabled, sends email when the replica database cannot sync with the primary (source) database _(Flexible or Annuals plans only_) |
-| **Replica Of - sync lag is higher than** | When enabled, sends email when the sync lag exceeds the defined threshold _(Flexible or Annuals plans only_) |
+| **Replica Of - database unable to sync with source** | When enabled, sends email when the replica database cannot sync with the primary (source) database _(Flexible or Annual plans only_) |
+| **Replica Of - sync lag is higher than** | When enabled, sends email when the sync lag exceeds the defined threshold _(Flexible or Annual plans only_) |
+| **Throughput is higher than** | When enabled, sends an email when the operations per second exceed the defined threshold _(paid Fixed, Flexible, or Annual plans only_)|
+| **Throughput is lower than** | When enabled, sends an email when the operations per second falls below the defined threshold _(paid Fixed, Flexible, or Annual plans only_)|
+| **Total size of datasets under this plan reached** | When enabled, sends an an email when the database reaches the defined memory size _(paid Fixed plans only_)|

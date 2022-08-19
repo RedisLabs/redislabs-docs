@@ -29,8 +29,10 @@ The following code creates a connection to Redis:
 ```js
 const redis = require('redis');
 const client = redis.createClient({
-    host: '<hostname>',
-    port: <port>,
+    socket: {
+        host: '<hostname>',
+        port: <port>
+    },
     password: '<password>'
 });
 

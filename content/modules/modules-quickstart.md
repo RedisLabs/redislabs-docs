@@ -6,10 +6,10 @@ weight: 1
 alwaysopen: false
 categories: ["Modules"]
 ---
-To quickly get access to a Redis database with a module,
-you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/sign-up) subscription, create a database, and enable the module that you want to try.
+To quickly set up a Redis database with modules,
+you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/sign-up) subscription and create a [Redis Stack]({{<relref "/modules/redis-stack">}}) database.
 
-The modules that are currently available for Redis Enterprise Cloud include:
+Redis Stack databases include the following modules:
 
 - [RediSearch]({{<relref "/modules/redisearch/_index.md">}})
 - [RedisJSON]({{<relref "/modules/redisjson/_index.md">}})
@@ -19,23 +19,31 @@ The modules that are currently available for Redis Enterprise Cloud include:
 
 Alternatively, you can use one of these methods to set up a Redis database with modules:
 
-- [Redis Enterprise Software]({{<relref "/rs/getting-started/_index.md">}})
-- Redis Enterprise Software in a [Docker container]({{<relref "/rs/getting-started/getting-started-docker.md">}})
+- [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md">}})
+- Redis Enterprise Software in a [Docker container]({{<relref "/rs/installing-upgrading/get-started-docker.md">}})
 - [Other platforms]({{<relref "/kubernetes/_index.md">}}) for Redis Enterprise Software
 
 ## Set up a Redis Cloud database
 
-The following steps provide a high-level walkthrough to set up a Redis Cloud database with a module.
+To set up a Redis Cloud database with modules enabled, follow these steps:
+
+1. [Create a new Redis Cloud subscription](#create-a-subscription).
+
+1. [Create a Redis Stack database](#create-a-redis-stack-database).
+
+1. [Connect to the database](#connect-to-the-database).
 
 For more details, see the Redis Enterprise Cloud [quick start]({{<relref "/rc/rc-quickstart.md">}}).
 
-### Step 1: Create a new subscription
+### Create a subscription
 
 To create a new subscription:
 
-1. Sign into the Redis Enterprise Cloud [admin console](http://app.redislabs.com) or create a new account.
+1. Sign in to the Redis Enterprise Cloud [admin console](http://app.redislabs.com) or create a new account.
 
-1. Select **New subscription**.
+1. Select the **New subscription** button:
+
+    {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." width="150px">}}{{</image>}}
 
 1. Configure your subscription:
 
@@ -45,28 +53,38 @@ To create a new subscription:
     1. From the dataset size list, select the Free tier (30MB).
     1. Enter a name for the subscription.
 
-1. Select **Create subscription**.
+1. Select the **Create subscription** button:
 
-### Step 2: Create a database with a module enabled
+    {{<image filename="images/rc/button-subscription-create.png" alt="The Create Subscription button." width="150px">}}{{</image>}}
 
-After you create a subscription, select **New database** to create a new database:
+### Create a Redis Stack database
 
-1. In the **General** settings, enter a **Database name**.
+After you create a subscription, follow these steps to create a Redis Stack database:
 
-1. Select your preferred module from the **Modules** <nobr>drop-down</nobr> list.
+1. Select the **New database** button:
 
-1. Select **Activate database**.
+    {{<image filename="images/rc/button-database-new.png" alt="The New Database button creates a new database for your subscription." width="120px">}}{{</image>}}
 
-### Step 3: Connect to your database
+1. In **General** settings, enter a **Database name**.
+
+1. For database **Type**, select **Redis Stack**.
+
+1. Select the **Activate database** button:
+
+    {{<image filename="images/rc/button-database-activate.png" alt="Use the Activate database button to create and activate your database." width="150px">}}{{</image>}}
+
+### Connect to the database
 
 After creating the database, you can view its **Configuration** settings. You will need the following information to connect to your new database:
 
 - **Public endpoint**: The host address of the database
 - **Redis password**/**Default user password**: The password used to authenticate with the database
 
-With this information, you can connect to your database with the `redis-cli` command-line tool, an application, or [RedisInsight](https://redislabs.com/redisinsight/).
+With this information, you can connect to your database with the [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool, an application, or [RedisInsight](https://redislabs.com/redisinsight/).
 
-To try out your selected module, follow its corresponding quick start guide:
+## Try modules
+
+To try out a module, follow its corresponding quick start guide:
 
 - [RediSearch]({{<relref "/modules/redisearch/redisearch-quickstart.md">}})
 - [RedisJSON]({{<relref "/modules/redisjson/redisjson-quickstart.md">}})

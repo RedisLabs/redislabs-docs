@@ -65,7 +65,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 - End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here]({{<relref "/rs/administering/product-lifecycle.md">}}).
 - Google Chrome browser on macOS Catalina requires self-signed certificate generated after June 2019 to include the extendedKeyUsage field in order to connect to the RS admin console.
-    If you use a self-signed certificate that does not include this field, [update the self-signed certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+    If you use a self-signed certificate that does not include this field, [update the self-signed certificate](https://docs.redis.com/latest/rs/administering/cluster-operations/updating-certificates).
 - When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or lower to version RS 5.4.4 or higher:
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
@@ -91,7 +91,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 - Before you upgrade a database with RediSearch Module to Redis 5.0,
     you must [upgrade the RediSearch Module]({{<relref "/modules/install/upgrade-module">}}) to version 1.4.2 or above.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above
-    by manually updating the certificates on the disk instead of [updating them through the API]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+    by manually updating the certificates on the disk instead of [updating them through the API](https://docs.redis.com/latest/rs/administering/cluster-operations/updating-certificates).
     For assistance with this issue, [contact Redis support](https://redislabs.com/company/support/).
 - We recommend that you test module upgrade commands in a test environment before you upgrade modules in a production environment.
     The module upgrade arguments are not validated during the upgrade process and incorrect arguments can cause unexpected downtime.
@@ -105,7 +105,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 ### Discovery service
 
-- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), every database name must be unique across the cluster.
+- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/databases/configure/discovery-service.md" >}}), every database name must be unique across the cluster.
 
 ### Redis commands
 

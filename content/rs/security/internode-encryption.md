@@ -41,7 +41,7 @@ To enable internode encryption for a database (also called _data plane encryptio
 
     {{<image filename="images/rs/database-configuration-internode-encryption-edit.png" alt="The Internode encryption setting can be found on the Configuration tab of the Database settings." >}}{{< /image >}}
 
--  Use the `rladmin` command-line utility to set the [data_internode_encryption]({{< relref "/rs/references/rladmin.md#tune" >}}) setting for the database:
+-  Use the `rladmin` command-line utility to set the [data_internode_encryption]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-db">}}) setting for the database:
 
     ``` shell
     rladmin tune db <database_id> data_internode_encryption enable
@@ -79,7 +79,7 @@ The private CA is generated when a cluster is created or upgraded to 6.2.4.
 
 When nodes join the cluster, the cluster CA is used to generate certificates for the new node, one for each plane.  Certificates signed by the private CA are not shared between clusters and they're not exposed outside the cluster.
 
-All certificates signed by the internal CA are expire after forty-five (45) days and automatically rotated every thirty (30) days.  Alerts also monitor certificate expiration and trigger should certificate expiration fall below 45 days.  If you receive such an alert, contact support.
+All certificates signed by the internal CA expire after ninety (90) days and automatically rotate every thirty (30) days.  Alerts also monitor certificate expiration and trigger when certificate expiration falls below 45 days.  If you receive such an alert, contact support.
 
 You can use the Redis Enterprise Software REST API to rotate certificates manually:
 

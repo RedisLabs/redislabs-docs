@@ -28,9 +28,9 @@ Fixed plan pricing scales according to the memory size of all databases defined 
 | 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 | 4 |
 | 500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 | 4 |
 | 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 2 | 8 |
-| 2&half; GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | Unlimited | 2 | 8 |
-| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | Unlimited | 4 | 16 |
-| 10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | Unlimited | 4 | 32 |
+| 2&half; GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 | 8 |
+| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | 5000 | 4 | 16 |
+| 10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | 10000 | 4 | 32 |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
