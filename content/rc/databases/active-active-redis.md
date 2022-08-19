@@ -1,10 +1,13 @@
 ---
 Title: Active-Active Redis
 description: Overview of the Active-Active feature for Redis Cloud.
-weight: 35
+weight: 05
 alwaysopen: false
 categories: ["RC"]
-aliases:
+aliases: [
+    "/rc/subscriptions/active-active-redis/",
+    "/rc/subscriptions/active-active-redis.md"
+]
 
 ---
 
@@ -25,7 +28,7 @@ Geo-distributed replication maintains copies of both primary and replica shards 
 
 ### Multiple active proxies
 
-Active-Active databases use a multi-primary architecture, which lets you read and write to a primary shard in any of your participating clusters. Having [multiple active proxies]({{<relref "/rs/administering/designing-production/networking/multiple-active-proxy.md">}}) allows users to connect to the cluster closest to them, reducing latency.
+Active-Active databases use a multi-primary architecture, which lets you read and write to a primary shard in any of your participating clusters. Having [multiple active proxies]({{<relref "/rs/databases/configure/proxy-policy#about-multiple-active-proxy-support">}}) allows users to connect to the cluster closest to them, reducing latency.
 
 ### Conflict resolution
 
