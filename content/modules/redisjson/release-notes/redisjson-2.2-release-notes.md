@@ -23,7 +23,7 @@ A preview of RedisJSON 2.2 is available for Free and Fixed subscription plans in
 
 This release adds support for the JSON data structure as a CRDT (Conflict-free Replicated Data Type) when used with Redis Enterprise [Active-Active databases](https://docs.redis.com/latest/modules/redisjson/active-active/).
 
-Active-Active JSON requires Redis Enterprise Software v6.2.12. Contact your account manager or support to access the preview of Redis Enterprise v6.2.12.
+Active-Active JSON requires Redis Enterprise Software v6.2.12. Contact your account manager or support to access the preview of RedisJSON 2.2. 
 
 ### Details
 
