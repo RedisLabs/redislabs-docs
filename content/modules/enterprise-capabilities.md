@@ -39,7 +39,7 @@ For details about individual modules, see the corresponding documentation.
 | Backup/Restore            | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
 | Clustering                | Yes (v1.6)[^3] | Yes (v1.0)   | Yes (v2.2.3)[^1] |
 | Custom hashing policy     | Yes (v2.0)     | Yes (v1.0)   | Yes (v1.0)   |
-| Eviction expiration       | Yes (v2.0)     | Yes (v1.0)   | No           |
+| Eviction expiration       | Yes (v2.0)     | Yes (v1.0)   | Yes (v2.8.10) |
 | Failover/migration        | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
 | Internode encryption      | Yes (v2.0.11)  | Yes (v1.0.8) | Yes (v2.4)   |
 | Module datatypes          | Yes            | Yes          | Yes          |
