@@ -28,11 +28,7 @@ To create a new free subscription:
 
 1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
-2. If this is the first time you've signed in, you have no active subscriptions and can select the **Add subscription** button.
-
-    {{<image filename="images/rc/button-subscription-add.png" alt="The Add subscriptions button appears when there are no other subscriptions." >}}{{< /image >}}
-
-    If you already have a subscription, select the **New subscription** button in the admin menu.
+2. Select the **New subscription** button in the admin menu.
 
     {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
@@ -77,7 +73,7 @@ Now that you have a subscription, you need to create a database.
     - The name must start with a letter and end with either a letter or a number
     - Spaces are not allowed
 
-    {{<image filename="images/rc/database-new-free-name.png" width="75%" alt="Create new database. " >}}{{< /image >}}
+    {{<image filename="images/rc/new-database-free-name.png" width="75%" alt="Create new database. " >}}{{< /image >}}
 
 3.  For this exercise, leave the remaining options at their default values.  (To learn about them, see [Create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription.md" >}}).)
 
@@ -85,13 +81,13 @@ Now that you have a subscription, you need to create a database.
 
 5.  You're taken to the **Configuration tab** for your new database.
 
-    {{<image filename="images/rc/database-fixed-configuration-general.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
+    {{<image filename="images/rc/database-fixed-configuration-general-update.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
 
     In the upper corner, an icon shows the current status of the database.  If the icon shows an orange clock, this means your database is still being created and its status is _pending_.
 
-    ![Pending status icon](/images/rc/icon-database-status-pending.png#no-click "Pending database status") &nbsp; ![Active status icon](/images/rc/icon-database-status-active.png#no-click "Active database status")
+    ![Pending status icon](/images/rc/icon-database-update-status-pending.png#no-click "Pending database status") &nbsp; ![Active status icon](/images/rc/icon-database-update-status-active.png#no-click "Active database status")
 
-    Once the database has been created, it becomes _active_ and the status indicator switches to a teal circle containing a checkmark.  
+    Once the database has been created, it becomes _active_ and the status indicator switches to a green circle containing a checkmark.  
 
 Admin console operations are asynchronous; they operate [in the background]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but pending resources aren't available until they're active.
 
