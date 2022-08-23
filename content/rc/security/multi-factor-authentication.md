@@ -15,6 +15,10 @@ When MFA is enabled, users must enter their username, password, and an authentic
 
 To further increase the security of the account, the account owner can [require MFA enforcement for all users](#enforcing).
 
+{{< note >}}
+Once you enable MFA, MFA will be required to access every account that belongs to you. Deactivating MFA enforcement on an account will not deactivate MFA enforcement for other users of that account that have defined a phone number.  In order to deactivate MFA enforcement for other users, those users will each need to deactivate MFA enforcement for their own user accounts.
+{{< /note >}}
+
 ### Enabling MFA for a user account
 
 Each user can enable and configure MFA for their account.
