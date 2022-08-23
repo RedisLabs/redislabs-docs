@@ -16,7 +16,7 @@ To create a database in your Redis Enterprise Cloud [subscription]({{< relref "r
 
 2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
-    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-flexible-databases-tab-update.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
 
 3. Select the **New database** button.
 
