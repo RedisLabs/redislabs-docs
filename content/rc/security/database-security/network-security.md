@@ -44,7 +44,7 @@ You can restrict database access to a configurable
 set of source IP addresses and subnets. This is roughly equivalent
 to using [iptables](https://en.wikipedia.org/wiki/Iptables) to limit access to a host.
 
-### Adding restrictions
+### Add restrictions
 
 To restrict a database to a specific set of source IP addresses or subnets:
 
@@ -74,75 +74,11 @@ How you create these connections and the features supported vary somewhat by pub
 
 ### VPCs with AWS
 
-Subscriptions that run on AWS support two VPC options. To ensure that that you can securely connect to your database, you must either [create a VPC peering connection](#creating-a-vpc-peering-connection) or [deploy your subscription in your own VPC](#deploying-in-your-own-vpc).
+Subscriptions that run on AWS support two VPC options. To ensure that that you can securely connect to your database, you must either [create a VPC peering connection]({{<relref "/rc/security/vpc-peering#aws-vpc-peering">}}) or [deploy your subscription in your own VPC](#deploying-in-your-own-vpc).
 
-#### Create a VPC peering connection
+If you create a VPC peering connection, you can also [configure a CIDR allow list]({{<relref "/rc/security/cidr-whitelist">}}) to allow connections only from specific IP address blocks or security groups.
 
-Below are instructions for creating a VPC peering connection for AWS. Once you've created this connection, you may also want to consider [configuring a CIDR whitelist]({{<relref "/rc/security/cidr-whitelist.md">}}) to allow connection only from specific IP address blocks or security groups.
-
-To create a VPC peering connection:
-
-1. In **Subscriptions**, click on the subscription requiring a VPC peering connection
-2. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add"). You'll then see a form like the following:
-
-![VPC AWS](/images/rc/vpc-aws.png "VPC AWS")
-
-3. Enter your VPC peering details:
-
-    - AWS Account ID
-    - AWS Region
-    - AWS VPC ID
-    - VPC CIDR (must not overlap with the Redis CIDR block)
-
-Then click **Initiate Peering**.
-
-4. Next, you'll need to approve the VPC peering request. To do that, log in to your AWS management console.
-
-      1. Go to: **Services** > **VPC** > **Peering Connections**
-      1. Select the peering connection with the Peering ID of your peering request.
-      1. Go to **Description** and note the Requester VPC CIDRs shown in the Peering Connection details.
-      1. Click **Actions** and select **Accept Request**.
-      1. To confirm, click **Yes, Accept**.
-      1. Finally, update your routing tables for the peering connection:
-
-            1. After you accept the peering request, click **Modify my route tables now**.
-            1. Find the ID of your VPC in the list of routes and select it.
-            1. Go to **Routes** and click on **Edit Routes**.
-            1. To add a route, click **Add Route**.
-            1. In the Destination field, enter the Requester VPC CIDRs shown when you accepted the peering request.
-
-               This is the Redis Cloud VPC CIDR address, to which your application's VPC should connect.
-
-            1. In the Target field, select **Peering Connection** and select the relevant Peering ID.
-            1. Click **Save Routes** and **Close**.
-
-Once your VPC peering request is accepted, the status in your subscription's **VPC Peering** tab will indicate 'Peer Established'.
-
-If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
-please don't hesitate to [contact Redis support](https://redislabs.com/company/support/).
-
-#### Configure the CIDR whitelist
-
-The **CIDR whitelist** defines a range of IP addresses and/or AWS security groups permitted to access
-databases in the Redis Cloud VPC.
-
-To define the CIDR whitelist:
-
-1. In **Subscriptions**, click on the subscription for VPC peering.
-1. Go to: **Security** > **CIDR Whitelist**.
-1. If there are no CIDR whitelist entries, click ![Add](/images/rs/icon_add.png#no-click "Add"). You'll see
-   a form similar to this:
-
-   ![CIDR Whitelist](/images/rc/cidr-whitelist.png "CIDR Whitelist")
-
-1. Specify the **Type** of whitelist entry as either:
-    - **IP Address**: For the value, enter the IP block in CIDR format for the traffic that
-            you want to allow access for.
-    - **Security Group**: For the value, enter the ID of the AWS security group to grant access to.
-1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
-1. Next, either:
-   1. Add more whitelist entries by clicking ![Add](/images/rs/icon_add.png#no-click "Add").
-   1. Or apply the changes to the whitelist by selecting **Apply all changes**.
+If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions, [contact Redis support](https://redis.com/company/support/).
 
 #### Deploy in your own VPC
 
