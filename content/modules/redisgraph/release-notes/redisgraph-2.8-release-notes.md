@@ -10,10 +10,30 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.17 requires:
+RedisGraph v2.8.19 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.19 (August 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#2517](https://github.com/RedisGraph/RedisGraph/issues/2517) Crash on invalid `REDUCE` queries
+    - [#2525](https://github.com/RedisGraph/RedisGraph/issues/2525) `toJSON` - node labels are not separated with a comma (`,`)
+    - [#2467](https://github.com/RedisGraph/RedisGraph/issues/2467) Possibly wrong results when using a variable named `anon_N`
+    - [#2522](https://github.com/RedisGraph/RedisGraph/pull/2522) Deleting an edge index leaves traces
+    - [#2477](https://github.com/RedisGraph/RedisGraph/issues/2477) Cannot extract the latitude or the longitude of a point
+
+- Improvements:
+
+    - [#2519](https://github.com/RedisGraph/RedisGraph/pull/2519) When a query is cached and then a relevant index is created, recalculate the execution plan
 
 ## v2.8.17 (July 2022)
 
