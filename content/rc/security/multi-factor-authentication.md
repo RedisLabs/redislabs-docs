@@ -19,7 +19,7 @@ To further increase the security of the account, the account owner can [require 
 Once you enable MFA, MFA will be required to access every account that belongs to you. Deactivating MFA enforcement on an account will not deactivate MFA enforcement for other users of that account that have defined a phone number.  In order to deactivate MFA enforcement for other users, those users will each need to deactivate MFA enforcement for their own user accounts.
 {{< /note >}}
 
-### Enabling MFA for a user account
+### Enable MFA
 
 Each user can enable and configure MFA for their account.
 The default MFA configuration sends an authentication code by text message that users must enter when they sign in.
@@ -46,7 +46,7 @@ If you cannot sign in to your account because of MFA, please [contact support](h
 If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized sign-ins.
 
 
-### Changing your MFA phone number
+### Change your MFA phone number
 
 To change the mobile phone number used for MFA:
 
@@ -55,7 +55,7 @@ To change the mobile phone number used for MFA:
 1. Enter the new mobile phone number, and complete the verification process as described above.
 
 
-### Configuring MFA for an authenticator app {#app}
+### Configure MFA for an authenticator app {#app}
 
 After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOTP) app such as [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator).
 
@@ -72,11 +72,11 @@ To configure MFA for an authenticator app:
 
 You can now use either a text message code or an authenticator app code as your second factor when signing in.
 
-#### Deactivating MFA
+#### Deactivate MFA
 
 You can deactivate MFA for your user account. To deactivate MFA, go to your profile, locate **Multi-Factor Authentication**, and click **Deactivate**.
 
-### Enforcing MFA for all user accounts {#enforcing}
+### Enforce MFA for all user accounts {#enforcing}
 
 Account owner users can enable MFA enforcement for all users in their account.
 After MFA is enforced for the account, all users who do not have MFA enabled will be required to configure MFA the next time they sign in to the Redis Cloud Admin Console.
