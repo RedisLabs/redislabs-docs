@@ -28,4 +28,4 @@ This is the General Availability (GA) release of RedisInsight 2.8.0
 
 **Bugs fixed:**
 - [#1019](https://github.com/RedisInsight/RedisInsight/pull/1019) Workbench blank screen when [opening](https://github.com/RedisInsight/RedisInsight/issues/986)
-- [#1009](https://github.com/RedisInsight/RedisInsight/pull/1009)Flow to automatically discover Sentinel databases is [not available](https://github.com/RedisInsight/RedisInsight/issues/804)
+- [#1009](https://github.com/RedisInsight/RedisInsight/pull/1009) Flow to automatically discover Sentinel databases is [not available](https://github.com/RedisInsight/RedisInsight/issues/804)
