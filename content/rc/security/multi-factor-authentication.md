@@ -33,7 +33,7 @@ To configure MFA for your user account:
     {{<image filename="images/rc/multi-factor-authentication-user-profile.png" alt="Multi-factor authentication is located on the user profile page." >}}{{< /image >}}
 
 4. Enter your mobile phone number in the **Text message** box and then select **Send code**.
-5. You will receive a confirmation code sent by text message. Enter the code and select **Verify**.
+5. You will receive a confirmation code sent by text message. Enter the code when prompted by the admin console and select **Verify**.
 
 Your account is now configured for MFA.
 
