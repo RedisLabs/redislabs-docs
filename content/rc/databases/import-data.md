@@ -26,7 +26,7 @@ As a result, the number of keys in the source and destination databases can be d
 
 To import a dataset from any publicly available Redis server:
 
-1. Select Databases from the admin console menu and then select the target database from the database list.
+1. Select **Databases** from the admin console menu and then select the target database from the database list.
 1. Scroll down to **Danger Zone** and select **Import**.
 1. Enter the source database details:
     - Source Type - Select **Redis**.
@@ -41,7 +41,7 @@ If you have an RDB or a compressed RDB file from a Redis database, you can impor
 
 {{< note >}}
 In order to import a sharded database that has multiple RDB files, you must first merge the files into a single RDB.
-For assistance, contact [Support](https://support.redislabs.com).
+For assistance, contact [Support](https://redis.com/company/support/).
 {{< /note >}}
 
 ### Via FTP or HTTP
@@ -85,7 +85,7 @@ To share and import an RDB file that is stored in an AWS Simple Storage Service 
     For more information, see [Configuring ACLs for objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html) on the AWS docs.
 
 1. In the [Redis Cloud admin console](https://app.redislabs.com/), select the target database from the database list.
-1. Scroll down to **Danger Zone** and select Import.
+1. Scroll down to **Danger Zone** and select **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **AWS S3**.
     - RDB file path - Enter the URL for RDB file: `s3://bucketname/[path/]filename.rdb[.gz]`
@@ -104,19 +104,19 @@ To use the Redis Cloud admin console to import your data, you must first share t
 
 To share and import an RDB file that is stored in a GCP Storage bucket:
 
-1. In the GCP Storage bucket, edit the file's Access Control List to give reader access to Redis Enterprise cloud.
+1. In the GCP Storage bucket, edit the file's Access Control List to give read access to Redis Enterprise Cloud.
     - Select **Edit access** in the RDB file menu.
-    - Click **Add item**.
+    - Select **Add item**.
     - Enter the user details and access:
        - In the Entity field of the new item, select **User**.
        - In the Name field of the new item, enter: `service@redislabs-prod-clusters.iam.gserviceaccount.com`
        - In the Access field of the new item, select **Reader**.
-    - Click **Save**.
+    - Select **Save**.
 
     For more information, see [Set ACLs](https://cloud.google.com/storage/docs/access-control/create-manage-lists#set-an-acl) on the Google Cloud docs.
 
-1. In the [Redis Cloud admin console](https://app.redislabs.com/),select the target database from the database list.
-1. Scroll down to **Danger Zone** and select Import.
+1. In the [Redis Cloud admin console](https://app.redislabs.com/), select the target database from the database list.
+1. Scroll down to **Danger Zone** and select **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **Google Cloud Storage**.
     - RDB file path - Enter the URL for RDB file: `gs://bucketname/[path/]filename.rdb[.gz]`
