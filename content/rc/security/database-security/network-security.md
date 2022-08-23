@@ -68,17 +68,15 @@ To restrict a database to a specific set of source IP addresses or subnets:
 
 A [Virtual Private Cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC) is an isolated set of resources within a [public cloud](https://en.wikipedia.org/wiki/Cloud_computing#Public_cloud), usually having its own subnets and VLAN.
 
-Databases in Flexible and Annual subscriptions are almost always deployed in a Redis VPC. In most cases, you'll need to create a **VPC peering connection** to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
+Databases in Flexible and Annual subscriptions are almost always deployed in a Redis VPC. In most cases, you'll need to create a [VPC peering connection]({{<relref "/rc/security/vpc-peering">}}) to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
 
 How you create these connections and the features supported vary somewhat by public cloud provider. You can read about VPC usage for [AWS](#vpcs-with-aws), [GCP](#vpcs-with-gcp), and [Azure](#vpcs-with-azure) below.
 
 ### VPCs with AWS
 
-Subscriptions that run on AWS support two VPC options. To ensure that that you can securely connect to your database, you must either [create a VPC peering connection]({{<relref "/rc/security/vpc-peering#aws-vpc-peering">}}) or [deploy your subscription in your own VPC](#deploying-in-your-own-vpc).
+Subscriptions that run on AWS support two VPC options. To ensure that that you can securely connect to your database, you need to either [create a VPC peering connection]({{<relref "/rc/security/vpc-peering#aws-vpc-peering">}}) or [deploy your subscription in your own VPC](#deploy-in-your-own-vpc).
 
 If you create a VPC peering connection, you can also [configure a CIDR allow list]({{<relref "/rc/security/cidr-whitelist">}}) to allow connections only from specific IP address blocks or security groups.
-
-If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions, [contact Redis support](https://redis.com/company/support/).
 
 #### Deploy in your own VPC
 
@@ -100,30 +98,7 @@ Once your subscription and databases have been provisioned, you'll be able to ac
 
 ### VPCs with GCP
 
-Subscriptions that run on GCP *require* a VPC peering connection.
-
-To create a VPC peering connection:
-
-1. In **Subscriptions**, click on the subscription requiring a VPC peering connection
-2. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add"). You'll then see a form like the following:
-
-![VPC GPC](/images/rc/vpc-gpc.png "VPC GPC")
-
-3. Enter your VPC peering details:
-
-      - GCP Project ID
-      - GCP Network name
-
-Before you click **Initiate Connection**, be sure that you copy the `gcloud` command generated at the bottom of the form:
-
-![VPC GCloud Command](/images/rc/vpc-gcloud-command.png "VPC GCloud Command")
-
-4. Run the `gcloud` command you just copied to approve the VPC peering connection.
-
-Once your VPC peering request is accepted, the status in your subscription's **VPC Peering** tab will indicate 'Peer Established'.
-
-If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
-please don't hesitate to [contact Redis support](https://redislabs.com/company/support/).
+Subscriptions that run on GCP *require* a VPC peering connection. See [GCP VPC peering](http://localhost:1313/rc/security/vpc-peering/#gcp-vpc-peering) to learn how to set up VPC peering for GCP.
 
 ### VPCs with Azure
 
