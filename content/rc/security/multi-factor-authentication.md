@@ -27,7 +27,7 @@ The default MFA configuration sends an authentication code by text message that 
 To configure MFA for your user account:
 
 1. Sign in to your account.
-2. From the Redis Enterprise Cloud menu, click on your name to enter the **User Profile** view.
+2. From the Redis Enterprise Cloud menu, select your name to enter the **User Profile** view.
 3. Under your user profile, locate **Multi-factor authentication**.
 
     {{<image filename="images/rc/multi-factor-authentication-user-profile.png" alt="Multi-factor authentication is located on the user profile page." >}}{{< /image >}}
@@ -85,7 +85,7 @@ To enable MFA enforcement for all user accounts:
 
 1. Sign in as an account owner.
 1. Go to **Settings** > **Account**.
-1. Under **MFA enforcement**, click the toggle.
+1. Under **MFA enforcement**, select the toggle.
 
 - When you enable MFA enforcement, users cannot disable MFA for their account.
 - When you disable MFA enforcement, users can disable MFA for their account.
