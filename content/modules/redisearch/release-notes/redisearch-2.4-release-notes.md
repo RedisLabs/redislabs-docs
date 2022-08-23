@@ -10,10 +10,30 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.11 requires:
+RediSearch v2.4.14 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.14 (August 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Improvements:
+
+  - [Vector similarity v0.3.2](https://github.com/RedisAI/VectorSimilarity/releases/tag/v0.3.2)
+  - [#2955](https://github.com/RediSearch/RediSearch/pull/2955) Add timeout during prefix query (MOD-3949)
+  - [#2957](https://github.com/RediSearch/RediSearch/pull/2957) Efficient removal from prefix list for cases with many indices
+
+- Bug fixes:
+
+  - [#2937](https://github.com/RediSearch/RediSearch/pull/2937) Returning `NULL` response after encountering an expired document (MOD-3515)
+  - [#2962](https://github.com/RediSearch/RediSearch/pull/2962) Crash upon AOF preload (MOD-3951)
+  - [#2986](https://github.com/RediSearch/RediSearch/pull/2986) Memory leak related to schema prefixes
 
 ## v2.4.11 (July 2022)
 
