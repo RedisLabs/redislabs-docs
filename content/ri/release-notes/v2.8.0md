@@ -1,0 +1,31 @@
+---
+Title: RedisInsight v2.8.0, August 2022
+linkTitle: v2.8.0 (August 2022)
+date: 2022-08-23 00:00:00 +0000
+description: RedisInsight v2.8.0
+weight: 1
+aliases: /ri/release-notes/v2.8.0/
+         /ri/release-notes/v2.8.0.md
+---
+
+## 2.8.0 (August 2022)
+This is the General Availability (GA) release of RedisInsight 2.8.0
+
+### Headlines:
+- Formatters: see formatted key values in JSON, MessagePack, Hex, Unicode, or ASCII to enhance your experience of working with different data formats in Browser/Tree view
+- Clone existing database: easily clone your database already added in RedisInsight to change a database index, username, or password.
+- Raw mode in Workbench: support for the raw mode in Workbench results
+
+### Details
+**Features and improvements:**
+- [#978](https://github.com/RedisInsight/RedisInsight/pull/978), [#959](https://github.com/RedisInsight/RedisInsight/pull/959), [#984](https://github.com/RedisInsight/RedisInsight/pull/984), [#996](https://github.com/RedisInsight/RedisInsight/pull/996), [#992](https://github.com/RedisInsight/RedisInsight/pull/992), [#1030](https://github.com/RedisInsight/RedisInsight/pull/1030) Support for different data formats in Browser/Tree view, including JSON, MessagePack, Hex and ASCII. Selected formatter will be applied for the entire key and is available for any data type supported in Browser/Tree view. If any unprintable characters are detected, editing the data will be available only in Workbench and CLI to avoid data loss.
+- [#955](https://github.com/RedisInsight/RedisInsight/pull/965) Quickly add a database with the same endpoint, but another database index, username, or password. To do so, open the database in the edit mode, request to clone it, and make the changes needed. The previous database will not be changed.
+- [#1012](https://github.com/RedisInsight/RedisInsight/pull/1012) Support for the raw mode (--raw) in Workbench. Enable it to see the 
+ results of the commands executed in Workbench in the raw mode.
+- [#987](https://github.com/RedisInsight/RedisInsight/pull/987) [DBSIZE](https://redis.io/commands/dbsize/) command is no longer required to connect to a database
+- [#971](https://github.com/RedisInsight/RedisInsight/pull/971) Changed icons displayed for the [RediSearch](https://redis.io/docs/stack/search/) Light module
+- [#1011](https://github.com/RedisInsight/RedisInsight/pull/1011) Enhanced navigation in the Command Helper to conveniently go back
+
+**Bugs fixed:**
+- [#1019](https://github.com/RedisInsight/RedisInsight/pull/1019) Workbench blank screen when [opening](https://github.com/RedisInsight/RedisInsight/issues/986)
+- [#1009](https://github.com/RedisInsight/RedisInsight/pull/1009)Flow to automatically discover Sentinel databases is [not available](https://github.com/RedisInsight/RedisInsight/issues/804)
