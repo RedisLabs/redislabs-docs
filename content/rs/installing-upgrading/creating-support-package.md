@@ -4,6 +4,13 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/troubleshooting/creating-support-package.md,
+    /rs/administering/troubleshooting/creating-support-package/,
+    /rs/installing-upgrading/creating-support-package.md,
+    /rs/installing-upgrading/creating-support-package/,
+
+]
 ---
 If you encounter any issues that you are not able to resolve yourself
 and need to [contact Redis support](https://redislabs.com/company/support/) for assistance, you can create a
