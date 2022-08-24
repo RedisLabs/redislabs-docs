@@ -13,6 +13,7 @@ aliases: /rs/
          /redis_enterprise_software/
          /rs/administering/troubleshooting/
          /rs/administering/
+         /rs/faqs/
 ---
 
 [Redis Enterprise](https://redis.com/redis-enterprise/advantages/) is a self-managed, enterprise-grade version of Redis.
