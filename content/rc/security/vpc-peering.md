@@ -1,7 +1,7 @@
 ---
 Title: Enable VPC peering
 linkTitle: VPC peering
-description:
+description: VPC peering uses private IP addresses to route traffic between a Redis Cloud VPC and an application VPC.
 weight: 80
 alwaysopen: false
 categories: ["RC"]
@@ -16,7 +16,7 @@ You can connect your VPC in the Redis Cloud subscription to the VPC of your appl
 VPC peering is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
 {{< /note >}}
 
-The VPC peering configuration requires you to initiate VPC peering on your Redis Cloud subscription and accept the VPC peering request for the AWS VPC that you want to peer with.
+VPC peering configuration requires you to initiate VPC peering on your Redis Cloud subscription and then accept the VPC peering request for the AWS VPC that you want to peer with.
 
 ## AWS VPC peering
 
@@ -30,7 +30,7 @@ If you want to peer a Redis Cloud VPC with an AWS VPC, you need to:
 
 ### Configure VPC peering {#config-aws-vpc-peering}
 
-To set up VPC peering between a Redis Cloud VPC and an AWS VPC:
+To set up VPC peering:
 
 1. Select **Subscriptions** from the [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
 
@@ -55,16 +55,15 @@ To set up VPC peering between a Redis Cloud VPC and an AWS VPC:
 
         {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-add-cidr.png" width="40px" alt="Select the Add CIDR button to add another VPC CIDR." >}}{{< /image >}}
 
-    1. Enter the new CIDR-formatted IP address in the box:
+    1. Enter the additional CIDR-formatted IP address in the box:
 
         {{<image filename="images/rc/subscription-connectivity-vpc-peering-add-multiple-cidrs.png" width="300px" alt="Select the Add CIDR button to add another VPC CIDR." >}}{{< /image >}}
-
 
 1. Select the **Initiate peering** button:
 
     {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-initiate-peering.png" width="140px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
 
-1. Note the **Peering ID** of the peering request:
+1. Note the **Peering ID** of the VPC peering request:
 
     {{<image filename="images/rc/subscription-connectivity-vpc-peering-aws.png" width="350px" alt="View VPC peering list." >}}{{< /image >}}
 
@@ -98,7 +97,7 @@ If you want to peer a Redis Cloud VPC with a GCP VPC, you need to:
 
 ### Configure VPC peering {#config-gcp-vpc-peering}
 
-To peer a Redis Cloud VPC with a GCP VPC:
+To set up VPC peering:
 
 1. Select **Subscriptions** from the [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
 
@@ -115,7 +114,7 @@ To peer a Redis Cloud VPC with a GCP VPC:
     | **Project ID** | GCP project ID (see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)) |
     | **Network name** | GCP VPC network you want to peer with (see [View networks](https://cloud.google.com/vpc/docs/create-modify-vpc-networks#viewing-networks)) |
 
-1. Copy the **Google cloud command**. You need this command to accept the peering request later:
+1. Copy the **Google cloud command** after you enter the other VPC peering settings. You need this command to accept the peering request later:
 
     {{<image filename="images/rc/subscription-connectivity-vpc-peering-gcloud-command.png" width="350px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
 
@@ -123,7 +122,7 @@ To peer a Redis Cloud VPC with a GCP VPC:
 
     {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-initiate-peering.png" width="140px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
 
-1. Note the **Cloud peering ID** of the peering request:
+1. Note the **Cloud peering ID** of the VPC peering request:
 
     {{<image filename="images/rc/subscription-connectivity-vpc-peering-gcp.png" width="350px" alt="View VPC peering list." >}}{{< /image >}}
 
