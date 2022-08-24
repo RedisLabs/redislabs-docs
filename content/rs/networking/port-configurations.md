@@ -8,6 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/designing-production/networking/port-configurations/,
     /rs/networking/port-configurations/,
+    /rs/administering/troubleshooting/network-configuration.md,
+    /rs/administering/troubleshooting/network-configuration/,
 
 ]
 ---
@@ -86,3 +88,8 @@ After you disable HTTP support, traffic sent to the unencrypted API endpoint is 
 ## HTTP to HTTPS redirection
 Starting with version 6.0.12, the automatic HTTP to HTTPS redirection is disabled.
 To poll metrics from the `metrics_exporter` or to access the admin console, use HTTPS in your request. HTTP requests won't be automatically redirected to HTTPS for those services. 
+
+# Nodes on different VLANs
+
+Nodes in the same cluster must reside on the same VLAN. If you can't
+host the nodes on the same VLAN, then you must open [all ports]({{< relref "/rs/networking/port-configurations.md" >}}) between them.

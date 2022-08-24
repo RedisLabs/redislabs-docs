@@ -1,9 +1,16 @@
 ---
-Title: Database Metrics Not Collected During Resharding
+Title: Database metrics not collected during resharding
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/troubleshooting/database-metrics-blank-during-resharding.md,
+    /rs/administering/troubleshooting/database-metrics-blank-during-resharding/,
+    /rs/clusters/monitoring/database-metrics-blank-during-resharding.md,
+    /rs/clusters/monitoring/database-metrics-blank-during-resharding/,
+
+]
 ---
 Because data is being moved around across shards during the resharding
 process, it is impossible to report the values of some of the metrics in
