@@ -22,7 +22,7 @@ This is the General Availability (GA) release of RedisInsight 2.8.0
 - [#1012](https://github.com/RedisInsight/RedisInsight/pull/1012) Added support for the raw mode (--raw) in Workbench. Enable it to see the results of commands executed in the raw mode.
 - [#987](https://github.com/RedisInsight/RedisInsight/pull/987) [DBSIZE](https://redis.io/commands/dbsize/) command is no longer required to connect to a database
 - [#971](https://github.com/RedisInsight/RedisInsight/pull/971) Updated icon for the [RediSearch](https://redis.io/docs/stack/search/) Light module
-- [#1011](https://github.com/RedisInsight/RedisInsight/pull/1011) Enhanced navigation in the Command Helper to conveniently go back
+- [#1011](https://github.com/RedisInsight/RedisInsight/pull/1011) Enhanced navigation in the Command Helper allowing you to return to previous actions
 
 **Bugs fixed:**
 - [#1019](https://github.com/RedisInsight/RedisInsight/pull/1019) Workbench blank screen when [opening](https://github.com/RedisInsight/RedisInsight/issues/986)
