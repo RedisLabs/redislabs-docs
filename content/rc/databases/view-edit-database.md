@@ -21,7 +21,7 @@ To view the details of a database:
 
 3.  Select the database name to open the **Database** page.
 
-    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
+    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
 The **Database** screen lets you review:
 - Configuration details of a database
@@ -121,7 +121,7 @@ The available alerts vary according to the subscription type.
 | **Replica Of - database unable to sync with source** | When enabled, sends email when the replica database cannot sync with the primary (source) database _(Flexible or Annuals plans only_) |
 | **Replica Of - sync lag is higher than** | When enabled, sends email when the sync lag exceeds the defined threshold _(Flexible or Annuals plans only_) |
 
-### Danger zone 
+### Danger zone
 
 Actions in the **Danger Zone** are permanent and should not be taken lightly.
 
@@ -156,7 +156,7 @@ You can:
 - Sort the list in descending or ascending order using the the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Name**, and **Memory**.
 
     {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}
-    
+
     Select the arrow icon to change the sort order.  One sort order can be active at any given time.
 
 - Use the Filter icon displayed to the right of the field name in the header to display string matches for that field.
@@ -189,7 +189,7 @@ Use the **Edit database** button to edit database details.
 
 Because databases exist within the context of a deployment, certain fields cannot be updated, especially those that might lead to data loss.
 
-Here's what you can change: 
+Here's what you can change:
 
 | Section | Setting | Comments |
 |:-----------|:----------|:---------|
@@ -214,4 +214,3 @@ Choose **Save database** to save your changes.
 {{<image filename="images/rc/button-database-save.png" alt="Use the Save database button to save database changes." >}}{{< /image >}}
 
 If you need to change other details, create a new database and then migrate existing data.
-

@@ -17,7 +17,7 @@ This command requires the account owner role.
 
 ## Step-by-step
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/). 
+1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).
 
 1. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
@@ -25,11 +25,11 @@ This command requires the account owner role.
 
 1.  Select the database from the list.  The **Configuration** tab is selected by default.
 
-    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
+    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
 1.  Scroll to the **Danger zone**.
 
-    {{<image filename="images/rc/database-details-configuration-tab-danger-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
+    {{<image filename="images/rc/database-details-configuration-tab-danger-flexible.png" width="75%" alt="The Danger Zone of the Database details screen." >}}{{< /image >}}
 
 1.  Select the **Delete** button.
 
