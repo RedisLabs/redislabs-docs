@@ -83,3 +83,41 @@ From the Redis Enterprise Software admin console, you can monitor the performanc
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 
 For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/monitoring-metrics/_index.md">}}), and [Memory statistics]({{<relref "/rs/clusters/optimize/node-memory.md#memory-statistics">}}).
+
+## Scaling databases
+
+Each Redis Enterprise cluster can contain multiple databases. In Redis,
+databases represent data that belong to a single application, tenant, or
+microservice. Redis Enterprise is built to scale to 100s of databases
+per cluster to provide flexible and efficient multi-tenancy models.
+
+Each database can contain few or many Redis shards. Sharding is
+transparent to Redis applications. Master shards in the database process
+data operations for a given subset of keys. The number of shards per
+database is configurable and depend on the throughput needs of the
+applications. Databases in Redis Enterprise can be resharded into more
+Redis shards to scale throughput while maintaining sub-millisecond
+latencies. Resharding is performed without downtime.
+
+![Sharding diagram](/images/rs/sharding.png)
+
+*Figure 2*
+*Redis Enterprise places master node (M) and replicas (R) in separate
+nodes, racks and zones and use in-memory replication to protect data
+against failures.*
+
+In Redis Enterprise, each database has a quota of RAM. The quota cannot
+exceed the limits of the RAM available on the node. However, with Redis
+Enterprise Flash, RAM is extended to the local flash drive (SATA, NVMe
+SSDs etc). The total quota of the database can take advantage of both
+RAM and Flash drive. The administrator can choose the RAM vs Flash ratio
+and adjust that anytime in the lifetime of the database without
+downtime.
+
+With Redis on Flash, instead of storing all keys and data for a
+given shard in RAM, less frequently accessed values are pushed to flash.
+If applications need to access a value that is in flash, Redis
+Enterprise automatically brings the value into RAM. Depending on the
+flash hardware in use, applications experience slightly higher latency
+when bringing values back into RAM from flash. However subsequent
+accesses to the same value is fast, once the value is in RAM.

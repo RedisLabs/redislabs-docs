@@ -1,7 +1,7 @@
 ---
-Title: Use the WAIT command to control consistency
+Title: Use the WAIT command for strong consistency
 linkTitle: WAIT command
-description:
+description: Use the wait command to take full advantage of Redis Enterprise Software's replication based durability. 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
