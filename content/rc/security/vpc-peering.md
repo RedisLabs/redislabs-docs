@@ -28,27 +28,37 @@ To peer Redis Cloud VPC with another VPC:
 
 1. Select the **Connectivity** tab and then select **VPC Peering**.
 
-1. Select the **Add peering** button. 
+1. Select the **Add peering** button:
 
-1. Enter the VPC peering details:
+    {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-add-peering.png" width="140px" alt="The Add peering button lets you set up VPC peering." >}}{{< /image >}}
 
-    - AWS Account ID
-    - AWS Region
-    - AWS VPC ID
-    - VPC CIDR (must not overlap with the Redis CIDR block)
+1. Enter **VPC peering** details:
 
-1. To add multiple VPC CIDRs:
+    | Setting&nbsp;name | Description |
+    |-------------------|-------------|
+    | _Consumer AWS Account_ | Your AWS account ID (see [Finding your AWS account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)) |
+    | _Consumer region_ | AWS VPC region |
+    | _Consumer VPC ID_ | The VPC ID for the application that needs to access your Redis Enterprise (see [Finding a VPC ID](https://docs.aws.amazon.com/managedservices/latest/userguide/find-vpc.html)) |
+    | _Consumer VPC CIDRs_ | The VPC CIDR for the application that needs to access your Redis Cloud database; must not overlap with the _Redis producer VPC CIDR_ (see [View your VPCs](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#view-vpc)) |
 
-    1. Select the **Add CIDR** button.
+1. You can provide up to five VPC CIDRs. To add multiple VPC CIDRs:
 
-    1. Enter the new CIDR-formatted IP address in the box.
+    1. Select the **Add CIDR** button:
 
-1. Select the **Initiate peering** button.
+        {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-add-cidr.png" width="40px" alt="Select the Add CIDR button to add another VPC CIDR." >}}{{< /image >}}
 
-    A VPC Peering request is automatically created and appears in the VPC Peering tab until
-        it is accepted by the VPC that you want to peer with.
+    1. Enter the new CIDR-formatted IP address in the box:
 
-1. Note the **Peering ID** of the peering request.
+        {{<image filename="images/rc/subscription-connectivity-vpc-peering-add-multiple-cidrs.png" width="300px" alt="Select the Add CIDR button to add another VPC CIDR." >}}{{< /image >}}
+
+
+1. Select the **Initiate peering** button:
+
+    {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-initiate-peering.png" width="140px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
+
+1. Note the **Peering ID** of the peering request:
+
+    {{<image filename="images/rc/subscription-connectivity-vpc-peering-aws.png" width="350px" alt="View VPC peering list." >}}{{< /image >}}
 
 ### Approve VPC peering request {#approve-aws-vpc-peering}
 
@@ -88,21 +98,28 @@ To peer Redis Cloud VPC with another VPC:
 
 1. Select the **Connectivity** tab and then select **VPC Peering**.
 
-1. Select the **Add peering** button. 
+1. Select the **Add peering** button:
+
+    {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-add-peering.png" width="140px" alt="The Add peering button lets you set up VPC peering." >}}{{< /image >}}
 
 1. Enter the VPC peering details:
 
-    - GCP Project ID
-    - GCP Network name
+    | Setting&nbsp;name | Description |
+    |-------------------|-------------|
+    | **Project ID** | GCP project ID (see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)) |
+    | **Network name** | GCP VPC network you want to peer with (see [View networks](https://cloud.google.com/vpc/docs/create-modify-vpc-networks#viewing-networks)) |
 
-    Make sure you copy the *gcloud* command that appears at the bottom of the page to accept the peering.
+1. Copy the **Google cloud command**. You need this command to accept the peering request later:
 
-1. Select the **Initiate peering** button.
+    {{<image filename="images/rc/subscription-connectivity-vpc-peering-gcloud-command.png" width="350px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
 
-    A VPC Peering request is automatically created and appears in the VPC Peering tab until
-        it is accepted by the VPC that you want to peer with.
+1. Select the **Initiate peering** button:
 
-1. Note the **Peering ID** of the peering request.
+    {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-initiate-peering.png" width="140px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
+
+1. Note the **Cloud peering ID** of the peering request:
+
+    {{<image filename="images/rc/subscription-connectivity-vpc-peering-gcp.png" width="350px" alt="View VPC peering list." >}}{{< /image >}}
 
 ### Approve VPC peering request {#approve-gcp-vpc-peering}
 
