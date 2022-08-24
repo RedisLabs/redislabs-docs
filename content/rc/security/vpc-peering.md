@@ -20,13 +20,21 @@ The VPC peering configuration requires you to initiate VPC peering on your Redis
 
 ## AWS VPC peering
 
+If you want to peer a Redis Cloud VPC with an AWS VPC, you need to:
+
+1. [Configure and initiate VPC peering](#config-aws-vpc-peering) for your Redis Cloud subscription.
+
+1. [Approve the VPC peering request](#approve-aws-vpc-peering).
+
+1. [Update the routes tables](#update-route-tables).
+
 ### Configure VPC peering {#config-aws-vpc-peering}
 
-To peer Redis Cloud VPC with another VPC:
+To set up VPC peering between a Redis Cloud VPC and an AWS VPC:
 
 1. Select **Subscriptions** from the [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
 
-1. Select the **Connectivity** tab and then select **VPC Peering**.
+1. Select the **Connectivity** tab and then **VPC Peering**.
 
 1. Select the **Add peering** button:
 
@@ -38,8 +46,8 @@ To peer Redis Cloud VPC with another VPC:
     |-------------------|-------------|
     | _Consumer AWS Account_ | Your AWS account ID (see [Finding your AWS account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)) |
     | _Consumer region_ | AWS VPC region |
-    | _Consumer VPC ID_ | The VPC ID for the application that needs to access your Redis Enterprise (see [Finding a VPC ID](https://docs.aws.amazon.com/managedservices/latest/userguide/find-vpc.html)) |
-    | _Consumer VPC CIDRs_ | The VPC CIDR for the application that needs to access your Redis Cloud database; must not overlap with the _Redis producer VPC CIDR_ (see [View your VPCs](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#view-vpc)) |
+    | _Consumer VPC ID_ | The VPC ID for the application that needs to access your Redis Cloud VPC (see [Finding a VPC ID](https://docs.aws.amazon.com/managedservices/latest/userguide/find-vpc.html)) |
+    | _Consumer VPC CIDRs_ | [CIDR-formatted](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) IP addresses for the AWS VPC that needs to access your Redis Cloud VPC; must not overlap with the _Redis producer VPC CIDR_ (see [View your VPCs](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#view-vpc)) |
 
 1. You can provide up to five VPC CIDRs. To add multiple VPC CIDRs:
 
@@ -62,37 +70,35 @@ To peer Redis Cloud VPC with another VPC:
 
 ### Approve VPC peering request {#approve-aws-vpc-peering}
 
-To approve the VPC peering request on VPC for your application:
+After you set up and intitiate VPC peering, you need to approve the VPC peering request:
 
 1. Follow the AWS guide to [accept the VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html#accept-vpc-peering-connection).
 
-1. Update your routing tables for the peering connection:
+1. After you accept the peering request, select **Modify my route tables now**.
 
-    1. After you accept the peering request, select **Modify my route tables now**.
+### Update route tables {#update-route-tables}
 
-    1. Find the ID of your VPC in the list of routes and select it.
+To finish VPC peering setup, [update your route tables for the peering connection](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html) with the following details:
 
-    1. Go to **Routes** and select on **Edit Routes**.
+1. In the **Destination** field, enter the Requester VPC CIDRs shown when you accepted the peering request.
 
-    1. To add a route, select **Add Route**.
+    This is the Redis Cloud VPC CIDR address, to which your application's VPC connects.
 
-    1. In the **Destination** field, enter the Requester VPC CIDRs shown when you accepted the peering request.
+1. In the **Target** field, select **Peering Connection** and select the relevant **Peering ID**.
 
-        This is the Redis Cloud VPC CIDR address, to which your application's VPC connects.
-
-    1. In the **Target** field, select **Peering Connection** and select the relevant **Peering ID**.
-
-    1. Select **Save Routes** and **Close**.
-
-Now the VPC Peering request is accepted. Its status in the **VPC Peering** tab in the Redis Cloud subscription is updated to 'Peer Established'.
-
-Once peering is established, we recommend switching your application connection string to the private endpoint.
+Once VPC peering is established, we recommend switching your application connection string to the private endpoint.
 
 ## GCP VPC peering
 
+If you want to peer a Redis Cloud VPC with a GCP VPC, you need to:
+
+1. [Configure and initiate VPC peering](#config-gcp-vpc-peering) for your Redis Cloud subscription.
+
+1. [Approve the VPC peering request](#approve-gcp-vpc-peering).
+
 ### Configure VPC peering {#config-gcp-vpc-peering}
 
-To peer Redis Cloud VPC with another VPC:
+To peer a Redis Cloud VPC with a GCP VPC:
 
 1. Select **Subscriptions** from the [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
 
@@ -123,10 +129,6 @@ To peer Redis Cloud VPC with another VPC:
 
 ### Approve VPC peering request {#approve-gcp-vpc-peering}
 
-To approve the VPC peering request on VPC for your application:
+To approve the VPC peering request between Redis Cloud and GCP, use the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud) to run the **Google cloud command** that you copied before you initiated VPC peering.
 
-1. In your GCP environment, run the *gcloud* CLI command provided in the VPC peering popup.
-
-Now the VPC Peering request is accepted. Its status in the **VPC Peering** tab in the Redis Cloud subscription is updated to 'Peer Established'.
-
-Once peering is established, we recommend switching your application connection string to the private endpoint.
+Once VPC peering is established, we recommend switching your application connection string to the private endpoint.
