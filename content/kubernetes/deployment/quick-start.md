@@ -151,7 +151,7 @@ You can test the operator by creating a minimal cluster by following this proced
           memory: 16Gi
     ```
 
-    See the [Redis Enterprise hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md">}}) for more
+    See the [Redis Enterprise hardware requirements]({{< relref "//rs/installing-upgrading/hardware-requirements.md">}}) for more
     information on sizing Redis Enterprise node resource requests.
   
 1. Apply your custom resource definition (CRD) file in the same namespace as `test-rec.yaml`.

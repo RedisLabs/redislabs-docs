@@ -21,7 +21,7 @@ and scaling a Redis Enterprise cluster deployment.
 
 For minimum and recommended sizing, always follow the sizing guidelines
 detailed in the [Redis Enterprise hardware requirements]({{< relref
-"/rs/administering/designing-production/hardware-requirements.md" >}}).
+"//rs/installing-upgrading/hardware-requirements.md" >}}).
 
 ## Sizing and scaling cluster nodes
 

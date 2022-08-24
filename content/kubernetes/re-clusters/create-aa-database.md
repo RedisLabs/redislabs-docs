@@ -27,7 +27,7 @@ Before creating Active-Active databases, you'll need two or more working Kuberne
 
 - Routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) (OpenShift users can use routes)
 - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
-- Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/administering/designing-production/hardware-requirements.md">}}))
+- Enough memory resources available for the database (see [hardware requirements]({{<relref "//rs/installing-upgrading/hardware-requirements.md">}}))
 
 ## Document required parameters
 

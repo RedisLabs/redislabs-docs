@@ -87,7 +87,7 @@ This option is only for when you recover a cluster.
     ![Import button](/images/platforms/pcf_resource_config.png)
 
     {{< note >}}
-Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum hardware specification requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) for Redis Enterprise.
+Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum hardware specification requirements]({{< relref "//rs/installing-upgrading/hardware-requirements.md" >}}) for Redis Enterprise.
     {{< /note >}}
 
 1. Click **Save**.
