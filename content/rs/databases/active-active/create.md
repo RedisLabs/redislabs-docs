@@ -10,6 +10,8 @@ aliases: [
     /rs/administering/database-operations/create-active-active/,
     /rs/databases/active-active/create-active-active.md,
     /rs/databases/active-active/create-active-active/,
+    /rs/databases/active-active/create.md,
+    /rs/databases/active-active/create/,
 
 ]
 ---

@@ -7,6 +7,8 @@ categories: ["RS"]
 aliases: [
     /rs/databases/active-active/edit-aa-database.md,
     /rs/databases/active-active/edit-aa-database/,
+    /rs/databases/active-active/edit.md,
+    /rs/databases/active-active/edit/,
 ]
 ---
 

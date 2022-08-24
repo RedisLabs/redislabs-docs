@@ -9,6 +9,8 @@ aliases: [
     /rs/getting-started/getting-started-crdbs/,
     /rs/databases/active-active/get-started-active-active.md,
     /rs/databases/active-active/get-started-active-active/,
+    /rs/databases/active-active/get-started.md,
+    /rs/databases/active-active/get-started/,
 
 ]
 categories: ["RS"]

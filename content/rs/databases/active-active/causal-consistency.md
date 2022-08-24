@@ -1,7 +1,7 @@
 ---
 Title: Enable causal consistency in an Active-Active database
 linkTitle: Enable causal consistency
-description: 
+description: Enable causal consistency for an Active-Active database.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -9,6 +9,7 @@ aliases: [
     /rs/administering/database-operations/causal-consistency-crdb/,
     /rs/databases/active-active/causal-consistency-crdb.md,
     /rs/databases/active-active/causal-consistency-crdb/,
+    /rs/databases/active-active/causal-consistency/,
 ]
 ---
 When you enable causal consistency in Active-Active databases,

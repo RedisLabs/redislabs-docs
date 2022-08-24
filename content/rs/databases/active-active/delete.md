@@ -9,6 +9,8 @@ aliases: [
     /rs/administering/database-operations/delete-crdb/,
     /rs/databases/active-active/delete-aa-database.md,
     /rs/databases/active-active/delete-aa-database/,
+    /rs/databases/active-active/delete.md,
+    /rs/databases/active-active/delete/,
 ]
 ---
 
