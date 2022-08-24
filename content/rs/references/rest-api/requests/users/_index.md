@@ -265,20 +265,6 @@ Create a new user.
 POST /users
 ```
 
-#### Example JSON body
-
-```json
-{
-     "email": "user@redislabs.com",
-     "password": "my-password",
-     "name": "John Doe",
-     "email_alerts": true,
-     "bdbs_email_alerts": ["1","2"],
-     "role": "db_viewer",
-     "auth_method": "regular"
-}
-```
-
 #### Headers
 
 | Key | Value | Description |
@@ -288,7 +274,7 @@ POST /users
 
 #### Body
 
-Include a single [user object]({{<relref "/rs/references/rest-api/objects/user">}}), with an email and a password, in the request body.
+Include a single [user object]({{<relref "/rs/references/rest-api/objects/user">}})in the request body. The user object must have an email, password, and role.
 
 {{<note>}}
 For [RBAC-enabled clusters]({{<relref "/rs/security/access-control">}}), use `role_uids` instead of `role` in the request body.
@@ -299,6 +285,20 @@ For [RBAC-enabled clusters]({{<relref "/rs/security/access-control">}}), use `ro
 - `true` - user will receive alerts for all databases configured in `bdbs_email_alerts`. The user will receive alerts for all databases by default if `bdbs_email_alerts` is not configured. `bdbs_email_alerts` can be a list of database UIDs or `[‘all’]` meaning all databases.
 
 - `false` - user will not receive alerts for any databases
+
+##### Example JSON body
+
+```json
+{
+     "email": "newuser@redis.com",
+     "password": "my-password",
+     "name": "Pat Doe",
+     "email_alerts": true,
+     "bdbs_email_alerts": ["1","2"],
+     "role_uids": [ 3, 4 ],
+     "auth_method": "regular"
+}
+```
 
 ### Response {#post-response}
 
@@ -321,7 +321,9 @@ Returns the newly created [user object]({{<relref "/rs/references/rest-api/objec
 
 ### Error codes {#post-error-codes}
 
-When errors are reported, the server may return a JSON object with    `error_code` and `message` field that provide additional information.    The following are possible `error_code` values:
+When errors are reported, the server may return a JSON object with `error_code` and `message` field that provide additional information.
+
+The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
@@ -341,9 +343,52 @@ When errors are reported, the server may return a JSON object with    `error_cod
 
 #### cURL
 
-
+```sh
+$ curl -k -X POST -u '[username]:[password]' \
+       -H 'Content-Type: application/json' \
+       -d '{ "email": "newuser@redis.com", \
+           "password": "my-password", \
+           "name": "Pat Doe", \
+           "email_alerts": true, \
+           "bdbs_email_alerts": ["1","2"], \
+           "role_uids": [ 3, 4 ], \
+           "auth_method": "regular" }' \
+       'https://[host][:port]/v1/users'
+```
 
 #### Python
+
+```python
+import requests
+import json
+
+url = "https://[host][:port]/v1/users"
+auth = ("[username]", "[password]")
+
+payload = json.dumps({
+  "email": "newuser@redis.com",
+  "password": "my-password",
+  "name": "Pat Doe",
+  "email_alerts": True,
+  "bdbs_email_alerts": [
+    "1",
+    "2"
+  ],
+  "role_uids": [
+    3,
+    4
+  ],
+  "auth_method": "regular"
+})
+
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, auth=auth, headers=headers, data=payload, verify=False)
+
+print(response.text)
+```
 
 ## Delete user {#delete-user}
 
