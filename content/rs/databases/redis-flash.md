@@ -51,7 +51,7 @@ There are a few critical recommendations:
 
 For more information read [Ephemeral and Persistent Storage in Redis
 Enterprise
-Software]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
+Software]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md.md" >}}).
 
 When running on a cloud environment, the flash memory for Redis on Flash
 should be on the ephemeral SSDs of the cloud instance and persistent
@@ -136,7 +136,7 @@ than extending RAM in a number of ways.
 
 To create Redis on Flash databases, you must meet the following prerequisites: 
 
-- Mount [ephemeral and persistent storage]({{<relref "/rs/administering/designing-production/persistent-ephemeral-storage.md">}}) on Redis Enterprise Software nodes with the proper disk size.
+- Mount [ephemeral and persistent storage]({{<relref "/rs/installing-upgrading/persistent-ephemeral-storage.md.md">}}) on Redis Enterprise Software nodes with the proper disk size.
 - Meet all [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) and [software requirements]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
 - [Install Redis Enterprise Software]({{< relref "/rs/installing-upgrading/_index.md" >}}).
 

@@ -8,6 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/administering/designing-production/persistent-ephemeral-storage.md,
     /rs/administering/designing-production/persistent-ephemeral-storage/,
+    /rs/installing-upgrading/persistent-ephemeral-storage.md,
+    /rs/installing-upgrading/persistent-ephemeral-storage/,
     
 ]
 ---
