@@ -24,7 +24,7 @@ These databases can use Redis Enterprise features like:
 
 {{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
-[create an Active-Active database]({{< relref "/rs/databases/active-active/create-active-active.md" >}}).
+[create an Active-Active database]({{< relref "/rs/databases/active-active/create.md" >}}).
 {{< /note >}}
 
 ## Create a database

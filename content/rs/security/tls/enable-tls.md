@@ -51,7 +51,7 @@ You cannot enable or turn off TLS after the Active-Active database is created, b
 
 ### Configure TLS certificates for Active-Active
 
-1. During database creation (see [Create an Active-Active Geo-Replicated Database]({{<relref "/rs/databases/active-active/create-active-active.md" >}}), select **Edit** from the **configuration** tab.
+1. During database creation (see [Create an Active-Active Geo-Replicated Database]({{<relref "/rs/databases/active-active/create.md" >}}), select **Edit** from the **configuration** tab.
 1. Enable **TLS**.
     - **Enforce client authentication** is selected by default. If you clear this option, you will still enforce encryption, but TLS client authentication will be deactivated.
 1. Select **Require TLS for CRDB communication only** from the dropdown menu.
