@@ -5,6 +5,12 @@ description:
 weight: 100
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/product-lifecycle.md,
+    /rs/administering/product-lifecycle/,
+    /rs/installing-upgrading/product-lifecycle.md,
+    /rs/installing-upgrading/product-lifecycle/,
+]
 ---
 Redis Enterprise Software product lifecycle fully reflects our [subscription agreement](https://redis.com/software-subscription-agreement).
 However, for any discrepancy between the two policies, the subscription agreement prevails.
