@@ -110,6 +110,23 @@ networks:
     driver: bridge
 ```
 
+##### nginx config
+
+```nginx
+server {
+ listen ${NGINX_PORT} default_server;
+
+ root /etc/nginx;
+ index index.html;
+
+ location ${NGINX_PROXY_PATH} {                        # Subpath
+     proxy_pass             http://redisinsight:8001/; # Assumes redisinsight runs in this host
+     proxy_read_timeout     900;
+     proxy_set_header       Host $host;
+ }
+}
+```
+
 ![RIPROXYPATH](/images/ri/riproxypath.png)
 
 
