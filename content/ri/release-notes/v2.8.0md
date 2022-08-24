@@ -11,7 +11,7 @@ aliases: /ri/release-notes/v2.8.0/
 This is the General Availability (GA) release of RedisInsight 2.8.0
 
 ### Headlines
-- Formatters: see formatted key values in JSON, MessagePack, Hex, Unicode, or ASCII to enhance your experience of working with different data formats in Browser/Tree view
+- Formatters: See formatted key values in JSON, MessagePack, Hex, Unicode, or ASCII in Browser/Tree view for an improved experience of working with different data formats 
 - Clone existing database connection or connection details: easily clone your database connection already added in RedisInsight to change a database index, username, or password.
 - Raw mode in Workbench: support for the raw mode in Workbench results
 
