@@ -43,7 +43,7 @@ to Redis persistence or AWS ephemeral drives.
 For disk size requirements, see:
 
 - [Hardware
-    requirements]({{< relref "//rs/installing-upgrading/hardware-requirements.md" >}})
+    requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}})
     for general guidelines regarding the ideal disk size each type of
     storage
 - [Disk size requirements for extreme write

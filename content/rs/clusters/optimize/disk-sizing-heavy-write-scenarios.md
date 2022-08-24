@@ -42,5 +42,5 @@ disk space they would require in this scenario:
 
 For disk size requirements in standard usage scenarios, refer to the
 [Hardware
-requirements]({{< relref "//rs/installing-upgrading/hardware-requirements.md" >}})
+requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}})
 section.

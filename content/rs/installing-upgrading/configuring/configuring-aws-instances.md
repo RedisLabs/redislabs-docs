@@ -51,7 +51,7 @@ this feature could be critical to use:
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet RS's [hardware
-requirements]({{< relref "//rs/installing-upgrading/hardware-requirements.md" >}}).
+requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}).
 
 In addition, some instance types are optimized for EBS backed volumes
 and some are not. If you are using persistent storage, you should use an

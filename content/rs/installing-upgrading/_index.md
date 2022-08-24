@@ -23,7 +23,7 @@ Here, you'll learn how to perform each step.
 
 Before installing Redis Enterprise Software, you need to:
 
-- Set up [your hardware]({{< relref "//rs/installing-upgrading/hardware-requirements.md" >}}).
+- Set up [your hardware]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}).
 
 - Choose your [deployment platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
 
