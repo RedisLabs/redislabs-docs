@@ -40,10 +40,10 @@ To create a cluster:
 1. Click **Setup**.
 1. In the Node Configuration page that appears:
 
-    1. Enter a path for [**Persistent storage**]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md.md" >}}),
+    1. Enter a path for [**Persistent storage**]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
 
-    1. Enter a path for [**Ephemeral storage**]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md.md" >}}),
+    1. Enter a path for [**Ephemeral storage**]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
 
     1. If you want to enable Redis on Flash, select the **Enable flash storage support** checkbox

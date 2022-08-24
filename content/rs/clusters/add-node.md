@@ -50,9 +50,9 @@ with a custom certificate.
 
 1. To start configuring RS, click **Setup**.
 1. Configure the RS network and storage settings:
-    1. You can enter a path for [*Persistent storage*]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md.md" >}}),
+    1. You can enter a path for [*Persistent storage*]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
-    1. You can enter a path for [*Ephemeral storage*]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md.md" >}}),
+    1. You can enter a path for [*Ephemeral storage*]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
     1. If you want to enable [*Redis on Flash*]({{< relref "/rs/databases/redis-flash.md" >}}),
         select **Enable flash storage support** and enter the path to the Flash storage to use as RAM extension.
