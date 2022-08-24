@@ -9,6 +9,8 @@ aliases: [
     /rs/administering/database-operations/flush-db-crdb/,
     /rs/databases/import-export/flush-db-crdb.md,
     /rs/databases/import-export/flush-db-crdb/,
+    content/rs/databases/import-export/flush.md,
+    content/rs/databases/import-export/flush/,
 ]
 ---
 To delete the data in a database without deleting the database configuration,
