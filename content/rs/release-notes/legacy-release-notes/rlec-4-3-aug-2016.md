@@ -20,7 +20,7 @@ upgrade to this version.
 - Various improvements to internal performance and stability were
     implemented.
 - RLEC Flash functionality added. For additional details, refer to
-    [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
+    [Redis on Flash]({{< relref "/rs/databases/redis-flash.md" >}})
     and contact <support@redislabs.com> if you are interested in this
     functionality.
 - Support for Redis version 3.0 added. When you install or upgrade the

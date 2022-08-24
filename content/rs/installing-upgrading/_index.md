@@ -60,7 +60,7 @@ Before installing, review these notes:
 
 - Review the [security considerations]({{< relref "/rs/security/" >}}) for your deployment.
 
-- If you want to use Redis on Flash (RoF) for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
+- If you want to use Redis on Flash (RoF) for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/databases/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
 
     Use the `prepare_flash` script to prepare and format flash memory:
 

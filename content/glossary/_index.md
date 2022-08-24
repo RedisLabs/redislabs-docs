@@ -248,7 +248,7 @@ Single-threaded Redis OSS database.
 {{%definition "Redis on Flash (RoF)"%}}
 Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Redis on Flash manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
 
-More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/administering/cluster-operations/getting-started-redis-flash.md">}})
+More info: [Redis on Flash]({{<relref "/rs/databases/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/administering/cluster-operations/getting-started-redis-flash.md">}})
 {{%/definition%}}
 
 {{%definition "Replica Of"%}}

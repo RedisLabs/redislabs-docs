@@ -42,7 +42,7 @@ certain level of disk performance. There are two features in RS where
 this feature could be critical to use:
 
 1. When using [Redis on
-    Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
+    Flash]({{< relref "/rs/databases/redis-flash.md" >}})
 1. When using AOF on every write and there is a high write load. In
     this case, the provisioned IOPS should be on the nodes used as
     replicas in the cluster.
