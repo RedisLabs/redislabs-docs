@@ -66,6 +66,42 @@ The following environment variables can be set to configure RedisInsight:
 **Default:**     `"WARNING"`
 
 
+### RITRUSTEDORIGINS
+
+**Description:** Configures the trusted origins of the application. Example values are - `"https://my-website.com,https://my-another-website.com,http://my-third-website.com"`
+
+**Type:**        String
+
+**Default:**     `""`
+
+
+### RIPROXYENABLE
+
+**Description:** Enables Subpath Proxy for the application.
+
+**Type:**        Bool
+
+**Default:**    `False`
+
+
+### RIPROXYPATH
+
+**Description:** Configures Subpath Proxy path for the application. Example values are - `"/redisinsight"`, `"/myapp"`
+
+**Type:**        String
+
+**Default:**     `""`
+
+
+### RIPROXYPREFIX
+
+**Description:** Sets the Subpath proxy prefix HTTP header field name for the application. The application uses the value from this HTTP header key as proxy subpath. Examples values are - `"X-Forwarded-Prefix"`, `"X-Forwarded-Path"` etc.,
+
+**Type:**        String
+
+**Default:**     `"X-Forwarded-Prefix"`
+
+
 ### RIAUTHPROMPT
 
 **Description:** Enables authentication prompt that asks for authentication before opening an instance or when the user is idle.
