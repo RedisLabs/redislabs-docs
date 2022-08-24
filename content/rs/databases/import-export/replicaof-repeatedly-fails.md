@@ -4,6 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+/rs/administering/troubleshooting/replicaof-repeatedly-fails.md,
+/rs/administering/troubleshooting/replicaof-repeatedly-fails/,
+/rs/databases/import-export/replicaof-repeatedly-fails.md,
+/rs/databases/import-export/replicaof-repeatedly-fails/,
+]
 ---
 **Problem**: The Replica Of process repeatedly fails and restarts
 
