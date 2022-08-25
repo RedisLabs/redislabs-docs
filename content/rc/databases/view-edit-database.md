@@ -21,7 +21,7 @@ To view the details of a database:
 
 3.  Select the database name to open the **Database** page.
 
-    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
+    {{<image filename="images/rc/database-configuration-tab-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
 The **Database** screen lets you review:
 - Configuration details of a database
@@ -45,13 +45,12 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Database Name** | The name given to your database |
 | **Public endpoint** | Public URI used by any application or client to access the database. |
 | **Private endpoint** | Private endpoint URI available to approved clients; use CIDR allow list and VPC peering to enabled access (_Flexible or Annual subscriptions only_)|
-| **Protocol** | Either 'redis' or 'memcached' based on the value selected when the database was created |
+| **Type** | Either 'redis' or 'memcached' based on the value selected when the database was created |
 | **Redis version** | Redis version used to create the database |
 | **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
 | **Activated on** | Date and time the database was created |
 | **Active-Active Redis** | Checked when the database is part of an Active-Active relationship (_coming soon; Flexible or Annual subscriptions only_) |
 | **Last changed** | Date and time of last update |
-| **Protocol**  | Describes the protocol of the database, typically _Redis_ |
 | **Module** | This setting appears when when a [module]({{< relref "modules/" >}}) is enabled for a database  |
 
 ### Scalability section
@@ -60,7 +59,7 @@ The **Scalability** section describes the memory size, throughput, and hashing p
 
 {{<image filename="images/rc/database-details-configuration-tab-scalability-flexible.png" alt="Use the Scalability section to control the size, throughput, and hashing policy for a database." >}}{{< /image >}}
 
-The **Scalability** section is available only for Flexible and Annual plans.
+The **Scalability** section is primarily for Flexible and Annual plans. Free and Fixed plans have options for memory limit, and memory used
 
 |Setting name|Description|
 |:-----------|:----------|
@@ -97,7 +96,7 @@ The **Security** section helps you control access to your database.
 |Setting name|Description|
 |:-----------|:----------|
 | **Default user** | When enabled, permits access using a simple password |
-| **Redis password** | Password assigned to the database when created |  
+| **Default user password** | Password assigned to the database when created |  
 | **CIDR allow list** | (_paid Fixed, Flexible, or Annual subscriptions only_) Range of IP addresses/security groups allowed to [access the database]({{< relref "/rc/security/cidr-whitelist.md" >}})|
 | **Transport layer security (TLS)** | (_Flexible or Annual subscriptions only_) Enables [transport security layer]({{< relref "/rc/security/database-security/tls-ssl.md" >}})(TLS) encryption for database access.|
 
