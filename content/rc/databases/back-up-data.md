@@ -63,7 +63,7 @@ Once backups are turned on, you can back up your data at any time.  Use the **Ba
 
 {{<image filename="images/rc/button-database-backup-now.png" alt="Use the Backup Now button to make backups on demand." >}}{{< /image >}}
 
-Backups need to be turned on before the button activtes.  
+Backups need to be turned on before the button activates.  
 
 ## Set up backup storage locations
 
