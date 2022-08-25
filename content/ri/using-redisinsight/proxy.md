@@ -208,7 +208,6 @@ networks:
     driver: bridge
 ```
 
-
 ##### nginx config
 ```nginx
 
