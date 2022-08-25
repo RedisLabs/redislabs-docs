@@ -110,7 +110,7 @@ of the statuses of all the sources.
 {{< note >}}
 If you encounter issues with the Replica Of process, refer
 to the troubleshooting section [Replica Of repeatedly
-fails]({{< relref "/rs/administering/troubleshooting/replicaof-repeatedly-fails.md" >}}).
+fails]({{< relref "/rs/databases/import-export/replicaof-repeatedly-fails.md" >}}).
 {{< /note >}}
 
 ### Synchronization errors
