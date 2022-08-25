@@ -14,6 +14,6 @@ aliases: [
 ---
 Learn how to connect your application to a Redis database hosted by Redis Enterprise Software and test your connection.
 
-[Supported connection clients]({{< relref "/rs/connections/supported-clients-browsers.md" >}})
+[Supported connection clients]({{< relref "/rs/databases/connections/supported-clients-browsers.md" >}})
 
 [Test client connectivity]({{< relref "/rs/connections/testing-client-connectivity.md" >}})
