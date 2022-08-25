@@ -58,7 +58,6 @@ You can enable subpath proxy by setting `RIPROXYENABLE` environment variable. On
 
 ### RIPROXYPATH static subpath
 
-
 When `RIPROXYPATH` is being set with a path, RedisInsight is accessible only on that subpath. The default routes are given the provided prefix subpath. There isn't a way to add another proxy behind this proxy unless the same subpath is used for the new proxy.
 
 {{< note >}}
