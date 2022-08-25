@@ -87,7 +87,7 @@ The following environment variables can be set to configure RedisInsight:
 
 ### RIPROXYPATH
 
-**Description:** Configures Subpath Proxy path for the application. Example values are - `"/redisinsight"`, `"/myapp"`
+**Description:** Configures Subpath Proxy path for the application. 
 
 **Type:**        String
 
