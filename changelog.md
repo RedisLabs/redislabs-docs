@@ -337,7 +337,7 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
 - Redis Enterprise Software doc updates:
 
-    - Added article describing compatibility with [open source Redis](https://docs.redislabs.com/latest/rs/concepts/compatibility/) ([PR #1345](https://github.com/RedisLabs/redislabs-docs/pull/1345))
+    - Added article describing compatibility with [open source Redis](https://docs.redislabs.com/latest/rs/references/compatibility/) ([PR #1345](https://github.com/RedisLabs/redislabs-docs/pull/1345))
 
     - Simplified [install and update](https://docs.redislabs.com/latest/rs/installing-upgrading/) article and resolved navigation issues ([PR #1376](https://github.com/RedisLabs/redislabs-docs/pull/1376))
 
