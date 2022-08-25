@@ -68,7 +68,7 @@ The following environment variables can be set to configure RedisInsight:
 
 ### RITRUSTEDORIGINS
 
-**Description:** Configures the trusted origins of the application. Example values are - `"https://my-website.com,https://my-another-website.com,http://my-third-website.com"`
+**Description:** Configures the trusted origins of the application.
 
 **Type:**        String
 
