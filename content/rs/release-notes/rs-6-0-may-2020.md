@@ -19,8 +19,8 @@ For Active-Active deployments, this release requires that you [upgrade the CRDB 
 
 ### End of life
 
-End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{< relref "/rs/administering/product-lifecycle.md" >}}).
-EOL for Redis Modules can be found [here]({{< relref "/rs/administering/product-lifecycle.md" >}}).
+End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}).
+EOL for Redis Modules can be found [here]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}).
 
 - Support for Red Hat Enterprise Linux 6 and Oracle Linux 6 [operating systems platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) will end on November 30, 2020.
 - Support for Ubuntu 14.04 (Trusty Tahr) [operating systems platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) will end on November 30, 2020.

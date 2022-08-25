@@ -63,7 +63,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 ## Information
 
-- End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here]({{<relref "/rs/administering/product-lifecycle.md">}}).
+- End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}).
 - Google Chrome browser on macOS Catalina requires self-signed certificate generated after June 2019 to include the extendedKeyUsage field in order to connect to the RS admin console.
     If you use a self-signed certificate that does not include this field, [update the self-signed certificate](https://docs.redis.com/latest/rs/administering/cluster-operations/updating-certificates).
 - When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or lower to version RS 5.4.4 or higher:

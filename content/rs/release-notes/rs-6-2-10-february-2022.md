@@ -55,7 +55,7 @@ The following table shows the MD5 checksums for the available packages.
 
 Redis Enterprise Software v6.0.x will reach end of life (EOF) on May 31, 2022.
 
-To learn more, see the Redis Enterprise Software [product lifecycle](https://docs.redis.com/latest/rs/administering/product-lifecycle/), which details the release number and the end-of-life schedule for Redis Enterprise Software.
+To learn more, see the Redis Enterprise Software [product lifecycle](https://docs.redis.com/latest/rs/installing-upgrading/product-lifecycle/), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
 For Redis modules information and lifecycle, see [Module lifecycle](https://docs.redis.com/latest/modules/modules-lifecycle/).
 

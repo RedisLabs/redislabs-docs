@@ -47,7 +47,7 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 ## Product version lifecycle
 
-- The End of Life (EOL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/administering/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
+- The End of Life (EOL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
 
 ## Important fixes
 

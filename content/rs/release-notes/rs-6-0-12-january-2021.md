@@ -28,7 +28,7 @@ And other functional and stability improvements.
 
 #### Product lifecycle information
 
-- End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{<relref "/rs/administering/product-lifecycle.md">}}).
+- End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}).
 - EOL for Redis modules can be found [here]({{<relref "/modules/modules-lifecycle#modules-endoflife-schedule">}}).
 
 #### Deprecation Notice
