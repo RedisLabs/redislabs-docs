@@ -54,7 +54,7 @@ More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persis
 {{%definition "causal consistency"%}}
 A distributed database is causally consistent if it maintains the same order of operations on a piece of data across all database copies.
 
-More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/databases/active-active/causal-consistency-crdb">}})
+More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/databases/active-active/causal-consistency">}})
 {{%/definition%}}
 
 {{%definition "CIDR allowlist"%}}

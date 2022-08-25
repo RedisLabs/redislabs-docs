@@ -127,7 +127,7 @@ Every instance of an Active-Active database can receive write operations, and al
         1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn>:9443`),
             enter the credentials (email address and password) for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    - **[Causal Consistency]({{< relref "/rs/databases/active-active/causal-consistency-crdb.md" >}})** -
+    - **[Causal Consistency]({{< relref "/rs/databases/active-active/causal-consistency.md" >}})** -
         Causal Consistency in an Active-Active database guarantees that the order of operations
         on a specific key is maintained across all instances of an Active-Active database.
         To enable Causal Consistency for an existing Active-Active database, use the REST API.
