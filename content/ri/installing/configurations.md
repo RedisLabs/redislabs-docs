@@ -93,15 +93,17 @@ The following environment variables can be set to configure RedisInsight:
 
 **Default:**     `""`
 
+**Examples:**     `"/redisinsight"`, `"/myapp"`
 
 ### RIPROXYPREFIX
 
-**Description:** Sets the Subpath proxy prefix HTTP header field name for the application. The application uses the value from this HTTP header key as proxy subpath. Examples values are - `"X-Forwarded-Prefix"`, `"X-Forwarded-Path"` etc.,
+**Description:** Sets the Subpath proxy prefix HTTP header field name for the application. The application uses the value from this HTTP header key as proxy subpath. 
 
 **Type:**        String
 
 **Default:**     `"X-Forwarded-Prefix"`
 
+**Examples:**     `"X-Forwarded-Prefix"`, `"X-Forwarded-Path"` 
 
 ### RIAUTHPROMPT
 
