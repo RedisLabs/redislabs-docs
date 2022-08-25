@@ -49,7 +49,6 @@ networks:
     driver: bridge
 ```
 
-
 ## Subpath proxy
 
 
