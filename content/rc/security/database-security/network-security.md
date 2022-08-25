@@ -74,27 +74,9 @@ How you create these connections and the features supported vary somewhat by pub
 
 ### VPCs with AWS
 
-Subscriptions that run on AWS support two VPC options. To ensure that that you can securely connect to your database, you need to either [create a VPC peering connection]({{<relref "/rc/security/vpc-peering#aws-vpc-peering">}}) or [deploy your subscription in your own VPC](#deploy-in-your-own-vpc).
+Subscriptions that run on AWS support two VPC options. To ensure that that you can securely connect to your database, you need to [create a VPC peering connection]({{<relref "/rc/security/vpc-peering#aws-vpc-peering">}}).
 
 If you create a VPC peering connection, you can also [configure a CIDR allow list]({{<relref "/rc/security/cidr-whitelist">}}) to allow connections only from specific IP address blocks or security groups.
-
-#### Deploy in your own VPC
-
-As an alternative to VPC peering, you can create and deploy a Flexible subscription directly in your own AWS VPC. You need to do this at the time you create your subscription.
-
-1. Navigate to the **New Subscription** page:
-
-![New Subscription](/images/rc/new-subscription.png "New Subscription")
-
-2. In the **Flexible plan** section, select the **Create** button.
-
-3.  When the Create Custom Subscription screen appears, locate the **Networking** section of the **Setup** tab and then select the option to deploy in an existing VPC.
-
-    Next, enter the subnet (**Deployment CIDR**) where you want your subscription deployed and your VPC ID.
-
-4.  Fill in the remaining details for your subscription.
-
-Once your subscription and databases have been provisioned, you'll be able to access those databases directly from within your own VPC.
 
 ### VPCs with GCP
 
