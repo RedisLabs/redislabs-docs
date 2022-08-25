@@ -28,5 +28,5 @@ and then restore the data to the database from backup.
 We recommended that you:
 
 - Back up your data and test the restore on another database before you delete an Active-Active database.
-- Consider [flushing the data]({{< relref "/rs/databases/import-export/flush-db-crdb.md" >}}) from the database
+- Consider [flushing the data]({{< relref "/rs/databases/import-export/flush.md" >}}) from the database
     so that you can keep the Active-Active database configuration and restore the data to it if necessary.
