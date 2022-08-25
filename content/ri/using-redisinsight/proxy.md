@@ -127,7 +127,6 @@ server {
 
 ![RIPROXYPATH](/images/ri/riproxypath.png)
 
-
 ### RIPROXYPREFIX dynamic subpath
 
 
