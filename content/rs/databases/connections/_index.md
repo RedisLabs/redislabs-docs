@@ -16,4 +16,4 @@ Learn how to connect your application to a Redis database hosted by Redis Enterp
 
 [Supported connection clients]({{< relref "/rs/databases/connections/supported-clients-browsers.md" >}})
 
-[Test client connectivity]({{< relref "/rs/databases/connections/testing-client-connectivity.md" >}})
+[Test client connectivity]({{< relref "/rs/databases/connections/test-client-connectivity.md" >}})
