@@ -59,7 +59,7 @@ The **Scalability** section describes the memory size, throughput, and hashing p
 
 {{<image filename="images/rc/database-details-configuration-tab-scalability-flexible.png" alt="Use the Scalability section to control the size, throughput, and hashing policy for a database." >}}{{< /image >}}
 
-The **Scalability** section is primarily for Flexible and Annual plans. Free and Fixed plans have options for memory limit, and memory used
+The **Scalability** section is primarily for Flexible and Annual plans. Free and Fixed plans have options for memory limit and memory used.
 
 |Setting name|Description|
 |:-----------|:----------|
@@ -134,9 +134,13 @@ Here, you can:
 
     {{<image filename="images/rc/database-delete-confirm-dialog.png" alt="The Delete database confirmation dialog confirms your decision to delete a database." >}}{{< /image >}}
 
-    When you choose this action for the last database in a subscription, you're shown a different prompt. You're asked to keep the database, delete the database, or delete both the database and the subscription.
+    If you only have one database in your subscription, you can delete both the database and the subscription from the **Delete database** confirmation dialog:
+        
+    - **Delete both** deletes both the database and the subscription.
+    
+    - **Delete database** deletes the database but keeps the subscription.
 
-    {{<image filename="images/rc/database-delete-last-dialog.png" alt="A different delete database confirmation dialog asks you to consider deleting the subscruption as well.">}}{{< /image >}}
+    {{<image filename="images/rc/database-delete-last-dialog.png" alt="A different delete database confirmation dialog asks you to consider deleting the subscription as well.">}}{{< /image >}}
 
     Databases must be active and empty before they can be deleted.  To learn more, see [Delete a database]({{< relref "/rc/databases/delete-database.md" >}}).
 
