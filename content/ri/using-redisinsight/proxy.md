@@ -133,16 +133,16 @@ server {
 #### RIPROXYPREFIX - Dynamic Subpath
 
 
-When `RIPROXYPREFIX` is being set to a value, default being `X-Forwarded-Prefix`, RedisInsight extracts the path from this field in the HTTP Header. So the subpath is actually set by the Proxy server and not RedisInsight and this variable just tells which HTTP header field to check for the proxy subpath. Using this approach, multiple proxies can send requests to same RedisInsight with different proxy subpaths.
+When `RIPROXYPREFIX` is being set to a value, default being `X-Forwarded-Prefix`, RedisInsight extracts the path from this field in the HTTP Header. So the subpath is actually set by the proxy server and not RedisInsight and this variable just tells which HTTP header field to check for the proxy subpath. Using this approach, multiple proxies can send requests to same RedisInsight with different proxy subpaths.
 
 {{< note >}}
 
-When Dynamic Subpath is used, RedisInsight is reachable both from the normal path, i.e., `localhost:8001` and the one from Dynamic subpath.
+When the dynamic subpath is used, RedisInsight is reachable both from the normal path, i.e., `localhost:8001` and the one from dynamic subpath.
 
 {{< /note >}}
 
 
-##### Example - Multiple Nginx to same RedisInsight
+#### Example
 
 Using the below `docker-compose` and `nginx.conf` file, same RedisInsight instance is reachable via:
 - `http://localhost:8001` — Direct path to RedisInsight server
