@@ -10,33 +10,15 @@ aliases: /rc/security/database-security/network-security/
 
 ---
 
-Redis Enterprise Cloud supports two types of network security: [IP Restrictions](#ip) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as shown here:
+Redis Enterprise Cloud supports two types of network security: database-level CIDR allow lists and [VPC](#virtual-private-clouds)-wide CIDR allow lists.
 
-<table>
-<tbody>
-<tr style="height: 23px;">
-<td style="height: 23px;">&nbsp;</td>
-<td style="height: 23px;">VPC Support</td>
-<td style="height: 23px;">IP Restrictions</td>
-</tr>
-<tr style="height: 23px;">
-<td style="height: 23px;">AWS</td>
-<td style="height: 23px;">Flexible and Annual</td>
-<td style="height: 23px;">Fixed (paid), Flexible, and Annual</td>
-</tr>
-<tr style="height: 23px;">
-<td style="height: 23px;">GCP</td>
-<td style="height: 23px;">Flexible and Annual</td>
-<td style="height: 23px;">Fixed (paid), Flexible, and Annual</td>
-</tr>
-<tr style="height: 23px;">
-<td style="height: 23px;">Azure</td>
-<td style="height: 23px;">Annual</td>
-<td style="height: 23px;">Annual</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
+These features are available in most Redis Cloud configurations, as shown here:
+
+| Cloud&nbsp;provider | VPC peering | IP restrictions |
+|:-------------------:|-------------|-----------------|
+| AWS | Flexible and Annual | Fixed (paid), Flexible, and Annual |
+| GCP | Flexible and Annual | Fixed (paid), Flexible, and Annual |
+| Azure | Annual | Annual |
 
 ## IP and subnet restrictions {#ip}
 
@@ -44,25 +26,7 @@ You can restrict database access to a configurable
 set of source IP addresses and subnets. This is roughly equivalent
 to using [iptables](https://en.wikipedia.org/wiki/Iptables) to limit access to a host.
 
-### Add restrictions
-
-To restrict a database to a specific set of source IP addresses or subnets:
-
-1. From the admin console, navigate to the **View Database** screen for a particular database.
-
-![Add](/images/rc/view-db.png#no-click "View Database")
-
-2. Click on the **edit** icon to enter the **Edit Database** screen. ![Add](/images/rc/icon_edit.png#no-click "Edit")
-
-![Add](/images/rc/edit-db.png#no-click "Edit Database")
-
-3. Under the **Access Control & Security** subsection, click on the **Source IP / Subnet** slider.
-
-![Access & Security Control](/images/rc/access-control-security.png "Access Control / Security")
-
-4. From here, you can use the UI to add individual IP addresses and subnets, one at a time.
-
-![Add](/images/rc/source-ip-subnet.png "Source IP / Subnet")
+To restrict a database to a specific set of source IP addresses or subnets, see [Configure CIDR allow list]({{<relref "/rc/security/cidr-whitelist">}}).
 
 ## Virtual private clouds
 
