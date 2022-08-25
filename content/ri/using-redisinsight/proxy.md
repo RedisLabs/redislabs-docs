@@ -138,7 +138,6 @@ When the dynamic subpath is used, RedisInsight is reachable both from the normal
 
 {{< /note >}}
 
-
 #### Example
 
 Using the below `docker-compose` and `nginx.conf` file, same RedisInsight instance is reachable via:
