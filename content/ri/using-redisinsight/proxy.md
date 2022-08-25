@@ -8,18 +8,18 @@ path: features/proxy/
 
 ## Trusted origins
 
-RedisInsight by default trusts only the origin to which RedisInsight binds to. If RedisInsight is run behind a proxy, the origin where the requests comes from is not trusted if the proxy's origin is not the origin where RedisInsight binds to. While RedisInsight does start and is reachable, no operations are allowed. Since the origin of requests/proxy is always known, the trusted origins must be manually set via `RITRUSTEDORIGINS` environment variable.
+By default, RedisInsight trusts only the origin to which RedisInsight binds to. If RedisInsight is run behind a proxy, the origin where the requests come from is not trusted if the proxy's origin is not the origin where RedisInsight binds to. While RedisInsight does start and is reachable, no operations are allowed. Because the origin of requests/proxy is always known, the trusted origins must be manually set via the `RITRUSTEDORIGINS` environment variable.
 
 {{< note >}}
 Values in the `RITRUSTEDORIGINS` setting must include the scheme (e.g. `http://` or `https://`) instead of only the hostname.
 
-Also, values that started with a dot, must also include an asterisk before the dot. For example, Instead of `.example.com` use `https://*.example.com`.
+Also, values that started with a dot must also include an asterisk before the dot. For example, instead of `.example.com`, use `https://*.example.com`.
 
 {{< /note >}}
 
-#### Nginx Example
+### Example
 
-Here's a sample Nginx Sample docker-compose file:
+Here's a sample Nginx docker-compose file:
 
 ```yml
 version: "3.7"
@@ -50,16 +50,16 @@ networks:
 ```
 
 
-## Subpath Proxy
+## Subpath proxy
 
 
-Subpath proxy can be enabled setting `RIPROXYENABLE` enviornment variable. Once enabled, either `RIPROXYPATH` or `RIPROXYPREFIX` must be set to path of the proxy subpath. Use `RIPROXYPATH` to set a static proxy subpath and `RIPROXYPREFIX` for a dynamic proxy subpath.
+You can enable subpath proxy by setting `RIPROXYENABLE` environment variable. Once enabled, either `RIPROXYPATH` or `RIPROXYPREFIX` must be set to path of the proxy subpath. Use `RIPROXYPATH` to set a static proxy subpath and `RIPROXYPREFIX` for a dynamic proxy subpath.
 
 
-#### RIPROXYPATH - Static Subpath
+### RIPROXYPATH static subpath
 
 
-When `RIPROXYPATH` is being set with a path, RedisInsight is accessible only on that subpath. The default routes will be given the provided prefix subpath. There won't be a way to add another proxy behind this proxy unless the same subpath is used for the new proxy.
+When `RIPROXYPATH` is being set with a path, RedisInsight is accessible only on that subpath. The default routes are given the provided prefix subpath. There isn't a way to add another proxy behind this proxy unless the same subpath is used for the new proxy.
 
 {{< note >}}
 Once the static subpath is set, RedisInsight is only reachable on the provided subpath, both the one that is directly reachable via the binded origin and from the proxy server.
@@ -69,7 +69,7 @@ Once the static subpath is set, RedisInsight is only reachable on the provided s
 If no value is provided for `RIPROXYPATH`, RedisInsight assumes dynamic subpath and uses `RIPROXYPREFIX` variable to extract the proxy prefix from HTTP Headers at runtime.
 {{< /note >}}
 
-##### Example:
+#### Example
 
 ```yml
 version: "3.7"
