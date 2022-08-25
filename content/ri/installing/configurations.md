@@ -74,7 +74,8 @@ The following environment variables can be set to configure RedisInsight:
 
 **Default:**     `""`
 
-
+ **Examples:**     `"https://my-website.com,https://my-another-website.com,http://my-third-website.com"`
+ 
 ### RIPROXYENABLE
 
 **Description:** Enables Subpath Proxy for the application.
