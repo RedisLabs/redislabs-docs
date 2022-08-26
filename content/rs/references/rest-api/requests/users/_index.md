@@ -274,7 +274,7 @@ POST /users
 
 #### Body
 
-Include a single [user object]({{<relref "/rs/references/rest-api/objects/user">}})in the request body. The user object must have an email, password, and role.
+Include a single [user object]({{<relref "/rs/references/rest-api/objects/user">}}) in the request body. The user object must have an email, password, and role.
 
 {{<note>}}
 For [RBAC-enabled clusters]({{<relref "/rs/security/access-control">}}), use `role_uids` instead of `role` in the request body.
