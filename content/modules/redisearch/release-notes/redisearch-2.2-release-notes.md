@@ -120,6 +120,10 @@ That way, it is possible to understand which part of the query is taking most of
 
 With the support of JSON document indexing, it is now possible to map a JSONPath query to an alias. Therefore, it is possible to index the same value in different fields with different indexing strategies.
 
+{{<note>}}
+As of RediSearch v2.2, `fields` are now known as `attributes`.
+{{</note>}}
+
 ### Details
 
 - Enhancements:
