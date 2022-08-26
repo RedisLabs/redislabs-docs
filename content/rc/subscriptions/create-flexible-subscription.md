@@ -4,13 +4,13 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RC"]
-aliases: /rc/administration/customize-pro/ 
+aliases: /rc/administration/customize-pro/
          /rc/administration/customize-pro.md          
-         /rc/administration/setup/customize-pro/ 
-         /rc/administration/setup/customize-pro.md 
+         /rc/administration/setup/customize-pro/
+         /rc/administration/setup/customize-pro.md
          /rc/administration/setup/customize-flexible-plan/
 ---
-Flexible subscriptions support any dataset size or throughput.  Pricing is based on your [workload requirements](https://redislabs.com/redis-enterprise-cloud/pricing/) (database size and throughput.)  
+Flexible subscriptions support any dataset size or throughput.  Pricing is based on your [workload requirements](https://redis.com/redis-enterprise-cloud/pricing/) (database size and throughput.)  
 
 When you create a Flexible subscription, a cost estimate is provided to help you understand the impact of your requirements.  
 
@@ -28,7 +28,7 @@ To create a [Flexible subscription]({{< relref "/rc/subscriptions/#subscription-
 
 3. From here, you need to:
 
-    1. Set up the deployment options for your subscription, include cloud vendor details, replication settings, and advanced options.
+    1. Set up the deployment options for your subscription, include cloud vendor details, high availability settings, and advanced options.
 
     2. Define the database size requirements for your subscription.
 
@@ -46,7 +46,7 @@ The **Setup** tab specifies general settings for the deployment of your subscrip
 The two sections to this tab:
 
 - [General settings](#general-settings) include the cloud provider details, the subscription name, and specific configuration options.
-- [Advanced options](#advanced-options) define settings for replication and security.vary according to cloud provider.
+- [Advanced options](#advanced-options) define settings for high availability and security. Configurable settings vary according to cloud provider.
 
 To continue to the Sizing tag, locate and select the **Continue** button, which appears below the **Advanced options** section
 
@@ -62,7 +62,7 @@ The following settings are defined in the **General settings** of the **Setup** 
 | **Cloud vendor** | The public cloud vendor to deploy your subscription. (_required_) |
 | **Region** | The vendor region where you wish to deploy your subscription.  (_required_)|
 | **Subscription&nbsp;Name** | A custom name for your subscription (_required_) |
-| **Active-Active Redis** | (_Coming soon_) |
+| **Active-Active Redis** | Hosts your datasets in multiple read-write locations to support distributed applications and disaster recovery. See [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active" >}}) |
 | **Redis on Flash**| Determines if your databases are stored only in memory (RAM) or are split between memory and Flash storage (RAM+Flash).  See [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})|
 
 ### Advanced options {#advanced-options}
@@ -73,7 +73,7 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 
 | _Advanced option_ | _Description_ |
 |:---------|:-----------|
-| **Multi-AZ** | Determines if replication spans multiple Availablity Zones, which provides automatic failover when problems occur. |
+| **Multi-AZ** | Determines if replication spans multiple Availability Zones, which provides automatic failover when problems occur. |
 | **Cloud account** | To deploy this subscription to a specific cloud account, select it here.  Use the Add button to add a new cloud account. |
 | **VPC configuration** | Select _In a new VPC_ to deploy to a new Virtual Private Cloud.<br/><br/>To deploy this subscription to an existing Virtual Private Cloud , select _In existing VCP_ and then set VPC ID to the appropriate ID value.   |
 | **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) subnet address for your deployment. Must not overlap other addresses used with your subscription.|
@@ -104,7 +104,7 @@ By default, you're shown basic settings, which include:
 | **Name** | A custom name for your database (_required_) |
 | **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**).throughput is measured for the database, either operations per second (_Ops/sec_) or _Number of shards_. |
 | **Memory Limit (GB)** | The size limit for the database. Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).|
-| **Replication** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |
+| **High Availability** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |
 | **Quantity** | Identifies the number of databases to create with the selected settings. |
 
 Advanced options are also available.
@@ -116,9 +116,9 @@ Select **Advanced options** to specify values for the following settings:
 | Advanced&nbsp;option | Description |
 |:---------|:-----------|
 | **OSS Cluster API** | Enable to use the open-source Redis Cluster API. |
-| **Protocol** | Set to _Memcached_ database to support the legacy database; otherwise leave at _Redis_ |
+| **Type** | Set to _Memcached_ database to support the legacy database; otherwise leave as _Redis_ |
 | **Data Persistence** | Defines the data persistence policy, if any. See [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}) |
-| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2]({{< relref "/modules/redisearch/_index.md" >}}), [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}).<br/><br/>If you select RedisSearch 2, you also need to specify a value for **Number of Documents**.  This defines the maximum internal array size ([MAXDOCTABLESIZE](https://oss.redislabs.com/redisearch/Configuring/?_ga=2.155176508.524468484.1612194154-499260268.1607530891#maxdoctablesize)).|
+| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2]({{< relref "/modules/redisearch/_index.md" >}}), [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}}), [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}). |
 
 When finished, select **Save Database** to create your database.
 
