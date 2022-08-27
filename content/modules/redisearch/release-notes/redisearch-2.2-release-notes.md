@@ -118,10 +118,10 @@ That way, it is possible to understand which part of the query is taking most of
 
 #### Field aliasing
 
-With the support of JSON document indexing, it is now possible to map a JSONPath query to an alias. Therefore, it is possible to index the same value in different fields with different indexing strategies.
+With the support of JSON document indexing, it is now possible to map a JSONPath query to an alias. Therefore, it is possible to index the same value in different indexing attributes with different indexing strategies.
 
 {{<note>}}
-As of RediSearch v2.2, `fields` are now known as `attributes`.
+As of RediSearch v2.2, index `fields` are now known as `attributes` in order to avoid confusion with Hash fields.  This has an impact on the response of `FT.INFO` which might break clients.  It is advised to upgrade your application to the latest supported Redis clients prior to upgrading to RediSearch 2.2.
 {{</note>}}
 
 ### Details
