@@ -51,6 +51,10 @@ rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES
 
 Control plane cipher suites use the BoringSSL library format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99-L131).
 
+```sh
+rladmin cluster config cipher_suites <BoringSSL cipher list>
+```
+
 See the example below to configure cipher suites for the control plane:
 
 ```sh
