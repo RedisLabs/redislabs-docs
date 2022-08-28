@@ -63,6 +63,11 @@ rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES
 
 Data plane cipher suites use the OpenSSL library format. See the OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html).
 
+````sh
+rladmin cluster config  data_cipher_list <openSSL cipher list>  
+
+```
+
 See the example below to configure cipher suites for the data plane:
 
 ```sh
@@ -74,6 +79,11 @@ rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA
 #### 6.0.20 or later
 
 Sentinel service cipher suites use the golang.org OpenSSL format for discovery service TLS connections. See their documentation for a list of [available configurations](https://golang.org/src/crypto/tls/cipher_suites.go).
+
+````sh
+rladmin cluster config  sentinel_cipher_suites <golang cipher list> 
+
+```
 
 See the example below to configure cipher suites for the sentinel service:
 
