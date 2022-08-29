@@ -12,12 +12,12 @@ By setting the variables, enforce the prompt for username and password each time
 
 * For Windows and Linux:
 ```bash
-docker run -p 8001:8001-e RIAUTHPROMPT=5 -e RIAUTHTIMER=1 redislabs/redisinsight # 5 minutes idle timer 
+docker run -p 8001:8001-e RIAUTHPROMPT=1 -e RIAUTHTIMER=5 redislabs/redisinsight # 5 minutes idle timer 
 ```
 
 * For Mac:
 ```bash
-docker run -p 8001:8001-e RIAUTHPROMPT=5 -e RIAUTHTIMER=1 redislabs/redisinsight # 5 minutes idle timer 
+docker run -p 8001:8001-e RIAUTHPROMPT=1 -e RIAUTHTIMER=5 redislabs/redisinsight # 5 minutes idle timer 
 ```
 
 Where:
