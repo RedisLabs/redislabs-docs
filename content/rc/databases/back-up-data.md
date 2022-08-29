@@ -84,12 +84,12 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
 1.  Use the Buckets list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Access control list (ACL)** section, and then select the **Edit** button.
 
 1.  When the **Edit access control list (ACL)** screen appears, configure the bucket's Access Control List to give access to Redis Enterprise Cloud.
-    - Select **Add grantee**.
-    - In the **Grantee** field, enter:
+    1. Select **Add grantee**.
+    1. In the **Grantee** field, enter:
     `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-    - In the **Objects** list, select **Write**.
-    - In the **Bucket ACL** list, select **Read** and **Write**.
-    - Select **Save**.
+    1. In the **Objects** list, select **Write**.
+    1. In the **Bucket ACL** list, select **Read** and **Write**.
+    1. Select **Save**.
 
 Once the bucket is available and the permissions are set, use the name of your bucket as the **Backup destination** for your database's Remote backup settings. For example, suppose your bucket is named *backups-bucket*.  In that case, set **Backup destination** to `s3://backups-bucket`.
 
