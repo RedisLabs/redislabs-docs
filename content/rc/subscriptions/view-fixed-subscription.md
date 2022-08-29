@@ -19,11 +19,11 @@ aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
 ---
 To view the details of a Fixed subscription:
 
-1.  Sign into the admin console.
+1.  Sign in to the [admin console](https://app.redislabs.com/).
 
 1.  If you have more than one subscription, select the target subscription from the subscription list.
 
-    {{<image filename="images/rc/subscription-list-select.png" alt="The Subscription list shows your scurrent ubscriptions." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-list-select.png" alt="The Subscription list shows your current subscriptions." >}}{{< /image >}}
 
 1.  Your subscription details appear, along with a summary of your database details.
 
@@ -31,15 +31,13 @@ To view the details of a Fixed subscription:
 
 From here, you can:
 
-- Use the **Edit** icon to change the subscription name.
+- Select the **Change Plan** button to update the subscription plan tier, high availability settings, or payment method.
 
-    {{<image filename="images/rc/icon-edit-subscription-name.png" alt="Use the Edit button to change the subcription name." >}}{{< /image >}}
+    {{<image filename="images/rc/button-subscription-change-plan.png" alt="Select the Change plan button to update your subscription settings." >}}{{< /image >}}
 
-- Select the **Change Plan** button to update subscription plan tier, high availability settings, or payment method.
+- Select the **New Database** button to [create a new database]({{<relref "rc/databases/create-database">}}) for your subscription.
 
-    {{<image filename="images/rc/button-subscription-change-plan.png" alt="Select the Edit icon to change the subscription name." >}}{{< /image >}}
-
-- Select the **Overview** tab to view subscription details.
+- Select the **Overview** tab to view and edit subscription details.
 
 The following sections provide more details.
 
@@ -65,7 +63,7 @@ If you upgrade a free plan to a paid tier, you need to add a payment method.
 
 If you change your subscription to a lower tier, make sure your data (and databases) fit within the limits of the new tier; otherwise, the change attempt will fail.
 
-### Change high availability 
+### Change high availability
 
 To change your plan's high availability settings, select the desired setting in the **High availability** panel.
 
@@ -73,7 +71,7 @@ To change your plan's high availability settings, select the desired setting in 
 
 Fixed plans support either no replication or single-zone replication.
 
-(Free tiers do not support replication.)
+Free tiers do not support replication.
 
 ### Change payment method
 
@@ -81,7 +79,7 @@ To change your subscription payment method, update the **Credit card** settings.
 
 {{<image filename="images/rc/subscription-change-credit-card.png" alt="Use the Credit card drop-down to set your subscription payment method." >}}{{< /image >}}
 
-Payment method changes require the Owner role.  If your sign-on is not a subscription owner, you cannot change the payment method. 
+Payment method changes require the Owner role.  If your sign-on is not a subscription owner, you cannot change the payment method.
 
 To verify your role, select **Access Management** from the admin menu and then locate your credentials in the **Team** tab.
 
@@ -90,7 +88,6 @@ To verify your role, select **Access Management** from the admin menu and then l
 Use the **Change plan** button to save changes.
 
 {{<image filename="images/rc/button-subscription-change-plan.png" alt="Use the Change plan button to save your subscription plan changes." >}}{{< /image >}}
-
 
 ## Subscription overview
 
@@ -105,15 +102,19 @@ The following details are displayed:
 | **Cloud vendor** | Your subscription cloud vendor |
 | **Plan description** | Brief summary of subscription, including the plan type, cloud provider, region, and data size limit |
 | **Availability** | Describes high availability settings |
-| **Region** | Describes the region your subscription is deployed to |
-| **Plan** | Describes the tier of your Fixed plan, expressed in terms of maximum database size.  Also displays the cost for paid plans. |
+| **Region** | The region your subscription is deployed to |
+| **Plan** | The tier of your Fixed plan, expressed in terms of maximum database size.  Also displays the cost for paid plans. |
 | **Databases** | Maximum number of databases for your plan |
 | **Connections** | Maximum number of concurrent connections |
 | **CIDR allow rules** | Maximum number of authorization rules |
 | **Data persistence** | Indicates whether persistence is supported for your subscription |
 | **Daily & instant backups** | Indicates whether backups are supported for your subscription |
-| **Replication** | Indicates whether replication is supported for your subscription | 
-| **Clustering** | Indicates whether clustering is supported for your subscription | 
+| **Replication** | Indicates whether replication is supported for your subscription |
+| **Clustering** | Indicates whether clustering is supported for your subscription |
+
+Select the **Edit** button to change the subscription name.
+
+{{<image filename="images/rc/icon-edit-subscription-name.png" alt="Use the **Edit** button to change the subscription name." >}}{{< /image >}}
 
 The **Cancel subscription** button appears below the **Overview** details; it lets you  [delete your subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}})
 
