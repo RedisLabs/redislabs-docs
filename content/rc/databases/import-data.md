@@ -29,7 +29,7 @@ To import a dataset from any publicly available Redis server:
 1. Select **Databases** from the admin console menu and then select the target database from the database list.
 1. Scroll down to **Danger Zone** and select **Import**.
 1. Enter the source database details:
-    - Source Type - Select **Redis**.
+    - Source type - Select **Redis**.
     - Redis Hostname/IP Address - Enter the hostname or the public IP address of the source Redis server.
     - Redis port - Enter the port of the source Redis server if it is not the default value of `6379`.
     - Password - Enter the password, if required by the Redis database.
@@ -73,14 +73,14 @@ To use the Redis Cloud admin console to import your data, you must first share t
 To share and import an RDB file that is stored in an AWS Simple Storage Service (S3) bucket:
 
 1. In the AWS management console, configure the file’s Access Control List to give read-only access to Redis Enterprise Cloud:
-    - Go to the bucket in the AWS S3 console. In the location where the file is stored, select the RDB file.
-    - Select **Permissions**.
-    - Select **Edit**.
-    - Select **Add grantee**.
-    - In the Grantee field, enter:
+    1. Go to the bucket in the AWS S3 console. In the location where the file is stored, select the RDB file.
+    1. Select **Permissions**.
+    1. Select **Edit**.
+    1. Select **Add grantee**.
+    1. In the Grantee field, enter:
     `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-    - In the Read column, select Yes.
-    - Select Save.
+    1. In the Read column, select Yes.
+    1. Select Save.
 
     For more information, see [Configuring ACLs for objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html) on the AWS docs.
 
@@ -105,9 +105,9 @@ To use the Redis Cloud admin console to import your data, you must first share t
 To share and import an RDB file that is stored in a GCP Storage bucket:
 
 1. In the GCP Storage bucket, edit the file's Access Control List to give read access to Redis Enterprise Cloud:
-    - Select **Edit access** in the RDB file menu.
-    - Select **Add item**.
-    - Enter the user details and access:
+    1. Select **Edit access** in the RDB file menu.
+    1. Select **Add item**.
+    1. Enter the user details and access:
        - In the Entity field of the new item, select **User**.
        - In the Name field of the new item, enter: `service@redislabs-prod-clusters.iam.gserviceaccount.com`
        - In the Access field of the new item, select **Reader**.
