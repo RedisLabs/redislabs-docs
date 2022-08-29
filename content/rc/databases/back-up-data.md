@@ -19,9 +19,9 @@ The backup options for Redis Enterprise Cloud databases depend on your plan:
 
 - Paid Fixed plans can perform backups on-demand and schedule backups that occur every 24 hours.  
 
-- Free plans can not perform backups through the cloud console.
+- Free plans cannot perform backups through the Redis Cloud console.
 
-Backups are saved to pre-defined storage locations available to your subscription.
+Backups are saved to predefined storage locations available to your subscription.
 
 Backup locations need to be available before you turn on database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations)
 
@@ -59,11 +59,11 @@ When you enable **Remote backup**, additional options appear.  The options vary 
 
 ## Back up data on demand
 
-Once backups are turned on, you can back up your data at any time.  Use the **Backup Now** button in the **Durability** section.
+After backups are turned on, you can back up your data at any time.  Use the **Backup now** button in the **Durability** section.
 
 {{<image filename="images/rc/button-database-backup-now.png" alt="Use the Backup Now button to make backups on demand." >}}{{< /image >}}
 
-Backups need to be turned on before the button activates.  
+You can only use the **Backup now** button after you turn on backups.
 
 ## Set up backup storage locations
 
@@ -75,7 +75,7 @@ Your subscription needs the ability to view permissions and update objects in th
 
 The following sections help set things up; however, provider features change frequently.  For best results, use your provider's documentation for the latest info.
 
-### AWS Simple Storage Service
+### AWS S3
 
 To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html):
 
@@ -130,7 +130,7 @@ console](https://developers.google.com/console/) subscriptions, store your backu
 
 Use the bucket details **Configuration** tab to locate the **gsutil URI**.  This is the value you'll assign to your resource's backup path.
 
-To learn more, see [Use IAM Permissions](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-iam).
+To learn more, see [Use IAM permissions](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-iam).
 
 ### Azure Blob Storage
 
