@@ -55,7 +55,7 @@ To change your subscription tier, select the desired tier from the list:
 
 Each tier in a Fixed plan provides a variety of benefits, including increased memory, number of databases, connections, and so on.
 
-For a comparison of available tiers, see [Fixed size subscription tiers]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}})
+For a comparison of available tiers, see [Fixed size subscription tiers]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}}).
 
 When you change your plan tier, your data and endpoints are not disrupted.  
 
