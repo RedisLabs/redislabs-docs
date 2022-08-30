@@ -267,7 +267,7 @@ More info: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controller
 {{%definition "replication"%}}
 Database replication provides a mechanism to ensure high availability.
 
-More info: [Database replication]({{<relref "/rs/databases/essentials/replication.md">}})
+More info: [Database replication]({{<relref "/rs/databases/durability-ha/replication.md">}})
 {{%/definition%}}
 
 {{%definition "role-based access control (RBAC)"%}}

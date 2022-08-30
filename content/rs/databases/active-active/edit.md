@@ -54,7 +54,7 @@ The joined participating clusters reject updates sent from the removed participa
 
 ## Database replication backlog
 
-Redis databases that use [replication for high availability]({{< relref "/rs/databases/essentials/replication.md" >}}) maintain a replication backlog (per shard) to synchronize the primary and replica shards of a database.
+Redis databases that use [replication for high availability]({{< relref "/rs/databases/durability-ha/replication.md" >}}) maintain a replication backlog (per shard) to synchronize the primary and replica shards of a database.
 By default, the replication backlog is set to one percent (1%) of the database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
 Use the [`rladmin`]({{<relref "rs/references/cli-utilities/rladmin">}}) and the [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) utilities to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
 
