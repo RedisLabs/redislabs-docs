@@ -30,8 +30,8 @@ RedisGraph is the first queryable [Property Graph](https://github.com/opencypher
 
 In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/databases/active-active/create.md" >}}) in a non-clustering mode. As a result, the following creation options are allowed:
 
-1. Clustering mode - Creates a CRDB that consists of any number of shards in a clustering mode and is subject to [multi-key commands limitations]({{< relref "/rs/databases/essentials/clustering.md" >}}).
-1. Non-clustering mode - Creates a CRDB that consists of one shard only in a non-clustering mode so that [multi-key command limitations]({{< relref "/rs/databases/essentials/clustering.md" >}}) do not apply.
+1. Clustering mode - Creates a CRDB that consists of any number of shards in a clustering mode and is subject to [multi-key commands limitations]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
+1. Non-clustering mode - Creates a CRDB that consists of one shard only in a non-clustering mode so that [multi-key command limitations]({{< relref "/rs/databases/durability-ha/clustering.md" >}}) do not apply.
 
 ### High availability for replica shards
 

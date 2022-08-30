@@ -107,10 +107,10 @@ The **Scalability** section is available only for Flexible and Annual plans.
 | **Memory size** | Maximum size (in GB) for your database |
 | **Throughput** | Defines throughput in terms of maximum operations per second for the database
 | **Shards** | Defines the throughput in terms of shards dedicated to the database
-| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/essentials/clustering.md#changing-the-hashing-policy" >}}) |
+| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/durability-ha/clustering.md#changing-the-hashing-policy" >}}) |
 | **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 
-To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/essentials/clustering.md" >}}).
+To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
 
 ### Memory size
 

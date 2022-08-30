@@ -111,10 +111,10 @@ Every instance of an Active-Active database can receive write operations, and al
 
         - Make sure the Database clustering is enabled and select the number of shards
         that you want to have in the database. When database clustering is enabled,
-        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}}).
+        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
         - Clear the **Database clustering** option to use only one shard so that you
-        can use [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}})
+        can use [Multi-key commands]({{< relref "/rs/databases/durability-ha/clustering.md" >}})
         without the limitations.
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}

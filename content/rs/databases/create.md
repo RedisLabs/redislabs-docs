@@ -137,18 +137,18 @@ after the database is created.
         {{< /note >}}
 
     - **Database clustering** - You can either:
-        - Enable [database clustering]({{< relref "/rs/databases/essentials/clustering.md" >}})
+        - Enable [database clustering]({{< relref "/rs/databases/durability-ha/clustering.md" >}})
             and select the number of shards that you want to have in the database.
             When database clustering is enabled, databases are subject to limitations on
-            [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}}).
+            [Multi-key commands]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
             You can increase the number of shards in the database at any time.
 
-            You can accept the [standard hashing policy]({{< relref "/rs/databases/essentials/clustering#standard-hashing-policy" >}})
-            or define a [custom hashing policy]({{< relref "/rs/databases/essentials/clustering#custom-hashing-policy" >}})
+            You can accept the [standard hashing policy]({{< relref "/rs/databases/durability-ha/clustering#standard-hashing-policy" >}})
+            or define a [custom hashing policy]({{< relref "/rs/databases/durability-ha/clustering#custom-hashing-policy" >}})
             to define where keys are located in the clustered database.
 
         - Clear the **Database clustering** option to use only one shard so that you
-            can use [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}})
+            can use [Multi-key commands]({{< relref "/rs/databases/durability-ha/clustering.md" >}})
             without the limitations.
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}

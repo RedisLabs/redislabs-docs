@@ -102,7 +102,7 @@ When enabled, the database has a replica shard for every master.
 
 ### [`shardCount`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-The number of [database shards]({{< relref "/rs/databases/essentials/clustering.md">}}) (default: `1`).
+The number of [database shards]({{< relref "/rs/databases/durability-ha/clustering.md">}}) (default: `1`).
 
 ### [`tlsMode`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 

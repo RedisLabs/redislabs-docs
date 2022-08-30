@@ -10,8 +10,8 @@ aliases: [
     /rs/concepts/high-availability/clustering/,
     /rs/databases/configure/clustering.md,
     /rs/databases/configure/clustering/,
-    /rs/databases/essentials/clustering.md,
-    /rs/databases/essentials/clustering/,
+    /rs/databases/durability-ha/clustering.md,
+    /rs/databases/durability-ha/clustering/,
 ]
 ---
 Open source [Redis](https://redislabs.com/redis-features/redis) is a single-threaded process
