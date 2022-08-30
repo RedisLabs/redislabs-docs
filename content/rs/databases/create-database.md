@@ -1,8 +1,8 @@
 ---
 title: Create a Redis Enterprise Software database
 linkTitle: Create a database
-description: Create a database
-weight: 20
+description: Create a database with Redis Enterprise Software.
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 db_type: database
