@@ -17,7 +17,7 @@ aliases: [
 Redis Enterprise Software lets you create databases and distribute them across a cluster of nodes.
 These databases can use Redis Enterprise features like:
 
-- [Redis on Flash]({{< relref "/rs/databases/redis-flash.md" >}})
+- [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}})
 - [High availability]({{< relref "/rs/databases/durability-ha.md" >}})
 - [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
@@ -43,7 +43,7 @@ To create a new database:
 
 1. Click **Next** to create a single-region, in-memory database.
 
-    If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-flash.md" >}}),
+    If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash/.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
     ![getstarted-newdatabase](/images/rs/getstarted-newdatabase.png)

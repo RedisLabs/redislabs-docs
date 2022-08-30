@@ -63,7 +63,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create an Active-Active database on RAM.
 
-    If your cluster supports [Redis on Flash]({{< relref "/rs/databases/redis-flash.md" >}}),
+    If your cluster supports [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
     for the best performance during the initial Active-Active database sync of a new replica.
 

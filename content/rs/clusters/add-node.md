@@ -54,7 +54,7 @@ with a custom certificate.
         or leave the default path.
     1. You can enter a path for [*Ephemeral storage*]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
-    1. If you want to enable [*Redis on Flash*]({{< relref "/rs/databases/redis-flash.md" >}}),
+    1. If you want to enable [*Redis on Flash*]({{< relref "/rs/databases/redis-on-flash/.md" >}}),
         select **Enable flash storage support** and enter the path to the Flash storage to use as RAM extension.
     1. If your machine has multiple IP addresses, in **IP Addresses Usage** assign a single IPv4 type address for internal traffic
         and multiple IPv4/IPv6 type addresses for external traffic.

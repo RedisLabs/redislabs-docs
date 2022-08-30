@@ -15,7 +15,7 @@ aliases: /rs/getting-started/creating-database/redis-flash/
 
 ---
 The steps to set up a Redis Enterprise Software cluster using [Redis on
-Flash]({{< relref "/rs/databases/redis-flash.md" >}})
+Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}})
 with a single node are:
 
 - Step 1: Install Redis Enterprise Software or launch with Docker
@@ -182,4 +182,4 @@ help. However please note that to see the true performance and scale of
 Redis on Flash, you must tune your IO path and have the flash
 path set to the mounted path of SSD or NVMe flash memory as that is what
 it is designed to run on. For more information, see [Redis on
-Flash]({{< relref "/rs/databases/redis-flash.md" >}}).
+Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}}).
