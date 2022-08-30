@@ -29,7 +29,7 @@ Note: You cannot use client libraries to configure Redis Enterprise Software.  I
 
 ### Discovery service
 
-We recommend the following clients when using a [discovery service]({{< relref "/rs/databases/configure/discovery-service.md" >}}) based on the Redis Sentinel API:
+We recommend the following clients when using a [discovery service]({{< relref "/rs/databases/essentials/discovery-service.md" >}}) based on the Redis Sentinel API:
 
 - [redis-py](https://github.com/redis/redis-py) (Python Redis client)
 - [Hiredis](https://github.com/redis/hiredis) (C Redis client)
