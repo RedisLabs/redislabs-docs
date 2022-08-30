@@ -11,7 +11,9 @@ aliases: [
     /rs/administering/database-operations/creating-database/,
     /rs/databases/create-database.md,
     /rs/databases/create-database/,
-    /rs/administering/creating-databases/
+    /rs/administering/creating-databases/,
+    /rs/databases/create.md,
+    /rs/databases/create/,
 ]
 ---
 Redis Enterprise Software lets you create databases and distribute them across a cluster of nodes.

@@ -40,7 +40,7 @@ Build a small-scale cluster with the Redis Enterprise Software container image.
 
 ## Databases
 Create and manage a [Redis database]({{<relref "/rs/databases">}}) on a cluster.
-- [Create a Redis Enterprise Software database]({{<relref "/rs/databases/create-database">}})
+- [Create a Redis Enterprise Software database]({{<relref "/rs/databases/create">}})
 - [Configure database]({{<relref "/rs/databases/configure">}})
 - [Create Active-Active database]({{<relref "/rs/databases/active-active/create">}})
 - [Edit Active-Active database]({{<relref "/rs/databases/active-active/edit">}})

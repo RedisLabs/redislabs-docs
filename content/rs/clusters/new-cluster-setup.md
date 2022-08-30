@@ -77,5 +77,5 @@ After a short wait, your cluster is created and you can log in to the RS admin c
 
 You can now access any of the management capabilities, including:
 
-- [Creating a new database]({{< relref "/rs/databases/create-database.md" >}})
+- [Creating a new database]({{< relref "/rs/databases/create.md" >}})
 - [Joining a new node to a cluster]({{< relref "/rs/clusters/add-node.md" >}})
