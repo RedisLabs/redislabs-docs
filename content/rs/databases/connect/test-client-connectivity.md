@@ -1,7 +1,8 @@
 ---
-Title: Test client connectivity
+Title: Test client connection
+linktitle: Test connection
 description: 
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: rs/administering/troubleshooting/testing-client-connectivity/

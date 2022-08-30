@@ -2,7 +2,7 @@
 Title: Redis on Flash
 linktitle: Redis on Flash
 description: Redis on Flash enables your data to span both RAM and dedicated flash memory.
-weight: 79
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: [

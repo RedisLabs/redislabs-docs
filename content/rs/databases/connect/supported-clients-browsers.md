@@ -1,7 +1,7 @@
 ---
 Title: Supported connection clients
-description:
-weight: $weight
+description: Info about Redis client libraries and supported clients when using the discovery service.
+weight: 10
 categories: ["RS"]
 aliases: [/rs/administering/designing-production/supported-clients-browsers/,
          /rs/administering/designing-production/supported-clients-browsers.md,
