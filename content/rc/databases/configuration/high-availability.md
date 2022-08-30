@@ -55,4 +55,4 @@ To use different zone settings, create a new subscription with the preferred set
 
 To learn more about high availability and replication, see:
 - [Highly Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
-- [Database replication]({{<relref "/rs/databases/configure/replication.md">}})
+- [Database replication]({{<relref "/rs/databases/essentials/replication.md">}})

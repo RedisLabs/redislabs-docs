@@ -17,13 +17,13 @@ aliases: [
 ---
 Redis Enterprise Software comes with several features that make your data more durable and accessible. The following features can help protect your data in cases of failures or outages and help keep your data available when you need it.
 
-## [Replication]({{<relref "/rs/databases/configure/replication.md">}})
+## [Replication]({{<relref "/rs/databases/essentials/replication.md">}})
 
 When you replicate your database, each database instance (shard) is copied one or more times. Your database will then have one primary shard, and one or more replica shards. The primary handles both writes and reads from users. The replicas receive copies of changes from the primary to stay consistent with the primary.
 
 When a primary shard fails, Redis Enterprise automatically promotes the replica shard to primary. When the failed shard comes back into a stable state, the data is copied to it and it becomes the new replica.
 
-For more details, see [Replication]({{<relref "/rs/databases/configure/replication.md">}}).
+For more details, see [Replication]({{<relref "/rs/databases/essentials/replication.md">}}).
 
 ## [Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 

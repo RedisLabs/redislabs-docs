@@ -96,7 +96,7 @@ If it is not specified, the database will follow the [upgrade policy set on the 
 
 ### [`replication`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-A boolean that indicates whether in-memory [database replication]({{< relref "/rs/databases/configure/replication.md">}}) is enabled (default: `false`).
+A boolean that indicates whether in-memory [database replication]({{< relref "/rs/databases/essentials/replication.md">}}) is enabled (default: `false`).
 
 When enabled, the database has a replica shard for every master.
 
