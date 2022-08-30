@@ -2,7 +2,7 @@
 Title: Configure database persistence
 linktitle: Persistence
 description: How to configure database persistence with either an append-only file (AOF) or snapshots.
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: [
