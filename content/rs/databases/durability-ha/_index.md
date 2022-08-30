@@ -51,8 +51,8 @@ Rack-zone awareness maps each node in your Redis Enterprise cluster to a physica
 
 For more details, see [Rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}}).
 
-## [Discovery service]({{<relref "/rs/databases/essentials/discovery-service.md">}})
+## [Discovery service]({{<relref "/rs/databases/durability-ha/discovery-service.md">}})
 
 The Discovery service provides an IP-based connection management service used when connecting to Redis Enterprise Software databases. When used in conjunction with Redis Enterprise Software’s other high availability features, the Discovery Service assists an application scope with topology changes such as adding, removing of nodes, node failovers and so on. It does this by providing your application with the ability to easily discover which node hosts the database endpoint. The API used for discovery service is compliant with the Redis Sentinel API.
 
-For more details, see [Discovery service]({{<relref "/rs/databases/essentials/discovery-service.md">}}).
+For more details, see [Discovery service]({{<relref "/rs/databases/durability-ha/discovery-service.md">}}).

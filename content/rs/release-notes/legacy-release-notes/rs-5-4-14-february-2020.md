@@ -105,7 +105,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 ### Discovery service
 
-- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/databases/essentials/discovery-service.md" >}}), every database name must be unique across the cluster.
+- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}), every database name must be unique across the cluster.
 
 ### Redis commands
 

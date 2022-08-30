@@ -10,8 +10,8 @@ aliases: [
     /rs/concepts/data-access/discovery-service/,
     /rs/databases/configure/discovery-service.md,
     /rs/databases/configure/discovery-service/,
-    /rs/databases/essentials/discovery-service.md,
-    /rs/databases/essentials/discovery-service/,
+    /rs/databases/durability-ha/discovery-service.md,
+    /rs/databases/durability-ha/discovery-service/,
 ]
 ---
 The Discovery Service provides an IP-based connection management service
@@ -99,7 +99,7 @@ To use Redis Sentinel, every database name must be unique across the cluster.
 
 ## Redis client support
 
-We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/databases/essentials/discovery-service.md" >}}) that uses the Redis Sentinel API:
+We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) that uses the Redis Sentinel API:
 
 {{< embed-md "discovery-clients.md" >}}
 

@@ -105,7 +105,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
 ### Discovery service
 
-- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/databases/essentials/discovery-service.md" >}}), every database name must be unique across the cluster.
+- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}), every database name must be unique across the cluster.
 
 ### Redis commands
 

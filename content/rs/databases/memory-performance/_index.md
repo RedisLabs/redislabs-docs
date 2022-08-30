@@ -14,8 +14,8 @@ aliases: [
     /rs/concepts/memory-performance/,
     /rs/databases/memory-performance.md,
     /rs/databases/memory-performance/,
-    /rs/databases/essentials/memory-performance.md,
-    /rs/databases/essentials/memory-performance/,
+    /rs/databases/memory-performance/.md,
+    /rs/databases/memory-performance//,
 
 ]
 ---
