@@ -76,7 +76,7 @@ Redis Enterprise Software has two shard placement policies available:
 - **dense**: puts as many shards as possible on the smallest number of nodes
 - **sparse**: spread the shards across as many nodes as possible
 
-For more info about the shard placement policy, see [Shard placement policy]({{<relref "content/rs/databases/memory-performance/shard-placement-policy.md.md">}})
+For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/databases/memory-performance/shard-placement-policy.md">}})
 
 ## Metrics
 
