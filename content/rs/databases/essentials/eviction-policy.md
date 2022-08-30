@@ -12,6 +12,8 @@ aliases: [
     /rs/concepts/memory-performance/eviction-policy/,
     /rs/databases/configure/eviction-policy.md,
     /rs/databases/configure/eviction-policy/,
+    /rs/databases/essentials/eviction-policy.md,
+    /rs/databases/essentials/eviction-policy/,
 ]
 ---
 

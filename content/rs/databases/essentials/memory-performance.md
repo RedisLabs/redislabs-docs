@@ -14,6 +14,8 @@ aliases: [
     /rs/concepts/memory-performance/,
     /rs/databases/memory-performance.md,
     /rs/databases/memory-performance/,
+    /rs/databases/essentials/memory-performance.md,
+    /rs/databases/essentials/memory-performance/,
 
 ]
 ---
@@ -74,7 +76,7 @@ Redis Enterprise Software has two shard placement policies available:
 - **dense**: puts as many shards as possible on the smallest number of nodes
 - **sparse**: spread the shards across as many nodes as possible
 
-For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/databases/configure/shard-placement-policy.md">}})
+For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/databases/essentials/shard-placement-policy.md">}})
 
 ## Metrics
 

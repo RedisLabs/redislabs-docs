@@ -15,6 +15,8 @@ aliases: [
     /rs/concepts/memory-performance/shard-placement-policy/,
     /rs/databases/configure/shard-placement-policy.md,
     /rs/databases/configure/shard-placement-policy/,
+    /rs/databases/essentials/shard-placement-policy.md,
+    /rs/databases/essentials/shard-placement-policy,
 ]
 ---
 In Redis Enterprise Software, the location of master and replica shards on the cluster nodes can impact the database and node performance.

@@ -12,6 +12,8 @@ aliases: [
     /rs/concepts/memory-architecture/memory-limit.md,
     /rs/concepts/memory-performance/memory-limit.md,
     /rs/concepts/memory-performance/memory-limit/,
+    /rs/databases/essentials/memory-limit.md,
+    /rs/databases/essentials/memory-limit/,
 ]
 ---
 When you set a database's memory limit, you define the maximum size the

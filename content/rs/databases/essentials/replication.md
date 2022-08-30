@@ -10,6 +10,10 @@ aliases: [
     /rs/concepts/high-availability/replication/,
     /rs/databases/configure/replication.md,
     /rs/databases/configure/replication/,
+    /rs/databases/essentials/replication.md,
+    /rs/databases/essentials/replication/,
+    
+
 ]
 ---
 Database replication helps ensure high availability.

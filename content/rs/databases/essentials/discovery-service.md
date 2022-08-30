@@ -9,7 +9,9 @@ aliases: [
     /rs/concepts/data-access/discovery-service.md,
     /rs/concepts/data-access/discovery-service/,
     /rs/databases/configure/discovery-service.md,
-    /rs/databases/configure/discovery-service/
+    /rs/databases/configure/discovery-service/,
+    /rs/databases/essentials/discovery-service.md,
+    /rs/databases/essentials/discovery-service/,
 ]
 ---
 The Discovery Service provides an IP-based connection management service
