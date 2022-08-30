@@ -14,7 +14,7 @@ aliases: ["/rs/security/tls-ssl",
 You can [use TLS authentication]({{<relref "/rs/security/tls/enable-tls">}}) for the following types of communication:
 
 - Communication from clients (applications) to your database
-- Communication from your database to other clusters for replication using [Replica Of]({{<relref "/rs/databases/replica-of">}})
+- Communication from your database to other clusters for replication using [Replica Of]({{<relref "/rs/databases/import-export/replica-of">}})
 - Communication to and from your database to other clusters for synchronization using [Active-Active]({{<relref "/rs/databases/active-active/">}})
 
 ## Protocols and ciphers

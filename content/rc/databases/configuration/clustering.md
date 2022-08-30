@@ -62,14 +62,14 @@ For Redis Cloud Essentials, clustering is only available in the
 ## Multi-key operations {#multikey-operations}
 
 Operations on multiple keys in a sharded Redis Cloud cluster
-are supported with the following limitations:
+are supported, with the following limitations:
 
 1. **Multi-key commands:** Redis offers several commands that accept
-    multiple keys as arguments. In a sharded setup, multi-key commands
-    can only be used when all affected keys reside in the same slot.
-    These commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH, MSETNX,
+    multiple keys as arguments. In a sharded setup, you can run multi-key commands
+    only if all of the affected keys reside in the same slot (and on the same shard).
+    This restriction applies to all mulit-key commands, including BITOP, BLPOP, BRPOP, BRPOPLPUSH, MSETNX,
     RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE, SORT,
-    SUNION, ZINTER, ZINTERSTORE, ZUNION, ZUNIONSTORE, ZDIFF, ZDIFFSTORE
+    SUNION, XREAD, ZINTER, ZINTERSTORE, ZUNION, ZUNIONSTORE, ZDIFF, ZDIFFSTORE
 1. **Geo commands:** In GEORADIUS/GEORADIUSBYMEMBER/GEOSEARCHSTORE commands, the
     STORE and STOREDIST options can only be used when all affected keys
     reside in the same slot.

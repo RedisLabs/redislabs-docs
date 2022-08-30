@@ -21,3 +21,8 @@ Primary features:
 - Graphs represented as sparse adjacency matrices
 - [Cypher](http://www.opencypher.org/) as query language
     - Cypher queries translated into linear algebra expressions
+
+## More info
+
+- [RedisGraph commands]({{<relref "/modules/redisgraph/commands">}})
+- [RedisGraph source](https://github.com/RedisGraph/RedisGraph)

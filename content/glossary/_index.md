@@ -15,23 +15,17 @@ aliases: /glossary/
 
 ## A, B {#letter-a}
 
-{{%definition "admission controller"%}}
-A piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object.
-
-More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
-{{%/definition%}}
-
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
-More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Update database ACLs]({{<relref "/rs/security/ldap/update-database-acls.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
+More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/access-control">}}); [Update database ACLs]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
 {{%/definition%}}
 
 <a name="active-active"></a>
 {{%definition "Active-Active database (CRDB)"%}}
 Geo-distributed databases that span multiple [Redis Enterprise Software]({{<relref "#redis-enterprise-software">}}) [clusters]({{<relref "#cluster">}}). Active-Active databases, also known as conflict-free replicated databases (CRDB), depend on [multi-master replication (MMR)]({{<relref "#multi-master-replication-mmr">}}) and [conflict-free replicated data types (CRDTs)]({{<relref "#conflict-free-replicated-data-types-crdt">}}) to power a simple development experience for geo-distributed applications.
 
-More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/concepts/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/databases/active-active/data-types/_index.md">}})
+More info: [Active-Active geo-distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}), [Geo-distributed Active-Active Redis applications]({{<relref "/rs/databases/active-active/" >}}), [Developing applications for Active-Active databases]({{<relref "rs/databases/active-active/develop/_index.md">}})
 {{%/definition%}}
 
 {{%definition "Active-Active database instance"%}}
@@ -40,6 +34,13 @@ A “member database” of a global Active-Active database which is made up of i
 
 {{%definition "active-passive database replication"%}}
 Provides applications read-only access to replicas of the data set from different geographical locations. The Redis Enterprise implementation of active-passive replication is called [Replica Of]({{<relref "#replica-of">}}).
+
+{{%/definition%}}
+
+{{%definition "admission controller"%}}
+A piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object.
+
+More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
 {{%/definition%}}
 
 {{%definition "append-only file (AoF)"%}}
@@ -54,7 +55,7 @@ More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persis
 {{%definition "causal consistency"%}}
 A distributed database is causally consistent if it maintains the same order of operations on a piece of data across all database copies.
 
-More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/administering/database-operations/causal-consistency-crdb">}})
+More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/databases/active-active/causal-consistency-crdb">}})
 {{%/definition%}}
 
 {{%definition "CIDR allowlist"%}}
@@ -63,10 +64,18 @@ Classless Inter-Domain Routing (CIDR) is a method to allocate and route IP addre
 More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [Configure CIDR allowlist]({{<relref "/rc/security/cidr-whitelist.md">}})
 {{%/definition%}}
 
+{{%definition "consistency"%}}
+
+Consistency models describe the way a distributed system keeps replicated data consistent between copies.
+
+More info: [Consistency models](https://en.wikipedia.org/wiki/Consistency_model)
+
+{{%/definition%}}
+
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
 
-More info: [Database Clustering]({{<relref "content/rc/databases/configuration/clustering.md" >}})
+More info: [Database clustering]({{<relref "/rc/databases/configuration/clustering.md" >}})
 {{%/definition%}}
 
 {{%definition "Cluster Configuration Store (CSS)"%}}
@@ -85,7 +94,7 @@ Conflict-free replicated databases (CRDB) are an alternate name for [Active-Acti
 {{%definition "conflict-free replicated data types (CRDT)"%}}
 Techniques used by Redis data types in Active-Active databases that handle conflicting concurrent writes across member Active-Active databases. The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
 
-More info: [CRDT info]({{<relref "/rs/databases/active-active/data-types/#info" >}}), [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active/_index.md" >}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
+More info: [CRDT info]({{<relref "/rs/databases/active-active/develop/#info" >}}), [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active/_index.md" >}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
 {{%/definition%}}
 
 {{%definition "CustomResourceDefinition (CRD)"%}}
@@ -102,6 +111,12 @@ Defines how excess data is handled when the database exceeds the memory limit.
 More info: [Data Eviction Policy]({{<relref "/rc/databases/configuration/data-eviction-policies.md">}})
 {{%/definition%}}
 
+{{%definition "deprecated"%}}
+Features are marked as _deprecated_ when they're scheduled to be removed from our products, generally because they've been replaced by new features.
+
+For details, see [obsolete](#obsolete).
+{{%/definition%}}
+
 {{%definition "Domain Name Service (DNS)"%}}
 Naming system for computers, services, or other resources connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities.
 
@@ -115,6 +130,13 @@ After updating data on one instance of a distributed database, the other databas
 More info: [Eventual consistency wikipedia](https://en.wikipedia.org/wiki/Eventual_consistency)
 {{%/definition%}}
 
+{{%definition "Fully qualified domain name (FQDN)"%}}
+A domain name that includes a list of domain labels to specify the exact location in the DNS.
+
+More info: [FQDN wikipedia](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)
+
+{{%/definition%}}
+
 {{%definition "`fysnc`"%}}
 Linux command to synchronize a file's in-core state with a storage device
 
@@ -126,25 +148,32 @@ More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.htm
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
-More info: [Database Clustering]({{<relref "content/rs/concepts/high-availability/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "hash tag"%}}
 A part of the key that is used in the hash calculation.
 
-More info: [Database Clustering]({{<relref "content/rs/concepts/high-availability/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+{{%/definition%}}
+
+{{%definition "high availability"%}}
+
+High availability (HA) is a characteristic of distributed systems that keeps systems available for users for longer than normal periods of time. This is done by reducing single points of failure, increasing redundancy, and making recovering from failures easier.
+
+More info: [Redis Enterprise durability and high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}), [High availability wikipedia](https://en.wikipedia.org/wiki/High_availability)
 {{%/definition%}}
 
 {{%definition "ingress"%}}
 An API object that manages external access to the services in a Kubernetes cluster, typically HTTP.
 
-More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [Ingress routing for Redis Enterprise Software on Kubernetes]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}})
 {{%/definition%}}
 
 ## K, L {#letter-k}
 
 {{%definition "kubectl"%}}
-A command line tool for communicating with a Kubernetes API server. 
+A command-line tool for communicating with a Kubernetes API server.
 
 More info: [Overview of kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)
 {{%/definition%}}
@@ -157,13 +186,19 @@ More info: [LDAP wikipedia](https://en.wikipedia.org/wiki/Lightweight_Directory_
 
 ## M - O {#letter-m}
 
-{{%definition "Master node"%}}
-Node that operates as the leader of a cluster
+{{%definition "master node"%}}
+Node that operates as the leader of a cluster. Also known as the primary node.
 {{%/definition%}}
 
 {{%definition "migration"%}}
 Deciding when and where shards will be moved if more network throughput, memory, or CPU resources are needed
 {{%/definition%}}
+
+{{%definition "multicast DNS (mDNS)"%}}
+Protocol that resolves hostnames to the IP addresses that do not include a local name server.
+
+More info: [multicast DNS wikipedia](https://en.wikipedia.org/wiki/Multicast_DNS)
+{{%definition%}}
 
 {{%definition "multi-factor authentication (MFA)"%}}
 Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Enterprise Cloud, users must enter their username, password, and an authentication code when logging in.
@@ -171,14 +206,27 @@ Method of authenticating users with pieces of evidence of the user's identity. W
 More info: [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication.md">}})
 {{%/definition%}}
 
-{{%definition "multi-master replication (MMR)"%}}
-Multi-directional replication that power the efficient replication required to achieve active-active concurrent writes in Active-Active databases.
-{{%/definition%}}
+{{%definition "multi-primary replication"%}}
+Also known as multi-master replication, Active-Active databases have multiple primary nodes (one on each participating cluster) to enable concurrent writes operations.
+
+More info: [Multi-primary replication]({{<relref "/rs/databases/active-active/#multi-primary-replication">}})
+
+{{%definition%}}
 
 {{%definition "namespace"%}}
 An abstraction used by Kubernetes to support multiple virtual clusters on the same physical cluster.
 
 More info: [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+{{%/definition%}}
+
+{{%definition "obsolete"%}}
+When features are removed from our products, they're generally replaced by new features that provide a better experience, more functionality, improved security, and other benefits.  
+
+To provide a transition period, we mark older features as _deprecated_ when introducing replacement features.  This gives you time to adjust your deployments, apps, and processes to support the new features.  During this transition, the older features continue to work as a courtesy.
+
+Eventually, older features are removed from the product.  When this happens, they're considered _obsolete_, partly because they can no longer be used.  
+
+For best results, we advise against relying on deprecated features for any length of time.  
 {{%/definition%}}
 
 {{%definition "operator"%}}
@@ -194,11 +242,17 @@ If a member Active-Active database is in an out of memory situation, that member
 ## P - Q {#letter-p}
 
 {{%definition "participating clusters"%}}
-Clusters participating in the multi-master replication of an Active-Active database.
+Clusters participating in the multi-primary replication of an Active-Active database.
 {{%/definition%}}
 
 {{%definition "provisioning"%}}
 Deciding where shards will be created and placed.
+{{%/definition%}}
+
+{{%definition "proxy policy"%}}
+Determines the number and location of active proxies tied to a single endpoint that receive incoming traffic for a database.
+
+For more info, see [Proxy policy]({{<relref "/rs/databases/configure/proxy-policy.md">}}).
 {{%/definition%}}
 
 {{%definition "quorum node"%}}
@@ -210,7 +264,11 @@ Node provisioned only for cluster operations that can be elected as a master nod
 {{%definition "rack-zone awareness"%}}
 Redis Enterprise feature that helps to ensure high availability in the event of a rack or zone failure. In the event of a rack or zone failure, the replicas and endpoints in the remaining racks/zones will be promoted.
 
-More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/concepts/high-availability/rack-zone-awareness.md">}})
+More info: [Rack-zone awareness in Redis Enterprise Software]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}})
+{{%/definition%}}
+
+{{%definition "replication backlog"%}}
+Databases using replication or Active-Active maintain a backlog to synchronize the primary and replica shards.
 {{%/definition%}}
 
 {{%definition "re-sharding"%}}
@@ -251,29 +309,38 @@ Enables your Redis databases to span both RAM and dedicated flash memory (SSD). 
 More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/administering/cluster-operations/getting-started-redis-flash.md">}})
 {{%/definition%}}
 
+{{%definition "replica high availability (replicaHA)"%}}
+High availability feature of Redis Enterprise Software. After a node failure, the cluster automatically migrates remaining replica shards to available nodes. Previously known as "Slave HA" or `slave_ha`.
+
+More info: [High availability for replica shards]({{<relref "/rs/databases/configure/replica-ha.md">}})
+{{%definition%}}
+
 {{%definition "Replica Of"%}}
 The Redis Enterprise implementation of active-passive database replication.
 
-More info: [Replica-Of
-]({{<relref "/rs/databases/replica-of.md">}})
+More info: [Replica Of
+]({{<relref "/rs/databases/import-export/replica-of.md">}})
 {{%/definition%}}
 
 {{%definition "ReplicaSet"%}}
-In Kubernetes, a ReplicaSet (aims to) maintain a set of replica Pods running at any given time.
+A ReplicaSet is a type of Kubernetes resource that (aims to) maintain a set of replica pods running at any given time.
 
 More info: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 {{%/definition%}}
 
 {{%definition "replication"%}}
-Database replication provides a mechanism to ensure high availability.
 
-More info: [Database replication]({{<relref "/rs/concepts/high-availability/replication.md">}})
+Database replication provides a mechanism to ensure high availability. When replication is enabled, your dataset is replicated to a replica shard,
+which is constantly synchronized with the primary shard. If the primary 
+shard fails, an automatic failover happens and the replica shard is promoted.
+
+More info: [Database replication]({{<relref "/rs/databases/configure/replication.md">}})
 {{%/definition%}}
 
 {{%definition "role-based access control (RBAC)"%}}
 A security approach that restricts system access to authorized users.
 
-More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
+More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/access-control">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
 {{%/definition%}}
 
 ## S {#letter-s}
@@ -285,7 +352,7 @@ Kubernetes term for object that stores sensitive information, such as passwords,
 {{%definition "shard"%}}
 Redis process that is part of the Redis clustered database.
 
-More info: [Database clustering]({{<relref "/rs/concepts/high-availability/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "sharding"%}}
@@ -302,7 +369,19 @@ More info: [SASL wikipedia](https://en.wikipedia.org/wiki/Simple_Authentication_
 Data persistence file that performs a data dump every one, six, or twelve hours.
 {{%/definition%}}
 
+{{%definition "syncer"%}}
+Process on each node hosting an Active-Active database instance that synchronizes a backlog of operations between participating clusters.
+
+More info: [Syncer process]({{<relref "/rs/databases/active-active/syncer.md">}})
+{{%definition%}}
+
 ## T - Z {#letter-t}
+
+{{%definition "tombstone"%}}
+
+A key that is logically deleted but stays in memory until it is collected by the garbage collector.
+
+{{%/definition%}}
 
 {{%definition "Transport Layer Security (TLS)"%}}
 Protocols that provide communications security over a computer network.

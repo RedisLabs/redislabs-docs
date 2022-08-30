@@ -6,7 +6,7 @@ description: This section how to set up an Active-Active Redis Enterprise databa
 weight: 15
 alwaysopen: false
 categories: ["Platforms"]
-aliases: [ 
+aliases: [
     /kubernetes/re-clusters/create-aa-database/,
     /kubernetes/re-clusters/create-aa-database.md,
 ]
@@ -56,7 +56,7 @@ You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<i
   - Example value: `rec01.ns01.svc.cluster.local`
   - How to get it: List all your Redis Enterprise clusters
       ```bash
-      kubectl get rec 
+      kubectl get rec
       ```
 - **API hostname** `<api-hostname>`:
   - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster
@@ -153,7 +153,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 
 1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the route IP address. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
-1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
+1. If your cluster uses [OpenShift routes]({{<relref "/kubernetes/re-databases/routes.md">}}), add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
 
       ```sh
       activeActive:
@@ -177,7 +177,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{< relref "/kubernetes/re-clusters/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
 
 ```sh
-crdb-cli crdb create 
+crdb-cli crdb create \
   --name <db-name> \
   --memory-size <mem-size> \
   --encryption yes \
@@ -187,7 +187,7 @@ crdb-cli crdb create
 
 To create a database that syncs between more than two instances, add additional `--instance` arguments.
 
-See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more options.
+See the [`crdb-cli` reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more options.
 
 ## Test your database
 

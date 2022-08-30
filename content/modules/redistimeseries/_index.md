@@ -10,7 +10,7 @@ aliases:
   - /redis_time_series/ 
   - /rs/developing/modules/redistimeseries/
 ---
-RedisTimeSeries is a Redis module developed by Redis to enhance your experience managing time series data with Redis.
+The RedisTimeSeries module lets you manage time series data with Redis.
 
 ## Features
 
@@ -18,7 +18,7 @@ RedisTimeSeries is a Redis module developed by Redis to enhance your experience 
 - Query by labels sets
 - Aggregated queries (Min, Max, Avg, Sum, Range, Count, First, Last) for any time bucket
 - Configurable max retention period
-- Compaction/Roll-ups - automatically updated aggregated timeseries
+- Compaction/Roll-ups - automatically updated aggregated time series
 - labels index - each key has labels which allows query by labels
 
 ## Memory model
@@ -38,13 +38,15 @@ In RedisTimeSeries, we introduce a new data type that uses chunks of memory of f
 | --- | --- |
 | ![TimeSeries-downsampling1](/images/rs/TimeSeries-downsampling1.png) | ![TimeSeries-downsampling2](/images/rs/TimeSeries-downsampling2.png) |
 
-If you want to keep all of your raw data points indefinitely, your data set grows linearly over time. However, if your use case allows you to have less fine-grained data further back in time, downsampling can be applied. This allows you to keep fewer historical data points by aggregating raw data for a given time window using a given aggregation function. [RedisTimeSeries supports downsampling](https://oss.redislabs.com/redistimeseries/commands/#tscreaterule) with the following aggregations: avg, sum, min, max, range, count, first and last.  
+If you want to keep all of your raw data points indefinitely, your data set grows linearly over time. However, if your use case allows you to have less fine-grained data further back in time, downsampling can be applied. This allows you to keep fewer historical data points by aggregating raw data for a given time window using a given aggregation function. RedisTimeSeries supports [downsampling](https://redis.io/docs/stack/timeseries/quickstart/#downsampling) with the following aggregations: avg, sum, min, max, range, count, first, and last.  
 
 ### Secondary indexing
 
 When using Redis’ core data structures, you can only retrieve a time series by knowing the exact key holding the time series. Unfortunately, for many time series use cases (such as root cause analysis or monitoring), your application won’t know the exact key it’s looking for. These use cases typically want to query a set of time series that relate to each other in a couple of dimensions to extract the insight you need. You could create your own secondary index with core Redis data structures to help with this, but it would come with a high development cost and require you to manage edge cases to make sure the index is correct.
 
-RedisTimeSeries does this indexing for you based on `field value` pairs (a.k.a labels) you can add to each time series, and use to filter at query time (a full list of these filters is available in our [documentation](https://oss.redislabs.com/redistimeseries/commands/#filtering)). Here’s an example of creating a time series with two labels (sensor_id and area_id are the fields with values 2 and 32 respectively) and a retention window of 60,000 milliseconds:
+RedisTimeSeries does this indexing for you based on `field value` pairs called [labels](https://redis.io/docs/stack/timeseries/quickstart/#labels). You can add labels to each time series and use them to [filter](https://redis.io/docs/stack/timeseries/quickstart/#filtering) at query time.
+
+Here’s an example of creating a time series with two labels (sensor_id and area_id are the fields with values 2 and 32 respectively) and a retention window of 60,000 milliseconds:
 
 ```sh
     TS.CREATE temperature RETENTION 60000 LABELS sensor_id 2 area_id 32
@@ -52,7 +54,9 @@ RedisTimeSeries does this indexing for you based on `field value` pairs (a.k.a l
 
 ### Aggregation at read time
 
-When you need to query a time series, it’s cumbersome to stream all raw data points if you’re only interested in, say, an average over a given time interval. RedisTimeSeries follows the Redis philosophy to only transfer the minimum required data to ensure lowest latency. Below is an example of aggregation query over time buckets of 5,000 milliseconds with an [aggregation function](https://oss.redislabs.com/redistimeseries/commands/#tsrange):  
+When you need to query a time series, it’s cumbersome to stream all raw data points if you’re only interested in, say, an average over a given time interval. RedisTimeSeries follows the Redis philosophy to only transfer the minimum required data to ensure lowest latency.
+
+Here's an example of [aggregation](https://redis.io/docs/stack/timeseries/quickstart/#aggregation) over time buckets of 5,000 milliseconds:  
 
 ```sh
     127.0.0.1:12543> TS.RANGE temperature:3:32 1548149180000 1548149210000 AGGREGATION avg 5000
@@ -78,7 +82,7 @@ RedisTimeSeries comes with several integrations into existing time series tools.
 
 ![TimeSeries-integrations](/images/rs/TimeSeries-integrations.png)
 
-Furthermore, we also created direct integrations for [Grafana](https://github.com/RedisTimeSeries/grafana-redistimeseries) and [Telegraph](https://github.com/RedisTimeSeries/telegraf). [This repository](https://github.com/RedisTimeSeries/prometheus-demos) contains a docker-compose setup of RedisTimeSeries, its remote write adaptor, Prometheus and [Grafana](https://grafana.com/). It also comes with a set of data generators and pre-built Grafana dashboards.
+Furthermore, we also created direct integrations for [Grafana](https://github.com/RedisTimeSeries/grafana-redistimeseries) and [Telegraf](https://github.com/RedisTimeSeries/telegraf). [This repository](https://github.com/RedisTimeSeries/prometheus-demos) contains a docker-compose setup of RedisTimeSeries, its remote write adaptor, Prometheus and [Grafana](https://grafana.com/). It also comes with a set of data generators and pre-built Grafana dashboards.
 
 ## Time series modelling approaches with Redis
 
@@ -102,7 +106,7 @@ In RedisTimeSeries, each time series holds a single metric. We chose this design
 
 ![TimeSeries-modeling4](/images/rs/TimeSeries-modeling4.jpg)
 
-It is important to note that our benchmark did not utilize RedisTimeSeries’ out-of-the-box secondary indexing capabilities. The module keeps a partial secondary index in each shard, and since the index inherits the same hash-slot of the key it indices, it is always hosted on the same shard. This approach would make the setup for native data structures even more complex to model, so for the sake of simplicity, we decided not to include it in our benchmarks. Additionally, while Redis Enterprise can use the [proxy](https://redislabs.com/redis-enterprise/technology/redis-enterprise-cluster-architecture/) to fan out requests for commands like [TS.MGET](https://oss.redislabs.com/redistimeseries/commands/#tsmget) and [TS.MRANGE](https://oss.redislabs.com/redistimeseries/commands/#tsmrange) to all the shards and aggregate the results, we chose not to exploit this advantage in the benchmark either.
+It is important to note that our benchmark did not utilize RedisTimeSeries’ out-of-the-box secondary indexing capabilities. The module keeps a partial secondary index in each shard, and since the index inherits the same hash-slot of the key it indices, it is always hosted on the same shard. This approach would make the setup for native data structures even more complex to model, so for the sake of simplicity, we decided not to include it in our benchmarks. Additionally, while Redis Enterprise can use the [proxy](https://redis.com/redis-enterprise/technology/redis-enterprise-cluster-architecture/) to fan out requests for commands like [TS.MGET](https://redis.io/commands/ts.mget) and [TS.MRANGE](https://redis.io/commands/ts.mrange) to all the shards and aggregate the results, we chose not to exploit this advantage in the benchmark either.
 
 ### Data ingestion
 
@@ -144,3 +148,8 @@ In both the Redis Streams and Sorted Set approaches, the samples were kept as a 
 RedisTimeSeries can be seen to dramatically reduce the memory consumption when compared against both Sorted Set approaches. Given the unbounded nature of time series data, this is typically a critical criteria to evaluate - the overall data set size that needs to be retained in memory. Redis Streams reduces the memory consumption further but would be equal or higher than RedisTimeSeries when more digits for a higher precision would be required.
 
 ![TimeSeries-UsedMemory](/images/rs/TimeSeries-UsedMemory.png)
+
+## More info
+
+- [RedisTimeSeries commands]({{<relref "/modules/redistimeseries/commands">}})
+- [RedisTimeSeries source](https://github.com/RedisTimeSeries/RedisTimeSeries)

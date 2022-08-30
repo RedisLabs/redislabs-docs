@@ -71,7 +71,7 @@ kubectl patch redb <your-db-name> --type=json -p \
 
 The operator attaches a finalizer to the Redis Enterprise cluster (REC) object. This makes sure the Redis cluster is deleted before the REC custom resource is removed from the K8s cluster.
 
-If the operator isn't running, or some other fatal error occurs, the finalizer isn't removed automatically by the operator. In this case, you won't be able to delete your REDB resource.
+If the operator isn't running, or some other fatal error occurs, the finalizer isn't removed automatically by the operator. In this case, you won't be able to delete your REC resource.
 
 If this happens, you can remove the finalizer manually.
 

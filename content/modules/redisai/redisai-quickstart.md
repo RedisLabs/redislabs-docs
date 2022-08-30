@@ -1,7 +1,7 @@
 ---
-Title: RedisAI quick start tutorial
+Title: RedisAI quick start
 linkTitle: Quick start
-description:
+description: RedisAI quick start
 weight: 20
 alwaysopen: false
 categories: ["Modules"]

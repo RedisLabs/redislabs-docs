@@ -16,7 +16,7 @@ To create a database in your Redis Enterprise Cloud [subscription]({{< relref "r
 
 2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
-    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-flexible-databases-tab-update.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
 
 3. Select the **New database** button.
 
@@ -107,10 +107,10 @@ The **Scalability** section is available only for Flexible and Annual plans.
 | **Memory size** | Maximum size (in GB) for your database |
 | **Throughput** | Defines throughput in terms of maximum operations per second for the database
 | **Shards** | Defines the throughput in terms of shards dedicated to the database
-| **Hashing policy** | Defines the [hashing policy]({{< relref "rs/concepts/high-availability/clustering.md#changing-the-hashing-policy" >}}) |
-| **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
+| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/configure/clustering.md#changing-the-hashing-policy" >}}) |
+| **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 
-To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/configure/clustering.md" >}}).
 
 ### Memory size
 
