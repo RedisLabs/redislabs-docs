@@ -2,7 +2,7 @@
 Title: Logging and audit events
 linkTitle: Logging
 description: Management actions performed with Redis Enterprise are audited in order to fulfill two major objectives.
-weight: 71
+weight: 95
 alwaysopen: false
 categories: ["RS"]
 aliases: [

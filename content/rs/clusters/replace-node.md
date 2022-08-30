@@ -1,8 +1,8 @@
 ---
 Title: Replace a faulty cluster node
-linkTitle: Replace a node
+linkTitle: Replace node
 description: Replace a node in your cluster that is down. 
-weight: $weight
+weight: 90
 alwaysopen: false
 categories: ["RS"]
 aliases: [

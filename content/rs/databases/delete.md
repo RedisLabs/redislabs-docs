@@ -1,6 +1,7 @@
 ---
 Title: Delete databases 
-description: Delete
+linktitle: Delete
+description: Delete a database from the admin console.
 weight: 36
 alwaysopen: false
 categories: ["RS"]

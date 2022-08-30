@@ -2,7 +2,7 @@
 Title: Monitoring with metrics and alerts
 linkTitle: Monitoring
 description: You can use the metrics that measure the performance of your Redis Enterprise Software (RS) clusters, nodes, databases and shards to keep an eye on the performance of your databases.
-weight: 75
+weight: 96
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/alerting/

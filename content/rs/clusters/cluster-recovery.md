@@ -2,7 +2,7 @@
 Title: Recover a failed cluster
 linktitle: Recover a cluster
 description: How to use the cluster configuration file and database data to recover a failed cluster.
-weight: $weight
+weight: 70
 alwaysopen: false
 categories: ["RS"]
 aliases: [

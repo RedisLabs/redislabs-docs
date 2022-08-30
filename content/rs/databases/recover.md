@@ -1,6 +1,6 @@
 ---
 Title: Recover a failed database
-linktitle: Recover a database
+linktitle: Recover
 description: Recover a database after the cluster fails or the database is corrupted.
 weight: 35
 alwaysopen: false

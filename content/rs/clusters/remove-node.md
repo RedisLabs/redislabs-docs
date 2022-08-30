@@ -2,7 +2,7 @@
 Title: Remove a cluster node
 linkTitle: Remove node
 description: Remove a node from your Redis Enterprise cluster.
-weight: $weight
+weight: 80
 alwaysopen: false
 categories: ["RS"]
 aliases: [
