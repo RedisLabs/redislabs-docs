@@ -525,7 +525,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
 To remove the Redis Enterprise cluster from your PKS deployment:
 
-1. [Delete]({{< relref "/rs/databases/configure/edit-delete-db.md" >}}) any databases you created.
+1. [Delete]({{< relref "/rs/databases/delete.md" >}}) any databases you created.
 
 1. Delete the REC custom resource. This removes the pods on the cluster nodes and all related services and deployments, except for the Operator deployment itself.
 

@@ -36,7 +36,7 @@ The cluster recovery process includes:
 1. Mount the persistent storage with the recovery files from the original cluster to the nodes of the new cluster.
 1. Recover the cluster configuration on the first node in the new cluster.
 1. Join the remaining nodes to the new cluster.
-1. [Recover the databases]({{< relref "/rs/databases/recover-database.md" >}}).
+1. [Recover the databases]({{< relref "/rs/databases/recover.md" >}}).
 
 ## Prerequisites
 
@@ -156,4 +156,4 @@ Make sure that you update your [DNS records]({{< relref "/rs/networking/cluster-
 with the IP addresses of the new nodes.
     {{< /note >}}
 
-After the cluster is recovered, you must [recover the databases]({{< relref "/rs/databases/recover-database.md" >}}).
+After the cluster is recovered, you must [recover the databases]({{< relref "/rs/databases/recover.md" >}}).

@@ -12,6 +12,8 @@ aliases: [
     /rs/concepts/memory-architecture/memory-limit.md,
     /rs/concepts/memory-performance/memory-limit.md,
     /rs/concepts/memory-performance/memory-limit/,
+    /rs/databases/configure/memory-limit,
+    /rs/databases/configure/memory-limit.md,
     /rs/databases/essentials/memory-limit.md,
     /rs/databases/essentials/memory-limit/,
 ]

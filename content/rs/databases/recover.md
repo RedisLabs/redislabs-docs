@@ -10,6 +10,8 @@ aliases: [
     /rs/administering/troubleshooting/database-recovery.md,
     /rs/databases/recover-database.md,
     /rs/databases/recover-database/,
+    /rs/databases/recover.md,
+    /rs/databases/recover/,
 ]
 ---
 When a cluster fails or a database is corrupted, you must:
