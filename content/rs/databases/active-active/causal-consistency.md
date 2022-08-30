@@ -1,8 +1,8 @@
 ---
-Title: Enable causal consistency in an Active-Active database
+Title: Enable causal consistency
 linkTitle: Enable causal consistency
-description: Enable causal consistency for an Active-Active database.
-weight: 85
+description: Enable causal consistency  in an Active-Active database. 
+weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -13,7 +13,7 @@ aliases: [
 ]
 ---
 When you enable causal consistency in Active-Active databases,
-the order of operations on a specific key are maintained across all Active-Active database instances.<!--more--> [comment] <> : (What happens if it's left at default? What is the default? Why would you change it?)
+the order of operations on a specific key are maintained across all Active-Active database instances.<!--more--> [comment] <> : (What happens if it's left at default? What is the default? Why would you change it?) [comment] <> : (What happens if it's left at default? What is the default? Why would you change it?)
 
 For example, if operations A and B were applied on the same key and the effect of A was observed by the instance that initiated B before B was applied to the key.
 All instances of an Active-Active databases would then observe the effect of A before observing the effect of B.

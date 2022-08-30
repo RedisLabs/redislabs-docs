@@ -1,17 +1,16 @@
 ---
-title: Develop applications with Active-Active databases
-linkTitle: Develop applications
-description: Overview of how developing applications differs for Active-Active databases from standalone Redis databases.
-weight: 10
+Title: Active-Active Redis applications
+linktitle: Active-Active applications
+description:
+weight: 99
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    /rs/developing/crdbs/,
-    /rs/developing/,
-    /rs/references/developing-for-active-active/,
-    /rs/references/developing-for-active-active.md,
-    /rs/databases/active-active/develop-aa-apps.md,
-    /rs/databases/active-active/develop-aa-apps/,
+    /rs/concepts/intercluster-replication.md,
+    /rs/concepts/intercluster-replication/,
+    /rs/databases/active-active/intercluster-replication.md,
+    /rs/databases/active-active/intercluster-replication/,
+    /rs/databases/active-active/develop/,
 ]
 ---
 Developing globally distributed applications can be challenging, as
@@ -56,82 +55,14 @@ times t1 and t2 and happen before a sync can communicate the changes.
 However, writes at times t4 and t6 are not concurrent as a sync happened
 in between.
 
-## Lua scripts
-
-Active-Active databases support Lua scripts, but unlike standard Redis, Lua scripts always
-execute in effects replication mode. There is currently no way to
-execute them in script-replication mode.
-
-## Eviction
-
-The default policy for Active-Active databases is _noeviction_ mode.
-For details, see [eviction for Active-Active databases]({{< relref "/rs/databases/memory-performance/eviction-policy.md" >}}).
-
-
-## Expiration
-
-Expiration is supported with special multi-master semantics.
-
-If a key's expiration time is changed at the same time on different
-members of the Active-Active database, the longer extended time set via TTL on a key is
-preserved. As an example:
-
-If this command was performed on key1 on cluster #1
-
-```sh
-127.0.0.1:6379> EXPIRE key1 10
-```
-
-And if this command was performed on key1 on cluster #2
-
-```sh
-127.0.0.1:6379> EXPIRE key1 50
-```
-
-The EXPIRE command setting the key to 50 would win.
-
-And if this command was performed on key1 on cluster #3:
-
-```sh
-127.0.0.1:6379> PERSIST key1
-```
-
-It would win out of the three clusters hosting the Active-Active database as it sets the
-TTL on key1 to an infinite time.
-
-The replica responsible for the "winning" expire value is also
-responsible to expire the key and propagate a DEL effect when this
-happens. A "losing" replica is from this point on not responsible
-for expiring the key, unless another EXPIRE command resets the TTL.
-Furthermore, a replica that is NOT the "owner" of the expired value:
-
-- Silently ignores the key if a user attempts to access it in READ
-    mode, e.g. treating it as if it was expired but not propagating a
-    DEL.
-- Expires it (sending a DEL) before making any modifications if a user
-    attempts to access it in WRITE mode.
-    
-    {{< note >}}
-Expiration values are in the range of [0,&nbsp;2^49] for Active-Active databases and [0,&nbsp;2^64] for non Active-Active databases.
-    {{< /note >}}
-
-## Out-of-Memory (OOM) {#outofmemory-oom}
-
-If a member Active-Active database is in an out of memory situation, that member is marked
-"inconsistent" by RS, the member stops responding to user traffic, and
-the syncer initiates full reconciliation with other peers in the Active-Active database.
-
-## Active-Active Database Key Counts
-
-Keys are counted differently for Active-Active databases:
-
-- DBSIZE (in `shard-cli dbsize`) reports key header instances
-    that represent multiple potential values of a key before a replication conflict is resolved.
-- expired_keys (in `bdb-cli info`) can be more than the keys count in DBSIZE (in `shard-cli dbsize`) 
-    because expires are not always removed when a key becomes a tombstone.
-    A tombstone is a key that is logically deleted but still takes memory
-    until it is collected by the garbage collector.
-- The Expires average TTL (in `bdb-cli info`) is computed for local expires only.
+|  **Time** | **CRDB Instance1** | **CRDB Instance2** |
+|  ------: | :------: | :------: |
+|  t1 | SET key1 “a” |  |
+|  t2 |  | SET key1 “b” |
+|  t3 | — Sync — | — Sync — |
+|  t4 | SET key1 “c” |  |
+|  t5 | — Sync — | — Sync — |
+|  t6 |  | SET key1 “d” |
 
 [Learn more about
 synchronization]({{< relref "/rs/databases/active-active/_index.md" >}}) for
@@ -139,30 +70,26 @@ each supported data type and [how to develop]({{< relref "/rs/databases/active-a
 
 ## Terminology
 
-|  **Section** | **Field** | **Description** |
-|  ------ | ------ | ------ |
-|  **CRDT Context** | crdt_config_version | Currently active Active-Active database configuration version. |
-|   | crdt_slots | Hash slots assigned and reported by this shard. |
-|   | crdt_replid | Unique Replica/Shard IDs. |
-|   | crdt_clock | Clock value of local vector clock. |
-|   | crdt_ovc | Locally observed Active-Active database vector clock. |
-|  **Peers** | A list of currently connected Peer Replication peers. This is similar to the slaves list reported by Redis. |  |
-|  **Backlogs** | A list of Peer Replication backlogs currently maintained. Typically in a full mesh topology only a single backlog is used for all peers, as the requested Ids are identical. |  |
-|  **CRDT Stats** | crdt_sync_full | Number of inbound full synchronization processes performed. |
-|   | crdt_sync_partial_ok | Number of partial (backlog based) re-synchronization processes performed. |
-|   | crdt_sync_partial-err | Number of partial re-synchronization processes failed due to exhausted backlog. |
-|   | crdt_merge_reqs | Number of inbound merge requests processed. |
-|   | crdt_effect_reqs | Number of inbound effect requests processed. |
-|   | crdt_ovc_filtered_effect_reqs | Number of inbound effect requests filtered due to old vector clock. |
-|   | crdt_gc_pending | Number of elements pending garbage collection. |
-|   | crdt_gc_attempted | Number of attempts to garbage collect tombstones. |
-|   | crdt_gc_collected | Number of tombstones garbaged collected successfully. |
-|   | crdt_gc_gvc_min | The minimal globally observed vector clock, as computed locally from all received observed clocks. |
-|   | crdt_stale_released_with_merge | Indicates last stale flag transition was a result of a complete full sync. |
-|  **CRDT Replicas** | A list of crdt_replica \<uid> entries, each describes the known state of a remote instance with the following fields: |  |
-|   | config_version | Last configuration version reported. |
-|   | shards | Number of shards. |
-|   | slots | Total number of hash slots. |
-|   | slot_coverage | A flag indicating remote shards provide full coverage (i.e. all shards are alive). |
-|   | max_ops_lag | Number of local operations not yet observed by the least updated remote shard |
-|   | min_ops_lag | Number of local operations not yet observed by the most updated remote shard |
+1. **Active-Active database**: A
+    type of Redis Enterprise Software database that spans clusters.
+    There can be one or more member databases across many clusters that
+    form a conflict-free replicated databases. Each local
+    database can have different shard count, replica count, and other
+    database options but contain identical information in steady-state.
+1. **Active-Active Database Instance**: is a "member database" instance of a global Active-Active database
+    which is made up of its own master and slave shards spanning a
+    single cluster.
+1. **Multi-master Replication (MMR):** is the multi-directional
+    replication that power the efficient replication required to achieve
+    active-active concurrent writes in Active-Active databases.
+1. **Conflict-free Replicated Data Types (CRDT):** is the underlying
+    research that describes techniques used by Redis data types in Active-Active databases
+    that smartly handle conflicting concurrent writes across member
+    Active-Active databases.
+1. **Participating Clusters:** refers to clusters participating in the
+    multi-master replication of an Active-Active database.
+1. **Concurrent Writes or Concurrent Updates:** Concurrency or updates
+    and writes refer to more than events that happen at the same wall
+    clock time across member Active-Active databases. Concurrent updates refer to the fact
+    that updates happen in between sync events that catch up member
+    Active-Active databases with updates that happened on other member Active-Active databases.

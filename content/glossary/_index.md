@@ -148,13 +148,20 @@ More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.htm
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
-More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "hash tag"%}}
 A part of the key that is used in the hash calculation.
 
-More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+{{%/definition%}}
+
+{{%definition "high availability"%}}
+
+High availability (HA) is a characteristic of distributed systems that keeps systems available for users for longer than normal periods of time. This is done by reducing single points of failure, increasing redundancy, and making recovering from failures easier.
+
+More info: [Redis Enterprise durability and high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}), [High availability wikipedia](https://en.wikipedia.org/wiki/High_availability)
 {{%/definition%}}
 
 {{%definition "ingress"%}}
@@ -322,7 +329,10 @@ More info: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controller
 {{%/definition%}}
 
 {{%definition "replication"%}}
-Database replication provides a mechanism to ensure high availability.
+
+Database replication provides a mechanism to ensure high availability. When replication is enabled, your dataset is replicated to a replica shard,
+which is constantly synchronized with the primary shard. If the primary 
+shard fails, an automatic failover happens and the replica shard is promoted.
 
 More info: [Database replication]({{<relref "/rs/databases/configure/replication.md">}})
 {{%/definition%}}
