@@ -27,8 +27,8 @@ A node is unbalanced if:
 
 An endpoint is unbalanced in the following cases:
 - `single` proxy policy and one of the following is true:  
-    - Shard placement is [`sparse`]({{<relref "/rs/databases/essentials/shard-placement-policy#sparse-shard-placement-policy">}}) and none of the master shards are on the node
-    - Shard placement is [`dense`]({{<relref "/rs/databases/essentials/shard-placement-policy#dense-shard-placement-policy">}}) and some master shards are on a different node from the endpoint
+    - Shard placement is [`sparse`]({{<relref "content/rs/databases/memory-performance/shard-placement-policy.md#sparse-shard-placement-policy">}}) and none of the master shards are on the node
+    - Shard placement is [`dense`]({{<relref "content/rs/databases/memory-performance/shard-placement-policy.md#dense-shard-placement-policy">}}) and some master shards are on a different node from the endpoint
 - `all-master-shards` proxy policy and one of the following is true:  
     - None of the master shards are on the node
     - Some master shards are on a different node from the endpoint

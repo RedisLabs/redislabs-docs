@@ -37,7 +37,7 @@ Factors to consider when sizing your database:
 - [**database replication**]({{<relref "/rs/databases/essentials/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
 
-For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/clusters/optimize/node-memory.md">}}) or [Database memory limits]({{<relref "/rs/databases/essentials/memory-limit.md">}}).
+For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/clusters/optimize/node-memory.md">}}) or [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit.md">}}).
 
 ## Eviction policies
 
@@ -76,7 +76,7 @@ Redis Enterprise Software has two shard placement policies available:
 - **dense**: puts as many shards as possible on the smallest number of nodes
 - **sparse**: spread the shards across as many nodes as possible
 
-For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/databases/essentials/shard-placement-policy.md">}})
+For more info about the shard placement policy, see [Shard placement policy]({{<relref "content/rs/databases/memory-performance/shard-placement-policy.md.md">}})
 
 ## Metrics
 
