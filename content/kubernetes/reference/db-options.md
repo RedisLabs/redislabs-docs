@@ -48,7 +48,7 @@ also updated with the generated database password.
 
 ### [`evictionPolicy`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-An [eviction policy]({{< relref "/rs/databases/configure/eviction-policy.md">}}) (default: `volatile-lru`)
+An [eviction policy]({{< relref "/rs/databases/essentials/eviction-policy.md">}}) (default: `volatile-lru`)
 
 ### [`memorySize`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 

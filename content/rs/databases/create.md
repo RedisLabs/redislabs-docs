@@ -151,7 +151,7 @@ after the database is created.
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-    - [**Data eviction policy**]({{< relref "/rs/databases/configure/eviction-policy.md" >}}) -
+    - [**Data eviction policy**]({{< relref "/rs/databases/essentials/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
