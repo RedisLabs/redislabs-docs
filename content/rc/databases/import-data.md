@@ -27,7 +27,7 @@ As a result, the number of keys in the source and destination databases can be d
 To import a dataset from any publicly available Redis server:
 
 1. Select **Databases** from the admin console menu and then select the target database from the database list.
-1. Scroll down to **Danger Zone** and select **Import**.
+1. In the **Danger Zone**, select **Import**.
 1. Enter the source database details:
     - Source type - Select **Redis**.
     - Redis Hostname/IP Address - Enter the hostname or the public IP address of the source Redis server.
@@ -46,10 +46,10 @@ For assistance, contact [Support](https://redis.com/company/support/).
 
 ### Via FTP or HTTP
 
-To import an RDB file that is stored on an FTP or HTTP server:
+To import an RDB file stored on an FTP or HTTP server:
 
 1. Select **Databases** from the admin console menu and then select your database from the list.
-1. Scroll down to **Danger Zone** and select **Import**.
+1. In the **Danger Zone**, select **Import**.
 1. Enter the details for the RDB file:
     - Source type - Select **FTP** or **HTTP**.
     - Source path - Enter the URL for the RDB file: `<protocol>://[username][:password]@[:port]/[path/]filename.rdb[.gz]`
@@ -82,10 +82,10 @@ To share and import an RDB file that is stored in an AWS Simple Storage Service 
     1. In the Read column, select Yes.
     1. Select Save.
 
-    For more information, see [Configuring ACLs for objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html) on the AWS docs.
+    For more info, see [Configuring ACLs for objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html).
 
 1. In the [Redis Cloud admin console](https://app.redislabs.com/), select the target database from the database list.
-1. Scroll down to **Danger Zone** and select **Import**.
+1. In the **Danger Zone**, select **Import**.
 1. Enter the details for the RDB file:
     - Source type - Select **AWS S3**.
     - Source path - Enter the URL for the RDB file: `s3://bucketname/[path/]filename.rdb[.gz]`
@@ -113,10 +113,10 @@ To share and import an RDB file that is stored in a GCP Storage bucket:
        - In the Access field of the new item, select **Reader**.
     1. Select **Save**.
 
-    For more information, see [Set ACLs](https://cloud.google.com/storage/docs/access-control/create-manage-lists#set-an-acl) on the Google Cloud docs.
+    For more info, see [Set ACLs](https://cloud.google.com/storage/docs/access-control/create-manage-lists#set-an-acl).
 
 1. In the [Redis Cloud admin console](https://app.redislabs.com/), select the target database from the database list.
-1. Scroll down to **Danger Zone** and select **Import**.
+1. In the **Danger Zone**, select **Import**.
 1. Enter the details for the RDB file:
     - Source type - Select **Google Cloud Storage**.
     - Source path - Enter the URL for the RDB file: `gs://bucketname/[path/]filename.rdb[.gz]`
@@ -130,10 +130,10 @@ To share and import an RDB file that is stored in a GCP Storage bucket:
 
 ### Via Azure Blob Storage container
 
-To import an RDB file that is stored in a Microsoft Azure Blog storage container:
+To import an RDB file stored in a Microsoft Azure Blog storage container:
 
 1. In the Redis Cloud admin console, select the target database from the database list.
-1. Scroll down to **Danger Zone** and select **Import**.
+1. In the **Danger Zone**, select **Import**.
 1. Enter the details for the RDB file:
     - Source type - Select **Azure Blob Storage**.
     - Source path - Enter the URL for the RDB file: `abs://:storage_account_access_key@storage_account_name/[container/]filename.rdb[.gz]`
