@@ -1,7 +1,7 @@
 ---
 Title: Memory and performance
 linktitle: Memory and performance
-description:
+description: Learn more about managing your memory and optimizing performance for your database. 
 weight: 70
 alwaysopen: false
 categories: ["RS"]

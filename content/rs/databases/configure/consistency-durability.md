@@ -2,7 +2,7 @@
 Title: Consistency during replication
 linkTitle: Consistency
 description: Explains the order write operations are communicated from app to proxy to shards for both the weak consistency model and the strong consistency model. 
-weight: 90
+weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
