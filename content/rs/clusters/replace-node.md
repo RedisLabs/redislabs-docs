@@ -27,7 +27,7 @@ failure](/images/rs/node-failure.png)
     instructions]({{< relref "/rs/installing-upgrading/_index.md" >}}).
 
     {{< note >}}
-If you are using [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}}),
+If you are using [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}),
 you must make sure the required flash storage is set up on this new node.
     {{< /note >}}
 

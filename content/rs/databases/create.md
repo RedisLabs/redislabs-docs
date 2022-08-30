@@ -17,7 +17,7 @@ aliases: [
 Redis Enterprise Software lets you create databases and distribute them across a cluster of nodes.
 These databases can use Redis Enterprise features like:
 
-- [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}})
+- [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
 - [High availability]({{< relref "/rs/databases/durability-ha.md" >}})
 - [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
@@ -43,7 +43,7 @@ To create a new database:
 
 1. Click **Next** to create a single-region, in-memory database.
 
-    If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash/.md" >}}),
+    If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash/" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
     ![getstarted-newdatabase](/images/rs/getstarted-newdatabase.png)
@@ -135,18 +135,18 @@ after the database is created.
         {{< /note >}}
 
     - **Database clustering** - You can either:
-        - Enable [database clustering]({{< relref "/rs/databases/configure/clustering.md" >}})
+        - Enable [database clustering]({{< relref "/rs/databases/essentials/clustering.md" >}})
             and select the number of shards that you want to have in the database.
             When database clustering is enabled, databases are subject to limitations on
-            [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}}).
+            [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}}).
             You can increase the number of shards in the database at any time.
 
-            You can accept the [standard hashing policy]({{< relref "/rs/databases/configure/clustering#standard-hashing-policy" >}})
-            or define a [custom hashing policy]({{< relref "/rs/databases/configure/clustering#custom-hashing-policy" >}})
+            You can accept the [standard hashing policy]({{< relref "/rs/databases/essentials/clustering#standard-hashing-policy" >}})
+            or define a [custom hashing policy]({{< relref "/rs/databases/essentials/clustering#custom-hashing-policy" >}})
             to define where keys are located in the clustered database.
 
         - Clear the **Database clustering** option to use only one shard so that you
-            can use [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}})
+            can use [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}})
             without the limitations.
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}

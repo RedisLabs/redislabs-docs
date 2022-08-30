@@ -47,7 +47,7 @@ To create a cluster:
         or leave the default path.
 
     1. If you want to enable Redis on Flash, select the **Enable flash storage support** checkbox
-        and enter the path to the [Flash storage]({{< relref "/rs/databases/redis-on-flash/.md" >}}).
+        and enter the path to the [Flash storage]({{< relref "/rs/databases/redis-on-flash/" >}}).
 
     1. If your machine is configured to have multiple IP addresses, the section **IP Addresses Usage** is shown.
         Use the **IP Addresses Usage** section to assign a single IPv4 type address for internal traffic

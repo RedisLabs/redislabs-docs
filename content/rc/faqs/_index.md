@@ -141,7 +141,7 @@ Briefly, Redis Enterprise Cloud Flexible and Fixed plans are fully-managed Redis
 
 Flexible plans run in dedicated VPCs and offer:
 
-- [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}}) - Recommended for datasets larger than 500GB
+- [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) - Recommended for datasets larger than 500GB
 - [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) and [Replica Of]({{< relref "/rs/databases/import-export/replica-of.md" >}}) Geo Distribution
 - Integration with [modules]({{< relref "/modules/_index.md" >}})
 - Encryption of [persistence data]({{< relref "/rs/databases/configure/database-persistence.md" >}})

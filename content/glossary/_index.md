@@ -126,13 +126,13 @@ More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.htm
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
-More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database Clustering]({{<relref "/rs/databases/essentials/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "hash tag"%}}
 A part of the key that is used in the hash calculation.
 
-More info: [Database Clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database Clustering]({{<relref "/rs/databases/essentials/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "ingress"%}}
@@ -248,7 +248,7 @@ Single-threaded Redis OSS database.
 {{%definition "Redis on Flash (RoF)"%}}
 Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Redis on Flash manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
 
-More info: [Redis on Flash]({{<relref "/rs/databases/redis-on-flash/.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/databases/redis-on-flash/getting-started-redis-flash.md">}})
+More info: [Redis on Flash]({{<relref "/rs/databases/redis-on-flash/">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/databases/redis-on-flash/getting-started-redis-flash.md">}})
 {{%/definition%}}
 
 {{%definition "Replica Of"%}}
@@ -285,7 +285,7 @@ Kubernetes term for object that stores sensitive information, such as passwords,
 {{%definition "shard"%}}
 Redis process that is part of the Redis clustered database.
 
-More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/essentials/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "sharding"%}}

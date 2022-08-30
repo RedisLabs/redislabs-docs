@@ -55,7 +55,7 @@ Data eviction policies are not supported for Active-Active databases with Redis 
 
 To avoid data eviction, make sure your database is large enough to hold required values.  
 
-For larger databases, consider using [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash/.md" >}}).
+For larger databases, consider using [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash/" >}}).
 
 Redis on Flash stores actively-used data (also known as _hot data_) in RAM and the remaining data in Flash memory (SSD).
 This lets you retain more data while ensuring the fastest access to the most critical data.

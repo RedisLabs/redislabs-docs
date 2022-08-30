@@ -110,9 +110,9 @@ Each Active-Active instance must have a unique fully-qualified domain name (FQDN
 
         - Make sure that **Database clustering** is enabled and select the number of shards
         that you want to have in the database. When database clustering is enabled,
-        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}}).
+        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
-        - Clear **Database clustering** to use only one shard and to avoid [Multi-key command]({{< relref "/rs/databases/configure/clustering.md" >}}) limitations.
+        - Clear **Database clustering** to use only one shard and to avoid [Multi-key command]({{< relref "/rs/databases/essentials/clustering.md" >}}) limitations.
 
         {{< note >}}
 You cannot enable or disable database clustering after the Active-Active database is created.

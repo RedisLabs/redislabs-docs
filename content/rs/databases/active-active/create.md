@@ -63,7 +63,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create an Active-Active database on RAM.
 
-    If your cluster supports [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}}),
+    If your cluster supports [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
     for the best performance during the initial Active-Active database sync of a new replica.
 
@@ -111,10 +111,10 @@ Every instance of an Active-Active database can receive write operations, and al
 
         - Make sure the Database clustering is enabled and select the number of shards
         that you want to have in the database. When database clustering is enabled,
-        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}}).
+        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
         - Clear the **Database clustering** option to use only one shard so that you
-        can use [Multi-key commands]({{< relref "/rs/databases/configure/clustering.md" >}})
+        can use [Multi-key commands]({{< relref "/rs/databases/essentials/clustering.md" >}})
         without the limitations.
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
