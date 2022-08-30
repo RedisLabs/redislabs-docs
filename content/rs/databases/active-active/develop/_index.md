@@ -101,7 +101,7 @@ execute them in script-replication mode.
 ## Eviction
 
 The default policy for Active-Active databases is _noeviction_ mode.
-For details, see [eviction for Active-Active databases]({{< relref "/rs/databases/essentials/eviction-policy.md" >}}).
+For details, see [eviction for Active-Active databases]({{< relref "/rs/databases/memory-performance/eviction-policy.md" >}}).
 
 
 ## Expiration

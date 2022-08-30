@@ -45,7 +45,7 @@ When a database exceeds its memory limit, eviction policies determine which data
 
 The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the ‘expire’ field set. The default for Active-Active databases is `noeviction`.
 
-For more information, see [eviction policies]({{<relref "/rs/databases/essentials/eviction-policy.md">}}).
+For more information, see [eviction policies]({{<relref "/rs/databases/memory-performance/eviction-policy.md">}}).
 
 ## Database persistence
 

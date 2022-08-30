@@ -19,7 +19,7 @@ RS is designed to handle memory management to optimize database performance - be
 If not enough RAM is available, RS prevents adding more data into the databases.
 
 RS protects the existing data and prevents the database from being able to store data into the shards.
-You can configure the cluster to move the data to another node, or even discard it according to the [eviction policy]({{< relref "/rs/databases/essentials/eviction-policy.md" >}}) set on each database by the administrator.
+You can configure the cluster to move the data to another node, or even discard it according to the [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy.md" >}}) set on each database by the administrator.
 
 [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
 manages memory so that you can also use flash memory (SSD) to store data.
