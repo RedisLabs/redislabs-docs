@@ -39,9 +39,9 @@ Database persistence gives your database durability against process or server fa
 
 For more details, see [Database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}}).
 
-## [Active-Active geo-distribution]({{<relref "/rs/databases/active-active/_index.md">}})
+## [Active-Active geo-distributed replication]({{<relref "/rs/databases/active-active/_index.md">}})
 
-Redis Enterprise Active-Active geo-replication distributes your replicated data across multiple nodes and availability zones. This increases the durability of your database by reducing the likelihood of data or availability loss. It also reduces the latency of your data access.
+Redis Enterprise Active-Active distributes your replicated data across multiple nodes and availability zones. This increases the durability of your database by reducing the likelihood of data or availability loss. It also reduces the latency of your data access.
 
 For more details, see [Active-Active geo-distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}).
 
@@ -50,3 +50,9 @@ For more details, see [Active-Active geo-distributed Redis]({{<relref "/rs/datab
 Rack-zone awareness maps each node in your Redis Enterprise cluster to a physical rack or logical zone. The cluster then uses that information to distribute primary shards and their replica shards in different racks or zones. This protects your data and ensures data availability if there is rack or zone failure.
 
 For more details, see [Rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}}).
+
+## [Discovery service]({{<relref "/rs/databases/essentials/discovery-service.md">}})
+
+The Discovery service provides an IP-based connection management service used when connecting to Redis Enterprise Software databases. When used in conjunction with Redis Enterprise Software’s other high availability features, the Discovery Service assists an application scope with topology changes such as adding, removing of nodes, node failovers and so on. It does this by providing your application with the ability to easily discover which node hosts the database endpoint. The API used for discovery service is compliant with the Redis Sentinel API.
+
+For more details, see [Discovery service]({{<relref "/rs/databases/essentials/discovery-service.md">}}).
