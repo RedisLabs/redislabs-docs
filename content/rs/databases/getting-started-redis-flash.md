@@ -1,8 +1,8 @@
 ---
 Title: Get started with Redis on Flash (RoF)
-linkTitle: Redis on Flash
+linkTitle: Get started with Redis on Flash
 description:
-weight: 20
+weight: 80
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/getting-started/creating-database/redis-flash/

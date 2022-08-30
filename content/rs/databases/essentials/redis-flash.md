@@ -1,7 +1,7 @@
 ---
 Title: Redis on Flash
 description:
-weight: 40
+weight: 79
 alwaysopen: false
 categories: ["RS"]
 aliases: [

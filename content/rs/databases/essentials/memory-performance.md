@@ -2,7 +2,7 @@
 Title: Memory and performance
 linktitle: Memory and performance
 description:
-weight: $weight
+weight: 73
 alwaysopen: false
 categories: ["RS"]
 aliases: [

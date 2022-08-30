@@ -1,5 +1,5 @@
 ---
-Title: Proxy policy
+Title: Configure proxy policy
 linktitle: Proxy policy
 description:
 weight: $weight
