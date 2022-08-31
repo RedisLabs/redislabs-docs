@@ -14,6 +14,9 @@ aliases: /rs/administering/monitoring-metrics/definitions/
          /rs/administering/cluster-operations/node-metrics/
          /rs/administering/monitoring-metrics/console-metrics-definitions/
          /rs/monitoring-metrics/console-metrics-definitions/
+         /rs/clusters/monitoring/console-metrics-definitions/
+         /rs/clusters/monitoring/console-metrics-definitions.md
+
 ---
 The Redis Enterprise Software (RS) admin console shows metrics with information about the performance of the cluster, node, database, and shard.
 For Redis on Flash (ROF) databases, additional metrics are available.

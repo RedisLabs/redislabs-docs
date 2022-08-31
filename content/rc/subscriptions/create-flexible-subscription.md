@@ -63,7 +63,7 @@ The following settings are defined in the **General settings** of the **Setup** 
 | **Region** | The vendor region where you wish to deploy your subscription.  (_required_)|
 | **Subscription&nbsp;Name** | A custom name for your subscription (_required_) |
 | **Active-Active Redis** | Hosts your datasets in multiple read-write locations to support distributed applications and disaster recovery. See [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active" >}}) |
-| **Redis on Flash**| Determines if your databases are stored only in memory (RAM) or are split between memory and Flash storage (RAM+Flash).  See [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})|
+| **Redis on Flash**| Determines if your databases are stored only in memory (RAM) or are split between memory and Flash storage (RAM+Flash).  See [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/.md" >}})|
 
 ### Advanced options {#advanced-options}
 

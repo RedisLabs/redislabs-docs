@@ -8,6 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/concepts/memory-architecture/redis-flash/,
     /rs/concepts/memory-architecture/redis-flash.md,
+    /rs/concepts/memory-performance/redis-flash,
+    /rs/concepts/memory-performance/redis-flash.md,
     /rs/databases/redis-flash/,
     /rs/databases/redis-flash.md,
     /rs/databases/redis-flash.md,
