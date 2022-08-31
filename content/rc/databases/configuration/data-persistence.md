@@ -34,7 +34,7 @@ Data persistance can be also disabled.  In such cases, data is lost when the dat
 
 In Redis Enterprise Cloud, data persistence is a database configuration setting that can be changed by editing your database settings.
 
-The availability of the setting depends on your [subscription]({{<relref "/rc/subscriptions/_index.md">}}):
+The availability of the setting depends on your [subscription]({{<relref "/rc/subscriptions/">}}):
 
 - Free subscriptions do not support data persistence; the setting is disabled entirely.
 

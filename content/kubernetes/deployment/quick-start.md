@@ -26,8 +26,8 @@ This quick start guide is for generic Kubernetes distributions ([kOps](https://k
 
 If you're running either OpenShift or VMWare Tanzu, we provide specific getting started guides for installing the Redis Enterprise Operator on these platforms:
 
-* [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}})
-* [Redis Enterprise on VMWare Tanzu]({{< relref "/kubernetes/deployment/tanzu/_index.md" >}})
+* [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/" >}})
+* [Redis Enterprise on VMWare Tanzu]({{< relref "/kubernetes/deployment/tanzu/" >}})
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ To deploy the Redis Enterprise operator, you'll need:
 * a Kubernetes client (kubectl)
 * access to DockerHub, RedHat Container Catalog, or a private repository that can hold the required images.
 
-See your version's [release notes]({{<relref "/kubernetes/release-notes/_index.md">}}) for a list of required images.
+See your version's [release notes]({{<relref "/kubernetes/release-notes/">}}) for a list of required images.
 
 If you are not pulling images from DockerHub, see [Private Repositories](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/README.md#private-repositories) for additional sections to add to your REC resource file and your `operator.yaml` file.
 

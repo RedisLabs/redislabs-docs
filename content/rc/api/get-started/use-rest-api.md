@@ -85,7 +85,7 @@ Some API operations require input, such as:
         ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
 {{< warning >}}
-The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You should modify these examples to suit your specific needs and account settings. The examples will fail if used as-is. <br/><br/>For more examples showing how to use specific endpoints, see [REST API examples]({{< relref "/rc/api/examples/_index.md" >}}).
+The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You should modify these examples to suit your specific needs and account settings. The examples will fail if used as-is. <br/><br/>For more examples showing how to use specific endpoints, see [REST API examples]({{< relref "/rc/api/examples/" >}}).
 {{< /warning >}}
 
 ## Use the `cURL` HTTP client

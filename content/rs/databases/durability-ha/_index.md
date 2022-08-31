@@ -39,11 +39,11 @@ Database persistence gives your database durability against process or server fa
 
 For more details, see [Database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}}).
 
-## [Active-Active geo-distributed replication]({{<relref "/rs/databases/active-active/_index.md">}})
+## [Active-Active geo-distributed replication]({{<relref "/rs/databases/active-active/">}})
 
 Redis Enterprise Active-Active distributes your replicated data across multiple nodes and availability zones. This increases the durability of your database by reducing the likelihood of data or availability loss. It also reduces the latency of your data access.
 
-For more details, see [Active-Active geo-distributed Redis]({{<relref "/rs/databases/active-active/_index.md">}}).
+For more details, see [Active-Active geo-distributed Redis]({{<relref "/rs/databases/active-active/">}}).
 
 ## [Rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}})
 

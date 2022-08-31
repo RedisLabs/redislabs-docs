@@ -22,7 +22,7 @@ These databases can use Redis Enterprise features like:
 - [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
 - [High availability]({{< relref "/rs/databases/durability-ha/" >}})
 - [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
-- [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
+- [Redis modules]({{< relref "/rs/developing/modules/" >}})
 
 {{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
@@ -80,7 +80,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}}),
         you can also enable rack-zone awareness for the database.
 
-    - [**Redis Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - When you create a new in-memory database,
+    - [**Redis Modules**]({{< relref "/rs/developing/modules/" >}}) - When you create a new in-memory database,
         you can enable multiple Redis modules to the database.
         For RoF databases, you can add modules that support RoF.
         
@@ -170,7 +170,7 @@ after the database is created.
 
     - [**Alerts**]({{< relref "/rs/clusters/monitoring/_index.md#database-alerts" >}}) -
     You can select alerts to show in the database status and configure their thresholds.
-    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}).
+    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/" >}}).
 
 1. Click **Activate**.
 

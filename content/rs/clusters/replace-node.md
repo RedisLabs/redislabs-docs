@@ -24,7 +24,7 @@ failure](/images/rs/node-failure.png)
 
 1. Acquire a new node that is identical to the old node, install and
     configure Redis Enterprise Software on it per the [install
-    instructions]({{< relref "/rs/installing-upgrading/_index.md" >}}).
+    instructions]({{< relref "/rs/installing-upgrading/" >}}).
 
     {{< note >}}
 If you are using [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}),
@@ -44,6 +44,6 @@ you must make sure the required flash storage is set up on this new node.
 - If there is a faulty node in the cluster to which you are adding a node,
 - RS enforces using the new node to replace the faulty one.
 - If you are using the DNS NS record based connection approach,
-the [DNS records must be updated]({{< relref "/rs/networking/cluster-dns/_index.md" >}})
+the [DNS records must be updated]({{< relref "/rs/networking/cluster-dns/" >}})
 each time a node is added or replaced.
     {{< /note >}}

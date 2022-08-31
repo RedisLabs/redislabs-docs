@@ -77,5 +77,5 @@ To enable alerts for a database:
 To send cluster or database alerts by email:
 
 1. In **settings** > **alerts**, select **Receive email alerts** at the bottom of the page.
-1. Configure the [email server settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}}).
-1. In **access control**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}) that you want the user to receive.
+1. Configure the [email server settings]({{< relref "/rs/administering/cluster-operations/settings/" >}}).
+1. In **access control**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/access-control/" >}}) that you want the user to receive.

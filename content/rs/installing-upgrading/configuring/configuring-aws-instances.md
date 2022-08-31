@@ -29,7 +29,7 @@ connected. Later, when setting up RS on the instance, make sure that [the
 persistence storage]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
 
 {{< note >}}
-After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the instance
+After [installing the RS package]({{< relref "/rs/installing-upgrading/" >}}) on the instance
 and **before** running through [the setup process]({{< relref "/rs/clusters/new-cluster-setup.md" >}}),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
@@ -67,7 +67,7 @@ When configuring the Security Group:
     access the UI.
 - If you are using the DNS resolving option with RS, define a DNS UDP
     rule for port 53 to allow access to the databases' endpoints by
-    using the [DNS resolving mechanism]({{< relref "/rs/networking/cluster-dns/_index.md" >}}).
+    using the [DNS resolving mechanism]({{< relref "/rs/networking/cluster-dns/" >}}).
 - To create a cluster that has multiple nodes all running as instances on AWS,
     you need to define a security group that has an All TCP rule for all ports, 0 - 65535,
     and add it to all instances that are part of the cluster.
@@ -76,5 +76,5 @@ When configuring the Security Group:
 
 After successfully launching the instances:
 
-1. Install Redis Enterprise Software from the [Linux package or AWS AMI]({{< relref "/rs/installing-upgrading/_index.md" >}}).
+1. Install Redis Enterprise Software from the [Linux package or AWS AMI]({{< relref "/rs/installing-upgrading/" >}}).
 2. [Set up the cluster]({{< relref "/rs/clusters/new-cluster-setup.md" >}}).

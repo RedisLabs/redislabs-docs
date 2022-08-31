@@ -17,7 +17,7 @@ We made this change because some customers have maintenance procedures that dele
 
 When you upgrade from a RS version lower than 5.2.2 to 5.2.2 and higher, the socket files
 are not moved to the new location by default. During [installation]({{< relref
-"/rs/installing-upgrading/_index.md" >}}) you can specify a custom location
+"/rs/installing-upgrading/" >}}) you can specify a custom location
 for the socket files, but after installation you must use this procedure to move the socket files.
 
 To change the location of the socket files:

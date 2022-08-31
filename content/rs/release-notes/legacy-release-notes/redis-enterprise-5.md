@@ -47,7 +47,7 @@ provide smart and automatic conflict resolution based on the data type's
 intent.
 
 For more information, go here. For information, go to [Developing with
-CRDBs]({{< relref "/rs/developing/crdbs/_index.md" >}}).
+CRDBs]({{< relref "/rs/developing/crdbs/" >}}).
 
 ### Redis modules
 
@@ -62,13 +62,13 @@ Enterprise is known for.
 Redis has developed and certified the following modules for use with 
 Redis Enterprise Pack:
 
-- [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
+- [RediSearch]({{< relref "/modules/redisearch/" >}})
     - This module turns RS into a supercharged distributed in-memory
       full-text indexing and search beast.
-- [ReJSON]({{< relref "/modules/redisjson/_index.md" >}})
+- [ReJSON]({{< relref "/modules/redisjson/" >}})
     - Now you have the convenience JSON as a built-in data type and
       easily able to address nested data via a path.
-- [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
+- [RedisBloom]({{< relref "/modules/redisbloom/" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
       filters are probabilistic data structures that
       quickly determine if values are in a set.

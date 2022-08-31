@@ -145,8 +145,8 @@ and the concepts must explain any background information that is needed to know 
     - Incorrect - `In this section detailed description of available development tools, like built-in features, widget objects, functions, template mechanism and available libraries is provided.`
     - Correct - `The widget development tools include built-in features, widget objects, functions, template mechanism and available libraries.`
 - Link from text itself instead of “see …”. For example:
-    - Incorrect - `Using the React Utility is the recommended method, and it requires a build operation. You must use the build system described in [Widget building]({{< relref "rs/_index.md" >}}) section.`
-    - Correct - `Using the React Utility is the recommended method, and it requires a build operation in the [widget build system]({{< relref "rs/_index.md" >}}).`
+    - Incorrect - `Using the React Utility is the recommended method, and it requires a build operation. You must use the build system described in [Widget building]({{< relref "rs/" >}}) section.`
+    - Correct - `Using the React Utility is the recommended method, and it requires a build operation in the [widget build system]({{< relref "rs/" >}}).`
 - Terminology for APIs:
     - Your code calls an API, which usually returns something.
     - A call to a REST API sends an HTTP Request to the API URL and the server that hosts that URL usually returns an HTTP Response.

@@ -67,7 +67,7 @@ before running through the upgrade process.
     parameter for default answers ("Y") or "-c" for file path parameters
     for custom answers. For additional details, refer to [Accessing and
     installing the setup
-    package]({{< relref "/rs/installing-upgrading/_index.md" >}})
+    package]({{< relref "/rs/installing-upgrading/" >}})
     section.
 - New rladmin command-line-interface "info" command allows for
     fetching current value of tunable parameters.

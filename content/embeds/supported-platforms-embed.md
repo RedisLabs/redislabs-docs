@@ -18,7 +18,7 @@ Make sure your system meets these requirements:
 | <nobr>Oracle Linux 7, Oracle Linux 8</nobr> | Based on the corresponding RHEL version |
 | Amazon Linux |Version 1 |
 | Docker | [Docker images]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) of Redis Enterprise Software are certified for development and testing only. |
-| Kubernetes | See the [Redis Enterprise Software on Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
+| Kubernetes | See the [Redis Enterprise Software on Kubernetes documentation]({{< relref "/kubernetes/" >}}) |
 
 Be aware that Redis Enterprise Software relies on certain components that require support from the operating system.  You cannot enable support for components, services, protocols, or versions that aren't supported by the operating system running Redis Enterprise Software.  In addition, updates to the operating system or to Redis Enterprise Software can impact component support.
 

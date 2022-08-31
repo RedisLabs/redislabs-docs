@@ -6,7 +6,7 @@ weight: 30
 alwaysopen: false
 categories: ["Modules"]
 ---
-Starting with RediSearch 2.x, supported in Redis Enterprise Software (RS) 6.0 and later, you can [add the RediSearch module]({{<relref "/modules/install/add-module-to-database">}}) to an [Active-Active database]({{< relref "/rs/databases/active-active/_index.md" >}}) at the time of creation.
+Starting with RediSearch 2.x, supported in Redis Enterprise Software (RS) 6.0 and later, you can [add the RediSearch module]({{<relref "/modules/install/add-module-to-database">}}) to an [Active-Active database]({{< relref "/rs/databases/active-active/" >}}) at the time of creation.
 
 You can run search operations on any instance of an Active-Active database.
 

@@ -32,7 +32,7 @@ Before installing Redis Enterprise Software, you need to:
     - Multiple Linux distributions (Ubuntu, RedHat Enterprise Linux (RHEL)/IBM CentOS, Oracle Linux)
     - [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
     - [Docker container]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) (for development and testing only)
-    - [Kubernetes]({{< relref "/kubernetes/_index.md" >}})
+    - [Kubernetes]({{< relref "/kubernetes/" >}})
 
     For complete details, see [Supported platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}})
 
@@ -177,7 +177,7 @@ To install without answering the installation questions, either:
 
 1. [Create]({{< relref "/rs/clusters/new-cluster-setup.md" >}})
     or [join]({{< relref "/rs/clusters/add-node.md" >}}) an existing Redis Enterprise Software cluster.
-1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
+1. [Create a database]({{< relref "/rs/administering/creating-databases/" >}}).
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/databases/active-active/create.md" >}}) database.
 
@@ -238,5 +238,5 @@ More info is available to help with customization and related questions:
 Now that your cluster is set up with nodes, you can:
 
 - [Add users]({{<relref "/rs/security/access-control/manage-users/add-users">}}) to the cluster with specific permissions.  To begin, start with [Access control]({{<relref "/rs/security/access-control">}}).
-- [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
+- [Create databases]({{< relref "/rs/administering/creating-databases/" >}}) to use with your applications.
 

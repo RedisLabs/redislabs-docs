@@ -68,4 +68,4 @@ For more info about configuring the `ServiceMonitor` resource, see the [`Service
   - [Troubleshooting ServiceMonitor changes](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/custom-metrics-elements.png)
 - docs.redis.com
   - [Metrics in Prometheus]({{<relref "/rs/clusters/monitoring/prometheus-metrics-definitions.md">}})
-  - [Monitoring and metrics]({{<relref "/rs/clusters/monitoring/_index.md">}})
+  - [Monitoring and metrics]({{<relref "/rs/clusters/monitoring/">}})

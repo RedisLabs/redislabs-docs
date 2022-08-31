@@ -17,7 +17,7 @@ aliases: [
 ]
 ---
 Redis on Flash (RoF) offers users of [Redis Enterprise
-Software]({{< relref "/rs/_index.md" >}}) and [Redis
+Software]({{< relref "/rs/" >}}) and [Redis
 Enterprise Cloud](https://redislabs.com/redis-enterprise-cloud/) the unique ability to
 have large Redis databases but at significant cost savings. Where
 standard Redis databases must all be in RAM, Redis on Flash enables your
@@ -141,12 +141,12 @@ To create Redis on Flash databases, you must meet the following prerequisites:
 
 - Mount [ephemeral and persistent storage]({{<relref "/rs/installing-upgrading/persistent-ephemeral-storage.md">}}) on Redis Enterprise Software nodes with the proper disk size.
 - Meet all [hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}) and [software requirements]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
-- [Install Redis Enterprise Software]({{< relref "/rs/installing-upgrading/_index.md" >}}).
+- [Install Redis Enterprise Software]({{< relref "/rs/installing-upgrading/" >}}).
 
 Once these requirements are met, both Redis on Flash databases and
 all-RAM databases can be created and managed in the same cluster. For
 additional details, refer to [Creating a new
-database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
+database]({{< relref "/rs/administering/creating-databases/" >}}).
 
 When Redis on Flash is enabled, additional settings and
 [metrics]({{< relref "/rs/clusters/monitoring/console-metrics-definitions.md#redis-on-flash-metrics" >}})

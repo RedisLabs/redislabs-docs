@@ -11,7 +11,7 @@ You can manage your Redis Enterprise Software clusters with several different to
 
 - Admin console (the web-based user interface)
 - Command-line tools ([rladmin]({{<relref "/rs/references/cli-utilities/rladmin">}}), [redis-cli](https://redis.io/docs/manual/cli/), [crdb-cli]({{<relref "/rs/references/cli-utilities/crdb-cli">}}))
-- [REST API]({{<relref "/rs/references/rest-api/_index.md">}})
+- [REST API]({{<relref "/rs/references/rest-api/">}})
 
 
 {{< allchildren style="h2" description="true" />}}

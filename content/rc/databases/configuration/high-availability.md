@@ -27,7 +27,7 @@ Redis Enterprise Cloud supports three levels of replication:
 
 - _Multi-zone replication_ means that the primary and its replicas are stored in different zones. This means that your database can remain online even if an entire zone becomes unavailable.
 
-Your replication options depend on your [subscription plan]({{<relref "/rc/subscriptions/_index.md">}}):
+Your replication options depend on your [subscription plan]({{<relref "/rc/subscriptions/">}}):
 
 - _Free_ plans do not support replication.
 - _Fixed_ plans let you choose between no replication, single-zone replication, or multi-zone replication when creating a subscription.  
