@@ -8,6 +8,8 @@ categories: ["RS"]
 aliases: [
     /rs/databases/active-active/connect-to-aa-db.md,
     /rs/databases/active-active/connect-to-aa-db/,
+    /rs/databases/active-active/connect.md,
+    /rs/databases/active-active/connect,
 ]
 ---
 

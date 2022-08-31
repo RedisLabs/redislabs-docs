@@ -140,4 +140,4 @@ You cannot enable or disable database clustering after the Active-Active databas
 ## Step 4: Test the connection to your member Redis Active-Active databases
 
 With the Redis database created, you are ready to connect to your
-database. See [Connect to Active-Active databases]({{<relref "/rs/databases/active-active/connect-to-aa-db.md">}}) for tutorials and examples of multiple connection methods.
+database. See [Connect to Active-Active databases]({{<relref "/rs/databases/active-active/connect.md">}}) for tutorials and examples of multiple connection methods.

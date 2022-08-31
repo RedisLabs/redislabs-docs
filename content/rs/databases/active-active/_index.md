@@ -44,7 +44,7 @@ Database configurations, LUA scripts, and other support info are not replicated.
 
 Keeping multiple copies of the dataset consistent across multiple clusters is no small task. To achieve consistency between participating clusters, Redis Active-Active replication uses a process called the [syncer]({{<relref "content/rs/databases/active-active/syncer.md">}}). 
 
-The syncer keeps a [replication backlog]({{<relref "/rs/databases/active-active/manage-aa#replication-backlog/">}}), which stores changes to the dataset that the syncer sends to other participating clusters. The syncer uses partial syncs to keep replicas up to date with changes, or a full sync in the event a replica or primary is lost.
+The syncer keeps a [replication backlog]({{<relref "/rs/databases/active-active/manage#replication-backlog/">}}), which stores changes to the dataset that the syncer sends to other participating clusters. The syncer uses partial syncs to keep replicas up to date with changes, or a full sync in the event a replica or primary is lost.
 
 ## Conflict resolution
 
@@ -61,6 +61,6 @@ Other Redis Enterprise Software features can also be used to enhance the perform
 
 ## Next steps
 
-- [Plan your Active-Active deployment]({{<relref "/rs/databases/active-active/aa-planning.md">}})
-- [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started-active-active.md">}})
-- [Create an Active-Active database]({{<relref "/rs/databases/active-active/create-active-active.md">}})
+- [Plan your Active-Active deployment]({{<relref "/rs/databases/active-active/planning.md">}})
+- [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started.md">}})
+- [Create an Active-Active database]({{<relref "/rs/databases/active-active/create.md">}})

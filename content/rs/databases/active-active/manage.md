@@ -5,10 +5,11 @@ weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    /rs/databases/active-active/edit-aa-database.md,
-    /rs/databases/active-active/edit-aa-database/,
+
     /rs/databases/active-active/manage-aa.md,
     /rs/databases/active-active/manage-aa/,
+    /rs/databases/active-active/manage.md,
+    /rs/databases/active-active/manage,
 ]
 ---
 

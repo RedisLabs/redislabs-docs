@@ -8,6 +8,10 @@ categories: ["RS"]
 aliases: [
    /rs/databases/configure/_index.md,
    /rs/databases/configure/_index/,
+   /rs/databases/configure/edit-delete-db/,
+   /rs/databases/configure/edit-delete-db.md,
+   /rs/administering/database-operations/updating-configurations/,
+   /rs/administering/database-operations/updating-configurations.md,
 ]
 ---
 

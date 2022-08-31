@@ -141,4 +141,4 @@ Every instance of an Active-Active database can receive write operations, and al
 <!-- Also in getting-started-crdbs.md -->
 ## Test the connection to your member Redis Active-Active databases
 
-With the Redis database created, you are ready to connect to your database. See [Connect to Active-Active databases]({{<relref "/rs/databases/active-active/connect-to-aa-db.md">}}) for tutorials and examples of multiple connection methods.
+With the Redis database created, you are ready to connect to your database. See [Connect to Active-Active databases]({{<relref "/rs/databases/active-active/connect.md">}}) for tutorials and examples of multiple connection methods.

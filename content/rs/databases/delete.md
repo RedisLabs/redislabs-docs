@@ -6,10 +6,6 @@ weight: 36
 alwaysopen: false
 categories: ["RS"]
 aliases: [
-    /rs/administering/database-operations/updating-configurations/,
-    /rs/administering/database-operations/updating-configurations.md,
-    /rs/databases/configure/edit-delete-db.md,
-    /rs/databases/configure/edit-delete-db/,
     /rs/databases/delete.md,
     /rs/databases/delete/,
     
