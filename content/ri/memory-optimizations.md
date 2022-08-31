@@ -306,7 +306,7 @@ But if you want `Show me those 46966 IP Addresses` — it cannot show you. For t
 
 If you are using large [sorted sets](https://redis.io/docs/data-types/sorted-sets/) to solve one of the following problems:
 
-- Determine the count of a given observation in a stream
+- Determine the count of a given observation in a stream.
 - Maintain a list of the most frequent observations in a stream
 
 and you are ready to trade accuracy with speed and memory usage, consider using one of the following probabilistic data structures:
