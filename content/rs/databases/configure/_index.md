@@ -42,7 +42,7 @@ For [Active-Active database instances]({{<relref "/rs/databases/active-active">}
 
 For details on using command line tools see:
 - [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) for standalone database configuration
-- [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}})) for Active-Active database configuration
+- [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for Active-Active database configuration
 - [`redis-cli`](https://redis.io/docs/manual/cli/) for open source Redis configuration
 
 ## REST API
