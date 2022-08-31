@@ -24,7 +24,7 @@ architecture to help optimize storage and performance.
 
 ## Memory limits
 
-Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "/rs/references/terminology.md#redis-instance-shard">}}) on the cluster. Your memory limit will also determine the number of shards you'll need.
+Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "/glossary#letter-s">}}) on the cluster. Your memory limit will also determine the number of shards you'll need.
 
 Besides your dataset, the memory limit must also account for replication, Active-Active overhead, and module overhead. These features can significantly increase your database size, sometimes increasing it by four times or more.
 

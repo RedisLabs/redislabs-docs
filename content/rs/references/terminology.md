@@ -120,16 +120,3 @@ Some of the primary functionalities of the cluster manager include:
 - Gathering operational statistics
 - Enforcing license and subscription limitations
 
-## Management UI
-
-Each node runs a web server that is used to provide the user with access
-to the management user interface (UI). The management UI allows viewing
-and managing the entire cluster, so it does not matter which node is
-used for accessing the UI.
-
-## REST API
-
-Each node exposes a REST API to the cluster. Using the REST API, you can
-automate various tasks that are managed through the management UI. For
-example, using the REST API you can instruct the cluster to create a new
-database, update an existing database, or fetch various statistics.

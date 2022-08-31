@@ -34,7 +34,10 @@ A “member database” of a global Active-Active database which is made up of i
 
 {{%definition "active-passive database replication"%}}
 Provides applications read-only access to replicas of the data set from different geographical locations. The Redis Enterprise implementation of active-passive replication is called [Replica Of]({{<relref "#replica-of">}}).
+{{%/definition%}}
 
+{{%definition"admin console"%}}
+Each node runs a web server that is used to provide the user with access to the Redis Enterprise Software admin console (previously known as management UI). The admin console allows viewing and managing the entire cluster, so it does not matter which node is used to access it.
 {{%/definition%}}
 
 {{%definition "admission controller"%}}
@@ -358,7 +361,7 @@ Kubernetes term for object that stores sensitive information, such as passwords,
 {{%definition "shard"%}}
 Redis process that is part of the Redis clustered database.
 
-More info: [Database clustering]({{<relref "/rs/databases/durability-ha/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/durability-ha/clustering.md">}}), [terminology]({{<relref "/rs/references/terminology.md">}})
 {{%/definition%}}
 
 {{%definition "sharding"%}}
