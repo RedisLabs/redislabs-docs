@@ -35,7 +35,7 @@ connecting to databases.
 The Discovery Service is available for querying on each node of the
 cluster, listening on port 8001. To employ it, your application utilizes
 a [Redis Sentinel enabled client
-library]({{< relref "/rs/databases/connections/supported-clients-browsers.md" >}})
+library]({{< relref "/rs/databases/connect/supported-clients-browsers.md" >}})
 to connect to the Discovery Service and request the endpoint for the
 given database. The Discovery Service replies with the database's
 endpoint for that database. In case of a node failure, the Discovery
