@@ -6,7 +6,7 @@ weight: 7
 alwaysopen: false
 categories: ["Modules"]
 ---
-Redis Enterprise Software follows the [Redis Enterprise lifecycle]({{< relref "/rs/administering/product-lifecycle.md" >}}).  (For complete details, see the Redis Enterprise Software [subscription agreement](https://redis.com/software-subscription-agreement).)
+Redis Enterprise Software follows the [Redis Enterprise lifecycle]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}).  (For complete details, see the Redis Enterprise Software [subscription agreement](https://redis.com/software-subscription-agreement).)
 
 Redis modules also follow a release lifecycle and schedule.  Here, you'll find the "end-of-life" dates for each module and release.
 

@@ -10,14 +10,15 @@ aliases: [
     /rs/clusters/,
     /rs/administering/cluster-operations,
     /rs/administering/cluster-operations.md,
-    
+    /rs/administering/designing-production/,
+
 ]
 ---
 
 You can manage your Redis Enterprise Software clusters with several different tools:
 
 - Admin console (the web-based user interface)
-- Command-line tools ([rladmin]({{<relref "/rs/references/rladmin.md">}}), [redis-cli](https://redis.io/docs/manual/cli/), [crdb-cli]({{<relref "/rs/references/crdb-cli-reference.md">}}))
+- Command-line tools ([rladmin]({{<relref "/rs/references/cli-utilities/rladmin">}}), [redis-cli](https://redis.io/docs/manual/cli/), [crdb-cli]({{<relref "/rs/references/cli-utilities/crdb-cli">}}))
 - [REST API]({{<relref "/rs/references/rest-api/_index.md">}})
 
 ## Manage your cluster

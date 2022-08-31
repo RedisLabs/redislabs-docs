@@ -17,7 +17,7 @@ aliases: /rs/release-notes/rs-6-2-8-october-2021/
 This version features:
 
 - Support for Red Hat Linux Edition (RHEL) 8
-- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/databases/import-export/database-backup.md">}}) 
+- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/databases/import-export/schedule-backups.md">}}) 
 - Compatibility with version of [open source Redis 6.2.3](https://github.com/redis/redis/releases/tag/6.2.3) (starting with [Redis Enterprise Software v6.2.4]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}))
 - Compatibility with the security fixes of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6)
 - Enhancements and bug fixes
@@ -41,7 +41,7 @@ This version features:
 
 As of 31 October 2021, Redis Enterprise Software v5.6.0 is end of life (EOF).
 
-To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/administering/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
+To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
 Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
 
@@ -83,6 +83,8 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/insta
          - (B) Upon import operation
 
 ## Known limitations
+
+-RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 - RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
 

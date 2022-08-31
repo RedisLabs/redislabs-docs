@@ -16,26 +16,19 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-- `redis-cli` command-line tool
+- [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
 
-- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or greater
+- [`redis-py`](https://github.com/redis/redis-py) client library v4.0.0 or later
 
-## RedisTimeSeries with redis-cli
-
-The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool is included with the Redis installation. You can use it to connect to your Redis database and test RedisTimeSeries commands.
+## RedisTimeSeries with `redis-cli`
 
 The following examples show you how to create a time series that represents weather measurements.
 
-### Connect to a database
-
-```sh
-$ redis-cli -h <endpoint> -p <port> -a <password>
-127.0.0.1:12543>
-```
+To begin, [connect to your database]({{<relref "/rs/references/cli-utilities/redis-cli#connect-to-a-database">}}) with `redis-cli`.
 
 ### Create a time series
 
-Use [`TS.CREATE`](https://redis.io/commands/ts.create/) to create a Redis key with a time series value.
+Use [`TS.CREATE`](https://redis.io/commands/ts.create/) to create a new time series.
 
 Create a time series with the key name `temperature:1:20` to represent the temperatures at sensor 1 and area 20.
 
@@ -62,7 +55,7 @@ Create `temperature` and `humidity` time series keys for other temperature and h
 "OK"
 ```
 
-### Add data to a time series
+### Add samples
 
 Use [`TS.ADD`](https://redis.io/commands/ts.add/) to add new data to a time series.
 
@@ -90,6 +83,8 @@ Add a few humidity measurements from area 20 to `humidity:1:20`.
 1652831657886
 ```
 
+#### Update multiple time series
+
 You can also update multiple time series at once with [`TS.MADD`](https://redis.io/commands/ts.madd/).
 
 Use `TS.MADD` to add multiple measurements from area 24 to `temperature:2:24` and `humidity:2:24`.
@@ -106,7 +101,7 @@ Use `TS.MADD` to add multiple measurements from area 24 to `temperature:2:24` an
 6) "1652831657886"
 ```
 
-### Get data from a time series
+### Read time series data
 
 Use [`TS.GET`](https://redis.io/commands/ts.get/) to get the latest entry in the time series.
 
@@ -139,6 +134,8 @@ You can specify `0` and `+` for the starting and ending timestamps to get all of
 3) 1) "1652824475581"
    2) "18.3"
 ```
+
+#### Read data from multiple time series
 
 Use [`TS.MGET`](https://redis.io/commands/ts.mget/) to get the last entry in all time series keys with an `area_id` of 20.
 
@@ -208,9 +205,9 @@ Then, use [`TS.MREVRANGE`](https://redis.io/commands/ts.mrevrange/) to get a ran
          2) "51"
 ```
 
-### Delete data from a time series
+### Delete samples
 
-Use [`TS.DEL`](https://redis.io/commands/ts.del/) to delete all timestamps in a specified range from a time series.
+Use [`TS.DEL`](https://redis.io/commands/ts.del/) to delete all samples within a specified range of timestamps:
 
 ```sh
 127.0.0.1:12543> TS.DEL temperature:1:20 1652824475581 1652828015127
@@ -551,5 +548,5 @@ Done!
 
 ## More info
 
-- [RedisTimeSeries commands](https://redis.io/commands/?group=timeseries)
+- [RedisTimeSeries commands]({{<relref "/modules/redistimeseries/commands">}})
 - [RedisTimeSeries client libraries](https://redis.io/docs/stack/timeseries/clients/)

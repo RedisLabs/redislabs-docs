@@ -1,7 +1,7 @@
 ---
 Title: Export data from a database
 description: You can export data to import it into a new database or to make a backup.  This article shows how to do so.
-weight: 60
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: [

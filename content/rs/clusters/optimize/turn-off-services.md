@@ -1,7 +1,7 @@
 ---
 Title: Turn off services to free system memory
 linktitle: Free system memory
-description: Turn off services to free memory and improve performance. 
+description: Turn off services to free memory and improve performance.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -26,39 +26,35 @@ The services that you can turn off are:
 - RS Admin Console - `cm_server`
 - Logs in CSV format - `stats_archiver`
 - [LDAP authentication]({{< relref "/rs/security/ldap/_index.md" >}}) - `saslauthd`
-- [Discovery service]({{< relref "rs/installing-upgrading/configuring/cluster-dns.md" >}})- `mdns_server`, `pdns_server`
+- [Discovery service]({{< relref "rs/networking/cluster-dns.md" >}})- `mdns_server`, `pdns_server`
 - [Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}) - `crdb_coordinator`, `crdb_worker`
 
 To turn off a service with the `rladmin cluster config` command, use the `services` parameter and the name of the service, followed by `disabled`.
 ```text
- rladmin cluster config 
+ rladmin cluster config
         [ services <service_name> <enabled | disabled> ]
 ```
 
-To turn off a service with the API, use the `/v1/cluster/services/configuration` endpoint
+To turn off a service with the API, use the [`PUT /v1/services_configuration`]({{<relref "/rs/references/rest-api/requests/cluster/services_configuration#put-cluster-services_config">}}) endpoint
 with the name of the service and the operating mode (enabled/disabled) in JSON format.
 
 For example:
-- To turn off the Redis Enterprise admin console, issue this PUT request:
+- To turn off the Redis Enterprise admin console, use this PUT request:
 
     ```sh
-    curl --request PUT \
-    --url https://localhost:9443/v1/cluster/services_configuration \
-    --header 'content-type: application/json' \
-    --data '{
+    PUT https://[host][:9443]/v1/cluster/services_configuration
+    '{
         "cm_server":{
             "operating_mode":"disabled"
         }
     }'
     ```
 
-- To turn off the CRDB services and enable the `stats_archiver` for cluster component statistics, issue this PUT request:
+- To turn off the CRDB services and enable the `stats_archiver` for cluster component statistics, use this PUT request:
 
     ```sh
-    curl --request PUT \
-    --url https://localhost:9443/v1/cluster/services_configuration \
-    --header 'content-type: application/json' \
-    --data '{
+    PUT https://[host][:9443]/v1/cluster/services_configuration
+    '{
         "crdb_coordinator":{
             "operating_mode":"disabled"
         },

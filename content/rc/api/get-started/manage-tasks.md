@@ -65,13 +65,10 @@ With the task ID, you can query the task status for updates and progress informa
 The response in the above example shows a URL with the title `getTaskStatusUpdates`.
 The URL in the `href` property returns updates for the specified task.
 
-This request returns the updated status of the task identifier, using the value in the `$TASK_ID` environment variable:
+This request returns the updated status of the task identifier:
 
 ```bash
-curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
-    -H "accept: application/json" \
-    -H "x-api-key: $ACCOUNT_KEY" \
-    -H "x-api-secret-key: $SECRET_KEY"
+GET "https://[host]/v1/tasks/<taskId>"
 ```
 
 The response to the `getTaskStatusUpdates` request shows:
@@ -114,10 +111,7 @@ You can use the API operation `GET /tasks` to list the recently submitted and co
 This API operation returns a list of tasks for the current account, sorted by most recent status update.
 
 ```bash
-curl -s -X GET "https://$HOST/tasks" \
-    -H "accept: application/json" \
-    -H "x-api-key: $ACCOUNT_KEY" \
-    -H "x-api-secret-key: $SECRET_KEY"
+GET "https://$HOST/tasks"
 ```
 
 The result returns all the tasks submitted during the past 10 days.

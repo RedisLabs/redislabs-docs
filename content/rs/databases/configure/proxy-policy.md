@@ -1,8 +1,8 @@
 ---
-Title: Proxy policy
+Title: Configure proxy policy
 linktitle: Proxy policy
 description:
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -136,7 +136,7 @@ you might also look into enabling the multiple NIC support in RS. With
 nodes that have multiple physical NICs (Network Interface Cards), you
 can configure RS to separate internal and external traffic onto
 independent physical NICs. For more details, refer to [Multi-IP &
-IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}).
+IPv6]({{< relref "/rs/networking/multi-ip-ipv6.md" >}}).
 {{< /note >}}
 
 Having multiple proxies for a database can improve RS's ability for fast

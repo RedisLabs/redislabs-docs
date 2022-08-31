@@ -13,7 +13,7 @@ aliases: [
     /platforms/kubernetes/getting-started/openshift/openshift-cli.md,
     /platforms/kubernetes/deployment/openshift/openshift-cli/,
     /platforms/kubernetes/deployment/openshift/openshift-cli/,
-    content/kubernetes/deployment/openshift/openshift-cli.md,
+    /kubernetes/deployment/openshift/openshift-cli.md,
     /kubernetes/deployment/openshift/openshift-cli.md,
     /kubernetes/deployment/openshift/openshift-cli/,
 
@@ -24,7 +24,7 @@ cluster with OpenShift.
 
 ## Prerequisites
 
-- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) installed, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}))
+- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) installed, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}))
   {{<note>}}
 If you are running an OpenShift 3 version, use the `bundle.yaml` file located in the `openshift_3_x` folder in the `redis-enterprise-k8s-docs` repo. This folder also contains the custom resource definitions (CRDs) compatible with OpenShift 3.x.  
   {{</note>}}
