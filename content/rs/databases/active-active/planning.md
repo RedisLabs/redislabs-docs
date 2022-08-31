@@ -27,7 +27,7 @@ Changes made from the admin console to an Active-Active database configuration o
 
 ## Memory limits
 
-Database memory limits define the maximum size of your database across all database replicas and [shards]({{<relref "rs/concepts/terminology#redis-instance-shard">}}) on the cluster. Your memory limit also determines the number of shards.
+Database memory limits define the maximum size of your database across all database replicas and [shards]({{<relref "/rs/references/terminology.md#redis-instance-shard">}}) on the cluster. Your memory limit also determines the number of shards.
 
 Besides your dataset, the memory limit must also account for replication, Active-Active metadata, and module overhead. These features can increase your database size, sometimes increasing it by two times or more.
 
