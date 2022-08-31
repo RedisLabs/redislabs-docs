@@ -1,6 +1,6 @@
 ---
 Title: Active-Active Redis applications
-linktitle: Active-Active applications
+linktitle: Develop applications
 description:
 weight: 99
 alwaysopen: false

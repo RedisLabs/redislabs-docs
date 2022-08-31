@@ -1,6 +1,7 @@
 ---
 Title: Manage Active-Active databases 
-description: Manage 
+linktitle: Manage
+description: Manage your Active-Active database settings. 
 weight: 30
 alwaysopen: false
 categories: ["RS"]

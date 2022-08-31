@@ -1,8 +1,8 @@
 ---
 Title: Syncer process
 linktitle: Syncer process
-description: 
-weight: 75
+description: Detailed information about the syncer process and its role in distributed databases.
+weight: 90
 alwaysopen: false
 categories: ["RS"]
 aliases: [
