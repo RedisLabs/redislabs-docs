@@ -270,7 +270,7 @@ You should be consistent about the `total no. of expected elements` and the `sha
 
 If you were to change any one the values, you should have a process for moving your data from the old datashards to the new data shards (this is generally known as resharding).
 
-#### Trade offs
+#### Tradeoffs
 
 Converting big hashes to small hashes increases the complexity of your code.
 
