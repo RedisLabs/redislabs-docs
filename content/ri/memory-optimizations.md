@@ -285,7 +285,7 @@ If you are using large [sets](https://redis.io/docs/data-types/sets/) to solve o
 and you are ready to trade accuracy with speed and memory usage, consider using one of the following probabilistic data structures. You can use:
 
 - [HyperLogLog](https://redis.io/docs/data-types/hyperloglogs/) to estimate the number of unique observations in a set.
-- [Bloom filter or cuckoo filter](https://redis.io/docs/stack/bloom/) can be used for checking if an observation has already appeared in the stream (false positive matches are possible, but false negatives are not).
+- [Bloom filter or cuckoo filter](https://redis.io/docs/stack/bloom/) to check if an observation has already appeared in the stream. False positive matches are possible, but false negatives are not.
 - [t-digest](https://redis.io/docs/stack/bloom/) can be used for estimating the fraction or the number of observations in the stream that are smaller or larger than a given value.
 
 Bloom filter and cuckoo filter require [RedisBloom](https://redis.com/modules/redis-bloom/).
