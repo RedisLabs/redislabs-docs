@@ -292,7 +292,7 @@ Bloom filter and cuckoo filter require [RedisBloom](https://redis.com/modules/re
 
 #### Trade offs
 
-Following are the trade-offs of using HyperLogLog:
+Following are the tradeoffs of using HyperLogLog:
 
 1. The results achieved from HyperLogLog are not 100% accurate; they have an approximate standard error of 0.81%.
 1. Hyperloglog only tells you the unique count. It cannot tell you the elements in the set.
