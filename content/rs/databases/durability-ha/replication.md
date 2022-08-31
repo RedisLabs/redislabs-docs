@@ -2,7 +2,7 @@
 Title: Database replication
 linktitle: Replication
 description:
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["RS"]
 aliases: [

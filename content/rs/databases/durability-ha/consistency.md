@@ -2,7 +2,7 @@
 Title: Consistency during replication
 linkTitle: Consistency
 description: Explains the order write operations are communicated from app to proxy to shards for both the weak consistency model and the strong consistency model. 
-weight: 10
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -10,8 +10,8 @@ aliases: [
     /rs/concepts/data-access/consistency-durability/,
     /rs/databases/configure/consistency-durability.md,
     /rs/databases/configure/consistency-durability/,
-    /rs/databases/configure/consistency.md,
-    /rs/databases/configure/consistency/,
+    /rs/databases/durability-ha/consistency.md,
+    /rs/databases/durability-ha/consistency/,
 ]
 ---
 Redis Enterprise Software comes with the ability to replicate data

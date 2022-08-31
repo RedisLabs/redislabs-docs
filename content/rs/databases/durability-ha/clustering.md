@@ -1,8 +1,8 @@
 ---
 Title: Database clustering
 linktitle: Clustering
-description:
-weight: $weight
+description: Clustering to allow customers to spread the load of a Redis process over multiple cores and the RAM of multiple servers.
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: [

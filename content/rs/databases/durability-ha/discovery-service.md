@@ -2,7 +2,7 @@
 Title: Discovery service
 linktitle: Discovery service
 description:
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [
