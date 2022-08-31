@@ -21,7 +21,7 @@ To view the details of a database:
 
 3.  Select the database name to open the **Database** page.
 
-    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
+    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
 The **Database** screen lets you review:
 - Configuration details of a database
@@ -45,13 +45,12 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Database Name** | The name given to your database |
 | **Public endpoint** | Public URI used by any application or client to access the database. |
 | **Private endpoint** | Private endpoint URI available to approved clients; use CIDR allow list and VPC peering to enabled access (_Flexible or Annual subscriptions only_)|
-| **Protocol** | Either 'redis' or 'memcached' based on the value selected when the database was created |
+| **Type** | Either 'redis' or 'memcached' based on the value selected when the database was created |
 | **Redis version** | Redis version used to create the database |
 | **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
 | **Activated on** | Date and time the database was created |
 | **Active-Active Redis** | Checked when the database is part of an Active-Active relationship (_coming soon; Flexible or Annual subscriptions only_) |
 | **Last changed** | Date and time of last update |
-| **Protocol**  | Describes the protocol of the database, typically _Redis_ |
 | **Module** | This setting appears when when a [module]({{< relref "modules/" >}}) is enabled for a database  |
 
 ### Scalability section
@@ -60,7 +59,7 @@ The **Scalability** section describes the memory size, throughput, and hashing p
 
 {{<image filename="images/rc/database-details-configuration-tab-scalability-flexible.png" alt="Use the Scalability section to control the size, throughput, and hashing policy for a database." >}}{{< /image >}}
 
-The **Scalability** section is available only for Flexible and Annual plans.
+The **Scalability** section is primarily for Flexible and Annual plans. Free and Fixed plans have options for memory limit and memory used.
 
 |Setting name|Description|
 |:-----------|:----------|
@@ -97,7 +96,7 @@ The **Security** section helps you control access to your database.
 |Setting name|Description|
 |:-----------|:----------|
 | **Default user** | When enabled, permits access using a simple password |
-| **Redis password** | Password assigned to the database when created |  
+| **Default user password** | Password assigned to the database when created |  
 | **CIDR allow list** | (_paid Fixed, Flexible, or Annual subscriptions only_) Range of IP addresses/security groups allowed to [access the database]({{< relref "/rc/security/cidr-whitelist.md" >}})|
 | **Transport layer security (TLS)** | (_Flexible or Annual subscriptions only_) Enables [transport security layer]({{< relref "/rc/security/database-security/tls-ssl.md" >}})(TLS) encryption for database access.|
 
@@ -121,7 +120,7 @@ The available alerts vary according to the subscription type.
 | **Replica Of - database unable to sync with source** | When enabled, sends email when the replica database cannot sync with the primary (source) database _(Flexible or Annuals plans only_) |
 | **Replica Of - sync lag is higher than** | When enabled, sends email when the sync lag exceeds the defined threshold _(Flexible or Annuals plans only_) |
 
-### Danger zone 
+### Danger zone
 
 Actions in the **Danger Zone** are permanent and should not be taken lightly.
 
@@ -134,6 +133,14 @@ Here, you can:
     When you choose this action, you're asked to confirm.
 
     {{<image filename="images/rc/database-delete-confirm-dialog.png" alt="The Delete database confirmation dialog confirms your decision to delete a database." >}}{{< /image >}}
+
+    If you only have one database in your subscription, you can delete both the database and the subscription from the **Delete database** confirmation dialog:
+        
+    - **Delete both** deletes both the database and the subscription.
+    
+    - **Delete database** deletes the database but keeps the subscription.
+
+    {{<image filename="images/rc/database-delete-last-dialog.png" alt="A different delete database confirmation dialog asks you to consider deleting the subscription as well.">}}{{< /image >}}
 
     Databases must be active and empty before they can be deleted.  To learn more, see [Delete a database]({{< relref "/rc/databases/delete-database.md" >}}).
 
@@ -156,7 +163,7 @@ You can:
 - Sort the list in descending or ascending order using the the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Name**, and **Memory**.
 
     {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}
-    
+
     Select the arrow icon to change the sort order.  One sort order can be active at any given time.
 
 - Use the Filter icon displayed to the right of the field name in the header to display string matches for that field.
@@ -189,7 +196,7 @@ Use the **Edit database** button to edit database details.
 
 Because databases exist within the context of a deployment, certain fields cannot be updated, especially those that might lead to data loss.
 
-Here's what you can change: 
+Here's what you can change:
 
 | Section | Setting | Comments |
 |:-----------|:----------|:---------|
@@ -214,4 +221,3 @@ Choose **Save database** to save your changes.
 {{<image filename="images/rc/button-database-save.png" alt="Use the Save database button to save database changes." >}}{{< /image >}}
 
 If you need to change other details, create a new database and then migrate existing data.
-
