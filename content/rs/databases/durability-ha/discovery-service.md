@@ -104,8 +104,8 @@ We recommend these clients that are tested for use with the [Discovery Service]
 {{< embed-md "discovery-clients.md" >}}
 
 {{< note >}}
-Redis Sentinel API can return endpoints for both master and slave
+Redis Sentinel API can return endpoints for both master and replica
 endpoints.
 Discovery Service only supports master endpoints and does not
-support returning slave endpoints for a database.
+support returning replica endpoints for a database.
 {{< /note >}}

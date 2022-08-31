@@ -35,8 +35,8 @@ upgrade to this version.
     details, refer to [Cluster
     Recovery]({{< relref "/rs/clusters/cluster-recovery.md" >}}).
 - Major improvements made to database replication performance process
-    by using diskless replication between master and slave shards. The
-    data between the master and slave shards is streamed directly,
+    by using diskless replication between master and replica shards. The
+    data between the master and replica shards is streamed directly,
     instead of using the default file-on-disk mechanism. This behavior
     can be changed for the entire cluster or per database through
     rladmin.
@@ -95,7 +95,7 @@ upgrade to this version.
 - RLEC-7652 - database is down in certain failover scenarios only
     when the database is completely empty
 - RLEC-7737 - issue where in a specific scenario after node restarts,
-    a database with replication both master and slave shards are
+    a database with replication both master and replica shards are
     reported as down
 - RLEC-7712 - in some cases, the Replica Of process may fail when
     Redis password is set
@@ -162,18 +162,18 @@ upgrade to this version.
     stop and restart the synchronization process after the resharding of
     the source database is done.
 
-- **Issue**: In the Replica Of process, high database traffic might restart the Replica Of process due to the "slave buffer" being exceeded. In this case
+- **Issue**: In the Replica Of process, high database traffic might restart the Replica Of process due to the "replica buffer" being exceeded. In this case
     you will often see the status of the Replica Of process display as
     "Syncing".
     
-    **Workaround**: You must manually increase the "slave
+    **Workaround**: You must manually increase the "replica
     buffer" size through rladmin. In order to find the appropriate
     buffer size please [contact Redis support](https://redislabs.com/company/support/)
 
 - **Issue**: In a cluster that is configured to support rack-zone
-    awareness, if the user forces migration of a master or slave shard
+    awareness, if the user forces migration of a master or replica shard
     through rladmin to a node on the same rack-zone as its corresponding
-    master or slave shard, and later runs the rebalance process, the
+    master or replica shard, and later runs the rebalance process, the
     rebalance process will not migrate the shards to ensure rack-zone
     awareness compliance.
     

@@ -70,19 +70,19 @@ update this file.
     resharding of the source database is done.
 
 - **Issue**: In the replica of process, high database traffic might cause the replica of process to restart frequently
-    as result of the "slave buffer" being exceeded. In this case you see
+    as result of the "replica buffer" being exceeded. In this case you see
     the status of the replica of process as "Syncing"
     frequently.
     
     **Workaround**: You need to manually reconfigure the
-    "slave buffer" through rladmin and set the buffer size to a new
+    "replica buffer" through rladmin and set the buffer size to a new
     size. In order to find the appropriate buffer size please contact
     support at: <support@redislabs.com>.
 
 - **Issue**: In a cluster that is configured to support rack-zone
-    awareness, if the user forces migration of a master or slave shard,
+    awareness, if the user forces migration of a master or replica shard,
     through rladmin, to a node on the same rack-zone as its
-    corresponding master or slave shard, and later runs the rebalance
+    corresponding master or replica shard, and later runs the rebalance
     process, the rebalance process will not migrate the shards to ensure
     rack-zone awareness compliance.
     

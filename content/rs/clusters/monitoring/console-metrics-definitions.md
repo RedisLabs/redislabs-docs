@@ -53,7 +53,7 @@ For Redis on Flash (ROF) databases, additional metrics are available.
 | Reads/sec | Database | Number of total reads per second | For example: GET |
 | Total CPU usage | Database, Shard | Percent usage of the CPU |  |
 | Total keys | Database, Shard | Total number of keys in the dataset (not including replication, even if replication enabled) | Calculated as the sum of all keys of all master shards. |
-| Used memory | Database, Shard | Total memory used by the database, including RAM, Flash (if enabled) and replication (if enabled) | **Note** – used memory does not include:<br>1. The fragmentation overhead<br><br>2. The slave replication buffers at the masters<br><br>3. Memory used by Lua scripts<br><br>4. Copy On Write (COW) operation that can be triggered by:<br><br>  - A full replication process is started<br><br>  - A database snapshot process is started<br><br>  - AOF rewrite process is started |
+| Used memory | Database, Shard | Total memory used by the database, including RAM, Flash (if enabled) and replication (if enabled) | **Note** – used memory does not include:<br>1. The fragmentation overhead<br><br>2. The replica replication buffers at the masters<br><br>3. Memory used by Lua scripts<br><br>4. Copy On Write (COW) operation that can be triggered by:<br><br>  - A full replication process is started<br><br>  - A database snapshot process is started<br><br>  - AOF rewrite process is started |
 | Write misses/sec | Database, Shard | Number of write operations (per sec) on non-existing keys | This metric is more relevant for caching use cases. |
 | Writes latency | Database | Latency per write operation |  |
 | Writes/sec | Database | Number of total writes per second | For example: SET |

@@ -9,7 +9,9 @@ aliases: [
     /rs/concepts/data-access/consistency-durability.md,
     /rs/concepts/data-access/consistency-durability/,
     /rs/databases/configure/consistency-durability.md,
-    /rs/databases/configure/consistency-durability/
+    /rs/databases/configure/consistency-durability/,
+    c/rs/databases/configure/consistency.md,
+    /rs/databases/configure/consistency/,
 ]
 ---
 Redis Enterprise Software comes with the ability to replicate data

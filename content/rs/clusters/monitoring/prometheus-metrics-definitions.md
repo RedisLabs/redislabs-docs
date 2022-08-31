@@ -236,14 +236,14 @@ Here are the metrics available to Prometheus:
 | redis_keyspace_read_misses | Number of read operations accessing an non-existing keyspace |
 | redis_keyspace_write_hits | Number of write operations accessing an existing keyspace |
 | redis_keyspace_write_misses | Number of write operations accessing an non-existing keyspace |
-| redis_master_link_status | Indicates if the slave is connected to its master |
+| redis_master_link_status | Indicates if the replica is connected to its master |
 | redis_master_repl_offset | Number of bytes sent to replicas by the shard; Calculate the throughput for a time period by comparing the value at different times |
 | redis_master_sync_in_progress | The master shard is synchronizing (1 true | 0 false) |
 | redis_max_process_mem | Current memory limit configured by redis_mgr according to node free memory |
 | redis_maxmemory | Current memory limit configured by redis_mgr according to db memory limits |
 | redis_mem_aof_buffer | Current size of AOF buffer |
-| redis_mem_clients_normal | Current memory used for input and output buffers of non-slave clients |
-| redis_mem_clients_slaves | Current memory used for input and output buffers of slave clients |
+| redis_mem_clients_normal | Current memory used for input and output buffers of non-replica clients |
+| redis_mem_clients_slaves | Current memory used for input and output buffers of replica clients |
 | redis_mem_fragmentation_ratio | Memory fragmentation ratio (1.3 means 30% overhead) |
 | redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error |
 | redis_mem_replication_backlog | Size of replication backlog |
@@ -260,7 +260,7 @@ Here are the metrics available to Prometheus:
 | redis_process_virtual_memory_bytes | Shard virtual memory in bytes |
 | redis_rdb_bgsave_in_progress | Indication if bgsave is currently in progress |
 | redis_rdb_last_cow_size | Last bgsave (or SYNC fork) used CopyOnWrite memory |
-| redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
+| redis_rdb_saves | Total count of bgsaves since process was restarted (including replica fullsync and persistence) |
 | redis_repl_touch_bytes | Number of bytes sent to replicas as TOUCH commands by the shard as a result of a READ command that was processed; Calculate the throughput for a time period by comparing the value at different times |
 | redis_total_commands_processed | Number of commands processed by the shard; Calculate the number of commands for a time period by comparing the value at different times |
 | redis_total_connections_received | Number of connections received by the shard; Calculate the number of connections for a time period by comparing the value at different times |

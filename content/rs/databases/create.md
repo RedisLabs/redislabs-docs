@@ -63,7 +63,7 @@ The database name is not case-sensitive
         {{< /note >}}
 
     - **Memory limit** - The [database memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}}) includes all database replicas and shards,
-        including slave shards in database replication and database shards in database clustering.
+        including replica shards in database replication and database shards in database clustering.
         If the total size of the database in the cluster reaches the memory limit,
         then the data eviction policy for the database is enforced.
 
@@ -75,7 +75,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
 
 1. Configure the {{< field "db_type" >}} options that you want for the database:
 
-    - [**Replication**]({{< relref "/rs/databases/durability-ha/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
+    - [**Replication**]({{< relref "/rs/databases/durability-ha/replication.md" >}}) - We recommend that you use intra-cluster replication to create replica shards for each database for high-availablity of your data.
 
         If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}}),
         you can also enable rack-zone awareness for the database.

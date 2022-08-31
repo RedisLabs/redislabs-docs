@@ -52,7 +52,7 @@ destination database.
 The Replica Of feature should not be confused with the
 in-memory [Database
 replication]({{< relref "/rs/databases/durability-ha/replication.md" >}})
-feature, which is used for creating a master / slave configuration that
+feature, which is used for creating a master / replica configuration that
 enables ensuring database high-availability.
 {{< /note >}}
 

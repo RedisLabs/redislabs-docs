@@ -77,7 +77,7 @@ each supported data type and [how to develop]({{< relref "/rs/databases/active-a
     database can have different shard count, replica count, and other
     database options but contain identical information in steady-state.
 1. **Active-Active Database Instance**: is a "member database" instance of a global Active-Active database
-    which is made up of its own master and slave shards spanning a
+    which is made up of its own master and replica shards spanning a
     single cluster.
 1. **Multi-master Replication (MMR):** is the multi-directional
     replication that power the efficient replication required to achieve

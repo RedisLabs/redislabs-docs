@@ -39,7 +39,7 @@ When [replica high availability]({{< relref "/rs/databases/configure/replica-ha.
 
 RS 5.4 expands the high availability capabilities by adding the ability to automatically avoid this single point of failure by configuring the cluster to automatically migrate the replica shard to another available node. In practice, replica migration creates a new replica shard and replicates the data from the master shard to the new replica shard.
 
-*_Note that just as is the case with the Redis open-source project, Redis is in the process of changing the "master-slave" terminology to "master-replica" everywhere, including within our documentation._
+*_Note that just as is the case with the Redis open-source project, Redis is in the process of changing the "master-replica" terminology to "master-replica" everywhere, including within our documentation._
 
 ## Additional capabilities
 
