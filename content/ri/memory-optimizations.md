@@ -272,7 +272,7 @@ If you were to change any one the values, you should have a process for moving y
 
 #### Trade offs
 
-The only trade off of converting big hashes to small hashes is that it increase the complexity in your code.
+Converting big hashes to small hashes increases the complexity of your code.
 
 ### Switch from Set to Bloom filter, cuckoo filter, or HyperLogLog
 
