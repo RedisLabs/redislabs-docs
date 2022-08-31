@@ -302,7 +302,7 @@ For example, if you want to maintain how many unique ipaddresses made an API cal
 
 But if your desired result is `Show me those 46966 IP Addresses`, it cannot show you. To achieve that, you need to maintain all IP addresses in a set.
 
-### Switch from Sorted Set to count-min sketch or top-k
+### Switch from a sorted set to count-min sketch or top-k
 
 Suppose you are using large [sorted sets](https://redis.io/docs/data-types/sorted-sets/) to solve one of the following problems:
 
