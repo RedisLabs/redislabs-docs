@@ -1,7 +1,7 @@
 ---
 Title: Active-Active Redis applications
 linktitle: Develop applications
-description:
+description: General information to keep in mind while developing applications for an Active-Active database.
 weight: 99
 alwaysopen: false
 categories: ["RS"]
