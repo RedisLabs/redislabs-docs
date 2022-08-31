@@ -300,7 +300,7 @@ Following are the tradeoffs of using HyperLogLog:
 For example, if you want to maintain how many unique ipaddresses made an API call today. HyperLogLog tells you
 `46966 unique IPs for today`.
 
-But if you want `Show me those 46966 IP Addresses` — it cannot show you. For that, you need to maintain all the IP Addresses in a set.
+But if your desired result is `Show me those 46966 IP Addresses`, it cannot show you. To achieve that, you need to maintain all IP addresses in a set.
 
 ### Switch from Sorted Set to count-min sketch or top-k
 
