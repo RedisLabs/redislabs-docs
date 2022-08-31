@@ -12,7 +12,7 @@ aliases: [
     /rs/databases/active-active/synchronization-mode/,
 ]
 ---
-Replicated databases, including those that use [Replica Of]({{< relref "/rs/databases/import-export/replica-of/" >}}) and [Active-Active]({{< relref "/rs/databases/active-active/" >}}) replication,
+Replicated databases, including those that use [Replica Of]({{< relref "/rs/databases/import-export/replica-of/" >}}) and [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) replication,
 use proxy endpoints to synchronize database changes with the databases on the other participating clusters.
 To improve the throughput and lower the latency for synchronization traffic,
 you can configure a replicated database to use distributed synchronization where any available proxy endpoint can manage synchronization traffic.

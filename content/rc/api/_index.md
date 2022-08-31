@@ -26,7 +26,7 @@ The Redis Cloud REST API is available only with Flexible or Annual subscriptions
 ## Getting started
 
 1. [Enable the API]({{< relref  "/rc/api/get-started/enable-the-api.md" >}})
-1. [Authenticate and authorize]({{< relref  "/rc/api/get-started/" >}})
+1. [Authenticate and authorize]({{< relref  "/rc/api/get-started/_index.md" >}})
 1. [Create API keys]({{< relref  "/rc/api/get-started/manage-api-keys.md" >}})
 1. [Use the API]({{< relref  "/rc/api/get-started/use-rest-api.md" >}})
 1. [Learn the API lifecycle]({{< relref  "/rc/api/get-started/process-lifecycle.md" >}})
@@ -47,4 +47,4 @@ The Redis Cloud REST API is available only with Flexible or Annual subscriptions
 
 - Use the [Redis Cloud API]({{< relref  "/rc/api/get-started/use-rest-api.md" >}})
 - [Full API Reference](https://api.redislabs.com/v1/swagger-ui.html)
-- Secure [authentication and authorization]({{< relref  "/rc/api/get-started/" >}})
+- Secure [authentication and authorization]({{< relref  "/rc/api/get-started/_index.md" >}})

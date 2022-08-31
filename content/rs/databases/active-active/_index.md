@@ -50,7 +50,7 @@ The syncer keeps a [replication backlog]({{<relref "/rs/databases/active-active/
 
 Because you can connect to any participating cluster to perform a write operation, concurrent and conflicting writes are always possible. Conflict resolution is an important part of the Active-Active technology. Active-Active databases only use [conflict-free replicated data types (CRDTs)](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type). These data types provide a predictable conflict resolution and don't require any additional work from the application or client side.
 
-When developing with CRDTs for Active-Active databases, you need to consider some important differences. See [Develop applications with Active-Active databases]({{<relref "/rs/databases/active-active/develop/">}}) for related information.
+When developing with CRDTs for Active-Active databases, you need to consider some important differences. See [Develop applications with Active-Active databases]({{<relref "/rs/databases/active-active/develop/_index.md">}}) for related information.
 
 
 ## Strong eventual consistency

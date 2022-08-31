@@ -32,10 +32,10 @@ Factors to consider when sizing your database:
 
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
-- [**modules**]({{<relref "/modules/">}}): using modules with your database consumes more memory.
+- [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
 - [**database clustering**]({{<relref "/rs/databases/durability-ha/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
 - [**database replication**]({{<relref "/rs/databases/durability-ha/replication.md">}}): enabling replication doubles memory consumption
-- [**Active-Active replication**]({{<relref "/rs/databases/active-active/">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
+- [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
 
 For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/clusters/optimize/node-memory.md">}}) or [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit.md">}}).
 
@@ -84,7 +84,7 @@ From the Redis Enterprise Software admin console, you can monitor the performanc
 
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 
-For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/clusters/monitoring/">}}), and [Memory statistics]({{<relref "/rs/clusters/optimize/node-memory.md#memory-statistics">}}).
+For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/clusters/monitoring/_index.md">}}), and [Memory statistics]({{<relref "/rs/clusters/optimize/node-memory.md#memory-statistics">}}).
 
 ## Scaling databases
 

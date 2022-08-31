@@ -2,7 +2,7 @@
 Title: Migrate a database to Active-Active
 linktitle: Migrate to Active-Active
 description: Use Replica Of to migrate your database to an Active-Active database.
-weight: 50
+weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -13,7 +13,7 @@ aliases: [
 
 ]
 ---
-With [Active-Active databases]({{< relref "/rs/databases/active-active/" >}}), applications can read and write to the same dataset from different geographical locations seamlessly and with latency less than 1 ms, without changing the way the application connects to the database.
+With [Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}), applications can read and write to the same dataset from different geographical locations seamlessly and with latency less than 1 ms, without changing the way the application connects to the database.
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
 If you have data in a single-region Redis Enterprise Software database that you want to migrate to an Active-Active database,

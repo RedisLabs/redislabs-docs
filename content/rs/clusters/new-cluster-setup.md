@@ -23,7 +23,7 @@ In a cluster that consists of only one node, some features and capabilities are 
 such as database replication that provides high availability.
 {{< /note >}}
 
-To set up a new cluster, you must first [install the Redis Enterprise Software package]({{< relref "/rs/installing-upgrading/" >}})
+To set up a new cluster, you must first [install the Redis Enterprise Software package]({{< relref "/rs/installing-upgrading/_index.md" >}})
 and then set up the cluster as described below.
 After the cluster is created you can [add multiple nodes to the cluster]({{< relref "/rs/clusters/add-node.md" >}}).
 
@@ -56,7 +56,7 @@ To create a cluster:
     1. In Cluster configuration, select **Create new cluster**.
 
     1. In **Cluster name (FQDN)**, enter a unique name for the cluster.
-        Also, make sure that you look at the [instructions for setting up DNS]({{< relref "/rs/networking/cluster-dns/" >}})
+        Also, make sure that you look at the [instructions for setting up DNS]({{< relref "/rs/networking/cluster-dns/_index.md" >}})
         to make sure your cluster is reachable by name.
 
     1. Choose whether to [**Enable private & public endpoints support**]({{< relref "/rs/networking/private-public-endpoints.md" >}}).

@@ -78,7 +78,7 @@ tune cluster default_redis_version 6.2
 
 Before upgrading a cluster:
 
-- Verify that you meet the upgrade path requirements for your desired cluster version and review the relevant [release notes]({{< relref "/rs/release-notes/" >}}) for any preparation instructions.
+- Verify that you meet the upgrade path requirements for your desired cluster version and review the relevant [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for any preparation instructions.
 
 - Identify the cluster master node and upgrade that node first.
 
@@ -123,7 +123,7 @@ When each node is upgraded, the cluster is fully upgraded.
 
 Before upgrading a database:
 
-- Review the relevant [release notes]({{< relref "/rs/release-notes/" >}}) for any preparation instructions.
+- Review the relevant [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for any preparation instructions.
 
 - Verify that the database version meets the minimums specified earlier.
 

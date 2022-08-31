@@ -118,7 +118,7 @@ Select **Advanced options** to specify values for the following settings:
 | **OSS Cluster API** | Enable to use the open-source Redis Cluster API. |
 | **Type** | Set to _Memcached_ database to support the legacy database; otherwise leave as _Redis_ |
 | **Data Persistence** | Defines the data persistence policy, if any. See [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}) |
-| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2]({{< relref "/modules/redisearch/" >}}), [RedisJSON]({{< relref "/modules/redisjson/" >}}), [RedisGraph]({{< relref "/modules/redisgraph/" >}}), [RedisBloom]({{< relref "/modules/redisbloom/" >}}), or [RedisTimeSeries]({{< relref "/modules/redistimeseries/" >}}). |
+| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2]({{< relref "/modules/redisearch/_index.md" >}}), [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}}), [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}). |
 
 When finished, select **Save Database** to create your database.
 

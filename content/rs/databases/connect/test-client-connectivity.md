@@ -20,7 +20,7 @@ database.
 
 To test client connectivity:
 
-1. [Create a Redis database]({{< relref "/rs/administering/creating-databases/" >}}) and get the database endpoint, which
+1. [Create a Redis database]({{< relref "/rs/administering/creating-databases/_index.md" >}}) and get the database endpoint, which
     contains the cluster name (FQDN).
 1. Try to connect to the database endpoint from your client of choice,
     and execute commands against the database.
@@ -28,7 +28,7 @@ To test client connectivity:
     endpoint by using the IP address rather than the FQDN; if you
     succeed, it means that the DNS is not properly configured. For
     additional details, refer to
-    [DNS]({{< relref "/rs/networking/cluster-dns/" >}}).
+    [DNS]({{< relref "/rs/networking/cluster-dns/_index.md" >}}).
 
 If any issues are encountered during the connectivity test, contact our
 support at <support@redislabs.com>.

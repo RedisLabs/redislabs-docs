@@ -7,7 +7,7 @@ categories: ["RS"]
 hidden: true
 draft: true
 ---
-In this guide, we'll set up an [Active-Active database]({{< relref "/rs/databases/active-active/" >}})
+In this guide, we'll set up an [Active-Active database]({{< relref "/rs/databases/active-active/_index.md" >}})
 (formerly known as CRDB) deployment with Active-Active replication
 spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator
 and OpenShift Route.
@@ -42,7 +42,7 @@ Routes should have unique hostnames across a Kubernetes cluster.
 
 Before you create an Active-Active deployment with Service Broker, you must create a cluster
 using the REC custom resource, with a Service Broker deployment as covered in
-[Getting Started with Kubernetes and Openshift]({{< relref "/platforms/openshift/" >}}), while noting the following:
+[Getting Started with Kubernetes and Openshift]({{< relref "/platforms/openshift/_index.md" >}}), while noting the following:
 
 1. Make sure you use the latest versions of the deployment files available on GitHub.
 1. Deploy nodes with at least 6GB of RAM in order to accommodate the Active-Active database plan's 5GB database size.

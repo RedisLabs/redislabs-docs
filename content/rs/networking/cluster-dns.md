@@ -32,7 +32,7 @@ Whether you're administering Redis Enterprise Software or accessing databases, t
 
 ## URL-based connections
 
-The fully qualified domain name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/" >}}) of Redis Enterprise Software.
+The fully qualified domain name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) of Redis Enterprise Software.
 The FQDN is a crucial component of the high-availability mechanism because it's used internally to enable and implement automatic and transparent failover of nodes, databases, shards, and endpoints.
 
 {{< note >}}

@@ -27,7 +27,7 @@ Before you add a node to the cluster:
     If the clock in the node you are trying to join to the cluster is not synchronized with the nodes already in the cluster,
     the action fails and an error message is shown indicating that you must synchronize the clocks first.
 
-- You must [update the DNS records]({{< relref "/rs/networking/cluster-dns/" >}})
+- You must [update the DNS records]({{< relref "/rs/networking/cluster-dns/_index.md" >}})
     each time a node is added or replaced.
 
 - We recommend that you add nodes one after the other rather than in parallel
@@ -36,7 +36,7 @@ Before you add a node to the cluster:
 
 To add a node in RS:
 
-1. [Install the RS installation package]({{< relref "/rs/installing-upgrading/" >}}) on a clean installation
+1. [Install the RS installation package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on a clean installation
     of a [supported operating system]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
 1. To connect to the RS management UI of the new RS installation, go to: <https://URL or IP address:8443>
 

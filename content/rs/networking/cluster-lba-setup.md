@@ -40,7 +40,7 @@ The architecture is shown in the following diagram with 3 nodes Redis Enterprise
 
 ### Prerequisites
 
-- [Install]({{< relref "/rs/installing-upgrading/" >}}) the latest version of RS on your clusters
+- [Install]({{< relref "/rs/installing-upgrading/_index.md" >}}) the latest version of RS on your clusters
 - Configure the cluster with the cluster name (FQDN) even though DNS is not in use.
     Remember that the same cluster name is used to issue the licence keys.
     We recommend that you use a “.local” suffix in the FQDN.

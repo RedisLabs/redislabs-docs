@@ -17,9 +17,9 @@ Here, you'll find the details of the API and how to use it.
 
 For more info, see:
 
-- Supported [request endpoints]({{<relref "/rs/references/rest-api/requests/" >}}), organized by path
-- Supported [objects]({{<relref "/rs/references/rest-api/objects/" >}}), both request and response
-- Built-in roles and associated [permissions]({{<relref "/rs/references/rest-api/permissions/" >}})
+- Supported [request endpoints]({{<relref "/rs/references/rest-api/requests/_index.md" >}}), organized by path
+- Supported [objects]({{<relref "/rs/references/rest-api/objects/_index.md" >}}), both request and response
+- Built-in roles and associated [permissions]({{<relref "/rs/references/rest-api/permissions/_index.md" >}})
 - [Redis Enterprise Software REST API quick start]({{<relref "/rs/references/rest-api/quick-start" >}}) with examples
 
 ## Authentication
@@ -39,7 +39,7 @@ For more examples, see the [Redis Enterprise Software REST API quick start]({{<r
 
 ### Permissions
 
-By default, the admin user is authorized for access to all endpoints. Use [role-based access controls]({{< relref "/rs/security/access-control" >}}) and [role permissions]({{<relref "/rs/references/rest-api/permissions/" >}}) to manage access.
+By default, the admin user is authorized for access to all endpoints. Use [role-based access controls]({{< relref "/rs/security/access-control" >}}) and [role permissions]({{<relref "/rs/references/rest-api/permissions/_index.md" >}}) to manage access.
 
 If a user attempts to access an endpoint that is not allowed in their role, the request will fail with a [`403 Forbidden`](https://www.rfc-editor.org/rfc/rfc9110.html#name-403-forbidden) status code. For more details on which user roles can access certain endpoints, see [Permissions]({{<relref "/rs/references/rest-api/permissions">}}).
 

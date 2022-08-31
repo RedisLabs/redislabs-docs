@@ -26,7 +26,7 @@ synchronize the database, either within Redis Enterprise or external to Redis En
 
 You can [create Active-Passive]({{< relref "/rs/databases/import-export/replica-of/create.md" >}}) databases on Redis Enterprise Software or Redis Cloud.
 
-[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/databases/active-active/" >}})
+[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/databases/active-active/_index.md" >}})
 provides these benefits and also provides write access to all of the database replicas.
 
 {{< warning >}}

@@ -19,7 +19,7 @@ You can manage your Redis Enterprise Software databases with several different t
 
 - Admin console (the web-based user interface)
 - Command-line tools
-- [REST API]({{<relref "/rs/references/rest-api/">}})
+- [REST API]({{<relref "/rs/references/rest-api/_index.md">}})
 
 ## Admin console
 
@@ -47,5 +47,5 @@ For details on using command line tools see:
 
 ## REST API
 
-See the [REST API reference]({{<relref "/rs/references/rest-api/">}}) for details on using the API to configure your database. 
+See the [REST API reference]({{<relref "/rs/references/rest-api/_index.md">}}) for details on using the API to configure your database. 
 

@@ -30,7 +30,7 @@ If you're new to Redis Enterprise Cloud, consider the [Quick Start]({{<relref "r
 
 - [Back up databases]({{<relref "rc/databases/back-up-data.md">}})
 
-- [Secure database access]({{<relref "rc/security/database-security/">}})
+- [Secure database access]({{<relref "rc/security/database-security/_index.md">}})
 
 - [Flush database data]({{<relref "rc/databases/flush-data.md">}})
 

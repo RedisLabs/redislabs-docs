@@ -35,10 +35,10 @@ Factors to consider when sizing your database:
 
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
-- [**modules**]({{<relref "/modules/">}}): using modules with your database consumes more memory.
+- [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
 - [**database clustering**]({{<relref "/rs/databases/durability-ha/clustering.md">}}): enables you to spread your data into shards across multiple nodes (scale out).
 - [**database replication**]({{<relref "/rs/databases/durability-ha/replication.md">}}): enabling replication doubles memory consumption
-- [**Active-Active replication**]({{<relref "/rs/databases/active-active/">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to two times (2x) the original data size per instance.
+- [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to two times (2x) the original data size per instance.
 - [**database replication backlog**]({{<relref "/rs/databases/active-active/manage#replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
 - [**Active-Active replication backlog**]({{<relref "/rs/databases/active-active/manage.md">}}) for synchronization between clusters. By default, this is set to 1% of the database size.
 

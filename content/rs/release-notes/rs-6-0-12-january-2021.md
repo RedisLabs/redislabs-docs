@@ -108,8 +108,8 @@ The following GA releases of Redis modules are bundled with RS 6.0.12:
 
 - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0.6]({{<relref "/modules/redisearch/release-notes/redisearch-2.0-release-notes.md">}})
 - [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{<relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md">}})
-- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.2.11]({{<relref "/modules/redisgraph/release-notes/">}})
-- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.4.7]({{<relref "/modules/redistimeseries/release-notes/">}})
+- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.2.11]({{<relref "/modules/redisgraph/release-notes/_index.md">}})
+- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.4.7]({{<relref "/modules/redistimeseries/release-notes/_index.md">}})
 - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}})
 
 To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/install/upgrade-module">}}).

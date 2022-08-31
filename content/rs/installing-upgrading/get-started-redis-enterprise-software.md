@@ -24,7 +24,7 @@ When finished, you'll have a simple cluster with a single node:
 
 {{< note >}}
 **This quick start is designed for local testing only.**
-For production environments, the [install and setup]({{< relref "/rs/installing-upgrading/" >}}) guide  walks through deployment options appropriate for a production environment.
+For production environments, the [install and setup]({{< relref "/rs/installing-upgrading/_index.md" >}}) guide  walks through deployment options appropriate for a production environment.
 {{< /note >}}
 
 Quick start guides are also available to help you:

@@ -11,17 +11,17 @@ you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/
 
 Redis Stack databases include the following modules:
 
-- [RediSearch]({{<relref "/modules/redisearch/">}})
-- [RedisJSON]({{<relref "/modules/redisjson/">}})
-- [RedisGraph]({{<relref "/modules/redisgraph/">}})
-- [RedisTimeSeries]({{<relref "/modules/redistimeseries/">}})
-- [RedisBloom]({{<relref "/modules/redisbloom/">}})
+- [RediSearch]({{<relref "/modules/redisearch/_index.md">}})
+- [RedisJSON]({{<relref "/modules/redisjson/_index.md">}})
+- [RedisGraph]({{<relref "/modules/redisgraph/_index.md">}})
+- [RedisTimeSeries]({{<relref "/modules/redistimeseries/_index.md">}})
+- [RedisBloom]({{<relref "/modules/redisbloom/_index.md">}})
 
 Alternatively, you can use one of these methods to set up a Redis database with modules:
 
 - [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md">}})
 - Redis Enterprise Software in a [Docker container]({{<relref "/rs/installing-upgrading/get-started-docker.md">}})
-- [Other platforms]({{<relref "/kubernetes/">}}) for Redis Enterprise Software
+- [Other platforms]({{<relref "/kubernetes/_index.md">}}) for Redis Enterprise Software
 
 ## Set up a Redis Cloud database
 

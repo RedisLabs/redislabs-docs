@@ -91,7 +91,7 @@ RedisAI supports DL/ML identifiers and their respective backend libraries, inclu
 - **TORCH**: The PyTorch backend
 - **ONNX**: ONNXRuntime backend
 
-A complete list of supported backends is in the [release notes for each version]({{< relref "/modules/redisai/release-notes/" >}}).
+A complete list of supported backends is in the [release notes for each version]({{< relref "/modules/redisai/release-notes/_index.md" >}}).
 
 Backend libraries are dynamically loaded as needed, but can also be loaded during booting or at runtime.
 Refer to these pages for more information on loading backends:
