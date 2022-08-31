@@ -53,7 +53,7 @@ For details about individual modules, see the corresponding documentation.
 
 [^2]: In version 1.6, RediSearch supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
 
-[^3]: You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/databases/configure/enable-oss-cluster-api">}}).
+[^3]: You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/databases/configure/oss-cluster-api">}}).
 
 [^4]: You currently cannot combine Redis on Flash and Active-Active with modules in Redis Cloud.
 

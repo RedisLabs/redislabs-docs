@@ -10,6 +10,8 @@ aliases: [
     /rs/administering/designing-production/networking/using-oss-cluster-api/,
     /rs/databases/configure/enable-oss-cluster-api.md,
     /rs/databases/configure/enable-oss-cluster-api/,
+    /rs/databases/configure/oss-cluster-api.md,
+    /rs/databases/configure/oss-cluster-api/,
 ]
 ---
 {{< embed-md "oss-cluster-api-intro.md"  >}}

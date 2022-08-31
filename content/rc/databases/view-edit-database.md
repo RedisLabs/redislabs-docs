@@ -68,7 +68,7 @@ The **Scalability** section is primarily for Flexible and Annual plans. Free and
 | **Throughput** | Defines throughput in terms of maximum operations per second for the database
 | **Shards** | Defines the throughput in terms of shards dedicated to the database
 | **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/durability-ha/clustering.md#changing-the-hashing-policy" >}}) |
-| **Cluster OSS** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
+| **Cluster OSS** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 
 To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
 

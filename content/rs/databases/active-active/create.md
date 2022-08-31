@@ -117,7 +117,7 @@ Every instance of an Active-Active database can receive write operations, and al
         can use [Multi-key commands]({{< relref "/rs/databases/durability-ha/clustering.md" >}})
         without the limitations.
 
-    - [**OSS Cluster API**]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
+    - [**OSS Cluster API**]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
     - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
 

@@ -81,4 +81,4 @@ There is some Redis functionality (shown below) that's not applicable for Redis 
 
 ## Compatibility with open source Redis Cluster API
 
-Redis Enterprise Software supports [Redis OSS Cluster API]({{< relref "/rs/clusters/optimize/oss-cluster-api.md" >}}) if it is enabled for a database. For more information, see [Using the OSS Cluster API]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}})
+Redis Enterprise Software supports [Redis OSS Cluster API]({{< relref "/rs/clusters/optimize/oss-cluster-api.md" >}}) if it is enabled for a database. For more information, see [Using the OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}})
