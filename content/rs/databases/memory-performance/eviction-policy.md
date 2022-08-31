@@ -2,7 +2,7 @@
 Title: Eviction policy
 linkTitle: Eviction policy
 description: The eviction policy determines what happens when a database reaches its memory limit. 
-weight: $weight
+weight: 10
 alwaysOpen: false
 categories: ["RS"]
 aliases: [

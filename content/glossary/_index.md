@@ -64,6 +64,12 @@ Classless Inter-Domain Routing (CIDR) is a method to allocate and route IP addre
 More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [Configure CIDR allowlist]({{<relref "/rc/security/cidr-whitelist.md">}})
 {{%/definition%}}
 
+{{%definition "concurrent writes"%}}
+
+Concurrency or updates and writes refer to more than events that happen at the same wall clock time across member Active-Active databases. Concurrent updates refer to the fact that updates happen in between sync events that catch up member Active-Active databases with updates that happened on other member Active-Active databases.
+
+{{%/definition%}}
+
 {{%definition "consistency"%}}
 
 Consistency models describe the way a distributed system keeps replicated data consistent between copies.

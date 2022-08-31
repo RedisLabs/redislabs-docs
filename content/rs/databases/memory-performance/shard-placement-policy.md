@@ -1,8 +1,8 @@
 ---
 Title: Shard placement policy
 linkTitle: Shard placement policy
-description:
-weight: 60
+description: Detailed info about the shard placement policy.
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [

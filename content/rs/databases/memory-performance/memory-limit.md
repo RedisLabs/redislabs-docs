@@ -2,7 +2,7 @@
 Title: Database memory limits
 linkTitle: Memory limits
 description: When you set a database's memory limit, you define the maximum size the database can reach.
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: [

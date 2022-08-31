@@ -66,30 +66,4 @@ in between.
 
 [Learn more about
 synchronization]({{< relref "/rs/databases/active-active/_index.md" >}}) for
-each supported data type and [how to develop]({{< relref "/rs/databases/active-active/develop/_index.md" >}}) with them on Redis Enterprise Software.
-
-## Terminology
-
-1. **Active-Active database**: A
-    type of Redis Enterprise Software database that spans clusters.
-    There can be one or more member databases across many clusters that
-    form a conflict-free replicated databases. Each local
-    database can have different shard count, replica count, and other
-    database options but contain identical information in steady-state.
-1. **Active-Active Database Instance**: is a "member database" instance of a global Active-Active database
-    which is made up of its own master and replica shards spanning a
-    single cluster.
-1. **Multi-master Replication (MMR):** is the multi-directional
-    replication that power the efficient replication required to achieve
-    active-active concurrent writes in Active-Active databases.
-1. **Conflict-free Replicated Data Types (CRDT):** is the underlying
-    research that describes techniques used by Redis data types in Active-Active databases
-    that smartly handle conflicting concurrent writes across member
-    Active-Active databases.
-1. **Participating Clusters:** refers to clusters participating in the
-    multi-master replication of an Active-Active database.
-1. **Concurrent Writes or Concurrent Updates:** Concurrency or updates
-    and writes refer to more than events that happen at the same wall
-    clock time across member Active-Active databases. Concurrent updates refer to the fact
-    that updates happen in between sync events that catch up member
-    Active-Active databases with updates that happened on other member Active-Active databases.
+each supported data type and [how to develop]({{< relref "/rs/databases/active-active/develop/develop-for-aa.md" >}}) with them on Redis Enterprise Software.
