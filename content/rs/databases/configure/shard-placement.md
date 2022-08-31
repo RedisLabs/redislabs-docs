@@ -2,7 +2,7 @@
 Title: Configure shard placement
 linktitle: Shard placement
 description: Configure shard placement to improve performance.
-weight: 
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: [
