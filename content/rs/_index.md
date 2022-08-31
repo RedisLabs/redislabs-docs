@@ -44,7 +44,7 @@ Create and manage a [Redis database]({{<relref "/rs/databases">}}) on a cluster.
 - [Create a Redis Enterprise Software database]({{<relref "/rs/databases/create">}})
 - [Configure database]({{<relref "/rs/databases/configure">}})
 - [Create Active-Active database]({{<relref "/rs/databases/active-active/create">}})
-- [Edit Active-Active database]({{<relref "/rs/databases/active-active/edit.md">}})
+- [Edit Active-Active database]({{<relref "/rs/databases/active-active/manage.md">}})
 
 ## Security
 [Manage secure connections]({{<relref "/rs/security">}}) to the cluster and databases.

@@ -1,6 +1,6 @@
 ---
 Title: Create an Active-Active geo-replicated database
-linkTitle: Create Active-Active 
+linkTitle: Create
 description: How to create an Active-Active database and things to consider when setting it up.
 weight: 25
 alwaysopen: false

@@ -1,6 +1,6 @@
 ---
 Title: Enable causal consistency
-linkTitle: Enable causal consistency
+linkTitle: Causal consistency
 description: Enable causal consistency  in an Active-Active database. 
 weight: $weight
 alwaysopen: false

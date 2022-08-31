@@ -1,6 +1,6 @@
 ---
 Title: Manage Active-Active databases 
-description: Manage Active-Active
+description: Manage 
 weight: 30
 alwaysopen: false
 categories: ["RS"]
@@ -10,6 +10,8 @@ aliases: [
     /rs/databases/active-active/manage-aa/,
     /rs/databases/active-active/manage.md,
     /rs/databases/active-active/manage,
+    /rs/databases/active-active/edit-aa-database.md,
+    /rs/databases/active-active/edit-aa-database/,
 ]
 ---
 
