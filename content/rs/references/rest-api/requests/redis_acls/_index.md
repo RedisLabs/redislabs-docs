@@ -24,31 +24,34 @@ aliases: /rs/references/rest-api/redis_acls
 
 ## Get all Redis ACLs {#get-all-redis_acls}
 
-	GET /v1/redis_acls
+```sh
+GET /v1/redis_acls
+```
 
 Get all Redis ACL objects.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_all_redis_acls_info]({{<relref "/rs/references/rest-api/permissions#view_all_redis_acls_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_all_redis_acls_info]({{<relref "/rs/references/rest-api/permissions#view_all_redis_acls_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
-	GET /redis_acls 
+```sh
+GET /redis_acls
+```
 
-
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns a JSON array of [Redis ACL objects]({{<relref "/rs/references/rest-api/objects/redis_acl">}}).
 
@@ -79,7 +82,7 @@ Returns a JSON array of [Redis ACL objects]({{<relref "/rs/references/rest-api/o
 ]
 ```
 
-### Status codes {#get-all-status-codes} 
+### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -88,24 +91,27 @@ Returns a JSON array of [Redis ACL objects]({{<relref "/rs/references/rest-api/o
 
 ## Get Redis ACL {#get-redis_acl}
 
-	GET /v1/redis_acls/{int: uid}
+```sh
+GET /v1/redis_acls/{int: uid}
+```
 
 Get a single Redis ACL object.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_redis_acl_info]({{<relref "/rs/references/rest-api/permissions#view_redis_acl_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_redis_acl_info]({{<relref "/rs/references/rest-api/permissions#view_redis_acl_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /redis_acls/1 
+```sh
+GET /redis_acls/1
+```
 
-
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -119,7 +125,7 @@ Get a single Redis ACL object.
 |-------|------|-------------|
 | uid | integer | The object's unique ID. |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns a [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}).
 
@@ -133,7 +139,7 @@ Returns a [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_ac
 }
 ```
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -144,21 +150,25 @@ Returns a [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_ac
 
 ## Update Redis ACL {#put-redis_acl}
 
-	PUT /v1/redis_acls/{int: uid}
+```sh
+PUT /v1/redis_acls/{int: uid}
+```
 
 Update an existing Redis ACL object.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [update_redis_acl]({{<relref "/rs/references/rest-api/permissions#update_redis_acl">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_redis_acl]({{<relref "/rs/references/rest-api/permissions#update_redis_acl">}}) | admin |
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /redis_acls/17 
+```sh
+PUT /redis_acls/17
+```
 
 #### Example JSON body
 
@@ -168,7 +178,7 @@ Update an existing Redis ACL object.
 }
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -180,7 +190,7 @@ Update an existing Redis ACL object.
 
 Include a [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}) with updated fields in the request body.
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Returns the updated [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}).
 
@@ -194,17 +204,15 @@ Returns the updated [Redis ACL object]({{<relref "/rs/references/rest-api/object
 }
 ```
 
-### Error codes {#put-error-codes} 
-
-Possible `error_code` values:
+### Error codes {#put-error-codes}
 
 | Code | Description |
 |------|-------------|
-| unsupported_resource | The cluster is not yet able to handle this resource type. This could happen in a partially upgraded cluster, where some of the nodes are still on a previous version.| 
-| name_already_exists | An object of the same type and name exists| 
-| invalid_param | A parameter has an illegal value| 
+| unsupported_resource | The cluster is not yet able to handle this resource type. This could happen in a partially upgraded cluster, where some of the nodes are still on a previous version.|
+| name_already_exists | An object of the same type and name exists|
+| invalid_param | A parameter has an illegal value|
 
-### Status codes {#put-status-codes} 
+### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -216,21 +224,25 @@ Possible `error_code` values:
 
 ## Create Redis ACL {#post-redis_acl}
 
-	POST /v1/redis_acls
+```sh
+POST /v1/redis_acls
+```
 
 Create a new Redis ACL object.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [create_redis_acl]({{<relref "/rs/references/rest-api/permissions#create_redis_acl">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [create_redis_acl]({{<relref "/rs/references/rest-api/permissions#create_redis_acl">}}) | admin |
 
-### Request {#post-request} 
+### Request {#post-request}
 
 #### Example HTTP request
 
-	POST /redis_acls 
+```sh
+POST /redis_acls
+```
 
 #### Example JSON body
 
@@ -241,7 +253,7 @@ Create a new Redis ACL object.
 }
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -253,7 +265,7 @@ Create a new Redis ACL object.
 
 Include a [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}) in the request body.
 
-### Response {#post-response} 
+### Response {#post-response}
 
 Returns the newly created [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}).
 
@@ -267,18 +279,18 @@ Returns the newly created [Redis ACL object]({{<relref "/rs/references/rest-api/
 }
 ```
 
-### Error codes {#post-error-codes} 
+### Error codes {#post-error-codes}
 
 Possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
-| unsupported_resource | The cluster is not yet able to handle this resource type. This could happen in a partially upgraded cluster, where some of the nodes are still on a previous version. | 
-| name_already_exists | An object of the same type and name exists | 
-| missing_field | A needed field is missing | 
-| invalid_param | A parameter has an illegal value | 
+| unsupported_resource | The cluster is not yet able to handle this resource type. This could happen in a partially upgraded cluster, where some of the nodes are still on a previous version. |
+| name_already_exists | An object of the same type and name exists |
+| missing_field | A needed field is missing |
+| invalid_param | A parameter has an illegal value |
 
-### Status codes {#post-status-codes} 
+### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -286,31 +298,69 @@ Possible `error_code` values:
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad or missing configuration parameters. |
 | [501 Not Implemented](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2) | Cluster doesn't support redis_acl yet. |
 
+### Examples
+
+#### cURL
+
+```sh
+curl -k -u "[username]:[password]" -X POST \
+     -H 'Content-Type: application/json' \
+     -d '{ "name": "Geo", "acl": "~* +@geo" }' \
+     https://[host][:port]/v1/redis_acls
+```
+
+#### Python
+
+```python
+import requests
+import json
+
+url = "https://[host][:port]/v1/redis_acls"
+
+headers = {
+  'Content-Type': 'application/json'
+}
+
+payload = json.dumps({
+    "name": "Geo",
+    "acl": "~* +@geo"
+})
+auth=("[username]", "[password]")
+
+response = requests.request("POST", url,
+           auth=auth, headers=headers, payload=payload, verify=False)
+
+print(response.text)
+```
+
 ## Delete Redis ACL {#delete-redis_acl}
 
-	DELETE /v1/redis_acls/{int: uid}
+```sh
+DELETE /v1/redis_acls/{int: uid}
+```
 
 Delete a Redis ACL object.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [delete_redis_acl]({{<relref "/rs/references/rest-api/permissions#delete_redis_acl">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [delete_redis_acl]({{<relref "/rs/references/rest-api/permissions#delete_redis_acl">}}) | admin |
 
-### Request {#delete-request} 
+### Request {#delete-request}
 
 #### Example HTTP request
 
-	DELETE /redis_acls/1 
+```sh
+DELETE /redis_acls/1
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
-
 
 #### URL parameters
 
@@ -318,11 +368,11 @@ Delete a Redis ACL object.
 |-------|------|-------------|
 | uid | integer | The redis_acl unique ID. |
 
-### Response {#delete-response} 
+### Response {#delete-response}
 
 Returns a status code that indicates the Redis ACL deletion success or failure.
 
-### Status codes {#delete-status-codes} 
+### Status codes {#delete-status-codes}
 
 | Code | Description |
 |------|-------------|

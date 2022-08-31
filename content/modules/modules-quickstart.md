@@ -39,7 +39,7 @@ For more details, see the Redis Enterprise Cloud [quick start]({{<relref "/rc/rc
 
 To create a new subscription:
 
-1. Sign into the Redis Enterprise Cloud [admin console](http://app.redislabs.com) or create a new account.
+1. Sign in to the Redis Enterprise Cloud [admin console](http://app.redislabs.com) or create a new account.
 
 1. Select the **New subscription** button:
 
@@ -80,7 +80,9 @@ After creating the database, you can view its **Configuration** settings. You wi
 - **Public endpoint**: The host address of the database
 - **Redis password**/**Default user password**: The password used to authenticate with the database
 
-With this information, you can connect to your database with the `redis-cli` command-line tool, an application, or [RedisInsight](https://redislabs.com/redisinsight/).
+With this information, you can connect to your database with the [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool, an application, or [RedisInsight](https://redislabs.com/redisinsight/).
+
+## Try modules
 
 To try out a module, follow its corresponding quick start guide:
 

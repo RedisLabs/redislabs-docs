@@ -10,10 +10,123 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.5 requires:
+RediSearch v2.4.14 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.14 (August 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Improvements:
+
+  - [Vector similarity v0.3.2](https://github.com/RedisAI/VectorSimilarity/releases/tag/v0.3.2)
+  - [#2955](https://github.com/RediSearch/RediSearch/pull/2955) Add timeout during prefix query (MOD-3949)
+  - [#2957](https://github.com/RediSearch/RediSearch/pull/2957) Efficient removal from prefix list for cases with many indices
+
+- Bug fixes:
+
+  - [#2937](https://github.com/RediSearch/RediSearch/pull/2937) Returning `NULL` response after encountering an expired document (MOD-3515)
+  - [#2962](https://github.com/RediSearch/RediSearch/pull/2962) Crash upon AOF preload (MOD-3951)
+  - [#2986](https://github.com/RediSearch/RediSearch/pull/2986) Memory leak related to schema prefixes
+
+## v2.4.11 (July 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2892](https://github.com/RediSearch/RediSearch/pull/2892) Combining `SORTBY` with `MAX` on `FT.SEARCH` (which is not supported) caused an inconsistent response and out-of-memory error (MOD-3540, MOD-3644)
+  - [VecSim v0.3.1](https://github.com/RedisAI/VectorSimilarity/releases/tag/v0.3.1)
+    - HNSW indices: reclaim memory upon deletion - HNSW index's data structures now reclaim memory and shrink upon deletion
+
+- Improvements:
+
+  - [VecSim v0.3.1](https://github.com/RedisAI/VectorSimilarity/releases/tag/v0.3.1)
+    - HNSW indices: delete procedure is up to 40% faster
+    - More accurate memory consumption reporting for HNSW indices
+
+## v2.4.10 (July 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2863](https://github.com/RediSearch/RediSearch/pull/2863) Crash due to too high (Levenshtein) `DISTANCE` in `FT.SPELLCHECK`. This fix limits the `DISTANCE` to 4. (MOD-3563)
+  - [#2875](https://github.com/RediSearch/RediSearch/pull/2875) Not all documents with vector fields were indexed with Redis on Flash (MOD-3584)
+  - [#2846](https://github.com/RediSearch/RediSearch/pull/2846) Enforce Redis Enterprise memory limit for vector indices
+
+## v2.4.9 (June 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2837](https://github.com/RediSearch/RediSearch/pull/2837), [#2836](https://github.com/RediSearch/RediSearch/issues/2836) Crash on `FT.AGGREGATE` "... APPLY '-INF % -1'..."
+  - [#2814](https://github.com/RediSearch/RediSearch/pull/2814) `FT.EXPLAIN` without parameters causes a crash
+  - [#2790](https://github.com/RediSearch/RediSearch/pull/2790) Incorrect `num_terms` value in `FT.INFO` after a term is deleted from all the docs (garbage collection)
+  - [#2804](https://github.com/RediSearch/RediSearch/pull/2804) Freeze when `OFFSET`+`LIMIT` was greater than `maxSearchResults` (config)
+  - [#2791](https://github.com/RediSearch/RediSearch/pull/2791) Add `BlockedClientMeasureTime` to coordinator for more accurate performance stats
+  - [#2802](https://github.com/RediSearch/RediSearch/pull/2802) Tagged parts of keys (curly brackets `{}`) are now returned by `FT.SEARCH`
+
+- Improvements:
+
+  - [#2806](https://github.com/RediSearch/RediSearch/pull/2806) Do not load the JSON API when RediSearch is initialized as a library
+
+- Minor breaking change:
+
+  - As pointed out above, [#2802](https://github.com/RediSearch/RediSearch/pull/2802) is a bug fix. However, if your application relies on RediSearch incorrectly trimming the tagged part of a key (using `{}`), this could break your application. This only applies to users who are using RediSearch in clustered databases.
+
+## v2.4.8 (May 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+However, if you're using Vector Similarity (introduced in RediSearch 2.4), there are some critical bugs that may affect a subset of users. In this case, you should upgrade.
+
+Details:
+
+- Bug fixes:
+
+  - [#2739](https://github.com/RediSearch/RediSearch/pull/2739) Memory leak in coordinator related to Vector Similarity (MOD-3023)
+  - [#2736](https://github.com/RediSearch/RediSearch/pull/2736), [#2782](https://github.com/RediSearch/RediSearch/pull/2782) Memory allocation restrictions for Vector Similarity indices (causing OOM) (MOD-3195)
+  - [#2755](https://github.com/RediSearch/RediSearch/pull/2755) Compare the entire vector field name instead of a prefix when creating a new vector index
+  - [#2780](https://github.com/RediSearch/RediSearch/pull/2780) Initialize all variables in `EvalContext` (which might have led to crashes in clustered databases)
+
+- Improvements:
+
+  - [#2740](https://github.com/RediSearch/RediSearch/pull/2740) Performance optimization for hybrid vector queries
+
+## v2.4.6 (May 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2716](https://github.com/RediSearch/RediSearch/pull/2716) Removed assert statement that could cause crashes with replica of (MOD-3008, MOD-3012)
+  - [#2734](https://github.com/RediSearch/RediSearch/pull/2734) `ON_TIMEOUT RETURN` policy fix: return results obtained until timeout rather than discarding them
+  - [#2714](https://github.com/RediSearch/RediSearch/pull/2714) Memory leak on non-TLS setup in coordinator
 
 ## v2.4.5 (April 2022)
 

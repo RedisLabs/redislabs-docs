@@ -1,6 +1,6 @@
 ---
 Title: Configure database persistence
-linktitle: Database persistence
+linktitle: Persistence
 description: How to configure database persistence with either an append-only file (AOF) or snapshots.
 weight: 30
 alwaysopen: false
@@ -16,7 +16,7 @@ aliases: [
 ]
 ---
 All data is stored and managed exclusively in either RAM or RAM + flash Memory ([Redis on
-Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})) and therefore, is at risk of being lost upon a process or server
+Flash]({{< relref "/rs/databases/redis-on-flash/" >}})) and therefore, is at risk of being lost upon a process or server
 failure. As Redis Enterprise Software is not just a caching solution, but also a full-fledged database, [persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) to disk
 is critical. Therefore, Redis Enterprise Software supports persisting data to disk on a per-database basis and in multiple ways.
 

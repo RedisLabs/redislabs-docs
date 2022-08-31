@@ -1,30 +1,51 @@
 ---
 title: Configure database settings
-linktitle: Configure database settings
-description: Configure and learn about settings specific to each database.
-weight: 60
+linktitle: Configure
+description: Configure settings specific to each database.
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: [
    /rs/databases/configure/_index.md,
    /rs/databases/configure/_index/,
+   /rs/databases/configure/edit-delete-db/,
+   /rs/databases/configure/edit-delete-db.md,
+   /rs/administering/database-operations/updating-configurations/,
+   /rs/administering/database-operations/updating-configurations.md,
 ]
 ---
 
 You can manage your Redis Enterprise Software databases with several different tools:
 
 - Admin console (the web-based user interface)
-- Command-line tools ([rladmin]({{<relref "/rs/references/rladmin.md">}}), [redis-cli](https://redis.io/docs/manual/cli/), [crdb-cli]({{<relref "/rs/references/crdb-cli-reference.md">}}))
+- Command-line tools
 - [REST API]({{<relref "/rs/references/rest-api/_index.md">}})
 
-## Database settings
+## Admin console
 
-The following are database settings configured specifically for each database:
+You can change the configuration of a Redis Enterprise Software database at any time.<!--more-->
 
-- [Memory limits]({{<relref "/rs/databases/configure/memory-limit.md">}})
-- [Data eviction]({{<relref "/rs/databases/configure/eviction-policy.md">}})
-- [Database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}})
-- Geo-distribution ([Active-Active]({{<relref "/rs/databases/active-active/_index.md">}}) or [ReplicaOf]({{<relref "/rs/databases/replica-of.md">}}))
-- [Client connection TLS encryption]({{<relref "/rs/security/tls/enable-tls#enable-tls-for-client-connections">}})
+To edit the configuration of a database using the admin console:
 
-Other settings are managed on the [cluster level]({{<relref "/rs/administering/cluster-operations">}}).
+1. Go to **Database** and select the database that you want to edit.
+1. Go to **Configuration** and click **Edit** at the bottom of the page.
+    The database settings appear.
+1. Change any of the [configurable database settings]({{< relref "/rs/databases/configure/" >}}).
+
+    {{< note >}}
+For [Active-Active database instances]({{<relref "/rs/databases/active-active">}}), most database settings only apply to the instance that you are editing.
+    {{< /note >}}
+
+1. Click **Update**.
+
+## Command-line tools
+
+For details on using command line tools see:
+- [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) for standalone database configuration
+- [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for Active-Active database configuration
+- [`redis-cli`](https://redis.io/docs/manual/cli/) for open source Redis configuration
+
+## REST API
+
+See the [REST API reference]({{<relref "/rs/references/rest-api/_index.md">}}) for details on using the API to configure your database. 
+

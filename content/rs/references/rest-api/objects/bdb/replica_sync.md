@@ -7,9 +7,9 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-The BDB `replica_sync` field relates to the [Replica Of]({{<relref "/rs/databases/create-replica-of.md">}}) feature, which enables the creation of a Redis database (single- or multi-shard) that synchronizes data from another Redis database (single- or multi-shard).
+The BDB `replica_sync` field relates to the [Replica Of]({{<relref "/rs/databases/import-export/replica-of/create.md">}}) feature, which enables the creation of a Redis database (single- or multi-shard) that synchronizes data from another Redis database (single- or multi-shard).
 
-You can use the `replica_sync` field to enable, disable, or pause the [Replica Of]({{<relref "/rs/databases/create-replica-of.md">}}) sync process. The BDB `crdt_sync` field has a similar purpose for the Redis CRDB.
+You can use the `replica_sync` field to enable, disable, or pause the [Replica Of]({{<relref "/rs/databases/import-export/replica-of/create.md">}}) sync process. The BDB `crdt_sync` field has a similar purpose for the Redis CRDB.
 
 Possible BDB sync values:
 

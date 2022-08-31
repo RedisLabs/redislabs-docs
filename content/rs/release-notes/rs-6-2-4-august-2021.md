@@ -60,15 +60,15 @@ To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgradin
 
 Redis Enterprise Software v5.6.0 will reach end of life (EOF) on October 31, 2021.
 
-To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/administering/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
+To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
 Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
 
 ### Deprecation notices
 
-- [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), the SASL-based LDAP mechanism was deprecated in favor of a new [RBAC-based approach]({{<relref "/rs/security/ldap/">}}).  As of v.6.2.4, support for the older mechanism has been removed.
+- [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), the SASL-based LDAP mechanism was deprecated in favor of a new [RBAC-based approach]({{<relref "/rs/security/access-control/ldap">}}).  As of v6.2.12, support for the older mechanism has been removed.
 
-    For help migrating to the LDAP-based mechanism, see [Migrate to role-based LDAP]({{<relref "/rs/security/ldap/migrate-to-role-based-ldap.md">}}).
+    For help migrating to the LDAP-based mechanism, see [Migrate to role-based LDAP]({{<relref "/rs/security/access-control/ldap/migrate-to-role-based-ldap">}}).
     
 - [OpenStack Object Storage](https://wiki.openstack.org/wiki/Swift) ("Swift") has reached end-of-life.  Consequently, you can no longer use ObjectStack Swift as a target for database backup or export operations.  
 
@@ -114,7 +114,7 @@ The leaf certificates expire regularly; they're automatically rotated before exp
 
 Redis Enterprise Software supports all new commands, except [RESET](https://redis.io/commands/reset) and [FAILOVER](https://redis.io/commands/failover).  (Redis Enterprise takes a different approach to connectivity; it also separates control plane operations from data plane operations.)
 
-To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/concepts/compatibility.md">}}).
+To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/references/compatibility.md">}}).
 
 ### Redis modules
 
@@ -136,12 +136,12 @@ For help, see [Upgrade the module for a database]({{<relref "/modules/install/up
 
 Added the capability to update current module arguments for an existing database. 
 In earlier versions, you could do this only when upgrading a module.
-To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrade">}}).
+To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}).
 
 ## Resolved issues
 
 - RS39954 - Changed the UI status indication for the 
-[default user]({{<relref "/rs/references/rladmin#upgrade">}}) from `Active/Inactive` to `Enabled/Disabled` 
+[default user]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}) from `Active/Inactive` to `Enabled/Disabled` 
 
 - RS42626 - Increased the max length for modules commands from 23 characters to 64 characters
 
@@ -158,6 +158,9 @@ To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrad
 ## Known issues 
 
 A new command was added as part of Redis 6.2: [XAUTOCLAIM](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+
+- RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
 
 ## Security
 

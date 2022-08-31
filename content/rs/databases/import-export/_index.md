@@ -1,8 +1,8 @@
 ---
 Title: Import and export data
-linkTitle: Import and export data
-description:
-weight: 65
+linkTitle: Import and export 
+description: How to import, export, flush, and migrate your data.
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [

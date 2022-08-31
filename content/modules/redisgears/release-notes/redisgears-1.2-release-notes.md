@@ -14,10 +14,41 @@ aliases: /modules/redisgears/release-notes/redisgears-1.2-release-notes/
 
 ## Requirements
 
-RedisGears v1.2.3 requires:
+RedisGears v1.2.5 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.12
+
+## v1.2.5 (July 2022)
+
+This is a maintenance release for RedisGears 1.2.
+
+Update urgency: `MODERATE` : Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#792](https://github.com/RedisGears/RedisGears/issues/792), [#798](https://github.com/RedisGears/RedisGears/pull/798) Execution was triggered infinitely when trimming is turned off.
+    - [#791](https://github.com/RedisGears/RedisGears/issues/791), [#796](https://github.com/RedisGears/RedisGears/pull/796) Stop triggering executions during [pause](https://oss.redis.com/redisgears/commands.html#rgpauseregistrations) even on failure.
+    - [#794](https://github.com/RedisGears/RedisGears/pull/794), [#797](https://github.com/RedisGears/RedisGears/pull/797) Use [`PythonInstallationDir`](https://oss.redis.com/redisgears/configuration.html#pythoninstallationdir) configuration to find the virtual environment location on Redis Enterprise. (MOD-1734)
+
+## v1.2.4 (May 2022)
+
+This is a maintenance release for RedisGears 1.2.
+
+Update urgency: `LOW` : No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+    - [#772](https://github.com/RedisGears/RedisGears/pull/772) Added the ability to upgrade a dependency at runtime with `FORCE_REQUIREMENTS_REINSTALLATION` on `RG.PYEXECUTE`.
+    - [#765](https://github.com/RedisGears/RedisGears/pull/765) Allow deactivating [override Python allocators](https://oss.redis.com/redisgears/configuration.html#overridepythonallocators) for performance improvements.
+
+- Bug fixes:
+
+    - [#761](https://github.com/RedisGears/RedisGears/issues/761), [#760](https://github.com/RedisGears/RedisGears/issues/760), [#778](https://github.com/RedisGears/RedisGears/pull/778) [`StreamReader`](https://oss.redis.com/redisgears/readers.html#streamreader) fixes to pause and unregister stream processing.
 
 ## v1.2.3 (April 2022)
 

@@ -1,8 +1,9 @@
 ---
 Title: RedisJSON
-description:
+description: The RedisJSON module adds support for JSON to Redis databases.
 weight: 30
 alwaysopen: false
+toc: "true"
 categories: ["Modules"]
 aliases:
   - /redisjson/
@@ -10,104 +11,74 @@ aliases:
   - /redis_json/
   - /rs/developing/modules/redisjson/
 ---
-Applications developed with the open source version of RedisJSON are 100%
-compatible with RedisJSON in Redis Enterprise Software (RS).
 
-## RedisJSON path syntax
+The [RedisJSON](https://redis.io/docs/stack/json/) module adds support for the [JSON data structure](http://www.json.org/) to Redis databases.
 
-Since there is no standard for JSON path syntax, RedisJSON implements its
-own. RedisJSON's syntax is a subset of common best practices and resembles
-JSONPath not by accident.
+Applications developed with the [open source version of RedisJSON](https://github.com/RedisJSON/RedisJSON) are 100%
+compatible with RedisJSON in Redis Enterprise Software.
 
-Paths always begin at the root of a RedisJSON value. The root is denoted by
-the period character (.). For paths referencing the root's children,
-prefixing the path with the root is optional.
+## RedisJSON paths
 
-Dotted and square-bracketed, single-or-double-quoted-child notation are
-both supported for object keys, so the following paths all refer to bar,
-child of foo under the root:
+[Paths](https://redis.io/docs/stack/json/path) let you traverse the structure of a JSON document, starting from the root, and interact only with the data you want. You can also use paths to perform operations on specific JSON elements.
 
-- *.foo.bar*
-- *foo\["bar"\]*
-- *\['foo'\]\["bar"\]*
+Since there is no standard for JSON path syntax, RedisJSON implements its own.
 
-Array elements are accessed by their index enclosed by a pair of square
-brackets. The index is 0-based, with 0 being the first element of the
-array, 1 being the next element and so on. These offsets can also be
-negative numbers, indicating indices starting at the end of the array.
-For example, -1 is the last element in the array, -2 the penultimate,
-and so on.'
+### JSONPath syntax
 
-## JSON key names and path compatibility
+RedisJSON v2.0 and later support the [JSONPath syntax](https://redis.io/docs/stack/json/path/#jsonpath-support), which resembles [Goessner's design](https://goessner.net/articles/JsonPath/):
+  
+  - Paths start with a dollar sign (`$`), which represents the root of the JSON document.
 
-By definition, a JSON key can be any valid JSON String. Paths, on the
-other hand, are traditionally based on JavaScript's (and in Java in
-turn) variable naming conventions. Therefore, while it is possible to
-have RedisJSON store objects containing arbitrary key names, accessing
-these keys via a path is only possible if they respect these naming
-syntax rules:
-Names must begin with a letter, a dollar ($) or an underscore (_)
-character
-Names can contain letters, digits, dollar signs and underscores
-Names are case-sensitive
-Time complexity of path evaluation
-The complexity of searching (navigating to) an element in the path is
-made of:
-Child level - every level along the path adds an additional search
-Key search - O(N)\*\*, where N is the number of keys in the parent
-object
-Array search - O(1)
-This means that the overall time complexity of searching a path is
-O(N\*M), where N is the depth and M is the number of parent object keys.
+  - See the [JSONPath syntax table](https://redis.io/docs/stack/json/path/#jsonpath-syntax) to learn how to access various elements within a JSON document.
 
-\*\* While this is acceptable for objects where N is small, access can
-be optimized for larger objects, and this is planned for a future
-version.
+The following path refers to `headphones`, which is a child of `inventory` under the root:
 
-## Example
+`$.inventory.headphones`
+  
+See [JSONPath examples](https://redis.io/docs/stack/json/path/#jsonpath-examples) for examples with more complex syntax.
 
-Log into the RedisJSON enabled database with redis-cli and the --raw switch
-so we can see the raw output:
+### Legacy path syntax
 
-```sh
-$ redis-cli --raw
-127.0.0.1:6379>
-```
+The [legacy path syntax](https://redis.io/docs/stack/json/path/#legacy-path-syntax) refers to the path implementation in RedisJSON v1. RedisJSON v2 still supports this legacy path syntax in addition to JSONPath syntax.
 
-I have a document called example1 I want to store and it looks like so:
+The legacy path syntax works as follows:
 
-```sh
-{"foo": "bar"}
-```
+  - A period character represents the root.
+  
+  - For paths to the root's children, it is optional to prefix the path with a period.
 
-Add a new entity to the example1 document called test2 and set it to an
-array called test3
+  - Supports both dot notation and bracket notation for JSON object key access.
+  
+The following paths refer to `headphones`, which is a child of `inventory` under the root:
 
-```sh
-127.0.0.1:6379> json.set example1 .test2 '{"test3":[1,2,3]}'
-OK
-```
+`.inventory.headphones`
+ 
+`inventory["headphones"]`
 
-Get the object to see what it looks like:
+`['inventory']["headphones"]`
 
-```sh
-127.0.0.1:6379> JSON.GET example1
-{"foo":"bar","test2":{"test3":[1,2,3]}}
-```
+### Key name rules
 
-Get the second array value from the test2 sub-document in the test3
-object's array:
+You can only use the [legacy path syntax](#legacy-path-syntax) to access JSON keys if they follow these name syntax rules:
 
-```sh
-127.0.0.1:6379> JSON.GET example1 .test2.test3[1]
-2
-```
+- Key names must begin with a letter, a dollar sign (`$`), or an underscore (`_`).
+- Key names can contain letters, digits, dollar signs, and underscores.
+- Key names are case-sensitive.
 
-As you can see, you can easily traverse the document structure by path
-to get only the data you want, when you need it. You could also use this
-to increment or another operation on this object.
+## Index and search JSON documents
+
+If a Redis database has both RedisJSON and [RediSearch]({{<relref "/modules/redisearch">}}) modules enabled, you can index and search stored JSON documents.
+
+For more information about how to use RediSearch with JSON documents, see the [Search JSON quick start]({{<relref "/modules/redisearch/search-json-quickstart">}}).
+
+## RedisJSON in Active-Active databases
+
+RedisJSON v2.2 and later support the JSON data structure as a conflict-free replicated data type [(CRDT)](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
+
+For details about how RedisJSON resolves operation conflicts that can arise when replicas attempt to sync, see the RedisJSON [conflict resolution rules]({{<relref "/modules/redisjson/active-active#conflict-resolution-rules">}}).
 
 ## More info
 
-- [RedisJSON commands](https://redis.io/docs/stack/json/commands/)
+- [RedisJSON quick start]({{<relref "/modules/redisjson/redisjson-quickstart">}})
+- [RedisJSON commands]({{<relref "/modules/redisjson/commands">}})
 - [RedisJSON source](https://github.com/RedisJSON/RedisJSON)

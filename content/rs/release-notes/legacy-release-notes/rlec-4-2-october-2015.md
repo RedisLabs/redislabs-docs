@@ -20,7 +20,7 @@ before running through the upgrade process.
     performance profiles that are optimized for either cloud or
     non-cloud environments. For additional details, refer to the
     [Performance
-    optimization]({{< relref "/rs/administering/designing-production/performance/optimization.md" >}})
+    optimization]({{< relref "/rs/clusters/optimize/optimization.md" >}})
     section.
 - SLA for AOF rewrite - enables the administrator to configure
     database parameters, by running the rladmin tune command, related to
@@ -45,16 +45,16 @@ before running through the upgrade process.
     administrator to specify which IP address is used for internal
     traffic and which IP addresses are used for external traffic. For
     additional details, refer to [Multi-IP &
-    IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}})
+    IPv6]({{< relref "/rs/networking/multi-ip-ipv6.md" >}})
     support.
 - IPv6 support for external traffic - on a node that has multiple
     IPs, external IP addresses can be of IPv6 type. For additional
     details, refer to [Multi-IP &
-    IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}})
+    IPv6]({{< relref "/rs/networking/multi-ip-ipv6.md" >}})
     support section.
 - Support for OpenStack Object Store ("Swift") location for import /
     export / backup. For additional details, refer to [Database
-    backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
+    backup]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
     and [Importing data to a
     database]({{< relref "/rs/databases/import-export/import-data.md" >}})
     sections.
@@ -77,7 +77,7 @@ before running through the upgrade process.
 - rladmin command-line-interface can only be run under user root or
     redislabs. For additional details, refer to the [rladmin
     command-line
-    interface (CLI)]({{< relref "/rs/references/rladmin.md" >}})
+    interface (CLI)](https://docs.redis.com/latest/rs/references/rladmin/)
     section.
 - Import / export / backup to/from Amazon S3 requires supplying the
     credentials per usage instance; it does not use central cloud
@@ -139,7 +139,7 @@ before running through the upgrade process.
     [Upgrading
     nodes]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
     while the node is in the offline state (refer to [Taking a node
-    offline]({{< relref "/rs/administering/cluster-operations/removing-node.md" >}}),
+    offline]({{< relref "/rs/clusters/remove-node.md" >}}),
     the upgrade process succeeds but might result in an unstable
     cluster.
     
@@ -192,19 +192,19 @@ before running through the upgrade process.
     **Workaround**: You need to
     manually stop and restart the synchronization process after
     resharding of the source database is done.
-- **Issue**: In the replica of process, high database traffic might restart the Replica of process as result of the "slave buffer" being exceeded. In this case you see
+- **Issue**: In the replica of process, high database traffic might restart the Replica of process as result of the "replica buffer" being exceeded. In this case you see
     the status of the replica of process as "Syncing"
     frequently.
     
     **Workaround**: You need to manually reconfigure the
-    "slave buffer" through rladmin and set the buffer size to a new
+    "replica buffer" through rladmin and set the buffer size to a new
     size. In order to find the appropriate buffer size please contact
     support at: <support@redislabs.com>.
 
 - **Issue**: In a cluster that is configured to support rack-zone
-    awareness, if the user forces migration of a master or slave shard,
+    awareness, if the user forces migration of a master or replica shard,
     through rladmin, to a node on the same rack-zone as its
-    corresponding master or slave shard, and later runs the rebalance
+    corresponding master or replica shard, and later runs the rebalance
     process, the rebalance process will not migrate the shards to ensure
     rack-zone awareness compliance.
     

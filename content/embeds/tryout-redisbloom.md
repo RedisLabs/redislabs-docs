@@ -53,7 +53,7 @@ Cuckoo filters can also be used as part of the RedisBloom module.
 You can play with it using redis-cli:
 
 ```sh
-127.0.0.1:12543> CF.ADD cuckoo redis
+127.0.0.1:12543> CF.ADD newcuckoo redis
 (integer) 1
 127.0.0.1:12543> CF.EXISTS newcuckoo redis
 (integer) 1

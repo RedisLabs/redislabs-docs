@@ -41,7 +41,7 @@ The REC deployment files in the [Kubernetes documentation](https://github.com/Re
 omitted, Operator allocates five times (5x) the amount of memory (RAM)
 defined for nodes (see example below), which is the recommended
 persistent storage size as described in the [Hardware
-requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) article.
+requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}) article.
 
 To explicitly specify the persistent storage size, use the *volumeSize*
 property as described in the example above.
@@ -90,6 +90,10 @@ Below is an example of a response to the command.
 {{< note >}}
 storageClassName must be specified for this deployment type.
 {{< /note >}}
+
+{{< warning >}}
+The storage class cannot be changed after deployment. Trying to change this value after deployment could result in unexpected and potentially damaging behavior.
+{{< /warning >}}
 
 Example of the redisEnterpriseNodeResources definition:
 

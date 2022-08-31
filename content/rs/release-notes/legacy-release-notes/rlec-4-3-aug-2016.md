@@ -8,7 +8,7 @@ categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
+instructions](/rs/installing-upgrading/upgrading.md" >}})
 before running through the upgrade process.
 
 You can upgrade to this version from any 4.2 version. If you have a
@@ -20,7 +20,7 @@ upgrade to this version.
 - Various improvements to internal performance and stability were
     implemented.
 - RLEC Flash functionality added. For additional details, refer to
-    [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
+    [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
     and contact <support@redislabs.com> if you are interested in this
     functionality.
 - Support for Redis version 3.0 added. When you install or upgrade the
@@ -33,10 +33,10 @@ upgrade to this version.
     latest 2.8 minor version, refer to the Known Issues section below.
 - Complete cluster failure recovery instructions added. For additional
     details, refer to [Cluster
-    Recovery]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}).
+    Recovery]({{< relref "/rs/clusters/cluster-recovery.md" >}}).
 - Major improvements made to database replication performance process
-    by using diskless replication between master and slave shards. The
-    data between the master and slave shards is streamed directly,
+    by using diskless replication between master and replica shards. The
+    data between the master and replica shards is streamed directly,
     instead of using the default file-on-disk mechanism. This behavior
     can be changed for the entire cluster or per database through
     rladmin.
@@ -44,12 +44,12 @@ upgrade to this version.
     administration functionalities.
 - rlcheck installation verification utility added to facilitate
     checking node health. For additional details, refer to [rlcheck
-    Installation Verification
-    Utility]({{< relref "/rs/references/rlcheck.md" >}}).
+    installation verification
+    utility](https://docs.redis.com/latest/rs/references/rlcheck).
 - Added the ability to allow the user to configure how machine IP
     addresses are used in Node Configuration setup in the management UI.
     For additional details, refer to [Initial setup - creating a new
-    cluster.]({{< relref "/rs/administering/new-cluster-setup.md" >}})
+    cluster.](https://docs.redis.com/latest/rs/clusters/new-cluster-setup/)
 - Connection to database endpoint can now be encrypted with SSL. For
     additional details, refer to [Securing client connection with
     SSL](https://docs.redis.com/latest/rs/security/tls-ssl).
@@ -62,7 +62,7 @@ upgrade to this version.
 - Environment configuration profile with name "default" has been
     changed to "cloud" and the default value has been changed to
     "local-network". For additional details, refer to [Performance
-    optimization]({{< relref "/rs/administering/designing-production/performance/optimization.md" >}})
+    optimization]({{< relref "/rs/clusters/optimize/optimization.md" >}})
     section.
 - In the REST API, when creating a database and not setting the
     database replication parameter to "true", the default value assigned
@@ -95,7 +95,7 @@ upgrade to this version.
 - RLEC-7652 - database is down in certain failover scenarios only
     when the database is completely empty
 - RLEC-7737 - issue where in a specific scenario after node restarts,
-    a database with replication both master and slave shards are
+    a database with replication both master and replica shards are
     reported as down
 - RLEC-7712 - in some cases, the Replica Of process may fail when
     Redis password is set
@@ -162,18 +162,18 @@ upgrade to this version.
     stop and restart the synchronization process after the resharding of
     the source database is done.
 
-- **Issue**: In the Replica Of process, high database traffic might restart the Replica Of process due to the "slave buffer" being exceeded. In this case
+- **Issue**: In the Replica Of process, high database traffic might restart the Replica Of process due to the "replica buffer" being exceeded. In this case
     you will often see the status of the Replica Of process display as
     "Syncing".
     
-    **Workaround**: You must manually increase the "slave
+    **Workaround**: You must manually increase the "replica
     buffer" size through rladmin. In order to find the appropriate
     buffer size please [contact Redis support](https://redislabs.com/company/support/)
 
 - **Issue**: In a cluster that is configured to support rack-zone
-    awareness, if the user forces migration of a master or slave shard
+    awareness, if the user forces migration of a master or replica shard
     through rladmin to a node on the same rack-zone as its corresponding
-    master or slave shard, and later runs the rebalance process, the
+    master or replica shard, and later runs the rebalance process, the
     rebalance process will not migrate the shards to ensure rack-zone
     awareness compliance.
     

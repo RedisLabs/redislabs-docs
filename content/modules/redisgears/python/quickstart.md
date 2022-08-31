@@ -1,7 +1,7 @@
 ---
-Title: RedisGears Python quick start tutorial
+Title: RedisGears Python quick start
 linkTitle: Quick start
-description: A quick start tutorial to learn how to use RedisGears with Python.
+description: A quick start to learn how to use RedisGears with Python.
 weight: 10
 alwaysopen: false
 categories: ["Modules"]
@@ -137,4 +137,4 @@ redis.cloud:6379> GET age:maximum
 
 ## Next steps
 
-You should now have a basic idea of how to run RedisGears functions for batch and event processing. But there's a lot more to RedisGears than this. To better understand it, see the [RedisGears tutorial](https://oss.redislabs.com/redisgears/intro.html). If you're interested in write-behind caching, see our [write-behind caching]({{<relref "/modules/redisgears/python/recipes/write-behind">}}) overview.
+You should now have a basic idea of how to run RedisGears functions for batch and event processing. But there's a lot more to RedisGears than this. To better understand it, see the [RedisGears tutorial](https://oss.redis.com/redisgears/intro.html). If you're interested in write-behind caching, see our [write-behind caching]({{<relref "/modules/redisgears/python/recipes/write-behind">}}) overview.

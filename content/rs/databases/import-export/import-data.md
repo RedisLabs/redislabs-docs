@@ -1,7 +1,7 @@
 ---
 Title: Import data into a database
 description: You can import export or backup files of a specific Redis Enterprise Software database to restore data. You can either import from a single file or from multiple files, such as when you want to import from a backup of a clustered database.
-weight: 20
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 linktitle: Import data
@@ -15,7 +15,7 @@ aliases: [
 ]
 ---
 You can import, [export]({{< relref "/rs/databases/import-export/export-data.md" >}}),
-or [backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
+or [backup]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
 files of a specific Redis Enterprise Software database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a clustered database.
@@ -28,16 +28,19 @@ Importing data erases all existing content in the database.
 
 To import data into a database:
 
-1. In **databases**, click on the database that you want to import data to.
-1. In **configuration**, at the bottom of the page click **Import**.
-1. Select the location to import the data from and enter the connection details.
-1. Select **Receive email notification on success/failure**, if you want to receive
-    email notifications about the import process.
-1. Click **Import**.
+1. Sign in to the admin console and then select **Databases** from the main menu.
+1. Select the target database from the list.
+1. From the **Configuration** tab, locate and then select the **Import** button.
+1. Acknowledge the warning to continue the operation.
+1. From the **Import** dialog, enter the details for the import data.  These vary according to the storage location.
+1. To receive email notifications, place a checkmark in the **Receive email notification on success/failure** option.
+1. Select **Import**.
 
 ## Supported storage services
 
-The storage services that are supported for import are:
+You can import data from a variety of services, ranging from local servers to cloud services.
+
+Earlier versions of Redis Enterprise Software supported OpenStack Swift a storage location; however, that support ended [30 November 2020]({{< relref "/rs/release-notes/rs-5-6-0-april-2020#end-of-life" >}}).  As a result, that option is no longer available.
 
 ### HTTP server
 
@@ -48,7 +51,7 @@ each path on a separate line.
 
 Before you specify to import from an FTP server, make sure that:
 
-- The RS cluster has network connectivity to the FTP server.
+- The Redis Enterprise cluster has network connectivity to the FTP server.
 - The user that you specify in the FTP server location has read privileges.
 
 To import an RDB file from an FTP server, enter the FTP server location in the format:
@@ -63,7 +66,7 @@ For example: `ftp://username:password@10.1.1.1/home/backups/<filename>.rdb`
 
 Before you specify to import from an SFTP server, make sure that:
 
-- The RS cluster has network connectivity to the SFTP server.
+- The Redis Enterprise cluster has network connectivity to the SFTP server.
 - The user that you specify in the SFTP server location has read privileges.
 - The RS server and SFTP server have the correct TLS certificates. You can select either:
     - **Use the cluster auto generated key** - Go to **settings** and copy the **Cluster SSH Public Key**
@@ -116,20 +119,6 @@ To specify to import from a local mount point on a node:
 
     For example: `/mnt/Public/<filename>.rdb`
 
-### OpenStack Swift
-
-{{< note >}}
-Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
-{{< /note >}}
-
-Before you specify to import from OpenStack Swift, make sure that you have:
-
-- Storage URL in the format: `https://<openstack_url>/v1/<filename>.rdb`
-- Container
-- Prefix (Optional)
-- User
-- Key
-
 ### Azure Blob Storage
 
 Before you choose to import from Azure Blob Storage, make sure that you have:
@@ -154,9 +143,8 @@ Before you choose to import from Google Cloud Storage, make sure that you have:
 
 When importing data into an Active-Active database, there are two options:
 
-- Perform a flushall to the database, thus deleting all data.
-    Then import the data into the Active-Active database.
-- Import data but merge it into the existing or add new data from the import file.
+- Use `flushall` to delete all data from the Active-Active database, then import the data into the database.
+- Import data but merge it into the existing data or add new data from the import file.
 
 Because Active-Active databases have a numeric counter data type,
 when you merge the imported data into the existing data RS increments counters by the value that is in the imported data.

@@ -78,7 +78,7 @@ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 1200
 
 The Docker container with RS runs on your localhost with port 8443 open for HTTPS
 connections, 9443 for REST API connections, and port 12000 open for redis client connections.
-You can publish other [ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
+You can publish other [ports]({{< relref "/rs/networking/port-configurations.md" >}})
 with `-p <host_port>:<container_port>` or use the `--network host` option to open all ports to the host network.
 
 ## Step 3: Set up a cluster
@@ -185,5 +185,5 @@ get key1
 
 Now you have a Redis Enterprise cluster ready to go. You can connect to it with
 a [redis client](https://redis.io/clients) to start loading it with data or
-you can use the [memtier_benchmark Quick Start]({{< relref "/rs/administering/memtier-benchmark.md" >}})
+you can use the [memtier_benchmark Quick Start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}})
 to check the cluster performance.

@@ -33,7 +33,7 @@ If you're running either OpenShift or VMWare Tanzu, we provide specific getting 
 
 To deploy the Redis Enterprise operator, you'll need:
 
-* a Kubernetes cluster in a [supported distribution]({{<relref "content/kubernetes/reference/supported_k8s_distributions.md">}})
+* a Kubernetes cluster in a [supported distribution]({{<relref "/kubernetes/reference/supported_k8s_distributions.md">}})
 * a minimum of three worker nodes
 * a Kubernetes client (kubectl)
 * access to DockerHub, RedHat Container Catalog, or a private repository that can hold the required images.
@@ -70,22 +70,19 @@ The operator [definition and reference materials](https://github.com/RedisLabs/r
 If you do not pull images from DockerHub or another public registry, you'll need additional configuration in your operator deployment file and your Redis Enterprise cluster resource file. See [Manage image sources]({{<relref "/kubernetes/deployment/container-images#manage-image-sources">}}) for more info.
 {{</note>}}
 
-### Download the operator bundle
+### Deploy the operator bundle
 
 To ensure that you pull the correct version of the bundle, check versions tags listed with the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases)
 or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases).
 
 ```sh
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
-curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
 
-If you need a different release, replace `VERSION` in the above with a specific release tag.
-
-### Deploy the operator bundle
+If you need a different release, replace `VERSION` in the above with a specific release tag. Now deploy the operator with 
 
 ```sh
-kubectl apply -f bundle.yaml
+kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
 
   You should see a result similar to this:
@@ -151,7 +148,7 @@ You can test the operator by creating a minimal cluster by following this proced
           memory: 16Gi
     ```
 
-    See the [Redis Enterprise hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md">}}) for more
+    See the [Redis Enterprise hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md">}}) for more
     information on sizing Redis Enterprise node resource requests.
   
 1. Apply your custom resource definition (CRD) file in the same namespace as `test-rec.yaml`.

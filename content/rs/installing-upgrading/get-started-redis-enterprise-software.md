@@ -30,9 +30,9 @@ For production environments, the [install and setup]({{< relref "/rs/installing-
 Quick start guides are also available to help you:
 
 - Run Redis Software using a [Docker container]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}), which lets you skip the installation process
-- Set up a [Redis on Flash cluster]({{< relref "/rs/administering/cluster-operations/getting-started-redis-flash.md" >}}) to optimize  memory resources
-- Set up an [Active-Active cluster]({{< relref "/rs/databases/active-active/get-started-active-active.md" >}}) to enable high availability
-- [Benchmark]({{< relref "content/rs/administering/memtier-benchmark.md" >}}) Redis Enterprise Software performance.
+- Set up a [Redis on Flash cluster]({{< relref "/rs/databases/redis-on-flash/getting-started-redis-flash.md" >}}) to optimize  memory resources
+- Set up an [Active-Active cluster]({{< relref "/rs/databases/active-active/get-started.md" >}}) to enable high availability
+- [Benchmark]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) Redis Enterprise Software performance.
 
 ## Step 1: Install Redis Enterprise Software
 
@@ -96,63 +96,7 @@ You now have a Redis database!
 ## Step 4: Connect to your database
 
 After you create the Redis database, you are ready to store data in your database.
-You can test connectivity to your database with:
-
-- redis-cli - the built-in command-line tool
-- A _Hello World_ application using Python
-
-### Connect using redis-cli {#connecting-using-rediscli}
-
-`redis-cli` is a simple command-line tool to interact with Redis database.
-
-Here's how to run `redis-cli` to connect to port 12000 and perform basic database operations using Redis commands:
-
-```sh
-$ sudo /opt/redislabs/bin/redis-cli -p 12000
-127.0.0.1:16653> set key1 123
-OK
-127.0.0.1:16653> get key1
-"123"
-```
-
-### Connecting using _Hello World_ application in Python
-
-A simple python application running on the **host machine**, not the
-container, can also connect to database1.
-
-{{< note >}}
-The following section assumes you already have Python and redis-py
-(python library for connecting to Redis) configured on the host machine running the container.
-You can find the instructions to configure redis-py on the
-[github page for redis-py](https://github.com/andymccurdy/redis-py).
-{{< /note >}}
-
-1. Create a new file called `redis_test.py` with this contents:
-
-    ```python
-    import redis
-
-    r = redis.StrictRedis(host='localhost', port=12000, db=0)
-    print ("set key1 123")
-    print (r.set('key1', '123'))
-    print ("get key1")
-    print(r.get('key1'))
-    ```
-
-1. Run the redis_test.py application to store and retrieve a key:
-
-    ```sh
-    python.exe redis_test.py
-    ```
-
-If the connection is successful, the output of the application looks like this:
-
-```sh
-set key1 123
-True
-get key1
-123
-```
+See [test connectivity]({{<relref "/rs/databases/connect/test-client-connectivity.md">}}) page for a tutorial on connecting to your database.
 
 ## Supported web browsers
 
@@ -181,5 +125,5 @@ The following browsers have been tested with the current version of the admin co
 
 Now you have a Redis Enterprise cluster ready to go. You can connect to it with
 a [redis client](https://redis.io/clients) to start loading it with data or
-you can use the [memtier_benchmark Quick Start]({{< relref "content/rs/administering/memtier-benchmark.md" >}})
+you can use the [memtier_benchmark Quick Start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}})
 to check the cluster performance.
