@@ -280,7 +280,7 @@ Suppose you are using large [sets](https://redis.io/docs/data-types/sets/) to so
 
 - Count the number of unique observations in a stream.
 - Check if an observation already appeared in the stream.
-- Find the fraction or the number of observations in the stream that are smaller or larger than a given value
+- Find the fraction or the number of observations in the stream that are smaller or larger than a given value.
 
 and you are ready to trade accuracy with speed and memory usage, consider using one of the following probabilistic data structures. You can use:
 
