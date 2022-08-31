@@ -282,7 +282,7 @@ If you are using large [sets](https://redis.io/docs/data-types/sets/) to solve o
 - Check if an observation already appeared in the stream
 - Find the fraction or the number of observations in the stream that are smaller or larger than a given value
 
-and you are ready to trade accuracy with speed and memory usage, consider using one of the following probabilistic data structures:
+and you are ready to trade accuracy with speed and memory usage, consider using one of the following probabilistic data structures. You can use:
 
 - [HyperLogLog](https://redis.io/docs/data-types/hyperloglogs/) can be used for estimating the number of unique observations in a set.
 - [Bloom filter or cuckoo filter](https://redis.io/docs/stack/bloom/) can be used for checking if an observation has already appeared in the stream (false positive matches are possible, but false negatives are not).
