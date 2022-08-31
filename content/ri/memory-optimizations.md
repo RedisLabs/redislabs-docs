@@ -274,7 +274,7 @@ If you were to change any one the values, you should have a process for moving y
 
 Converting big hashes to small hashes increases the complexity of your code.
 
-### Switch from Set to Bloom filter, cuckoo filter, or HyperLogLog
+### Switch from a set to Bloom filter, cuckoo filter, or HyperLogLog
 
 Suppose you are using large [sets](https://redis.io/docs/data-types/sets/) to solve one of the following problems:
 
