@@ -309,7 +309,7 @@ If you are using large [sorted sets](https://redis.io/docs/data-types/sorted-set
 - Determine the count of a given observation in a stream.
 - Maintain a list of the most frequent observations in a stream.
 
-and you are ready to trade accuracy with speed and memory usage, consider using one of the following probabilistic data structures:
+If you are willing to trade accuracy for speed and memory usage, consider using one of the following probabilistic data structures. You can use:
 
 - [count-min sketch]() can be used to estimate the count of a given observation in a stream
 - [top-k]() can be used to maintain a list of the _k_ most frequent observations in a stream
