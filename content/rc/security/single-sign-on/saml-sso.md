@@ -51,7 +51,7 @@ To create a SAML user and add them to a Redis Cloud account:
 
     The username configured in the identity provider must match the email address that the SAML user will use to sign in to Redis Cloud.
 
-1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/administration/access-management#team-management-roles">}}) in the **redisAccountMapping** field.
+1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/security/access-management#team-management-roles">}}) in the **redisAccountMapping** field.
 
     You can add the same user to multiple SAML-enabled accounts with a comma-separated list: 
 
@@ -149,7 +149,7 @@ To activate SAML SSO:
 If you see a **SAML activation failed** notification when redirected to the Redis Cloud sign-in screen, sign in with your local user credentials and review the SAML configuration for issues.
     {{</note>}}
 
-After you activate SAML SSO, [add a few local bypass users]({{<relref "/rc/administration/access-management#manage-team-access">}}) from the **Team** tab. Local bypass users should [set up MFA]({{<relref "/rc/security/multi-factor-authentication">}}) for additional security.
+After you activate SAML SSO, [add a few local bypass users]({{<relref "/rc/security/access-management#manage-team-access">}}) from the **Team** tab. Local bypass users should [set up MFA]({{<relref "/rc/security/multi-factor-authentication">}}) for additional security.
 
 ## Bind other accounts
 
