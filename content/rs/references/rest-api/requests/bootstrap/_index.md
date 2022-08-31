@@ -21,7 +21,9 @@ aliases: /rs/references/rest-api/bootstrap
 
 ## Get bootstrap status {#get-bootstrap}
 
-	GET /v1/bootstrap
+```sh
+GET /v1/bootstrap
+```
 
 Get the local node's bootstrap status.
 
@@ -29,25 +31,28 @@ This request is accepted as soon the cluster software is installed and before th
 
 Once the node is part of an active cluster, authentication is required.
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /bootstrap 
+```sh
+GET /bootstrap
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Accept | application/json | Accepted media type |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 The JSON response object contains two other objects:
 - `bootstrap_status` which is described below
 - `local_node_info` which is a subset of a [node object]({{<relref "/rs/references/rest-api/objects/node">}}) that provides information about the node configuration
 
-`bootstrap_status` object: 
+`bootstrap_status` object:
+
 | Field | Description |
 |-------|-------------|
 | state | Current bootstrap state.<br></br>`idle`: No bootstrapping started.<br></br>`initiated`: Bootstrap request received.<br></br>`creating_cluster`: In the process of creating a new cluster.<br></br>`joining_cluster`: In the process of joining an existing cluster.<br></br>`error`: The last bootstrap action failed.<br></br>`completed`: The last bootstrap action completed successfully.|
@@ -122,7 +127,7 @@ The JSON response object contains two other objects:
 | path_error | A needed path does not exist or is not accessable. |        
 | internal_error | A different, unspecified internal error was encountered. |
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -130,7 +135,9 @@ The JSON response object contains two other objects:
 
 ## Start bootstrapping {#post-bootstrap}
 
-	POST /v1/bootstrap/{action}
+```sh
+POST /v1/bootstrap/{action}
+```
 
 Initiate bootstrapping.
 
@@ -145,11 +152,13 @@ This request is asynchronous - once the request has been accepted,
 the caller is expected to poll bootstrap status while waiting for it to
 complete.
 
-### Request {#post-request} 
+### Request {#post-request}
 
 #### Example HTTP request
 
-	POST /bootstrap/create_cluster 
+```sh
+POST /bootstrap/create_cluster
+```
 
 #### Example JSON body
 
@@ -207,7 +216,7 @@ complete.
 }
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -220,10 +229,9 @@ complete.
 
 Include a [bootstrap object]({{<relref "/rs/references/rest-api/objects/bootstrap">}}) in the request body.
 
-### Response {#post-response} 
+### Response {#post-response}
 
-
-### Status codes {#post-status-codes} 
+#### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|
