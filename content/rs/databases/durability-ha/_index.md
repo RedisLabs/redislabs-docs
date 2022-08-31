@@ -10,7 +10,8 @@ aliases: [
     /rs/concepts/high-availability/,
     /rs/databases/durability-ha/,
     /rs/databases/configure/durability-ha.md,
-    /rs/databases/configure/durability-ha/
+    /rs/databases/configure/durability-ha/,
+    /rs/databases/durability-ha/,
 
 ]
 ---

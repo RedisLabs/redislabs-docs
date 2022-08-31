@@ -16,7 +16,7 @@ In Redis Enterprise, Active-Active geo-distribution is based on [conflict-free r
 
 Because of the complexities of Active-Active databases, there are special considerations to keep in mind while planning your Active-Active database.
 
-See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more information about geo-distributed replication. For more info on other high availability features, see [Durability and high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}).
+See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more information about geo-distributed replication. For more info on other high availability features, see [Durability and high availability]({{<relref "/rs/databases/durability-ha/">}}).
 
 ## Participating clusters
 
@@ -35,8 +35,8 @@ Factors to consider when sizing your database:
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
 - [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
-- [**database clustering**]({{<relref "/rs/databases/configure/clustering.md">}}): enables you to spread your data into shards across multiple nodes (scale out).
-- [**database replication**]({{<relref "/rs/databases/configure/replication.md">}}): enabling replication doubles memory consumption
+- [**database clustering**]({{<relref "/rs/databases/durability-ha/clustering.md">}}): enables you to spread your data into shards across multiple nodes (scale out).
+- [**database replication**]({{<relref "/rs/databases/durability-ha/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to two times (2x) the original data size per instance.
 - [**database replication backlog**]({{<relref "/rs/databases/active-active/manage-aa#replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
 - [**Active-Active replication backlog**]({{<relref "/rs/databases/active-active/manage-aa.md">}}) for synchronization between clusters. By default, this is set to 1% of the database size.

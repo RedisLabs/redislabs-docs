@@ -52,7 +52,7 @@ To avoid re-join attempts, purge the forcefully removed instance from the partic
 
 ## Replication backlog
 
-Redis databases that use [replication for high availability]({{< relref "/rs/databases/configure/replication.md" >}}) maintain a replication backlog (per shard) to synchronize the primary and replica shards of a database. In addition to the database replication backlog, Active-Active databases maintain a backlog (per shard) to synchronize the database instances between clusters.
+Redis databases that use [replication for high availability]({{< relref "/rs/databases/durability-ha/replication.md" >}}) maintain a replication backlog (per shard) to synchronize the primary and replica shards of a database. In addition to the database replication backlog, Active-Active databases maintain a backlog (per shard) to synchronize the database instances between clusters.
 
 By default, both the database and Active-Active replication backlogs are set to one percent (1%) of the database size divided by the number of shards. This can range between 1MB to 250MB per shard for each backlog.
 
