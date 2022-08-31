@@ -28,7 +28,7 @@ And other functional and stability improvements.
 
 #### Product lifecycle information
 
-- End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{<relref "/rs/administering/product-lifecycle.md">}}).
+- End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}).
 - EOL for Redis modules can be found [here]({{<relref "/modules/modules-lifecycle#modules-endoflife-schedule">}}).
 
 #### Deprecation Notice
@@ -133,7 +133,7 @@ To use the updated modules with a database, you must [upgrade the module on the 
 
 with 6.0.12-58:
 - RS50865 - Fixed a bug causing rladmin change master node to fail when performed after a prior successful master change.
-- RS51359 - Fixed a memory leak on slave shards in Active-Active databases with replication and AOF for persistence.
+- RS51359 - Fixed a memory leak on replica shards in Active-Active databases with replication and AOF for persistence.
 - RS52363 - Updated PUB/SUB max message value size from 64KB to 512MB 
 
 ### Known limitations
@@ -144,7 +144,7 @@ with 6.0.12-58:
 
 - [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}) introduced new Active-Active Redis Database capabilities that improve its compatibility with open source Redis. Now the string data-type in Active-Active Redis Database is implicitly and dynamically typed, just like open source Redis. To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower, you must [upgrade the Active-Active Redis Database protocol]({{<relref "/rs/installing-upgrading/upgrading#upgrading-crdbs">}}).
 - When you upgrade an Active-Active Redis with active AOF from version [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}) or earlier to version [RS 5.4.4]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-4-june-2019.md">}}) or later:
-    - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
+    - If replication is enabled, you must run the BGREWRITEAOF command on all replica shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of [updating them through the API]({{<relref "/rs/security/certificates/updating-certificates">}}). For assistance with this issue, contact Support.
 - Starting from [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}), to preserve the current Redis major.minor version during database upgrade you must use the keep_redis_version option instead of keep_current_version.

@@ -34,7 +34,10 @@ A “member database” of a global Active-Active database which is made up of i
 
 {{%definition "active-passive database replication"%}}
 Provides applications read-only access to replicas of the data set from different geographical locations. The Redis Enterprise implementation of active-passive replication is called [Replica Of]({{<relref "#replica-of">}}).
+{{%/definition%}}
 
+{{%definition"admin console"%}}
+Each node runs a web server that is used to provide the user with access to the Redis Enterprise Software admin console (previously known as management UI). The admin console allows viewing and managing the entire cluster, so it does not matter which node is used to access it.
 {{%/definition%}}
 
 {{%definition "admission controller"%}}
@@ -55,13 +58,19 @@ More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persis
 {{%definition "causal consistency"%}}
 A distributed database is causally consistent if it maintains the same order of operations on a piece of data across all database copies.
 
-More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/databases/active-active/causal-consistency-crdb">}})
+More info: [Causal consistency wikipedia](https://en.wikipedia.org/wiki/Causal_consistency), [Causal consistency in an Active-Active database]({{<relref "/rs/databases/active-active/causal-consistency">}})
 {{%/definition%}}
 
 {{%definition "CIDR allowlist"%}}
 Classless Inter-Domain Routing (CIDR) is a method to allocate and route IP addresses. A CIDR allowlist defines a range of IP addresses and permits connections to them.
 
 More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [Configure CIDR allowlist]({{<relref "/rc/security/cidr-whitelist.md">}})
+{{%/definition%}}
+
+{{%definition "concurrent writes"%}}
+
+Concurrency or updates and writes refer to more than events that happen at the same wall clock time across member Active-Active databases. Concurrent updates refer to the fact that updates happen in between sync events that catch up member Active-Active databases with updates that happened on other member Active-Active databases.
+
 {{%/definition%}}
 
 {{%definition "consistency"%}}
@@ -148,20 +157,20 @@ More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.htm
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
-More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/durability-ha/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "hash tag"%}}
 A part of the key that is used in the hash calculation.
 
-More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/durability-ha/clustering.md">}})
 {{%/definition%}}
 
 {{%definition "high availability"%}}
 
 High availability (HA) is a characteristic of distributed systems that keeps systems available for users for longer than normal periods of time. This is done by reducing single points of failure, increasing redundancy, and making recovering from failures easier.
 
-More info: [Redis Enterprise durability and high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}), [High availability wikipedia](https://en.wikipedia.org/wiki/High_availability)
+More info: [Redis Enterprise durability and high availability]({{<relref "/rs/databases/durability-ha/">}}), [High availability wikipedia](https://en.wikipedia.org/wiki/High_availability)
 {{%/definition%}}
 
 {{%definition "ingress"%}}
@@ -306,7 +315,7 @@ Single-threaded Redis OSS database.
 {{%definition "Redis on Flash (RoF)"%}}
 Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Redis on Flash manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
 
-More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/administering/cluster-operations/getting-started-redis-flash.md">}})
+More info: [Redis on Flash]({{<relref "/rs/databases/redis-on-flash/">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/databases/redis-on-flash/getting-started-redis-flash.md">}})
 {{%/definition%}}
 
 {{%definition "replica high availability (replicaHA)"%}}
@@ -319,7 +328,7 @@ More info: [High availability for replica shards]({{<relref "/rs/databases/confi
 The Redis Enterprise implementation of active-passive database replication.
 
 More info: [Replica Of
-]({{<relref "/rs/databases/import-export/replica-of.md">}})
+]({{<relref "/rs/databases/import-export/replica-of/">}})
 {{%/definition%}}
 
 {{%definition "ReplicaSet"%}}
@@ -334,7 +343,7 @@ Database replication provides a mechanism to ensure high availability. When repl
 which is constantly synchronized with the primary shard. If the primary 
 shard fails, an automatic failover happens and the replica shard is promoted.
 
-More info: [Database replication]({{<relref "/rs/databases/configure/replication.md">}})
+More info: [Database replication]({{<relref "/rs/databases/durability-ha/replication.md">}})
 {{%/definition%}}
 
 {{%definition "role-based access control (RBAC)"%}}
@@ -352,7 +361,7 @@ Kubernetes term for object that stores sensitive information, such as passwords,
 {{%definition "shard"%}}
 Redis process that is part of the Redis clustered database.
 
-More info: [Database clustering]({{<relref "/rs/databases/configure/clustering.md">}})
+More info: [Database clustering]({{<relref "/rs/databases/durability-ha/clustering.md">}}), [terminology]({{<relref "/rs/references/terminology.md">}})
 {{%/definition%}}
 
 {{%definition "sharding"%}}

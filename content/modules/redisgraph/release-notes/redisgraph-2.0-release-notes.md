@@ -289,7 +289,7 @@ Full details:
     - #[550](https://github.com/RedisGraph/RedisGraph/issues/550) #[555](https://github.com/RedisGraph/RedisGraph/issues/555) Optimize cartesian product by reducing to join.
     - #[641](https://github.com/RedisGraph/RedisGraph/issues/641) Cartesian products with multiple incoming streams >2 can now be optimized with "HashJoin".
 - Bugfixes
-    - #[783](https://github.com/RedisGraph/RedisGraph/issues/783) Master-slave replication - slaves were dropping index mutations caused by procedure calls.
+    - #[783](https://github.com/RedisGraph/RedisGraph/issues/783) Master-replica replication - slaves were dropping index mutations caused by procedure calls.
     - #[785](https://github.com/RedisGraph/RedisGraph/issues/785) Solved several major memory leaks.
     - #[795](https://github.com/RedisGraph/RedisGraph/issues/795) The underlying graph object's attributes were not updated on `RENAME`.
     - #[720](https://github.com/RedisGraph/RedisGraph/issues/720) Validation of function calls in `WITH` and `CREATE` clauses e.g. `CREATE (a {v: fake()})`.

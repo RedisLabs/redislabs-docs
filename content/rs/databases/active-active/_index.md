@@ -25,7 +25,7 @@ Active-Active databases also provide disaster recovery and accelerated data read
 
 ## High availability
 
-The [high availability]({{<relref "/rs/databases/configure/durability-ha.md">}}) that Active-Active replication provides is built upon a number of Redis Enterprise Software features (such as [clustering]({{<relref "/rs/databases/configure/clustering.md">}}), [replication]({{<relref "/rs/databases/configure/replication.md">}}), and [replica HA]({{<relref "/rs/databases/configure/replica-ha.md">}})) as well as some features unique to Active-Active ([multi-primary replication]({{<relref "#multi-primary-replication/">}}), [automatic conflict resolution]({{<relref "#conflict-resolution/">}}), and [strong eventual consistency]({{<relref "#strong-eventual-consistency/">}})).
+The [high availability]({{<relref "/rs/databases/durability-ha/">}}) that Active-Active replication provides is built upon a number of Redis Enterprise Software features (such as [clustering]({{<relref "/rs/databases/durability-ha/clustering.md">}}), [replication]({{<relref "/rs/databases/durability-ha/replication.md">}}), and [replica HA]({{<relref "/rs/databases/configure/replica-ha.md">}})) as well as some features unique to Active-Active ([multi-primary replication]({{<relref "#multi-primary-replication/">}}), [automatic conflict resolution]({{<relref "#conflict-resolution/">}}), and [strong eventual consistency]({{<relref "#strong-eventual-consistency/">}})).
 
 Clustering and replication are used together in Active-Active databases to distribute multiple copies of the dataset across multiple nodes and multiple clusters. As a result, a node or cluster is less likely to become a single point of failure. If a primary node or primary shard fails, a replica is automatically promoted to primary. To avoid having one node hold all copies of certain data, the [replica HA]({{<relref "/rs/databases/configure/replica-ha.md">}}) feature (enabled by default) automatically migrates replica shards to available nodes.
 
@@ -44,7 +44,7 @@ Database configurations, LUA scripts, and other support info are not replicated.
 
 Keeping multiple copies of the dataset consistent across multiple clusters is no small task. To achieve consistency between participating clusters, Redis Active-Active replication uses a process called the [syncer]({{<relref "content/rs/databases/active-active/syncer.md">}}). 
 
-The syncer keeps a [replication backlog]({{<relref "/rs/databases/active-active/manage-aa#replication-backlog/">}}), which stores changes to the dataset that the syncer sends to other participating clusters. The syncer uses partial syncs to keep replicas up to date with changes, or a full sync in the event a replica or primary is lost.
+The syncer keeps a [replication backlog]({{<relref "/rs/databases/active-active/manage#replication-backlog/">}}), which stores changes to the dataset that the syncer sends to other participating clusters. The syncer uses partial syncs to keep replicas up to date with changes, or a full sync in the event a replica or primary is lost.
 
 ## Conflict resolution
 
@@ -57,10 +57,10 @@ When developing with CRDTs for Active-Active databases, you need to consider som
 
 Maintaining strong consistency for replicated databases comes with tradeoffs in scalability and availability. Redis Active-Active databases use a strong eventual consistency model, which means that local values may differ across replicas for short periods of time, but they all eventually converge to one consistent state. Redis uses vector clocks and the CRDT conflict resolution to strengthen consistency between replicas. You can also enable the causal consistency feature to preserve the order of operations as they are synchronized among replicas.
 
-Other Redis Enterprise Software features can also be used to enhance the performance, scalability, or durability of your Active-Active database. These include [data persistence]({{<relref "/rs/databases/configure/database-persistence.md">}}), [multiple active proxies]({{<relref "/rs/databases/configure/proxy-policy.md">}}), [distributed synchronization]({{<relref "/rs/databases/active-active/synchronization-mode.md">}}), [the OSS Cluster API]({{<relref "/rs/databases/configure/enable-oss-cluster-api.md">}}), and [rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}}).
+Other Redis Enterprise Software features can also be used to enhance the performance, scalability, or durability of your Active-Active database. These include [data persistence]({{<relref "/rs/databases/configure/database-persistence.md">}}), [multiple active proxies]({{<relref "/rs/databases/configure/proxy-policy.md">}}), [distributed synchronization]({{<relref "/rs/databases/active-active/synchronization-mode.md">}}), [the OSS Cluster API]({{<relref "/rs/databases/configure/oss-cluster-api.md">}}), and [rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness.md">}}).
 
 ## Next steps
 
-- [Plan your Active-Active deployment]({{<relref "/rs/databases/active-active/aa-planning.md">}})
-- [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started-active-active.md">}})
-- [Create an Active-Active database]({{<relref "/rs/databases/active-active/create-active-active.md">}})
+- [Plan your Active-Active deployment]({{<relref "/rs/databases/active-active/planning.md">}})
+- [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started.md">}})
+- [Create an Active-Active database]({{<relref "/rs/databases/active-active/create.md">}})

@@ -17,7 +17,7 @@ With [Active-Active databases]({{< relref "/rs/databases/active-active/_index.md
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
 If you have data in a single-region Redis Enterprise Software database that you want to migrate to an Active-Active database,
-you'll need to create a new Active-Active database and migrate the data into the new database as a [Replica Of]({{<relref "/rs/databases/import-export/replica-of.md">}}) the existing database.
+you'll need to create a new Active-Active database and migrate the data into the new database as a [Replica Of]({{<relref "/rs/databases/import-export/replica-of/">}}) the existing database.
 This process will gradually populate the data in the Active-Active database.
 
 Before data migration starts, all data is flushed from the Active-Active database.
@@ -34,7 +34,7 @@ to make sure the dataset is identical to the source database during the migratio
 
 To migrate an RS database to Active-Active:
 
-1. Create a new [Active-Active database]({{< relref "/rs/databases/active-active/create-active-active.md" >}}).
+1. Create a new [Active-Active database]({{< relref "/rs/databases/active-active/create.md" >}}).
 
     After the Active-Active database is activated, you see the database's configuration.
 

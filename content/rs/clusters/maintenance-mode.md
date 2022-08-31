@@ -2,7 +2,7 @@
 Title: Maintenance mode for cluster nodes
 linkTitle: Maintenance mode
 description: Prepare a cluster node for maintenance.
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: [

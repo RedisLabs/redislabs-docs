@@ -28,10 +28,10 @@ RedisGraph is the first queryable [Property Graph](https://github.com/opencypher
 
 ### Active-Active Redis (CRDB) - Creation in non-clustering mode {#activeactive-redis-crdb-creation-in-nonclustering-mode}
 
-In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/databases/active-active/create-active-active.md" >}}) in a non-clustering mode. As a result, the following creation options are allowed:
+In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/databases/active-active/create.md" >}}) in a non-clustering mode. As a result, the following creation options are allowed:
 
-1. Clustering mode - Creates a CRDB that consists of any number of shards in a clustering mode and is subject to [multi-key commands limitations]({{< relref "/rs/databases/configure/clustering.md" >}}).
-1. Non-clustering mode - Creates a CRDB that consists of one shard only in a non-clustering mode so that [multi-key command limitations]({{< relref "/rs/databases/configure/clustering.md" >}}) do not apply.
+1. Clustering mode - Creates a CRDB that consists of any number of shards in a clustering mode and is subject to [multi-key commands limitations]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
+1. Non-clustering mode - Creates a CRDB that consists of one shard only in a non-clustering mode so that [multi-key command limitations]({{< relref "/rs/databases/durability-ha/clustering.md" >}}) do not apply.
 
 ### High availability for replica shards
 
@@ -39,7 +39,7 @@ When [replica high availability]({{< relref "/rs/databases/configure/replica-ha.
 
 RS 5.4 expands the high availability capabilities by adding the ability to automatically avoid this single point of failure by configuring the cluster to automatically migrate the replica shard to another available node. In practice, replica migration creates a new replica shard and replicates the data from the master shard to the new replica shard.
 
-*_Note that just as is the case with the Redis open-source project, Redis is in the process of changing the "master-slave" terminology to "master-replica" everywhere, including within our documentation._
+*_Note that just as is the case with the Redis open-source project, Redis is in the process of changing the "master-replica" terminology to "master-replica" everywhere, including within our documentation._
 
 ## Additional capabilities
 
@@ -47,7 +47,7 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 ## Product version lifecycle
 
-- The End of Life (EOL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/administering/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
+- The End of Life (EOL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
 
 ## Important fixes
 

@@ -16,7 +16,7 @@ The communications for which you can modify TLS protocols are:
 
 - Control plane - The TLS configuration for cluster administration.
 - Data plane - The TLS configuration for the communication between applications and databases.
-- Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{<relref "/rs/databases/configure/discovery-service.md">}}).
+- Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service.md">}}).
 
 You can configure the TLS protocols with the `rladmin` commands shown here or with the REST API.
 

@@ -54,7 +54,7 @@ before running through the upgrade process.
     support section.
 - Support for OpenStack Object Store ("Swift") location for import /
     export / backup. For additional details, refer to [Database
-    backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
+    backup]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
     and [Importing data to a
     database]({{< relref "/rs/databases/import-export/import-data.md" >}})
     sections.
@@ -192,19 +192,19 @@ before running through the upgrade process.
     **Workaround**: You need to
     manually stop and restart the synchronization process after
     resharding of the source database is done.
-- **Issue**: In the replica of process, high database traffic might restart the Replica of process as result of the "slave buffer" being exceeded. In this case you see
+- **Issue**: In the replica of process, high database traffic might restart the Replica of process as result of the "replica buffer" being exceeded. In this case you see
     the status of the replica of process as "Syncing"
     frequently.
     
     **Workaround**: You need to manually reconfigure the
-    "slave buffer" through rladmin and set the buffer size to a new
+    "replica buffer" through rladmin and set the buffer size to a new
     size. In order to find the appropriate buffer size please contact
     support at: <support@redislabs.com>.
 
 - **Issue**: In a cluster that is configured to support rack-zone
-    awareness, if the user forces migration of a master or slave shard,
+    awareness, if the user forces migration of a master or replica shard,
     through rladmin, to a node on the same rack-zone as its
-    corresponding master or slave shard, and later runs the rebalance
+    corresponding master or replica shard, and later runs the rebalance
     process, the rebalance process will not migrate the shards to ensure
     rack-zone awareness compliance.
     

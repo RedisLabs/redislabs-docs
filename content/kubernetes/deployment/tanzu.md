@@ -22,7 +22,7 @@ These are the steps required to set up a Redis Enterprise cluster with the Kuber
 Prerequisites:
 
 - A [PKS environment installed](https://docs.pivotal.io/runtimes/pks/1-4/installing.html) on PCF version 2.4.6 or above and PKS version 1.3.3 or above.
-- A [PKS cluster](https://docs.pivotal.io/runtimes/pks/1-4/create-cluster.html#create) with at least three nodes, each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) in the case of a development environment. For production use-cases and large-scale POCs, use hardware recommendations for production environments. <!--- Reference a future article that will cover k8s cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
+- A [PKS cluster](https://docs.pivotal.io/runtimes/pks/1-4/create-cluster.html#create) with at least three nodes, each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}) in the case of a development environment. For production use-cases and large-scale POCs, use hardware recommendations for production environments. <!--- Reference a future article that will cover k8s cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
 - The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher.
 - The [PKS cli installed](https://docs.pivotal.io/runtimes/pks/1-4/installing-pks-cli.html).
 
@@ -270,7 +270,7 @@ For production environments you must retain the Persistent Volume Claims (PVCs) 
         we now default to using persistence -->
 
         - `storageClassName` - Your storage class name from the previous step.
-        - `redisEnterpriseNodeResources` - The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constrained, the minimum workable limits for basic testing are 2 CPU and 3GB. For development and production, see the [minimum hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+        - `redisEnterpriseNodeResources` - The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constrained, the minimum workable limits for basic testing are 2 CPU and 3GB. For development and production, see the [minimum hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}).
             - limits – specifies the max resources for a Redis node
             - requests – specifies the minimum resources for a Redis node
         - `enforceIPv4: true` - Add this line under `spec:` at the same indentation (2 spaces) as 'nodes'. This indicates to the REC deployment to not attempt to bind to IPv6, which is currently not supported on PKS clusters.
@@ -525,7 +525,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
 To remove the Redis Enterprise cluster from your PKS deployment:
 
-1. [Delete]({{< relref "/rs/databases/edit-delete-db.md" >}}) any databases you created.
+1. [Delete]({{< relref "/rs/databases/delete.md" >}}) any databases you created.
 
 1. Delete the REC custom resource. This removes the pods from the cluster nodes including all related services and deployments, except for the Operator deployment itself.
 

@@ -10,6 +10,7 @@ aliases: [
     /rs/clusters/,
     /rs/administering/cluster-operations,
     /rs/administering/cluster-operations.md,
+    /rs/administering/designing-production/,
 
 ]
 ---

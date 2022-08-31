@@ -60,7 +60,7 @@ To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgradin
 
 Redis Enterprise Software v5.6.0 will reach end of life (EOF) on October 31, 2021.
 
-To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/administering/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
+To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
 Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
 
@@ -114,7 +114,7 @@ The leaf certificates expire regularly; they're automatically rotated before exp
 
 Redis Enterprise Software supports all new commands, except [RESET](https://redis.io/commands/reset) and [FAILOVER](https://redis.io/commands/failover).  (Redis Enterprise takes a different approach to connectivity; it also separates control plane operations from data plane operations.)
 
-To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/concepts/compatibility.md">}}).
+To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/references/compatibility.md">}}).
 
 ### Redis modules
 

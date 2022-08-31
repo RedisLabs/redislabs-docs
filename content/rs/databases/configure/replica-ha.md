@@ -1,8 +1,8 @@
 ---
-Title: High availability for replica shards
+Title: Configure high availability for replica shards
 linkTitle: Replica high availability
 description: Configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -16,7 +16,7 @@ aliases: [
          
 ]
 ---
-When you enable [database replication]({{< relref "/rs/databases/configure/replication.md" >}}),
+When you enable [database replication]({{< relref "/rs/databases/durability-ha/replication.md" >}}),
 Redis Enterprise Software copies your data to a replica node to make your data highly available.
 If the replica node fails or if the primary (master) node fails and the replica is promoted to primary,
 the remaining primary node is a single point of failure.<!--more-->

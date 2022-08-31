@@ -90,7 +90,7 @@ An additional setting can be done to allow (on average) closer termination of cl
 
 ### RS database configuration
 
-After the cluster settings are updated and the LBs are configured you can go to the RS admin console at https://load-balancer-virtual-ip:8443/ and [create a new database]({{<relref "/rs/databases/create-database.md">}}).
+After the cluster settings are updated and the LBs are configured you can go to the RS admin console at https://load-balancer-virtual-ip:8443/ and [create a new database]({{<relref "/rs/databases/create.md">}}).
 
 If you are creating an Active-Active database, you will need to use the `crdb-cli` utility. See the [`crdb-cli` reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more information about creating Active-Active databases from the command line.
 
@@ -109,7 +109,7 @@ especially if they are directly connected on IP addresses that have changed.
 
 ## Intercluster communication considerations
 
-Redis Enterprise supports several topologies that allow inter cluster replication, these include [Active/Passive]({{<relref "/rs/databases/import-export/replica-of.md">}}) and [Active/Active]({{<relref "/rs/databases/active-active/">}}) for deployment options.
+Redis Enterprise supports several topologies that allow inter cluster replication, these include [Active/Passive]({{<relref "/rs/databases/import-export/replica-of/">}}) and [Active/Active]({{<relref "/rs/databases/active-active/">}}) for deployment options.
 When your Redis Enterprise software clusters are located behind load balancers, you must allow some network services to be open and defined in the load balancers to allow the replication to work.
 
 ### Active Passive

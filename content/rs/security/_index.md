@@ -32,7 +32,7 @@ For antivirus solutions that intercept processes, binary files may have to be ex
     | /opt/redislabs/lib | System library files |
     | /opt/redislabs/sbin | System binaries for tweaking provisioning |
 
-- **Send logs to a remote logging server**: Redis Enterprise is configured to send logs by default to syslog. To send these logs to a remote logging server you must [configure syslog]({{< relref "/rs/logging/log-security.md" >}}) based the requirements of the remote logging server vendor. Remote logging helps ensure that the logs are not deleted so that you can rotate the logs so that your server disk does not fill up.
+- **Send logs to a remote logging server**: Redis Enterprise is configured to send logs by default to syslog. To send these logs to a remote logging server you must [configure syslog]({{< relref "/rs/clusters/logging/log-security.md" >}}) based the requirements of the remote logging server vendor. Remote logging helps ensure that the logs are not deleted so that you can rotate the logs so that your server disk does not fill up.
 
 - **Deploy clusters with an odd number of 3 or more nodes** - Redis is an available and partition tolerant database. We recommend that Redis Enterprise be deployed in a cluster of an odd number of 3 or more nodes so that you are able to successfully failover in the event of a failure.
 
@@ -58,7 +58,7 @@ Redis Enterprise offers several database security controls to help protect your 
 
 - **Configure Transport Layer Security (TLS)**: Similar to the control plane, you can also [configure TLS protocols]({{<relref "/rs/security/tls/tls-protocols">}}) to help support your security and compliance needs.
 
-- **Configure and verify database backups**: Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports [database backups to many destinations]({{< relref "/rs/databases/import-export/database-backup.md" >}}).
+- **Configure and verify database backups**: Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports [database backups to many destinations]({{< relref "/rs/databases/import-export/schedule-backups.md" >}}).
 
 ## LDAP authentication
 
