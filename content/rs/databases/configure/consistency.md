@@ -10,7 +10,7 @@ aliases: [
     /rs/concepts/data-access/consistency-durability/,
     /rs/databases/configure/consistency-durability.md,
     /rs/databases/configure/consistency-durability/,
-    c/rs/databases/configure/consistency.md,
+    /rs/databases/configure/consistency.md,
     /rs/databases/configure/consistency/,
 ]
 ---

@@ -1,7 +1,7 @@
 ---
 Title: Configure shard placement
 linktitle: Shard placement
-description: Configure star
+description: Configure shard placement to improve performance.
 weight: 
 alwaysopen: false
 categories: ["RS"]
