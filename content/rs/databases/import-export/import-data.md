@@ -1,7 +1,7 @@
 ---
 Title: Import data into a database
 description: You can import export or backup files of a specific Redis Enterprise Software database to restore data. You can either import from a single file or from multiple files, such as when you want to import from a backup of a clustered database.
-weight: 20
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 linktitle: Import data
@@ -15,7 +15,7 @@ aliases: [
 ]
 ---
 You can import, [export]({{< relref "/rs/databases/import-export/export-data.md" >}}),
-or [backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
+or [backup]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
 files of a specific Redis Enterprise Software database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a clustered database.

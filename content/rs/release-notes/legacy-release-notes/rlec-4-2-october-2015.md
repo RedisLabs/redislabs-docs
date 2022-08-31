@@ -54,7 +54,7 @@ before running through the upgrade process.
     support section.
 - Support for OpenStack Object Store ("Swift") location for import /
     export / backup. For additional details, refer to [Database
-    backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
+    backup]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
     and [Importing data to a
     database]({{< relref "/rs/databases/import-export/import-data.md" >}})
     sections.

@@ -1,5 +1,6 @@
 ---
 Title: Schedule periodic backups
+linktitle: Schedule backups
 description: You can manually export your data from a specific Redis Enterprise Software database at any time. You can also schedule backups of your databases to make sure you always have valid backups.
 weight: 40
 alwaysopen: false
@@ -9,6 +10,8 @@ aliases: [
     /rs/administering/database-operations/database-backup.md,
     /rs/databases/import-export/database-backup.md,
     /rs/databases/import-export/database-backup/,
+    /rs/databases/import-export/schedule-backups.md,
+    /rs/databases/import-export/schedule-backups/,
 ]
 ---
 

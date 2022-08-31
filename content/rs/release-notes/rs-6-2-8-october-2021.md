@@ -17,7 +17,7 @@ aliases: /rs/release-notes/rs-6-2-8-october-2021/
 This version features:
 
 - Support for Red Hat Linux Edition (RHEL) 8
-- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/databases/import-export/database-backup.md">}}) 
+- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/databases/import-export/schedule-backups.md">}}) 
 - Compatibility with version of [open source Redis 6.2.3](https://github.com/redis/redis/releases/tag/6.2.3) (starting with [Redis Enterprise Software v6.2.4]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}))
 - Compatibility with the security fixes of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6)
 - Enhancements and bug fixes

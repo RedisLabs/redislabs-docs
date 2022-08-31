@@ -1,7 +1,8 @@
 ---
 Title: Replica Of Repeatedly Fails
-description:
-weight: $weight
+linktitle: Troubleshoot repeat failures
+description: Troubleshoot when the Replica Of process repeatedly fails and restarts. 
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -9,6 +10,8 @@ aliases: [
 /rs/administering/troubleshooting/replicaof-repeatedly-fails/,
 /rs/databases/import-export/replicaof-repeatedly-fails.md,
 /rs/databases/import-export/replicaof-repeatedly-fails/,
+/rs/databases/import-export/replica-of/replicaof-repeatedly-fails.md,
+/rs/databases/import-export/replica-of/replicaof-repeatedly-fails/,
 ]
 ---
 **Problem**: The Replica Of process repeatedly fails and restarts

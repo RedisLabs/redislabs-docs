@@ -319,7 +319,7 @@ More info: [High availability for replica shards]({{<relref "/rs/databases/confi
 The Redis Enterprise implementation of active-passive database replication.
 
 More info: [Replica Of
-]({{<relref "/rs/databases/import-export/replica-of.md">}})
+]({{<relref "/rs/databases/import-export/replica-of/">}})
 {{%/definition%}}
 
 {{%definition "ReplicaSet"%}}

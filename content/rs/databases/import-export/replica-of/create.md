@@ -2,7 +2,7 @@
 Title: Create a database with Replica Of
 linkTitle: Create Replica Of database
 description: Create Replica Of database
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: [ 
@@ -10,6 +10,8 @@ aliases: [
     /rs/administering/database-operations/create-active-passive/,
     /rs/databases/import-export/create-replica-of.md, 
     /rs/databases/import-export/create-replica-of/,
+    /rs/databases/import-export/replica-of/create.md,
+    /rs/databases/import-export/replica-of/create/,
 ]
 ---
 Active-Passive replicated databases (also known as Replica Of) give applications read-only access
@@ -75,7 +77,7 @@ If you regenerate the password, replication to existing destinations fails until
 
         {{< note >}}
 For a source database on a different RS cluster,
-you can [compress the replication data]({{< relref "/rs/databases/import-export/replica-of.md#data-compression-for-replica-of">}}) to save bandwidth.
+you can [compress the replication data]({{< relref "/rs/databases/import-export/replica-of/#data-compression-for-replica-of">}}) to save bandwidth.
         {{< /note >}}
 
     - For a source database in an OSS Redis cluster - Enter the URL of the source endpoint in the format:

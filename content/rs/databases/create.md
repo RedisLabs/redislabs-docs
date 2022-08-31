@@ -158,14 +158,14 @@ after the database is created.
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-    - [**Replica Of**]({{< relref "/rs/databases/import-export/create-replica-of.md" >}}) -
+    - [**Replica Of**]({{< relref "/rs/databases/import-export/replica-of/create.md" >}}) -
     You can make this database a repository for keys from other databases.
 
 - [**TLS**]({{<relref "/rs/security/tls/">}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
-    - [**Periodic backup**]({{< relref "/rs/databases/import-export/database-backup.md" >}}) -
+    - [**Periodic backup**]({{< relref "/rs/databases/import-export/schedule-backups.md" >}}) -
     You can configure periodic backups of the database, including the interval and backup location parameters.
 
     - [**Alerts**]({{< relref "/rs/clusters/monitoring/_index.md#database-alerts" >}}) -

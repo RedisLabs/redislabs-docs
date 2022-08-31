@@ -2,7 +2,7 @@
 Title: Flush database data
 linkTitle: Flush database
 description: To delete the data in a database without deleting the database, you can use Redis CLI to flush it from the database.  You can also use Redis CLI, the admin console, and the Redis Software REST API to flush data from Active-Active databases.
-weight: 80
+weight: 40
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -20,7 +20,7 @@ You can use the admin console to flush data from Active-Active databases.
 
 {{< warning title="Data Loss Warning" >}}
 The flush command deletes ALL in-memory and persistence data in the database.
-We recommend that you [back up your database]({{< relref "/rs/databases/import-export/database-backup.md" >}}) before you flush the data.
+We recommend that you [back up your database]({{< relref "/rs/databases/import-export/schedule-backups.md" >}}) before you flush the data.
 {{< /warning >}}
 
 ## Flush data from a database
