@@ -47,11 +47,9 @@ GET /bootstrap
 
 ### Response {#get-response}
 
-The JSON response object contains two other objects:
-- `bootstrap_status` which is described below
-- `local_node_info` which is a subset of a [node object]({{<relref "/rs/references/rest-api/objects/node">}}) that provides information about the node configuration
+The JSON response object contains a `bootstrap_status` object and a `local_node_info` object.
 
-`bootstrap_status` object:
+The `bootstrap_status` object contains the following information:
 
 | Field | Description |
 |-------|-------------|
@@ -60,6 +58,8 @@ The JSON response object contains two other objects:
 | end_time | Bootstrap process end time |
 | error_code | If state is `error`, this error code describes the type of error encountered. |
 | error_details | An error-specific object that may contain additional information about the error. A common field in use is `message` which provides a more verbose error message.
+
+The `local_node_info` object is a subset of a [node object]({{<relref "/rs/references/rest-api/objects/node">}}) that provides information about the node configuration.
 
 #### Example JSON body
 
