@@ -1,6 +1,6 @@
 ---
 Title: Enable OSS Cluster API
-linkTitle: Enable OSS Cluster API
+linkTitle: OSS Cluster API
 description:
 weight: 20
 alwaysopen: false
