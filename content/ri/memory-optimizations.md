@@ -280,13 +280,13 @@ If you are using large [sets](https://redis.io/docs/data-types/sets/) to solve o
 
 - Count the number of unique observations in a stream
 - Check if an observation already appeared in the stream
-- Find the percentage or the number of observations in the stream that are smaller or larger than a given value
+- Find the fraction or the number of observations in the stream that are smaller or larger than a given value
 
 and you are ready to trade accuracy with speed and memory usage, consider using one of the following probabilistic data structures:
 
 - [HyperLogLog](https://redis.io/docs/data-types/hyperloglogs/) can be used for estimating the number of unique observations in a set.
 - [Bloom filter or cuckoo filter](https://redis.io/docs/stack/bloom/) can be used for checking if an observation has already appeared in the stream (false positive matches are possible, but false negatives are not).
-- [t-digest](https://redis.io/docs/stack/bloom/) can be used for estimating the percentage or the number of observations in the stream that are smaller or larger than a given value.
+- [t-digest](https://redis.io/docs/stack/bloom/) can be used for estimating the fraction or the number of observations in the stream that are smaller or larger than a given value.
 
 Bloom filter and cuckoo filter require [RedisBloom](https://redis.com/modules/redis-bloom/).
 
