@@ -311,7 +311,7 @@ If you are using large [sorted sets](https://redis.io/docs/data-types/sorted-set
 
 If you are willing to trade accuracy for speed and memory usage, consider using one of the following probabilistic data structures. You can use:
 
-- [count-min sketch]() can be used to estimate the count of a given observation in a stream
+- [count-min sketch]() to estimate the count of a given observation in a stream.
 - [top-k]() can be used to maintain a list of the _k_ most frequent observations in a stream
 
 count-min sketch and top-k require [RedisBloom](https://redis.com/modules/redis-bloom/).
