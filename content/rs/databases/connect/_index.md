@@ -2,7 +2,7 @@
 Title: Manage client connections
 linkTitle: Connect
 description: Learn how to connect your application to a Redis database hosted by Redis Enterprise Software and test your connection.
-weight: 19
+weight: 20
 categories: ["RS"]
 aliases: [
     /rs/connections/_index.md,
