@@ -276,7 +276,7 @@ Converting big hashes to small hashes increases the complexity of your code.
 
 ### Switch from Set to Bloom filter, cuckoo filter, or HyperLogLog
 
-If you are using large [sets](https://redis.io/docs/data-types/sets/) to solve one of the following problems:
+Suppose you are using large [sets](https://redis.io/docs/data-types/sets/) to solve one of the following problems:
 
 - Count the number of unique observations in a stream
 - Check if an observation already appeared in the stream
