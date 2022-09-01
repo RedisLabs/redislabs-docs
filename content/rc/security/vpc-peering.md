@@ -49,7 +49,13 @@ To set up VPC peering:
     | _Consumer VPC ID_ | The VPC ID for the application that needs to access your Redis Cloud VPC (see [Finding a VPC ID](https://docs.aws.amazon.com/managedservices/latest/userguide/find-vpc.html)) |
     | _Consumer VPC CIDRs_ | [CIDR-formatted](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) IP addresses for the AWS VPC that needs to access your Redis Cloud VPC; must not overlap with the _Redis producer VPC CIDR_ (see [View your VPCs](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#view-vpc)) |
 
-1. You can provide up to five VPC CIDRs. To add multiple VPC CIDRs:
+1. You can provide up to five VPC CIDRs.
+    
+    {{< note >}}
+    Multiple VPC CIDRs are not yet supported by the Redis Cloud TerraForm provider. Any additional CIDRs that are defined through the Redis Cloud console will be removed by TerraForm.
+    {{< /note >}}
+    
+    To add multiple VPC CIDRs:
 
     1. Select the **Add CIDR** button:
 
