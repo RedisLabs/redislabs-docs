@@ -52,7 +52,7 @@ To set up VPC peering:
 1. You can provide up to five VPC CIDRs.
     
     {{< note >}}
-    Multiple VPC CIDRs are not yet supported by the Redis Cloud TerraForm provider. Any additional CIDRs that are defined through the Redis Cloud console will be removed by TerraForm.
+    The [Redis Cloud Terraform provider](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs) currently supports one VPC CIDR.  Additional CIDRs defined by the console will be removed by Terraform.
     {{< /note >}}
     
     To add multiple VPC CIDRs:
