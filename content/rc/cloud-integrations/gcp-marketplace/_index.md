@@ -35,7 +35,7 @@ Here's how to create a new Flexible subscription as part of your GCP Marketplace
 
 1.  Create a Redis Cloud admin account or sign in to an existing account.
 
-1.  Use the Google Cloud Marketplace dialog to select the Redis account to be mapped to your GCP Marketplace account.
+1.  Use the Google Cloud Marketplace dialog to select the Redis account to be mapped to your GCP Marketplace account. You only need to do this once.
 
     {{<image filename="images/rc/gcp-marketplace-map-account-dialog.png" alt="Use the GCP Marketplace dialog to map your Redis Cloud account to your GCP Marketplace account." width="75%">}}{{< /image >}}
 
