@@ -191,7 +191,7 @@ In this case, any pods that are deployed with the label `local/role: database` c
 You can configure Redis Enterprise with rack-zone awareness to increase availability
 during partitions or other rack (or region) related failures.
 
-{{%note%}}When creating your rack-zone ID, there are some constraints to consider; see [rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness#cluster-and-node-configuration">}}) more info. {{%/note%}}
+{{%note%}}When creating your rack-zone ID, there are some constraints to consider; see [rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness#cluster-and-node-configuration">}}) for more info. {{%/note%}}
 
 
 Rack-zone awareness is a single property in the Redis Enterprise cluster CRD named `rackAwarenessNodeLabel`.
