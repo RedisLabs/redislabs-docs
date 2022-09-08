@@ -80,7 +80,7 @@ If the database status is `missing files`, make sure all persistence files are p
 
    {{< /note >}}
 
-    If you want to recover based on the cluster configuration of another pod, copy the cluster configuration from the source pod (/var/opt/redislabs/persist/ccs/ccs-redis.rdb) to pod-0.
+    If you want to recover based on the cluster configuration of another pod (from the same REC), copy the cluster configuration from the source pod (/var/opt/redislabs/persist/ccs/ccs-redis.rdb) to pod-0.
 
 1. If you are using sentinel discovery service, you must restart the sentinel_service on the master. To do this, log into the master pod and run:
 
