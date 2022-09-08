@@ -107,7 +107,9 @@ Changes to the `openshift.bundle.yaml` file can cause unexpected results.
 
     You can rename the file to `<your_cluster_name>.yaml`, but it is not required (the examples below will use `<rec_rhel>.yaml`). [Options for Redis Enterprise clusters]({{<relref "/kubernetes/reference/cluster-options.md">}}) has more info about the REC custom resource, or see the [Redis Enterprise cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) for a full list of options.
 
-    {{%note%}}Each Redis Enterprise cluster must have at least 3 nodes. One node RECs are not supported.{{%/note%}}
+    {{%note%}}
+Each Redis Enterprise cluster must have at least 3 nodes. One-node RECs are not supported.
+    {{%/note%}}
 
 1. Apply the custom resource file to create your Redis Enterprise cluster.
 

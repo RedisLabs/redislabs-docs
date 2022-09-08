@@ -174,7 +174,7 @@ After you install the Redis Enterprise operator into a project you can:
 
 You can easily create a cluster with the operator in **Installed Operators**.
 
-{{%note%}}Each cluster must have at least 3 nodes. One node RECs are not supported.{{%/note%}}
+{{%note%}}Each cluster must have at least 3 nodes. One-node RECs are not supported.{{%/note%}}
 
 ### Step 1: Navigate to the installed operator
 
