@@ -39,7 +39,14 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
 
 1. Create or add a SAML integration app for the service provider Redis Cloud.
 
-1. Create a custom SAML attribute called **redisAccountMapping** in the service provider app. This attribute lets you map a user to multiple Redis Cloud accounts and roles as a comma-separated list.
+1. Set up your SAML service provider app so the SAML assertion contains the following attributes:
+
+    | Attribute&nbsp;name | Description |
+    |----------------|-------------|
+    | FirstName | User's first name |
+    | LastName | User's last name |
+    | Email | User's email address |
+    | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and roles as a comma-separated list |
 
 1. Set up any additional configuration required by your identity provider to ensure you can configure the **redisAccountMapping** attribute for SAML users.
 
@@ -47,7 +54,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
 
 To create a SAML user and add them to a Redis Cloud account:
 
-1. From your identity provider's admin console, [add a new user](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-add-users.htm) or edit an existing user's profile.
+1. From your identity provider's admin console, add a new user or edit an existing user's profile.
 
     The username configured in the identity provider must match the email address that the SAML user will use to sign in to Redis Cloud.
 
@@ -57,7 +64,7 @@ To create a SAML user and add them to a Redis Cloud account:
 
     12345=owner,54321=manager
 
-1. [Assign the Redis Cloud SAML integration app](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm) to the user.
+1. Assign the Redis Cloud SAML integration app to the user.
 
 If your identity provider lets you configure custom attributes with workflows or group rules, you can set up automation to configure the **redisAccountMapping** field automatically instead of manually.
 
@@ -75,7 +82,7 @@ After you set up the SAML integration app and create a SAML user in your identit
 
 1. Select the **Setup SSO** button:
 
-    {{<image filename="images/rc/button-access-management-sso-setup.png" alt="Setup SSO button">}}{{</image>}}
+    {{<image filename="images/rc/button-access-management-sso-setup.png" width="120px" alt="Setup SSO button">}}{{</image>}}
 
 1. You need the following metadata values from your identity provider:
 
@@ -129,6 +136,8 @@ After you finish the required SAML SSO configuration between your identity provi
 
 To activate SAML SSO:
 
+1. Sign out of any active SSO sessions with your identity provider.
+
 1. For **Activate SAML integration**, select the **Activate** button.
 
 1. From the **Logout notification** dialog, select **Continue**. This redirects you to your configured identity provider's sign-in screen.
@@ -141,7 +150,7 @@ To activate SAML SSO:
 
     - Select **Sign in with SSO** and enter the email address associated with the SAML user configured in your identity provider:
 
-        {{<image filename="images/rc/button-sign-in-sso.png" alt="Sign in with SSO button">}}{{</image>}}
+        {{<image filename="images/rc/button-sign-in-sso.png" width="150px" alt="Sign in with SSO button">}}{{</image>}}
 
         This will convert your user to a SAML user in Redis Cloud, so do not use this method if you want your user account to remain a local bypass user.
 
@@ -171,7 +180,7 @@ To bind other accounts to an existing SAML SSO configuration:
 
 ## Deactivate SAML SSO
 
-Before you can deactivate SAML SSO for an account, it must have a local (non-SAML) user with the owner role assigned. You can only deactivate SAML SSO for the account you are currently signed in to.
+Before you can deactivate SAML SSO for an account, you must sign in to the account as a local (non-SAML) user with the owner role assigned.
 
 To deactivate SAML SSO for a specific account:
 
