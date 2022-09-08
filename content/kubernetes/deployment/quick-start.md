@@ -148,7 +148,7 @@ You can test the operator by creating a minimal cluster by following this proced
           memory: 16Gi
     ```
     {{%note%}}
-Each cluster must have at least 3 nodes. One-node RECs are not supported.
+Each cluster must have at least 3 nodes. Single-node RECs are not supported.
     {{%/note%}}
 
     See the [Redis Enterprise hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md">}}) for more
