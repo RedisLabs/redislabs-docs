@@ -27,7 +27,6 @@ crdb-cli crdb create --name <name>
          [--sharding { false | true } ]
          [--shards-count <number_of_shards>]
          [--shard-key-regex <regex_rule>]
-         [--oss-sharding { true | false } ]
          [--oss-cluster { true | false } ]
          [--bigstore { true | false }]
          [--bigstore-ram-size <maximum_memory>]
