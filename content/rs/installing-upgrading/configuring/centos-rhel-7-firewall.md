@@ -1,5 +1,5 @@
 ---
-title: Configure CentOS/RHEL 7 Firewall
+title: Configure CentOS/RHEL 7 and above Firewall
 linkTitle: CentOS/RHEL 7 firewall
 description:
 weight: $weight
