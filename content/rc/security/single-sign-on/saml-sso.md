@@ -17,11 +17,11 @@ After you activate SAML SSO for a Redis Cloud account, all existing local users 
 
 ### IdP-initiated SSO
 
-After you sign in to your identity provider (IdP), you can select the Redis Cloud application. This redirects you to the Redis Cloud [admin console](https://app.redislabs.com/#/login) and signs you in to your SAML user account.
+With IdP-initiated single sign-on, you can select the Redis Cloud application after you sign in to your [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider). This redirects you to the Redis Cloud [admin console](https://app.redislabs.com/#/login) and signs you in to your SAML user account.
 
 ### SP-initiated SSO
 
-You can also initiate single sign-on from the Redis Cloud [admin console](https://app.redislabs.com/#/login). This process is known as service provider (SP)-initiated single sign-on.
+You can also initiate single sign-on from the Redis Cloud [admin console](https://app.redislabs.com/#/login). This process is known as [service provider (SP)](https://en.wikipedia.org/wiki/Service_provider)-initiated single sign-on.
 
 1. From the Redis Cloud admin console's [sign in screen](https://app.redislabs.com/#/login), select the **SSO** button:
 
@@ -37,7 +37,7 @@ You can also initiate single sign-on from the Redis Cloud [admin console](https:
 
         1. Enter your IdP user credentials to sign in.
 
-        1. Then the SSO flow redirects you back to the Redis Cloud admin console and automatically signs in to your SAML user account.
+        1. This redirects you back to the Redis Cloud admin console and automatically signs in to your SAML user account.
 
 ### Multi-factor authentication
 
@@ -199,6 +199,14 @@ If you see a **SAML activation failed** notification when redirected to the Redi
     {{</note>}}
 
 After you activate SAML SSO, [add a few local bypass users]({{<relref "/rc/security/access-management#manage-team-access">}}) from the **Team** tab. Local bypass users should [set up MFA]({{<relref "/rc/security/multi-factor-authentication">}}) for additional security.
+
+## Update configuration {#update-config}
+
+If you change certain metadata or configuration settings after you set up SAML SSO, such as the assertion signing certificate, remember to do the following:
+
+1. [Update the SAML SSO configuration](#configure-idp) with the new values.
+
+1. [Download the updated service provider metadata](#download-sp) and use it to update the Redis Cloud service provider app.
 
 ## Bind other accounts
 
