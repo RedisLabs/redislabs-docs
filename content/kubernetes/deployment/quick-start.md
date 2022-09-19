@@ -147,9 +147,9 @@ You can test the operator by creating a minimal cluster by following this proced
           cpu: 2000m
           memory: 16Gi
     ```
-    {{%note%}}
+    {{<note>}}
 Each cluster must have at least 3 nodes. Single-node RECs are not supported.
-    {{%/note%}}
+    {{</note>}}
 
     See the [Redis Enterprise hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md">}}) for more
     information on sizing Redis Enterprise node resource requests.
