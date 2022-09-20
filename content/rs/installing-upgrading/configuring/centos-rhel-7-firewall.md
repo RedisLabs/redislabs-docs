@@ -7,11 +7,11 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall/
 ---
-CentOS/RHEL7 distributions have, by default, a restrictive firewall mechanism based on **firewalld**
+CentOS/RHEL distributions have, by default, a restrictive firewall mechanism based on **firewalld**
 that in turn configures the standard iptables system.
 The default configuration assigns the network interfaces to the **public** zone and blocks all ports, except 22 (SSH).
 
-Redis Enterprise Software (RS) installation on CentOS/RHEL 7 automatically creates two firewalld system services:
+Redis Enterprise Software (RS) installation on CentOS/RHEL  automatically creates two firewalld system services:
 
 - A service named **redislabs**, which includes all ports and protocols needed for communications between cluster nodes.
 - A service named **redislabs-clients**, which includes the ports and protocols needed for communications external to the cluster.
