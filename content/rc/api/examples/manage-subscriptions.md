@@ -15,7 +15,7 @@ You can use the Redis Enterprise Cloud REST API to create and manage a subscript
 
 ## Create a subscription
 
-The API operation that creates a subscription is `POST /v1/subscriptions`.
+Use `POST /v1/subscriptions` to create a subscription.
 
 ```sh
 POST "https://[host]/v1/subscriptions"
@@ -48,7 +48,7 @@ To use the sample JSON document in your own account, you must modify these param
 
 - **`paymentMethodId`** - Specify a payment method that is defined for your account.
 
-    You can lookup the payment method identifier using the `GET /payment-methods` API operation.
+    You can look up the payment method identifier using the `GET /payment-methods` API operation.
 
     If you subscribed to Redis Enterprise Cloud through the GCP Marketplace, you do not need to pass this field in your API requests.
 
@@ -66,4 +66,25 @@ To use the sample JSON document in your own account, you must modify these param
 The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
 {{< /note >}}
 
-The POST response is a JSON document that contains the `taskId`. You can use `GET /v1/tasks/<taskId>` to track the creation of your subscription.
+The POST request returns a JSON document with a `taskId` of the task that is creating the subscription. You can use `GET /v1/tasks/<taskId>` to track the status of this task.
+
+## Update a subscription
+
+Use `PUT /v1/subscriptions/<susbscriptionId>` to update a subscription.
+
+```sh
+PUT "https://[host]/v1/subscriptions/<susbscriptionId>"
+{
+    "name": "new-subscription-name",
+    "paymentMethodId": <payment_id>
+}
+```
+
+You can only change the following settings with this endpoint:
+- **`name`** - Specify a new name for your subscription.
+
+- **`paymentMethodId`** - Specify a different payment method that is defined for your account.
+
+    You can look up a payment method identifier using the `GET /payment-methods` API operation.
+
+The PUT request returns a JSON document with a `taskId` of the task that is updating the subscription. You can use `GET /v1/tasks/<taskId>` to track the status of this task.
