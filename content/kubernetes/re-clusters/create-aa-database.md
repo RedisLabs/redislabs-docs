@@ -98,14 +98,28 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
 
+For Nginx: 
+
     ```sh
     activeActive:
       apiIngressUrl: <api-hostname>
       dbIngressSuffix: <ingress-suffix>
       ingressAnnotations:
-        kubernetes.io/ingress.class: <nginx | haproxy>
-        <nginx.ingress.kubernetes.io | haproxy-ingress.github.io>/backend-protocol: HTTPS
-        <nginx.ingress.kubernetes.io | haproxy-ingress.github.io>/ssl-passthrough: "true"  
+        kubernetes.io/ingress.class: nginx
+        nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+        nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+      method: ingress
+    ```
+
+For HAProxy: 
+
+    ```sh
+    activeActive:
+      apiIngressUrl: <api-hostname>
+      dbIngressSuffix: <ingress-suffix>
+      ingressAnnotations:
+        kubernetes.io/ingress.class: haproxy
+        haproxy-ingress.github.io
       method: ingress
     ```
 
