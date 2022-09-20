@@ -24,7 +24,7 @@ You can use Uptrace to:
 
 ## Installing Collector and Uptrace
 
-Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and AlertManager.
+Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and Alertmanager.
 
 Alternatively, you can try the following guides to explore all available options:
 
@@ -111,25 +111,7 @@ When metrics start arriving to Uptrace, you should see a couple of dashboards in
 
 ## Monitoring metrics
 
-Uptrace can also monitor metrics and send notifications using AlertManager integration. First, you need to tell Uptrace how to reach AlertManager:
-
-```yaml
-# uptrace.yml
-
-##
-## AlertManager client configuration.
-## See https://uptrace.dev/get/alerting.html for details.
-##
-## Note that this is NOT an AlertManager config and you need to configure AlertManager separately.
-## See https://prometheus.io/docs/alerting/latest/configuration/ for details.
-##
-alertmanager_client:
-  # AlertManager API endpoints that Uptrace uses to manage alerts.
-  urls:
-    - "http://localhost:9093/api/v2/alerts"
-```
-
-To start monitoring metrics, you need to add some alerting rules, for example, to alert when a Redis shard is down:
+To start monitoring metrics, you need to add some alerting rules, for example, the following rule creates an alert whenever an individual Redis shard is down which is ensured by the `group by node` expression:
 
 ```yaml
 # uptrace.yml
@@ -140,12 +122,14 @@ alerting:
       metrics:
         - redis_up as $redis_up
       query:
-        - group by cluster
-        - group by bdb
-        - group by node
+        - group by cluster # monitor each cluster,
+        - group by bdb     # each database,
+        - group by node    # and each shard
         - $redis_up == 0
-      for: 5m # for 5 minutes
-      projects: [1] # in projects #1
+      # shard should be down for 5 minutes to trigger an alert
+      for: 5m
+      # only monitor Uptrace projects with these ids
+      projects: [1]
 ```
 
 You can also create queries with more complex expressions, for example, to alert when the keyspace hit rate is lower than 75% or memory fragmentation is too high:
@@ -180,6 +164,26 @@ alerting:
       projects: [1]
 ```
 
-## Conclusion
+## Sending notifications
 
-TODO: some final words and links to the blog etc
+Uptrace does not manage notifications by itself and instead provides an [integration](https://uptrace.dev/get/alerting.html) with Alertmanager.
+
+Alertmanager handles alerts sent by client applications such as Uptrace and takes care of deduplicating, grouping, and routing notifications to configured receivers via email, Slack, Telegram, and many others.
+
+To start creating Alertmanager alerts, you need to tell Uptrace how to reach AlertManager:
+
+```yaml
+# uptrace.yml
+
+##
+## AlertManager client configuration.
+## See https://uptrace.dev/get/alerting.html for details.
+##
+## Note that this is NOT an AlertManager config and you need to configure AlertManager separately.
+## See https://prometheus.io/docs/alerting/latest/configuration/ for details.
+##
+alertmanager_client:
+  # AlertManager API endpoints that Uptrace uses to manage alerts.
+  urls:
+    - "http://localhost:9093/api/v2/alerts"
+```
