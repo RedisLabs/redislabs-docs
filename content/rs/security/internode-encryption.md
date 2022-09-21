@@ -2,7 +2,7 @@
 title: Internode encryption
 linkTitle: Internode encryption
 description: Describes internode which improves the security of data in transit. 
-weight: 10
+weight: 15
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/security/internode-encryption/
