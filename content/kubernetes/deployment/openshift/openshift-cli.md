@@ -159,16 +159,15 @@ Each Redis Enterprise cluster must have at least 3 nodes. Single-node RECs are n
     CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
     ```
 
-1. Create a patch file for the Kubernetes webhook.
+1. Create a patch file for the Kubernetes webhook, using your own values for the namespace and name.
 
-    ```bash
-    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
-
+    ```sh
+    sed '<namespace>' admission/webhook.yaml | kubectl create -f -
     cat > modified-webhook.yaml <<EOF
     webhooks:
-    - name: redb.admission.redislabs
-      clientConfig:
-        caBundle: $CERT
+      - name: <redb.admission.redislabs>
+        clientConfig:
+          caBundle: $CERT
       admissionReviewVersions: ["v1beta1"]
     EOF
     ```
@@ -218,16 +217,16 @@ Apply an invalid resource (provided below).
 
 This should force the admission controller to reject it. If it applies successfully, the admission controller is not installed correctly.
 
-    ```bash
-    $ kubectl apply -f - << EOF
-    apiVersion: app.redislabs.com/v1alpha1
-    kind: RedisEnterpriseDatabase
-    metadata:
-      name: redis-enterprise-database
-    spec:
-     evictionPolicy: illegal
-    EOF
-    ```
+```bash
+  $ kubectl apply -f - << EOF
+   apiVersion: app.redislabs.com/v1alpha1
+   kind: RedisEnterpriseDatabase
+   metadata:
+     name: redis-enterprise-database
+   spec:
+    evictionPolicy: illegal
+   EOF
+```
 
 You should see an error from the admission controller webhook `redb.admission.redislabs`.
   
