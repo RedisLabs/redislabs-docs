@@ -194,7 +194,7 @@ The field value that appears immediately after the timestamp describes the actio
 In addition, the following fields may also appear in audit event notifications:
 
 | Field&nbsp;name | Description |
-|---------|-------------|
+|:---------:|-------------|
 | `acl-rules` | ACL rule associated with the connection, which includes a rule for the `default` user. |
 | `bdb_name` | Destination database name - the name of the database being accessed | 
 | `bdb_uid` | Destination database ID - The cluster ID of the database being accessed | 
@@ -214,7 +214,7 @@ In addition, the following fields may also appear in audit event notifications:
 The `status` field reports the results of an authentication request as an integer.  Here's what different values mean:
 
 | Error&nbsp;value | Error code | Description | 
-|-------------|------------|-------------|
+|:-------------:|------------|-------------|
 | `0` | AUTHENTICATION_FAILED | Invalid username and/or password |
 | `1` | AUTHENTICATION_FAILED_TOO_LONG | Username or password are too long |
 | `2` | AUTHENTICATION_NOT_REQUIRED | Client tried to authenticate, but authentication isn't necessary. | 
