@@ -98,32 +98,32 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
 
-For Nginx: 
+  Nginx:
 
-    ```sh
-    activeActive:
-      apiIngressUrl: <api-hostname>
-      dbIngressSuffix: <ingress-suffix>
-      ingressAnnotations:
-        kubernetes.io/ingress.class: nginx
-        nginx.ingress.kubernetes.io/backend-protocol: HTTPS
-        nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-      method: ingress
-    ```
+  ```sh
+  activeActive:
+    apiIngressUrl: <api-hostname>
+    dbIngressSuffix: <ingress-suffix>
+    ingressAnnotations:
+       kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    method: ingress
+  ```
 
-For HAProxy: 
+HAproxy:
 
-    ```sh
-    activeActive:
-      apiIngressUrl: <api-hostname>
-      dbIngressSuffix: <ingress-suffix>
-      ingressAnnotations:
-        kubernetes.io/ingress.class: haproxy
-        haproxy-ingress.github.io/ssl-passthrough: "true"
-      method: ingress
-    ```
+  ```sh
+  activeActive:
+    apiIngressUrl: <api-hostname>
+    dbIngressSuffix: <ingress-suffix>
+    ingressAnnotations:
+      kubernetes.io/ingress.class: haproxy
+      haproxy-ingress.github.io/ssl-passthrough: "true"
+    method: ingress
+  ```
 
-1. After the changes are saved and applied, you can verify a new ingress was created for the API.
+2. After the changes are saved and applied, you can verify a new ingress was created for the API.
 
     ```sh
     $ kubectl get ingress
@@ -131,7 +131,7 @@ For HAProxy:
     rec01  api.abc.cde.redisdemo.com  225161f845b278-111450635.us.cloud.com   80      24h
     ```
 
-1. Verify you can access the API from outside the K8s cluster.
+3. Verify you can access the API from outside the K8s cluster.
 
     ```sh
    curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/cluster
@@ -139,7 +139,7 @@ For HAProxy:
 
     If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
 
-1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address of the ingress controller’s LoadBalancer. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
+4. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address of the ingress controller’s LoadBalancer. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
 #### If using Istio Gateway and VirtualService
 
