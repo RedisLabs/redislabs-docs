@@ -76,17 +76,15 @@ If you are running an OpenShift 3 version, use the `bundle.yaml` file located in
 
 1. Deploy the OpenShift operator bundle.
 
-  {{<note>}}
-If you are running on OpenShift 3.x, use the `openshift.bundle.yaml` file in the `openshift_3_x` folder.
-  {{</note>}}
+    If you are running on OpenShift 3.x, use the `openshift.bundle.yaml` file in the `openshift_3_x` folder.
+    
+    ```sh
+    oc apply -f openshift.bundle.yaml
+    ```
 
-  ```sh
-  oc apply -f openshift.bundle.yaml
-   ```
-
-{{< warning >}}
-Changes to the `openshift.bundle.yaml` file can cause unexpected results.
-{{< /warning >}}
+    {{< warning >}}
+  Changes to the `openshift.bundle.yaml` file can cause unexpected results.
+    {{< /warning >}}
 
 1. Verify that your redis-enterprise-operator deployment is running, run:
 
