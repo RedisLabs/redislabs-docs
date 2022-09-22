@@ -54,6 +54,30 @@ spec:
     flashDiskSize: 100G
 ```
 
+### Create Redis Enterprise database
 
+By default, any new database will use RAM only. To create a Redis Enterprise database (REDB) that can use flash storage, specify the following in the `redisEnterpriseCluster` section of the REDB custom resource definition:
+
+- `isRof: true` enables Redis on Flash
+- `rofRamSize` defines the RAM capacity for the database
+
+Below is an example REDB custom resource:
+
+```YAML
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: rof-redb
+spec:
+  redisEnterpriseCluster:
+    name: rec
+  isRof: true
+  memorySize: 2GB
+  rofRamSize: 0.5GB
+```
+
+{{< note >}}
+This example defines both `memorySize` and `rofRamSize`. When using Redis on Flash, `memorySize` refers to the combined memory size (RAM + flash), while `rofRamSize` specifies only the RAM capacity for the database. `rofRamSize` must be at least 10% of `memorySize`.
+{{< /note >}}
 
 
