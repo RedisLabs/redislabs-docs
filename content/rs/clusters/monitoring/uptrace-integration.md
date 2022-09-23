@@ -101,7 +101,7 @@ You can also check the full OpenTelemetry Collector config [here](https://github
 
 When metrics start arriving to Uptrace, you should see a couple of dashboards in the Metrics tab. In total, Uptrace should create 3 dashboards for Redis Enterprise metrics:
 
-- "Redis: Nodes" dashboard displays a list of cluster nodes with ability to click on a node to view node metrics.
+- "Redis: Nodes" dashboard displays a list of cluster nodes. You can select a node to view its metrics.
 
 - "Redis: Databases" displays a list of Redis databases in all cluster nodes. To find a specific database, you can use filters or sort the table by columns.
 
