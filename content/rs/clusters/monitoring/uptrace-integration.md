@@ -97,7 +97,7 @@ sudo journalctl -u otelcol-contrib -f
 
 You can also check the full OpenTelemetry Collector config [here](https://github.com/uptrace/uptrace/blob/master/example/redis-enterprise/otel-collector.yaml).
 
-## Viewing metrics
+## View metrics
 
 When metrics start arriving to Uptrace, you should see a couple of dashboards in the Metrics tab. In total, Uptrace should create 3 dashboards for Redis Enterprise metrics:
 
