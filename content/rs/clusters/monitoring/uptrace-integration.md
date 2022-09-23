@@ -178,6 +178,3 @@ alerting:
       projects: [1]
 ```
 
-## Conclusion
-
-TODO: some final words and links to the blog etc
