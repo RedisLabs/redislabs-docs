@@ -9,33 +9,31 @@ categories: ["RS"]
 
 To collect, display, and monitor metrics data from your databases and other cluster components, you can connect Uptrace to your Redis Enterprise cluster using OpenTelemetry Collector.
 
-[Uptrace](https://uptrace.dev/get/) is an open-source APM tool that supports distributed tracing, metrics, and logs. You can use it to monitor applications and set up automatic alerts to receive notifications.
+[Uptrace](https://uptrace.dev/get/) is an open source application performance monitoring (APM) tool that supports distributed tracing, metrics, and logs. You can use it to monitor applications and set up automatic alerts to receive notifications.
 
-[OpenTelemetry Collector](https://opentelemetry.io/docs/collector/) allows to receive, process and export telemetry data in a vendor-agnostic way. You can use it to scrape Prometheus metrics provided by Redis and then export those metrics to Uptrace or any other tool.
+With [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/), you can receive, process, and export telemetry data to any monitoring tool. You can use it to scrape Prometheus metrics provided by Redis and then export those metrics to Uptrace or any other tool.
 
 You can use Uptrace to:
 
 - Collect and display data metrics not available in the [admin console]({{< relref "/rs/clusters/monitoring/console-metrics-definitions.md" >}}).
-- Get access to pre-built dashboard templates maintained by Uptrace community.
+- Use prebuilt dashboard templates maintained by the Uptrace community.
 - Set up automatic alerts and receive notifications via email, Slack, Telegram, and others.
 - Monitor your app performance and logs using [tracing](https://uptrace.dev/opentelemetry/distributed-tracing.html).
 
 ![uptrace-redis-nodes](/images/rs/uptrace-redis-nodes.png)
 
-## Installing Collector and Uptrace
+## Install Collector and Uptrace
 
 Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and Alertmanager.
 
-Alternatively, you can try the following guides to explore all available options:
-
-<!-- The first link could point to the official Otel doc, but it focuses on installing otelcol instead of otelcol-contrib which is required here -->
+But you can also try the following guides to install OpenTelemetry and Uptrace from scratch:
 
 - [Getting started with OpenTelemetry Collector](https://uptrace.dev/opentelemetry/collector.html)
 - [Getting started with Uptrace](https://uptrace.dev/get/install.html)
 
-Either way, after installing Uptrace you should have Uptrace UI available at [http://localhost:14318/](http://localhost:14318/).
+After you install Uptrace, you can access the Uptrace UI at [http://localhost:14318/](http://localhost:14318/).
 
-## Scraping Prometheus metrics
+## Scrape Prometheus metrics
 
 Redis Enterprise cluster exposes a Prometheus scraping endpoint on `http://localhost:8070/`. You can scrape that endpoint by adding the following lines to the OpenTelemetry Collector config:
 
@@ -99,17 +97,17 @@ sudo journalctl -u otelcol-contrib -f
 
 You can also check the full OpenTelemetry Collector config [here](https://github.com/uptrace/uptrace/blob/master/example/redis-enterprise/otel-collector.yaml).
 
-## Viewing metrics
+## View metrics
 
 When metrics start arriving to Uptrace, you should see a couple of dashboards in the Metrics tab. In total, Uptrace should create 3 dashboards for Redis Enterprise metrics:
 
-- "Redis: Nodes" dashboard displays a list of cluster nodes with ability to click on a node to view node metrics.
+- "Redis: Nodes" dashboard displays a list of cluster nodes. You can select a node to view its metrics.
 
 - "Redis: Databases" displays a list of Redis databases in all cluster nodes. To find a specific database, you can use filters or sort the table by columns.
 
-- "Redis: Shards" contains a list of shards that you have in all cluster nodes. Just like with other dashboards, you can filter/sort shards and click on a shard to get more details.
+- "Redis: Shards" contains a list of shards that you have in all cluster nodes. You can filter or sort shards and select a shard for more details.
 
-## Monitoring metrics
+## Monitor metrics
 
 To start monitoring metrics, you need to add some alerting rules, for example, the following rule creates an alert whenever an individual Redis shard is down which is ensured by the `group by node` expression:
 
@@ -123,8 +121,8 @@ alerting:
         - redis_up as $redis_up
       query:
         - group by cluster # monitor each cluster,
-        - group by bdb     # each database,
-        - group by node    # and each shard
+        - group by bdb # each database,
+        - group by node # and each shard
         - $redis_up == 0
       # shard should be down for 5 minutes to trigger an alert
       for: 5m
@@ -164,7 +162,7 @@ alerting:
       projects: [1]
 ```
 
-## Sending notifications
+## Send notifications
 
 Uptrace does not manage notifications by itself and instead provides an [integration](https://uptrace.dev/get/alerting.html) with Alertmanager.
 
