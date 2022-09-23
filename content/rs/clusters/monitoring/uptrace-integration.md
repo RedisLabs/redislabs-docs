@@ -26,9 +26,7 @@ You can use Uptrace to:
 
 Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and AlertManager.
 
-Alternatively, you can try the following guides to explore all available options:
-
-<!-- The first link could point to the official Otel doc, but it focuses on installing otelcol instead of otelcol-contrib which is required here -->
+Alternative installation guides include:
 
 - [Getting started with OpenTelemetry Collector](https://uptrace.dev/opentelemetry/collector.html)
 - [Getting started with Uptrace](https://uptrace.dev/get/install.html)
