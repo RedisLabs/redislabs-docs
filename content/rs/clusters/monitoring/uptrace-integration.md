@@ -22,7 +22,7 @@ You can use Uptrace to:
 
 ![uptrace-redis-nodes](/images/rs/uptrace-redis-nodes.png)
 
-## Installing Collector and Uptrace
+## Install Collector and Uptrace
 
 Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and AlertManager.
 
