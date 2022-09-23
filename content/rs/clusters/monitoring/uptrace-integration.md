@@ -11,7 +11,7 @@ To collect, display, and monitor metrics data from your databases and other clus
 
 [Uptrace](https://uptrace.dev/get/) is an open source application performance monitoring (APM) tool that supports distributed tracing, metrics, and logs. You can use it to monitor applications and set up automatic alerts to receive notifications.
 
-With [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/), you can receive, process, and export telemetry data to any monitoring tool. You can use it to scrape Prometheus metrics provided by Redis and then export those metrics to Uptrace or any other tool.
+With [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/), you can receive, process, and export telemetry data to any monitoring tool. You can use it to scrape Prometheus metrics provided by Redis and then export those metrics to Uptrace.
 
 You can use Uptrace to:
 
@@ -26,7 +26,7 @@ You can use Uptrace to:
 
 Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and Alertmanager.
 
-But you can also try the following guides to install OpenTelemetry and Uptrace from scratch:
+But you can also install OpenTelemetry and Uptrace from scratch using the following guides:
 
 - [Getting started with OpenTelemetry Collector](https://uptrace.dev/opentelemetry/collector.html)
 - [Getting started with Uptrace](https://uptrace.dev/get/install.html)
@@ -38,7 +38,7 @@ After you install Uptrace, you can access the Uptrace UI at [http://localhost:14
 Redis Enterprise cluster exposes a Prometheus scraping endpoint on `http://localhost:8070/`. You can scrape that endpoint by adding the following lines to the OpenTelemetry Collector config:
 
 ```yaml
-# otel-collector.yaml
+# /etc/otelcol-contrib/config.yaml
 
 prometheus_simple/cluster1:
   collection_interval: 10s
@@ -53,7 +53,7 @@ prometheus_simple/cluster1:
 Next, you can export the collected metrics to Uptrace using OpenTelemetry protocol (OTLP):
 
 ```yaml
-# otel-collector.yaml
+# /etc/otelcol-contrib/config.yaml
 
 receivers:
   otlp:
@@ -112,7 +112,7 @@ When metrics start arriving to Uptrace, you should see a couple of dashboards in
 To start monitoring metrics, you need to add some alerting rules, for example, the following rule creates an alert whenever an individual Redis shard is down which is ensured by the `group by node` expression:
 
 ```yaml
-# uptrace.yml
+# /etc/uptrace/uptrace.yml
 
 alerting:
   rules:
@@ -133,7 +133,7 @@ alerting:
 You can also create queries with more complex expressions, for example, to alert when the keyspace hit rate is lower than 75% or memory fragmentation is too high:
 
 ```yaml
-# uptrace.yml
+# /etc/uptrace/uptrace.yml
 
 alerting:
   rules:
@@ -162,6 +162,8 @@ alerting:
       projects: [1]
 ```
 
+You can learn more about the query language [here](https://uptrace.dev/get/querying-metrics.html).
+
 ## Send notifications
 
 Uptrace does not manage notifications by itself and instead provides an [integration](https://uptrace.dev/get/alerting.html) with Alertmanager.
@@ -171,7 +173,7 @@ Alertmanager handles alerts sent by client applications such as Uptrace and take
 To start creating Alertmanager alerts, you need to tell Uptrace how to reach AlertManager:
 
 ```yaml
-# uptrace.yml
+# /etc/uptrace/uptrace.yml
 
 ##
 ## AlertManager client configuration.
