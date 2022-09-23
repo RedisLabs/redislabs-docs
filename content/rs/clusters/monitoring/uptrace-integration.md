@@ -9,9 +9,9 @@ categories: ["RS"]
 
 To collect, display, and monitor metrics data from your databases and other cluster components, you can connect Uptrace to your Redis Enterprise cluster using OpenTelemetry Collector.
 
-[Uptrace](https://uptrace.dev/get/) is an open-source APM tool that supports distributed tracing, metrics, and logs. You can use it to monitor applications and set up automatic alerts to receive notifications.
+[Uptrace](https://uptrace.dev/get/) is an open source application performance monitoring (APM) tool that supports distributed tracing, metrics, and logs. You can use it to monitor applications and set up automatic alerts to receive notifications.
 
-[OpenTelemetry Collector](https://opentelemetry.io/docs/collector/) allows to receive, process and export telemetry data in a vendor-agnostic way. You can use it to scrape Prometheus metrics provided by Redis and then export those metrics to Uptrace or any other tool.
+With [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/), you can receive, process, and export telemetry data to any monitoring tool. You can use it to scrape Prometheus metrics provided by Redis and then export those metrics to Uptrace or any other tool.
 
 You can use Uptrace to:
 
