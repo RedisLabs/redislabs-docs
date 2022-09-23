@@ -31,7 +31,7 @@ Alternative installation guides include:
 - [Getting started with OpenTelemetry Collector](https://uptrace.dev/opentelemetry/collector.html)
 - [Getting started with Uptrace](https://uptrace.dev/get/install.html)
 
-Either way, after installing Uptrace you should have Uptrace UI available at [http://localhost:14318/](http://localhost:14318/).
+After you install Uptrace, you can access the Uptrace UI at [http://localhost:14318/](http://localhost:14318/).
 
 ## Scraping Prometheus metrics
 
