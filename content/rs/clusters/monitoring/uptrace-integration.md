@@ -107,7 +107,7 @@ When metrics start arriving to Uptrace, you should see a couple of dashboards in
 
 - "Redis: Shards" contains a list of shards that you have in all cluster nodes. You can filter or sort shards and select a shard for more details.
 
-## Monitoring metrics
+## Monitor metrics
 
 Uptrace can also monitor metrics and send notifications using AlertManager integration. First, you need to tell Uptrace how to reach AlertManager:
 
