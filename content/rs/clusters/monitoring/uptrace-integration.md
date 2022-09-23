@@ -16,7 +16,7 @@ With [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/), you ca
 You can use Uptrace to:
 
 - Collect and display data metrics not available in the [admin console]({{< relref "/rs/clusters/monitoring/console-metrics-definitions.md" >}}).
-- Get access to pre-built dashboard templates maintained by Uptrace community.
+- Use prebuilt dashboard templates maintained by the Uptrace community.
 - Set up automatic alerts and receive notifications via email, Slack, Telegram, and others.
 - Monitor your app performance and logs using [tracing](https://uptrace.dev/opentelemetry/distributed-tracing.html).
 
