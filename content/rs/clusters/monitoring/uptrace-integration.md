@@ -105,7 +105,7 @@ When metrics start arriving to Uptrace, you should see a couple of dashboards in
 
 - "Redis: Databases" displays a list of Redis databases in all cluster nodes. To find a specific database, you can use filters or sort the table by columns.
 
-- "Redis: Shards" contains a list of shards that you have in all cluster nodes. Just like with other dashboards, you can filter/sort shards and click on a shard to get more details.
+- "Redis: Shards" contains a list of shards that you have in all cluster nodes. You can filter or sort shards and select a shard for more details.
 
 ## Monitoring metrics
 
