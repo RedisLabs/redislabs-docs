@@ -33,7 +33,7 @@ Alternative installation guides include:
 
 After you install Uptrace, you can access the Uptrace UI at [http://localhost:14318/](http://localhost:14318/).
 
-## Scraping Prometheus metrics
+## Scrape Prometheus metrics
 
 Redis Enterprise cluster exposes a Prometheus scraping endpoint on `http://localhost:8070/`. You can scrape that endpoint by adding the following lines to the OpenTelemetry Collector config:
 
