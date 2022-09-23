@@ -21,13 +21,13 @@ Before creating your Redis clusters or databases, these SSDs must be:
 - [formatted and mounted]() on the worker nodes that will run Redis Enterprise pods
 - [provisioned as local persistent volumes](https://kubernetes.io/docs/concepts/storage/volumes/#local)
   - You can use a [local volume provisioner](https://github.com/kubernetes-sigs/sig-storage-local-static-provisioner/blob/master/README.md) to do this [dynamically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic)
-- a [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/#local) resource specifying a unique name
+- a [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/#local) resource with a unique name
 
 {{< note >}}
-Redis on Flash support is currently in preview. To enable this feature, create a boolean environment variable with the name `ENABLE_ALPHA_FEATURES` to `True` in either the `redis-enterprise-operator` pod spec or the `operator-environment-config` ConfigMap.
+Redis on Flash support with Kubernetes is currently in preview. To enable this feature, set an environment variable with the name `ENABLE_ALPHA_FEATURES` to `True` in either the `redis-enterprise-operator` pod spec or the `operator-environment-config` ConfigMap.
 {{< /note >}}
 
-## Create Redis Enterprise cluster
+## Create a Redis Enterprise cluster
 
 To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to specify the following in the `redisOnFlashSpec` section of your [REC custom resource]:
 
@@ -54,7 +54,7 @@ spec:
     flashDiskSize: 100G
 ```
 
-### Create Redis Enterprise database
+### Create a Redis Enterprise database
 
 By default, any new database will use RAM only. To create a Redis Enterprise database (REDB) that can use flash storage, specify the following in the `redisEnterpriseCluster` section of the REDB custom resource definition:
 
