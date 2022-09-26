@@ -24,7 +24,7 @@ You can use Uptrace to:
 
 ## Install Collector and Uptrace
 
-Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and Alertmanager.
+Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and AlertManager.
 
 But you can also install OpenTelemetry and Uptrace from scratch using the following guides:
 
