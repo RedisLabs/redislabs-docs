@@ -166,11 +166,11 @@ You can learn more about the query language [here](https://uptrace.dev/get/query
 
 ## Send notifications
 
-Uptrace does not manage notifications by itself and instead provides an [integration](https://uptrace.dev/get/alerting.html) with Alertmanager.
+Uptrace does not manage notifications by itself and instead provides an [integration](https://uptrace.dev/get/alerting.html) with AlertManager.
 
-Alertmanager handles alerts sent by client applications such as Uptrace and takes care of deduplicating, grouping, and routing notifications to configured receivers via email, Slack, Telegram, and many others.
+AlertManager handles alerts sent by client applications such as Uptrace and takes care of deduplicating, grouping, and routing notifications to configured receivers via email, Slack, Telegram, and many others.
 
-To start creating Alertmanager alerts, you need to tell Uptrace how to reach AlertManager:
+To connect Uptrace to AlertManager and enable alert notifications, add the AlertManager API endpoint to uptrace.yml:
 
 ```yaml
 # /etc/uptrace/uptrace.yml
