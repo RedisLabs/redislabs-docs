@@ -26,6 +26,11 @@ You can use Uptrace to:
 
 Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and AlertManager.
 
+The docker example contains the following files that can edit before starting Docker containers:
+
+- `otel-collector.yaml` - OpenTelemetry Collector config that you can find inside the running Collector container at `/etc/otelcol-contrib/config.yaml`.
+- `uptrace.yml` - Uptrace config that you can find inside the Uptrace container at `/etc/uptrace/uptrace.yml`.
+
 You can also install OpenTelemetry and Uptrace from scratch using the following guides:
 
 - [Getting started with OpenTelemetry Collector](https://uptrace.dev/opentelemetry/collector.html)
@@ -174,7 +179,7 @@ Uptrace does not manage notifications by itself and instead provides an [integra
 
 AlertManager handles alerts sent by client applications such as Uptrace and takes care of deduplicating, grouping, and routing notifications to configured receivers via email, Slack, Telegram, and many others.
 
-To connect Uptrace to AlertManager and enable alert notifications, add the AlertManager API endpoint to uptrace.yml:
+To connect Uptrace to AlertManager and enable alert notifications, add the AlertManager API endpoint to `uptrace.yml`:
 
 ```yaml
 # /etc/uptrace/uptrace.yml
