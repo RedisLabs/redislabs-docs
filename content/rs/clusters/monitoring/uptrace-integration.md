@@ -109,7 +109,9 @@ When metrics start arriving to Uptrace, you should see a couple of dashboards in
 
 ## Monitor metrics
 
-To start monitoring metrics, you need to add some alerting rules, for example, the following rule creates an alert whenever an individual Redis shard is down which is ensured by the `group by node` expression:
+To start monitoring metrics, you need to add some alerting rules.
+
+For example, the following rule uses the `group by node` expression to create an alert whenever an individual Redis shard is down:
 
 ```yaml
 # /etc/uptrace/uptrace.yml
