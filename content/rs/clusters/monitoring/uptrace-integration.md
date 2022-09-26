@@ -130,7 +130,9 @@ alerting:
       projects: [1]
 ```
 
-You can also create queries with more complex expressions, for example, to alert when the keyspace hit rate is lower than 75% or memory fragmentation is too high:
+You can also create queries with more complex expressions.
+
+For example, the following rules create an alert when the keyspace hit rate is lower than 75% or memory fragmentation is too high:
 
 ```yaml
 # /etc/uptrace/uptrace.yml
