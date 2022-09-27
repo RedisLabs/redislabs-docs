@@ -26,10 +26,10 @@ You can use Uptrace to:
 
 Because installing OpenTelemetry Collector and Uptrace can take some time, you can use the [docker-compose](https://github.com/uptrace/uptrace/tree/master/example/redis-enterprise) example that also comes with Redis Enterprise cluster and AlertManager.
 
-The docker example contains the following files that can edit before starting Docker containers:
+After you download the Docker example, you can edit the following configuration files in the `uptrace/example/redis-enterprise` directory before you start the Docker containers:
 
-- `otel-collector.yaml` - OpenTelemetry Collector config that you can find inside the running Collector container at `/etc/otelcol-contrib/config.yaml`.
-- `uptrace.yml` - Uptrace config that you can find inside the Uptrace container at `/etc/uptrace/uptrace.yml`.
+- `otel-collector.yaml` - Configures `/etc/otelcol-contrib/config.yaml` in the OpenTelemetry Collector container.
+- `uptrace.yml` - Configures`/etc/uptrace/uptrace.yml` in the Uptrace container.
 
 You can also install OpenTelemetry and Uptrace from scratch using the following guides:
 
