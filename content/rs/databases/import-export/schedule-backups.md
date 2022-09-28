@@ -187,11 +187,9 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
 
 1. [Create an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html) if you do not already have one.
 
-1. Create an access key if you do not already have one.
+1. [Create an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console) with permission to add objects to the bucket.
 
-    - For an AWS root user, see [Creating access keys for the root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_add-key).
-
-    - For an AWS Identity and Access Management (IAM) user, see [Managing access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
+1. [Create an access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) for that user if you do not already have one.
 
 1. In the Redis Enterprise Software admin console, when you enter the backup location details:
 
