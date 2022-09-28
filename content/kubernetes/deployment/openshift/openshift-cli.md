@@ -76,17 +76,15 @@ If you are running an OpenShift 3 version, use the `bundle.yaml` file located in
 
 1. Deploy the OpenShift operator bundle.
 
-  {{<note>}}
-If you are running on OpenShift 3.x, use the `openshift.bundle.yaml` file in the `openshift_3_x` folder.
-  {{</note>}}
+    If you are running on OpenShift 3.x, use the `openshift.bundle.yaml` file in the `openshift_3_x` folder.
+    
+    ```sh
+    oc apply -f openshift.bundle.yaml
+    ```
 
-  ```sh
-  oc apply -f openshift.bundle.yaml
-   ```
-
-{{< warning >}}
-Changes to the `openshift.bundle.yaml` file can cause unexpected results.
-{{< /warning >}}
+    {{< warning >}}
+  Changes to the `openshift.bundle.yaml` file can cause unexpected results.
+    {{< /warning >}}
 
 1. Verify that your redis-enterprise-operator deployment is running, run:
 
@@ -159,16 +157,15 @@ Each Redis Enterprise cluster must have at least 3 nodes. Single-node RECs are n
     CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
     ```
 
-1. Create a patch file for the Kubernetes webhook.
+1. Create a patch file for the Kubernetes webhook, using your own values for the namespace and webhook name.
 
-    ```bash
-    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
-
+    ```sh
+    sed '<your_namespace>' admission/webhook.yaml | kubectl create -f -
     cat > modified-webhook.yaml <<EOF
     webhooks:
-    - name: redb.admission.redislabs
-      clientConfig:
-        caBundle: $CERT
+      - name: <your.admission.webhook>
+        clientConfig:
+          caBundle: $CERT
       admissionReviewVersions: ["v1beta1"]
     EOF
     ```
@@ -218,16 +215,16 @@ Apply an invalid resource (provided below).
 
 This should force the admission controller to reject it. If it applies successfully, the admission controller is not installed correctly.
 
-    ```bash
-    $ kubectl apply -f - << EOF
-    apiVersion: app.redislabs.com/v1alpha1
-    kind: RedisEnterpriseDatabase
-    metadata:
-      name: redis-enterprise-database
-    spec:
-     evictionPolicy: illegal
-    EOF
-    ```
+```bash
+  $ kubectl apply -f - << EOF
+   apiVersion: app.redislabs.com/v1alpha1
+   kind: RedisEnterpriseDatabase
+   metadata:
+     name: redis-enterprise-database
+   spec:
+    evictionPolicy: illegal
+   EOF
+```
 
 You should see an error from the admission controller webhook `redb.admission.redislabs`.
   
