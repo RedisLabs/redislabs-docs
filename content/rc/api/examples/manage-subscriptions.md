@@ -44,7 +44,7 @@ POST "https://[host]/v1/subscriptions"
 }
 ```
 
-Modify the following parameters in the sample JSON document to create a subscription on your own account.
+Modify the following parameters in the sample JSON document to create a subscription on your own account:
 
 - **`paymentMethodId`** - Specify a payment method connected to your account.
 
@@ -60,13 +60,13 @@ Modify the following parameters in the sample JSON document to create a subscrip
 
 The request JSON body contains two primary segments: subscription specification and databases specification. When you create a subscription, you must specify one or more databases in the "`databases`" array.
 
-You can [copy-and-paste]({{< relref  "/rc/api/get-started/use-rest-api.md#swagger-user-interface" >}}) the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
+You can include the contents of the JSON document in the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html). See [Swagger user interface]({{< relref  "/rc/api/get-started/use-rest-api#swagger-user-interface" >}}) for more details.
 
 {{< note >}}
 The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
 {{< /note >}}
 
-The response body contains the `taskId` for the task creating the subscription. You can use `GET /v1/tasks/<taskId>` to track the status of this task.
+The response body contains the `taskId` for the task that creates the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.
 
 ## Update a subscription
 
@@ -87,7 +87,7 @@ You can only change the following settings with this endpoint:
 
     Use `GET /payment-methods` to find a payment method ID.
 
-The response body contains the `taskId` for the task updating the subscription. You can use `GET /v1/tasks/<taskId>` to track the status of this task.
+The response body contains the `taskId` for the task that updates the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.
 
 ## Delete a subscription
 
@@ -96,4 +96,4 @@ Use `DELETE /v1/subscriptions/<subscriptionId>` to delete a subscription.
 ```sh
 DELETE "https://[host]/v1/subscriptions/<subscriptionId>"
 ```
-The response body contains the `taskId` for the task deleting the subscription. You can use `GET /v1/tasks/<taskId>` to track the status of this task.
+The response body contains the `taskId` for the task that deletes the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.
