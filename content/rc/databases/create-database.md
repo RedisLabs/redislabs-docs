@@ -43,9 +43,19 @@ The available settings vary according to your subscription plan:
 | **Subscription** | Read-only description of your subscription plan, including cloud provider and region |
 | **Active-Active Redis** | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_) |
 | **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
-| **Database Name** | A name for your database (_required_) |
+| **Database name** | A name for your database (_required_) |
+| **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
 | **Type**  | Controls optional capabilities, such as modules or protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
 | **Modules** | Extend core Redis functionality using [modules]({{<relref "modules/">}}).  Redis Enterprise Cloud supports selected modules; for details, see [Redis Enterprise module support]({{<relref "modules/enterprise-capabilities#redis-enterprise-module-support">}}) |
+
+### Database port
+
+All subscriptions automatically assign a database port by default.
+
+Flexible (and Annual) subscriptions let you choose between two options:
+
+- **Auto assign** automatically assigns a port number during database creation.
+- **Manually assign** lets you enter a custom port number between 10000 and 19999. You cannot assign a port that is reserved or already in use.
 
 ### Modules
 
