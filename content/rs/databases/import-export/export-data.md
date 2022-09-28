@@ -27,7 +27,7 @@ If you export a database configured for database clustering, export files are cr
 
 ## Storage space requirements
 
-Before exporting data, verify that you have enough space available in the storage destination and on the local storage associated with the node hosting the database. 
+Before exporting data, verify that you have enough space available in the storage destination and on the local storage associated with the node hosting the database.
 
 Export is a two-step process: a temporary copy of the data is saved to the local storage of the node and then copied to the storage destination.  (The temporary file is removed after the copy operation.)
 
@@ -54,7 +54,7 @@ To export data from a database:
 
     {{<image filename="images/rs/database-configuration-export-button.png" alt="Select the **Export** button tab to export data." >}}{{< /image >}}
 
-    If the **Export** button is disabled, you do not have permission to export data. 
+    If the **Export** button is disabled, you do not have permission to export data.
 
 1.  Enter the export details.
 
@@ -68,7 +68,7 @@ To export data from a database:
 
 ## Supported storage locations {#supported-storage-locations}
 
-Data can be exported to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage. 
+Data can be exported to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage.
 
 When saved to a local mount point or a cloud provider, export locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
 
@@ -127,7 +127,7 @@ Before exporting data to a local mount point, verify that:
 - The node can connect to the destination server, the one hosting the mount point.
 - The `redislabs:redislabs` user has read and write privileges on the local mount point
 and on the destination server.
-- The export location has enough disk space for your exported data. 
+- The export location has enough disk space for your exported data.
 
 To export to a local mount point:
 
@@ -155,11 +155,9 @@ To export data to an [Amazon Web Services](https://aws.amazon.com/) (AWS) Simple
 
 1. [Create an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html) if you do not already have one.
 
-1. Create an access key if you do not already have one.
+1. [Create an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console) with permission to add objects to the bucket.
 
-    - For an AWS root user, see [Creating access keys for the root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_add-key).
-
-    - For an AWS Identity and Access Management (IAM) user, see [Managing access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
+1. [Create an access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) for that user if you do not already have one.
 
 1. In the Redis Enterprise Software admin console, when you enter the export location details:
 
