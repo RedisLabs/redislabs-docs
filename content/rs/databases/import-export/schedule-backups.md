@@ -30,7 +30,7 @@ You can schedule backups to a variety of locations, including:
 - Azure Blob Storage
 - Google Cloud Storage
 
-The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/databases/import-export/import-data.md" >}}). 
+The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/databases/import-export/import-data.md" >}}).
 
 When you back up a database configured for database clustering,
 Redis Enterprise Software creates a backup file for each shard in the configuration.  All backup files are copied to the storage location.
@@ -39,7 +39,7 @@ Redis Enterprise Software creates a backup file for each shard in the configurat
 
 - Make sure that you have enough space available in your storage location.
     If there is not enough space in the backup location, the backup fails.
-- The backup configuration only applies to the node it is configured on.
+- The backup configuration only applies to the database it is configured on.
 
 {{< /note >}}
 
@@ -61,7 +61,7 @@ To schedule periodic backups for a database:
 4.  Locate and enable the **Periodic backup** checkbox.
 
     {{<image filename="images/rs/database-configuration-periodic-backup.png" alt="In the admin console, the Periodic backup settings can be found on the Configuration details tab of the database." >}}{{< /image >}}
-    
+
 6.  Use the following table to help specify the details:
 
     | Setting | Description |
@@ -76,7 +76,7 @@ Access to the storage location is verified when you apply your updates.  This me
 
 ## Default backup start time
 
-If you do _not_ specify a start time for twenty-four or twelve hour backups, Redis Enterprise Software chooses one for you, based on the time the backups are enabled.
+If you do _not_ specify a start time for twenty-four or twelve hour backups, Redis Enterprise Software chooses a random starting time for you.
 
 This choice assumes that your database is deployed to a multi-tenant cluster containing multiple databases.  This means that default start times are staggered (offset) to ensure availability.  This is done by calculating a random offset which specifies a number of seconds added to the start time.  
 
@@ -99,7 +99,7 @@ For help with specific backup issues, [contact support](https://redis.com/compan
 
 ## Supported storage locations {#supported-storage-locations}
 
-Database backups can be saved to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage. 
+Database backups can be saved to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage.
 
 When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
 
