@@ -8,118 +8,125 @@ categories: ["RS"]
 aliases: [ 
     /rs/administering/intercluster-replication/replica-of/, 
     /rs/administering/database-operations/create-active-passive/,
+    /rs/administering/creating-databases/create-active-passive/,
     /rs/databases/import-export/create-replica-of.md, 
     /rs/databases/import-export/create-replica-of/,
     /rs/databases/import-export/replica-of/create.md,
     /rs/databases/import-export/replica-of/create/,
 ]
 ---
-Active-Passive replicated databases (also known as Replica Of) give applications read-only access
-to replicas of the data that are hosted in different geographical locations.
+Replica databases copy data from source databases (previously known as _master_), which enable read-only connections from apps and clients located in different geographic locations.
 
-The source database can be located in the same Redis Enterprise Software (RS) cluster, in a different cluster, or in an OSS Redis database.
-Your applications can connect to the source database to read and write data, or to the source or destination databases to read data.
+To create a replica connection, you define a database as a replica of a source database.  Replica Of databases (also known as _Active-Passive databases_) synchronize in the background.
 
-Replica Of can replicate:
+Sources databases can be:
 
-- One-to-many - Configure multiple destinations as Replica Of one source database.
-- Many-to-one - Configure one destination as Replica Of multiple source databases.
+- Located in the same Redis Enterprise Software cluster
+- Located in a different Redis Enterprise cluster
+- Hosted by a different deployment, e.g. Redis Enterprise Cloud
+- Open source Redis (OSS) databases
 
-{{< note >}}
-When you add, remove, or edit Replica Of sources, the data is re-replicated from all source databases.
-{{< /note >}}
+Your apps can connect to the source database to read and write data; they can also use any replica for read-only access.
 
-## Configuring Replica Of
+Replica Of can model a variety of data relationships, including:
+
+- One-to-many relationships, where multiple replicas copy a single source database.
+- Many-to-one relationships, where a single replica collects data from multiple source databases.
+
+When you change the replica status of a database, by adding, removing, or changing sources, the replica database is synchronized to the new sources.  
+
+## Configure Replica Of
 
 To configure a destination database as a Replica Of:
 
 1. Open the database settings:
+
     1. For a new database, [create the database]({{< relref "/rs/databases/create.md" >}}) with its settings.
+
     1. For an existing database:
+
         1. Go to **databases**.
-        1. Click on the database and go to **configuration**.
-        1. Click **Edit**.
-1. Select **Replica Of** to show the ![icon_add](/images/rs/icon_add.png#no-click "Add") icon.
-1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add") to show the box for the source database endpoint.
-1. Enter the URL of the source database endpoint:
+        1. Select the database and then select the **Configuration** tab.
+        1. Select the **Edit** button.
 
-    <!-- Shared in migrate-to-active-active.md -->
+1. Select **Replica Of** to display the **Add** button.  
+![icon_add](/images/rs/icon_add.png#no-click "Add")
 
-    {{< note >}}
-The order of the Replica Of sources has no impact on replication.
-    {{< /note >}}
+1. Select the **Add** button to display the source database prompt.
 
-    - For a source database in the same RS cluster - When you click on the box,
-    the available databases are shown in the correct format for the URL of the source endpoint:
+1. Enter the URL of the source database endpoint.
 
-        ```sh
-        <database name>: redis://admin:<database_password>@<database_endpoint>:<database_port>
-        ```
+    The order of the multiple Replica Of sources has no material impact on replication.
 
-        You can select the database that you want to use as the source.
+    - For a source database in the same Redis Enterprise cluster - Enter the URL of the source database in the following format:
 
-    - For a source database in a different RS cluster:
-        1. Log in to the admin console of the cluster that hosts the source database.
-        1. In **databases**, click on the database and go to **configuration**.
-        1. Under **Endpoint**, click on **Get Replica Of source URL**.
+    ```sh
+    <database name>: redis://admin:<password>@<endpoint>:<port>
+    ```
+
+    You can select the database that you want to use as the source.
+
+    - For a source database in a different cluster:
+
+        1. Sign in to the admin console of the cluster hosting the source database.
+        1. In **Databases**, select the source database and then select the **Configuration** tab.
+        1. Under **Endpoint**, select **Get Replica Of source URL**.
 
             ![Replica Of source URL](/images/rs/replicaof-source-url.png)
 
-        1. Click **Copy to Clipboard** to copy the URL of the source endpoint.
+        1. Select **Copy to Clipboard** to copy the URL of the source endpoint to your Clipboard.
 
-            If you want a different internal password, you can click **Regenerate Password**.
+            To change the internal password, select **Regenerate Password**.
 
-            {{< warning >}}
-If you regenerate the password, replication to existing destinations fails until you update their configuration with the new password.
-            {{< /warning >}}
+            If you regenerate the password, replication to existing destinations fails until their credentials are updated with the new password.
 
-        1. In the destination database, paste the URL of the source endpoint in the **Replica Of** box, and click ![Save](/images/rs/icon_save.png#no-click "Save").
+        1. In the destination database, paste the URL of the source endpoint to the **Replica Of** edit box.  
+        
+        Use the **Save** button to save your changes.  
+        ![Save](/images/rs/icon_save.png#no-click "Save")
 
-        {{< note >}}
-For a source database on a different RS cluster,
-you can [compress the replication data]({{< relref "/rs/databases/import-export/replica-of/#data-compression-for-replica-of">}}) to save bandwidth.
-        {{< /note >}}
+        For source databases on different clusters, you can [compress replication data]({{< relref "/rs/databases/import-export/replica-of/#data-compression-for-replica-of">}}) to save bandwidth.
+        
+    - For a source database on an open source Redis (OSS) cluster - Enter the URL of the source endpoint in one of the following formats:
 
-    - For a source database in an OSS Redis cluster - Enter the URL of the source endpoint in the format:
-
-        - If the database has a password -
+        - For databases with passwords:
 
             ```sh
-            redis://:<redis_password>@<hostname>:<database_port>
+            redis://:<password>@<host>:<port>
             ```
 
             Where the password is the Redis password represented with URL encoding escape characters.
 
-        - If the database has no password -
+        - For databases without passwords: -
 
             ```sh
-            redis://<hostname>:<database_port>
+            redis://<host>:<port>
             ```
 
-{{< note >}}
-If you used the mDNS protocol for the cluster name (FQDN),
-make sure that the [client mDNS prerequisites]({{< relref "/rs/networking/mdns.md" >}}) are met.
-{{< /note >}}
+For best results when using the [Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS) (mDNS) protocol to resolve the fully-qualified domain name (FQDN) of the cluster, verify that your client connections meet the [client mDNS prerequisites]({{< relref "/rs/networking/mdns.md" >}}).
 
-## Configuring TLS for Replica Of traffic on the destination database
+## Configure TLS on replica database
 
 When you enable TLS for Replica Of, the Replica Of synchronization traffic uses TLS certificates to authenticate the communication between the source and destination clusters.
+
 To encrypt the Replica Of synchronization traffic, you must also [configure encryption for the source database](#configuring-encryption-of-replica-of-traffic-on-the-source-database).
 
 To enable TLS for Replica Of in the destination database:
 
-1. Hover over the URL of the source endpoint and click ![Unencrypted](/images/rs/icon_unlocked.png#no-click "Unencrypted"):
+1. Select the **Enable TLS Authentication** button  
+   ![Enable TLS Authentication button](/images/rs/icon_unlocked.png#no-click "Enable TLS Authentication button")
 
     ![Encrypt Replica-of](/images/rs/replicaof-unencrypted.png)
 
-1. From the admin console of the cluster that hosts the source database,
-    go to **settings** > **general** and copy the proxy certificate.
-1. Paste it as the **Source Cluster Certificate** for the destination database:
+1. From the admin console of the cluster hosting the source database,
+    select the **Settings** menu and then go to the **General** tab.  Copy the full text of the proxy certificate to the Clipboard.
+
+1. Paste the certificate text as the **Source Cluster Certificate** for the destination database:
 
     ![Replica-of Destination - Certificate](/images/rs/replicaof-certificate.png)
 
-1. Click **Continue**, save the Replica Of endpoint, and click **Update** to save the changes.
+1. Select **Continue** to save the certificate, save the Replica Of endpoint, and then select  **Update** to save your changes.
 
-## Configuring encryption of Replica Of traffic on the source database
+## Encrypt source database traffic
 
 {{< embed-md "tls-configuration-procedure.md"  >}}
