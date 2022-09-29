@@ -1,6 +1,6 @@
 ---
 Title: Manage Redis Enterprise cluster (REC) credentials
-linkTitle: Manage cluster credentials
+linkTitle: Manage REC credentials
 weight: 93
 alwaysopen: false
 categories: ["Platforms"]
@@ -53,7 +53,7 @@ The credentials can be used to access the Redis Enterprise admin console or the 
     kubectl exec -it <rec-resource-name>-0 bash
     ```
 
-1. From the pod , add the new password for the existing user.
+1. Add a new password for the existing user.
 
     ```bash
      REC_USER="`cat /opt/redislabs/credentials/username`" \
@@ -67,7 +67,7 @@ The credentials can be used to access the Redis Enterprise admin console or the 
      \"new_password\":\"<NEW PASSWORD>\"}"
     ```
 
-1. From outside the node pod, update the REC credential secret.
+1. From outside the pod, update the REC credential secret.
 
     1. Save the existing username to a text file .
         ```bash
@@ -90,13 +90,13 @@ The credentials can be used to access the Redis Enterprise admin console or the 
 
 1. Wait five minutes for all the components to read the new password from the updated secret. If you proceed to the next step too soon, the account could get locked.
 
-1. Access the console of a pod running a Redis Enterprise cluster again.
+1. Access a pod running a Redis Enterprise cluster again.
 
     ```bash
     kubectl exec -it <rec-resource-name>-0 bash
     ```
 
- 1. From within the pod, remove the previous password to ensure only the new one applies.
+ 1. Remove the previous password to ensure only the new one applies.
 
     ```sh
     REC_USER="`cat /opt/redislabs/credentials/username`"; \
@@ -111,14 +111,13 @@ The credentials can be used to access the Redis Enterprise admin console or the 
 
     {{<note>}} The username for the K8s secret is the email displayed on the Redis Enterprise admin console. {{</note>}}
 
-
 ### Change both the REC username and password
 
-1. Sign in to the Redis Enterprise cluster console.
+1. [Connect to the admin console]({{<relref "/kubernetes/re-clusters/connect-to-admin-console.md">}})
 
-1. [Add another admin user]({{<relref "/rs/security/access-control/manage-users/add-users">}}) and choose a password.
+1. [Add another admin user]({{<relref "/rs/security/access-control/manage-users/add-users">}}) and choose a new password.
 
-1. Set the new username in the REC spec `username` field.
+1. Specify the new username in the `username` field of your REC custom resource spec.
 
 1. Update the REC credential secret:
 
@@ -146,7 +145,7 @@ The credentials can be used to access the Redis Enterprise admin console or the 
 
 1. Wait five minutes for all the components to read the new password from the updated secret. If you proceed to the next step too soon, the account could get locked.
 
-1. Delete the previous admin user from the Redis Enterprise cluster.
+1. Delete the previous admin user from the cluster.
 
   {{<note>}}
 The operator may log errors in the time between updating the username in the REC spec and the secret update.
