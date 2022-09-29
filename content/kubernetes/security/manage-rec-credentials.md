@@ -150,3 +150,13 @@ The credentials can be used to access the Redis Enterprise admin console or the 
   {{<note>}}
 The operator may log errors in the time between updating the username in the REC spec and the secret update.
   {{</note>}}
+
+### Update the credentials secret in Vault
+
+If you store your secrets with Hashicorp Vault, update the secret for the REC credentials with the following key-value pairs:
+
+```sh
+username:<desired_username>, password:<desired_password>
+```
+
+For more information about Vault integration with the Redis Enterprise Cluster see [Integrating the Redis Enterprise operator with Hashicorp Vault](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/65eba63a6aac69455a691652218e28b0873e4de3/vault#integrating-the-redis-enterprise-operator-with-hashicorp-vault).
