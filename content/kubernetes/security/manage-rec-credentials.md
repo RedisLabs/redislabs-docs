@@ -15,7 +15,7 @@ aliases:
 ---
 The Redis Enterprise Software on Kubernetes uses a custom resource called [`RedisEnterpriseCluster`]({{<relref "/kubernetes/reference/cluster-options.md">}}) to create a Redis Enterprise cluster (REC). During creation it generates random credentials for the operator to use. The credentials are saved in a Kubernetes (K8s) [secret](https://kubernetes.io/docs/concepts/configuration/secret/). The secret name defaults to the name of the cluster.
 
-{{ <note> }}
+{{<note>}}
 This procedure is only supported for operator versions 6.0.20-12 and above.
 {{</note>}}
 
@@ -43,18 +43,17 @@ The credentials can be used to access the Redis Enterprise admin console or the 
 
     This outputs the password and username in plain text. In this example, the plain text password is `12345678` and the username is `demo@redis.com`.
 
-## Change the Redis Enterprise cluster credentials
+## Change the Redis Enterprise cluster (REC) credentials
 
-### Replace the REC password
+### Change the REC password for the current username
 
-1. Retrieve and take note of the current password (see above)
-1. Access the console of a [pod](https://kubernetes.io/docs/concepts/workloads/pods/) running a Redis Enterprise cluster.
+1. Access a [pod](https://kubernetes.io/docs/concepts/workloads/pods/) running a Redis Enterprise cluster.
 
     ```bash
     kubectl exec -it <rec-resource-name>-0 bash
     ```
 
-1. From the pod console, add the new password for the existing user.
+1. From the pod , add the new password for the existing user.
 
     ```bash
      REC_USER="`cat /opt/redislabs/credentials/username`" \
@@ -110,50 +109,10 @@ The credentials can be used to access the Redis Enterprise admin console or the 
       \"old_password\":\"<OLD PASSWORD\"}"
     ```
 
-    {{ <note>}}}} The username for the K8s secret is the email displayed on the Redis Enterprise admin console. {{ </note>}}
+    {{<note>}} The username for the K8s secret is the email displayed on the Redis Enterprise admin console. {{</note>}}
 
-### Replace the  admin console credentials
 
-1. Log into the admin console with the REC credentials above.
-
-2. Add another admin user and choose a password.
-
-3. Add the new username to the `username` field in the REC `spec` section.
-
-4. Update the cluster credential secret:
-
-    {{ <note>}} For Vault users, see the instruction described [below](#creds_with_vault) and proceed to the next step. {{ </note> }}
-    
-    a. Save the new username to a text file (replace <new username> with actual).
-    ```
-    echo -n "<new username>" > username
-    ```
-    b. Save the new password to a text file (replace <new password> with actual).
-    ```
-    echo -n "<new password>" > password
-    ```
-    c. Update the secret:
-    ```
-    kubectl create secret generic <cluster secret name> --from-file=./username --from-file=./password --dry-run -o yaml | kubectl apply -f -
-    ```
-    {{ <note> }} the username to be used with the K8s secret is the email displayed on the Redis Enterprise admin console {{ </note> }}
-
-5. Wait 5 minutes to make sure all components have read the new password from the updated secret. The operator might log errors in the time period between updating the username in the REC spec and the secret update.
-
-6. Delete the previous admin user using the admin console.
-
-   {{ <note> }} This procedure is only supported for version 6.0.20-5 or above {{ </note> }}
-
-### Update the credentials secret in Vault
-
-For users who store secrets in Vault, update the Vault secret containing the REC credentials with the following key-value pairs:  
-    ```sh
-    username:<desired_username>, password:<desired_password>
-    ```
-
-For more information about Vault integration, see [Integrating the Redis Enterprise operator with Hashicorp Vault](https://github.com/RedisLabs/redis-enterprise-operator/tree/master/deploy/vault).
-
-### Replace the REC username and password
+### Change both the REC username and password
 
 1. Sign in to the Redis Enterprise cluster console.
 
@@ -189,6 +148,6 @@ For more information about Vault integration, see [Integrating the Redis Enterpr
 
 1. Delete the previous admin user from the Redis Enterprise cluster.
 
-  {{ <note> }}
+  {{<note>}}
 The operator may log errors in the time between updating the username in the REC spec and the secret update.
-  {{ </note> }}
+  {{</note>}}
