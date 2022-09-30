@@ -108,7 +108,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
         
         `crdb-cli crdb update --crdb-guid <CRDB-GUID> --force`
          
-    - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
+    - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/databases/import-export/replica-of/create/#configure-tls-on-replica-database).
 
 ### Issues resolved in build 96
 

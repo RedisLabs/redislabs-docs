@@ -33,7 +33,7 @@ Replica Of can model a variety of data relationships, including:
 - One-to-many relationships, where multiple replicas copy a single source database.
 - Many-to-one relationships, where a single replica collects data from multiple source databases.
 
-When you change the replica status of a database, by adding, removing, or changing sources, the replica database is synchronized to the new sources.  
+When you change the replica status of a database by adding, removing, or changing sources, the replica database is synchronized to the new sources.  
 
 ## Configure Replica Of
 
@@ -41,7 +41,7 @@ To configure a destination database as a Replica Of:
 
 1. Open the database settings:
 
-    1. For a new database, [create the database]({{< relref "/rs/databases/create.md" >}}) with its settings.
+    1. For a new database, [create the database]({{<relref "/rs/databases/create.md" >}}) with its settings.
 
     1. For an existing database:
 
@@ -82,10 +82,10 @@ To configure a destination database as a Replica Of:
 
         1. In the destination database, paste the URL of the source endpoint to the **Replica Of** edit box.  
         
-        Use the **Save** button to save your changes.  
+        1. Use the **Save** button to save your changes.  
         ![Save](/images/rs/icon_save.png#no-click "Save")
 
-        For source databases on different clusters, you can [compress replication data]({{< relref "/rs/databases/import-export/replica-of/#data-compression-for-replica-of">}}) to save bandwidth.
+        For source databases on different clusters, you can [compress replication data]({{<relref "/rs/databases/import-export/replica-of/#data-compression-for-replica-of">}}) to save bandwidth.
         
     - For a source database on an open source Redis (OSS) cluster - Enter the URL of the source endpoint in one of the following formats:
 
@@ -97,7 +97,7 @@ To configure a destination database as a Replica Of:
 
             Where the password is the Redis password represented with URL encoding escape characters.
 
-        - For databases without passwords: -
+        - For databases without passwords:
 
             ```sh
             redis://<host>:<port>
@@ -109,11 +109,11 @@ For best results when using the [Multicast DNS](https://en.wikipedia.org/wiki/Mu
 
 When you enable TLS for Replica Of, the Replica Of synchronization traffic uses TLS certificates to authenticate the communication between the source and destination clusters.
 
-To encrypt the Replica Of synchronization traffic, you must also [configure encryption for the source database](#configuring-encryption-of-replica-of-traffic-on-the-source-database).
+To encrypt the Replica Of synchronization traffic, you must also [configure encryption for the source database](#encrypt-source-database-traffic).
 
 To enable TLS for Replica Of in the destination database:
 
-1. Select the **Enable TLS Authentication** button  
+1. Select the **Enable TLS Authentication** button.  
    ![Enable TLS Authentication button](/images/rs/icon_unlocked.png#no-click "Enable TLS Authentication button")
 
     ![Encrypt Replica-of](/images/rs/replicaof-unencrypted.png)
@@ -121,7 +121,7 @@ To enable TLS for Replica Of in the destination database:
 1. From the admin console of the cluster hosting the source database,
     select the **Settings** menu and then go to the **General** tab.  Copy the full text of the proxy certificate to the Clipboard.
 
-1. Paste the certificate text as the **Source Cluster Certificate** for the destination database:
+1. Enter the copied certificate text as the **Source Cluster Certificate** for the destination database:
 
     ![Replica-of Destination - Certificate](/images/rs/replicaof-certificate.png)
 

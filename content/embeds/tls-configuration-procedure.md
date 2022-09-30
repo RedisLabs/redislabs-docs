@@ -1,4 +1,4 @@
-To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/databases/import-export/replica-of/create#configuring-tls-for-replica-of-traffic-on-the-destination-database" >}}).
+To encrypt Replica Of synchronization traffic, you must also [configure encryption for the replica database]({{<relref "/rs/databases/import-export/replica-of/create#configure-tls-on-replica-database">}}) (the destination).
 
 ### Encrypt source synchronization traffic
 
@@ -20,7 +20,7 @@ To enable TLS for Replica Of communication only on the source database:
     - For an existing database that is configured to **Require TLS for all
     communications** - Select **Require TLS for Replica Of communications only**.
 
-    By default, client authentication is enforced.  This means must enter the syncer certificates
+    By default, client authentication is enforced.  This means you must enter the syncer certificates
     of the clusters hosting the replicas (the destination databases).
 
 1. To enter the syncer certificates:
@@ -37,7 +37,7 @@ To enable TLS for Replica Of communication only on the source database:
         ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png
         "Database TLS Configuration")
 
-    1. Paste the certificate text into the text box below the **Enforce client authentication** checkbox.
+    1. Enter the copied certificate text into the text box below the **Enforce client authentication** checkbox.
 
     1. Use the **Save** button to save the certificates.  
     ![icon_save](/images/rs/icon_save.png#no-click "Save button")
@@ -45,7 +45,7 @@ To enable TLS for Replica Of communication only on the source database:
     You can also clear **Enforce client authentication** so that all clusters or
     clients can connect to your database without authentication.
 
-    To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/databases/import-export/replica-of/create#configuring-tls-for-replica-of-traffic-on-the-destination-database" >}}).
+    To encrypt Replica Of synchronization traffic, you must also [configure encryption for the replica database]({{<relref "/rs/databases/import-export/replica-of/create#configure-tls-on-replica-database" >}}) (the destination).
 
 ### Encrypt all source communication
 
@@ -63,7 +63,8 @@ To enable TLS for Replica Of and client communication on the source database:
 
     By default, client authentication is enforced so you must enter the syncer
     certificates of the clusters that host the destination databases.
-    The certificates of the clients that connect to the database.
+
+    You also need to add the certificates of the clients that connect to the database.
 
 1. To enter the syncer and client certificates:
 
@@ -81,7 +82,7 @@ To enable TLS for Replica Of and client communication on the source database:
         ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png
         "Database TLS Configuration")
 
-    1. Paste the certificate text into the text box below the **Enforce client authentication** checkbox.
+    1. Enter the copied certificate text into the text box below the **Enforce client authentication** checkbox.
     1. Use the **Save** button to save your changes.  
     ![icon_save](/images/rs/icon_save.png#no-click "Save button") 
 
