@@ -23,7 +23,7 @@ This procedure is only supported for operator versions 6.0.20-12 and above.
 
 The credentials can be used to access the Redis Enterprise admin console or the API. Connectivity must be configured to the REC [pods](https://kubernetes.io/docs/concepts/workloads/pods/) using an appropriate service (or port forwarding).
 
-1. Inspect the random username and password created by the operator during creation, use the `kubectl get secret` command.
+1. Inspect the random username and password created by the operator during creation with the `kubectl get secret` command.
 
     ```sh
     kubectl get secret rec -o jsonpath='{.data}'
