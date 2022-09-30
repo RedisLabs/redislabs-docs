@@ -13,23 +13,30 @@ aliases: [
 
 ## Prerequisites
 
-Redis Enterprise Software for Kubernetes supports using NVMe (nonvolatile memory express) SSDs (solid state drives) for flash storage with the Redis on Flash feature.
+Redis Enterprise Software for Kubernetes supports using Redis on Flash, which extends your node memory to use both RAM and flash storage. SSDs (solid state drives) can store infrequently used (warm) values while your keys and frequently used (hot) values are still stored in RAM. This improves performance or lower costs for large datasets.
+
+{{<note>}}
+NVMe (non-volatile memory express) SSDs are strongly recommended to achieve the best performance.
+{{</note>}}
 
 Before creating your Redis clusters or databases, these SSDs must be:
 
 - [locally attached to worker nodes in your Kubernetes cluster](https://kubernetes.io/docs/concepts/storage/volumes/#local)
-- [formatted and mounted]() on the nodes that will run Redis Enterprise pods
+- formatted and mounted on the nodes that will run Redis Enterprise pods
+- dedicated to RoF and not shared with other parts of the database, (e.g. durability, binaries)
 - [provisioned as local persistent volumes](https://kubernetes.io/docs/concepts/storage/volumes/#local)
   - You can use a [local volume provisioner](https://github.com/kubernetes-sigs/sig-storage-local-static-provisioner/blob/master/README.md) to do this [dynamically](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic)
 - a [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/#local) resource with a unique name
 
-{{< note >}}
+For more information on node storage, see [Node persistent and ephemeral storage]({{<relref "/rs/installing-upgrading/persistent-ephemeral-storage.md">}})
+
+## Enable Redis on Flash feature
+
 Redis on Flash support with Kubernetes is currently in preview. To enable this feature, set an environment variable with the name `ENABLE_ALPHA_FEATURES` to `True` in either the `redis-enterprise-operator` pod spec or the `operator-environment-config` ConfigMap.
-{{< /note >}}
 
 ## Create a Redis Enterprise cluster
 
-To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to specify the following in the `redisOnFlashSpec` section of your [REC custom resource]:
+To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to specify the following in the `redisOnFlashSpec` section of your [REC custom resource]({{<relref "/kubernetes/reference/cluster-options.md">}}):
 
 - enable Redis on Flash (`enabled: true`)
 - flash storage driver (`flashStorageEngine`)
@@ -77,7 +84,7 @@ spec:
 ```
 
 {{< note >}}
-This example defines both `memorySize` and `rofRamSize`. When using Redis on Flash, `memorySize` refers to the combined memory size (RAM + flash), while `rofRamSize` specifies only the RAM capacity for the database. `rofRamSize` must be at least 10% of `memorySize`.
+This example defines both `memorySize` and `rofRamSize`. When using Redis on Flash, `memorySize` refers to the total combined memory size (RAM + flash) allocated for the database. `rofRamSize` specifies only the RAM capacity for the database. `rofRamSize` must be at least 10% of `memorySize`.
 {{< /note >}}
 
 
