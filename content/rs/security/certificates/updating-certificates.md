@@ -81,7 +81,7 @@ Replace the following variables with your own values:
 To update the proxy certificate on clusters running Active-Passive (Replica Of) databases:
 
 - **Step 1:**  Use `rladmin` or the REST API to update the proxy certificate on the source database cluster.
-- **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "/rs/databases/import-export/replica-of/create#configuring-tls-for-replica-of-traffic-on-the-destination-database">}}).
+- **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "/rs/databases/import-export/replica-of/create#configure-tls-on-replica-database">}}).
 
 {{<note>}}
 - Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established.
