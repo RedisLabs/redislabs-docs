@@ -29,7 +29,7 @@ The credentials can be used to access the Redis Enterprise admin console or the 
     kubectl get secret rec -o jsonpath='{.data}'
     ```
 
-    The output will be the encoded password and username similar to the example below.
+    The command outputs the encoded password and username, similar to the example below.
 
       ```sh
       map[password:MVUyTjd1Mm0= username:ZGVtb0ByZWRpc2xhYnMuY29t]
