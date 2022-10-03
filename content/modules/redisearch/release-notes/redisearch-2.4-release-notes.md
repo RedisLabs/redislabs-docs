@@ -10,10 +10,30 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.14 requires:
+RediSearch v2.4.15 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.15 (August 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#3095](https://github.com/RediSearch/RediSearch/pull/3095) Replace order of parsing the parameters and query in the coordinator (MOD-4205)
+  - [#3012](https://github.com/RediSearch/RediSearch/pull/3012) Improved efficiency of LLAPI `findInfo` which could reduce stability during upgrade in Redis Enterprise (MOD-4197, MOD-4052)
+  - [#3040](https://github.com/RediSearch/RediSearch/pull/3040), [#3049](https://github.com/RediSearch/RediSearch/pull/3049) fix for `SORTBY` numeric field for non-SORTABLE fields on the coordinator (MOD-4115)
+  - [#3050](https://github.com/RediSearch/RediSearch/pull/3050) Results from fields from a missing value should come last when combined with `SORTBY`. (MOD-4120)
+
+- Improvements:
+
+  - [#3047](https://github.com/RediSearch/RediSearch/pull/3047) Add `strlen` string function to `FT.AGGREGATE` (MOD-4141)
+  - [#3038](https://github.com/RediSearch/RediSearch/pull/3038) Add `number_of_uses` to `FT.INFO` for the number of times the index was queried
 
 ## v2.4.14 (August 2022)
 
@@ -167,7 +187,7 @@ All VSS queries or any query using the [`PARAMS`](https://oss.redis.com/redisear
     This type of index is used when the recall is more important than the speed of query execution. A query vector will be compared to all vectors in a flat index. The search results will return the exact top k nearest neighbors to the query vector.
 
   - **Hierarchical Navigable Small World (HNSW) Index**
-  
+
     This index is a modified implementation of the library written by the author of this influential [academic paper](https://arxiv.org/abs/1603.09320). An HNSW vector index is used when the speed of query execution is preferred over recall. The results returned are approximate nearest neighbors (ANNs).
 
     You can try out different HNSW index parameters (`M`, `EFCONSTRUCTION`, `EFRUNTIME`) to improve the “recall versus speed” balance.
@@ -194,7 +214,7 @@ All VSS queries or any query using the [`PARAMS`](https://oss.redis.com/redisear
     - [`FT.EXPLAIN`](https://github.com/RediSearch/RediSearch/blob/master/docs/Commands.md#ftexplain)
 
     - [`FT.EXPLAINCLI`](https://github.com/RediSearch/RediSearch/blob/master/docs/Commands.md#ftexplaincli)
-    
+
     - [`FT.SPELLCHECK`](https://github.com/RediSearch/RediSearch/blob/master/docs/Commands.md#ftspellcheck)
 
   If you do not specify dialect when running any of these commands, they will use the default module-level dialect value.
