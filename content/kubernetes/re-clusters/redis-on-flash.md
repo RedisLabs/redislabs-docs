@@ -13,7 +13,7 @@ aliases: [
 
 ## Prerequisites
 
-Redis Enterprise Software for Kubernetes supports using Redis on Flash, which extends your node memory to use both RAM and flash storage. SSDs (solid state drives) can store infrequently used (warm) values while your keys and frequently used (hot) values are still stored in RAM. This improves performance or lower costs for large datasets.
+Redis Enterprise Software for Kubernetes supports using Redis on Flash, which extends your node memory to use both RAM and flash storage. SSDs (solid state drives) can store infrequently used (warm) values while your keys and frequently used (hot) values are still stored in RAM. This improves performance and lowers costs for large datasets.
 
 {{<note>}}
 NVMe (non-volatile memory express) SSDs are strongly recommended to achieve the best performance.
