@@ -32,7 +32,7 @@ For more information on node storage, see [Node persistent and ephemeral storage
 
 ## Enable Redis on Flash feature
 
-Redis on Flash support with Kubernetes is currently in preview. To enable this feature, set an environment variable with the name `ENABLE_ALPHA_FEATURES` to `True` in either the `redis-enterprise-operator` pod spec or the `operator-environment-config` ConfigMap.
+Redis on Flash support with Kubernetes is in preview. To enable this feature, set an environment variable with the name `ENABLE_ALPHA_FEATURES` to `True` in either the `redis-enterprise-operator` pod spec or the `operator-environment-config` ConfigMap.
 
 ## Create a Redis Enterprise cluster
 
