@@ -40,7 +40,7 @@ To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to sp
 
 - enable Redis on Flash (`enabled: true`)
 - flash storage driver (`flashStorageEngine`)
-  - The only currently supported value is `rocksdb`
+  - The only supported value is `rocksdb`
 - storage class name (`storageClassName`)
 - minimal flash disk size (`flashDiskSize`)
 
