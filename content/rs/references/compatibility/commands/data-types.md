@@ -1,13 +1,15 @@
 ---
 Title: Data type commands compatibility
 linkTitle: Data types
-description: Lists data type commands compatible with Redis Enterprise Software.
+description: Data type commands compatibility (bitmaps, geospatial indices, hashes, HyperLogLogs, lists, sets, sorted sets, streams, strings).
 weight: 10
 alwaysopen: false
 toc: "true"
 categories: ["RS"]
 aliases: 
 ---
+
+The following tables show which open source Redis data type commands are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Enterprise Cloud.
 
 ## Bitmap commands
 
@@ -30,10 +32,10 @@ aliases:
 | [GEODIST](https://redis.io/commands/geodist) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [GEOHASH](https://redis.io/commands/geohash) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [GEOPOS](https://redis.io/commands/geopos) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [GEORADIUS](https://redis.io/commands/georadius) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [GEORADIUS_RO](https://redis.io/commands/georadius_ro) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | (Deprecated) |
-| [GEORADIUSBYMEMBER](https://redis.io/commands/georadiusbymember) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [GEORADIUSBYMEMBER_RO](https://redis.io/commands/georadiusbymember_ro) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | (Deprecated) |
+| [GEORADIUS](https://redis.io/commands/georadius) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
+| [GEORADIUS_RO](https://redis.io/commands/georadius_ro) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
+| [GEORADIUSBYMEMBER](https://redis.io/commands/georadiusbymember) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
+| [GEORADIUSBYMEMBER_RO](https://redis.io/commands/georadiusbymember_ro) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
 | [GEOSEARCH](https://redis.io/commands/geosearch) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [GEOSEARCHSTORE](https://redis.io/commands/geosearchstore) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 
@@ -51,7 +53,7 @@ aliases:
 | [HKEYS](https://redis.io/commands/hkeys) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [HLEN](https://redis.io/commands/hlen) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [HMGET](https://redis.io/commands/hmget) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [HMSET](https://redis.io/commands/hmset) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [HMSET](https://redis.io/commands/hmset) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v4.0.0. |
 | [HRANDFIELD](https://redis.io/commands/hrandfield) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [HSCAN](https://redis.io/commands/hscan) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [HSET](https://redis.io/commands/hset) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
@@ -79,7 +81,7 @@ aliases:
 | [BLMPOP](https://redis.io/commands/blmpop) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [BLPOP](https://redis.io/commands/blpop) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [BRPOP](https://redis.io/commands/brpop) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [BRPOPLPUSH](https://redis.io/commands/brpoplpush) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [BRPOPLPUSH](https://redis.io/commands/brpoplpush) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
 | [LINDEX](https://redis.io/commands/lindex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [LINSERT](https://redis.io/commands/linsert) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [LLEN](https://redis.io/commands/llen) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
@@ -94,7 +96,7 @@ aliases:
 | [LSET](https://redis.io/commands/lset) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [LTRIM](https://redis.io/commands/ltrim) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [RPOP](https://redis.io/commands/rpop) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [RPOPLPUSH](https://redis.io/commands/rpoplpush) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [RPOPLPUSH](https://redis.io/commands/rpoplpush) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
 | [RPUSH](https://redis.io/commands/rpush) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [RPUSHX](https://redis.io/commands/rpushx) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 
@@ -145,17 +147,17 @@ aliases:
 | [ZPOPMIN](https://redis.io/commands/zpopmin) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZRANDMEMBER](https://redis.io/commands/zrandmember) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZRANGE](https://redis.io/commands/zrange) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ZRANGEBYLEX](https://redis.io/commands/zrangebylex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ZRANGEBYSCORE](https://redis.io/commands/zrangebyscore) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [ZRANGEBYLEX](https://redis.io/commands/zrangebylex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
+| [ZRANGEBYSCORE](https://redis.io/commands/zrangebyscore) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
 | [ZRANGESTORE](https://redis.io/commands/zrangestore) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZRANK](https://redis.io/commands/zrank) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZREM](https://redis.io/commands/zrem) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZREMRANGEBYLEX](https://redis.io/commands/zremrangebylex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZREMRANGEBYRANK](https://redis.io/commands/zremrangebyrank) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZREMRANGEBYSCORE](https://redis.io/commands/zremrangebyscore) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ZREVRANGE](https://redis.io/commands/zrevrange) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ZREVRANGEBYLEX](https://redis.io/commands/zrevrangebylex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ZREVRANGEBYSCORE](https://redis.io/commands/zrevrangebyscore) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [ZREVRANGE](https://redis.io/commands/zrevrange) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
+| [ZREVRANGEBYLEX](https://redis.io/commands/zrevrangebylex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
+| [ZREVRANGEBYSCORE](https://redis.io/commands/zrevrangebyscore) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
 | [ZREVRANK](https://redis.io/commands/zrevrank) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZSCAN](https://redis.io/commands/zscan) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [ZSCORE](https://redis.io/commands/zscore) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
@@ -193,13 +195,12 @@ aliases:
 | [DECRBY](https://redis.io/commands/decrby) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [GET](https://redis.io/commands/get) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [GETDEL](https://redis.io/commands/getdel) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [GETEX](https://redis.io/commands/getex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [GETEX](https://redis.io/commands/getex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes\* | \*Not supported for HyperLogLog |
 | [GETRANGE](https://redis.io/commands/getrange) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [GETSET](https://redis.io/commands/getset) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [GETSET](https://redis.io/commands/getset) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
 | [INCR](https://redis.io/commands/incr) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [INCRBY](https://redis.io/commands/incrby) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [INCRBYFLOAT](https://redis.io/commands/incrbyfloat) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [LCS](https://redis.io/commands/lcs) | &#x2705; Yes |  |  |
 | [MGET](https://redis.io/commands/mget) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [MSET](https://redis.io/commands/mset) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [MSETNX](https://redis.io/commands/msetnx) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
@@ -208,6 +209,6 @@ aliases:
 | [SETEX](https://redis.io/commands/setex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [SETNX](https://redis.io/commands/setnx) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [SETRANGE](https://redis.io/commands/setrange) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| STRALGO | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
+| STRALGO | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | Deprecated as of Redis v7.0.0. |
 | [STRLEN](https://redis.io/commands/strlen) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [SUBSTR](https://redis.io/commands/substr) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | (Deprecated) |
+| [SUBSTR](https://redis.io/commands/substr) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | Deprecated as of Redis v2.0.0. |
