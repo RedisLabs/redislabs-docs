@@ -22,11 +22,11 @@ crdb-cli task status --task-id <task_id>
 | verbose              | N/A    | Returns detailed information when specified |
 | no-verbose           | N/A    | Returns limited information when specified |
 
+The `--verbose` and `--no-verbose` options are mutually incompatible; specify one or the other.
+
 ### Returns
 
 Returns the status of an Active-Active database task.
-
-The `--verbose` and `--no-verbose` options are mutually incompatible; specify one or the other.
 
 ### Example
 

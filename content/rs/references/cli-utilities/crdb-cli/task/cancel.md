@@ -11,7 +11,7 @@ aliases:
 Cancels the Active-Active database task specified by the task ID.
 
 ```sh
-crdb-cli task status --task-id <task_id>
+crdb-cli task cancel <task_id>
 ```
 
 ### Parameters
@@ -24,10 +24,10 @@ crdb-cli task status --task-id <task_id>
 
 Attempts to cancel an Active-Active database task.
 
-Because tasks happen asynchronously, it's possible a task may complete before it can be cancelled.
+Be aware that tasks may complete before they can be cancelled.
 
 ### Example
 
 ```sh
-$ crdb-cli task cancel --crdb-guid 2901c2a3-2828-4717-80c0-6f27f1dd2d7c 
+$ crdb-cli task cancel --task-id 2901c2a3-2828-4717-80c0-6f27f1dd2d7c 
 ```
