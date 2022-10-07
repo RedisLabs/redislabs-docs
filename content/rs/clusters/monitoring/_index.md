@@ -78,4 +78,4 @@ To send cluster or database alerts by email:
 
 1. In **settings** > **alerts**, select **Receive email alerts** at the bottom of the page.
 1. Configure the [email server settings]({{< relref "/rs/clusters/configure/cluster-settings#configuring-email-server-settings" >}}).
-1. In **access control**, select for each user [the database and cluster alerts]({{< relref "/rs/security/access-control/manage-users" >}}) that you want the user to receive.
+1. In **access control**, select the [database and cluster alerts]({{< relref "/rs/security/access-control/manage-users" >}}) that you want each user to receive.
