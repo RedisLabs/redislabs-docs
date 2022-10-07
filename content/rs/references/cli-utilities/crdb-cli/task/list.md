@@ -29,7 +29,7 @@ A table listing current and recent Active-Active tasks.  Each entry includes the
 | Operation | String describing the task action |
 | Status | String indicating the task status |
 | Worker name | String identifying the process handling the task |
-| Started | TimeStamp value indicating when the task started ([UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) |
+| Started | TimeStamp value indicating when the task started ([UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)) |
 | Ended | TimeStamp value indicating when the task ended (UTC) |
 
 ### Example
