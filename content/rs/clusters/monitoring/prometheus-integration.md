@@ -106,9 +106,9 @@ This is for development testing only (running in Docker).
 
     1. To start the containers, run:
 
-    ```sh
-    $ docker compose up -d
-    ```
+        ```sh
+        $ docker compose up -d
+        ```
 
     1. To check that all the containers are up, run: `docker ps`
     1. In your browser, sign in to Prometheus at http://localhost:9090 to make sure the server is running.
@@ -130,7 +130,7 @@ This is for development testing only (running in Docker).
 
     1. Select **Prometheus** from the list of data source types.
 
-    {{<image filename="images/rs/prometheus-datasource.png" alt="The Prometheus data source in the list of data sources on Grafana.">}}{{< /image >}}
+        {{<image filename="images/rs/prometheus-datasource.png" alt="The Prometheus data source in the list of data sources on Grafana.">}}{{< /image >}}
 
     1. Enter the Prometheus information:
 
