@@ -106,7 +106,7 @@ This is for development testing only (running in Docker).
 
     1. To start the containers, run: `docker compose up -d`
     1. To check that all the containers are up, run: `docker ps`
-    1. In your browser, login to Prometheus at http://localhost:9090 to make sure the server is running.
+    1. In your browser, sign in to Prometheus at http://localhost:9090 to make sure the server is running.
     1. Select **Status** and then **Targets** to check that Prometheus is collecting data from the Redis Enterprise cluster.
 
         {{<image filename="images/rs/prometheus-target.png" alt="The Redis Enterprise target showing that Prometheus is connected to the Redis Enterprise Cluster.">}}{{< /image >}}
@@ -114,7 +114,7 @@ This is for development testing only (running in Docker).
         If Prometheus is connected to the cluster, you can type **node_up** in the Expression field on the Prometheus home page to see the cluster metrics.
 
 1. Configure the Grafana datasource:
-    1. Login to Grafana. If you installed Grafana locally, go to http://localhost:3000 and login with:
+    1. Sign in to Grafana. If you installed Grafana locally, go to http://localhost:3000 and sign in with:
 
         - Username: admin
         - Password: secret
