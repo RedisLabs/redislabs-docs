@@ -26,7 +26,7 @@ You can use Prometheus and Grafana to:
 
 - Display Redis Enterprise Software metric data alongside data from other applications
 
-{{<image filename="/images/rs/grafana-prometheus.png" alt="Graphic showing how Prometheus and Grafana collect and display data from a Redis Enterprise Cluster. Prometheus scrapes metrics from the Redis Enterprise cluster and Grafana queries those metrics for visualization.">}}{{< /image >}}
+{{<image filename="images/rs/grafana-prometheus.png" alt="Graphic showing how Prometheus and Grafana collect and display data from a Redis Enterprise Cluster. Prometheus scrapes metrics from the Redis Enterprise cluster and Grafana queries those metrics for visualization.">}}{{< /image >}}
 
 In each cluster, the metrics_exporter component listens on port 8070 and serves as a Prometheus scraping endpoint for obtaining metrics.
 
@@ -109,7 +109,7 @@ This is for development testing only (running in Docker).
     1. In your browser, login to Prometheus at http://localhost:9090 to make sure the server is running.
     1. Select **Status** and then **Targets** to check that Prometheus is collecting data from the Redis Enterprise cluster.
 
-        {{<image filename="/images/rs/prometheus-target.png" alt="The Redis Enterprise target showing that Prometheus is connected to the Redis Enterprise Cluster.">}}{{< /image >}}
+        {{<image filename="images/rs/prometheus-target.png" alt="The Redis Enterprise target showing that Prometheus is connected to the Redis Enterprise Cluster.">}}{{< /image >}}
 
         If Prometheus is connected to the cluster, you can type **node_up** in the Expression field on the Prometheus home page to see the cluster metrics.
 
@@ -125,7 +125,7 @@ This is for development testing only (running in Docker).
 
     1. Select **Prometheus** from the list of data source types.
 
-    {{<image filename="/images/rs/prometheus-datasource.png" alt="The Prometheus data source in the list of data sources on Grafana.">}}{{< /image >}}
+    {{<image filename="images/rs/prometheus-datasource.png" alt="The Prometheus data source in the list of data sources on Grafana.">}}{{< /image >}}
 
     1. Enter the Prometheus information:
 
@@ -133,7 +133,7 @@ This is for development testing only (running in Docker).
         - URL: `http://<your prometheus address>:9090`
         - Access: `Server`
 
-        {{<image filename="/images/rs/prometheus-connection.png" alt="The Prometheus connection form in Grafana.">}}{{< /image >}}
+        {{<image filename="images/rs/prometheus-connection.png" alt="The Prometheus connection form in Grafana.">}}{{< /image >}}
 
     {{< note >}}
 
