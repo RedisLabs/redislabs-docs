@@ -104,7 +104,12 @@ This is for development testing only (running in Docker).
                     - prometheus-server:prometheus
         ```
 
-    1. To start the containers, run: `docker compose up -d`
+    1. To start the containers, run:
+
+    ```sh
+    $ docker compose up -d
+    ```
+
     1. To check that all the containers are up, run: `docker ps`
     1. In your browser, sign in to Prometheus at http://localhost:9090 to make sure the server is running.
     1. Select **Status** and then **Targets** to check that Prometheus is collecting data from the Redis Enterprise cluster.
