@@ -24,6 +24,8 @@ crdb-cli task status --task-id <task_id>
 
 The `--verbose` and `--no-verbose` options are mutually incompatible; specify one or the other.
 
+The `404 Not Found` error indicates an invalid task ID.  Use the [`task list`]({{< relref "/rs/references/cli-utilities/crdb-cli/task/list" >}}) command to determine available task IDs.
+
 ### Returns
 
 Returns the status of an Active-Active database task.
@@ -31,8 +33,12 @@ Returns the status of an Active-Active database task.
 ### Example
 
 ```sh
-$ crdb-cli task status --task-id 2901c2a3-2828-4717-80c0-6f27f1dd2d7c
-Task-ID: 2901c2a3-2828-4717-80c0-6f27f1dd2d7c
-CRDB-GUID: -
+$ crdb-cli task status --task-id e1c49470-ae0b-4df8-885b-9c755dd614d0
+Task-ID: e1c49470-ae0b-4df8-885b-9c755dd614d0
+CRDB-GUID: 1d7741cc-1110-4e2f-bc6c-935292783d24
+Operation: create_crdb
 Status: finished
+Worker-Name: crdb_worker:1:0
+Started: 2022-10-12T09:33:41Z
+Ended: 2022-10-12T09:33:55Z
 ```

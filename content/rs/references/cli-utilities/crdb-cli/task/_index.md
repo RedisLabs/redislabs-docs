@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Use `crdb-cli task` commands to manage Active-Active database tasks.
+The `crdb-cli task` commands help investigate Active-Active database performance issues.  They should not be used except as directed by Support.
 
 ## `crdb-cli task` commands
 
