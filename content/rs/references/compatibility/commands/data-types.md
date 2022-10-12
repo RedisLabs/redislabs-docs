@@ -195,7 +195,7 @@ The following tables show which open source Redis data type commands are compati
 | [DECRBY](https://redis.io/commands/decrby) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [GET](https://redis.io/commands/get) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [GETDEL](https://redis.io/commands/getdel) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [GETEX](https://redis.io/commands/getex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes\* | \*Not supported for HyperLogLog |
+| [GETEX](https://redis.io/commands/getex) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes\* | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes\* | \*Not supported for HyperLogLog |
 | [GETRANGE](https://redis.io/commands/getrange) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
 | [GETSET](https://redis.io/commands/getset) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | Deprecated as of Redis v6.2.0. |
 | [INCR](https://redis.io/commands/incr) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
