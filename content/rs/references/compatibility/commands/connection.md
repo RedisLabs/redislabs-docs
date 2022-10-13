@@ -4,7 +4,6 @@ linkTitle: Connection management
 description: Connection management commands compatibility.
 weight: 10
 alwaysopen: false
-toc: "true"
 categories: ["RS"]
 aliases: 
 ---
@@ -15,24 +14,24 @@ The following tables show which open source Redis connection management commands
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
 | [AUTH](https://redis.io/commands/auth) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
-| [CLIENT CACHING](https://redis.io/commands/client-caching) |
-| [CLIENT GETNAME](https://redis.io/commands/client-getname) |
-| [CLIENT GETREDIR](https://redis.io/commands/client-getredir) |
-| [CLIENT ID](https://redis.io/commands/client-id) |
-| [CLIENT INFO](https://redis.io/commands/client-info) |
-| [CLIENT KILL](https://redis.io/commands/client-kill) |
-| [CLIENT LIST](https://redis.io/commands/client-list) |
-| [CLIENT NO-EVICT](https://redis.io/commands/client-no-evict) |
-| [CLIENT PAUSE](https://redis.io/commands/client-pause) |
-| [CLIENT REPLY](https://redis.io/commands/client-reply) |
-| [CLIENT SETNAME](https://redis.io/commands/client-setname) |
-| [CLIENT TRACKING](https://redis.io/commands/client-tracking) |
-| [CLIENT TRACKINGINFO](https://redis.io/commands/client-trackinginfo) |
-| [CLIENT UNBLOCK](https://redis.io/commands/client-unblock) |
-| [CLIENT UNPAUSE](https://redis.io/commands/client-unpause) |
-| [ECHO](https://redis.io/commands/echo) |
-| [HELLO](https://redis.io/commands/hello) |
-| [PING](https://redis.io/commands/ping) |
-| [QUIT](https://redis.io/commands/quit) |
-| [RESET](https://redis.io/commands/reset) |
-| [SELECT](https://redis.io/commands/select) |
+| [CLIENT CACHING](https://redis.io/commands/client-caching) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [CLIENT GETNAME](https://redis.io/commands/client-getname) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CLIENT GETREDIR](https://redis.io/commands/client-getredir) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [CLIENT ID](https://redis.io/commands/client-id) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CLIENT INFO](https://redis.io/commands/client-info) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CLIENT KILL](https://redis.io/commands/client-kill) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CLIENT LIST](https://redis.io/commands/client-list) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CLIENT NO-EVICT](https://redis.io/commands/client-no-evict) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [CLIENT PAUSE](https://redis.io/commands/client-pause) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [CLIENT REPLY](https://redis.io/commands/client-reply) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CLIENT SETNAME](https://redis.io/commands/client-setname) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CLIENT TRACKING](https://redis.io/commands/client-tracking) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [CLIENT TRACKINGINFO](https://redis.io/commands/client-trackinginfo) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [CLIENT UNBLOCK](https://redis.io/commands/client-unblock) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CLIENT UNPAUSE](https://redis.io/commands/client-unpause) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [ECHO](https://redis.io/commands/echo) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [HELLO](https://redis.io/commands/hello) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [PING](https://redis.io/commands/ping) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [QUIT](https://redis.io/commands/quit) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [RESET](https://redis.io/commands/reset) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [SELECT](https://redis.io/commands/select) | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
