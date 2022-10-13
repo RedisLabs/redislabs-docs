@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-The following tables show which open source Redis connection management commands are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Enterprise Cloud.
+The following tables show which open source Redis [connection management commands](https://redis.io/commands/?group=connection) are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Enterprise Cloud.
 
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
