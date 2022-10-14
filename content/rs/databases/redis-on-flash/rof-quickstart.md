@@ -11,6 +11,7 @@ aliases: /rs/getting-started/creating-database/redis-flash/
          /rs/administering/cluster-operations/getting-started-redis-flash/
          /rs/databases/getting-started-redis-flash.md
          /rs/databases/getting-started-redis-flash/
+         /rs/databases/redis-on-flash/getting-started-redis-flash/
          /rs/databases/redis-on-flash/rof-quickstart.md
          /rs/databases/redis-on-flash/rof-quickstart/
          
@@ -93,9 +94,9 @@ Select the "new redis db flash" option.
 ![redis-on-flash](/images/rs/redis-on-flash.png)
 
 On the **create database** page, and enter **myredisflashdb** for a database name and
-**12000** for the endpoint port number.
+**12000** for the endpoint port number. Select **show advanced options** to see the various alerts available.
 
-Then click **Activate** to create your database.
+Then select **Activate** to create your database.
 
 ![new redis flash
 db](/images/rs/newredisflashdb.png)
