@@ -10,10 +10,29 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.19 requires:
+RedisGraph v2.8.20 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.20 (September 2022)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#2591](https://github.com/RedisGraph/RedisGraph/issues/2591) Potential crash trying to utilize a nonexistent index
+    - [#2558](https://github.com/RedisGraph/RedisGraph/issues/2558) Multi-relationship properties created before index creation are not indexed
+    - [#2571](https://github.com/RedisGraph/RedisGraph/issues/2571) `min` and `max` return wrong results when the argument is an array
+    - [#2587](https://github.com/RedisGraph/RedisGraph/issues/2587) Some queries generate a "forced unlocking commit flow" warning
+
+- Improvements:
+
+    - [#2533](https://github.com/RedisGraph/RedisGraph/issues/2533) Graph slow log can be reset with `GRAPH.SLOWLOG g RESET`
 
 ## v2.8.19 (August 2022)
 
