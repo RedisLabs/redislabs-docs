@@ -1,7 +1,7 @@
 ---
 Title: Server management commands compatibility
 linkTitle: Server management
-description: Server management commands compatible with Redis Enterprise.
+description: Server management commands compatibility.
 weight: 10
 alwaysopen: false
 toc: "true"
@@ -9,45 +9,77 @@ categories: ["RS"]
 aliases: 
 ---
 
+The following tables show which open source Redis [server management commands](https://redis.io/commands/?group=server) are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Enterprise Cloud.
+
 ## Access control commands
 
 Several access control list (ACL) commands are not available in Redis Enterprise. Instead, you can manage access controls from the admin consoles for [Redis Enterprise Software]({{<relref "/rs/security/access-control">}}) and [Redis Cloud]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}}).
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
-| [ACL CAT](https://redis.io/commands/acl-cat) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ACL DELUSER](https://redis.io/commands/acl-deluser) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [ACL GENPASS](https://redis.io/commands/acl-genpass) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [ACL GETUSER](https://redis.io/commands/acl-getuser) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ACL HELP](https://redis.io/commands/acl-help) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ACL LIST](https://redis.io/commands/acl-list) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ACL LOAD](https://redis.io/commands/acl-load) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [ACL LOG](https://redis.io/commands/acl-log) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [ACL SAVE](https://redis.io/commands/acl-save) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [ACL SETUSER](https://redis.io/commands/acl-setuser) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [ACL USERS](https://redis.io/commands/acl-users) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [ACL WHOAMI](https://redis.io/commands/acl-whoami) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [ACL CAT](https://redis.io/commands/acl-cat) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [ACL DELUSER](https://redis.io/commands/acl-deluser) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [ACL GENPASS](https://redis.io/commands/acl-genpass) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [ACL GETUSER](https://redis.io/commands/acl-getuser) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [ACL HELP](https://redis.io/commands/acl-help) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [ACL LIST](https://redis.io/commands/acl-list) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [ACL LOAD](https://redis.io/commands/acl-load) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [ACL LOG](https://redis.io/commands/acl-log) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [ACL SAVE](https://redis.io/commands/acl-save) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [ACL SETUSER](https://redis.io/commands/acl-setuser) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [ACL USERS](https://redis.io/commands/acl-users) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [ACL WHOAMI](https://redis.io/commands/acl-whoami) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+
+
+## General server commands
+
+| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+|:--------|:----------------------|:-----------------|:------|
+| [COMMAND](https://redis.io/commands/command) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [COMMAND COUNT](https://redis.io/commands/command-count) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [COMMAND DOCS](https://redis.io/commands/command-docs) |
+| [COMMAND GETKEYS](https://redis.io/commands/command-getkeys) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [COMMAND GETKEYSANDFLAGS](https://redis.io/commands/command-getkeysandflags) |
+| [COMMAND INFO](https://redis.io/commands/command-info) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [COMMAND LIST](https://redis.io/commands/command-list) |
+| [CONFIG GET](https://redis.io/commands/config-get) |
+| [CONFIG RESETSTAT](https://redis.io/commands/config-resetset) |
+| [CONFIG REWRITE](https://redis.io/commands/config-rewrite) |
+| [CONFIG SET](https://redis.io/commands/config-set) |
+| [FLUSHALL](https://redis.io/commands/flushall) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active\*</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | \*Can use the [Active-Active flush API request]({{<relref "/rs/references/rest-api/requests/crdbs/flush">}}). |
+| [FLUSHDB](https://redis.io/commands/flushdb) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active\*</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | \*Can use the [Active-Active flush API request]({{<relref "/rs/references/rest-api/requests/crdbs/flush">}}). |
+| [LOLWUT](https://redis.io/commands/lolwut) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [MODULE LIST](https://redis.io/commands/module-list) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [MODULE LOAD](https://redis.io/commands/module-load) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [MODULE LOADEX](https://redis.io/commands/module-loadex) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [MODULE UNLOAD](https://redis.io/commands/module-unload) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [SHUTDOWN](https://redis.io/commands/shutdown) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [SWAPDB](https://redis.io/commands/swapdb) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [TIME](https://redis.io/commands/time) |
 
 
 ## Monitoring commands
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
-| [INFO](https://redis.io/commands/info) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [LATENCY DOCTOR](https://redis.io/commands/latency-doctor) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [LATENCY GRAPH](https://redis.io/commands/latency-graph) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [LATENCY HELP](https://redis.io/commands/latency-help) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [LATENCY HISTORY](https://redis.io/commands/latency-history) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [LATENCY LATEST](https://redis.io/commands/latency-latest) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [LATENCY RESET](https://redis.io/commands/latency-reset) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [MEMORY DOCTOR](https://redis.io/commands/memory-doctor) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [MEMORY HELP](https://redis.io/commands/memory-help) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [MEMORY MALLOC-STATS](https://redis.io/commands/memory-malloc-stats) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [MEMORY PURGE](https://redis.io/commands/memory-purge) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [MEMORY STATS](https://redis.io/commands/memory-stats) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [MEMORY USAGE](https://redis.io/commands/memory-usage) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [MONITOR](https://redis.io/commands/monitor) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
-| [SLOWLOG](https://redis.io/commands/slowlog) | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes | &#x2705; Yes<br /><br /><nobr>Active-Active:</nobr><br />&#x2705; Yes |  |
+| [DBSIZE](https://redis.io/commands/dbsize) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [INFO](https://redis.io/commands/info) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [LATENCY DOCTOR](https://redis.io/commands/latency-doctor) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [LATENCY GRAPH](https://redis.io/commands/latency-graph) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [LATENCY HELP](https://redis.io/commands/latency-help) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [LATENCY HISTORY](https://redis.io/commands/latency-history) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [LATENCY LATEST](https://redis.io/commands/latency-latest) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [LATENCY RESET](https://redis.io/commands/latency-reset) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [MEMORY DOCTOR](https://redis.io/commands/memory-doctor) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [MEMORY HELP](https://redis.io/commands/memory-help) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [MEMORY MALLOC-STATS](https://redis.io/commands/memory-malloc-stats) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [MEMORY PURGE](https://redis.io/commands/memory-purge) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [MEMORY STATS](https://redis.io/commands/memory-stats) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [MEMORY USAGE](https://redis.io/commands/memory-usage) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [MONITOR](https://redis.io/commands/monitor) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [SLOWLOG GET](https://redis.io/commands/slowlog-get) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [SLOWLOG LEN](https://redis.io/commands/slowlog-len) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [SLOWLOG RESET](https://redis.io/commands/slowlog-reset) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 
 
 ## Persistence commands
@@ -56,10 +88,10 @@ Data persistence and backup commands are not available in Redis Enterprise. Inst
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
-| [BGREWRITEAOF](https://redis.io/commands/bgrewriteaof) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [BGSAVE](https://redis.io/commands/bgsave) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [LASTSAVE](https://redis.io/commands/lastsave) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [SAVE](https://redis.io/commands/save) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
+| [BGREWRITEAOF](https://redis.io/commands/bgrewriteaof) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [BGSAVE](https://redis.io/commands/bgsave) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [LASTSAVE](https://redis.io/commands/lastsave) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [SAVE](https://redis.io/commands/save) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 
 
 ## Replication commands
@@ -68,8 +100,10 @@ Redis Enterprise automatically manages [replication]({{<relref "/rs/databases/du
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
-| [MIGRATE](https://redis.io/commands/migrate) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [PSYNC](https://redis.io/commands/psync) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [REPLICAOF](https://redis.io/commands/replicaof) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
-| [SLAVEOF](https://redis.io/commands/slaveof) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | Deprecated as of Redis v5.0.0. |
-| [SYNC](https://redis.io/commands/sync) | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No | &#x274c; No<br /><br /><nobr>Active-Active:</nobr><br />&#x274c; No |  |
+| [FAILOVER](https://redis.io/commands/failover) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [MIGRATE](https://redis.io/commands/migrate) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [PSYNC](https://redis.io/commands/psync) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [REPLICAOF](https://redis.io/commands/replicaof) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [ROLE](https://redis.io/commands/role) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [SLAVEOF](https://redis.io/commands/slaveof) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | Deprecated as of Redis v5.0.0. |
+| [SYNC](https://redis.io/commands/sync) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
