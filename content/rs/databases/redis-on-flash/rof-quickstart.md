@@ -93,10 +93,11 @@ Select the "new redis db flash" option.
 
 ![redis-on-flash](/images/rs/redis-on-flash.png)
 
-On the **create database** page, and enter **myredisflashdb** for a database name and
-**12000** for the endpoint port number. Select **show advanced options** to see the various alerts available.
-
-Then select **Activate** to create your database.
+On the **create database** page:
+1. Enter **myredisflashdb** for a database name.
+2. Enter **12000** for the endpoint port number.
+3. Select **show advanced options** to see the various alerts available.
+4. Select **Activate** to create your database.
 
 ![new redis flash
 db](/images/rs/newredisflashdb.png)
