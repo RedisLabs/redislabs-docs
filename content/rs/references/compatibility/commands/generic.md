@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-The following tables show which open source Redis [key (generic) commands](https://redis.io/commands/?group=generic) are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Enterprise Cloud.
+The following table shows which open source Redis [key (generic) commands](https://redis.io/commands/?group=generic) are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Enterprise Cloud.
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
