@@ -1,6 +1,6 @@
 ---
-Title: Redis on Flash (RoF) quickstart
-linkTitle: Redis on Flash quickstart
+Title: Redis on Flash (RoF) quick start
+linkTitle: Redis on Flash quick start
 description: Get started with Redis on Flash quickly, creating a cluster and database using flash storage. 
 weight: 80
 alwaysopen: false
@@ -11,6 +11,8 @@ aliases: /rs/getting-started/creating-database/redis-flash/
          /rs/administering/cluster-operations/getting-started-redis-flash/
          /rs/databases/getting-started-redis-flash.md
          /rs/databases/getting-started-redis-flash/
+         /rs/databases/redis-on-flash/rof-quickstart.md
+         /rs/databases/redis-on-flash/rof-quickstart/
          
 
 ---
