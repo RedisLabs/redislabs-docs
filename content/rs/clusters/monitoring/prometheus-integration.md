@@ -26,8 +26,7 @@ You can use Prometheus and Grafana to:
 
 - Display Redis Enterprise Software metric data alongside data from other applications
 
-
-![grafana-prometheus](/images/rs/grafana-prometheus.png)
+{{<image filename="images/rs/grafana-prometheus.png" alt="Graphic showing how Prometheus and Grafana collect and display data from a Redis Enterprise Cluster. Prometheus scrapes metrics from the Redis Enterprise cluster and Grafana queries those metrics for visualization.">}}{{< /image >}}
 
 In each cluster, the metrics_exporter component listens on port 8070 and serves as a Prometheus scraping endpoint for obtaining metrics.
 
@@ -83,7 +82,7 @@ This is for development testing only (running in Docker).
 
 1. Set up your Prometheus and Grafana servers.
     To set up Prometheus and Grafana on Docker containers:
-    1. Create a _docker-compose.yml_ file with this yaml contents:
+    1. Create a _docker-compose.yml_ file:
 
         ```yml
         version: '3'
@@ -105,30 +104,41 @@ This is for development testing only (running in Docker).
                     - prometheus-server:prometheus
         ```
 
-    1. To start the containers, run: `docker-compose up -d`
+    1. To start the containers, run:
+
+        ```sh
+        $ docker compose up -d
+        ```
+
     1. To check that all the containers are up, run: `docker ps`
-    1. In your browser, login to Prometheus at http://localhost:9090 to make sure the server is running.
-    1. Enter **node_up** in the Expression field.
-        If Prometheus is connected to the Redis Enterprise cluster, the cluster metrics are shown.
+    1. In your browser, sign in to Prometheus at http://localhost:9090 to make sure the server is running.
+    1. Select **Status** and then **Targets** to check that Prometheus is collecting data from the Redis Enterprise cluster.
+
+        {{<image filename="images/rs/prometheus-target.png" alt="The Redis Enterprise target showing that Prometheus is connected to the Redis Enterprise Cluster.">}}{{< /image >}}
+
+        If Prometheus is connected to the cluster, you can type **node_up** in the Expression field on the Prometheus home page to see the cluster metrics.
 
 1. Configure the Grafana datasource:
-    1. Login to Grafana. If you installed Grafana locally, go to http://localhost:3000 and login with:
+    1. Sign in to Grafana. If you installed Grafana locally, go to http://localhost:3000 and sign in with:
 
         - Username: admin
         - Password: secret
 
     1. In the Grafana configuration menu, select **Data Sources**.
 
-        ![data-sources](/images/rs/data-sources.png)
+    1. Select **Add data source**.
 
-    1. Add a new data source with:
+    1. Select **Prometheus** from the list of data source types.
+
+        {{<image filename="images/rs/prometheus-datasource.png" alt="The Prometheus data source in the list of data sources on Grafana.">}}{{< /image >}}
+
+    1. Enter the Prometheus information:
 
         - Name: `redis-enterprise`
-        - Type: `Prometheus`
         - URL: `http://<your prometheus address>:9090`
         - Access: `Server`
 
-    ![prometheus-connection](/images/rs/prometheus-connection.png)
+        {{<image filename="images/rs/prometheus-connection.png" alt="The Prometheus connection form in Grafana.">}}{{< /image >}}
 
     {{< note >}}
 
