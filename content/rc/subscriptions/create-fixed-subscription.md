@@ -14,7 +14,7 @@ Fixed Size subscription plans support low throughput workflows.  Several tiers a
 
 When creating your subscription, you'll need to know which tier to choose.
 
-(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create a free subscription and an initial database.  You also learn how to connect to your database.)
+(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.)
 
 
 ## Fixed plan subscription tiers
@@ -74,7 +74,7 @@ To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-pla
 
 Here are few details to keep in mind:
 
-- You aren't prompted for payment details when creating a Free subscription. 
+- You aren't prompted for payment details when creating a Free subscription.
 
 - You can only have one free subscription at a time.
 
@@ -89,4 +89,3 @@ When you create your subscription, there's a brief pause while your request is p
 To create your first database, select the **New Database** button and then fill in the appropriate details.
 
 To learn more, see [Create a database]({{<relref "rc/databases/create-database.md">}}).
-
