@@ -49,7 +49,14 @@ To enable auditing for your cluster, use:
 
     Development systems can set _audit\_protocol_ to `local` for testing and training purposes; however, this setting is _not_ supported for production use.  
     
-    When _audit\_protocol_ is set to `local`, _<address>_ should be the path of the output file and _<port>_ should be an empty string (`""`).  The output file (and path) must be accessible by the user and group running Redis Enterprise Software.
+    When `audit_protocol` is set to `local`, `<address>` should be the path of the output file and _`<port>`_ should not be specified: 
+    
+    ```
+    rladmin cluster config auditing db_conns \
+       audit_protocol local audit_address <filename>
+    ```
+
+    Here, `<filename>` should be set to the full path and name of the output file.  The output file (and path) must be accessible by the user and group running Redis Enterprise Software.
 
 - the REST API
 
