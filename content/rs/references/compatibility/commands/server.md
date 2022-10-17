@@ -31,34 +31,53 @@ Several access control list (ACL) commands are not available in Redis Enterprise
 | [ACL WHOAMI](https://redis.io/commands/acl-whoami) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 
 
+## Configuration commands
+
+| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+|:--------|:----------------------|:-----------------|:------|
+| [CONFIG GET](https://redis.io/commands/config-get) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | [Only supports a subset of configuration settings.]({{<relref "/rs/references/compatibility/config-settings">}}) |
+| [CONFIG RESETSTAT](https://redis.io/commands/config-resetstat) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [CONFIG REWRITE](https://redis.io/commands/config-rewrite) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [CONFIG SET](https://redis.io/commands/config-set) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | [Only supports a subset of configuration settings.]({{<relref "/rs/references/compatibility/config-settings">}}) |
+
+
 ## General server commands
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
 | [COMMAND](https://redis.io/commands/command) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [COMMAND COUNT](https://redis.io/commands/command-count) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
-| [COMMAND DOCS](https://redis.io/commands/command-docs) |
+| [COMMAND DOCS](https://redis.io/commands/command-docs) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [COMMAND GETKEYS](https://redis.io/commands/command-getkeys) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
-| [COMMAND GETKEYSANDFLAGS](https://redis.io/commands/command-getkeysandflags) |
+| [COMMAND GETKEYSANDFLAGS](https://redis.io/commands/command-getkeysandflags) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [COMMAND INFO](https://redis.io/commands/command-info) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
-| [COMMAND LIST](https://redis.io/commands/command-list) |
-| [CONFIG GET](https://redis.io/commands/config-get) |
-| [CONFIG RESETSTAT](https://redis.io/commands/config-resetset) |
-| [CONFIG REWRITE](https://redis.io/commands/config-rewrite) |
-| [CONFIG SET](https://redis.io/commands/config-set) |
+| [COMMAND LIST](https://redis.io/commands/command-list) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [DEBUG](https://redis.io/commands/debug/) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [FLUSHALL](https://redis.io/commands/flushall) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active\*</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | \*Can use the [Active-Active flush API request]({{<relref "/rs/references/rest-api/requests/crdbs/flush">}}). |
 | [FLUSHDB](https://redis.io/commands/flushdb) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active\*</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | \*Can use the [Active-Active flush API request]({{<relref "/rs/references/rest-api/requests/crdbs/flush">}}). |
 | [LOLWUT](https://redis.io/commands/lolwut) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+| [SHUTDOWN](https://redis.io/commands/shutdown) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [SWAPDB](https://redis.io/commands/swapdb) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [TIME](https://redis.io/commands/time) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
+
+
+## Module commands
+
+For Redis Enterprise Software, you can [manage Redis modules]({{<relref "/modules/install/">}}) from the admin console or with [REST API requests](/rs/references/rest-api/requests/modules/).
+
+Redis Cloud manages modules for you and lets you [enable modules](/rc/databases/create-database#modules) when you create a database.
+
+| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+|:--------|:----------------------|:-----------------|:------|
 | [MODULE LIST](https://redis.io/commands/module-list) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [MODULE LOAD](https://redis.io/commands/module-load) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [MODULE LOADEX](https://redis.io/commands/module-loadex) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [MODULE UNLOAD](https://redis.io/commands/module-unload) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
-| [SHUTDOWN](https://redis.io/commands/shutdown) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
-| [SWAPDB](https://redis.io/commands/swapdb) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
-| [TIME](https://redis.io/commands/time) |
 
 
 ## Monitoring commands
+
+Although Redis Enterprise does not support certain monitoring commands, you can use the admin consoles to view Redis Enterprise Software [metrics](/rs/clusters/monitoring/) and [logs](/rs/clusters/logging/) or Redis Cloud [metrics](/rc/databases/monitor-performance/) and [logs](/rc/databases/system-logs/).
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
@@ -67,6 +86,7 @@ Several access control list (ACL) commands are not available in Redis Enterprise
 | [LATENCY DOCTOR](https://redis.io/commands/latency-doctor) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [LATENCY GRAPH](https://redis.io/commands/latency-graph) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [LATENCY HELP](https://redis.io/commands/latency-help) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [LATENCY HISTOGRAM](https://redis.io/commands/latency-histogram) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [LATENCY HISTORY](https://redis.io/commands/latency-history) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [LATENCY LATEST](https://redis.io/commands/latency-latest) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [LATENCY RESET](https://redis.io/commands/latency-reset) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
@@ -103,7 +123,9 @@ Redis Enterprise automatically manages [replication]({{<relref "/rs/databases/du
 | [FAILOVER](https://redis.io/commands/failover) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [MIGRATE](https://redis.io/commands/migrate) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [PSYNC](https://redis.io/commands/psync) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [REPLCONF](https://redis.io/commands/replconf) | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [REPLICAOF](https://redis.io/commands/replicaof) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
+| [RESTORE-ASKING](https://redis.io/commands/restore-asking) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [ROLE](https://redis.io/commands/role) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
 | [SLAVEOF](https://redis.io/commands/slaveof) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | Deprecated as of Redis v5.0.0. |
 | [SYNC](https://redis.io/commands/sync) | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> | <span title="Not supported">&#x274c; Standard</span><br /><br /><span title="Not supported"><nobr>&#x274c; Active-Active</nobr></span> |  |
