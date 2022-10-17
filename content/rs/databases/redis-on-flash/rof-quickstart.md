@@ -74,7 +74,7 @@ Choose "continue to the website" to get to the setup screen.
 
 2. On the **node configuration** page, select the **Enable flash storage
 support** checkbox and provide a cluster FQDN: **mycluster.local**.
-Then simply click the **Next** button.
+Then select the **Next** button.
 
 ![Enable Redis
 Flash](/images/rs/enable_redis_flash.png)
