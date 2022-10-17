@@ -32,7 +32,7 @@ with a single node are:
 1. Create a new Redis on Flash database.
 1. Connect to your new database.
 
-## Step 1: Install Redis Enterprise Software
+## Install Redis Enterprise Software
 
 ### Bare metal, VM, Cloud instance
 
@@ -63,7 +63,7 @@ Docker container on Windows, MacOS, and Linux.
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
-## Step 2: Set up a cluster and enable Redis on Flash
+## Set up a cluster and enable Redis on Flash
 
 1. Direct your browser to `https://localhost:8443/` on the host machine to
 see the Redis Enterprise Software admin console. Select the
@@ -89,7 +89,7 @@ the trial version of the product.
 5. Select **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
 
-## Step 3: Create a database
+## Create a database
 
 Select the "new redis db flash" option.
 
@@ -106,7 +106,7 @@ db](/images/rs/newredisflashdb.png)
 
 You now have a Redis on Flash database!
 
-## Step 4: Connecting to your database
+## Connect to your database
 
 You are ready to connect to your database to store data. See the [test connectivity]({{<relref "/rs/databases/connect/test-client-connectivity.md">}}) page to learn how to connect to your database.
 
