@@ -1,6 +1,6 @@
 ---
 Title: Redis on Flash (RoF) quick start
-linkTitle: Redis on Flash quick start
+linkTitle: Quick start
 description: Get started with Redis on Flash quickly, creating a cluster and database using flash storage. 
 weight: 80
 alwaysopen: false
@@ -20,33 +20,35 @@ aliases: /rs/getting-started/creating-database/redis-flash/
 This page guides you through a quick setup of a [Redis on
 Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) cluster with a single node for testing and demo purposes. 
 
-For production environments, you'll find more detailed installation instructions in the [install and setup]({{< relref "/rs/installing-upgrading/_index.md" >}}) section.
+For production environments, you can find more detailed installation instructions in the [install and setup]({{< relref "/rs/installing-upgrading/_index.md" >}}) section.
 
 The steps to set up a Redis Enterprise Software cluster using Redis on Flash
 with a single node are:
 
-- **Step 1**: Install Redis Enterprise Software or launch with Docker
-    container
-- **Step 2**: Set up a Redis Enterprise Software cluster with Redis on
-    Flash
-- **Step 3**: Create a new Redis on Flash database
-- **Step 4**: Connect to your new database
+1. Install Redis Enterprise Software or run it in a Docker
+    container.
+1. Set up a Redis Enterprise Software cluster with Redis on
+    Flash.
+1. Create a new Redis on Flash database.
+1. Connect to your new database.
 
 ## Step 1: Install Redis Enterprise Software
 
 ### Bare metal, VM, Cloud instance
 
-To install on bare metal, VM, or instance; download the binaries from
-the [Redis Enterprise download
-site](https://app.redislabs.com/#/sign-up/software?direct=true). Once
-you have the bits on a Linux based OS, you need to extract the image.
+To install on bare metal, a virtual machine, or an instance:
+
+1. Download the binaries from the [Redis Enterprise download center](https://app.redislabs.com/#/sign-up/software?direct=true).
+
+1. Upload the binaries to a Linux-based operating system.
+
+1. Extract the image:
 
 ```sh
 tar -vxf <downloaded tar file name>
 ```
 
-Once the tar command completes, you can find a new `install.sh` script in
-the current directory.
+1. After the `tar` command completes, you can find a new `install.sh` script in the current directory:
 
 ```sh
 sudo ./install.sh -y
@@ -64,7 +66,7 @@ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redis
 ## Step 2: Set up a cluster and enable Redis on Flash
 
 1. Direct your browser to `https://localhost:8443/` on the host machine to
-see the Redis Enterprise Software admin console. Click the
+see the Redis Enterprise Software admin console. Select the
 **Setup** button to get started.
 
 {{< note >}}
@@ -79,12 +81,12 @@ Then select the **Next** button.
 ![Enable Redis
 Flash](/images/rs/enable_redis_flash.png)
 
-3. If you don't have a license key yet, click the **Next** button to try
+3. If you don't have a license key yet, select the **Next** button to try
 the trial version of the product.
 
-4. On the next screen, set up a cluster administrator account credentials.
+4. On the next screen, set up account credentials for a cluster administrator.
 
-5. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
+5. Select **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
 
 ## Step 3: Create a database
@@ -106,11 +108,11 @@ You now have a Redis on Flash database!
 
 ## Step 4: Connecting to your database
 
-You are ready to connect to your database to store data. See [test connectivity]({{<relref "/rs/databases/connect/test-client-connectivity.md">}}) page for a tutorial on connecting to your database.
+You are ready to connect to your database to store data. See the [test connectivity]({{<relref "/rs/databases/connect/test-client-connectivity.md">}}) page to learn how to connect to your database.
 
 ## Next steps
 
-If you'd like to generate load against the
-database or add a bunch of data for cluster testing, the [memtier_benchmark quick start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) should help.
+If you want to generate load against the
+database or add a bunch of data for cluster testing, see the [memtier_benchmark quick start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) for help.
 
-To see the true performance and scale of Redis on Flash, you must tune your IO path and have the flash path set to the mounted path of SSD or NVMe flash memory as that is what it is designed to run on. For more information, see [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}).
+To see the true performance and scale of Redis on Flash, you must tune your I/O path and set the flash path to the mounted path of SSD or NVMe flash memory as that is what it is designed to run on. For more information, see [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}).
