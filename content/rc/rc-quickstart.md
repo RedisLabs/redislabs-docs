@@ -14,7 +14,7 @@ If you're new to Redis Enterprise Cloud, this quick start helps you get up and r
 
 You'll learn how to:
 
-1.  Create an account with a free subscription and database
+1.  Create an account, a free subscription, and a database
 
 1.  Connect to your database
 
@@ -30,15 +30,15 @@ To create a new account with a free subscription and database:
 
 1. Enter your information in the form and select **Get Started**, or sign up with Google or Github.
 
-1. When you receive the activation email, select **Activate account** to be taken to the Redis Cloud [admin console](https://app.redislabs.com/#/login).
+1. In the activation email, select **Activate account** to go to the Redis Cloud [admin console](https://app.redislabs.com/#/login).
 
     {{<image filename="images/rc/quickstart-quick-dialog.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
 
-1. Select your preferred cloud vendor and region from the dialog.
+1. Select your preferred cloud vendor and region.
 
 1. Select **Let's start free** to create your subscription and database.
 
-    If you would rather customize your subscription and database, Select **Create a custom database** to be sent to the Add subscription page. From there, you can [create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) or [create a flexible subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}).
+    If you would rather customize your subscription and database, select **Create a custom database** to go to the **Add subscription** page. From there, you can [create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) or [create a flexible subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}).
 
 1.  You're taken to the **Overview tab** for your new subscription.
 
