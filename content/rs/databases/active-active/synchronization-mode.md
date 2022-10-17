@@ -12,8 +12,9 @@ aliases: [
     /rs/databases/active-active/synchronization-mode/,
 ]
 ---
-Replicated databases, including those that use [Replica Of]({{< relref "/rs/databases/import-export/replica-of/" >}}) and [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) replication,
-use proxy endpoints to synchronize database changes with the databases on the other participating clusters.
+Replicated databases, such as [Replica Of]({{< relref "/rs/databases/import-export/replica-of/" >}}) and [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) databases,
+use proxy endpoints to synchronize database changes with the databases on other participating clusters.
+
 To improve the throughput and lower the latency for synchronization traffic,
 you can configure a replicated database to use distributed synchronization where any available proxy endpoint can manage synchronization traffic.
 
@@ -25,6 +26,8 @@ To prepare a database to use distributed synchronization you must first make sur
 is defined so that either each node has a proxy endpoint or each primary (master) shard has a proxy endpoint.
 After you have multiple proxies for the database,
 you can configure the database synchronization to use distributed synchronization.
+
+## Configure distributed synchronization
 
 To configure distributed synchronization:
 
@@ -38,7 +41,7 @@ To configure distributed synchronization:
     db:1        db        endpoint:1:1              node:1        all-master-shards                   No
     ```
 
-    If the proxy policy (also known as a role) is `single`, configure the policy to `all-nodes` or `all-master-shards` according to your needs with the command:
+    If the proxy policy (also known as a _role_) is `single`, configure the policy to `all-nodes` or `all-master-shards` according to your needs with the command:
 
     ```sh
     rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards|all-nodes>
@@ -55,3 +58,20 @@ To configure distributed synchronization:
     ```sh
     tune db <db_name> syncer_mode centralized
     ```
+
+## Verify database synchronization
+
+Use `rladmin` to verify a database synchronization role:
+
+```sh
+rladmin info db <db_name>
+```
+
+The current database role is reported as the `syncer_mode` value:
+
+```sh
+$ rladmin info db <db_name>     
+db:1 [<db_name>]:
+  // (Other settings removed) 
+  syncer_mode: centralized
+```
