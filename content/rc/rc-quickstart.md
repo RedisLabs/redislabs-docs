@@ -18,7 +18,7 @@ You'll learn how to:
 
 1.  Connect to your database
 
-If you already have an account, see [Create a Fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) to create a Free 30MB subscription. Free plans are a tier of Fixed plans; this provides an easy upgrade path when you need it.
+If you already have an account, see [Create a Fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) to create a Free 30MB subscription. Free plans are a tier of fixed plans; this provides an easy upgrade path when you need it.
 
 If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/subscriptions/" >}}) and [Manage databases]({{< relref "/rc/databases/" >}}).
 
@@ -155,6 +155,8 @@ Here's how to connect to your database using the `redis-py` library for Python.
     $ python example_redis.py
     world
     ```
+
+See the [client list](https://redis.io/docs/clients/) to view all Redis clients by language.
 
 ## More info
 
