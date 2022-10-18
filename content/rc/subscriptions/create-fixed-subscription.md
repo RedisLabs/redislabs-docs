@@ -74,7 +74,7 @@ To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-pla
 
 Here are few details to keep in mind:
 
-- You aren't prompted for payment details when creating a Free subscription.
+- You can create a Free subscription without being prompted for payment details.
 
 - You can only have one free subscription at a time.
 
