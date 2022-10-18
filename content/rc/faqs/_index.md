@@ -18,67 +18,17 @@ This enhanced and exponentially more powerful database platform is Redis Enterpr
 
 To learn more, see [Redis Enterprise](https://redislabs.com/why-redis/redis-enterprise/) on our main site.
 
-## Are you fully compatible with open source Redis?
+## Is Redis Cloud fully compatible with open source Redis?
 
-Every effort is made to adhere, where possible, to the specifications of open source Redis (also known as _core Redis_).  However, some features are not applicable in the context of our service, including (but not limited to):
+Although Redis Cloud follows open source Redis specifications, it does not support certain commands. Instead of using these commands, Redis Cloud automatically handles features like replication and lets you [manage your database]({{<relref "/rc/databases">}}) from the [admin console](https://app.redislabs.com/) or [REST API]({{<relref "/rc/api">}}).
 
-- Shared databases aren’t supported in our service given their potential negative impact on performance. We recommend using [dedicated databases instead](https://redislabs.com/blog/benchmark-shared-vs-dedicated-redis-instances/). 
+For more details, see:
 
-    Therefore, the following Redis commands are blocked and show an error when used:
+- [Redis Enterprise compatibility with open source Redis]({{<relref "/rs/references/compatibility">}})
 
-    - [MOVE](http://redis.io/commands/move)
-    - [SELECT](http://redis.io/commands/select)
-- Data persistence and backups are managed from the service’s web interface, so the following commands are blocked:
-    - [BGREWRITEAOF](http://redis.io/commands/BGREWRITEAOF)
-    - [BGSAVE](http://redis.io/commands/bgsave)
-    - [LASTSAVE](http://redis.io/commands/LASTSAVE)
-    - [SAVE](http://redis.io/commands/SAVE)
+- [Command compatibility]({{<relref "/rs/references/compatibility/commands">}})
 
-- Since replication is managed automatically by the service and since it could present a security risk, the following commands are blocked:
-    - [MIGRATE](http://redis.io/commands/MIGRATE)
-    - [REPLICAOF](http://redis.io/commands/REPLICAOF)
-    - [SLAVEOF](http://redis.io/commands/SLAVEOF)
-    - [SYNC](http://redis.io/commands/SYNC)/[PSYNC](http://redis.io/commands/PSYNC)
-
-- Redis clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
-
-- Redis clustering technology allows [multiple active proxies]({{<relref "rs/databases/configure/proxy-policy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
-
-- Commands that aren’t relevant for a hosted Redis service are blocked:
-    - [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)
-    - [DEBUG OBJECT](http://redis.io/commands/DEBUG-OBJECT)/[SEGFAULT](http://redis.io/commands/DEBUG-SEGFAULT)
-    - [OBJECT](http://redis.io/commands/OBJECT)
-    - [SHUTDOWN](http://redis.io/commands/SHUTDOWN)
-    - [CLIENT PAUSE](http://redis.io/commands/CLIENT-PAUSE)
-    - [COMMAND INFO](http://redis.io/commands/COMMAND-INFO)
-    - [COMMAND COUNT](http://redis.io/commands/COMMAND-COUNT)
-    - [COMMAND GETKEYS](http://redis.io/commands/COMMAND-GETKEYS)
-    - [LATENCY LATEST](http://redis.io/commands/LATENCY-LATEST)
-    - [LATENCY HISTORY](http://redis.io/commands/LATENCY-HISTORY)
-    - [LATENCY RESET](http://redis.io/commands/LATENCY-RESET)
-    - [LATENCY GRAPH](http://redis.io/commands/LATENCY-GRAPH)
-    - [LATENCY DOCTOR](http://redis.io/commands/LATENCY-DOCTOR)
-    - [MEMORY STATS](https://redis.io/commands/memory-stats)
-    - [MEMORY DOCTOR](https://redis.io/commands/memory-doctor)
-    - [MEMORY MALLOC-STATS](https://redis.io/commands/memory-malloc-stats)
-    - [MEMORY PURGE](https://redis.io/commands/memory-purge)
-    - [MODULE LOAD](https://redis.io/commands/module-load)
-    - [MODULE UNLOAD](https://redis.io/commands/module-unload)
-    - [MODULE LIST](https://redis.io/commands/module-list)
-
-- Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Cloud. Attempts to get or set a configuration parameter that isn’t included in the following list show an error when used:
-    - hash-max-ziplist-entries
-    - hash-max-ziplist-value
-    - list-max-ziplist-entries
-    - list-max-ziplist-value
-    - notify-keyspace-events
-    - set-max-intset-entries
-    - slowlog-log-slower-than (value must be larger than 1000)
-    - slowlog-max-len (value must be between 128 and 1024)
-    - zset-max-ziplist-entries
-    - zset-max-ziplist-value
-
-- Open source Redis supports key names up to 512MB.  Redis Enterprise Software and Redis Enterprise Cloud each limit key names to 64KB.  Key values can reach up to 512MB in all three services.
+- [Configuration compatibility]({{<relref "/rs/references/compatibility/config-settings">}})
 
 ## How many databases can I create and manage?
 
