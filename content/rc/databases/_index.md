@@ -46,10 +46,14 @@ These topics provide background details that can help you tailor your databases 
 
 - [High availability and replication]({{<relref "rc/databases/configuration/high-availability.md">}}): Replication allows for automatic failover and greater fault tolerance. It can prevent data loss in the event of a hardware or zone failure.  Learn which options are available for Redis Enterprise Cloud subscriptions.
 
+## Compatibility
 
+Although Redis Cloud follows open source Redis specifications, it does not support certain commands. Instead of using these commands, Redis Cloud automatically handles features like replication and lets you [manage your database]({{<relref "/rc/databases">}}) from the [admin console](https://app.redislabs.com/) or [REST API]({{<relref "/rc/api">}}).
 
+For more details, see:
 
+- [Redis Enterprise compatibility with open source Redis]({{<relref "/rs/references/compatibility">}})
 
+- [Command compatibility]({{<relref "/rs/references/compatibility/commands">}})
 
-
-
+- [Configuration compatibility]({{<relref "/rs/references/compatibility/config-settings">}})
