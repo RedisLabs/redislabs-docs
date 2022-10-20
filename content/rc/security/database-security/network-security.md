@@ -44,7 +44,7 @@ If you create a VPC peering connection, you can also [configure a CIDR allow lis
 
 ### VPCs with GCP
 
-Subscriptions that run on GCP *require* a VPC peering connection. See [GCP VPC peering](http://localhost:1313/rc/security/vpc-peering/#gcp-vpc-peering) to learn how to set up VPC peering for GCP.
+Subscriptions that run on GCP *require* a VPC peering connection. See [GCP VPC peering]({{<relref "/rc/security/vpc-peering/#gcp-vpc-peering">}}) to learn how to set up VPC peering for GCP.
 
 ### VPCs with Azure
 
