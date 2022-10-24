@@ -14,74 +14,41 @@ If you're new to Redis Enterprise Cloud, this quick start helps you get up and r
 
 You'll learn how to:
 
-1.  Create a free subscription
+1.  Create an account, a free subscription, and a database
 
-2.  Create a database
+1.  Connect to your database
 
-3.  Connect to your database
+If you already have an account, see [Create a Fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) to create a Free 30MB subscription. Free plans are a tier of fixed plans; this provides an easy upgrade path when you need it.
 
 If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/subscriptions/" >}}) and [Manage databases]({{< relref "/rc/databases/" >}}).
 
-## Create a subscription
+## Create an account
 
-To create a new free subscription:
+To create a new account with a free subscription and database:
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
+1. On the Redis Cloud [admin console](https://app.redislabs.com/#/login), select [Sign up](https://redis.com/try-free/).
 
-2. Select the **New subscription** button in the admin menu.
+1. Enter your information in the form and select **Get Started**, or sign up with Google or Github.
 
-    {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
+1. In the activation email, select **Activate account** to go to the Redis Cloud [admin console](https://app.redislabs.com/#/login).
 
-    (You can only have one free subscription.)
+    {{<image filename="images/rc/quickstart-quick-dialog.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
 
-3. When the **New subscription** page appears, select **Fixed plans** and then scroll to the cloud vendor options.
+1. Select your preferred cloud vendor and region.
 
-    {{<image filename="images/rc/subscription-new-plan-options.png" alt="Available subscription plan options." >}}{{< /image >}}
+1. Select **Let's start free** to create your subscription and database.
 
-4.  Choose a **Cloud Provider** and a **Region**.
+    {{< note >}}
+If you would rather customize your subscription and database, select **Create a custom database** to go to the **Add subscription** page. From there, you can [create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) or [create a flexible subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}).
+    {{< /note >}}
 
-    (You can ignore the **High-Availability** options for now; these are available in paid tiers only.)
+    You're taken to the **Overview tab** for your new subscription.
 
-    {{<image filename="images/rc/subscription-new-cloud-vendor-options.png" alt="Available cloud vendor options." >}}{{< /image >}}
+    {{<image filename="images/rc/quickstart-subscription-overview.png" width="75%" alt="Overview tab showing your new subscription and database." >}}{{< /image >}}
 
+1.  Select the database name to view the **Configuration** tab for your new database.
 
-5.  In the **Fixed Size** panel, locate the **Dataset Size** list and then choose **30MB**.
-
-    Free plans are a tier of Fixed plans; this provides an easy upgrade path when you need it.
-
-    {{<image filename="images/rc/subscription-new-fixed-plan-options.png" alt="Create a free subscription. " >}}{{< /image >}}
-
-6.  Enter a descriptive **Subscription Name** and then select the **Create subscription**.
-
-    {{<image filename="images/rc/button-subscription-create.png" alt="The Create subscription button is located below the subscription options. " >}}{{< /image >}}
-
-
-## Create a database
-
-Now that you have a subscription, you need to create a database.
-
-1.  If you aren't already at the **Subscription details** screen, sign into the Redis Cloud admin console and select your subscription from the subscription list.
-
-2.  Select the **New Database** button.
-
-    {{<image filename="images/rc/button-database-new.png" alt="Use the New database to create a database." >}}{{< /image >}}
-
-2.  In the **General** section, enter a descriptive **Database Name**.  
-
-    - You have 40 characters  
-    - You can use letters, numbers, or a hyphen  
-    - The name must start with a letter and end with either a letter or a number
-    - Spaces are not allowed
-
-    {{<image filename="images/rc/new-database-free-name.png" width="75%" alt="Create new database. " >}}{{< /image >}}
-
-3.  For this exercise, leave the remaining options at their default values.  (To learn about them, see [Create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription.md" >}}).)
-
-4.  Select the **Activate database** button near the upper, right corner of the page.
-
-5.  You're taken to the **Configuration tab** for your new database.
-
-    {{<image filename="images/rc/database-fixed-configuration-general-update.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
+    {{<image filename="images/rc/quickstart-database-overview.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
 
     In the upper corner, an icon shows the current status of the database.  If the icon shows an orange clock, this means your database is still being created and its status is _pending_.
 
@@ -114,7 +81,7 @@ These are displayed in the **Configuration** tab.
 
 Once you have the connection details, you can connect in a variety of ways, including:
 
-- Using the `redis-cli` utility 
+- Using the `redis-cli` utility
 
 - Using a [connection client](https://redis.io/clients) for your preferred programming language
 
@@ -178,18 +145,20 @@ Here's how to connect to your database using the `redis-py` library for Python.
 
     ```python
     import redis
-    r = redis.Redis(host='<endpoint>', port='<port>', 
+    r = redis.Redis(host='<endpoint>', port='<port>',
                     password='<password>')
     r.set('hello', 'world')
     print(r.get('hello'))
     ```
-    
+
 3.  Now, run the code:
 
     ```sh
     $ python example_redis.py
     world
     ```
+
+See the [client list](https://redis.io/docs/clients/) to view all Redis clients by language.
 
 ## More info
 
