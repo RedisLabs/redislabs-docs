@@ -64,30 +64,27 @@ When your new database becomes active, you're ready to connect to it.
 
 At this point, you're viewing the **Configuration** details for your new database.  
 
-To connect to your database, you need the following info:
+To connect to your database, you need your username and password. For the default user, the username is `default`.
 
-- The hostname for your database
-- The port number
-- The database password
+The **Security** section contains your **Default user password**.  By default, this is masked.  Select the eye icon to show or hide the password.    
 
-These are displayed in the **Configuration** tab.  
+{{<image filename="images/rc/database-fixed-configuration-security.png" width="75%" alt="The Security section of the Configuration tab of the database details page." >}}{{< /image >}}
 
-- In the **General** section, the **Public endpoint** setting shows the hostname for your database and the port number.
+Once you have the username and password, select the **Connect** button to open the connection wizard.
 
-- The **Security** section contains your **Default user password**.  By default, this is masked.  Select the eye icon to show or hide the password.    
+![Connect button](/images/rc/connection-wizard-button.png#no-click "Connect button.")
 
-    {{<image filename="images/rc/database-fixed-configuration-security.png" width="75%" alt="The Security section of the Configuration tab of the database details page." >}}{{< /image >}}
+{{<image filename="images/rc/connection-wizard.png" width="75%" alt="The connection wizard." >}}{{< /image >}}
 
-
-Once you have the connection details, you can connect in a variety of ways, including:
+The connection wizard shows how to connect to your database with the following methods:
 
 - Using the `redis-cli` utility
 
-- Using a [connection client](https://redis.io/clients) for your preferred programming language
+- Using a [Redis client](https://redis.io/clients) for your preferred programming language
 
-Here's an example of each.
+- Using [RedisInsight](https://redis.com/redis-enterprise/redis-insight/)
 
-### Use redis-cli (via Docker){#using-rediscli}
+### redis-cli (via Docker){#using-rediscli}
 
 The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands/).
 
@@ -100,25 +97,23 @@ Run the following commands to create a `redis` Docker container and connect to y
     ``` sh
     $ docker pull redis
     ```
-2.  Start a container created from the image:
+1.  Start a container created from the image:
 
     ``` sh
     $ docker run -d --name redis1 redis
     ```
-3.  Connect to a bash prompt running in the container:
+
+1.  Connect to a bash prompt running in the container:
+
     ``` sh
     $ docker exec -it redis1 bash
     ```
 
-4. Connect to your database with `redis-cli`:
+1. In the connection wizard, under **Redis CLI**, select the **Copy** button to copy the redis-cli command.
 
-    ``` sh
-    # redis-cli -h <host> -p <port> -a <password>
-    ```
+1. Paste the redis-cli command into the terminal, and replace `<username>` and `<password>` with your username and password.
 
-    Replace `<host>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
-
-5. After you connect to your database, try these basic Redis commands:
+1. After you connect to your database, try these basic Redis commands:
 
     ``` sh
     xxx:yyy> ping
@@ -129,36 +124,76 @@ Run the following commands to create a `redis` Docker container and connect to y
     "world"
     ```
 
-### Use code (Python)
+    See the [commmand list](https://redis.io/commands/) for a list of all Redis commands.
 
-Different programming languages use different clients to interact with Redis databases.
+### Redis client
 
-Here's how to connect to your database using the `redis-py` library for Python.
+Different programming languages use different connection clients to interact with Redis databases. Each client has its own syntax and installation process, so read the documentation for the client you are using before running your code.
 
-1.  If you don't already have the client installed:
+The connection wizard contains code snippets to connect to your database for the following programming languages:
+
+- node.js using [ioredis](https://github.com/luin/ioredis#quick-start)
+- .NET using [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/)
+- Python using [redis-py](https://github.com/redis/redis-py#redis-py)
+- Java using [Jedis](https://github.com/redis/jedis#jedis)
+
+See the [client list](https://redis.io/docs/clients/) to view all Redis clients by language.
+
+#### Code example (Python)
+
+Here's how to connect to your database using the [redis-py](https://github.com/redis/redis-py#redis-py) library for Python.
+
+1.  Install the Redis client if it is not already installed.
 
     ```sh
-    sudo pip install redis
+    $ sudo pip install redis
     ```
 
-2.  The specific syntax varies according to the client:
+2.  In the connection wizard, under **Redis Client**, select Python from the **Select your client** menu.
+
+3. Select **Copy** to copy the connection code for your database.
+
+4. Paste the code into your program, and replace `<username>` and `<password>` with your username and password.
 
     ```python
     import redis
-    r = redis.Redis(host='<endpoint>', port='<port>',
-                    password='<password>')
+
+    r = redis.Redis(
+      host='<host>',
+      port=<port>,
+      password='<password>')
+
+    # Redis commands
     r.set('hello', 'world')
     print(r.get('hello'))
     ```
 
-3.  Now, run the code:
+5. Run the program.
 
     ```sh
     $ python example_redis.py
     world
     ```
 
-See the [client list](https://redis.io/docs/clients/) to view all Redis clients by language.
+### RedisInsight
+
+RedisInsight is a free Desktop GUI for Redis that is available for MacOS, Windows, and Linux.
+
+1. In the connection wizard, under **Redis Client**, select your operating system from the **Download RedisInsight** menu.
+
+1. Select **Download** to download RedisInsight.
+
+1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
+
+1. Once RedisInsight is installed and open, select **Add Redis Database**.
+
+1. In the connection wizard, under **RedisInsight Desktop**, select **Copy** to copy the connection information.
+
+1. In RedisInsight, paste the connection information into the **Host** field. RedisInsight will automatically populate the rest of the information needed to connect to the database with the default user.
+
+1. Select **Add Redis Database** to connect to the database.
+
+See the [RedisInsight documentation]({{< relref "/ri/_index.md" >}}) for more information.
 
 ## More info
 
