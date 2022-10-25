@@ -52,7 +52,7 @@ The Redis Enterprise Software admin console shows performance metrics for cluste
 | Reads/sec | Database | Number of total read operations per second | For example: GET |
 | Total CPU usage | Database, Shard | Percent usage of the CPU |  |
 | Total keys[^1] | Database, Shard | Total number of keys in the dataset (not including replication, even if replication enabled) | Calculated as the sum of all keys of all master shards. |
-| Used memory | Database, Shard | Total memory used by the database, including RAM, Flash (if enabled) and replication (if enabled) | Does not include:<ol><li>Fragmentation overhead</li><li>Replica replication buffers at the primary nodes</li><li>Memory used by Lua scripts</li><li>Copy On Write (COW) operation that can be triggered by:<br><ul><li>A full replication process</li><li>A database snapshot process</li><li>AOF rewrite process</li></ul></li></ol> |
+| Used memory[^1] | Database, Shard | Total memory used by the database, including RAM, Flash (if enabled) and replication (if enabled) | Does not include:<ol><li>Fragmentation overhead</li><li>Replica replication buffers at the primary nodes</li><li>Memory used by Lua scripts</li><li>Copy On Write (COW) operation that can be triggered by:<br><ul><li>A full replication process</li><li>A database snapshot process</li><li>AOF rewrite process</li></ul></li></ol> |
 | Write misses/sec[^1] | Database, Shard | Number of write operations (per sec) on non-existing keys |  |
 | Writes latency | Database | Latency per write operation |  |
 | Writes/sec | Database | Number of total write operation per second | For example: SET |
