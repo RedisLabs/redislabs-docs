@@ -18,7 +18,7 @@ aliases: /rs/administering/monitoring-metrics/definitions/
          /rs/clusters/monitoring/console-metrics-definitions.md
 
 ---
-The Redis Enterprise Software admin console shows metrics with information about the performance of the cluster, node, database, and shard.
+The Redis Enterprise Software admin console shows performance metrics for clusters, nodes, databases, and shards.
 
 ## Standard metrics
 
@@ -26,13 +26,13 @@ The Redis Enterprise Software admin console shows metrics with information about
 | ------ | ------ | ------ | ------ |
 | Connections | Cluster, Node, Database | Number of connections used to access the database |  |
 | CPU usage | Cluster, Node | Percent usage of the CPU |  |
-| Evicted objects/sec[^1] | Database, Shard | Number of objects evicted per second | Objects are evicted if:<br><ol><li>The database reaches its memory_limit</li><li>The [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy" >}}) is not configured to `no-eviction`</li><li>The dataset keys are compliant with the selected eviction policy. For exmaple, with the `volatile-lru` eviction policy, Redis evicts expired keys.</li></ol> |
+| Evicted objects/sec[^1] | Database, Shard | Number of objects evicted per second | Objects are evicted if:<br><ol><li>The database reaches its memory_limit</li><li>The [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy" >}}) is not configured to `no-eviction`</li><li>The dataset keys are compliant with the selected eviction policy. For example, with the `volatile-lru` eviction policy, Redis evicts expired keys.</li></ol> |
 | Expired objects/sec[^1] | Database, Shard | Number of expired objects per second |  |
 | Fork CPU usage | Database, Shard | CPU usage of Redis child forks |  |
 | Free disk space | Cluster, Node | Remaining unused disk space |  |
 | Free ephemeral disk space | Cluster, Node | Remaining unused disk space on the ephemeral path |  |
 | Free RAM | Cluster, Node | RAM available for system use |  |
-| Hit ratio | Database, Shard | Calculated as number of operations on existing keys out of the total number of operations | `number_of_ops_on_exsiting_keys` / `total_ops` |
+| Hit ratio | Database, Shard | Calculated as number of operations on existing keys out of the total number of operations | `number_of_ops_on_existing_keys` / `total_ops` |
 | Incoming traffic[^1] | Cluster, Node, Database | Total incoming traffic (in bytes/sec) to the database |  |
 | Incoming traffic compressed[^1] | Active-Active | Total incoming compressed traffic (in bytes/sec) to the database |  |
 | Incoming traffic uncompressed[^1] | Active-Active | Total incoming uncompressed traffic (in bytes/sec) to the database |  |
@@ -44,7 +44,7 @@ The Redis Enterprise Software admin console shows metrics with information about
 | Other cmds/sec | Database | Number of other commands per second | For example: PING, AUTH, INFO |
 | Other commands latency | Database | Latency per other command | The graph shows average, min, max and last latency values |
 | Outgoing traffic[^1] | Cluster, Node, Database | Total outgoing traffic (in bytes/sec) from the database |  |
-| Pending writes max | Active-Active | Maximum number of write opreations queued |  |
+| Pending writes max | Active-Active | Maximum number of write operations queued |  |
 | Pending writes min | Active-Active | Minimum number of write operations queued |  |
 | RAM fragmentation | Database, Shard | Ratio between the used (allocated) memory and the physical RAM that is used. |  |
 | Read misses/sec[^1] | Database, Shard | Number of read operations (per sec) on non-existing keys |  |
@@ -57,7 +57,7 @@ The Redis Enterprise Software admin console shows metrics with information about
 | Writes latency | Database | Latency per write operation |  |
 | Writes/sec | Database | Number of total write operation per second | For example: SET |
 
-[^1]: These metrics are not collected during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph will be blank.
+[^1]: These metrics are not collected during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
 
 ## Redis on Flash (RoF) metrics
 
@@ -78,7 +78,7 @@ These metrics are available for [Redis on Flash (RoF)]({{< relref "/rs/databases
 |  RAM hit ratio | Database RoF, Shard RoF | Ratio of requests processed directly from RAM to total number of requests processed |
 |  RAM limit | Database RoF | RAM limit in bytes |
 |  RAM usage | Database RoF | Percentage of the RAM limit usage |
-|  RAM:Flash access ratio | Database RoF, Shard RoF | Ratio between logical redis key value operations, and actual flash key value operations |
+|  RAM:Flash access ratio | Database RoF, Shard RoF | Ratio between logical Redis key value operations and actual flash key value operations |
 |  Used Flash | Database RoF, Shard RoF | Total RAM used to store values in Flash |
 |  Used RAM | Database RoF, Shard RoF | Total size of data stored in RAM, including keys, values, overheads and including replication, if enabled |
 |  Values in Flash | Database RoF, Shard RoF | Number of keys with values stored in Flash, not including replication |
