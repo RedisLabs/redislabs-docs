@@ -74,8 +74,6 @@ Once you have the username and password, select the **Connect** button to open t
 
 ![Connect button](/images/rc/connection-wizard-button.png#no-click "Connect button.")
 
-{{<image filename="images/rc/connection-wizard.png" width="75%" alt="The connection wizard." >}}{{< /image >}}
-
 The connection wizard shows how to connect to your database with the following methods:
 
 - Using the `redis-cli` utility
@@ -83,6 +81,8 @@ The connection wizard shows how to connect to your database with the following m
 - Using a [Redis client](https://redis.io/clients) for your preferred programming language
 
 - Using [RedisInsight](https://redis.com/redis-enterprise/redis-insight/)
+
+{{<image filename="images/rc/connection-wizard.png" alt="The connection wizard." >}}{{< /image >}}
 
 ### redis-cli (via Docker){#using-rediscli}
 
@@ -126,7 +126,7 @@ Run the following commands to create a `redis` Docker container and connect to y
 
     To try other Redis commands, see the [commands reference](https://redis.io/commands/) for help.
 
-### Redis client
+### Redis client{#using-redis-client}
 
 Different programming languages use different connection clients to interact with Redis databases, and each client has its own syntax and installation process. For help with a specific client, see the client's documentation.
 
@@ -175,7 +175,7 @@ Here's how to connect to your database using the [redis-py](https://github.com/r
     world
     ```
 
-### RedisInsight
+### RedisInsight{#using-redisinsight}
 
 RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux.
 
