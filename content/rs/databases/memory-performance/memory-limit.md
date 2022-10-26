@@ -26,6 +26,8 @@ If the total size of the database in the cluster reaches the memory
 limit, the data eviction policy is
 applied.
 
+## Factors for sizing
+
 Factors to consider when sizing your database:
 
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
@@ -40,12 +42,11 @@ Additional factors for Active-Active databases:
 - [**database replication backlog**]({{<relref "/rs/databases/active-active/manage#replication-backlog/">}}) for synchronization between shards. By default, this is set to 1% of the database size.
 - [**Active-Active replication backlog**]({{<relref "/rs/databases/active-active/manage.md">}}) for synchronization between clusters. By default, this is set to 1% of the database size.
 
-It's also important to know Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit.
+  It's also important to know Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit.
 
 Additional factors for Redis on Flash databases:
-- **flash to RAM ratio**: 
 
-- [**database persistence**]({{<relref "/rs/databases/configure/database-persistence/">}}): Redis on Flash uses dual database persistence where both the primary and replica shards persist to disk. This may add some processor and network overhead, especially in cloud configurations with network attached storage.
+- [**database persistence**]({{<relref "/rs/databases/configure/database-persistence.md">}}): Redis on Flash uses dual database persistence where both the primary and replica shards persist to disk. This may add some processor and network overhead, especially in cloud configurations with network attached storage.
 
 ## What happens when Redis Enterprise Software is low on RAM?
 
@@ -59,18 +60,20 @@ out of memory (OOM) messages.
 4. If shards can't free memory, RS relies on the OS processes to stop replicas,
 but tries to avoid stopping primary shards.
 
-We recommend that you have a [monitoring platform]({{<relref "content/rs/clusters/monitoring/">}}) that alerts you before a system gets low on RAM.
+We recommend that you have a [monitoring platform]({{<relref "/rs/clusters/monitoring/">}}) that alerts you before a system gets low on RAM.
 You must maintain sufficient free memory to make sure that you have a healthy RS installation.
 
 ## Memory metrics
 
-The admin console provides metric information 
+The admin console provides metrics that can help you evaluate your memory use.
 
-Free RAM
-RAM fragmentation
-Used memory
-Memory usage
-Memory limit
+- Free RAM
+- RAM fragmentation
+- Used memory
+- Memory usage
+- Memory limit
+
+See [console metrics]({{<relref "/rs/clusters/monitoring/console-metrics-definitions.md">}}) for more detailed information.
 
 ## Use case examples
 
