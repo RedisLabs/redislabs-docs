@@ -16,11 +16,17 @@ aliases: [
     /rs/databases/configure/memory-limit.md,
     /rs/databases/memory-performance/memory-limit.md,
     /rs/databases/memory-performance/memory-limit/,
+    /rs/concepts/memory-architecture/memory-management/,
+    /rs/concepts/memory-architecture/memory-management.md,
+    /rs/concepts/memory-performance/memory-management/,
+    /rs/concepts/memory-performance/memory-management.md,
+    /rs/clusters/optimize/node-memory.md,
+    /rs/clusters/optimize/node-memory/
 ]
 ---
 When you set a database's memory limit, you define the maximum size the
 database can reach in the cluster, across all database replicas and
-shards, including both primary and replica shards. 
+shards, including both primary and replica shards.
 
 If the total size of the database in the cluster reaches the memory
 limit, the data eviction policy is
@@ -50,7 +56,16 @@ Additional factors for Redis on Flash databases:
 
 ## What happens when Redis Enterprise Software is low on RAM?
 
-If a node is low on RAM, RS follows this order of priority:
+Redis Enterprise Software manages node memory so that data is entirely in RAM (unless using Redis on Flash). If not enough RAM is available, RS prevents adding more data into the databases.
+
+Redis Enterprise Software protects the existing data and prevents the database from being able to store data into the shards.
+
+You can configure the cluster to move the data to another node, or even discard it according to the [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy.md" >}}) set on each database by the administrator.
+
+[Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
+manages memory so that you can also use flash memory (SSD) to store data.
+
+### If a node is low on RAM, RS follows this order of priority
 
 1. If there are other nodes available, your shards migrate to other nodes.
 2. If the eviction policy allows eviction, shards start to release memory,
@@ -75,53 +90,11 @@ The admin console provides metrics that can help you evaluate your memory use.
 
 See [console metrics]({{<relref "/rs/clusters/monitoring/console-metrics-definitions.md">}}) for more detailed information.
 
-## Use case examples
+## Related info
 
-The following examples show how different database configurations affect
-the total database size.
-
-### Example 1
-
-You create a database and:
-
-- Set the memory limit to 4 GB
-- Enable database replication in order to ensure high-availability
-
-The cluster creates two shards: a primary and a replica. Each 
-shard has a maximum size of 2 GB. In this case, the maximum
-dataset size that you can store in the database is 2 GB.
-
-### Example 2
-
-You create a database and:
-
-- Set the memory limit to 6 GB
-- Enable database clustering and configure the database to have three shards
-- Do not enable replication
-
-The cluster creates three shards. Each of these shards can have a
-different size depending on the amount of data stored in it, as long as
-the total size across all shards does not exceed 6 GB. In this case, the
-maximum dataset size you can store in the database is 6 GB.
-
-### Example 3
-
-You create a database and:
-
-- Set the memory limit to 6 GB
-- Enable database clustering and configure the database to have three shards
-- Enable database replication in order to ensure high-availability
-
-The cluster creates 6 shards in total - three primary shards and three replica 
-shards. Each of these shards can have a different size depending on the
-amount of data stored in it, as long as the total size across all primary
-shards does not exceed 3 GB. In this case, the maximum dataset size you
-can store in the database is 3 GB.
-
-{{< warning >}}
-If you edit an existing database that already has data in it,
-some updates might fail as they could cause the total database size to exceed the memory limit.
-For example, enabling replication doubles the existing database size,
-which may then exceed the memory limit.<br/><br/>
-In these cases, you must update the memory limit before you can make the change.
-{{< /warning >}}
+- [Memory and performance]({{<relref "/rs/databases/memory-performance">}})
+- [Disk sizing for heavy write scenarios({{<relref "/rs/clusters/optimize/disk-sizing-heavy-write-scenarios.md">}})
+- [Turn off services to free system memory]({{<relref "/rs/clusters/optimize/turn-off-services.md">}})4
+- [Eviction policy]({{<relref "/rs/databases/memory-performance/eviction-policy.md">}})
+- [Shard placement policy]({{< relref "/rs/databases/memory-performance/shard-placement-policy.md ">}})
+- [Database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}})
