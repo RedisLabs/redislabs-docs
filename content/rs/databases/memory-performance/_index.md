@@ -28,7 +28,7 @@ Database memory limits define the maximum size your database can reach across al
 
 Besides your dataset, the memory limit must also account for replication, Active-Active overhead, and module overhead, and a number of other factors. These can significantly increase your database size, sometimes increasing it by four times or more.
 
-For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/clusters/optimize/node-memory.md">}}) or [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit.md">}}).
+For more information on memory limits, see [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit.md">}}).
 
 ## Eviction policies
 
@@ -75,7 +75,7 @@ From the Redis Enterprise Software admin console, you can monitor the performanc
 
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 
-For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/clusters/monitoring/_index.md">}}), and [Memory statistics]({{<relref "/rs/clusters/optimize/node-memory.md#memory-statistics">}}).
+For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/clusters/monitoring/_index.md">}}), and [Memory statistics]({{<relref "/rs/content/rs/databases/memory-performance/memory-limit#memory-metrics">}}).
 
 ## Scaling databases
 
