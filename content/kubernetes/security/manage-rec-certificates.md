@@ -25,13 +25,13 @@ To install and use your own certificates with Kubernetes on your Redis Enterpris
 
 ## Create a secret to hold the new certificate
 
-1. Create the secret with the required fields shown below.
+1. Create the [secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) with the required fields shown below.
 
     ```sh
     kubectl create secret generic <secret-name> \
-    --from-file=certificate=</PATH/TO/certificate.pem> \
-    --from-file=key=</PATH/TO/key.pem> \
-    --from-literal=name==<proxy | api | cm | syncer | metrics_exporter>
+      --from-file=certificate=</PATH/TO/certificate.pem> \
+      --from-file=key=</PATH/TO/key.pem> \
+      --from-literal=name=<proxy | api | cm | syncer | metrics_exporter>
     ```
 
 ## Update certificates in the REC custom resource
@@ -48,7 +48,7 @@ spec:
     proxyCertificateSecretName: <proxycert-secret-name>
 ```
 
-#### Update certificates through the API
+### Update certificates through the API
 
 Alternatively, you can also update the REC certificates via the API:
 
