@@ -67,22 +67,22 @@ These metrics are available for [Redis on Flash (RoF)]({{< relref "/rs/databases
 
 | Metric | Components measured | Description |
 | ------ | ------ | ------ |
-|  % Values in RAM | Database RoF, Shard RoF | Percent of keys whose values are stored in RAM |
-|  Flash bytes/sec | Cluster RoF, Node RoF, Database RoF, Shard RoF | Read+write bytes per second on flash storage device |
-|  Flash fragmentation | Database RoF, Shard RoF | Ratio between the (logical) used flash memory and the actual physical flash that is used |
-|  Flash IOPS | Cluster RoF, Node RoF | Rate of Input/Output operations per second on flash storage device |
-|  Flash KV ops | Node RoF | Rate of operations on flash key values (read + write + del) per second |
-|  Flash ops/sec | Database RoF, Shard RoF | Rate of operations on flash key values (read + write + del) per second |
-|  Free flash | Cluster RoF, Node RoF | Free space on flash storage |
-|  RAM dataset overhead | Database RoF, Shard RoF | Percentage of the RAM limit that is used for anything other than values, such as key names, dictionaries, and other overheads |
-|  RAM hit ratio | Database RoF, Shard RoF | Ratio of requests processed directly from RAM to total number of requests processed |
-|  RAM limit | Database RoF | RAM limit in bytes |
-|  RAM usage | Database RoF | Percentage of the RAM limit usage |
-|  RAM:Flash access ratio | Database RoF, Shard RoF | Ratio between logical Redis key value operations and actual flash key value operations |
-|  Used Flash | Database RoF, Shard RoF | Total RAM used to store values in flash |
-|  Used RAM | Database RoF, Shard RoF | Total size of data stored in RAM, including keys, values, overheads, and replication (if enabled) |
-|  Values in Flash | Database RoF, Shard RoF | Number of keys with values stored in flash, not including replication |
-|  Values in RAM | Database RoF, Shard RoF | Number of keys with values stored in RAM, not including replication |
+|  % Values in RAM | Database, Shard  | Percent of keys whose values are stored in RAM |
+|  Flash bytes/sec | Cluster, Node, Database, Shard | Read+write bytes per second on flash storage device |
+|  Flash fragmentation | Database, Shard | Ratio between the (logical) used flash memory and the actual physical flash that is used |
+|  Flash IOPS | Cluster, Node | Rate of Input/Output operations per second on flash storage device |
+|  Flash KV ops | Node | Rate of operations on flash key values (read + write + del) per second |
+|  Flash ops/sec | Database, Shard | Rate of operations on flash key values (read + write + del) per second |
+|  Free flash | Cluster, Node | Free space on flash storage |
+|  RAM dataset overhead | Database, Shard | Percentage of the RAM limit that is used for anything other than values, such as key names, dictionaries, and other overheads |
+|  RAM hit ratio | Database, Shard | Ratio of requests processed directly from RAM to total number of requests processed |
+|  RAM limit | Database | RAM limit in bytes |
+|  RAM usage | Database | Percentage of the RAM limit usage |
+|  RAM:Flash access ratio | Database, Shard | Ratio between logical Redis key value operations and actual flash key value operations |
+|  Used Flash | Database, Shard | Total RAM used to store values in flash |
+|  Used RAM | Database, Shard | Total size of data stored in RAM, including keys, values, overheads, and replication (if enabled) |
+|  Values in Flash | Database, Shard | Number of keys with values stored in flash, not including replication |
+|  Values in RAM | Database, Shard | Number of keys with values stored in RAM, not including replication |
 
 ### Calculated metrics
 
