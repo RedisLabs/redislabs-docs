@@ -109,9 +109,9 @@ Run the following commands to create a `redis` Docker container and connect to y
     $ docker exec -it redis1 bash
     ```
 
-1. In the connection wizard, under **Redis CLI**, select the **Copy** button to copy the redis-cli command.
+1. In the connection wizard, under **Redis CLI**, select the **Copy** button to copy the `redis-cli` command.
 
-1. Paste the redis-cli command into the terminal, and replace `<username>` and `<password>` with your username and password.
+1. Enter the copied `redis-cli` command in the terminal and replace `<username>` and `<password>` with your username and password.
 
 1. After you connect to your database, try these basic Redis commands:
 
@@ -124,13 +124,13 @@ Run the following commands to create a `redis` Docker container and connect to y
     "world"
     ```
 
-    See the [commmand list](https://redis.io/commands/) for a list of all Redis commands.
+    To try other Redis commands, see the [commands reference](https://redis.io/commands/) for help.
 
 ### Redis client
 
-Different programming languages use different connection clients to interact with Redis databases. Each client has its own syntax and installation process, so read the documentation for the client you are using before running your code.
+Different programming languages use different connection clients to interact with Redis databases, and each client has its own syntax and installation process. For help with a specific client, see the client's documentation.
 
-The connection wizard contains code snippets to connect to your database for the following programming languages:
+The connection wizard provides code snippets to connect to your database with the following programming languages:
 
 - node.js using [ioredis](https://github.com/luin/ioredis#quick-start)
 - .NET using [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/)
@@ -153,7 +153,7 @@ Here's how to connect to your database using the [redis-py](https://github.com/r
 
 3. Select **Copy** to copy the connection code for your database.
 
-4. Paste the code into your program, and replace `<username>` and `<password>` with your username and password.
+4. Add the copied code to your program and replace `<username>` and `<password>` with your username and password.
 
     ```python
     import redis
@@ -177,7 +177,7 @@ Here's how to connect to your database using the [redis-py](https://github.com/r
 
 ### RedisInsight
 
-RedisInsight is a free Desktop GUI for Redis that is available for MacOS, Windows, and Linux.
+RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux.
 
 1. In the connection wizard, under **Redis Client**, select your operating system from the **Download RedisInsight** menu.
 
@@ -185,11 +185,11 @@ RedisInsight is a free Desktop GUI for Redis that is available for MacOS, Window
 
 1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
 
-1. Once RedisInsight is installed and open, select **Add Redis Database**.
+1. After you install and open RedisInsight, select **Add Redis Database**.
 
 1. In the connection wizard, under **RedisInsight Desktop**, select **Copy** to copy the connection information.
 
-1. In RedisInsight, paste the connection information into the **Host** field. RedisInsight will automatically populate the rest of the information needed to connect to the database with the default user.
+1. In RedisInsight, enter the copied connection information into the **Host** field. RedisInsight automatically populates the rest of the fields needed to connect to the database as the default user.
 
 1. Select **Add Redis Database** to connect to the database.
 
