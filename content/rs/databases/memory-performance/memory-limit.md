@@ -65,7 +65,7 @@ You can configure the cluster to move the data to another node, or even discard
 [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
 manages memory so that you can also use flash memory (SSD) to store data.
 
-### If a node is low on RAM, RS follows this order of priority
+### Order of events for low RAM
 
 1. If there are other nodes available, your shards migrate to other nodes.
 2. If the eviction policy allows eviction, shards start to release memory,
