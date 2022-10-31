@@ -107,13 +107,10 @@ Redis on Flash is not recommended for:
 
 Redis on Flash is not intended to be used for persistent storage. Redis Enterprise Software database persistent and ephemeral storage should be on different disks, either local or attached.
 
-## Metrics
+## Next steps
 
-When Redis on Flash is enabled, additional settings and
-[metrics]({{< relref "/rs/clusters/monitoring/console-metrics-definitions.md#redis-on-flash-metrics" >}})
-are available in the system.
-
-## Related info
+- [Redis on Flash metrics]({{< relref "/rs/clusters/monitoring/console-metrics-definitions.md#redis-on-flash-metrics" >}})
+- [Redis on Flash quick start]({{<relref "/rs/databases/redis-on-flash/rof-quickstart.md">}})
 
 - [Ephemeral and persistent storage]({{<relref "/rs/installing-upgrading/persistent-ephemeral-storage.md">}})
 - [Hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md" >}})
