@@ -12,6 +12,6 @@ aliases: [
 
 Redis Enterprise for Kubernetes now supports Redis on Flash (RoF).
 
-See [Redis on Flash]({{<relref "/kubernetes/re-clusters/redis-on-flash.md">}}) for more info on using flash storage with your [Redis Enterprise clusters (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) and [Redis Enterprise databases (REDB)]({{<relref "/kubernetes/reference/db-options.md">}}).
+See [Redis on Flash]({{<relref "/kubernetes/re-clusters/redis-on-flash.md">}}) for information on using flash storage with your [Redis Enterprise clusters (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) and [Redis Enterprise databases (REDB)]({{<relref "/kubernetes/reference/db-options.md">}}).
 
-For more information about Redis on Flash, see [Redis on Flash]({{<relref "/rs/databases/redis-on-flash/">}}) and [Redis on Flash quick start]({{<relref "/rs/databases/redis-on-flash/getting-started-redis-flash.md">}}).
+For more info about Redis on Flash, see [Redis on Flash]({{<relref "/rs/databases/redis-on-flash/">}}) and [Redis on Flash quick start]({{<relref "/rs/databases/redis-on-flash/rof-quickstart.md">}}).
