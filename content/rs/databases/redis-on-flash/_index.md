@@ -38,8 +38,8 @@ Flash memory can be SATA or NVMe based storage devices. However, we recommend NV
 
 {{<note>}} The Redis Enterprise Software database persistent and ephemeral storage should be on different disks, either local or attached. {{</note>}}
 
-Once these requirements are met, both Redis on Flash databases and
-all-RAM databases can be created and managed in the same cluster.
+Once these requirements are met, you can create and manage both Redis on Flash databases and
+all-RAM databases in the same cluster.
 
 When you begin planning the deployment of Redis on Flash in production,
 we recommend working closely with the Redis technical team for
