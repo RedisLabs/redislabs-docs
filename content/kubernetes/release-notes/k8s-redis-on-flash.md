@@ -10,7 +10,7 @@ aliases: [
     /kubernetes/release-notes/k8s-redis-on-flash/,   ]
 ---
 
-Redis Enterprise for Kubernetes now supports Redis on Flash (RoF).
+Redis on Flash is now available for Redis Enterprise for Kubernetes starting with version 6.2.12 (option to enable) and with 6.2.18 expected in mid-November 2022.
 
 See [Redis on Flash]({{<relref "/kubernetes/re-clusters/redis-on-flash.md">}}) for information on using flash storage with your [Redis Enterprise clusters (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) and [Redis Enterprise databases (REDB)]({{<relref "/kubernetes/reference/db-options.md">}}).
 
