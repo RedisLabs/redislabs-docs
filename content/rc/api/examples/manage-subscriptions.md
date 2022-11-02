@@ -11,11 +11,11 @@ aliases: /rv/api/how-to/create-and-manage-subscriptions/
          /rc/api/examples/manage-subscriptions.md
 ---
 
-You can use the Redis Enterprise Cloud REST API to create and manage a subscription.
+The Redis Enterprise Cloud REST API lets you create and manage a subscription.
 
 ## Create a subscription
 
-The API operation that creates a subscription is `POST /v1/subscriptions`.
+Use `POST /v1/subscriptions` to create a subscription.
 
 ```sh
 POST "https://[host]/v1/subscriptions"
@@ -44,26 +44,56 @@ POST "https://[host]/v1/subscriptions"
 }
 ```
 
-To use the sample JSON document in your own account, you must modify these parameters:
+Modify the following parameters in the sample JSON document to create a subscription on your own account:
 
-- **`paymentMethodId`** - Specify a payment method that is defined for your account.
+- **`paymentMethodId`** - Specify a payment method connected to your account.
 
-    You can lookup the payment method identifier using the `GET /payment-methods` API operation.
+    Use `GET /payment-methods` to find a payment method ID.
 
-    If you subscribed to Redis Enterprise Cloud through the GCP Marketplace, you do not need to pass this field in your API requests.
+    You don't need to pass this field in your API request if you subscribed to Redis Enterprise Cloud through GCP Marketplace.
 
-- **`cloudAccountId`** - Specify a cloud account that is defined for your account.
+- **`cloudAccountId`** - Set a cloud account ID connected to your account.
 
-    You can look up cloud account identifiers using the `GET /cloud-accounts` API operation or use `"cloudAccountId": 1` to use internal resources.
+    To list cloud account IDs, use `GET /cloud-accounts`. To use internal resources, set it to `"cloudAccountId": 1`.
 
-    If you subscribed to Redis Enterprise Cloud through the GCP Marketplace, use the value `1` for this field.
+    If you subscribed to Redis Enterprise Cloud through GCP Marketplace, use `1` for this field.
 
-- The JSON document contains two primary segments: subscription specification and databases specification.
-- When you create a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file.
-- You can [copy-and-paste]({{< relref  "/rc/api/get-started/use-rest-api.md#swagger-user-interface" >}}) the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
+The request JSON body contains two primary segments: subscription specification and databases specification. When you create a subscription, you must specify one or more databases in the "`databases`" array.
+
+You can include the contents of the JSON document in the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html). See [Swagger user interface]({{< relref  "/rc/api/get-started/use-rest-api#swagger-user-interface" >}}) for more details.
 
 {{< note >}}
 The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
 {{< /note >}}
 
-The POST response is a JSON document that contains the `taskId`. You can use `GET /v1/tasks/<taskId>` to track the creation of your subscription.
+The response body contains the `taskId` for the task that creates the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.
+
+## Update a subscription
+
+Use `PUT /v1/subscriptions/<subscriptionId>` to update a subscription.
+
+```sh
+PUT "https://[host]/v1/subscriptions/<subscriptionId>"
+{
+    "name": "new-subscription-name",
+    "paymentMethodId": <payment_id>
+}
+```
+
+You can only change the following settings with this endpoint:
+- **`name`** - Specify a new name for your subscription.
+
+- **`paymentMethodId`** - Specify a different payment method connected to your account.
+
+    Use `GET /payment-methods` to find a payment method ID.
+
+The response body contains the `taskId` for the task that updates the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.
+
+## Delete a subscription
+
+Use `DELETE /v1/subscriptions/<subscriptionId>` to delete a subscription.
+
+```sh
+DELETE "https://[host]/v1/subscriptions/<subscriptionId>"
+```
+The response body contains the `taskId` for the task that deletes the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.

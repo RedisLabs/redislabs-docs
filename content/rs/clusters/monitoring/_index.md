@@ -15,7 +15,7 @@ You can use the metrics that measure the performance of your Redis Enterprise So
 to keep an eye on the performance of your databases.
 In the RS admin console, you can see the real-time metrics and you can configure alerts that send notifications based on alert parameters.
 
-You can also access the metrics and configure alerts through the REST API so that you can integrate the RS metrics into your monitoring environment, for example [using Prometheus and Grafana]({{< relref "/rs/clusters/monitoring/prometheus-integration.md" >}}).
+You can also access the metrics and configure alerts through the REST API so that you can integrate the RS metrics into your monitoring environment, for example, using [Prometheus with Grafana]({{< relref "/rs/clusters/monitoring/prometheus-integration.md" >}}) or [Uptrace]({{< relref "/rs/clusters/monitoring/uptrace-integration.md" >}}).
 
 Make sure you read the [definition of each metric]({{< relref "/rs/clusters/monitoring/console-metrics-definitions.md" >}})
 so that you understand exactly what it represents.
@@ -77,5 +77,5 @@ To enable alerts for a database:
 To send cluster or database alerts by email:
 
 1. In **settings** > **alerts**, select **Receive email alerts** at the bottom of the page.
-1. Configure the [email server settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}}).
-1. In **access control**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}) that you want the user to receive.
+1. Configure the [email server settings]({{< relref "/rs/clusters/configure/cluster-settings#configuring-email-server-settings" >}}).
+1. In **access control**, select the [database and cluster alerts]({{< relref "/rs/security/access-control/manage-users" >}}) that you want each user to receive.

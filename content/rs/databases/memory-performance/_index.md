@@ -26,24 +26,15 @@ architecture to help optimize storage and performance.
 
 Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "/glossary#letter-s">}}) on the cluster. Your memory limit will also determine the number of shards you'll need.
 
-Besides your dataset, the memory limit must also account for replication, Active-Active overhead, and module overhead. These features can significantly increase your database size, sometimes increasing it by four times or more.
+Besides your dataset, the memory limit must also account for replication, Active-Active overhead, and module overhead, and a number of other factors. These can significantly increase your database size, sometimes increasing it by four times or more.
 
-Factors to consider when sizing your database:
-
-- **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
-- **database throughput**: high throughput needs more shards, leading to a higher memory limit.
-- [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
-- [**database clustering**]({{<relref "/rs/databases/durability-ha/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
-- [**database replication**]({{<relref "/rs/databases/durability-ha/replication.md">}}): enabling replication doubles memory consumption
-- [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
-
-For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/clusters/optimize/node-memory.md">}}) or [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit.md">}}).
+For more information on memory limits, see [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit.md">}}).
 
 ## Eviction policies
 
 When a database exceeds its memory limit, eviction policies determine which data is removed. The eviction policy removes keys based on frequency of use, how recently used, randomly, expiration date, or a combination of these factors. The policy can also be set to `noeviction` to return a memory limit error when trying to insert more data.
 
-The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the ‘expire’ field set. The default for Active-Active databases is `noeviction`.
+The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the `expire` field set. The default for Active-Active databases is `noeviction`.
 
 For more information, see [eviction policies]({{<relref "/rs/databases/memory-performance/eviction-policy.md">}}).
 
@@ -84,7 +75,7 @@ From the Redis Enterprise Software admin console, you can monitor the performanc
 
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 
-For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/clusters/monitoring/_index.md">}}), and [Memory statistics]({{<relref "/rs/clusters/optimize/node-memory.md#memory-statistics">}}).
+For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/clusters/monitoring/_index.md">}}), and [Memory statistics]({{<relref "/rs/databases/memory-performance/memory-limit#memory-metrics">}}).
 
 ## Scaling databases
 

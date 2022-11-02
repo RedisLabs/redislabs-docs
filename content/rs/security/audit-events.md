@@ -28,12 +28,12 @@ For performance reasons, auditing is disabled by default.  In addition, auditing
 
 ### Cluster audits
 
-To audit all databases in your cluster, you can use:
+To enable auditing for your cluster, use:
 
 - `rladmin`
 
     ```
-    rladmin tune cluster config auditing db_conns \
+    rladmin cluster config auditing db_conns \
        audit_protocol <TCP|local> \
        audit_address <address> \
        audit_port <port>
@@ -41,11 +41,22 @@ To audit all databases in your cluster, you can use:
 
     where:
 
-    - _audit_protocol_ indicates the protocol used to process notifications.  For production systems, _TCP_ is the only supported value.
+    - _audit\_protocol_ indicates the protocol used to process notifications.  For production systems, _TCP_ is the only value. 
 
-    - _audit_address_ defines the TCP/IP address where one can listen for notifications
+    - _audit\_address_ defines the TCP/IP address where one can listen for notifications
 
-    - _audit_port_ defines the port where one can listen for notifications
+    - _audit\_port_ defines the port where one can listen for notifications
+
+    Development systems can set _audit\_protocol_ to `local` for testing and training purposes; however, this setting is _not_ supported for production use.  
+    
+    When `audit_protocol` is set to `local`, `<address>` should be set to a [stream socket](https://man7.org/linux/man-pages/man7/unix.7.html) defined on the machine running Redis Enterprise and _`<port>`_ should not be specified: 
+    
+    ```
+    rladmin cluster config auditing db_conns \
+       audit_protocol local audit_address <output-file>
+    ```
+
+    The output file (and path) must be accessible by the user and group running Redis Enterprise Software.
 
 - the REST API
 
@@ -62,7 +73,7 @@ To audit all databases in your cluster, you can use:
 
 ### Database audits
 
-To audit a single database, you can use:
+Once auditing is enabled for your cluster, you can audit individual databases.  To do so, use:
 
 - `rladmin`
 
@@ -89,6 +100,13 @@ To audit a single database, you can use:
     ```
 
     To disable auditing, set `db_conns_auditing` to `disabled`.
+
+You must enable auditing for your cluster before auditing a database; otherwise, an error appears:
+
+>  _Error setting description: Unable to enable DB Connections Auditing before feature configurations are set.                                                                                                  
+>  Error setting error_code: db_conns_auditing_config_missing_
+
+To resolve this error, enable the protocol for your cluster _before_ attempting to audit a database.
 
 ### Policy defaults for new databases
 
