@@ -41,7 +41,7 @@ Flash memory can be SATA or NVMe based storage devices. However, we recommend NV
 Once these requirements are met, both Redis on Flash databases and
 all-RAM databases can be created and managed in the same cluster.
 
-When you begin planning the deployment of Redis on Flash in Production,
+When you begin planning the deployment of Redis on Flash in production,
 we recommend working closely with the Redis technical team for
 sizing and performance tuning.
 
