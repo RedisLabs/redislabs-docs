@@ -101,7 +101,7 @@ Redis on Flash is ideal when your:
 
 Redis on Flash is not recommended for:
 
-- Long keys names (all key names are stored in RAM)
+- Long key names (all key names are stored in RAM)
 - Broad access patterns (any value could be pulled into RAM)
 - Large working sets (working set is stored in RAM)
 - Frequently moved data (moving to and from RAM too often can impact performance)
