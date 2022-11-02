@@ -16,7 +16,7 @@ aliases: [
     /rs/databases/redis-flash/
 ]
 ---
-Redis on Flash (RoF) offers users of Redis Enterprise the unique ability to
+Redis on Flash (RoF) offers Redis Enterprise users the unique ability to
 have large Redis databases but at significant cost savings. Where
 standard Redis databases must all be in RAM, Redis on Flash enables your databases to span both RAM and dedicated flash memory in the form of SSDs (solid state drives).
 
