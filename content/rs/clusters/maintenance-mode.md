@@ -34,7 +34,8 @@ If you run [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/st
 1. Migrates shards and binds endpoints to other nodes, if space is available.
 
 {{<note>}}
-Maintenance mode does not demote a master node by default. The cluster elects a new master node when the original master node is restarted. Alternatively, you can add the `demote_node` option to the `rladmin` command to [demote a master node](#demote-a-master-node) when you turn on maintenance mode.
+1. Maintenance mode does not demote a master node by default. The cluster elects a new master node when the original master node is restarted. Alternatively, you can add the `demote_node` option to the `rladmin` command to [demote a master node](#demote-a-master-node) when you turn on maintenance mode.
+2. Setting “maintenance mode on” can be performed multiple times on a node, each time will creating a new snapshot. Consequencly, the “maintenance mode off” command should be performed the same number of times.
 {{</note>}}
 
 To turn on maintenance mode for a node, run the following command:
@@ -87,6 +88,9 @@ To turn maintenance mode off after you finish server maintenance, run:
 ```sh
 rladmin node <node_id> maintenance_mode off
 ```
+{{<note>}}
+“Maintenance mode off” can finish successfully even though it did not restore the snapshot.
+{{</note>}}
 
 ### Specify a snapshot
 
@@ -156,7 +160,7 @@ After turning on maintenance mode for node 2, Redis Enterprise saves a snapshot 
 
 Now node 2 has `0/0` shards because shards cannot migrate to it while it is in maintenance mode.
 
-## Toggle maintenance mode via API
+## Set maintenance mode via API
 
 You can also turn maintenance mode on or off via [REST API requests]({{<relref "/rs/references/rest-api">}}) to [<nobr>POST `/nodes/{node_uid}/actions/{action}`</nobr>]({{<relref "/rs/references/rest-api/requests/nodes/actions#post-node-action">}}).
 
