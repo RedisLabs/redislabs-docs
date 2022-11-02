@@ -47,8 +47,9 @@ sizing and performance tuning.
 
 ### Cloud environments
 
-When running on a cloud environment:  - flash memory should be on the ephemeral SSDs of the cloud instance
-- persistent database storage should be network attached, (e.g AWS EBS. For AWS)
+When running in a cloud environment: 
+- Flash memory is on the ephemeral SSDs of the cloud instance.
+- Persistent database storage needs to be network attached (for example, AWS EBS for AWS).
 
 {{<note>}}
 We specifically recommend "[Storage Optimized I3 - High I/O Instances](https://aws.amazon.com/ec2/instance-types/#storage-optimized)" because of the performance of NVMe for flash memory. {{</note>}}
