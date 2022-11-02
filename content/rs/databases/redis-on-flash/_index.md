@@ -31,7 +31,7 @@ Redis on Flash is also supported on [Redis Cloud]({{<relref "/rc/">}}) and [Redi
 Implementing Redis on Flash requires preplanning around memory and sizing. Considerations and requirements for Redis on Flash include:
 
 - Flash memory must be locally attached (as opposed to network attached)
-- Flash memory must be dedicated to RoF and not shared with other parts of the database (e.g. durability, binaries, persistence, ect.).
+- Flash memory must be dedicated to RoF and not shared with other parts of the database, such as durability, binaries, or persistence.
 - For the best performance, the SSDs should be NVMe based.
 
 Flash memory can be SATA or NVMe based storage devices. However, we recommend NVMe for the best performance.
