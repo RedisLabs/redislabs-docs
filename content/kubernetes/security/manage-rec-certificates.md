@@ -25,7 +25,7 @@ To install and use your own certificates with Kubernetes on your Redis Enterpris
 
 ## Create a secret to hold the new certificate
 
-1. Create the [secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) with the required fields shown below.
+Create the [secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) with the required fields shown below.
 
     ```sh
     kubectl create secret generic <secret-name> \
