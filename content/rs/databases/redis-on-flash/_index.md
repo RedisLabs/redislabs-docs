@@ -56,7 +56,7 @@ We specifically recommend "[Storage Optimized I3 - High I/O Instances](https://a
 
 ### On-premises environments
 
-When you begin planning the deployment of Redis on Flash in Production, we recommend working closely with the Redis technical team for sizing and performance tuning.
+When you begin planning the deployment of Redis on Flash in production, we recommend working closely with the Redis technical team for sizing and performance tuning.
 
 On-premises environments support more deployment options than other environments such as:
 
