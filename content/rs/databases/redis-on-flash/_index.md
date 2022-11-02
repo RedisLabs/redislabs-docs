@@ -82,7 +82,7 @@ All data is accessed through RAM. If a value in flash memory is accessed, it bec
 
 Inactive or infrequently accessed data is referred to as “warm data” and stored in flash memory. When more space is needed in RAM, warm data is moved from RAM to flash storage.
 
-{{<note>}} When using Redis on Flash with RediSearch, it’s important to note that RedisSearch indexes are also stored in RAM.{{</note>}}
+{{<note>}} When using Redis on Flash with RediSearch, it’s important to note that RediSearch indexes are also stored in RAM.{{</note>}}
 
 ## RAM to Flash ratio
 
