@@ -96,7 +96,7 @@ The benefits associated with Redis on Flash are dependent on the use case.
 Redis on Flash is ideal when your:
 
 - working set is significantly smaller than your dataset
-- average keys size is smaller than average value size
+- average key size is smaller than average value size
 - most recent data is the most frequently used
 
 Redis on Flash is not recommended for:
