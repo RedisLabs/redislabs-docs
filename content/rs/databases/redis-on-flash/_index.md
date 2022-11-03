@@ -26,15 +26,52 @@ Just like all-RAM databases, RoF is compatible with existing Redis applications.
 
 Redis on Flash is also supported on [Redis Cloud]({{<relref "/rc/">}}) and [Redis Enterprise Software for Kubernetes]({{<relref "/rs/">}}).
 
+## Use cases
+
+The benefits associated with Redis on Flash are dependent on the use case.
+
+Redis on Flash is ideal when your:
+
+- working set is significantly smaller than your dataset
+- average key size is smaller than average value size
+- most recent data is the most frequently used
+
+Redis on Flash is not recommended for:
+
+- Long key names (all key names are stored in RAM)
+- Broad access patterns (any value could be pulled into RAM)
+- Large working sets (working set is stored in RAM)
+- Frequently moved data (moving to and from RAM too often can impact performance)
+
+Redis on Flash is not intended to be used for persistent storage. Redis Enterprise Software database persistent and ephemeral storage should be on different disks, either local or attached.
+
+## Where is my data?
+
+When using Redis on Flash, RAM storage holds:
+- All keys (names)
+- Key indexes
+- Dictionaries
+- Hot data (working set)
+
+All data is accessed through RAM. If a value in flash memory is accessed, it becomes part of the working set and is moved to RAM. These values are referred to as “hot data”.
+
+Inactive or infrequently accessed data is referred to as “warm data” and stored in flash memory. When more space is needed in RAM, warm data is moved from RAM to flash storage.
+
+{{<note>}} When using Redis on Flash with RediSearch, it’s important to note that RediSearch indexes are also stored in RAM.{{</note>}}
+
+## RAM to Flash ratio
+
+You can easily configure or tune the ratio of RAM-to-Flash for each database independently, optimizing performance for your specific use case. This is an online operation requiring no downtime for your database.
+
+The RAM size cannot be smaller than 10% or larger than 60% of the total memory. We recommend you keep at least 20% of all values in RAM.
+
 ## Flash memory
 
 Implementing Redis on Flash requires preplanning around memory and sizing. Considerations and requirements for Redis on Flash include:
 
 - Flash memory must be locally attached (as opposed to network attached)
 - Flash memory must be dedicated to RoF and not shared with other parts of the database, such as durability, binaries, or persistence.
-- For the best performance, the SSDs should be NVMe based.
-
-Flash memory can be SATA or NVMe based storage devices. However, we recommend NVMe for the best performance.
+- For the best performance, the SSDs should be NVMe based, but SATA can also be used.
 
 {{<note>}} The Redis Enterprise Software database persistent and ephemeral storage should be on different disks, either local or attached. {{</note>}}
 
@@ -69,44 +106,6 @@ On-premises environments support more deployment options than other environments
   - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
 
 {{<warning>}} Redis on Flash is not supported running on network attached storage (NAS), storage area network (SAN), or with local HDD drives. {{</warning>}}
-
-## Where is my data?
-
-When using Redis on Flash, RAM storage holds:
-- All keys (names)
-- Key indexes
-- Dictionaries
-- Hot data (working set)
-
-All data is accessed through RAM. If a value in flash memory is accessed, it becomes part of the working set and is moved to RAM. These values are referred to as “hot data”.
-
-Inactive or infrequently accessed data is referred to as “warm data” and stored in flash memory. When more space is needed in RAM, warm data is moved from RAM to flash storage.
-
-{{<note>}} When using Redis on Flash with RediSearch, it’s important to note that RediSearch indexes are also stored in RAM.{{</note>}}
-
-## RAM to Flash ratio
-
-You can easily configure or tune the ratio of RAM-to-Flash for each database independently, optimizing performance for your specific use case. This is an online operation requiring no downtime for your database.
-
-The RAM size cannot be smaller than 10% or larger than 60% of the total memory. We recommend you keep at least 20% of all values in RAM.
-
-## Use cases
-The benefits associated with Redis on Flash are dependent on the use case.
-
-Redis on Flash is ideal when your:
-
-- working set is significantly smaller than your dataset
-- average key size is smaller than average value size
-- most recent data is the most frequently used
-
-Redis on Flash is not recommended for:
-
-- Long key names (all key names are stored in RAM)
-- Broad access patterns (any value could be pulled into RAM)
-- Large working sets (working set is stored in RAM)
-- Frequently moved data (moving to and from RAM too often can impact performance)
-
-Redis on Flash is not intended to be used for persistent storage. Redis Enterprise Software database persistent and ephemeral storage should be on different disks, either local or attached.
 
 ## Next steps
 
