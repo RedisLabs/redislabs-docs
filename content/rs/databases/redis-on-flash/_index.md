@@ -20,7 +20,7 @@ Redis on Flash (RoF) offers Redis Enterprise users the unique ability to
 have large Redis databases but at significant cost savings. Where
 standard Redis databases must all be in RAM, Redis on Flash enables your databases to span both RAM and dedicated flash memory in the form of SSDs (solid state drives).
 
-Distributing data between RAM and flash memory keeps your frequently used data accessible in RAM, and values you need less often in flash memory. Since flash memory usually comes with more storage space and less cost than RAM, this can result in significant savings for large datasets.
+Your data is distributed between RAM and flash memory so that your frequently used data is accessible in RAM, while the values you need less often are stored on the flash memory. Since flash memory usually comes with more storage space and less cost than RAM, this can result in significant savings for large datasets.
 
 Just like all-RAM databases, RoF is compatible with existing Redis applications. Databases that employ RoF are identical to all-RAM Redis Enterprise Software databases in characteristics and features.
 
@@ -84,7 +84,8 @@ sizing and performance tuning.
 
 ### Cloud environments
 
-When running in a cloud environment: 
+When running in a cloud environment:
+
 - Flash memory is on the ephemeral SSDs of the cloud instance.
 - Persistent database storage needs to be network attached (for example, AWS EBS for AWS).
 
