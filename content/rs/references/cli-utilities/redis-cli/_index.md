@@ -40,7 +40,7 @@ If you have SSH access to a node in a Redis cluster, you can run `redis-cli` dir
     ```sh
     $ redis-cli -p <port>
     ```
-
+.
 ### Connect remotely
 
 If you have `redis-cli` installed on your local machine, you can use it to connect to a remote Redis database. You will need to provide the database's connection details, such as the hostname or IP address, port, and password.
