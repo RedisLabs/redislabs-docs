@@ -95,7 +95,7 @@ const client = redis.createClient({
 client['auth'] = null;
 
 // send_command expects a command name and array of parameters.
-client.send_command('AUTH', ['<username>', '<password>']);
+client.sendCommand('AUTH', ['<username>', '<password>']);
 ```
 
 Replace the `<port>`, `<username>`, and `<password>` with the values for the ACL user that you are connecting as.
