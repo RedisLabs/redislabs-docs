@@ -69,7 +69,7 @@ The RAM size cannot be smaller than 10% or larger than 60% of the total memory. 
 
 Implementing Redis on Flash requires preplanning around memory and sizing. Considerations and requirements for Redis on Flash include:
 
-- Flash memory must be locally attached (as opposed to network attached)
+- Flash memory must be locally attached (as opposed to network attached.
 - Flash memory must be dedicated to RoF and not shared with other parts of the database, such as durability, binaries, or persistence.
 - For the best performance, the SSDs should be NVMe based, but SATA can also be used.
 
