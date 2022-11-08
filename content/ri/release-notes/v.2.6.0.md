@@ -3,7 +3,7 @@ Title: RedisInsight v2.6.0, July 2022
 linkTitle: v2.6.0 (July 2022)
 date: 2022-07-25 00:00:00 +0000
 description: RedisInsight v2.6.0
-weight: 1
+weight: 5
 aliases: /ri/release-notes/v2.6.0/
          /ri/release-notes/v2.6.0.md
 ---
