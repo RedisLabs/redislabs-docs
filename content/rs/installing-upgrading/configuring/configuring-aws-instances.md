@@ -10,8 +10,8 @@ aliases: [
     /rs/installing-upgrading/configuring/configuring-aws-instances/,
 ]
 ---
-There are some special considerations that are important when installing
-and running Redis Enterprise Software on Amazon Web Services (AWS), whether Amazon Electric Cloud Compute (EC2) AWS Outposts.  
+There are some special considerations for installing
+and running Redis Enterprise Software on Amazon Elastic Cloud Compute (EC2) instances. 
 
 These include:
 
