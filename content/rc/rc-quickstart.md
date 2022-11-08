@@ -70,17 +70,17 @@ The **Security** section contains your **Default user password**.  By default, t
 
 {{<image filename="images/rc/database-fixed-configuration-security.png" width="75%" alt="The Security section of the Configuration tab of the database details page." >}}{{< /image >}}
 
-Once you have the username and password, select the **Connect** button to open the connection wizard.
+Once you have the username and password, select **Connect** to open the connection wizard.
 
 ![Connect button](/images/rc/connection-wizard-button.png#no-click "Connect button.")
 
-The connection wizard shows how to connect to your database with the following methods:
+The connection wizard provides the following database connection methods:
 
-- Using the `redis-cli` utility
+- `redis-cli` utility
 
-- Using a [Redis client](https://redis.io/clients) for your preferred programming language
+- [Redis client](https://redis.io/clients) for your preferred programming language
 
-- Using [RedisInsight](https://redis.com/redis-enterprise/redis-insight/)
+- [RedisInsight](https://redis.com/redis-enterprise/redis-insight/)
 
 {{<image filename="images/rc/connection-wizard.png" alt="The connection wizard." >}}{{< /image >}}
 
@@ -141,7 +141,7 @@ See the [client list](https://redis.io/docs/clients/) to view all Redis clients 
 
 #### Code example (Python)
 
-Here's how to connect to your database using the [redis-py](https://github.com/redis/redis-py#redis-py) library for Python.
+To connect to your database using the [redis-py](https://github.com/redis/redis-py#redis-py) library for Python:
 
 1.  Install the Redis client if it is not already installed.
 
@@ -185,7 +185,7 @@ RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux
 
 1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
 
-1. After you install and open RedisInsight, select **Add Redis Database**.
+1. Open RedisInsight and select **Add Redis Database**.
 
 1. In the connection wizard, under **RedisInsight Desktop**, select **Copy** to copy the connection information.
 
