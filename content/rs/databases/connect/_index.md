@@ -14,7 +14,7 @@ aliases: [
 ]
 ---
 
-After you have [Set up a cluster]({{< relref "/rs/clusters/new-cluster-setup" >}}) and [created a Redis database]({{< relref "/rs/databases/create" >}}), connect to your database to test your connection.
+After you have [Set up a cluster]({{< relref "/rs/clusters/new-cluster-setup" >}}) and [created a Redis database]({{< relref "/rs/databases/create" >}}), you can connect to your database.
 
 To connect to your database, you need the database endpoint, which includes the cluster name (FQDN) and the database port. Select the Configuration tab in the database screen to find the database endpoint.
 
@@ -56,7 +56,7 @@ Different programming languages use different connection clients to interact wit
 See the [client list](https://redis.io/docs/clients/) to view all Redis clients by language.
 
 {{< note >}}
-You cannot use client libraries to configure Redis Enterprise Software.  Instead, use:
+You can't use client libraries to configure Redis Enterprise Software.  Instead, use:
 
 - The Redis Software [admin console]({{< relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md" >}})
 - The [REST API]({{<relref "/rs/references/rest-api">}})
@@ -85,7 +85,7 @@ You can find the instructions to configure redis-py on the [github page for redi
     print(r.get('key1'))
     ```
 
-    Replace <host> and <port> with the hostname and port for your database.
+    Replace `<host>` and `<port>` with the hostname and port for your database.
 
 1. Run the redis_test.py application to store and retrieve a key:
 
