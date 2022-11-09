@@ -13,7 +13,7 @@ Redis Cloud supports both [IdP-initiated](#idp-initiated-sso) and [SP-initiated]
 
 When SAML SSO is enabled, the [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider) admin handles SAML user management instead of the Redis Cloud account owner.
 
-After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud account and role.
+After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud accounts and roles.
 
 ### IdP-initiated SSO
 
@@ -74,7 +74,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
     | FirstName | User's first name |
     | LastName | User's last name |
     | Email | User's email address |
-    | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and roles as a comma-separated list |
+    | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and roles |
 
     {{<note>}}
 To confirm the identity provider's SAML assertions contain the required attributes, you can use a SAML-tracer web developer tool to inspect them.
@@ -92,9 +92,30 @@ To create a SAML user and add them to a Redis Cloud account:
 
 1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/security/access-management#team-management-roles">}}) in the **redisAccountMapping** field.
 
-    You can add the same user to multiple SAML-enabled accounts with a comma-separated list: 
+    You can add the same user to multiple SAML-enabled accounts with either:
 
-    12345=owner,54321=manager
+    - A single string that contains a comma-separated list of account/role pairs
+
+        ```xml
+        <saml2:Attribute Name="redisAccountMapping" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified">
+            <saml2:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                12345=owner,54321=manager
+            </saml2:AttributeValue>
+        </saml2:Attribute>
+        ```
+
+    - Multiple strings, where each represents a single account/role pair
+
+        ```xml
+        <saml2:Attribute Name="redisAccountMapping" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified">
+            <saml2:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                12345=owner
+            </saml2:AttributeValue>
+            <saml2:AttributeValue xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                54321=manager
+            </saml2:AttributeValue>
+        </saml2:Attribute>
+        ```
 
 1. Assign the Redis Cloud SAML integration app to the user.
 
