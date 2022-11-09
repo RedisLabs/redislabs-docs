@@ -10,10 +10,32 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.15 requires:
+RediSearch v2.4.16 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.16 (November 2022)
+
+This is a maintenance release for RediSearch 2.4
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#2962](https://github.com/RediSearch/RediSearch/pull/2962) Crash upon AOF preload - Use local GC context in periodic callback (MOD-3951)
+  - [#2863](https://github.com/RediSearch/RediSearch/pull/2863) High CPU Utilization - Change MAX_LEV_DISTANCE to 4 (MOD-3563)
+  - [#3041](https://github.com/RediSearch/RediSearch/pull/3041), [#3063](https://github.com/RediSearch/RediSearch/pull/3063), [#3051](https://github.com/RediSearch/RediSearch/pull/3051), [#3143](https://github.com/RediSearch/RediSearch/pull/3143) Several memory leaks (MOD-4121, MOD-4252)
+  - [#3119](https://github.com/RediSearch/RediSearch/pull/3119) Crash on intersect iterator GetCriteriaTester (MOD-4200)
+  - [#3128](https://github.com/RediSearch/RediSearch/pull/3128) Filter rules must be reevaluated per index per document (MOD-4207)
+  - [#3127](https://github.com/RediSearch/RediSearch/pull/3127) Fix assertion failure on wrong result counting, which leads to a crash (MOD-4214)
+  - [#3171](https://github.com/RediSearch/RediSearch/pull/3171) Missing implementation of NumericRangeIterator_OnReopen which lead to crash (MOD-4255)
+  - [#3191](https://github.com/RediSearch/RediSearch/pull/3191) Wrong query iterator casting which resulted in 100% CPU utilization (MOD-4290)
+  - [#3197](https://github.com/RediSearch/RediSearch/pull/3197) Release failed to create temporary indices on the main thread (MOD-4388)
+  - [#2981](https://github.com/RediSearch/RediSearch/pull/2981) Double freeing in iterators of hybrid queries resulting in crash (MOD-4411)
+  - [#3161](https://github.com/RediSearch/RediSearch/pull/3161) Latency used to increase over time when combining INKEYS and wildcard query (MOD-4343)
 
 ## v2.4.15 (October 2022)
 
