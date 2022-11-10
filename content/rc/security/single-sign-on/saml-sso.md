@@ -51,8 +51,6 @@ To set up SAML single sign-on for a Redis Cloud account:
 
 1. [Set up a SAML app](#set-up-app) to integrate Redis Cloud with your identity provider.
 
-1. For existing users with access to the Redis Cloud account, [set up SAML users](#add-saml-users) for them in your identity provider's admin console.
-
 1. [Configure SAML in Redis Cloud](#configure-idp).
 
 1. [Download service provider metadata](#download-sp) and upload it to your identity provider.
@@ -76,23 +74,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
     | Email | User's email address |
     | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and roles |
 
-    {{<note>}}
-To confirm the identity provider's SAML assertions contain the required attributes, you can use a SAML-tracer web developer tool to inspect them.
-    {{</note>}}
-
-1. Set up any additional configuration required by your identity provider to ensure you can configure the **redisAccountMapping** attribute for SAML users.
-
-### Create SAML users {#add-saml-users}
-
-To create a SAML user and add them to a Redis Cloud account:
-
-1. From your identity provider's admin console, add a new user or edit an existing user's profile.
-
-    The username configured in the identity provider must match the email address that the SAML user will use to sign in to Redis Cloud.
-
-1. Enter the Redis Cloud account ID and a [user role]({{<relref "/rc/security/access-management#team-management-roles">}}) in the **redisAccountMapping** field.
-
-    You can add the same user to multiple SAML-enabled accounts with either:
+    For `redisAccountMapping`, you can add the same user to multiple SAML-enabled accounts with either:
 
     - A single string that contains a comma-separated list of account/role pairs
 
@@ -117,11 +99,13 @@ To create a SAML user and add them to a Redis Cloud account:
         </saml2:Attribute>
         ```
 
-1. Assign the Redis Cloud SAML integration app to the user.
+    {{<note>}}
+To confirm the identity provider's SAML assertions contain the required attributes, you can use a SAML-tracer web developer tool to inspect them.
+    {{</note>}}
 
-If your identity provider lets you configure custom attributes with workflows or group rules, you can set up automation to configure the **redisAccountMapping** field automatically instead of manually.
+1. Set up any additional configuration required by your identity provider to ensure you can configure the `redisAccountMapping` attribute for SAML users.
 
-To learn how to manage users in more detail, see your identity provider's documentation.
+    If your identity provider lets you configure custom attributes with workflows or group rules, you can set up automation to configure the `redisAccountMapping` field automatically instead of manually.
 
 ### Configure SAML in Redis Cloud {#configure-idp}
 
