@@ -40,7 +40,7 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | Community Kubernetes    |            | supported  | supported  | supported  | supported  |
 | Amazon EKS              | deprecated | supported  | supported  |            |            |
 | Azure AKS               |            | supported  | supported  | supported  |            |
-| Google GKE              | deprecated | supported  | supported  | supported  |            |
+| Google GKE              | deprecated | supported  | supported  | supported  | supported* |
 | Rancher 2.6             | supported  | supported  | supported  | supported* |            |
 | VMware TKG 1.6          |            | supported* | supported* |            |            |
 | **OpenShift version**   | **4.8**    | **4.9**    | **4.10**   | **4.11**   |            |
@@ -48,4 +48,4 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | **VMware TKGI version** | **1.12**   | **1.13**   | **1.14**   | **1.15**   |            |
 |                         |            | supported  | supported  | supported* |            |
 
-\* Support added in this release  
+\* Support added in this release 
