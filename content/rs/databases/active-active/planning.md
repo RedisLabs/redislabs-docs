@@ -44,7 +44,7 @@ Factors to consider when sizing your database:
 
 It's also important to know Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit. 
 
-For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/clusters/optimize/node-memory.md">}}), [Memory and performance]({{< relref "/rs/databases/memory-performance/">}}), or [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit.md">}}).
+For more information on memory limits, see [Memory and performance]({{< relref "/rs/databases/memory-performance/">}}) or [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit.md">}}).
 
 ## Networking
 
