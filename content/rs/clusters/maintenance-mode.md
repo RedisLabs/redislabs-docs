@@ -17,13 +17,13 @@ Use maintenance mode to prevent data loss during hardware or operating system ma
 
 ## Activate maintenance mode
 
-When activate maintenance mode, Redis Enterprise does the following:
+When you activate maintenance mode, Redis Enterprise does the following:
 
 1. Checks whether a shut down of the node will cause quorum loss. If so, maintenance mode will not turn on.
 
     Maintenance mode does not protect against quorum loss. If you activate maintenance mode for the majority of nodes in a cluster and restart them simultaneously, quorum is lost, which can lead to  data loss.
 
-1. Takes a snapshot of the node configuration i order to record the shard and endpoint configuration of the node.
+1. Takes a snapshot of the node configuration in order to record the shard and endpoint configuration of the node.
 
 1. Marks the node as a quorum node to prevent shards and endpoints from migrating to it.
 
@@ -65,9 +65,9 @@ rladmin node <node_id> maintenance_mode on keep_slave_shards
 
 ### Demote a master node
 
-If maintenance might affect connectivity to the master node, you can demote the master node when you activating maintenance mode, which lets the cluster elect a new master node.
+If maintenance might affect connectivity to the master node, you can demote the master node when you  activate maintenance mode.  This lets the cluster elect a new master node.
 
-To demote a master node when you activating maintenance mode, run:
+To demote a master node when activating maintenance mode, run:
 
 ```sh
 rladmin node <node_id> maintenance_mode on demote_node
@@ -97,7 +97,7 @@ To deactivate maintenance mode after server maintenance, run:
 rladmin node <node_id> maintenance_mode off
 ```
 
-By default, the snapshop is required to deactivate maintenance mode.  If, for whatever reason, the snapshot file cannot be restored, deactivation is cancelled and the node remains in maintenance mode.  In such events, it may be necessary to [reset node status](#reset_node_status).
+By default, a snapshop is required to deactivate maintenance mode.  If the snapshot cannot be restored, deactivation is cancelled and the node remains in maintenance mode.  In such events, it may be necessary to [reset node status](#reset_node_status).
 
 ### Specify a snapshot
 
@@ -132,14 +132,14 @@ rladmin node <node_id> maintenance_mode off skip_shards_restore
 
 ### Reset node status
 
-In extreme cases, it may become necessary to reset node status.  Run the following commands to do so:
+In extreme cases, you may need to reset a node's status.  Run the following commands to do so:
 
 ```
-rladmin tune node <node_id> max_listeners 100
-rladmin tune node <node_id> quorum_only disabled
+$ rladmin tune node <node_id> max_listeners 100
+$ rladmin tune node <node_id> quorum_only disabled
 ```
 
-This should not be done lightly.  For best results, contact Support before running these commands.
+use these commands with caution.  For best results, contact Support before running these commands.
 
 ## Cluster status example
 
@@ -204,7 +204,7 @@ The `maintenance_on` request returns a JSON response body:
 
 ### Deactivate maintenance mode (REST API)
 
-Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> request to deactivate maintenance mode:
+Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> deactivate maintenance mode:
 
 ```
 POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_off
