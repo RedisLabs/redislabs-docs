@@ -139,7 +139,7 @@ $ rladmin tune node <node_id> max_listeners 100
 $ rladmin tune node <node_id> quorum_only disabled
 ```
 
-use these commands with caution.  For best results, contact Support before running these commands.
+Use these commands with caution.  For best results, contact Support before running these commands.
 
 ## Cluster status example
 
