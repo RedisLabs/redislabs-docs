@@ -30,9 +30,6 @@ Before creating your Redis clusters or databases, these SSDs must be:
 
 For more information on node storage, see [Node persistent and ephemeral storage]({{<relref "/rs/installing-upgrading/persistent-ephemeral-storage.md">}}).
 
-## Enable Redis on Flash feature
-
-Redis on Flash support with Kubernetes is in preview. To enable this feature, set an environment variable with the name `ENABLE_ALPHA_FEATURES` to `True` in either the `redis-enterprise-operator` pod spec or the `operator-environment-config` ConfigMap.
 
 ## Create a Redis Enterprise cluster
 
