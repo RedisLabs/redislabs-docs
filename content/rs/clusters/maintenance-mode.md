@@ -77,7 +77,7 @@ rladmin node <node_id> maintenance_mode on demote_node
 
 To verify maintenance mode for a node, use `rladmin status` and review the node's shards field.  If that value is displayed in yellow (shown earlier), then the node is in maintenance mode.
 
-Avoid activating maintenance mode when it is already active.  Maintenance mode activations stack.  that is, if you activate maintenance mode for a node that is already in maintenance mode, you will have to deactivate maintenance mode twice in order to restore full functionality.
+Avoid activating maintenance mode when it is already active.  Maintenance mode activations stack.  If you activate maintenance mode for a node that is already in maintenance mode, you will have to deactivate maintenance mode twice in order to restore full functionality.
 
 ## Deactivate maintenance mode
 
