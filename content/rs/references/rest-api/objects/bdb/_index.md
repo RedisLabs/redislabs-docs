@@ -16,7 +16,7 @@ An API object that represents a managed database in the cluster.
 | action_uid | string | Currently running action's UID (read-only) |
 | aof_policy | **'appendfsync-every-sec'** <br />'appendfsync-always' | Policy for Append-Only File data persistence |
 | authentication_admin_pass | string | Password for administrative access to the BDB (used for SYNC from the BDB) |
-| authentication_redis_pass | string | Redis AUTH password authentication In use for Redis databases only. When defined for memcached databases will be ignored. |
+| authentication_redis_pass | string | Redis AUTH password authentication.  <br/>Use for Redis databases only.  Ignored for memcached databases. |
 | authentication_sasl_pass | string | Binary memcache SASL password |
 | authentication_sasl_uname | string | Binary memcache SASL username (pattern does not allow special characters &,\<,>,") |
 | authentication_ssl_client_certs | {{<code>}}	
