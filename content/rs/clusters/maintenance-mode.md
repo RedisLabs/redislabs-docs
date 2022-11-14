@@ -97,7 +97,7 @@ To deactivate maintenance mode after server maintenance, run:
 rladmin node <node_id> maintenance_mode off
 ```
 
-By default, a snapshop is required to deactivate maintenance mode.  If the snapshot cannot be restored, deactivation is cancelled and the node remains in maintenance mode.  In such events, it may be necessary to [reset node status](#reset_node_status).
+By default, a snapshot is required to deactivate maintenance mode.  If the snapshot cannot be restored, deactivation is cancelled and the node remains in maintenance mode.  In such events, it may be necessary to [reset node status](#reset_node_status).
 
 ### Specify a snapshot
 
