@@ -49,12 +49,6 @@ You can start server maintenance if:
 
 - Enough nodes are still online to maintain quorum
 
-### Verify maintenance mode activation
-
-To verify maintenance mode for a node, use `rladmin status` and review the node's shards field.  If that value is displayed in yellow (shown earlier), then the node is in maintenance mode.
-
-Avoid activating maintenance mode when it is already active.  Maintenance mode activations stack.  that is, if you activate maintenance mode for a node that is already in maintenance mode, you will have to deactivate maintenance mode twice in order to restore full functionality.
-
 ### Prevent replica shard migration
 
 If you do not have enough resources available to move all of the shards to other nodes, you can turn maintenance mode on without migrating the replica shards.
@@ -78,6 +72,12 @@ To demote a master node when you activating maintenance mode, run:
 ```sh
 rladmin node <node_id> maintenance_mode on demote_node
 ```
+
+### Verify maintenance mode activation
+
+To verify maintenance mode for a node, use `rladmin status` and review the node's shards field.  If that value is displayed in yellow (shown earlier), then the node is in maintenance mode.
+
+Avoid activating maintenance mode when it is already active.  Maintenance mode activations stack.  that is, if you activate maintenance mode for a node that is already in maintenance mode, you will have to deactivate maintenance mode twice in order to restore full functionality.
 
 ## Deactivate maintenance mode
 
@@ -178,13 +178,13 @@ After turning on maintenance mode for node 2, Redis Enterprise saves a snapshot 
 
 Now node 2 has `0/0` shards because shards cannot migrate to it while it is in maintenance mode.
 
-## Toggle maintenance mode via API
+## Maintenance mode REST API
 
 You can also turn maintenance mode on or off via [REST API requests]({{<relref "/rs/references/rest-api">}}) to [<nobr>POST `/nodes/{node_uid}/actions/{action}`</nobr>]({{<relref "/rs/references/rest-api/requests/nodes/actions#post-node-action">}}).
 
-### Activate using the REST API
+### Activate maintenance mode (REST API)
 
-Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> request to turn on maintenance mode:
+Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> to activate maintenance mode:
 
 ```
 POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_on
@@ -198,13 +198,13 @@ The `maintenance_on` request returns a JSON response body:
 ```json
 {
     "status":"queued",
-    "task_id":"38c7405b-26a7-4379-b84c-cab4b3db706d"
+    "task_id":"<task-id-guid>"
 }
 ```
 
-### Deactivate using the REST API
+### Deactivate maintenance mode (REST API)
 
-Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> request to turn off maintenance mode:
+Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> request to deactivate maintenance mode:
 
 ```
 POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_off
@@ -218,7 +218,7 @@ The `maintenance_off` request returns a JSON response body:
 ```json
 {
     "status":"queued",
-    "task_id":"6c3c0d03-fb6f-40ad-9eca-9d46aa6a8487"
+    "task_id":"<task-id-guid>"
 }
 ```
 
