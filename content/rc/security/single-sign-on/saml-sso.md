@@ -158,8 +158,8 @@ Next, you need to download the service provider metadata for Redis Cloud and use
     
         | XML attribute | Value | Description |
         |---------------|-------|-------------|
-        | EntityDescriptor's **entityID** |  https://auth.redis.com/saml2/<nobr>service-provider</nobr>/\<ID\> | Unique URL that identifies the Redis Cloud service provider |
-        | AssertionConsumerService's **Location** | <nobr> https://auth.redis.com/sso/saml2/\<ID\> | The service provider endpoint where the identity provider sends a SAML assertion that authenticates a user  |
+        | EntityDescriptor's **entityID** | https://<nobr>auth.redis.com</nobr>/saml2/<nobr>service-provider</nobr>/\<ID\> | Unique URL that identifies the Redis Cloud service provider |
+        | AssertionConsumerService's **Location** | <nobr> https://<nobr>auth.redis.com</nobr>/sso/saml2/\<ID\> | The service provider endpoint where the identity provider sends a SAML assertion that authenticates a user  |
 
     - To use [IdP-initiated SSO](#idp-initiated-sso) with certain identity providers, you also need to set the RelayState parameter to the following URL:
     
