@@ -213,23 +213,23 @@ If you change certain metadata or configuration settings after you set up SAML S
 
 1. [Download the updated service provider metadata](#download-sp) and use it to update the Redis Cloud service provider app.
 
-## Bind other accounts
+## Link other accounts
 
-After you set up SAML SSO for one account, you can bind other accounts you own to the existing SAML configuration. This lets you use the same SAML configuration for SSO across multiple accounts.
+After you set up SAML SSO for one account, you can link other accounts you own to the existing SAML configuration. This lets you use the same SAML configuration for SSO across multiple accounts.
 
-To bind other accounts to an existing SAML SSO configuration:
+To link other accounts to an existing SAML SSO configuration:
 
 1. Go to **Access Management > Single Sign-On** in the Redis Cloud [admin console](https://app.redislabs.com).
 
 1. Select the **Edit** button.
 
-1. For **Bind other accounts to SAML config**, select the checkboxes for the other accounts you want to bind to SAML SSO.
+1. For **Account linking**, select the checkboxes for the other accounts you want to link to SAML SSO.
 
-    {{<image filename="images/rc/access-management-saml-bind-accounts.png"  alt="Bind other accounts to SAML configuration screen.">}}{{</image>}}
+    {{<image filename="images/rc/access-management-saml-link-accounts.png"  alt="Link other accounts to the SAML configuration screen.">}}{{</image>}}
 
 1. Select **Save**.
 
-1. From the **Bind accounts** dialog, select **Continue** to enable SAML SSO for the selected accounts.
+1. From the **Link accounts** dialog, select **Continue** to enable SAML SSO for the selected accounts.
 
 ## Deactivate SAML SSO
 
@@ -245,11 +245,11 @@ To deactivate SAML SSO for a specific account:
 
 1. Select the **Edit** button.
 
-1. For **Bind other accounts to SAML configuration**, clear the checkbox for the relevant account to unbind it from SAML SSO.
+1. For **Account linking**, clear the checkbox for the relevant account to remove it from the SAML SSO configuration.
 
 1. Select **Save**.
 
-1. From the **Bind accounts** dialog, select **Continue** to deactivate SAML SSO for the unbound account.
+1. From the **Link accounts** dialog, select **Continue** to deactivate SAML SSO for the account.
 
 ## Deprovision SAML users
 
