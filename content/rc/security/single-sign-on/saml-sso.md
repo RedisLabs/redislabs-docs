@@ -71,7 +71,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
     |-------------------------------------------|-------------|
     | FirstName | User's first name |
     | LastName | User's last name |
-    | Email | User's email address |
+    | Email | User's email address (used as the username in the Redis Cloud console) |
     | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and roles |
 
     For `redisAccountMapping`, you can add the same user to multiple SAML-enabled accounts with either:
@@ -158,8 +158,8 @@ Next, you need to download the service provider metadata for Redis Cloud and use
     
         | XML attribute | Value | Description |
         |---------------|-------|-------------|
-        | EntityDescriptor's **entityID** | https://www.\<idp\>.com<br />/saml2/<nobr>service-provider</nobr>/\<ID\> | Unique URL that identifies the Redis Cloud service provider |
-        | AssertionConsumerService's **Location** | <nobr> https://redisauth.\<sp\>.com<br />/sso/saml2/\<ID\> | The service provider endpoint where the identity provider sends a SAML assertion that authenticates a user  |
+        | EntityDescriptor's **entityID** | https://<nobr>auth.redis.com</nobr>/saml2/<nobr>service-provider</nobr>/\<ID\> | Unique URL that identifies the Redis Cloud service provider |
+        | AssertionConsumerService's **Location** | <nobr> https://<nobr>auth.redis.com</nobr>/sso/saml2/\<ID\> | The service provider endpoint where the identity provider sends a SAML assertion that authenticates a user  |
 
     - To use [IdP-initiated SSO](#idp-initiated-sso) with certain identity providers, you also need to set the RelayState parameter to the following URL:
     
