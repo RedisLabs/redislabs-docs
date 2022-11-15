@@ -206,6 +206,11 @@ As part of the REC creation process, the operator stores the admission controlle
 
     ```sh
      kubectl get secret admission-tls
+    ```
+  
+    The output will look similar to
+  
+    ```
      NAME            TYPE     DATA   AGE
      admission-tls   Opaque   2      2m43s
     ```
