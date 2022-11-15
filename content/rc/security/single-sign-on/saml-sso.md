@@ -71,7 +71,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
     |-------------------------------------------|-------------|
     | FirstName | User's first name |
     | LastName | User's last name |
-    | Email | User's email address |
+    | Email | User's email address (used as the username in the Redis Cloud console) |
     | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and roles |
 
     For `redisAccountMapping`, you can add the same user to multiple SAML-enabled accounts with either:
