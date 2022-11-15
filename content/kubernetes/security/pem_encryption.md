@@ -14,5 +14,12 @@ aliases: [
 
 - [Install the operator]({{<relref "/kubernetes/deployment/quick-start.md#install-the-operator" >}})
 
+<--- TODO: 
+- document what's in pem.md
+- figure out why this needs to be enabled if its default previously?
+- there's no RS equivalent?? 
+>
+
+
 
 
