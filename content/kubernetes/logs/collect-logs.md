@@ -18,15 +18,22 @@ aliases: [
 
 The Redis Enterprise cluster (REC) log collector script ([`log_collector.py`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/log_collector/log_collector.py)) creates and fills a directory with the relevant logs for your environment. These logs will help the support team with troubleshooting.
 
+The log collector tool has two modes:
+
+- **restricted** collects only resources and logs created by the operator and Redis Enterprise deployments (default)
+- **all** collects everything from your environment
+
 {{<note>}} This script requires Python 3.6 or later. {{</note>}}
 
 1. Download the [`log_collector.py`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/log_collector/log_collector.py) file.
 2. Run the script on the system that runs your `kubectl` or `oc` commands.
-    - Pass `-n` parameter to run on a different namespace than the one you are currently on.
-    - Run with `-h` to see options.
+    - Pass `-n` parameter to run on a different namespace than the one you are currently on
+    - Pass `-m` parameter to change the log collector mode (`all` or `restricted`)
+    - Run with `-h` to see options
+    
 
     ```bash
-    python log_collector.py
+    python log_collector.py 
     ```
 
   {{< note >}} If you get an error because the yaml module is not found, install the pyYAML module with `pip install pyyaml`.
