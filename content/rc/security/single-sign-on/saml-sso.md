@@ -9,11 +9,13 @@ categories: ["RC"]
 
 Redis Cloud supports both [IdP-initiated](#idp-initiated-sso) and [SP-initiated](#sp-initiated-sso) [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
 
+You cannot use [SCIM (System for Cross-domain Identity Management)](https://en.wikipedia.org/wiki/System_for_Cross-domain_Identity_Management) to provision Redis Cloud users. However, Redis Cloud supports just-in-time (JIT) user provisioning, which means Redis Cloud automatically creates a user account the first time a new user signs in with SAML SSO.
+
 ## SAML SSO overview
 
 When SAML SSO is enabled, the [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider) admin handles SAML user management instead of the Redis Cloud account owner.
 
-After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud accounts and [roles]({{<relref "/rc/security/access-management#team-management-roles">}}).
+After you activate SAML SSO for a Redis Cloud account, all existing local users for the account, except for the user that set up SAML SSO, are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud accounts and [roles]({{<relref "/rc/security/access-management#team-management-roles">}}).
 
 ### IdP-initiated SSO
 
@@ -177,7 +179,7 @@ Replace `<ID>` so it matches the `AssertionConsumerService Location` URL's ID.
 
 After you finish the required SAML SSO configuration between your identity provider and Redis Cloud account, you can test and activate SAML SSO.
 
- All users associated with the account, excluding the local user you used to set up SAML SSO, are converted to SAML users on successful activation. They can no longer sign in with their previous sign-in method and must use SAML SSO instead.
+ All users associated with the account, excluding the local user you used to set up SAML SSO, are converted to SAML users on successful activation. They can no longer sign in with their previous sign-in method and must use SAML SSO instead. However, you can add local bypass users after SAML SSO activation to allow access to the account in case of identity provider downtime or other issues with SAML SSO.
 
 To activate SAML SSO:
 
