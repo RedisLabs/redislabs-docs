@@ -243,13 +243,13 @@ To deactivate SAML SSO for a specific account:
 
 1. Go to **Access Management > Single Sign-On**.
 
-1. Select the **Edit** button.
+1. Click on the **Deactivate SAML** button to deactive the SAML SSO configuration for the active account. Any other accounts that are linked to the same SAML SSO configuration will remain intact.
 
-1. For **Account linking**, clear the checkbox for the relevant account to remove it from the SAML SSO configuration.
-
-1. Select **Save**.
-
-1. From the **Link accounts** dialog, select **Continue** to deactivate SAML SSO for the account.
+1. Confirm **Deactive**.
+    
+{{<note>}}
+Any SAML-type users that exist in the account for which the SAML SSO configuration is deactivated will be removed.
+{{</note>}}
 
 ## Deprovision SAML users
 
