@@ -235,6 +235,8 @@ To link other accounts to an existing SAML SSO configuration:
 
 Before you can deactivate SAML SSO for an account, you must sign in to the account as a local (non-SAML) user with the owner role assigned.
 
+Deactivating SAML SSO for an account also removes any existing SAML-type users associated with the account.
+
 To deactivate SAML SSO for a specific account:
 
 1. In the Redis Cloud [admin console](https://app.redislabs.com), select your name to display your available accounts.
@@ -243,13 +245,11 @@ To deactivate SAML SSO for a specific account:
 
 1. Go to **Access Management > Single Sign-On**.
 
-1. Click on the **Deactivate SAML** button to deactive the SAML SSO configuration for the active account. Any other accounts that are linked to the same SAML SSO configuration will remain intact.
+1. Select **Deactivate SAML**. This only deactivates SAML SSO for the current account. Other linked accounts continue to use this SAML SSO configuration.
 
-1. Confirm **Deactive**.
-    
-{{<note>}}
-Any SAML-type users that exist in the account for which the SAML SSO configuration is deactivated will be removed.
-{{</note>}}
+1. Select **Deactivate** to confirm deactivation:
+
+    {{<image filename="images/rc/button-access-management-sso-deactivate-saml-deactivate.png" width="120px" alt="Deactivate SAML button">}}{{</image>}}
 
 ## Deprovision SAML users
 
