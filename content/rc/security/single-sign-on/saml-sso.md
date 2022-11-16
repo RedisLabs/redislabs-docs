@@ -13,7 +13,7 @@ Redis Cloud supports both [IdP-initiated](#idp-initiated-sso) and [SP-initiated]
 
 When SAML SSO is enabled, the [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider) admin handles SAML user management instead of the Redis Cloud account owner.
 
-After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud accounts and roles.
+After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud accounts and [roles]({{<relref "/rc/security/access-management#team-management-roles">}}).
 
 ### IdP-initiated SSO
 
@@ -72,7 +72,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
     | FirstName | User's first name |
     | LastName | User's last name |
     | Email | User's email address (used as the username in the Redis Cloud console) |
-    | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and roles |
+    | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and [roles]({{<relref "/rc/security/access-management#team-management-roles">}}) (roles must be lowercase) |
 
     For `redisAccountMapping`, you can add the same user to multiple SAML-enabled accounts with either:
 
