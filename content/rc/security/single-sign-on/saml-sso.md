@@ -9,11 +9,13 @@ categories: ["RC"]
 
 Redis Cloud supports both [IdP-initiated](#idp-initiated-sso) and [SP-initiated](#sp-initiated-sso) [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
 
+You cannot use [SCIM (System for Cross-domain Identity Management)](https://en.wikipedia.org/wiki/System_for_Cross-domain_Identity_Management) to provision Redis Cloud users. However, Redis Cloud supports just-in-time (JIT) user provisioning, which means Redis Cloud automatically creates a user account the first time a new user signs in with SAML SSO.
+
 ## SAML SSO overview
 
 When SAML SSO is enabled, the [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider) admin handles SAML user management instead of the Redis Cloud account owner.
 
-After you activate SAML SSO for a Redis Cloud account, all existing local users for the account are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud accounts and roles.
+After you activate SAML SSO for a Redis Cloud account, all existing local users for the account, except for the user that set up SAML SSO, are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud accounts and [roles]({{<relref "/rc/security/access-management#team-management-roles">}}).
 
 ### IdP-initiated SSO
 
@@ -72,7 +74,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
     | FirstName | User's first name |
     | LastName | User's last name |
     | Email | User's email address (used as the username in the Redis Cloud console) |
-    | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and roles |
+    | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and [roles]({{<relref "/rc/security/access-management#team-management-roles">}}) (roles must be lowercase) |
 
     For `redisAccountMapping`, you can add the same user to multiple SAML-enabled accounts with either:
 
@@ -177,7 +179,7 @@ Replace `<ID>` so it matches the `AssertionConsumerService Location` URL's ID.
 
 After you finish the required SAML SSO configuration between your identity provider and Redis Cloud account, you can test and activate SAML SSO.
 
- All users associated with the account, excluding the local user you used to set up SAML SSO, are converted to SAML users on successful activation. They can no longer sign in with their previous sign-in method and must use SAML SSO instead.
+ All users associated with the account, excluding the local user you used to set up SAML SSO, are converted to SAML users on successful activation. They can no longer sign in with their previous sign-in method and must use SAML SSO instead. However, you can add local bypass users after SAML SSO activation to allow access to the account in case of identity provider downtime or other issues with SAML SSO.
 
 To activate SAML SSO:
 
@@ -213,27 +215,29 @@ If you change certain metadata or configuration settings after you set up SAML S
 
 1. [Download the updated service provider metadata](#download-sp) and use it to update the Redis Cloud service provider app.
 
-## Bind other accounts
+## Link other accounts
 
-After you set up SAML SSO for one account, you can bind other accounts you own to the existing SAML configuration. This lets you use the same SAML configuration for SSO across multiple accounts.
+After you set up SAML SSO for one account, you can link other accounts you own to the existing SAML configuration. This lets you use the same SAML configuration for SSO across multiple accounts.
 
-To bind other accounts to an existing SAML SSO configuration:
+To link other accounts to an existing SAML SSO configuration:
 
 1. Go to **Access Management > Single Sign-On** in the Redis Cloud [admin console](https://app.redislabs.com).
 
 1. Select the **Edit** button.
 
-1. For **Bind other accounts to SAML config**, select the checkboxes for the other accounts you want to bind to SAML SSO.
+1. For **Account linking**, select the checkboxes for the other accounts you want to link to SAML SSO.
 
-    {{<image filename="images/rc/access-management-saml-bind-accounts.png"  alt="Bind other accounts to SAML configuration screen.">}}{{</image>}}
+    {{<image filename="images/rc/access-management-saml-link-accounts.png"  alt="Link other accounts to the SAML configuration screen.">}}{{</image>}}
 
 1. Select **Save**.
 
-1. From the **Bind accounts** dialog, select **Continue** to enable SAML SSO for the selected accounts.
+1. From the **Link accounts** dialog, select **Continue** to enable SAML SSO for the selected accounts.
 
 ## Deactivate SAML SSO
 
 Before you can deactivate SAML SSO for an account, you must sign in to the account as a local (non-SAML) user with the owner role assigned.
+
+Deactivating SAML SSO for an account also removes any existing SAML-type users associated with the account.
 
 To deactivate SAML SSO for a specific account:
 
@@ -243,13 +247,11 @@ To deactivate SAML SSO for a specific account:
 
 1. Go to **Access Management > Single Sign-On**.
 
-1. Select the **Edit** button.
+1. Select **Deactivate SAML**. This only deactivates SAML SSO for the current account. Other linked accounts continue to use this SAML SSO configuration.
 
-1. For **Bind other accounts to SAML configuration**, clear the checkbox for the relevant account to unbind it from SAML SSO.
+1. Select **Deactivate** to confirm deactivation:
 
-1. Select **Save**.
-
-1. From the **Bind accounts** dialog, select **Continue** to deactivate SAML SSO for the unbound account.
+    {{<image filename="images/rc/button-access-management-sso-deactivate-saml-deactivate.png" width="120px" alt="Deactivate SAML button">}}{{</image>}}
 
 ## Deprovision SAML users
 
