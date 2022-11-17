@@ -28,14 +28,9 @@ This appears in the **Security** section of the **Configuration** tab of the dat
 
 {{<image filename="images/rc/database-fixed-configuration-security.png" alt="The Default user password appears in the Security section of the Configuration tab on the database details screen." >}}{{< /image >}}
 
+Use the copy button to copy the password to the clipboard:
 
-You can see this password on the **View Database** screen.
-
-![Default User Password](/images/rc/default-user-password.png "Default User Password")
-
-Click the ![Password View Icon](/images/rc/icon_view.png "Default User Password") icon to see your password and copy it.
-
-![Default User Password Reveal](/images/rc/default-user-password-reveal.png "Default User Password Reveal")
+{{<image filename="images/rc/button-database-password-copy.png" width="100px" alt="Use the Copy button to copy the default user password." >}}{{< /image >}}
 
 You'll need to use this password whenever you connect to your database using a Redis client. For example,
 in the Redis CLI, you use the AUTH command to provide this password:
@@ -46,23 +41,21 @@ AUTH 4kTtH2ddXfN2sFmXE6sowOLukxiaJhN8n
 
 See your Redis client's documentation for specifics on how to provide your password when connecting.
 
-### Changing the password
+### Change password
 
-To change your Redis database password:
+To change the default user password for your database:
 
-1. From the **View Database** screen, click ![Edit](/images/rc/icon_edit.png#no-click "Edit"):
+1. From the **Configuration** tab, select **Edit database**:
 
-![Edit Database](/images/rc/view-edit.png "Edit Database")
+    TODO: add button
 
-2. Scroll down to **Access Control & Security**, and enter the new password:
+1. Under the **Security** section, enter the new password in the **Default user password** field.
 
-![Edit Password](/images/rc/edit-password.png "Edit Password")
+1. Select **Save database** to update the password:
 
-3. Click **Update** to save your changes.
+    TODO: add button
 
-![Cancel/Update](/images/rc/cancel-update.png "Cancel Update")
-
-## Role-Based access control {#role-based-access-control}
+## Role-based access control {#role-based-access-control}
 
 Role-based access control (RBAC) is an access-control mechanism that allows you to define *roles* with specific sets of *permissions*. You can then assign *users* to these roles
 to provide appropriate levels of access.
@@ -70,19 +63,23 @@ to provide appropriate levels of access.
 RBAC effectively lets you implement the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For example, you can provide
 read-only access to an application whose only job is to display Redis data. Similarly, you can prevent new developers from running dangerous administrative commands.
 
-### Setting up RBAC
+### Set up RBAC
 
 To set up RBAC, first navigate to the **Data Access Control** screen.
-
-![Data Access Control](/images/rc/data-access-control.png "Data Access Control")
 
 There are three tabs on this screen: **Users**, **Roles**, and **Redis ACLs**.
 
 In the **Redis ACLs** tab, you define named *permissions* for specific Redis commands and keys.
 
+{{<image filename="images/rc/data-access-control-acls.png" alt="Data access control screen." >}}{{< /image >}}
+
 In the **Roles** tab, you create roles. Each role consists of a set of permissions for one or more Redis Cloud databases.
 
+{{<image filename="images/rc/data-access-control-roles.png" alt="Data access control screen." >}}{{< /image >}}
+
 Finally, in the **Users** tab, you create users, and you assign each user a role.
+
+{{<image filename="images/rc/data-access-control-users.png" alt="Data access control screen." >}}{{< /image >}}
 
 #### OSS Redis ACLs vs. Redis Enterprise Cloud RBAC
 
@@ -102,11 +99,11 @@ run within the transaction block are subject to RBAC permissions.
 
 When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
 
-### Defining permissions
+### Define permissions
 
-To define permissions, go to the **Redis ACLs** tab of the **Data Access Control** page.
+To define permissions, go to the **Redis ACLs** tab of the **Data Access Control** screen.
 
-![Redis ACLs](/images/rc/redis-acls.png "Redis ACLs")
+{{<image filename="images/rc/data-access-control-acls.png" alt="Data access control screen." >}}{{< /image >}}
 
 You define these named permissions using the [Redis ACL syntax](https://redis.io/topics/acl#acl-rules). This
 syntax allows you to concisely specify **commands**, **command categories**, and **keys** that should be permitted.
@@ -119,7 +116,7 @@ A **command** can be any Redis command. Take the `SET` command, for example. The
 
 indicates that the `SET` command is permitted.
 
-A **command category** is a predefined, named set of commands. For example, the Redis commands that
+A [**command category**](https://redis.io/docs/management/security/acl/#command-categories) is a predefined, named set of commands. For example, the Redis commands that
 read data are available in the `read` command category. The Redis ACL rule
 
 ```sh
@@ -160,9 +157,11 @@ The Redis ACL syntax emphasizes brevity:
 
 Redis Cloud includes three, predefined permissions:
 
-- Full Access (`+@all ~*`) - All commands are allowed for all keys
-- Not Dangerous (`+@all -@dangerous ~*`) - All commands except for the "dangerous" command category are allowed for all keys
-- Read Only (`+@read ~*`) - Only the "read" command category is allowed for all keys
+- Full-Access (`+@all ~*`) - All commands are allowed for all keys
+
+- Read-Write (`+@all -@dangerous ~*`) - All commands except for the "dangerous" command category are allowed for all keys
+
+- Read-Only (`+@read ~*`) - Only the "read" command category is allowed for all keys
 
 #### Module command permissions
 
@@ -175,7 +174,7 @@ To define database access control, you can either:
 - Create new data access roles and select the management roles and Redis ACLs that apply to the roles for specific databases.
 - Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rc/databases/create-database.md" >}}).
 
-### Configuring permissions using Redis ACLs
+### Configure permissions with Redis ACLs
 
 To configure a Redis ACL that you can assign to a data access role:
 
@@ -194,7 +193,7 @@ To configure a Redis ACL that you can assign to a data access role:
     1. Click **Save Rule**.
 1. Click **Save**.
 
-### Assigning permissions to a role
+### Assign permissions to roles
 
 To assign Redis ACLs to a data access role:
 
@@ -214,15 +213,18 @@ To assign Redis ACLs to a data access role:
 
 Users that are assigned to the role can access the databases according to the Redis ACL definitions.
 
-### Assigning a role to a user
+### Assign roles to users
 
 To assign a role to a user:
 
-1. In **Data Access Control** > **Users**:
-    - Edit an existing role - Hover over a role and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-    - Create a new role - Click ![Add](/images/rc/icon_add.png#no-click "Add").
-1. Select a role for the user.
+1. Go to **Data Access Control > Users**.
 
-    You can also change the user password.
+1. Point to the user and select the **Edit entry** button when it appears:
 
-1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
+    TODO: add button
+
+1. Select a **Role** from the list.
+
+1. Select the check mark to assign the role to the user:
+
+    TODO: add button
