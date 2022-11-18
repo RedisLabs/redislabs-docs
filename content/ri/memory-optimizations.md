@@ -270,31 +270,51 @@ You should be consistent about the `total no. of expected elements` and the `sha
 
 If you were to change any one the values, you should have a process for moving your data from the old datashards to the new data shards (this is generally known as resharding).
 
+#### Tradeoffs
+
+Converting big hashes to small hashes increases the complexity of your code.
+
+### Switch from a set to Bloom filter, cuckoo filter, or HyperLogLog
+
+Suppose you are using large [sets](https://redis.io/docs/data-types/sets/) to solve one of the following problems:
+
+- Count the number of unique observations in a stream.
+- Check if an observation already appeared in the stream.
+- Find the fraction or the number of observations in the stream that are smaller or larger than a given value.
+
+and you are ready to trade accuracy with speed and memory usage, consider using one of the following probabilistic data structures. You can use:
+
+- [HyperLogLog](https://redis.io/docs/data-types/hyperloglogs/) to estimate the number of unique observations in a set.
+- [Bloom filter or cuckoo filter](https://redis.io/docs/stack/bloom/) to check if an observation has already appeared in the stream. False positive matches are possible, but false negatives are not.
+- [t-digest](https://redis.io/docs/stack/bloom/) to estimate the fraction or the number of observations in the stream that are smaller or larger than a given value.
+
+Bloom filter and cuckoo filter require [RedisBloom](https://redis.com/modules/redis-bloom/).
+
 #### Trade offs
 
-The only trade off of converting big hashes to small hashes is that it increase the complexity in your code.
+Following are the tradeoffs of using HyperLogLog:
 
-### Switch to bloom filter or hyperloglog
-
-Unique items can be difficult to count. Usually this means storing every unique item then recalling this information somehow. 
-
-Redis sets support this with a single command; however, storing every unique item you want want to count may use a prohibitive amount of memory. If this is the case, consider using a HyperLogLog instead. A HyperLogLog is a probabilistic data structure for counting unique items in a set. HyperLogLogs trade off perfect accuracy for less memory usage.
-
-Bloom filters help when your set contains a high number of elements and you use the set to determine existence or to eliminate duplicates.  
-
-Bloom filters aren't natively supported, but you can find several solutions on top of redis. If you are only using the set to count number of unique elements - like unique ip addresses, unique pages visited by a user etc - then switching to hyperloglog saves significant memory.
-
-#### Trade offs
-
-Following are the Trade Offs of using HyperLogLog:
-
-1. The results that are achieved from HyperLogLog are not 100% accurate, they have an approximate standard error of 0.81%.
+1. The results achieved from HyperLogLog are not 100% accurate; they have an approximate standard error of 0.81%.
 1. Hyperloglog only tells you the unique count. It cannot tell you the elements in the set.
 
-For example, if you want to maintain how many unique ipaddresses made an API call today. HyperLogLog tells you
+For example, if you want to maintain how many unique IP addresses made an API call today, HyperLogLog tells you
 `46966 unique IPs for today`.
 
-But if you want `Show me those 46966 IP Addresses` — it cannot show you. For that, you need to maintain all the IP Addresses in a set
+But if your desired result is `Show me those 46966 IP Addresses`, it cannot show you. To achieve that, you need to maintain all IP addresses in a set.
+
+### Switch from a sorted set to count-min sketch or top-k
+
+Suppose you are using large [sorted sets](https://redis.io/docs/data-types/sorted-sets/) to solve one of the following problems:
+
+- Determine the count of a given observation in a stream.
+- Maintain a list of the most frequent observations in a stream.
+
+If you are willing to trade accuracy for speed and memory usage, consider using one of the following probabilistic data structures. You can use:
+
+- [count-min sketch]() to estimate the count of a given observation in a stream.
+- [top-k]() to maintain a list of the _k_ most frequent observations in a stream.
+
+count-min sketch and top-k require [RedisBloom](https://redis.com/modules/redis-bloom/).
 
 ## Data compression methods
 
