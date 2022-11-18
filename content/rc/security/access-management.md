@@ -19,7 +19,7 @@ The **Access management** screen helps you manage:
 
 - The team of users allowed to access your subscription and its databases
 - The API keys that authenticate application access to your account
-- [Single sign-on (SSO)]({{<relref "/rc/security/single-sign-on">}}) with [SAML]({{<relref "/rc/security/single-sign-on#saml-single-sign-on">}})
+- [Single sign-on (SSO)]({{<relref "/rc/security/single-sign-on">}}) with [SAML]({{<relref "/rc/security/single-sign-on/saml-sso">}})
 
 Here, you learn how to manage your team's users and to control their level of access. 
 
