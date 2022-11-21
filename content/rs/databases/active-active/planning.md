@@ -35,7 +35,7 @@ Factors to consider when sizing your database:
 
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
-- [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
+- [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database can consume more memory.
 - [**database clustering**]({{<relref "/rs/databases/durability-ha/clustering.md">}}): enables you to spread your data into shards across multiple nodes (scale out).
 - [**database replication**]({{<relref "/rs/databases/durability-ha/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to two times (2x) the original data size per instance.
@@ -69,10 +69,7 @@ See [Synchronizing cluster node clocks]({{<relref "/rs/clusters/configure/sync-c
 
 ## Redis modules {#redis-modules}
 
-Not all Redis modules are compatible with Active-Active databases. Below is a list of [compatible Redis modules]({{< relref "/modules/enterprise-capabilities.md" >}}).
-
-- [RediSearch 2.x in Redis Enterprise Software 6.0 and higher]({{< relref "/modules/redisearch/redisearch-active-active.md" >}})
-- RedisGears
+Several Redis modules are compatible with Active-Active databases. Find the list of [compatible Redis modules]({{< relref "/modules/enterprise-capabilities.md" >}}).
 
 ## Limitations
 
