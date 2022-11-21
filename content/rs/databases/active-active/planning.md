@@ -71,7 +71,7 @@ See [Synchronizing cluster node clocks]({{<relref "/rs/clusters/configure/sync-c
 
 Several Redis modules are compatible with Active-Active databases. Find the list of [compatible Redis modules]({{< relref "/modules/enterprise-capabilities.md" >}}).
 {{< note >}}
-Starting v6.2.18 the capability of indexing, query and full-text search of nested JSON documents are now also GA on Active-Active (achieved by the combination of RedisJSON with RediSearch).
+Starting v6.2.18 the capability of index, query, and full-text search of nested JSON documents, are now also available for Active-Active databases by using a combination of RedisJSON with RediSearch.
 {{< /note >}}
 
 ## Limitations
