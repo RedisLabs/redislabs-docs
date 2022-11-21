@@ -30,7 +30,7 @@ This appears in the **Security** section of the **Configuration** tab of the dat
 
 Use the copy button to copy the password to the clipboard:
 
-{{<image filename="images/rc/button-database-password-copy.png" width="100px" alt="Use the Copy button to copy the default user password." >}}{{< /image >}}
+{{<image filename="images/rc/button-database-password-copy.png"  alt="Use the Copy button to copy the default user password." >}}{{< /image >}}
 
 You'll need to use this password whenever you connect to your database using a Redis client. For example,
 in the Redis CLI, you use the AUTH command to provide this password:
@@ -39,21 +39,21 @@ in the Redis CLI, you use the AUTH command to provide this password:
 AUTH 4kTtH2ddXfN2sFmXE6sowOLukxiaJhN8n
 ```
 
-See your Redis client's documentation for specifics on how to provide your password when connecting.
+See your Redis client's documentation to learn how to provide your password when connecting.
 
 ### Change password
 
 To change the default user password for your database:
 
-1. From the **Configuration** tab, select **Edit database**:
+1. From the database **Configuration** tab, select **Edit database**:
 
-    TODO: add button
+    {{<image filename="images/rc/button-database-edit.png" width="150px" alt="The Edit database button lets you change the database's default user password." >}}{{< /image >}}
 
 1. Under the **Security** section, enter the new password in the **Default user password** field.
 
 1. Select **Save database** to update the password:
 
-    TODO: add button
+    {{<image filename="images/rc/button-database-save.png" width="150px" alt="Use the Save database button to save the new password." >}}{{< /image >}}
 
 ## Role-based access control {#role-based-access-control}
 
@@ -77,7 +77,7 @@ In the **Roles** tab, you create roles. Each role consists of a set of permissio
 
 {{<image filename="images/rc/data-access-control-roles.png" alt="Data access control screen." >}}{{< /image >}}
 
-Finally, in the **Users** tab, you create users, and you assign each user a role.
+Finally, in the **Users** tab, you create users and assign each user a role.
 
 {{<image filename="images/rc/data-access-control-users.png" alt="Data access control screen." >}}{{< /image >}}
 
@@ -188,11 +188,11 @@ To configure a Redis ACL that you can assign to a data access role:
 
     - Create a new Redis ACL:
 
-        TODO: add button
+        {{<image filename="images/rc/icon-rbac-add.png" width="40px" alt="Select the Add button to create a new Redis ACL." >}}{{< /image >}}
 
     - Point to an existing ACL and select **Edit**:
 
-        TODO: add button
+        {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing ACL." >}}{{< /image >}}
 
 1. Enter a descriptive name for the Redis ACL.
 
@@ -208,9 +208,15 @@ To configure a Redis ACL that you can assign to a data access role:
 
     1. To add more commands, categories, or keys to the ACL rule, select **Add**:
 
-        TODO: add button
+        {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-add.png"  alt="Use the Add button to add more commands, categories, or keys to the ACL rule." >}}{{< /image >}}
 
-1. Select the check mark to save your changes.
+    1. Select **Save rule**:
+
+        {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-save-rule.png" width="120px" alt="The Save rule button saves your ACL rule changes." >}}{{< /image >}}
+
+1. Select the check mark to save your changes:
+
+    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to save your Redis ACL changes." >}}{{< /image >}}
 
 ### Assign permissions to roles
 
@@ -220,31 +226,33 @@ To assign Redis ACLs to a data access role:
 
     - Point to an existing role and select the **Edit** button:
 
-        TODO: add button
+        {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing role." >}}{{< /image >}}
 
     - Select the **Add** button to create a new role:
 
-        TODO: add button
+        {{<image filename="images/rc/icon-rbac-add.png" width="40px" alt="Select the Add button to create a new role." >}}{{< /image >}}
 
 1. In the **Associations** section of the **Edit role** or **Create new role** screen, you can:
 
     - Point to an existing association and select the **Edit** button:
 
-        TODO: add button
+        {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing role association." >}}{{< /image >}}
 
     - Select the **Add** button to create a new association:
 
-        TODO: add button
+        {{<image filename="images/rc/icon-rbac-add.png" width="40px" alt="Select the Add button to create a new role association." >}}{{< /image >}}
 
 1. Select one or more databases from the **Databases** list.
 
 1. Select a **Redis ACL** from the list to set the role's level of access to the selected databases.
 
-1. Select the check mark to confirm the association.
+1. Select the check mark to confirm the association:
+
+    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to save the role association changes." >}}{{< /image >}}
 
 1. Select **Save role**:
 
-    TODO: add button
+    {{<image filename="images/rc/button-data-access-control-save-role.png" width="120px" alt="The Save role button saves your role changes." >}}{{< /image >}}
 
 Users assigned the role can access the databases according to the role's associated Redis ACLs.
 
@@ -256,10 +264,10 @@ To assign a role to a user:
 
 1. Point to the user and select the **Edit** button when it appears:
 
-    TODO: add button
+    {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing user's role." >}}{{< /image >}}
 
 1. Select a **Role** from the list.
 
 1. Select the check mark to assign the role to the user:
 
-    TODO: add button
+    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to apply the user's role changes." >}}{{< /image >}}
