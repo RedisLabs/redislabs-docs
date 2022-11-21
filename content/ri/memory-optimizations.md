@@ -72,7 +72,7 @@ You can follow one of these three steps to reclaim the memory:
 
 #### Trade offs
 
-If we increase the memorysamples config, it expires the keys faster, but it costs more CPU cycles, which increases latency of commands. Secondly, increasing the expiry of keys helps but that requires significant changes to application logic.
+If we increase the `maxmemory-samples` config, it expires the keys faster, but it costs more CPU cycles, which increases latency of commands. Secondly, increasing the expiry of keys helps but that requires significant changes to application logic.
 
 ### Use better serializer
 
