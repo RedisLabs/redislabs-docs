@@ -57,7 +57,7 @@ To change the default user password for your database:
 
 ## Role-based access control {#role-based-access-control}
 
-Role-based access control (RBAC) is an access-control mechanism that lets you define *roles* with specific sets of *permissions*. You can then assign *users* to these roles
+Role-based access control (RBAC) lets you define *roles* with specific sets of *permissions*. You can then assign *users* to these roles
 to provide appropriate levels of access.
 
 RBAC effectively lets you implement the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For example, you can provide
@@ -105,7 +105,7 @@ To define permissions, go to the **Redis ACLs** tab of the **Data Access Control
 
 {{<image filename="images/rc/data-access-control-acls.png" alt="Data access control screen." >}}{{< /image >}}
 
-You define these named permissions using the [Redis ACL syntax](https://redis.io/topics/acl#acl-rules). This
+You define these named permissions using the [Redis ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules). This
 syntax lets you concisely specify which **commands**, **command categories**, and **keys** to allow.
 
 The Redis ACL syntax emphasizes brevity:
@@ -117,7 +117,7 @@ The Redis ACL syntax emphasizes brevity:
 
 #### Command ACL rules
 
-A **command** can be any Redis command.
+A **command** can be any [Redis command](https://redis.io/commands/).
 
 For example, this Redis ACL rule indicates that the `SET` command is permitted:
 
@@ -194,13 +194,13 @@ To configure a Redis ACL that you can assign to a data access role:
 
         {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing ACL." >}}{{< /image >}}
 
-1. Enter a descriptive name for the Redis ACL.
+1. Provide a descriptive name for the Redis ACL.
 
-1. Enter [ACL syntax](https://redis.io/topics/acl#acl-rules) to define the ACL rule or select **Rule Builder** for help building the ACL rule with correct syntax.
+1. Enter [ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules) to define the ACL rule or select **Rule Builder** for help building the ACL rule with correct syntax.
 
 1. To create a Redis ACL rule with the **Rule Builder**:
 
-    1. For **Redis commands / categories**, enter a command or [command category](https://redis.io/docs/management/security/acl/#command-categories).
+    1. For **Redis commands / categories**, enter a [command](https://redis.io/commands/) or [command category](https://redis.io/docs/management/security/acl/#command-categories).
 
     1. Select whether to include or exclude the command or category.
 
@@ -210,7 +210,7 @@ To configure a Redis ACL that you can assign to a data access role:
 
         {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-add.png"  alt="Use the Add button to add more commands, categories, or keys to the ACL rule." >}}{{< /image >}}
 
-    1. Select **Save rule**:
+    1. When you finish building the ACL rule, select **Save rule**:
 
         {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-save-rule.png" width="120px" alt="The Save rule button saves your ACL rule changes." >}}{{< /image >}}
 
@@ -244,7 +244,7 @@ To assign Redis ACLs to a data access role:
 
 1. Select one or more databases from the **Databases** list.
 
-1. Select a **Redis ACL** from the list to set the role's level of access to the selected databases.
+1. To set the role's level of access to the selected databases, select a **Redis ACL** from the list.
 
 1. Select the check mark to confirm the association:
 
