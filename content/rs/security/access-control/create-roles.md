@@ -13,9 +13,9 @@ From **access control** > **roles**, you can configure user roles with:
 - **Management roles** - Management roles define user access to the cluster's admin console and API
 - **Data access controls** - Data access controls define the permissions each role has for each database in the cluster.
 
-## Default roles
+## Default management roles
 
-Redis Enterprise Software includes five pre-built roles to help users who need limited access to the admin console.
+Redis Enterprise Software includes five predefined roles to help users who need limited access to the admin console.
 
 1. **DB Viewer** - Read database settings
 1. **DB Member** - Administer databases
@@ -25,7 +25,19 @@ Redis Enterprise Software includes five pre-built roles to help users who need l
 
 For more details about the privileges for each of these roles, see the following table:
 
-{{<embed-html "account-role-table.html">}}
+| Action | DB Viewer | DB Member | Cluster Viewer | Cluster Member | Admin |
+|--------|:---------:|:---------:|:--------------:|:-----------:|:------:|
+| Edit database configuration | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| Reset slow log | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| View cluster configuration | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| View cluster logs | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span><br /> |
+| View cluster metrics | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| View database configuration | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| View database metrics | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| View node configuration | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| View node metrics | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| View Redis database password | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
+| View and edit cluster settings |<span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> |
 
 ## Create roles for database access
 
