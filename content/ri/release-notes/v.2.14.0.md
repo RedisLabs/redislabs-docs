@@ -14,14 +14,15 @@ This is the General Availability (GA) release of RedisInsight 2.14.
 This is the General Availability (GA) release of RedisInsight 2.14.
 
 ### Highlights
-- Search capabilities: Search per values of your keys in Browser and Tree view using RediSearch, create Search indexes via dedicated UI
-- Optimize the column width in the values of hashes, lists, and sorted sets
-- Display command processing time in Workbench
+- Support for [search capabilities](https://redis.io/docs/stack/search/) in Browser: create secondary index via dedicated form, run queries and full-text search in List or Tree view
+- Ability to resize the column width of key values when displaying hashes, lists, and sorted sets
+- Command processing time displayed as part of the result in Workbench
+
 
 ### Details
 **Features and improvements**
-- [#1345](https://github.com/RedisInsight/RedisInsight/pull/1345), [#1346](https://github.com/RedisInsight/RedisInsight/pull/1346), [#1376](https://github.com/RedisInsight/RedisInsight/pull/1376) Search per values of your keys in Browser and Tree view using RediSearch capability, see the list of keys found, and create Search indexes via dedicated UI.
-- [#1385](https://github.com/RedisInsight/RedisInsight/pull/1385) Resize the column width of fields and values in hashes, indexes and elements in lists, and scores and members in sorted sets to optimize the view
-- [#1354](https://github.com/RedisInsight/RedisInsight/pull/1407) Do not scroll to the end of results by double-clicking a command output in CLI
-- [#1347](https://github.com/RedisInsight/RedisInsight/pull/1347) Display the command processing time in Workbench (time taken by RedisInsight backend and Redis to process the command)
-- [#1351](https://github.com/RedisInsight/RedisInsight/pull/1351) Display the namespaces section in the Database analysis report even when there are no namespaces
+- [#1345](https://github.com/RedisInsight/RedisInsight/pull/1345), [#1346](https://github.com/RedisInsight/RedisInsight/pull/1346), [#1376](https://github.com/RedisInsight/RedisInsight/pull/1376) Added support for [search capabilities](https://redis.io/docs/stack/search/) in Browser tool. Create secondary index of your data using a dedicated form. Conveniently run your queries and full-text search against the preselected index and display results in List or Tree view. 
+- [#1385](https://github.com/RedisInsight/RedisInsight/pull/1385) Ability to resize the column width of key values when displaying hashes, lists, and sorted sets
+- [#1354](https://github.com/RedisInsight/RedisInsight/pull/1407) Do not scroll to the end of results when double-clicking a command output in CLI
+- [#1347](https://github.com/RedisInsight/RedisInsight/pull/1347) Display the command processing time as part of the result in Workbench (time taken to process the command by both RedisInsight backend and Redis)
+- [#1351](https://github.com/RedisInsight/RedisInsight/pull/1351) Display the namespaces section in the Database analysis report when no namespaces were found
