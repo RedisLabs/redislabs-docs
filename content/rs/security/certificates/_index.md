@@ -10,6 +10,8 @@ aliases:
 
 Redis Enterprise Software uses self-signed certificates by default to ensure that the product is secure. If using a self-signed certificate is not the right solution for you, you can import a certificate signed by a certificate authority of your choice.
 
+If you choose to use the self-signed certificates, note that they are valid for 365 days after which it is the user's responsibility to replace them.
+
 The self-signed certificates establish encryption-in-transit for the following cluster components:
 
 - The admin console
