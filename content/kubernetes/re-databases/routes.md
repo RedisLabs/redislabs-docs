@@ -52,3 +52,10 @@ Use the `openssl` command to access the database from outside the cluster.
   ```
 
   Replace the `<hostname>` value with the hostname for your new route.
+  
+  To connect via `redis-cli`:
+  
+  ```sh
+  redis-cli -h <hostname> -p 443 --tls --cacert ./ca.pem --sni <hostname>
+  ```
+  
