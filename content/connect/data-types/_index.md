@@ -1,7 +1,7 @@
 ---
 Title: Data type conversion
 linkTitle: Data type conversion
-description: Describes how Redis Connect converts source data types to Redis data types.
+description: Describes how Redis Data Integration converts source data types to Redis data types.
 headerrange: "2"
 weight: 100
 alwaysopen: false
@@ -11,7 +11,7 @@ aliases: /connect/datatypes/
          /connect/data-types/
          /connect/data-types.md
 ---
-Redis Connect converts source data to Redis data types.  The specific conversions depend on the original source and data type.  
+Redis Data Integration converts source data to Redis data types.  The specific conversions depend on the original source and data type.  
 
 This section describes data type conversions from different sources, including:
 
@@ -21,7 +21,7 @@ This section describes data type conversions from different sources, including:
 - PostgreSQL specific types
 - Microsoft SQL Server specific data types
 
-Currently, Redis Connect stores incoming values as hashes.  As a result, all supported incoming values are converted to a string type.  The initial conversion is handled by the connector (Debezium).
+Currently, Redis Data Integration stores incoming values as hashes.  As a result, all supported incoming values are converted to a string type.  The initial conversion is handled by the connector (Debezium).
 
 Fields with unsupported data types do not appear in the target Redis database.
 
@@ -59,7 +59,7 @@ The binary value is either base64-encoded or hex-encoded, based on the value of 
 
 Example: When `binary.handling.mode` is set to `bytes`, the value is saved as a binary string and then transformed into the Redis data type.
     
-To illustrate, the value `hello` is added to the table as a binary string (`0x68656C6C6F`).  This is stored in the Redis Connect instance as `"aGVsbG8AAAAAAAAAAAAAAAAAAAA="`, which is also the value passed to the Redis database.
+To illustrate, the value `hello` is added to the table as a binary string (`0x68656C6C6F`).  This is stored in the Redis Data Integration instance as `"aGVsbG8AAAAAAAAAAAAAAAAAAAA="`, which is also the value passed to the Redis database.
     
 ### bitstring
 

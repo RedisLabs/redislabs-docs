@@ -1,7 +1,7 @@
 ---
 Title: Install and set up Redis Connect
 linkTitle: Install and set up
-description: Shows how to install Redis Connect CLI and use it to create a new Redis Connect instance.
+description: Shows how to install Redis Data Integration CLI and use it to create a new Redis Data Integration instance.
 weight: 20
 alwaysopen: false
 categories: ["Connect"]
@@ -9,42 +9,42 @@ aliases: /connect/install/
          /connect/install.md
 ---
 
-Redis Connect helps connect traditional relational database systems (RDBMS) to Redis Enterprise.  It does this by ingesting (_importing_) row-based data into a target Redis database.
+Redis Data Integration helps connect traditional relational database systems (RDBMS) to Redis Enterprise.  It does this by ingesting (_importing_) row-based data into a target Redis database.
 
-The Redis Connect command-line interface (CLI) helps you set up a new Redis Connect instance and configure the connections between your source data and Redis Enterprise.
+The Redis Data Integration command-line interface (CLI) helps you set up a new Redis Data Integration instance and configure the connections between your source data and Redis Enterprise.
 
-The Redis Connect CLI requires network access to the Redis Enterprise cluster API; it uses port 9443 by default.
+The Redis Data Integration CLI requires network access to the Redis Enterprise cluster API; it uses port 9443 by default.
 
 {{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
 
-## Install Redis Connect CLI
+## Install Redis Data Integration CLI
 
-Redis Connect CLI requires Python 3.7 or later.  If your operating system relies on a different version of Python, we recommend installing the latest version of Python and using [virtual environments](https://docs.python.org/3/library/venv.html) to manage Python.
+Redis ConData Integrationnect CLI requires Python 3.7 or later.  If your operating system relies on a different version of Python, we recommend installing the latest version of Python and using [virtual environments](https://docs.python.org/3/library/venv.html) to manage Python.
 
 Specific steps vary according to your operating system and environment.  The general process is:
 
 1.  Install or update to [Python 3.7 or later](https://www.python.org/downloads/)
 
-1.  Set up and activate a new virtual environment for Redis Connect:
+1.  Set up and activate a new virtual environment for Redis Data Integration:
 
     ``` console
     python3 -m venv venv
     source venv/bin/activate
     ```
 
-1.  Install Redis Connect CLI:
+1.  Install Redis Data Integration CLI:
 
     ``` console
     pip3 install https://qa-onprem.s3.amazonaws.com/redis-connect/redis_connect_cli-latest-py3-none-any.whl
     ```
 
-## Set up a Redis Connect instance
+## Set up a Redis Data Integration instance
 
-Once Redis Connect CLI is installed, you can use it to create a new Redis Connect instance.  Here's how:
+Once Redis Data Integration CLI is installed, you can use it to create a new Redis Data Integration instance.  Here's how:
 
 1.  Verify prerequisites
 
-    To set up a new Redis Connect instance, you need:
+    To set up a new Redis Data Integration instance, you need:
 
     - A Redis Enterprise cluster, v6.2 or later
 
@@ -52,7 +52,7 @@ Once Redis Connect CLI is installed, you can use it to create a new Redis Connec
 
     - A target Redis database, which can be added after setting up Redis Connect
 
-1.  Use Redis Connect CLI to create a new Redis Connect instance on your Redis Enterprise cluster:
+1.  Use Redis Data Integration CLI to create a new Redis Data Integration instance on your Redis Enterprise cluster:
 
     ``` console
     redis-connect create
@@ -62,7 +62,7 @@ Once Redis Connect CLI is installed, you can use it to create a new Redis Connec
     
     Your user account needs permission to create databases and to register RedisGears recipes
 
-1.  Use the `scaffold` command to create the configuration files for your Redis Connect instance
+1.  Use the `scaffold` command to create the configuration files for your Redis Data Integration instance
 
     ``` console
     redis-connect scaffold <PROJECT_NAME>
@@ -78,7 +78,7 @@ Once Redis Connect CLI is installed, you can use it to create a new Redis Connec
 
 1.  Update the configuration files
 
-    1.  The Redis Connect configuration file (`config.yaml`) defines the connection between your source data and your Redis database 
+    1.  The Redis Data Integration configuration file (`config.yaml`) defines the connection between your source data and your Redis database 
 
         In `config.yaml`, update `connections.target` and other details to reflect your environment.  
     
@@ -114,19 +114,19 @@ applier:
     
         For help, see [Install Debezium Server](#install-debezium-server).
 
-1.  Deploy Redis Connect configuration
+1.  Deploy Redis Data Integration configuration
 
-    The `deploy` command deploys a Redis Connect configuration to your Redis database instance:
+    The `deploy` command deploys a Redis Data Integration configuration to your Redis database instance:
 
     ``` console
     redis-connect deploy
     ```
 
-    The Redis Connect configuration file is saved (_persisted_) to the cluster, which helps configure new shards and recover in the event of shard or node failure.
+    The Redis Data Integration configuration file is saved (_persisted_) to the cluster, which helps configure new shards and recover in the event of shard or node failure.
 
 1.  Verify the install
 
-    Use the `status` command to verify Redis Connect status.
+    Use the `status` command to verify Redis Data Integration status.
 
     ``` console
     redis-connect status
@@ -226,7 +226,7 @@ quarkus.log.console.json=false
 
 1.  Run Debezium Server
 
-    From your Redis Connect configuration folder, run:
+    From your Redis Data Integration configuration folder, run:
 
     - Docker
 
