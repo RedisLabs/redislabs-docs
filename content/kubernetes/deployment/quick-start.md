@@ -101,7 +101,7 @@ kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8
 Check the operator deployment to verify it's running in your namespace:
 
 ```sh
-kubectl get deployment -l name=redis-enterprise-operator
+kubectl get deployment redis-enterprise-operator
 ```
 
 You should see a result similar to this:
@@ -147,6 +147,9 @@ You can test the operator by creating a minimal cluster by following this proced
           cpu: 2000m
           memory: 16Gi
     ```
+    {{<note>}}
+Each cluster must have at least 3 nodes. Single-node RECs are not supported.
+    {{</note>}}
 
     See the [Redis Enterprise hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md">}}) for more
     information on sizing Redis Enterprise node resource requests.

@@ -10,10 +10,52 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.4.14 requires:
+RediSearch v2.4.16 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.4.16 (November 2022)
+
+This is a maintenance release for RediSearch 2.4
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#2962](https://github.com/RediSearch/RediSearch/pull/2962) Crash upon AOF preload - Use local GC context in periodic callback (MOD-3951)
+  - [#2863](https://github.com/RediSearch/RediSearch/pull/2863) High CPU Utilization - Change MAX_LEV_DISTANCE to 4 (MOD-3563)
+  - [#3041](https://github.com/RediSearch/RediSearch/pull/3041), [#3063](https://github.com/RediSearch/RediSearch/pull/3063), [#3051](https://github.com/RediSearch/RediSearch/pull/3051), [#3143](https://github.com/RediSearch/RediSearch/pull/3143) Several memory leaks (MOD-4121, MOD-4252)
+  - [#3119](https://github.com/RediSearch/RediSearch/pull/3119) Crash on intersect iterator GetCriteriaTester (MOD-4200)
+  - [#3128](https://github.com/RediSearch/RediSearch/pull/3128) Filter rules must be reevaluated per index per document (MOD-4207)
+  - [#3127](https://github.com/RediSearch/RediSearch/pull/3127) Fix assertion failure on wrong result counting, which leads to a crash (MOD-4214)
+  - [#3171](https://github.com/RediSearch/RediSearch/pull/3171) Missing implementation of NumericRangeIterator_OnReopen which lead to crash (MOD-4255)
+  - [#3191](https://github.com/RediSearch/RediSearch/pull/3191) Wrong query iterator casting which resulted in 100% CPU utilization (MOD-4290)
+  - [#3197](https://github.com/RediSearch/RediSearch/pull/3197) Release failed to create temporary indices on the main thread (MOD-4388)
+  - [#2981](https://github.com/RediSearch/RediSearch/pull/2981) Double freeing in iterators of hybrid queries resulting in crash (MOD-4411)
+  - [#3161](https://github.com/RediSearch/RediSearch/pull/3161) Latency used to increase over time when combining INKEYS and wildcard query (MOD-4343)
+
+## v2.4.15 (October 2022)
+
+This is a maintenance release for RediSearch 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#3095](https://github.com/RediSearch/RediSearch/pull/3095) Replace order of parsing the parameters and query in the coordinator (MOD-4205)
+  - [#3012](https://github.com/RediSearch/RediSearch/pull/3012) Improved efficiency of LLAPI `findInfo`, which could reduce stability during upgrade in Redis Enterprise (MOD-4197, MOD-4052)
+  - [#3040](https://github.com/RediSearch/RediSearch/pull/3040), [#3049](https://github.com/RediSearch/RediSearch/pull/3049) Fix for `SORTBY` numeric field for non-SORTABLE fields on the coordinator (MOD-4115)
+  - [#3050](https://github.com/RediSearch/RediSearch/pull/3050) Results from fields from a missing value should come last when combined with `SORTBY` (MOD-4120)
+
+- Improvements:
+
+  - [#3047](https://github.com/RediSearch/RediSearch/pull/3047) Add `strlen` string function to `FT.AGGREGATE` (MOD-4141)
+  - [#3038](https://github.com/RediSearch/RediSearch/pull/3038) Add `number_of_uses` to `FT.INFO` for the number of times the index was queried
 
 ## v2.4.14 (August 2022)
 
@@ -167,7 +209,7 @@ All VSS queries or any query using the [`PARAMS`](https://oss.redis.com/redisear
     This type of index is used when the recall is more important than the speed of query execution. A query vector will be compared to all vectors in a flat index. The search results will return the exact top k nearest neighbors to the query vector.
 
   - **Hierarchical Navigable Small World (HNSW) Index**
-  
+
     This index is a modified implementation of the library written by the author of this influential [academic paper](https://arxiv.org/abs/1603.09320). An HNSW vector index is used when the speed of query execution is preferred over recall. The results returned are approximate nearest neighbors (ANNs).
 
     You can try out different HNSW index parameters (`M`, `EFCONSTRUCTION`, `EFRUNTIME`) to improve the “recall versus speed” balance.
@@ -194,7 +236,7 @@ All VSS queries or any query using the [`PARAMS`](https://oss.redis.com/redisear
     - [`FT.EXPLAIN`](https://github.com/RediSearch/RediSearch/blob/master/docs/Commands.md#ftexplain)
 
     - [`FT.EXPLAINCLI`](https://github.com/RediSearch/RediSearch/blob/master/docs/Commands.md#ftexplaincli)
-    
+
     - [`FT.SPELLCHECK`](https://github.com/RediSearch/RediSearch/blob/master/docs/Commands.md#ftspellcheck)
 
   If you do not specify dialect when running any of these commands, they will use the default module-level dialect value.

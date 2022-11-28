@@ -30,7 +30,7 @@ You can schedule backups to a variety of locations, including:
 - Azure Blob Storage
 - Google Cloud Storage
 
-The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/databases/import-export/import-data.md" >}}). 
+The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/databases/import-export/import-data.md" >}}).
 
 When you back up a database configured for database clustering,
 Redis Enterprise Software creates a backup file for each shard in the configuration.  All backup files are copied to the storage location.
@@ -39,7 +39,7 @@ Redis Enterprise Software creates a backup file for each shard in the configurat
 
 - Make sure that you have enough space available in your storage location.
     If there is not enough space in the backup location, the backup fails.
-- The backup configuration only applies to the node it is configured on.
+- The backup configuration only applies to the database it is configured on.
 
 {{< /note >}}
 
@@ -61,7 +61,7 @@ To schedule periodic backups for a database:
 4.  Locate and enable the **Periodic backup** checkbox.
 
     {{<image filename="images/rs/database-configuration-periodic-backup.png" alt="In the admin console, the Periodic backup settings can be found on the Configuration details tab of the database." >}}{{< /image >}}
-    
+
 6.  Use the following table to help specify the details:
 
     | Setting | Description |
@@ -76,7 +76,7 @@ Access to the storage location is verified when you apply your updates.  This me
 
 ## Default backup start time
 
-If you do _not_ specify a start time for twenty-four or twelve hour backups, Redis Enterprise Software chooses one for you, based on the time the backups are enabled.
+If you do _not_ specify a start time for twenty-four or twelve hour backups, Redis Enterprise Software chooses a random starting time for you.
 
 This choice assumes that your database is deployed to a multi-tenant cluster containing multiple databases.  This means that default start times are staggered (offset) to ensure availability.  This is done by calculating a random offset which specifies a number of seconds added to the start time.  
 
@@ -99,7 +99,7 @@ For help with specific backup issues, [contact support](https://redis.com/compan
 
 ## Supported storage locations {#supported-storage-locations}
 
-Database backups can be saved to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage. 
+Database backups can be saved to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage.
 
 When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
 
@@ -179,100 +179,79 @@ To back up to a local mount point:
 
 1. Verify that the user running Redis Enterprise Software has permissions to access and update files in the mount location.
 
-### AWS Simple Storage Service 
+### AWS Simple Storage Service
 
 To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html):
 
 1.  Sign in to the [AWS Management Console](https://console.aws.amazon.com/).
 
-1.  Use the **Services** menu to locate and select **Storage** > **S3**.  This takes you to the Amazon S3 admin panel.
+1. [Create an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html) if you do not already have one.
 
-1.  If you do not already have a bucket for backups, select the **Create Bucket** button in the upper, right corner of the **Buckets** panel.
+1. [Create an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console) with permission to add objects to the bucket.
 
-    1.  When the **Create bucket** screen appears, enter a name for your bucket.
+1. [Create an access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) for that user if you do not already have one.
 
-    1.  Set **AWS Region** to an appropriate region.
+1. In the Redis Enterprise Software admin console, when you enter the backup location details:
 
-    1.  Set other properties according to your company standards.
+    - Select "AWS S3" from the **Choose storage type** drop-down.
 
-    1.  When finished, select the **Create bucket** button near the bottom of the screen.
+    - In the **Path** field, enter the path of your bucket.
 
-1.  Use the Buckets list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Access control list (ACL)** section, and then select the **Edit** button.
+    - In the **Access key ID** field, enter the access key ID.
 
-1.  When the **Edit access control list (ACL)** screen appears, locate the **Access for other AWS accounts** section and then select the **Add grantee** button.
+    - In the **Secret access key** field, enter the secret access key.
 
-    1.  In the **Grantee** field, enter the AWS account ID:
-    
-    ```
-    fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614
-    ```
+### GCP Storage
 
-    1.  In the **Objects** list, enable **Write**.
-    1.  In the **Bucket ACL** list, enable **Read** and **Write**.
-    1.  When finished, select the **Save changes** button.
-
-Once the bucket is available and the permissions are set, use the name of your bucket as the **Backup destination** for your database **Remote backup settings**. 
-
-Use the S3 protocol scheme (`s3://`) to set *backups-bucket* to the name of your backup bucket.  If, for example, your bucket is named *backups-bucket*, set **Backup destination** to `s3://backups-bucket`.
-
-### GCP Storage 
-
-For [Google Cloud Platform (GCP)
-console](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
+For [Google Cloud Platform (GCP) console](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
 
 1. Sign in to Google Cloud Platform console.
 
-1. In the admin console menu, locate the _Storage_ section then select **Cloud Storage&nbsp;>&nbsp;Browser**.
+1. [Create a JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating) if you do not already have one.
 
-1. Create or select a bucket.
+1. [Create a bucket](https://cloud.google.com/storage/docs/creating-buckets#create_a_new_bucket) if you do not already have one.
 
-1. Select the [overflow menu](https://material.io/components/app-bars-top#anatomy) (three dots, stacked) and then select the **Edit Bucket Permissions** command.
+1. [Add a principal](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-add) to your bucket:
 
-1. Select the **Add members** button and then add:
+    - In the **New principals** field, add the `client_email` from the service account key.
 
-    `service@redislabs-prod-clusters.iam.gserviceaccount.com`
+    - Select "Storage Legacy Bucket Writer" from the **Role** list.
 
-1. Set **Role** to **Storage Legacy** | **Storage Legacy Bucket Writer**.
+1. In the Redis Enterprise Software admin console, when you enter the backup location details:
 
-1. Save your changes.
+    - Select "Google Cloud Storage" from the **Choose storage type** drop-down.
 
-1. Verify that your bucket does _not_ have a set retention policy.  
+    - In the **Path** field, enter the path of your bucket.
 
-    To do so:
+    - In the **Client id** field, enter the `client_id` from the service account key.
 
-    1. View the details of your bucket.
+    - In the **Client email** field, enter the `client_email` from the service account key.
 
-    1. Select the **Retention** tab.
-    
-    1. Verify that there is no retention policy.  
-    
-    If a policy is defined and you cannot delete it, you need to use a different bucket.
+    - In the **Private key id** field, enter the `private_key_id` from the service account key.
 
-Use the bucket details **Configuration** tab to locate the **gsutil URI**.  This is the value you'll assign to your resource's backup path.
+    - In the **Private key** field, enter the `private_key` from the service account key.
+      Replace `\n` with new lines, and then select the **Save** icon.
 
-### Azure Blob Storage 
+### Azure Blob Storage
 
 To store your backup in Microsoft Azure Blob Storage, sign in to the Azure portal and then:
 
-1. [Create an Azure Storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) if you do not already have one
+To export to Microsoft Azure Blob Storage, sign in to the Azure portal and then:
 
-1. [Create a container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) if you do not already have one
+1. [Create an Azure Storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) if you do not already have one.
 
-1. [Manage storage account access keys](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage)
+1. [Create a container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) if you do not already have one.
 
-Set your resource's **Backup Path** to the path of your storage account.
+1. [Manage storage account access keys](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage) to find the storage account name and account keys.
 
-The syntax for creating the backup varies according to your authorization mechanism.  For example:
+1. In the Redis Enterprise Software admin console, when you enter the backup location details:
 
-`abs://storage_account_access_key@storage_account_name/container_name/[path/]`
+    - Select "Azure Blob Storage" from the **Choose storage type** drop-down.
 
-Where:
+    - In the **Path** field, enter the path of your bucket.
 
-- *storage_account_access_key:* the primary access key to the
-    storage account
-- *storage_account_name:* the storage account name
-- *container_name:* the name of the container, if needed.
-- *path*: the backups path, if needed.
+    - In the **Account name** field, enter your storage account name.
 
-To learn more, see [Authorizing access to data in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth)
+    - In the **Account key** field, enter the storage account key.
 
+To learn more, see [Authorizing access to data in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth).

@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Shows the health report of an Active-Active database.
+Shows the health report of the API management layer of an Active-Active database.
 
 ```sh
 crdb-cli crdb health-report --crdb-guid <guid>
@@ -22,7 +22,7 @@ crdb-cli crdb health-report --crdb-guid <guid>
 
 ### Returns
 
-Returns the health report of the database.
+Returns the health report of the API management layer of the database.
 
 ### Example
 

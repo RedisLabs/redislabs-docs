@@ -58,7 +58,7 @@ header a {
   text-decoration: none; }
 
 .header-wrap-outer {
-  box-shadow: 0 0 6px 0 rgba(140,140,141,.5);  
+  box-shadow: 0 0 6px 0 rgba(140,140,141,.5);
   position: -webkit-sticky !important;
   position: sticky !important;
   top: 0px !important;
@@ -67,12 +67,12 @@ header a {
 
 header .header-wrap {
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
   height: 100%;
-  width: 90%;  
+  width: 90%;
   max-width: 1600px;
   margin: 0 0rem 0 2rem;
-  position: relative;  
+  position: relative;
 }
 
 header .logo {
@@ -80,7 +80,7 @@ header .logo {
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -20px; 
+  margin-top: -20px;
 }
 
 header .logo img {
@@ -124,7 +124,7 @@ header nav.shortcuts li a:hover {
 }
 
 header nav.shortcuts-right li a label {
-  color: #5961ff;  
+  color: #5961ff;
   text-transform: capitalize;
   font-weight: 700;
 }
@@ -152,7 +152,7 @@ header nav.shortcuts-right li:last-child a label {
   width: 100px;
   padding: 12px 16px 12px;
   display: flex;
-  align-items: center;  
+  align-items: center;
 }
 
 header nav.shortcuts-right li:last-child a label:hover {
@@ -166,7 +166,7 @@ header nav.shortcuts label {
   text-align: center;
   -webkit-text-stroke-width: .35px;
   -webkit-text-stroke-color: #fff;
-  font-weight: 700; 
+  font-weight: 700;
 }
 header nav.shortcuts li .submenu-wrapper {
   visibility: hidden;
@@ -961,7 +961,7 @@ ul.footer-action .social a {
   color: #a7a7a7;
   font-size: 35px;
   width: 1em;
-  margin-right: 7px;  
+  margin-right: 7px;
 }
 .btm_footer {
   background: #393b3c;
@@ -1706,7 +1706,7 @@ thead tr {
 
 .footer-wrapper {
   padding-top: 50px;
-  padding-bottom: 50px;  
+  padding-bottom: 50px;
   margin: 0 auto;
   max-width: 1100px;
   width: 90%;
@@ -1743,7 +1743,7 @@ thead tr {
   width: 50%;
   display: flex;
   margin-right: 50px;
-  margin-bottom: 30px;  
+  margin-bottom: 30px;
 }
 
 .footer nav ul {
@@ -1751,13 +1751,13 @@ thead tr {
 }
 
 .footer nav ul.partners {
-  margin-bottom: 30px;  
+  margin-bottom: 30px;
 }
 
 .footer nav a {
     font-size: 14px;
     color: #fff;
-    font-weight: 300;    
+    font-weight: 300;
 }
 
 .footer nav h6 {
@@ -1779,7 +1779,7 @@ thead tr {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 0;    
+    padding: 0;
 }
 
 .footer .v-bottom .columns {
@@ -1810,7 +1810,7 @@ thead tr {
   font-size: 14px;
   margin-top: 0!important;
   font-weight: 500;
-  padding-bottom: 0!important;  
+  padding-bottom: 0!important;
   margin-bottom: 0!important;
 }
 
@@ -1840,7 +1840,7 @@ thead tr {
 }
 
 .footer .cta-btn a {
-  display: flex;  
+  display: flex;
   align-items: center;
   font-weight: 500;
   font-size: 15px;
@@ -3261,7 +3261,7 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   header nav.shortcuts.shortcuts-right {
     display: inline-block;
     text-align: right;
-    flex: 1;    
+    flex: 1;
     margin: 15px 0px 0px 0px;
   }
 
@@ -3714,7 +3714,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
   text-decoration: none;
 }
 
-.page .main-content .tab-content {  
+.page .main-content .tab-content {
   border: 1px solid #cecece;
   border-top: none;
   padding: 10px 20px;
@@ -3774,7 +3774,6 @@ article section.page table {
   table-layout: auto !important;
 }
 
-.gdpr-modal {
+#gdpr-modal {
   z-index: 9999;
 }
-  

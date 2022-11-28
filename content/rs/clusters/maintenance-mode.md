@@ -15,49 +15,49 @@ aliases: [
 
 Use maintenance mode to prevent data loss during hardware or operating system maintenance on Redis Enterprise servers. When maintenance mode is on, all shards move off of the node under maintenance and migrate to another available node.
 
-## Turn maintenance mode on
+## Activate maintenance mode
 
-When you turn maintenance mode on, Redis Enterprise does the following:
+When you activate maintenance mode, Redis Enterprise does the following:
 
 1. Checks whether a shut down of the node will cause quorum loss. If so, maintenance mode will not turn on.
 
-    {{<warning>}}
-Maintenance mode does not protect against quorum loss. If you turn on maintenance mode for the majority of nodes in a cluster and restart them simultaneously, the quorum is lost. This can cause data loss.
-    {{</warning>}}
+    Maintenance mode does not protect against quorum loss. If you activate maintenance mode for the majority of nodes in a cluster and restart them simultaneously, quorum is lost, which can lead to  data loss.
 
-1. Takes a snapshot of the node configuration to record which shards and endpoints are on the node.
+1. Takes a snapshot of the node configuration in order to record the shard and endpoint configuration of the node.
+
 1. Marks the node as a quorum node to prevent shards and endpoints from migrating to it.
-    {{<note>}}
-If you run [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}), the node's shards field is now yellow to show that shards cannot migrate to it.
-    {{</note>}}
+
+    At this point, [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) displays the node's shards field in yellow, which indicates that shards cannot migrate to the node.
+
     ![maintenance_mode](/images/rs/maintenance_mode.png)
-1. Migrates shards and binds endpoints to other nodes, if space is available.
 
-{{<note>}}
-Maintenance mode does not demote a master node by default. The cluster elects a new master node when the original master node is restarted. Alternatively, you can add the `demote_node` option to the `rladmin` command to [demote a master node](#demote-a-master-node) when you turn on maintenance mode.
-{{</note>}}
+1. Migrates shards and binds endpoints to other nodes, when space is available.
 
-To turn on maintenance mode for a node, run the following command:
+Maintenance mode does not demote a master node by default. The cluster elects a new master node when the original master node restarts. 
+
+Add the `demote_node` option to the `rladmin` command to [demote a master node](#demote-a-master-node) when you activate maintenance mode.
+
+To activate maintenance mode for a node, run the following command:
 
 ```sh
 rladmin node <node_id> maintenance_mode on
 ```
 
 You can start server maintenance if:
-- All shards and endpoints have moved to other nodes
-- Enough nodes are still online to maintain quorum
 
+- All shards and endpoints have moved to other nodes
+
+- Enough nodes are still online to maintain quorum
 
 ### Prevent replica shard migration
 
 If you do not have enough resources available to move all of the shards to other nodes, you can turn maintenance mode on without migrating the replica shards.
 
-{{<warning>}}
-If you prevent replica shard migration, the shards stay on the node during maintenance.
-If the maintenance node fails, the master shards do not have replica shards for data redundancy and high availability.
-{{</warning>}}
+If you prevent replica shard migration, the shards remain on the node during maintenance.
 
-To turn on maintenance mode without replica shard migration, run:
+If the maintenance node fails in this case, the master shards do not have replica shards to maintain data redundancy and high availability.
+
+To activate maintenance mode without replica shard migration, run:
 
 ```sh
 rladmin node <node_id> maintenance_mode on keep_slave_shards
@@ -65,28 +65,39 @@ rladmin node <node_id> maintenance_mode on keep_slave_shards
 
 ### Demote a master node
 
-If you need to do maintenance that might affect connectivity to the master node, you can demote the master node when you turn on maintenance mode. This process also allows the cluster to elect a new master quicker.
+If maintenance might affect connectivity to the master node, you can demote the master node when you  activate maintenance mode.  This lets the cluster elect a new master node.
 
-To demote a master node when you turn on maintenance mode, run:
+To demote a master node when activating maintenance mode, run:
 
 ```sh
 rladmin node <node_id> maintenance_mode on demote_node
 ```
 
-## Turn maintenance mode off
+### Verify maintenance mode activation
 
-When you turn maintenance mode off, Redis Enterprise:
+To verify maintenance mode for a node, use `rladmin status` and review the node's shards field.  If that value is displayed in yellow (shown earlier), then the node is in maintenance mode.
+
+Avoid activating maintenance mode when it is already active.  Maintenance mode activations stack.  If you activate maintenance mode for a node that is already in maintenance mode, you will have to deactivate maintenance mode twice in order to restore full functionality.
+
+## Deactivate maintenance mode
+
+When you deactivate maintenance mode, Redis Enterprise:
 
 1. Loads a [specified snapshot](#specify-a-snapshot) or defaults to the latest snapshot.
+
 1. Unmarks the node as a quorum node to allow shards and endpoints to migrate to the node.
+
 1. Restores the shards and endpoints that were in the node at the time of the snapshot.
+
 1. Deletes the snapshot.
 
-To turn maintenance mode off after you finish server maintenance, run:
+To deactivate maintenance mode after server maintenance, run:
 
 ```sh
 rladmin node <node_id> maintenance_mode off
 ```
+
+By default, a snapshot is required to deactivate maintenance mode.  If the snapshot cannot be restored, deactivation is cancelled and the node remains in maintenance mode.  In such events, it may be necessary to [reset node status](#reset_node_status).
 
 ### Specify a snapshot
 
@@ -118,6 +129,17 @@ To turn maintenance mode off and skip shard restoration, run:
 ```sh
 rladmin node <node_id> maintenance_mode off skip_shards_restore
 ```
+
+### Reset node status
+
+In extreme cases, you may need to reset a node's status.  Run the following commands to do so:
+
+```
+$ rladmin tune node <node_id> max_listeners 100
+$ rladmin tune node <node_id> quorum_only disabled
+```
+
+Use these commands with caution.  For best results, contact Support before running these commands.
 
 ## Cluster status example
 
@@ -156,13 +178,13 @@ After turning on maintenance mode for node 2, Redis Enterprise saves a snapshot 
 
 Now node 2 has `0/0` shards because shards cannot migrate to it while it is in maintenance mode.
 
-## Toggle maintenance mode via API
+## Maintenance mode REST API
 
 You can also turn maintenance mode on or off via [REST API requests]({{<relref "/rs/references/rest-api">}}) to [<nobr>POST `/nodes/{node_uid}/actions/{action}`</nobr>]({{<relref "/rs/references/rest-api/requests/nodes/actions#post-node-action">}}).
 
-### Maintenance mode on
+### Activate maintenance mode (REST API)
 
-Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> request to turn on maintenance mode:
+Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> to activate maintenance mode:
 
 ```
 POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_on
@@ -176,13 +198,13 @@ The `maintenance_on` request returns a JSON response body:
 ```json
 {
     "status":"queued",
-    "task_id":"38c7405b-26a7-4379-b84c-cab4b3db706d"
+    "task_id":"<task-id-guid>"
 }
 ```
 
-### Maintenance mode off
+### Deactivate maintenance mode (REST API)
 
-Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> request to turn off maintenance mode:
+Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> deactivate maintenance mode:
 
 ```
 POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_off
@@ -196,7 +218,7 @@ The `maintenance_off` request returns a JSON response body:
 ```json
 {
     "status":"queued",
-    "task_id":"6c3c0d03-fb6f-40ad-9eca-9d46aa6a8487"
+    "task_id":"<task-id-guid>"
 }
 ```
 

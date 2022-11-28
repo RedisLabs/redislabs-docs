@@ -27,7 +27,7 @@ The following table shows the MD5 checksums for the available packages.
 
 - Upgrade the Redis Enterprise infrastructure to [Python v3.9](https://www.python.org/).
 
-- [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
+- [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) and [Red Hat Enterprise Linux (RHEL) v8.6](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.6_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
 
 - [Oracle Linux v8](https://docs.oracle.com/en/operating-systems/oracle-linux/8/) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
 
@@ -108,7 +108,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
         
         `crdb-cli crdb update --crdb-guid <CRDB-GUID> --force`
          
-    - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
+    - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/databases/import-export/replica-of/create/#configure-tls-on-replica-database).
 
 ### Issues resolved in build 96
 

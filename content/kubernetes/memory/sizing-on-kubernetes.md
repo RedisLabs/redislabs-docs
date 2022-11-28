@@ -120,4 +120,7 @@ Then, apply the file by running:
 
     kubectl apply -f redis-enterprise-cluster.yaml
 
-For Persistent Storage sizing, please refer to [Kubernetes Operator Deployment – Persistent Volumes]({{< relref "/kubernetes/memory/persistent-volumes.md" >}}).
+{{< warning >}}
+Be aware that [persistent volume size]({{< relref "/kubernetes/memory/persistent-volumes.md" >}} cannot be changed after deployment. When adjusting compute resources, make sure the ratio of persistent volume size and the new memory size are in accordance to the [Hardware
+requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}) article.
+{{< /warning >}}

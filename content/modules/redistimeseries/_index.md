@@ -152,4 +152,5 @@ RedisTimeSeries can be seen to dramatically reduce the memory consumption when c
 ## More info
 
 - [RedisTimeSeries commands]({{<relref "/modules/redistimeseries/commands">}})
+- [RedisTimeSeries configuration]({{<relref "/modules/redistimeseries/config">}})
 - [RedisTimeSeries source](https://github.com/RedisTimeSeries/RedisTimeSeries)

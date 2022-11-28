@@ -51,7 +51,7 @@ persistentSpec:
 
 The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node (see `limits` and `requests`). Kubernetes accepts only integers as sizing numbers for requests and limits.
 
-Resource limits are recommended to equal requests, see [quaranteed quality of service](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/topics.md#guaranteed-quality-of-service) for more info.
+Resource limits are recommended to equal requests, see [guaranteed quality of service](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/topics.md#guaranteed-quality-of-service) for more info.
 
 ### [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec)
 

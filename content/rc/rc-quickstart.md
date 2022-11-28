@@ -14,74 +14,41 @@ If you're new to Redis Enterprise Cloud, this quick start helps you get up and r
 
 You'll learn how to:
 
-1.  Create a free subscription
+1.  Create an account, a free subscription, and a database
 
-2.  Create a database
+1.  Connect to your database
 
-3.  Connect to your database
+If you already have an account, see [Create a Fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) to create a Free 30MB subscription. Free plans are a tier of fixed plans; this provides an easy upgrade path when you need it.
 
 If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/subscriptions/" >}}) and [Manage databases]({{< relref "/rc/databases/" >}}).
 
-## Create a subscription
+## Create an account
 
-To create a new free subscription:
+To create a new account with a free subscription and database:
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
+1. On the Redis Cloud [admin console](https://app.redislabs.com/#/login), select [Sign up](https://redis.com/try-free/).
 
-2. Select the **New subscription** button in the admin menu.
+1. Enter your information in the form and select **Get Started**, or sign up with Google or Github.
 
-    {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
+1. In the activation email, select **Activate account** to go to the Redis Cloud [admin console](https://app.redislabs.com/#/login).
 
-    (You can only have one free subscription.)
+    {{<image filename="images/rc/quickstart-quick-dialog.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
 
-3. When the **New subscription** page appears, select **Fixed plans** and then scroll to the cloud vendor options.
+1. Select your preferred cloud vendor and region.
 
-    {{<image filename="images/rc/subscription-new-plan-options.png" alt="Available subscription plan options." >}}{{< /image >}}
+1. Select **Let's start free** to create your subscription and database.
 
-4.  Choose a **Cloud Provider** and a **Region**.
+    {{< note >}}
+If you would rather customize your subscription and database, select **Create a custom database** to go to the **Add subscription** page. From there, you can [create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) or [create a flexible subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}).
+    {{< /note >}}
 
-    (You can ignore the **High-Availability** options for now; these are available in paid tiers only.)
+    You're taken to the **Overview tab** for your new subscription.
 
-    {{<image filename="images/rc/subscription-new-cloud-vendor-options.png" alt="Available cloud vendor options." >}}{{< /image >}}
+    {{<image filename="images/rc/quickstart-subscription-overview.png" width="75%" alt="Overview tab showing your new subscription and database." >}}{{< /image >}}
 
+1.  Select the database name to view the **Configuration** tab for your new database.
 
-5.  In the **Fixed Size** panel, locate the **Dataset Size** list and then choose **30MB**.
-
-    Free plans are a tier of Fixed plans; this provides an easy upgrade path when you need it.
-
-    {{<image filename="images/rc/subscription-new-fixed-plan-options.png" alt="Create a free subscription. " >}}{{< /image >}}
-
-6.  Enter a descriptive **Subscription Name** and then select the **Create subscription**.
-
-    {{<image filename="images/rc/button-subscription-create.png" alt="The Create subscription button is located below the subscription options. " >}}{{< /image >}}
-
-
-## Create a database
-
-Now that you have a subscription, you need to create a database.
-
-1.  If you aren't already at the **Subscription details** screen, sign into the Redis Cloud admin console and select your subscription from the subscription list.
-
-2.  Select the **New Database** button.
-
-    {{<image filename="images/rc/button-database-new.png" alt="Use the New database to create a database." >}}{{< /image >}}
-
-2.  In the **General** section, enter a descriptive **Database Name**.  
-
-    - You have 40 characters  
-    - You can use letters, numbers, or a hyphen  
-    - The name must start with a letter and end with either a letter or a number
-    - Spaces are not allowed
-
-    {{<image filename="images/rc/new-database-free-name.png" width="75%" alt="Create new database. " >}}{{< /image >}}
-
-3.  For this exercise, leave the remaining options at their default values.  (To learn about them, see [Create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription.md" >}}).)
-
-4.  Select the **Activate database** button near the upper, right corner of the page.
-
-5.  You're taken to the **Configuration tab** for your new database.
-
-    {{<image filename="images/rc/database-fixed-configuration-general-update.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
+    {{<image filename="images/rc/quickstart-database-overview.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
 
     In the upper corner, an icon shows the current status of the database.  If the icon shows an orange clock, this means your database is still being created and its status is _pending_.
 
@@ -97,30 +64,27 @@ When your new database becomes active, you're ready to connect to it.
 
 At this point, you're viewing the **Configuration** details for your new database.  
 
-To connect to your database, you need the following info:
+To connect to your database, you need your username and password. For the default user, the username is `default`.
 
-- The hostname for your database
-- The port number
-- The database password
+The **Security** section contains your **Default user password**.  By default, this is masked.  Select the eye icon to show or hide the password.    
 
-These are displayed in the **Configuration** tab.  
+{{<image filename="images/rc/database-fixed-configuration-security.png" width="75%" alt="The Security section of the Configuration tab of the database details page." >}}{{< /image >}}
 
-- In the **General** section, the **Public endpoint** setting shows the hostname for your database and the port number.
+Once you have the username and password, select **Connect** to open the connection wizard.
 
-- The **Security** section contains your **Default user password**.  By default, this is masked.  Select the eye icon to show or hide the password.    
+![Connect button](/images/rc/connection-wizard-button.png#no-click "Connect button.")
 
-    {{<image filename="images/rc/database-fixed-configuration-security.png" width="75%" alt="The Security section of the Configuration tab of the database details page." >}}{{< /image >}}
+The connection wizard provides the following database connection methods:
 
+- `redis-cli` utility
 
-Once you have the connection details, you can connect in a variety of ways, including:
+- [Redis client](https://redis.io/clients) for your preferred programming language
 
-- Using the `redis-cli` utility 
+- [RedisInsight](https://redis.com/redis-enterprise/redis-insight/)
 
-- Using a [connection client](https://redis.io/clients) for your preferred programming language
+{{<image filename="images/rc/connection-wizard.png" alt="The connection wizard." >}}{{< /image >}}
 
-Here's an example of each.
-
-### Use redis-cli (via Docker){#using-rediscli}
+### redis-cli (via Docker){#using-rediscli}
 
 The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands/).
 
@@ -133,25 +97,23 @@ Run the following commands to create a `redis` Docker container and connect to y
     ``` sh
     $ docker pull redis
     ```
-2.  Start a container created from the image:
+1.  Start a container created from the image:
 
     ``` sh
     $ docker run -d --name redis1 redis
     ```
-3.  Connect to a bash prompt running in the container:
+
+1.  Connect to a bash prompt running in the container:
+
     ``` sh
     $ docker exec -it redis1 bash
     ```
 
-4. Connect to your database with `redis-cli`:
+1. In the connection wizard, under **Redis CLI**, select the **Copy** button to copy the `redis-cli` command.
 
-    ``` sh
-    # redis-cli -h <host> -p <port> -a <password>
-    ```
+1. Enter the copied `redis-cli` command in the terminal and replace `<username>` and `<password>` with your username and password.
 
-    Replace `<host>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
-
-5. After you connect to your database, try these basic Redis commands:
+1. After you connect to your database, try these basic Redis commands:
 
     ``` sh
     xxx:yyy> ping
@@ -162,34 +124,76 @@ Run the following commands to create a `redis` Docker container and connect to y
     "world"
     ```
 
-### Use code (Python)
+    To try other Redis commands, see the [commands reference](https://redis.io/commands/) for help.
 
-Different programming languages use different clients to interact with Redis databases.
+### Redis client{#using-redis-client}
 
-Here's how to connect to your database using the `redis-py` library for Python.
+Different programming languages use different connection clients to interact with Redis databases, and each client has its own syntax and installation process. For help with a specific client, see the client's documentation.
 
-1.  If you don't already have the client installed:
+The connection wizard provides code snippets to connect to your database with the following programming languages:
+
+- node.js using [ioredis](https://github.com/luin/ioredis#quick-start)
+- .NET using [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/)
+- Python using [redis-py](https://github.com/redis/redis-py#redis-py)
+- Java using [Jedis](https://github.com/redis/jedis#jedis)
+
+See the [client list](https://redis.io/docs/clients/) to view all Redis clients by language.
+
+#### Code example (Python)
+
+To connect to your database using the [redis-py](https://github.com/redis/redis-py#redis-py) library for Python:
+
+1.  Install the Redis client if it is not already installed.
 
     ```sh
-    sudo pip install redis
+    $ sudo pip install redis
     ```
 
-2.  The specific syntax varies according to the client:
+2.  In the connection wizard, under **Redis Client**, select Python from the **Select your client** menu.
+
+3. Select **Copy** to copy the connection code for your database.
+
+4. Add the copied code to your program and replace `<username>` and `<password>` with your username and password.
 
     ```python
     import redis
-    r = redis.Redis(host='<endpoint>', port='<port>', 
-                    password='<password>')
+
+    r = redis.Redis(
+      host='<host>',
+      port=<port>,
+      password='<password>')
+
+    # Redis commands
     r.set('hello', 'world')
     print(r.get('hello'))
     ```
-    
-3.  Now, run the code:
+
+5. Run the program.
 
     ```sh
     $ python example_redis.py
     world
     ```
+
+### RedisInsight{#using-redisinsight}
+
+RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux.
+
+1. In the connection wizard, under **Redis Client**, select your operating system from the **Download RedisInsight** menu.
+
+1. Select **Download** to download RedisInsight.
+
+1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
+
+1. Open RedisInsight and select **Add Redis Database**.
+
+1. In the connection wizard, under **RedisInsight Desktop**, select **Copy** to copy the connection information.
+
+1. In RedisInsight, enter the copied connection information into the **Host** field. RedisInsight automatically populates the rest of the fields needed to connect to the database as the default user.
+
+1. Select **Add Redis Database** to connect to the database.
+
+See the [RedisInsight documentation]({{< relref "/ri/_index.md" >}}) for more information.
 
 ## More info
 
