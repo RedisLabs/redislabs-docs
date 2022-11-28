@@ -9,12 +9,12 @@ aliases: /rc/administration/security/data-access-control
          /rc/security/database-security/passwords-users-roles.md
 ---
 All Redis Cloud databases require either [password-based authentication](#password-based-authentication) or
-[role-based access control](#role-based-access-control). Role-based access control allows you to define multiple
+[role-based access control](#role-based-access-control). Role-based access control lets you define multiple
 users with fine-grained authorization features.
 
 ## Prerequisites
 
-To use role-based access control, your Redis cloud database needs to support Redis version 6.0.0 or later.
+To use role-based access control, your Redis Cloud database needs to support Redis version 6.0.0 or later.
 
 The **Redis version** of a database is displayed in the **General** section of the **Configuration** tab of the [database detail]({{<relref "rc/databases/view-edit-database">}}) screen.
 
@@ -28,14 +28,9 @@ This appears in the **Security** section of the **Configuration** tab of the dat
 
 {{<image filename="images/rc/database-fixed-configuration-security.png" alt="The Default user password appears in the Security section of the Configuration tab on the database details screen." >}}{{< /image >}}
 
+Use the copy button to copy the password to the clipboard:
 
-You can see this password on the **View Database** screen.
-
-![Default User Password](/images/rc/default-user-password.png "Default User Password")
-
-Click the ![Password View Icon](/images/rc/icon_view.png "Default User Password") icon to see your password and copy it.
-
-![Default User Password Reveal](/images/rc/default-user-password-reveal.png "Default User Password Reveal")
+{{<image filename="images/rc/button-database-password-copy.png"  alt="Use the Copy button to copy the default user password." >}}{{< /image >}}
 
 You'll need to use this password whenever you connect to your database using a Redis client. For example,
 in the Redis CLI, you use the AUTH command to provide this password:
@@ -44,45 +39,47 @@ in the Redis CLI, you use the AUTH command to provide this password:
 AUTH 4kTtH2ddXfN2sFmXE6sowOLukxiaJhN8n
 ```
 
-See your Redis client's documentation for specifics on how to provide your password when connecting.
+See your Redis client's documentation to learn how to provide your password when connecting.
 
-### Changing the password
+### Change password
 
-To change your Redis database password:
+To change the default user password for your database:
 
-1. From the **View Database** screen, click ![Edit](/images/rc/icon_edit.png#no-click "Edit"):
+1. From the database **Configuration** tab, select **Edit database**:
 
-![Edit Database](/images/rc/view-edit.png "Edit Database")
+    {{<image filename="images/rc/button-database-edit.png" width="150px" alt="The Edit database button lets you change the database's default user password." >}}{{< /image >}}
 
-2. Scroll down to **Access Control & Security**, and enter the new password:
+1. Under the **Security** section, enter the new password in the **Default user password** field.
 
-![Edit Password](/images/rc/edit-password.png "Edit Password")
+1. Select **Save database** to update the password:
 
-3. Click **Update** to save your changes.
+    {{<image filename="images/rc/button-database-save.png" width="150px" alt="Use the Save database button to save the new password." >}}{{< /image >}}
 
-![Cancel/Update](/images/rc/cancel-update.png "Cancel Update")
+## Role-based access control {#role-based-access-control}
 
-## Role-Based access control {#role-based-access-control}
-
-Role-based access control (RBAC) is an access-control mechanism that allows you to define *roles* with specific sets of *permissions*. You can then assign *users* to these roles
+Role-based access control (RBAC) lets you define *roles* with specific sets of *permissions*. You can then assign *users* to these roles
 to provide appropriate levels of access.
 
 RBAC effectively lets you implement the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For example, you can provide
 read-only access to an application whose only job is to display Redis data. Similarly, you can prevent new developers from running dangerous administrative commands.
 
-### Setting up RBAC
+### Set up RBAC
 
 To set up RBAC, first navigate to the **Data Access Control** screen.
-
-![Data Access Control](/images/rc/data-access-control.png "Data Access Control")
 
 There are three tabs on this screen: **Users**, **Roles**, and **Redis ACLs**.
 
 In the **Redis ACLs** tab, you define named *permissions* for specific Redis commands and keys.
 
+{{<image filename="images/rc/data-access-control-acls.png" alt="Data access control screen." >}}{{< /image >}}
+
 In the **Roles** tab, you create roles. Each role consists of a set of permissions for one or more Redis Cloud databases.
 
-Finally, in the **Users** tab, you create users, and you assign each user a role.
+{{<image filename="images/rc/data-access-control-roles.png" alt="Data access control screen." >}}{{< /image >}}
+
+Finally, in the **Users** tab, you create users and assign each user a role.
+
+{{<image filename="images/rc/data-access-control-users.png" alt="Data access control screen." >}}{{< /image >}}
 
 #### OSS Redis ACLs vs. Redis Enterprise Cloud RBAC
 
@@ -102,52 +99,14 @@ run within the transaction block are subject to RBAC permissions.
 
 When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
 
-### Defining permissions
+### Define permissions
 
-To define permissions, go to the **Redis ACLs** tab of the **Data Access Control** page.
+To define permissions, go to the **Redis ACLs** tab of the **Data Access Control** screen.
 
-![Redis ACLs](/images/rc/redis-acls.png "Redis ACLs")
+{{<image filename="images/rc/data-access-control-acls.png" alt="Data access control screen." >}}{{< /image >}}
 
-You define these named permissions using the [Redis ACL syntax](https://redis.io/topics/acl#acl-rules). This
-syntax allows you to concisely specify **commands**, **command categories**, and **keys** that should be permitted.
-
-A **command** can be any Redis command. Take the `SET` command, for example. The Redis ACL rule
-
-```sh
-+set
-```
-
-indicates that the `SET` command is permitted.
-
-A **command category** is a predefined, named set of commands. For example, the Redis commands that
-read data are available in the `read` command category. The Redis ACL rule
-
-```sh
-+@read
-```
-
-permits access to all read commands. If you'd like to know which commands are included in the
-`read` command category, run
-
-```sh
-ACL CAT read
-```
-
-from the Redis CLI.
-
-There's also a syntax for specifying which **keys** can be accessed. For example,
-
-```sh
-~*
-```
-
-indicates that all keys can be accessed. Whereas
-
-```
-~cache:*
-```
-
-indicates that only those keys beginning with the prefix `cache:` can be accessed.
+You define these named permissions using the [Redis ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules). This
+syntax lets you concisely specify which **commands**, **command categories**, and **keys** to allow.
 
 The Redis ACL syntax emphasizes brevity:
 
@@ -156,13 +115,59 @@ The Redis ACL syntax emphasizes brevity:
 - `@` indicates a command category
 - `~` defines a permitted key pattern
 
+#### Command ACL rules
+
+A **command** can be any [Redis command](https://redis.io/commands/).
+
+For example, this Redis ACL rule indicates that the `SET` command is permitted:
+
+```sh
++set
+```
+
+#### Command category ACL rules
+
+A [**command category**](https://redis.io/docs/management/security/acl/#command-categories) is a predefined, named set of commands.
+
+For example, the Redis commands that
+read data are available in the `read` command category. This Redis ACL rule permits access to all read commands:
+
+```sh
++@read
+```
+
+To find out which commands are included in the
+`read` command category, run the following command with [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}):
+
+```sh
+ACL CAT read
+```
+
+#### Key ACL rules
+
+There's also a [syntax](https://redis.io/docs/management/security/acl/#key-permissions) for specifying which **keys** are accessible.
+
+The following ACL rule allows access to all keys:
+
+```sh
+~*
+```
+
+Whereas, this ACL rule only allows access to keys prefixed with `cache:`
+
+```
+~cache:*
+```
+
 #### Predefined permissions
 
 Redis Cloud includes three, predefined permissions:
 
-- Full Access (`+@all ~*`) - All commands are allowed for all keys
-- Not Dangerous (`+@all -@dangerous ~*`) - All commands except for the "dangerous" command category are allowed for all keys
-- Read Only (`+@read ~*`) - Only the "read" command category is allowed for all keys
+- Full-Access (`+@all ~*`) - All commands are allowed for all keys
+
+- Read-Write (`+@all -@dangerous ~*`) - All commands except for the "dangerous" command category are allowed for all keys
+
+- Read-Only (`+@read ~*`) - Only the "read" command category is allowed for all keys
 
 #### Module command permissions
 
@@ -175,54 +180,94 @@ To define database access control, you can either:
 - Create new data access roles and select the management roles and Redis ACLs that apply to the roles for specific databases.
 - Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rc/databases/create-database.md" >}}).
 
-### Configuring permissions using Redis ACLs
+### Configure permissions with Redis ACLs
 
 To configure a Redis ACL that you can assign to a data access role:
 
-1. In **Data Access Control** > **Redis ACLs**:
-    - To edit an existing Redis ACL: Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-    - To create a new Redis ACL: Click ![Add](/images/rc/icon_add.png#no-click "Add").
-1. Enter a descriptive name for the Redis ACL.
-1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) defining the ACL or click **Rule Builder** to use a form to build the ACL:
-    1. For the commands:
-        1. Select whether to include or exclude a command or category.
-        1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the commands.
-            - To add more command definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
-            - All entries in the Commands/Categories column apply to the keys defined in the Keys column.
-    1. For the keys, enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the keys.
-        - To add more key definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
-    1. Click **Save Rule**.
-1. Click **Save**.
+1. Go to **Data Access Control > ACLs** and either:
 
-### Assigning permissions to a role
+    - Create a new Redis ACL:
+
+        {{<image filename="images/rc/icon-rbac-add.png" width="40px" alt="Select the Add button to create a new Redis ACL." >}}{{< /image >}}
+
+    - Point to an existing ACL and select **Edit**:
+
+        {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing ACL." >}}{{< /image >}}
+
+1. Provide a descriptive name for the Redis ACL.
+
+1. Enter [ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules) to define the ACL rule or select **Rule Builder** for help building the ACL rule with correct syntax.
+
+1. To create a Redis ACL rule with the **Rule Builder**:
+
+    1. For **Redis commands / categories**, enter a [command](https://redis.io/commands/) or [command category](https://redis.io/docs/management/security/acl/#command-categories).
+
+    1. Select whether to include or exclude the command or category.
+
+    1. For **Keys**, enter the [pattern for permitted keys](https://redis.io/docs/management/security/acl/#key-permissions).
+
+    1. To add more commands, categories, or keys to the ACL rule, select **Add**:
+
+        {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-add.png"  alt="Use the Add button to add more commands, categories, or keys to the ACL rule." >}}{{< /image >}}
+
+    1. When you finish building the ACL rule, select **Save rule**:
+
+        {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-save-rule.png" width="120px" alt="The Save rule button saves your ACL rule changes." >}}{{< /image >}}
+
+1. Select the check mark to save your changes:
+
+    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to save your Redis ACL changes." >}}{{< /image >}}
+
+### Assign permissions to roles
 
 To assign Redis ACLs to a data access role:
 
-1. In **Data Access Control** > **Roles**:
-    - Edit an existing role - Hover over a role and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-    - Create a new role - Click ![Add](/images/rc/icon_add.png#no-click "Add").
-1. In the Redis ACLs section:
-    - Edit a Redis ACL association - Hover over a Redis ACL assignment and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-    - Create a Redis ACL association - Click ![Add](/images/rc/icon_add.png#no-click "Add").
-1. Select the databases that the Redis ACL applies to.
-1. Select the [Redis ACL](#configuring-redis-acls) that defines the access to commands and keys.
-1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
+1. Go to **Data Access Control > Roles** and either:
 
-    You can click ![Add](/images/rc/icon_add.png#no-click "Add") to assign a Redis ACL to another database.
+    - Point to an existing role and select the **Edit** button:
 
-1. Click **Save**.
+        {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing role." >}}{{< /image >}}
 
-Users that are assigned to the role can access the databases according to the Redis ACL definitions.
+    - Select the **Add** button to create a new role:
 
-### Assigning a role to a user
+        {{<image filename="images/rc/icon-rbac-add.png" width="40px" alt="Select the Add button to create a new role." >}}{{< /image >}}
+
+1. In the **Associations** section of the **Edit role** or **Create new role** screen, you can:
+
+    - Point to an existing association and select the **Edit** button:
+
+        {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing role association." >}}{{< /image >}}
+
+    - Select the **Add** button to create a new association:
+
+        {{<image filename="images/rc/icon-rbac-add.png" width="40px" alt="Select the Add button to create a new role association." >}}{{< /image >}}
+
+1. Select one or more databases from the **Databases** list.
+
+1. To set the role's level of access to the selected databases, select a **Redis ACL** from the list.
+
+1. Select the check mark to confirm the association:
+
+    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to save the role association changes." >}}{{< /image >}}
+
+1. Select **Save role**:
+
+    {{<image filename="images/rc/button-data-access-control-save-role.png" width="120px" alt="The Save role button saves your role changes." >}}{{< /image >}}
+
+Users assigned the role can access the databases according to the role's associated Redis ACLs.
+
+### Assign roles to users
 
 To assign a role to a user:
 
-1. In **Data Access Control** > **Users**:
-    - Edit an existing role - Hover over a role and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-    - Create a new role - Click ![Add](/images/rc/icon_add.png#no-click "Add").
-1. Select a role for the user.
+1. Go to **Data Access Control > Users**.
 
-    You can also change the user password.
+1. Point to the user and select the **Edit** button when it appears:
 
-1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
+    {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing user's role." >}}{{< /image >}}
+
+1. Select a **Role** from the list.
+
+1. Select the check mark to assign the role to the user:
+
+    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to apply the user's role changes." >}}{{< /image >}}
