@@ -11,7 +11,7 @@ aliases: /connect/architecture/
 
 Redis Data Integration relies on a variety of components, as shown in the following figure:
 
-{{<image filename="images/connect/redis-connect-architecture.png" alt="Redis Data Integration architecture and components" width="75%">}}{{< /image >}}
+{{<image filename="images/redis-di/redis-di-simplified-architecture.png" alt="Redis Data Integration architecture and components" width="75%">}}{{< /image >}}
 
 For Preview, Redis Data Integration uses [Debezium](https://debezium.io/) to load source data into a Redis Data Integration instance as [Redis Streams](https://redis.io/docs/manual/data-types/streams/).
 
