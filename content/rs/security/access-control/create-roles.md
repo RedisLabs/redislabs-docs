@@ -10,12 +10,12 @@ aliases:
 
 From **access control** > **roles**, you can configure user roles with:
 
-- **Management roles** - Management roles define user access to the cluster's admin console and API
+- **Management roles** - Management roles define user access to the cluster's admin console and API.
 - **Data access controls** - Data access controls define the permissions each role has for each database in the cluster.
 
 ## Default management roles
 
-Redis Enterprise Software includes five predefined roles to help users who need limited access to the admin console.
+Redis Enterprise Software includes five predefined roles that determine a user's level of access to the admin console and [REST API]({{<relref "/rs/references/rest-api">}}).
 
 1. **DB Viewer** - Read database settings
 1. **DB Member** - Administer databases
@@ -23,21 +23,29 @@ Redis Enterprise Software includes five predefined roles to help users who need 
 1. **Cluster Member** - Administer the cluster
 1. **Admin** - Full cluster access
 
-For more details about the privileges for each of these roles, see the following table:
+For more details about the privileges granted by each of these roles, see [admin console permissions](#admin-console-permissions) or [REST API permissions](#rest-api-permissions).
+
+### Admin console permissions
+
+Here's a summary of the admin console actions permitted by each default management role:
 
 | Action | DB Viewer | DB Member | Cluster Viewer | Cluster Member | Admin |
 |--------|:---------:|:---------:|:--------------:|:-----------:|:------:|
-| Edit database configuration | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| Reset slow log | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| View cluster configuration | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| View cluster logs | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span><br /> |
-| View cluster metrics | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| View database configuration | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| View database metrics | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| View node configuration | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| View node metrics | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| View Redis database password | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> | <span title="Allowed">&#x2705;</span> |
-| View and edit cluster settings |<span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Not allowed">&#x274c;</span> | <span title="Allowed">&#x2705;</span> |
+| Edit database configuration | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| Reset slow log | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| View cluster configuration | <span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| View cluster logs | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span><br /> |
+| View cluster metrics | <span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| View database configuration | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| View database metrics | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| View node configuration | <span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| View node metrics | <span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| View Redis database password | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
+| View and edit cluster settings |<span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> |
+
+### REST API permissions
+
+The default management roles also grant permissions to perform certain [REST API]({{<relref "/rs/references/rest-api">}}) actions. See the [REST API permissions reference page]({{<relref "/rs/references/rest-api/permissions">}}) for more details.
 
 ## Create roles for database access
 
