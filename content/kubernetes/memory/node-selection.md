@@ -195,7 +195,7 @@ during partitions or other rack (or region) related failures.
 
 
 Rack-zone awareness is a single property in the Redis Enterprise cluster CRD named `rackAwarenessNodeLabel`.
-This value for this label is commonly `failure-domain.beta.kubernetes.io/zone` as documented in
+This value for this label is commonly `topology.kubernetes.io/zone` as documented in
 ['Running in multiple zones'](https://kubernetes.io/docs/setup/best-practices/multiple-zones/#nodes-are-labeled).
 
 You can check the value for this label in your nodes with the command:
