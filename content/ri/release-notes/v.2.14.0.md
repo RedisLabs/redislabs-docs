@@ -10,9 +10,6 @@ aliases: /ri/release-notes/v2.14.0/
 ## 2.14.0 (November 2022)
 This is the General Availability (GA) release of RedisInsight 2.14.
 
-## 2.14.0 (November 2022)
-This is the General Availability (GA) release of RedisInsight 2.14.
-
 ### Highlights
 - Support for [search capabilities](https://redis.io/docs/stack/search/) in Browser: create secondary index via dedicated form, run queries and full-text search in Browser or Tree view
 - Ability to resize the column width of key values when displaying hashes, lists, and sorted sets
