@@ -12,17 +12,17 @@ aliases: [
     /rs/databases/import-export/,
 ]
 ---
-You can [import]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}), [export]({{< relref "/rs/databases/import-export/export-data.md" >}}),
-or [backup]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
+You can [import]({{< relref "/rs/databases/import-export/import-data" >}}), [export]({{< relref "/rs/databases/import-export/export-data" >}}),
+or [back up]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
 files of a specific Redis Enterprise Software database to restore data.
 
-## [Import data]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}})
+## [Import data]({{< relref "/rs/databases/import-export/import-data" >}})
 
-Import export or backup files of a specific Redis Enterprise Software database to restore data. You can either import from a single file or from multiple files, such as when you want to import from a backup of a clustered database.
+Import data from a backup or another Redis database. You can import from a single file or multiple files, such as when you want to import a backup of a clustered database.
 
 ## [Export data]({{< relref "/rs/databases/import-export/export-data.md" >}})
 
-Export data to import it into a new database or to make a backup. Export to a local mount point, to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or on cloud provider storage.
+Export data from a Redis Enterprise database to a local mount point, an FTP or SFTP server, or cloud provider storage.
 
 ## [Schedule automatic backups]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
 
