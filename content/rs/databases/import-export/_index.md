@@ -14,7 +14,7 @@ aliases: [
 ---
 You can [import]({{< relref "/rs/databases/import-export/import-data" >}}), [export]({{< relref "/rs/databases/import-export/export-data" >}}),
 or [back up]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
-files of a specific Redis Enterprise Software database to restore data.
+ a Redis Enterprise database.
 
 ## [Import data]({{< relref "/rs/databases/import-export/import-data" >}})
 
