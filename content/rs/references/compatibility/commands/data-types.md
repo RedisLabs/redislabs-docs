@@ -13,7 +13,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## Bitmap commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [BITCOUNT](https://redis.io/commands/bitcount) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [BITFIELD](https://redis.io/commands/bitfield) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
@@ -26,7 +26,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## Geospatial indices commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [GEOADD](https://redis.io/commands/geoadd) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [GEODIST](https://redis.io/commands/geodist) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
@@ -42,7 +42,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## Hash commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [HDEL](https://redis.io/commands/hdel) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [HEXISTS](https://redis.io/commands/hexists) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
@@ -64,7 +64,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## HyperLogLog commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [PFADD](https://redis.io/commands/pfadd) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [PFCOUNT](https://redis.io/commands/pfcount) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
@@ -75,7 +75,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## List commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [BLMOVE](https://redis.io/commands/blmove) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [BLPOP](https://redis.io/commands/blpop) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
@@ -101,7 +101,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## Set commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [SADD](https://redis.io/commands/sadd) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [SCARD](https://redis.io/commands/scard) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
@@ -123,7 +123,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## Sorted set commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [BZPOPMAX](https://redis.io/commands/bzpopmax) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [BZPOPMIN](https://redis.io/commands/bzpopmin) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
@@ -161,7 +161,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## Stream commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [XACK](https://redis.io/commands/xack) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [XADD](https://redis.io/commands/xadd) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
@@ -182,7 +182,7 @@ The following tables show which open source Redis data type commands are compati
 
 ## String commands
 
-| Command | Redis<br />Enterprise | Redis<br />Cloud | Notes |
+| <span style="min-width: 10em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
 | [APPEND](https://redis.io/commands/append) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
 | [DECR](https://redis.io/commands/decr) | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> | <span title="Supported">&#x2705; Standard</span><br /><span title="Supported"><nobr>&#x2705; Active-Active</nobr></span> |  |
