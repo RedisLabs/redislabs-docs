@@ -80,6 +80,8 @@ Every effort is made to adhere, where possible, to the specifications of open so
 
 - Open source Redis supports key names up to 512MB.  Redis Enterprise Software and Redis Enterprise Cloud each limit key names to 64KB.  Key values can reach up to 512MB in all three services.
 
+- The output of the [SLOWLOG GET](https://redis.io/commands/slowlog-get) command is different in Open source Redis compared to Redis Enterprise Software and Redis Enterprise Cloud. In Open source Redis, the command prints: id, timestamp, time in microseconds, arguments array, client IP and port, and client name. In Redis Enterprise Software and Redis Enterprise Cloud the command results in id, timestamp, time in microseconds, and arguments array.
+
 ## How many databases can I create and manage?
 
 With Redis Enterprise Cloud, the number of databases depends on the subscription plan:
