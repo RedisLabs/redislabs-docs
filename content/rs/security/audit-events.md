@@ -36,7 +36,9 @@ To enable auditing for your cluster, use:
     rladmin cluster config auditing db_conns \
        audit_protocol <TCP|local> \
        audit_address <address> \
-       audit_port <port>
+       audit_port <port> \
+       audit_reconnect_interval <interval in seconds> \
+       audit_reconnect_max_attempts <number of attempts>
     ```
 
     where:
@@ -46,6 +48,10 @@ To enable auditing for your cluster, use:
     - _audit\_address_ defines the TCP/IP address where one can listen for notifications
 
     - _audit\_port_ defines the port where one can listen for notifications
+   
+    - _audit\_reconnect\_interval_ defines the interval (in seconds) between attempts to reconnect to the listener. Default is 1 second.
+    
+    - _audit\_reconnect\_max\_attempts_ defines the maximum number of attempts to reconnect. Default is 0. (infinite)
 
     Development systems can set _audit\_protocol_ to `local` for testing and training purposes; however, this setting is _not_ supported for production use.  
     
@@ -65,11 +71,13 @@ To enable auditing for your cluster, use:
     { 
         "audit-address":"<address>", 
         "audit-port":<port>, 
-        "audit_protocol":"TCP" 
+        "audit_protocol":"TCP",
+        "audit_reconnect_interval":<interval>,
+        "audit_reconnect_max_attempts":<max attempts>
     }
     ```
 
-    where `<address>` is a string containing the TCP/IP address and `<port`> is a numeric value representing the port.
+    where `<address>` is a string containing the TCP/IP address, `<port>` is a numeric value representing the port, `<interval>` is a numeric value representing the interval in seconds, and `<max attempts>` is a numeric value representing the maximum number of attempts to execute.
 
 ### Database audits
 
