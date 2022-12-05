@@ -119,7 +119,7 @@ HAproxy:
     dbIngressSuffix: <ingress-suffix>
     ingressAnnotations:
       kubernetes.io/ingress.class: haproxy
-      haproxy-ingress.github.io/ssl-passthrough: "true"
+       ingress.kubernetes.io/ssl-passthrough': 'true'
     method: ingress
   ```
 
