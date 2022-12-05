@@ -77,7 +77,7 @@ To enable auditing for your cluster, use:
     }
     ```
 
-    where `<address>` is a string containing the TCP/IP address, `<port>` is a numeric value representing the port, `<interval>` is a numeric value representing the interval in seconds and `<max attempts>` is a numeric value representing the maximum number of attempts to execute.
+    where `<address>` is a string containing the TCP/IP address, `<port>` is a numeric value representing the port, `<interval>` is a numeric value representing the interval in seconds, and `<max attempts>` is a numeric value representing the maximum number of attempts to execute.
 
 ### Database audits
 
