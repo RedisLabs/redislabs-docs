@@ -100,7 +100,7 @@ Install one of the supported ingress controllers:
 
     ``` YAML
     kubernetes.io/ingress.class: haproxy
-     ingress.kubernetes.io/ssl-passthrough': 'true'
+     ingress.kubernetes.io/ssl-passthrough': "true"
     ```
 
     For NGINX, insert the following into the `annotations` section:  
