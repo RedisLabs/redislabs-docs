@@ -51,7 +51,7 @@ To enable auditing for your cluster, use:
    
     - _audit\_reconnect\_interval_ defines the interval (in seconds) between attempts to reconnect to the listener. Default is 1 second.
     
-    - _audit\_reconnect\_max\_attempts_ defines the maximum number of attempts to reconnect. Default is 0 (infinite)
+    - _audit\_reconnect\_max\_attempts_ defines the maximum number of attempts to reconnect. Default is 0. (infinite)
 
     Development systems can set _audit\_protocol_ to `local` for testing and training purposes; however, this setting is _not_ supported for production use.  
     
