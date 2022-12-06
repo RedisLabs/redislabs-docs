@@ -206,7 +206,17 @@ To configure a Redis ACL that you can assign to a data access role:
 
     1. For **Keys**, enter the [pattern for permitted keys](https://redis.io/docs/management/security/acl/#key-permissions).
 
-    1. To add more commands, categories, or keys to the ACL rule, select **Add**:
+    1. To change pub/sub channels from permissive to restrictive, enter "resetchannels" in the first **Pub/Sub channels** field.
+
+        TODO: Select **Add** and enter an allowed channel name.
+
+        {{<note>}}
+**Pub/Sub channels** are only available in the **Rule builder** for accounts that have Redis v6.2 or later for all subscriptions.
+
+If you need to edit ACL rules for pub/sub channels but your account still has Redis v6.0 subscriptions, contact support to upgrade your subscriptions to a later version.
+        {{</note>}}
+
+    1. To add more commands, categories, keys, or pub/sub channels to the ACL rule, select **Add**:
 
         {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-add.png"  alt="Use the Add button to add more commands, categories, or keys to the ACL rule." >}}{{< /image >}}
 
