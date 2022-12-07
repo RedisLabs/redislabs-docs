@@ -106,7 +106,7 @@ To define permissions, go to the **Redis ACLs** tab of the **Data Access Control
 {{<image filename="images/rc/data-access-control-acls.png" alt="Data access control screen." >}}{{< /image >}}
 
 You define these named permissions using the [Redis ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules). This
-syntax lets you concisely specify which **commands**, **command categories**, and **keys** to allow.
+syntax lets you concisely specify which commands, command categories, keys, and pub/sub channels to allow.
 
 The Redis ACL syntax emphasizes brevity:
 
@@ -114,6 +114,7 @@ The Redis ACL syntax emphasizes brevity:
 - `-` *excludes* commands or command categories
 - `@` indicates a command category
 - `~` defines a permitted key pattern
+- `&` allows access to a [pub/sub channel](https://redis.io/docs/manual/pubsub/)
 
 #### Command ACL rules
 
@@ -158,6 +159,29 @@ Whereas, this ACL rule only allows access to keys prefixed with `cache:`
 ```
 ~cache:*
 ```
+
+#### Pub/sub ACL rules
+
+For versions earlier than Redis 7, pub/sub ACLs default to permissive, which allows access to all [pub/sub channels](https://redis.io/docs/manual/pubsub/). Although open source Redis changed the default pub/sub ACLs to restrictive to block all channels as of Redis 7, Redis Cloud still defaults to permissive pub/sub ACLs even for Redis 7 databases.
+
+To change pub/sub channels from permissive to restrictive in Redis Cloud:
+
+```sh
+resetchannels
+```
+
+If you want to limit access to specific channels, first include `resetchannels` and then use `&` syntax to permit channels:
+
+```sh
+resetchannels &channel1 &channel2
+```
+
+This ACL rule changes pub/sub channels back to permissive:
+
+```sh
+allchannels
+```
+
 
 #### Predefined permissions
 
@@ -211,7 +235,7 @@ To configure a Redis ACL that you can assign to a data access role:
         TODO: Select **Add** and enter an allowed channel name.
 
         {{<note>}}
-**Pub/Sub channels** are only available in the **Rule builder** for accounts that have Redis v6.2 or later for all subscriptions.
+**Pub/Sub channels** are only available in the **Rule Builder** for accounts that have Redis v6.2 or later for all subscriptions.
 
 If you need to edit ACL rules for pub/sub channels but your account still has Redis v6.0 subscriptions, contact support to upgrade your subscriptions to a later version.
         {{</note>}}
