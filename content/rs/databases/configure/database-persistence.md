@@ -97,7 +97,7 @@ Active-Active databases support AOF persistence only.  Snapshot persistence is n
 If an Active-Active database is using snapshot persistence, use `crdb-cli` to switch to AOF persistence:
 
 ```text
-crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config \\
+crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config \
    '{"data_persistence": "aof", "aof_policy":"appendfsync-every-sec"}'
 ```
 
