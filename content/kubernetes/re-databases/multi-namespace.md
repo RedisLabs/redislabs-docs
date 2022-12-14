@@ -18,7 +18,7 @@ A single Redis Enterprise cluster (REC) can manage multiple Redis Enterprise dat
 
 Both the operator and the RedisEnterpriseCluster (REC) resource need access to each namespace the REC will manage. For each managed namespace, create a `role.yaml` and `role_binding.yaml` file within the managed namespace, as shown in the examples below.
 Replace `<NAMESPACE_OF_SERVICE_ACCOUNT>` with the namespace the REC resides in.
-Replace `<NAME_OF_REC_SERVICE_ACCOUNT>` with the REC name.
+Replace `<NAME_OF_REC_SERVICE_ACCOUNT>` with the your own value (by default this is the REC name).
 
 ```yaml
 kind: Role
