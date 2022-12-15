@@ -16,9 +16,7 @@ For more information on how Prometheus communicates with Redis Enterprise Softwa
 
 {{< note >}}
 
-You must [enable VPC peering]({{< relref "/rc/security/vpc-peering" >}}) for your subscription to connect Prometheus and Grafana to your Redis Cloud databases. 
-
-VPC peering is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions. Prometheus and Grafana cannot connect to databases on Fixed or Free subscriptions.
+You must [enable VPC peering]({{< relref "/rc/security/vpc-peering" >}}) for your subscription to connect Prometheus and Grafana to your Redis Cloud databases. VPC peering is available only with Flexible or Annual subscriptions.  Prometheus and Grafana cannot connect to databases on Fixed or Free subscriptions.
 
 {{< /note >}}
 
