@@ -44,11 +44,11 @@ See [Manage databases in multiple namespaces]({{<relref "/kubernetes/re-clusters
 
 Redis Enterprise for Kubernetes does not support operations that cross Kubernetes clusters. Redis Enterprise clusters (REC) work inside a single K8s cluster. Crossing clusters could result in functional and security issues.
 
-![cross cluster deployment antipattern](/images/platforms/k8s-deploy-cross-namespaces.png)
+![cross cluster deployment](/images/platforms/k8s-deploy-cross-namespaces.png)
 
 ### Multiple RECs in one namespace
 
 Redis Enterprise for Kubernetes does not support multiple Redis Enterprise clusters (REC) in the same namespace. Creating more than one REC in the same namespace will result in errors.
 
-![multicluster deployment antipattern](/images/platforms/k8s-deploy-multicluster-antipattern.png)
+![multi-cluster single namespace deployment](/images/platforms/k8s-deploy-multicluster-antipattern.png)
 
