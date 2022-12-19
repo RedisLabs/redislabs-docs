@@ -23,7 +23,7 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
   2. Upgrade the Redis Enterprise cluster (REC)
 
 {{< warning >}}
-  OpenShift customers who also use Redis Modules are advised to skip upgrading to the 6.2.10-34 release, and instead upgrade to the [6.2.10-45]({{< relref "/kubernetes/release-notes/k8s-6-2-10-45-2022-07.md" >}}) release. Either way, when upgrading existing RS clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version.
+When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info. 
   {{</warning>}}
 
 ## Upgrade the operator
