@@ -6,7 +6,7 @@ weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
-    /kubernetes/re-databases/multi-namespace.md,
+    /kubernetes/re-clusters/multi-namespace.md,
     /kubernetes/re-databases/multi-namespace/,
 ]
 
