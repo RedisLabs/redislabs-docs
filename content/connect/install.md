@@ -46,10 +46,10 @@ Specific steps vary according to your operating system and environment.  The gen
 
     | Operating system | Installation filename |
     |---|---|
-    | Ubuntu v20.04 | `redis-di-ubuntu20.04-latest.tar.gz` |
-    | Ubuntu v18.04 | `redis-di-ubuntu18.04-latest.tar.gz` |
-    | Red Hat Enterprise Linux 8 (RHEL8) | `redis-di-rhel8-latest.tar.gz` |
-    | Red Hat Enterprise Linux 7 (RHEL7) | `redis-di-rhel7-latest.tar.gz` |
+    | Ubuntu v20.04 | [`redis-di-ubuntu20.04-latest.tar.gz`](https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-ubuntu20.04-latest.tar.gz) |
+    | Ubuntu v18.04 | [`redis-di-ubuntu18.04-latest.tar.gz`](https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-ubuntu18.04-latest.tar.gz) |
+    | Red Hat Enterprise Linux 8 (RHEL8) | [`redis-di-rhel8-latest.tar.gz`](https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-rhel8-latest.tar.gz) |
+    | Red Hat Enterprise Linux 7 (RHEL7) |  [`redis-di-rhel7-latest.tar.gz`](https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-rhel7-latest.tar.gz) |
 
     Download your file to a local directory:
 
