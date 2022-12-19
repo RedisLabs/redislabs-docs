@@ -37,7 +37,7 @@ namespace ReferenceConsoleRedisApp
     {
         static readonly ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(
             new ConfigurationOptions{
-                EndPoints = {"localhost:6379"}                
+                EndPoints = { "redis-12000.cluster.redis.com:12000" },                
             });
         static async Task Main(string[] args)
         {
@@ -205,7 +205,7 @@ namespace ConnectToRedisWithTls
         {
             var configurationOptions = new ConfigurationOptions
             {
-                EndPoints = { "localhost:6379" },
+                EndPoints = { "redis-12000.cluster.redis.com:12000" },
                 Ssl = true
             };
             configurationOptions.CertificateSelection += delegate {
@@ -222,7 +222,7 @@ namespace ConnectToRedisWithTls
 - Modify the `EndPoints` setting to point to your endpoint(s)
 - If necessary, add a `Password` to the `ConfigurationOptions`
 
-To learn how to run Redis Server with TLS enabled, see [TLS Support](https://redis.io/topics/encryption).
+To learn how to run Redis Enterprise with TLS enabled, see [TLS Support](https://docs.redis.com/latest/rs/security/tls/enable-tls/).
 
 ### Convert certificate format
 
