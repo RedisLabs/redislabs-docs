@@ -140,7 +140,7 @@ roleRef:
 1. Patch the ConfigMap in the REC namespace (`<rec-namespace>`) to identify the managed namespaces with your desired label (`<namespace-label>`).
 
   ```sh
-   kubectl patch configmap/operator-environment-config \
+   kubectl patch ConfigMap/operator-environment-config \
   -n <rec-namespace> \
   --type merge \
   -p '{"data": {"REDB_NAMESPACES_LABEL": "<namespace-label>"}}'
@@ -160,10 +160,10 @@ The operator restarts when it detects a namespace label has been added or remove
 
 ### Method 2: Explicit namespace list
 
-Patch the `operator-environment-configmap` in the REC namespace with a new environment variable (`REDB_NAMESPACES`).
+Patch the `operator-environment-ConfigMap` in the REC namespace with a new environment variable (`REDB_NAMESPACES`).
 
 ```sh
-kubectl patch configmap/operator-environment-config \ 
+kubectl patch ConfigMap/operator-environment-config \ 
 -n <rec-namespace> \
 --type merge \
 -p `{"data":{"REDB_NAMESPACES": "<comma,separated,list,of,namespaces,to,watch"}}`
