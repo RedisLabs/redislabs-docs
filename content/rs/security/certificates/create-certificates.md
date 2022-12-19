@@ -44,9 +44,4 @@ You will be prompted for a Country Name, State or Province Name, Locality Name, 
         key_file <key-file-name>.pem
     ```
 
-    The certificate names are as follows: 
-      - For the admin console: `cm`
-      - For the REST API: `api`
-      - For the proxy: `proxy`
-      - For the syncer: `syncer`
-      - For the metrics exporter: `metrics_exporter`
+    See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.

@@ -32,12 +32,7 @@ To replace certificates with the `rladmin` CLI, run:
 
 Replace the following variables with your own values:
 
-- `<cert-name>` - The name of the certificate you want to replace:
-  - For the admin console: `cm`
-  - For the REST API: `api`
-  - For the database endpoint: `proxy`
-  - For the syncer: `syncer`
-  - For the metrics exporter: `metrics_exporter`
+- `<cert-name>` - The name of the certificate you want to replace. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
 - `<cert-file-name>` - The name of your certificate file
 - `<key-file-name>` - The name of your key file
 
@@ -58,12 +53,7 @@ PUT https://[host][:port]/v1/cluster/update_cert
 
 Replace the following variables with your own values:
 
-- `<cert_name>` - The name of the certificate to replace:
-  - For the admin console: `cm`
-  - For the REST API: `api`
-  - For the database endpoint: `proxy`
-  - For the syncer: `syncer`
-  - For the metrics exporter: `metrics_exporter`
+- `<cert_name>` - The name of the certificate to replace. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
 - `<key>` - The contents of the \*\_key.pem file
 
     {{< tip >}}
