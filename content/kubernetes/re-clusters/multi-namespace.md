@@ -55,6 +55,8 @@ rules:
     verbs: ["get", "watch", "list", "update", "patch", "create", "delete"]
 ```
 
+
+
 ```yaml
  kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
@@ -109,6 +111,8 @@ rules:
     resources: ["namespaces"]
     verbs: ["list", "watch"]
 ```
+
+
 
 ```yaml
 kind: ClusterRoleBinding
