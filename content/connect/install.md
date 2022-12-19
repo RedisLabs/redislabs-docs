@@ -1,5 +1,5 @@
 ---
-Title: Install and set up Redis Connect
+Title: Install and set up
 linkTitle: Install and set up
 description: Shows how to install Redis Data Integration CLI and use it to create a new Redis Data Integration instance.
 weight: 20
