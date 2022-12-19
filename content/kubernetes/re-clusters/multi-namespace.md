@@ -2,7 +2,7 @@
 Title: Manage databases in multiple namespaces
 linktitle: Manage multiple namespaces
 description: Redis Enterprise for Kubernetes allows you to deploy to multiple namespaces within your Kubernetes cluster. This article shows you how to configure your Redis Enterprise cluster to connect to databases in multiple namespaces
-weight: 10
+weight: 17
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
