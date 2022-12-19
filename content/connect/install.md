@@ -11,15 +11,17 @@ aliases: /connect/install/
 
 Redis Data Integration helps connect traditional relational database systems (RDBMS) to Redis Enterprise.  It does this by ingesting (_importing_) row-based data into a target Redis database.
 
+{{<note>}}The features described here are currently in preview.  Behavior may change before general availability.  We recommend against using preview features in production environments.{{</note>}}
+
 The Redis Data Integration command-line interface (CLI) helps you set up a new Redis Data Integration instance and configure the connections between your source data and Redis Enterprise.
 
 The Redis Data Integration CLI requires network access to the Redis Enterprise cluster API; it uses port 9443 by default.
 
-{{<note>}}This information describes features currently in preview.  Behavior may change before general availability.{{</note>}}
-
 ## Install Redis Data Integration CLI
 
-Redis ConData Integrationnect CLI requires Python 3.7 or later.  If your operating system relies on a different version of Python, we recommend installing the latest version of Python and using [virtual environments](https://docs.python.org/3/library/venv.html) to manage Python.
+Redis Data Integration provides a command-line interface (CLI) called `redis-di` to install and manage Redis Data integration.  The `redis-di` utility requires Python 3.7 or later.  
+
+If your operating system relies on a different version of Python, we recommend installing the latest version of Python and using [virtual environments](https://docs.python.org/3/library/venv.html) to manage Python.
 
 Specific steps vary according to your operating system and environment.  The general process is:
 
@@ -32,10 +34,33 @@ Specific steps vary according to your operating system and environment.  The gen
     source venv/bin/activate
     ```
 
+1.  Download the latest installation file for your operating system.
+
+    Setup files are available at: 
+
+    ``` console 
+    https://qa-onprem.s3.amazonaws.com/redis-di/latest/
+    ```
+    
+    The following operating systems are supported:
+
+    | Operating system | Installation filename |
+    |---|---|
+    | Ubuntu v20.04 | `redis-di-ubuntu20.04-latest.tar.gz` |
+    | Ubuntu v18.04 | `redis-di-ubuntu18.04-latest.tar.gz` |
+    | Red Hat Enterprise Linux 8 (RHEL8) | `redis-di-rhel8-latest.tar.gz` |
+    | Red Hat Enterprise Linux 7 (RHEL7) | `redis-di-rhel7-latest.tar.gz` |
+
+    Download your file to a local directory:
+
+    ``` console
+    wget <filename> -0 /tmp/redis-di.tar.gz
+    ```
+    
 1.  Install Redis Data Integration CLI:
 
     ``` console
-    pip3 install https://qa-onprem.s3.amazonaws.com/redis-connect/redis_connect_cli-latest-py3-none-any.whl
+    pip3 install /tmp/redis-di.tar.gz
     ```
 
 ## Set up a Redis Data Integration instance
@@ -55,17 +80,17 @@ Once Redis Data Integration CLI is installed, you can use it to create a new Red
 1.  Use Redis Data Integration CLI to create a new Redis Data Integration instance on your Redis Enterprise cluster:
 
     ``` console
-    redis-connect create
+    redis-di create
     ```
 
-    This creates a database named `redis-connect` in your cluster
+    This creates a database named `redis-di` in your cluster
     
     Your user account needs permission to create databases and to register RedisGears recipes
 
 1.  Use the `scaffold` command to create the configuration files for your Redis Data Integration instance
 
     ``` console
-    redis-connect scaffold <PROJECT_NAME>
+    redis-di scaffold <PROJECT_NAME>
     ```
 
     This creates a directory in the current location; this directory contains the following files:
@@ -119,7 +144,7 @@ applier:
     The `deploy` command deploys a Redis Data Integration configuration to your Redis database instance:
 
     ``` console
-    redis-connect deploy
+    redis-di deploy
     ```
 
     The Redis Data Integration configuration file is saved (_persisted_) to the cluster, which helps configure new shards and recover in the event of shard or node failure.
@@ -129,14 +154,14 @@ applier:
     Use the `status` command to verify Redis Data Integration status.
 
     ``` console
-    redis-connect status
+    redis-di status
     ```
 
     You should receive a response similar to the following example:
 
     {{%expand "Example status response"%}}
 ``` console
-Status of redis-connect instance on localhost:12001
+Status of redis-di instance on localhost:12001
 
 Target DB:
  host: localhost
@@ -231,13 +256,18 @@ quarkus.log.console.json=false
     - Docker
 
     ```bash
-    docker run -it --name debezium --network host -v $PWD/debezium:/debezium/conf debezium/server
+    docker run -it \
+       --name debezium \
+       --network host  \
+       -v $PWD/debezium:/debezium/conf debezium/server
     ```
 
     - Podman
 
     ```bash
-    sudo podman run -it --rm --name debezium --network=host --privileged -v $PWD/debezium:/debezium/conf debezium/server
+    sudo podman run -it --rm \
+       --name debezium --network=host --privileged \
+       -v $PWD/debezium:/debezium/conf debezium/server
     ```
 
 ## Resolve Debezium Oracle errors
