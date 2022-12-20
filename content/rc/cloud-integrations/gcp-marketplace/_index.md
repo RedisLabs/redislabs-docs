@@ -37,15 +37,9 @@ Here's how to create a new Flexible subscription as part of your GCP Marketplace
 
     {{<image filename="images/rc/gcp-marketplace-billing-badge.png" alt="The GCP Marketplace badge appears when your Redis Cloud account is mapped to an GCP Marketplace account.">}}{{< /image >}}
 
-1.  GCP sends a request to Redis to approve the subscription, which can take a few seconds. Until Redis approves the subscription, the [GCP Marketplace listing](https://console.cloud.google.com/marketplace/product/redis-marketplace-isaas/redis-enterprise-cloud-flexible-plan) shows that the purchase is pending provider approval.
+1. On the GCP Marketplace listing, select **Manage on provider** to go to the Redis Cloud [admin console](https://app.redislabs.com).
 
-    {{<image filename="images/rc/gcp-marketplace-rc-payg-pending-approval.png" alt="The Redis Enterprise Cloud Flexible - Pay as You Go plan listing on GCP Marketplace, with the Purchase pending provider approval" >}}{{< /image >}}
-
-    Select **Manage on provider** to go to the Redis Cloud [admin console](https://app.redislabs.com).
-
-    {{<image filename="images/rc/gcp-marketplace-manage-on-provider.png" alt="The Manage on Provider button" >}}{{< /image >}}
-
-    If this button is not available, refresh the page.
+    {{<image filename="images/rc/gcp-marketplace-flexible-payg.png" alt="The GCP Marketplace listing showing the Manage on Provider button" >}}{{< /image >}}
 
 At this point, you can create a new Flexible subscription using the [standard workflow]({{<relref "/rc/subscriptions/create-flexible-subscription">}}), with one important change. You don't need to enter a payment method, as it automatically uses your GCP Marketplace account.
 
