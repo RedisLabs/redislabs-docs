@@ -14,17 +14,9 @@ aliases: [
 
 A single Redis Enterprise cluster (REC) can manage multiple Redis Enterprise database objects (REDB) in multiple namespaces within the same Kubernetes cluster.
 
-To learn more designing a multi-namespace Redis Enterprise cluster, see [flexible deployment options]({{<relref "/kubernetes/deployment/deployment-options.md">}}).
-
-## Prerequisites
-
-- A running [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/deployment/quick-start.md">}})
-- List of [namespaces the REC will manage]({{<relref "/kubernetes/deployment/deployment-options.md">}})
-
 ## Create role and role binding for managed namespaces
 
 Both the operator and the RedisEnterpriseCluster (REC) resource need access to each namespace the REC will manage. For each managed namespace, create a `role.yaml` and `role_binding.yaml` file within the managed namespace, as shown in the examples below.
-
 Replace `<NAMESPACE_OF_SERVICE_ACCOUNT>` with the namespace the REC resides in.
 Replace `<NAME_OF_REC_SERVICE_ACCOUNT>` with the your own value (by default this is the REC name).
 
@@ -88,18 +80,16 @@ kubectl apply -f role_binding.yaml
 
 ## Update Redis Enterprise operator configmap
 
-There are two ways to update the operator configmap to specify which namespaces to manage:
+### Method 1: Explicit namespace list
 
-- Method 1 uses a label
-- Method 2 uses each namespace name in a comma separated list
+Only configure the operator to watch a namespace once the namespace is created and configured with the role/role_binding as explained above. If configured to watch a namespace without setting those permissions or a namespace that is not created yet, the operator will fail and not perform normal operations.
 
-{{<note>}}
-If the REC is configured to watch a namespace without setting the role and role binding permissions, or a namespace that's not created yet, the operator will fail and halt normal operations.
-{{</note>}}
+Note that this configmap can be created manually before deploying the RedisEnterpriseCluster, or the operator will automatically create it once a RedisEnterpriseCluster is deployed.
 
-### Method 1: Namespace label
 
-1. Create the `cluster_role_binding.yaml` and `cluster_role.yaml` files to add the namespace of the operator. Replace the `<NAMESPACE_OF_SERVICE_ACCOUNT>` with the namespace the Redis Enterprise cluster (REC) resides in.
+### Method 2: Namespace label
+
+Edit the `cluster_role_binding.yaml` and `cluster_role.yaml` files to add the namespace of the operator. Replace the `<NAMESPACE_OF_SERVICE_ACCOUNT>` with the namespace the Redis Enterprise cluster (REC) resides in.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -126,45 +116,6 @@ roleRef:
   name: redis-enterprise-operator
   apiGroup: rbac.authorization.k8s.io
 ```
-
-1. Apply the files:
-
-  ```sh
-  kubectl apply -f cluster_role.yaml
-  kubectl apply -f cluster_role_binding.yaml 
-  ```
-
-1. Patch the configmap to identify the managed namespaces
-
- - replace `<REC_NAMESPACE>` with the REC namespace
- - replace `<NAMESPACE_LABEL>` with your desired namespace label
-
-  ```sh
-   kubectl patch configmap/operator-environment-config \
-  -n <REC_NAMESPACE> \
-  --type merge \
-  -p '{"data": {"REDB_NAMESPACES_LABEL": "<NAMESPACE_LABEL>"}}'
-  ```
-
-1. Label the managed namespace with the same label
-
- - replace `<REC_NAMESPACE>` with the REC namespace
-
-  ```sh
-  kubectl label namespace <REC_NAMESPACE> <NAMESPACE_LABEL>=<ANY_VALUE>
-  ```
-
-{{<note>}}
-The operator restarts when it detects a namespace label has been added or removed. 
-{{</note>}}
-
-### Method 2: Explicit namespace list
-
-Only configure the operator to watch a namespace once the namespace is created and configured with the role/role_binding as explained above. If configured to watch a namespace without setting those permissions or a namespace that is not created yet, the operator will fail and not perform normal operations.
-
-Note that this configmap can be created manually before deploying the RedisEnterpriseCluster, or the operator will automatically create it once a RedisEnterpriseCluster is deployed.
-
-
 
 
 
