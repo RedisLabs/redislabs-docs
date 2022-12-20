@@ -27,6 +27,8 @@ Both the operator and the RedisEnterpriseCluster (REC) resource need access to e
 Replace `<rec-namespace>` with the namespace the REC resides in.
 Replace `<service-account-name>` with the your own value (by default this is the REC name).
 
+`role.yaml` example: 
+
 ```yaml
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
@@ -55,7 +57,7 @@ rules:
     verbs: ["get", "watch", "list", "update", "patch", "create", "delete"]
 ```
 
-
+`role_binding.yaml` example:
 
 ```yaml
  kind: RoleBinding
@@ -97,47 +99,48 @@ This ConfigMap can be created manually before deploying the RedisEnterpriseClust
 If the REC is configured to watch a namespace without setting the role and role binding permissions, or a namespace that's not created yet, the operator will fail and halt normal operations.
 {{</note>}}
 
-
 ### Method 1: Namespace label (recommended)
 
 1. Create the `cluster_role_binding.yaml` and `cluster_role.yaml` files to add the namespace of the operator. Replace the `<rec-namespace>` with the namespace the Redis Enterprise cluster (REC) resides in.
 
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: redis-enterprise-operator
-rules:
-  - apiGroups: [""]
-    resources: ["namespaces"]
-    verbs: ["list", "watch"]
-```
+  `cluster_role.yaml` example:
 
+  ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      name: redis-enterprise-operator
+    rules:
+      - apiGroups: [""]
+        resources: ["namespaces"]
+        verbs: ["list", "watch"]
+  ```
 
+  `cluster_role_binding.yaml` example: 
 
-```yaml
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: redis-enterprise-operator
-subjects:
-- kind: ServiceAccount
-  name: redis-enterprise-operator
-  namespace: <rec-namespace>
-roleRef:
-  kind: ClusterRole
-  name: redis-enterprise-operator
-  apiGroup: rbac.authorization.k8s.io
-```
+  ```yaml
+    kind: ClusterRoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: redis-enterprise-operator
+    subjects:
+    - kind: ServiceAccount
+      name: redis-enterprise-operator
+      namespace: <rec-namespace>
+    roleRef:
+      kind: ClusterRole
+      name: redis-enterprise-operator
+      apiGroup: rbac.authorization.k8s.io
+  ```
 
-1. Apply the files:
+2. Apply the files:
 
   ```sh
   kubectl apply -f cluster_role.yaml
   kubectl apply -f cluster_role_binding.yaml 
   ```
 
-1. Patch the ConfigMap in the REC namespace (`<rec-namespace>`) to identify the managed namespaces with your desired label (`<namespace-label>`).
+3. Patch the ConfigMap in the REC namespace (`<rec-namespace>`) to identify the managed namespaces with your desired label (`<namespace-label>`).
 
   ```sh
    kubectl patch ConfigMap/operator-environment-config \
@@ -146,9 +149,8 @@ roleRef:
   -p '{"data": {"REDB_NAMESPACES_LABEL": "<namespace-label>"}}'
   ```
 
-1. For each managed namespace, apply the same label.
+4. For each managed namespace, apply the same label. Replace `<managed-namespace>` with the namespace the REC will be managing.
 
- - replace `<managed-namespace>` with the namespace the REC will be managing
 
   ```sh
   kubectl label namespace <managed-namespace> <namespace-label>=true
@@ -172,4 +174,3 @@ kubectl patch ConfigMap/operator-environment-config \
 {{<warning>}}
 Only configure the operator to watch a namespace once the namespace is created and configured with the role/role_binding as explained above. If configured to watch a namespace without setting those permissions or a namespace that is not created yet, the operator will fail and not perform normal operations.
 {{</warning>}}
-
