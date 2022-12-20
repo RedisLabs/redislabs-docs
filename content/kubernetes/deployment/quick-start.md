@@ -1,5 +1,5 @@
 ---
-Title: Deploy Redis Enterprise Software for Kubernetes
+Title: Deploy Redis Enterprise Software on Kubernetes
 linkTitle: Kubernetes 
 description: How to install Redis Enterprise Software on Kubernetes.
 weight: 10
