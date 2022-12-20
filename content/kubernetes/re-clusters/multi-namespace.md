@@ -87,13 +87,11 @@ kubectl apply -f role_binding.yaml
 
 ## Update Redis Enterprise operator ConfigMap
 
-There are two ways to update the operator ConfigMap (`operator-environment-config`) to specify which namespaces to manage.
+There are two ways to update the operator ConfigMap (`operator-environment-config`) to specify which namespaces to manage:
 
 {{<note>}}
 If the REC is configured to watch a namespace without setting the role and role binding permissions, or a namespace that's not created yet, the operator will fail and halt normal operations.
 {{</note>}}
-
-This ConfigMap can be created manually before deploying the RedisEnterpriseCluster, or the operator will automatically create it once a Redis Enterprise cluster (REC) is deployed.
 
 ### Method 1: Namespace label (recommended)
 
@@ -150,7 +148,7 @@ roleRef:
   ```
 
 {{<note>}}
-The operator restarts when it detects a namespace label has been added or removed.
+The operator restarts when it detects a namespace label has been added or removed. 
 {{</note>}}
 
 ### Method 2: Explicit namespace list
@@ -167,4 +165,10 @@ kubectl patch ConfigMap/operator-environment-config \
 {{<warning>}}
 Only configure the operator to watch a namespace once the namespace is created and configured with the role/role_binding as explained above. If configured to watch a namespace without setting those permissions or a namespace that is not created yet, the operator will fail and not perform normal operations.
 {{</warning>}}
+
+Note that this ConfigMap can be created manually before deploying the RedisEnterpriseCluster, or the operator will automatically create it once a Redis Enterprise cluster (REC) is deployed.
+
+
+
+
 
