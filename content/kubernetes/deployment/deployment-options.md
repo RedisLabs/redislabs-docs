@@ -2,7 +2,7 @@
 Title: Flexible deployment options
 linktitle: Deployment options
 description: Redis Enterprise for Kubernetes allows you to deploy to multiple namespaces. This article describes flexible deployment options you can use to meet your specific needs. 
-weight: 10
+weight: 12
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
@@ -51,4 +51,3 @@ Redis Enterprise for Kubernetes does not support operations that cross Kubernete
 Redis Enterprise for Kubernetes does not support multiple Redis Enterprise clusters (REC) in the same namespace. Creating more than one REC in the same namespace will result in errors.
 
 ![multicluster deployment antipattern](/images/platforms/k8s-deploy-multicluster-antipattern.png)
-
