@@ -139,7 +139,7 @@ There are four parameters:
 These parameters can be set by:
 
 ```sh
-kubectl create ConfigMap replica-of-database-parameters \
+kubectl create configmap replica-of-database-parameters \
 --from-literal=source=name-of-source \
 --from-literal=cluster=name-of-cluster \
 --from-literal=target=name-of-target \
