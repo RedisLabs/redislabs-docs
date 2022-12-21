@@ -116,18 +116,16 @@ redis-enterprise-operator   1/1     1            1           0m36s
 A Redis Enterprise cluster (REC) is created by with a  `RedisEnterpriseCluster` custom resource
 that contains cluster's specifications.
 
- See the [RedisEnterpriseCluster API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) for more information on the various options available.
+The following example creates a minimal Redis Enterprise cluster. See the [RedisEnterpriseCluster API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) for more information on the various options available.
 
-You can test the operator by creating a minimal cluster by following this procedure:
-
-1. Create a file called `test-rec.yaml` that defines a Redis Enterprise cluster with three nodes:
+1. Create a file (`my-rec.yaml`) that defines a Redis Enterprise cluster with three nodes:
 
     ```sh
-    cat <<EOF > test-rec.yaml
+    cat <<EOF > <my-rec.yaml>
     apiVersion: "app.redislabs.com/v1"
     kind: "RedisEnterpriseCluster"
     metadata:
-      name: "test-rec"
+      name: "<my-rec>"
     spec:
       nodes: 3
     EOF
@@ -136,7 +134,7 @@ You can test the operator by creating a minimal cluster by following this proced
     This will request a cluster with three Redis Enterprise nodes using the
     default requests (i.e., 2 CPUs and 4GB of memory per node).
 
-    To test with a larger configuration, use the example below to add node resources to the `spec` section of your test cluster (`test-rec.yaml`).
+    To test with a larger configuration, use the example below to add node resources to the `spec` section of your test cluster (`my-rec.yaml`).
 
     ```yaml
       redisEnterpriseNodeResources:
@@ -154,16 +152,16 @@ Each cluster must have at least 3 nodes. Single-node RECs are not supported.
     See the [Redis Enterprise hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md">}}) for more
     information on sizing Redis Enterprise node resource requests.
   
-1. Apply your custom resource definition (CRD) file in the same namespace as `test-rec.yaml`.
+1. Apply your custom resource file in the same namespace as `my-rec.yaml`.
 
     ```sh
-    kubectl apply -f test-rec.yaml
+    kubectl apply -f my-rec.yaml
     ```
 
     You should see a result similar to this:
 
     ```sh
-    redisenterprisecluster.app.redislabs.com/test-rec created
+    redisenterprisecluster.app.redislabs.com/my-rec created
     ```
 
 1. You can verify the creation of the cluster with:
@@ -176,7 +174,7 @@ Each cluster must have at least 3 nodes. Single-node RECs are not supported.
 
     ```sh
     NAME           AGE
-    test-rec   1m
+    my-rec   1m
     ```
 
    At this point, the operator will go through the process of creating various
@@ -186,7 +184,7 @@ Each cluster must have at least 3 nodes. Single-node RECs are not supported.
    StatefulSet associated with the cluster:
 
    ```sh
-   kubectl rollout status sts/test-rec
+   kubectl rollout status sts/my-rec
    ```
 
    or by looking at the status of all of the resources in your namespace:
@@ -289,32 +287,7 @@ The webhook will intercept requests from all namespaces unless you edit it to ta
 
 ## Create a Redis Enterprise Database (REDB)
 
-Once the cluster is running, you can create a test database.
+You can create multiple databases within the same namespace as your REC, or in other namespaces.
 
-1. Define the database with a sample REDB custom resource YAML file.
+See [Manage Manage Redis Enterprise databases for Kubernetes]({{<relref "/kubernetes/re-databases/db-controller.md">}}) to create a new REDB.
 
-   ```sh
-   cat <<EOF > smalldb.yaml
-   apiVersion: app.redislabs.com/v1alpha1
-   kind: RedisEnterpriseDatabase
-   metadata:
-     name: smalldb
-   spec:
-     memorySize: 100MB
-   EOF
-   ```
-
-1. Apply the REDB resource file.
-
-   ```sh
-   kubectl apply -f smalldb.yaml
-   ```
-
-1. The connectivity information for the database is now stored in a Kubernetes secret using the same name but prefixed with `redb-`:
-
-   ```sh
-   kubectl get secret/redb-smalldb -o yaml
-   ```
-
-   From this secret you can get the service name, port, and password for the
-   default user.
