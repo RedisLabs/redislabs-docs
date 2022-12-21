@@ -15,13 +15,15 @@ aliases: [
 ]
 ---
 
-To deploy Redis Enterprise Software for Kubernetes, and get your Redis Enterprise cluster (REC) up and running, you'll need to do the following: 
+To deploy Redis Enterprise Software for Kubernetes, and get your Redis Enterprise cluster (REC) up and running, you'll need to do the following:
 
-- Download the operator bundle (contains images for Redis Enterprise, the operator, and the service rigger).
-- 
+- Create a new namespace in your Kubernetes cluster.
+- Download the operator bundle.
+- Apply the operator bundle and verify it's running
+- Create a Redis Enterprise cluster (REC)
+- Create a Redis Enterprise database (REDB)
 
-This guide works with most supported Kubernetes distributions. If you're using OpenShift, see Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}}). For details on what is currently supported, see [supported distributions].
-
+This guide works with most supported Kubernetes distributions. If you're using OpenShift, see [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}}). For details on what is currently supported, see [supported distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions.md">}}).
 
 ## Prerequisites
 
@@ -31,7 +33,6 @@ To deploy the Redis Enterprise operator, you'll need:
 * a minimum of three worker nodes
 * a Kubernetes client (kubectl)
 * access to DockerHub, RedHat Container Catalog, or a private repository that can hold the required images.
-
 
 ### Create a new namespace
 
@@ -66,7 +67,7 @@ If you do not pull images from DockerHub or another public registry, you'll need
 
 ### Download the operator bundle
 
-Use the API to pull the latest version of the operator bundle:
+Pull the latest version of the operator bundle:
 
 ```sh
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
@@ -112,10 +113,10 @@ redis-enterprise-operator   1/1     1            1           0m36s
 
 ## Create a Redis Enterprise cluster (REC)
 
-A cluster is created by creating a custom resource with the kind "RedisEnterpriseCluster"
-that contains the specification of the cluster option. See the
-[Redis Enterprise Cluster API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md)
-for more information on the various options available.
+A Redis Enterprise cluster (REC) is created by with a  `RedisEnterpriseCluster` custom resource
+that contains cluster's specifications.
+
+ See the [RedisEnterpriseCluster API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) for more information on the various options available.
 
 You can test the operator by creating a minimal cluster by following this procedure:
 
