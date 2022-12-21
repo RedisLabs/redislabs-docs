@@ -35,7 +35,7 @@ To deploy the Redis Enterprise operator, you'll need:
 
 ### Create a new namespace
 
-The Redis Enterprise operator manages a single Redis Enterprise cluster in a single namespace. Multiple operator versions can co-exist on the same Kubernetes cluster, as long as they are in separate namespaces.
+Each namespace can only contain one Redis Enterprise cluster. Multiple RECs with different operator versions can co-exist on the same Kubernetes cluster, as long as they are in separate namespaces.
 
 Throughout this guide, each command is applied to the namespace in which the Redis Enterprise cluster operates.
 
