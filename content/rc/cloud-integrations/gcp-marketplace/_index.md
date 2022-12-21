@@ -39,7 +39,7 @@ Here's how to create a new Flexible subscription as part of your GCP Marketplace
 
 1. On the GCP Marketplace listing, select **Manage on provider** to go to the Redis Cloud [admin console](https://app.redislabs.com).
 
-    {{<image filename="images/rc/gcp-marketplace-flexible-payg.png" alt="The GCP Marketplace listing showing the Manage on Provider button" >}}{{< /image >}}
+    {{<image filename="images/rc/gcp-marketplace-manage-on-provider.png" alt="The Manage on Provider button" >}}{{< /image >}}
 
 At this point, you can create a new Flexible subscription using the [standard workflow]({{<relref "/rc/subscriptions/create-flexible-subscription">}}), with one important change. You don't need to enter a payment method, as it automatically uses your GCP Marketplace account.
 
