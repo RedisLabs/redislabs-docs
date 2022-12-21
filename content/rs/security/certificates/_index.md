@@ -14,11 +14,11 @@ Here's the list of self-signed certificates that create secure, encrypted connec
 
 | Certificate name | Description |
 |------------------|-------------|
-| api | Encrypts [REST API]({{<relref "/rs/references/rest-api/">}}) requests and responses. |
-| cm | Secures connections to the Redis Enterprise admin console. |
-| metrics_exporter | Sends Redis Enterprise metrics to external [monitoring tools]({{<relref "/rs/clusters/monitoring/">}}) over a secure connection. |
-| proxy | Creates secure, encrypted connections between clients and databases. |
-| syncer | For [Active-Active]({{<relref "/rs/databases/active-active/">}}) or [Replica Of]({{<relref "rs/databases/import-export/replica-of/">}}) databases, encrypts data during the synchronization of participating clusters. |
+| `api` | Encrypts [REST API]({{<relref "/rs/references/rest-api/">}}) requests and responses. |
+| `cm` | Secures connections to the Redis Enterprise admin console. |
+| `metrics_exporter` | Sends Redis Enterprise metrics to external [monitoring tools]({{<relref "/rs/clusters/monitoring/">}}) over a secure connection. |
+| `proxy` | Creates secure, encrypted connections between clients and databases. |
+| `syncer` | For [Active-Active]({{<relref "/rs/databases/active-active/">}}) or [Replica Of]({{<relref "rs/databases/import-export/replica-of/">}}) databases, encrypts data during the synchronization of participating clusters. |
 
 These self-signed certificates are generated on the first node of each Redis Enterprise Software installation and are copied to all other nodes added to the cluster.
 
