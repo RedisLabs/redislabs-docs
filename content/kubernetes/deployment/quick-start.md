@@ -21,7 +21,6 @@ To deploy Redis Enterprise Software for Kubernetes, and get your Redis Enterpris
 - Download the operator bundle.
 - Apply the operator bundle and verify it's running
 - Create a Redis Enterprise cluster (REC)
-- Create a Redis Enterprise database (REDB)
 
 This guide works with most supported Kubernetes distributions. If you're using OpenShift, see [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}}). For details on what is currently supported, see [supported distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions.md">}}).
 
@@ -36,7 +35,7 @@ To deploy the Redis Enterprise operator, you'll need:
 
 ### Create a new namespace
 
-The Redis Enterprise operator manages a single Redis Enterprise cluster in a single namespace.
+The Redis Enterprise operator manages a single Redis Enterprise cluster in a single namespace. Multiple operator versions can co-exist on the same Kubernetes cluster, as long as they are in separate namespaces.
 
 Throughout this guide, each command is applied to the namespace in which the Redis Enterprise cluster operates.
 
@@ -279,15 +278,15 @@ The webhook will intercept requests from all namespaces unless you edit it to ta
     EOF
     ```
 
-  You should see your request was denied by the `admission webhook "redb.admission.redislabs"`.
+You should see your request was denied by the `admission webhook "redb.admission.redislabs"`.
 
-    ```sh
-    Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
-    ```
+```sh
+Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+```
 
 ## Create a Redis Enterprise Database (REDB)
 
 You can create multiple databases within the same namespace as your REC, or in other namespaces.
 
-See [Manage Manage Redis Enterprise databases for Kubernetes]({{<relref "/kubernetes/re-databases/db-controller.md">}}) to create a new REDB.
+See [manage Redis Enterprise databases for Kubernetes]({{<relref "/kubernetes/re-databases/db-controller.md">}}) to create a new REDB.
 
