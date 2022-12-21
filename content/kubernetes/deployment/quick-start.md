@@ -1,7 +1,7 @@
 ---
-Title: Deploy Redis Enterprise Software on Kubernetes
+Title: Deploy Redis Enterprise Software for Kubernetes
 linkTitle: Kubernetes 
-description: How to install Redis Enterprise Software on Kubernetes.
+description: How to install Redis Enterprise Software for Kubernetes.
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
@@ -15,19 +15,13 @@ aliases: [
 ]
 ---
 
-To deploy Redis Enterprise Software on Kubernetes, you first need to install the Redis Enterprise operator.
+To deploy Redis Enterprise Software for Kubernetes, and get your Redis Enterprise cluster (REC) up and running, you'll need to do the following: 
 
-This quick start guide is for generic Kubernetes distributions ([kOps](https://kops.sigs.k8s.io)) as well as:
+- Download the operator bundle (contains images for Redis Enterprise, the operator, and the service rigger).
+- 
 
-* [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/) (AKS)
-* [Rancher](https://rancher.com/products/rancher/) / [Rancher Kubernetes Engine](https://rancher.com/products/rke/) (RKE)
-* [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) (GKE)
-* [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS)
+This guide works with most supported Kubernetes distributions. If you're using OpenShift, see Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}}). For details on what is currently supported, see [supported distributions].
 
-If you're running either OpenShift or VMWare Tanzu, we provide specific getting started guides for installing the Redis Enterprise Operator on these platforms:
-
-* [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}})
-* [Redis Enterprise on VMWare Tanzu]({{< relref "/kubernetes/deployment/tanzu/_index.md" >}})
 
 ## Prerequisites
 
@@ -38,48 +32,53 @@ To deploy the Redis Enterprise operator, you'll need:
 * a Kubernetes client (kubectl)
 * access to DockerHub, RedHat Container Catalog, or a private repository that can hold the required images.
 
-See your version's [release notes]({{<relref "/kubernetes/release-notes/_index.md">}}) for a list of required images.
-
-If you are not pulling images from DockerHub, see [Private Repositories](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/README.md#private-repositories) for additional sections to add to your REC resource file and your `operator.yaml` file.
 
 ### Create a new namespace
 
 The Redis Enterprise operator manages a single Redis Enterprise cluster in a single namespace.
 
-Throughout this guide, you should assume that each command is applied to the namespace in which the Redis Enterprise cluster operates.
+Throughout this guide, each command is applied to the namespace in which the Redis Enterprise cluster operates.
 
 1. Create a new namespace
 
     ```sh
-    kubectl create namespace <my-namespace>
+    kubectl create namespace <rec-namespace>
     ```
 
 2. Change the namespace context to make the newly created namespace default for future commands.
 
     ```sh
-    kubectl config set-context --current --namespace=<my-namespace>
+    kubectl config set-context --current --namespace=<rec-namespace>
     ```
+
+{{<note>}} You can use an existing namespace as long as it does not contain any existing Redis Enterprise cluster resources. It's best practice to create a new namespace to make sure there are no Redis Enterprise resources that could interfere with the deployment.
+{{</note>}}
 
 ## Install the operator
 
-The Redis Enterprise operator implementation is published as a Docker container. For more information about image sources, see [Manage container images]({{<relref "/kubernetes/deployment/container-images.md">}})
+The Redis Enterprise operator bundle is published as a Docker container. A list of required images is available in the [release notes]({{<relref "/kubernetes/release-notes/_index.md">}}) for each version.
 
 The operator [definition and reference materials](https://github.com/RedisLabs/redis-enterprise-k8s-docs) are available on GitHub. The operator definitions are [packaged as a single generic YAML file](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
 
 {{<note>}}
-If you do not pull images from DockerHub or another public registry, you'll need additional configuration in your operator deployment file and your Redis Enterprise cluster resource file. See [Manage image sources]({{<relref "/kubernetes/deployment/container-images#manage-image-sources">}}) for more info.
+If you do not pull images from DockerHub or another public registry, you'll need to use a [private container registry]({{<relref "/kubernetes/deployment/container-images#manage-image-sources">}}).
 {{</note>}}
 
-### Deploy the operator bundle
+### Download the operator bundle
 
-To ensure that you pull the correct version of the bundle, check versions tags listed with the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases)
-or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases).
+Use the API to pull the latest version of the operator bundle:
 
 ```sh
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
 ```
 
-If you need a different release, replace `VERSION` in the above with a specific release tag. Now deploy the operator with 
+  If you need a different release, replace `VERSION` with a specific release tag.
+
+  Check versions tags listed with the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases) or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases) to ensure the version of the bundle is correct.
+
+### Deploy the operator bundle
+
+Apply the operator bundle in your REC namespace:
 
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
@@ -194,7 +193,6 @@ Each cluster must have at least 3 nodes. Single-node RECs are not supported.
    ```sh
    kubectl get all
    ```
-
 
 ## Enable the admission controller
 
