@@ -12,7 +12,7 @@ To collect and display metrics data from your databases, you can connect your Pr
 - [Prometheus](https://prometheus.io/) is an open source systems monitoring and alerting toolkit that can scrape metrics from different sources.
 - [Grafana](https://grafana.com/) is an open source metrics dashboard and graph editor that can process Prometheus data.
 
-Redis Cloud has an Prometheus compatible endpoint available in order to pull metrics. It is only available on the internal network so [VPC peering](({{< relref "/rc/security/vpc-peering" >}})) is required. VPC peering is only available with Flexible or Annual subscriptions. Because VPC peering is not available on Fixed or Free subscriptions, Prometheus and Grafana cannot connect to databases on Fixed or Free subscriptions.
+Redis Cloud has an Prometheus compatible endpoint available in order to pull metrics. Prometheus needs to connect to the internal server on port 8070. This is only available on the internal network so [VPC peering](({{< relref "/rc/security/vpc-peering" >}})) is required. VPC peering is only available with Flexible or Annual subscriptions. Because VPC peering is not available on Fixed or Free subscriptions, Prometheus and Grafana cannot connect to databases on Fixed or Free subscriptions.
 
 For more information on how Prometheus communicates with Redis Enterprise clusters, see [Prometheus integration with Redis Enterprise Software]({{< relref "/rs/clusters/monitoring/prometheus-integration" >}}).
 
@@ -26,6 +26,20 @@ You can quickly set up Prometheus and Grafana for testing using the Prometheus a
 
 1. Set up [VPC peering]({{< relref "/rc/security/vpc-peering" >}}) for your subscription.
 
+1. Extract the Prometheus endpoint from the private endpoint to your database. The private endpoint is in the [Redis Cloud console](https://app.redislabs.com/) under the [Configuration tab]({{< relref "/rc/databases/view-edit-database#configuration-details-tab" >}}) of your database. The Prometheus endpoint is on port 8070 of the internal server.
+
+    For example, if your private endpoint is:
+
+    ```sh
+    redis-12345.internal.<cluster_address>:12345
+    ```
+
+    The Prometheus endpoint is:
+
+    ```sh
+    internal.<cluster_address>:8070
+    ``` 
+
 1. Create an instance to run Prometheus and Grafana on the same provider as your Redis Cloud subscription (Amazon Web Services or Google Cloud Project). This instance must:
     - Exist in the same region as your Redis Cloud subscription.
     - Connect to the VPC subnet that is peered with your Redis Cloud subscription.
@@ -38,9 +52,7 @@ To get started with custom monitoring with Prometheus on Docker:
 
 1. Create a directory on the Prometheus instance called `prometheus` and create a `prometheus.yml` file in that directory.
 
-1. In the [Redis Cloud console](https://app.redislabs.com/), under the [Configuration tab]({{< relref "/rc/databases/view-edit-database#configuration-details-tab" >}}) of your database, copy the Private endpoint to your database.
-
-1. Add the following contents to `prometheus.yml`. Replace `<instance_ip>` with the IP address of the instance. Replace `internal.<cluster_name>` with the Private endpoint to your database and remove the port information.
+1. Add the following contents to `prometheus.yml`. Replace `<instance_ip>` with the IP address of the instance and replace `<prometheus_endpoint>` with the Prometheus endpoint.
 
     ```yml 
     global:
@@ -72,7 +84,7 @@ To get started with custom monitoring with Prometheus on Docker:
             metrics_path: /
             scheme: https
             static_configs:
-                - targets: ["internal.<cluster_name>:8070"]
+                - targets: ["<prometheus_endpoint>:8070"]
     ```
 
 1. Create a `docker-compose.yml` file with instructions to set up the Prometheus and Grafana Docker images.
@@ -104,7 +116,7 @@ To get started with custom monitoring with Prometheus on Docker:
     ```
 
 1. To check that all the containers are up, run: `docker ps`
-1. In your browser, sign in to Prometheus at http://<instance_ip>:9090 to make sure the server is running.
+1. In your browser, sign in to Prometheus at `http://<instance_ip>:9090` to make sure the server is running.
 1. Select **Status** and then **Targets** to check that Prometheus is collecting data from the Redis Cloud cluster.
 
     {{<image filename="images/rs/prometheus-target.png" alt="The Redis Enterprise target showing that Prometheus is connected to the Redis Enterprise Cluster.">}}{{< /image >}}
@@ -117,10 +129,10 @@ See [Prometheus Metrics]({{< relref "/rs/clusters/monitoring/prometheus-metrics-
 
 Once the Prometheus and Grafana Docker containers are running, and Prometheus is connected to your Redis Cloud subscription, you can set up your Grafana dashboards.
 
-1. Sign in to Grafana. If you installed Grafana with Docker, go to http://<instance_ip>:3000 and sign in with:
+1. Sign in to Grafana. If you installed Grafana with Docker, go to `http://<instance_ip>:3000` and sign in with:
 
-    - Username: admin
-    - Password: secret
+    - Username: `admin`
+    - Password: `secret`
 
 1. In the Grafana configuration menu, select **Data Sources**.
 
