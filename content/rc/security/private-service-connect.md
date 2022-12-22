@@ -29,15 +29,19 @@ Compared to VPC peering, Private Service Connect:
 Larger clusters are more likely to experience increased latency with Private Service Connect versus VPC peering.
     {{</note>}}
 
-## Set up Private Service Connect
+## Set up Private Service Connect {#setup-psc}
 
-1. Configure Private Service Connect in the Redis Cloud admin console.
+To set up Private Service Connect, you need to:
 
-1. Create Private Service Connect endpoints in the application VPC.
+1. [Configure Private Service Connect](#configure-psc) in the Redis Cloud admin console.
 
-1. From the Redis Cloud admin console, review and accept the Private Service Connect request.
+1. [Create Private Service Connect endpoints](#create-endpoints) in the application VPC.
 
-### Configure PSC
+1. From the Redis Cloud admin console, review and [accept the Private Service Connect endpoint connection](#accept-psc).
+
+### Configure PSC {#configure-psc}
+
+First, configure Private Service Connect in Redis Cloud:
 
 1. Select **Subscriptions** from the Redis Cloud [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
 
@@ -56,60 +60,94 @@ Larger clusters are more likely to experience increased latency with Private Ser
     | Setting&nbsp;name | Description |
     |-------------------|-------------|
     | _Google Cloud project ID_ | GCP project ID |
-    | _VPC name_ | Name of your Virtual Private Cloud in GCP |
+    | _VPC name_ | Name of the VPC that hosts your application |
     | _Subnet name_ | Name of your VPC's subnet of IP address ranges |
     | _Endpoint name_ | Prefix for the endpoint created in GCP |
 
-1. Select **Continue**:
+1. Continue to the **Add connections** step:
     
     {{<image filename="images/rc/button-subscription-connectivity-psc-continue.png" width="100px" alt="" >}}{{< /image >}}
 
-1. In **Add connections**, select either **Bash Shell** or **PowerShell** and download or copy the provided gcloud script for later:
+1. Select either **Bash Shell** or **PowerShell** and then download or copy the provided `gcloud` script for later:
 
-    {{<image filename="images/rc/button-subscription-connectivity-psc-download.png" width="40px" alt="" >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-connectivity-psc-gcloud-script.png" width="350px" alt="" >}}{{< /image >}}
 
-    {{<image filename="images/rc/button-subscription-connectivity-psc-copy.png" width="80px" alt="" >}}{{< /image >}}
-
-1. Select **Continue**:
+1. Select **Continue** to save this endpoint configuration:
 
     {{<image filename="images/rc/button-subscription-connectivity-psc-continue.png" width="100px" alt="" >}}{{< /image >}}
 
-### Create PSC endpoints
+### Create endpoints {#create-endpoints}
 
-To create the Private Service Connect endpoints in your application's VPC:
+Now that you have a pending Private Service Connect entry, you need to create the endpoints in your application's VPC:
 
-1. Follow GCP's guide to [enable Cloud DNS](https://cloud.google.com/dns/docs/set-up-dns-records-domain-name) for your GCP project if you haven't already. Since it can take some time for the DNS changes to become active, we recommend you wait 10 minutes before continuing to the next step.
+1. Follow GCP's guide to [enable Cloud DNS](https://cloud.google.com/dns/docs/set-up-dns-records-domain-name) for your GCP project if you haven't already.
 
-1. Use the [gcloud CLI](https://cloud.google.com/sdk/gcloud) to run the Google cloud command that you copied earlier.
+    {{<note>}}
+Since it can take some time for the DNS changes to become active, we recommend you wait 10 minutes before running the `gcloud` script in the next steps.
+    {{</note>}}
 
-### Accept PSC connection
+1. If you already have a copy of the `gcloud` script shown earlier during the **Add connections** step, you can continue to the next step. 
 
-To accept the Private Service Connect connection:
+    1. Otherwise, return to your subscription's **Connectivity > Private Service Connect** screen and select **Complete setup** for the pending endpoint:
+
+        {{<image filename="images/rc/button-subscription-connectivity-psc-complete-setup.png" width="140px" alt="" >}}{{< /image >}}
+
+    1. Download or copy the script.
+
+1. Use the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud) to run the script.
+
+    {{<warning>}}
+To ensure the `gcloud` script configures the endpoints correctly, do not make any changes to it.
+    {{</warning>}}
+
+### Accept PSC connection {#accept-psc}
+
+After the `gcloud` script finishes creating the Private Service Connect endpoints, you need to accept the connection in Redis Cloud:
 
 1. In the Redis Cloud admin console, return to your subscription's **Connectivity > Private Service Connect** screen.
 
-1. Find your pending Private Service Connect connection in the list and select **Accept**:
+1. Find your pending endpoint connection in the list and select **Accept**:
 
     {{<image filename="images/rc/button-subscription-connectivity-psc-accept.png" width="100px" alt="" >}}{{< /image >}}
 
-### Connect to database
+### Connect to database {#connect-db}
 
-After your Private Service Connect endpoint is active, you can connect your application to a database:
+Once your Private Service Connect endpoint is active, you can connect your application to a database:
 
 1. From your subscription's **Connectivity > Private Service Connect** tab, select the **Connect** button for the active endpoint:
 
     {{<image filename="images/rc/button-subscription-connectivity-psc-connect.png" width="100px" alt="" >}}{{< /image >}}
 
-1. Select the database you want to connect to from your list of databases.
+1. Select a database from the list.
 
 1. Copy the endpoint and use it in your application to connect to your database.
 
 
-## Deactivate Private Service Connect
+## Deactivate Private Service Connect {#deactivate-psc}
 
-1. Delete the Private Service Connect endpoints from your GCP project.
+To deactivate Private Service Connect for your subscription:
 
-1. Remove service.
+1. Select **Subscriptions** from the Redis Cloud [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
+
+1. Select the **Connectivity** tab and then **Private Service Connect**.
+
+1. For each endpoint:
+
+    1. Select the **Delete PSC endpoint** button:
+
+        {{<image filename="images/rc/icon-psc-delete-endpoint.png" width="40px" alt="" >}}{{< /image >}}
+
+    1. Copy the provided `gcloud` script from the **Remove endpoint** dialog.
+
+    1. Run the `gcloud` script with [`gcloud` CLI](https://cloud.google.com/sdk/gcloud) to delete the endpoint.
+
+1. After you remove all endpoints, select the **Actions** button to see a list of available actions:
+
+    {{<image filename="images/rc/icon-psc-actions.png" width="40px" alt="" >}}{{< /image >}}
+
+1. Select **Remove service** and then **Confirm**:
+
+    {{<image filename="images/rc/button-subscription-connectivity-psc-remove-service-confirm.png" width="100px" alt="" >}}{{< /image >}}
 
 ## Limitations
 
