@@ -16,7 +16,7 @@ When you update the certificates, the new certificate replaces the same certific
 
 ## How to update certificates
 
-You can use either the `rladmin` command-line interface (CLI) or the REST API to update certificates.
+You can use either the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command-line interface (CLI) or the [REST API]({{<relref "/rs/references/rest-api">}}) to update certificates.
 
 The new certificates are used the next time the clients connect to the database.
 
@@ -24,7 +24,7 @@ When you upgrade Redis Enterprise Software, the upgrade process copies the certi
 
 ### Use the CLI
 
-To replace certificates with the `rladmin` CLI, run:
+To replace certificates with the `rladmin` CLI, run the [`cluster certificate set`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) command:
 
 ```sh
  rladmin cluster certificate set <cert-name> certificate_file <cert-file-name>.pem key_file <key-file-name>.pem
@@ -32,16 +32,11 @@ To replace certificates with the `rladmin` CLI, run:
 
 Replace the following variables with your own values:
 
-- `<cert-name>` - The name of the certificate you want to replace:
-  - For the admin console: `cm`
-  - For the REST API: `api`
-  - For the database endpoint: `proxy`
-  - For the syncer: `syncer`
-  - For the metrics exporter: `metrics_exporter`
+- `<cert-name>` - The name of the certificate you want to replace. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
 - `<cert-file-name>` - The name of your certificate file
 - `<key-file-name>` - The name of your key file
 
-For example, to replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem":
+For example, to replace the admin console (`cm`) certificate with the private key `key.pem` and the certificate file `cluster.pem`:
 
 ```sh
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
@@ -58,12 +53,7 @@ PUT https://[host][:port]/v1/cluster/update_cert
 
 Replace the following variables with your own values:
 
-- `<cert_name>` - The name of the certificate to replace:
-  - For the admin console: `cm`
-  - For the REST API: `api`
-  - For the database endpoint: `proxy`
-  - For the syncer: `syncer`
-  - For the metrics exporter: `metrics_exporter`
+- `<cert_name>` - The name of the certificate to replace. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
 - `<key>` - The contents of the \*\_key.pem file
 
     {{< tip >}}
