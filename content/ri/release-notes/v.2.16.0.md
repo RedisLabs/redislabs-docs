@@ -26,4 +26,4 @@ This is the General Availability (GA) release of RedisInsight 2.16.
 - [#1499](https://github.com/RedisInsight/RedisInsight/pull/1499) Display values of [JSON](https://redis.io/docs/stack/json/) keys when [JSON.DEBUG MEMORY](https://redis.io/commands/json.debug-memory/) is not available
 
 **Bugs**
-- [TBD] Scan the database even when the [DBSIZE](https://redis.io/commands/dbsize/) returns 0
+- [#1514](https://github.com/RedisInsight/RedisInsight/pull/1514) Scan the database even when the [DBSIZE](https://redis.io/commands/dbsize/) returns 0
