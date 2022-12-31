@@ -33,7 +33,7 @@ To review your user profile settings, select **User profile** from the Profile c
 
 This screen contains up to three sections, including:
 
-- The *User details* section includes basic information about your account, including _First Name_, _Last Name_, _Job title_, _Email_, and the date the account was created.  The name and job title can be edited; other settings are read-only.
+- The *User details* section includes basic information about your account, including _First name_, _Last name_, _Job title_, _Email_, and the date the account was created.  The names and job title can be edited; other settings are read-only.
 
 - The *Password* section lets you change the password for accounts created and managed by Redis Cloud. 
 

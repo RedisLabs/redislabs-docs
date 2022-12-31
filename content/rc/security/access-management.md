@@ -57,8 +57,8 @@ Use this dialog to specify the following values:
 
 | Setting | Description |
 |---------|-------------|
-| **First Name** | First name of the user displayed in the admin console and in email messages |
-| **Last Name** | Last name of the user displayed in the admin console and in email messages |
+| **First name** | First name of the user displayed in the admin console and in email messages |
+| **Last name** | Last name of the user displayed in the admin console and in email messages |
 | **Role** | The role identifies their subscription and account privileges.  For details, see [Team management roles](#team-management-roles). |
 | **Email** | The address used for alerts and other email messages regarding the account | 
 | **Alert emails** | Enable to be notified when subscription databases cross certain thresholds, such as exceeding memory limits or latency requirements |
