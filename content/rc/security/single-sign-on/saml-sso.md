@@ -59,6 +59,10 @@ To set up SAML single sign-on for a Redis Cloud account:
 
 1. [Activate SAML SSO](#activate-saml-sso).
 
+{{<note>}}
+SAML integration guides are available for several popular identity providers. You can contact [Redis support](mailto:support@redis.com?subject=SAML%20integration%20guide) to request a guide for your identity provider.
+{{</note>}}
+
 ### Set up SAML app {#set-up-app}
 
 First, set up a SAML app to integrate Redis Cloud with your identity provider:
@@ -254,6 +258,8 @@ To deactivate SAML SSO for a specific account:
     {{<image filename="images/rc/button-access-management-sso-deactivate-saml-deactivate.png" width="120px" alt="Deactivate SAML button">}}{{</image>}}
 
 ## Deprovision SAML users
+
+It is important to deprovision Redis Cloud users that have API keys. When you revoke a user's access to Redis Cloud through your identity provider, they cannot access the Redis Cloud admin console, but their API keys remain active.
 
 To deprovision SAML users upon deletion, the identity provider admin can set up a webhook to automatically make the appropriate Cloud API requests.
 
