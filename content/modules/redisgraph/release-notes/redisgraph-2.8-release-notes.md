@@ -10,10 +10,36 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.20 requires:
+RedisGraph v2.8.21 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.21 (January 2023)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#2754](https://github.com/RedisGraph/RedisGraph/pull/2754) Partial sync may hang (MOD-4594)
+    - [#2695](https://github.com/RedisGraph/RedisGraph/pull/2695) Potential crash on certain write queries (MOD-4286, MOD-4545)
+    - [#2637](https://github.com/RedisGraph/RedisGraph/issues/2637), [#2460](https://github.com/RedisGraph/RedisGraph/issues/2460), [#2680](https://github.com/RedisGraph/RedisGraph/issues/2680) Crash on invalid queries
+    - [#2484](https://github.com/RedisGraph/RedisGraph/issues/2484) Indexes can be created on invalid property names
+    - [#2672](https://github.com/RedisGraph/RedisGraph/issues/2672) Wrong matching result on multiple labels
+    - [#2643](https://github.com/RedisGraph/RedisGraph/issues/2643) Duplicate reports when matching relationship type `:R|R`
+    - [#2687](https://github.com/RedisGraph/RedisGraph/issues/2687), [#2414](https://github.com/RedisGraph/RedisGraph/issues/2414) Error when `UNWIND`ing relationships
+    - [#2635](https://github.com/RedisGraph/RedisGraph/issues/2635) Cannot `UNWIND` an expression that is not a list
+    - [#2636](https://github.com/RedisGraph/RedisGraph/issues/2636) `MERGE` ... `ON` ... - cannot remove a property by setting it to null
+
+- Improvements:
+
+    - [#2790](https://github.com/RedisGraph/RedisGraph/pull/2790) Improved performance by disabling `SuiteSparse:GraphBLAS` global free pool
+    - [#2757](https://github.com/RedisGraph/RedisGraph/pull/2757) Improved performance of `indegree` and `outdegree`
+    - [#2740](https://github.com/RedisGraph/RedisGraph/issues/2740) Don’t show partial results for timed out `GRAPH.PROFILE`
 
 ## v2.8.20 (September 2022)
 
