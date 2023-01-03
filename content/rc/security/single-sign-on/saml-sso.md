@@ -60,7 +60,7 @@ To set up SAML single sign-on for a Redis Cloud account:
 1. [Activate SAML SSO](#activate-saml-sso).
 
     {{<note>}}
-SAML integration guides are available for several popular Identity Providers. Please reach out to [Redis support](mailto:support@redis.com?subject=SAML%20integration%20guide) to request a guide for your Identity Provider.
+SAML integration guides are available for several popular identity providers. You can contact [Redis support](mailto:support@redis.com?subject=SAML%20integration%20guide) to request a guide for your identity provider.
     {{</note>}}
 
 ### Set up SAML app {#set-up-app}
