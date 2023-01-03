@@ -37,7 +37,7 @@ Details:
 
 - Improvements:
 
-    - [#2790](https://github.com/RedisGraph/RedisGraph/pull/2790) Improved performance by disabling SuiteSparse:GraphBLAS' global free pool
+    - [#2790](https://github.com/RedisGraph/RedisGraph/pull/2790) Improved performance by disabling `SuiteSparse:GraphBLAS` global free pool
     - [#2757](https://github.com/RedisGraph/RedisGraph/pull/2757) Improved performance of `indegree` and `outdegree`
     - [#2740](https://github.com/RedisGraph/RedisGraph/issues/2740) Don’t show partial results for timed out `GRAPH.PROFILE`
 
