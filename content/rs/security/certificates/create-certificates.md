@@ -50,3 +50,39 @@ You will be prompted for a Country Name, State or Province Name, Locality Name, 
     - `<cert-name>` - The name of the certificate to update. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
     - `<cert-file-name>` - The certificate filename 
     - `<key-file-name>` - The key filename
+
+## TLS certificate guidelines
+
+You can use a certificate authority (CA) to create TLS certificates for Redis Enterprise Software.
+
+There are two types of certificates:
+
+- _Server certificates_ (also known as _cluster certificates_) encrypt communication between servers hosting clusters, nodes, and databases instances, including masters and replicas.
+
+- _Client certificates_ connect a process to a database instance. 
+
+Include the full [certificate chain](https://en.wikipedia.org/wiki/X.509#Certificate_chains_and_cross-certification) when creating certificate .PEM files for either server or client certificates.   
+
+Certificates in the .PEM file should be chained in the following order:
+
+``` text    
+-----BEGIN CERTIFICATE-----    
+Domain (leaf) certificate
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+Intermediate CA certificate
+-----END CERTIFICATE----
+-----BEGIN CERTIFICATE-----
+Trusted Root CA certificate
+-----END CERTIFICATE-----
+```
+
+- More?
+
+### 
+
+## Additional resources
+
+To learn more, see:
+
+
