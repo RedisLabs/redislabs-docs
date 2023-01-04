@@ -19,8 +19,8 @@ To deploy Redis Enterprise Software for Kubernetes and start your Redis Enterpri
 
 - Create a new namespace in your Kubernetes cluster.
 - Download the operator bundle.
-- Apply the operator bundle and verify it's running
-- Create a Redis Enterprise cluster (REC)
+- Apply the operator bundle and verify it's running.
+- Create a Redis Enterprise cluster (REC).
 
 This guide works with most supported Kubernetes distributions. If you're using OpenShift, see [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}}). For details on what is currently supported, see [supported distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions.md">}}).
 
@@ -35,7 +35,7 @@ To deploy the Redis Enterprise operator, you'll need:
 
 ### Create a new namespace
 
-**Important:** Each namespace can only contain one Redis Enterprise cluster. Multiple RECs with different operator versions can co-exist on the same Kubernetes cluster, as long as they are in separate namespaces.
+**Important:** Each namespace can only contain one Redis Enterprise cluster. Multiple RECs with different operator versions can coexist on the same Kubernetes cluster, as long as they are in separate namespaces.
 
 Throughout this guide, each command is applied to the namespace in which the Redis Enterprise cluster operates.
 
@@ -56,12 +56,12 @@ You can use an existing namespace as long as it does not contain any existing Re
 
 ## Install the operator
 
-The Redis Enterprise operator bundle is published as a Docker container. A list of required images is available in the [release notes]({{<relref "/kubernetes/release-notes/_index.md">}}) for each version.
+The Redis Enterprise operator bundle is published as a container image. A list of required images is available in the [release notes]({{<relref "/kubernetes/release-notes/_index.md">}}) for each version.
 
 The operator [definition and reference materials](https://github.com/RedisLabs/redis-enterprise-k8s-docs) are available on GitHub. The operator definitions are [packaged as a single generic YAML file](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
 
 {{<note>}}
-If you do not pull images from DockerHub or another public registry, you'll need to use a [private container registry]({{<relref "/kubernetes/deployment/container-images#manage-image-sources">}}).
+If you do not pull images from DockerHub or another public registry, you need to use a [private container registry]({{<relref "/kubernetes/deployment/container-images#manage-image-sources">}}).
 {{</note>}}
 
 ### Download the operator bundle
@@ -74,7 +74,7 @@ VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k
 
   If you need a different release, replace `VERSION` with a specific release tag.
 
-  Check versions tags listed with the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases) or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases) to ensure the version of the bundle is correct.
+  Check version tags listed with the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases) or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases) to ensure the version of the bundle is correct.
 
 ### Deploy the operator bundle
 
@@ -112,8 +112,8 @@ redis-enterprise-operator   1/1     1            1           0m36s
 
 ## Create a Redis Enterprise cluster (REC)
 
-A Redis Enterprise cluster (REC) is created by with a  `RedisEnterpriseCluster` custom resource
-that contains cluster's specifications.
+A Redis Enterprise cluster (REC) is created from a `RedisEnterpriseCluster` custom resource
+that contains cluster specifications.
 
 The following example creates a minimal Redis Enterprise cluster. See the [RedisEnterpriseCluster API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) for more information on the various options available.
 
@@ -286,7 +286,7 @@ Error from server: error when creating "STDIN": admission webhook "redb.admissio
 
 ## Create a Redis Enterprise Database (REDB)
 
-You can create multiple databases within the same namespace as your REC, or in other namespaces.
+You can create multiple databases within the same namespace as your REC or in other namespaces.
 
 See [manage Redis Enterprise databases for Kubernetes]({{<relref "/kubernetes/re-databases/db-controller.md">}}) to create a new REDB.
 
