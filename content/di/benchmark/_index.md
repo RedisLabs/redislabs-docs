@@ -2,7 +2,7 @@
 Title: Sizing and benchmark tool
 linkTitle: Sizing and benchmark tool
 description: Describes the Redis Data Integraiton Szing & Benchmark tool.
-weight: 70
+weight: 90
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

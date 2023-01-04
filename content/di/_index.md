@@ -5,6 +5,7 @@ description:
 weight: 71
 alwaysopen: false
 categories: ["redis-di"]
+headerRange: "[2]"
 aliases: /connect/
          /connect.md
          /redis-di/
