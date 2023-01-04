@@ -90,7 +90,7 @@ When running in a cloud environment:
 - Persistent database storage needs to be network attached (for example, AWS EBS for AWS).
 
 {{<note>}}
-We specifically recommend "[Storage Optimized I3 - High I/O Instances](https://aws.amazon.com/ec2/instance-types/#storage-optimized)" because of the performance of NVMe for flash memory. {{</note>}}
+We specifically recommend "[Storage Optimized I4i - High I/O Instances](https://aws.amazon.com/ec2/instance-types/#storage-optimized)" because of the performance of NVMe for flash memory. {{</note>}}
 
 ### On-premises environments
 
@@ -98,7 +98,6 @@ When you begin planning the deployment of Redis on Flash in production, we recom
 
 On-premises environments support more deployment options than other environments such as:
 
-- Using the SpeedDB storage engine instead of the default RocksDB
 - Using Active-Active distributed databases
 - Using supported modules
   - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})

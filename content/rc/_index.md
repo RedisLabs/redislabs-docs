@@ -13,7 +13,10 @@ aliases: [ "/rv/",
            "/redis-enterprise-cloud",
            "/redis_enterprise_cloud",
            "/rc/administration/",
-           "/rc/administration.md" ]
+           "/rc/administration.md",
+           "/rv/faqs/",
+           "/rc/faqs/",
+           "/rc/faqs/_index.md" ]
 
 ---
 [Redis Enterprise Cloud](https://redis.com/redis-enterprise-cloud/overview/) delivers a fully managed Redis database offering hosted on major public cloud services.
@@ -47,7 +50,7 @@ Create and manage [Redis databases]({{<relref "/rc/databases">}}) in the cloud.
 - [View and edit databases]({{<relref "/rc/databases/view-edit-database">}})
 - [Monitor performance]({{<relref "/rc/databases/monitor-performance">}})
 - [Manage databases]({{<relref "/rc/databases/configuration">}})
-- [Redis commands](https://redis.io/commands/)
+- [Redis commands](https://redis.io/commands/) & [compatibility]({{<relref "/rs/references/compatibility">}})
 
 ## Security
 Manage [secure connections]({{<relref "/rc/security">}}) to cloud databases.

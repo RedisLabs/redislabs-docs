@@ -114,7 +114,7 @@ The leaf certificates expire regularly; they're automatically rotated before exp
 
 Redis Enterprise Software supports all new commands, except [RESET](https://redis.io/commands/reset) and [FAILOVER](https://redis.io/commands/failover).  (Redis Enterprise takes a different approach to connectivity; it also separates control plane operations from data plane operations.)
 
-To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/references/compatibility.md">}}).
+To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/references/compatibility">}}).
 
 ### Redis modules
 

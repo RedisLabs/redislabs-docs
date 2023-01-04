@@ -71,7 +71,7 @@ Returns a JSON object that contains the cluster's certificates and keys.
 
 Removes the specified cluster certificate from both CCS and disk
 across all nodes. Only optional certificates can be deleted through
-this endpoint.
+this endpoint. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of cluster certificates and their descriptions.
 
 ### Request {#delete-request} 
 
