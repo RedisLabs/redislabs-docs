@@ -21,7 +21,7 @@ Compared to VPC peering, Private Service Connect:
 
 - Only exposes the private endpoint instead of the entire application VPC network.
 
-- Allows producer (Redis Cloud VPC) and consumer (application VPC) CIDR IP addresses to overlap.
+- Allows producer (Redis Cloud VPC) and consumer (application VPC) CIDR ranges to overlap.
  
 - Has slightly higher network latency than VPC peering due to load balancing requirements.
 
