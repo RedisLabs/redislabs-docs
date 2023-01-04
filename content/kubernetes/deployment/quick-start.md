@@ -15,7 +15,7 @@ aliases: [
 ]
 ---
 
-To deploy Redis Enterprise Software for Kubernetes, and get your Redis Enterprise cluster (REC) up and running, you'll need to do the following:
+To deploy Redis Enterprise Software for Kubernetes and start your Redis Enterprise cluster (REC), you need to do the following:
 
 - Create a new namespace in your Kubernetes cluster.
 - Download the operator bundle.
