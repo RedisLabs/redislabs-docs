@@ -18,6 +18,7 @@ aliases: [
   /platforms/pcf/_index.md,
   /kubernetes/deployment/tanzu/pcf/_index.md,
   /kubernetes/deployment/tanzu/pcf/,
+  /kubernetes/deployment/tanzu/,
 ]
 ---
 
