@@ -11,7 +11,14 @@ aliases: [
   /platforms/kubernetes/deployment/quick-start/,
   /platforms/kubernetes/deployment/quick-start.md, 
   /kubernetes/deployment/quick-start.md,
-  /kubernetes/deployment/quick-start/
+  /kubernetes/deployment/quick-start/,
+  /rs/getting-started/pcf/,
+  /platforms/pcf/installing-pcf/,
+  /platforms/pcf/,
+  /platforms/pcf/_index.md,
+  /kubernetes/deployment/tanzu/pcf/_index.md,
+  /kubernetes/deployment/tanzu/pcf/,
+  /kubernetes/deployment/tanzu/,
 ]
 ---
 
@@ -24,10 +31,7 @@ This quick start guide is for generic Kubernetes distributions ([kOps](https://k
 * [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) (GKE)
 * [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS)
 
-If you're running either OpenShift or VMWare Tanzu, we provide specific getting started guides for installing the Redis Enterprise Operator on these platforms:
-
-* [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}})
-* [Redis Enterprise on VMWare Tanzu]({{< relref "/kubernetes/deployment/tanzu/_index.md" >}})
+If you're using OpenShift, see [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/" >}}).
 
 ## Prerequisites
 
