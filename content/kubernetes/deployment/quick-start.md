@@ -120,11 +120,11 @@ The following example creates a minimal Redis Enterprise cluster. See the [Redis
 1. Create a file (`my-rec.yaml`) that defines a Redis Enterprise cluster with three nodes:
 
     ```sh
-    cat <<EOF > <my-rec.yaml>
+    cat <<EOF > my-rec.yaml
     apiVersion: "app.redislabs.com/v1"
     kind: "RedisEnterpriseCluster"
     metadata:
-      name: "<my-rec>"
+      name: my-rec
     spec:
       nodes: 3
     EOF
