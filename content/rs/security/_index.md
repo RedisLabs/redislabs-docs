@@ -14,7 +14,7 @@ Security is an important part of any production system. This section describes t
 
 When deploying Redis Enterprise Software to production, we recommend the following practices:
 
-- **Deploy Redis Enterprise inside a trusted network**:  Redis Enterprise is database software and should be deployed on a trusted network not accessible to the public internet. Deploying Redis Enterprise in a trusted network reduces the liklihood that someone can obtain unauthroized access to your data or the ability to manage your database configuration.
+- **Deploy Redis Enterprise inside a trusted network**:  Redis Enterprise is database software and should be deployed on a trusted network not accessible to the public internet. Deploying Redis Enterprise in a trusted network reduces the liklihood that someone can obtain unauthorized access to your data or the ability to manage your database configuration.
 
 - **Implement anti-virus exclusions**: To ensure that anti-virus solutions that scan files or intercept processes to protect memory do not interfere with Redis Enterprise software, customers should ensure that anti-virus exclusions are implemented across all nodes in their Redis Enterprise cluster in a consistent policy. This helps ensure that anti-virus software does not impact the availibility of your Redis Enterprise cluster.
 
@@ -42,7 +42,7 @@ For antivirus solutions that intercept processes, binary files may have to be ex
 
 ## Database Security
 
-Redis Enterprise offers several database security controls to help protect your data against unauthroized access and to improve the operational security of your databse. The following section details configurable security controls availible for implementation.
+Redis Enterprise offers several database security controls to help protect your data against unauthorized access and to improve the operational security of your databse. The following section details configurable security controls availible for implementation.
 
 - **Implement role-based access for users**: With [role-based access control (RBAC)]({{<relref "/rs/security/access-control">}}), you can manage ACLs for the entire cluster. You can reuse ACL templates across users, accounts, and multiple databases to precisely scale complex security configurations with a few simple clicks. RBAC lets you set permissions for your databases and for the Redis Enterprise management console itself, providing a complete security-management solution for your cluster.
 

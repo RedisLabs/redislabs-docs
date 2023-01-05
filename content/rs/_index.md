@@ -24,7 +24,7 @@ With Redis Enterprise, you get many enterprise-grade capabilities, including:
 - Linear scalability
 - High availability, backups, and recovery
 - Predictable performance
-- 24/7 suppport
+- 24/7 support
 
 You can run Redis Enterprise Software in an on-premises data center or on your preferred cloud platform.
 

@@ -11,7 +11,14 @@ aliases: [
   /platforms/kubernetes/deployment/quick-start/,
   /platforms/kubernetes/deployment/quick-start.md, 
   /kubernetes/deployment/quick-start.md,
-  /kubernetes/deployment/quick-start/
+  /kubernetes/deployment/quick-start/,
+  /rs/getting-started/pcf/,
+  /platforms/pcf/installing-pcf/,
+  /platforms/pcf/,
+  /platforms/pcf/_index.md,
+  /kubernetes/deployment/tanzu/pcf/_index.md,
+  /kubernetes/deployment/tanzu/pcf/,
+  /kubernetes/deployment/tanzu/,
 ]
 ---
 
@@ -23,6 +30,7 @@ To deploy Redis Enterprise Software for Kubernetes and start your Redis Enterpri
 - Create a Redis Enterprise cluster (REC).
 
 This guide works with most supported Kubernetes distributions. If you're using OpenShift, see [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}}). For details on what is currently supported, see [supported distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions.md">}}).
+
 
 ## Prerequisites
 

@@ -20,13 +20,7 @@ rladmin cluster certificate
         [ key_file <key filepath> ]
 ```
 
-To set a certificate for a specific service, use the corresponding certificate name:
-
-- `cm` for the admin console
-- `api` for the REST API
-- `proxy` for the proxy, which manages connections between clients and database endpoints
-- `syncer` for the syncer, which synchronizes data between clusters (using either Active-Active or Active-Passive replication)
-- `metrics_exporter` for the metrics exporter, which sends metrics to Prometheus
+To set a certificate for a specific service, use the corresponding certificate name. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of cluster certificates and their descriptions.
 
 ### Parameters
 
