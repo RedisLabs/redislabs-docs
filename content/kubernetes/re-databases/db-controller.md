@@ -1,5 +1,5 @@
 ---
-Title: Manage Redis Enterprise databases on Kubernetes
+Title: Manage Redis Enterprise databases for Kubernetes
 linkTitle: Manage databases
 description: This section describes how the database controller provides the ability to create, manage,
   and use databases via a database custom resource.
@@ -23,7 +23,7 @@ A Redis Enterprise database (REDB) is created with a custom resource file. The c
 The database controller in the Redis Enterprise operator:
 
 - Discovers the custom resource
-- Makes sure that it is created in the same namespace as the Redis Enterprise cluster (REC)
+- Makes sure the REDB is created in the same namespace as the Redis Enterprise cluster (REC)
 - Maintains consistency between the custom resource and the REDB
 
 The database controller recognizes the new custom resource and validates the specification.
@@ -32,7 +32,7 @@ the custom resource with default values to create a full specification. It then 
 database on the specified Redis Enterprise cluster (REC).
 
 Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
-If the database custom resource is deleted, the database and its services are deleted from the cluster.
+If the database [custom resource is deleted]({{<relref "/kubernetes/re-clusters/delete_custom_resources.md">}}), the database and its services are deleted from the cluster.
 
 ### Create a database
 
