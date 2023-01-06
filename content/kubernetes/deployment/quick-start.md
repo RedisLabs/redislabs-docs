@@ -223,7 +223,7 @@ As part of the REC creation process, the operator stores the admission controlle
 1. Create a patch file for the Kubernetes validating webhook.
 
     ```sh
-    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
+    curl https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/admission/webhook.yaml | sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g'| kubectl create -f -
 
     cat > modified-webhook.yaml <<EOF
     webhooks:
