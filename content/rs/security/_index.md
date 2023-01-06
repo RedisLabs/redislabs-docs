@@ -14,7 +14,7 @@ Security is an important part of any production system. This section describes t
 
 When deploying Redis Enterprise Software to production, we recommend the following practices:
 
-- **Deploy Redis Enterprise inside a trusted network**:  Redis Enterprise is database software and should be deployed on a trusted network not accessible to the public internet. Deploying Redis Enterprise in a trusted network reduces the liklihood that someone can obtain unauthorized access to your data or the ability to manage your database configuration.
+- **Deploy Redis Enterprise inside a trusted network**:  Redis Enterprise is database software and should be deployed on a trusted network not accessible to the public internet. Deploying Redis Enterprise in a trusted network reduces the likelihood that someone can obtain unauthorized access to your data or the ability to manage your database configuration.
 
 - **Implement anti-virus exclusions**: To ensure that anti-virus solutions that scan files or intercept processes to protect memory do not interfere with Redis Enterprise software, customers should ensure that anti-virus exclusions are implemented across all nodes in their Redis Enterprise cluster in a consistent policy. This helps ensure that anti-virus software does not impact the availibility of your Redis Enterprise cluster.
 
