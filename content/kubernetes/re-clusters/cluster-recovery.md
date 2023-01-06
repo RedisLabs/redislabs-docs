@@ -23,7 +23,7 @@ When this happens, you must recover the cluster to restore the connections.
 
 You can also perform cluster recovery to reset cluster nodes, to troubleshoot issues, or in a case of active/passive failover.
 
-The cluster recovery for Kubernetes automates these recovery steps:
+The Redis Enterprise for Kubernetes automates these recovery steps:
 
 1. Recreates a fresh Redis Enterprise cluster
 1. Mounts the persistent storage with the recovery files from the original cluster to the nodes of the new cluster
@@ -34,9 +34,9 @@ The cluster recovery for Kubernetes automates these recovery steps:
 
 - For cluster recovery, the cluster must be [deployed with persistence]({{< relref "/kubernetes/memory/persistent-volumes.md" >}}).
 
-## Recovering a cluster on Kubernetes
+## Recover a cluster
 
-1. Edit the rec resource to set the clusterRecovery flag to true, run:
+1. Edit the REC resource to set the `clusterRecovery` flag to `true`.
 
     ```sh
     kubectl patch rec <cluster-name> --type merge --patch '{"spec":{"clusterRecovery":true}}'
@@ -55,7 +55,7 @@ kubectl delete pods <pod> --grace-period=0 --force
 When the last pod is manually deleted, the recovery process resumes.
     {{< /note >}}
 
-1. Wait for the cluster to recover until it is in the Running state.
+1. Wait for the cluster to recover until it is in the "Running" state.
 
     To see the state of the cluster, run:
 
