@@ -37,7 +37,7 @@ software that can reliably manage an application in an extensible,
 modular way and do not hinder the basic primitives that comprise the K8s
 architecture.
 
-Redis created an Operator that deploys and manages the lifecycle of a Redis Enterprise Cluster.
+Redis created an operator that deploys and manages the lifecycle of a Redis Enterprise Cluster.
 
 The Redis Enterprise operator acts as a custom controller for the custom
 resource RedisEnterpriseCluster, or ‘rec’, which is defined through K8s

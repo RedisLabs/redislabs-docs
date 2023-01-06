@@ -78,5 +78,11 @@ crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_b
 
 ## Data persistence
 
-You can set the data persistence configuration, including AOF (Append-Only File) data persistence and snapshot,
-for each participating cluster.
+Active-Active supports AOF (Append-Only File) data persistence only.  Snapshot persistence is _not_ supported and should not be used.
+The snapshot option for data persistence on Active-Active databases is not supported and should not be used (Althought possible to be configured).
+If an Active-Active database is currently using snapshot data persistence, use `crdb-cli` to switch to AOF persistence:
+```text
+ crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config '{"data_persistence": "aof", "aof_policy":"appendfsync-every-sec"}'
+```
+
+
