@@ -45,17 +45,20 @@ By default, REDB creates a `ClusterIP` type service, which exposes a cluster-int
 
 ## Access database
 
-Use the `openssl` command to access the database from outside the cluster.
+Access the database from outside the cluster using `redis-cli` or `openssl`.
+
+To connect with `redis-cli`:
+  
+  ```sh
+  redis-cli -h <hostname> -p 443 --tls --cacert ./ca.pem --sni <hostname>
+  ```
+
+Replace the `<hostname>` value with the hostname for your new route.
+
+To connect with `openssl`:
 
   ```sh
   openssl s_client -connect <hostname>:443 -crlf -CAfile ./ca.pem -servername <hostname>
   ```
 
-  Replace the `<hostname>` value with the hostname for your new route.
-  
-  To connect via `redis-cli`:
-  
-  ```sh
-  redis-cli -h <hostname> -p 443 --tls --cacert ./ca.pem --sni <hostname>
-  ```
-  
+
