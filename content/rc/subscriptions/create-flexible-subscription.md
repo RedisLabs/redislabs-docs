@@ -77,11 +77,25 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 | **Cloud account** | To deploy this subscription to a specific cloud account, select it here.  Use the Add button to add a new cloud account. |
 | **VPC configuration** | Select _In a new VPC_ to deploy to a new Virtual Private Cloud.<br/><br/>To deploy this subscription to an existing Virtual Private Cloud , select _In existing VCP_ and then set VPC ID to the appropriate ID value.   |
 | **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) subnet address for your deployment. Must not overlap other addresses used with your subscription.|
-| **Preferred Availability Zone(s)** | The [availability zone](https://cloud.google.com/compute/docs/regions-zones/#available) for your selected region.<br/><br/>If you choose *Select zone(s)*, you must choose at least one zone from **Zone Suffix**.  You can choose up to three preferred zones. |
+| **Allowed Availability Zones** | The availability zone for your selected region.<br/><br/>If you choose *Manual selection*, you must choose at least one zone ID from the **Zone IDs** dropdown.  For more information, see [Availability zones](#availability-zones). |
 
 When finished, choose **Continue** to determine your subscription size requirements.
 
 {{<image filename="images/rc/button-subscription-continue.png" width="100px" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+
+#### Availability zones
+
+You can reduce the amount of data transfer between your Redis Cloud cluster and your application by ensuring they are located in the same availability zone. To specify the availability zone for your hosted cluster, select *Manual Selection* under **Allowed Availability Zones**. 
+
+If **Multi-AZ** is on, select three availability zones from the **Zone IDs** dropdown.
+
+{{<image filename="images/rc/availability-zones-multi-az.png" width="95%" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+
+Otherwise, select one availability zone from the **Zone IDs** dropdown.
+
+{{<image filename="images/rc/availability-zones-no-multi-az.png" width="90%" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+
+For more information on availability zones, see the [GCP docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
 
 ## Sizing tab
 
