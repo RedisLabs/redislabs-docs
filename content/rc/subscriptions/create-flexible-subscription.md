@@ -85,7 +85,9 @@ When finished, choose **Continue** to determine your subscription size requireme
 
 #### Availability zones
 
-You can reduce network transfer costs by ensuring your Redis Cloud cluster and your application are located in the same availability zone. To specify the availability zone for your hosted cluster, select *Manual Selection* under **Allowed Availability Zones**. 
+You can reduce network transfer costs by ensuring your Redis Cloud cluster and your application are located in the same availability zone. 
+
+To specify the availability zone for your hosted cluster, select *Manual Selection* under **Allowed Availability Zones**. 
 
 If **Multi-AZ** is enabled, select three availability zones from the **Zone IDs** list.
 
