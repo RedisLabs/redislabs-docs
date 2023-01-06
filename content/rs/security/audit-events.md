@@ -103,7 +103,7 @@ Once auditing is enabled for your cluster, you can audit individual databases.  
 - the REST API
 
     ```
-    PUT /v1/bdb/1
+    PUT /v1/bdbs/1
     { "db_conns_auditing":"enabled" }
     ```
 

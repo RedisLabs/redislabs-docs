@@ -241,7 +241,7 @@ For best results, we advise against relying on deprecated features for any lengt
 {{%definition "operator"%}}
 Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components.
 
-More info: [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
+More info: [operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 {{%/definition%}}
 
 {{%definition "Out-of-Memory (OOM)"%}}
