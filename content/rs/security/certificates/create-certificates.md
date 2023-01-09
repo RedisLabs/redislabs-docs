@@ -36,7 +36,8 @@ You will be prompted for a Country Name, State or Province Name, Locality Name, 
 
 4. Upload the certificate to the cluster.
 
-    Use the `rladmin` command-line utility to upload the certificate to the cluster and replace the current certificate. You'll run the `cluster certificate set` command, followed by the name of the certificate to set, the certificate filename, and the key filename.
+    To upload the new certificate and replace the current certificate with the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command-line utility,
+    run the [`cluster certificate set`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) command:
 
     ```sh
     rladmin cluster certificate set <cert-name> \
@@ -44,9 +45,8 @@ You will be prompted for a Country Name, State or Province Name, Locality Name, 
         key_file <key-file-name>.pem
     ```
 
-    The certificate names are as follows: 
-      - For the admin console: `cm`
-      - For the REST API: `api`
-      - For the proxy: `proxy`
-      - For the syncer: `syncer`
-      - For the metrics exporter: `metrics_exporter`
+    Replace the following variables with your own values:
+    
+    - `<cert-name>` - The name of the certificate to update. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
+    - `<cert-file-name>` - The certificate filename 
+    - `<key-file-name>` - The key filename
