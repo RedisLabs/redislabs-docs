@@ -61,9 +61,9 @@ To do so, select **Advanced options** while creating the database in order to di
 
 ### Command line (`rladmin`)
 
-You can use the [`rladmin` utility]({{<relref "/rs/references/cli-utilities/rladmin/">}}) to enable the OSS Cluster API for Redis Software databases, including Replica Of (Active-Passive) databases.
+You can use the [`rladmin` utility]({{<relref "/rs/references/cli-utilities/rladmin/">}}) to enable the OSS Cluster API for Redis Enterprise Software databases, including Replica Of (Active-Passive) databases.
 
-For Active-Active (CRDB) databases, [use the crdb-cli utility](#enable-for-active-active-databases-from-the-command-line).
+For Active-Active (CRDB) databases, [use the crdb-cli utility](#active-active-databases).
 
 To enable the OSS Cluster API for a Redis database from the command line:
 
@@ -71,7 +71,7 @@ To enable the OSS Cluster API for a Redis database from the command line:
 $ rladmin tune db <database name or ID> oss_cluster enabled
 ```
 
-To determine the current setting for a database from the command-line, use `rladmin info db` to return the value of the `oss_cluster` setting.
+To determine the current setting for a database from the command line, use `rladmin info db` to return the value of the `oss_cluster` setting.
 
 ```sh
 $ rladmin info db test | grep oss_cluster:
@@ -127,7 +127,7 @@ To deactivate OSS Cluster API support for a database, either:
 
 - Use the admin console to remove the checkmark from the database configuration settings.
 
-- Use the appropriate utility to deactivate sthe appropriate setting.
+- Use the appropriate utility to deactivate the OSS cluster setting.
 
     For standard databases, including Replica Of (Active-Passive), use `rladmin`:
 
