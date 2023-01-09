@@ -25,7 +25,7 @@ Before configuring a multi-namespace deployment, you must have a running [Redis 
 Both the operator and the RedisEnterpriseCluster (REC) resource need access to each namespace the REC will manage. For each managed namespace, create a `role.yaml` and `role_binding.yaml` file within the managed namespace, as shown in the examples below.
 
 Replace `<rec-namespace>` with the namespace the REC resides in.
-Replace `<service-account-name>` with the your own value (by default this is the REC name).
+Replace `<service-account-name>` with your own value (defaults to the REC name).
 
 `role.yaml` example: 
 
