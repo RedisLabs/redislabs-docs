@@ -14,7 +14,7 @@ aliases: [
 
 A single Redis Enterprise cluster (REC) can manage multiple Redis Enterprise database objects (REDB) in multiple namespaces within the same Kubernetes cluster.
 
-To learn more designing a multi-namespace Redis Enterprise cluster, see [flexible deployment options]({{<relref "/kubernetes/deployment/deployment-options.md">}}).
+To learn more about designing a multi-namespace Redis Enterprise cluster, see [flexible deployment options]({{<relref "/kubernetes/deployment/deployment-options.md">}}).
 
 ## Prerequisites
 
