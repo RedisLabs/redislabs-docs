@@ -1,6 +1,6 @@
 ---
 Title: Flexible deployment options
-linktitle: Deployment options
+linkTitle: Deployment options
 description: Redis Enterprise for Kubernetes allows you to deploy to multiple namespaces. This article describes flexible deployment options you can use to meet your specific needs. 
 weight: 12
 alwaysopen: false
@@ -17,7 +17,7 @@ A single Redis Enterprise cluster (REC) can manage multiple Redis Enterprise dat
 
 ## Single REC and single namespace (one-to-one)
 
-The standard and simplest way is with your Redis Enterprise cluster (REC) and Redis Enterprise databases (REDB) residing within the same namespace. No additional configuration is required for this, since there is no communication required to cross namespaces. See [Deploy Redis Enterprise Software on Kubernetes]{{<relref "/kubernetes/deployment/quick-start.md">}}.
+The standard and simplest way is with your Redis Enterprise cluster (REC) and Redis Enterprise databases (REDB) residing within the same namespace as the Redis Enterprise operator. No additional configuration is required for this, since there is no communication required to cross namespaces. See [Deploy Redis Enterprise Software on Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}).
 
 ![One-to-one deployment option](/images/platforms/k8s-deploy-one-to-one.png)
 
@@ -29,9 +29,9 @@ A single Redis Enterprise cluster (REC) can manage multiple Redis Enterprise dat
 
 ## Multiple RECs and multiple namespaces (many-to-many)
 
-A single Kubernetes cluster can contain multiple Redis Enterprise clusters (REC), as long as they reside in different namespaces. Each namespace can host only one REC.
+A single Kubernetes cluster can contain multiple Redis Enterprise clusters (REC), as long as they reside in different namespaces. Each namespace can host only one REC and each operator can only manage one REC.
 
-You have the flexibility to create databases in separate namespaces, or in the same namespace as the REC, or combine any of the supported deployment options above. This configuration is ideal for running a variety of applications in the same Kubernetes cluster.
+You have the flexibility to create databases in separate namespaces, or in the same namespace as the REC, or combine any of the supported deployment options above. This configuration is geared towards use cases that require multiple Redis Enterprise clusters with greater isolation or different cluster configurations.
 
 See [Manage databases in multiple namespaces]({{<relref "/kubernetes/re-clusters/multi-namespace.md">}}) for more information.
 
