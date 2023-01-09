@@ -57,7 +57,7 @@ To enable the OSS Cluster API from the admin console for an existing database:
 
 You can also use the admin console to enable the setting when creating a new database.  
 
-To do so, select **Advanced options** while creating the database.  This displays the **OSS Cluster API support** setting.
+To do so, select **Advanced options** while creating the database in order to display the **OSS Cluster API support** setting.  Place a checkmark in the setting to enable the API when the database is created.
 
 ### Command line (`rladmin`)
 
