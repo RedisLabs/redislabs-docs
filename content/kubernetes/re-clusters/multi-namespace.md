@@ -75,7 +75,7 @@ subjects:
   namespace: <rec-namespace>
 - kind: ServiceAccount
   name: <service-account-name>
-  namespace: rec-namespace
+  namespace: <rec-namespace>
 roleRef:
   kind: Role
   name: redb-role
