@@ -149,7 +149,7 @@ If the REC is configured to watch a namespace without setting the role and role 
   -p '{"data": {"REDB_NAMESPACES_LABEL": "<namespace-label>"}}'
   ```
 
-4. For each managed namespace, apply the same label. Replace `<managed-namespace>` with the namespace the REC will be managing.
+4. For each managed namespace, apply the same label. Replace `<managed-namespace>` with the namespace the REC will manage.
 
 
   ```sh
