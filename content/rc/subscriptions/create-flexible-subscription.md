@@ -97,7 +97,7 @@ Otherwise, select one availability zone from the **Zone IDs** list.
 
 {{<image filename="images/rc/availability-zones-no-multi-az.png" width="90%" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
 
-For more information on availability zones, see the [GCP docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+For more information on availability zones and to learn how to find a zone ID, see the [GCP docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
 
 ## Sizing tab
 
