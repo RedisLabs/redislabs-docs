@@ -11,7 +11,7 @@ aliases: [
 ]
 
 ---
-Redis Enterprise for Kubernetes can be deployed in several different ways depending on your database needs.
+You can deploy Redis Enterprise for Kubernetes in several different ways depending on your database needs.
 
 A single Redis Enterprise cluster (REC) can manage multiple Redis Enterprise database objects (REDB) in multiple namespaces within the same Kubernetes cluster.
 
