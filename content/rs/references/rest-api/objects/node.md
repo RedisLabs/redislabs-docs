@@ -32,6 +32,7 @@ An API object that represents a node in the cluster.
 | public_addr | string | Public IP address of node |
 | rack_id | string | Rack ID where node is installed |
 | recovery_path | string | Recovery files path |
+| role | 'master'<br/>'slave' | The node's current role in the cluster<br />**master:** a primary node<br />**slave:** a replica node |
 | shard_count | integer | Number of shards on the node (read-only) |
 | shard_list | array of integers | Cluster unique IDs of all node shards |
 | software_version | string | Installed Redis Enterprise cluster software version (read-only) |
