@@ -23,7 +23,7 @@ The standard and simplest deployment deploys your Redis Enterprise databases (RE
 
 ## Single REC and multiple namespaces (one-to-many)
 
-A single Redis Enterprise cluster (REC) can manage multiple Redis Enterprise database objects (REDB) in multiple namespaces within the same Kubernetes cluster. See [Manage databases in multiple namespaces]({{<relref "/kubernetes/re-clusters/multi-namespace.md">}}) for more information.
+Multiple Redis Enterprise databases (REDB) spread across multiple namespaces within the same K8s cluster can be associated with the same Redis Enterprise cluster (REC). See [Manage databases in multiple namespaces]({{<relref "/kubernetes/re-clusters/multi-namespace.md">}}) for more information.
 
 ![one-to-many deployment option](/images/platforms/k8s-deploy-one-to-many.png)
 
