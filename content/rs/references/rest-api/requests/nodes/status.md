@@ -1,9 +1,10 @@
 ---
 Title: Node status requests
 linkTitle: status
-description: Node status requests
+description: Requests that return a node's hostname and role.
 weight: $weight
 alwaysopen: false
+toc: "true"
 headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/nodes/status
@@ -23,13 +24,17 @@ aliases: /rs/references/rest-api/nodes/status
 
 	GET /v1/nodes/status
 
-Get the status of all nodes in the cluster.
+Gets the status of all nodes. Includes each node's hostname and role in the cluster:
+
+- Primary nodes return `"role": "master"`
+
+- Replica nodes return `"role": "slave"`
 
 #### Required permissions
 
 | Permission name |
 |-----------------|
-| [view_all_nodes_alerts]({{<relref "/rs/references/rest-api/permissions#view_all_nodes_alerts">}}) |
+| [view_node_info]({{<relref "/rs/references/rest-api/permissions#view_node_info">}}) |
 
 ### Request {#get-all-request} 
 
@@ -46,12 +51,25 @@ Get the status of all nodes in the cluster.
 
 ### Response {#get-all-response} 
 
-Returns an array of [node objects]({{<relref "/rs/references/rest-api/objects/node">}}).
+For each node in the cluster, returns a JSON object that contains the node's hostname and role.
 
 #### Example JSON body
 
 ```json
-
+{
+    "1": {
+        "hostname": "3d99db1fdf4b",
+        "role": "master"
+    },
+    "2": {
+        "hostname": "fc7a3d332458",
+        "role": "slave"
+    },
+    "3": {
+        "hostname": "b87cc06c830f",
+        "role": "slave"
+    }
+}
 ```
 
 ### Status codes {#get-all-status-codes} 
@@ -65,13 +83,17 @@ Returns an array of [node objects]({{<relref "/rs/references/rest-api/objects/no
 
 	GET /v1/nodes/{int: uid}/status
 
-Get the status of a specific node.
+Gets the status of a node. Includes the node's hostname and role in the cluster:
+
+- Primary nodes return `"role": "master"`
+
+- Replica nodes return `"role": "slave"`
 
 #### Required permissions
 
 | Permission name |
 |-----------------|
-| [view_node_alerts]({{<relref "/rs/references/rest-api/permissions#view_node_alerts">}}) |
+| [view_node_info]({{<relref "/rs/references/rest-api/permissions#view_node_info">}}) |
 
 ### Request {#get-request} 
 
@@ -88,14 +110,24 @@ Get the status of a specific node.
 | Accept | application/json | Accepted media type |
 
 
+#### URL parameters
+
+| Field | Type | Description |
+|-------|------|-------------|
+| uid | integer | The node's unique ID. |
+
+
 ### Response {#get-response} 
 
-Returns a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
+Returns a JSON object that contains the node's hostname and role.
 
 #### Example JSON body
 
 ```json
-
+{
+    "hostname": "3d99db1fdf4b",
+    "role": "master"
+}
 ```
 
 ### Status codes {#get-status-codes} 
@@ -103,4 +135,4 @@ Returns a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
 | Code | Description |
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
-| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Specified alert or node does not exist |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Node UID does not exist |
