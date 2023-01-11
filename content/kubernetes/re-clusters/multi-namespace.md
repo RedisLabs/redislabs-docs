@@ -60,7 +60,7 @@ rules:
 `role_binding.yaml` example:
 
 ```yaml
- kind: RoleBinding
+kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: redb-role
