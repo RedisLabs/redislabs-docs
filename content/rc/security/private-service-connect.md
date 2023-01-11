@@ -29,6 +29,12 @@ Compared to VPC peering, Private Service Connect:
 Larger clusters are more likely to experience increased latency with Private Service Connect versus VPC peering.
     {{</note>}}
 
+Consider using VPC peering and Private Service Connect in parallel for the following situations:
+
+- When migrating from one connectivity solution to the other.
+
+- If different applications need to connect to the same database but have different latency or security requirements.
+
 ## Set up Private Service Connect {#setup-psc}
 
 To set up Private Service Connect, you need to:
@@ -62,7 +68,7 @@ First, configure Private Service Connect in Redis Cloud:
     | _Google Cloud project ID_ | GCP project ID |
     | _VPC name_ | Name of the VPC that hosts your application |
     | _Subnet name_ | Name of your VPC's subnet of IP address ranges |
-    | _Endpoint name_ | Prefix for the endpoint created in GCP |
+    | _Endpoint name_ | Prefix used to create PSC endpoints in the consumer application VPC, so endpoint names appear in GCP as _endpoint name prefix + endpoint number_ |
 
 1. Continue to the **Add connections** step:
     
@@ -99,6 +105,10 @@ Since it can take some time for the DNS changes to become active, we recommend y
     {{<warning>}}
 To ensure the `gcloud` script configures the endpoints correctly, do not make any changes to it.
     {{</warning>}}
+
+The `gcloud` script creates 40 endpoints in the consumer application VPC. Each endpoint appears in GCP as the configured endpoint name followed by the endpoint number.
+
+Redis Cloud displays this collection of endpoints as a single endpoint in the admin console.
 
 ### Accept PSC connection {#accept-psc}
 
