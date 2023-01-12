@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise on Kubernetes FAQs
+Title: Redis Enterprise for Kubernetes FAQs
 linkTitle: FAQs
 description:
 weight: 100
