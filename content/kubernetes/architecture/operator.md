@@ -14,7 +14,7 @@ aliases: {
     /kubernetes/architecture/operator/,
 }
 ---
-The Redis Enterprise operator is the fastest, most efficient way to
+Redis Enterprise is the fastest, most efficient way to
 deploy and maintain a Redis Enterprise cluster in Kubernetes.
 
 ## What is an operator?
