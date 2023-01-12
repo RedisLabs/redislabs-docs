@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise for Kubernetes operator-based architecture
 linkTitle: What is an operator?
-description: This section provides a description of the design of the Redis Enterprise operator for Kubernetes.
+description: This section provides a description of the design of Redis Enterprise for Kubernetes.
 weight: 30
 alwaysopen: false
 categories: ["Platforms"]

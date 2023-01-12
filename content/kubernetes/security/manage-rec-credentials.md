@@ -159,4 +159,4 @@ If you store your secrets with Hashicorp Vault, update the secret for the REC cr
 username:<desired_username>, password:<desired_password>
 ```
 
-For more information about Vault integration with the Redis Enterprise Cluster see [Integrating the Redis Enterprise operator with Hashicorp Vault](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/65eba63a6aac69455a691652218e28b0873e4de3/vault#integrating-the-redis-enterprise-operator-with-hashicorp-vault).
+For more information about Vault integration with the Redis Enterprise Cluster see [Integrating Redis Enterprise for Kubernetes with Hashicorp Vault](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/65eba63a6aac69455a691652218e28b0873e4de3/vault#integrating-the-redis-enterprise-operator-with-hashicorp-vault).

@@ -163,7 +163,7 @@ After the approval, the status of the resources installed is updated.
 
 ### Next steps
 
-After you install the Redis Enterprise operator into a project you can:
+After you install Redis Enterprise for Kubernetes into a project you can:
 
 - Navigate to the installed version and use the **Create New** button to create a
   new cluster in your namespace.

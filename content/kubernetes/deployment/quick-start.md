@@ -34,7 +34,7 @@ This guide works with most supported Kubernetes distributions. If you're using O
 
 ## Prerequisites
 
-To deploy the Redis Enterprise operator, you'll need:
+To deploy Redis Enterprise for Kubernetes, you'll need:
 
 * a Kubernetes cluster in a [supported distribution]({{<relref "/kubernetes/reference/supported_k8s_distributions.md">}})
 * a minimum of three worker nodes
