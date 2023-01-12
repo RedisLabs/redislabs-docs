@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software on Kubernetes architecture
+Title: Redis Enterprise for Kubernetes architecture
 linkTitle: Architecture
 description: This section provides an overview of the architecture and considerations for Redis Enterprise on Kubernetes.
 weight: 11

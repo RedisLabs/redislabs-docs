@@ -1,5 +1,5 @@
 ---
-Title: Deployment with OpenShift CLI for Redis Enterprise Software on Kubernetes
+Title: Deployment with OpenShift CLI for Redis Enterprise for Kubernetes
 linkTitle: OpenShift CLI
 description: The Redis Enterprise operator and cluster can be installed via CLI tools
   OpenShift

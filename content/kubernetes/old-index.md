@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software on Kubernetes
+Title: Redis Enterprise for Kubernetes
 description:
 weight: 10
 alwaysopen: false

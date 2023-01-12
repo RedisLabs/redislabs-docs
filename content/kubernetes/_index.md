@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Software on Kubernetes
+Title: Redis Enterprise for Kubernetes
 linkTitle: Redis Enterprise on Kubernetes
-description: The Redis Enterprise operators allows you to use Redis Enterprise Software on Kubernetes. 
+description: The Redis Enterprise operators allows you to use Redis Enterprise for Kubernetes. 
 weight: 50
 alwaysopen: false
 categories: ["Platforms"]

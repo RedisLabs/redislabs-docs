@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software on Kubernetes deployment with the OpenShift OperatorHub
+Title: Redis Enterprise for Kubernetes deployment with the OpenShift OperatorHub
 linkTitle: OpenShift OperatorHub
 description: OpenShift provides the OperatorHub where you can install the
  Redis Enterprise operator from the administrator user interface. Alternatively,
