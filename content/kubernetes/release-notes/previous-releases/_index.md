@@ -10,6 +10,6 @@ aliases: [
 /kubernetes/release-notes/previous-releases/,
 ]
 ---
-Archived release notes for Redis Enterprise for Kubernetes released more than 18 months ago are collected here.
+Below are archived release notes for Redis Enterprise for Kubernetes versions released more than 18 months ago.
 
 {{<table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes" columnSources="LinkTitle,Description" enableLinks="LinkTitle">}}
