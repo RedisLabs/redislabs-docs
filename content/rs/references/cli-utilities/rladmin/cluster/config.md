@@ -24,6 +24,7 @@ Updates the cluster configuration.
         [ cnm_https_port <number>]
         [ data_cipher_list <openSSL cipher list> ]
         [ debuginfo_path <filepath> ]
+        [ encrypt_pkeys { enabled | disabled } ]
         [ handle_redirects { enabled | disabled } ]
         [ http_support { enabled | disabled } ]
         [ ipv6 { enabled | disabled } ]
@@ -54,6 +55,7 @@ Updates the cluster configuration.
 | cnm_https_port | integer | HTTPS REST API server listening port |
 | data_cipher_list | list of ciphers | Cipher suites used by the the data plane (specified in the format understood by the OpenSSL library) |
 | debuginfo_path | filepath | Local directory to place generated support package files |
+| encrypt_pkeys | `enabled`<br />`disabled` | Enable or turn off encryption of private keys |
 | handle_redirects | `enabled`<br />`disabled` | Enable or turn off handling DNS redirects when DNS is not configured and running behind a load balancer |
 | http_support | `enabled`<br />`disabled` | Enable or turn off using HTTP for REST API connections |
 | ipv6 | `enabled`<br />`disabled` | Enable or turn off IPv6 connections to the admin console |
