@@ -14,7 +14,7 @@ aliases: [
 ---
 
 This section contains the references to the operator, cluster, database deployment
-options on Kubernetes.
+options for Kubernetes.
 
 
 {{< allchildren style="h2" description="true" />}}
