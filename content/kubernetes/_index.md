@@ -22,6 +22,6 @@ aliases: [
 ]
 ---
 
-Kubernetes provides enterprise orchestration of containers and has been widely adopted. Redis Enterprise for Kubernetesprovides a simple way to get a Redis Enterprise cluster on Kubernetes and enables more complex deployment scenarios.
+Kubernetes provides enterprise orchestration of containers and has been widely adopted. Redis Enterprise for Kubernetes provides a simple way to get a Redis Enterprise cluster on Kubernetes and enables more complex deployment scenarios.
 
 {{< allchildren style="h2" description="true" />}}
