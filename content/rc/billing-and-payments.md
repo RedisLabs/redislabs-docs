@@ -40,6 +40,12 @@ The following tabs are available:
 
     Select this to download a PDF invoice for the associated charge.
 
+    A **Pay Now** button appears in selected regions.
+
+    {{<image filename="images/rc/icon-billing-payments-pay-now.png" width="30px" alt="Use the Pay Now button to Pay your invoice in selected regions." >}}{{< /image >}} 
+    
+    Select this button to pay your invoice.
+
 - The **Payment Methods** tab lists your current payment methods.  You can add a new payment method, associate different payment methods with specific subscriptions, and remove payment methods.
 
     {{<image filename="images/rc/billing-payment-method-tab.png" alt="The Payments Methods tab helps you manage payments for your subscriptions." >}}{{< /image >}}
