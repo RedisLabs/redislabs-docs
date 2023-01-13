@@ -42,7 +42,7 @@ The following tabs are available:
 
     A **Pay Now** button appears in selected regions.
 
-    {{<image filename="images/rc/icon-billing-payments-pay-now.png" width="30px" alt="Use the Pay Now button to Pay your invoice in selected regions." >}}{{< /image >}} 
+    {{<image filename="images/rc/billing-payments-pay-now.png" width="100px" alt="Use the Pay Now button to Pay your invoice in selected regions." >}}{{< /image >}} 
     
     Select this button to pay your invoice.
 
