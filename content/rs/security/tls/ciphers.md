@@ -35,6 +35,8 @@ When you modify your cipher suites, make sure:
 - Redis Enterprise Software doesn't support static Diffie–Hellman key exchange ciphers.
 
 - It does support Ephemeral Diffie–Hellman key exchange ciphers on RHEL8 and Bionic OS.
+  
+- Only the ciphers in the command will be configured (it won't APPEND to existing ciphers list)  
 {{</note>}}
 
 ### Control plane
