@@ -75,7 +75,7 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 |:---------|:-----------|
 | **Multi-AZ** | Determines if replication spans multiple Availability Zones, which provides automatic failover when problems occur. |
 | **Cloud account** | To deploy this subscription to a specific cloud account, select it here.  Use the Add button to add a new cloud account. |
-| **VPC configuration** | Select _In a new VPC_ to deploy to a new Virtual Private Cloud.<br/><br/>To deploy this subscription to an existing Virtual Private Cloud , select _In existing VCP_ and then set VPC ID to the appropriate ID value.   |
+| **VPC configuration** | Select _In a new VPC_ to deploy to a new Virtual Private Cloud.<br/><br/>To deploy this subscription to an existing Virtual Private Cloud , select _In existing VPC_ and then set VPC ID to the appropriate ID value.   |
 | **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range for your deployment should be a subrange of your VPCs **primary** CIDR (secondary CIDRs are currenly not supported). Redis will create a new subnet for this CIDR in your VPC. Therefore, it must not overlap other subnets or ranges used with your subscription.|
 | **Preferred Availability Zone(s)** | The [availability zone](https://cloud.google.com/compute/docs/regions-zones/#available) for your selected region.<br/><br/>If you choose *Select zone(s)*, you must choose at least one zone from **Zone Suffix**.  You can choose up to three preferred zones. |
 
