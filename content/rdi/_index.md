@@ -10,6 +10,7 @@ aliases: /connect/
          /connect.md
          /redis-di/
          /redis-di.md
+headermessage: Hello, footpad
 ---
 
 Redis Data Integration is a product for data ingestion from existing systems of records (mainly databases) into Redis Enterprise.

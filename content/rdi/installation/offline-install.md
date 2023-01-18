@@ -12,13 +12,13 @@ aliases:
 
 ### Redis Data Integration Offline Package
 
-#### Ubuntu20.04
+#### Ubuntu 20.04
 
 ```bash
 wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-ubuntu20.04-latest.tar.gz -O /tmp/redis-di-offline.tar.gz
 ```
 
-#### Ubuntu18.04
+#### Ubuntu 18.04
 
 ```bash
 wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-ubuntu18.04-latest.tar.gz -O /tmp/redis-di-offline.tar.gz

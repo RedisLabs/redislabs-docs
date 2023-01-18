@@ -1,6 +1,6 @@
 ---
 Title: Data transformation pipeline
-linkTitle: Data transformation pipeline
+linkTitle: Pipeline
 description: Describes the data transformaiton pieline that imports and transforms relationl database data to Redis databases.
 weight: 10
 alwaysopen: false
@@ -8,7 +8,7 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-Redis Data Integration's Data Transformation allows users to transform their data beyond the default translation of source types to Redis types. The transformation involves no coding! Instead it is described in a set of human readable YAML files, one per source table.
+Redis Data Integration Data Transformation lets users transform their data beyond the default translation of source types to Redis types. The transformation involves no coding! Instead it is described in a set of human readable YAML files, one per source table.
 
 The ingested format and types are different from one source to another. Currently, the only supported source is [Debezium](https://debezium.io/). The first transformation from Debezium types to a naive JSON with Redis types is done automatically without any need for user instructions. Then, this JSON is passed on to the user defined transformation pipeline
 
