@@ -34,7 +34,7 @@ This guide works with most supported Kubernetes distributions. If you're using O
 
 ## Prerequisites
 
-To deploy the Redis Enterprise operator, you'll need:
+To deploy Redis Enterprise for Kubernetes, you'll need:
 
 * a Kubernetes cluster in a [supported distribution]({{<relref "/kubernetes/reference/supported_k8s_distributions.md">}})
 * a minimum of three worker nodes
@@ -64,7 +64,7 @@ You can use an existing namespace as long as it does not contain any existing Re
 
 ## Install the operator
 
-The Redis Enterprise operator bundle is published as a container image. A list of required images is available in the [release notes]({{<relref "/kubernetes/release-notes/_index.md">}}) for each version.
+Redis Enterprise for Kubernetes bundle is published as a container image. A list of required images is available in the [release notes]({{<relref "/kubernetes/release-notes/_index.md">}}) for each version.
 
 The operator [definition and reference materials](https://github.com/RedisLabs/redis-enterprise-k8s-docs) are available on GitHub. The operator definitions are [packaged as a single generic YAML file](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
 
