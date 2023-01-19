@@ -24,7 +24,7 @@ The communications for which you can modify ciphers are:
 - Data plane - The TLS configuration for the communication between applications and databases.
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service.md">}}).
 
-You can configure ciphers with the `rladmin` commands shown here or with the REST API.
+You can configure ciphers with the `rladmin` commands shown here or with the REST API. Note that configuring cipher suites overwrites existing ciphers rather than appending new ciphers to the list.
 
 When you modify your cipher suites, make sure:
 
@@ -34,7 +34,7 @@ When you modify your cipher suites, make sure:
 {{<note>}}
 - Redis Enterprise Software doesn't support static Diffie–Hellman key exchange ciphers.
 
-- It does support Ephemeral Diffie–Hellman key exchange ciphers on RHEL8 and Bionic OS.
+- It does support Ephemeral Diffie–Hellman key exchange ciphers on RHEL8 and Bionic OS.  
 {{</note>}}
 
 ### Control plane
