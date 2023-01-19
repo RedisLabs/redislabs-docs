@@ -66,8 +66,7 @@ Data plane cipher suites use the OpenSSL library format. See the OpenSSL documen
 To configure the cipher suites for communications between applications and databases, use the following `rladmin` command syntax:
 
 ```sh
-rladmin cluster config  data_cipher_list <OpenSSL cipher list>  
-
+rladmin cluster config  data_cipher_list <OpenSSL cipher list>
 ```
 
 See the example below to configure cipher suites for the data plane:
