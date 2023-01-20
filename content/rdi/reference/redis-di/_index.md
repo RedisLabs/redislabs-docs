@@ -1,5 +1,5 @@
 ---
-Title: redis-di utility
+Title: redis-di command line utility
 linkTitle: redis-di 
 description: Describes redis-di, the Redis Data Integration command line utility 
 weight: 10
@@ -10,34 +10,45 @@ aliases: [
 ] 
 ---
 
-The `redis-cli` utility is a command line interface (CLI) to manage and configure Redis Data Integration
+The `redis-di` utility is a command line interface (CLI) to manage and configure Redis Data Integration
 
 ## Usage
 
 ```
-Usage: redis-di [OPTIONS] COMMAND [ARGS]...
+redis-di [OPTIONS] COMMAND [ARGS]...
 ```
 
 ## Options
-* `version`: 
-  * Type: BOOL 
-  * Default: `false`
-  * Usage: `--version`
 
-  Show the version and exit.
-
-
-* `help`: 
-  * Type: BOOL 
-  * Default: `false`
-  * Usage: `--help`
-
-  Show this message and exit.
-
+| Option | Description |
+|--------|-------------|
+| --version | Shows the RDI version string and exits.  Boolean, default: _false_ |
+| --help    | Shows the help message and exists.  Boolean, default: _false_  |
 
 ## Commands
 
-{{< table-children columnNames="Command,Description" columnSources="LinkTitle,Description" enableLinks="LinkTitle" >}}
+| Command | Description |
+|---------|-------------|
+| [add-context]({{<relref "/rdi/reference/redis-di/add-context">}}) | Adds a new context to your Redis Data integration instance |
+| [configure]({{<relref "/rdi/reference/redis-di/configure">}}) | Configures a Redis Data Integration database so that it's ready to process data |
+| [create]({{<relref "/rdi/reference/redis-di/create">}}) | Creates a new Redis Data Integration instance |
+| [delete]({{<relref "/rdi/reference/redis-di/delete">}}) | Deletes a Redis Data Integration database |
+| <nobr>[delete-all-contexts]({{<relref "/rdi/reference/redis-di/delete-all-contexts">}})</nobr> | Deletes all contexts |
+| [delete-context]({{<relref "/rdi/reference/redis-di/delete-context">}}) | Deletes a context |
+| [deploy]({{<relref "/rdi/reference/redis-di/deploy">}}) | Deploys the Redis Data Integration configurations including target |
+| [describe-job]({{<relref "/rdi/reference/redis-di/describe-job">}}) | Describes a transformation engine job |
+| [get-rejected]({{<relref "/rdi/reference/redis-di/get-rejected">}}) | Returns all the stored rejected entries |
+| [list-jobs]({{<relref "/rdi/reference/redis-di/list-jobs">}}) | Lists transformation engine jobs |
+| [reset]({{<relref "/rdi/reference/redis-di/reset">}}) | Resets the pipeline into initial full sync mode |
+| [scaffold]({{<relref "/rdi/reference/redis-di/scaffold">}}) | Generates configuration files for Redis Data Integration and Debezium Redis Sink Connector |
+| [set-context]({{<relref "/rdi/reference/redis-di/set-context">}}) | Sets a context to be the active one |
+| [set-secret]({{<relref "/rdi/reference/redis-di/set-secret">}}) | Writes a secret to Redis secret store |
+| [start]({{<relref "/rdi/reference/redis-di/start">}}) | Starts the pipeline |
+| [status]({{<relref "/rdi/reference/redis-di/status">}}) | Displays the status of the pipeline end to end |
+| [stop]({{<relref "/rdi/reference/redis-di/stop">}}) |   Stops the pipeline |
+| [trace]({{<relref "/rdi/reference/redis-di/trace">}}) |  Starts a trace session for troubleshooting data transformation |
+| [upgrade]({{<relref "/rdi/reference/redis-di/upgrade">}}) | Upgrades RDI Engine without losing data or downtime |
+
 
 ## CLI Help
 

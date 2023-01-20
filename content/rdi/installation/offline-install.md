@@ -1,12 +1,15 @@
 ---
 Title: Offline install
 linkTitle: Offline install
-description: Shows how to install Redis Data Integration without an active internet connection.
+description: Shows how to install Redis Data Integration without an active Internet connection.
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
+
+Here's how to install Redis Data Integration without using an active Internet connecion, also known as an offline (or _air-gapped_) environment.
+
 
 ## Download
 
