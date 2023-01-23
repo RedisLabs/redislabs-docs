@@ -1,6 +1,6 @@
 ---
 Title: redis-di command line utility
-linkTitle: redis-di 
+linkTitle: redis-di command line utility
 description: Describes redis-di, the Redis Data Integration command line utility 
 weight: 10
 alwaysopen: false

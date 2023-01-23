@@ -1,14 +1,14 @@
 ---
-Title: Data type handling
-linkTitle: Data type handling
-description: Describes how relational data types are transformed to Redis data types.
+Title: Data type conversion
+linkTitle: Data type conversion
+description: Describes how relational data types are converted to Redis data types.
 weight: 20
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
 
-This document describes default conversions of data types of supported databases into target redis data types.
+This document describes default conversions of data types of supported databases into target Redis data types.
 
 - [General ANSI SQL Data Types](#general-ansi-sql-data-types)
 - [Cassandra Specific Data Types](#cassandra-specific-data-types)

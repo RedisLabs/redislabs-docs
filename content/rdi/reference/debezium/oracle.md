@@ -1,8 +1,14 @@
 ---
-parent: Debezium Server Configuration File
-title: oracle
-grand_parent: Reference
+Title: RDI configuration for Oracle
+linkTitle: Oracle
+description: Describes the `application.properties` settings that configure Debezium Server for Oracle
+weight: $weight
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
 ---
+
+The following example shows how to configure the Debezium Server `application.properties` file to support [Oracle](https://oracle.com/database/).
 
 # application.properties
 

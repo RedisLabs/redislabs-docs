@@ -1,6 +1,6 @@
 ---
-Title: Debezium Server Configuration Guide
-linkTitle: Debezium Server Configuration
+Title: Debezium Server configuration guide
+linkTitle: Debezium Server configuration
 description: Describes how to use and update the Debezium Server configuration file.
 weight: 50
 alwaysopen: false

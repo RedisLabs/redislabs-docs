@@ -1,8 +1,14 @@
 ---
-parent: Debezium Server Configuration File
-title: sqlserver
-grand_parent: Reference
+Title: RDI configuration for SQL Server
+linkTitle: SQL Server
+description: Describes the `application.properties` settings that configure Debezium Server for Microsoft SQL Server
+weight: $weight
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
 ---
+
+The following example shows how to configure the Debezium Server `application.properties` file to support [Microsoft SQL Server](https://microsoft.com/sql-server/).
 
 # application.properties
 

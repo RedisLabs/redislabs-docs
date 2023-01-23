@@ -8,6 +8,10 @@ categories: ["redis-di"]
 aliases: 
 ---
 
+This guide shows how to install [RedisGears](https://oss.redis.com/redisgears/) as part of a Redis Data Integration deployment.  Quick starts are also available for Redis Server (open source) and Rdis Enterprise Software.
+
+Help with other deployments is also available, including [Redis Server](https://oss.redis.com/redisgears/quickstart.html) (open source) and [Redis Enterprise Software]({{<relref "/modules/redisearch/redisearch-quickstart">}}).  
+
 # RedisGears Installation
 
 Redis Data Integration requires [RedisGears](https://redis.com/modules/redis-gears) module with [Python plugin](https://docs.redis.com/latest/modules/redisgears/python/) to be installed on the Redis Enterprise cluster.

@@ -1,7 +1,7 @@
 ---
 Title: Data transformation pipeline
 linkTitle: Pipeline
-description: Describes the data transformaiton pieline that imports and transforms relationl database data to Redis databases.
+description: Describes the data transformation pipeline that imports and transforms relational database data type to Redis data types.
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]

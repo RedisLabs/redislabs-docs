@@ -1,10 +1,14 @@
 ---
-parent: Debezium Server Configuration File
-title: cassandra
-grand_parent: Reference
+Title: RDI configuration for Cassandra
+linkTitle: Cassandra
+description: Describes the `application.properties` settings that configure Debezium Server for Cassandra
+weight: $weight
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
 ---
 
-# application.properties
+The following example shows how to configure the Debezium Server `application.properties` file to support [Apache Cassandra](https://cassandra.apache.org).
 
 ```properties
 debezium.sink.type=redis

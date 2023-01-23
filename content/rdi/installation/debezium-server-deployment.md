@@ -1,6 +1,6 @@
 ---
-Title: Debezium Server Deployment Guide
-linkTitle: Debezium Server Deployment
+Title: Debezium Server deployment guide
+linkTitle: Debezium Server deployment
 description: Describes how to deploy Debezium Server using a container management service, such as Docker or Podman.
 weight: 60
 alwaysopen: false

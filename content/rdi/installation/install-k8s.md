@@ -5,6 +5,7 @@ description: Explains how to run Redis Data Integration in a Kubernetes environm
 weight: 30
 alwaysopen: false
 categories: ["redis-di"]
+headerRange: "[2]"
 aliases: 
 ---
 
@@ -12,7 +13,7 @@ When running Redis Data Integration in a [Kubernetes](https://kubernetes.io/) en
 
 Throughout the document, the snippets make use of OpenShift's `oc` tool. All examples can be replaced with `kubectl` when working in a non-OpenShift environment.
 
-### Prerequisites
+## Prerequisites
 
 - An existing Redis Enterprise cluster version >= 6.2.
 - [RedisGears](https://redis.com/modules/redis-gears/) >= {{ site.redis_gears_min_version }} installed on the cluster. In case it's missing, follow [this guide](install-redis-gears.md) to install.
@@ -26,14 +27,14 @@ There are two options for installing the Redis Data Integration CLI in an Kubern
 
 - [Install Redis Data Integration CLI as a pod in Kubernetes cluster](#install-redis-data-integration-cli-on-kubernetes-cluster)
 
-## Install Redis Data Integration CLI Locally
+### Install Redis Data Integration CLI Locally
 
 To install Redis Data Integration CLI locally, follow these steps:
 
 - [Download Redis Data Integration CLI](../index.md#download-redis-data-integration-cli)
 - [Install Redis Data Integration CLI](../index.md#install-redis-data-integration-cli)
 
-### Create a New Redis Data Integration Instance
+## Create a New Redis Data Integration Instance
 
 - Run:
 
@@ -67,7 +68,7 @@ To install Redis Data Integration CLI locally, follow these steps:
 
 The `create` command will create a BDB named `redis-di-1` in your cluster. You will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register Gears recipes, to run it.
 
-### Create Configuration File for Redis Data Integration
+## Create Configuration File for Redis Data Integration
 
 Run `redis-di scaffold <NAME> --db-type <{{ site.db_types }}>`.
 Edit the file `config.yaml` which is located under the directory <NAME> to point to the correct Redis Target database settings:
@@ -88,7 +89,7 @@ Run `redis-di deploy` command to deploy the configuration in the `config.yaml` f
 
 For `config.yaml` reference [see complete settings](../reference/config-yaml-reference.md).
 
-### Validate the Deploy
+## Validate the Deploy
 
 Run `redis-di status` to check the status of the installation.
 

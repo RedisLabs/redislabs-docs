@@ -1,6 +1,6 @@
 ---
-Title: Data type transformation
-linkTitle: Data type transformation
+Title: Data transformation
+linkTitle: Data transformation
 description:
 weight: 30
 alwaysopen: false

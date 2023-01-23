@@ -1,8 +1,14 @@
 ---
-parent: Debezium Server Configuration File
-title: postgresql
-grand_parent: Reference
+Title: RDI configuration for PostgreSQL
+linkTitle: PostgreSQL
+description: Describes the `application.properties` settings that configure Debezium Servers for Cassandra
+weight: $weight
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
 ---
+
+The following example shows how to configure the Debezium Server `application.properties` file to support [PostgreSQL](https://postgresql.org).
 
 # application.properties
 
