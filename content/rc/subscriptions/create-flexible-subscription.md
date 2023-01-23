@@ -87,17 +87,21 @@ When finished, choose **Continue** to determine your subscription size requireme
 
 You can reduce network transfer costs and network latency by ensuring your Redis Cloud cluster and your application are located in the same availability zone. 
 
-To specify the availability zone for your hosted cluster, select *Manual Selection* under **Allowed Availability Zones**. 
+To specify the availability zone for your cluster, select *Manual Selection* under **Allowed Availability Zones**. 
 
-If **Multi-AZ** is enabled, select three availability zones from the **Zone IDs** list.
+If **Multi-AZ** is enabled, select three availability zones from the **Zone Names** list.
 
-{{<image filename="images/rc/availability-zones-multi-az.png" width="95%" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+{{<image filename="images/rc/availability-zones-multi-az.png" width="95%" alt="Select Manual selection to select three availability zones when Multi-AZ is enabled." >}}{{< /image >}}
 
-Otherwise, select one availability zone from the **Zone IDs** list.
+Otherwise, select one availability zone from the **Zone Names** list.
 
-{{<image filename="images/rc/availability-zones-no-multi-az.png" width="90%" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+{{<image filename="images/rc/availability-zones-no-multi-az.png" width="90%" alt="Select one availability zone when Multi-AZ is turned off." >}}{{< /image >}}
 
-For more information on availability zones and to learn how to find a zone ID, see the [GCP docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+For more information on availability zones, see the [GCP docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+
+For hosted clusters on AWS, select availability zone IDs from the **Zone IDs** list. For more information on how to find an availability zone ID, see the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+
+{{<image filename="images/rc/availability-zones-aws-hosted-no-multi-az.png" width="80%" alt="For hosted AWS clusters, select availability zone IDs from the Zone IDs list." >}}{{< /image >}}
 
 ## Sizing tab
 
