@@ -33,11 +33,11 @@ To review your user profile settings, select **User profile** from the Profile c
 
 This screen contains up to three sections, including:
 
-- The *User details* section includes basic information about your account, including _Name_, _Job title_, _Email_, and the date the account was created.  _Name_ and _Job title_ can be edited; the other settings are read-only.
+- The *User details* section includes basic information about your account, including _First name_, _Last name_, _Job title_, _Email_, and the date the account was created.  The names and job title can be edited; other settings are read-only.
 
 - The *Password* section lets you change the password for accounts created and managed by Redis Cloud. 
 
-    If you're using single sign-on, you cannot change the password using the *User Profile* screen.  Such accounts are managed by an identity provider (IdP).  For help changing (or recovering) the passwords for these accounts, consult your identity provider docs.
+    If you're using single sign-on authentication, you cannot change the password using the *User Profile* screen.  Such accounts are managed by an identity provider (IdP).  For help changing (or recovering) the passwords for these accounts, consult your identity provider docs.
 
 - The **Multi-factor authentication (MFA)** section lets you manage MFA settings for the current user account.  
 
