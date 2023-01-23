@@ -129,7 +129,7 @@ If you subscribed to Redis Enterprise Cloud using Google Cloud Platform (GCP) Ma
 To grant Redis Cloud access to a GCP user, select the **Add** button to add a member, insert the email address, and then assign the following roles to the user:
 
 - An 'Owner' or 'Editor' role will allow the user to access the Redis console and perform changes.
-- A 'Viewer' role will allow the user to access the Redis console but not to make any changes.
+- A 'Viewer' role lets the user access the Redis admin console but not make changes.
 - A user with a 'Browser' role cannot access the Redis admin console.
 
  
