@@ -130,6 +130,6 @@ To grant Redis Cloud access to a GCP user, select the **Add** button to add a me
 
 - An 'Owner' or 'Editor' role will allow the user to access the Redis console and perform changes.
 - A 'Viewer' role will allow the user to access the Redis console but not to make any changes.
-- A user with a 'Browser' role will not be able to access the Redis console.
+- A user with a 'Browser' role cannot access the Redis admin console.
 
  
