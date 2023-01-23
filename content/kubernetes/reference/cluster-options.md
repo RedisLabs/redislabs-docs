@@ -83,7 +83,7 @@ The default is 4 cores (4000m) and 4GB (4Gi).
 
 ## [`redisEnterpriseImageSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#imagespec)
 
-This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The Operator automatically uses the matching RHEL image version for the release.
+This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The operator automatically uses the matching RHEL image version for the release.
 
 The value is structured as follows with the [policy values from OpenShift](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/builds_and_image_streams.html#image-pull-policy):
 

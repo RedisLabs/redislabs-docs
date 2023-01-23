@@ -176,7 +176,7 @@ More info: [Redis Enterprise durability and high availability]({{<relref "/rs/da
 {{%definition "ingress"%}}
 An API object that manages external access to the services in a Kubernetes cluster, typically HTTP.
 
-More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [Ingress routing for Redis Enterprise Software on Kubernetes]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}})
+More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [Ingress routing for Redis Enterprise for Kubernetes]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}})
 {{%/definition%}}
 
 ## K, L {#letter-k}
@@ -241,7 +241,7 @@ For best results, we advise against relying on deprecated features for any lengt
 {{%definition "operator"%}}
 Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components.
 
-More info: [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
+More info: [operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 {{%/definition%}}
 
 {{%definition "Out-of-Memory (OOM)"%}}

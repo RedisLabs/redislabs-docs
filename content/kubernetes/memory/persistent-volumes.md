@@ -38,7 +38,7 @@ The REC deployment files in the [Kubernetes documentation](https://github.com/Re
 ## Volume size
 
 *volumeSize* is an optional definition. By default, if the definition is
-omitted, Operator allocates five times (5x) the amount of memory (RAM)
+omitted, operator allocates five times (5x) the amount of memory (RAM)
 defined for nodes (see example below), which is the recommended
 persistent storage size as described in the [Hardware
 requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}) article.

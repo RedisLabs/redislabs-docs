@@ -24,7 +24,7 @@ The communications for which you can modify ciphers are:
 - Data plane - The TLS configuration for the communication between applications and databases.
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service.md">}}).
 
-You can configure ciphers with the `rladmin` commands shown here or with the REST API.
+You can configure ciphers with the `rladmin` commands shown here or with the REST API. Note that configuring cipher suites overwrites existing ciphers rather than appending new ciphers to the list.
 
 When you modify your cipher suites, make sure:
 
@@ -34,7 +34,7 @@ When you modify your cipher suites, make sure:
 {{<note>}}
 - Redis Enterprise Software doesn't support static Diffie–Hellman key exchange ciphers.
 
-- It does support Ephemeral Diffie–Hellman key exchange ciphers on RHEL8 and Bionic OS.
+- It does support Ephemeral Diffie–Hellman key exchange ciphers on RHEL8 and Bionic OS.  
 {{</note>}}
 
 ### Control plane
@@ -51,6 +51,12 @@ rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES
 
 Control plane cipher suites use the BoringSSL library format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99-L131).
 
+To configure the cipher suites for cluster communications, use the following `rladmin` command syntax:
+
+```sh
+rladmin cluster config cipher_suites <BoringSSL cipher list>
+```
+
 See the example below to configure cipher suites for the control plane:
 
 ```sh
@@ -63,6 +69,12 @@ rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES
 
 Data plane cipher suites use the OpenSSL library format. See the OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html).
 
+To configure the cipher suites for communications between applications and databases, use the following `rladmin` command syntax:
+
+```sh
+rladmin cluster config  data_cipher_list <OpenSSL cipher list>
+```
+
 See the example below to configure cipher suites for the data plane:
 
 ```sh
@@ -74,6 +86,12 @@ rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA
 #### 6.0.20 or later
 
 Sentinel service cipher suites use the golang.org OpenSSL format for discovery service TLS connections. See their documentation for a list of [available configurations](https://golang.org/src/crypto/tls/cipher_suites.go).
+
+To configure the discovery service cipher suites, use the following `rladmin` command syntax:
+
+```sh
+rladmin cluster config  sentinel_cipher_suites <golang cipher list> 
+```
 
 See the example below to configure cipher suites for the sentinel service:
 
