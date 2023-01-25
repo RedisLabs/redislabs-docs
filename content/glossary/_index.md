@@ -176,7 +176,7 @@ More info: [Redis Enterprise durability and high availability]({{<relref "/rs/da
 {{%definition "ingress"%}}
 An API object that manages external access to the services in a Kubernetes cluster, typically HTTP.
 
-More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [Ingress routing for Redis Enterprise Software on Kubernetes]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}})
+More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [Ingress routing for Redis Enterprise for Kubernetes]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}})
 {{%/definition%}}
 
 ## K, L {#letter-k}

@@ -51,13 +51,14 @@ If you have a large team, you can use the controls in the list footer to navigat
 
 When you add a member to your team, the **Add user** dialog appears.  
 
-{{<image filename="images/rc/access-management-add-user-dialog.png" width="50%" alt="Use the Add User dialog to specify the details for your new user." >}}{{< /image >}}
+{{<image filename="images/rc/access-mgmt-add-user-dialog.png" width="50%" alt="Use the Add User dialog to specify the details for your new user." >}}{{< /image >}}
 
 Use this dialog to specify the following values:
 
 | Setting | Description |
 |---------|-------------|
-| **Name** | Name of the user displayed in the admin console and in email messages |
+| **First name** | First name of the user displayed in the admin console and in email messages |
+| **Last name** | Last name of the user displayed in the admin console and in email messages |
 | **Role** | The role identifies their subscription and account privileges.  For details, see [Team management roles](#team-management-roles). |
 | **Email** | The address used for alerts and other email messages regarding the account | 
 | **Alert emails** | Enable to be notified when subscription databases cross certain thresholds, such as exceeding memory limits or latency requirements |
@@ -73,7 +74,7 @@ To edit user team details, select the user from the list and then select the **E
 
 When you do this, the **Edit user** dialog displays the details you can change.  
 
-{{<image filename="images/rc/access-management-edit-user-dialog.png" width="50%" alt="Use the Edit User dialog to change the details for a user." >}}{{< /image >}}
+{{<image filename="images/rc/access-mgmt-edit-user-dialog.png" width="50%" alt="Use the Edit User dialog to change the details for a user." >}}{{< /image >}}
 
 You can change any detail except the team member's email address.
 

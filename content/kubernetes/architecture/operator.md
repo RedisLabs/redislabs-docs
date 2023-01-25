@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Software on Kubernetes operator-based architecture
+Title: Redis Enterprise for Kubernetes operator-based architecture
 linkTitle: What is an operator?
-description: This section provides a description of the design of the Redis Enterprise operator for Kubernetes.
+description: This section provides a description of the design of Redis Enterprise for Kubernetes.
 weight: 30
 alwaysopen: false
 categories: ["Platforms"]
@@ -14,7 +14,7 @@ aliases: {
     /kubernetes/architecture/operator/,
 }
 ---
-The Redis Enterprise operator is the fastest, most efficient way to
+Redis Enterprise is the fastest, most efficient way to
 deploy and maintain a Redis Enterprise cluster in Kubernetes.
 
 ## What is an operator?

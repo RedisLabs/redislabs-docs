@@ -74,9 +74,9 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 | _Advanced option_ | _Description_ |
 |:---------|:-----------|
 | **Multi-AZ** | Determines if replication spans multiple Availability Zones, which provides automatic failover when problems occur. |
-| **Cloud account** | To deploy this subscription to a specific cloud account, select it here.  Use the Add button to add a new cloud account. |
-| **VPC configuration** | Select _In a new VPC_ to deploy to a new Virtual Private Cloud.<br/><br/>To deploy this subscription to an existing Virtual Private Cloud , select _In existing VCP_ and then set VPC ID to the appropriate ID value.   |
-| **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) subnet address for your deployment. Must not overlap other addresses used with your subscription.|
+| **Cloud account** | To deploy this subscription to an existing cloud account, select it here.  Use the Add button to add a new cloud account.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
+| **VPC configuration** | Select _In a new VPC_ to deploy to a new [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC).<br/><br/>To deploy this subscription to an existing virtual private cloud, select _In existing VPC_ and then set VPC ID to the appropriate ID value.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
+| **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range of IP addresses for your deployment. Because Redis creates a new [subnet](https://en.wikipedia.org/wiki/Subnetwork) for the _Deployment CIDR_ in your [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC), it cannot overlap with the CIDR ranges of other subnets used by your subscription.<br/><br/>For deployments in an existing VPC, the _Deployment CIDR_ must be within your VPC's **primary** CIDR range (secondary CIDRs are not supported). |
 | **Preferred Availability Zone(s)** | The [availability zone](https://cloud.google.com/compute/docs/regions-zones/#available) for your selected region.<br/><br/>If you choose *Select zone(s)*, you must choose at least one zone from **Zone Suffix**.  You can choose up to three preferred zones. |
 
 When finished, choose **Continue** to determine your subscription size requirements.

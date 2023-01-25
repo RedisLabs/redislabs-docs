@@ -18,11 +18,11 @@ The following events are tracked:
 - Authentication requests, including requests for new and existing connections
 - Database disconnects
 
-When tracked events are triggered, notifications are sent via TCP to an address and port defined when auditing is enabled.  Notifications appear in the near real-time and are intended to be consumed by an external listener, such as a TCP listener, third-party service, or related utility.
+When tracked events are triggered, notifications are sent via TCP to an address and port defined when auditing is enabled.  Notifications appear in near real time and are intended to be consumed by an external listener, such as a TCP listener, third-party service, or related utility.
 
 For development and testing environments, notifications can be saved to a local file; however, this is neither supported nor intended for production environments.
 
-For performance reasons, auditing is disabled by default.  In addition, auditing occurs in the background (asynchronously) and is non-blocking by design.  That is, the action that triggered the notification continues without regard to the status of the notification or the listening tool.  
+For performance reasons, auditing is not enabled by default.  In addition, auditing occurs in the background (asynchronously) and is non-blocking by design.  That is, the action that triggered the notification continues without regard to the status of the notification or the listening tool.  
 
 ## Enable audit notifications
 
@@ -107,7 +107,7 @@ Once auditing is enabled for your cluster, you can audit individual databases.  
     { "db_conns_auditing":"enabled" }
     ```
 
-    To disable auditing, set `db_conns_auditing` to `disabled`.
+    To deactivate auditing, set `db_conns_auditing` to `disabled`.
 
 You must enable auditing for your cluster before auditing a database; otherwise, an error appears:
 
@@ -185,7 +185,7 @@ Here is a sample authentication request for a database:
 }
 ```
 
-State reports success or failure.  Values of `2` or `8` indicate success; other values indicate failure.
+Status reports success or failure.  Values of `2` or `8` indicate success; other values indicate failure.
 
 ### Database disconnect
 
@@ -221,17 +221,17 @@ In addition, the following fields may also appear in audit event notifications:
 
 | Field&nbsp;name | Description |
 |:---------:|-------------|
-| `acl-rules` | ACL rule associated with the connection, which includes a rule for the `default` user. |
-| `bdb_name` | Destination database name - the name of the database being accessed | 
-| `bdb_uid` | Destination database ID - The cluster ID of the database being accessed | 
+| `acl-rules` | ACL rules associated with the connection, which includes a rule for the `default` user. |
+| `bdb_name` | Destination database name - The name of the database being accessed. | 
+| `bdb_uid` | Destination database ID - The cluster ID of the database being accessed. | 
 | `hname` | Client hostname - The hostname of the client.  Currently empty; reserved for future use. |
-| `id` | Connection ID - Unique connection ID assigned by the proxy |
-| `identity` | Identity - A unique ID value assigned by the proxy to the user for the current connection. |
-| `srcip` | Source IP address - Source TCP/IP address of the client accessing the Redis database |
-| `srcp` | Source port - Port associated with the source IP address accessing the Redis database.  Can be combined with the address to uniquely identify the socket. |
+| `id` | Connection ID - Unique connection ID assigned by the proxy. |
+| `identity` | Identity - A unique ID the proxy assigned to the user for the current connection. |
+| `srcip` | Source IP address - Source TCP/IP address of the client accessing the Redis database. |
+| `srcp` | Source port - Port associated with the source IP address accessing the Redis database. Combine the port with the address to uniquely identify the socket. |
 | `status` | Status result code - An integer representing the result of an authentication request. |
-| `trgip` | Target IP address - The IP address of the destination being accessed by the action |
-| `trgp` | Target port - The port of the destination being access by the action.  Can be combined with the destination IP address to uniquely identify the database being accessed. |
+| `trgip` | Target IP address - The IP address of the destination being accessed by the action. |
+| `trgp` | Target port - The port of the destination being accessed by the action.  Combine the port with the destination IP address to uniquely identify the database being accessed. |
 | `ts`  | Timestamp - The date and time of the event, in [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC).  Granularity is within one millisecond (ms). |
 | `username` | Authentication username  - Username associated with the connection; can include `default` for databases that allow default access.  (Passwords are _not_ recorded). |
 
@@ -241,13 +241,13 @@ The `status` field reports the results of an authentication request as an intege
 
 | Error&nbsp;value | Error code | Description | 
 |:-------------:|------------|-------------|
-| `0` | AUTHENTICATION_FAILED | Invalid username and/or password |
-| `1` | AUTHENTICATION_FAILED_TOO_LONG | Username or password are too long |
+| `0` | AUTHENTICATION_FAILED | Invalid username and/or password. |
+| `1` | AUTHENTICATION_FAILED_TOO_LONG | Username or password are too long. |
 | `2` | AUTHENTICATION_NOT_REQUIRED | Client tried to authenticate, but authentication isn't necessary. | 
-| `3` | AUTHENTICATION_DIRECTORY_PENDING | Attempt to receive authentication info from Directory in async mode |
-| `4` | AUTHENTICATION_DIRECTORY_ERROR | Authentication attempt failed because there was a directory connection error |
-| `5` | AUTHENTICATION_SYNCER_IN_PROGRESS | Syncer SASL handshake, return SASL response and wait for next request | 
-| `6` | AUTHENTICATION_SYNCER_FAILED | Syncer SASL handshake, return SASL response and close the connection |
-| `7` | AUTHENTICATION_SYNCER_OK | Syncer authenticated. Return SASL response |
-| `8` | AUTHENTICATION_OK | Client successfully authenticated
+| `3` | AUTHENTICATION_DIRECTORY_PENDING | Attempting to receive authentication info from the directory in async mode. |
+| `4` | AUTHENTICATION_DIRECTORY_ERROR | Authentication attempt failed because there was a directory connection error. |
+| `5` | AUTHENTICATION_SYNCER_IN_PROGRESS | Syncer SASL handshake. Return SASL response and wait for the next request. | 
+| `6` | AUTHENTICATION_SYNCER_FAILED | Syncer SASL handshake. Returned SASL response and closed the connection. |
+| `7` | AUTHENTICATION_SYNCER_OK | Syncer authenticated. Returned SASL response. |
+| `8` | AUTHENTICATION_OK | Client successfully authenticated. |
 
