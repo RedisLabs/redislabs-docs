@@ -8,12 +8,11 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-Here's how to install Redis Data Integration without using an active Internet connecion, also known as an offline (or _air-gapped_) environment.
-
+Here's how to install Redis Data Integration in an environment that doesn't have an active Internet connection, also known as an _offline_ or _air gapped_ environment.
 
 ## Download
 
-### Redis Data Integration Offline Package
+### Redis Data Integration offline package
 
 #### Ubuntu 20.04
 
@@ -27,25 +26,25 @@ wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-ubuntu2
 wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-ubuntu18.04-latest.tar.gz -O /tmp/redis-di-offline.tar.gz
 ```
 
-#### RHEL8
+#### RHEL 8
 
 ```bash
 wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-rhel8-latest.tar.gz -O /tmp/redis-di-offline.tar.gz
 ```
 
-#### RHEL7
+#### RHEL 7
 
 ```bash
 wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-rhel7-latest.tar.gz -O /tmp/redis-di-offline.tar.gz
 ```
 
-### Debezium Container Image
+### Debezium container image
 
 ```bash
 wget https://qa-onprem.s3.amazonaws.com/redis-di/debezium/debezium_server_{{ site.debezium_server_version }}_offline.tar.gz
 ```
 
-## Install RedisGears Module and its Dependencies
+## Install RedisGears and dependencies
 
 - Copy the downloaded `redis-di-offline.tar.gz` into the master node of Redis under `/tmp` directory.
 
@@ -67,9 +66,9 @@ wget https://qa-onprem.s3.amazonaws.com/redis-di/debezium/debezium_server_{{ sit
   curl -v -k -u "<CLUSTER_USERNAME>:<CLUSTER_PASSWORD>" -F "module=@/tmp/redis-di-offline/redis-gears/redisgears_python.Linux-<OS_VERSION>-x86_64.{{ site.redis_gears_min_version }}.zip" https://localhost:9443/v2/modules
   ```
 
-## Install RDI CLI
+## Install RDI utility
 
-On the workstation where the RDI CLI is to be installed, follow these steps:
+On the workstation where the RDI command line utility is to be installed:
 
 - Unpack the downloaded `redis-di-offline.tar.gz` into `/tmp` directory:
 
@@ -85,7 +84,7 @@ On the workstation where the RDI CLI is to be installed, follow these steps:
 
   > Note: Non-root users should unpack to a directory with write permission and run `redis-di` directly from it.
 
-## Create Redis Data Integration BDB
+## Create RDI database
 
 ```bash
 redis-di create --silent --cluster-host <CLUSTER_HOST> --cluster-user <CLUSTER_USER> --cluster-password <CLUSTER_PASSWORD> --rdi-port <RC_PORT> --rdi-password <RC_PASSWORD>
@@ -93,15 +92,15 @@ redis-di create --silent --cluster-host <CLUSTER_HOST> --cluster-user <CLUSTER_U
 
 Note: You can omit the `--rdi-port` argument and the BDB will be created on the next available port (starting with 12001).
 
-## Load Debezium Image
+## Load Debezium image
 
-Copy the downloaded `debezium_server_{{ site.debezium_server_version }}_offline.tar.gz` into `/tmp` and run:
+Copy the downloaded `debezium_server_2.1.1.Final_offline.tar.gz` into `/tmp` and run:
 
 ```bash
-docker load < /tmp/debezium_server_{{ site.debezium_server_version }}_offline.tar.gz
-docker tag debezium/server:{{ site.debezium_server_version }}_offline debezium/server:latest
+docker load < /tmp/debezium_server_2.1.1_Final_offline.tar.gz
+docker tag debezium/server:2.1.1.Final_offline debezium/server:latest
 ```
 
-## Finalize the Installation
+## Finalize installation
 
 Continue the installation as described in [README](../index.md#scaffold-configuration-files).

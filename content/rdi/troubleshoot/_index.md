@@ -1,14 +1,14 @@
 ---
-Title: Troubleshooting guide
-linkTitle: Troubleshooting
-description: Describes how to use resolve common Redis Data integration problems.
+Title: Troubleshoot & resolve common problems
+linkTitle: Troubleshoot
+description: Describes how to resolve common Redis Data integration problems.
 weight: 50
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
 
-This document contains some practical things to do in order to diagnose common problems during installation and runtime of Redis Data Integration.
+Here are some practical ways to diagnose common problems that occur when installation and at runtime.
 
 ## Problems During Installation
 
@@ -18,7 +18,13 @@ We have seen problems with using the [pip](https://pypi.org/project/pip/) instal
 
 - **Wrong Python 3 Version**
 
-  In many Linux distros the Python 3 version is still 3.6.\*. You can check this by running: `python --version`.
+  Many Linux distributions include earlier Python 3 versions, mainly Python 3.6. 
+  
+  To check the current version, run:
+
+  ``` console
+  python --version
+  ```
 
 - **More than one Python 3 Installed**
 

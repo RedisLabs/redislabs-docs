@@ -1,6 +1,6 @@
 ---
 Title: Run on Kubernetes
-linkTitle: Kubernetes
+linkTitle: Kubernetes deployment
 description: Explains how to run Redis Data Integration in a Kubernetes environment
 weight: 30
 alwaysopen: false

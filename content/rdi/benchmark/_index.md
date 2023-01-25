@@ -1,8 +1,8 @@
 ---
-Title: Sizing and benchmark tool
-linkTitle: Sizing and benchmark tool
-description: Describes the Redis Data Integraiton Szing & Benchmark tool.
-weight: 90
+Title: Size and benchmark tool
+linkTitle: Size and benchmark tool
+description: Describes the Redis Data Integration Benchmark tool.
+weight: 80
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
@@ -10,11 +10,11 @@ aliases:
 
 ## Overview
 
-The goal of Redis Data Integration Benchmark Tool is to produce `INSERT` statements on the source DB and calculates the lag between the time the key is inserted into the source DB and the time at which the key is stored in the target Redis DB.
+The goal of Redis Data Integration Benchmark tool uses `INSERT` statements on the source DB to calculate the lag between the time the key is inserted into the source DB and the time at which the key is stored in the target Redis DB.
 
-{{<image filename="images/di/redis-di-benchmark.png" alt="Change record calculated latency" >}}{{</image>}}
+{{<image filename="images/rdi/redis-di-benchmark.png" alt="Change record calculated latency" >}}{{</image>}}
 
-The databases that are supported by this tool are:
+The Benchmark tool The databases that are supported by this tool are:
 
 - MySQL
 - Oracle

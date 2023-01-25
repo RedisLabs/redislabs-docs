@@ -10,12 +10,11 @@ aliases: /connect/
          /connect.md
          /redis-di/
          /redis-di.md
-headermessage: Hello, footpad
 ---
 
-Redis Data Integration is a product for data ingestion from existing systems of records (mainly databases) into Redis Enterprise.
+Redis Data Integration transfers (or _ingests_) data from traditional relations databases and other record systems to Redis Enterprise databases.
 
-Read [here](architecture.md) for more details & architecture.
+For details about the process and how it works, see [Redis Data Integration architecture]({{<relref "/rdi/architecture">}}).
 
 ## Installation
 

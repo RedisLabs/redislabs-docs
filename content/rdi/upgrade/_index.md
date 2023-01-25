@@ -52,11 +52,11 @@ In order to upgrade the RedisGears module once a new release is available, the f
 
 - Verify that the new version is installed via the Admin Console (settings → redis modules):
 
-  {{<image filename="images/di/cluster-redis-modules.png" alt="Cluster Redis modules" >}}{{</image>}}
+  {{<image filename="images/rdi/cluster-redis-modules.png" alt="Cluster Redis modules" >}}{{</image>}}
 
 - From the Admin console, go to your Redis Data Integration configuration view (databases → Redis Data Integration → configuration), you’ll see an indication that there’s an update available to your RedisGears module:
 
-  {{<image filename="images/di/redis-di-db-update-available.png" alt="Redis Data Integration Update Available" >}}{{</image>}}
+  {{<image filename="images/rdi/redis-di-db-update-available.png" alt="Redis Data Integration Update Available" >}}{{</image>}}
 
   You can also see this indication via the `rladmin`:
 
@@ -64,7 +64,7 @@ In order to upgrade the RedisGears module once a new release is available, the f
   rladmin status modules all
   ```
 
-  {{<image filename="images/di/rladmin-status-modules.png" alt="rladmin status modules" >}}{{</image>}}
+  {{<image filename="images/rdi/rladmin-status-modules.png" alt="rladmin status modules" >}}{{</image>}}
   
 - Now, we should upgrade the RedisGears module in this Redis Data Integration database:
 
@@ -90,4 +90,4 @@ In order to upgrade the RedisGears module once a new release is available, the f
 
 - Verify that the new RedisGears is used by Redis Data Integration by navigating to databases → Redis Data Integration → configuration:
 
-  {{<image filename="images/di/redis-di-upgraded-redis-gears.png" alt="Upgraded RedisGears" >}}{{</image>}}
+  {{<image filename="images/rdi/redis-di-upgraded-redis-gears.png" alt="Upgraded RedisGears" >}}{{</image>}}

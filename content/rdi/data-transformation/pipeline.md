@@ -1,6 +1,6 @@
 ---
 Title: Data transformation pipeline
-linkTitle: Pipeline
+linkTitle: Transformation pipeline
 description: Describes the data transformation pipeline that imports and transforms relational database data type to Redis data types.
 weight: 10
 alwaysopen: false

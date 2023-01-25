@@ -1,5 +1,5 @@
 ---
-Title: Data type conversion
+Title: Data type handling & conversion
 linkTitle: Data type conversion
 description: Describes how relational data types are converted to Redis data types.
 weight: 20
@@ -7,6 +7,47 @@ alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
+
+Redis Data Integration autmatically converts Debezium JSON schema to Redis types.
+
+Some Debezium types require special conversion. For example:
+
+- Date and Time types are converted to Epoch time.
+- Decimal numeric types are converted to strings that can be used by applications without losing precision.
+
+The following Debezium logical types are currently handled:
+
+```text
+double
+float
+io.debezium.data.Bits
+io.debezium.data.Json
+io.debezium.data.VariableScaleDecimal
+io.debezium.time.Date
+io.debezium.time.NanoTime
+io.debezium.time.NanoTimestamp
+io.debezium.time.MicroTime
+io.debezium.time.MicroTimestamp
+io.debezium.time.ZonedTime
+io.debezium.time.ZonedTimestamp
+org.apache.kafka.connect.data.Date
+org.apache.kafka.connect.data.Decimal
+org.apache.kafka.connect.data.Time
+```
+
+The following types are _not_ currently supported:
+
+```text
+io.debezium.time.interval
+```
+
+If you try to use these types, they'll return "Unsupported Error".
+
+All other values are as `String` types.
+
+The following sections provide complete details.
+
+## Data type conversion
 
 This document describes default conversions of data types of supported databases into target Redis data types.
 
