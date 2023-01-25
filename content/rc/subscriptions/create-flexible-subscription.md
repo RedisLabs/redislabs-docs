@@ -89,11 +89,11 @@ You can reduce network transfer costs and network latency by ensuring your Redis
 
 To specify the availability zone for your cluster, select *Manual Selection* under **Allowed Availability Zones**. 
 
-If **Multi-AZ** is enabled, select three availability zones from the **Zone Names** list.
+If **Multi-AZ** is enabled, select three availability zones from the **Zone names** list.
 
 {{<image filename="images/rc/availability-zones-multi-az.png" width="95%" alt="Select Manual selection to select three availability zones when Multi-AZ is enabled." >}}{{< /image >}}
 
-Otherwise, select one availability zone from the **Zone Names** list.
+Otherwise, select one availability zone from the **Zone name** list.
 
 {{<image filename="images/rc/availability-zones-no-multi-az.png" width="90%" alt="Select one availability zone when Multi-AZ is turned off." >}}{{< /image >}}
 
