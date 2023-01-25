@@ -89,20 +89,19 @@ You can reduce network transfer costs and network latency by ensuring your Redis
 
 To specify the availability zone for your cluster, select *Manual Selection* under **Allowed Availability Zones**. 
 
-If **Multi-AZ** is enabled, select three availability zones from the **Zone names** list.
+For GCP clusters and [self-managed AWS cloud accounts]({{< relref "/rc/cloud-integrations/aws-cloud-accounts/" >}}), select an availability zone from the **Zone name** list.
 
-{{<image filename="images/rc/availability-zones-multi-az.png" width="95%" alt="Select Manual selection to select three availability zones when Multi-AZ is enabled." >}}{{< /image >}}
+{{<image filename="images/rc/availability-zones-no-multi-az.png" width="95%" alt="Select one availability zone when Multi-AZ is turned off." >}}{{< /image >}}
 
-Otherwise, select one availability zone from the **Zone name** list.
-
-{{<image filename="images/rc/availability-zones-no-multi-az.png" width="90%" alt="Select one availability zone when Multi-AZ is turned off." >}}{{< /image >}}
-
-For more information on availability zones, see the [GCP docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
-
-For hosted clusters on AWS, select availability zone IDs from the **Zone IDs** list. For more information on how to find an availability zone ID, see the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+For all other AWS clusters, select an availability zone ID from the **Zone IDs** list. For more information on how to find an availability zone ID, see the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
 
 {{<image filename="images/rc/availability-zones-aws-hosted-no-multi-az.png" width="80%" alt="For hosted AWS clusters, select availability zone IDs from the Zone IDs list." >}}{{< /image >}}
 
+If **Multi-AZ** is enabled, you must select three availability zones from the list.
+
+{{<image filename="images/rc/availability-zones-multi-az.png" width="80%" alt="Select Manual selection to select three availability zones when Multi-AZ is enabled." >}}{{< /image >}}
+
+For more information on availability zones, see the [GCP docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
 ## Sizing tab
 
 The **Sizing** tab helps you specify the database, memory, and throughput requirements for your subscription.
