@@ -53,7 +53,7 @@
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/kubernetes/"
+                "ReplaceKeyPrefixWith": "latest/platforms/"
             }
         },
         {
