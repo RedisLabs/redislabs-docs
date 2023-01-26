@@ -86,7 +86,8 @@
           {{end}}
 
           {{if eq (index .Params.categories 0) "Platforms"}}
-            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
+            <!-- Remove style="display: none;" to enable platforms version selector -->
+            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()" style="display: none;">
               <button class="menu__version-selector-btn version-selector-control">
                 <span id="versionSelectorValue" class="version-selector-control"></span>
                 <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
