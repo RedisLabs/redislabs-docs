@@ -9,21 +9,25 @@ headerRange: "[2]"
 aliases: 
 ---
 
-Redis Data Integration is a product for data ingestion from existing systems of record (mainly databases) into Redis Enterprise.
-You can think of Redis Data Integration as a streaming ELT process:
+Redis Data Integration is a product that takes data from traditional databases and other record systems and migrates it to Redis Enterprise.
 
-- Data is **E**xtracted from the source database using [Debezium](https://debezium.io/) connectors.
-- Data is then **L**oaded into Redis Data Integration, a Redis DB instance that keeps the data in [`Redis Streams`](https://redis.io/docs/manual/data-types/streams/) alongside required metadata.
-- Data is then **T**ransformed using provided [`RedisGears recipes`](https://developer.redis.com/howtos/redisgears/) and written to the target Redis DB.
+Think of Redis Data Integration as a streaming extract, load, transform (ELT) process where data is:
 
-Redis Data Integration using Debezium works in 2 modes:
+- Extracted from a source database using [Debezium](https://debezium.io/) connectors.
+- Loaded into Redis Data Integration, a Redis database instance that keeps the data in [Redis Streams](https://redis.io/docs/manual/data-types/streams/) and required metadata.
+- Transformed using [RedisGears recipes](https://developer.redis.com/howtos/redisgears/) and written to the target Redis database.
 
-1. Initial sync - Where a snapshot of the entire db or a subset of selected tables is used as a baseline and the entire data is streamed to Redis Data Integration and then transformed and written into the target Redis DB.
-2. Live updates - Where Debezium captures changes to the data that happen after the baseline snapshot and streams them to Redis Data Integration where they are transformed and written to the target.
+Redis Data Integration using Debezium works in two modes:
 
-{{<image filename="/images/rdi/redis-di-simplified.png" alt="Redis Data Integration Architecture - High Level" >}}{{</image>}}
+1. Initial sync - A snapshot of the entire database or a subset of selected tables is used as a baseline.  The data streamed to Redis Data Integration, transformed, and then written to the target Redis database.
 
-## Database Support
+2. Live updates - Debezium captures changes to the source data that occur after the baseline snapshot and streams updates to Redis Data Integration where they are transformed and then written to the target database.
+
+The following image shows how this works:
+
+{{<image filename="/images/rdi/redis-di-simplified.png" alt="Redis Data Integration architecture - high level" >}}{{</image>}}
+
+## Database support
 
 Redis Data Integration supports the following Databases sources using Debezium 1.9 connectors:
 
@@ -34,13 +38,13 @@ Redis Data Integration supports the following Databases sources using Debezium 1
 | Postgres   | 10, 11, 12, 13, 14 |
 | SQL Server | 2017, 2019         |
 
-## Supported Data Transformations
+## Supported data transformations
 
-Currently Redis Data Integration supports transforming data from RDBMS row into a [Redis Hash](https://redis.io/docs/manual/data-types/#hashes).
-In the short term we will add support for RDBMS row into [RedisJSON](https://redis.io/docs/stack/json/) document.
-See the [data types list](data-transformation/data-type-conversion.md) for the exact mappings.
+Currently, Redis Data Integration supports transforming data from RDBMS row to a [Redis Hash](https://redis.io/docs/data-types/#hashes) or a [RedisJSON](https://redis.io/docs/stack/json/) document.
 
-## Architecture and Components
+For exact mappings, see [Data type conversion]({{<relref "/rdi/data-transformation/data-type-conversion">}}).
+
+## Architecture and components
 
 {{<image filename="images/rdi/redis-di.png" alt="Redis Data Integration Architecture - Detailed" >}}{{</image>}}
 
@@ -49,9 +53,9 @@ See the [data types list](data-transformation/data-type-conversion.md) for the e
 Currently the only source for Redis Data Integration is the [Debezium Redis Sink Connector](https://debezium.io/documentation/reference/stable/operations/debezium-server.html#_redis_stream).
 Other sources and SDK will be added in later versions.
 
-## Redis Data Integration Data Plane
+## Redis Data Integration data plane
 
-### Redis Data Integration Data Streams
+### Redis Data Integration data streams
 
 Redis Data Integration receives data using [Redis Streams](https://redis.io/docs/manual/data-types/streams/). Records with data from a specific database table are written to a stream with a key reflecting the table name. This allows a simple interface into Redis Data Integration and keeping the order of changes as served by Debezium.
 
@@ -62,17 +66,17 @@ RDI Engine is built on top of RedisGears. It has 2 main logical functions:
 - Transformation of data - in the current version we only support Debezium types into Redis types but future versions will support [Apache Avro](https://avro.apache.org/docs/current/). In addition we plan to provide data mapping between denormalized relational model and denormalized Redis JSON documents.
 - Writing data - this is the part where Redis Data Integration writes the data to the target ensuring order & guarantying at least once to prevent data loss. In addition, the Writer can be configured to ignore, abort or keep rejected data entries.
 
-## Redis Data Integration Control Plane
+## Redis Data Integration control plane
 
 ### RDI CLI
 
-Redis Data Integration comes with a python based CLI that is intuitive, self explanatory & validating to ease the entire lifecycle of Redis Data Integration setup and management.
+Redis Data Integration comes with a python based command line utility that is intuitive, self explanatory, and validating to ease the entire lifecycle of Redis Data Integration setup and management.
 
-### Redis Data Integration Configuration
+### Redis Data Integration configuration
 
 Redis Data Integration configuration is persisted at the cluster level. The configuration is written by the CLI `deploy` command, reflecting the configuration file. This mechanism allows for automatic configuration of new shards when needed and can survive shard and node failure.
 
-### Secrets Handling
+### Secret handling
 
 Redis Data Integration requires the following secrets:
 
@@ -87,7 +91,7 @@ Credentials and Certificate can be served in one of the following ways:
 - Stored in environment variables.
 - Injected to the temp file system by a secret store agent (e.g. [HashiCorp Vault](https://www.vaultproject.io/)).
 
-## Scalability and High Availability
+## Scalability and high availability
 
 Redis Data Integration is highly available:
 
