@@ -82,9 +82,9 @@ Before upgrading a cluster:
 
 - Identify the cluster master node and upgrade that node first.
 
-    Use the [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) command to identify the master node.
+    Use the [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) command or send a [`GET /nodes/status`]({{<relref "/rs/references/rest-api/requests/nodes/status#get-all-nodes-status">}}) request to the [REST API]({{<relref "/rs/references/rest-api">}}) to identify the master node.
 
-## Cluster upgrade process
+### Cluster upgrade process
 
 Starting with the master node, follow these steps for every node in the cluster.  (We recommend upgrading each node separately to ensure cluster availability.)
 
