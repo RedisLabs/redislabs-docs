@@ -164,7 +164,15 @@ Whereas, this ACL rule only allows access to keys prefixed with `cache:`
 
 Pub/sub ACL rules determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
 
-For Redis version 6.2, pub/sub is permissive and allows access to all channels by default.
+For versions earlier than Redis 7, pub/sub is permissive and allows access to all channels by default.
+
+Redis 7 changes pub/sub to restrictive and blocks access to all channels in open source (OSS) Redis. However, Redis Cloud still defaults to permissive pub/sub even for Redis 7 subscriptions.
+
+| Redis<br />version | OSS Redis<br />pub/sub ACLs | Redis Cloud<br />pub/sub ACLs |
+|:-------------:|-----------|-------------|
+| 6.0 | Not supported | Not supported |
+| 6.2 | Permissive | Permissive |
+| 7.0 | Restrictive | Permissive |
 
 ##### Restrict channel access
 
