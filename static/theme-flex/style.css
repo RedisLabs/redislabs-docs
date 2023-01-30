@@ -1170,8 +1170,24 @@ article {
   text-decoration: underline;
 }
 
-.article-banner {
-  margin-top: 2rem;
+.banner-article {
+  /*background-color: #f7f7f7;*/
+  background-color: #fff8dc;
+  padding: 1px;
+  margin-left: -3px;
+  z-index: 998;
+}
+
+.banner-article p {
+  text-align: left;
+  font-size: 16px !important;
+  padding-top: 1rem;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.banner-article a {
+  text-decoration: underline;
 }
 
 .cbp-spmenu a.menu__link__title {

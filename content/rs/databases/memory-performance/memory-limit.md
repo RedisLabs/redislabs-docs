@@ -56,7 +56,7 @@ Additional factors for Redis on Flash databases:
 
 ## What happens when Redis Enterprise Software is low on RAM?
 
-Redis Enterprise Software manages node memory so that data is entirely in RAM (unless using Redis on Flash). If not enough RAM is available, RS prevents adding more data into the databases.
+Redis Enterprise Software manages node memory so that data is entirely in RAM (unless using Redis on Flash). If not enough RAM is available, Redis Enterprise prevents adding more data into the databases.
 
 Redis Enterprise Software protects the existing data and prevents the database from being able to store data into the shards.
 
@@ -72,11 +72,11 @@ manages memory so that you can also use flash memory (SSD) to store data.
 which can result in data loss.
 3. If the eviction policy does not allow eviction, you'll receive
 out of memory (OOM) messages.
-4. If shards can't free memory, RS relies on the OS processes to stop replicas,
+4. If shards can't free memory, Redis Enterprise relies on the OS processes to stop replicas,
 but tries to avoid stopping primary shards.
 
 We recommend that you have a [monitoring platform]({{<relref "/rs/clusters/monitoring/">}}) that alerts you before a system gets low on RAM.
-You must maintain sufficient free memory to make sure that you have a healthy RS installation.
+You must maintain sufficient free memory to make sure that you have a healthy Redis Enterprise installation.
 
 ## Memory metrics
 
@@ -93,8 +93,8 @@ See [console metrics]({{<relref "/rs/clusters/monitoring/console-metrics-definit
 ## Related info
 
 - [Memory and performance]({{<relref "/rs/databases/memory-performance">}})
-- [Disk sizing for heavy write scenarios({{<relref "/rs/clusters/optimize/disk-sizing-heavy-write-scenarios.md">}})
-- [Turn off services to free system memory]({{<relref "/rs/clusters/optimize/turn-off-services.md">}})4
+- [Disk sizing for heavy write scenarios]({{<relref "/rs/clusters/optimize/disk-sizing-heavy-write-scenarios.md">}})
+- [Turn off services to free system memory]({{<relref "/rs/clusters/optimize/turn-off-services.md">}})
 - [Eviction policy]({{<relref "/rs/databases/memory-performance/eviction-policy.md">}})
 - [Shard placement policy]({{< relref "/rs/databases/memory-performance/shard-placement-policy.md ">}})
 - [Database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}})
