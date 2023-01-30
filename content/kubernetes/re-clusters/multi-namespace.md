@@ -91,6 +91,81 @@ kubectl apply -f role_binding.yaml
 
 ## Update Redis Enterprise operator ConfigMap
 
+
+There are two methods of updating the operator ConfigMap (`operator-environment-config`) to specify which namespaces to manage.
+
+- Method 1: Configure the operator to watch for a namespace label and add this label to managed namespaces.
+- Method 2: Configure the operator with an explicit list of namespaces to manage.
+
+This ConfigMap can be created manually before deploying the RedisEnterpriseCluster, or will be created automatically when a Redis Enterprise cluster (REC) is deployed.
+
+{{<note>}}
+If the REC is configured to watch a namespace without setting the role and role binding permissions, or a namespace that's not created yet, the operator will fail and halt normal operations.
+{{</note>}}
+
+### Method 1: Namespace label (recommended)
+
+1. Create the `cluster_role_binding.yaml` and `cluster_role.yaml` files. Replace the `<rec-namespace>` with the namespace the Redis Enterprise cluster (REC) resides in.
+
+  `cluster_role.yaml` example:
+
+  ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      name: redis-enterprise-operator
+    rules:
+      - apiGroups: [""]
+        resources: ["namespaces"]
+        verbs: ["list", "watch"]
+  ```
+
+  `cluster_role_binding.yaml` example:
+
+  ```yaml
+    kind: ClusterRoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: redis-enterprise-operator
+    subjects:
+    - kind: ServiceAccount
+      name: redis-enterprise-operator
+      namespace: <rec-namespace>
+    roleRef:
+      kind: ClusterRole
+      name: redis-enterprise-operator
+      apiGroup: rbac.authorization.k8s.io
+  ```
+
+2. Apply the files:
+
+  ```sh
+  kubectl apply -f cluster_role.yaml
+  kubectl apply -f cluster_role_binding.yaml 
+  ```
+
+3. Patch the ConfigMap in the REC namespace (`<rec-namespace>`) to identify the managed namespaces with your desired label (`<label-name>`).
+
+  ```sh
+   kubectl patch ConfigMap/operator-environment-config \
+  -n <rec-namespace> \
+  --type merge \
+  -p '{"data": {"REDB_NAMESPACES_LABEL": "<label-name>"}}'
+  ```
+
+4. For each managed namespace, apply the same label. Replace `<managed-namespace>` with the namespace the REC will manage. Replace `<label-name>` with the value used in the previous step. If you specify a value for `<label-value>`, both the label name and value in managed namespaces must match to be detected by the operator. If the `<label-value>` is empty, only the label name needs to match on manged namespaces and the value is disregarded.
+
+
+  ```sh
+  kubectl label namespace <managed-namespace> <label-name>=<label-value>
+  ```
+
+{{<note>}}
+The operator restarts when it detects a namespace label has been added or removed.
+{{</note>}}
+
+### Method 2: Explicit namespace list
+
 Patch the `operator-environment-config` in the REC namespace with a new environment variable (`REDB_NAMESPACES`).
 
 ```sh
