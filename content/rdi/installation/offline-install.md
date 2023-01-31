@@ -103,4 +103,4 @@ docker tag debezium/server:2.1.1.Final_offline debezium/server:latest
 
 ## Finalize installation
 
-Continue the installation as described in [README](../index.md#scaffold-configuration-files).
+At this point, you should be able to use the primary installation process to finish installaation.  Start with the [scaffold configuration files]({{<relref "/rdi#scaffold-configuration-files">}}).
