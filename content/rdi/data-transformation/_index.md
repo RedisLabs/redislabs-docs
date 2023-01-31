@@ -16,13 +16,13 @@ Two data transformations are available:
 
     Incoming data, which includes schema, is converted using Debezium Schema.  
     
-    RDI uses handlers to convert each source column based on the Debezium schema type.  For details, see [Data type conversion]({{<relref "rdi/data-transformation/data-type-conversion">}}).
+    RDI uses handlers to convert each source column based on the Debezium schema type.  For details, see [Data type conversion]({{<relref "/rdi/data-transformation/data-type-conversion">}}).
 
 - To add or modify the conversion of source data, you can specify _Declarative Data Transformations_ using YAML files.  
 
     Each file defines a Job that represents a set of transformations for a single source table. 
 
-    To learn more, [Data transformation pipeline]({{<relref "rdi/data-transformation/pipeline">}}).
+    To learn more, [Data transformation pipeline]({{<relref "/rdi/data-transformation/pipeline">}}).
 
 The following image shows how this works:
 
