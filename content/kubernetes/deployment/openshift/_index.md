@@ -1,5 +1,5 @@
 ---
-Title: Deploy Redis Enterprise Software on Kubernetes with OpenShift
+Title: Deploy Redis Enterprise for Kubernetes with OpenShift
 linkTitle: OpenShift
 description: A quick introduction to the steps necessary to get a Redis Enterprise
   cluster installed in your OpenShift Kubernetes cluster

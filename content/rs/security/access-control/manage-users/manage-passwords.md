@@ -73,7 +73,8 @@ To deactivate password complexity rules:
 
 - Use the `cluster` REST API endpoint to set `password_complexity` to `false`
 
-## Password expiration
+<a href name="enable-password-expiration-policies"></a>
+## Password expiration 
 
 To enforce an expiration of a user's password after a specified number of days:
 
@@ -105,7 +106,7 @@ Password rotation does not work for the default user. [Add additional users]({{<
 {{< /note >}}
 
 For user access to the Redis Enterprise Software admin console,
-you can set a [password expiration policy](#enable-password-expiration) to prompt the user to change their password.
+you can set a [password expiration policy](#enable-password-expiration-policies) to prompt the user to change their password.
 
 However, for database connections that rely on password authentication,
 you need to allow for authentication with the existing password while you roll out the new password to your systems.

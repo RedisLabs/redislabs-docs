@@ -48,6 +48,16 @@
         },
         {
             "Condition": {
+                "KeyPrefixEquals": "6.0/platforms/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/platforms/"
+            }
+        },
+        {
+            "Condition": {
                 "KeyPrefixEquals": "5.4/platforms/"
             },
             "Redirect": {
