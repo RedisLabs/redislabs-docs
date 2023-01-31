@@ -12,7 +12,7 @@ This is the General Availability (GA) release of RedisInsight 2.18.
 
 ### Highlights
 - Support for SSH tunnel to connect to your Redis database
-- Ability to switch between database indexes when staying connected to your database
+- Ability to switch between database indexes while connected to your database
 - Recommendations on how to optimize the usage of your database
 
 ### Details
