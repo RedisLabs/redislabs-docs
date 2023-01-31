@@ -34,6 +34,8 @@ The following tabs are available:
     | Reference | Reference number |
     | Amount    | Transaction amount |
 
+    Billing details may vary between regions.
+
     When you select a billing transaction, a **Download** icon appears to the right of the amount.  
 
     {{<image filename="images/rc/icon-billing-download.png" width="30px" alt="Use the download icon to download a PDF for the selected invoice." >}}{{< /image >}}
