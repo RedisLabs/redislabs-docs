@@ -65,7 +65,7 @@ sudo tar xvf /tmp/redis-di.tar.gz -C /usr/local/bin/
 - An existing Redis Enterprise cluster v6.2 or later.
 - [RedisGears](https://redis.com/modules/redis-gears/) v1.2.5 or later installed on the cluster.
 
-    For help installing RedisGears to support RDI, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears">}}).
+    For help installing RedisGears to support RDI, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redisgears">}}).
 
 - A target Redis database, which can be added after installing RDI.
 
