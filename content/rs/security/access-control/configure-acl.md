@@ -21,6 +21,7 @@ Redis Enterprise lets you:
 - Include commands and categories with the "+" prefix for commands or "+@" prefix for command categories.
 - Exclude commands and categories with the "-" prefix for commands or "-@" prefix for command categories.
 - Include keys or key patterns with the "~" prefix.
+- Allow access to pub/sub channels with the "&" prefix (only supported for databases with Redis version 6.2 and later).
 
 To define database access control, you can:
 
@@ -57,6 +58,22 @@ In Redis Enterprise:
 - External users are not currently supported for database authentication.
 - For multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
 {{</note>}}
+
+## Change default pub/sub access
+
+Pub/sub ACL rules determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
+
+As of Redis Enterprise version 6.4.2, you can configure `acl_pubsub_default`, which determines the default pub/sub access for all databases in the cluster.
+
+- `resetchannels` is restrictive and blocks access to all channels.
+
+- `allchannels` is permissive and allows access to all channels. 
+
+Redis Enterprise v6.4.2 defaults to permissive pub/sub channels for backward compatibility. We recommend you change your cluster's default pub/sub ACLs to be restrictive:
+
+```sh
+rladmin tune cluster acl_pubsub_default resetchannels
+```
 
 ## Blocked ACL commands
 
