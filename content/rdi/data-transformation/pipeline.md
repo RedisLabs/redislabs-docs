@@ -14,15 +14,17 @@ The ingested format and types are different from one source to another. Currentl
 
 Each job describes the transformation logic to perform on data from a single source. The source is typically a database table or collection and is specified as the full name of this table/collection. The job may include a filtering logic, to skip data that matches a condition. Other logical steps in the job will transform the data into the desired output that will be stored in Redis (as Hash or JSON).
 
-{{<image filename="images/di/data-transformation-pipeline.png" alt="Data transformaiton Pipeline" >}}{{</image>}}
+{{<image filename="/images/rdi/data-transformation-pipeline.png" alt="Data transformaiton Pipeline" >}}{{</image>}}
 
 ## Jobs
 
-Each job will be in a separate YAML file. All of these files will be uploaded to Redis Data Integration using the `deploy` command (see [below](#deploy-configuration)). If you are using the [scaffold](../index.md#scaffold-configuration-files) command, place the job files under the `jobs` folder.
+Each job will be in a separate YAML file. All of these files will be uploaded to Redis Data Integration using the [`deploy` command](#deploy) of the [`redis-di`]({{<relref "/rdi/reference/redis-di">}}) utility.
 
-### Job YAML Structure
+Job files should be placed in the `jobs` folder created by the [`scaffold` command]({{<relref "/rdi/reference/redis-di/scaffold">}}) command.  For details, see [Scaffold configuration files]({{<relref "/rdi#scaffold-configuration-files">}}).
 
-#### Fields
+## Job YAML structure
+
+### Fields
 
 - `source`:
 
@@ -37,7 +39,8 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
 - `transform`:
 
   This section includes a series of blocks that the data should go through.
-  See documentation of the [supported blocks](../reference/data-transformation-block-types.md) and [JMESPath custom functions](../reference/jmespath-custom-functions.md).
+
+  For details, see [supported blocks]({{<relref "/rdi/data-transformation/block-types">}}) and [JMESPath custom functions]({{<relref "/rdi/reference/jmes-functions/">}}).
 
 - `output`:
 
@@ -58,16 +61,14 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
       - `table`: Targe table
       - `keys`:Array of key columns
 
-#### Notes
+### Notes
 
 - `source` is required.
 - Either `transform` and `key` (or both) should be specified.
 
-### Example
+## Example job
 
 This example shows how to rename a certain field (`fname` to `first_name`) in a given table (`emp`) using the `rename_field` block. It also demonstrates how to set the key of this record instead of relying on the default logic.
-
-redislabs.dbo.emp.yaml
 
 ```yaml
 source:
@@ -88,9 +89,9 @@ output:
         language: jmespath
 ```
 
-### Deploy Configuration
+## Deploy job {#deploy}
 
-In order to deploy your jobs to the remote RDI database, run:
+To deploy data transformation jobs, use the [`redis-di`]({{<relref "/rdi/reference/redis-di">}}) utility: 
 
 ```bash
 redis-di deploy

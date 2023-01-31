@@ -1,7 +1,7 @@
 ---
 Title: Data type transformation block types
 linkTitle: Transformation block types
-description:
+description: Describes the transform blocks of Redis Data Integration configuration files and the types that let you control data transformation.
 weight: $weight
 alwaysopen: false
 categories: ["redis-di"]
