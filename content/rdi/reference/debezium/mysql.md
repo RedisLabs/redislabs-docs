@@ -8,7 +8,7 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-The following example shows how to configure the Debezium Server `application.properties` file to support [Oracle MySQL](https://mysql.org).
+The following example shows how to configure the Debezium Server `application.properties` file to support [Oracle MySQL](https://mysql.com).
 
 # application.properties
 

@@ -5,32 +5,33 @@ description: Describes the Redis Data Integration Benchmark tool.
 weight: 80
 alwaysopen: false
 categories: ["redis-di"]
+headerRange: "[2]"
 aliases: 
 ---
 
 ## Overview
 
-The goal of Redis Data Integration Benchmark tool uses `INSERT` statements on the source DB to calculate the lag between the time the key is inserted into the source DB and the time at which the key is stored in the target Redis DB.
+The Redis Data Integration Benchmark tool uses `INSERT` statements on the source database to determine performance.  Specifically, _lag_ is calculating by tracking the time when a key is inserted into the source database and when it appears in the target Redis database.
 
 {{<image filename="images/rdi/redis-di-benchmark.png" alt="Change record calculated latency" >}}{{</image>}}
 
-The Benchmark tool The databases that are supported by this tool are:
+The Benchmark tool supports the following databases:
 
 - MySQL
 - Oracle
 - PostgreSQL
-- SQLServer
+- Microsoft SQLServer
 
 ## Prerequisites
 
-- An existing Redis Enterprise cluster version >= 6.2.
-- [RedisGears](https://redis.com/modules/redis-gears/) {{ site.redis_gears_min_version }} installed on the cluster.
-- A Source DB Server with `Bin Log` enabled.
-  The DBs that are supported by this tool are : `MySQL`, `Oracle`, `PostgreSQL` and `SQLServer`
-- A target Redis DB.
-- A Redis Data Integration DB which is connected to the target Redis DB.
-- [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) up and running and connected to the source DB and to the Redis Data Integration DB.
-- [Oracle Instant Client](https://www.oracle.com/il-en/database/technologies/instant-client.html) installed and configured for `Oracle` source DB.
+- An existing Redis Enterprise cluster version 6.2 or later.
+- [RedisGears](https://redis.com/modules/redis-gears/) version 1.25 or later installed on the cluster.
+- A source database server with `Bin Log` enabled.
+- A target Redis database.
+- A Redis Data Integration database sucessfully configured to connect to the target Redis database.
+- A running [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) connected to the source database and the target RDI database instance.
+
+- For Oracle, [Oracle Instant Client](https://www.oracle.com/il-en/database/technologies/instant-client.html) must be installed and configured to connect to the source `Oracle` database.  
   In case it’s missing, follow this [guide](#installation-of-oracle-instant-client) to install.
 
 Redis Data Integration Benchmark requires connectivity to the following endpoints:
