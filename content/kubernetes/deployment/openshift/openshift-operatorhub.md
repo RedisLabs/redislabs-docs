@@ -62,6 +62,9 @@ oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:my-p
 1. Select **Operators**->**OperatorHub**
 
 1. Search for "Redis Enterprise" in the search dialog and select the **Redis Enterprise Operator provided by Redis** marked as **Certified**.
+  {{<note>}}
+  Custom catalogs are not supported.
+  {{</note>}}
 
 1. On the **Install Operator** page, specify the namespace for the operator.
 
