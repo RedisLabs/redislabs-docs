@@ -31,7 +31,33 @@ You can enable TLS by editing the configuration of an existing database (as show
 1. Save the certificate. ![icon_save](/images/rs/icon_save.png#no-click "Save")
 1. Repeat for each client certificate you need to add.
     - If your database uses Replica Of or Active-Active replication, you will need to add the syncer certificates for the participating clusters. The steps for each are below.
-1. Optional: To limit connections further to a subset of those with valid certificates, enforce **Subject Alternative Name** and enter authorized users separated with commas.
+
+1. You can configure **Additional certificate validations** to further limit connections to clients with valid certificates.
+
+    {{<image filename="images/rs/database-tls-config-full-subject.png" alt="Configure additional certificate validations with Common Name or full subject." >}}{{< /image >}}
+
+
+    1. Select a certificate validation option.
+
+        | Validation option | Description |
+        |-------------------|-------------|
+        | _No validation_ | Authenticates clients with valid certificates. No additional validations are enforced. |
+        | _By Subject Alternative Name (SAN) / Common Name (CN) only_ | A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other `Subject` attributes. |
+        | _By full subject_ | A client certificate is valid only if its `Subject` attributes match an entry in the list of valid subjects. |
+
+    1. If you selected **No validation**, you can skip this step. Otherwise, select **Add** ![Add](/images/rs/icon_add.png#no-click "Add") to create a new entry and then enter valid `Subject` attributes for your client certificates.
+
+        | Subject attribute<br />(case-sensitive) | Description |
+        |-------------------|-------------|
+        | _Common Name (CN)_ | Name of the client authenticated by the certificate (_required_) |
+        | _Organization (O)_ | The client's organization or company name |
+        | <nobr>_Organizational Unit (OU)_</nobr> | Name of the unit or department within the organization |
+        | _Locality (L)_ | The organization's city |
+        | _State / Province (ST)_ | The organization's state or province |
+        | _Country (C)_ | 2-letter code that represents the organization's country |
+
+        You can only enter a single value for each field. If your client certificate has a `Subject` attribute with multiple values (such as OU=unit1; OU=unit2), add a separate `Subject` entry for each.
+
 1. Select **Update** at the bottom of the screen to save your configuration.
 1. Optional: By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to turn off this behavior.
     ```sh
