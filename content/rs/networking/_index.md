@@ -21,7 +21,7 @@ implement.
 Configure DNS to communicate between cluster nodes.
 
 - [AWS Route53 DNS management]({{< relref "/rs/networking/configuring-aws-route53-dns-redis-enterprise" >}})
-- [Client Prerequisites for mDNS]({{< relref "/rs/networking/mdns" >}}) for development and test environments
+- [Client prerequisites for mDNS]({{< relref "/rs/networking/mdns" >}}) for development and test environments
 
 ## [Cluster load balancer setup]({{< relref "/rs/networking/cluster-lba-setup" >}})
 
@@ -33,7 +33,7 @@ Requirements for using multiple IP addresses or IPv6 addresses with Redis Enterp
 
 ## [Network port configurations]({{< relref "/rs/networking/port-configurations" >}})
 
-Describes the various port ranges that Redis Enterprise Software uses.
+Describes the port ranges that Redis Enterprise Software uses.
 
 ## [Public and private endpoints]({{< relref "/rs/networking/private-public-endpoints" >}})
 
