@@ -26,8 +26,8 @@ For details on the OperatorHub, see the [OpenShift documentation](https://docs.o
 The Redis Enterprise pods must run in OpenShift with privileges set in a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth). This grants the pod various rights, such as the ability to change system limits or run as a particular user.
 
 {{<warning>}}
-The security context constraint for the operator
-([scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)) must be installed before the operator can create any clusters.
+You must install the security context constraint for the operator
+([scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)) before it can create any clusters.
 {{</warning>}}
 
 The SCC only needs to be installed once but must not be deleted.
