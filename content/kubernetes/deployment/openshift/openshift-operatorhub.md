@@ -30,7 +30,7 @@ You must install the security context constraint for the operator
 ([scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)) before it can create any clusters.
 {{</warning>}}
 
-The SCC only needs to be installed once but must not be deleted.
+You only need to install the SCC once, but you must not delete it.
 
 1. Select the project you'll be using or create a new project.
 
