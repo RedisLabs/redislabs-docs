@@ -86,6 +86,6 @@ You can monitor the subscription status in **Operators**->**Installed Operators*
 
 The **Installed Operators**->**Operator details** page shows the provided APIs: **RedisEnterpriseCluster** and **RedisEnterpriseDatabase**. You can select **Create instance** to create custom resources using the OperatorHub interface.
 
-Use the YAML view to create a custom resource file, or use the form view to specify configuration options and the OperatorHub will generate the YAML file for you.
+Use the YAML view to create a custom resource file or let OperatorHub generate the YAML file for you by specifying your configuration options in the form view.
 
 For more information on creating and maintaining Redis Enterprise custom resources, see [Redis Enterprise clusters (REC)]({{<relref "/kubernetes/re-clusters/">}}) and [Redis Enterprise databases (REDB)]({{<relref "/kubernetes/re-databases/">}}).
