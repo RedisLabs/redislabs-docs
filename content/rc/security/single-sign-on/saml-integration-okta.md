@@ -26,11 +26,11 @@ You need to create an Okta "Org2Org" SAML integration appliction.  To do so:
 
 1. Locate and select **Okta Org2Org**
 
-    {{<image filename="/images/rc/saml/okta_saml_1.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
+    {{<image filename="images/rc/saml/okta_saml_1.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
 
 2. Once you have found the application, click on the "Add" button.
 
-    {{<image filename="/images/rc/saml/okta_saml_2.png" alt="Data transformaiton Pipeline" >}}{{</image>}}
+    {{<image filename="images/rc/saml/okta_saml_2.png" alt="Data transformaiton Pipeline" >}}{{</image>}}
 
 3. Enter the following fields for the "Org2Org" application "General Settings" section
 
@@ -38,25 +38,22 @@ You need to create an Okta "Org2Org" SAML integration appliction.  To do so:
 
 * Click the **next** button
 
-    {{<image filename="/images/rc/saml/okta_saml_3.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
+    {{<image filename="images/rc/saml/okta_saml_3.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
 
 
 4. Enter the following fields for the "Redis Cloud" application "Sign-On Options" -> "Attributes" section :
 
+    * Name : **redisAccountMapping**
+    * Name Format : **Basic**
+    * Value : **appuser.redisAccountMapping**
 
-* Name : **redisAccountMapping**
-* Name Format : **Basic**
-* Value : **appuser.redisAccountMapping**
+    **IMPORTANT** : Make sure to fill in the value field correctly with **appuser.redisAccountMapping**. If this is not done, the role mapping will not take effect. It is easy to overlook this step.
 
-> **IMPORTANT** : Make sure to fill in the value field correctly with **appuser.redisAccountMapping**. If this is not done, the role mapping will not take effect. It is easy to overlook this step.
-
-    {{<image filename="/images/rc/saml/okta_saml_4.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
-
+    {{<image filename="images/rc/saml/okta_saml_4.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
 
 5. Next, click on the **View Setup Instructions** button. This will open a new browser window and will give us the information needed to configure the IdP in Redis Cloud.
 
-    {{<image filename="/images/rc/saml/okta_saml_5.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
-
+    {{<image filename="images/rc/saml/okta_saml_5.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
 
 <a name="step6">6.</a> Scroll down to section 6 in the page, and note down the following information :
 
@@ -66,8 +63,7 @@ You need to create an Okta "Org2Org" SAML integration appliction.  To do so:
 
     {{<image filename="/images/rc/saml/okta_saml_6.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
 
-
-Once you have the information noted, close the window, go back to the OKTA admin console, scroll down the page and click the **Done** button.
+    Once you have the information noted, close the window, go back to the OKTA admin console, scroll down the page and click the **Done** button.
 
 ### Modify the application user profile
 
