@@ -46,7 +46,7 @@ After the install, the OperatorHub automatically uses the constraint for Redis E
 
 {{< note >}}
 **Known Limitation** - The automatic use of the security constraint is limited. The
-Redis Enterprise must be named `rec` for the constraint to be used automatically.  **We recommended that you use the cluster name `rec` when deploying with
+Redis Enterprise must be named `rec` for the constraint to be used automatically.  **We recommend you use the cluster name `rec` when deploying with
 the OperatorHub.**
 
 If you require a different name, you must grant the SCC to the project
