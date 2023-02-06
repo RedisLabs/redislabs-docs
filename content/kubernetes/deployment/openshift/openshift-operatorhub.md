@@ -78,7 +78,7 @@ oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:my-p
 
     We recommend **Manual** for production systems to ensure the operator is only upgraded by approval.
 
-1. Select **Install** and approve the install plan
+1. Select **Install** and approve the install plan.
 
 You can monitor the subscription status in **Operators**->**Installed Operators**.
 
