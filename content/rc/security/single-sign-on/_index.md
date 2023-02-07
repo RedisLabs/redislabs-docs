@@ -12,4 +12,12 @@ As an alternative to the traditional email/password account authentication metho
 ## Supported SSO methods
 
 - [SAML SSO]({{<relref "/rc/security/single-sign-on/saml-sso">}})
+
+    Integration guides are available for the following identity providers (IdP):
+
+    - [Okta]({{<relref "/rc/security/single-sign-on/saml-integration-okta">}})
+    - [Microsoft Azure Active Directory]({{<relref "/rc/security/single-sign-on/saml-integration-azure-ad">}}) (Azure AD)
+    - [PingIdentity]({{<relref "/rc/security/single-sign-on/saml-integration-ping-identity">}})
+    - [Auth0]({{<relref "/rc/security/single-sign-on/saml-integration-auth0">}})
+
 - [Social login]({{<relref "/rc/security/single-sign-on/social-login">}})
