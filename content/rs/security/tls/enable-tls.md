@@ -42,10 +42,10 @@ You can enable TLS by editing the configuration of an existing database (as show
         | Validation option | Description |
         |-------------------|-------------|
         | _No validation_ | Authenticates clients with valid certificates. No additional validations are enforced. |
-        | _By Subject Alternative Name (SAN) / Common Name (CN) only_ | A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other `Subject` attributes. |
-        | _By full subject_ | A client certificate is valid only if its `Subject` attributes match an entry in the list of valid subjects. |
+        | _By Subject Alternative Name (SAN) / Common Name (CN) only_ | A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes. |
+        | _By full subject_ | A client certificate is valid only if its [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes match an entry in the list of valid subjects. |
 
-    1. If you selected **No validation**, you can skip this step. Otherwise, select **Add** ![Add](/images/rs/icon_add.png#no-click "Add") to create a new entry and then enter valid `Subject` attributes for your client certificates.
+    1. If you selected **No validation**, you can skip this step. Otherwise, select **Add** ![Add](/images/rs/icon_add.png#no-click "Add") to create a new entry and then enter valid [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes for your client certificates.
 
         | Subject attribute<br />(case-sensitive) | Description |
         |-------------------|-------------|
