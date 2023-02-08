@@ -29,7 +29,17 @@ An API object that represents a managed database in the cluster.
   "client_cert": string
 }, ...]
 {{</code>}} | List of authorized CRDT certificates<br />**client_cert**: X.509 PEM (base64) encoded certificate |
-| authorized_names | array of strings | Additional certified names |
+| authorized_names | array of strings | Additional certified names (deprecated as of Redis Enterprise v6.4.2; use authorized_subjects instead) |
+| authorized_subjects | {{<code>}}
+[{
+  "CN": string,
+  "O": string,
+  "OU": string,
+  "L": string,
+  "ST": string,
+  "C": string
+}, ...]
+{{</code>}} | A list of valid subjects used for additional certificate validations during TLS client authentication. All subject attributes are case-sensitive.<br />**Required subject fields**:<br />"CN" for Common Name<br />**Optional subject fields:**<br />"O" for Organization<br />"OU" for Organizational Unit<br />"L" for Locality (city)<br />"ST" for State/Province<br />"C" for 2-letter country code  |
 | avoid_nodes | array of strings | Cluster node UIDs to avoid when placing the database's shards and binding its endpoints |
 | background_op | {{<code>}}
 [{
@@ -55,6 +65,7 @@ An API object that represents a managed database in the cluster.
   "weight": number
 }, ...]
 {{</code>}} | List of shard UIDs and their bigstore RAM weights;<br /> **shard_uid**: Shard UID;<br /> **weight**: Relative weight of RAM distribution |
+| client_cert_subject_validation_type | **disabled**<br />san_cn<br />full_subject | Enables additional certificate validations that further limit connections to clients with valid certificates during TLS client authentication.<br />**disabled**: Authenticates clients with valid certificates. No additional validations are enforced.<br />**san_cn**: A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other Subject attributes.<br />**full_subject**: A client certificate is valid only if its Subject attributes match an entry in the list of valid subjects. |
 | crdt | boolean (default:&nbsp;false) | Use CRDT-based data types for multi-master replication |
 | crdt_causal_consistency | boolean (default:&nbsp;false) | Causal consistent CRDB. |
 | crdt_config_version | integer | Replica-set configuration version, for internal use only. |
