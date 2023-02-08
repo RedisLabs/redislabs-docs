@@ -29,8 +29,17 @@ An API object that represents a managed database in the cluster.
   "client_cert": string
 }, ...]
 {{</code>}} | List of authorized CRDT certificates<br />**client_cert**: X.509 PEM (base64) encoded certificate |
-| authorized_names | array of strings | Additional certified names |
-| authorized_subjects | array of JSON objects | A list of valid subjects used for additional certificate validations during TLS client authentication.<br />**Required subject fields**:<br />"CN" for Common Name<br />**Optional subject fields:**<br />"O" for Organization<br />"OU" for Organizational Unit<br />"L" for Locality (city)<br />"ST" for State/Province<br />"C" for 2-letter country code  |
+| authorized_names | array of strings | Additional certified names (deprecated as of Redis Enterprise v6.4.2; use authorized_subjects instead) |
+| authorized_subjects | {{<code>}}
+[{
+  "CN": string,
+  "O": string,
+  "OU": string,
+  "L": string,
+  "ST": string,
+  "C": string
+}, ...]
+{{</code>}} | A list of valid subjects used for additional certificate validations during TLS client authentication. All subject attributes are case-sensitive.<br />**Required subject fields**:<br />"CN" for Common Name<br />**Optional subject fields:**<br />"O" for Organization<br />"OU" for Organizational Unit<br />"L" for Locality (city)<br />"ST" for State/Province<br />"C" for 2-letter country code  |
 | avoid_nodes | array of strings | Cluster node UIDs to avoid when placing the database's shards and binding its endpoints |
 | background_op | {{<code>}}
 [{
