@@ -15,9 +15,10 @@ As an alternative to the traditional email/password account authentication metho
 
     Integration guides are available for the following identity providers (IdP):
 
-    - [Okta]({{<relref "/rc/security/single-sign-on/saml-integration-okta">}})
-    - [Microsoft Azure Active Directory]({{<relref "/rc/security/single-sign-on/saml-integration-azure-ad">}}) (Azure AD)
-    - [PingIdentity]({{<relref "/rc/security/single-sign-on/saml-integration-ping-identity">}})
-    - [Auth0]({{<relref "/rc/security/single-sign-on/saml-integration-auth0">}})
+    - [Okta (Generic)]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-generic">}})
+    - [Okta (Org2Org)]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-org2org">}})
+    - [Microsoft Azure Active Directory]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-azure-ad">}}) (Azure AD)
+    - [PingIdentity]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-ping-identity">}})
+    - [Auth0]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-auth0">}})
 
 - [Social login]({{<relref "/rc/security/single-sign-on/social-login">}})

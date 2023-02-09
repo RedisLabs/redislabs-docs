@@ -5,6 +5,10 @@ description: SAML single sign-on (SSO) with Redis Cloud.
 weight: 50
 alwaysopen: false
 categories: ["RC"]
+aliases: [
+    "/rc/security/single-sign-on/saml-sso.md"
+]
+
 ---
 
 Redis Cloud supports both [IdP-initiated](#idp-initiated-sso) and [SP-initiated](#sp-initiated-sso) [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
@@ -47,6 +51,16 @@ The account owner remains a local user and should set up [multi-factor authentic
 
 If MFA enforcement is enabled, note that Redis Cloud does not enforce MFA for SAML users since the identity provider handles MFA management and enforcement.
 
+## Integration guides
+
+SAML integration guides are available for several popular identity providers, including:
+
+- [Okta (Generic)]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-generic">}})
+- [Okta (Org2Org)]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-org2org">}})
+- [Microsoft Azure Active Directory]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-azure-ad">}}) (Azure AD)
+- [PingIdentity]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-ping-identity">}})
+- [Auth0]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-auth0">}})
+
 ## Set up SAML SSO
 
 To set up SAML single sign-on for a Redis Cloud account:
@@ -58,10 +72,6 @@ To set up SAML single sign-on for a Redis Cloud account:
 1. [Download service provider metadata](#download-sp) and upload it to your identity provider.
 
 1. [Activate SAML SSO](#activate-saml-sso).
-
-{{<note>}}
-SAML integration guides are available for several popular identity providers. You can contact [Redis support](mailto:support@redis.com?subject=SAML%20integration%20guide) to request a guide for your identity provider.
-{{</note>}}
 
 ### Set up SAML app {#set-up-app}
 
