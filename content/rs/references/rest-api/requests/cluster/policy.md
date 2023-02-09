@@ -92,7 +92,7 @@ Update cluster policy settings.
 ```json
 {
     "default_shards_placement": "sparse",
-    ""
+    "default_sharded_proxy_policy": "all-nodes"
 }
 ```
 
