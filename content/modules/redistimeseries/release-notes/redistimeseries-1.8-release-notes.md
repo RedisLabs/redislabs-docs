@@ -4,7 +4,7 @@ linkTitle: v1.8 (January 2023)
 description: Added a time-weighted average aggregator, gap filling, ability to control bucket timestamps, ability to control alignment for compaction rules, new reducer types, and ability to include the latest (possibly partial) raw bucket samples when retrieving compactions
 min-version-db: "6.0.16"
 min-version-rs: "6.2.8"
-weight: 97
+weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
