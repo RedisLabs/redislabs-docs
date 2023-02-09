@@ -1,6 +1,6 @@
 ---
 Title: RedisTimeSeries 1.8 release notes
-linkTitle: v1.8 (January 2023)
+linkTitle: v1.8 (November 2022)
 description: Added a time-weighted average aggregator, gap filling, ability to control bucket timestamps, ability to control alignment for compaction rules, new reducer types, and ability to include the latest (possibly partial) raw bucket samples when retrieving compactions
 min-version-db: "6.0.16"
 min-version-rs: "6.2.8"
@@ -42,7 +42,7 @@ Details:
     - [#1347](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1347) When adding samples with [TS.ADD](https://redis.io/commands/ts.add/) or [TS.MADD](https://redis.io/commands/ts.madd/) using  `*` as timestamp, the timestamp could differ between master and replica shards
 
 - Improvements:
-    - [#1215](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1347) OSS cluster: Support TLS and IPv6; Introduce new configuration parameter: [OSS_GLOBAL_PASSWORD](https://redis.io/docs/stack/timeseries/configuration/#oss_global_password)
+    - [#1215](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1347) OSS cluster: Support TLS and IPv6; introduce new configuration parameter: [OSS_GLOBAL_PASSWORD](https://redis.io/docs/stack/timeseries/configuration/#oss_global_password)
 
 
 ## v1.8 GA (v1.8.3) (November 2022)
@@ -77,13 +77,13 @@ RedisTimeSeries 1.8 introduces seven highly requested features, performance impr
 
   For the `sum` and `count` aggregators, the value 0 is reported for empty buckets.
 
-  For the `min`, `max`, `range`, `avg`, `first`, `std.p` and `std.s` aggregators, the value NaN (not a number) is reported.
+  For the `min`, `max`, `range`, `avg`, `first`, `std.p`, and `std.s` aggregators, the value NaN (not a number) is reported.
 
   For the `last` aggregator and the new `twa` aggregator, the `EMPTY` flag is used for gap filling (see below).
 
   To report aggregations for empty buckets, use the new optional `EMPTY` flag in [TS.RANGE](https://redis.io/commands/ts.range/), [TS.REVRANGE](https://redis.io/commands/ts.revrange/), [TS.MRANGE](https://redis.io/commands/ts.mrange/), and [TS.MREVRANGE](https://redis.io/commands/ts.mrevrange/).
 
-  Regardless of the values of fromTimestamp and toTimestamp, no data is reported for empty buckets that end before the earliest sample or begin after the latest sample in the time series.
+  Regardless of the values of `fromTimestamp` and `toTimestamp`, no data is reported for empty buckets that end before the earliest sample or begin after the latest sample in the time series.
 
 * **A new aggregator: time-weighted average**
 
@@ -129,7 +129,7 @@ RedisTimeSeries 1.8 introduces seven highly requested features, performance impr
 
   But what if we want to aggregate daily events from 06:00 to 06:00 the next day? We can now specify alignment for compaction rules.
 
-  Alignment can be specified with the new optional `alignTimestamp` parameter of [TS.CREATERULE](https://redis.io/commands/ts.createrule/)and the [COMPACTION_POLICY](https://redis.io/docs/stack/timeseries/configuration/#compaction_policy) configuration parameter. Specifying `alignTimestamp` ensures that there is a bucket that starts exactly at `alignTimestamp` and all other buckets are aligned accordingly. `alignTimestamp` is expressed in milliseconds. The default value is 0 (aligned with the epoch).
+  Alignment can be specified with the new optional `alignTimestamp` parameter of [TS.CREATERULE](https://redis.io/commands/ts.createrule/) and the [COMPACTION_POLICY](https://redis.io/docs/stack/timeseries/configuration/#compaction_policy) configuration parameter. Specifying `alignTimestamp` ensures that there is a bucket that starts exactly at `alignTimestamp` and all other buckets are aligned accordingly. `alignTimestamp` is expressed in milliseconds. The default value is 0 (aligned with the epoch).
 
 * **New reducers**
 
@@ -140,5 +140,5 @@ RedisTimeSeries 1.8 introduces seven highly requested features, performance impr
   This can be specified with the new reducer types ([TS.MRANGE](https://redis.io/commands/ts.mrange/) and [TS.MREVRANGE](https://redis.io/commands/ts.mrevrange/)): `avg`, `range`, `count`, `std.p`, `std.s`, `var.p`, and `var.s`.
 
 {{<note>}}
-RDB version 7 since 1.8.2. RDB files are not backward-compatible.
+RDB version 7 since 1.8.2. RDB files are not backward compatible.
 {{</note>}}
