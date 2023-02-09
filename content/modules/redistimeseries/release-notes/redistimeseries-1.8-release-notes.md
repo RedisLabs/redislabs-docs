@@ -140,5 +140,5 @@ RedisTimeSeries 1.8 introduces seven highly requested features, performance impr
   This can be specified with the new reducer types ([TS.MRANGE](https://redis.io/commands/ts.mrange/) and [TS.MREVRANGE](https://redis.io/commands/ts.mrevrange/)): `avg`, `range`, `count`, `std.p`, `std.s`, `var.p`, and `var.s`.
 
 {{<note>}}
-RDB version 7 since 1.8.2. RDB files are not backward compatible.
+New RDB version (v7). RDB files created with v1.8.3 are not backward compatible. 
 {{</note>}}
