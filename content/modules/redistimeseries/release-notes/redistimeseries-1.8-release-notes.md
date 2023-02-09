@@ -42,7 +42,7 @@ Details:
     - [#1347](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1347) When adding samples with [TS.ADD](https://redis.io/commands/ts.add/) or [TS.MADD](https://redis.io/commands/ts.madd/) using  `*` as timestamp, the timestamp could differ between master and replica shards
 
 - Improvements:
-    - [#1215](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1347) OSS cluster: Support TLS and IPv6; introduce new configuration parameter: [OSS_GLOBAL_PASSWORD](https://redis.io/docs/stack/timeseries/configuration/#oss_global_password)
+    - [#1215](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1215) OSS cluster: Support TLS and IPv6; introduce new configuration parameter: [OSS_GLOBAL_PASSWORD](https://redis.io/docs/stack/timeseries/configuration/#oss_global_password)
 
 
 ## v1.8 GA (v1.8.3) (November 2022)
