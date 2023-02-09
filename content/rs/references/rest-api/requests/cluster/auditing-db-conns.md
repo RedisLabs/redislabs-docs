@@ -64,7 +64,7 @@ Returns a [database connection auditing configuration object]({{<relref "/rs/ref
 
 ### Error codes {#get-error-codes} 
 
-When errors are reported, the server may return a JSON object with `error_code` and `message` field that provide additional information. The following are possible `error_code` values:
+When errors are reported, the server may return a JSON object with `error_code` and `message` fields that provide additional information. The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
@@ -120,7 +120,7 @@ Include a [database connection auditing configuration object]({{<relref "/rs/ref
 
 ### Response {#put-response} 
 
-Returns a [database connection auditing configuration object]({{<relref "/rs/references/rest-api/objects/db-conns-auditing-config">}}).
+Returns the updated [database connection auditing configuration object]({{<relref "/rs/references/rest-api/objects/db-conns-auditing-config">}}).
 
 #### Example JSON body
 
@@ -136,7 +136,7 @@ Returns a [database connection auditing configuration object]({{<relref "/rs/ref
 
 ### Error codes {#put-error-codes} 
 
-When errors are reported, the server may return a JSON object with `error_code` and `message` field that provide additional information. The following are possible `error_code` values:
+When errors are reported, the server may return a JSON object with `error_code` and `message` fields that provide additional information. The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
@@ -151,7 +151,7 @@ When errors are reported, the server may return a JSON object with `error_code` 
 
 ## Delete database auditing settings {#delete-cluster-audit-db-conns}
 
-	GET /v1/cluster/auditing/db_conns
+	DELETE /v1/cluster/auditing/db_conns
 
 Resets the configuration settings for [auditing database connections]({{<relref "/rs/security/audit-events">}}).
 
@@ -165,7 +165,7 @@ Resets the configuration settings for [auditing database connections]({{<relref 
 
 #### Example HTTP request
 
-	GET /cluster/auditing/db_conns 
+	DELETE /cluster/auditing/db_conns 
 
 
 #### Request headers
@@ -181,7 +181,7 @@ Returns a status code that indicates whether the database connection auditing se
 
 ### Error codes {#delete-error-codes} 
 
-When errors are reported, the server may return a JSON object with `error_code` and `message` field that provide additional information. The following are possible `error_code` values:
+When errors are reported, the server may return a JSON object with `error_code` and `message` fields that provide additional information. The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
