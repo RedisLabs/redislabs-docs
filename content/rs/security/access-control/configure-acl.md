@@ -75,11 +75,20 @@ To make default pub/sub permissions restrictive:
 
 1. [Upgrade all databases]({{<relref "/rs/installing-upgrading/upgrading#upgrade-a-database">}}) in the cluster to Redis version 6.2 or later.
 
-1. Set the default to `resetchannels` with [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}):
+1. Set the default to `resetchannels` with [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) or the [REST API]({{<relref "/rs/references/rest-api">}}).
 
-    ```sh
-    rladmin tune cluster acl_pubsub_default resetchannels
-    ```
+    - Method 1 - [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}):
+
+        ```sh
+        rladmin tune cluster acl_pubsub_default resetchannels
+        ```
+
+    - Method 2 - [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
+
+        ```sh
+        PUT /v1/cluster/policy
+        { "acl_pubsub_default": "resetchannels" }
+        ```
 
 ## Blocked ACL commands
 
