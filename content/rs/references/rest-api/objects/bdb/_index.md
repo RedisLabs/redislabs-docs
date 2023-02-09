@@ -84,6 +84,7 @@ An API object that represents a managed database in the cluster.
 | data_internode_encryption | boolean | Should the data plane internode communication for this database be encrypted |
 | data_persistence | **'disabled'** <br />'snapshot'<br />'aof' | Database on-disk persistence policy. For snapshot persistence, a [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) must be provided |
 | dataset_import_sources | [complex object]({{<relref "/rs/references/rest-api/objects/bdb/dataset_import_sources">}}) | Array of source file location description objects to import from when performing an import action. This is write-only and cannot be read after set. <br />Call GET /jsonschema to retrieve the object's structure. |
+| db_conns_auditing | boolean | Enables/deactivates [database connection auditing]({{<relref "/rs/security/audit-events">}}) |
 | default_user | boolean (default:&nbsp;true) | Allow/disallow a default user to connect |
 | disabled_commands | string (default: ) | Redis commands which are disabled in db |
 | dns_address_master | string | Database private address endpoint FQDN (read-only) (deprecated) |
