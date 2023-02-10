@@ -42,8 +42,8 @@ Every instance of an Active-Active database can receive write operations, and al
 
     1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the Active-Active database.
         By default, the address is: `https://<RS_address>:8443`
-    1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
-    1. Enter the name, email, and password for the user, select the **Admin** role, and click ![Save](/images/rs/icon_save.png#no-click "Save").
+    1. Go to **access control > users** and select ![Add](/images/rs/icon_add.png#no-click "Add").
+    1. Enter the name, email, and password for the user, select the **Admin** role, and select ![Save](/images/rs/icon_save.png#no-click "Save").
 
     ![Service Account Creation](/images/rs/create-service-account.png)
 
@@ -119,7 +119,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-    - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
+    - **Eviction policy** - The default eviction policy for Active-Active databases is `noeviction`. Redis Enterprise version 6.0.20 and later support all eviction policies for Active-Active databases, unless [Redis on Flash]({{<relref "/rs/databases/redis-on-flash">}}) is enabled.
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host instances of an Active-Active database and the admin user account to connect to each cluster.
