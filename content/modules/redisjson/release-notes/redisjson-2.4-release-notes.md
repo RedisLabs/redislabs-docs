@@ -45,15 +45,15 @@ RedisJSON 2.4 contains several low-level API changes in order to support the mul
 - Features:
 
   - [#848](https://github.com/RedisJSON/RedisJSON/pull/848) Add JSONPath filter the regexp match operator (MOD-4432)
-  - [#861](https://github.com/RedisJSON/RedisJSON/pull/861) Support legacy JSONpath with dollar $ (MOD-4436)
+  - [#861](https://github.com/RedisJSON/RedisJSON/pull/861) Support legacy JSONPath with the dollar sign $ (MOD-4436)
 
-- Performance Enhancements:
+- Performance enhancements:
 
   - [#699](https://github.com/RedisJSON/RedisJSON/pull/699) A new JSONPath library which enhances the performance of parsing any JSONPath expression in RedisJSON.
 
-- Changing Behaviour:
+- Changing behaviour:
 
-  - [#699](https://github.com/RedisJSON/RedisJSON/pull/699) Floating point numbers which become round numbers due to some operation, for example by `JSON.NUMINCRBY`, will now return as a floating point with a trailing `.0`, e.g., instead of just `42`, now `42.0` will be returned.
+  - [#699](https://github.com/RedisJSON/RedisJSON/pull/699) Floating point numbers which become round numbers due to some operation, such as `JSON.NUMINCRBY`, will now return as a floating point with a trailing `.0`, e.g., instead of just `42`, now `42.0` will be returned.
 
 - Bugs fixes (since 2.4-RC1/ v2.4.0):
 
