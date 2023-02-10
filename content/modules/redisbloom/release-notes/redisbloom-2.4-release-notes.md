@@ -39,7 +39,7 @@ Using t-digest is simple and straightforward:
 
 * **Creating a sketch and adding observations**
 
-  `TDIGEST.CREATE key [COMPRESSION compression]` initializes a new t-digest sketch (and error if such key already exists). The `COMPRESSION` argument is used to specify the tradeoff between accuracy and memory consumption. The default is 100. Higher values mean more accuracy.
+  `TDIGEST.CREATE key [COMPRESSION compression]` initializes a new t-digest sketch (and errors if the key already exists). The `COMPRESSION` argument is used to specify the tradeoff between accuracy and memory consumption. The default is 100. Higher values mean more accuracy.
 
   `TDIGEST.ADD key value...` adds new observations (floating-point values) to the sketch. You can repeat calling [TDIGEST.ADD](https://redis.io/commands/tdigest.add/) whenever new observations are available.
 
@@ -63,7 +63,7 @@ Using t-digest is simple and straightforward:
 
   Use `TDIGEST.TRIMMED_MEAN key lowFraction highFraction` to retrieve an estimation of the mean value between the specified fractions.
 
-  This is especially useful for calculating the average value ignoring outliers. For example - calculating the average value between the 20th percentile and the 80th percentile.
+  This is especially useful for calculating the average value ignoring outliers. For example, calculating the average value between the 20th percentile and the 80th percentile.
 
 * **Merging sketches**
 
@@ -71,7 +71,7 @@ Using t-digest is simple and straightforward:
 
   `TDIGEST.MERGE destKey numKeys sourceKey... [COMPRESSION compression] [OVERRIDE]` merges multiple sketches into a single sketch.
 
-  If `destKey` does not exist - a new sketch is created.
+  If `destKey` does not exist, a new sketch is created.
 
   If `destKey` is an existing sketch, its values are merged with the values of the source keys. To override the destination key contents, use `OVERRIDE`.
 
@@ -79,7 +79,7 @@ Using t-digest is simple and straightforward:
 
   Use `TDIGEST.MIN` key and `TDIGEST.MAX key` to retrieve the minimal and maximal values in the sketch, respectively.
 
-  Both return nan when the sketch is empty.
+  Both return NaN (Not a Number) when the sketch is empty.
 
   Both commands return accurate results and are equivalent to `TDIGEST.BYRANK key 0` and `TDIGEST.BYREVRANK key 0` respectively.
 
@@ -87,4 +87,4 @@ Using t-digest is simple and straightforward:
 
 * **Resetting a sketch**
 
-  `TDIGEST.RESET key` empties the sketch and re-initializes it.
+  `TDIGEST.RESET key` empties the sketch and reinitializes it.
