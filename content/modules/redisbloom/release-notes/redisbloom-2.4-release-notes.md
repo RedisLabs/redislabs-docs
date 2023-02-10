@@ -1,7 +1,7 @@
 ---
 Title: RedisBloom 2.4 release notes
 linkTitle: v2.4 (November 2022)
-description: BF.INFO returns bloom filter details. CF.INFO returns cuckoo filter details. Scalable bloom and cuckoo filters. Configurable bucket size for cuckoo filters. CMS.INCRBY returns count.
+description: Added t-digest - a probabilistic data structure for estimating quantiles based on a data stream or a large dataset of floating-point values.
 min-version-db: "6.0.16"
 min-version-rs: "6.2.8"
 weight: 96
