@@ -13,64 +13,43 @@ To upgrade Redis Enterprise Software, you:
 
 2.  _(Optional)_ Upgrade each database in the cluster.
 
-You don't have to upgrade the databases in your cluster, however, new features and important fixes might not be enabled until you do so.
+You don't have to upgrade the databases in your cluster; however, new features and important fixes might not be enabled until you do so.
+
+## Default Redis database versions {#default-db-versions}
+
+When you upgrade an existing database or create a new one, the database complies with the version of open source Redis configured for the default Redis version (`default_redis_version`).
+
+Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2. The default Redis database version differs between Redis Enterprise releases as follows:
+
+| Redis<br />Enterprise | Bundled Redis<br />DB versions | Default DB version<br />(upgraded/new databases) |
+|-------|----------|-----|
+| 6.2.x | 6.0, 6.2 | 6.0 |
+| 6.4.2 | 6.0, 6.2 | 6.2 |
+
+- v6.2.x: `default_redis_version` is 6.0.
+
+    Setting `redis_upgrade_policy` to `major` enforces this default.
+    
+    The upgrade policy is only relevant for Redis Enterprise Software versions 6.2.4 through 6.2.18. For more information about upgrade policies, see the [6.2 version of this document](https://docs.redis.com/6.2/rs/installing-upgrading/upgrading/#redis-upgrade-policy).
+
+- v6.4.2: `default_redis_version` is 6.2.
+
+    Both `major` and `latest` upgrade policies use this new default.
+
+    You can override the default version with [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}); however, this might limit future upgrade options:
+    
+    ```sh
+    rladmin tune cluster default_redis_version 6.0
+    ```
 
 ## Supported upgrade paths
 
-The upgrade path depends on two requirements, which vary according to the desired cluster version:
+The following upgrade paths are supported:
 
-| Target<br/>cluster version | Minimum<br/>cluster version | Minimum database<br/>compatibility version |
-|:----------:|:----------:|:----------:|
-| 6.2    | 6.0      | 6.0 |
-| 6.0.20 | 5.6      | 5.0 |
-| 6.0    | 5.4.0    | 5.0 |
-| 5.6    | 5.0.2-30 | 4.0 |
-
-To upgrade successfully, both of the following must be true:
-
-- Each node on your cluster must be at the minimum cluster version
-- The Redis database compatibility version for each database must meet the required minimum.
-
-If you do not meet these minimums, you must first update the nodes and databases accordingly.
-
-## Redis upgrade policy
-
-In version 6.2.4, Redis Enterprise Software introduced the Redis database compatibility upgrade policy (`redis_upgrade_policy`).  This policy controls the default value for the Redis database compatibility when creating or updating databases. 
-
-As of v6.2.4, this policy defaults to `major`, which limits Redis database compatibility to the most recent major release (v6.0, as of this writing).  
-
-This value supports a more conservative approach to upgrades.  You can change the value to support more frequent upgrades, however, you'll need to upgrade more frequently to stay current.  
-
-If you change the policy to `latest`, you need to upgrade Redis Enterprise Software every time there's a minor release.  Further, you'll need to leave the policy set to `latest` until the next major release of Redis Enterprise Software, which generally happens every 18-24 months.
-
-Changes to the upgrade policy do _not_ affect existing databases.  The policy is used only when you create a new database, upgrade a database, or change its configuration.
-
-For best results, we recommend changing the policy value only after upgrading to a major release of Redis Enterprise Software.
-
-## Upgrade policy values
-
-The Redis version of a database indicates its open source Redis compatibility.  When you create a database or edit its configuration, the compatibility version is updated to support the most recent version supported by your copy of Redis Enterprise Software.  
-
-The database compatibility upgrade policy controls this by limiting compatibility to either the most recent _major_ (x.0) release or the _latest_ release (x.y) supported by your version of Redis Enterprise Software.
-
-- When set to `major`, the policy limits Redis compatibility to major releases.  This allows for longer upgrade cycles by supporting Redis versions across multiple Redis Enterprise Software releases.  
-
-    This is the default value for Redis Enterprise Software.
-
-- When set to `latest`, the policy limits compatibility to the latest (most recent) version of open source Redis supported by your copy of Redis Enterprise Software.  (This was the default behavior of earlier releases.  As of v6.2.4, this is no longer the default behavior.)
-
-    Setting the upgrade policy to `latest` ensures that the most recent Redis features are available to new databases and ones that are upgraded.  It also requires more frequent upgrades, as open source Redis is updated more frequently than Redis Enterprise Software.
-
-To demonstrate: The Redis Enterprise Software 6.2.4 package included compatibility with the most recent major Redis release (v6.0 at the time) and the latest (most recent) update to Redis (v6.2.3 at the time).  
-
-By default, compatibility with v6.0 was installed with the upgrade.  
-
-To change this to use the latest release available, use `rladmin` to set the upgrade policy and the default Redis version:
-
-``` shell
-tune cluster redis_upgrade_policy latest
-tune cluster default_redis_version 6.2
-```
+| Current<br/>cluster version | Upgrade to<br/>cluster version |
+|:-----:|:-----:|
+| 6.2.x | 6.4.2 |
+| 6.0.x | 6.4.2<br />6.2.x |
 
 ## Upgrade a cluster
 
