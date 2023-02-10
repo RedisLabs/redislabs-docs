@@ -11,4 +11,3 @@ aliases: {
 }
 ---
 
-Before creating Active-Active databases, you'll need admin access to 2-3 working Kubernetes clusters. 

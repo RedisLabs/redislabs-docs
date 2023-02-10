@@ -15,7 +15,7 @@ aliases: {
 
 ## Prepare participating clusters
 
-An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})). Prepare each Redis Enterprise cluster (REC) for use in your Active-Active deployment with the following steps. 
+An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})). Prepare each Redis Enterprise cluster (REC) for use in your Active-Active deployment with the following steps.
 
 ## Enable Active-Active controllers
 
@@ -67,7 +67,7 @@ For each each Redis Enterprise cluster (REC), you must enable the Active-Active 
     kubectl apply -f redis-enterprise-<rec-name>-<rec-namespace>
     ```
 
-1. Complete the previous steps for each participating Redis Enterprise cluster (REC).
+1. Complete these steps for each participating Redis Enterprise cluster (REC).
 
 [//]: # (Is there an advantage to applying them all at once, or can they apply each secret as they create it?)
 
