@@ -119,7 +119,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-    - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
+    - **Eviction policy** - The default eviction policy for Active-Active databases is `noeviction`. Redis Enterprise version 6.0.20 and later support all eviction policies for Active-Active databases, unless [Redis on Flash]({{<relref "/rs/databases/redis-on-flash">}}) is enabled.
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host instances of an Active-Active database and the admin user account to connect to each cluster.
