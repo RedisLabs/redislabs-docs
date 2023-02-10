@@ -30,7 +30,7 @@ Details:
   
 - Improvements:
 
-  - [#892](https://github.com/RedisJSON/RedisJSON/pull/892) Allow `JSON.ARRINDEX` with none scalar values
+  - [#892](https://github.com/RedisJSON/RedisJSON/pull/892) Allow `JSON.ARRINDEX` with nonscalar values
 
 ## v2.4 GA (v2.4.2) (November 2022)
 
