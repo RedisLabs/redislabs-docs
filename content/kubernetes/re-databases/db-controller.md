@@ -20,7 +20,7 @@ aliases: [
 
 A Redis Enterprise database (REDB) is created with a custom resource file. The custom resource defines the size, name, and other specifications for the REDB. The database is created when you apply the custom resource file.
 
-The database controller in the Redis Enterprise operator:
+The database controller in Redis Enterprise for Kubernetes:
 
 - Discovers the custom resource
 - Makes sure the REDB is created in the same namespace as the Redis Enterprise cluster (REC)

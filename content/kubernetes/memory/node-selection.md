@@ -21,7 +21,7 @@ aliases: [
 
 Many Kubernetes cluster deployments have different kinds of nodes that have
 different CPU and memory resources available for scheduling cluster workloads.
-The Redis Enterprise operator has various abilities to control the scheduling
+Redis Enterprise for Kubernetes has various abilities to control the scheduling
 Redis Enterprise cluster node pods through properties specified in the
 Redis Enterprise cluster custom resource definition (CRD).
 

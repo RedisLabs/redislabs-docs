@@ -29,7 +29,7 @@ aliases: [
 ]
 ---
 
-Each release of the Redis Enterprise operator is thoroughly tested against a set of Kubernetes distributions. The table below lists the current release's support status for each distribution.
+Each release of Redis Enterprise for Kubernetes is thoroughly tested against a set of Kubernetes distributions. The table below lists the current release's support status for each distribution.
 
 - "supported" indicates this distribution is supported for this release.
 - "deprecated" indicates this distribution is supported for this release, but will be dropped in a future release.
