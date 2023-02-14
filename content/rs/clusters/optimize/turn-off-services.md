@@ -28,7 +28,7 @@ The services that you can turn off are:
 - [LDAP authentication]({{< relref "/rs/security/ldap/_index.md" >}}) - `saslauthd`
 - [Discovery service]({{< relref "rs/networking/cluster-dns.md" >}})- `mdns_server`, `pdns_server`
 - [Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}) - `crdb_coordinator`, `crdb_worker`
-- Alert Manager - `alert_mgr` (We recomend you to disable this service only if you have alterative alert system)
+- Alert Manager - `alert_mgr` (For best results, disable only if you have an alternate alert system.)
 
 To turn off a service with the `rladmin cluster config` command, use the `services` parameter and the name of the service, followed by `disabled`.
 ```text
