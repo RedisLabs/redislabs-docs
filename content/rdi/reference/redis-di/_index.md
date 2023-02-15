@@ -22,8 +22,8 @@ redis-di [OPTIONS] COMMAND [ARGS]...
 
 | Option | Description |
 |--------|-------------|
-| --version | Shows the RDI version string and exits.  Boolean, default: _false_ |
-| --help    | Shows the help message and exists.  Boolean, default: _false_  |
+| --version | Shows the RDI version string and exits.  Boolean, default: _false_<br/>Example: `--version` |
+| --help    | Shows the help message and exists.  Boolean, default: _false_<br/>Example: `--help`  |
 
 ## Commands
 

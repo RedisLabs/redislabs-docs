@@ -12,14 +12,18 @@ aliases:
 
 You can use either [docker](https://www.docker.com/) or [podman](https://podman.io/) container management engines.
 
-- Change directory to your `Redis Data Integration` configuration folder created by the [scaffold command](../index.md#scaffold-configuration-files).
-- Verify that you've configured `debezium/application.properties` file based on these [instructions](../index.md#install-the-debezium-server).
+- Change directory to your `Redis Data Integration` configuration folder created by the [scaffold command]({{<relref "/rdi/reference/redis-di/scaffold">}}).
+
+- Verify that you've configured `debezium/application.properties` file based on these [instructions]({{<relref "/rdi/#install-the-debezium-server">}}).
+
 - Run:
 
   - For `Docker`:
 
     ```bash
-    docker run -it --name debezium --network host --privileged -v $PWD/debezium:/debezium/conf debezium/server:{{ site.debezium_server_version }}
+    docker run -it --name debezium --network host \ 
+       --privileged -v $PWD/debezium:/debezium/conf \
+       debezium/server:{{ site.debezium_server_version }}
     ```
 
   - For `Podman`:
@@ -80,7 +84,7 @@ As result, it will fail with an error. You should follow these steps to add the 
   tar xvfz debezium-server-dist-{{ site.debezium_server_version }}.tar.gz
   ```
 
-- Copy the scaffolded `application.properties` file (created by the [scaffold command](../index.md#scaffold-configuration-files)) to the extracted `debezium-server/conf` directory. Verify that you've configured this file based on these [instructions](../index.md#install-the-debezium-server).
+- Copy the scaffolded `application.properties` file (created by the [scaffold command]({{<relref "/rdi/reference/redis-di/scaffold">}}) to the extracted `debezium-server/conf` directory. Verify that you've configured this file based on these [instructions]({{<relref "/rdi/#install-the-debezium-server">}}).
 
 - If you are using `Oracle` as your source DB, please note that Debezium Server does **not** include the Oracle JDBC driver. You should download it and locate under `debezium-server/lib` directory:
 
