@@ -341,7 +341,7 @@ There are several compression algorithms to choose from, each with its own trade
 1. LZO compresses fast and decompresses faster.
 1. Others, such as Gzip, are more widely available.
 
-The gzip compression uses more CPU resources than Snappy or LZO, but provides a higher compression ratio. gzip is often a good choice for cold data, which is accessed infrequently. Snappy or LZO are a better choice for hot data, which is accessed frequently.
+The Gzip compression uses more CPU resources than Snappy or LZO, but provides a higher compression ratio. Gzip is often a good choice for cold data, which is accessed infrequently. Snappy or LZO are a better choice for hot data, which is accessed frequently.
 
 Compressing strings requires code changes. Some libraries can transparently compress objects, and you would only need to configure your library. In other cases, you might have to compress the data manually.
 
