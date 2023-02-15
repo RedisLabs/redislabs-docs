@@ -290,7 +290,7 @@ Bloom filter and cuckoo filter require [RedisBloom](https://redis.com/modules/re
 
 Following are the trade-offs of using HyperLogLog:
 
-1. The results achieved from HyperLogLog are not 100% accurate; they have an approximate standard error of 0.81%.
+1. The results achieved from HyperLogLog have a standard error of 0.81%.
 1. Hyperloglog only tells you the unique count. It cannot tell you the elements in the set.
 
 For example, if you want to maintain how many unique IP addresses made an API call today, HyperLogLog tells you `46966 unique IPs for today`.
