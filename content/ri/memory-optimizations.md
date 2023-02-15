@@ -19,7 +19,7 @@ Memory is consumed as scripts are loaded. Memory is consumed:
 1. By the `server.lua_scripts` dictionary holding original text.
 1. Internally by Lua to keep the compiled byte-code.
 
-So, If you have to use dynamic scripting, then just use plain EVAL, because it doesn't make sense to load them first.
+So, If you have to use dynamic scripting, then just use the `EVAL` command, because it doesn't make sense to load them first.
 
 #### Things to keep in mind if using dynamic Lua scripts
 
