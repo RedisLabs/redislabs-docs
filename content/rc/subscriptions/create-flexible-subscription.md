@@ -74,15 +74,34 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 | _Advanced option_ | _Description_ |
 |:---------|:-----------|
 | **Multi-AZ** | Determines if replication spans multiple Availability Zones, which provides automatic failover when problems occur. |
-| **Cloud account** | To deploy this subscription to a specific cloud account, select it here.  Use the Add button to add a new cloud account. |
-| **VPC configuration** | Select _In a new VPC_ to deploy to a new Virtual Private Cloud.<br/><br/>To deploy this subscription to an existing Virtual Private Cloud , select _In existing VCP_ and then set VPC ID to the appropriate ID value.   |
-| **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) subnet address for your deployment. Must not overlap other addresses used with your subscription.|
-| **Preferred Availability Zone(s)** | The [availability zone](https://cloud.google.com/compute/docs/regions-zones/#available) for your selected region.<br/><br/>If you choose *Select zone(s)*, you must choose at least one zone from **Zone Suffix**.  You can choose up to three preferred zones. |
+| **Cloud account** | To deploy this subscription to an existing cloud account, select it here.  Use the Add button to add a new cloud account.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
+| **VPC configuration** | Select _In a new VPC_ to deploy to a new [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC).<br/><br/>To deploy this subscription to an existing virtual private cloud, select _In existing VPC_ and then set VPC ID to the appropriate ID value.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
+| **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range of IP addresses for your deployment. Because Redis creates a new [subnet](https://en.wikipedia.org/wiki/Subnetwork) for the _Deployment CIDR_ in your [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC), it cannot overlap with the CIDR ranges of other subnets used by your subscription.<br/><br/>For deployments in an existing VPC, the _Deployment CIDR_ must be within your VPC's **primary** CIDR range (secondary CIDRs are not supported). |
+| **Allowed Availability Zones** | The availability zones for your selected region.<br/><br/>If you choose *Manual selection*, you must select at least one zone ID from the **Zone IDs** list.  For more information, see [Availability zones](#availability-zones). |
 
 When finished, choose **Continue** to determine your subscription size requirements.
 
 {{<image filename="images/rc/button-subscription-continue.png" width="100px" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
 
+#### Availability zones
+
+You can reduce network transfer costs and network latency by ensuring your Redis Cloud cluster and your application are located in the same availability zone. 
+
+To specify the availability zone for your cluster, select *Manual Selection* under **Allowed Availability Zones**. 
+
+For GCP clusters and [self-managed AWS cloud accounts]({{< relref "/rc/cloud-integrations/aws-cloud-accounts/" >}}), select an availability zone from the **Zone name** list.
+
+{{<image filename="images/rc/availability-zones-no-multi-az.png" width="95%" alt="Select one availability zone when Multi-AZ is turned off." >}}{{< /image >}}
+
+For all other AWS clusters, select an availability zone ID from the **Zone IDs** list. For more information on how to find an availability zone ID, see the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+
+{{<image filename="images/rc/availability-zones-aws-hosted-no-multi-az.png" width="80%" alt="For hosted AWS clusters, select availability zone IDs from the Zone IDs list." >}}{{< /image >}}
+
+If **Multi-AZ** is enabled, you must select three availability zones from the list.
+
+{{<image filename="images/rc/availability-zones-multi-az.png" width="80%" alt="Select Manual selection to select three availability zones when Multi-AZ is enabled." >}}{{< /image >}}
+
+For more information on availability zones, see the [GCP docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
 ## Sizing tab
 
 The **Sizing** tab helps you specify the database, memory, and throughput requirements for your subscription.

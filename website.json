@@ -8,12 +8,22 @@
     "RoutingRules": [
         {
             "Condition": {
-                "KeyPrefixEquals": "6.2/"
+                "KeyPrefixEquals": "6.4/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.2/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
             }
         },
         {
@@ -48,12 +58,52 @@
         },
         {
             "Condition": {
+                "KeyPrefixEquals": "6.2/platforms/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/platforms/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/platforms/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/platforms/"
+            }
+        },
+        {
+            "Condition": {
                 "KeyPrefixEquals": "5.4/platforms/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "5.6/platforms/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "5.6/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "5.4/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/"
             }
         },
         {

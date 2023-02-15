@@ -38,6 +38,7 @@ rladmin tune cluster
         [ default_redis_version <value> ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
+        [ acl_pubsub_default { resetchannels | allchannels } ]
 ```
 
 Redis cluster watchdog supports two preconfigured profiles:
@@ -50,8 +51,9 @@ Redis cluster watchdog supports two preconfigured profiles:
 
 | Parameters                             | Type/Value                        | Description                                                                                                                  |
 |----------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| acl_pubsub_default | `resetchannels`<br /> `allchannels` | Default pub/sub ACL rule for all databases in the cluster:<br />•`resetchannels` blocks access to all channels (restrictive)<br />•`allchannels` allows access to all channels (permissive) |
 | data_internode_encryption              | `enabled`<br />`disabled`       | Activates or deactivates [internode encryption]({{<relref "/rs/security/internode-encryption">}}) for new databases    |
-| db_conns_auditing                      | `enabled`<br /> `disabled`      | Activates or deactivates database [connection auditing]({{<relref "/rs/security/audit-events">}}) for a cluster                                                                 |
+| db_conns_auditing                      | `enabled`<br /> `disabled`      | Activates or deactivates [connection auditing]({{<relref "/rs/security/audit-events">}}) by default for new databases of a cluster                                                                  |
 | default_concurrent_restore_actions     | integer<br />`all`              | Default number of concurrent actions when restoring a node from a snapshot (positive integer or "all")                         |
 | default_redis_version                  | version number                    | The default Redis database compatibility version used to create new databases.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.<br/><br/>You cannot set _default_redis_version_ to a value higher than that supported by the current _redis_upgrade_policy_ value. |
 | expose_hostnames_for_all_suffixes      | `enabled`<br />`disabled`       | Exposes hostnames for all DNS suffixes                                                                                       |
