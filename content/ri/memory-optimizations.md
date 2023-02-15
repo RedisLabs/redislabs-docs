@@ -91,7 +91,7 @@ As stated by Salvatore Sanfilippo, creator of Redis, "Redis scripting has suppor
 
 ##### Protocol buffers
 
-Protocol buffers, usually referred as Protobuf, is a protocol developed by Google to allow serialization and deserialization of structured data. Google developed it with the goal to provide a better way, compared to XML, to make systems communicate. So they focused on making it simpler, smaller, faster, and more maintainable then XML.
+Protocol buffers, usually referred as [Protobuf](https://github.com/protocolbuffers/protobuf), is a protocol developed by Google to allow serialization and deserialization of structured data. Google developed it with the goal to provide a better way, compared to XML, to make systems communicate. So they focused on making it simpler, smaller, faster, and more maintainable then XML.
 
 ## Data modeling recommendations
 
