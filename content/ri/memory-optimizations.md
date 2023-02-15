@@ -339,7 +339,7 @@ There are several compression algorithms to choose from, each with its own trade
 
 1. [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression)) aims for high speed and reasonable compression.
 1. LZO compresses fast and decompresses faster.
-1. Others, such as gzip, are more widely available.
+1. Others, such as Gzip, are more widely available.
 
 The gzip compression uses more CPU resources than Snappy or LZO, but provides a higher compression ratio. gzip is often a good choice for cold data, which is accessed infrequently. Snappy or LZO are a better choice for hot data, which is accessed frequently.
 
