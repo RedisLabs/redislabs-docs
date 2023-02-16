@@ -39,13 +39,13 @@ GMT timezone is used in debezium container by default. In order to use another t
 - For `Docker`:
 
   ```bash
-  docker run -it --name debezium -e TZ=Europe/London --network host --privileged -v $PWD/debezium:/debezium/conf debezium/server:{{ site.debezium_server_version }}
+  docker run -it --name debezium -e TZ=Europe/London --network host --privileged -v $PWD/debezium:/debezium/conf debezium/server:2.1.1
   ```
 
 - For `Podman`:
 
   ```bash
-  sudo podman run -it --rm --name debezium -e TZ=Europe/London --network=host --privileged -v $PWD/debezium:/debezium/conf debezium/server:{{ site.debezium_server_version }}
+  sudo podman run -it --rm --name debezium -e TZ=Europe/London --network=host --privileged -v $PWD/debezium:/debezium/conf debezium/server:2.1.1
   ```
 
 ### Oracle
@@ -77,11 +77,11 @@ As result, it will fail with an error. You should follow these steps to add the 
 ## Non Containerized Deployment
 
 - Install [Java 11](https://www.oracle.com/java/technologies/downloads/#java11) or [Java 17](https://www.oracle.com/java/technologies/downloads/#java17).
-- Download Debezium Server {{ site.debezium_server_version }} from [here](https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/{{ site.debezium_server_version }}/debezium-server-dist-{{ site.debezium_server_version }}.tar.gz).
+- Download Debezium Server v2.1.1 from [here](https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/2.1.1/debezium-server-dist-2.1.1.tar.gz).
 - Unpack Debezium Server:
 
   ```bash
-  tar xvfz debezium-server-dist-{{ site.debezium_server_version }}.tar.gz
+  tar xvfz debezium-server-dist-2.1.1.tar.gz
   ```
 
 - Copy the scaffolded `application.properties` file (created by the [scaffold command]({{<relref "/rdi/reference/redis-di/scaffold">}}) to the extracted `debezium-server/conf` directory. Verify that you've configured this file based on these [instructions]({{<relref "/rdi/#install-the-debezium-server">}}).

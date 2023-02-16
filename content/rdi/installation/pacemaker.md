@@ -34,15 +34,17 @@ The following ports must be enabled for Pacemaker and Debezium Server:
 | TCP      | 2224           | pcsd Web UI and node-to-node communication                                                                         |
 | UDP      | 5404-5412      | Required on [corosync](http://corosync.github.io/corosync/) nodes to facilitate communication between nodes        |
 | TCP      | 8088           | Query Debezium Server status                                                                                       |
-| TCP      | _\<Redis DI>_  | The port of the Redis DI database, as specified in [_application.properties_](debezium-server-configuration.md)    |
-| TCP      | _\<Source DB>_ | The port used by the source database, as specified in [_application properties_](debezium-server-configuration.md) |
+| TCP      | _\<Redis DI>_  | The port of the Redis DI database, as specified in [_application.properties_]({{<relref "/rdi/reference/debezium">}})    |
+| TCP      | _\<Source DB>_ | The port used by the source database, as specified in [_application properties_]({{<relref "/rdi/reference/debezium">}}) |
 
 For further details on Pacemaker, please refer to the Red Hat documentation [here](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_creating-high-availability-cluster-configuring-and-managing-high-availability-clusters#proc_enabling-ports-for-high-availability-creating-high-availability-cluster).
+
+
 
 ## Install and run Pacemaker
 
 - [CentOS 7/RHEL 7](#centos-7rhel-7)
-- [CentOS Stream 8/RHEL 8/Rocky 8](#centos-stream-8rhel-8rocky-8)
+- [CentOS Stream 8/RHEL 8/Rocky 8](#centos-stream-8-rhel-8--rocky-linux-8)
 - [Ubuntu 18.04](#ubuntu-1804)
 - [Ubuntu 20.04](#ubuntu-2004)
 
@@ -98,7 +100,7 @@ sudo pcs cluster start --all
 sudo pcs property set stonith-enabled=false
 ```
 
-See [here](#validating-the-installation) how to check that the cluster is running correctly.
+To learn how to verify that the cluster is working correctly, see [Validating the installation](#validating-the-installation).
 
 ### CentOS Stream 8, RHEL 8, & Rocky Linux 8
 
@@ -113,7 +115,6 @@ sudo dnf config-manager --set-enabled ha
 ```
 
 This step is not needed for CentOS Stream 8
-
 
 #### Install Pacemaker and dependencies
 
@@ -186,7 +187,7 @@ sudo pcs cluster start --all
 sudo pcs property set stonith-enabled=false
 ```
 
-See [here](#validating-the-installation) how to check that the cluster is running correctly.
+To learn how to verify that the cluster is working correctly, see [Validating the installation](#validating-the-installation).
 
 ### Ubuntu 20.04
 
@@ -226,7 +227,7 @@ sudo pcs cluster start --all
 sudo pcs property set stonith-enabled=false
 ```
 
-See [here](#validating-the-installation) how to check that the cluster is running correctly.
+To learn how to verify that the cluster is working correctly, see [Validating the installation](#validating-the-installation).
 
 ### Validate the installation
 
@@ -259,8 +260,8 @@ The cluster is now ready to run Debezium Server.
 
 You can launch Debezium Server with Pacemaker in one of the following ways:
 
-- [Run Debezium Server as a Container](#running-debezium-server-as-a-container) using the Heartbeat resource agent for [Podman](https://podman.io/) or [Docker](https://www.docker.com/)
-- [Run Debezium Server as a Standalone Java Process](#running-debezium-server-as-a-standalone-java-process) using the `systemd` resource agent
+- [Run Debezium Server as a Container](#run-debezium-server-as-a-container) using the Heartbeat resource agent for [Podman](https://podman.io/) or [Docker](https://www.docker.com/).
+- [Run Debezium Server as a Standalone Java Process](#run-debezium-server-as-a-standalone-java-process) using the `systemd` resource agent.
 
 ### Run Debezium Server as a container
 
@@ -395,7 +396,7 @@ Repeat the following steps on each of the Pacemaker cluster nodes.
 
 ```bash
 wget https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/{{ site.debezium_server_version }}.Final/debezium-server-dist-{{ site.debezium_server_version }}.Final.tar.gz
-sudo tar xvfz debezium-server-dist-{{ site.debezium_server_version }}.Final.tar.gz -C /opt
+sudo tar xvfz debezium-server-dist-2.1.1.Final.tar.gz -C /opt
 ```
 
 This will install Debezium Server in the directory _/opt/debezium-server_.

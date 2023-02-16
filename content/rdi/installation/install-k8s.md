@@ -16,7 +16,7 @@ Throughout the document, the snippets make use of OpenShift's `oc` tool. All exa
 ## Prerequisites
 
 - An existing Redis Enterprise cluster version >= 6.2.
-- [RedisGears](https://redis.com/modules/redis-gears/) >= {{ site.redis_gears_min_version }} installed on the cluster. In case it's missing, follow [this guide](install-redis-gears.md) to install.
+- [RedisGears](https://redis.com/modules/redis-gears/) >= 10205 installed on the cluster. In case it's missing, follow [this guide]({{<relref "/rdi/installation/install-redisgears">}}) to install.
 - A target Redis DB (can be added after installation).
 
 ## Install Redis Data Integration CLI
@@ -31,8 +31,9 @@ There are two options for installing the Redis Data Integration CLI in an Kubern
 
 To install Redis Data Integration CLI locally, follow these steps:
 
-- [Download Redis Data Integration CLI](../index.md#download-redis-data-integration-cli)
-- [Install Redis Data Integration CLI](../index.md#install-redis-data-integration-cli)
+- [Download Redis Data Integration CLI]({{<relref "/rdi/#download-rdi-cli">}})
+
+- [Install Redis Data Integration CLI]({{<relref "/rdi/#install-redis-di-utility">}})
 
 ## Create a New Redis Data Integration Instance
 
@@ -70,7 +71,8 @@ The `create` command will create a BDB named `redis-di-1` in your cluster. You w
 
 ## Create Configuration File for Redis Data Integration
 
-Run `redis-di scaffold <NAME> --db-type <{{ site.db_types }}>`.
+Run `redis-di scaffold <NAME> --db-type <cassandra|mysql|oracle|postgresql|sqlserver>`.
+
 Edit the file `config.yaml` which is located under the directory <NAME> to point to the correct Redis Target database settings:
 
 ```yaml
@@ -87,11 +89,11 @@ connections:
 
 Run `redis-di deploy` command to deploy the configuration in the `config.yaml` file to the remote Redis Data Integration instance.
 
-For `config.yaml` reference [see complete settings](../reference/config-yaml-reference.md).
+For `config.yaml` reference [see complete settings]({{<relref "/rdi/reference/rdi-configuration-file">}})
 
 ## Validate the Deploy
 
-Run `redis-di status` to check the status of the installation.
+Use `redis-di status` to check the status of the installation.
 
 ## Install Redis Data Integration CLI on Kubernetes Cluster
 
@@ -120,7 +122,7 @@ EOF
 oc apply -f /tmp/redis-di-configmap.yml
 ```
 
-For config.yaml reference [see complete settings](../reference/config-yaml-reference.md).
+For config.yaml reference [see complete settings]({{<relref "/rdi/reference/rdi-configuration-file">}}).
 
 ### Add CLI Pod
 
@@ -222,7 +224,7 @@ EOF
 oc apply -f /tmp/debezium-server-configmap.yml
 ```
 
-For a full list of configuration options and classname of each connector see the [Debezium documentation](https://debezium.io/documentation/reference/stable/connectors/)
+For a full list of configuration options and classname of each connector see the [Debezium documentation](https://debezium.io/documentation/reference/stable/connectors/).
 
 ### Create the Debezium Server Pod
 
