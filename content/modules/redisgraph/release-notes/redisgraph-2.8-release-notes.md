@@ -10,10 +10,29 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.21 requires:
+RedisGraph v2.8.24 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.24 (February 2023)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#2777](https://github.com/RedisGraph/RedisGraph/issues/2777), [#2841](https://github.com/RedisGraph/RedisGraph/issues/2841) Potential crash when sending queries from multiple connections and timeout is not 0
+  - [#2844](https://github.com/RedisGraph/RedisGraph/issues/2844) Potential partial results when same parametrized query is running from multiple connections
+  - [#2739](https://github.com/RedisGraph/RedisGraph/issues/2739), [#2774](https://github.com/RedisGraph/RedisGraph/issues/2774) Paths with exact variable length >1 are not matched
+
+- Improvements:
+
+  - [#2758](https://github.com/RedisGraph/RedisGraph/pull/2758) Improved edge deletion performance
+
 
 ## v2.8.21 (January 2023)
 
