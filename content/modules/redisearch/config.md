@@ -8,9 +8,36 @@ toc: "false"
 categories: ["Modules"]
 ---
 
-[Redis Enterprise Software]({{<relref "/rs">}}) lets you manually change any [RediSearch configuration setting](https://redis.io/docs/stack/search/configuring/#redisearch-configuration-parameters) with the [`FT.CONFIG SET`](https://redis.io/commands/ft.config-set) command.
+You cannot use [`FT.CONFIG SET`](https://redis.io/commands/ft.config-set) to configure RediSearch in [Redis Enterprise Software]({{<relref "/rs">}}) or [Redis Enterprise Cloud]({{<relref "/rc">}}). Instead, use one of the following methods.
 
-[Redis Enterprise Cloud]({{<relref "/rc">}}) does not let you use [`FT.CONFIG SET`](https://redis.io/commands/ft.config-set) to configure RediSearch. However, if you have a Flexible or Annual [subscription]({{<relref "/rc/subscriptions">}}), you can contact [support](https://redis.com/company/support/) to request a configuration change. You cannot change RediSearch configuration for Free or Fixed subscriptions.
+For Redis Cloud:
+
+- _Flexible or Annual [subscriptions]({{<relref "/rc/subscriptions">}})_: contact [support](https://redis.com/company/support/) to request a configuration change.
+    
+- _Free or Fixed subscriptions_: you cannot change RediSearch configuration.
+
+For Redis Enterprise Software, use either:
+
+- [`rladmin tune db`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-db">}}):
+
+    ```sh
+    $ rladmin tune db db:<ID|name> module_name search \
+        module_config_params "setting-name setting-value"
+    ```
+
+- [Configure module]({{<relref "/rs/references/rest-api/requests/modules/config">}}) REST API request:
+
+    ```sh
+    POST /v1/modules/config/bdb/<ID>
+    {
+      "modules": [
+        {
+          "module_name": "search",
+          "module_args": "setting-name setting-value"
+        }
+      ]
+    }
+    ```
 
 | Setting | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|

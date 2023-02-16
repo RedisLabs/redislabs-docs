@@ -40,8 +40,12 @@ Use the module runtime configuration command (if defined) to configure new argum
 
 ```json
 {
-     "module_name": "ft",
-     "module_args": "MINPREFIX 3 MAXEXPANSIONS 1000"
+  "modules": [
+    {
+      "module_name": "search",
+      "module_args": "MINPREFIX 3 MAXEXPANSIONS 1000"
+    }
+  ]
 }
 ```
 
@@ -57,6 +61,7 @@ Use the module runtime configuration command (if defined) to configure new argum
 
 | Field | Type | Description |
 |-------|------|-------------|
+| modules | list of JSON objects | List of modules (module_name) and their new configuration settings (module_args) |
 | module_name | string | Module's name |
 | module_args | string | Module command line arguments (pattern does not allow special characters &,<,>,”) |
 
