@@ -19,11 +19,11 @@ Determine the required persistent disk space for heavy throughput databases.
 ## [Cluster environment optimization]({{< relref "/rs/clusters/optimize/optimization" >}}) 
 Optimize your cluster environments for better performance.
 
-# [Turn off services to free system memory]({{< relref "/rs/clusters/optimize/turn-off-services" >}}) 
+## [Turn off services to free system memory]({{< relref "/rs/clusters/optimize/turn-off-services" >}}) 
 Turn off services to free memory and improve performance.
 
 ## [Redis OSS Cluster API]({{< relref "/rs/clusters/optimize/oss-cluster-api" >}}) 
-Use the Redis OSS Cluster API improve performance and let applications stay current with cluster topology changes.
+Use the Redis OSS Cluster API to improve performance and keep applications current with cluster topology changes.
 
-# [WAIT command]({{< relref "/rs/clusters/optimize/wait" >}})
-Use the WAIT command to take full advantage of Redis Enterprise Software's replication based durability.
+## [WAIT command]({{< relref "/rs/clusters/optimize/wait" >}})
+Use the WAIT command to control the consistency and durability guarantees for the replicated and persisted database.
