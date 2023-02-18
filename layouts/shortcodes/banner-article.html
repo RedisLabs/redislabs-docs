@@ -1,0 +1,7 @@
+{{ $bannerText :=  .Get "bannerText" }}
+{{ $bannerLink :=  .Get "bannerLink" }}
+{{ $bannerColor :=  .Get "bannerColor" }}
+
+<div class="banner-article" style="background-color: {{$bannerColor}}">
+    <p>{{ .Inner | markdownify }}</p>
+</div>

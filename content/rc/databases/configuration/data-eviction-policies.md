@@ -33,7 +33,3 @@ Redis Cloud supports [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/"
 to prevent data eviction but maintain high performance.
 
 RoF can extend your database across RAM and Flash Memory and intelligently manage "hot" (active) data in RAM and "cold" (less active) data in Flash memory (SSD).
-
-{{< note >}}
-[Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}) always operates in noeviction mode.
-{{< /note >}}

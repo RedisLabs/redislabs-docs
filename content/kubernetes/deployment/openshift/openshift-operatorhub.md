@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software on Kubernetes deployment with the OpenShift OperatorHub
+Title: Redis Enterprise for Kubernetes deployment with the OpenShift OperatorHub
 linkTitle: OpenShift OperatorHub
 description: OpenShift provides the OperatorHub where you can install the
  Redis Enterprise operator from the administrator user interface. Alternatively,
@@ -163,7 +163,7 @@ After the approval, the status of the resources installed is updated.
 
 ### Next steps
 
-After you install the Redis Enterprise operator into a project you can:
+After you install Redis Enterprise for Kubernetes into a project, you can:
 
 - Navigate to the installed version and use the **Create New** button to create a
   new cluster in your namespace.
