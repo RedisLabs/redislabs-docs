@@ -16,6 +16,8 @@ You can renew these certificates by replacing them with new self-signed certific
 
 As of [v6.2.18-70]({{<relref "/rs/release-notes/rs-6-2-18#enhancements-added-in-6218-70-january-release">}}), Redis Enterprise Software includes a script to generate self-signed certificates.  
 
+By default, the `generate_self_signed_certs.sh` script is located in `/opt/redislabs/utils/`.  
+
 Here, you learn how to use this script to generate new certificates and how to install them.
 
 ### Step 1: Generate new certificates 
@@ -31,7 +33,7 @@ where:
 
 - _\<DomainName1>_ is the fully qualified domain name (FQDN) of the cluster.  (This is the name given to the cluster when first created.)
 - _\<DomainName2>_ is an optional FQDN for the cluster.  Multiple domain names are allowed, separated by whitespace.  Quotation marks (`""`) should enclose the full set of names.
-- _\<Days>_ is an integer that specifying the number of days the certificate should be valid.  For best results, we recommend setitng this longer than 365 days.
+- _\<Days>_ is an integer that specifying the number of days the certificate should be valid.  For best results, we recommend setting this longer than 365 days.
 
     _\<Days>_ is optional and defaults to `365`.
 
@@ -95,34 +97,14 @@ $ sudo chmod 644 /tmp/*.pem
 
 ### Replace existing certificates
 
-Use `rladmin` to replace the existing certificates with new certificates:
+You can use `rladmin` to replace the existing certificates with new certificates:
 
 ``` console
 $ rladmin cluster certificate set <CertName> certificate_file \
    <CertFilename>.pem key_file <KeyFilename>.pem
 ```
 
-Where:
-
-- _\<CertName>_ is the name of the certificate the file applies to; the following values are supported:
-
-    | Value | Description |
-    |-------|-------------|
-    | `cm` | The admin console |
-    | `api` | The REST API |
-    | `proxy` | The database endpoint |
-    | `syncer` | The synchronization process |
-    | `metrics` | The metrics exporter |
-
-- _\<CertFilename>_ is the filename of the certificate file. 
-- _\<KeyFilename>_ is the filename of the certificate key. 
-
-To illustrate, here's one way to update the admin console certificate:
-
-``` console
-$ rladmin cluster certificate set cm \
-   certificate_file cm_cert.pem key_file cm_key.pem
-```
+You can also use the REST API.  To learn more, see [Update certificates]({{<relref "/rs/security/certificates/updating-certificates#how-to-update-certificates">}}).
 
 ## Create CA-signed certificates
 
@@ -181,6 +163,7 @@ In addition to the general guidelines described earlier, the following guideline
 
 1.  We strongly recommend using a strong hash algorithm, such as <nobr>SHA-256</nobr> or <nobr>SHA-512</nobr>.
 
+    Individual operating systems might limit access to specific algorithms.  For example, Ubuntu 20.04 does not [provide default access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>).  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.)
 
 #### Client certificate guidelines
 
@@ -192,6 +175,7 @@ In addition to the general guidelines described earlier, the following guideline
 
 1.  We strongly recommend using a strong hash algorithm, such as <nobr>SHA-256</nobr> or <nobr>SHA-512</nobr>.
 
+    Individual operating systems might limit access to specific algorithms.  For example, Ubuntu 20.04 does not [provide default access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>).  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.)
 
 ### Creating certificates
 
@@ -213,7 +197,7 @@ However you choose to create the certificates, be sure to incorporate the guidel
     $ openssl req -new -key <key-file-name>.pem -out \
        <key-file-name>.csr -config <csr-config-file>.cnf
     ```
-    _Important:&nbsp;_ The .CSR file is a configuration file.  Check with your security team or certificate authority for help creating a value configuration file.
+    _Important:&nbsp;_ The .CNF file is a configuration file.  Check with your security team or certificate authority for help creating a valid configuration file for your environment.
 
 3.  Sign the private key using your certificate authority.
 
@@ -221,17 +205,12 @@ However you choose to create the certificates, be sure to incorporate the guidel
 
 4.  Upload the certificate to your cluster.
 
-    To upload the new certificate and replace the current certificate with the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command-line utility,
-    run the [`cluster certificate set`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) command:
+    You can use `rladmin` to replace the existing certificates with new certificates:
 
-    ```sh
-    rladmin cluster certificate set <CertName> \
-        certificate_file <CertFilename>.pem \
-        key_file <KeyFilename>.pem
+    ``` console
+    $ rladmin cluster certificate set <CertName> certificate_file \
+       <CertFilename>.pem key_file <KeyFilename>.pem
     ```
 
-    Replace the following variables with your own values:
-    
-    - `<CertName>` - The name of the certificate to update. Supported values are described in the earlier table.
-    - `<CertFilename>` - The certificate filename 
-    - `<KeyFilename>` - The key filename
+    You can also use the REST API.  To learn more, see [Update certificates]({{<relref "/rs/security/certificates/updating-certificates#how-to-update-certificates">}}).
+
