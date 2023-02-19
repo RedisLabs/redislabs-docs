@@ -56,7 +56,7 @@ The following example generates all self signed certificates for `mycluster.exam
 
 ``` bash
 $ sudo /opt/redislabs/utils/generate_self_signed_certs.sh \
-    -f "mycluster.com"`
+    -f "mycluster.example.com"`
 ```
 
 Suppose you want to create an admin console certificate to support two clusters for a period of two years.  The following example shows how:
@@ -68,10 +68,12 @@ $ sudo /opt/redislabs/utils/generate_self_signed_certs.sh \
 
 Here, a certificate file and certificate key are generated to support the following domains:
 
-> `mycluster.example.com`  
-> `*.mycluster.example.com`  
-> `anothercluster.example.com`  
-> `*.anothercluster.example.com`  
+``` text
+mycluster.example.com
+*.mycluster.example.com
+anothercluster.example.com 
+*.anothercluster.example.com
+```
 
 ### Step 2: Locate the new certificate files
 
