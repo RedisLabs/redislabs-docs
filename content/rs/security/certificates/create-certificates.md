@@ -95,7 +95,7 @@ We recommend setting the permissions of your new certificate files to limit read
 $ sudo chmod 644 /tmp/*.pem
 ```
 
-### Replace existing certificates
+### Step 4: Replace existing certificates {#replace-self-signed}
 
 You can use `rladmin` to replace the existing certificates with new certificates:
 
@@ -103,6 +103,16 @@ You can use `rladmin` to replace the existing certificates with new certificates
 $ rladmin cluster certificate set <CertName> certificate_file \
    <CertFilename>.pem key_file <KeyFilename>.pem
 ```
+
+The following values are supported for the _\<CertName>_ parameter:
+
+| Value | Description |
+|-------|-------------|
+| `api` | The REST API |
+| `cm` | The admin console |
+| `metrics_exporter` | The metrics exporter |
+| `proxy` | The database endpoint |
+| `syncer` | The synchronization process |
 
 You can also use the REST API.  To learn more, see [Update certificates]({{<relref "/rs/security/certificates/updating-certificates#how-to-update-certificates">}}).
 
@@ -211,6 +221,8 @@ However you choose to create the certificates, be sure to incorporate the guidel
     $ rladmin cluster certificate set <CertName> certificate_file \
        <CertFilename>.pem key_file <KeyFilename>.pem
     ```
+
+    For a list of values supported by the _\<CertName>_ parameter, see the [earlier table](#replace-self-signed).
 
     You can also use the REST API.  To learn more, see [Update certificates]({{<relref "/rs/security/certificates/updating-certificates#how-to-update-certificates">}}).
 
