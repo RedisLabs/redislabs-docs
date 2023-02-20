@@ -6,8 +6,8 @@ weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
-    /kubernetes/active-active/prepare.md,
-    /kubernetes/active-active/prepare/,
+    /kubernetes/prepare/prepare.md,
+    /kubernetes/preview/prepare/,
 }
 ---
 
