@@ -33,7 +33,7 @@ where:
 
 - _\<DomainName1>_ is the fully qualified domain name (FQDN) of the cluster.  (This is the name given to the cluster when first created.)
 - _\<DomainName2>_ is an optional FQDN for the cluster.  Multiple domain names are allowed, separated by whitespace.  Quotation marks (`""`) should enclose the full set of names.
-- _\<Days>_ is an integer that specifying the number of days the certificate should be valid.  For best results, we recommend setting this longer than 365 days.
+- _\<Days>_ is an integer specifying the number of days the certificate should be valid.  We recommend against setting this longer than a year (365 days).
 
     _\<Days>_ is optional and defaults to `365`.
 
@@ -43,18 +43,18 @@ where:
 
     | Value | Description |
     |-------|-------------|
-    | `cm` | The admin console |
     | `api` | The REST API |
+    | `cm` | The admin console |
+    | `metrics` | The metrics exporter |
     | `proxy` | The database endpoint |
     | `syncer` | The synchronization process |
-    | `metrics` | The metrics exporter |
     | `all` | Generates all certificates in a single operation |
 
     _Type_ is optional and defaults to `all`.
 
 When you run the script, it either reports success (`"Self signed cert generated successfully"`) or an error message.  Use the error message to troubleshoot any issues.
 
-The following example generates all self signed certificates for `mycluster.example.com`; these certificates expire one year after the command is run.
+The following example generates all self signed certificates for `mycluster.example.com`; these certificates expire one year after the command is run:
 
 ``` bash
 $ sudo /opt/redislabs/utils/generate_self_signed_certs.sh \
@@ -173,7 +173,8 @@ In addition to the general guidelines described earlier, the following guideline
 
 1.  We strongly recommend using a strong hash algorithm, such as <nobr>SHA-256</nobr> or <nobr>SHA-512</nobr>.
 
-    Individual operating systems might limit access to specific algorithms.  For example, Ubuntu 20.04 does not [provide default access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>).  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.)
+    Individual operating systems might limit access to specific algorithms.  (For example, Ubuntu 20.04 [limits  access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>.)  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.
+
 
 #### Client certificate guidelines
 
@@ -185,7 +186,7 @@ In addition to the general guidelines described earlier, the following guideline
 
 1.  We strongly recommend using a strong hash algorithm, such as <nobr>SHA-256</nobr> or <nobr>SHA-512</nobr>.
 
-    Individual operating systems might limit access to specific algorithms.  For example, Ubuntu 20.04 does not [provide default access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>).  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.)
+    Individual operating systems might limit access to specific algorithms.  (For example, Ubuntu 20.04 [limits  access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>.)  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.
 
 ### Creating certificates
 
@@ -195,13 +196,13 @@ Here, we demonstrate the general process using OpenSSL.  If your CA provides alt
 
 However you choose to create the certificates, be sure to incorporate the guidelines described earlier.
 
-1.  Create a private key
+1.  Create a private key.
 
     ``` bash
     $ openssl genrsa -out <key-file-name>.pem 2048
     ```
 
-1.  Create certificate signing request
+1.  Create certificate signing request.
 
     ``` bash
     $ openssl req -new -key <key-file-name>.pem -out \
