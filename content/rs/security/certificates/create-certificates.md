@@ -10,7 +10,7 @@ aliases:
 
 When you first install Redis Enterprise Software, self-signed certificates are created to encrypt internal traffic.  These certificates expire after a year (365 days) and must be renewed.
 
-You can renew these certificates by replacing them with new self-signed certificates or by replacing them with certificates signed by a certificate authority (CA).
+You can renew these certificates by replacing them with new self-signed certificates or by replacing them with certificates signed by a [certificate authority](https://en.wikipedia.org/wiki/Certificate_authority) (CA).
 
 ## Renew self-signed certificates
 
@@ -79,7 +79,7 @@ anothercluster.example.com
 
 ### Step 2: Locate the new certificate files
 
-When successful, the script generates two .PEM files for each generated certificate: A certificate file and certificate key, each named after the type of certificate generated (see earlier table for individual certificate names.)
+When successful, the script generates two .PEM files for each generated certificate: a certificate file and a certificate key, each named after the type of certificate generated (see earlier table for individual certificate names.)
 
 These files can be found in the `/tmp` directory.
 
@@ -118,19 +118,19 @@ You can also use the REST API.  To learn more, see [Update certificates]({{<relr
 
 ## Create CA-signed certificates
 
-You can use certificates signed by a certificate authority (CA).  
+You can use certificates signed by a [certificate authority](https://en.wikipedia.org/wiki/Certificate_authority) (CA).  
 
 For best results, use the following guidelines to create the certificates.
 
 ### TLS certificate guidelines
 
-When you create certificates signed by a certificate authority, you need to create server certificates and client certificates.  The follow sections describe guidelines that apply to both certificates and provide guidance for each certificate type. 
+When you create certificates signed by a certificate authority, you need to create server certificates and client certificates.  The following provide guidelines that apply to both certificates and guidance for each certificate type. 
 
 #### Guidelines for server and client certificates
 
 1.  Include the full [certificate chain](https://en.wikipedia.org/wiki/X.509#Certificate_chains_and_cross-certification) when creating certificate .PEM files for either server or client certificates.   
 
-1.  Certificates in the .PEM file should be chained in the following order:
+1.  List (_chain_) certificates in the .PEM file in the following order:
 
     ``` text    
     -----BEGIN CERTIFICATE-----    
@@ -154,13 +154,13 @@ In addition to the general guidelines described earlier, the following guideline
 
 1.  Set the following values according to the values specified by your security team or certificate authority:
 
-    - Country Name
-    - State or Province Name
-    - Locality Name
-    - Organization Name
-    - Organization Unit 
+    - Country Name (C)
+    - State or Province Name (ST)
+    - Locality Name (L)
+    - Organization Name (O)
+    - Organization Unit  (OU)
 
-1.  The Subject Alternate name (SAN) should include the following values based on the FQDN:
+1.  The [Subject Alternative Name](https://en.wikipedia.org/wiki/Subject_Alternative_Name) (SAN) should include the following values based on the FQDN:
 
     ``` text
     dns=<cluster-fqdn>
@@ -173,7 +173,7 @@ In addition to the general guidelines described earlier, the following guideline
 
 1.  We strongly recommend using a strong hash algorithm, such as <nobr>SHA-256</nobr> or <nobr>SHA-512</nobr>.
 
-    Individual operating systems might limit access to specific algorithms.  (For example, Ubuntu 20.04 [limits  access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>.)  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.
+    Individual operating systems might limit access to specific algorithms.  For example, Ubuntu 20.04 [limits  access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>.  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.
 
 
 #### Client certificate guidelines
@@ -186,9 +186,9 @@ In addition to the general guidelines described earlier, the following guideline
 
 1.  We strongly recommend using a strong hash algorithm, such as <nobr>SHA-256</nobr> or <nobr>SHA-512</nobr>.
 
-    Individual operating systems might limit access to specific algorithms.  (For example, Ubuntu 20.04 [limits  access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>.)  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.
+    Individual operating systems might limit access to specific algorithms.  For example, Ubuntu 20.04 [limits  access](https://manpages.ubuntu.com/manpages/focal/man7/crypto-policies.7.html) to <nobr>SHA-1</nobr>.  In such cases, Redis Enterprise Software is limited to the features supported by the underlying operating system.
 
-### Creating certificates
+### Create certificates
 
 The actual process of creating CA-signed certificates varies according to the CA.  In addition, your security team may have custom instructions that you need to follow. 
 
@@ -202,7 +202,7 @@ However you choose to create the certificates, be sure to incorporate the guidel
     $ openssl genrsa -out <key-file-name>.pem 2048
     ```
 
-1.  Create certificate signing request.
+1.  Create a certificate signing request.
 
     ``` bash
     $ openssl req -new -key <key-file-name>.pem -out \
@@ -216,7 +216,7 @@ However you choose to create the certificates, be sure to incorporate the guidel
 
 4.  Upload the certificate to your cluster.
 
-    You can use `rladmin` to replace the existing certificates with new certificates:
+    You can use [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) to replace the existing certificates with new certificates:
 
     ``` console
     $ rladmin cluster certificate set <CertName> certificate_file \
