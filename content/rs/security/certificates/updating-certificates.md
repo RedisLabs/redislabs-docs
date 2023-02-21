@@ -64,11 +64,13 @@ Replace the following variables with your own values:
 
 - `<cert>` - The contents of the \*\_cert.pem file
 
-## Active-Passive database certificates
+## Replica Of database certificates {#active-passive-database-certificates}
+
+This section describes how to update certificates for Replica Of (also known as Active-Passive) databases.
 
 ### Update proxy certificates {#update-ap-proxy-certs}
 
-To update the proxy certificate on clusters running Active-Passive (Replica Of) databases:
+To update the proxy certificate on clusters running Replica Of (Active-Passive) databases:
 
 - **Step 1:**  Use `rladmin` or the REST API to update the proxy certificate on the source database cluster.
 - **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "/rs/databases/import-export/replica-of/create#configure-tls-on-replica-database">}}).
@@ -91,7 +93,7 @@ To update proxy certificate on clusters running Active-Active databases:
     ```
 
 {{<note>}}
-- Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established .
+- Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established.<br/>
 - Do not run any other `crdb-cli crdb update` operations between the two steps.
 {{</note>}}
 
@@ -107,7 +109,7 @@ To update your syncer certificate on clusters running Active-Active databases, f
     ```
 
 {{<note>}}
-- Run step 2 as quickly as possible after step 1. Between the two steps, new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).
-- Do not run any other `crdb-cli crdb update` operations between the two steps.
-- **Known limitation**: Updating syncer certificate on versions prior to 6.0.20-81 will restart the proxy and syncer connections. We recommend you schedule the certificate replacement carefully.
+- Run step 2 as quickly as possible after step 1. Between the two steps, new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).<br/>
+- Do not run any other `crdb-cli crdb update` operations between the two steps.<br/>
+- **Known limitation**: Updating syncer certificate on versions prior to 6.0.20-81 will restart the proxy and syncer connections. In these cases, we recommend scheduling certificate replacement carefully to minimize customer impact.
 {{</note>}}
