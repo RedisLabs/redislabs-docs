@@ -29,7 +29,7 @@ database can reach in the cluster, across all database replicas and
 shards, including both primary and replica shards.
 
 If the total size of the database in the cluster reaches the memory
-limit, the data eviction policy is
+limit, the data [eviction policy]({{<relref "/rs/references/policies/eviction-policy">}}) is
 applied.
 
 ## Factors for sizing
@@ -60,7 +60,7 @@ Redis Enterprise Software manages node memory so that data is entirely in RAM (
 
 Redis Enterprise Software protects the existing data and prevents the database from being able to store data into the shards.
 
-You can configure the cluster to move the data to another node, or even discard it according to the [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy.md" >}}) set on each database by the administrator.
+You can configure the cluster to move the data to another node, or even discard it according to the [eviction policy]({{<relref "/rs/references/policies/eviction-policy">}}) set on each database by the administrator.
 
 [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
 manages memory so that you can also use flash memory (SSD) to store data.
@@ -95,6 +95,6 @@ See [console metrics]({{<relref "/rs/clusters/monitoring/console-metrics-definit
 - [Memory and performance]({{<relref "/rs/databases/memory-performance">}})
 - [Disk sizing for heavy write scenarios]({{<relref "/rs/clusters/optimize/disk-sizing-heavy-write-scenarios.md">}})
 - [Turn off services to free system memory]({{<relref "/rs/clusters/optimize/turn-off-services.md">}})
-- [Eviction policy]({{<relref "/rs/databases/memory-performance/eviction-policy.md">}})
-- [Shard placement policy]({{< relref "/rs/databases/memory-performance/shard-placement-policy.md ">}})
+- [Eviction policy]({{<relref "/rs/references/policies/eviction-policy">}})
+- [Shard placement policy]({{<relref "/rs/references/policies/default-shards-placement">}})
 - [Database persistence]({{<relref "/rs/databases/configure/database-persistence.md">}})

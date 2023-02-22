@@ -18,7 +18,7 @@ Changes to the upgrade policy do not affect existing databases. The policy is us
 
 For best results, we recommend changing the policy value only after upgrading to a major release of Redis Enterprise Software.
 
-## Values
+## Policy values
 
 | Value | Description |
 |-------|-------------|

@@ -12,7 +12,7 @@ aliases:
 
 A database can have one of these proxy policies:
 
-## Values
+## Policy values
 
 | Value | Description |
 |------------|-----------------|

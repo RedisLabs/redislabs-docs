@@ -23,7 +23,7 @@ Cluster resources management policy
 | default_non_sharded_proxy_policy | `single`<br /><nobr>`all-master-shards`</nobr><br />`all-nodes` | Default proxy_policy for newly created non-sharded databases' endpoints |
 | default_provisioned_redis_version | string | Default Redis version |
 | default_sharded_proxy_policy | `single`<br />`all-master-shards`<br />`all-nodes` | Default proxy_policy for newly created sharded databases' endpoints |
-| default_shards_placement | `dense`<br />`sparse` | Default shards_placement for a newly created databases |
+| default_shards_placement | `dense`<br />`sparse` | Default placement of shards for newly created databases |
 | endpoint_rebind_propagation_grace_time | integer | Time to wait between the addition and removal of a proxy |
 | login_lockout_counter_reset_after | integer | Number of seconds that must elapse between failed sign in attempts before the lockout counter is reset to 0. |
 | login_lockout_duration | integer | Duration (in secs) of account lockout. If set to 0, the account lockout will persist until released by an admin. |

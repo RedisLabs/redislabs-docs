@@ -1,33 +1,26 @@
 ---
 Title: Shard placement policy
-linkTitle: Shard placement policy
+linkTitle: shard_placement
 description: Detailed info about the shard placement policy.
 weight: 30
 alwaysopen: false
+toc: "true"
 categories: ["RS"]
-aliases: [
-    /rs/concepts/rebalancing-shard-placement/,
-    /rs/concepts/shard-placement-policy.md,
-    /rs/concepts/shard-placement-policy/,
-    /rs/concepts/memory-architecture/shard-placement-policy.md,
-    /rs/concepts/memory-architecture/shard-placement-policy/,
-    /rs/concepts/memory-performance/shard-placement-policy.md,
-    /rs/concepts/memory-performance/shard-placement-policy/,
-    /rs/databases/configure/shard-placement-policy.md,
-    /rs/databases/configure/shard-placement-policy/,
-    /rs/databases/memory-performance/shard-placement-policy.md,
-    /rs/databases/memory-performance/shard-placement-policy.md,
-]
+aliases: 
 ---
+
 In Redis Enterprise Software, the location of master and replica shards on the cluster nodes can impact the database and node performance.
 Master shards and their corresponding replica shards are always placed on separate nodes for data resiliency.
 The shard placement policy helps to maintain optimal performance and resiliency.
 
-{{< embed-md "shard-placement-intro.md"  >}}
+## Policy values
 
-## Shard placement policies
+| Value | Description |
+|-------|-----------------|
+| dense | Place as many shards as possible on the smallest number of nodes to reduce the latency between the proxy and the database shards (default)<br/><br/>Recommended for Redis on RAM databases to optimize memory resources |
+| sparse | Spread the shards across as many nodes in the cluster as possible to spread the traffic across cluster nodes<br/><br/>Recommended for Redis on Flash databases to optimize disk resources |
 
-### Dense shard placement policy
+### Dense shard placement
 
 In the dense policy, the cluster places the database shards on as few nodes as possible.
 When the node is not able to host all of the shards, some shards are moved to another node to maintain optimal node health.
@@ -41,7 +34,7 @@ For Redis on RAM databases without the OSS cluster API enabled, use the dense po
 
 *Figure: Three nodes with two master shards (red) and two replica shards (grey) with a dense placement policy*
 
-### Sparse shard placement policy
+### Sparse shard placement
 
 In the sparse policy, the cluster places shards on as many nodes as possible to distribute the shards of a database across all available nodes.
 When all nodes have database shards, the shards are distributed evenly across the nodes to maintain optimal node health.
@@ -59,6 +52,16 @@ For Redis on RAM databases with OSS cluster API enabled and for Redis on Flash d
 
 *Figure: Three nodes with two master shards (red) and two replica shards (grey) with a sparse placement policy*
 
-## Related articles
+## Change shard placement policy
 
-You can [configure the shard placement policy]({{< relref "/rs/databases/configure/shard-placement.md" >}}) for each database.
+When you create a Redis Enterprise Software cluster, the default shard placement policy (`dense`) is assigned to all databases that you create on the cluster.
+
+You can:
+
+- Change the default shard placement policy for the cluster to `sparse` so that the cluster applies that policy to all databases that you create
+
+- Change the shard placement policy for each database after the database is created
+
+```sh
+$ rladmin tune cluster default_shards_placement [ dense | sparse ]
+```

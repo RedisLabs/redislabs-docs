@@ -26,7 +26,7 @@ The Redis Enterprise Software admin console shows performance metrics for cluste
 | ------ | ------ | ------ | ------ |
 | Connections | Cluster, Node, Database | Number of connections used to access the database |  |
 | CPU usage | Cluster, Node | Percent usage of the CPU |  |
-| Evicted objects/sec[^1] | Database, Shard | Number of objects evicted per second | Objects are evicted if:<br><ol><li>The database reaches its memory_limit</li><li>The [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy" >}}) is not configured to `no-eviction`</li><li>The dataset keys are compliant with the selected eviction policy. For example, with the `volatile-lru` eviction policy, Redis evicts expired keys.</li></ol> |
+| Evicted objects/sec[^1] | Database, Shard | Number of objects evicted per second | Objects are evicted if:<br><ol><li>The database reaches its memory_limit</li><li>The [eviction policy]({{<relref "/rs/references/policies/eviction-policy">}}) is not configured to `no-eviction`</li><li>The dataset keys are compliant with the selected eviction policy. For example, with the `volatile-lru` eviction policy, Redis evicts expired keys.</li></ol> |
 | Expired objects/sec[^1] | Database, Shard | Number of expired objects per second |  |
 | Fork CPU usage | Database, Shard | CPU usage of Redis child forks |  |
 | Free disk space | Cluster, Node | Remaining unused disk space |  |

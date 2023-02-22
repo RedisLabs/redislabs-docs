@@ -32,11 +32,11 @@ For more information on memory limits, see [Database memory limits]({{<relref "/
 
 ## Eviction policies
 
-When a database exceeds its memory limit, eviction policies determine which data is removed. The eviction policy removes keys based on frequency of use, how recently used, randomly, expiration date, or a combination of these factors. The policy can also be set to `noeviction` to return a memory limit error when trying to insert more data.
+When a database exceeds its memory limit, eviction policies determine which data is removed.
 
 The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the `expire` field set. The default for Active-Active databases is `noeviction`.
 
-For more information, see [eviction policies]({{<relref "/rs/databases/memory-performance/eviction-policy.md">}}).
+For more information, see [eviction policies]({{<relref "/rs/references/policies/eviction-policy">}}).
 
 ## Database persistence
 
@@ -60,14 +60,8 @@ For more info, see [Redis on Flash]({{<relref "/rs/databases/redis-on-flash/">}}
 
 The location of the primary and replica shards on the cluster nodes can impact your database performance.
 Primary shards and their corresponding replica shards are always placed on separate nodes for data resiliency and high availability.
-The shard placement policy helps to maintain optimal performance and resiliency.
 
-Redis Enterprise Software has two shard placement policies available:
-
-- **dense**: puts as many shards as possible on the smallest number of nodes
-- **sparse**: spread the shards across as many nodes as possible
-
-For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/databases/memory-performance/shard-placement-policy.md">}})
+The shard placement policy helps to maintain optimal performance and resiliency. For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/references/policies/default-shards-placement">}}).
 
 ## Metrics
 
