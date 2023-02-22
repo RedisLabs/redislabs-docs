@@ -10,10 +10,22 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.6.17 requires:
+RedisTimeSeries v1.6.19 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.6.19 (February 2023)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#1397](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1397) Memory leak when trying to create an already existing key (MOD-4724, RED-93418)
 
 ## v1.6.17 (July 2022)
 
