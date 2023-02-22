@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-When new versions of open source Redis change existing commands, upgrading your database to a new version can potentially break some functionality. Before you upgrade, we recommend you read the provided list of breaking changes that affect Redis Enterprise to help you prepare.
+When new major versions of open source Redis change existing commands, upgrading your database to a new version can potentially break some functionality. Before you upgrade, we recommend you read the provided list of breaking changes that affect Redis Enterprise to help you prepare.
 
 To check your Redis database version (`redis_version`), you can use the admin console or run the [`INFO`](https://redis.io/commands/info/) command with [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}):
 
