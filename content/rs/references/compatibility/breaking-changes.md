@@ -1,5 +1,5 @@
 ---
-Title: Breaking changes
+Title: Redis breaking changes
 linkTitle: Breaking changes
 description: Potentially breaking changes in Redis Enterprise, introduced by new versions of open source Redis. 
 weight: 90
