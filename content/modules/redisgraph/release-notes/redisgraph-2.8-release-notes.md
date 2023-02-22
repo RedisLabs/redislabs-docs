@@ -10,10 +10,22 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.24 requires:
+RedisGraph v2.8.25 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.25 (February 2023)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2890](https://github.com/RedisGraph/RedisGraph/issues/2890) Potential wrong results on variable-length path
 
 ## v2.8.24 (February 2023)
 
