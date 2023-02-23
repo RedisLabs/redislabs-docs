@@ -278,7 +278,7 @@ Details:
 
     - [#2173](https://github.com/RedisGraph/RedisGraph/pull/2173) Improve performance of breadth-first search
 
-## v2.8.8 (February 2022)
+## v2.8 GA (v2.8.8) (February 2022)
 
 This is the General Availability release of RedisGraph 2.8.
 
