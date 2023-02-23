@@ -278,7 +278,7 @@ Details:
 
     - [#2173](https://github.com/RedisGraph/RedisGraph/pull/2173) Improve performance of breadth-first search
 
-## v2.8.8 (February 2022)
+## v2.8 GA (v2.8.8) (February 2022)
 
 This is the General Availability release of RedisGraph 2.8.
 
@@ -363,9 +363,3 @@ If you are using this function and upgrading to RedisGraph 2.8, a simple fix is 
     - [#2072](https://github.com/RedisGraph/RedisGraph/issues/2072), [#2081](https://github.com/RedisGraph/RedisGraph/pull/2081) CRLF sequences embedded in strings no longer trigger a protocol error when being emitted
     - [#2139](https://github.com/RedisGraph/RedisGraph/pull/2139) Fix crash when trying to retrieve an out-of-bounds item
     - [#2149](https://github.com/RedisGraph/RedisGraph/pull/2149) Fix crash when matching a node engages an index to search for a value that is a RediSearch stop word
-
-{{<note>}}
-- This is the first GA version of 2.8. The version inside Redis will be 2.8.8 in semantic versioning. Since the version of a module in Redis is numeric, we could not add a GA flag.
-
-- Minimum Redis version: 6.2
-{{</note>}}
