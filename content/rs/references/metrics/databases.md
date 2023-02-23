@@ -48,7 +48,7 @@ Total incoming traffic to the database in bytes per second.
 
 Incoming traffic is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
 
-**Components measured**: [Cluster, Node]({{<relref "/rs/references/metrics/cluster">}}) and Database
+**Components measured**: [Cluster, Node]({{<relref "/rs/references/metrics/clusters">}}) and Database
 
 ## Latency
 
@@ -78,7 +78,7 @@ Percent of memory used by redis out of the [memory limit](#memory-limit).
 
 Number of total operations per second, which includes [read operations](#readssec), [write operations](#writessec), and [other operations](#other-commandssec).
 
-**Components measured**: [Cluster, Node]({{<relref "/rs/references/metrics/cluster">}}), Database, and Shard
+**Components measured**: [Cluster, Node]({{<relref "/rs/references/metrics/clusters">}}), Database, and Shard
 
 ## Other commands/sec
 
@@ -102,7 +102,7 @@ Total outgoing traffic from the database in bytes per second.
 
 Outgoing traffic is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
 
-**Components measured**: [Cluster, Node]({{<relref "/rs/references/metrics/cluster">}}) and Database
+**Components measured**: [Cluster, Node]({{<relref "/rs/references/metrics/clusters">}}) and Database
 
 ## Read misses/sec
 
