@@ -10,10 +10,26 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisBloom v2.4.3 requires:
+RedisBloom v2.4.4 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.4.4 (February 2023)
+
+This is a maintenance release for RedisBloom 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#609](https://github.com/RedisBloom/RedisBloom/issues/609) [CF.INFO](https://redis.io/commands/cf.info/) - incorrect information for large filters
+
+- Improvements:
+
+  - [#389](https://github.com/RedisBloom/RedisBloom/issues/389) Introduce [BF.CARD](https://redis.io/commands/bf.card/) to retrieve the cardinality of a Bloom filter or 0 when such key does not exist
 
 ## v2.4 GA (v2.4.3) (November 2022)
 
