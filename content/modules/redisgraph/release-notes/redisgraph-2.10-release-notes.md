@@ -30,7 +30,7 @@ Details:
   - [#2739](https://github.com/RedisGraph/RedisGraph/issues/2739), [#2774](https://github.com/RedisGraph/RedisGraph/issues/2774) Paths with exact variable length >1 are not matched
   - [#2794](https://github.com/RedisGraph/RedisGraph/issues/2794) `toInteger` and `toIntegerOrNull` don't convert Booleans
   - [#2798](https://github.com/RedisGraph/RedisGraph/issues/2798) `right` and `left` should reply with an error when `length` is null
-  - [#2809](https://github.com/RedisGraph/RedisGraph/issues/2809) `TIMEOUT_MAX` configuration parameter in not enforced when `TIMEOUT_DEFAULT` is 0
+  - [#2809](https://github.com/RedisGraph/RedisGraph/issues/2809) `TIMEOUT_MAX` configuration parameter is not enforced when `TIMEOUT_DEFAULT` is 0
   - [#2780](https://github.com/RedisGraph/RedisGraph/issues/2780) `indegree` and `outdegree` - relationships are counted more than once when same relationship type is supplied more than once
 
 - Improvements:
@@ -67,14 +67,14 @@ RedisGraph 2.10 introduces new path algorithms, additional expressivity (constru
 
 #### What's new in 2.10
 
-- New path-finding algorithms: 
+- New pathfinding algorithms: 
   - The `algo.SPpaths` procedure yields one, _n_, or all minimal-weight, optionally bounded-cost, optionally bounded-length paths between a given pair of nodes.
   - The `algo.SSpaths` procedure yields one, _n_, or all minimal-weight, optionally bounded-cost, optionally bounded-length paths from a given node.
 - Introduce `SET` for adding node labels and `REMOVE` for removing node labels, node properties, and edge properties.
 - Support deleting paths with `DELETE`.
 - Introduce 29 functions: `toBoolean`, `toBooleanOrNull`, `toFloatOrNull`, `toIntegerOrNull`, `toStringOrNull`, `toBooleanList`, `toFloatList`, `toIntegerList`, `toStringList`, `properties`, `split`, `last`, `isEmpty`, `e`, `exp`, `log`, `log10`, `sin`, `cos`, `tan`, `cot`, `asin`, `acos`, `atan`, `atan2`, `degrees`, `radians`, `pi`, and `haversin`.
 - Graph slow log can be reset with `GRAPH.SLOWLOG g RESET`.
-- Queries are now atomic (_Atomicity_ is the guarantee that each query either succeeds or fails with no side effects). Whenever a failure occurs, the query effect is rolled-back from an undo-log.
+- Queries are now atomic (_Atomicity_ is the guarantee that each query either succeeds or fails with no side effects). Whenever a failure occurs, the query effect is rolled back from an undo log.
 
 ### Details
 
@@ -87,7 +87,7 @@ RedisGraph 2.10 introduces new path algorithms, additional expressivity (constru
   - [#2643](https://github.com/RedisGraph/RedisGraph/issues/2643) Duplicate reports when matching relationship type `:R|R`
   - [#2687](https://github.com/RedisGraph/RedisGraph/issues/2687), [#2414](https://github.com/RedisGraph/RedisGraph/issues/2414) Error when `UNWIND`ing relationships
   - [#2636](https://github.com/RedisGraph/RedisGraph/issues/2636) `MERGE` ... `ON` ... - cannot remove property by setting it to null
-  - [#2710](https://github.com/RedisGraph/RedisGraph/pull/2710) Undo-log fix
+  - [#2710](https://github.com/RedisGraph/RedisGraph/pull/2710) Undo log fix
   - [#2435](https://github.com/RedisGraph/RedisGraph/issues/2435) Incorrect result when comparing a value to NaN
   - [#2497](https://github.com/RedisGraph/RedisGraph/issues/2497) Incorrect result when comparing a value to null
   - [#2676](https://github.com/RedisGraph/RedisGraph/issues/2676) `sqrt`, `log`, `log10` - incorrect result for negative values
