@@ -26,8 +26,6 @@ cluster with OpenShift.
 
 - [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) installed, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}))
   {{<note>}}
-If you are running an OpenShift 3 version, use the `bundle.yaml` file located in the `openshift_3_x` folder in the `redis-enterprise-k8s-docs` repo. This folder also contains the custom resource definitions (CRDs) compatible with OpenShift 3.x.  
-  {{</note>}}
 - [kubectl tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/)  installed at version 1.9 or higher
 - [OpenShift CLI](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html) installed
 
@@ -50,29 +48,6 @@ If you are running an OpenShift 3 version, use the `bundle.yaml` file located in
     ```bash
     git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
     ```
-
-1. Apply the file `scc.yaml` file.
-
-     The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html)) yaml defines security context constraints for the cluster for our project. We strongly recommend that you **not** change anything in this yaml file.
-
-    ```bash
-    oc apply -f openshift/scc.yaml
-    ```
-
-    You should receive the following response:
-
-    ```sh
-    securitycontextconstraints.security.openshift.io "redis-enterprise-scc" configured
-    ```
-
-1. Provide the operator permissions for the pods.
-
-    ```sh
-    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:redis-enterprise-operator
-    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec>
-    ```
-
-    You can see the name of your project with the `oc project` command to replace `<my-project>` in the command above. Replace `rec` with the name of your Redis Enterprise cluster, if different.
 
 1. Deploy the OpenShift operator bundle.
 
@@ -100,6 +75,28 @@ If you are running an OpenShift 3 version, use the `bundle.yaml` file located in
     ```
 
 ## Create your Redis Enterprise cluster (REC) custom resource
+
+1. Apply the file `scc.yaml` file.
+
+     The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html)) yaml defines security context constraints for the cluster for our project. We strongly recommend that you **not** change anything in this yaml file.
+
+    ```bash
+    oc apply -f openshift/scc.yaml
+    ```
+
+    You should receive the following response:
+
+    ```sh
+    securitycontextconstraints.security.openshift.io "redis-enterprise-scc" configured
+    ```
+
+1. Provide the operator permissions for the pods.
+
+    ```sh
+    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec>
+    ```
+
+    You can see the name of your project with the `oc project` command to replace `<my-project>` in the command above. Replace `rec` with the name of your Redis Enterprise cluster, if different.
 
 1. Apply the `RedisEnterpriseCluster` resource file ([rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml)).
 
