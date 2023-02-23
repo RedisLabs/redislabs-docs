@@ -41,7 +41,7 @@ Details:
   
 - Improvements:
 
-  - [#725](https://github.com/RedisJSON/RedisJSON/issues/725) Improve errors messages
+  - [#725](https://github.com/RedisJSON/RedisJSON/issues/725) Improve error messages
   - [#918](https://github.com/RedisJSON/RedisJSON/pull/918) Add IPv6 to the capabilities list
 
 ## v2.4.3 (December 2022)
