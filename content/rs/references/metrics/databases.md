@@ -18,7 +18,7 @@ Objects are evicted from the database if:
 1. The [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy" >}}) is not configured to `no-eviction`
 1. The dataset keys are compliant with the selected eviction policy. For example, with the `volatile-lru` eviction policy, Redis evicts expired keys.
 
-Object information is not collected during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
+Object information is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
 
 **Components measured**: Database and Shard
 
@@ -26,7 +26,7 @@ Object information is not collected during [shard migration]({{< relref "/rs/dat
 
 Number of expired objects per second.
 
-Object information is not collected during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
+Object information is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
 
 **Components measured**: Database and Shard
 
@@ -46,13 +46,13 @@ Ratio of the number of operations on existing keys out of the total number of op
 
 Total incoming traffic to the database in bytes per second.
 
-Incoming traffic is not collected during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
+Incoming traffic is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
 
 **Components measured**: [Cluster, Node]({{<relref "/rs/references/metrics/cluster">}}) and Database
 
 ## Latency
 
-
+The total amount of time between sending a Redis operation and receiving a response from the database.
 
 The graph shows average, minimum, maximum, and last latency values.
 
@@ -66,13 +66,7 @@ Percent of the CPU used by the main thread.
 
 ## Memory limit
 
-Memory size limit of the database, enforced on the used memory.
-
-Used memory does not include:
-
-1. Fragmentation Ratio - the ratio of memory seen by the operating system to memory allocated by Redis
-2. Replication buffer - set to 10% of used memory and is between 64 MB and 2048 MB
-3. Lua memory limit - does not exceed 1 MB.
+Memory size limit of the database, enforced on the [used memory](#used-memory).
 
 ## Memory usage
 
@@ -106,7 +100,7 @@ The graph shows average, minimum, maximum, and last latency values.
 
 Total outgoing traffic from the database in bytes per second.
 
-Outgoing traffic is not collected during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
+Outgoing traffic is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
 
 **Components measured**: [Cluster, Node]({{<relref "/rs/references/metrics/cluster">}}) and Database
 
@@ -114,7 +108,7 @@ Outgoing traffic is not collected during [shard migration]({{< relref "/rs/datab
 
 The number of [read operations](#readssec) per second on keys that do not exist.
 
-Read misses are not collected during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
+Read misses are not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
 
 **Components measured**: Database
 
@@ -130,13 +124,68 @@ The graph shows average, minimum, maximum, and last latency values.
 
 Number of total read operations per second.
 
-To find out what operations are considered read operations, run this 
+To find out which commands are read operations, run the following command with [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}):
+
+```sh
+ACL CAT read
+```
 
 **Components measured**: Database
 
 ## Total CPU usage
+
+Percent usage of the CPU.
+
+**Components measured**: Database
+
 ## Total keys
+
+Total number of keys in the dataset.
+ 
+Does not include replicated keys, even if [replication]({{< relref "/rs/databases/durability-ha/replication" >}}) is enabled.
+
+Total keys is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank. 
+
+**Components measured**: Database
+
 ## Used memory
+
+Total memory used by the database, including RAM, [Flash]({{< relref "/rs/databases/redis-on-flash" >}}) (if enabled), and [replication]({{< relref "/rs/databases/durability-ha/replication" >}}) (if enabled).
+
+Used memory does not include:
+
+1. Fragmentation overhead - the ratio of memory seen by the operating system to memory allocated by Redis
+2. Replication buffers at the primary nodes - set to 10% of used memory and is between 64 MB and 2048 MB
+3. Memory used by Lua scripts - does not exceed 1 MB.
+4. Copy on Write (COW) operation that can be triggered by:
+    - A full replication process
+    - A database snapshot process
+    - AOF rewrite process
+
+Used memory is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank. 
+
 ## Write misses/sec
+
+Number of [write operations](#writessec) per second on keys that do not exist.
+
+Write misses are not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view the database or shard metrics while resharding, the graph is blank.
+
+**Components measured**: Database and Shard
+
 ## Writes latency
+
+[Latency](#latency) per [write operation](#writessec).
+
+**Components measured**: Database
+
 ## Writes/sec
+
+Number of total write operations per second.
+
+To find out which commands are write operations, run the following command with [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}):
+
+```sh
+ACL CAT write
+```
+
+**Components measured**: Database
