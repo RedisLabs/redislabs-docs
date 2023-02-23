@@ -72,9 +72,9 @@ The following tabs are available:
 
 To download an invoice:
 
-1. In the Redis Cloud [admin portal](https://app.redislabs.com/), select **Billing & Payments** and then make sure the Billing History tab is selected.
+1. In the Redis Cloud [admin console](https://app.redislabs.com/), select **Billing & Payments**.
 
-2.  Locate and select the invoice.
+2.  From the **Billing History** tab, locate and select the invoice.
 
 3.  Select the **Download invoice** icon displayed to the right of the invoice amount.
 
@@ -86,9 +86,9 @@ The invoice is downloaded as an Acrobat PDF file.  Use your browser's download f
 
 To add a new payment method:
 
-1. In the Redis Cloud [admin portal](https://app.redislabs.com/), select **Billing & Payments** and then select the **Payment Methods** tab.
+1. In the Redis Cloud [admin console](https://app.redislabs.com/), select **Billing & Payments > Payment Methods**.
 
-2.  Select **Add credit card** and then provide the details.
+2.  Select **Add credit card** and add the credit card details.
 
     {{<image filename="images/rc/billing-add-credit-card.png" width="80%" alt="Select Add Credit Card to add a new payment method" >}}{{< /image >}}
 
@@ -97,7 +97,7 @@ To add a new payment method:
     {{<image filename="images/rc/billing-update-billing-address.png" width="80%" alt="Deactivate the Use account address slider to specify a different billing address." >}}{{< /image >}}
 
     {{< note >}}
-Changing the billing address to your account will remove any payment methods associated with the old billing address. 
+Changing the billing address for your account will remove any payment methods associated with the old billing address. 
     {{< /note >}}
 
 4.  Select the **Add Credit Card** button to save your changes.
@@ -106,11 +106,11 @@ Changing the billing address to your account will remove any payment methods ass
 
 ## Edit billing address
 
-To edit the account billing address:
+To edit the Redis Cloud account billing address:
 
-1. In the Redis Cloud [admin portal](https://app.redislabs.com/), select **Billing & Payments** and then select the **Payment Methods** tab.
+1. In the Redis Cloud [admin console](https://app.redislabs.com/), select **Billing & Payments > Payment Methods**.
 
-2. Select the **Credit Card options** menu and select **Edit billing address**.
+2. Select the **Credit Card options > Edit billing address**.
 
     {{<image filename="images/rc/billing-credit-card-options-menu.png" alt="The Credit Card options menu on the upper-right hand corner of the payment method." width="200px">}}{{< /image >}}
 
@@ -119,14 +119,14 @@ To edit the account billing address:
     {{<image filename="images/rc/account-settings-change-billing-address.png" alt="The Edit account billing address screen." width="80%">}}{{< /image >}}
 
     {{< note >}}
-Changing the billing address to your account will remove any payment methods associated with the old billing address. See [Add payment method](#add-payment-method) to learn how to add a payment method back to your account.
+Changing the billing address for your account will remove any payment methods associated with the old billing address. See [Add payment method](#add-payment-method) to learn how to add a payment method back to your account.
     {{< /note >}}
 
 ## Edit mailing address
 
 To edit the mailing address associated with a payment method:
 
-1. In the Redis Cloud [admin portal](https://app.redislabs.com/), select **Billing & Payments** and then select the **Payment Methods** tab.
+1. In the Redis Cloud [admin console](https://app.redislabs.com/), select **Billing & Payments** and then select the **Payment Methods** tab.
 
 2. Select the **Credit Card options** menu and select **Edit mailing address**.
 
@@ -140,7 +140,7 @@ To edit the mailing address associated with a payment method:
 
 Coupons apply credits to your Redis Enterprise Cloud account.  To redeem a coupon:
 
-1. In the Redis Cloud [admin portal](https://app.redislabs.com/), select **Billing & Payments** and then select the **Credits** tab.
+1. In the Redis Cloud [admin console](https://app.redislabs.com/), select **Billing & Payments** and then select the **Credits** tab.
 
 2.  Enter the coupon code and then select the **Apply** button.
 

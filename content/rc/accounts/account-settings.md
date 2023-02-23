@@ -56,7 +56,7 @@ Select **Edit** to change the account's billing address. You must re-enter your 
    {{<image filename="images/rc/account-settings-change-billing-address.png" alt="The Edit account billing address screen." width="75%">}}{{< /image >}}
 
 {{< note >}}
-Changing the billing address to your account will remove any payment methods associated with the old billing address. See [Add payment method]({{<relref "/rc/billing-and-payments#add-payment-method">}}) to learn how to add a payment method back to your account.
+Changing the billing address for your account will remove any payment methods associated with the old billing address. See [Add payment method]({{<relref "/rc/billing-and-payments#add-payment-method">}}) to learn how to add a payment method back to your account.
 {{< /note >}}
 
 ## Security settings
