@@ -21,41 +21,6 @@ Redis Enterprise for Kubernetes can be deployed and administered entirely from t
 
 For details on the OperatorHub, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.11/operators/index.html).
 
-## Prepare the cluster
-
-The Redis Enterprise pods must run in OpenShift with privileges set in a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth). This grants the pod various rights, such as the ability to change system limits or run as a particular user.
-
-{{<warning>}}
-You must install the security context constraint for the operator
-([scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)) before it can create any clusters.
-{{</warning>}}
-
-You only need to install the SCC once, but you must not delete it.
-
-1. Select the project you'll be using or create a new project.
-
-1. Download [`scc.yaml`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml).
-
-1. Apply the file to install the security context constraint.
-
-  ```sh
-  oc apply -f scc.yaml
-  ```
-
-After the install, the OperatorHub automatically uses the constraint for Redis Enterprise node pods.
-
-{{< note >}}
-**Known Limitation** - The automatic use of the security constraint is limited. The
-Redis Enterprise must be named `rec` for the constraint to be used automatically.  **We recommend you use the cluster name `rec` when deploying with
-the OperatorHub.**
-
-If you require a different name, you must grant the SCC to the project
-namespace (e.g., `my-project`) as in OpenShift 3.x:
-
-```sh
-oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:my-project
-```
-{{< /note >}}
 
 ## Install the Redis Enterprise operator
 
@@ -81,6 +46,37 @@ oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:my-p
 1. Select **Install** and approve the install plan.
 
 You can monitor the subscription status in **Operators**->**Installed Operators**.
+
+## Install security context constraint
+
+The Redis Enterprise pods must run in OpenShift with privileges set in a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth). This grants the pod various rights, such as the ability to change system limits or run as a particular user.
+
+{{<warning>}}
+You must install the security context constraint for the operator
+([scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)) before it can create any clusters.
+{{</warning>}}
+
+You only need to install the SCC once, but you must not delete it.
+
+1. Select the project you'll be using or create a new project.
+
+1. Download [`scc.yaml`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml).
+
+1. Apply the file to install the security context constraint.
+
+  ```sh
+  oc apply -f scc.yaml
+  ```
+
+After the install, the OperatorHub automatically uses the constraint for Redis Enterprise node pods.
+
+{{< note >}}
+**Known Limitation** - The automatic use of the security constraint is limited. The
+Redis Enterprise must be named `rec` for the constraint to be used automatically.  **We recommend you use the cluster name `rec` when deploying with the OperatorHub.**
+
+If you require a different name, you must grant the SCC to the project
+namespace.
+{{< /note >}}
 
 ## Create Redis Enterprise custom resources
 
