@@ -38,6 +38,7 @@ rladmin tune cluster
         [ default_redis_version <value> ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
+        [ acl_pubsub_default { resetchannels | allchannels } ]
 ```
 
 Redis cluster watchdog supports two preconfigured profiles:
@@ -50,6 +51,7 @@ Redis cluster watchdog supports two preconfigured profiles:
 
 | Parameters                             | Type/Value                        | Description                                                                                                                  |
 |----------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| acl_pubsub_default | `resetchannels`<br /> `allchannels` | Default pub/sub ACL rule for all databases in the cluster:<br />•`resetchannels` blocks access to all channels (restrictive)<br />•`allchannels` allows access to all channels (permissive) |
 | data_internode_encryption              | `enabled`<br />`disabled`       | Activates or deactivates [internode encryption]({{<relref "/rs/security/internode-encryption">}}) for new databases    |
 | db_conns_auditing                      | `enabled`<br /> `disabled`      | Activates or deactivates [connection auditing]({{<relref "/rs/security/audit-events">}}) by default for new databases of a cluster                                                                  |
 | default_concurrent_restore_actions     | integer<br />`all`              | Default number of concurrent actions when restoring a node from a snapshot (positive integer or "all")                         |
@@ -156,7 +158,8 @@ rladmin tune db { db:<id> | <name> }
 | maxclients                           | integer                          | Controls the maximum client connections between the proxy and shards (default value is 10000)                                         |
 | metrics_export_all                   | `enabled`<br /> `disabled`       | Activates the exporter to expose all shard metrics                                                                                    |
 | mkms                                 | `enabled`<br /> `disabled`       | Activates multi-key multi-slot commands                                                                                               |
-| module_name and module_config_params | string                           | Configures arguments of a module in runtime. The module_config_params should be inside 'quotation marks'.                              |
+| module_config_params | string | Configures module arguments at runtime. Enclose `module_config_params` within quotation marks. |
+| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf` | The module to configure with `module_config_params` |
 | mtls_allow_outdated_cert             | `enabled`<br /> `disabled`       | Activates outdated certificates in mTLS connections                                   |
 | mtls_allow_weak_hashing              | `enabled`<br /> `disabled`       | Activates weak hashing (less than 2048 bits) in mTLS connections                       |
 | oss_cluster                          | `enabled`<br /> `disabled`       | Activates OSS cluster API                                                                                                             |

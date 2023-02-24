@@ -247,7 +247,7 @@ As part of the REC creation process, the operator stores the admission controlle
 
 ### Limit the webhook to the relevant namespaces {#webhook}
 
-The webhook will intercept requests from all namespaces unless you edit it to target a specific namespace. You can do this by adding the `namespaceSelector` section to the webhook spec to target a label on the namespace.
+The operator bundle includes a webhook file. The webhook will intercept requests from all namespaces unless you edit it to target a specific namespace. You can do this by adding the `namespaceSelector` section to the webhook spec to target a label on the namespace.
 
 1. Make sure the namespace has a unique `namespace-name` label.
 
@@ -277,6 +277,8 @@ The webhook will intercept requests from all namespaces unless you edit it to ta
     ```sh
     kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
+
+## Verify the admission controller is working
 
 1. Verify the admission controller is installed correctly by applying an invalid resource. This should force the admission controller to correct it.
 

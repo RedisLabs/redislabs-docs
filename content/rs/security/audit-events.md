@@ -232,7 +232,7 @@ In addition, the following fields may also appear in audit event notifications:
 | `status` | Status result code - An integer representing the result of an authentication request. |
 | `trgip` | Target IP address - The IP address of the destination being accessed by the action. |
 | `trgp` | Target port - The port of the destination being accessed by the action.  Combine the port with the destination IP address to uniquely identify the database being accessed. |
-| `ts`  | Timestamp - The date and time of the event, in [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC).  Granularity is within one millisecond (ms). |
+| `ts`  | Timestamp - The date and time of the event, in [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC).  Granularity is within one second. |
 | `username` | Authentication username  - Username associated with the connection; can include `default` for databases that allow default access.  (Passwords are _not_ recorded). |
 
 ## Status result codes
