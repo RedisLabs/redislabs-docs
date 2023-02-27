@@ -64,7 +64,8 @@ For LDAP servers that require authentication for client queries, the bind creden
         --from-literal=dn='<cn=admin,dc=example,dc=org>' \
         --from-literal=password=<adminpassword>
     ```
-    Replace the `<placeholders>` with your own values.
+
+    Replace the `<placeholders>` in the command above with your own values.
 
 1. Reference the secret name in the `.spec.ldap.bindCredentialsSecretName` field of the `RedisEnterpriseCluster` custom resource.
 
@@ -74,12 +75,30 @@ For LDAP servers that require authentication for client queries, the bind creden
         bindCredentialsSecretName: ldap-bind-credentials
     ```
 
-### Enable secure LDAP communication
+### Enable LDAPS or STARTTLS protocols
 
 In addition to plain LDAP protocol, Redis Enterprise Software also supports LDAPS and STARTTLS protocols for secure communication with the LDAP server.
 
-To use one of these secure protocols, set the `.spec.protocol` field to either `LDAPS` or `STARTTLS`.
-Note that the default port, if unspecified, is 389 for `STARTTLS` (as well as plain `LDAP`) protocols, and 636 for `LDAPS` protocol.
+Edit the `spec.protocol` field in the `RedisEnterpriseCluster` custom resource:
+
+#### Enable `LDAPS`
+
+  ```yaml
+      spec:
+        protocol: LDAPS
+  ```
+
+  Default port is 636 if left unspecified.
+
+#### Enable `STARTTLS`
+
+  ```yaml
+      spec:
+        protocol: STARTTLS
+  ```
+
+  Default port is 389 if left unspecified.
+
 
 ### Configure CA certificate
 
