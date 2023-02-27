@@ -49,7 +49,6 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
 
 1. Deploy the OpenShift operator bundle.
 
-    If you are running OpenShift 3.x, apply the `openshift.bundle.yaml` file from the `openshift_3_x` folder.
     
     ```sh
     oc apply -f openshift.bundle.yaml
