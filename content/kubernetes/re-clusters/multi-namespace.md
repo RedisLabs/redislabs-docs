@@ -71,9 +71,6 @@ subjects:
   name: redis-enterprise-operator
   namespace: <rec-namespace>
 - kind: ServiceAccount
-  name: redis-enterprise-admission
-  namespace: <rec-namespace>
-- kind: ServiceAccount
   name: <service-account-name>
   namespace: <rec-namespace>
 roleRef:
