@@ -15,7 +15,7 @@ aliases: [
 
 Redis Enterprise Software supports LDAP authentication and authorization through [role-based access controls]({{<relref "/rs/security/access-control/">}}) (RBAC). You can map LDAP groups to {[Redis Enterprise roles]({{<relref "/rs/security/access-control/create-roles.md">}}) to control access to your database and the [admin console]({{<relref "/rs/security/admin-console-security/">}}). For more details on how LDAP works with Redis Enterprise, see [LDAP authentication]({{<relref "/rs/security/access-control/ldap/">}}).
 
-Redis Enterprise for Kubernetes supports enabling and configuring LDAP authentication using the RedisEnterpriseCluster (REC) custom resource. Currently, the Redis Enterprise cluster (REC) only supports configuration related to the LDAP servers, such as server addresses, connection details, credentials, and query configuration.
+Redis Enterprise for Kubernetes supports enabling and configuring LDAP authentication using the RedisEnterpriseCluster (REC) custom resource. Currently, the Redis Enterprise cluster (REC) only supports configuration related to the LDAP server, such as server addresses, connection details, credentials, and query configuration.
 
 To [map LDAP groups to Redis Enterprise access control roles]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap.md">}}), you'll need to use the Redis Enterprise [API]({{<relref "/rs/references/rest-api/requests/ldap_mappings/">}}) or [admin console]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap.md">}}).
 
@@ -101,7 +101,7 @@ Edit the `spec.protocol` field in the `RedisEnterpriseCluster` custom resource:
 
 ### CA certificate
 
-To use a custom CA certificate for validating the LDAP servers certificate, store the CA certificate in a secret and reference the secret in the `RedisEnterpriseCluster` custom resource.
+To use a custom CA certificate for validating the LDAP server certificate, store the CA certificate in a secret and reference the secret in the `RedisEnterpriseCluster` custom resource.
 
 1. Create a secret to hold the CA certificate.
 
@@ -148,9 +148,7 @@ spec:
     ldapClientCertificateSecretName: ldap-client-certificate
 ```
 
-## Caveats
+## Known limitations
 
-
-- Redis Enterprise Software cannot currently resolve DNS names with a `.local` suffix.
-  If your LDAP server is running within the same Kubernetes cluster and exposed via a Service object, avoid specifying addresses such as `openldap.openldap.svc.cluster.local`.
-  Instead, use short-form addresses such as `openldap.openldap.svc`.
+Redis Enterprise Software can't resolve DNS names with a `.local` suffix.
+  If your LDAP server is in the same Kubernetes cluster and exposed via a Service object, **Avoid** addresses such as `openldap.openldap.svc.cluster.local`. Instead, **use short-form addresses such as `openldap.openldap.svc`**.
