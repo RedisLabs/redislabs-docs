@@ -22,6 +22,10 @@ The new certificates are used the next time the clients connect to the database.
 
 When you upgrade Redis Enterprise Software, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
 
+{{<note>}}
+Don't manually overwrite the files located in `/etc/opt/redislabs`. Instead, upload new certificates to a temporary location on one of the cluster nodes, such as the `/tmp` directory.
+{{</note>}}
+
 ### Use the CLI
 
 To replace certificates with the `rladmin` CLI, run the [`cluster certificate set`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) command:
@@ -35,11 +39,6 @@ Replace the following variables with your own values:
 - `<cert-name>` - The name of the certificate you want to replace. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
 - `<cert-file-name>` - The name of your certificate file
 - `<key-file-name>` - The name of your key file
-
-{{<note>}}
-- The new certificates should be placed in a temporary location on one of the cluster nodes, for example under /tmp.
-  The files under the /etc/opt/redislabs path should not be overwritten manually.
-{{<note>}}
 
 For example, to replace the admin console (`cm`) certificate with the private key `key.pem` and the certificate file `cluster.pem`:
 
