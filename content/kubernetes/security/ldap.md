@@ -1,21 +1,27 @@
-## LDAP support in Redis Enterprise Software
+---
+Title: Enable LDAP authentication
+linkTitle: Enable LDAP
+description: Enable LDAP authentication for Redis Enterprise for Kubernetes. 
+weight: 95
+alwaysopen: false
+categories: ["Platforms"]
+aliases: [ 
+  /kubernetes/security/ldap.md,
+  /kubernetes/security/ldap/,
+]
+---
 
-Redis Enterprise Software supports LDAP authentication and authorization for both database, API and admin console access.
+## LDAP support for Redis Enterprise Software
 
-LDAP queries are executed with an external LDAP server which authenticates users based on their credentials, and associate them with user groups.
-These user groups are then mapped to roles within the Redis Enterprise cluster, which in turn can be associated with management roles and/or Redis ACLs.
-The level of access granted to an authenticated user is then governed by the realized management roles and Redis ACLs associated with its LDAP user group.
+Redis Enterprise Software supports LDAP authentication and authorization through [role-based access controls]({{<relref "/rs/security/access-control/">}}) (RBAC). You can map LDAP groups to {[Redis Enterprise roles]({{<relref "/rs/security/access-control/create-roles.md">}}) to control access to your database and the [admin console]({{<relref "/rs/security/admin-console-security/">}}). For more details on how LDAP works with Redis Enterprise, see [LDAP authentication](https://docs.redis.com/latest/rs/security/access-control/ldap/).
 
-More information can be found in the Redis Enterprise Software [LDAP documentation](https://docs.redis.com/latest/rs/security/access-control/ldap/).
+Redis Enterprise for Kubernetes supports enabling and configuring LDAP authentication using the RedisEnterpriseCluster (REC) custom resource. Currently, the Redis Enterprise cluster (REC) only supports configuration related to the LDAP servers, such as server addresses, connection details, credentials, and query configuration.
 
-## LDAP Support in Redis Enterprise Operator for Kubernetes
+To [map LDAP groups to Redis Enterprise access control roles]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap.md">}}), you'll need to use the Redis Enterprise [API]({{<relref "/rs/references/rest-api/">}}) or [admin console]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap.md">}}).
 
-Redis Enterprise Operator can be used to enable LDAP authentication and authorization in Redis Enterprise Software, and provide LDAP servers configuration.
+## Enable LDAP for Redis Enterprise cluster (REC)
 
-As of now, the operator supports LDAP servers related configuration, such as servers addresses and connection details, credentials, query configuration, etc.
-A future release may introduce operator support for configuring LDAP mappings and roles within Redis Enterprise Software.
-
-LDAP configuration in Kubernetes is controlled via the `.spec.ldap` field in the `RedisEnterpriseCluster` custom resource.
+Use the `.spec.ldap` field in the `RedisEnterpriseCluster` custom resource to enable LDAP for Redis Enterprise cluster (REC).
 
 The following `RedisEnterpriseCluster` example resource enables a basic LDAP configuration:
 
@@ -41,38 +47,41 @@ spec:
       attribute: memberOf
 ```
 
-Refer to the `RedisEnterpriseCluster` [reference documentation](../redis_enterprise_cluster_api.md#ldapspec) for full details on the available fields and their meaning.
+Refer to the `RedisEnterpriseCluster` [API reference](../redis_enterprise_cluster_api.md#ldapspec) for full details on the available fields.
 
-### Configuring LDAP server bind credentials
+### Configure LDAP server bind credentials
 
 For LDAP servers that require authentication for client queries, the bind credentials can be stored in a secret and referenced in the `RedisEnterpriseCluster` custom resource.
 
-The secret must reside within the same namespace as the `RedisEnterpriseCluster` custom resource, and include a `dn` key with the Distinguish Name of the user performing the query, and a `password` key with the bind password.
+1. Create a secret to store the bind credentials.
+    The secret must:
+    - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
+    - include a `dn` key with the Distinguish Name of the user performing the query
+    - include a `password` key with the bind password
 
-The following example command creates such a secret:
+    ```sh
+    kubectl -n <my-rec-namespace> create secret generic ldap-bind-credentials \
+        --from-literal=dn='<cn=admin,dc=example,dc=org>' \
+        --from-literal=password=<adminpassword>
+    ```
+    Replace the `<placeholders>` with your own values.
 
-```sh
-kubectl -n my-rec-namespace create secret generic ldap-bind-credentials \
-    --from-literal=dn='cn=admin,dc=example,dc=org' \
-    --from-literal=password=adminpassword
-```
+1. Reference the secret name in the `.spec.ldap.bindCredentialsSecretName` field of the `RedisEnterpriseCluster` custom resource.
 
-Once configured, the secret can be referenced in the `RedisEnterpriseCluster` custom resource by specifying its name via the `.spec.ldap.bindCredentialsSecretName` field:
+    ```yaml
+    spec:
+      ldap:
+        bindCredentialsSecretName: ldap-bind-credentials
+    ```
 
-```yaml
-spec:
-  ldap:
-    bindCredentialsSecretName: ldap-bind-credentials
-```
-
-### Enabling secure LDAP communication
+### Enable secure LDAP communication
 
 In addition to plain LDAP protocol, Redis Enterprise Software also supports LDAPS and STARTTLS protocols for secure communication with the LDAP server.
 
 To use one of these secure protocols, set the `.spec.protocol` field to either `LDAPS` or `STARTTLS`.
 Note that the default port, if unspecified, is 389 for `STARTTLS` (as well as plain `LDAP`) protocols, and 636 for `LDAPS` protocol.
 
-### Configuring CA certificate for secure LDAP communication
+### Configure CA certificate
 
 To configure a custom CA certificate for validating the LDAP servers certificate, the CA certificate can be stored in a secret and referenced in the `RedisEnterpriseCluster` custom resource.
 
@@ -91,7 +100,7 @@ spec:
     caCertificateSecretName: ldap-ca-certificate
 ```
 
-### Configuring client certificate authentication for secure LDAP communication
+### Configure client certificate authentication
 
 In addition to LDAP bind authentication, the LDAP client within Redis Enterprise Software can use a client certificate to authenticate with the LDAP server.
 To configure the LDAP client certificate, the certificate cna be stored in a secret and referenced in the `RedisEnterpriseCluster` custom resource.
@@ -118,7 +127,7 @@ spec:
 ## Caveats
 
 - LDAP mappings configuration cannot be configured via the operator at this time.
-  To configure LDAP mappings, the Redis Enterprise Software [API](https://docs.redis.com/latest/rs/references/rest-api/requests/ldap_mappings/) or [admin console](https://docs.redis.com/latest/rs/security/access-control/ldap/map-ldap-groups-to-roles/) must be used. 
+  To configure LDAP mappings, the Redis Enterprise Software [API](https://docs.redis.com/latest/rs/references/rest-api/requests/ldap_mappings/) or [admin console](https://docs.redis.com/latest/rs/security/access-control/ldap/map-ldap-groups-to-roles/) must be used.
 - Redis Enterprise Software cannot currently resolve DNS names with a `.local` suffix.
   If your LDAP server is running within the same Kubernetes cluster and exposed via a Service object, avoid specifying addresses such as `openldap.openldap.svc.cluster.local`.
-  Instead, you may use short-form addresses such as `openldap.openldap.svc`.
+  Instead, use short-form addresses such as `openldap.openldap.svc`.
