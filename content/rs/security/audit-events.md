@@ -64,16 +64,16 @@ To enable auditing for your cluster, use:
 
     The output file (and path) must be accessible by the user and group running Redis Enterprise Software.
 
-- the REST API
+- the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/auditing-db-conns#put-cluster-audit-db-conns">}})
 
     ```
     PUT /v1/cluster/auditing/db_conns
     { 
-        "audit-address":"<address>", 
-        "audit-port":<port>, 
-        "audit_protocol":"TCP",
-        "audit_reconnect_interval":<interval>,
-        "audit_reconnect_max_attempts":<max attempts>
+        "audit_address": "<address>", 
+        "audit_port": <port>, 
+        "audit_protocol": "TCP",
+        "audit_reconnect_interval": <interval>,
+        "audit_reconnect_max_attempts": <max attempts>
     }
     ```
 
@@ -100,14 +100,14 @@ Once auditing is enabled for your cluster, you can audit individual databases.  
     rladmin info cluster
     ```
 
-- the REST API
+- the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs#put-bdbs">}})
 
     ```
     PUT /v1/bdbs/1
-    { "db_conns_auditing":"enabled" }
+    { "db_conns_auditing": true }
     ```
 
-    To deactivate auditing, set `db_conns_auditing` to `disabled`.
+    To deactivate auditing, set `db_conns_auditing` to `false`.
 
 You must enable auditing for your cluster before auditing a database; otherwise, an error appears:
 
@@ -128,11 +128,11 @@ To audit connections for new databases by default, use:
 
     To deactivate this policy, set `db_conns_auditing` to `disabled`.
 
-- the REST API
+- the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}})
 
     ```
     PUT /v1/cluster/policy
-    { "db_conns_auditing":true }
+    { "db_conns_auditing": true }
     ```
 
     To deactivate this policy, set `db_conns_auditing` to `false`.
@@ -232,7 +232,7 @@ In addition, the following fields may also appear in audit event notifications:
 | `status` | Status result code - An integer representing the result of an authentication request. |
 | `trgip` | Target IP address - The IP address of the destination being accessed by the action. |
 | `trgp` | Target port - The port of the destination being accessed by the action.  Combine the port with the destination IP address to uniquely identify the database being accessed. |
-| `ts`  | Timestamp - The date and time of the event, in [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC).  Granularity is within one millisecond (ms). |
+| `ts`  | Timestamp - The date and time of the event, in [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC).  Granularity is within one second. |
 | `username` | Authentication username  - Username associated with the connection; can include `default` for databases that allow default access.  (Passwords are _not_ recorded). |
 
 ## Status result codes

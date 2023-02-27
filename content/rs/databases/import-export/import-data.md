@@ -103,6 +103,8 @@ and on the destination server.
     You can also use local storage but you must copy the imported files manually to all nodes
     because the import source folders on the nodes are not synchronized.
 
+As of version 6.2.12, Redis Enterprise reads files directly from the mount point using a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) (symlink) instead of copying them to a temporary directory on the node.
+
 To specify to import from a local mount point on a node:
 
 1. Create the mount point:

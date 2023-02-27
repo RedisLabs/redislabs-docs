@@ -10,10 +10,41 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.21 requires:
+RedisGraph v2.8.25 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.25 (February 2023)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#2890](https://github.com/RedisGraph/RedisGraph/issues/2890) Potential wrong results on variable-length path
+
+## v2.8.24 (February 2023)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#2777](https://github.com/RedisGraph/RedisGraph/issues/2777), [#2841](https://github.com/RedisGraph/RedisGraph/issues/2841) Potential crash when sending queries from multiple connections and timeout is not 0
+  - [#2844](https://github.com/RedisGraph/RedisGraph/issues/2844) Potential partial results when same parametrized query is running from multiple connections
+  - [#2739](https://github.com/RedisGraph/RedisGraph/issues/2739), [#2774](https://github.com/RedisGraph/RedisGraph/issues/2774) Paths with exact variable length >1 are not matched
+
+- Improvements:
+
+  - [#2758](https://github.com/RedisGraph/RedisGraph/pull/2758) Improved edge deletion performance
+
 
 ## v2.8.21 (January 2023)
 
@@ -247,7 +278,7 @@ Details:
 
     - [#2173](https://github.com/RedisGraph/RedisGraph/pull/2173) Improve performance of breadth-first search
 
-## v2.8.8 (February 2022)
+## v2.8 GA (v2.8.8) (February 2022)
 
 This is the General Availability release of RedisGraph 2.8.
 
@@ -332,9 +363,3 @@ If you are using this function and upgrading to RedisGraph 2.8, a simple fix is 
     - [#2072](https://github.com/RedisGraph/RedisGraph/issues/2072), [#2081](https://github.com/RedisGraph/RedisGraph/pull/2081) CRLF sequences embedded in strings no longer trigger a protocol error when being emitted
     - [#2139](https://github.com/RedisGraph/RedisGraph/pull/2139) Fix crash when trying to retrieve an out-of-bounds item
     - [#2149](https://github.com/RedisGraph/RedisGraph/pull/2149) Fix crash when matching a node engages an index to search for a value that is a RediSearch stop word
-
-{{<note>}}
-- This is the first GA version of 2.8. The version inside Redis will be 2.8.8 in semantic versioning. Since the version of a module in Redis is numeric, we could not add a GA flag.
-
-- Minimum Redis version: 6.2
-{{</note>}}
