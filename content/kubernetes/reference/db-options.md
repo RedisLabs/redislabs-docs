@@ -48,7 +48,7 @@ also updated with the generated database password.
 
 ### [`evictionPolicy`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-An [eviction policy]({{< relref "/rs/databases/configure/eviction-policy.md">}}) (default: `volatile-lru`)
+An [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy.md">}}) (default: `volatile-lru`)
 
 ### [`memorySize`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
@@ -96,13 +96,13 @@ If it is not specified, the database will follow the [upgrade policy set on the 
 
 ### [`replication`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-A boolean that indicates whether in-memory [database replication]({{< relref "/rs/databases/configure/replication.md">}}) is enabled (default: `false`).
+A boolean that indicates whether in-memory [database replication]({{< relref "/rs/databases/durability-ha/replication.md">}}) is enabled (default: `false`).
 
 When enabled, the database has a replica shard for every master.
 
 ### [`shardCount`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-The number of [database shards]({{< relref "/rs/databases/configure/clustering.md">}}) (default: `1`).
+The number of [database shards]({{< relref "/rs/databases/durability-ha/clustering.md">}}) (default: `1`).
 
 ### [`tlsMode`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 

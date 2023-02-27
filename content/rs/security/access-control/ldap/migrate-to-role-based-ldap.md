@@ -31,6 +31,18 @@ This checklist covers the basic process:
 
 1.  Remove the earlier "external" (LDAP) users from Redis Enterprise.
 
+1.  _(Recommended)_ Update cluster configuration to replace the cluster-based configuration file.
+
+    You can use `rladmin` to update the cluster configuration:
+
+    ``` bash
+    $ touch /tmp/saslauthd_empty.conf
+    $ rladmin cluster config saslauthd_ldap_conf \
+         /tmp/saslauthd_empty.conf
+    ```
+
+    Here, a blank file replaces the earlier configuration.
+
 1.  Use **Settings > LDAP** to enable role-based LDAP.
 
 1.  Map your LDAP groups to access control roles.

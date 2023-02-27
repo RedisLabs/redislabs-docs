@@ -129,6 +129,7 @@ db:1 [database1]:
     data_internode_encryption: disabled
     proxy_policy: single
     db_conns_auditing: disabled
+    syncer_mode: centralized
 ```
 
 ## `info node`

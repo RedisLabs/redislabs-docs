@@ -57,9 +57,9 @@ The following paths refer to `headphones`, which is a child of `inventory` under
 
 `['inventory']["headphones"]`
 
-## Key name rules
+### Key name rules
 
-You can only use a path to access JSON keys if they follow these name syntax rules:
+You can only use the [legacy path syntax](#legacy-path-syntax) to access JSON keys if they follow these name syntax rules:
 
 - Key names must begin with a letter, a dollar sign (`$`), or an underscore (`_`).
 - Key names can contain letters, digits, dollar signs, and underscores.

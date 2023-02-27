@@ -40,14 +40,14 @@ To create a cluster:
 1. Click **Setup**.
 1. In the Node Configuration page that appears:
 
-    1. Enter a path for [**Persistent storage**]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}),
+    1. Enter a path for [**Persistent storage**]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
 
-    1. Enter a path for [**Ephemeral storage**]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}),
+    1. Enter a path for [**Ephemeral storage**]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
 
     1. If you want to enable Redis on Flash, select the **Enable flash storage support** checkbox
-        and enter the path to the [Flash storage]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}).
+        and enter the path to the [Flash storage]({{< relref "/rs/databases/redis-on-flash/" >}}).
 
     1. If your machine is configured to have multiple IP addresses, the section **IP Addresses Usage** is shown.
         Use the **IP Addresses Usage** section to assign a single IPv4 type address for internal traffic
@@ -77,5 +77,5 @@ After a short wait, your cluster is created and you can log in to the RS admin c
 
 You can now access any of the management capabilities, including:
 
-- [Creating a new database]({{< relref "/rs/databases/create-database.md" >}})
+- [Creating a new database]({{< relref "/rs/databases/create.md" >}})
 - [Joining a new node to a cluster]({{< relref "/rs/clusters/add-node.md" >}})

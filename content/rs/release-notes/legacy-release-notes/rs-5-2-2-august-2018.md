@@ -32,7 +32,7 @@ RediSearch Enterprise, which is installed with Redis Enterprise Software by defa
 - RED-19758 – Upgraded NGINX from 1.10.3 to 1.13.12
 - RED-19415, RED-18945 – Improved support for Lettuce client with OSS Cluster enabled
 - RED-19287 – Fixed a scenario of a stuck shard migration process
-- RED-18459 – Updated the data persistence (AOF / Snapshot) of RoF databases to be handled, by default, by the slave shard/s
+- RED-18459 – Updated the data persistence (AOF / Snapshot) of RoF databases to be handled, by default, by the replica shard/s
 - RED-20541– Improved handling of aof file when its tail is corrupted (using aof-load-corrupt-tail flag)
 - RED-21936 – Improved handling of CRDB configuration update when URL parameter was supplied at creation time
 - RED-19760 – Added the capability to control the minimum TLS version that can be used for encrypting the Discovery Service data

@@ -22,31 +22,34 @@ aliases: /rs/references/rest-api/nodes
 
 ## Get all nodes {#get-all-nodes}
 
-	GET /v1/nodes
+```sh
+GET /v1/nodes
+```
 
 Get all cluster nodes.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_all_nodes_info]({{<relref "/rs/references/rest-api/permissions#view_all_nodes_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_all_nodes_info]({{<relref "/rs/references/rest-api/permissions#view_all_nodes_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
-	GET /nodes 
+```sh
+GET /nodes
+```
 
-
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns a JSON array of [node objects]({{<relref "/rs/references/rest-api/objects/node">}}).
 
@@ -95,7 +98,7 @@ Returns a JSON array of [node objects]({{<relref "/rs/references/rest-api/object
 ]
 ```
 
-### Status codes {#get-all-status-codes} 
+#### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -103,23 +106,27 @@ Returns a JSON array of [node objects]({{<relref "/rs/references/rest-api/object
 
 ## Get node {#get-node}
 
-	GET /v1/nodes/{int: uid}
+```sh
+GET /v1/nodes/{int: uid}
+```
 
 Get a single cluster node.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_node_info]({{<relref "/rs/references/rest-api/permissions#view_node_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_node_info]({{<relref "/rs/references/rest-api/permissions#view_node_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /nodes/1 
+```sh
+GET /nodes/1
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -132,7 +139,7 @@ Get a single cluster node.
 |-------|------|-------------|
 | uid | integer | The unique ID of the node requested. |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
 
@@ -146,7 +153,7 @@ Returns a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
 }
 ```
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -155,7 +162,9 @@ Returns a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
 
 ## Update node {#put-node}
 
-	PUT /v1/nodes/{int: uid}
+```sh
+PUT /v1/nodes/{int: uid}
+```
 
 Update a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
 
@@ -173,22 +182,29 @@ Currently, you can edit the following attributes:
 You can only update the `addr` attribute for offline nodes. Otherwise, the request returns an error.
 {{</note>}}
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [update_node]({{<relref "/rs/references/rest-api/permissions#update_node">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_node]({{<relref "/rs/references/rest-api/permissions#update_node">}}) | admin |
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /nodes/1 
+```sh
+PUT /nodes/1
+```
 
 #### Example JSON body
 
 ```json
-{ "addr": "10.0.0.1" }
+{
+    "addr": "10.0.0.1",
+    "external_addr" : [
+        "192.0.2.24"
+    ]
+}
 ```
 
 #### Request headers
@@ -207,33 +223,33 @@ You can only update the `addr` attribute for offline nodes. Otherwise, the reque
 | uid | integer | The unique ID of the updated node. |
 
 
-#### Request body
+#### Body
 
 | Field | Type | Description |
 |-------|------|-------------|
 | addr | string | Internal IP address of node |
-| external_addr | complex object | External IP addresses of node. GET /jsonschema to retrieve the object’s structure. |
+| external_addr | JSON array | External IP addresses of the node |
 | recovery_path | string | Path for recovery files |
 | accept_servers | boolean | If true, no shards will be created on the node |
 
-### Response {#put-response} 
+### Response {#put-response}
 
-If an error status is returned, the body may contain a JSON object
-that describes the error.
+If the request is successful, the body will be empty. Otherwise, it may contain a JSON object with an error code and error message.
 
-#### Example JSON body
-
-```json
-{
-    "error_code": "node_not_offline", 
-    "description": "Attempted to change node address while it is online" 
-}
-```
-
-### Status codes {#put-status-codes} 
+#### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, the request has been processed. |
 | [406 Not Acceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | Update request cannot be processed. |
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad content provided. |
+
+#### Error codes {#put-error-codes}
+
+| Code | Description |
+|------|-------------|
+| node_not_found | Node does not exist |
+| node_not_offline | Attempted to change node address while it is online |
+| node_already_populated | The node contains shards or endpoints, cannot disable accept_servers |
+| invalid_oss_cluster_port_mapping | Cannot enable "accept_servers" since there are databases with "oss_cluster_port_mapping" that do not have a port configuration for the current node |
+| node_already_has_rack_id | Attempted to change node's rack_id when it already has one |

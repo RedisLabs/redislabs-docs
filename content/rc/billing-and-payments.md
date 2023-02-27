@@ -27,18 +27,26 @@ The following tabs are available:
 
 - The **Billing History** tab displays recent charges and payments.  Each transaction includes the following details:
 
-    | Detail | Description | 
+    | Detail | Description |
     |:-------|:------------|
     | Date   | Date the transaction was recorded |
     | Description | Description of the transaction |
     | Reference | Reference number |
     | Amount    | Transaction amount |
 
+    Billing details may vary between regions.
+
     When you select a billing transaction, a **Download** icon appears to the right of the amount.  
 
     {{<image filename="images/rc/icon-billing-download.png" width="30px" alt="Use the download icon to download a PDF for the selected invoice." >}}{{< /image >}}
 
     Select this to download a PDF invoice for the associated charge.
+
+    A **Pay Now** button appears in selected regions.
+
+    {{<image filename="images/rc/billing-payments-pay-now.png" width="100px" alt="Use the Pay Now button to Pay your invoice in selected regions." >}}{{< /image >}} 
+    
+    Select this button to pay your invoice.
 
 - The **Payment Methods** tab lists your current payment methods.  You can add a new payment method, associate different payment methods with specific subscriptions, and remove payment methods.
 
@@ -50,11 +58,13 @@ The following tabs are available:
 
     {{<image filename="images/rc/billing-payments-credits-tab.png" alt="The Credits tab lets you apply coupons to your account and shows credits that have already been applied." >}}{{< /image >}}
 
-    | Detail | Description | 
+    | Detail | Description |
     |:-------|:------------|
-    | Name   | Coupon name (code) |
+    | Code   | Coupon code |
+    | Coupon Amount | Amount credited to your account |
+    | Current Balance | Amount left |
     | Date added | Date applied to your account |
-    | Amount    | Amount credited to your account |
+    | Expiration Date | Date the amount expires |
 
     To apply a coupon, enter the code and then select the **Apply** button.
 
@@ -64,7 +74,7 @@ To download an invoice:
 
 1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/).  (Create an account if you don't already have one.)
 
-2.  Use the admin console menu to select **Billing & Payments** and then make sure the Billing History tab is selected. 
+2.  Use the admin console menu to select **Billing & Payments** and then make sure the Billing History tab is selected.
 
 3.  Locate and select the invoice.
 
@@ -109,5 +119,3 @@ Coupons apply credits to your Redis Enterprise Cloud account.  To redeem a coupo
 The value of the coupon is applied to your account when accepted.  
 
 For help, contact [Support](https://support.redislabs.com).
-
-

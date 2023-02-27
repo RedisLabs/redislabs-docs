@@ -93,7 +93,7 @@ upgrade to this version.
 - RLEC-9069 - Fixed issue related to RHEL 7 and IPv6.
 - RLEC-9156 - Fixed issue causing a full resync of data when a source
     or destination failure occurred.
-- RLEC-9173 - Issue with writing data after master and slave failed
+- RLEC-9173 - Issue with writing data after master and replica failed
 - RLEC-9235 - Issue with SSL connection error and self signed
     certificates
 - RLEC-9491 - Fixed alerting issue due to incorrect measurement
@@ -194,16 +194,16 @@ Changes in 4.4.2 - 49
     is done.
 - **Issue:** In the Replica Of process, if there is very high
     traffic on the database the Replica Of process might be restarted
-    frequently due to the "slave buffer" being exceeded. In this case,
+    frequently due to the "replica buffer" being exceeded. In this case,
     you will often see the status of the Replica Of process display as
     "Syncing".
-    **Workaround:** You must manually increase the "slave buffer" size
+    **Workaround:** You must manually increase the "replica buffer" size
     through rladmin. To find the appropriate buffer size please contact
     support at: <support@redislabs.com>.
 - **Issue:** In a cluster that is configured to support rack-zone
-    awareness, if the user forces migration of a master or slave shard
+    awareness, if the user forces migration of a master or replica shard
     through rladmin to a node on the same rack-zone as its corresponding
-    master or slave shard, and later runs the rebalance process, the
+    master or replica shard, and later runs the rebalance process, the
     rebalance process will not migrate the shards to ensure rack-zone
     awareness compliance.
     **Workaround:** In the scenario described above, you must use

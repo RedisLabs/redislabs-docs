@@ -27,7 +27,7 @@ Represents a [Redis module]({{<relref "/modules">}}).
 | min_redis_pack_version | string | Minimum Redis pack version required by this module |
 | min_redis_version | string | Minimum Redis version required by this module |
 | module_file | string | Module filename |
-| module_name | string | Module's name |
+| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf` | Module's name<br/> |
 | os | string | Operating system used to compile the module |
 | os_list | array of strings | List of supported operating systems |
 | semantic_version | string | Module's semantic version |

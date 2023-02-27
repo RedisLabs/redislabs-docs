@@ -67,7 +67,7 @@ Support has been added RHEL 7.3 with this version.
 - RP10465 - failover times can be higher under certain scenarios in
     local watchdog profile
 - RP10633 - Improve install.sh and answers file
-- RP11880 - Improved slave sync and add node robustness
+- RP11880 - Improved replica sync and add node robustness
 - RP8689 - Minimized impact when changing RAM-Flash limit on Redis
     Enterprise Flash
 - RP12063 - Improved Redis Flash data import/population performance
@@ -79,7 +79,7 @@ Support has been added RHEL 7.3 with this version.
 - RP12438 - Email alerts with Amazon SES may fail under certain
     conditions.
 - RP12538 - Redis failover was initiated by node_wd during sync to
-    new slave
+    new replica
 - RP10264 - Improved debuginfo package for better supportability
 
 Important fixes in RP 4.5.0-22

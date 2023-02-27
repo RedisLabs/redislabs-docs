@@ -27,7 +27,7 @@ The following table shows the MD5 checksums for the available packages.
 
 - Upgrade the Redis Enterprise infrastructure to [Python v3.9](https://www.python.org/).
 
-- [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
+- [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) and [Red Hat Enterprise Linux (RHEL) v8.6](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.6_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
 
 - [Oracle Linux v8](https://docs.oracle.com/en/operating-systems/oracle-linux/8/) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
 
@@ -55,7 +55,7 @@ The following table shows the MD5 checksums for the available packages.
 
 Redis Enterprise Software v6.0.x will reach end of life (EOF) on May 31, 2022.
 
-To learn more, see the Redis Enterprise Software [product lifecycle](https://docs.redis.com/latest/rs/administering/product-lifecycle/), which details the release number and the end-of-life schedule for Redis Enterprise Software.
+To learn more, see the Redis Enterprise Software [product lifecycle](https://docs.redis.com/latest/rs/installing-upgrading/product-lifecycle/), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
 For Redis modules information and lifecycle, see [Module lifecycle](https://docs.redis.com/latest/modules/modules-lifecycle/).
 
@@ -102,13 +102,13 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS66280 - Fixes the lexicographic [SORT](https://redis.io/commands/sort) command on Active-Active databases (e.g. `SORT mylist ALPHA`). The SORT command should only run on keys mapped to the same slot.
 - RS64575 - Fixes a bug in the replication between primary and replica shards of a destination Active-active database in the scenario of using Replica-Of from a single to an Active-Active database, where the syncer process went down during the full sync.
 - RS65370 - Adds logic to remove old syncer entries in the cluster configuration during upgrades.
-- RS67434 - Version 6.2.10 fixes the mTLS handshake between the [syncer process](https://docs.redis.com/latest/rs/databases/active-active/#syncer-process) and the [proxy (DMC)](https://docs.redis.com/latest/rs/concepts/terminology/#proxy), where the proxy presented a leaf certificate without its full chain to the syncer. After upgrading to 6.2.10, syncer connections using invalid certificates will break the synchronization between Active-Active instances or deployments using Replica Of when TLS is enabled. To ensure certificates are valid before upgrading do the following: 
+- RS67434 - Version 6.2.10 fixes the mTLS handshake between the [syncer process](https://docs.redis.com/latest/rs/databases/active-active/#syncer-process) and the [proxy (DMC)](https://docs.redis.com/latest//rs/references/terminology/#proxy), where the proxy presented a leaf certificate without its full chain to the syncer. After upgrading to 6.2.10, syncer connections using invalid certificates will break the synchronization between Active-Active instances or deployments using Replica Of when TLS is enabled. To ensure certificates are valid before upgrading do the following: 
 
     - For Active-Active databases, run the following command from one of the clusters:
         
         `crdb-cli crdb update --crdb-guid <CRDB-GUID> --force`
          
-    - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
+    - For Active-Passive (Replica Of) databases: use the admin console to verify that the destination syncer has the correct certificate for the source proxy (DMC).  For details, see [Configure TLS for Replica Of](https://docs.redis.com/latest/rs/databases/import-export/replica-of/create/#configure-tls-on-replica-database).
 
 ### Issues resolved in build 96
 
@@ -139,6 +139,8 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 - RS78486 - Fix known issue from 6.2.10 build 100 - When using rladmin tune db to change the replica buffer size, the command appears to succeed, but the change does not take effect. 
 
 ## Known limitations
+
+-RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 - RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
 

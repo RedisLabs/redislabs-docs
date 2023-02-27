@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: [
         /rs/installing-upgrading/configuring/configuring-aws-route53-dns-redis-enterprise,
-        /rs/installing-upgrading/configuring/installing-cluster-name-dns-connection-management/
+        /rs/installing-upgrading/configuring/installing-cluster-name-dns-connection-management/,
         /rs/installing-cluster-name-dns-connection-management/,
         /rs/installing-upgrading/configuring-aws-route53-dns-redis-enterprise/,
         /rs/networking/configuring-aws-route53-dns-redis-enterprise/,

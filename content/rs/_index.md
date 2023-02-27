@@ -11,6 +11,11 @@ aliases: /rs/
          /redisenterprisesoftware/
          /redis-enterprise-software/
          /redis_enterprise_software/
+         /rs/administering/troubleshooting/
+         /rs/administering/
+         /rs/faqs/
+         /rs/technology-behind-redis-enterprise/
+         /rs/concepts/
 ---
 
 [Redis Enterprise](https://redis.com/redis-enterprise/advantages/) is a self-managed, enterprise-grade version of Redis.
@@ -19,7 +24,7 @@ With Redis Enterprise, you get many enterprise-grade capabilities, including:
 - Linear scalability
 - High availability, backups, and recovery
 - Predictable performance
-- 24/7 suppport
+- 24/7 support
 
 You can run Redis Enterprise Software in an on-premises data center or on your preferred cloud platform.
 
@@ -27,7 +32,7 @@ You can run Redis Enterprise Software in an on-premises data center or on your p
 Build a small-scale cluster with the Redis Enterprise Software container image.
 - [Get started]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software" >}})
 - [Docker]({{<relref "/rs/installing-upgrading/get-started-docker">}})
-- [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started-active-active">}})
+- [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started">}})
 
 ## Install & setup
 [Install & set up]({{<relref "/rs/installing-upgrading">}}) a Redis Enterprise Software cluster.
@@ -37,10 +42,10 @@ Build a small-scale cluster with the Redis Enterprise Software container image.
 
 ## Databases
 Create and manage a [Redis database]({{<relref "/rs/databases">}}) on a cluster.
-- [Create a Redis Enterprise Software database]({{<relref "/rs/databases/create-database">}})
+- [Create a Redis Enterprise Software database]({{<relref "/rs/databases/create">}})
 - [Configure database]({{<relref "/rs/databases/configure">}})
-- [Create Active-Active database]({{<relref "/rs/databases/active-active/create-active-active">}})
-- [Edit Active-Active database]({{<relref "/rs/databases/active-active/edit-aa-database">}})
+- [Create Active-Active database]({{<relref "/rs/databases/active-active/create">}})
+- [Edit Active-Active database]({{<relref "/rs/databases/active-active/manage.md">}})
 
 ## Security
 [Manage secure connections]({{<relref "/rs/security">}}) to the cluster and databases.
@@ -60,3 +65,4 @@ Use command-line utilities and the REST API to manage the cluster and databases.
 - [Open source Redis](https://redis.io/) (redis.io)
 - [Redis Stack]({{<relref "/modules">}})
 - [Glossary]({{<relref "/glossary">}})
+

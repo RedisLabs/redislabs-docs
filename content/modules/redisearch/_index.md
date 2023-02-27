@@ -66,13 +66,13 @@ Because the index on the new shard is created synchronously though, it's expecte
 
 ## Limitations
 
-- You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/databases/configure/enable-oss-cluster-api">}}).
+- You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/databases/configure/oss-cluster-api">}}).
 
 ## More info
 
 - [Getting Started with RediSearch 2.0](https://redis.com/blog/getting-started-with-redisearch-2-0/)
 - [RediSearch quick start]({{<relref "/modules/redisearch/redisearch-quickstart">}})
-- [Configure RediSearch](https://redis.io/docs/stack/search/configuring/)
+- [Configure RediSearch]({{<relref "/modules/redisearch/config">}})
 - [RediSearch commands]({{<relref "/modules/redisearch/commands">}})
 - [RediSearch references](https://redis.io/docs/stack/search/reference/)
 - [RediSearch source](https://github.com/RediSearch/RediSearch)

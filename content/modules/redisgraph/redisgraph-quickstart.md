@@ -18,20 +18,13 @@ For this quick start tutorial, you need:
 
     - A [Redis Enterprise Software]({{<relref "/modules/install/add-module-to-database">}}) database
 
-- `redis-cli` command-line tool
+- [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool
 
-- [`redis-py`](https://github.com/redis/redis-py) client library v4.1.0 or greater
+- [`redis-py`](https://github.com/redis/redis-py) client library v4.1.0 or later
 
 ## RedisGraph with `redis-cli`
 
-The [`redis-cli`](https://redis.io/docs/manual/cli/) command-line tool comes packaged with Redis. You can use it to connect to your Redis database and test the following RedisGraph commands.
-
-### Connect to a database
-
-```sh
-$ redis-cli -h <endpoint> -p <port> -a <password>
-127.0.0.1:12543>
-```
+To begin, [connect to your database]({{<relref "/rs/references/cli-utilities/redis-cli#connect-to-a-database">}}) with `redis-cli`.
 
 ### Create a graph
 
@@ -246,5 +239,5 @@ After you run a query, the output log displays a visual representation of your g
 
 ## More info
 
-- [RedisGraph commands](https://redis.io/commands/?group=graph)
+- [RedisGraph commands]({{<relref "/modules/redisgraph/commands">}})
 - [RedisGraph client libraries](https://redis.io/docs/stack/graph/clients/)

@@ -27,9 +27,10 @@ An API object that represents the cluster.
 | default_sharded_proxy_policy | string (default:&nbsp;all-master-shards) | Default proxy_policy for newly created sharded databases' endpoints (read-only) |
 | email_alerts | boolean (default:&nbsp;false) | Send node/cluster email alerts (requires valid SMTP and email_from settings) |
 | email_from | string | Sender email for automated emails |
+| encrypt_pkeys | boolean (default:&nbsp;false) | Enable or turn off encryption of private keys |
 | envoy_max_downstream_connections | integer, (range:&nbsp;100-2048) | The max downstream connections envoy is allowed to open |
 | handle_redirects | boolean (default:&nbsp;false) | Handle API HTTPS requests and redirect to the master node internally |
-| http_support | boolean (default:&nbsp;false) | Enable/disable HTTP support |
+| http_support | boolean (default:&nbsp;false) | Enable or turn off HTTP support |
 | min_control_TLS_version | '1' <br />'1.1' <br />'1.2' <br />'1.3' | The minimum version of TLS protocol which is supported at the control path |
 | min_data_TLS_version | '1' <br />'1.1' <br />'1.2' | The minimum version of TLS protocol which is supported at the data path |
 | min_sentinel_TLS_version | '1' <br />'1.1' <br />'1.2' | The minimum version of TLS protocol which is supported at the data path |
@@ -42,7 +43,7 @@ An API object that represents the cluster.
 | s3_url | string | Specifies the URL for S3 export and import |
 | saslauthd_ldap_conf | string | saslauthd LDAP configuration |
 | sentinel_cipher_suites | array | Specifies the list of enabled ciphers for the sentinel service. The supported ciphers are ones that were implemented by the [cipher_suits.go](<https://golang.org/src/crypto/tls/cipher_suites.go>) package. |
-| sentinel_ssl_policy | 'allowed'<br />'disabled' <br />'required' | Is ssl for the Discovery Service required/disabled/allowed |
+| sentinel_ssl_policy | 'allowed'<br />'disabled' <br />'required' | Determines whether the discovery service allows, blocks, or requires TLS connections<br />**allowed**: Allows both TLS and non-TLS connections<br />**disabled**: Allows only non-TLS connections<br />**required**: Allows only TLS connections |
 | slave_ha | boolean (default:&nbsp;false) | Enable the replica high-availability mechanism (read-only) |
 | slave_ha_bdb_cooldown_period | integer (default:&nbsp;86400) | Time in seconds between runs of the replica high-availability mechanism on different nodes on the same database (read-only) |
 | slave_ha_cooldown_period | integer (default:&nbsp;3600) | Time in seconds between runs of the replica high-availability mechanism on different nodes (read-only) |

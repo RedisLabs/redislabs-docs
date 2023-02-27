@@ -10,10 +10,22 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.6.17 requires:
+RedisTimeSeries v1.6.19 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.6.19 (February 2023)
+
+This is a maintenance release for RedisTimeSeries 1.6.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#1397](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1397) Memory leak when trying to create an already existing key (MOD-4724, RED-93418)
 
 ## v1.6.17 (July 2022)
 
@@ -25,7 +37,7 @@ Details:
 
 - Bug fixes:
 
-    - [#1240](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1240) Compaction rules are not saved to [RoF](https://docs.redis.com/latest/rs/concepts/memory-performance/redis-flash/) (Redis Enterprise)
+    - [#1240](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1240) Compaction rules are not saved to [RoF](https://docs.redis.com/latest/rs/databases/redis-on-flash//) (Redis Enterprise)
 
 ## v1.6.16 (June 2022)
 
@@ -130,4 +142,4 @@ RedisTimeSeries 1.6 adds support for aggregating across multiple time series (mu
 
 - [#675](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/675) Add keyspace notifications for all CRUD commands. Check out [this test](https://github.com/RedisTimeSeries/RedisTimeSeries/blob/master/tests/flow/test_ts_keyspace.py) for the details.
 
-- [#882](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/882) [Redis on Flash (RoF)](https://docs.redis.com/latest/rs/concepts/memory-performance/redis-flash/#:~:text=Redis%20on%20Flash%20(RoF)%20offers,dedicated%20flash%20memory%20(SSD).) support.
+- [#882](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/882) [Redis on Flash (RoF)](https://docs.redis.com/latest/rs/databases/redis-on-flash//#:~:text=Redis%20on%20Flash%20(RoF)%20offers,dedicated%20flash%20memory%20(SSD).) support.

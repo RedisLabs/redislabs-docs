@@ -21,7 +21,9 @@ aliases: /rs/references/rest-api/nodes/stats
 
 ## Get all nodes stats {#get-all-nodes-stats}
 
-	GET /v1/nodes/stats
+```sh
+GET /v1/nodes/stats
+```
 
 Get statistics for all nodes.
 
@@ -31,11 +33,13 @@ Get statistics for all nodes.
 |-----------------|
 | [view_all_nodes_stats]({{<relref "/rs/references/rest-api/permissions#view_all_nodes_stats">}}) |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
-	GET /nodes/stats?interval=1hour&stime=2014-08-28T10:00:00Z 
+```sh
+GET /nodes/stats?interval=1hour&stime=2014-08-28T10:00:00Z
+```
 
 #### Request headers
 
@@ -52,7 +56,7 @@ Get statistics for all nodes.
 | stime | ISO_8601 | Start time from which we want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns a JSON array of [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all nodes.
 
@@ -121,7 +125,7 @@ Returns a JSON array of [statistics]({{<relref "/rs/references/rest-api/objects/
 ]
 ```
 
-### Status codes {#get-all-status-codes} 
+### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -130,7 +134,9 @@ Returns a JSON array of [statistics]({{<relref "/rs/references/rest-api/objects/
 
 ## Get node stats {#get-node-stats}
 
-	GET /v1/nodes/stats/{int: uid}
+```sh
+GET /v1/nodes/stats/{int: uid}
+```
 
 Get statistics for a node.
 
@@ -140,11 +146,13 @@ Get statistics for a node.
 |-----------------|
 | [view_node_stats]({{<relref "/rs/references/rest-api/permissions#view_node_stats">}}) |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /nodes/stats/1?interval=1hour&stime=2014-08-28T10:00:00Z 
+```sh
+GET /nodes/stats/1?interval=1hour&stime=2014-08-28T10:00:00Z
+```
 
 #### Request headers
 
@@ -167,7 +175,7 @@ Get statistics for a node.
 | stime | ISO_8601 | Start time from which we want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the specified node.
 
@@ -205,7 +213,7 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
 }
 ```
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|

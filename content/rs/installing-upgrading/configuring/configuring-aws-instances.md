@@ -10,8 +10,8 @@ aliases: [
     /rs/installing-upgrading/configuring/configuring-aws-instances/,
 ]
 ---
-There are some special considerations that are important when installing
-and running Redis Enterprise Software on Amazon Web Services (AWS), whether Amazon Electric Cloud Compute (EC2) AWS Outposts.  
+There are some special considerations for installing
+and running Redis Enterprise Software on Amazon Elastic Cloud Compute (EC2) instances. 
 
 These include:
 
@@ -26,7 +26,7 @@ not be. If you require a persistent storage location for your database,
 the storage must be located outside of the instance. Therefore, when you
 set up an instance make sure that it has a properly sized EBS backed volume
 connected. Later, when setting up RS on the instance, make sure that [the
-persistence storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
+persistence storage]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
 
 {{< note >}}
 After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the instance
@@ -42,7 +42,7 @@ certain level of disk performance. There are two features in RS where
 this feature could be critical to use:
 
 1. When using [Redis on
-    Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
+    Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
 1. When using AOF on every write and there is a high write load. In
     this case, the provisioned IOPS should be on the nodes used as
     replicas in the cluster.
@@ -51,7 +51,7 @@ this feature could be critical to use:
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet RS's [hardware
-requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}).
 
 In addition, some instance types are optimized for EBS backed volumes
 and some are not. If you are using persistent storage, you should use an

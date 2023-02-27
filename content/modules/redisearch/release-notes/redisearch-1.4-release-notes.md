@@ -137,7 +137,7 @@ This is a maintenance release for version 1.4.
 This release improves overall stability and provides fixes for issues found after the previous release.
 
 - Bugfixes
-    - #[1000](https://github.com/RediSearch/RediSearch/issues/1000) - `FT.DEL` was not replicated to slave correctly
+    - #[1000](https://github.com/RediSearch/RediSearch/issues/1000) - `FT.DEL` was not replicated to replica correctly
     - #[1004](https://github.com/RediSearch/RediSearch/issues/1004) -  Memory leak on `TAG` array on certain situations
     - #[1006](https://github.com/RediSearch/RediSearch/issues/1006) - Unexposed error on [conditional update `IF`](https://oss.redislabs.com/redisearch/Commands.html#ftadd) that caused the error message to leak
 

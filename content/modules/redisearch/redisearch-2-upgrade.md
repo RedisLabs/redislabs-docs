@@ -68,7 +68,7 @@ To replicate a RediSearch 1.x database to a RediSearch 2.x database:
 
 ### Create a RediSearch 2.x database {#create-db}
 
-1. [Create a database]({{<relref "/rs/databases/create-database">}}) and configure its settings.
+1. [Create a database]({{<relref "/rs/databases/create">}}) and configure its settings.
 
 1. In the **Redis Modules** section:
 

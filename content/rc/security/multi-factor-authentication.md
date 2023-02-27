@@ -11,23 +11,29 @@ aliases: /rc/security/admin-console-security/multi-factor-authentication/
 
 To reduce the chances of unauthorized access, Redis Enterprise Cloud allows users to enable multi-factor authentication (MFA).
 
-When MFA is enabled, users must enter their username, password, and an authentication code when logging in. MFA requires a mobile device that can receive these authentication codes over text messaging. In addition, you may [use an authenticator app](#app) such as [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) as one of your factors.
+When MFA is enabled, users must enter their username, password, and an authentication code when signing in. MFA requires a mobile device that can receive these authentication codes over text messaging. In addition, you may [use an authenticator app](#app) such as [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) as one of your factors.
 
 To further increase the security of the account, the account owner can [require MFA enforcement for all users](#enforcing).
 
-### Enabling MFA for a user account
+{{< note >}}
+Once you enable MFA, MFA will be required to access every account that belongs to you. Deactivating MFA enforcement on an account will not deactivate MFA enforcement for other users of that account that have defined a phone number.  In order to deactivate MFA enforcement for other users, those users will each need to deactivate MFA enforcement for their own user accounts.
+{{< /note >}}
+
+### Enable MFA
 
 Each user can enable and configure MFA for their account.
-The default MFA configuration sends an authentication code by text message that users must enter when they log in.
+The default MFA configuration sends an authentication code by text message that users must enter when they sign in.
 
 To configure MFA for your user account:
 
-1. Log in to your account.
-2. From the Redis Enterprise Cloud menu, click on your name to enter the **User Profile** view.
-3. Under your user profile, click **Multi-Factor Authentication**.
-4. From the **Multi-Factor Authentication** view, click **Activate Now**.
-5. Enter your mobile phone number.
-6. You will receive a confirmation code sent by text message. Enter the code and click **Verify**.
+1. Sign in to your account.
+2. From the Redis Enterprise Cloud menu, select your name to enter the **User Profile** view.
+3. Under your user profile, locate **Multi-factor authentication**.
+
+    {{<image filename="images/rc/multi-factor-authentication-user-profile.png" alt="Multi-factor authentication is located on the user profile page." >}}{{< /image >}}
+
+4. Enter your mobile phone number in the **Text message** box and then select **Send code**.
+5. You will receive a confirmation code sent by text message. Enter the code when prompted by the admin console and select **Verify**.
 
 Your account is now configured for MFA.
 
@@ -35,51 +41,51 @@ Your account is now configured for MFA.
 We recommend that you also [configure MFA for an authenticator app](#app) as an additional factor.
 {{< /note >}}
 
-If you cannot log in to your account because of MFA, please [contact support](https://redislabs.com/company/support/).
+If you cannot sign in to your account because of MFA, please [contact support](https://redislabs.com/company/support/).
 
-If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized logins.
+If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized sign-ins.
 
 
-### Changing your MFA phone number
+### Change your MFA phone number
 
 To change the mobile phone number used for MFA:
 
 1. Navigate to the **Multi-Factor Authentication** view.
-1. Click **Configure**.
+1. Select **Change number**.
 1. Enter the new mobile phone number, and complete the verification process as described above.
 
 
-### Configuring MFA for an authenticator app {#app}
+### Configure MFA for an authenticator app {#app}
 
 After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOTP) app such as [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator).
 
-When you log in to the Redis Cloud Admin Console, you can select  either an authentication code sent by text message or an authentication code shown in your authenticator app.
+When you sign in to the Redis Cloud Admin Console, you can select  either an authentication code sent by text message or an authentication code shown in your authenticator app.
 
 To configure MFA for an authenticator app:
 
 1. Install an authenticator app on your mobile phone.
 1. Add Redis Cloud to the app:
-    1. From the **User Profile** view in your Redis Cloud account, click **Multi-Factor Authentication**.
-    1. Click **Configure** for the authenticator app. A QR code will appear on screen requesting verification.
+    1. From the **User Profile** view in your Redis Cloud account, locate **Multi-Factor Authentication**.
+    1. Select **Connect** for the authenticator app. A QR code will appear on screen requesting verification.
     1. Scan the QR code using your phone's authenticator app.
     1. Enter the code generated by your authenticator app to verify the setup.
 
-You can now use either a text message code or an authenticator app code as your second factor when logging in.
+You can now use either a text message code or an authenticator app code as your second factor when signing in.
 
-#### Deactivating MFA
+#### Deactivate MFA
 
-You can deactivate MFA for your user account. To deactivate MFA, go to your profile, click **Multi-Factor Authentication**, and click **Deactivate**.
+You can deactivate MFA for your user account. To deactivate MFA, go to your profile, locate **Multi-Factor Authentication**, and select **Deactivate**.
 
-### Enforcing MFA for all user accounts {#enforcing}
+### Enforce MFA for all user accounts {#enforcing}
 
 Account owner users can enable MFA enforcement for all users in their account.
-After MFA is enforced for the account, all users who do not have MFA enabled will be required to configure MFA the next time they log in to the Redis Cloud Admin Console.
+After MFA is enforced for the account, all users who do not have MFA enabled will be required to configure MFA the next time they sign in to the Redis Cloud Admin Console.
 
 To enable MFA enforcement for all user accounts:
 
-1. Log in as an account owner.
+1. Sign in as an account owner.
 1. Go to **Settings** > **Account**.
-1. Under **MFA enforcement**, click the toggle.
+1. Under **MFA enforcement**, select the toggle.
 
 - When you enable MFA enforcement, users cannot disable MFA for their account.
 - When you disable MFA enforcement, users can disable MFA for their account.

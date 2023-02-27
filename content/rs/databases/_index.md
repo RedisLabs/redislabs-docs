@@ -8,6 +8,7 @@ categories: ["RS"]
 aliases: [
     /rs/databases/_index.md,
     /rs/databases/,
+    /rs/concepts/data-access,
 ]
 ---
 

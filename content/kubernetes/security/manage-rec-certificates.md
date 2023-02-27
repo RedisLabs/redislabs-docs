@@ -11,37 +11,19 @@ aliases: [
 ]
 ---
 
-By default, Redis Enterprise Software for Kubernetes generates TLS certificates for the cluster during creation. These self-signed certificates are generated on the first node of each Redis Enterprise cluster (REC) and are copied to all other nodes added to the cluster.
-
-Below are the names of certificates used by Redis Enterprise Software and the traffic they encrypt:
-
-- `proxy` - for connections between clients and database endpoints
-- `api` - for REST API calls
-- `cm` - for connections to the management admin console
-- `syncer` - for Active-Active and Replica Of synchronization between Redis Enterprise clusters
-- `metrics_exporter` - for exporting metrics to Prometheus
+By default, Redis Enterprise Software for Kubernetes generates TLS certificates for the cluster during creation. These self-signed certificates are generated on the first node of each Redis Enterprise cluster (REC) and are copied to all other nodes added to the cluster. For the list of of certificates used by Redis Enterprise Software and the traffic they encrypt, see the [certificates table]({{<relref "/rs/security/certificates">}}).
 
 To install and use your own certificates with Kubernetes on your Redis Enterprise cluster, they need to be stored in [secrets](https://kubernetes.io/docs/concepts/configuration/secret/). The REC custom resource also needs to be configured with those secret names to read and use the certificates.
 
 ## Create a secret to hold the new certificate
 
-1. [Create the secret config file](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-config-file/) with the required fields shown below.
+Create the [secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) with the required fields shown below.
 
-    ```yaml
-    apiVersion: v1
-    kind: Secret
-    type: Opaque
-    metadata:
-      name: <secret-name>
-    data:
-      name: { proxy | api | cm | syncer | metrics_exporter } 
-      certificate: <certificate-string>
-      key:  <key-string>  
-    ```
-
-1. Apply the file to create the secret resource.
-    ```bash
-    kubectl apply -f <secret-name>.yaml
+    ```sh
+    kubectl create secret generic <secret-name> \
+      --from-file=certificate=</PATH/TO/certificate.pem> \
+      --from-file=key=</PATH/TO/key.pem> \
+      --from-literal=name=<proxy | api | cm | syncer | metrics_exporter>
     ```
 
 ## Update certificates in the REC custom resource
@@ -58,7 +40,7 @@ spec:
     proxyCertificateSecretName: <proxycert-secret-name>
 ```
 
-#### Update certificates through the API
+### Update certificates through the API
 
 Alternatively, you can also update the REC certificates via the API:
 

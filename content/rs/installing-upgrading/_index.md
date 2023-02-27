@@ -23,7 +23,7 @@ Here, you'll learn how to perform each step.
 
 Before installing Redis Enterprise Software, you need to:
 
-- Set up [your hardware]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+- Set up [your hardware]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}).
 
 - Choose your [deployment platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
 
@@ -60,7 +60,7 @@ Before installing, review these notes:
 
 - Review the [security considerations]({{< relref "/rs/security/" >}}) for your deployment.
 
-- If you want to use Redis on Flash (RoF) for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
+- If you want to use Redis on Flash (RoF) for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/databases/redis-on-flash/" >}}) for RoF databases and prepare and format the flash memory.
 
     Use the `prepare_flash` script to prepare and format flash memory:
 
@@ -179,7 +179,7 @@ To install without answering the installation questions, either:
     or [join]({{< relref "/rs/clusters/add-node.md" >}}) an existing Redis Enterprise Software cluster.
 1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/databases/active-active/create-active-active.md" >}}) database.
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/databases/active-active/create.md" >}}) database.
 
 ## Permissions and access
 

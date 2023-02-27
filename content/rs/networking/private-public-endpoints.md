@@ -10,23 +10,21 @@ aliases: [
     /rs/networking/private-public-endpoints/,
 ]
 ---
-By default, Redis Enterprise Software databases expose a single endpoint.
+By default, Redis Enterprise Software databases expose a single endpoint, e.g. cluster.com (FQDN).
 
-When you create a cluster, you can configure it to expose private and public endpoints.
+When you create a cluster via the UI, you can configure it to expose private and public endpoints.
+This is common for environments such as cloud platforms and enterprises.
 
-This is valuable for certain environments, such as cloud platforms, where you want:
+When doing so, the cluster creates an additional FQDN, e.g. internal.cluster.com for private network (e.g. VPC or an internal network), while the cluster.com FQDN can be used by a public network (e.g. the internet).
 
-- A private IP address available only within the internal network
+This configuration can be enabled at cluster creation only.
+Once the cluster is created, it is possible to add an additional FQDN in a differnet domain only, e.g. cluster.io.
 
-- Public IP addresses accessible from the Internet (public network)
+Follow these steps to enable private and public endpoints:
 
-To enable this configuration, you need to:
+- Verify that the IP addresses are bound to the server/instance.
 
-- Make sure that the IP addresses are already bound to the server/instance.
-
-- Select the **Enable private and public endpoint support** setting when creating the cluster.
-
-    This setting is available when you set up a cluster.  It appears in the **Cluster configuration** section of the **Node configuration** screen.
+- When setting up the cluster via the UI, select the **Enable private and public endpoint support** setting. It appears in the **Cluster configuration** section of the **Node configuration** screen.
 
     {{<image filename="images/rs/node-configuration-endpoint-support.png" alt="The endpoint support setting appears in the **Cluster configuration section** of the **Node configuration** screen." >}}{{< /image >}}
 
