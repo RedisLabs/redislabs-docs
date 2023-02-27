@@ -3,7 +3,7 @@ Title: RedisInsight v2.16.0, December 2022
 linkTitle: v2.16.0 (Dec 2022)
 date: 2022-12-28 00:00:00 +0000
 description: RedisInsight v2.16.0
-weight: 1
+weight: 2
 aliases: /ri/release-notes/v2.16.0/
          /ri/release-notes/v2.16.0.md
 ---
