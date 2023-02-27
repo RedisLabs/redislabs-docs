@@ -13,7 +13,7 @@ aliases:
   /kubernetes/security/manage_REC_credentials/
  
 ---
-The Redis Enterprise Software on Kubernetes uses a custom resource called [`RedisEnterpriseCluster`]({{<relref "/kubernetes/reference/cluster-options.md">}}) to create a Redis Enterprise cluster (REC). During creation it generates random credentials for the operator to use. The credentials are saved in a Kubernetes (K8s) [secret](https://kubernetes.io/docs/concepts/configuration/secret/). The secret name defaults to the name of the cluster.
+Redis Enterprise for Kubernetes uses a custom resource called [`RedisEnterpriseCluster`]({{<relref "/kubernetes/reference/cluster-options.md">}}) to create a Redis Enterprise cluster (REC). During creation it generates random credentials for the operator to use. The credentials are saved in a Kubernetes (K8s) [secret](https://kubernetes.io/docs/concepts/configuration/secret/). The secret name defaults to the name of the cluster.
 
 {{<note>}}
 This procedure is only supported for operator versions 6.0.20-12 and above.
@@ -159,4 +159,4 @@ If you store your secrets with Hashicorp Vault, update the secret for the REC cr
 username:<desired_username>, password:<desired_password>
 ```
 
-For more information about Vault integration with the Redis Enterprise Cluster see [Integrating the Redis Enterprise operator with Hashicorp Vault](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/65eba63a6aac69455a691652218e28b0873e4de3/vault#integrating-the-redis-enterprise-operator-with-hashicorp-vault).
+For more information about Vault integration with the Redis Enterprise Cluster see [Integrating Redis Enterprise for Kubernetes with Hashicorp Vault](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/65eba63a6aac69455a691652218e28b0873e4de3/vault#integrating-the-redis-enterprise-operator-with-hashicorp-vault).

@@ -1,7 +1,7 @@
 ---
 Title: Security
 linkTitle: Security
-description: Security settings and configuration for Redis Enterprise Software on Kubernetes
+description: Security settings and configuration for Redis Enterprise for Kubernetes
 weight: 50
 alwaysopen: false
 categories: ["Platforms"]
@@ -19,6 +19,6 @@ aliases: [
 ]
 ---
 
-This section contains security settings and configuration for Redis Enterprise Software on Kubernetes.
+This section contains security settings and configuration for Redis Enterprise for Kubernetes.
 
 {{< allchildren style="h2" description="true" />}}

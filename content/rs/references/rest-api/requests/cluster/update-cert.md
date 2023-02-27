@@ -26,6 +26,8 @@ PUT /v1/cluster/update_cert
 
 Replaces an existing certificate on all nodes within the cluster with a new certificate. The new certificate must pass validation before it can replace the old certificate.
 
+See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of cluster certificates and their descriptions.
+
 ### Request {#put-request}
 
 #### Example HTTP request

@@ -48,5 +48,5 @@ that version.
 | 5.2 – June 2018                           | December 31, 2019  |
 
  {{< note >}}
- * On June 28th, 2022, release 6.2 EOL was extended by 6 months; from Feb 28, 2022 to Aug 31, 2023.
+ * On June 28th, 2022, release 6.2 EOL was extended by 6 months; from Feb 28, 2023 to Aug 31, 2023.
 {{< /note >}}

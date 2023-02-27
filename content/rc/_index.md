@@ -13,7 +13,10 @@ aliases: [ "/rv/",
            "/redis-enterprise-cloud",
            "/redis_enterprise_cloud",
            "/rc/administration/",
-           "/rc/administration.md" ]
+           "/rc/administration.md",
+           "/rv/faqs/",
+           "/rc/faqs/",
+           "/rc/faqs/_index.md" ]
 
 ---
 [Redis Enterprise Cloud](https://redis.com/redis-enterprise-cloud/overview/) delivers a fully managed Redis database offering hosted on major public cloud services.
@@ -28,8 +31,8 @@ With Redis Enterprise Cloud, you get all of the features of Redis Enterprise, in
 ## Get started
 Use the [Quick start]({{<relref "/rc/rc-quickstart">}}) to create a free subscription and create your first database.
 - [Connect with redis-cli]({{<relref "/rc/rc-quickstart#using-rediscli">}})
-- [Connect with code (Python)]({{<relref "/rc/rc-quickstart#use-code-python">}})
-- [Redis clients](https://redis.io/docs/clients/) (redis.io)
+- [Connect with Redis client]({{<relref "/rc/rc-quickstart#using-redis-client">}})
+- [Connect with RedisInsight]({{<relref "/rc/rc-quickstart#using-redisinsight">}})
 
 ## Subscriptions
 Learn about the [types of subscriptions]({{<relref "/rc/subscriptions">}}).
@@ -47,7 +50,7 @@ Create and manage [Redis databases]({{<relref "/rc/databases">}}) in the cloud.
 - [View and edit databases]({{<relref "/rc/databases/view-edit-database">}})
 - [Monitor performance]({{<relref "/rc/databases/monitor-performance">}})
 - [Manage databases]({{<relref "/rc/databases/configuration">}})
-- [Redis commands](https://redis.io/commands/)
+- [Redis commands](https://redis.io/commands/) & [compatibility]({{<relref "/rs/references/compatibility">}})
 
 ## Security
 Manage [secure connections]({{<relref "/rc/security">}}) to cloud databases.

@@ -108,4 +108,5 @@ reach a larger capacity.
 ## More info
 
 - [RedisBloom commands]({{<relref "/modules/redisbloom/commands">}})
+- [RedisBloom configuration]({{<relref "/modules/redisbloom/config">}})
 - [RedisBloom source](https://github.com/RedisBloom/RedisBloom/)

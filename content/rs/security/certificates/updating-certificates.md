@@ -16,7 +16,7 @@ When you update the certificates, the new certificate replaces the same certific
 
 ## How to update certificates
 
-You can use either the `rladmin` command-line interface (CLI) or the REST API to update certificates.
+You can use either the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command-line interface (CLI) or the [REST API]({{<relref "/rs/references/rest-api">}}) to update certificates.
 
 The new certificates are used the next time the clients connect to the database.
 
@@ -24,7 +24,7 @@ When you upgrade Redis Enterprise Software, the upgrade process copies the certi
 
 ### Use the CLI
 
-To replace certificates with the `rladmin` CLI, run:
+To replace certificates with the `rladmin` CLI, run the [`cluster certificate set`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) command:
 
 ```sh
  rladmin cluster certificate set <cert-name> certificate_file <cert-file-name>.pem key_file <key-file-name>.pem
@@ -32,16 +32,11 @@ To replace certificates with the `rladmin` CLI, run:
 
 Replace the following variables with your own values:
 
-- `<cert-name>` - The name of the certificate you want to replace:
-  - For the admin console: `cm`
-  - For the REST API: `api`
-  - For the database endpoint: `proxy`
-  - For the syncer: `syncer`
-  - For the metrics exporter: `metrics_exporter`
+- `<cert-name>` - The name of the certificate you want to replace. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
 - `<cert-file-name>` - The name of your certificate file
 - `<key-file-name>` - The name of your key file
 
-For example, to replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem":
+For example, to replace the admin console (`cm`) certificate with the private key `key.pem` and the certificate file `cluster.pem`:
 
 ```sh
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
@@ -58,12 +53,7 @@ PUT https://[host][:port]/v1/cluster/update_cert
 
 Replace the following variables with your own values:
 
-- `<cert_name>` - The name of the certificate to replace:
-  - For the admin console: `cm`
-  - For the REST API: `api`
-  - For the database endpoint: `proxy`
-  - For the syncer: `syncer`
-  - For the metrics exporter: `metrics_exporter`
+- `<cert_name>` - The name of the certificate to replace. See the [certificates table]({{<relref "/rs/security/certificates">}}) for the list of valid certificate names.
 - `<key>` - The contents of the \*\_key.pem file
 
     {{< tip >}}
@@ -74,11 +64,13 @@ Replace the following variables with your own values:
 
 - `<cert>` - The contents of the \*\_cert.pem file
 
-## Active-Passive database certificates
+## Replica Of database certificates {#active-passive-database-certificates}
+
+This section describes how to update certificates for Replica Of (also known as Active-Passive) databases.
 
 ### Update proxy certificates {#update-ap-proxy-certs}
 
-To update the proxy certificate on clusters running Active-Passive (Replica Of) databases:
+To update the proxy certificate on clusters running Replica Of (Active-Passive) databases:
 
 - **Step 1:**  Use `rladmin` or the REST API to update the proxy certificate on the source database cluster.
 - **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "/rs/databases/import-export/replica-of/create#configure-tls-on-replica-database">}}).
@@ -101,7 +93,7 @@ To update proxy certificate on clusters running Active-Active databases:
     ```
 
 {{<note>}}
-- Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established .
+- Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established.<br/>
 - Do not run any other `crdb-cli crdb update` operations between the two steps.
 {{</note>}}
 
@@ -117,7 +109,7 @@ To update your syncer certificate on clusters running Active-Active databases, f
     ```
 
 {{<note>}}
-- Run step 2 as quickly as possible after step 1. Between the two steps, new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).
-- Do not run any other `crdb-cli crdb update` operations between the two steps.
-- **Known limitation**: Updating syncer certificate on versions prior to 6.0.20-81 will restart the proxy and syncer connections. We recommend you schedule the certificate replacement carefully.
+- Run step 2 as quickly as possible after step 1. Between the two steps, new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).<br/>
+- Do not run any other `crdb-cli crdb update` operations between the two steps.<br/>
+- **Known limitation**: Updating syncer certificate on versions prior to 6.0.20-81 will restart the proxy and syncer connections. In these cases, we recommend scheduling certificate replacement carefully to minimize customer impact.
 {{</note>}}
