@@ -110,9 +110,9 @@ To edit the Redis Cloud account billing address:
 
 1. In the Redis Cloud [admin console](https://app.redislabs.com/), select **Billing & Payments > Payment Methods**.
 
-2. Select the **Credit Card options > Edit billing address**.
+2. Select **Credit card options > Edit billing address**.
 
-    {{<image filename="images/rc/billing-credit-card-options-menu.png" alt="The Credit Card options menu on the upper-right hand corner of the payment method." width="200px">}}{{< /image >}}
+    {{<image filename="images/rc/billing-credit-card-options-menu.png" alt="The Credit card options menu on the upper-right hand corner of the payment method." width="200px">}}{{< /image >}}
 
 3. Enter the new billing address. You must re-enter your payment method details to confirm your address change.
 
@@ -128,9 +128,9 @@ To edit the mailing address associated with a payment method:
 
 1. In the Redis Cloud [admin console](https://app.redislabs.com/), select **Billing & Payments** and then select the **Payment Methods** tab.
 
-2. Select the **Credit Card options** menu and select **Edit mailing address**.
+2. Select **Credit card options > Edit mailing address**.
 
-    {{<image filename="images/rc/billing-credit-card-options-menu.png" alt="The Credit Card options menu on the upper-right hand corner of the payment method." width="200px">}}{{< /image >}}
+    {{<image filename="images/rc/billing-credit-card-options-menu.png" alt="The Credit card options menu on the upper-right hand corner of the payment method." width="200px">}}{{< /image >}}
 
 3. If the mailing address is different from the billing address, deactivate the **Use billing address** slider and enter the new mailing address. 
 
