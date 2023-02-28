@@ -26,7 +26,7 @@ Object information is not measured during [shard migration]({{< relref "/rs/data
 
 **Components measured**: Database and Shard
 
-## Hit Ratio 
+## Hit ratio 
 
 Ratio of the number of operations on existing keys out of the total number of operations. 
 
@@ -74,7 +74,7 @@ The graph shows average, minimum, maximum, and last latency values for all Laten
 
 **Components measured**: Database
 
-## Ops/Sec 
+## Ops/sec 
 
 Number of total operations per second, which includes [read operations](#readssec), [write operations](#writessec), and [other operations](#other-commandssec).
 
