@@ -51,7 +51,7 @@ Refer to the `RedisEnterpriseCluster` [API reference](https://github.com/RedisLa
 
 ### Bind credentials
 
-For LDAP servers that require authentication for client queries, the bind credentials can be stored in a secret and referenced in the `RedisEnterpriseCluster` custom resource.
+For LDAP servers that require authentication for client queries, store the bind credentials in a secret and reference them in the `RedisEnterpriseCluster` custom resource.
 
 1. Create a secret to store the bind credentials.
     
@@ -88,7 +88,7 @@ To enable one of these protocols, edit the `spec.protocol` field in the `RedisEn
         protocol: LDAPS
   ```
 
-  Default port is 636 if left unspecified.
+  Default port: 636
 
 #### Enable `STARTTLS`
 
@@ -97,7 +97,7 @@ To enable one of these protocols, edit the `spec.protocol` field in the `RedisEn
         protocol: STARTTLS
   ```
 
-  Default port is 389 if left unspecified.
+  Default port: 389
 
 ### CA certificate
 
