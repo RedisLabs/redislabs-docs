@@ -57,12 +57,12 @@ For LDAP servers that require authentication for client queries, the bind creden
     
     ```sh
     kubectl -n <my-rec-namespace> create secret generic ldap-bind-credentials \
-        --from-literal=dn='<cn=admin,dc=example,dc=org>' \
-        --from-literal=password=<adminpassword>
+        --from-literal=dn='<disinguished-name>' \
+        --from-literal=password=<password>
     ```
     The secret must:
     - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
-    - include a `dn` key with the Distinguish Name of the user performing the query
+    - include a `dn` key with the distinguished name for the user performing the query (such as `cn=admin,dc=example,dc=org`)
     - include a `password` key with the bind password
 
     Replace the `<placeholders>` in the command above with your own values.
@@ -79,7 +79,7 @@ For LDAP servers that require authentication for client queries, the bind creden
 
 In addition to plain LDAP protocol, Redis Enterprise Software also supports LDAPS and STARTTLS protocols for secure communication with the LDAP server.
 
-Edit the `spec.protocol` field in the `RedisEnterpriseCluster` custom resource:
+To enable one of these protocols, edit the `spec.protocol` field in the `RedisEnterpriseCluster` custom resource:
 
 #### Enable `LDAPS`
 
@@ -107,12 +107,12 @@ To use a custom CA certificate for validating the LDAP server certificate, store
 
     ```sh
     kubectl -n <my-rec-namespace> create secret generic ldap-ca-certificate \
-        --from-file=cert=cacert.pem
+        --from-file=cert=<ca-cert>.pem
     ```
 
     The secret must:
     - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
-    - include a `cert` key with a PEM-encoded CA certificate
+    - include a `cert` key with a PEM-encoded CA certificate (such as `cacert.pem`)
 
     Replace the `<placeholders>` in the command above with your own values.
 
@@ -132,20 +132,21 @@ To use an LDAP client certificate, store the certificate in a secret and referen
 
     ```sh
     kubectl -n <my-rec-namespace> create secret generic ldap-client-certificate \
-      --from-literal=name=ldap_client \
-      --from-file=certificate=cert.pem \
-      --from-file=key=key.pem
+      --from-literal=name=<ldap_client \
+      --from-file=certificate=<client-cert>.pem \
+      --from-file=key=<private-key>.pem
     ```
 
     The secret must:
     - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
-    - include a `certificate` key for the public key
-    - include a `key` key for the private key
     - include a `name` key explicitly set to `ldap_client`
+    - include a `certificate` key for the public key (such as `cert.pem`)
+    - include a `key` key for the private key (such as `key.pem` )
+    
 
     Replace the `<placeholders>` in the command above with your own values.
 
-1. Reference the secret name in the `.spec.certificates.ldapClientCertificateSecretName` field of the `RedisEnterpriseCluster` custom resource.
+1. Reference the secret name in the `.spec.certificates.ldapClientCertificateSecretName` field of the `RedisEnterpriseCluster` custom resource, substituting your own values for `<placeholders>`.
 
     ```yaml
     spec:
