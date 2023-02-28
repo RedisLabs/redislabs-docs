@@ -61,9 +61,9 @@ For LDAP servers that require authentication for client queries, the bind creden
         --from-literal=password=<password>
     ```
     The secret must:
-    - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
-    - include a `dn` key with the distinguished name for the user performing the query (such as `cn=admin,dc=example,dc=org`)
-    - include a `password` key with the bind password
+    - Reside within the same namespace as the `RedisEnterpriseCluster` custom resource.
+    - Include a `dn` key with the distinguished name for the user performing the query (such as `cn=admin,dc=example,dc=org`).
+    - Include a `password` key with the bind password.
 
     Replace the `<placeholders>` in the command above with your own values.
 
@@ -111,8 +111,8 @@ To use a custom CA certificate for validating the LDAP server certificate, store
     ```
 
     The secret must:
-    - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
-    - include a `cert` key with a PEM-encoded CA certificate (such as `cacert.pem`)
+    - Reside within the same namespace as the `RedisEnterpriseCluster` custom resource.
+    - Include a `cert` key with a PEM-encoded CA certificate (such as `cacert.pem`).
 
     Replace the `<placeholders>` in the command above with your own values.
 
@@ -138,10 +138,10 @@ To use an LDAP client certificate, store the certificate in a secret and referen
     ```
 
     The secret must:
-    - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
-    - include a `name` key explicitly set to `ldap_client`
-    - include a `certificate` key for the public key (such as `cert.pem`)
-    - include a `key` key for the private key (such as `key.pem` )
+    - Reside within the same namespace as the `RedisEnterpriseCluster` custom resource.
+    - Include a `name` key explicitly set to `ldap_client`.
+    - Include a `certificate` key for the public key (such as `cert.pem`).
+    - Include a `key` key for the private key (such as `key.pem`).
     
 
     Replace the `<placeholders>` in the command above with your own values.
@@ -158,3 +158,9 @@ To use an LDAP client certificate, store the certificate in a secret and referen
 
 Redis Enterprise Software can't resolve DNS names with a `.local` suffix.
   If your LDAP server is in the same Kubernetes cluster and exposed via a Service object, *avoid* addresses such as `openldap.openldap.svc.cluster.local`. Instead, *use short-form addresses* such as `openldap.openldap.svc`.
+
+## Next steps
+
+To [map LDAP groups to Redis Enterprise access control roles]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap.md">}}), you'll need to use the Redis Enterprise [API]({{<relref "/rs/references/rest-api/requests/ldap_mappings/">}}) or [admin console]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap.md">}}).
+
+For more details on how LDAP works with Redis Enterprise, see [LDAP authentication]({{<relref "/rs/security/access-control/ldap/">}})
