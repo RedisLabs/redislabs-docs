@@ -38,20 +38,48 @@ Percent usage of the CPU for all nodes.
 
 **Components measured**: Database
 
-
-
 ## Free disk space
 
 Remaining unused disk space.
 
 **Components measured**:  Cluster and Node
 
-## Free RAM
+## Memory
+### Used memory 
+
+Total memory used by the database, including RAM, [Flash]({{< relref "/rs/databases/redis-on-flash" >}}) (if enabled), and [replication]({{< relref "/rs/databases/durability-ha/replication" >}}) (if enabled).
+
+Used memory does not include:
+
+1. Fragmentation overhead - the ratio of memory seen by the operating system to memory allocated by Redis
+2. Replication buffers at the primary nodes - set to 10% of used memory and is between 64 MB and 2048 MB
+3. Memory used by Lua scripts - does not exceed 1 MB.
+4. Copy on Write (COW) operation that can be triggered by:
+    - A full replication process
+    - A database snapshot process
+    - AOF rewrite process
+
+Used memory is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}).
+
+**Components measured**: Database and Shard
+
+### Free RAM
 
 Available RAM for System use.
 
 **Components measured**:  Cluster and Node
 
+### Memory limit 
+
+Memory size limit of the database, enforced on the [used memory](#used-memory).
+
+**Components measured**: Database
+
+### Memory usage 
+
+Percent of memory used by Redis out of the [memory limit](#memory-limit).
+
+**Components measured**: Database
 ## Traffic
 
 ### Incoming traffic 
@@ -70,33 +98,7 @@ Outgoing traffic is not measured during [shard migration]({{< relref "/rs/databa
 
 **Components measured**: Cluster, Node and Database
 
-## Used memory 
 
-Total memory used by the database, including RAM, [Flash]({{< relref "/rs/databases/redis-on-flash" >}}) (if enabled), and [replication]({{< relref "/rs/databases/durability-ha/replication" >}}) (if enabled).
-
-Used memory does not include:
-
-1. Fragmentation overhead - the ratio of memory seen by the operating system to memory allocated by Redis
-2. Replication buffers at the primary nodes - set to 10% of used memory and is between 64 MB and 2048 MB
-3. Memory used by Lua scripts - does not exceed 1 MB.
-4. Copy on Write (COW) operation that can be triggered by:
-    - A full replication process
-    - A database snapshot process
-    - AOF rewrite process
-
-Used memory is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}).
-
-### Memory limit 
-
-Memory size limit of the database, enforced on the [used memory](#used-memory).
-
-**Components measured**: Database
-
-### Memory usage 
-
-Percent of memory used by Redis out of the [memory limit](#memory-limit).
-
-**Components measured**: Database
 
 
 

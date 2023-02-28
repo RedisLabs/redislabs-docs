@@ -56,12 +56,6 @@ The graph shows average, minimum, maximum, and last latency values for all Laten
 
 **Components measured**: Database
 
-### Other commands latency 
-
-[Latency](#latency) of [other operations](#other-commandssec).
-
-**Components measured**: Database
-
 ### Reads latency 
 
 [Latency](#latency) of [read operations](#readssec).
@@ -74,19 +68,17 @@ The graph shows average, minimum, maximum, and last latency values for all Laten
 
 **Components measured**: Database
 
-## Ops/sec 
+### Other commands latency 
+
+[Latency](#latency) of [other operations](#other-commandssec).
+
+**Components measured**: Database
+
+## Operations per second (Ops/sec)
 
 Number of total operations per second, which includes [read operations](#readssec), [write operations](#writessec), and [other operations](#other-commandssec).
 
 **Components measured**: Cluster, Node, Database, and Shard
-
-### Other commands/sec 
-
-Number of operations per second that are not [read operations](#readssec) or [write operations](#writessec).
-
-Examples of other operations include [PING](https://redis.io/commands/ping/), [AUTH](https://redis.io/commands/auth/), and [INFO](https://redis.io/commands/info/).
-
-**Components measured**: Database
 
 ### Reads/sec
 
@@ -109,6 +101,14 @@ To find out which commands are write operations, run the following command with 
 ```sh
 ACL CAT write
 ```
+
+**Components measured**: Database
+
+### Other commands/sec 
+
+Number of operations per second that are not [read operations](#readssec) or [write operations](#writessec).
+
+Examples of other operations include [PING](https://redis.io/commands/ping/), [AUTH](https://redis.io/commands/auth/), and [INFO](https://redis.io/commands/info/).
 
 **Components measured**: Database
 
