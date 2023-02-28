@@ -1,5 +1,5 @@
 ---
-Title: Redis Stack on Redis Enterprise
+Title: Redis Stack and Redis Enterprise
 linkTitle: Redis Stack
 description: Describes Redis Stack.
 weight: 9

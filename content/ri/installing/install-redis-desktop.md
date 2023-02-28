@@ -6,7 +6,7 @@ categories: ["RI"]
 path: install/redis-desktop-mac-win-linux/
 aliases: /ri/install/install-redis-desktop/
 ---
-The RedisInsight desktop client allows you to download and use the RedisInsight GUI locally. The desktop client is supported on Windows, MacOS, and Ubuntu operating systems and works with all variants of Redis.
+The RedisInsight desktop client allows you to download and use the RedisInsight UI locally. The desktop client is supported on Windows, MacOS, and Ubuntu operating systems and works with all variants of Redis.
 
 ## System Requirements
 
@@ -18,7 +18,7 @@ The RedisInsight desktop client allows you to download and use the RedisInsight 
 
 {{< note >}}
 For unsupported operating systems, you can still install RedisInsight. However, it may show unexpected behavior.
-We are happy to receive any feedback at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
+We are happy to receive any feedback at [redisinsight@redis.com](mailto:redisinsight@redis.com).
 {{< /note >}}
 
 {{< note >}}
@@ -27,7 +27,7 @@ Disk space: If you are using [online memory analysis](https://docs.redislabs.com
 
 ## Install RedisInsight on Ubuntu
 
-1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. [Download RedisInsight](https://redis.com/redis-enterprise/redis-insight/).
 1. Open a terminal and navigate to the folder containing the downloaded file.
 1. Make your downloaded file into an executable.
 
@@ -41,7 +41,7 @@ chmod +x redisinsight-linux64-<version>
 ./redisinsight-linux64-<version>
 ```
 
-1. To access your RedisInsight GUI, open a web browser and navigate to [{{< param siteURL >}}]({{< param siteURL >}}).
+1. To access your RedisInsight UI, open a web browser and navigate to [{{< param siteURL >}}]({{< param siteURL >}}).
 
 
 ## Install RedisInsight on MacOS
@@ -50,11 +50,11 @@ chmod +x redisinsight-linux64-<version>
 RedisInsight V1 is supported on Mac hardware with Intel chips, and does not have specific support for the Apple M1 (ARM) chip. You can download a special build of [RedisInsight V2](https://redis.com/redis-enterprise/redis-insight/#insight-form) for the Apple M1 (ARM) chip.
 {{</warning>}}
 
-1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. [Download RedisInsight](https://redis.com/redis-enterprise/redis-insight/).
 1. Run the installer.
         {{< note >}}
 MacOS 10.14.x users occasionally encounter errors during installation.
-If you encounter a problem installing RedisInsight, please contact us at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com) and perform the following troubleshooting steps:
+If you encounter a problem installing RedisInsight, please contact us at [redisinsight@redis.com](mailto:redisinsight@redis.com) and perform the following troubleshooting steps:
 1. Move the package to the Desktop and left-click the file while hold the Control key.
 1. Click "Open" to proceed past the warning message.
         {{< /note >}}
@@ -66,7 +66,7 @@ If you encounter a problem installing RedisInsight, please contact us at [redisi
 RedisInsight should install and run on a fresh Windows system. There is no need to install any .NET framework.
 {{</note>}}
 
-1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. [Download RedisInsight](https://redis.com/redis-enterprise/redis-insight/).
 1. Run the installer.
 1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
 

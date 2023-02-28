@@ -6,7 +6,7 @@ description: This section how to set up an Active-Active Redis Enterprise databa
 weight: 15
 alwaysopen: false
 categories: ["Platforms"]
-aliases: [ 
+aliases: [
     /kubernetes/re-clusters/create-aa-database/,
     /kubernetes/re-clusters/create-aa-database.md,
 ]
@@ -27,7 +27,7 @@ Before creating Active-Active databases, you'll need two or more working Kuberne
 
 - Routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) (OpenShift users can use routes)
 - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
-- Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/administering/designing-production/hardware-requirements.md">}}))
+- Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}}))
 
 ## Document required parameters
 
@@ -56,7 +56,7 @@ You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<i
   - Example value: `rec01.ns01.svc.cluster.local`
   - How to get it: List all your Redis Enterprise clusters
       ```bash
-      kubectl get rec 
+      kubectl get rec
       ```
 - **API hostname** `<api-hostname>`:
   - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster
@@ -98,18 +98,32 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
 
-    ```sh
-    activeActive:
-      apiIngressUrl: <api-hostname>
-      dbIngressSuffix: <ingress-suffix>
-      ingressAnnotations:
-        kubernetes.io/ingress.class: <nginx | haproxy>
-        <nginx.ingress.kubernetes.io | haproxy-ingress.github.io>/backend-protocol: HTTPS
-        <nginx.ingress.kubernetes.io | haproxy-ingress.github.io>/ssl-passthrough: "true"  
-      method: ingress
-    ```
+  Nginx:
 
-1. After the changes are saved and applied, you can verify a new ingress was created for the API.
+  ```sh
+  activeActive:
+    apiIngressUrl: <api-hostname>
+    dbIngressSuffix: <ingress-suffix>
+    ingressAnnotations:
+       kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    method: ingress
+  ```
+
+HAproxy:
+
+  ```sh
+  activeActive:
+    apiIngressUrl: <api-hostname>
+    dbIngressSuffix: <ingress-suffix>
+    ingressAnnotations:
+      kubernetes.io/ingress.class: haproxy
+       ingress.kubernetes.io/ssl-passthrough: "true"
+    method: ingress
+  ```
+
+2. After the changes are saved and applied, you can verify a new ingress was created for the API.
 
     ```sh
     $ kubectl get ingress
@@ -117,7 +131,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
     rec01  api.abc.cde.redisdemo.com  225161f845b278-111450635.us.cloud.com   80      24h
     ```
 
-1. Verify you can access the API from outside the K8s cluster.
+3. Verify you can access the API from outside the K8s cluster.
 
     ```sh
    curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/cluster
@@ -125,7 +139,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
     If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
 
-1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address of the ingress controller’s LoadBalancer. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
+4. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address of the ingress controller’s LoadBalancer. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
 #### If using Istio Gateway and VirtualService
 
@@ -153,7 +167,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 
 1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the route IP address. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
-1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
+1. If your cluster uses [OpenShift routes]({{<relref "/kubernetes/re-databases/routes.md">}}), add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
 
       ```sh
       activeActive:
@@ -177,7 +191,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{< relref "/kubernetes/re-clusters/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
 
 ```sh
-crdb-cli crdb create 
+crdb-cli crdb create \
   --name <db-name> \
   --memory-size <mem-size> \
   --encryption yes \
@@ -187,7 +201,7 @@ crdb-cli crdb create
 
 To create a database that syncs between more than two instances, add additional `--instance` arguments.
 
-See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more options.
+See the [`crdb-cli` reference]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) for more options.
 
 ## Test your database
 

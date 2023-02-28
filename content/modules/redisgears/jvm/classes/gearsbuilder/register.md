@@ -18,7 +18,7 @@ public java.lang.String register​(
     gears.operations.OnUnregisteredOperation onUnregistered)
 ```
 
-Registers the pipeline of functions to run when certain events occur. The registered functions will run each time the event occurs.
+Registers the pipeline of functions to run when certain [events]({{<relref "/modules/redisgears/register-events">}}) occur. The registered functions will run each time the event occurs.
 
 Execution modes:
 

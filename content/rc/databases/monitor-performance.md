@@ -76,6 +76,6 @@ Any member of the account team can receive alert emails.
 
 To update alert settings for one or more team members, select **Access Management** from the admin console menu and then select the **Team** tab.
 
-For details, see [Access management]({{< relref "/rc/administration/access-management" >}}).
+For details, see [Access management]({{< relref "/rc/security/access-management" >}}).
 
 If you subscribe to Redis Enterprise Cloud through a Platform-as-a-Service (PaaS) provider (such as Heroku), you will need to review your provider's documentation for help managing your team.

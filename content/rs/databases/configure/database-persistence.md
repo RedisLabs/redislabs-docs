@@ -2,7 +2,7 @@
 Title: Configure database persistence
 linktitle: Persistence
 description: How to configure database persistence with either an append-only file (AOF) or snapshots.
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -16,11 +16,11 @@ aliases: [
 ]
 ---
 All data is stored and managed exclusively in either RAM or RAM + flash Memory ([Redis on
-Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})) and therefore, is at risk of being lost upon a process or server
-failure. As Redis Enterprise Software is not just a caching solution, but also a full-fledged database, [persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) to disk
+Flash]({{< relref "/rs/databases/redis-on-flash/" >}})) and therefore, is at risk of being lost upon a process or server
+failure. As Redis Enterprise Software is not just a caching solution, but also a full-fledged database, [persistence](https://redis.com/redis-enterprise/technology/durable-redis/) to disk
 is critical. Therefore, Redis Enterprise Software supports persisting data to disk on a per-database basis and in multiple ways.
 
-[Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be configured either during database creation or by editing an existing
+[Persistence](https://redis.com/redis-enterprise/technology/durable-redis/) can be configured either during database creation or by editing an existing
 database's configuration. While the persistence model can be changed dynamically, just know that it can take time for your database to switch from one persistence model to the other. It depends on what you are switching from and to, but also on the size of your database.
 
 ## Configure persistence for your database
@@ -90,7 +90,18 @@ two:
 |  Slower time to recover (Larger files) | Faster recovery time |
 |  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
 
-## Data persistence and Redis on Flash
+## Active-Active data persistence 
+
+Active-Active databases support AOF persistence only.  Snapshot persistence is not supported for Active-Active databases.
+
+If an Active-Active database is using snapshot persistence, use `crdb-cli` to switch to AOF persistence:
+
+```text
+crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config \
+   '{"data_persistence": "aof", "aof_policy":"appendfsync-every-sec"}'
+```
+
+## Redis on Flash data persistence
 
 If you are enabling data persistence for databases running on Redis
 Enterprise Flash, by default both master and replica shards are

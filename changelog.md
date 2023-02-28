@@ -112,7 +112,7 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
 - Kubernetes doc updates:
 
-    - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) on Kubernetes ([PR #1555](https://github.com/RedisLabs/redislabs-docs/pull/1555))
+    - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) for Kubernetes ([PR #1555](https://github.com/RedisLabs/redislabs-docs/pull/1555))
 
     - Docs have been updated to support Redis Enterprise for [Kubernetes v6.2.8-2](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-2-2021-11/) ([PR #1648](https://github.com/RedisLabs/redislabs-docs/pull/1648))
 
@@ -198,7 +198,7 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
     - Updated docs to support the K8s [6.2.4-1 release](https://docs.redis.com/latest/platforms/release-notes/k8s-6-2-4-1-2021-09/). ([PR #1527](https://github.com/RedisLabs/redislabs-docs/pull/1527)) 
 
-    - [Manage Redis Enterprise databases on Kubernetes](https://docs.redis.com/latest/platforms/kubernetes/redb/db-controller/) has been updated. ([PR #1524](https://github.com/RedisLabs/redislabs-docs/pull/1524)) 
+    - [Manage Redis Enterprise databases for Kubernetes](https://docs.redis.com/latest/platforms/kubernetes/redb/db-controller/) has been updated. ([PR #1524](https://github.com/RedisLabs/redislabs-docs/pull/1524)) 
 
     - A new article shows how to [connect to the admin console](https://docs.redis.com/latest/platforms/kubernetes/rec/connect-to-admin-console/) to manage the Redis Enterprise cluster in your Kubernetes deployment.  ([PR #1529](https://github.com/RedisLabs/redislabs-docs/pull/1529))
 
@@ -337,7 +337,7 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
 - Redis Enterprise Software doc updates:
 
-    - Added article describing compatibility with [open source Redis](https://docs.redislabs.com/latest/rs/concepts/compatibility/) ([PR #1345](https://github.com/RedisLabs/redislabs-docs/pull/1345))
+    - Added article describing compatibility with [open source Redis](https://docs.redislabs.com/latest/rs/references/compatibility/) ([PR #1345](https://github.com/RedisLabs/redislabs-docs/pull/1345))
 
     - Simplified [install and update](https://docs.redislabs.com/latest/rs/installing-upgrading/) article and resolved navigation issues ([PR #1376](https://github.com/RedisLabs/redislabs-docs/pull/1376))
 

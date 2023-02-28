@@ -22,7 +22,7 @@ To integrate Redis Enterprise Cloud into an existing cloud vendor account, you c
 
 - Subscribe to Redis Enterprise Cloud through [AWS Marketplace]({{<relref "/rc/cloud-integrations/aws-marketplace/">}}).
 
-- Subscribe to Redis Enterprise Cloud through GCP Marketplace.
+- Subscribe to Redis Enterprise Cloud through [GCP Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}).
 
 When you subscribe to Redis Enterprise Cloud through a cloud vendor marketplace, billing is handled through the marketplace.
 

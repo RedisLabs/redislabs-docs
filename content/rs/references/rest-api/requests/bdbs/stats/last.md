@@ -21,17 +21,19 @@ aliases: /rs/references/rest-api/bdbs/stats/last
 
 ## Get latest stats for all databases {#get-all-bdbs-stats-last}
 
-	GET /v1/bdbs/stats/last
+```sh
+GET /v1/bdbs/stats/last
+```
 
 Get the most recent statistics for all databases.
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [view_all_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_all_bdb_stats">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_all_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_all_bdb_stats">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
@@ -43,7 +45,7 @@ Get the most recent statistics for all databases.
 2. With metrics filter
     ```
     GET /bdbs/stats/last?metrics=no_of_keys,used_memory
-    ``` 
+    ```
 
 #### Request headers
 
@@ -58,7 +60,7 @@ Get the most recent statistics for all databases.
 |-------|------|-------------|
 | metrics | string | Comma-separated list of metric names for which we want statistics (default is all). (optional) |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all databases.
 
@@ -128,7 +130,7 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
     }
     ```
 
-### Status codes {#get-all-status-codes} 
+### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -137,21 +139,25 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
 
 ## Get latest database stats {#get-bdbs-stats-last}
 
-	GET /v1/bdbs/stats/last/{int: uid}
+```sh
+GET /v1/bdbs/stats/last/{int: uid}
+```
 
 Get the most recent statistics for a specific database.
 
-#### Required permissions
+#### Permissions
 
-| Permission name |
-|-----------------|
-| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /bdbs/stats/last/1?metrics=no_of_keys,used_memory 
+```sh
+GET /bdbs/stats/last/1?metrics=no_of_keys,used_memory
+```
 
 #### Request headers
 
@@ -172,7 +178,7 @@ Get the most recent statistics for a specific database.
 |-------|------|-------------|
 | metrics | string | Comma-separated list of metric names for which we want statistics (default is all). (optional) |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns the most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for a specific database.
 
@@ -189,7 +195,7 @@ Returns the most recent [statistics]({{<relref "/rs/references/rest-api/objects/
 }
 ```
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|

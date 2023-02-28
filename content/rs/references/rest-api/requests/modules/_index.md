@@ -25,34 +25,38 @@ aliases: /rs/references/rest-api/modules
 
 ## List modules {#list-modules}
 
-	GET /v1/modules
+```sh
+GET /v1/modules
+```
 
 List available modules, i.e. modules stored within the CCS.
 
-#### Required permissions
+#### Permissions
 
-| Permission name |
-|-----------------|
-| [view_cluster_modules]({{<relref "/rs/references/rest-api/permissions#view_cluster_modules">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_cluster_modules]({{<relref "/rs/references/rest-api/permissions#view_cluster_modules">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#list-request} 
+### Request {#list-request}
 
 #### Example HTTP request
 
-    GET /modules
+```sh
+GET /modules
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | 127.0.0.1:9443 | Domain name |
 | Accept | \*/\* | Accepted media type |
 
-### Response {#list-response} 
+### Response {#list-response}
 
 Returns a JSON array of [module objects]({{<relref "/rs/references/rest-api/objects/module">}}).
 
-### Status codes {#list-status-codes} 
+#### Status codes {#list-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -60,28 +64,32 @@ Returns a JSON array of [module objects]({{<relref "/rs/references/rest-api/obje
 
 ## Get module {#get-module}
 
-	GET /v1/modules/{string: uid}
+```sh
+GET /v1/modules/{string: uid}
+```
 
 Get specific available modules, i.e. modules stored within the CCS.
 
-#### Required permissions
+#### Permissions
 
-| Permission name |
-|-----------------|
-| [view_cluster_modules]({{<relref "/rs/references/rest-api/permissions#view_cluster_modules">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_cluster_modules]({{<relref "/rs/references/rest-api/permissions#view_cluster_modules">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-    GET /modules/1
+```sh
+GET /modules/1
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | 127.0.0.1:9443 | Domain name |
-| Accept | \*/\* | Accepted media type |	
+| Accept | \*/\* | Accepted media type |
 
 #### URL parameters
 
@@ -89,11 +97,11 @@ Get specific available modules, i.e. modules stored within the CCS.
 |-------|------|-------------|
 | uid | integer | The module's unique ID. |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns a [module object]({{<relref "/rs/references/rest-api/objects/module">}}).
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -102,90 +110,134 @@ Returns a [module object]({{<relref "/rs/references/rest-api/objects/module">}})
 
 ## Upload module v1 {#post-module}
 
-	POST /v1/modules
+```sh
+POST /v1/modules
+```
 
 Uploads a new module to the cluster.
 
 The request must contain a Redis module, bundled using [RedisModule
-Packer](https://github.com/RedisLabs/RAMP).
+Packer](https://github.com/RedisLabs/RAMP). For modules in [Redis Stack]({{<relref "/modules/redis-stack">}}), download the module from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
 
-#### Required permissions
+See [Install a module on a cluster]({{<relref "modules/install/add-module-to-cluster#rest-api-method">}}) for more information.
 
-| Permission name |
-|-----------------|
-| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
+#### Permissions
 
-### Request {#post-request} 
+| Permission name | Roles |
+|-----------------|-------|
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) | admin |
+
+### Request {#post-request}
 
 #### Example HTTP request
 
-	POST /v1/modules 
+```sh
+POST /v1/modules
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
-| Host | 127.0.0.1 | Domain name |
+| Host | string | Domain name |
 | Accept | \*/\* | Accepted media type |
-| Content-Length | 865 | Length of the request body in octets |
+| Content-Length | integer | Length of the request body in octets |
 | Expect | 100-continue | Requires particular server behaviors |
-| Content-Type | multipart/form-data; boundary=------------------------4751ac3b332ace13 | Media type of request/response body |
+| Content-Type | multipart/form-data | Media type of request/response body |
 
-### Response {#post-response} 
+### Response {#post-response}
 
 Returns a status code. If an error occurs, the response body may include an error code and message with more details.
 
-### Error codes {#post-error-codes} 
+#### Error codes {#post-error-codes}
 
 The server may return a JSON object with `error_code` and `message` fields that provide additional information. The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
-| no_module | Module wasn't provided | 
-| invalid_module | Module either corrupted or packaged files are wrong | 
-| module_exists | Module already in system | 
-| min_redis_pack_version | Module isn't supported yet in this Redis pack | 
-| unsupported_module_capabilities | The module does not support required capabilities| 
+| no_module | Module wasn't provided or could not be found |
+| invalid_module | Module either corrupted or packaged files are wrong |
+| module_exists | Module already in system |
+| min_redis_pack_version | Module isn't supported yet in this Redis pack |
+| unsupported_module_capabilities | The module does not support required capabilities|
 | os_not_supported | This module is not supported for this operating system |
 | dependencies_not_supported | This endpoint does not support dependencies, see v2 |
 
-### Status codes {#post-status-codes} 
+#### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Either missing module file or an invalid module file. |
 
+### Examples
+
+#### cURL
+
+```sh
+$ curl -k -u "[username]:[password]" -X POST
+       -F "module=@/tmp/rejson.Linux-ubuntu18.04-x86_64.2.0.8.zip"
+       https://[host][:port]/v1/modules
+```
+
+#### Python
+
+```python
+import requests
+
+url = "https://[host][:port]/v1/modules"
+
+files=[
+    ('module',
+        ('rejson.Linux-ubuntu18.04-x86_64.2.0.8.zip',
+        open('/tmp/rejson.Linux-ubuntu18.04-x86_64.2.0.8.zip','rb'),
+        'application/zip')
+    )
+]
+auth=("[username]", "[password]")
+
+response = requests.request("POST", url,
+                            auth=auth, files=files, verify=False)
+
+print(response.text)
+```
+
 ## Upload module v2 {#post-module-v2}
 
-	POST /v2/modules
+```sh
+POST /v2/modules
+```
 
 Asynchronously uploads a new module and its dependencies to the cluster.
 
 The request must contain a Redis module bundled using [RedisModule Packer](https://github.com/RedisLabs/RAMP). If the module's metadata includes a `dependencies` section, a `/v2/modules` request automatically uploads the dependencies.
 
-#### Required permissions
+For modules in [Redis Stack]({{<relref "/modules/redis-stack">}}), download the module from the [Download Center](https://redis.com/redis-enterprise-software/download-center/modules/). See [Install a module on a cluster]({{<relref "modules/install/add-module-to-cluster#rest-api-method">}}) for more information.
 
-| Permission name |
-|-----------------|
-| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
+#### Permissions
 
-### Request {#post-request-v2} 
+| Permission name | Roles |
+|-----------------|-------|
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) | admin |
+
+### Request {#post-request-v2}
 
 #### Example HTTP request
 
-	POST /v2/modules 
+```sh
+POST /v2/modules
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
-| Host | 127.0.0.1 | Domain name |
+| Host | string| Domain name |
 | Accept | \*/\* | Accepted media type |
-| Content-Length | 865 | Length of the request body in octets |
+| Content-Length | integer | Length of the request body in octets |
 | Expect | 100-continue | Requires particular server behaviors |
-| Content-Type | multipart/form-data; boundary=------------------------4751ac3b332ace13 | Media type of request/response body |
+| Content-Type | multipart/form-data; | Media type of request/response body |
 
-### Response {#post-response-v2} 
+### Response {#post-response-v2}
 
 Returns a [module object]({{<relref "/rs/references/rest-api/objects/module">}}) with an additional `action_uid` field.
 
@@ -234,7 +286,7 @@ You can use the `action_uid` to track the progress of the module upload.
 }
 ```
 
-### Error codes {#post-error-codes-v2} 
+### Error codes {#post-error-codes-v2}
 
 The server may return a JSON object with `error_code` and `message` fields that provide additional information.
 
@@ -244,7 +296,7 @@ Possible `error_code` values include [`/v1/modules` error codes](#post-error-cod
 |------|-------------|
 | invalid_dependency_data | Provided dependencies have an unexpected format |
 
-### Status codes {#post-status-codes-v2} 
+### Status codes {#post-status-codes-v2}
 
 | Code | Description |
 |------|-------------|
@@ -255,25 +307,29 @@ Possible `error_code` values include [`/v1/modules` error codes](#post-error-cod
 
 ## Delete module v1 {#delete-module}
 
-	DELETE /v1/modules/{string: uid}
+```sh
+DELETE /v1/modules/{string: uid}
+```
 
 Delete a module.
 
 If the module has dependencies, use the [`v2` request](#delete-module-v2) instead.
 
-#### Required permissions
+#### Permissions
 
-| Permission name |
-|-----------------|
-| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) | admin |
 
-### Request {#delete-request} 
+### Request {#delete-request}
 
 #### Example HTTP request
 
-	DELETE /v1/modules/1 
+```sh
+DELETE /v1/modules/1
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -286,17 +342,17 @@ If the module has dependencies, use the [`v2` request](#delete-module-v2) instea
 |-------|------|-------------|
 | uid | integer | The module's unique ID. |
 
-### Response {#delete-response} 
+### Response {#delete-response}
 
 Returns a status code to indicate module deletion success or failure.
 
-### Error codes {#delete-error-codes} 
+#### Error codes {#delete-error-codes}
 
 | Code | Description |
 |------|-------------|
-| dependencies_not_supported | You can use the following API endpoint to delete this module with its dependencies: `/v2/modules/<uid>` |
+| dependencies_not_supported | You can use the following API endpoint to delete this module with its dependencies: [`/v2/modules/<uid>`](#delete-module-v2) |
 
-### Status codes {#delete-status-codes} 
+#### Status codes {#delete-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -306,23 +362,27 @@ Returns a status code to indicate module deletion success or failure.
 
 ## Delete module v2 {#delete-module-v2}
 
-	DELETE /v2/modules/{string: uid}
+```sh
+DELETE /v2/modules/{string: uid}
+```
 
 Delete a module with dependencies.
 
-#### Required permissions
+#### Permissions
 
-| Permission name |
-|-----------------|
-| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) | admin |
 
-### Request {#delete-request-v2} 
+### Request {#delete-request-v2}
 
 #### Example HTTP request
 
-	DELETE /v2/modules/1 
+```sh
+DELETE /v2/modules/1
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -335,11 +395,11 @@ Delete a module with dependencies.
 |-------|------|-------------|
 | uid | integer | The module's unique ID. |
 
-### Response {#delete-response-v2} 
+### Response {#delete-response-v2}
 
 Returns a JSON object with an `action_uid` that allows you to track the progress of module deletion.
 
-### Status codes {#delete-status-codes-v2} 
+#### Status codes {#delete-status-codes-v2}
 
 | Code | Description |
 |------|-------------|

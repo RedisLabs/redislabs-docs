@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents an [LDAP mapping]({{<relref "/rs/security/ldap/map-ldap-groups-to-roles">}}) between an LDAP group and [roles]({{<relref "/rs/references/rest-api/objects/role">}}).
+An API object that represents an [LDAP mapping]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}}) between an LDAP group and [roles]({{<relref "/rs/references/rest-api/objects/role">}}).
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

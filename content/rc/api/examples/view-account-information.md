@@ -14,7 +14,7 @@ aliases: /rv/api/how-to/view-account-information/
 The root API operation returns information about the current account, user, and API Key (as identified by the set of API Keys provided in the API request).
 
 ```shell
-{{% embed-code "rv/api/70-query-metrics.sh" %}}
+GET "https://[host]/v1/subscriptions/<subscription_id>/databases/<database_id>/metrics?metricSpan=1hour"
 ```
 
 Here is an example of the API operation response:
@@ -31,19 +31,20 @@ Here is an example of the API operation response:
       "accountId": 654321,
       "accountName": "Redis account for Jay Doe",
       "allowedSourceIps": [
-        "82.81.136.0/24"
+        "192.0.2.0/24"
       ],
       "createdTimestamp": "2019-06-06T07:41:14Z",
       "owner": {
         "name": "Jay Doe",
         "email": "jay.doe@redislabs.com"
       },
-      "httpSourceIp": "82.81.136.242"
+      "httpSourceIp": "192.0.2.0"
     }
   }
+}
 ```
 
 The above example contains:
 
-- The public source IP of the current user - `82.81.136.242`
-- The API key limitation on allowed source IP ranges - The field `allowedSourceIps` restricts the current API Key access to requests originating from IP addresses that reside within the allowed IP range of `82.81.136.0/24`.
+- **httpSourceIp**: The public source IP of the current user
+- **allowedSourceIps**: Restricts the current API Key access to requests originating from IP addresses that reside within the specified IP range

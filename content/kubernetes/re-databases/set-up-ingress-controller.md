@@ -2,7 +2,7 @@
 Title: Establish external routing with an ingress controller
 linkTitle: Ingress routing
 description: Configure an ingress controller to access your Redis Enterprise databases from outside the Kubernetes cluster.
-weight: 25
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
@@ -19,7 +19,7 @@ Every time a Redis Enterprise database (REDB) is created with the Redis Enterpri
 
 By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
-Redis Enterprise Software on Kubernetes supports two ingress controllers, [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/).
+Redis Enterprise for Kubernetes supports two ingress controllers, [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/).
 
 ## Prerequisites
 
@@ -88,16 +88,19 @@ Install one of the supported ingress controllers:
         http:
           paths:
           - path: /
+            pathType: ImplementationSpecific
             backend:
-              serviceName: <db-name>
-              servicePort: <db-port>
+              service:
+                name: <db-name>
+                port:
+                  name: redis
     ```  
 
     For HAProxy, insert the following into the `annotations` section:  
 
     ``` YAML
     kubernetes.io/ingress.class: haproxy
-    haproxy-ingress.github.io/ssl-passthrough: "true"
+     ingress.kubernetes.io/ssl-passthrough: "true"
     ```
 
     For NGINX, insert the following into the `annotations` section:  

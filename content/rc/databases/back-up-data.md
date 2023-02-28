@@ -1,14 +1,14 @@
 ---
 Title: Back up a database
 description:
-weight: 40
+weight: 35
 alwaysopen: false
 categories: ["RC"]
 linktitle: Back up data
 aliases: [ "/rv/administration/configure/backups/",
            "/rc/administration/configure/backups/",
            "/rv/administration/configuration/backups/",
-           "/rc/administration/configuration/backups.md", 
+           "/rc/administration/configuration/backups.md",
            "/rc/administration/configuration/backups/",
            "/rc/databases/backups/" ]
 ---
@@ -19,17 +19,17 @@ The backup options for Redis Enterprise Cloud databases depend on your plan:
 
 - Paid Fixed plans can perform backups on-demand and schedule backups that occur every 24 hours.  
 
-- Free plans do not back up automatically.
+- Free plans cannot perform backups through the Redis Cloud console.
 
-Backups are saved to pre-defined storage locations available to your subscription.
+Backups are saved to predefined storage locations available to your subscription.
 
-Backup locations need to be available before you enable database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations)
+Backup locations need to be available before you turn on database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations)
 
 Here, you'll learn how to store backups using different cloud providers.
 
-## Enable backups
+## Turn on backups
 
-To enable backups for a database:
+To turn on database backups:
 
 1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
@@ -39,7 +39,7 @@ To enable backups for a database:
 
 3.  Select the database to open the **Database** page and then select **Edit database**.
 
-    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
+    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
 4.  In the **Durability** section of the **Configuration** tab, locate the **Remote backup** setting:
 
@@ -54,20 +54,20 @@ When you enable **Remote backup**, additional options appear.  The options vary 
 | **Interval** | Defines the frequency of automatic backups.  Paid fixed accounts are backed up every 24 hours.  Flexible and Annual subscriptions can be set to 24, 12, 6, 4, 2, or 1 hour backup intervals. |
 | **Set backup time** | When checked, this lets you set the hour of the **Backup time**. (_Flexible and Annual  subscriptions only_) |
 | **Backup time** | Defines the hour automatic backups are made.  Note that actual backup times will vary up in order to minimize customer access disruptions.  (_Flexible and Annual  subscriptions only_)<br/> Times are expressed in [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC).|
-| **Storage type** | Defines the provider of the storage location, which can be: `AWS S3`, `Google Cloud Storage`, `Azure Blob Storage`, or `FTP` (SFTP). |
+| **Storage type** | Defines the provider of the storage location, which can be: `AWS S3`, `Google Cloud Storage`, `Azure Blob Storage`, or `FTP` (FTPS). |
 | **Backup destination** | Defines a URI representing the backup storage location. |
 
 ## Back up data on demand
 
-Once backups are enabled, you can back up your data at any time.  Use the **Backup Now** button in the **Durability** section.
+After backups are turned on, you can back up your data at any time.  Use the **Backup now** button in the **Durability** section.
 
 {{<image filename="images/rc/button-database-backup-now.png" alt="Use the Backup Now button to make backups on demand." >}}{{< /image >}}
 
-Backups need to be enabled before the button appears.  
+You can only use the **Backup now** button after you turn on backups.
 
 ## Set up backup storage locations
 
-Database backups can be stored to a cloud provider service or saved to a URI using FTP/SFTP.
+Database backups can be stored to a cloud provider service or saved to a URI using FTP/FTPS.
 
 When stored to a cloud provider, backup locations need to be available on the same provider in the same region as your subscription.
 
@@ -75,41 +75,27 @@ Your subscription needs the ability to view permissions and update objects in th
 
 The following sections help set things up; however, provider features change frequently.  For best results, use your provider's documentation for the latest info.
 
-### AWS Simple Storage Service 
+### AWS S3
 
 To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html):
 
-1.  Sign in to the [AWS Management Console](https://console.aws.amazon.com/).
-
-1.  Use the **Services** menu to locate and select **Storage** > **S3**.  This takes you to the Amazon S3 admin panel.
-
-1.  If you do not already have a bucket for backups, select the **Create Bucket** button in the upper, right corner of the **Buckets** panel.
-
-    1.  When the **Create bucket** screen appears, enter a name for your bucket.
-
-    1.  Set **AWS Region** to an appropriate region.
-
-    1.  Set other properties according to your company standards.
-
-    1.  When finished, select the **Create bucket** button near the bottom of the screen.
+1. In the [AWS Management Console](https://console.aws.amazon.com/), use the **Services** menu to locate and select **Storage** > **S3**.  This takes you to the Amazon S3 admin panel.
 
 1.  Use the Buckets list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Access control list (ACL)** section, and then select the **Edit** button.
 
-1.  When the **Edit access control list (ACL)** screen appears, locate the Access for other AWS accounts section and then select the **Add grantee** button.
-
-    1.  In the **Grantee** field, enter:
-    
-    ```
-    fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614
-    ```
-
-    1.  In the **Objects** list, enable **Write**.
-    1.  In the **Bucket ACL** list, enable **Read** and **Write**.
-    1.  When finished, select the **Save changes** button.
+1.  When the **Edit access control list (ACL)** screen appears, configure the bucket's Access Control List to give access to Redis Enterprise Cloud.
+    1. Select **Add grantee**.
+    1. In the **Grantee** field, enter:
+    `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
+    1. In the **Objects** list, select **Write**.
+    1. In the **Bucket ACL** list, select **Read** and **Write**.
+    1. Select **Save**.
 
 Once the bucket is available and the permissions are set, use the name of your bucket as the **Backup destination** for your database's Remote backup settings. For example, suppose your bucket is named *backups-bucket*.  In that case, set **Backup destination** to `s3://backups-bucket`.
 
-### GCP Storage 
+To learn more, see [Configuring ACLs for buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html) on the AWS docs.
+
+### GCP Storage
 
 For [Google Cloud Platform (GCP)
 console](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
@@ -137,20 +123,22 @@ console](https://developers.google.com/console/) subscriptions, store your backu
     1. View the details of your bucket.
 
     1. Select the **Retention** tab.
-    
+
     1. Verify that there is no retention policy.  
-    
+
     If a policy is defined and you cannot delete it, you need to use a different bucket.
 
 Use the bucket details **Configuration** tab to locate the **gsutil URI**.  This is the value you'll assign to your resource's backup path.
 
-### Azure Blob Storage 
+To learn more, see [Use IAM permissions](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-iam).
+
+### Azure Blob Storage
 
 To store your backup in Microsoft Azure Blob Storage, sign in to the Azure portal and then:
 
-1. [Create an Azure Storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) if you do not already have one
+1. [Create an Azure Storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) if you do not already have one.
 
-1. [Create a container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) if you do not already have one
+1. [Create a container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) if you do not already have one.
 
 1. [Manage storage account access keys](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage)
 
@@ -168,7 +156,7 @@ Where:
 - *container_name:* the name of the container, if needed.
 - *path*: the backups path, if needed.
 
-To learn more, see [Authorizing access to data in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth)
+To learn more, see [Authorizing access to data in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth).
 
 ### FTP Server
 
@@ -186,5 +174,3 @@ Where:
 - *path*: the backup path, if needed.
 
 The user account needs permission to write files to the server.
-
-

@@ -43,7 +43,7 @@ public KeysReader(String pattern,
 | Name | Type | Default value | Description |
 |------|------|---------------|-------------|
 | commands | array of strings | null | The commands that this reader is registered on |
-| eventTypes | array of strings | null | The event types to register on (usually the command name) |
+| eventTypes | array of strings | null | The [event types]({{<relref "/modules/redisgears/register-events#event-types">}}) to register on (usually the command name) |
 | keyTypes | array of strings | null | The key types to register on |
 | noScan | boolean | false | Whether or not to scan the key space or just read the pattern as is |
 | pattern/prefix | string | "\*" (match all keys) | The reader will get all keys that match this pattern |

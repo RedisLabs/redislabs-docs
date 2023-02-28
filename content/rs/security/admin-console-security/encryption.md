@@ -1,6 +1,6 @@
 ---
-Title: Manage encryption
-linkTitle: Manage encryption
+Title: Encrypt REST API requests
+linkTitle: Encrypt API requests
 description:
 weight: 30
 alwaysopen: false

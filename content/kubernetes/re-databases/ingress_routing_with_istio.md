@@ -2,7 +2,7 @@
 Title: Configure Istio for external routing
 linkTitle: Istio ingress routing
 description: Configure Istio as an ingress controller for access to your Redis Enterprise databases from outside the Kubernetes cluster. 
-weight: 25
+weight: 20
 alwaysOpen: false
 categories: ["Platforms"]
 aliases: [

@@ -2,7 +2,7 @@
 title: Internode encryption
 linkTitle: Internode encryption
 description: Describes internode which improves the security of data in transit. 
-weight: 10
+weight: 15
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/security/internode-encryption/
@@ -41,7 +41,7 @@ To enable internode encryption for a database (also called _data plane encryptio
 
     {{<image filename="images/rs/database-configuration-internode-encryption-edit.png" alt="The Internode encryption setting can be found on the Configuration tab of the Database settings." >}}{{< /image >}}
 
--  Use the `rladmin` command-line utility to set the [data_internode_encryption]({{< relref "/rs/references/rladmin.md#tune" >}}) setting for the database:
+-  Use the `rladmin` command-line utility to set the [data_internode_encryption]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-db">}}) setting for the database:
 
     ``` shell
     rladmin tune db <database_id> data_internode_encryption enable

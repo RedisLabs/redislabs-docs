@@ -27,7 +27,7 @@ Before you add a node to the cluster:
     If the clock in the node you are trying to join to the cluster is not synchronized with the nodes already in the cluster,
     the action fails and an error message is shown indicating that you must synchronize the clocks first.
 
-- You must [update the DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
+- You must [update the DNS records]({{< relref "/rs/networking/cluster-dns/_index.md" >}})
     each time a node is added or replaced.
 
 - We recommend that you add nodes one after the other rather than in parallel
@@ -50,11 +50,11 @@ with a custom certificate.
 
 1. To start configuring RS, click **Setup**.
 1. Configure the RS network and storage settings:
-    1. You can enter a path for [*Persistent storage*]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}),
+    1. You can enter a path for [*Persistent storage*]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
-    1. You can enter a path for [*Ephemeral storage*]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}),
+    1. You can enter a path for [*Ephemeral storage*]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}),
         or leave the default path.
-    1. If you want to enable [*Redis on Flash*]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}),
+    1. If you want to enable [*Redis on Flash*]({{< relref "/rs/databases/redis-on-flash/" >}}),
         select **Enable flash storage support** and enter the path to the Flash storage to use as RAM extension.
     1. If your machine has multiple IP addresses, in **IP Addresses Usage** assign a single IPv4 type address for internal traffic
         and multiple IPv4/IPv6 type addresses for external traffic.
@@ -80,6 +80,6 @@ You can see it in the list of nodes in the cluster.
 If you see an error when you add the node, try adding the node again.
 
 {{< tip >}}
-We recommend that you run the [rlcheck utility]({{< relref "/rs/references/rlcheck.md" >}}) to verify that the node is functioning properly.
+We recommend that you run the [rlcheck utility]({{<relref "/rs/references/cli-utilities/rlcheck">}}) to verify that the node is functioning properly.
 {{< /tip >}}
 

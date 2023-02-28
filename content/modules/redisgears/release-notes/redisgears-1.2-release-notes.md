@@ -14,10 +14,24 @@ aliases: /modules/redisgears/release-notes/redisgears-1.2-release-notes/
 
 ## Requirements
 
-RedisGears v1.2.4 requires:
+RedisGears v1.2.5 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.12
+
+## v1.2.5 (July 2022)
+
+This is a maintenance release for RedisGears 1.2.
+
+Update urgency: `MODERATE` : Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#792](https://github.com/RedisGears/RedisGears/issues/792), [#798](https://github.com/RedisGears/RedisGears/pull/798) Execution was triggered infinitely when trimming is turned off.
+    - [#791](https://github.com/RedisGears/RedisGears/issues/791), [#796](https://github.com/RedisGears/RedisGears/pull/796) Stop triggering executions during [pause](https://oss.redis.com/redisgears/commands.html#rgpauseregistrations) even on failure.
+    - [#794](https://github.com/RedisGears/RedisGears/pull/794), [#797](https://github.com/RedisGears/RedisGears/pull/797) Use [`PythonInstallationDir`](https://oss.redis.com/redisgears/configuration.html#pythoninstallationdir) configuration to find the virtual environment location on Redis Enterprise. (MOD-1734)
 
 ## v1.2.4 (May 2022)
 

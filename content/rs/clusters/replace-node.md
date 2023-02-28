@@ -1,8 +1,8 @@
 ---
 Title: Replace a faulty cluster node
-linkTitle: Replace a node
+linkTitle: Replace node
 description: Replace a node in your cluster that is down. 
-weight: $weight
+weight: 90
 alwaysopen: false
 categories: ["RS"]
 aliases: [
@@ -27,7 +27,7 @@ failure](/images/rs/node-failure.png)
     instructions]({{< relref "/rs/installing-upgrading/_index.md" >}}).
 
     {{< note >}}
-If you are using [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}),
+If you are using [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}),
 you must make sure the required flash storage is set up on this new node.
     {{< /note >}}
 
@@ -44,6 +44,6 @@ you must make sure the required flash storage is set up on this new node.
 - If there is a faulty node in the cluster to which you are adding a node,
 - RS enforces using the new node to replace the faulty one.
 - If you are using the DNS NS record based connection approach,
-the [DNS records must be updated]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
+the [DNS records must be updated]({{< relref "/rs/networking/cluster-dns/_index.md" >}})
 each time a node is added or replaced.
     {{< /note >}}

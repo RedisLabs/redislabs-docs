@@ -21,23 +21,27 @@ aliases: /rs/references/rest-api/bdbs/actions/optimize_shards_placement
 
 ## Get optimized shards placement {#get-bdbs-actions-optimize-shards-placement}
 
-	GET /v1/bdbs/{int: uid}/actions/optimize_shards_placement
+```sh
+GET /v1/bdbs/{int: uid}/actions/optimize_shards_placement
+```
 
 Get optimized shards placement for the given database.
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /bdbs/1/actions/optimize_shards_placement
+```sh
+GET /bdbs/1/actions/optimize_shards_placement
+```
 
-### Response {#get-response} 
+### Response {#get-response}
 
 To rearrange the database shards, you can submit the blueprint returned in this response body as the `shards_blueprint` field in the [`PUT`&nbsp;`/bdbs/{uid}`](#put-bdbs-rearrange-shards) request.
 
@@ -87,14 +91,14 @@ To rearrange the database shards, you can submit the blueprint returned in this 
 ]
 ```
 
-#### Response headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Content-Length | 352 | Length of the request body in octets |
 | cluster-state-id | 30 | Cluster state ID |
 
-### Status codes {#get-status-codes} 
+#### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -114,7 +118,17 @@ The cluster will reject the update if its state was changed since the optimal sh
 
 #### Example HTTP request
 
-    PUT /bdbs/1
+```sh
+PUT /bdbs/1
+```
+
+#### Headers
+
+| Key | Value | Description |
+|-----|-------|-------------|
+| Host | cnm.cluster.fqdn | Domain name |
+| Accept | application/json | Accepted media type |
+| cluster-state-id | 30 | Cluster state ID |
 
 #### Example JSON body
 
@@ -135,14 +149,6 @@ The cluster will reject the update if its state was changed since the optimal sh
 }
 ```
 
-{{<warning>}} 
+{{<warning>}}
 If you submit such an optimized blueprint, it may cause strain on the cluster and its resources. Use with caution.
-{{</warning>}} 
-
-#### Request headers
-
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
-| cluster-state-id | 30 | Cluster state ID |
+{{</warning>}}

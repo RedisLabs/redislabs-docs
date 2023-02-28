@@ -24,31 +24,34 @@ aliases: /rs/references/rest-api/users
 
 ## Get all users {#get-all-users}
 
-	GET /v1/users
+```sh
+GET /v1/users
+```
 
 Get a list of all users.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_all_users_info]({{<relref "/rs/references/rest-api/permissions#view_all_users_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_all_users_info]({{<relref "/rs/references/rest-api/permissions#view_all_users_info">}}) | admin |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
-	GET /users 
+```sh
+GET /users
+```
 
-
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns a JSON array of [user objects]({{<relref "/rs/references/rest-api/objects/user">}}).
 
@@ -78,7 +81,7 @@ Returns a JSON array of [user objects]({{<relref "/rs/references/rest-api/object
 ]
 ```
 
-### Status codes {#get-all-status-codes} 
+### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -86,30 +89,32 @@ Returns a JSON array of [user objects]({{<relref "/rs/references/rest-api/object
 
 ## Get user {#get-user}
 
-	GET /v1/users/{int: uid}
+```sh
+GET /v1/users/{int: uid}
+```
 
 Get a single user's details.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_user_info]({{<relref "/rs/references/rest-api/permissions#view_user_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_user_info]({{<relref "/rs/references/rest-api/permissions#view_user_info">}}) | admin |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /users/1 
+```sh
+GET /users/1
+```
 
-
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
-
 
 #### URL parameters
 
@@ -117,7 +122,7 @@ Get a single user's details.
 |-------|------|-------------|
 | uid | integer | The user's unique ID |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns a [user object]({{<relref "/rs/references/rest-api/objects/user">}}) that contains the details for the specified user ID.
 
@@ -136,7 +141,7 @@ Returns a [user object]({{<relref "/rs/references/rest-api/objects/user">}}) tha
 }
 ```
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -146,21 +151,27 @@ Returns a [user object]({{<relref "/rs/references/rest-api/objects/user">}}) tha
 
 ## Update user {#put-user}
 
-	PUT /v1/users/{int: uid}
+```sh
+PUT /v1/users/{int: uid}
+```
 
 Update an existing user's configuration.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [update_user]({{<relref "/rs/references/rest-api/permissions#update_user">}}) (Although any user can change their own name, password, or alerts) |
+| Permission name | Roles |
+|-----------------|-------|
+| [update_user]({{<relref "/rs/references/rest-api/permissions#update_user">}}) | admin |
 
-### Request {#put-request} 
+Any user can change their own name, password, or alert preferences.
+
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /users/1 
+```sh
+PUT /users/1
+```
 
 #### Example JSON body
 
@@ -171,7 +182,7 @@ Update an existing user's configuration.
 }
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -190,7 +201,7 @@ Update an existing user's configuration.
 
 Include a [user object]({{<relref "/rs/references/rest-api/objects/user">}}) with updated fields in the request body.
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Returns the updated [user object]({{<relref "/rs/references/rest-api/objects/user">}}).
 
@@ -209,21 +220,21 @@ Returns the updated [user object]({{<relref "/rs/references/rest-api/objects/use
 ```
 
 {{<note>}}
-For [RBAC-enabled clusters]({{<relref "/rs/security/passwords-users-roles">}}), the returned user details include `role_uids` instead of `role`.
+For [RBAC-enabled clusters]({{<relref "/rs/security/access-control">}}), the returned user details include `role_uids` instead of `role`.
 {{</note>}}
 
-### Error codes {#put-error-codes} 
+### Error codes {#put-error-codes}
 
 When errors are reported, the server may return a JSON object with    `error_code` and `message` field that provide additional information.    The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
-| password_not_complex | The given password is not complex enough (Only works when the password_complexity feature is enabled).| 
-| new_password_same_as_current | The given new password is identical to the old password.| 
-| email_already_exists | The given email is already taken.| 
-| change_last_admin_role_not_allowed | At least one user with admin role should exist.| 
+| password_not_complex | The given password is not complex enough (Only works when the password_complexity feature is enabled).|
+| new_password_same_as_current | The given new password is identical to the old password.|
+| email_already_exists | The given email is already taken.|
+| change_last_admin_role_not_allowed | At least one user with admin role should exist.|
 
-### Status codes {#put-status-codes} 
+### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -234,58 +245,62 @@ When errors are reported, the server may return a JSON object with    `error_cod
 
 ## Create user {#post-user}
 
-	POST /v1/users
+```sh
+POST /v1/users
+```
 
 Create a new user.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [create_new_user]({{<relref "/rs/references/rest-api/permissions#create_new_user">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [create_new_user]({{<relref "/rs/references/rest-api/permissions#create_new_user">}}) | admin |
 
-### Request {#post-request} 
+### Request {#post-request}
 
 #### Example HTTP request
 
-	POST /users 
-
-#### Example JSON body
-
-```json
-{
-     "email": "user@redislabs.com",
-     "password": "my-password",
-     "name": "John Doe",
-     "email_alerts": true,
-     "bdbs_email_alerts": ["1","2"],
-     "role": "db_viewer",
-     "auth_method": "regular"
-}
+```sh
+POST /users
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
 
-#### Request body
+#### Body
 
-Include a single [user object]({{<relref "/rs/references/rest-api/objects/user">}}), with an email and a password, in the request body.
+Include a single [user object]({{<relref "/rs/references/rest-api/objects/user">}}) in the request body. The user object must have an email, password, and role.
 
 {{<note>}}
-For [RBAC-enabled clusters]({{<relref "/rs/security/passwords-users-roles">}}), use `role_uids` instead of `role` in the request body.
+For [RBAC-enabled clusters]({{<relref "/rs/security/access-control">}}), use `role_uids` instead of `role` in the request body.
 {{</note>}}
 
-`email_alerts` can be configured either as: 
+`email_alerts` can be configured either as:
 
-- `true` - user will receive alerts for all databases configured in `bdbs_email_alerts`. The user will receive alerts for all databases by default if `bdbs_email_alerts` is not configured. `bdbs_email_alerts` can be a list of database UIDs or `[‘all’]` meaning all databases. 
+- `true` - user will receive alerts for all databases configured in `bdbs_email_alerts`. The user will receive alerts for all databases by default if `bdbs_email_alerts` is not configured. `bdbs_email_alerts` can be a list of database UIDs or `[‘all’]` meaning all databases.
 
 - `false` - user will not receive alerts for any databases
 
-### Response {#post-response} 
+##### Example JSON body
+
+```json
+{
+     "email": "newuser@redis.com",
+     "password": "my-password",
+     "name": "Pat Doe",
+     "email_alerts": true,
+     "bdbs_email_alerts": ["1","2"],
+     "role_uids": [ 3, 4 ],
+     "auth_method": "regular"
+}
+```
+
+### Response {#post-response}
 
 Returns the newly created [user object]({{<relref "/rs/references/rest-api/objects/user">}}).
 
@@ -304,19 +319,19 @@ Returns the newly created [user object]({{<relref "/rs/references/rest-api/objec
 }
 ```
 
+### Error codes {#post-error-codes}
 
+When errors are reported, the server may return a JSON object with `error_code` and `message` field that provide additional information.
 
-### Error codes {#post-error-codes} 
-
-When errors are reported, the server may return a JSON object with    `error_code` and `message` field that provide additional information.    The following are possible `error_code` values:
+The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
-| password_not_complex | The given password is not complex enough (Only works when the password_complexity feature is enabled).| 
-| email_already_exists | The given email is already taken.| 
-| name_already_exists | The given name is already taken.| 
+| password_not_complex | The given password is not complex enough (Only works when the password_complexity feature is enabled).|
+| email_already_exists | The given email is already taken.|
+| name_already_exists | The given name is already taken.|
 
-### Status codes {#post-status-codes} 
+### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -324,32 +339,85 @@ When errors are reported, the server may return a JSON object with    `error_cod
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad or missing configuration parameters. |
 | [409 Conflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | User with the same email already exists. |
 
+### Examples
+
+#### cURL
+
+```sh
+$ curl -k -X POST -u '[username]:[password]' \
+       -H 'Content-Type: application/json' \
+       -d '{ "email": "newuser@redis.com", \
+           "password": "my-password", \
+           "name": "Pat Doe", \
+           "email_alerts": true, \
+           "bdbs_email_alerts": ["1","2"], \
+           "role_uids": [ 3, 4 ], \
+           "auth_method": "regular" }' \
+       'https://[host][:port]/v1/users'
+```
+
+#### Python
+
+```python
+import requests
+import json
+
+url = "https://[host][:port]/v1/users"
+auth = ("[username]", "[password]")
+
+payload = json.dumps({
+  "email": "newuser@redis.com",
+  "password": "my-password",
+  "name": "Pat Doe",
+  "email_alerts": True,
+  "bdbs_email_alerts": [
+    "1",
+    "2"
+  ],
+  "role_uids": [
+    3,
+    4
+  ],
+  "auth_method": "regular"
+})
+
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, auth=auth, headers=headers, data=payload, verify=False)
+
+print(response.text)
+```
+
 ## Delete user {#delete-user}
 
-	DELETE /v1/users/{int: uid}
+```sh
+DELETE /v1/users/{int: uid}
+```
 
 Delete a user.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [delete_user]({{<relref "/rs/references/rest-api/permissions#delete_user">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [delete_user]({{<relref "/rs/references/rest-api/permissions#delete_user">}}) | admin |
 
-### Request {#delete-request} 
+### Request {#delete-request}
 
 #### Example HTTP request
 
-	DELETE /users/1 
+```sh
+DELETE /users/1
+```
 
-
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
-
 
 #### URL parameters
 
@@ -357,11 +425,11 @@ Delete a user.
 |-------|------|-------------|
 | uid | integer | The user's unique ID |
 
-### Response {#delete-response} 
+### Response {#delete-response}
 
 Returns a status code to indicate the success or failure of the user deletion.
 
-### Status codes {#delete-status-codes} 
+### Status codes {#delete-status-codes}
 
 | Code | Description |
 |------|-------------|

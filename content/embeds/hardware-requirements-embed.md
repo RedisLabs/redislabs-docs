@@ -14,7 +14,7 @@ and with these hardware requirements:
 | Item | Description | Minimum Requirements | Recommended |
 |------------|-----------------|------------|-----------------|
 | Nodes per cluster | You can install on one node but many features require at least two nodes. | 1 node | >= 2 nodes |
-| RAM per node | The amount of RAM for each node. | 4GB | >= 8GB |
+| RAM per node | The amount of RAM for each node. | 4GB | >= 10GB |
 | Storage per node | The amount of storage space for each node. | 10GB | >= 20GB |
 
 ## Production environment
@@ -24,11 +24,11 @@ We recommend these hardware requirements for production systems or for developme
 | Item | Description | Minimum Requirements | Recommended |
 |------------|-----------------|------------|-----------------|
 | Nodes per cluster<sup>*</sup> | At least three nodes are required to support a reliable, highly available deployment that handles process failure, node failure, and network split events in a consistent manner. | 3 nodes | >= 3 nodes (Must be an odd number of nodes) |
-| Cores<sup>*</sup> per node | RS is based on a multi-tenant architecture and can run multiple Redis processes (or shards) on the same core without significant performance degradation. | 4 cores | >=8 cores |
+| Cores<sup>*</sup> per node | Redis Enterprise Software is based on a multi-tenant architecture and can run multiple Redis processes (or shards) on the same core without significant performance degradation. | 4 cores | >=8 cores |
 | RAM<sup>*</sup> per node | Defining your RAM size must be part of the capacity planning for your Redis usage. | 15GB | >=30GB |
-| Ephemeral Storage | Used for storing [replication files (RDB format) and cluster log files]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}). | RAM x 2 | >= RAM x 4 |
-| Persistent Storage | Used for storing [snapshot (RDB format) and AOF files]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}) over a persistent storage media, such as AWS Elastic Block Storage (EBS) or Azure Data Disk. | RAM x 3 | In-memory >= RAM x 6 (except for [extreme 'write' scenarios]({{< relref "/rs/clusters/optimize/disk-sizing-heavy-write-scenarios.md" >}})); [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) >= (RAM + Flash) x 5. |
-| Network | We recommend using multiple NICs per node where each NIC is >100Kbps, but RS can also run over a single 1Gbps interface network used for processing application requests, inter-cluster communication, and storage access. | 1G | >=10G |
+| Ephemeral Storage | Used for storing [replication files (RDB format) and cluster log files]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}). | RAM x 2 | >= RAM x 4 |
+| Persistent Storage | Used for storing [snapshot (RDB format) and AOF files]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}) over a persistent storage media, such as AWS Elastic Block Storage (EBS) or Azure Data Disk. | RAM x 3 | In-memory >= RAM x 6 (except for [extreme 'write' scenarios]({{< relref "/rs/clusters/optimize/disk-sizing-heavy-write-scenarios.md" >}})); [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) >= (RAM + Flash) x 5. |
+| Network | We recommend using multiple NICs per node where each NIC is >100Mbps, but Redis Enterprise Software can also run over a single 1Gbps interface network used for processing application requests, inter-cluster communication, and storage access. | 1G | >=10G |
 
 <sup>*</sup>Additional considerations:
 - Nodes per Cluster:

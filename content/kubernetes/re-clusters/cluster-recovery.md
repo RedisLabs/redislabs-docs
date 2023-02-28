@@ -23,7 +23,7 @@ When this happens, you must recover the cluster to restore the connections.
 
 You can also perform cluster recovery to reset cluster nodes, to troubleshoot issues, or in a case of active/passive failover.
 
-The cluster recovery for Kubernetes automates these recovery steps:
+The Redis Enterprise for Kubernetes automates these recovery steps:
 
 1. Recreates a fresh Redis Enterprise cluster
 1. Mounts the persistent storage with the recovery files from the original cluster to the nodes of the new cluster
@@ -33,13 +33,10 @@ The cluster recovery for Kubernetes automates these recovery steps:
 ## Prerequisites
 
 - For cluster recovery, the cluster must be [deployed with persistence]({{< relref "/kubernetes/memory/persistent-volumes.md" >}}).
-- For data recovery, the databases must be [configured with persistence]({{< relref "content/rs/databases/configure/database-persistence.md" >}}).
 
-## Recovering a cluster on Kubernetes
+## Recover a cluster
 
-To recover a cluster on Kubernetes:
-
-1. Edit the rec resource to set the clusterRecovery flag to true, run:
+1. Edit the REC resource to set the `clusterRecovery` flag to `true`.
 
     ```sh
     kubectl patch rec <cluster-name> --type merge --patch '{"spec":{"clusterRecovery":true}}'
@@ -58,7 +55,7 @@ kubectl delete pods <pod> --grace-period=0 --force
 When the last pod is manually deleted, the recovery process resumes.
     {{< /note >}}
 
-1. Wait for the cluster to recover until it is in the Running state.
+1. Wait for the cluster to recover until it is in the "Running" state.
 
     To see the state of the cluster, run:
 
@@ -66,24 +63,4 @@ When the last pod is manually deleted, the recovery process resumes.
     watch "kubectl describe rec | grep State"
     ```
 
-1. To recover the cluster data, once the cluster is in Running state, for any cluster pod run:
-
-    ```sh
-    kubectl exec <pod-name> -- rladmin recover all
-    ```
-    
-    This command recovers the data for all nodes in the cluster based on the cluster configuration in pod-0.
-    
-
-   {{< note >}}
-If the database status is `missing files`, make sure all persistence files are placed on the correct nodes under the persistence path. In case of databases with AOF persistence enabled, you may need to rename AOF files on the pods to remove the .prev suffix
-
-   {{< /note >}}
-
-    If you want to recover based on the cluster configuration of another pod, copy the cluster configuration from the source pod (/var/opt/redislabs/persist/ccs/ccs-redis.rdb) to pod-0.
-
-1. If you are using sentinel discovery service, you must restart the sentinel_service on the master. To do this, log into the master pod and run:
-
-    ```sh
-    supervisorctl restart sentinel_service
-    ```
+1. To recover the database, see [Recover a failed database]({{<relref "/rs/databases/recover.md">}}).

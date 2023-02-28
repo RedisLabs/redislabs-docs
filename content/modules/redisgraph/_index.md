@@ -24,5 +24,6 @@ Primary features:
 
 ## More info
 
-- [RedisGraph commands](https://redis.io/docs/stack/graph/commands/)
+- [RedisGraph commands]({{<relref "/modules/redisgraph/commands">}})
+- [RedisGraph configuration]({{<relref "/modules/redisgraph/config">}})
 - [RedisGraph source](https://github.com/RedisGraph/RedisGraph)

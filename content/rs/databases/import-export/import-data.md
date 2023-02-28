@@ -1,7 +1,7 @@
 ---
 Title: Import data into a database
 description: You can import export or backup files of a specific Redis Enterprise Software database to restore data. You can either import from a single file or from multiple files, such as when you want to import from a backup of a clustered database.
-weight: 20
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 linktitle: Import data
@@ -15,7 +15,7 @@ aliases: [
 ]
 ---
 You can import, [export]({{< relref "/rs/databases/import-export/export-data.md" >}}),
-or [backup]({{< relref "/rs/databases/import-export/database-backup.md" >}})
+or [backup]({{< relref "/rs/databases/import-export/schedule-backups.md" >}})
 files of a specific Redis Enterprise Software database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a clustered database.
@@ -102,6 +102,8 @@ and on the destination server.
 - You must mount the storage in the same path on all cluster nodes.
     You can also use local storage but you must copy the imported files manually to all nodes
     because the import source folders on the nodes are not synchronized.
+
+As of version 6.2.12, Redis Enterprise reads files directly from the mount point using a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link) (symlink) instead of copying them to a temporary directory on the node.
 
 To specify to import from a local mount point on a node:
 

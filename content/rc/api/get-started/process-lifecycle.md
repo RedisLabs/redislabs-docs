@@ -43,19 +43,13 @@ Many operations are asychronous, including CREATE, UPDATE, and DELETE operations
 You can query the `taskId` to track the state of a specific task:
 
 ```shell
-{{% embed-code "rv/api/20-get-task-id.sh" %}}
-```
-
-In this example, the `$TASK_ID` variable includes the `taskId` value.
-
-```bash
-TASK_ID=166d7f69-f35b-41ed-9128-7d753b642d63
+GET "https://[host]/v1/tasks/<taskId>"
 ```
 
 You can also query the state of all active tasks or recently completed tasks in your account:
 
 ```shell
-{{% embed-code "rv/api/30-get-all-tasks.sh" %}}
+GET "https://[host]/v1/tasks"
 ```
 
 ### Task process states
@@ -85,13 +79,13 @@ The term "provisioning" refers to all infrastructure changes required in order t
 
 The provisioning phase may require several minutes to complete. You can query the resource identifier to track the progress of the provisioning phase.
 
-For example, when you provision a new subscription, use this `cURL` command to query the status of the subscription:
+For example, when you provision a new subscription, use this API call to query the status of the subscription:
 
 ```shell
-{{% embed-code "rv/api/40-get-subscription-by-id.sh" %}}
+GET "https://[host]/v1/subscriptions/<subscription-id>"
 ```
 
-Where the `{subscription-id}` is the resource ID that you receive when the task is in the `processing-completed` state.
+Where the `<subscription-id>` is the resource ID that you receive when the task is in the `processing-completed` state.
 
 ### Provisioning state values
 
@@ -120,4 +114,3 @@ The following limitations apply to asynchronous operations:
     - If the creation of the database requires an update to the subscription, the subscription state is set to `pending`.
     When you create multiple databases one after the other, we recommend that you check the subscription state after the processing phase of each database create request.
     If the subscription is in `pending` state you must wait for the subscription changes to complete and the subscription state to return to `active`.
-

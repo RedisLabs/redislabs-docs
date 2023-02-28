@@ -16,7 +16,7 @@ To create a database in your Redis Enterprise Cloud [subscription]({{< relref "r
 
 2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
-    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-flexible-databases-tab-update.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
 
 3. Select the **New database** button.
 
@@ -43,9 +43,19 @@ The available settings vary according to your subscription plan:
 | **Subscription** | Read-only description of your subscription plan, including cloud provider and region |
 | **Active-Active Redis** | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_) |
 | **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
-| **Database Name** | A name for your database (_required_) |
+| **Database name** | A name for your database (_required_) |
+| **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
 | **Type**  | Controls optional capabilities, such as modules or protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
 | **Modules** | Extend core Redis functionality using [modules]({{<relref "modules/">}}).  Redis Enterprise Cloud supports selected modules; for details, see [Redis Enterprise module support]({{<relref "modules/enterprise-capabilities#redis-enterprise-module-support">}}) |
+
+### Database port
+
+All subscriptions automatically assign a database port by default.
+
+Flexible (and Annual) subscriptions let you choose between two options:
+
+- **Auto assign** automatically assigns a port number during database creation.
+- **Manually assign** lets you enter a custom port number between 10000 and 19999. You cannot assign a port that is reserved or already in use.
 
 ### Modules
 
@@ -105,12 +115,11 @@ The **Scalability** section is available only for Flexible and Annual plans.
 |Setting name|Description|
 |:-----------|:----------|
 | **Memory size** | Maximum size (in GB) for your database |
-| **Throughput** | Defines throughput in terms of maximum operations per second for the database
-| **Shards** | Defines the throughput in terms of shards dedicated to the database
-| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/configure/clustering.md#changing-the-hashing-policy" >}}) |
-| **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/enable-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
+| **Throughput** | Defines throughput in terms of maximum operations per second for the database <br/><br/>RediSearch databases use the number of shards to determine throughput. To determine how many shards you need for your RediSearch database, use the [RediSearch sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). |
+| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/durability-ha/clustering.md#changing-the-hashing-policy" >}}) |
+| **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 
-To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/configure/clustering.md" >}}).
+To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
 
 ### Memory size
 
@@ -122,11 +131,11 @@ Here are some general guidelines:
 
 - Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory size when replication is enabled.
 
-- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) is enabled.)
+- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) is enabled.)
 
 - Modules also consume memory.
 
-Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/configure/memory-limit.md" >}})
+Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}})
 
 ## Durability section
 
