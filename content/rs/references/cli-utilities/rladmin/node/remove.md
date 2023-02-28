@@ -21,7 +21,7 @@ rladmin node <ID> remove [wait_for_persistence enabled|disabled]
 | Parameter             | Type/Value                     | Description                                                 |
 |-----------------------|--------------------------------|-------------------------------------------------------------|
 | node                  | integer                        | The node to remove from the cluster                    |
-| wait_for_persistence  | enabled|disabled               | When enabled, ensures persistence files availability for recovery. Optional parameter. If not supplied default value is taken from cluster policy (persistent_node_removal).                   |
+| wait_for_persistence  | enabled|disabled               | Ensures persistence files are available for recovery. Optional parameter. Default value is taken from cluster policy (persistent_node_removal).                   |
 
 ### Returns
 
