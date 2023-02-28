@@ -131,8 +131,7 @@ Before upgrading a database:
 
     - Use the admin console to open the Configuration tab for the database.
 
-    - Use the `rladmin status extra all` command to display configuration details. An indicator appears in the command output when the database compatibility version is out-of-date.
-    **OLD REDIS VERSION**
+    - Use the [`rladmin status extra all`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) command to display configuration details. When the database compatibility version is outdated, <nobr>`OLD REDIS VERSION`</nobr> appears in the command output.
 
 - Verify the cluster is fully upgraded and operational.
 
