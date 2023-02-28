@@ -74,7 +74,7 @@ The graph shows average, minimum, maximum, and last latency values for all Laten
 
 **Components measured**: Database
 
-## Operations per second (Ops/sec)
+## Ops/sec
 
 Number of total operations per second, which includes [read operations](#readssec), [write operations](#writessec), and [other operations](#other-commandssec).
 
