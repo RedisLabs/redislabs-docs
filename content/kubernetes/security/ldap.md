@@ -113,7 +113,6 @@ To use a custom CA certificate for validating the LDAP server certificate, store
     - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
     - include a `cert` key with a PEM-encoded CA certificate
 
-
     Replace the `<placeholders>` in the command above with your own values.
 
 1. Reference the secret name in the `spec.ldap.caCertificateSecretName` field of the `RedisEnterpriseCluster` custom resource.
@@ -126,27 +125,32 @@ To use a custom CA certificate for validating the LDAP server certificate, store
 
 ### Client certificates
 
-In addition to LDAP bind authentication, the LDAP client within Redis Enterprise Software can use a client certificate to authenticate with the LDAP server.
-To configure the LDAP client certificate, the certificate cna be stored in a secret and referenced in the `RedisEnterpriseCluster` custom resource.
+To use an LDAP client certificate, store the certificate in a secret and reference the secret in the `RedisEnterpriseCluster` custom resource.
 
-The secret must reside within the same namespace as the `RedisEnterpriseCluster` custom resource, and include a `certificate` and `key` keys with the public and private keys respectively, as well as a `name` key explicitly set to `ldap_client`.
+1. Create a secret to hold the client certificate.
 
-The following example command creates such a secret:
+    ```sh
+    kubectl -n <my-rec-namespace> create secret generic ldap-client-certificate \
+      --from-literal=name=ldap_client \
+      --from-file=certificate=cert.pem \
+      --from-file=key=key.pem
+    ```
 
-```sh
-kubectl -n my-rec-namespace create secret generic ldap-client-certificate \
-    --from-literal=name=ldap_client \
-    --from-file=certificate=cert.pem \
-    --from-file=key=key.pem
-```
+    The secret must:
+    - reside within the same namespace as the `RedisEnterpriseCluster` custom resource
+    - include a `certificate` key for the public key
+    - include a `key` key for the private key
+    - include a `name` key explicitly set to `ldap_client`
 
-Once configured, the secret can be referenced in the `RedisEnterpriseCluster` custom resource by specifying its name via the `.spec.certificates.ldapClientCertificateSecretName` field:
+    Replace the `<placeholders>` in the command above with your own values.
 
-```yaml
-spec:
-  certificates:
-    ldapClientCertificateSecretName: ldap-client-certificate
-```
+1. Reference the secret name in the `.spec.certificates.ldapClientCertificateSecretName` field of the `RedisEnterpriseCluster` custom resource.
+
+    ```yaml
+    spec:
+      certificates:
+        ldapClientCertificateSecretName: ldap-client-certificate
+    ```
 
 ## Known limitations
 
