@@ -13,7 +13,7 @@ aliases:
 Removes the specified node from the cluster.
 
 ```sh
-rladmin node <ID> remove
+rladmin node <ID> remove [wait_for_persistence enabled|disabled]
 ```
 
 ### Parameters
@@ -21,6 +21,7 @@ rladmin node <ID> remove
 | Parameter             | Type/Value                     | Description                                                 |
 |-----------------------|--------------------------------|-------------------------------------------------------------|
 | node                  | integer                        | The node to remove from the cluster                    |
+| wait_for_persistence  | enabled|disabled               | When enabled, ensures persistence files availability for recovery. Optional parameter. If not supplied default value is taken from cluster policy (persistent_node_removal).                   |
 
 ### Returns
 
