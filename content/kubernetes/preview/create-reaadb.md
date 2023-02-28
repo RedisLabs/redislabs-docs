@@ -6,20 +6,20 @@ weight: 20
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
-    /kubernetes/preview/prepare.md,
-    /kubernetes/preview/prepare/,
+    /kubernetes/preview/create-reaadb.md,
+    /kubernetes/preview/create-reaadb/,
 }
 ---
 
-{{<note>}} This feature is currently in preview and is not for production use. {{</note>}}
+{{<note>}} **This feature is currently in preview and is not for production use.** {{</note>}}
 
 ## Prepare participating clusters
 
-An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})). Prepare each Redis Enterprise cluster (REC) for use in your Active-Active deployment with the following steps.
+An [Active-Active]({{<relerf "/rs/databases/active-active/">}}) database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})). Prepare each Redis Enterprise cluster (REC) for use in your Active-Active deployment with the following steps.
 
-## Enable Active-Active controllers
+### Enable Active-Active controllers
 
-For each each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster. 
+For each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster. 
 
 1. Apply custom resource definitions for the Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC) to install those controllers.
 
@@ -38,7 +38,9 @@ For each each Redis Enterprise cluster (REC), you must enable the Active-Active 
 
 1. Configure routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) (use [routes]({{<relref "/kubernetes/re-databases/routes.md">}}) for OpenShift).
 
-## Collect REC credentials
+1. Repeat these steps for each participating Redis Enterprise cluster (REC).
+
+### Collect REC credentials
 
 1. Get the REC credentials secret for the participating cluster, replacing `<rec-name>` with the REC name.
 
@@ -61,14 +63,19 @@ For each each Redis Enterprise cluster (REC), you must enable the Active-Active 
     type: Opaque
     ```
 
-1. Apply the secret file.
+
+1. Repeat these steps for each participating Redis Enterprise cluster (REC).
+
+1. Gather all the new secrets into a single file and apply it.
 
     ```sh
-    kubectl apply -f redis-enterprise-<rec-name>-<rec-namespace>
+    kubectl apply -f <new-generated-secret-file>
     ```
 
-1. Complete these steps for each participating Redis Enterprise cluster (REC).
 
-[//]: # (Is there an advantage to applying them all at once, or can they apply each secret as they create it?)
+
+
+
+
 
 
