@@ -90,9 +90,11 @@ Used memory is not measured during [shard migration]({{< relref "/rs/databases/c
 
 Memory size limit of the database, enforced on the [used memory](#used-memory).
 
+**Components measured**: Database
+
 ### Memory usage 
 
-Percent of memory used by redis out of the [memory limit](#memory-limit).
+Percent of memory used by Redis out of the [memory limit](#memory-limit).
 
 **Components measured**: Database
 
