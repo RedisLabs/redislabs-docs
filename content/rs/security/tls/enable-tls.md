@@ -58,7 +58,7 @@ You can enable TLS by editing the configuration of an existing database (as show
         | _State / Province (ST)_ | The organization's state or province |
         | _Country (C)_ | 2-letter code that represents the organization's country |
 
-        You can only enter a single value for each field. If your client certificate has a `Subject` attribute with multiple values (such as OU=unit1; OU=unit2), add a separate `Subject` entry for each.
+        You can only enter a single value for each field, except for the _Organizational Unit (OU)_ field. If your client certificate has a `Subject` with multiple  _Organizational Unit (OU)_ values, enter each value in quotation marks, comma separated (e.g. "unit1","unit2").
 
         **Breaking change:** If you use the [REST API]({{<relref "/rs/references/rest-api">}}) instead of the admin console to configure additional certificate validations, note that `authorized_names` is deprecated as of Redis Enterprise v6.4.2. Use `authorized_subjects` instead. See the [BDB object reference]({{<relref "/rs/references/rest-api/objects/bdb">}}) for more details.
 
