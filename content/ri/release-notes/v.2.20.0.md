@@ -12,7 +12,7 @@ This is the General Availability (GA) release of RedisInsight 2.20.
 
 ### Highlights
 - Visualizations of [search](https://redis.io/docs/stack/search/) and [graph](https://redis.io/docs/stack/graph/) execution plans in Workbench
-- Walkthrough to discover RedisInsight tools and capabilities for new users
+- Guided walkthrough of RedisInsight tools and capabilities for new users
 - Bulk export database connections to a file
 - Upload values of [RedisJSON](https://redis.io/docs/stack/json/) from a file for new keys in Browser
 - Visualizations of [CLIENT LIST](https://redis.io/commands/client-list/) in Workbench
