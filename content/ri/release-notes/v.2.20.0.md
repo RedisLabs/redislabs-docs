@@ -17,7 +17,7 @@ This is the General Availability (GA) release of RedisInsight 2.20.
 - Upload values of [RedisJSON](https://redis.io/docs/stack/json/) from a file for new keys in Browser
 - Visualizations of [CLIENT LIST](https://redis.io/commands/client-list/) in Workbench
 - See filters previously used in Browser
-- Automatically display Redis keys added in Browser
+- Automatically display Redis keys in Browser
 - Configure database connection timeout
 - Test database connection
 - Edit port for existing database connections
