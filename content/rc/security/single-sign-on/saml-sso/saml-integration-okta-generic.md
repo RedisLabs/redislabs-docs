@@ -188,7 +188,7 @@ An edit modal screen will appear, where you can modify the mapping field for the
 
 It is also possible to override the Redis mapping field at an individual user level. In order to do so, click on the "People" menu of the screen, and then on the "pencil" icon of the person you wish to modify the field for.
 
-{{<image filename="images/rc/saml/okta_saml_group_22.png" alt="" >}}{{</image>}}
+{{<image filename="images/rc/saml/okta_saml_group_15.png" alt="" >}}{{</image>}}
 
 Next, we need to set the user's "Assignment master" to "Administrator". This will allow us to override the group's policy. We then click on the **"Save"** button.
 
@@ -234,11 +234,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     * **EntityID** : The unique name of the service provider (SP)
 
-    {{<image filename="images/rc/saml/sm_sam1_4.png" alt="" >}}{{</image>}}
+    {{<image filename="images/rc/saml/sm_saml_4.png" alt="" >}}{{</image>}}
 
     * **Location** : The location of the assertion consumer service
 
-    {{<image filename="images/rc/saml/sm_sam1_5.png" alt="" >}}{{</image>}}
+    {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
 4. Return to you OKTA application, **click on Applications -> Redis Cloud -> General** and click the **Edit** link
 
@@ -268,7 +268,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
 3. The OKTA login screen will appear, enter the credentials and click **Sign In**
 
-    {{<image filename="images/rc/saml/sm_saml_14.png" alt="" >}}{{</image>}}
+    {{<image filename="images/rc/saml/okta_saml_app_int_14.png" alt="" >}}{{</image>}}
 
 4. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to login to SM going forward, you click on the **Sign in with SSO** button.
 
