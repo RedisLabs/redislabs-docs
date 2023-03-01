@@ -79,7 +79,7 @@ For LDAP servers that require authentication for client queries, store the bind 
 
 In addition to plain LDAP protocol, Redis Enterprise Software also supports LDAPS and STARTTLS protocols for secure communication with the LDAP server.
 
-To enable one of these protocols, edit the `spec.protocol` field in the `RedisEnterpriseCluster` custom resource:
+To enable one of these protocols, edit the `spec.ldap.protocol` field in the `RedisEnterpriseCluster` custom resource:
 
 #### Enable `LDAPS`
 
