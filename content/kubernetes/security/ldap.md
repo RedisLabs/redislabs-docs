@@ -56,7 +56,7 @@ For LDAP servers that require authentication for client queries, store the bind 
 1. Create a secret to store the bind credentials.
     
     ```sh
-    kubectl -n <my-rec-namespace> create secret generic ldap-bind-credentials \
+    kubectl -n <rec-namespace> create secret generic <bind-secret-name> \
         --from-literal=dn='<disinguished-name>' \
         --from-literal=password=<password>
     ```
@@ -72,7 +72,7 @@ For LDAP servers that require authentication for client queries, store the bind 
     ```yaml
     spec:
       ldap:
-        bindCredentialsSecretName: ldap-bind-credentials
+        bindCredentialsSecretName: <bind-secret-name>
     ```
 
 ### LDAPS or STARTTLS protocols
@@ -108,7 +108,7 @@ To use a custom CA certificate for validating the LDAP server certificate, store
 1. Create a secret to hold the CA certificate.
 
     ```sh
-    kubectl -n <my-rec-namespace> create secret generic ldap-ca-certificate \
+    kubectl -n <rec-namespace> create secret generic <ca-secret-name> \
         --from-file=cert=<ca-cert>.pem
     ```
 
@@ -123,7 +123,7 @@ To use a custom CA certificate for validating the LDAP server certificate, store
     ```yaml
     spec:
       ldap:
-        caCertificateSecretName: ldap-ca-certificate
+        caCertificateSecretName: <ca-secret-name>
     ```
 
 ### Client certificates
@@ -133,7 +133,7 @@ To use an LDAP client certificate, store the certificate in a secret and referen
 1. Create a secret to hold the client certificate.
 
     ```sh
-    kubectl -n <my-rec-namespace> create secret generic ldap-client-certificate \
+    kubectl -n <rec-namespace> create secret generic <client-secret-name> \
       --from-literal=name=<ldap_client \
       --from-file=certificate=<client-cert-file> \
       --from-file=key=<private-key-file>
@@ -153,7 +153,7 @@ To use an LDAP client certificate, store the certificate in a secret and referen
     ```yaml
     spec:
       certificates:
-        ldapClientCertificateSecretName: ldap-client-certificate
+        ldapClientCertificateSecretName: <client-secret-name>
     ```
 
 ## Known limitations
