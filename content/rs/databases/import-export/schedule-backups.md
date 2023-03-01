@@ -40,6 +40,7 @@ Redis Enterprise Software creates a backup file for each shard in the configurat
 - Make sure that you have enough space available in your storage location.
     If there is not enough space in the backup location, the backup fails.
 - The backup configuration only applies to the database it is configured on.
+- To limit the parallel backup for shards, set both [`tune cluster max_simultaneous_backups`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}) and [`tune node max_redis_forks`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-node">}}). 
 
 {{< /note >}}
 
