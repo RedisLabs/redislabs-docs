@@ -61,7 +61,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
     {{<image filename="images/rc/saml/ping_identity_saml_8.png" alt="" >}}{{</image>}}
 
-3. In the ACS URLs and Entity ID field add for now some dummy data, like https://orion.com
+3. In the ACS URLs and Entity ID field add for now some dummy data, like https://example.com
    
     * This data will be updated with the correct data from SM in a subsequent step
 

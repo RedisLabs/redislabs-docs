@@ -89,15 +89,15 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
     {{<image filename="images/rc/saml/okta_saml_app_int_7.png" alt="" >}}{{</image>}}
 
-<a name="step6">6.</a> Scroll down to section 6 in the page, and note down the following information :
-
-    * **Identity Provider Single Sign-On URL:**
+   Scroll down to section 6 in the page, and note down the following information :
+   
+    * **Identity Provider Single Sign-On URL**
     * **Identity Provider Issuer**
     * **X.509 Certificate**
 
     {{<image filename="images/rc/saml/okta_saml_app_int_8.png" alt="" >}}{{</image>}}
 
-    Once you have the information noted, you can close the window.
+   Once you have the information noted, you can close the window.
 
 ### Modify the application user profile
 
