@@ -85,7 +85,8 @@ To enable one of these protocols, edit the `spec.ldap.protocol` field in the `Re
 
   ```yaml
       spec:
-        protocol: LDAPS
+        ldap:
+          protocol: LDAPS
   ```
 
   Default port: 636
