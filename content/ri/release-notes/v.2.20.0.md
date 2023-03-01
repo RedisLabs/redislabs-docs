@@ -20,7 +20,7 @@ This is the General Availability (GA) release of RedisInsight 2.20.
 - Automatically display Redis keys in Browser
 - Configure database connection timeout
 - Test database connection
-- Edit port for existing database connections
+- Edit port for an existing database connection
 
 ### Details
 **Features and improvements**
