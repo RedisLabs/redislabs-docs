@@ -95,7 +95,8 @@ To enable one of these protocols, edit the `spec.ldap.protocol` field in the `Re
 
   ```yaml
       spec:
-        protocol: STARTTLS
+        ldap:
+          protocol: STARTTLS
   ```
 
   Default port: 389
