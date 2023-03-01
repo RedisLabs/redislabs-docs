@@ -134,7 +134,7 @@ To use an LDAP client certificate, store the certificate in a secret and referen
 
     ```sh
     kubectl -n <rec-namespace> create secret generic <client-secret-name> \
-      --from-literal=name=<ldap_client \
+      --from-literal=name=ldap_client \
       --from-file=certificate=<client-cert-file> \
       --from-file=key=<private-key-file>
     ```
