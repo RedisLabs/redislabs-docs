@@ -2,7 +2,7 @@
 Title: Preview features
 linkTitle: Preview
 description: Preview content related to Active-Active Redis Enterprise for Kubernetes. 
-weight: 31
+weight: 92
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {

@@ -2,12 +2,12 @@
 Title: Create Active-Active database for Kubernetes
 linkTitle: Create database
 description: 
-weight: 20
+weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
-    /kubernetes/preview/prepare.md,
-    /kubernetes/preview/prepare/,
+    /kubernetes/preview/create_reaadb.md,
+    /kubernetes/preview/create_reaadb/,
 }
 ---
 
@@ -48,7 +48,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
       secretName: redis-enterprise-rec2-ns2
     ```
 
-    For more details on RERC fields, see the [RERC API reference]().
+    For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
 1. Create a Redis Enterprise remote cluster from each RERC custom resource file. 
   
@@ -75,7 +75,6 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
 
 ## Create `RedisEnterpriseActiveActiveDatabase` resource
 
-
 1. Create a `RedisEnterpriseActiveActiveDatabase` (REAADB) custom resource file meeting the naming requirements and listing the names of the RERC custom resources created in the last step.
 
     Naming requirements:
@@ -99,7 +98,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
         - name: rec2.ns2
     ```
 
-    For more details on RERC fields, see the [RERC API reference]().
+    For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
 1. Create a Redis Enterprise Active-Active database from the REAADB custom resource file. 
   
