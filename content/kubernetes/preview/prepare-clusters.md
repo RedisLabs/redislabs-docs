@@ -10,7 +10,7 @@ aliases: {
     /kubernetes/preview/prepare/,
 }
 ---
-{{<note>}} This feature is currently in preview and is not for production use. See [Create Active-Active databases for Kubernetes]({<relref "/kubernetes/re-clusters/create-aa-database.md">}) for the currently supported procedure.{{</note>}}
+{{<note>}} This feature is currently in preview and is not for production use. See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/re-clusters/create-aa-database.md">}}) for the currently supported procedure.{{</note>}}
 
 ## Prepare participating clusters
 
@@ -18,7 +18,7 @@ An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you 
 
 ## Enable Active-Active controllers
 
-For each each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster. 
+For each each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster.
 
 1. Apply custom resource definitions for the Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC) to install those controllers.
 
@@ -72,4 +72,6 @@ For each each Redis Enterprise cluster (REC), you must enable the Active-Active 
     kubectl apply -f redis-enterprise-<rec-name>-<rec-namespace>
     ```
 
+## Next steps
 
+Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/preview/create_reaadb.md">}}).
