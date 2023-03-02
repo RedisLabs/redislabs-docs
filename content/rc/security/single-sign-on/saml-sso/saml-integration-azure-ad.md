@@ -139,7 +139,7 @@ Once you click the **enable** button, wait a few seconds for the status to chang
         * **FirstName** : user.givenname
         * **LastName** : user.surname
         * **redisAccountMapping** : "98072=owner"
-        * -> Redis Cloud account IDs and user roles pairs, e.g. 123456=owner,987654=viewer
+        * -> Redis Cloud account IDs and user roles pairs. The key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** (you can find this information in the upper-right user menu at app.redislabs.com, eg. 123456=owner,987654=viewer)
 
     {{<image filename="images/rc/saml/ad_saml_14.png" alt="" >}}{{</image>}}
 

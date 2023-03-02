@@ -140,7 +140,7 @@ Now that your group is populated with its users, it is time to assign the SAML i
 
     {{<image filename="images/rc/saml/okta_saml_group_7.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
 
-3. You will now define the redis account mapping string default for this group and click the **"Save and go back"** button. Finally click on the **"Done"** button.
+3. You will now define the redis account mapping string default for this group and click the **"Save and go back"** button. The key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** (you can find this information in the upper-right user menu at app.redislabs.com). Finally click on the **"Done"** button.
 
     {{<image filename="images/rc/saml/okta_saml_group_8.png" alt="Use the Okta admin console to locate the Org2Org application template." >}}{{</image>}}
 
@@ -237,8 +237,7 @@ To use IdP-initiated SSO with certain identity providers, you also need to set t
 
 `https://app.redislabs.com/#/login/?idpId=<ID>`
 
-> **Note**: Replace <ID> so it matches the AssertionConsumerService Location URL’s ID.
-To learn more about how to configure service provider apps, see your identity provider’s documentation.
+> **Note**: Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the content after the last forward slash "/"). To learn more about how to configure service provider apps, see your identity provider’s documentation.
 
 ### Return to Redis Cloud SM
 

@@ -25,7 +25,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
     {{<image filename="images/rc/saml/auth0_saml_1.png" alt="" >}}{{</image>}}
 
-2. Add **user_metadata** to fulfill the SAML assertion then click the **Save** button
+2. Add **user_metadata** to fulfill the SAML assertion then click the **Save** button. The key-value pair of **redisAccountMapping** consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** (you can find this information in the upper-right user menu at app.redislabs.com).
 
     ```
     {
@@ -163,8 +163,7 @@ To use IdP-initiated SSO with certain identity providers, you also need to set t
 
 `https://app.redislabs.com/#/login/?idpId=<ID>`
 
-> **Note**: Replace <ID> so it matches the AssertionConsumerService Location URL’s ID.
-To learn more about how to configure service provider apps, see your identity provider’s documentation.
+> **Note**: Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the content after the last forward slash "/"). To learn more about how to configure service provider apps, see your identity provider’s documentation.
 
 
 ## Step 4 - Return to Redis Cloud SM
