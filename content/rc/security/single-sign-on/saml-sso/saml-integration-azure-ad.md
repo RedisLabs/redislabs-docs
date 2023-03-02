@@ -186,9 +186,7 @@ Assuming that the users will be part of different Groups, you can create a Claim
 
 ## IdP initiated SSO
 
-``https://app.redislabs.com/#/login/?idpId=`
-
-By default, the SAML application will appear on user’s **My Apps** panel
+If you correctly set the up the **Sign on URl** in step three, then by default, the SAML application will appear on user’s **My Apps** panel
 
 {{<image filename="images/rc/saml/ad_saml_25.png" alt="" >}}{{</image>}}
 
