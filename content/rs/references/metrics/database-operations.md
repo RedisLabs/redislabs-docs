@@ -106,11 +106,11 @@ ACL CAT write
 
 #### Pending writes min
 
-Minimum number of write operations queued in an [Active-Active]({{<relref "/rs/databases/active-active">}}) database. 
+Minimum number of write operations queued per [Active-Active]({{<relref "/rs/databases/active-active">}}) replica database. 
 
 #### Pending writes max
 
-Maximum number of write operations queued in an [Active-Active]({{<relref "/rs/databases/active-active">}}) database. 
+Maximum number of write operations queued per [Active-Active]({{<relref "/rs/databases/active-active">}}) replica database. 
 
 ### Other commands/sec 
 

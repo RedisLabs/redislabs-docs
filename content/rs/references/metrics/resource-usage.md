@@ -92,11 +92,11 @@ All incoming traffic is not measured during [shard migration]({{< relref "/rs/da
 
 #### Incoming traffic compressed
 
-Total incoming compressed traffic (in bytes/sec) to an [Active-Active]({{<relref "/rs/databases/active-active">}}) database. 
+Total incoming compressed traffic (in bytes/sec) per [Active-Active]({{<relref "/rs/databases/active-active">}}) replica database. 
 
 #### Incoming traffic uncompressed
 
-Total incoming uncompressed traffic (in bytes/sec) to an [Active-Active]({{<relref "/rs/databases/active-active">}}) database. 
+Total incoming uncompressed traffic (in bytes/sec) per [Active-Active]({{<relref "/rs/databases/active-active">}}) replica database. 
 
 ### Outgoing traffic 
 
