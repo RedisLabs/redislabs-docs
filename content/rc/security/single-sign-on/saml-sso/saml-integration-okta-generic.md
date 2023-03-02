@@ -166,7 +166,7 @@ Now that your group is populated with its users, it is time to assign the SAML i
 
     {{<image filename="images/rc/saml/okta_saml_group_7.png" alt="" >}}{{</image>}}
 
-3. You will now define the redis account mapping string default for this group and click the **"Save and go back"** button. Finally click on the **"Done"** button.
+3. You will now define the redis account mapping string default for this group and click the **"Save and go back"** button. Finally, click on the **"Done"** button. The key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** (you can find this information in the upper-right user menu at app.redislabs.com).
 
     {{<image filename="images/rc/saml/okta_saml_group_8.png" alt="" >}}{{</image>}}
 
@@ -250,7 +250,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
         * **Single sign on URL** : Use the information that you copied for **Location**
         * **Audience URI (SP Entity ID)** : Use the information that you copied for **EntityID**
-        * **Default RelayState** : **Only needed if you want to have an IdP initiated flow**. Take the ID from the location URL and append to the url (ex: https://app.redislabs.com/#/login/?idpId=YOUR_LOCATION_ID)
+        * **Default RelayState** : **Only needed if you want to have an IdP initiated flow**. Take the ID from the location URL in step 3 (the content after the last forward slash "/") and append to the url (ex: https://app.redislabs.com/#/login/?idpId=YOUR_LOCATION_ID).
 
     {{<image filename="images/rc/saml/okta_saml_app_int_13.png" alt="" >}}{{</image>}}
 
