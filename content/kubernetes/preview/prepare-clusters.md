@@ -10,7 +10,9 @@ aliases: {
     /kubernetes/preview/prepare/,
 }
 ---
-{{<note>}} This feature is currently in preview and is not for production use. See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/re-clusters/create-aa-database.md">}}) for the currently supported procedure.{{</note>}}
+{{<note>}} This feature is currently in preview and is not for production use. To use this feature, upgrade to the 6.2.4-1 release.
+
+See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/re-clusters/create-aa-database.md">}}) for the currently supported procedure.{{</note>}}
 
 ## Prepare participating clusters
 
@@ -137,7 +139,7 @@ To sync global configurations, all participating clusters will need access to th
     kubectl apply -f <all-rec-secrets-file>
     ```
 
-This allows all the participating clusters to sync configuration changes. If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters. 
+This allows all the participating clusters to sync configuration changes. If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
 
 ## Next steps
 

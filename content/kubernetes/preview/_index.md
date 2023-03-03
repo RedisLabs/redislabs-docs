@@ -10,7 +10,7 @@ aliases: {
     /kubernetes/active-active/,
 }
 ---
-{{<note>}} These features are currently in preview and not for production use. {{</note>}}
+{{<note>}} This feature is currently in preview and not for production use. To use this feature, upgrade to the 6.2.4-1 release. {{</note>}}
 
 ## Redis Enterprise Active-Active for Kubernetes public preview
 
