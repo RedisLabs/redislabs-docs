@@ -28,7 +28,7 @@ Number of keys with values stored in RAM, not including [replication]({{< relref
 
 **Components measured**: Database and Shard 
 
-## Flash Key-Value operations
+## Flash key-value operations
 
 Number of operations on flash key values (read + write + del) per second.
 
@@ -63,6 +63,7 @@ Ratio of requests processed directly from RAM to total number of requests proces
 Total amount of memory used to store values in flash.
 
 **Components measured**: Database and Shard
+
 ### Free flash
 
 Amount of free space on flash storage. 
@@ -101,7 +102,7 @@ Percentage of the [RAM limit](#ram-limit) used.
 
 ## Calculated metrics
 
-These Redis on Flash statistics can be calculated from other metrics.
+These RoF statistics can be calculated from other metrics.
 
 - RoF average key size with overhead
 
