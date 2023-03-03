@@ -104,6 +104,14 @@ ACL CAT write
 
 **Components measured**: Database
 
+#### Pending writes min
+
+Minimum number of write operations queued per [Active-Active]({{<relref "/rs/databases/active-active">}}) replica database. 
+
+#### Pending writes max
+
+Maximum number of write operations queued per [Active-Active]({{<relref "/rs/databases/active-active">}}) replica database. 
+
 ### Other commands/sec 
 
 Number of operations per second that are not [read operations](#readssec) or [write operations](#writessec).
