@@ -82,28 +82,6 @@
 {{end}}
 {{end}}
 <!-- /Platforms version selector -->
-<!-- RDI version selector -->
-{{if .Params.categories}}
-{{if eq (index .Params.categories 0) "RDI"}}
-<script>
-    (function () {
-        var pa = window.location.pathname.split('/');
-        var pv = pa[1]; // 6.x, 5.x
-
-        if (pv == '0.93' || pv == 'latest') {
-            v = '0.93';
-            d = 'v0.93 latest)';
-        } else if (pv == '0.91') {
-            v = '0.91';
-            d = '0.91';
-        }
-        _setVersion(v, d);
-        _setSelectedVersion(v);
-    })();
-</script>
-{{end}}
-{{end}}
-<!-- /RDI version selector -->
 <script>
     // Compliance dialog
     function acceptGDPR() {

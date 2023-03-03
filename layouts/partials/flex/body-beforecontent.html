@@ -67,19 +67,6 @@
             </div>
             {{end}}
 
-            {{if eq (index .Params.categories 0) "RDI"}}
-            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
-                <button class="menu__version-selector-btn version-selector-control">
-                    <span id="versionSelectorValue" class="version-selector-control"></span>
-                    <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
-                    <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
-                </button>
-                <div class="menu__version-selector__list version-selector-control">
-                    <a href="https://docs.redis.com/0.93/rdi" id="version-select-0.93" onclick="_setSelectedVersion('0.93', 'v0.93 (latest)')">v0.93 (latest)</a>
-                    <a href="https://docs.redis.com/0.91/rdi" id="version-select-0.91" onclick="_setSelectedVersion('0.91', 'v0.91')">v0.91</a>
-                </div>
-            </div>
-            {{end}}
             {{end}}
 
             {{- if not .Site.Params.disableHomeIcon}}
