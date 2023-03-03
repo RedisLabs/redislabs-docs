@@ -1,35 +1,35 @@
 <!-- Common code for version selectors -->
 {{if .Params.categories}}
-{{if or (eq (index .Params.categories 0) "RS") (eq (index .Params.categories 0) "Platforms")}}
+{{if or (eq (index .Params.categories 0) "RS") (eq (index .Params.categories 0) "Platforms") (eq (index .Params.categories 0) "RDI")}}
 <script>
-  function _setVersion(ver, displayName) {
-  document.getElementById('versionSelectorValue').innerText = displayName;
-}
-
-function _setSelectedVersion(ver) {
-  if(ver) {
-    var i = document.getElementById('version-select-' + ver);
-    if(i) {
-      i.classList.toggle('selected-version');
+    function _setVersion(ver, displayName) {
+        document.getElementById('versionSelectorValue').innerText = displayName;
     }
-  }
-}
 
-function _openVersionSelector() {
-    document.getElementById('versionSelector').classList.toggle('open');
-}
-
-window.onclick = function(e) {
-  if (!e.target.matches('.version-selector-control')) {
-    var d = document.getElementsByClassName('menu__version-selector');
-    var i;
-    for (i = 0; i < d.length; i++) {
-      if (d[i].classList.contains('open')) {
-        d[i].classList.remove('open');
-      }
+    function _setSelectedVersion(ver) {
+        if (ver) {
+            var i = document.getElementById('version-select-' + ver);
+            if (i) {
+                i.classList.toggle('selected-version');
+            }
+        }
     }
-  }
-}
+
+    function _openVersionSelector() {
+        document.getElementById('versionSelector').classList.toggle('open');
+    }
+
+    window.onclick = function (e) {
+        if (!e.target.matches('.version-selector-control')) {
+            var d = document.getElementsByClassName('menu__version-selector');
+            var i;
+            for (i = 0; i < d.length; i++) {
+                if (d[i].classList.contains('open')) {
+                    d[i].classList.remove('open');
+                }
+            }
+        }
+    }
 </script>
 {{end}}
 {{end}}
@@ -38,67 +38,87 @@ window.onclick = function(e) {
 {{if .Params.categories}}
 {{if eq (index .Params.categories 0) "RS"}}
 <script>
-(function () {
-  var pa = window.location.pathname.split('/');
-  var pv = pa[1]; // latest, 5.4 or 5.2
+    (function () {
+        var pa = window.location.pathname.split('/');
+        var pv = pa[1]; // latest, 5.4 or 5.2
 
-  if(pv == '6.4' || pv == 'latest') {
-    v = '6.4';
-    d = 'v6.4 (latest)';
-  } else if (pv == '6.2') {
-    v = '6.2';
-    d = 'v6.2';
-  } else if (pv == '6.0') {
-    v = '6.0';
-    d = 'v6.0';
-  }
+        if (pv == '6.4' || pv == 'latest') {
+            v = '6.4';
+            d = 'v6.4 (latest)';
+        } else if (pv == '6.2') {
+            v = '6.2';
+            d = 'v6.2';
+        } else if (pv == '6.0') {
+            v = '6.0';
+            d = 'v6.0';
+        }
 
-  _setVersion(v, d);
-  _setSelectedVersion(v);
-})();
+        _setVersion(v, d);
+        _setSelectedVersion(v);
+    })();
 </script>
 {{end}}
 {{end}}
 <!-- /RS version selector -->
-
 <!-- Platforms version selector -->
 {{if .Params.categories}}
 {{if eq (index .Params.categories 0) "Platforms"}}
 <script>
-(function () {
-  var pa = window.location.pathname.split('/');
-  var pv = pa[1]; // 6.x, 5.x
+    (function () {
+        var pa = window.location.pathname.split('/');
+        var pv = pa[1]; // 6.x, 5.x
 
-  if(pv == '6.0' || pv == 'latest') {
-    v = '6.x';
-    d = 'v6.x (latest)';
-  } else if (pv == '5.6') {
-    v = '5.x';
-    d = 'v5.x';
-  }
-  _setVersion(v, d);
-  _setSelectedVersion(v);
-})();
+        if (pv == '6.0' || pv == 'latest') {
+            v = '6.x';
+            d = 'v6.x (latest)';
+        } else if (pv == '5.6') {
+            v = '5.x';
+            d = 'v5.x';
+        }
+        _setVersion(v, d);
+        _setSelectedVersion(v);
+    })();
 </script>
 {{end}}
 {{end}}
 <!-- /Platforms version selector -->
-
+<!-- RDI version selector -->
+{{if .Params.categories}}
+{{if eq (index .Params.categories 0) "RDI"}}
 <script>
-  // Compliance dialog
-  function acceptGDPR() {
-    localStorage.setItem('gdpr_accepted', true);
-    window.location.reload();    
-  };
+    (function () {
+        var pa = window.location.pathname.split('/');
+        var pv = pa[1]; // 6.x, 5.x
 
-  (function() {
-    if(!localStorage.getItem('gdpr_accepted')) {
-      const e = document.getElementById('gdpr-modal');
-      if(!e) return;
+        if (pv == '0.93' || pv == 'latest') {
+            v = '0.93';
+            d = 'v0.93 latest)';
+        } else if (pv == '0.91') {
+            v = '0.91';
+            d = '0.91';
+        }
+        _setVersion(v, d);
+        _setSelectedVersion(v);
+    })();
+</script>
+{{end}}
+{{end}}
+<!-- /RDI version selector -->
+<script>
+    // Compliance dialog
+    function acceptGDPR() {
+        localStorage.setItem('gdpr_accepted', true);
+        window.location.reload();
+    };
 
-      e.style.display = 'block';
-    }
-  })();
+    (function () {
+        if (!localStorage.getItem('gdpr_accepted')) {
+            const e = document.getElementById('gdpr-modal');
+            if (!e) return;
+
+            e.style.display = 'block';
+        }
+    })();
 </script>
 
 <script src="{{"theme-flex/modernizr-custom.js" | absURL}}" defer></script>

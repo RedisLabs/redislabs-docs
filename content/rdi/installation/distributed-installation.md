@@ -1,96 +1,62 @@
 ---
-Title: Distributed installation configuration
-linkTitle: Distributed installation
-description: Explains different distribution topologies and environments supported by Redis Data Integration.
-weight: 20
+Title: Installation topologies
+linkTitle: Installation topologies
+description: Learn about RDI topologies and configurations
+weight: 60
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
-Redis Data Integration (RDI) supports and can be used in a variety of configuration environments.  
 
-You can:
+This document explains the different topologies and configurations you can have with Redis Data Integration.
 
-- Run `redis-di` on a [separate host](#separate-utility).
-- Run Debezium Server separately from the [source database](#remote-source).
-- Run Debezium Server separately from the [RDI instance](#remote-target).
-- Store your RDI instance on a [different cluster](#separate-clusters) than your target database.
+## Running the CLI on a separate host
 
-Here, you learn how to configure Debezium Server and RDI for ones of these environments.
+This should be the best practice. The CLI is used by Redis Data Integration administrator.
 
-## Run redis-di on a separate host {#separate-utility}
+In production, it is recommended to install it on a different host to the cluster or the Debezium Server.
 
-The `redis-di` utility is typically used by the Redis Data Integration administrator.  As a best practice, you should run the utility from a device different from the one hosting the cluster and the one hosting Debezium Server.
+This scenario requires:
 
-To do so:
+- Copying the `application.properties` file to the host where the Debezium Server is running.
+- Running the docker command while changing the volume argument (-v) accordingly:
 
-- Copy the `application.properties` file to the host where the Debezium Server is running.
-- Run the `docker` command while changing the [volume argument](https://docs.docker.com/engine/reference/commandline/run/) (`-v`) accordingly:
-
-**Docker**
+> This guide uses Docker to illustrate the required command. If you are using Podman, simply replace `docker` with `podman` below.
 
 ```bash
-docker run -it --name debezium --network host \
-    --privileged -v <PROPERTIES>:/debezium/conf debezium/server
+docker run -d --rm --name debezium -v <ABSOLUTE_PATH_TO_APPLICATION_PROPERTIES>:/debezium/conf debezium/server
 ```
 
-Where `<PROPERTIES>` is a placeholder containing the absolute path to the [`application.properties`]({{<relref "rdi/reference/debezium/">}}) file.  
+See [README](debezium-server-deployment.md#oracle) for specific Oracle instructions when using Oracle as the source DB.
 
-**Podman**
+## Running Debezium Server remotely to the source DB
 
-```bash
-sudo podman run -it --rm --name debezium --network=host \
-    --privileged -v <PROPERTIES>:/debezium/conf debezium/server
-```
+While it is technically OK to run the [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) on the same host as the source database, it is not always the best practice:
 
-Where `<PROPERTIES>` is a placeholder containing the absolute path to the [`application.properties`]({{<relref "rdi/reference/debezium/">}}) file.  
-
-When using Oracle as your source database, you may need install the [Oracle JBDC driver]({{<relref "rdi/installation/debezium-server-deployment#oracle">}}) separately.  (Debezium Server does not install this for you.)
-
-## Run remotely from the source database {#remote-source}
-
-While it is technically possible to run the [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) on the same host as the source database, we  recommend against doing so:
-
-- The database host often needs all available resources to process queries and otherwise support the source database.
-- Database owners are not often allowed to install client applications on a database host server.
-
-In these and and similar cases, it's necessary to install Debezium Server (and RDI) on separate hosts.
-
-To run Debezium Server on a different host from the one containing the source database, update `application.properties` to point to the address of the source database host.
+- The database host needs all its resources to process queries.
+- The database owners are not allowed to install a database client for an application on the database host. This scenario is fully supported and only requires a small update to the `application.properites` file:
 
 ```properties
-debezium.source.database.hostname=<SOURCE_HOST>
+debezium.source.database.hostname=<NAME_OR_IP_ADDRESS_OF_SOURCE_DB_HOST>
 ```
 
-Where `<SOURCE_HOST>` is a placeholder containing either the IP address or the fully qualified domain name of the source database host.  
+## Running Debezium Server remotely to Redis Data Integration
 
-## Run remotely from Redis Data Integration {#remote-target}
-
-To run Debezium Server separately from devices hosting the target database cluster and its nodes, update the `sink` section of `application.properties` to specify the location of the Redis Data Integration database instance.
+In many cases, users would not like to run the Debezium Server on the same host(s) as the Redis Cluster node(s). In this case just ensure you edit the sink section of `application.properties`
 
 ```properties
-debezium.sink.redis.address=<RDI_ENDPOINT>:<RDI_PORT>
+debezium.sink.redis.address=<REDIS_DI_DB_ENDPOINT>:<REDIS_DI_DB_PORT>
 ```
 
-Where:
-> - `<RDI_ENDPOINT>` is the fully qualified domain of the RDI database instance endpoint
-> - `<RDI_PORT>` is the port address of the RDI endpoint.  
+## Redis Data Integration and target Redis DB on different clusters
 
-## Store databases on separate clusters {#separate-clusters}
-
-Redis Data Integration requires the [RedisGears module]({{<relref "rdi/installation/install-redisgears">}}).  
-
-If you don't want to install this module on the server hosting your target database or you want to keep things separate for other reasons, update the RDI [configuration file]({{<relref "rdi/installation/install-redisgears">}}) (`config.yaml`) to specify the connection details of the target database.
+This can be done when the Redis Enterprise owner wants a separation of concerns or does not wish to install/enable modules on the target cluster. In this scenario the `config.yaml` file needs to be edited with the following changes:
 
 ```yaml
 connections:
   # Redis target DB connection details
   target:
-    host: <TARGET_HOST>
-    port: <TARGET_PORT>
-    password: <TARGET_PASSWORD>
+    host: <REDIS_TARGET_DB_HOST>
+    port: <REDIS_TARGET_DB_PORT>
+    password: <REDIS_TARGET_DB_PASSWORD>
 ```
-Where:
-> - `<TARGET_HOST>` is the fully qualified domain of the target database
-> - `<TARGET_PORT>` is the port used to connect to the target database.  
-> - `<TARGET_PASSWORD>` is the password authorizing the connection (when required).  

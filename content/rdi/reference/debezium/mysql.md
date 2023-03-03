@@ -8,8 +8,6 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-The following example shows how to configure the Debezium Server `application.properties` file to support [Oracle MySQL](https://mysql.com).
-
 # application.properties
 
 ```properties
@@ -18,9 +16,14 @@ debezium.sink.redis.message.format=extended
 debezium.sink.redis.address=<RDI_HOST>:<RDI_PORT>
 # Comment the following line if not using a password for Redis Data Integration
 debezium.sink.redis.password=<RDI_PASSWORD>
-
+debezium.sink.redis.memory.limit.mb=80
 # Redis SSL/TLS
 #debezium.sink.redis.ssl.enabled=true
+# When Redis is configured with a replica shard, these properties allow to verify that the data has been written to the replica.
+#debezium.sink.redis.wait.enabled=true
+#debezium.sink.redis.wait.timeout.ms=1000
+#debezium.sink.redis.wait.retry.enabled=true
+#debezium.sink.redis.wait.retry.delay.ms=1000
 #debezium.source.database.history.redis.ssl.enabled=true
 # Location of the Java keystore file containing an application process' own certificate and private key.
 #javax.net.ssl.keyStore=<KEY_STORE_FILE_PATH>
@@ -34,10 +37,8 @@ debezium.sink.redis.password=<RDI_PASSWORD>
 debezium.source.connector.class=io.debezium.connector.mysql.MySqlConnector
 # A numeric ID of this database client, which must be unique across all currently-running database processes in the MySQL cluster.
 debezium.source.database.server.id=1
-debezium.source.offset.storage=io.debezium.server.redis.RedisOffsetBackingStore
+debezium.source.offset.storage=io.debezium.storage.redis.offset.RedisOffsetBackingStore
 debezium.source.topic.prefix=<SOURCE_LOGICAL_SERVER_NAME>
-
-
 debezium.source.database.hostname=<SOURCE_DB_HOST>
 debezium.source.database.port=<SOURCE_DB_PORT>
 debezium.source.database.user=<SOURCE_DB_USER>
@@ -45,7 +46,7 @@ debezium.source.database.password=<SOURCE_DB_PASSWORD>
 debezium.source.offset.flush.interval.ms=1000
 debezium.source.include.schema.changes=false
 debezium.source.tombstones.on.delete=false
-debezium.source.schema.history.internal=io.debezium.server.redis.RedisSchemaHistory
+debezium.source.schema.history.internal=io.debezium.storage.redis.history.RedisSchemaHistory
 # Important: Do NOT use include and exclude column lists at the same time, use either include or exclude.
 # An optional, comma-separated list of regular expressions that match the fully-qualified names of columns to include in change event record values.
 #debezium.source.column.include.list=<COL1>,<COL2>...
@@ -55,6 +56,9 @@ debezium.source.schema.history.internal=io.debezium.server.redis.RedisSchemaHist
 # Records only DDL statements that are relevant to tables whose changes are being captured by Debezium.
 # In case of changing the captured tables, run `redis-di reset`.
 debezium.source.schema.history.internal.store.only.captured.tables.ddl=true
+
+# If set to false the schema payload will be excluded from each change event record.
+#debezium.source.value.converter.schemas.enable=false
 
 debezium.transforms=AddPrefix
 debezium.transforms.AddPrefix.type=org.apache.kafka.connect.transforms.RegexRouter
@@ -70,3 +74,4 @@ quarkus.log.console.json=false
 # The port on which Debezium exposes Microprofile Health endpoint and other exposed status information.
 quarkus.http.port=8088
 ```
+

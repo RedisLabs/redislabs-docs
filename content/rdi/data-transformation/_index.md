@@ -8,25 +8,16 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-Redis Data Integration (RDI) maps data coming from [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) (representing source database row data or row state changes) to a Redis key-value pair.  The resulting value is either a [Hash](https://redis.io/docs/data-types/hashes/) or a [JSON](https://redis.io/docs/stack/json/) document.
+The key functionality that RDI performs is mapping the data coming from [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) (representing a Source Database row data or row state change) into a Redis key with a value of [Hash](https://redis.io/docs/data-types/hashes/) or [JSON](https://redis.io/docs/stack/json/).
+There are two types of Data Transformations in RDI:
 
-Two data transformations are available:
+- By default, each source row is converted into one [Hash](https://redis.io/docs/data-types/hashes/) or one JSON key in Redis.
+  This conversion is using the Debezium Schema based conversion: the incoming data includes the schema and RDI will use a set of handlers to automatically convert each source column to a the a Redis Hash field or JSON type based on the Debezium type in the schema. [Look here](../reference/data-types-conversion/data-types-conversion.md) for a full reference of these conversions.
 
-- By default, each source row is converted to a Redis [Hash](https://redis.io/docs/data-types/hashes/) value or a [JSON document](https://redis.io/docs/stack/json/).
-
-    Incoming data, which includes schema, is converted using Debezium Schema.  
-    
-    RDI uses handlers to convert each source column based on the Debezium schema type.  For details, see [Data type conversion]({{<relref "/rdi/data-transformation/data-type-conversion">}}).
-
-- To add or modify the conversion of source data, you can specify _Declarative Data Transformations_ using YAML files.  
-
-    Each file defines a Job that represents a set of transformations for a single source table. 
-
-    To learn more, [Data transformation pipeline]({{<relref "/rdi/data-transformation/pipeline">}}).
-
-The following image shows how this works:
+- If the user wants to add or modify this default mapping, RDI provides Declarative Data Transformations. These transformations are represented in YAML files. Each file contains a Job, a set of transformations per source table. More about [Declarative Transformations](data-transformation-pipeline.md).
 
 {{<image filename="/images/rdi/data-transformation-flow.png" alt="Data transformation flow" >}}{{</image>}}
+
 
 ## More info
 
