@@ -14,13 +14,30 @@ aliases: {
 
 ## Prepare participating clusters
 
-An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})). Prepare each Redis Enterprise cluster (REC) for use in your Active-Active deployment with the following steps.
+An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
 
-## Enable Active-Active controllers
+### Enable alpha features
+
+Edit the Redis operator configmap (`operator-environment-config`) to set the alpha features flag to "true". 
+
+```sh
+  kubectl patch cm  operator-environment-config --type merge --patch "{\"data\": \
+    {\"ENABLE_ALPHA_FEATURES\":\"true\"}}"
+```
+
+### Configure external routing
+
+
+Content to come sourced from: https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/setting_ingress_or_route_readme.md#configure-ingress-or-routes-on-the-rec
+
+
+### Enable Active-Active controllers
 
 For each each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster.
 
-1. Apply custom resource definitions for the Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC) to install those controllers.
+1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-1) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
+
+1. Apply the new CRDs for the Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC) to install those controllers.
 
     ```sh
     kubectl apply -f reaadb_crd.yaml
@@ -35,42 +52,92 @@ For each each Redis Enterprise cluster (REC), you must enable the Active-Active 
     \"REMOTE_CLUSTER_CONTROLLER_ENABLED\":\"true\"}}"
     ```
 
-1. Configure routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) (use [routes]({{<relref "/kubernetes/re-databases/routes.md">}}) for OpenShift).
+### Collect REC credentials
 
-## Collect REC credentials
+To sync global configurations, all participating clusters will need access to the admin credentials for all other clusters.
 
-1. Get the REC credentials secret for the participating cluster, replacing `<rec-name>` with the REC name.
+1. Create a file to hold the admin credentials for all participating RECs (such as `all-rec-secrets.yaml`).
+
+1. Within that file, create a new secret for each participating cluster named `redis-enterprise-<rec-name>-<rec-namespace>`.
+
+    The example below shows a file (`all-rec-secrets.yaml`) holding secrets for two participating clusters:
+
+    ```yaml
+    apiVersion: v1
+    data:
+      password: 
+      username: 
+    kind: Secret
+    metadata:
+      name: redis-enterprise-rec1-ns1
+    type: Opaque
+
+    ---
+
+    apiVersion: v1
+    data:
+      password: 
+      username: 
+    kind: Secret
+    metadata:
+      name: redis-enterprise-rec2-ns2
+    type: Opaque
+
+    ```
+
+1. Get the REC credentials secret for each participating cluster.
 
     ```sh
     kubectl get secret -o yaml <rec-name>
     ```
 
-1. Generate a new secret with the data and name it `redis-enterprise-<rec-name>-<rec-namespace>`, replacing `<placeholders>` your own values.
-
-    This example secret shows a Redis Enterprise cluster (REC) named `rec1` residing in the `ns1` namespace.
+    The admin credentials secret for an REC named `rec1` would similar to this:
 
     ```yaml
     apiVersion: v1
     data:
-      password: PHNvbWUgcGFzc3dvcmQ+
-      username: PHNvbWUgdXNlcj4
+      password: ABcdef12345
+      username: GHij56789
+    kind: Secret
+    metadata:
+      name: rec1
+    type: Opaque
+    ```
+
+1. Add the username and password new secret for that REC and namespace.
+
+    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rec1` in namespace `ns1` and `rec2` in namespace `ns2`.
+
+    ```yaml
+    apiVersion: v1
+    data:
+      password: ABcdef12345
+      username: GHij56789
     kind: Secret
     metadata:
       name: redis-enterprise-rec1-ns1
     type: Opaque
+
+    ---
+
+    apiVersion: v1
+    data:
+      password: KLmndo123456
+      username: PQrst789010
+    kind: Secret
+    metadata:
+      name: redis-enterprise-rec2-ns2
+    type: Opaque
+
     ```
 
-1. Complete these steps for each participating Redis Enterprise cluster (REC).
-
-## Apply the secrets
-
-1. Create a file containing all the new secrets you generated in the previous steps.
-
-1. Apply the file.
+1. Apply the file of collected secrets to every participating REC.
 
     ```sh
-    kubectl apply -f redis-enterprise-<rec-name>-<rec-namespace>
+    kubectl apply -f <all-rec-secrets-file>
     ```
+
+This allows all the participating clusters to sync configuration changes. If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters. 
 
 ## Next steps
 

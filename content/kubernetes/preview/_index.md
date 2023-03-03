@@ -1,6 +1,6 @@
 ---
-Title: Preview features
-linkTitle: Preview
+Title: Public preview support for Active-Active
+linkTitle: Active-Active preview
 description: Preview content related to Active-Active Redis Enterprise for Kubernetes. 
 weight: 92
 alwaysopen: false
