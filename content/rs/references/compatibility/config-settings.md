@@ -2,7 +2,7 @@
 Title: Compatibility with open source Redis configuration settings
 linkTitle: Configuration settings
 description: Open source Redis configuration settings supported by Redis Enterprise. 
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: 

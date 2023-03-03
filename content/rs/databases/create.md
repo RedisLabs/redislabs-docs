@@ -56,7 +56,7 @@ To create a new database:
 
         - Maximum of 63 characters
         - Only letter, number or hyphen (-) characters
-        - Starts with a letter; ends with a letter or digit.
+        - Starts with a letter or digit; ends with a letter or digit.
 
         {{< note >}}
 The database name is not case-sensitive
