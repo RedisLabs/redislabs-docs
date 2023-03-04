@@ -16,8 +16,7 @@ There are two types of Data Transformations in RDI:
 
 - If the user wants to add or modify this default mapping, RDI provides Declarative Data Transformations. These transformations are represented in YAML files. Each file contains a Job, a set of transformations per source table. More about [Declarative Transformations](data-transformation-pipeline.md).
 
-{{<image filename="/images/rdi/data-transformation-flow.png" alt="Data transformation flow" >}}{{</image>}}
-
+![Data transformation flow](/images/rdi/data-transformation-flow.png)
 
 ## More info
 

@@ -1,6 +1,6 @@
 ---
 Title: Install RedisGears for Redis Data Integration
-linkTitle: RedisGears installation
+linkTitle: Install RedisGears
 description: Install and set up RedisGears for a Redis Data Integration deplyoment.
 weight: 70
 alwaysopen: false

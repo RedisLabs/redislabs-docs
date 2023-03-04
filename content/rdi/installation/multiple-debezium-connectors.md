@@ -12,7 +12,7 @@ Some use cases require ingesting data from several different data sources.
 Ingesting data from more than one Debezium Connector to the same RDI installation is supported.
 The following diagram depict this topology.
 
-{{<image filename="/images/rdi/redis-di-multi-debezium.png" alt="Multi-Debezium topology" >}}{{</image>}}
+![Multi-Debezium topology](/images/rdi/redis-di-multi-debezium.png)
 
 ## Create the topology
 

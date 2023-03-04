@@ -52,11 +52,12 @@ In order to upgrade the RedisGears module once a new release is available, the f
 
 - Verify that the new version is installed via the Admin Console (settings → redis modules):
 
-  {{<image filename="/images/rdi/cluster-redis-modules.png" alt="Cluster Redis modules" >}}{{</image>}}
+ ![Cluster Redis modules](/images/rdi/cluster-redis-modules.png)
 
-- From the Admin console, go to your Redis Data Integration configuration view (databases → Redis Data Integration → configuration), you’ll see an indication that there’s an update available to your RedisGears module:
 
-  {{<image filename="/images/rdi/redis-di-db-update-available.png" alt="Redis Data Integration update available" >}}{{</image>}}
+ - From the Admin console, go to your Redis Data Integration configuration view (databases → Redis Data Integration → configuration), you’ll see an indication that there’s an update available to your RedisGears module:
+
+  ![Redis Data Integration update available](/images/rdi/redis-di-db-update-available.png)
   
   You can also see this indication via the `rladmin`:
 
@@ -64,7 +65,7 @@ In order to upgrade the RedisGears module once a new release is available, the f
   rladmin status modules all
   ```
 
-  {{<image filename="/images/rdi/rladmin-status-modules.png" alt="rladmin status modules" >}}{{</image>}}
+  ![rladmin status modules](/images/rdi/rladmin-status-modules.png)
 
 - Now, we should upgrade the RedisGears module in this Redis Data Integration database:
 
@@ -88,7 +89,7 @@ In order to upgrade the RedisGears module once a new release is available, the f
   - It's important to specify `keep_args` argument so the configuration won’t be reset.
   - Warning - After you upgrade the module for a database, the database shards restart. This causes a short interruption in the availability of this database across the cluster.
 
-- Verify that the new RedisGears is used by Redis Data Integration by navigating to databases > Redis Data Integration > configuration:
+- Verify that the new RedisGears is used by Redis Data Integration by navigating to **databases > Redis Data Integration > configuration**:
 
-  {{<image filename="/images/rdi/redis-di-upgraded-redis-gears.pngg" alt="Upgraded RedisGears" >}}{{</image>}}
+  ![Upgraded RedisGears](/images/rdi/redis-di-upgraded-redis-gears.png)
 

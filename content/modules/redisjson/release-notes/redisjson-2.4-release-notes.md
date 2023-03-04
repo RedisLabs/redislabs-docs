@@ -15,7 +15,6 @@ RedisJSON v2.4.5 requires:
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.18
 
-=======
 ## v2.4.5 (February 2023)
 
 This is a maintenance release for RedisJSON 2.4.
@@ -57,8 +56,6 @@ Details:
 
   - [#890](https://github.com/RedisJSON/RedisJSON/pull/890) JSONPath ignores any filter condition beyond the second (MOD-4602)
   
-=======
-
 - Improvements:
 
   - [#892](https://github.com/RedisJSON/RedisJSON/pull/892) Allow `JSON.ARRINDEX` with nonscalar values

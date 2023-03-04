@@ -11,8 +11,7 @@ aliases:
 
 The goal of Redis Data Integration Benchmark Tool is to produce `INSERT` statements on the source DB and calculates the lag between the time the key is inserted into the source DB and the time at which the key is stored in the target Redis DB.
 
-{{<image filename="/images/rdi/monitoring-grafana-dash-running.png" alt="Change record calculated latency" >}}{{</image>}}
-
+![Change record calculated latency](/images/rdi/monitoring-grafana-dash-running.png)
 
 The databases that are supported by this tool are:
 
@@ -31,7 +30,7 @@ The databases that are supported by this tool are:
 - A Redis Data Integration DB which is connected to the target Redis DB.
 - [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) up and running and connected to the source DB and to the Redis Data Integration DB.
 - [Oracle Instant Client](https://www.oracle.com/il-en/database/technologies/instant-client.html) installed and configured for `Oracle` source DB.
-  In case it’s missing, follow this [guide](#installation-of-oracle-instant-client) to install.
+  In case it's missing, follow this [guide](#installation-of-oracle-instant-client) to install.
 
 Redis Data Integration Benchmark requires connectivity to the following endpoints:
 

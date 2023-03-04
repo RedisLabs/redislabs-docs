@@ -14,8 +14,7 @@ The ingested format and types are different from one source to another. Currentl
 
 Each job describes the transformation logic to perform on data from a single source. The source is typically a database table or collection and is specified as the full name of this table/collection. The job may include a filtering logic, to skip data that matches a condition. Other logical steps in the job will transform the data into the desired output that will be stored in Redis (as Hash or JSON).
 
-{{<image filename="/images/rdi/pipeline.png" alt="High-level data transformation pipeline" >}}{{</image>}}
-
+![High-level data transformation pipeline](/images/rdi/pipeline.png)
 
 ## Jobs
 

@@ -18,7 +18,7 @@ Some basic RDI operating metrics can be displayed using the [`redis-di status`](
 
 RDI allows exporting its metrics to [Prometheus](https://prometheus.io/) and visualizing them in [Grafana](https://grafana.com/). Currently, RDI relies on the external [OSS Redis Exporter](https://github.com/oliver006/redis_exporter) that connects to RDI database to source the metrics and serve them for Prometheus job scraping. The diagram below describes this flow and components involved.
 
-{{<image filename="/images/monitoring-architecture.png" alt="Metrics architecture" >}}{{</image>}}
+![Metrics architecture](/images/rdi/monitoring-architecture.png)
 
 > Note: The host names and ports above are examples only and can be changed as needed.
 
@@ -108,16 +108,15 @@ Optionally, you may deploy the sample Grafana dashboard to monitor the status of
 
 2. Log into Grafana and navigate to the list of dashboards, then choose **New -> Import**:
 
-{{<image filename="/images/monitoring-grafana-new-dash.png" alt="New dashboard creation" >}}{{</image>}}
+![New dashboard creation](/images/rdi/monitoring-grafana-new-dash.png.png)
 
 3. On the next screen choose **Upload JSON file** and upload the file you've downloaded in step 1. Make sure you select the data source that is connected to the OSS Metrics Exporter:
 
-{{<image filename="/images/monitoring-grafana-dash-configure.png" alt="Data source connection" >}}{{</image>}}
-
+![Data source connection](/images/rdi/monitoring-grafana-dash-configure.png)
 
 4. Click **Import** and make sure you choose the jobs to monitor in a drop-down list (this will be empty if you don't have any jobs running yet):
 
-{{<image filename="/images/monitoring-grafana-dash-running.png" alt="Dashboard running" >}}{{</image>}}
+![Dashboard running](/images/rdi/monitoring-grafana-dash-running.png)
 
 ## RDI metrics
 

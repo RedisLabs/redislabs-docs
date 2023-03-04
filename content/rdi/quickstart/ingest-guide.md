@@ -33,7 +33,7 @@ The `create` command will create a BDB named `redis-di-<ID>` in your cluster. Yo
 
 ## Scaffold configuration files
 
-[Reference documentation]({{<relref "/rdi/reference/cli/redis-di-scaffold.md">}})
+[Reference documentation]({{<relref "/rdi/reference/cli/redis-di-scaffold">}})
 
 Run `scaffold` command to generate configuration files for Redis Data Integration and Debezium Redis Sink Connector:
 
@@ -62,11 +62,11 @@ The following files will be created in the provided directory:
 
 ## Update Redis target connection details
 
-{{<image filename="/images/rdi/config-yaml-diagram.png" alt="config.yaml diagram" >}}{{</image>}}
+![config.yaml diagram](/images/rdi/config-yaml-diagram.png)
 
 Edit the `config.yaml` configuration file. This file holds the connection details of the target Redis instance and Applier settings.
 
-Update the `connection/target` details to match the target database settings. [See configuration reference for all available settings](reference/config-yaml-reference.md).
+Update the `connection/target` details to match the target database settings. See [configuration reference for all available settings]({{<relref "/rdi/reference/config-yaml-reference">}}).
 
 ## Preventing data loss at Redis target DB
 
@@ -80,7 +80,7 @@ applier:
 
 ## Deploy configuration
 
-Run [deploy](reference/cli/redis-di-deploy.md) command to deploy the local configuration to the remote RDI database:
+Run [deploy]({{<relref "/rdi/reference/cli/redis-di-deploy">}}) command to deploy the local configuration to the remote RDI database:
 
 ```bash
 redis-di deploy
@@ -96,15 +96,15 @@ Run `redis-di status` to check the status of the installation.
 
 ### Configure Debezium Server's `application.properties`
 
-![application.properties Diagram](images/quickstart/application-properties-diagram.png)
+![application.properties Diagram](/images/rdi/application-properties-diagram.png)
 
 Edit `debezium/application.properties` file created under your project directory (created by the `scaffold` command described [above](#scaffold-configuration-files)).
 
-You can read the [Debezium Server Configuration Guide](installation/debezium-server-configuration.md) for the key configuration properties reference.
+You can read the [Debezium Server Configuration Guide]({{<relref "/rdi/installation/debezium-server-configuration">}}) for the key configuration properties reference.
 
 ### Run Debezium Server
 
-Follow [Debezium Server Deployment Guide](installation/debezium-server-deployment.md) to deploy and run Debezium Server in either [containerized](installation/debezium-server-deployment.md#containerized-deployment) and [non containerized](installation/debezium-server-deployment.md#non-containerized-deployment) deployment modes of your choice.
+Follow [Debezium Server Deployment Guide]({{<relref "/rdi/installation/debezium-server-deployment">}}) to deploy and run Debezium Server in either containerized and non-containerized deployment modes of your choice.
 
 ### Quick database setup using Debezium example database
 
@@ -120,7 +120,7 @@ docker run -it --name example-postgres -e POSTGRES_USER=postgres -e POSTGRES_PAS
 
 ### Reference Guide
 
-See [Redis Data Integration Configuration File Reference Guide](reference/config-yaml-reference.md).
+See [Redis Data Integration configuration file reference]({{<relref "/rdi/reference/config-yaml-reference">}}).
 
 ### Substitutions
 
@@ -134,7 +134,7 @@ See [Redis Data Integration Configuration File Reference Guide](reference/config
 
 ## Distributed installation
 
-For detailed information about a distributed installation (multi VM/Multi pod), [read this document](installation/distributed-installation.md).
+For information about a distributed installation (multi VM/Multi pod), see [Distributed installation]({{<relref "/rdi/installation/distributed-installation">}}).
 
 ## Installing from a Python package (Whl File)
 
@@ -193,9 +193,7 @@ For detailed information about a distributed installation (multi VM/Multi pod), 
 
 ## Upgrading
 
-- [Upgrade RDI CLI](upgrade/upgrade-guide.md#upgrade-rdi-cli)
-- [Upgrade RDI Engine](upgrade/upgrade-guide.md#upgrade-rdi-engine)
-- [Upgrade RedisGears Module](upgrade/upgrade-guide.md#upgrade-redisgears-module)
+To learn how you can upgrade RDI CLI, RDI engine, and RedisGears see the [Upgrade]({{<relref "/rdi/upgrade">}}) section.
 
 ## Troubleshooting
 

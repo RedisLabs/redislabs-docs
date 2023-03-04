@@ -21,7 +21,7 @@ This guide covers:
 
 For other Linux versions please check the [Pacemaker documentation](https://clusterlabs.org/quickstart.html) for the right binary packages and configurations.
 
-![HA topology for Debezium Server](../images/architecture/redis-di-ha.png)
+![High availability topology for Debezium Server](/images/rdi/redis-di-ha.png)
 
 ## Prerequisites
 

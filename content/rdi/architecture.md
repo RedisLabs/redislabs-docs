@@ -21,7 +21,7 @@ Redis Data Integration using Debezium works in 2 modes:
 1. Initial sync - Where a snapshot of the entire db or a subset of selected tables is used as a baseline and the entire data is streamed to Redis Data Integration and then transformed and written into the target Redis DB.
 2. Live updates - Where Debezium captures changes to the data that happen after the baseline snapshot and streams them to Redis Data Integration where they are transformed and written to the target.
 
-{{<image filename="/images/rdi/redis-di-simplified.png" alt="High-level Redis Data Integration architecture" >}}{{</image>}}
+![High-level Redis Data Integration architecture](/images/rdi/redis-di-simplified.png)
 
 ## Supported data transformations
 
@@ -31,7 +31,7 @@ See the [data types list](data-transformation/data-type-conversion.md) for the e
 
 ## Architecture and components
 
-{{<image filename="/images/rdi/redis-di.png" alt="Detailed Redis Data Integration architecture" >}}{{</image>}}
+![Detailed Redis Data Integration architecture](/images/rdi/redis-di.png)
 
 ## Feeders
 

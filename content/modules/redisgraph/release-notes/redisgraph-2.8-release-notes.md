@@ -15,7 +15,6 @@ RedisGraph v2.8.25 requires:
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
 
-=======
 ## v2.8.25 (February 2023)
 
 This is a maintenance release for RedisGraph 2.8.
