@@ -91,5 +91,5 @@ In order to upgrade the RedisGears module once a new release is available, the f
 
 - Verify that the new RedisGears is used by Redis Data Integration by navigating to **databases > Redis Data Integration > configuration**:
 
-  ![Upgraded RedisGears](/images/rdi/redis-di-upgraded-redis-gears.png)
+  ![Upgraded RedisGears](/images/rdi/redis-di-upgraded-redisgears.png)
 
