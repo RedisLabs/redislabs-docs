@@ -17,6 +17,9 @@ An API object that represents the cluster.
 | cm_session_timeout_minutes | integer (default:&nbsp;15) | The timeout (in minutes) for the session to the CM |
 | cnm_http_port | integer, (range:&nbsp;1024-65535) | API HTTP listening port |
 | cnm_https_port | integer, (range:&nbsp;1024-65535) | API HTTPS listening port |
+| envoy_mgmt_server_port | integer, (range:&nbsp;1024-65535) | Envoy management server port|
+| envoy_admin_port | integer, (range:&nbsp;1024-65535) | Envoy admin port. Changing this port in runtime might result in an empty response since envoy serves as the cluster gateway.|
+| gossip_envoy_admin_port | integer, (range:&nbsp;1024-65535) | Gossip envoy admin port|
 | control_cipher_suites | string | Specifies the enabled ciphers for the control plane. The ciphers are specified in the format understood by the BoringSSL library. |
 | crdt_rest_client_retries | integer | Maximum number of retries for the REST client used by the Active-Active management API |
 | crdt_rest_client_timeout | integer | Timeout for REST client used by the Active-Active management API |
