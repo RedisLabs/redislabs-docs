@@ -40,7 +40,7 @@ To import data into a database:
 
 You can import data from a variety of services, ranging from local servers to cloud services.
 
-Earlier versions of Redis Enterprise Software supported OpenStack Swift a storage location; however, that support ended [30 November 2020]({{< relref "/rs/release-notes/rs-5-6-0-april-2020#end-of-life" >}}).  As a result, that option is no longer available.
+Earlier versions of Redis Enterprise Software supported OpenStack Swift a storage location; however, that support ended [30 November 2020]({{< relref "/rs/release-notes/legacy-release-notes/rs-5-6-0-april-2020#end-of-life" >}}).  As a result, that option is no longer available.
 
 ### HTTP server
 

@@ -6,4 +6,5 @@ weight: 100
 alwaysopen: false
 categories: ["RS"]
 ---
-{{< allchildren style="h2" sort="Weight" >}}
+
+{{<table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes,OSS&nbsp;Redis compatibility" columnSources="LinkTitle,Description,compatibleOSSVersion" enableLinks="LinkTitle">}}
