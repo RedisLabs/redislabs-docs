@@ -43,13 +43,21 @@ You cannot change the email address associated with a Redis Cloud account.  Inst
 
 ## Account address settings
 
-The **Account address** section shows the address associated with the current Redis Cloud account and the current time zone. 
+The **Account address** section shows the billing address associated with the current Redis Cloud account and the current time zone. 
 
 To update the time zone, select the desired time zone from the **Time zone** drop-down.
 
 In addition, this section may include fields unique to your location.  For example, certain regions require tax IDs or other regulatory details.
 
-When updating details in this section, pay particular attention to prompts and error messages.
+Select **Edit** to change the account's billing address. You must re-enter your payment method details to confirm your address change. 
+
+   {{<image filename="images/rc/account-settings-edit-address-button.png" alt="Select the Edit button to change the account's billing address." width="400px">}}{{< /image >}}
+
+   {{<image filename="images/rc/account-settings-change-billing-address.png" alt="The Edit account billing address screen." width="75%">}}{{< /image >}}
+
+{{< note >}}
+Changing the billing address for your account will remove any payment methods associated with the old billing address. See [Add payment method]({{<relref "/rc/billing-and-payments#add-payment-method">}}) to learn how to add a payment method back to your account.
+{{< /note >}}
 
 ## Security settings
 

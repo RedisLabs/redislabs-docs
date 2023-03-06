@@ -109,7 +109,7 @@ The download contains a file called `redis_ca.pem`, which includes the following
 
 - Self-signed Redis Cloud Flexible plan Root CA and intermediate CA (deprecated but still in use)
 
-- Publicly trusted GlobalSign Root CA and intermediate CA
+- Publicly trusted GlobalSign Root CA
 
 To inspect the certificates in `redis_ca.pem`, run the `keytool` command:
 
