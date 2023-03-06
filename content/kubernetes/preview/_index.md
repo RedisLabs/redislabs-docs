@@ -58,9 +58,12 @@ Redis Enterprise remote cluster (RERC) custom resource contains configuration de
 
 For a full list of fields and options, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
-## Related articles
+## Preview limitations
 
-- [Active-Active geo-distributed Redis]({{<relref "/rs/databases/active-active/">}})
-- [Connect to your Active-Active database]({{<relref "/rs/databases/active-active/connect.md">}})
-- [Considerations for planning Active-Active databases]({{<relref "/rs/databases/active-active/planning.md">}})
-
+* Can't automatically update the cluster secret via the operator (can be updated manually)
+* No support for migration from old (manual) Active-Active database method to new Active-Active controller
+* No support for Hashicorp Vault for storing secrets
+* No module support
+* No support for client certificates in secrets
+* No support for backup configuration
+* No support for upgrading the database Redis version
