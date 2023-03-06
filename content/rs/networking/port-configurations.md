@@ -43,6 +43,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 20000-29999 | Internal | Database shard traffic |
 | TCP | 8002, 8004, 8006 | Internal | System health monitoring |
 | TCP | 8444, 9080 | Internal | Traffic between web proxy and cnm_http/cm |
+| TCP | 1024-65535 | Internal | Cluster gateway (envoy admin, envoy management server, gossip envoy admin) |
 
 ## Change the admin console port
 
@@ -59,7 +60,7 @@ After changing the Redis Enterprise Software web UI port, you must connect any n
 
 ## Change the REST API port
 
-For the REST API, Redis Enterprise Software uses port 9443 (secure) and port 8080 (unsecure), by default. You can change this to a custom port as long as the new port is not in use by another process.
+For the REST API, Redis Enterprise Software uses port 9443 (secure) and port 8080 (not secure), by default. You can change this to a custom port as long as the new port is not in use by another process.
 
 To change these ports, run:
 
@@ -71,25 +72,26 @@ rladmin cluster config cnm_http_port <new-port>
 rladmin cluster config cnm_https_port <new-port>
 ```
 
-## Disable HTTP support for API endpoints
+## Require HTTPS for API endpoints
 
-To harden deployments, you can disable the HTTP support for API endpoints that is supported by default.
-Before you disable HTTP support, make sure you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint to prevent broken connections.
+By default, the Redis Enterprise Software API supports communication over HTTP and HTTPS. However, you can turn off HTTP support to ensure that API requests are encrypted.
 
-To disable HTTP support for API endpoints, run:
+Before you turn off HTTP support, make sure you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint to prevent broken connections.
+
+To turn off HTTP support for API endpoints, run:
 
 ```sh
 rladmin cluster config http_support disabled
 ```
 
-After you disable HTTP support, traffic sent to the unencrypted API endpoint is blocked.
+After you turn off HTTP support, traffic sent to the unencrypted API endpoint is blocked.
 
 
 ## HTTP to HTTPS redirection
-Starting with version 6.0.12, the automatic HTTP to HTTPS redirection is disabled.
+Starting with version 6.0.12, you cannot use automatic HTTP to HTTPS redirection.
 To poll metrics from the `metrics_exporter` or to access the admin console, use HTTPS in your request. HTTP requests won't be automatically redirected to HTTPS for those services. 
 
-# Nodes on different VLANs
+## Nodes on different VLANs
 
 Nodes in the same cluster must reside on the same VLAN. If you can't
 host the nodes on the same VLAN, then you must open [all ports]({{< relref "/rs/networking/port-configurations.md" >}}) between them.
