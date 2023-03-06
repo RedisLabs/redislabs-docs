@@ -17,9 +17,6 @@ An API object that represents the cluster.
 | cm_session_timeout_minutes | integer (default:&nbsp;15) | The timeout (in minutes) for the session to the CM |
 | cnm_http_port | integer, (range:&nbsp;1024-65535) | API HTTP listening port |
 | cnm_https_port | integer, (range:&nbsp;1024-65535) | API HTTPS listening port |
-| envoy_mgmt_server_port | integer, (range:&nbsp;1024-65535) | Envoy management server port|
-| envoy_admin_port | integer, (range:&nbsp;1024-65535) | Envoy admin port. Changing this port in runtime might result in an empty response since envoy serves as the cluster gateway.|
-| gossip_envoy_admin_port | integer, (range:&nbsp;1024-65535) | Gossip envoy admin port|
 | control_cipher_suites | string | Specifies the enabled ciphers for the control plane. The ciphers are specified in the format understood by the BoringSSL library. |
 | crdt_rest_client_retries | integer | Maximum number of retries for the REST client used by the Active-Active management API |
 | crdt_rest_client_timeout | integer | Timeout for REST client used by the Active-Active management API |
@@ -31,7 +28,10 @@ An API object that represents the cluster.
 | email_alerts | boolean (default:&nbsp;false) | Send node/cluster email alerts (requires valid SMTP and email_from settings) |
 | email_from | string | Sender email for automated emails |
 | encrypt_pkeys | boolean (default:&nbsp;false) | Enable or turn off encryption of private keys |
+| envoy_admin_port | integer, (range:&nbsp;1024-65535) | Envoy admin port. Changing this port during runtime might result in an empty response since envoy serves as the cluster gateway.|
 | envoy_max_downstream_connections | integer, (range:&nbsp;100-2048) | The max downstream connections envoy is allowed to open |
+| envoy_mgmt_server_port | integer, (range:&nbsp;1024-65535) | Envoy management server port|
+| gossip_envoy_admin_port | integer, (range:&nbsp;1024-65535) | Gossip envoy admin port|
 | handle_redirects | boolean (default:&nbsp;false) | Handle API HTTPS requests and redirect to the master node internally |
 | http_support | boolean (default:&nbsp;false) | Enable or turn off HTTP support |
 | min_control_TLS_version | '1' <br />'1.1' <br />'1.2' <br />'1.3' | The minimum version of TLS protocol which is supported at the control path |
