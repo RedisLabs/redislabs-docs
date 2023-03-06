@@ -62,6 +62,8 @@ Login to your SM account at [https://app.redislabs.com/#/login](https://app.redi
 
 In order to activate SAML, you must have a local user (or social sign-on user) with the **owner** role. If you have the correct permissions, you will see the **Single Sign-On** tab.
 
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_7.png" alt="" >}}{{</image>}}
+
 1. Fill in the information you saved previously in the **Configuration setup** screen. This includes :
 
 * **Issuer (IdP Entity ID)** -> IAM Identity Center SAML issuer URL
@@ -72,13 +74,13 @@ You will also have to add :
 
 * **Email domain binding** - The domain used in your company's email addresses
 
-  {{<image filename="images/rc/saml/sm_saml_1.png" alt="" >}}{{</image>}}
+  {{<image filename="images/rc/saml/aws_iam_identity_center_saml_8.png" alt="" >}}{{</image>}}
 
 Once you click the **enable** button, wait a few seconds for the status to change.
 
 2. You will then be able to **download** the service provider (SP) metadata. Save the file to your local hard disk.
 
-   {{<image filename="images/rc/saml/ad_saml_10.png" alt="" >}}{{</image>}}
+   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_9.png" alt="" >}}{{</image>}}
 
 3. Open the file in any text editor, and there are 2 pieces of information that you need to copy and mark down:
 
