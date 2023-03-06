@@ -93,3 +93,18 @@ Once you click the **enable** button, wait a few seconds for the status to chang
   {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
 ## Step 3 - Finish SAML configuration in AWS IAM Identity Center's Redis Cloud Application
+
+1. Go back to the **Configuration setup** screen in IAM identity Center. Scroll down to the bottom of the page and select the **Upload application SAML metadata file** option. Click on the **upload** button and choose the file that you downloaded in the SAML configuration screen in Redis Cloud. It should look like the screen below :
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_10.png" alt="" >}}{{</image>}}
+
+2. If you would like to also configure an IdP initiated workflow, then you need to fill in the **relay state** field in the **Application properties** section. Use the following URL **https://app.redislabs.com/#/login/?idpId=XXXXXX**. Take the ID from the location URL in step 3 (the content after the last forward slash "/") and append to the url. It should look like the screen below :
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_11.png" alt="" >}}{{</image>}}
+
+3. Once all the information has been filled in, it is time finish the application creation by clicking the **Submit** button.
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_12.png" alt="" >}}{{</image>}}
+
+4. Next, we need to configure the **Redis Cloud** application's attribute mappings. Click on the **Actions** menu and choose **Edit Attribute Mappings**.
+
