@@ -48,3 +48,46 @@ Make sure to the note down or copy the URLs and to download the certification in
 > **NOTE** : Both the IAM Identity Center sign-in URL and the IAM Identity Center SAML issuer URL are the same value. This is normal.
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_6.png" alt="" >}}{{</image>}}
+
+
+## Step 2 - Configuring SAML support in Redis Cloud
+
+Now that we have our IAM Identity Center IdP server information, we need to configure support for SAML in Redis Cloud.
+
+### Login to your Redis Cloud SM account
+
+Login to your SM account at [https://app.redislabs.com/#/login](https://app.redislabs.com/#/login)
+
+### Activate SAML in Access Management
+
+In order to activate SAML, you must have a local user (or social sign-on user) with the **owner** role. If you have the correct permissions, you will see the **Single Sign-On** tab.
+
+1. Fill in the information you saved previously in the **Configuration setup** screen. This includes :
+
+* **Issuer (IdP Entity ID)** -> IAM Identity Center SAML issuer URL
+* **IdP server URL** -> IAM Identity Center sign-in URL
+* **Assertion signing certificate** - drag and drop the certificate file you downloaded to disk in the form textarea
+
+You will also have to add :
+
+* **Email domain binding** - The domain used in your company's email addresses
+
+  {{<image filename="images/rc/saml/sm_saml_1.png" alt="" >}}{{</image>}}
+
+Once you click the **enable** button, wait a few seconds for the status to change.
+
+2. You will then be able to **download** the service provider (SP) metadata. Save the file to your local hard disk.
+
+   {{<image filename="images/rc/saml/ad_saml_10.png" alt="" >}}{{</image>}}
+
+3. Open the file in any text editor, and there are 2 pieces of information that you need to copy and mark down:
+
+* **EntityID** : The unique name of the service provider (SP)
+
+  {{<image filename="images/rc/saml/sm_saml_4.png" alt="" >}}{{</image>}}
+
+* **Location** : The location of the assertion consumer service
+
+  {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
+
+## Step 3 - Finish SAML configuration in AWS IAM Identity Center's Redis Cloud Application
