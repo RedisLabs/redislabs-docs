@@ -35,7 +35,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
 6. The **Configure Application** screen is where we will initially get the information needed to configure SAML in Redis Cloud. To begin, change the **Display name** and **Description** to **Redis Cloud**
 
-   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_5" alt="" >}}{{</image>}}
+   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_5.png" alt="" >}}{{</image>}}
 
 7. Next, scroll down the page to the **IAM Identity Center metadata** section. This information includes all of the information needed to configure SAML in Redis Cloud. This includes :
 
@@ -47,4 +47,4 @@ Make sure to the note down or copy the URLs and to download the certification in
 
 > **NOTE** : Both the IAM Identity Center sign-in URL and the IAM Identity Center SAML issuer URL are the same value. This is normal.
 
-   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_6" alt="" >}}{{</image>}}
+   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_6.png" alt="" >}}{{</image>}}
