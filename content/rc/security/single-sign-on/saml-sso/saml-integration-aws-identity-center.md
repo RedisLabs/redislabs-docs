@@ -106,5 +106,22 @@ Once you click the **enable** button, wait a few seconds for the status to chang
 
 {{<image filename="images/rc/saml/aws_iam_identity_center_saml_12.png" alt="" >}}{{</image>}}
 
-4. Next, we need to configure the **Redis Cloud** application's attribute mappings. Click on the **Actions** menu and choose **Edit Attribute Mappings**.
+4. Next, we need to configure the **Redis Cloud** application's attribute mappings. Click on the **Actions** menu and choose **Edit Attribute Mappings**. 
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_13.png" alt="" >}}{{</image>}}   
+
+In the next screen, add the following attributes :
+
+* Subject : **${user:email}**, **unspecified**
+* Email : **${user:email}**, **unspecified**
+* FirstName : **${user:givenName}**, **unspecified**
+* LastName : **${user:familyName}**, **unspecified**
+* redisAccountMapping : **XXXXXXX=owner**, **unspecified**
+
+The **redisAccountMapping** key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** (you can find this information in the upper-right user menu at app.redislabs.com).
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_14.png" alt="" >}}{{</image>}}
+
+## Step 4 - Ensure that the SM account user has an IAM Identity Center user account
+
 
