@@ -32,7 +32,11 @@ Edit the Redis operator configmap (`operator-environment-config`) to set `ENABLE
 
 ### IngressOrRoutesSpec field in REC spec
 
+A new field in the Redis Enterprise cluster (REC) custom resource allows you use the REC spec to configure external access to your Redis Enterprise databases.
 
+We support these ingress controllers: 
+
+To use this, you'll need to see this **new article**
 
 ### Redis Enterprise Active-Active for Kubernetes
 
@@ -54,7 +58,7 @@ Redis Enterprise remote cluster (RERC) custom resource contains configuration de
 
 For a full list of fields and options, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
-## More info
+## Related articles
 
 - [Active-Active geo-distributed Redis]({{<relref "/rs/databases/active-active/">}})
 - [Connect to your Active-Active database]({{<relref "/rs/databases/active-active/connect.md">}})
