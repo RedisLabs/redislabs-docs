@@ -28,7 +28,7 @@ An API object that represents the cluster.
 | email_alerts | boolean (default:&nbsp;false) | Send node/cluster email alerts (requires valid SMTP and email_from settings) |
 | email_from | string | Sender email for automated emails |
 | encrypt_pkeys | boolean (default:&nbsp;false) | Enable or turn off encryption of private keys |
-| envoy_admin_port | integer, (range:&nbsp;1024-65535) | Envoy admin port. Changing this port during runtime might result in an empty response since envoy serves as the cluster gateway.|
+| envoy_admin_port | integer, (range:&nbsp;1024-65535) | Envoy admin port. Changing this port during runtime might result in an empty response because envoy serves as the cluster gateway.|
 | envoy_max_downstream_connections | integer, (range:&nbsp;100-2048) | The max downstream connections envoy is allowed to open |
 | envoy_mgmt_server_port | integer, (range:&nbsp;1024-65535) | Envoy management server port|
 | gossip_envoy_admin_port | integer, (range:&nbsp;1024-65535) | Gossip envoy admin port|
