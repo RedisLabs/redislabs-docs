@@ -407,6 +407,8 @@ article > aside .menu .dd-item {
   list-style: none;
   font-size: 1rem;
 }
+article > aside .menu .dd-item.parent > a {
+  font-size: 18px; }
 article > aside .menu .dd-item.alwaysopen > ul {
   display: block; }
 article > aside .menu .dd-item.parent > ul {
