@@ -6,8 +6,8 @@ weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
-    /kubernetes/preview/create_reaadb.md,
-    /kubernetes/preview/create_reaadb/,
+    /kubernetes/preview/create-reaadb.md,
+    /kubernetes/preview/create-reaadb/,
 }
 ---
 

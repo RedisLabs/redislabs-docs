@@ -6,8 +6,8 @@ weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
-    /kubernetes/preview/create_reaadb.md,
-    /kubernetes/preview/create_reaadb/,
+    /kubernetes/preview/external-routing.md,
+    /kubernetes/preview/external-routing/,
 }
 ---
 
@@ -26,9 +26,9 @@ By default, the operator creates a `ClusterIP` type service, which exposes a clu
 Redis Enterprise for Kubernetes supports three ingress controllers:
 * [HAProxy](https://haproxy-ingress.github.io/)
 * [NGINX](https://kubernetes.github.io/ingress-nginx/)
-* [Istio]({{<relref "kubernetes/re-databases/ingress_routing_with_istio/">}}) [routes]
+* [Istio]({{<relref "/kubernetes/re-databases/ingress_routing_with_istio.md">}}) [routes]
 
-OpenShift users can use ({{<relref "/kubernetes/re-databases/routes/">}}) instead of a ingress controller.
+OpenShift users can use ({{<relref "/kubernetes/re-databases/routes.md">}}) instead of a ingress controller.
 
 Install your chosen ingress controller, making sure `ssl-passthrough` is enabled. `ssl-passthrough` is disabled by default for NGINX but enabled by default for HAProxy.
 
@@ -71,7 +71,7 @@ Edit the Redis operator configmap (`operator-environment-config`) to set the alp
 
 Edit the REC spec to add the `ingressOrRouteSpec` field, replacing `<placeholders>` with your own values.
 
-Define the REC API hostname (apiFqdnUrl), database hostname suffix (dbFqdnSuffix) you chose when configuring DNS.
+Define the REC API hostname (`apiFqdnUrl`), database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
 
 Add the annotations for your ingress controller and set `ssl-passthrough` to "true". 
 

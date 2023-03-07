@@ -29,7 +29,7 @@ Edit the Redis operator configmap (`operator-environment-config`) to set the alp
 
 ### Configure external routing
 
-Active-Active database require external routing access to sync properly. To configure external routing through an ingress controller or OpenShift routes, see [Establish external routing on the REC]({{<relref "/kubernetes/preview/external-routing.md">}}).
+Active-Active databases require external routing access to sync properly. To configure external routing through an ingress controller or OpenShift routes, see [Establish external routing on the REC]({{<relref "/kubernetes/preview/external-routing.md">}}).
 
 ### Enable Active-Active controllers
 
@@ -141,4 +141,4 @@ This allows all the participating clusters to sync configuration changes. If the
 
 ## Next steps
 
-Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/preview/create_reaadb.md">}}).
+Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/preview/create-reaadb.md">}}).
