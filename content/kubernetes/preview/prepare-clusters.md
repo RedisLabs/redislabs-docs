@@ -29,9 +29,7 @@ Edit the Redis operator configmap (`operator-environment-config`) to set the alp
 
 ### Configure external routing
 
-
-Content to come sourced from: https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/setting_ingress_or_route_readme.md#configure-ingress-or-routes-on-the-rec
-
+Active-Active database require external routing access to sync properly. To configure external routing through an ingress controller or OpenShift routes, see [Establish external routing on the REC]({{<relref "/kubernetes/preview/external-routing.md">}}).
 
 ### Enable Active-Active controllers
 

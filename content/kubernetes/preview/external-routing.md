@@ -1,5 +1,5 @@
 ---
-Title: Establish external routing
+Title: Establish external routing on the REC
 linkTitle: External routing
 description: 
 weight: 30
@@ -30,4 +30,21 @@ Redis Enterprise for Kubernetes supports three ingress controllers:
 
 OpenShift users can use ({{<relref "/kubernetes/re-databases/routes/">}}) instead of a ingress controller.
 
-Install your chosen ingress controller, making sure `ssl-passthrough` is enabled. `ssl-passthrough` is disabled by default for NGINX but enabled by default for HAProxy. 
+Install your chosen ingress controller, making sure `ssl-passthrough` is enabled. `ssl-passthrough` is disabled by default for NGINX but enabled by default for HAProxy.
+
+## Configure DNS
+
+
+## Configure external routing on the REC
+
+### Enable alpha features
+
+Edit the Redis operator configmap (`operator-environment-config`) to set the alpha features flag to "true". 
+
+```sh
+  kubectl patch cm  operator-environment-config --type merge --patch "{\"data\": \
+    {\"ENABLE_ALPHA_FEATURES\":\"true\"}}"
+```
+
+### Edit the REC spec
+
