@@ -2,7 +2,7 @@
 Title: Establish external routing on the REC
 linkTitle: External routing
 description: 
-weight: 30
+weight: 9
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
