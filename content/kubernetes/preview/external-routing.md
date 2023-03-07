@@ -69,3 +69,17 @@ Edit the Redis operator configmap (`operator-environment-config`) to set the alp
 
 ### Edit the REC spec
 
+Edit the REC spec to add the `ingressOrRouteSpec` field, replacing `<placeholders>` with your own values.
+
+Define the REC API hostname (apiFqdnUrl), database hostname suffix (dbFqdnSuffix) you chose when configuring DNS.
+
+Add the annotations for your ingress controller and set `ssl-passthrough` to "true". 
+
+```sh
+kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
+    {\"ingressOrRouteSpec\": \
+      {\"apiFqdnUrl\": \"api-<rec-name>-<rec-namespace>.redis.com\", \
+      \"dbFqdnSuffix\": \"-db-<rec-name>-<rec-namespace>.redis.com\", \
+      \"ingressAnnotations\": {\"kubernetes.io/ingress.class\": \"<ingress-controller>\", \"<ingress-controller>.ingress.kubernetes.io/ssl-passthrough\": \"true\"}, \
+      \"method\": \"ingress\"}}}"
+```
