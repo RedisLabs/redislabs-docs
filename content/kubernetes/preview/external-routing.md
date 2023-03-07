@@ -34,6 +34,27 @@ Install your chosen ingress controller, making sure `ssl-passthrough` is enabled
 
 ## Configure DNS
 
+1. Choose the hostname (FQDN) you will use to access your database according to the recommended naming conventions below, replacing `<placeholders>` with your own values.
+
+   REC API hostname: `api-<rec-name>-<rec-namespace>.<subdomain>`
+   REDB or REAADB hostname: `*-db-<rec-name>-<rec-namespace>.<subdomain>`
+     We recommend using a wildcard (`*`) in place of the database name, followed by the hostname suffix.
+
+1. Retrieve the `EXTERNAL-IP` of your ingress controller's `LoadBalancer` service.
+
+    ``` sh
+    $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> \
+                        -n <ingress-ctrl-namespace>
+    ```
+
+    Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.  
+
+    ``` sh
+    NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE   
+    haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
+    ```
+
+1. Create DNS records to resolve your chosen REC API hostname and database hostname to the `EXTERNAL-IP` found in the previous step.
 
 ## Configure external routing on the REC
 
