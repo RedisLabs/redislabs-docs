@@ -8,6 +8,8 @@ categories: ["Platforms"]
 aliases: [
     /kubernetes/re-databases/ingress_routing_with_istio.md,
     /kubernetes/re-databases/ingress_routing_with_istio/,
+    /kubernetes/networking/ingress-routing-with-istio.md,
+    /kubernetes/networking/ingress_routing-with-istio/,
 ]
 ---
 

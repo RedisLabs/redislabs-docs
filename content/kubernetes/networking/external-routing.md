@@ -1,13 +1,14 @@
 ---
 Title: Establish external routing on the REC
-linkTitle: External routing
+linkTitle: Preview `ingressOrRouteSpec`
 description: 
-weight: 9
+weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
     /kubernetes/preview/external-routing.md,
     /kubernetes/preview/external-routing/,
+
 }
 ---
 
