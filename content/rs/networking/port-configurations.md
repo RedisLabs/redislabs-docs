@@ -41,7 +41,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 1968 | Internal | Proxy traffic |
 | TCP | 3333-3341, 3342-3344, 36379, 36380 | Internal | Internode communication |
 | TCP | 20000-29999 | Internal | Database shard traffic |
-| TCP | 8002, 8004, 8006 | Internal | Default System health monitoring (envoy admin, envoy management server, gossip envoy admin)|
+| TCP | 8002, 8004, 8006 | Internal | Default system health monitoring (envoy admin, envoy management server, gossip envoy admin)|
 | TCP | 8444, 9080 | Internal | Traffic between web proxy and cnm_http/cm |
 
 ## Change the admin console port
