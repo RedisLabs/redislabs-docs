@@ -1,6 +1,6 @@
 ---
-Title: Metrics
-linkTitle: Real-time Metrics
+Title: Real-time Metrics
+linkTitle: Metrics
 description: Documents the metrics that are tracked with Redis Enterprise Software.
 weight: $weight
 alwaysopen: false
@@ -35,3 +35,22 @@ you can connect your [Prometheus](https://prometheus.io/) and [Grafana](https://
 We recommend you use Prometheus and Grafana to view metrics history and trends.
 
 See [Prometheus Integration]({{< relref "/rs/clusters/monitoring/prometheus-integration" >}}) to learn how to connect Prometheus and Grafana to your Redis Enterprise database.
+
+## Limitations
+
+### Shard limit
+
+Metrics information is not shown for clusters with more than 128 shards. For large clusters, we recommend you use [Prometheus and Grafana]({{< relref "/rs/clusters/monitoring/prometheus-integration" >}}) to view metrics.
+
+### Metrics not shown during shard migration
+
+The following metrics are not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}). If you view these metrics while resharding, the graph will be blank.
+
+- [Evicted objects/sec]({{< relref "/rs/references/metrics/database-operations#evicted-objectssec" >}})
+- [Expired objects/sec]({{< relref "/rs/references/metrics/database-operations#expired-objectssec" >}})
+- [Read misses/sec]({{< relref "/rs/references/metrics/database-operations#read-missessec" >}})
+- [Write misses/sec]({{< relref "/rs/references/metrics/database-operations#write-missessec" >}})
+- [Total keys]({{< relref "/rs/references/metrics/database-operations#total-keys" >}})
+- [Incoming traffic]({{< relref "/rs/references/metrics/resource-usage#incoming-traffic" >}})
+- [Outgoing traffic]({{< relref "/rs/references/metrics/resource-usage#outgoing-traffic" >}})
+- [Used memory]({{< relref "/rs/references/metrics/resource-usage#used-memory" >}})
