@@ -245,6 +245,9 @@ As part of the REC creation process, the operator stores the admission controlle
     kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
+  {{<note>}} The 6.4.2-4 release introduces a new `ValidatingWebhookConfiguration` to replace `redb-admission`. See the [6.4.2-4 release notes]({{<relref "kubernetes/release-notes/k8s-6-4-2-4/#upgrade-to-642-4">}})
+
+
 ### Limit the webhook to the relevant namespaces {#webhook}
 
 The operator bundle includes a webhook file. The webhook will intercept requests from all namespaces unless you edit it to target a specific namespace. You can do this by adding the `namespaceSelector` section to the webhook spec to target a label on the namespace.
