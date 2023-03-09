@@ -39,7 +39,7 @@ You can deploy Redis Enterprise for Kubernetes from the Red Hat OpenShift CLI. Y
 
 5. Choose an approval strategy.
 
-    We recommend **Manual** for production systems to ensure the operator is only upgraded by approval.
+    Use **Manual** for production systems to ensure the operator is only upgraded by approval.
 
 6. Select **Install** and approve the install plan.
 
@@ -69,7 +69,7 @@ After the install, the OperatorHub automatically uses the constraint for Redis E
 
 {{< note >}}
 **Known Limitation** - The automatic use of the security constraint is limited. The
-Redis Enterprise must be named `rec` for the constraint to be used automatically.  **We recommend you use the cluster name `rec` when deploying with the OperatorHub.**
+Redis Enterprise must be named `rec` for the constraint to be used automatically.  **Use the cluster name `rec` when deploying with the OperatorHub.**
 
 If you require a different name, you must grant the SCC to the project
 namespace.
