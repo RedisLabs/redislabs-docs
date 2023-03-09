@@ -27,7 +27,7 @@ This process consists of:
 
 Before creating Active-Active databases, you'll need admin access to two or more working Kubernetes clusters that each have:
 
-- Routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) (use [routes]({{<relref "/kubernetes/re-databases/routes.md">}}) for OpenShift)
+- Routing for external access with an [ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) (use [routes]({{<relref "/kubernetes/re-databases/routes.md">}}) for OpenShift)
 - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
 - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}}))
 
@@ -98,7 +98,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 ### Using ingress controller
 
-1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
+1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
 
   Nginx:
 
