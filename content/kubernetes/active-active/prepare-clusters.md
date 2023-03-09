@@ -35,7 +35,7 @@ Active-Active databases require external routing access to sync properly. To con
 
 ### Enable Active-Active controllers
 
-For each each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster.
+For each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster.
 
 1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-1) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
 
@@ -93,7 +93,7 @@ To sync global configurations, all participating clusters will need access to th
     kubectl get secret -o yaml <rec-name>
     ```
 
-    The admin credentials secret for an REC named `rec1` would similar to this:
+    The admin credentials secret for an REC named `rec1` would be similar to this:
 
     ```yaml
     apiVersion: v1

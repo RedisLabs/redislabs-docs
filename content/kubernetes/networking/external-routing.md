@@ -31,9 +31,9 @@ Redis Enterprise for Kubernetes supports three ingress controllers:
 * [NGINX](https://kubernetes.github.io/ingress-nginx/)
 * [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}})
 
-OpenShift users can use [routes]({{<relref "/kubernetes/networking/routes.md">}}) instead of a ingress controller.
+OpenShift users can use [routes]({{<relref "/kubernetes/networking/routes.md">}}) instead of an ingress controller.
 
-Install your chosen ingress controller, making sure `ssl-passthrough` is enabled. `ssl-passthrough` is disabled by default for NGINX but enabled by default for HAProxy.
+Install your chosen ingress controller, making sure `ssl-passthrough` is enabled. `ssl-passthrough` is turned off by default for NGINX but enabled by default for HAProxy.
 
 ## Configure DNS
 
@@ -74,7 +74,7 @@ Edit the Redis operator configmap (`operator-environment-config`) to set the alp
 
 Edit the REC spec to add the `ingressOrRouteSpec` field, replacing `<placeholders>` with your own values.
 
-Define the REC API hostname (`apiFqdnUrl`), database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
+Define the REC API hostname (`apiFqdnUrl`) and database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
 
 Add the annotations for your ingress controller and set `ssl-passthrough` to "true". 
 

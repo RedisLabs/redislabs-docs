@@ -23,7 +23,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
 
 ## Create `RedisEnterpriseRemoteCluster` resources
 
-1. Create a `RedisEnterpriseRemoteCluster` (RERC) custom resource files for each participating Redis Enterprise cluster (REC). 
+1. Create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for each participating Redis Enterprise cluster (REC). 
   Below are examples of RERC resources for two participating clusters. Substitute your own values to create your own resource.
 
     Example RERC for a REC named `rec1` in the namespace `ns1`:
@@ -60,7 +60,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     kubectl create -f <rerc-file>
     ```
 
-1. Check the status of your RERC a `STATUS` of `Active` and a `SPEC STATUS` of `Valid`. This means your configurations are correct.
+1. Check the status of your RERC. If `STATUS` is `Active` and `SPEC STATUS` is `Valid`, then your configurations are correct.
   
     ```sh
     kubectl get rerc <rerc-name>
@@ -75,7 +75,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     rec1.ns1   Active   Valid         true
     ```
   
-    In case of error, review the RERC custom resource events and the Redis Enterprise operator logs.
+    In case of errors, review the RERC custom resource events and the Redis Enterprise operator logs.
 
 ## Create `RedisEnterpriseActiveActiveDatabase` resource
 
@@ -83,7 +83,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
 
     Naming requirements:
     - less than 63 characters
-    - contains only lower case letters, numbers, or hyphens
+    - contains only lowercase letters, numbers, or hyphens
     - starts with a letter
     - ends with a letter or digit
 
@@ -110,7 +110,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     kubectl create -f <reaadb-file>
     ```
 
-1. Check the status of your RERC a `STATUS` of `Active` and a `SPEC STATUS` of `Valid`. This means your configurations are correct.
+1. Check the status of your RERC. If `STATUS` is `Active` and `SPEC STATUS` is `Valid`, your configurations are correct.
   
     ```sh
     kubectl get raadb <raadb-name>
@@ -125,7 +125,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     example-aadb-1   active   Valid             
     ```
   
-    In case of error, review the REAADB custom resource events and the Redis Enterprise operator logs.
+    In case of errors, review the REAADB custom resource events and the Redis Enterprise operator logs.
 
 
 
