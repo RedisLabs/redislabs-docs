@@ -143,4 +143,4 @@ This allows all the participating clusters to sync configuration changes. If the
 
 ## Next steps
 
-Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/preview/create-reaadb.md">}}).
+Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/active-active/create-reaadb.md">}}).
