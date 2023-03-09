@@ -34,12 +34,12 @@ An API object that represents a managed database in the cluster.
 [{
   "CN": string,
   "O": string,
-  "OU": string,
+  "OU": [array of strings],
   "L": string,
   "ST": string,
   "C": string
 }, ...]
-{{</code>}} | A list of valid subjects used for additional certificate validations during TLS client authentication. All subject attributes are case-sensitive.<br />**Required subject fields**:<br />"CN" for Common Name<br />**Optional subject fields:**<br />"O" for Organization<br />"OU" for Organizational Unit<br />"L" for Locality (city)<br />"ST" for State/Province<br />"C" for 2-letter country code  |
+{{</code>}} | A list of valid subjects used for additional certificate validations during TLS client authentication. All subject attributes are case-sensitive.<br />**Required subject fields**:<br />"CN" for Common Name<br />**Optional subject fields:**<br />"O" for Organization<br />"OU" for Organizational Unit (array of strings)<br />"L" for Locality (city)<br />"ST" for State/Province<br />"C" for 2-letter country code  |
 | avoid_nodes | array of strings | Cluster node UIDs to avoid when placing the database's shards and binding its endpoints |
 | background_op | {{<code>}}
 [{

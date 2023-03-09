@@ -14,12 +14,12 @@ Make sure your system meets these requirements:
 
 | **Platform** | **Versions/Information** |
 |------------|-----------------|
-| Ubuntu | 16.04 (deprecated), 18.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
+| Ubuntu | 16.04 (deprecated), 18.04, 20.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
 | Red Hat Enterprise Linux (RHEL) 7, CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
-| <nobr>RHEL 8, CentOS 8</nobr> | 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, and 8.6 |
+| <nobr>RHEL 8, CentOS 8</nobr> | 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, and 8.7 |
 | <nobr>Oracle Linux 7, Oracle Linux 8</nobr> | Based on the corresponding RHEL version |
 | <nobr>Rocky Linux 8</nobr> | Based on RHEL 8 |
-| Amazon Linux |Version 1 |
+| Amazon Linux | Version 1 |
 | Docker | [Docker images]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) of Redis Enterprise Software are certified for development and testing only. |
 | Kubernetes | See the [Redis Enterprise for Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
 
@@ -30,6 +30,12 @@ Be aware that Redis Enterprise Software relies on certain components that requir
 To illustrate, version 6.2.8 of Redis Enterprise Software removed support for TLS 1.0 and TLS 1.1 on Red Hat Enterprise Linux 8 (RHEL 8) because that operating system [does not enable support](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/using-the-system-wide-cryptographic-policies_security-hardening) for these versions by default.  
 
 If you have trouble enabling specific components, features, or versions, verify that they're supported by your operating system and that they're configured correctly.
+
+### Ubuntu 20 rejects SHA1 certificates
+
+With Ubuntu 20.04, you cannot use the SHA1 hash algorithm because [OpenSSL's security level is set to 2 by default](https://manpages.ubuntu.com/manpages/focal/man3/SSL_CTX_set_security_level.3ssl.html#notes). As a result, the operating system rejects SHA1 certificates, even if you enable the `mtls_allow_weak_hashing` option.
+
+To avoid issues with SHA1 certificates, replace them with new certificates that use SHA-256. Note that certificates provided by Redis Enterprise Software use SHA-256.
 
 ### Upgrade RHEL when using modules
 
