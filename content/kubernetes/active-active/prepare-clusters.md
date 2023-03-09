@@ -8,11 +8,13 @@ categories: ["Platforms"]
 aliases: {
     /kubernetes/prepare/prepare.md,
     /kubernetes/preview/prepare/,
+    /kubernetes/active-active/prepare-clusters.md,
+    /kubernetes/active-active/prepare-clusters/,
 }
 ---
 {{<note>}} This feature is currently in preview and is not for production use. To use this feature, upgrade to the 6.2.4-1 release.
 
-See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/re-clusters/create-aa-database.md">}}) for the currently supported procedure.{{</note>}}
+See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.{{</note>}}
 
 ## Prepare participating clusters
 

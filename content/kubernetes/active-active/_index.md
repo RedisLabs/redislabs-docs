@@ -14,7 +14,7 @@ aliases: {
 ---
 {{<note>}} These feature are currently in preview and not for production use.  {{</note>}}
 
-## 6.4.2-3
+## 6.4.2-4
 
 The preview features below are only available for the 6.2.4-3 release. See the 6.2.4-3 release notes for more details.
 
@@ -24,7 +24,7 @@ The preview features below are only available for the 6.2.4-3 release. See the 6
 
 To create an Active-Active Redis Enterprise deployment for Kubernetes with these new features, first [prepare participating clusters]({{<relref "/kubernetes/preview/prepare-clusters.md">}}) then [create an Active-Active database]({{<relref "/kubernetes/preview/create-reaadb.md">}}).
 
-For the currently supported procedure, see [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/re-clusters/create-aa-database.md">}}).
+For the currently supported procedure, see [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}).
 
 ### REAADB custom resource
 

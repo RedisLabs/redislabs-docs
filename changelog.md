@@ -23,7 +23,7 @@ The docs are updated regularly; here are some recent highlights:
     - Docs were added to support the v6.2.8 release ([PR #1733](https://github.com/RedisLabs/redislabs-docs/pull/1733)), including:
 
         - Updates to the [OpenShift CLI deployment](https://docs.redis.com/staging/release-k8s-intrepid/kubernetes/deployment/openshift/openshift-cli/) doc 
-        - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) using K8s deployments 
+        - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/active-active/create-aa-database/) using K8s deployments 
         - How to configure Istio for [external routing](https://docs.redis.com/latest/kubernetes/re-databases/ingress_routing_with_istio/)
         - [v6.2.8 release notes](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-15-2022-01/) ([PR #1738](https://github.com/RedisLabs/redislabs-docs/pull/1738))
 
@@ -112,7 +112,7 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
 - Kubernetes doc updates:
 
-    - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) for Kubernetes ([PR #1555](https://github.com/RedisLabs/redislabs-docs/pull/1555))
+    - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/active-active/create-aa-database/) for Kubernetes ([PR #1555](https://github.com/RedisLabs/redislabs-docs/pull/1555))
 
     - Docs have been updated to support Redis Enterprise for [Kubernetes v6.2.8-2](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-2-2021-11/) ([PR #1648](https://github.com/RedisLabs/redislabs-docs/pull/1648))
 
