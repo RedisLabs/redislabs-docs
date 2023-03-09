@@ -150,7 +150,7 @@ If the REC is configured to watch a namespace without setting the role and role 
   -p '{"data": {"REDB_NAMESPACES_LABEL": "<label-name>"}}'
   ```
 
-4. For each managed namespace, apply the same label. Replace `<managed-namespace>` with the namespace the REC will manage. Replace `<label-name>` with the value used in the previous step. If you specify a value for `<label-value>`, both the label name and value in managed namespaces must match to be detected by the operator. If the `<label-value>` is empty, only the label name needs to match on manged namespaces and the value is disregarded.
+4. For each managed namespace, apply the same label. Replace `<managed-namespace>` with the namespace the REC will manage. Replace `<label-name>` with the value used in the previous step. If you specify a value for `<label-value>`, both the label name and value in managed namespaces must match to be detected by the operator. If the `<label-value>` is empty, only the label name needs to match on managed namespaces and the value is disregarded.
 
 
   ```sh
