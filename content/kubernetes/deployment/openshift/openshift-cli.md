@@ -75,7 +75,7 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
 
 1. Apply the file `scc.yaml` file. 
 
-   This file defines security context constraints for the cluster in our project. Do **not** alter this file. For more information about Security Context Constraints (SCCs), see [Managing Security Context Constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) (Red Hat). 
+   This file defines security context constraints for the cluster in your project. Do **not** alter this file. For more information about Security Context Constraints (SCCs), see [Managing Security Context Constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) (Red Hat). 
 
     ```bash
     oc apply -f openshift/scc.yaml
