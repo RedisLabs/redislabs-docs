@@ -17,17 +17,40 @@ aliases: [
 ]
 ---
 
-Redis Enterprise for Kubernetes can be deployed and administered entirely from the OpenShift command-line interface (CLI). For those who prefer a user interface (UI), OpenShift also provides the OperatorHub, a web console interface where you can install operators and create custom resources.
+You can deploy Redis Enterprise for Kubernetes from the Red Hat OpenShift CLI. You can also use a UI, [OperatorHub](https://docs.openshift.com/container-platform/4.11/operators/index.html) (Red Hat) to install operators and create custom resources.
 
-For details on the OperatorHub, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.11/operators/index.html).
+## Install the Redis Enterprise operator
 
-## Prepare the cluster
+1. Select **Operators > OperatorHub**.
+
+2. Search for _Redis Enterprise_ in the search dialog and select the **Redis Enterprise Operator provided by Redis** marked as **Certified**.
+
+  {{<note>}}
+  Custom catalogs are not supported.
+  {{</note>}}
+
+3. On the **Install Operator** page, specify the namespace for the operator.
+
+    Only one namespace per operator is supported.
+
+4. Update the **channel** with the version you're installing.
+
+    For more information about specific versions, see the [release notes]({{<relref "/kubernetes/release-notes/">}}).
+
+5. Choose an approval strategy.
+
+    Use **Manual** for production systems to ensure the operator is only upgraded by approval.
+
+6. Select **Install** and approve the install plan.
+
+   You can monitor the subscription status in **Operators > Installed Operators**.
+
+## Install security context constraint
 
 The Redis Enterprise pods must run in OpenShift with privileges set in a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth). This grants the pod various rights, such as the ability to change system limits or run as a particular user.
 
 {{<warning>}}
-You must install the security context constraint for the operator
-([scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)) before it can create any clusters.
+ Before creating any clusters, install the security context constraint (SCC) for the operator in [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml).
 {{</warning>}}
 
 You only need to install the SCC once, but you must not delete it.
@@ -46,41 +69,11 @@ After the install, the OperatorHub automatically uses the constraint for Redis E
 
 {{< note >}}
 **Known Limitation** - The automatic use of the security constraint is limited. The
-Redis Enterprise must be named `rec` for the constraint to be used automatically.  **We recommend you use the cluster name `rec` when deploying with
-the OperatorHub.**
+Redis Enterprise must be named `rec` for the constraint to be used automatically.  **Use the cluster name `rec` when deploying with the OperatorHub.**
 
 If you require a different name, you must grant the SCC to the project
-namespace (e.g., `my-project`) as in OpenShift 3.x:
-
-```sh
-oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:my-project
-```
+namespace.
 {{< /note >}}
-
-## Install the Redis Enterprise operator
-
-1. Select **Operators**->**OperatorHub**.
-
-1. Search for "Redis Enterprise" in the search dialog and select the **Redis Enterprise Operator provided by Redis** marked as **Certified**.
-  {{<note>}}
-  Custom catalogs are not supported.
-  {{</note>}}
-
-1. On the **Install Operator** page, specify the namespace for the operator.
-
-    Only one namespace per operator is supported.
-
-1. Update the **channel** with the version you're installing.
-
-    For more information about specific versions, see the [release notes]({{<relref "/kubernetes/release-notes/">}}).
-
-1. Choose an approval strategy.
-
-    We recommend **Manual** for production systems to ensure the operator is only upgraded by approval.
-
-1. Select **Install** and approve the install plan.
-
-You can monitor the subscription status in **Operators**->**Installed Operators**.
 
 ## Create Redis Enterprise custom resources
 
