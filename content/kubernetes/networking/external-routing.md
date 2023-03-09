@@ -8,6 +8,8 @@ categories: ["Platforms"]
 aliases: {
     /kubernetes/preview/external-routing.md,
     /kubernetes/preview/external-routing/,
+    /kubernetes/networking/external-routing.md,
+    /kubernetes/networking/external-routing/,
 
 }
 ---
