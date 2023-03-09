@@ -24,7 +24,7 @@ The docs are updated regularly; here are some recent highlights:
 
         - Updates to the [OpenShift CLI deployment](https://docs.redis.com/staging/release-k8s-intrepid/kubernetes/deployment/openshift/openshift-cli/) doc 
         - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/active-active/create-aa-database/) using K8s deployments 
-        - How to configure Istio for [external routing](https://docs.redis.com/latest/kubernetes/re-databases/ingress_routing_with_istio/)
+        - How to configure Istio for [external routing](https://docs.redis.com/latest/kubernetes/networking/ingress-routing-with-istio/)
         - [v6.2.8 release notes](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-15-2022-01/) ([PR #1738](https://github.com/RedisLabs/redislabs-docs/pull/1738))
 
     - Earlier Redis Enterprise for Kubernetes [release notes](https://docs.redis.com/latest/kubernetes/release-notes/) were updated to reflect similar changes in other parts of the portfolio ([PR #1732](https://github.com/RedisLabs/redislabs-docs/pull/1732))

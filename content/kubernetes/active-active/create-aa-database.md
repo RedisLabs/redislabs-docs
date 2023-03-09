@@ -27,7 +27,7 @@ This process consists of:
 
 Before creating Active-Active databases, you'll need admin access to two or more working Kubernetes clusters that each have:
 
-- Routing for external access with an [ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) (use [routes]({{<relref "/kubernetes/re-databases/routes.md">}}) for OpenShift)
+- Routing for external access with an [ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) (use [routes]({{<relref "/kubernetes/networking/routes.md">}}) for OpenShift)
 - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
 - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}}))
 
@@ -145,7 +145,7 @@ HAproxy:
 
 #### If using Istio Gateway and VirtualService
 
-No changes are required to the REC spec if you are using [Istio]({{<relref "/kubernetes/re-databases/ingress_routing_with_istio.md">}}) in place of an ingress controller. The `activeActive` section added above creates ingress resources. The two custom resources used to configure Istio (Gateway and VirtualService) replace the need for ingress resources.
+No changes are required to the REC spec if you are using [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}) in place of an ingress controller. The `activeActive` section added above creates ingress resources. The two custom resources used to configure Istio (Gateway and VirtualService) replace the need for ingress resources.
 
 {{<warning>}}
 These custom resources are not controlled by the operator and will need to be configured and maintained manually.
@@ -169,7 +169,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 
 1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the route IP address. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
-1. If your cluster uses [OpenShift routes]({{<relref "/kubernetes/re-databases/routes.md">}}), add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
+1. If your cluster uses [OpenShift routes]({{<relref "/kubernetes/networking/routes.md">}}), add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
 
       ```sh
       activeActive:

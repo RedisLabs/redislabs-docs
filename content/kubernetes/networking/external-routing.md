@@ -29,9 +29,9 @@ By default, the operator creates a `ClusterIP` type service, which exposes a clu
 Redis Enterprise for Kubernetes supports three ingress controllers:
 * [HAProxy](https://haproxy-ingress.github.io/)
 * [NGINX](https://kubernetes.github.io/ingress-nginx/)
-* [Istio]({{<relref "/kubernetes/re-databases/ingress_routing_with_istio.md">}})
+* [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}})
 
-OpenShift users can use [routes]({{<relref "/kubernetes/re-databases/routes.md">}}) instead of a ingress controller.
+OpenShift users can use [routes]({{<relref "/kubernetes/networking/routes.md">}}) instead of a ingress controller.
 
 Install your chosen ingress controller, making sure `ssl-passthrough` is enabled. `ssl-passthrough` is disabled by default for NGINX but enabled by default for HAProxy.
 
