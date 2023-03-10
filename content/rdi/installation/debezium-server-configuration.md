@@ -219,7 +219,7 @@ WHERE inv.total > 8000
 
 ### Fully-qualified table name
 
-In this document we refer to the fully-qualified table name as `<databaseName>.<tableName>`. This format is for MySQL database. For Oracle, SQLServer and Postgresql databases use `<schemaName>`.`<tableName>` instead.
+In this document we refer to the fully-qualified table name as `<databaseName>.<tableName>`. This format is for MySQL database. For Oracle, SQLServer, and PostgreSQL databases, use `<schemaName>`.`<tableName>` instead.
 
 | Database Type                  | Fully-qualified Table Name   |
 | ------------------------------ | ---------------------------- |
