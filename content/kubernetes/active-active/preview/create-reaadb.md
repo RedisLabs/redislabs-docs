@@ -1,5 +1,5 @@
 ---
-Title: Create Active-Active database for Kubernetes
+Title: Create Active-Active database (REAADB)
 linkTitle: Create database
 description: 
 weight: 30

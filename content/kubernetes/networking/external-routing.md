@@ -80,7 +80,7 @@ Install your chosen ingress controller, making sure `ssl-passthrough` is enabled
 
 ### Enable alpha features
 
-Edit the Redis operator configmap (`operator-environment-config`) to set the alpha features flag to "true". 
+Edit the Redis operator configmap (`operator-environment-config`) to set the alpha features flag to "true".
 
 ```sh
   kubectl patch cm  operator-environment-config --type merge --patch "{\"data\": \

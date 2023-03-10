@@ -1,6 +1,6 @@
 ---
-Title: Active-Active controller public preview
-linkTitle: Preview Active-Active controller
+Title: Redis Enterprise Active-Active database (REAADB) public preview
+linkTitle: Preview REAADB
 description: Preview content related to Active-Active Redis Enterprise for Kubernetes. 
 weight: 40
 alwaysopen: false
