@@ -50,7 +50,7 @@ In order to upgrade the RedisGears module once a new release is available, the f
 
   Once the status returned by this endpoint is `completed`, the new module is installed in the cluster.
 
-- Verify that the new version is installed via the Admin Console (settings → redis modules):
+- Verify that the new version is installed via the admin console (**settings > redis modules**):
 
  ![Cluster Redis modules](/images/rdi/cluster-redis-modules.png)
 
