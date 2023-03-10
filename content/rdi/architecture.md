@@ -13,7 +13,7 @@ Redis Data Integration is a product for data ingestion from existing systems of 
 You can think of Redis Data Integration as a streaming ELT process:
 
 - Data is **E**xtracted from the source database using [Debezium](https://debezium.io/) connectors.
-- Data is then **L**oaded into Redis Data Integration, a Redis DB instance that keeps the data in [Redis streams](https://redis.io/docs/manual/data-types/streams/) alongside required metadata.
+- Data is then **L**oaded into Redis Data Integration, a Redis database instance that keeps the data in [Redis streams](https://redis.io/docs/manual/data-types/streams/) alongside required metadata.
 - Data is then **T**ransformed using provided [RedisGears recipes](https://developer.redis.com/howtos/redisgears/) and written to the target Redis DB.
 
 Redis Data Integration using Debezium works in 2 modes:
