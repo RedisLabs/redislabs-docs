@@ -24,6 +24,13 @@ See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/activ
 
 An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
 
+### Cluster names
+
+The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) is used to identify participating clusters in parts of the Active-Active database creation.
+
+Each participating cluster must have a unique hostname (`<rec-name>.<namespace-name>`).
+
+For example, if you have two K8s clusters, each with their own REC named `rec1` in a namespace named `ns1`. The value of `<rec-name>.<namespace-name>` for both RECs would be `rec1.ns1`. These can't be used for the same Active-Active database.
 
 ### Configure external routing
 
@@ -56,7 +63,7 @@ To sync global configurations, all participating clusters will need access to th
 
 1. Create a file to hold the admin credentials for all participating RECs (such as `all-rec-secrets.yaml`).
 
-1. Within that file, create a new secret for each participating cluster named `redis-enterprise-<rec-name>-<rec-namespace>`.
+1. Within that file, create a new secret for each participating cluster named `redis-enterprise-<rerc>`.
 
     The example below shows a file (`all-rec-secrets.yaml`) holding secrets for two participating clusters:
 
@@ -67,7 +74,7 @@ To sync global configurations, all participating clusters will need access to th
       username: 
     kind: Secret
     metadata:
-      name: redis-enterprise-rec1-ns1
+      name: redis-enterprise-rerc1
     type: Opaque
 
     ---
@@ -78,7 +85,7 @@ To sync global configurations, all participating clusters will need access to th
       username: 
     kind: Secret
     metadata:
-      name: redis-enterprise-rec2-ns2
+      name: redis-enterprise-rerc2
     type: Opaque
 
     ```

@@ -13,9 +13,9 @@ aliases: {
 
 On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/">}}) databases provide read and write access to the same dataset from different Kubernetes clusters.
 
-There are two methods for creating an Active-Active database with Redis Enterprise for Kubernetes. The `crdb-cli`` method is available on all supported versions. The the Active-Active controller method is in preview and only available with the 6.4.2-4 release. Preview features are not fit for production environments.
+There are two methods for creating an Active-Active database with Redis Enterprise for Kubernetes. The `crdb-cli` method is available on all supported versions. The `RedisEnterpriseActiveActiveDatabase` (REAADB) custom resource available as a public preview with the 6.4.2-4 release. Preview features are not fit for production environments.
 
-## `credb-cli` method
+## `crdb-cli` method
 
 The currently supported Active-Active setup method includes the following steps:
 
@@ -24,7 +24,7 @@ The currently supported Active-Active setup method includes the following steps:
 3. Adding the `ActiveActive` field to the REC spec.
 4. Creating the database with the `crdb-cli` tool.
 
-## Active-Active controller public preview
+## REAADB public preview
 
 The 6.2.4-4 release includes a public preview of new Active-Active controller. The new setup method includes the following steps:
 
@@ -33,7 +33,6 @@ The 6.2.4-4 release includes a public preview of new Active-Active controller. T
 3. Collect and apply REC admin credentials for all participating RECs.
 4. Create `RedisEnterpriseRemoteCluster` (RERC) resources.
 5. Create `RedisEnterpriseActiveActiveDatabase` (REAADB) resource.
-
 
 ## More info
 
