@@ -24,7 +24,7 @@ Read [here]({{<relref "/rdi/architecture">}}) for more details and architecture.
 
 ## Supported sources (ingest)
 
-Redis Data Integration supports the following Databases sources using [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) connectors:
+Redis Data Integration supports the following database sources using [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) connectors:
 
 | Database       | Versions               |
 | -------------- | ---------------------- |
