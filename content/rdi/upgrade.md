@@ -55,7 +55,7 @@ In order to upgrade the RedisGears module once a new release is available, the f
  ![Cluster Redis modules](/images/rdi/cluster-redis-modules.png)
 
 
- - From the Admin console, go to your Redis Data Integration configuration view (databases → Redis Data Integration → configuration), you’ll see an indication that there’s an update available to your RedisGears module:
+ - From the admin console, go to your Redis Data Integration configuration view (**databases > Redis Data Integration > configuration**). You should see an indication that there’s an update available for your RedisGears module:
 
   ![Redis Data Integration update available](/images/rdi/redis-di-db-update-available.png)
   
