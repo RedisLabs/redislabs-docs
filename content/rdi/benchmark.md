@@ -23,7 +23,7 @@ The databases that are supported by this tool are:
 ## Prerequisites
 
 - An existing Redis Enterprise cluster version >= 6.2.
-- [RedisGears](https://redis.com/modules/redis-gears/) {{ site.redis_gears_min_semantic_version }} installed on the cluster.
+- [RedisGears](https://redis.com/modules/redis-gears/) >= 1.2.5 installed on the cluster.
 - A Source DB Server with `Bin Log` enabled.
   The DBs that are supported by this tool are : `MySQL`, `Oracle`, `PostgreSQL` and `SQLServer`
 - A target Redis DB.

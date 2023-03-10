@@ -28,7 +28,7 @@ RedisGears can be upgraded for a Redis Enterprise Cluster running Redis Data Int
 
 **Important**: Failing to follow these steps in the right order, will result with the Redis Data Integration still running the old RedisGears version.
 
-In order to upgrade the RedisGears module once a new release is available, the following steps should be followed:
+To upgrade the RedisGears module once a new release is available, follow these steps:
 
 - Download the new version of RedisGears (Python package only):
 

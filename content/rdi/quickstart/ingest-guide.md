@@ -14,7 +14,7 @@ This guide will take you through the creation of a write-behind pipeline.
 
 ## Prerequisites
 
-- Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli.md">}})
+- Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli.md">}}).
 - An existing Redis Enterprise cluster version >= 6.2.
 - [RedisGears](https://redis.com/modules/redis-gears/) >= 1.2.5 installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
 - A target Redis DB (can be added after installation).

@@ -7,18 +7,19 @@ alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 draft: 
+hidden: true
 ---
 
 This guide will take you through the creation of a write-behind pipeline.
 
 ## Concepts
 
-**Write Behind**: Is RDI policy and pipeline to synchronize the data in a Redis DB with some downstream data store.
+**Write-behind**: An RDI policy and pipeline to synchronize the data in a Redis DB with some downstream data store.
 You can think about it as a pipeline that starts with Capture Data Change (CDC) events for a Redis DB and then filters, transforms and maps the data to the target data store data structure.
 
-**Target**: The target is the data store to which Write Behind Pipeline will connect and write data.
+**Target**: The data store to which Write Behind Pipeline will connect and write data.
 
-**Jobs**: The Write Behind Pipeline is composed of one or more jobs. Each job is responsible for capturing change for one key pattern in Redis and mapping it to one or more tables in the downstream data store. Each Job is defined in a YAML file.
+**Jobs**: The write-behind pipeline is composed of one or more jobs. Each job is responsible for capturing change for one key pattern in Redis and mapping it to one or more tables in the downstream data store. Each Job is defined in a YAML file.
 
 {{<image filename="images/rdi/redis-di-write-behind.png" alt="Write-behind architecture" >}}{{</image>}}
 
