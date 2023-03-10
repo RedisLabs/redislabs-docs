@@ -221,4 +221,4 @@ If you need to upgrade RDI, you should use the [`upgrade`](reference/cli/redis-d
 redis-di upgrade ...
 ```
 
-Read [here](upgrade/upgrade-guide.md) about upgrade.
+See the [upgrade guide]({{<relref "/rdi/upgrade">}}) for more information.
