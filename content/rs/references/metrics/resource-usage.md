@@ -51,9 +51,9 @@ Total memory used by the database, including RAM, [Flash]({{< relref "/rs/databa
 
 Used memory does not include:
 
-1. Fragmentation overhead - the ratio of memory seen by the operating system to memory allocated by Redis
-2. Replication buffers at the primary nodes - set to 10% of used memory and is between 64 MB and 2048 MB
-3. Memory used by Lua scripts - does not exceed 1 MB.
+1. Fragmentation overhead - The ratio of memory seen by the operating system to memory allocated by Redis
+2. Replication buffers at the primary nodes - Set to 10% of used memory and is between 64 MB and 2048 MB
+3. Memory used by Lua scripts - Does not exceed 1 MB
 4. Copy on Write (COW) operation that can be triggered by:
     - A full replication process
     - A database snapshot process
@@ -84,7 +84,7 @@ Percent of memory used by Redis out of the [memory limit](#memory-limit).
 
 ### Incoming traffic 
 
-Total incoming traffic to the database in bytes per second.
+Total incoming traffic to the database in bytes/sec.
 
 All incoming traffic is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}).
 

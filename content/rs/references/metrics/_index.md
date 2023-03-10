@@ -20,9 +20,9 @@ aliases: /rs/administering/monitoring-metrics/definitions/
 
 The Redis Enterprise Software admin console shows performance metrics for clusters, nodes, databases, and shards. 
 
-In the Redis Enterprise admin console, you can see real-time metrics and configure alerts that send notifications based on alert parameters. Select the metrics tab to view the metrics available for each component. For more information, see [Monitoring with metrics and alerts]({{< relref "/rs/clusters/monitoring" >}}).
+In the Redis Enterprise admin console, you can see real-time metrics and configure alerts that send notifications based on alert parameters. Select the **Metrics** tab to view the metrics for each component. For more information, see [Monitoring with metrics and alerts]({{< relref "/rs/clusters/monitoring" >}}).
 
-See the following pages for metrics definitions:
+See the following topics for metrics definitions:
 - [Database operations]({{< relref "/rs/references/metrics/database-operations" >}}) for database metrics
 - [Resource usage]({{< relref "/rs/references/metrics/resource-usage" >}}) for resource and database usage metrics
 - [Redis on Flash]({{< relref "/rs/references/metrics/redis-on-flash" >}}) for additional metrics for [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash" >}}) databases

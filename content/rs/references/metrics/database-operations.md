@@ -52,7 +52,7 @@ Write misses are not measured during [shard migration]({{< relref "/rs/databases
 
 The total amount of time between sending a Redis operation and receiving a response from the database.
 
-The graph shows average, minimum, maximum, and last latency values for all Latency metrics.
+The graph shows average, minimum, maximum, and last latency values for all latency metrics.
 
 **Components measured**: Database
 
