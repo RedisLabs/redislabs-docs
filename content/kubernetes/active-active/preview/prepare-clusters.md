@@ -15,9 +15,10 @@ aliases: {
 
 }
 ---
-{{<note>}} This feature is currently in preview and is not for production use. To use this feature, upgrade to the 6.2.4-1 release.
-
-See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.{{</note>}}
+{{<banner-article bannerColor="#fff8dc">}}
+This feature is currently in preview and is not for production use.
+See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.
+{{</banner-article>}}
 
 ## Prepare participating clusters
 

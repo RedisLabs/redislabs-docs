@@ -1,6 +1,6 @@
 ---
 Title: Establish external routing on the REC
-linkTitle: Preview `ingressOrRouteSpec`
+linkTitle: REC external routing
 description: 
 weight: 30
 alwaysopen: false
@@ -14,7 +14,10 @@ aliases: {
 }
 ---
 
-{{<note>}} This feature is currently in preview and is not for production use. To use this feature, upgrade to the 6.2.4-1 release. {{</note>}}
+{{<banner-article bannerColor="#fff8dc">}}
+This feature is currently in preview and is not for production use.
+See [Establish external routing with an ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) for the currently supported procedure.
+{{</banner-article>}}
 
 Every time a Redis Enterprise database (REDB), Redis Enterprise Active-Active database (REAADB), or Redis Enterprise cluster (REC) is created, the Redis Enterprise operator, automatically creates a [service](https://kubernetes.io/docs/concepts/services-networking/service/) to allow requests to be routed to that resource. 
 

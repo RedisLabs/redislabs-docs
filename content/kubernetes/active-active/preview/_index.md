@@ -13,7 +13,10 @@ aliases: {
     
 }
 ---
-{{<note>}} These feature are currently in preview and not for production use.  {{</note>}}
+{{<banner-article bannerColor="#fff8dc">}}
+This feature is currently in preview and is not for production use.
+See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.
+{{</banner-article>}}
 
 ## 6.4.2-4
 
