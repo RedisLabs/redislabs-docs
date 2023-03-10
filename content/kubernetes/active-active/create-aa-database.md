@@ -13,9 +13,9 @@ aliases: [
     /kubernetes/active-active/create-aa-database/,
 ]
 ---
-On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/_index.md">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/databases/active-active/_index.md">}}).
+On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/databases/active-active/">}}).
 
-Creating an Active-Active database requires [routing]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) network access between two Redis Enterprise clusters residing in different Kubernetes clusters. Without the proper access configured for each cluster, syncing between the databases instances will fail.
+Creating an Active-Active database requires routing [network access]({{<relref "/kubernetes/networking/">}}) between two Redis Enterprise clusters residing in different Kubernetes clusters. Without the proper access configured for each cluster, syncing between the databases instances will fail.
 
 This process consists of:
 

@@ -10,6 +10,9 @@ aliases: {
     /kubernetes/preview/prepare/,
     /kubernetes/active-active/prepare-clusters.md,
     /kubernetes/active-active/prepare-clusters/,
+    /kubernetes/active-active/preview/prepare-clusters.md,
+    /kubernetes/active-active/preview/prepare-clusters/,
+
 }
 ---
 {{<note>}} This feature is currently in preview and is not for production use. To use this feature, upgrade to the 6.2.4-1 release.
@@ -37,7 +40,7 @@ Active-Active databases require external routing access to sync properly. To con
 
 For each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster.
 
-1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-1) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
+1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-4) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
 
 1. Apply the new CRDs for the Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC) to install those controllers.
 
@@ -143,4 +146,4 @@ This allows all the participating clusters to sync configuration changes. If the
 
 ## Next steps
 
-Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/active-active/create-reaadb.md">}}).
+Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/active-active/preview/create-reaadb.md">}}).
