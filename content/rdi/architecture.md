@@ -18,7 +18,7 @@ You can think of Redis Data Integration as a streaming ELT process:
 
 Redis Data Integration using Debezium works in 2 modes:
 
-1. Initial sync - Where a snapshot of the entire db or a subset of selected tables is used as a baseline and the entire data is streamed to Redis Data Integration and then transformed and written into the target Redis DB.
+1. Initial sync - Where a snapshot of the entire database or a subset of selected tables is used as a baseline. The entire dataset is streamed to Redis Data Integration and then transformed and written into the target Redis database.
 2. Live updates - Where Debezium captures changes to the data that happen after the baseline snapshot and streams them to Redis Data Integration where they are transformed and written to the target.
 
 ![High-level Redis Data Integration architecture](/images/rdi/redis-di-simplified.png)
