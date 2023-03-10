@@ -182,7 +182,7 @@ Starting the pipeline is done by running the [`deploy`](reference/cli/redis-di-d
 redis-di deploy
 ```
 
-You can check that the pipeline is running, receiving and writing data, using the [`status`](reference/cli/redis-di-status.md) command:
+You can check that the pipeline is running, receiving, and writing data, using the [`status`]({{<relref "/rdi/reference/cli/redis-di-status">}}) command:
 
 ```bash
 redis-di status
