@@ -172,7 +172,7 @@ To learn more about transformations, read [here](data-transformation/data-transf
 
 ## How to Provide Target's Secrets
 
-Target's secrets (e.g. TLS certificate) can be read from a path on the Redis Nodes file system. This allows to consume secrets injected from secret stores.
+The target's secrets (such as TLS certificates) can be read from a path on the Redis Nodes file system. This allows the consumption of secrets injected from secret stores.
 
 ## Deploying the Write Behind Pipeline
 
