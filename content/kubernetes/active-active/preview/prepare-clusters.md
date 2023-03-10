@@ -24,14 +24,6 @@ See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/activ
 
 An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
 
-### Enable alpha features
-
-Edit the Redis operator configmap (`operator-environment-config`) to set the alpha features flag to "true". 
-
-```sh
-  kubectl patch cm  operator-environment-config --type merge --patch "{\"data\": \
-    {\"ENABLE_ALPHA_FEATURES\":\"true\"}}"
-```
 
 ### Configure external routing
 
@@ -46,8 +38,8 @@ For each Redis Enterprise cluster (REC), you must enable the Active-Active and r
 1. Apply the new CRDs for the Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC) to install those controllers.
 
     ```sh
-    kubectl apply -f reaadb_crd.yaml
-    kubectl apply -f rerc_crd.yaml
+    kubectl apply -f crds/reaadb_crd.yaml
+    kubectl apply -f crds/rerc_crd.yaml
     ```
 
 1. Enable the Active-Active and remote cluster controllers on the operator ConfigMap.

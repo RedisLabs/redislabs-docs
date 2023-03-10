@@ -18,11 +18,10 @@ This feature is currently in preview and is not for production use.
 See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.
 {{</banner-article>}}
 
-## 6.4.2-4
-
-The preview features below are only available for the 6.2.4-3 release. See the 6.2.4-3 release notes for more details.
 
 ## Redis Enterprise Active-Active for Kubernetes
+
+{{<note>}}The preview features below are only available for the 6.4.2-4 release. {{</note>}}
 
 [Active-Active]({{<relref "/rs/databases/active-active/">}}) databases give you read and write access to Redis Enterprise clusters (REC) in different Kubernetes clusters or namespaces. Active-Active deployments managed by the Redis Enterprise operator require two additional custom resources: Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC).
 
@@ -43,8 +42,6 @@ Redis Enterprise remote cluster (RERC) custom resource contains configuration de
 For a full list of fields and options, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
 ## Preview limitations
-
-## Active-Active preview known limitations
 
 * No support for Hashicorp Vault for storing secrets (RED-95805)
 * No module support (RED-95153)
