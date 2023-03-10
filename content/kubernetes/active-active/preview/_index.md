@@ -1,6 +1,6 @@
 ---
-Title: Active-Active controller (preview)
-linkTitle: Preview Active-Active
+Title: Active-Active controller public preview
+linkTitle: Preview Active-Active controller
 description: Preview content related to Active-Active Redis Enterprise for Kubernetes. 
 weight: 40
 alwaysopen: false
