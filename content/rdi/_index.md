@@ -48,7 +48,7 @@ Redis Data Integration supports the following database sources using [Debezium S
 
 ## Features
 
-RDI is an enterprise grade product with extensive set of features:
+RDI is an enterprise grade product with an extensive set of features:
 
 ### Performance and scalability
 
