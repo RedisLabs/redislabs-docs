@@ -59,7 +59,7 @@ In order to upgrade the RedisGears module once a new release is available, the f
 
   ![Redis Data Integration update available](/images/rdi/redis-di-db-update-available.png)
   
-  You can also see this indication via the `rladmin`:
+  You can also see this indication using the `rladmin status` command:
 
   ```bash
   rladmin status modules all
