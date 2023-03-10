@@ -176,7 +176,7 @@ The target's secrets (such as TLS certificates) can be read from a path on the R
 
 ## Deploying the Write Behind Pipeline
 
-Starting the pipeline is done by running the [`deploy`](reference/cli/redis-di-deploy.md) command:
+To start the pipeline, run the [`deploy`]({{<relref "/rdi/reference/cli/redis-di-deploy">}}) command:
 
 ```bash
 redis-di deploy
