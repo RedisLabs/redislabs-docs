@@ -27,9 +27,9 @@ This process consists of:
 
 Before creating Active-Active databases, you'll need admin access to two or more working Kubernetes clusters that each have:
 
-- Routing for external access with an [ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) (use [routes]({{<relref "/kubernetes/networking/routes.md">}}) for OpenShift)
-- A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
-- Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}}))
+- Routing for external access with an [ingress resources]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) (or [route resources]({{<relref "/kubernetes/networking/routes.md">}}) on OpenShift).
+- A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name.
+- Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
 
 ## Document required parameters
 
