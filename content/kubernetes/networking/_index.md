@@ -18,8 +18,7 @@ For accessing Redis Enterprise clusters (REC), Redis Enterprise supports the fol
 
 By default, the operator creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller (or [routes](https://docs.openshift.com/container-platform/4.12/networking/routes/route-configuration.html) if you are using OpenShift).
 
-* To use NGNX or HAProxy, see [Establish external routing with an ingress controller 
-]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}).
+* To use NGNX or HAProxy, see [Establish external routing with an ingress]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}).
 * To use OpenShift routes, see [Use OpenShift routes for external database access]({{<relref "/kubernetes/networking/routes.md">}}).
 * To use Istio, see [Configure Istio for external routing]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}})
 

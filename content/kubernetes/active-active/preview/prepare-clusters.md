@@ -34,7 +34,7 @@ For example, if you have two K8s clusters, each with their own REC named `rec1` 
 
 ### Configure external routing
 
-Active-Active databases require external routing access to sync properly. To configure external routing through an ingress controller or OpenShift routes, see [Establish external routing on the REC]({{<relref "/kubernetes/networking/external-routing.md">}}).
+Active-Active databases require external routing access to sync properly. To configure external routing through an ingress or OpenShift route, see [Establish external routing on the REC]({{<relref "/kubernetes/networking/external-routing.md">}}).
 
 ### Enable Active-Active controllers
 

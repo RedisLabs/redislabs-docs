@@ -16,7 +16,7 @@ aliases: {
 
 {{<banner-article bannerColor="#fff8dc">}}
 This feature is currently in preview and is not for production use.
-See [Establish external routing with an ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) for the currently supported procedure.
+See [ingress routing]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) for the currently supported procedure.
 {{</banner-article>}}
 
 ## 6.4.2-4 preview feature
@@ -93,7 +93,7 @@ Edit the REC spec to add the `ingressOrRouteSpec` field, replacing `<placeholder
 
 Define the REC API hostname (`apiFqdnUrl`) and database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
 
-Add the annotations for your ingress controller and set `ssl-passthrough` to "true".
+Add the annotations for your ingress and set `ssl-passthrough` to "true". The annotations below are for ingress; see OpenShift documentation for route annotations.
 
 ```sh
 kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
@@ -106,3 +106,4 @@ kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
        \"<ingress-controller>.ingress.kubernetes.io/ssl-passthrough\": \ \"true\"}, \
       \"method\": \"ingress\"}}}"
 ```
+
