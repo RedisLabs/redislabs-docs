@@ -10,10 +10,39 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisJSON v2.4.3 requires:
+RedisJSON v2.4.5 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.18
+
+## v2.4.5 (February 2023)
+
+This is a maintenance release for RedisJSON 2.4.
+
+Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+  - Adds support to Redis Enterprise on Ubuntu Linux 20.04 LTS (Focal Fossa)
+
+## v2.4.4 (February 2023)
+
+This is a maintenance release for RedisJSON 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#919](https://github.com/RedisJSON/RedisJSON/pull/919) Possible failure loading RDB files (MOD-4822)
+  
+- Improvements:
+
+  - [#725](https://github.com/RedisJSON/RedisJSON/issues/725) Improve error messages
+  - [#918](https://github.com/RedisJSON/RedisJSON/pull/918) Add IPv6 to the capabilities list
 
 ## v2.4.3 (December 2022)
 
@@ -26,7 +55,6 @@ Details:
 - Bug fixes:
 
   - [#890](https://github.com/RedisJSON/RedisJSON/pull/890) JSONPath ignores any filter condition beyond the second (MOD-4602)
-  
   
 - Improvements:
 

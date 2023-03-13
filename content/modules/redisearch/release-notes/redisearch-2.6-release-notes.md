@@ -10,10 +10,28 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.6.4 requires:
+RediSearch v2.6.5 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.6.5 (February 2023)
+
+This is a maintenance release for RediSearch 2.6.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#3354](https://github.com/RediSearch/RediSearch/pull/3354) Library update preventing a crash during cluster failover (MOD-4560)
+  - [#3357](https://github.com/RediSearch/RediSearch/pull/3357) Handling division by zero in expressions preventing nodes to restart (MOD-4296)
+  - [#3332](https://github.com/RediSearch/RediSearch/pull/3332) Fix wildcards `*` queries on `DIALECT 2` and `DIALECT 3`
+
+- Improvements:
+  
+  - [#3361](https://github.com/RediSearch/RediSearch/pull/3361) Enable the use of IPv6 for all cluster and module communication
 
 ## v2.6.4 (December 2022)
 
@@ -32,7 +50,7 @@ Details:
   
   - [#3256](https://github.com/RediSearch/RediSearch/pull/3256) Support IPv6 on cluster set command
   - [#3194](https://github.com/RediSearch/RediSearch/pull/3194) Add the query dialects that are in use to `FT.INFO` and `INFO MODULE` commands (MOD-4232)
-  - [#3258](https://github.com/RediSearch/RediSearch/pull/3258) Add the module version and Redis version to `INFO MODULE`  
+  - [#3258](https://github.com/RediSearch/RediSearch/pull/3258) Add the module version and Redis version to `INFO MODULE`
 
 ## v2.6 GA (v2.6.3) (November 2022)
 

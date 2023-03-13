@@ -1,7 +1,7 @@
 ---
 Title: RedisInsight v2.18.0, January 2023
 linkTitle: v2.18.0 (Jan 2023)
-date: 2022-11-28 00:00:00 +0000
+date: 2023-01-31 00:00:00 +0000
 description: RedisInsight v2.18.0
 weight: 1
 aliases: /ri/release-notes/v2.18.0/

@@ -132,7 +132,7 @@ Different programming languages use different connection clients to interact wit
 
 The connection wizard provides code snippets to connect to your database with the following programming languages:
 
-- node.js using [ioredis](https://github.com/luin/ioredis#quick-start)
+- node.js using [node-redis](https://github.com/redis/node-redis#installation)
 - .NET using [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/)
 - Python using [redis-py](https://github.com/redis/redis-py#redis-py)
 - Java using [Jedis](https://github.com/redis/jedis#jedis)

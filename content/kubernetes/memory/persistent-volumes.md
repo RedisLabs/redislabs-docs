@@ -27,7 +27,7 @@ spec should include a *persistentSpec* section, in the
        storageClassName: "standard"
        volumeSize: "23Gi” #optional
 
-Persistence storage is a requirement for this deployment type.
+Persistence storage is a requirement for production deployments.
 
 {{< note >}}
 For **production deployments** of Redis Enterprise Cluster on Kubenetes,

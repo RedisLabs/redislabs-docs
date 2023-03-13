@@ -8,6 +8,9 @@ categories: ["Platforms"]
 aliases: [
    /kubernetes/re-databases/routes.md,
    /kubernetes/re-databases/routes/,
+   /kubernetes/networking/routes.md,
+   /kubernetes/networking/routes/,
+
 ]
 ---
 
