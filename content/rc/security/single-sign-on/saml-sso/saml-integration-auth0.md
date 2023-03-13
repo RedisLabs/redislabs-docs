@@ -13,7 +13,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
 ## Step 1 - Set up your identity provider (IdP)
 
-### Prepare the SM "owner" user
+### Specify the SAML owner
 
 1. Sign in to your Auth0 account and navigate to **User Management > Users**.
    * Select the SAML owner.
