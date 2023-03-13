@@ -15,7 +15,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
 ### Prepare the SM "owner" user
 
-1. Sign in in your Auth0 account and open **User Management → Users**
+1. Sign in to your Auth0 account and navigate to **User Management > Users**.
    * Select the User that will be SAML owner in SM
    * Verify the details
 
