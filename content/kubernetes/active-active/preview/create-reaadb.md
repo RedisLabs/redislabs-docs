@@ -72,10 +72,10 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     Output should look similar to:
 
     ```sh
-    kubectl get rerc rec1.ns1
+    kubectl get rerc rerc1
 
     NAME        STATUS   SPEC STATUS   LOCAL
-    rec1.ns1   Active   Valid         true
+    rerc1   Active   Valid         true
     ```
   
     In case of errors, review the RERC custom resource events and the Redis Enterprise operator logs.
