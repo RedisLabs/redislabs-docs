@@ -180,7 +180,7 @@ To modify the Redis mapping field, select the pencil icon of the Redis Cloud gro
 
 {{<image filename="images/rc/saml/okta_saml_group_10.png" alt="" >}}{{</image>}}
 
-An edit modal screen will appear, where you can modify the mapping field for the whole group.
+You can modify the mapping field for the whole group on the edit screen that appears.
 
 {{<image filename="images/rc/saml/okta_saml_group_11.png" alt="" >}}{{</image>}}
 
