@@ -168,7 +168,7 @@ Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the
 {{</ note >}}
 
 
-## Step 4 - Return to Redis Cloud SM
+## Step 4 - Return to the Redis Cloud admin console
 
 1. Return to the Redis Cloud admin console and click **Activate**.
 
@@ -182,7 +182,7 @@ Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the
 
     {{<image filename="images/rc/saml/auth0_saml_12.png" alt="" >}}{{</image>}}
 
-4. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to log in to the admin console going forward, click on **Sign in with SSO**.
+4. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to log in to the admin console from now on, click on **Sign in with SSO**.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 

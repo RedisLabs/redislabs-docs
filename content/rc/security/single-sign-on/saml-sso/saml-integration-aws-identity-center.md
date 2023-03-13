@@ -126,4 +126,34 @@ The **redisAccountMapping** key-value pair consists of the **lower-cased role na
 
 ## Step 4 - Ensure that the SM account user has an IAM Identity Center user account
 
+In order to complete SAML setup, we need to ensure that the user who began SAML configuration in Redis Cloud admin console has a user defined in AWS IAM identity center. This user account will be needed to complete SAML setup.
 
+Also, make sure that the user has been assigned to the **Redis Cloud** Application.
+
+## Step 5 - Activate SAML integration
+
+The final step in our SAML integration with AWS IAM identity Center is to **Activate** the SAML integration. 
+
+1. In the Single Sign-On screen, click **Activate**
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_15.png" alt="" >}}{{</image>}}
+
+2. A Logout notification screen is shown, explaining that you will be redirected to AWS IAM Identity Center's login screen.
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_16.png" alt="" >}}{{</image>}}
+
+3. Enter you AWS IAM Identity Center credentials
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_18.png" alt="" >}}{{</image>}}
+
+4. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** in order to login to the Redis Cloud admin console.
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_19.png" alt="" >}}{{</image>}}
+
+5. You will be shown a message which explains that your local user will now be converted to a SAML user. Click **Confirm**.
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_20.png" alt="" >}}{{</image>}}
+
+6. **Congratulations!!!** You have successfully configured AWS IAM Identity Center as an identification provider.
+
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_21.png" alt="" >}}{{</image>}}
