@@ -21,7 +21,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
     {{<image filename="images/rc/saml/aws_iam_identity_center_saml_1.png" alt="" >}}{{</image>}}
 
-3. Once in IAM Identity Center, select the **Applications** menu item
+3. Once in IAM Identity Center, select **Applications**.
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_2.png" alt="" >}}{{</image>}}
 
