@@ -25,7 +25,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
     {{<image filename="images/rc/saml/auth0_saml_1.png" alt="" >}}{{</image>}}
 
-2. Add **user_metadata** to fulfill the SAML assertion then click the **Save** button. The key-value pair of **redisAccountMapping** consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** (you can find this information in the upper-right user menu at app.redislabs.com).
+2. Add **user_metadata** to fulfill the SAML assertion then click the **Save** button. The key-value pair of **redisAccountMapping** consists of the **lower-cased role name** (owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
     ```
     {
