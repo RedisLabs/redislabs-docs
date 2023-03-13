@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-This guide shows how to configure [Auth0](https://auth0.com/docs) as a SAML single sign on identity provider (IdP) for your Redis Cloud account.
+This guide shows how to configure [Auth0](https://auth0.com/docs) as a SAML single sign-on identity provider (IdP) for your Redis Cloud account.
 
 To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
 
