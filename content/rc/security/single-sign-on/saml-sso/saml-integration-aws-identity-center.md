@@ -84,7 +84,7 @@ Select **Enable** and wait a few seconds for the status to change.
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_9.png" alt="" >}}{{</image>}}
 
-3. Open the file in any text editor, and there are 2 pieces of information that you need to copy and mark down:
+3. Open the file in any text editor. Save the following text from the metadata:
 
 * **EntityID** : The unique name of the service provider (SP)
 
@@ -96,15 +96,15 @@ Select **Enable** and wait a few seconds for the status to change.
 
 ## Step 3 - Finish SAML configuration in AWS IAM Identity Center's Redis Cloud Application
 
-1. Go back to the **Configuration setup** screen in IAM identity Center. Scroll down to the bottom of the page and select the **Upload application SAML metadata file** option. Click on the **upload** button and choose the file that you downloaded in the SAML configuration screen in Redis Cloud. It should look like the screen below :
+1. Go back to the **Configuration setup** screen in IAM identity Center. Scroll down to the bottom of the page and select **Upload application SAML metadata file**. Select **upload** and choose the file that you downloaded in the SAML configuration screen in Redis Cloud. 
 
 {{<image filename="images/rc/saml/aws_iam_identity_center_saml_10.png" alt="" >}}{{</image>}}
 
-2. If you would like to also configure an IdP initiated workflow, then you need to fill in the **relay state** field in the **Application properties** section. Use the following URL **https://app.redislabs.com/#/login/?idpId=XXXXXX**. Take the ID from the location URL in step 3 (the content after the last forward slash "/") and append to the url. It should look like the screen below :
+2. If you would like to also configure an IdP initiated workflow, then fill in the **relay state** field in the **Application properties** section. Use the following URL: **https://app.redislabs.com/#/login/?idpId=XXXXXX**. Take the ID from the location URL in step 3 (the content after the last forward slash "/") and append to the url.
 
 {{<image filename="images/rc/saml/aws_iam_identity_center_saml_11.png" alt="" >}}{{</image>}}
 
-3. Once all the information has been filled in, it is time finish the application creation by clicking the **Submit** button.
+3. Once all the information has been filled in, select **Submit** to finish creating the application.
 
 {{<image filename="images/rc/saml/aws_iam_identity_center_saml_12.png" alt="" >}}{{</image>}}
 

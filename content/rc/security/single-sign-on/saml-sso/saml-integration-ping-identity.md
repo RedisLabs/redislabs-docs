@@ -15,15 +15,15 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
 ### Add the "redisAccountMapping" attribute
 
-1. Login into your Ping Identity account and open **Administrators -> Identities ->User Attributes** and click on **Add Attribute**
+1. Login into your Ping Identity account. Open **Administrators > Identities > User Attributes** and select **Add Attribute**.
 
     {{<image filename="images/rc/saml/ping_identity_saml_1.png" alt="" >}}{{</image>}}
 
-2. In the modal that opens choose **DECLARED**
+2. Select the **DECLARED** attribute type.
 
     {{<image filename="images/rc/saml/ping_identity_saml_2.png" alt="" >}}{{</image>}}
 
-3. Fill in the following fields with the following values:
+3. Fill in the fields with the following values:
 
     * Name : **redisAccountMapping**
     * Display name : **redisAccountMapping**
@@ -31,21 +31,21 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
     {{<image filename="images/rc/saml/ping_identity_saml_3.png" alt="" >}}{{</image>}}
 
-    Click the **Save and Close** button. Once done verify that the attribute was created successfully
+    Click the **Save and Close** button. Once done, verify that the attribute was created successfully.
 
     {{<image filename="images/rc/saml/ping_identity_saml_4.png" alt="" >}}{{</image>}}
 
 ### Add the user who will activate SAML in Service Manager (Redis Cloud)
 
-1. Go to **Administrators -> Identities -> Users** and click on **Add User** button
+1. Go to **Administrators > Identities > Users** and click **Add User**.
 
     {{<image filename="images/rc/saml/ping_identity_saml_5.png" alt="" >}}{{</image>}}
 
-2. In the modal that appears, fill in all the information needed:
+2. Fill in the following information:
 
     * redisAccountMapping : **{accountID}={role}**
      
-    **accountID** is the account ID from SM and **role** represents the role that the user will be assigned in SM, (eg: owner, member, manager, viewer)
+    **accountID** is the account ID from [account settings]({{<relref "rc/accounts/account-settings">}}) and **role** represents the role that the user will be assigned in SM (owner, member, manager, or viewer):
 
     {{<image filename="images/rc/saml/ping_identity_saml_6.png" alt="" >}}{{</image>}}
 
@@ -53,29 +53,29 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
 ### Create the Ping Identity SAML application
 
-1. Go to **Administrators -> Connections -> Applications** and click on the **+** button to add a new application
+1. Go to **Administrators > Connections > Applications** and click on the **+** button to add a new application.
 
     {{<image filename="images/rc/saml/ping_identity_saml_7.png" alt="" >}}{{</image>}}
 
-2. Choose a name for the application, select **SAML Application Type** and click the **Configure** button
+2. Choose a name for the application, select **SAML Application Type** and click **Configure**.
 
     {{<image filename="images/rc/saml/ping_identity_saml_8.png" alt="" >}}{{</image>}}
 
 3. In the ACS URLs and Entity ID field add for now some dummy data, like https://example.com
    
-    * This data will be updated with the correct data from SM in a subsequent step
+    * This data will be updated with the correct data in a subsequent step.
 
     {{<image filename="images/rc/saml/ping_identity_saml_9.png" alt="" >}}{{</image>}}
 
     Click on the **Save** button
 
-4. Go to **Configuration** tab and copy the following information and note it down:
+4. Go to the **Configuration** tab and save the following information:
    
     * Issuer ID
     * Single Logout Service
     * Single Signon Service
 
-    This information will be needed once we configure SAML in SM
+    This information will be needed once we configure SAML in the Redis Cloud admin console.
 
     * Click on the **Download Metadata** button. A XML file will be downloaded. Open it and **copy the Certificate** - it will be needed for the configuration in SM.
 
@@ -116,13 +116,13 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
     {{<image filename="images/rc/saml/ping_identity_saml_12.png" alt="" >}}{{</image>}}
 
-    Once you click the **enable** button, wait a few seconds for the status to change.
+    Select **Enable** and wait a few seconds for the status to change.
 
-2. You will then be able to **download** the service provider (SP) metadata. Save the file to your local hard disk.
+2. You will then be able to **Download** the service provider (SP) metadata. Save the file to your local hard disk.
 
     {{<image filename="images/rc/saml/ping_identity_saml_18.png" alt="" >}}{{</image>}}
 
-3. Open the file in any text editor, and there are 2 pieces of information that you need to copy and mark down:
+3. Open the file in any text editor. Save the following text from the metadata:
 
     * **EntityID** : The unique name of the service provider (SP)
 
@@ -134,12 +134,11 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
 ## Step 3 - Finish SAML configuration in Ping Identity
 
-1. Go in Ping Identity to **Administrators -> Connections -> Applications -> {AppName} -> Configuration** tab and click on the **Edit** button
+1. In Ping Identity, go to **Administrators > Connections > Applications** and select your application name. Select the **Configuration** tab and click **Edit**.
 
-    This is where we had entered dummy data, we will now enter the correct data for this step:
+    This is where we had entered dummy data. We will now enter the correct data for this step:
 
-    * Paste **EntityID** information in the:
-        * Entity ID field
+    * Paste **EntityID** information in the **Entity ID** field
 
     * Paste **Location** link in the ACS URLS field
 
@@ -149,13 +148,13 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
     {{<image filename="images/rc/saml/ping_identity_saml_13.png" alt="" >}}{{</image>}}
 
-2. Click on the slider that exists on the right side of the application name in Ping Identity, to enable the app.
+2. Click on the slider to enable the app.
 
     {{<image filename="images/rc/saml/ping_identity_saml_14.png" alt="" >}}{{</image>}}
 
 ## Step 4 - Return to Redis Cloud SM
 
-1. Return to Redis Cloud SM, and now click on the **Activate** button
+1. Return to the Redis Cloud admin console and select **Activate**.
 
     {{<image filename="images/rc/saml/ping_identity_saml_19.png" alt="" >}}{{</image>}}
 
@@ -163,11 +162,11 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
     {{<image filename="images/rc/saml/sm_saml_13.png" alt="" >}}{{</image>}}
 
-3. The Ping Federate login screen will appear, enter the credentials and click **Sign In**
+3. The Ping Federate login screen will appear. Enter the credentials and click **Sign In**.
 
     {{<image filename="images/rc/saml/ping_identity_saml_20.png" alt="" >}}{{</image>}}
 
-4. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to login to SM going forward, you click on the **Sign in with SSO** button.
+4. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to login to SM going forward, select the **Sign in with SSO** button.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
@@ -175,7 +174,7 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
     {{<image filename="images/rc/saml/ad_saml_21.png" alt="" >}}{{</image>}}
 
-6. **Congratulations!!!** You have successfully configured SAML as an identification provider
+6. **Congratulations!!!** You have successfully configured SAML as an identity provider.
 
     {{<image filename="images/rc/saml/ping_identity_saml_15.png" alt="" >}}{{</image>}}
 
