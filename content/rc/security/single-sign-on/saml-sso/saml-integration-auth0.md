@@ -84,7 +84,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     {{<image filename="images/rc/saml/auth0_saml_8.png" alt="" >}}{{</image>}}
 
-10. From the **Usage** tab :
+10. From the **Usage** tab:
 
     * Copy and save the **Issuer** value 
     * Copy and save the **Identity Provider Login URL**
