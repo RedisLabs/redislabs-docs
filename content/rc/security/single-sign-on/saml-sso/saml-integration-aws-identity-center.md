@@ -29,7 +29,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_3.png" alt="" >}}{{</image>}}
 
-5. In the next screen, choose the **Add custom SAML 2.0 application** option, scroll down the page and click the **Next** button
+5. In the next screen, choose **Add custom SAML 2.0 application**, and then click **Next**.
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_4.png" alt="" >}}{{</image>}}
 
