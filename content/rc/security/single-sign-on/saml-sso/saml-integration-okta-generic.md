@@ -176,7 +176,7 @@ Now that your group is populated with its users, it is time to assign the SAML i
 
 ### Editing the mapping field for the group
 
-We might need to modify the Redis mapping field at a certain point in time. It is easy to do so by clicking on the "pencil" icon of the Redis Cloud group in the "Redis Cloud" application screen.
+To modify the Redis mapping field, select the pencil icon of the Redis Cloud group in the "Redis Cloud" application screen.
 
 {{<image filename="images/rc/saml/okta_saml_group_10.png" alt="" >}}{{</image>}}
 
