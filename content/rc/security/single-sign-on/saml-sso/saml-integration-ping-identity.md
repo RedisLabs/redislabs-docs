@@ -195,5 +195,5 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
     {{<image filename="images/rc/saml/ping_identity_saml_17.png" alt="" >}}{{</image>}}
 
-5. The user is redirected to SM
+5. You will be redirected to the Redis Cloud admin console.
 
