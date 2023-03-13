@@ -254,7 +254,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_13.png" alt="" >}}{{</image>}}
 
-    Once you have entered the information, click on the **Next** button, and finally click on the **Finish** button in feedback step.
+    Once you have entered the information, select **Next**. Finally, select **Finish**.
 
 ### Return to Redis Cloud SM
 
