@@ -68,7 +68,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     {{<image filename="images/rc/saml/auth0_saml_5.png" alt="" >}}{{</image>}}
 
-7. Provide a **nam**e for the Application and select the  **Single Page Web Applications** type. Once done click the **Create** button.
+7. Provide a **name** for the Application and select the  **Single Page Web Applications** type. Once done, click **Create**.
 
     {{<image filename="images/rc/saml/auth0_saml_6.png" alt="" >}}{{</image>}}
 
