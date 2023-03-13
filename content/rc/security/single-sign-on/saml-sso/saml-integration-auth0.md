@@ -170,7 +170,7 @@ Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the
 
 ## Step 4 - Return to Redis Cloud SM
 
-1. Return to Redis Cloud SM, and now click on the **Activate** button
+1. Return to the Redis Cloud admin console and click **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
