@@ -187,7 +187,7 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
 2. Go to **Target Application URL** and enter: **https://{enviroment}/#/login/?idpId={idpId}**, where idpId is the ID found in the Location field, after the last '/'
 
-3. Click on the **Save** button
+3. Click **Save**.
 
     {{<image filename="images/rc/saml/ping_identity_saml_16.png" alt="" >}}{{</image>}}
 
