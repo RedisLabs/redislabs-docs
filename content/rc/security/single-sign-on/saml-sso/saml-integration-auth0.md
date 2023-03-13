@@ -186,7 +186,7 @@ Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
-5. In the screen, enter your SAML email and click *Login*
+5. Enter your SAML email and click **Login**.
 
     {{<image filename="images/rc/saml/auth0_saml_13.png" alt="" >}}{{</image>}}
 
