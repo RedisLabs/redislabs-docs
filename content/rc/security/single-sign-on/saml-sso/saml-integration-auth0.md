@@ -163,7 +163,9 @@ To use IdP-initiated SSO with certain identity providers, you also need to set t
 
 `https://app.redislabs.com/#/login/?idpId=<ID>`
 
-> **Note**: Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the content after the last forward slash "/"). To learn more about how to configure service provider apps, see your identity provider’s documentation.
+{{< note >}}
+Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the content after the last forward slash "/"). To learn more about how to configure service provider apps, see your identity provider’s documentation.
+{{</ note >}}
 
 
 ## Step 4 - Return to Redis Cloud SM
