@@ -105,7 +105,7 @@ Login to your SM account at [https://app.redislabs.com/#/login](https://app.redi
 
 In order to activate SAML, you must have a local user (or social sign-on user) with the **owner** role. If you have the correct permissions, you will see the **Single Sign-On** tab.
 
-1. Fill in the information you saved previously in the **setup** form. This includes :
+1. Fill in the information you saved previously in the **setup** form. This includes:
 
     * **Issuer (IdP Entity ID)** -> Issuer value from Auth0
     * **IdP server URL** -> Identity Provider Login URL from Auth0
