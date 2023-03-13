@@ -80,7 +80,7 @@ You will also have to add :
 
 Select **Enable** and wait a few seconds for the status to change.
 
-2. You will then be able to **download** the service provider (SP) metadata. Save the file to your local hard disk.
+2. Select **Download** to download the service provider (SP) metadata. Save the file to your local hard disk.
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_9.png" alt="" >}}{{</image>}}
 
