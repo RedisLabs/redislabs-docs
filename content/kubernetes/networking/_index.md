@@ -24,7 +24,7 @@ By default, the operator creates a `ClusterIP` type service, which exposes a clu
 
 ## 6.4.2-4 preview feature
 
-{{<note>}} Preview features are not fit for production environments.{{</note>}}
+{{<note>}} Contact Redis support if you plan to use preview features.{{</note>}}
 
 The 6.4.2-4 release of Redis Enterprise for Kubernetes includes a public preview feature for ingress configuration. The `ingressOrRouteSpec` field is available in the RedisEnterpriseCluster spec which automatically creates an ingress (or route) for the API service and databases (REAADB) on that REC. See [Establish external routing on the REC]({{<relref "/kubernetes/networking/external-routing.md">}}) for more details.
 

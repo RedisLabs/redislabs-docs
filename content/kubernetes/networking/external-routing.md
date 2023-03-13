@@ -15,7 +15,7 @@ aliases: {
 ---
 
 {{<banner-article bannerColor="#fff8dc">}}
-This feature is currently in preview and is not for production use.
+This feature is currently in public preview. Contact Redis support if you plan to use this feature.
 See [ingress routing]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) for the currently supported procedure.
 {{</banner-article>}}
 
