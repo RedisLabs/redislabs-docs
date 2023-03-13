@@ -43,7 +43,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 * IAM Identity Center SAML issuer URL
 * IAM Identity Center Certificate
 
-Make sure to the note down or copy the URLs and to download the certification information from the **download** link.
+Make sure to note down or copy the URLs and select **Download** to download the certification information.
 
 > **NOTE** : Both the IAM Identity Center sign-in URL and the IAM Identity Center SAML issuer URL are the same value. This is normal.
 
