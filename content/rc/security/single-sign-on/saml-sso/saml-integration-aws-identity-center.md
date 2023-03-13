@@ -118,7 +118,7 @@ In the next screen, add the following attributes :
 * LastName : **${user:familyName}**, **unspecified**
 * redisAccountMapping : **XXXXXXX=owner**, **unspecified**
 
-The **redisAccountMapping** key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** (you can find this information in the upper-right user menu at app.redislabs.com).
+The **redisAccountMapping** key-value pair consists of the **lower-cased role name** (owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
 {{<image filename="images/rc/saml/aws_iam_identity_center_saml_14.png" alt="" >}}{{</image>}}
 
