@@ -198,7 +198,7 @@ The user's **Type** is set to **Individual**.
 
 {{<image filename="images/rc/saml/okta_saml_group_14.png" alt="" >}}{{</image>}}
 
-In the final step, we can now click on the "pencil" icon of the user we wish to override their mapping. This will open a modal window which will allow you to modify the Redis mapping field.
+Select the pencil icon of the user to modify the Redis mapping field on the screen that appears.
 
 {{<image filename="images/rc/saml/okta_saml_group_15.png" alt="" >}}{{</image>}}
 
