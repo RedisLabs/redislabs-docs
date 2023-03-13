@@ -191,7 +191,7 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
     {{<image filename="images/rc/saml/ping_identity_saml_16.png" alt="" >}}{{</image>}}
 
-4. Go to **https://apps.pingone.com/{environment}/myapps/#**, where environment is the Environment ID  Administrators -> Environment and click on the app.
+4. Go to **https://apps.pingone.com/{environment}/myapps/#**, where environment is the environment ID, found in **Administrators -> Environment** for your app.
 
     {{<image filename="images/rc/saml/ping_identity_saml_17.png" alt="" >}}{{</image>}}
 
