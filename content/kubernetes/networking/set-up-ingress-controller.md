@@ -21,7 +21,7 @@ Every time a Redis Enterprise database (REDB) is created with the Redis Enterpri
 
 By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
-Redis Enterprise for Kubernetes supports two ingress controllers, [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/). [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}) can also be used for ingress for Redis Enterprise.
+Redis Enterprise for Kubernetes supports two ingress controllers: [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/). You can also use [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}) ingress routing for Redis Enterprise.
 
 ## Prerequisites
 
