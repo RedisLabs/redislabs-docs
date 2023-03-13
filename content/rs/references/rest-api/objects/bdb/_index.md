@@ -192,7 +192,7 @@ An API object that represents a managed database in the cluster.
 | tls_mode | 'enabled'<br /> **'disabled'** <br />'replica_ssl' | Require TLS-authenticated and encrypted connections to the database |
 | type | **'redis'** <br />'memcached' | Type of database |
 | use_nodes | array of strings | Cluster node UIDs to use for database shards and bound endpoints |
-| version | string | Database compatibility version: full Redis/memcached version number, e.g. 6.0.6 |
+| version | string | Database compatibility version: full Redis/memcached version number, e.g. 6.0.6. This is an immutable property. This value is modified during database creation and database upgrade|
 | wait_command | boolean (default:&nbsp;true) | Supports Redis wait command (read-only) |
 
 
