@@ -22,13 +22,11 @@ See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/activ
 
 ## Prepare participating clusters
 
-An Active-Active database can span 2-3 Redis Enterprise clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
+An Active-Active database can span multiple clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
 
 ### Cluster names
 
-The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) is used to identify participating clusters in parts of the Active-Active database creation.
-
-Each participating cluster must have a unique hostname (`<rec-name>.<namespace-name>`).
+The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) must be unique for each participating cluster the Active-Active database.
 
 For example, if you have two K8s clusters, each with their own REC named `rec1` in a namespace named `ns1`. The value of `<rec-name>.<namespace-name>` for both RECs would be `rec1.ns1`. These can't be used for the same Active-Active database.
 
@@ -36,9 +34,15 @@ For example, if you have two K8s clusters, each with their own REC named `rec1` 
 
 Active-Active databases require external routing access to sync properly. To configure external routing through an ingress or OpenShift route, see [Establish external routing on the REC]({{<relref "/kubernetes/networking/external-routing.md">}}).
 
+### Configure `ValidatingWebhookConfiguration`
+
+The admission controller using a validating webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to configure. Learn how to enable and configure admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start/#enable-the-admission-controller">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/quick-start.md">}}) instructions.
+
+
+
 ### Enable Active-Active controllers
 
-For each Redis Enterprise cluster (REC), you must enable the Active-Active and remote cluster controllers. This prepares the cluster to become a participating cluster in your Active-Active database and only needs to be done once per cluster.
+To allow operator to handle managed Active-Active databases, enable the Active-Active and remote cluster controllers. You need to do this only once per cluster.
 
 1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-4) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
 
@@ -59,7 +63,7 @@ For each Redis Enterprise cluster (REC), you must enable the Active-Active and r
 
 ### Collect REC credentials
 
-To sync global configurations, all participating clusters will need access to the admin credentials for all other clusters.
+To communicate the other clusters, with all participating clusters will need access to the admin credentials for all other clusters.
 
 1. Create a file to hold the admin credentials for all participating RECs (such as `all-rec-secrets.yaml`).
 
@@ -120,7 +124,7 @@ To sync global configurations, all participating clusters will need access to th
       username: GHij56789
     kind: Secret
     metadata:
-      name: redis-enterprise-rec1-ns1
+      name: redis-enterprise-rerc1
     type: Opaque
 
     ---
@@ -131,7 +135,7 @@ To sync global configurations, all participating clusters will need access to th
       username: PQrst789010
     kind: Secret
     metadata:
-      name: redis-enterprise-rec2-ns2
+      name: redis-enterprise-rerc2
     type: Opaque
 
     ```
@@ -142,7 +146,7 @@ To sync global configurations, all participating clusters will need access to th
     kubectl apply -f <all-rec-secrets-file>
     ```
 
-This allows all the participating clusters to sync configuration changes. If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
+ If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
 
 ## Next steps
 
