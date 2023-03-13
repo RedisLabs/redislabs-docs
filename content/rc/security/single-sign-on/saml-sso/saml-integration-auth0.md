@@ -111,7 +111,7 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
     * **IdP server URL** -> Identity Provider Login URL from Auth0
     * **Assertion signing certificate** - Certificate value from Auth0
 
-    You will also have to add :
+    You will also have to add:
 
     * **Email domain binding** - The domain used in your company's email addresses
 
