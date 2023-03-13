@@ -78,7 +78,7 @@ You will also have to add :
 
   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_8.png" alt="" >}}{{</image>}}
 
-Once you click the **enable** button, wait a few seconds for the status to change.
+Select **Enable** and wait a few seconds for the status to change.
 
 2. You will then be able to **download** the service provider (SP) metadata. Save the file to your local hard disk.
 
