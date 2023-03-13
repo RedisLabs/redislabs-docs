@@ -194,7 +194,7 @@ Next, we need to set the user's "Assignment master" to "Administrator". This wil
 
 {{<image filename="images/rc/saml/okta_saml_group_13.png" alt="" >}}{{</image>}}
 
-We now see that the user's "Type" has been set to **"Individual"**
+The user's **Type** is set to **Individual**.
 
 {{<image filename="images/rc/saml/okta_saml_group_14.png" alt="" >}}{{</image>}}
 
