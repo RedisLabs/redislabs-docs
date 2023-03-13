@@ -11,7 +11,7 @@ This guide shows how to configure [Auth0](https://auth0.com/docs) as a SAML sing
 
 To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
 
-## Step 1 - Setup your identity provider (IdP)
+## Step 1 - Set up your identity provider (IdP)
 
 ### Prepare the SM "owner" user
 
