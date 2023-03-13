@@ -21,21 +21,21 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
     {{<image filename="images/rc/saml/ad_saml_1.png" alt="" >}}{{</image>}}
 
-2. Add a **New Application** → search for Azure AD SAML Toolkit
+2. Add a **New Application → Azure AD SAML Toolkit**.
 
     {{<image filename="images/rc/saml/ad_saml_2.png" alt="" >}}{{</image>}}
 
-3. Provide a name for the Application and **Create** it
+3. Provide a name for the Application and select **Create**.
 
     {{<image filename="images/rc/saml/ad_saml_3.png" alt="" >}}{{</image>}}
 
-4. Once the Application is created → select Properties and update the Redis logo (you can download anyone on the Internet), once done click on the **Save** button
+4. Select Properties and upload the Redis logo. Click **Save**.
 
     {{<image filename="images/rc/saml/ad_saml_17.png" alt="" >}}{{</image>}}
 
     {{<image filename="images/rc/saml/ad_saml_18.png" alt="" >}}{{</image>}}
 
-5. Once the Application is created → **Set up single sign on**
+5. Once the Application is created, select **Set up single sign on**.
 
     {{<image filename="images/rc/saml/ad_saml_4.png" alt="" >}}{{</image>}}
 
@@ -56,11 +56,11 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
     {{<image filename="images/rc/saml/ad_saml_7.png" alt="" >}}{{</image>}}
 
-9. Scroll up to **Step 1** in the configuration screen and enter some **dummy data** in the Required fields → **Save**
+9. Scroll up to **Step 1** in the configuration screen and enter some dummy data in the Required fields. Select **Save**.
 
     {{<image filename="images/rc/saml/ad_saml_8.png" alt="" >}}{{</image>}}
 
-10. Once the dummy data has been entered, the **Certificate** becomes available for download
+10. Once the dummy data is entered, the certificate is available for download.
 
 * Click the link and download the certificate to your hard drive
 
@@ -96,7 +96,7 @@ Once you click the **enable** button, wait a few seconds for the status to chang
 
     {{<image filename="images/rc/saml/ad_saml_10.png" alt="" >}}{{</image>}}
 
-3. Open the file in any text editor, and there are 2 pieces of information that you need to copy and mark down:
+3. Open the file in any text editor. Save the following text from the metadata:
 
 * **EntityID** : The unique name of the service provider (SP)
 
@@ -112,7 +112,9 @@ Once you click the **enable** button, wait a few seconds for the status to chang
    
     This is where we had entered dummy data, we will now enter the correct data for this step:
 
-    **NOTE**: For the **EntityID** and **Location** fields below you can direct upload the metadata file using the option at the top of the page. However, you will still need to manually add the **Sign on URL**
+{{< note >}}
+For the **EntityID** and **Location** fields below you can directly upload the metadata file using the option at the top of the page. However, you will still need to manually add the **Sign on URL**.
+{{< /note >}}
 
     * Paste **EntityID** information in the: 
         * Identifier (Entity ID) field
@@ -121,15 +123,15 @@ Once you click the **enable** button, wait a few seconds for the status to chang
 
     * For the **Sign on URL** field, add the following URL: **https://app.redislabs.com/#/login/?idpId=** where you need to add the ID from the Reply URL’s ID. eg. https://app.redislabs.com/#/login/?idpId=0oa5pwatz2JfpfCb91d7
 
-    Once done, click on the **Save** button
+    Once done, click **Save**.
 
     {{<image filename="images/rc/saml/ad_saml_23.png" alt="" >}}{{</image>}}
 
-2. We will now scroll down to **Step 2** which is the Attributes & Claims section and click on the **Edit** button
+2. Go to **Step 2 - Attributes & Claims** and select **Edit**.
 
     {{<image filename="images/rc/saml/ad_saml_24.png" alt="" >}}{{</image>}}
 
-3. We need to configure certain different attributes and claims
+3. Configure the following attributes and claims:
 
     * Modify Unique User Identifier (Name ID) to **user.mail**
   
@@ -143,17 +145,17 @@ Once you click the **enable** button, wait a few seconds for the status to chang
 
     {{<image filename="images/rc/saml/ad_saml_14.png" alt="" >}}{{</image>}}
 
-4. In order to add a user to the application, we begin by clicking on **User and Groups** in the left hand menu and click on the **Add user/group** button.
+4. In order to add a user to the application, select **User and Groups > Add user/group**.
 
     {{<image filename="images/rc/saml/ad_saml_15.png" alt="" >}}{{</image>}}
 
-5. Next, we add the user and click on the **Assign** button
+5. Add the user and select **Assign**.
 
     {{<image filename="images/rc/saml/ad_saml_16.png" alt="" >}}{{</image>}}
 
 ## Step 4 - Return to Redis Cloud SM
 
-1. Return to Redis Cloud SM, and now click on the **Activate** button
+1. Return to Redis Cloud SM and select **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
@@ -161,7 +163,7 @@ Once you click the **enable** button, wait a few seconds for the status to chang
 
     {{<image filename="images/rc/saml/sm_saml_9.png" alt="" >}}{{</image>}}
 
-3. The Microsoft AD login screen will appear, enter the credentials and click **Sign In**
+3. The Microsoft AD login screen will appear. Enter the credentials and click **Sign In**.
 
     {{<image filename="images/rc/saml/ad_saml_19.png" alt="" >}}{{</image>}}
 
@@ -169,7 +171,7 @@ Once you click the **enable** button, wait a few seconds for the status to chang
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
-5. In the screen, enter your SAML email and click *Login*
+5. Enter your SAML email and click **Login**.
 
     {{<image filename="images/rc/saml/ad_saml_21.png" alt="" >}}{{</image>}}
 
@@ -179,27 +181,27 @@ Once you click the **enable** button, wait a few seconds for the status to chang
 
 ## Claim conditions and user groups
 
-Assuming that the users will be part of different Groups, you can create a Claim Condition for redisAccountMapping attribute :
+If your users will be part of different Groups, you can create a Claim Condition for the redisAccountMapping attribute.
 
 {{<image filename="images/rc/saml/ad_saml_20.png" alt="" >}}{{</image>}}
 
 
 ## IdP initiated SSO
 
-If you correctly set the up the **Sign on URl** in step three, then by default, the SAML application will appear on user’s **My Apps** panel
+If you correctly set the up the **Sign on URL**, the SAML application will appear by default on a user’s **My Apps** panel.
 
 {{<image filename="images/rc/saml/ad_saml_25.png" alt="" >}}{{</image>}}
 
-While assigning the user to the app, there’s also a notification shown 
+While assigning the user to the app, a notification will appear:
 
 {{<image filename="images/rc/saml/ad_saml_26.png" alt="" >}}{{</image>}}
 
-Therefore, if you sign into into `https://myapplications.microsoft.com/`, the application will be available.
+Therefore, if you sign into `https://myapplications.microsoft.com/`, the application will be available.
 
-If the app is not available, make sure that the App is registered (it should be done automatically)
+If the app is not available, make sure that the App is registered. It should be done automatically.
 
 {{<image filename="images/rc/saml/ad_saml_27.png" alt="" >}}{{</image>}}
 
 {{<image filename="images/rc/saml/ad_saml_28.png" alt="" >}}{{</image>}}
 
-You can also access the app directly by using the **User access Url** from the App Properties
+You can also access the app directly by using the **User access Url** from App Properties.
