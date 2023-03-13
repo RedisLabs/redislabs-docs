@@ -156,4 +156,4 @@ The final step in our SAML integration with AWS IAM identity Center is to **Acti
 
 6. **Congratulations!!!** You have successfully configured AWS IAM Identity Center as an identification provider.
 
-{{<image filename="images/rc/saml/aws_iam_identity_center_saml_21.png" alt="" >}}{{</image>}}
+{{<image filename="images/rc/saml/aws_iam_identity_center_saml_22.png" alt="" >}}{{</image>}}
