@@ -190,7 +190,7 @@ Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the
 
     {{<image filename="images/rc/saml/auth0_saml_13.png" alt="" >}}{{</image>}}
 
-6. **Congratulations!!!** You have successfully configured SAML as an identification provider
+6. **Congratulations!!!** You have successfully configured SAML as an identification provider.
 
     {{<image filename="images/rc/saml/auth0_saml_14.png" alt="" >}}{{</image>}}
 
