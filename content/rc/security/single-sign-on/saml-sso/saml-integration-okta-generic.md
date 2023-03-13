@@ -244,7 +244,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_12.png" alt="" >}}{{</image>}}
 
-5. Then, navigate to the **Configure SAML** (step 2) and update the following information :
+5. Then, navigate to **Configure SAML** (step 2) and update the following information:
 
     * SAML Settings General
 
