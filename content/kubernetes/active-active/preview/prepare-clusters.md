@@ -30,16 +30,6 @@ The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) mu
 
 For example, if you have two K8s clusters, each with their own REC named `rec1` in a namespace named `ns1`. The value of `<rec-name>.<namespace-name>` for both RECs would be `rec1.ns1`. These can't be used for the same Active-Active database.
 
-### Configure external routing
-
-Active-Active databases require external routing access to sync properly. To configure external routing through an ingress or OpenShift route, see [Establish external routing on the REC]({{<relref "/kubernetes/networking/external-routing.md">}}).
-
-### Configure `ValidatingWebhookConfiguration`
-
-The admission controller using a validating webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to configure. Learn how to enable and configure admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start/#enable-the-admission-controller">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/quick-start.md">}}) instructions.
-
-
-
 ### Enable Active-Active controllers
 
 To allow operator to handle managed Active-Active databases, enable the Active-Active and remote cluster controllers. You need to do this only once per cluster.
@@ -60,6 +50,15 @@ To allow operator to handle managed Active-Active databases, enable the Active-A
     {\"ACTIVE_ACTIVE_DATABASE_CONTROLLER_ENABLED\":\"true\", \
     \"REMOTE_CLUSTER_CONTROLLER_ENABLED\":\"true\"}}"
     ```
+
+### Configure external routing
+
+Active-Active databases require external routing access to sync properly. To configure external routing through an ingress or OpenShift route, see [Establish external routing on the REC]({{<relref "/kubernetes/networking/external-routing.md">}}).
+
+### Configure `ValidatingWebhookConfiguration`
+
+The admission controller using a validating webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to configure. Learn how to enable and configure admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
+
 
 ### Collect REC credentials
 

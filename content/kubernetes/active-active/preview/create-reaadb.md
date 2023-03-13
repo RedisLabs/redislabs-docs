@@ -17,7 +17,6 @@ This feature is currently in preview and is not for production use.
 See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.
 {{</banner-article>}}
 
-
 ## Prerequisites
 
 {{<note>}}To use this feature, upgrade to the 6.4.2-4 release.{{</note>}}
@@ -35,11 +34,13 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseRemoteCluster
     metadata:
-      name: rec1.ns1
+      name: rerc1
     spec:
+      recName: rec1
+     recNamespace: ns1
       apiFqdnUrl: test-example-api-rec1-ns1.redis.com
       dbFqdnSuffix: -example-cluster-rec1-ns1.redis.com
-      secretName: redis-enterprise-rec1-ns1
+      secretName: redis-enterprise-rerc1
     ```
 
     Example RERC for a REC named `rec2` in the namespace `ns2`:
@@ -48,11 +49,13 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseRemoteCluster
     metadata:
-      name: rec2.ns2
+      name: rerc2
     spec:
+      recName: rec2
+     recNamespace: ns2
       apiFqdnUrl: test-example-api-rec2-ns2.redis.com
-      dbFqdnSuffix: -example-cluster-rec2.ns2.redis.com
-      secretName: redis-enterprise-rec2-ns2
+      dbFqdnSuffix: -example-cluster-rec2-ns2.redis.com
+      secretName: redis-enterprise-rerc2
     ```
 
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
@@ -90,7 +93,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     - starts with a letter
     - ends with a letter or digit
 
-    Example REAADB named `example-aadb-1` linked to the REC named `rec1` with two participating clusters:
+    Example REAADB named `example-aadb-1` linked to the REC named `rec1` with two participating clusters and a global database configuration with shard count set to 3:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
@@ -98,11 +101,11 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     metadata:
       name: example-aadb-1
     spec:
-      redisEnterpriseCluster: 
-        name: rec1
       participatingClusters:
         - name: rec1.ns1
         - name: rec2.ns2
+      globalConfigurations:
+        shardCount: 3
     ```
 
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
@@ -129,6 +132,3 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     ```
   
     In case of errors, review the REAADB custom resource events and the Redis Enterprise operator logs.
-
-
-
