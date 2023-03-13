@@ -183,7 +183,7 @@ In order to activate SAML, you must have a local user (or social sign-on user) w
 
 `https://app.redislabs.com/#/login/?idpId=`
 
-1. Go to **Administrators -> Connections -> Applications -> {AppName} -> Configuration tab and click the **Edit** button
+1. In Ping Identity, go to **Administrators > Connections > Applications** and select your application name. Select the **Configuration** tab and click **Edit**.
 
 2. Go to **Target Application URL** and enter: **https://{enviroment}/#/login/?idpId={idpId}**, where idpId is the ID found in the Location field, after the last '/'
 
