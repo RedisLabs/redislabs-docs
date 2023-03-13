@@ -166,7 +166,7 @@ Now that your group is populated with its users, it is time to assign the SAML i
 
     {{<image filename="images/rc/saml/okta_saml_group_7.png" alt="" >}}{{</image>}}
 
-3. You will now define the redis account mapping string default for this group and click the **"Save and go back"** button. The key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** (you can find this information in the upper-right user menu at app.redislabs.com). Finally, click on the **"Done"** button.
+3. You will now define the redis account mapping string default for this group and click **"Save and go back"**. The key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}). Click **"Done"**.
 
     {{<image filename="images/rc/saml/okta_saml_group_8.png" alt="" >}}{{</image>}}
 
