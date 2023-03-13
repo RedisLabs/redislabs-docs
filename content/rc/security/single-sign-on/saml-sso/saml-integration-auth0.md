@@ -43,7 +43,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 4. Pick a rule template → **Empty rule**
 
-5. Provide a **name** for the rule and add the **following Script**
+5. Provide a **name** for the rule and add the following script:
 
     ```
     function mapSamlAttributes(user, context, callback) {
