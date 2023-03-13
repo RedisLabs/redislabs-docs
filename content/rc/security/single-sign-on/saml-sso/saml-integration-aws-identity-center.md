@@ -37,7 +37,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_5.png" alt="" >}}{{</image>}}
 
-7. Next, scroll down the page to the **IAM Identity Center metadata** section. This information includes all of the information needed to configure SAML in Redis Cloud. This includes :
+7. Next, scroll to the **IAM Identity Center metadata** section. This information includes all of the information needed to configure SAML in Redis Cloud. This includes:
 
 * IAM Identity Center sign-in URL
 * IAM Identity Center SAML issuer URL
