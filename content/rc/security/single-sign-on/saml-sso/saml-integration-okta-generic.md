@@ -230,7 +230,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_3.png" alt="" >}}{{</image>}}
 
-3. Open the file in any text editor, and there are 2 pieces of information that you need to copy and mark down:
+3. Open the file in any text editor. Save the following text from the metadata:
 
     * **EntityID** : The unique name of the service provider (SP)
 
