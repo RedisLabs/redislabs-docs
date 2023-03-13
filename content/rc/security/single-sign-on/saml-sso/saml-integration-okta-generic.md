@@ -240,7 +240,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
-4. Return to you OKTA application, **click on Applications -> Redis Cloud -> General** and click the **Edit** link
+4. Return to OKTA, select **Applications > Redis Cloud > General** and select **Edit**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_12.png" alt="" >}}{{</image>}}
 
