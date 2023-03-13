@@ -58,7 +58,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
     }
     ```
 
-    Once done, click on the **Save Changes** button
+    Once done, select **Save Changes**.
 
     {{<image filename="images/rc/saml/auth0_saml_4.png" alt="" >}}{{</image>}}
 
