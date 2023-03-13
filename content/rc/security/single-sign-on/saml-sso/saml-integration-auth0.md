@@ -64,7 +64,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 ### Create and configure the SAML application
 
-6. Open **Applications → Applications** and click on the **Create Application** button
+6. Open **Applications → Applications** and select **Create Application**.
 
     {{<image filename="images/rc/saml/auth0_saml_5.png" alt="" >}}{{</image>}}
 
