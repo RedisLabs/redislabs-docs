@@ -178,7 +178,7 @@ Replace <ID> so it matches the AssertionConsumerService Location URL’s ID (the
 
     {{<image filename="images/rc/saml/sm_saml_9.png" alt="" >}}{{</image>}}
 
-3. The Auth0 login screen will appear, enter the credentials and click **Sign In**
+3. The Auth0 login screen will appear. Enter the credentials and click **Sign In**.
 
     {{<image filename="images/rc/saml/auth0_saml_12.png" alt="" >}}{{</image>}}
 
