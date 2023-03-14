@@ -13,20 +13,20 @@ Redis Cloud deployments are always encrypted at rest.
 
 ## Encryption at rest on AWS {#aws}
 
-Persistent data is written to [encrypted EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html). 
+Persistent data is written to encrypted EBS volumes. For more information, see [Amazon EBS encryption](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html). 
 
-When Redis on Flash is enabled, the flash memory data is written to [encrypted NVMe SSD volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html).
+When Redis on Flash is enabled, the flash memory data is written to encrypted NVMe SSD volumes. For more information, see [SSD instance store volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html).
 
 ## Disk encryption on GCP {#gcp}
 
 All data written to disk on GCP-based Redis Cloud deployments is encrypted by default. When deploying
 a Redis Cloud database on GCP, you don't need to take any actions to enable this encryption.
 
-To learn more, see the [GCP encryption at rest documentation](https://cloud.google.com/security/encryption-at-rest).
+To learn more, see the [GCP Default encryption at rest](https://cloud.google.com/security/encryption-at-rest).
 
 ## Disk encryption on Azure {#azure}
 
 All data written to disk on Azure-based Redis Cloud deployments is encrypted by default. When deploying
 a Redis Cloud database on Azure, you don't need to take any actions to enable this encryption.
 
-To learn more, see the [Azure encryption at rest documentation](https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest).
+To learn more, see the [Azure Data Encryption at rest](https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest).
