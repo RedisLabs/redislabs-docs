@@ -7,8 +7,6 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-Redis Cloud offers [social login](https://en.wikipedia.org/wiki/Social_login) as a [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) option. Social login lets you use an existing social media account to create or sign in to your Redis Cloud account.
-
 Redis Cloud supports the following social logins:
 - [GitHub](https://github.com/)
 - [Google](https://accounts.google.com/)
