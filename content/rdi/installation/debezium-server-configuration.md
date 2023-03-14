@@ -40,31 +40,7 @@ debezium.sink.redis.wait.retry.enabled=true
 In addition you can configure the timeout on waiting for the replica shard acknowledgment and the delay between write retries (both 1000 milliseconds by default).
 See [Redis Data Integration configuration reference](#redis-data-integration-configuration-reference) for more information.
 
-### Log rotation
 
-Add the following properties to the `application.properties` file and restart Debezium Server:
-
-```properties
-  quarkus.log.file.enable=true
-  quarkus.log.file.path=<LOG_FILE_PATH>
-  # The maximum file size of the log file after which a rotation is executed.
-  quarkus.log.file.rotation.max-file-size=<MAX_FILE_SIZE>
-  # Indicates whether to rotate log files on server initialization.
-  quarkus.log.file.rotation.rotate-on-boot=true
-  # File handler rotation file suffix. When used, the file will be rotated based on its suffix.
-  quarkus.log.file.rotation.file-suffix=<LOG_FILE_SUFFIX>
-  # The maximum number of backups to keep.
-  quarkus.log.file.rotation.max-backup-index=<MAX_BACKUP_INDEX>
-```
-
-#### Example
-
-```properties
-quarkus.log.file.path=/home/debezium-server/logs/debezium.log
-quarkus.log.file.rotation.max-file-size=5M
-quarkus.log.file.rotation.file-suffix=.yyyy-MM-dd.gz
-quarkus.log.file.rotation.max-backup-index=3
-```
 
 With this configuration the log file, `debezium.log`, will be created in the directoy `/home/debezium-server/logs/`.
 When the log file size reaches 5M it will be renamed to `debezium.log.2023-01-22.1.gz`, and a new log file, `debezium.log`, will be created.
