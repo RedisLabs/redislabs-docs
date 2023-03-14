@@ -22,3 +22,6 @@ As an alternative to the traditional email/password account authentication metho
     - [Auth0]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-auth0">}})
 
 - [Social login]({{<relref "/rc/security/single-sign-on/social-login">}})
+
+    Redis Cloud offers [social login](https://en.wikipedia.org/wiki/Social_login) as a [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) option. Social login lets you use an existing social media account to create or sign in to your Redis Cloud account.
+
