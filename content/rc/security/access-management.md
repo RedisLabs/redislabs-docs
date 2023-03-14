@@ -99,7 +99,7 @@ Roles and responsibilities are:
 
 - **Manager** can view, create, and edit any setting in the subscription. 
 
-    Managers can change subscription costs and change payment methods associated with a subscription, but they cannot cannot add or remove available payment methods.
+    Managers can change subscription costs and change payment methods associated with a subscription, but they cannot add or remove available payment methods.
 
 - **Member** can view, create, and edit databases in Fixed accounts.
 
