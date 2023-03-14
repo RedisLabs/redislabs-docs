@@ -17,21 +17,21 @@ aliases: [ "/rv/administration/account-team-settings/",
 
 The **Access management** screen helps you manage:
 
-- The team of users allowed to access your subscription and its databases
-- The API keys that authenticate application access to your account
-- [Single sign-on (SSO)]({{<relref "/rc/security/single-sign-on">}}) with [SAML]({{<relref "/rc/security/single-sign-on/saml-sso">}})
+- The team of users allowed to access your subscription and its databases.
+- The API keys that authenticate application access to your account.
+- [Single sign-on (SSO)]({{<relref "/rc/security/single-sign-on">}}) with [SAML]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
 
-Here, you learn how to manage your team's users and to control their level of access. 
+Here, you learn how to manage your team's users and control their level of access. 
 
 For help managing API keys, see [Manage API keys]({{< relref "/rc/api/get-started/manage-api-keys" >}}).
 
 ## Manage team access
 
-The **Team** tab lets you manage the people allowed to access your account.  Each authorized person is assigned to a role that specifies their privileges.
+The **Team** tab lets you manage the people allowed to access your account. Each authorized person is assigned to a role that specifies their privileges.
 
 {{<image filename="images/rc/access-management-team-tab.png" alt="The Access management tab helps you manage the people allowed to access your subscription." >}}{{< /image >}}
 
-The list contains one entry summarizing the team settings for each user in your team.  By default, the list includes the account owner.
+The list contains one entry summarizing the team settings for each user in your team. By default, the list includes the account owner.
 
 The list includes several buttons and icons to help you manage the list:
 
@@ -43,7 +43,7 @@ The list includes several buttons and icons to help you manage the list:
 | {{<image filename="images/rc/icon-list-filter.png" width="30px" alt="Use the Filter button to display team members that match specified conditions." >}}{{< /image >}} | **Filter** icons let you display team members matching conditions you specify |
 | <nobr>{{<image filename="images/rc/icon-list-sort-asc.png" width="30px" alt="The Sort ascending button displays members in ascending order according to the values of the selected field." >}}{{< /image >}}{{<image filename="images/rc/icon-list-sort-desc.png" width="30px" alt="The Sort descending button displays members in descending order according to the values of the selected field." >}}{{< /image >}}</nobr> | The **Sort ascending** and **Sort descending** icons display the list according to the selected order |
 
-If you have a large team, you can use the controls in the list footer to navigate quickly through the list.  These controls are deactivated for small teams.
+If you have a large team, you can use the controls in the list footer to navigate quickly through the list. These controls are deactivated for small teams.
 
 ### Add user
 
@@ -51,7 +51,7 @@ When you add a member to your team, the **Add user** dialog appears.
 
 {{<image filename="images/rc/access-mgmt-add-user-dialog.png" width="50%" alt="Use the Add User dialog to specify the details for your new user." >}}{{< /image >}}
 
-Use this dialog to specify the following values:
+Use the dialog to specify these values.
 
 | Setting | Description |
 |---------|-------------|
@@ -69,46 +69,45 @@ Use the **Add user** button to save your new team member details.
 ### Edit user
 
 To edit user team details, select the user from the list and then select the **Edit** button.
+The **Edit user** dialog displays the details you can change.  
 
-When you do this, the **Edit user** dialog displays the details you can change.  
-
-{{<image filename="images/rc/access-mgmt-edit-user-dialog.png" width="50%" alt="Use the Edit User dialog to change the details for a user." >}}{{< /image >}}
+{{<image filename="images/rc/access-mgmt-edit-user-dialog.png" width="50%" alt="Use the Edit User dialog to change the details for a user" >}}{{< /image >}}
 
 You can change any detail except the team member's email address.
 
-Use the **Save user** button to save your changes.
+Select **Save user** to save your changes.
 
 ### Delete user
 
-To remove a member from your team, select them from the list and then select the **Delete** button.  When you do this, a confirmation dialog appears.  
+To remove a member from your team, select them from the list and then select the **Delete** button. A confirmation dialog appears.  
 
-{{<image filename="images/rc/access-management-delete-user-dialog.png" width="50%" alt="Use the confirm that you want to remove a user from your team." >}}{{< /image >}}
+{{<image filename="images/rc/access-management-delete-user-dialog.png" width="50%" alt="Confirm that you want to remove a user from your team" >}}{{< /image >}}
 
-Select the **Delete user** button to confirm removal.  This action is permanent and cannot be undone.
+Select **Delete user** to confirm removal. This is a permanent action that cannot be undone.
 
 ## Team management roles
 
 Each team member is assigned a role that identifies their privileges and limits their activities in the admin console.
 
-The following roles are available:
+Roles and responsibilities are:
 
-- **Owner** - Can view, create, and edit any settings in the account
+- **Owner** can view, create, and edit any settings in the account.
 
-    Each subscription must have at least one account owner.  Accounts can have multiple owners.
+    Each subscription must have at least one account owner. Accounts can have multiple owners.
 
     Owners can also manage subscriptions, databases, and API keys.
 
-- **Manager** - Can view, create, and edit any setting in the subscription 
+- **Manager** can view, create, and edit any setting in the subscription. 
 
-    Managers can change subscription costs and change the payment methods associated with a subscription, but they cannot cannot add/remove available payment methods.
+    Managers can change subscription costs and change payment methods associated with a subscription, but they cannot cannot add or remove available payment methods.
 
-- **Member** - Can view, create, and edit databases in Fixed accounts
+- **Member** can view, create, and edit databases in Fixed accounts.
 
-    Members may not impact costs associated with Flexible accounts; this means they cannot create databases or edit databases in ways that impact subscription cost.
+    Members cannot impact costs associated with Flexible accounts, which means they cannot create databases or edit databases in ways that impact subscription cost.
 
-- **Viewer** - Can view all databases and their configurations (including database secrets)
+- **Viewer** can view all databases and their configurations, including database secrets.
 
-The following table shows each role's ability to perform common tasks using the admin console:
+This table shows each role's ability to perform common tasks using the admin console.
 
 | Task | Owner | Manager | Member | Viewer |
 |------|:-----:|:-------:|:------:|:------:|
