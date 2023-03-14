@@ -28,9 +28,9 @@ Open source Redis version 7.0 introduces the following potentially breaking chan
 
 -  Lua scripts no longer have access to the `print()` function ([#10651](https://github.com/redis/redis/pull/10651)) - The `print`  function was removed from Lua because it can potentially cause the Redis processes to get stuck (if no one reads from stdout). Users should use redis.log. An alternative is to override the  `print`  implementation and print the message to the log file.  
 
-- Block [`PFCOUNT`](https://redis.io/commands/pfcount/) and [`PUBLISH`](https://redis.io/commands/publish/) in read-only scripts (*_RO commands,  `no-writes`) ([#10744](https://github.com/redis/redis/pull/10744)) - Consider `PFCOUNT` and `PUBLISH` as write commands in scrips, in addition to `EVAL`; meaning:
-  - They can never be used in scripts with shebang and no `no-writes` flag
-  - They are blocked in `EVAL_RO` and `_RO` variants, (even in scriptis without shebang flags)
+- Block [`PFCOUNT`](https://redis.io/commands/pfcount/) and [`PUBLISH`](https://redis.io/commands/publish/) in read-only scripts (*_RO commands,  `no-writes`) ([#10744](https://github.com/redis/redis/pull/10744)) - Consider `PFCOUNT` and `PUBLISH` as write commands in scripts, in addition to `EVAL`; meaning:
+  - They can never be used in scripts with shebang (`#!`) and no `no-writes` flag
+  - They are blocked in `EVAL_RO` and `_RO` variants, (even in scripts without shebang (`#!`) flags)
   - Allow `no-write` scripts in EVAL (not just in EVAL_RO), even during `CLIENT PAUSE WRITE` 
 
 - Hide the `may_replicate` flag from the [`COMMAND`](https://redis.io/commands/command/) command response  ([#10744](https://github.com/redis/redis/pull/10744)) - As part of the change to treat `may_replicate` commands `PFCOUNT` and `PUBLISH` as write commands in scripts, in addition to `EVAL`, the `may_replicate` flag has been removed from the `COMMAND` response.
@@ -38,7 +38,7 @@ Open source Redis version 7.0 introduces the following potentially breaking chan
 ### Error handling
 
 - Rephrased some error responses about invalid commands or arguments ([#10612](https://github.com/redis/redis/pull/10612)) - 
-  - Error response for unknown command introduced a case change (`Unkown` to `unknown`)
+  - Error response for unknown command introduced a case change (`Unknown` to `unknown`)
   - Errors for module commands extended to cover subcommands, updated syntax to match Redis Server syntax
   - Arity errors for module commands introduce a case change (`Wrong` to `wrong`); will consider full command name
 
@@ -68,7 +68,7 @@ Open source Redis version 7.0 introduces the following potentially breaking chan
   ```
 
 - [`ZPOPMIN`](https://redis.io/commands/zpopmin/)/[`ZPOPMAX`](https://redis.io/commands/zpopmax/) used to produce wrong replies when count is 0 with non-zset  [#9711](https://github.com/redis/redis/pull/9711)):
-  -  `ZPOPMIN`/`ZPOPMAX` used to produce an `(empty array)` when `key` was not a sorted set and the optional `count` argument was set to `0`, it and now produces a `WRONGTYPE` error response instead.
+  -  `ZPOPMIN`/`ZPOPMAX` used to produce an `(empty array)` when `key` was not a sorted set and the optional `count` argument was set to `0` and now produces a `WRONGTYPE` error response instead.
   -  The optional `count` argument must be positive. A negative value produces a `value is out of range` error.
 
   These examples show changes in behavior:
@@ -155,7 +155,7 @@ For backwards compatibility, `SORT` with `GET`/`BY` keeps working, but if ACL ha
 
 #### Command introspection, stats, and configuration
 
-- [`COMMAND`](https://redis.io/commands/command/) reply drops `random` and `sort-for-scripts` flags, which are now part of [command tips](https://redis.io/docs/reference/command-tips/) ([#10104](https://github.com/redis/redis/pull/10104)) - The `random` flag was replaced with the `nondeterministic_output` tip; The `sort-for-scripts` flag was replaced by the ` nondeterministic_output_order` tip
+- [`COMMAND`](https://redis.io/commands/command/) reply drops `random` and `sort-for-scripts` flags, which are now part of [command tips](https://redis.io/docs/reference/command-tips/) ([#10104](https://github.com/redis/redis/pull/10104)) - The `random` flag was replaced with the `nondeterministic_output` tip; the `sort-for-scripts` flag was replaced by the ` nondeterministic_output_order` tip
 
 - [`INFO`](https://redis.io/commands/info/) `commandstats` now shows the stats per sub-command ([#9504](https://github.com/redis/redis/pull/9504))
 For example, while previous versions would provide a single entry for all command usage, in Redis 7, each sub command is reported separately:
