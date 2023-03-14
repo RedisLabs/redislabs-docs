@@ -96,7 +96,7 @@ Open source Redis version 7.0 introduces the following potentially breaking chan
 
 - [`XCLAIM`](https://redis.io/commands/xclaim/)/[`XAUTOCLAIM`](https://redis.io/commands/xautoclaim/) skips deleted entries instead of replying with `nil` and deletes them from the pending entry list ([#10227](https://github.com/redis/redis/pull/10227)) - `XCLAIM`/`XAUTOCLAIM` now behaves in the following way:
   - If you try to claim a deleted entry, it is deleted from the pending entry list (PEL) where it is found (as well as the group PEL). Therefore, such an entry is not claimed, just cleared from PEL (because it doesn't exist in the stream anyway).
-  - Because deleted entries are not clained, `X[AUTO]CLAIM` does not return "nil" instead of an entry.
+  - Because deleted entries are not claimed, `X[AUTO]CLAIM` does not return "nil" instead of an entry.
   - Added an array of all the deleted stream IDs to `XAUTOCLAIM` response.
 
 ###  ACLs
@@ -151,14 +151,14 @@ For backwards compatibility, `SORT` with `GET`/`BY` keeps working, but if ACL ha
   - `SELECT` and `WAIT` have been recategorized from `@keyspace` to `@connection`  
   - `ROLE`, `LASTSAVE` have been categorized as  `@admin`  and  `@dangerous`
   -  `ASKING`, `READONLY`, `READWRITE` have also been assigned the  `@connection`  category and  removed from `@keyspace`
-  - Command cateogries are explained in [ACL documentation](https://redis.io/docs/management/security/acl/#command-categories)
+  - Command categories are explained in [ACL documentation](https://redis.io/docs/management/security/acl/#command-categories)
 
 #### Command introspection, stats, and configuration
 
-- [`COMMAND`](https://redis.io/commands/command/) reply drops `random` and `sort-for-scripts` flags, which are now part of [command tips](https://redis.io/docs/reference/command-tips/) ([#10104](https://github.com/redis/redis/pull/10104)) - The `random` flag was replaced with the `nondeterministic_output` tip; The `sort-for-scripts` flag was replaced by the ` nondeterministic_output_order`tip
+- [`COMMAND`](https://redis.io/commands/command/) reply drops `random` and `sort-for-scripts` flags, which are now part of [command tips](https://redis.io/docs/reference/command-tips/) ([#10104](https://github.com/redis/redis/pull/10104)) - The `random` flag was replaced with the `nondeterministic_output` tip; The `sort-for-scripts` flag was replaced by the ` nondeterministic_output_order` tip
 
 - [`INFO`](https://redis.io/commands/info/) `commandstats` now shows the stats per sub-command ([#9504](https://github.com/redis/redis/pull/9504))
-For example, while previous versions would provide a single entry for all command usage, in Redis 7, each sub command is reported seperately:
+For example, while previous versions would provide a single entry for all command usage, in Redis 7, each sub command is reported separately:
 
   - Redis 6.2:
   
