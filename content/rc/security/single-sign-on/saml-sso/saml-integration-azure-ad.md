@@ -7,131 +7,126 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-This guide shows how to configure [Microsoft Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-architecture) (Azure AD) as a SAML single sign on identity provider (IdP) for your Redis Cloud account.
+This guide shows how to configure [Microsoft Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-architecture) (Azure AD) as a SAML single sign-on identity provider (IdP) for your Redis Cloud account.
 
 To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
 
-## Step 1 - Set up your identity provider (IdP)
+## Step 1: Set up your identity provider (IdP)
 
 ### Create the Azure AD SAML Toolkit integration application
 
 1. Sign in to Microsoft Azure account.
 
-1.  From the main menu, select **Azure Active Directory → Enterprise Applications**
+1. From the main menu, select **Azure Active Directory > Enterprise Applications**
 
     {{<image filename="images/rc/saml/ad_saml_1.png" alt="" >}}{{</image>}}
 
-2. Add a **New Application → Azure AD SAML Toolkit**.
+1. Add a **New Application > Azure AD SAML Toolkit**.
 
     {{<image filename="images/rc/saml/ad_saml_2.png" alt="" >}}{{</image>}}
 
-3. Provide a name for the Application and select **Create**.
+1. Provide an application name and select **Create**.
 
     {{<image filename="images/rc/saml/ad_saml_3.png" alt="" >}}{{</image>}}
 
-4. Select Properties and upload the Redis logo. Click **Save**.
+1. Select **Properties** and upload the Redis logo. Select **Save**.
 
     {{<image filename="images/rc/saml/ad_saml_17.png" alt="" >}}{{</image>}}
 
     {{<image filename="images/rc/saml/ad_saml_18.png" alt="" >}}{{</image>}}
 
-5. Once the Application is created, select **Set up single sign on**.
+1. Once the application is created, select **Set up single sign on**.
 
     {{<image filename="images/rc/saml/ad_saml_4.png" alt="" >}}{{</image>}}
 
-6. Select **SAML** as the single sign-on method
+1. Select **SAML** as the single sign-on method.
 
     {{<image filename="images/rc/saml/ad_saml_5.png" alt="" >}}{{</image>}}
 
-7. Scroll down to **Step 4** in the configuration screen, and note down or copy the following information :
+1. Scroll down to **Step 4** in the configuration screen, and note down or copy the following information:
 
-* **Login URL** -> Will be used as the "IdP server URL" in the SAML configuration in SM
-* **Azure AD Identifier** -> Will be used as the "Issuer (IdP Entity ID)" in the SAML configuration in SM
+   * **Login URL** is used as the "IdP server URL" in the SAML configuration in SM.
+   * **Azure AD Identifier** is used as the "Issuer (IdP Entity ID)" in the SAML configuration in SM.
   
     {{<image filename="images/rc/saml/ad_saml_6.png" alt="" >}}{{</image>}}
 
-8. Scroll up to **Step 3** in the configuration screen
+1. Scroll up to **Step 3** in the configuration screen.
 
-* Certificate (Base 64) is needed in order to complete the SAML configuration in SM
+   * Certificate (Base 64) is needed in order to complete the SAML configuration in SM
 
-    {{<image filename="images/rc/saml/ad_saml_7.png" alt="" >}}{{</image>}}
+     {{<image filename="images/rc/saml/ad_saml_7.png" alt="" >}}{{</image>}}
 
-9. Scroll up to **Step 1** in the configuration screen and enter some dummy data in the Required fields. Select **Save**.
+1. Scroll up to **Step 1** in the configuration screen and enter some mock data in the required fields. Select **Save**.
 
     {{<image filename="images/rc/saml/ad_saml_8.png" alt="" >}}{{</image>}}
 
-10. Once the dummy data is entered, the certificate is available for download.
+   The certificate is available for download. Select Download to save the certificate to your hard drive.
 
-* Click the link and download the certificate to your hard drive
+## Step 2: Configure SAML support in Redis Cloud
 
-    {{<image filename="images/rc/saml/ad_saml_9.png" alt="" >}}{{</image>}}
+Now that you have your AD IdP server ready, configure support for SAML in Redis Cloud.
 
-## Step 2 - Configuring SAML support in Redis Cloud
+### Log in to your Redis Cloud SM account
 
-Now that we have our AD IdP server ready, we need to configure support for SAML in Redis Cloud.
+[Log in](https://app.redislabs.com/#/login) to your SM account.
 
-### Login to your Redis Cloud SM account
+### Activate SAML in access management
 
-Login to your SM account at [https://app.redislabs.com/#/login](https://app.redislabs.com/#/login)
-
-### Activate SAML in Access Management
-
-In order to activate SAML, you must have a local user (or social sign-on user) with the **owner** role. If you have the correct permissions, you will see the **Single Sign-On** tab.
+To activate SAML, you must have a local user (or social sign-on user) with the **owner** role. If you have the correct permissions, you will see the **Single Sign-On** tab.
 
 1. Fill in the information you saved previously in the **setup** form. This includes :
 
-* **Issuer (IdP Entity ID)** -> Azure AD Identifier
-* **IdP server URL** -> Login URL
-* **Assertion signing certificate** - drag and drop the certificate file you downloaded to disk in the form textarea
+   * **Issuer (IdP Entity ID)** -> Azure AD Identifier
+   * **IdP server URL** -> Login URL
+   * **Assertion signing certificate** - drag and drop the certificate file you downloaded to disk in the form textarea
 
-You will also have to add :
+   You will also have to add :
 
-* **Email domain binding** - The domain used in your company's email addresses
+   * **Email domain binding** - The domain used in your company's email addresses
 
-    {{<image filename="images/rc/saml/sm_saml_1.png" alt="" >}}{{</image>}}
+     {{<image filename="images/rc/saml/sm_saml_1.png" alt="" >}}{{</image>}}
 
-Once you click the **enable** button, wait a few seconds for the status to change.
+   Once you click the **enable** button, wait a few seconds for the status to change.
 
-2. You will then be able to **download** the service provider (SP) metadata. Save the file to your local hard disk.
+1. You will then be able to **download** the service provider (SP) metadata. Save the file to your local hard disk.
 
     {{<image filename="images/rc/saml/ad_saml_10.png" alt="" >}}{{</image>}}
 
-3. Open the file in any text editor. Save the following text from the metadata:
+1. Open the file in any text editor. Save the following text from the metadata:
 
-* **EntityID** : The unique name of the service provider (SP)
+   * **EntityID** : The unique name of the service provider (SP)
 
     {{<image filename="images/rc/saml/sm_saml_4.png" alt="" >}}{{</image>}}
 
-* **Location** : The location of the assertion consumer service
+   * **Location** : The location of the assertion consumer service
 
     {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
-## Step 3 - Finish SAML configuration in Azure AD
+## Step 3: Finish SAML configuration in Azure AD
 
 1. Go back to Azure setup and **Edit** the Basic SAML Configuration in **Step 1**. 
    
-    This is where we had entered dummy data, we will now enter the correct data for this step:
+   This is where you entered mock data. Let's now enter the correct data for this step.
 
-{{< note >}}
-For the **EntityID** and **Location** fields below you can directly upload the metadata file using the option at the top of the page. However, you will still need to manually add the **Sign on URL**.
-{{< /note >}}
+   {{< note >}}
+   For the `EntityID` and `Location` fields below you can directly upload the metadata file using the option at the top of the page. However, you will still need to manually    add the **Sign on URL**.
+   {{< /note >}}
 
-    * Paste **EntityID** information in the: 
-        * Identifier (Entity ID) field
+    * Paste `EntityID` information in the `Identifier (Entity ID)` field.
   
-    * Paste **Location** link in Reply URL (Assertion Consumer Service URL) field
+    * Paste `Location` link in `Reply URL (Assertion Consumer Service URL)` field.
 
-    * For the **Sign on URL** field, add the following URL: **https://app.redislabs.com/#/login/?idpId=** where you need to add the ID from the Reply URL’s ID. eg. https://app.redislabs.com/#/login/?idpId=0oa5pwatz2JfpfCb91d7
+    * For the `Sign on URL` field, add URL `https://app.redislabs.com/#/login/?idpId=` where you need to add the ID from the Reply URL ID, for example,    `https://app.redislabs.com/#/login/?idpId=0oa5pwatz2JfpfCb91d7`.
 
-    Once done, click **Save**.
+    Select **Save**.
 
-    {{<image filename="images/rc/saml/ad_saml_23.png" alt="" >}}{{</image>}}
+      {{<image filename="images/rc/saml/ad_saml_23.png" alt="" >}}{{</image>}}
 
-2. Go to **Step 2 - Attributes & Claims** and select **Edit**.
+1. Go to step 2, **Attributes & Claims** and select **Edit**.
 
     {{<image filename="images/rc/saml/ad_saml_24.png" alt="" >}}{{</image>}}
 
-3. Configure the following attributes and claims:
+1. Configure these attributes and claims:
 
     * Modify Unique User Identifier (Name ID) to **user.mail**
   
@@ -141,11 +136,11 @@ For the **EntityID** and **Location** fields below you can directly upload the m
         * **FirstName** : user.givenname
         * **LastName** : user.surname
         * **redisAccountMapping** : "98072=owner"
-        * -> Redis Cloud account IDs and user roles pairs. The key-value pair consists of the **lower-cased role name** (owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
+        * Redis Cloud account IDs and user roles pairs. The key-value pair consists of the lowercase role name (owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
-    {{<image filename="images/rc/saml/ad_saml_14.png" alt="" >}}{{</image>}}
+          {{<image filename="images/rc/saml/ad_saml_14.png" alt="" >}}{{</image>}}
 
-4. In order to add a user to the application, select **User and Groups > Add user/group**.
+4. To add a user to the application, select **User and Groups > Add user/group**.
 
     {{<image filename="images/rc/saml/ad_saml_15.png" alt="" >}}{{</image>}}
 
@@ -153,29 +148,29 @@ For the **EntityID** and **Location** fields below you can directly upload the m
 
     {{<image filename="images/rc/saml/ad_saml_16.png" alt="" >}}{{</image>}}
 
-## Step 4 - Return to Redis Cloud SM
+## Step 4: Return to Redis Cloud SM
 
 1. Return to Redis Cloud SM and select **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
-2. A popup will appear, explaining that in order to test the SAML connection, that we need to login with credentials of a user defined in Azure AD.
+1. A popup will appear, explaining that in order to test the SAML connection, that we need to login with credentials of a user defined in Azure AD.
 
     {{<image filename="images/rc/saml/sm_saml_9.png" alt="" >}}{{</image>}}
 
-3. The Microsoft AD login screen will appear. Enter the credentials and click **Sign In**.
+1. The Microsoft AD login screen will appear. Enter the credentials and click **Sign In**.
 
     {{<image filename="images/rc/saml/ad_saml_19.png" alt="" >}}{{</image>}}
 
-4. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to login to SM going forward, you click on the **Sign in with SSO** button.
+1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to login to SM going forward, you click on the **Sign in with SSO** button.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
-5. Enter your SAML email and click **Login**.
+1. Enter your SAML email and click **Login**.
 
     {{<image filename="images/rc/saml/ad_saml_21.png" alt="" >}}{{</image>}}
 
-6. **Congratulations!!!** You have successfully configured SAML as an identification provider
+   You have successfully configured SAML as an identification provider.
 
     {{<image filename="images/rc/saml/ad_saml_22.png" alt="" >}}{{</image>}}
 
