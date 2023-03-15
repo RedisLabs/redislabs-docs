@@ -78,7 +78,6 @@ If you require a different name, you must grant the SCC to the project
 namespace.
 {{< /note >}}
 
-
 ## Create Redis Enterprise custom resources
 
 The **Installed Operators**->**Operator details** page shows the provided APIs: **RedisEnterpriseCluster** and **RedisEnterpriseDatabase**. You can select **Create instance** to create custom resources using the OperatorHub interface.
