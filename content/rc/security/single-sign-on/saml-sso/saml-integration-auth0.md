@@ -35,7 +35,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
     {
        "FirstName": "Test",
        "LastName": "User",
-       "redisAccountMapping": "98072=owner"
+       "redisAccountMapping": "YOUR_REDIS_CLOUD_ID=owner"
     }
     ```
 
