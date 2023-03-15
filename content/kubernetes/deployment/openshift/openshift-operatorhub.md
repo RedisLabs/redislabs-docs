@@ -22,7 +22,7 @@ You can deploy Redis Enterprise for Kubernetes from the Red Hat OpenShift CLI. Y
 
 ## Install the Redis Enterprise operator
 
-{{<warning>}} If using version 6.2.18-41 or earlier, [Install the security context constraint](https://docs.redis.com/latest/kubernetes/deployment/openshift/openshift-operatorhub/#install-security-context-constraint) before installing the operator. {{</warning>}}
+{{<warning>}} If using version 6.2.18-41 or earlier, [Install the security context constraint](#install-security-context-constraint) before installing the operator. {{</warning>}}
 
 1. Select **Operators > OperatorHub**.
 

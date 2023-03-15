@@ -50,7 +50,7 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
 
 1. Deploy the OpenShift operator bundle.
 
-   {{<note>}} If you are using version 6.2.18-41 or earlier, you must [apply the security context constraint]({{<relref "/kubernetes/deployment/openshift/openshift-cli#install-the-security-context-constraint">}}) before the operator bundle. {{</note>}}
+   {{<note>}} If you are using version 6.2.18-41 or earlier, you must [apply the security context constraint](#install-the-security-context-constraint) before the operator bundle. {{</note>}}
     
     ```sh
     oc apply -f openshift.bundle.yaml
