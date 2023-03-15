@@ -15,42 +15,39 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
 ## Step 1: Set up your demo identity provider (IdP)
 
-### Create the OKTA SAML integration application
+To create the OKTA SAML integration application:
 
-1. Log in to the OKTA admin console.
-
-* Click **Applications > Create App Integration**.
+1. Log in to the OKTA admin console. Select **Applications > Create App Integration**.
 
   {{<image filename="images/rc/saml/okta_saml_app_int_1.png" alt="" >}}{{</image>}}
 
-2. In the following screen, select **SAML 2.0** and click **Next**.
+1. In thid screen, select **SAML 2.0** and then select **Next**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_2.png" alt="" >}}{{</image>}}
 
-3. Enter the following fields for the SAML application "General Settings" section:
+1. Complete these fields for the SAML application **General Settings** section:
 
-    * App name : **Redis Cloud**
+    * **App name**: **Redis Cloud**
 
-    * App logo : Upload a [Redis icon](https://saml-integration-logo.s3.amazonaws.com/redis-cube-red_white-rgb.png)
+    * **App logo**: Upload a [Redis icon](https://saml-integration-logo.s3.amazonaws.com/redis-cube-red_white-rgb.png)
 
     Click **Next**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_3.png" alt="" >}}{{</image>}}
 
-4. In the **Configure SAML** tab, enter the following data under the **General** section :
+1. In the **Configure SAML** tab, enter the following data under the **General** section:
 
-    * Single sign on URL : **http://www.fake.com** -> This is a temporary fake url we will modify later
-    * Audience URI (SP Entity ID) : **http://www.fake.com** -> This is a temporary fake url we will modify later
+    * **Single sign on URL**: `http://www.fake.com` - This is a temporary fake URL that you will modify later.
+    * **Audience URI (SP Entity ID)**: `http://www.fake.com` - This is a temporary fake URL that you will modify later.
   
     {{< note >}}
-Only fill in the **Default RelayState** field if you need your SAML flow to be IdP initiated.
+    Complete the **Default RelayState** field only if you need your SAML flow to be IdP initiated.
     {{< /note >}}
 
-    * Default RelayState : **https://app.redislabs.com/#/login/?idpId=XXXXXX** -> We will need to complete this url with the idpId later. 
-  
-    * Name ID format : **Unspecified**
-    * Application username : **Okta username**
-    * Update application username on : **Create and update**
+    * **Default RelayState**: `https://app.redislabs.com/#/login/?idpId=XXXXXX` - You will need to complete this URL with the `idpId` later. 
+    * **Name ID forma**: `Unspecified`
+    * **Application username**: `Okta username`
+    * **Update application username on**: `Create and update`
 
     {{<image filename="images/rc/saml/okta_saml_app_int_4.png" alt="" >}}{{</image>}}
 
@@ -81,11 +78,11 @@ Only fill in the **Default RelayState** field if you need your SAML flow to be I
 
     Click **Next**.
 
-5. The last step is an optional feedback step for Okta. Select **I'm an Okta customer adding an internal app** and click **Finish**.
+1. The last step is an optional feedback step for Okta. Select **I'm an Okta customer adding an internal app** and click **Finish**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_6.png" alt="" >}}{{</image>}}
 
-6. Next, scroll down the page of your newly created app integration and click **View Setup Instructions**. This will open a new browser window and will give us the information needed to configure the IdP in Redis Cloud.
+1. Next, scroll down the page of your newly created app integration and click **View Setup Instructions**. This will open a new browser window and will give us the information needed to configure the IdP in Redis Cloud.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_7.png" alt="" >}}{{</image>}}
 
@@ -99,42 +96,42 @@ Only fill in the **Default RelayState** field if you need your SAML flow to be I
 
    Once you have the information saved, you can close the window.
 
-### Modify the application user profile
+To modify the application user profile:
 
-1. Click on "Directory" > "Profile Editor" in the left hand menu, and choose **Redis Cloud User**.
+1. Go to **Directory > "Profile Editor** in the left-hand menu, and select **Redis Cloud User**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_9.png" alt="" >}}{{</image>}}
 
-2. We need to **add the custom attribute** to our user profile that will specify what Redis Cloud role the user has and on what SM account. Click **Add Attribute**.
+1. Add the custom attribute to your user profile to specify which Redis Cloud role the user has and on which SM account. Select **Add Attribute**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_10.png" alt="" >}}{{</image>}}
 
-3. Fill in the following information for the new custom attribute.
+1. Add this information for the new custom attribute.
 
-    * Data type : **string array**
-    * Display name : **redisAccountMapping**
-    * Variable name : **redisAccountMapping**
-    * Description : **redisAccountMapping**
-    * Attribute required: **Yes**
-    * Group priority : **Combine values across groups**
+    * **Data type**: `string array`
+    * **Display name**: `redisAccountMapping`
+    * **Variable name**: `redisAccountMapping`
+    * **Description**: `redisAccountMapping`
+    * **Attribute required**: `Yes`
+    * **Group priority**: `Combine values across groups`
 
     {{<image filename="images/rc/saml/okta_saml_app_int_11.png" alt="" >}}{{</image>}}
 
-4. Once the attribute has been added, it will appear in the list of attributes for the profile.
+1. Once you add the attribute, it will appear in the list of attributes for the profile.
 
     {{<image filename="images/rc/saml/okta_saml_9.png" alt="" >}}{{</image>}}
 
-## <a name="createtestuser">Step 2</a> - Create a group and assign the application
+## Step 2: Create a group and assign the application
 
-Now that our SAML IdP is configured, we need to create an OKTA group and assign the "Redis Cloud" application.
+Now that your SAML IdP is configured, you need to create an OKTA group and assign the Redis Cloud application.
 
 ### Create the group
 
-1. Click on **Directory > Groups** in the left hand menu, and select **Add group**.
+1. In the left-hand menu, select on **Directory > Groups**, then select **Add group**.
 
     {{<image filename="images/rc/saml/okta_saml_group_1.png" alt="" >}}{{</image>}}
 
-2. Fill in the following information:
+1. Complete this information:
  
     * **Name**
     * **Description**
@@ -143,38 +140,37 @@ Now that our SAML IdP is configured, we need to create an OKTA group and assign 
 
     {{<image filename="images/rc/saml/okta_saml_group_3.png" alt="" >}}{{</image>}}
 
-### Assign your users to the group
+### Assign users to the group
 
-1. Click on the group and then select **Assign people**.
+1. Select the group and then select **Assign people**.
 
     {{<image filename="images/rc/saml/okta_saml_group_4.png" alt="" >}}{{</image>}}
 
-2. For each user you wish to add to the group, highlight the user in the table and select **+**. You can also select **Add all** to add all users. Once you have added all the users to your group, click **Save**.
+1. For each user you wish to add to the group, highlight the user in the table and select **+**. You can also select **Add all** to add all users. Once you have added all the users to your group, select **Save**.
 
     {{<image filename="images/rc/saml/okta_saml_group_5.png" alt="" >}}{{</image>}}
 
-
 ### Assign the application to the group
 
-Now that your group is populated with its users, it is time to assign the SAML integration application to your group. From the menu "Applications" -> "Applications" -> "Redis Cloud" :
+Now that your group is populated with its users, it is time to assign the SAML integration application to your group. From **Applications > Applications > Redis Cloud**:
 
-1. Click on the **Assign to groups** menu item.
+1. Select **Assign to groups** menu item.
 
     {{<image filename="images/rc/saml/okta_saml_group_6.png" alt="" >}}{{</image>}}
 
-2. In the "Redis Cloud User Group" click on the "Assign" link.
+1. In the "Redis Cloud User Group" click on the "Assign" link.
 
     {{<image filename="images/rc/saml/okta_saml_group_7.png" alt="" >}}{{</image>}}
 
-3. You will now define the redis account mapping string default for this group and click **"Save and go back"**. The key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}). Click **"Done"**.
+1. You will now define the redis account mapping string default for this group and click **"Save and go back"**. The key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}). Click **"Done"**.
 
     {{<image filename="images/rc/saml/okta_saml_group_8.png" alt="" >}}{{</image>}}
 
-4. The mapping field has now been defined as a default for each member of the group.
+1. The mapping field has now been defined as a default for each member of the group.
 
     {{<image filename="images/rc/saml/okta_saml_group_9.png" alt="" >}}{{</image>}}
 
-### Editing the mapping field for the group
+### Edit the mapping field for the group
 
 To modify the Redis mapping field, select the pencil icon of the Redis Cloud group in the "Redis Cloud" application screen.
 
@@ -184,7 +180,7 @@ You can modify the mapping field for the whole group on the edit screen that app
 
 {{<image filename="images/rc/saml/okta_saml_group_11.png" alt="" >}}{{</image>}}
 
-### Editing the mapping field for a specific user
+### Edit the mapping field for a specific user
 
 To override the Redis mapping field at an individual user level, select the **People** menu, and then on the pencil icon of the person you wish to modify the field for.
 
@@ -204,7 +200,7 @@ Select the pencil icon of the user to modify the Redis mapping field on the scre
 
 {{<image filename="images/rc/saml/okta_saml_group_16.png" alt="" >}}{{</image>}}
 
-## Step 3 - Configuring SAML support in Redis Cloud
+## Step 3: Configure SAML support in Redis Cloud
 
 Now that we have a test IdP server ready and our user group, we need to configure support for SAML in Redis Cloud.
 
@@ -226,11 +222,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_2.png" alt="" >}}{{</image>}}
 
-2. Select **Enable** and wait a few seconds for the status to change. You will then be able to **Download** the service provider (SP) metadata. Save the file to your local hard disk.
+1. Select **Enable** and wait a few seconds for the status to change. You will then be able to **Download** the service provider (SP) metadata. Save the file to your local hard disk.
 
     {{<image filename="images/rc/saml/sm_saml_3.png" alt="" >}}{{</image>}}
 
-3. Open the file in any text editor. Save the following text from the metadata:
+1. Open the file in any text editor. Save the following text from the metadata:
 
     * **EntityID** : The unique name of the service provider (SP)
 
@@ -240,11 +236,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
-4. Return to OKTA, select **Applications > Redis Cloud > General** and select **Edit**.
+1. Return to OKTA, select **Applications > Redis Cloud > General** and select **Edit**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_12.png" alt="" >}}{{</image>}}
 
-5. Then, navigate to **Configure SAML** (step 2) and update the following information:
+1. Then, navigate to **Configure SAML** (step 2) and update the following information:
 
     * SAML Settings General
 
@@ -262,11 +258,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
-2. A popup will appear, explaining that in order to test the SAML connection, that we need to login with OKTA credentials of a user defined in the Redis Cloud group. This is a user who is part of the group that we assigned the Redis Cloud application to.
+1. A popup will appear, explaining that in order to test the SAML connection, that we need to login with OKTA credentials of a user defined in the Redis Cloud group. This is a user who is part of the group that we assigned the Redis Cloud application to.
 
     {{<image filename="images/rc/saml/sm_saml_9.png" alt="" >}}{{</image>}}
 
-3. The OKTA login screen will appear. Enter the credentials and click **Sign In**.
+1. The OKTA login screen will appear. Enter the credentials and click **Sign In**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_14.png" alt="" >}}{{</image>}}
 
@@ -274,17 +270,17 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
-5. Enter your SAML email and click **Login**.
+1. Enter your SAML email and click **Login**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_15.png" alt="" >}}{{</image>}}
 
-6. If there is only one user defined in the SM account, you will get the following popup window. Click **Confirm** to convert the local user to a SAML user. 
+1. If there is only one user defined in the SM account, you will get the following popup window. Click **Confirm** to convert the local user to a SAML user. 
 
     * The user will be converted into a SAML user. It is a good practice to have one more local user other than a SAML user.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_16.png" alt="" >}}{{</image>}}
 
-7. **Congratulations!!!** You have successfully configured SAML as an identity provider.
+1. You have successfully configured SAML as an identity provider.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_17.png" alt="" >}}{{</image>}}
 
