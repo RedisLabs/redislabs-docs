@@ -21,7 +21,7 @@ To create the OKTA SAML integration application:
 
   {{<image filename="images/rc/saml/okta_saml_app_int_1.png" alt="" >}}{{</image>}}
 
-1. In thid screen, select **SAML 2.0** and then select **Next**.
+1. In this screen, select **SAML 2.0** and then select **Next**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_2.png" alt="" >}}{{</image>}}
 
