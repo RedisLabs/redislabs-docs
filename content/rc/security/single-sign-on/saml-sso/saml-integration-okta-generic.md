@@ -11,7 +11,7 @@ This guide shows how to configure [Okta](https://help.okta.com/en-us/Content/Top
 
 Learn how to use the generic application template. You can also refer to the [Org2Org]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-org2org">}}) application template.
 
-To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
+To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
 
 ## Step 1: Set up your demo identity provider (IdP)
 
@@ -54,7 +54,6 @@ To create the OKTA SAML integration application:
     Next, add **Attribute Statements** which are needed for the configuration:
 
     First Attribute
-
     * Name : **redisAccountMapping**
     * Name Format : **Basic**
     * Value : **appuser.redisAccountMapping**
