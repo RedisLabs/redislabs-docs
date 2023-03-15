@@ -21,8 +21,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
 * Click **Applications > Create App Integration**.
 
-
-    {{<image filename="images/rc/saml/okta_saml_app_int_1.png" alt="" >}}{{</image>}}
+  {{<image filename="images/rc/saml/okta_saml_app_int_1.png" alt="" >}}{{</image>}}
 
 2. In the following screen, select **SAML 2.0** and click **Next**.
 
