@@ -46,6 +46,28 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
     ```bash
     git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
     ```
+    
+1. Apply the file `scc.yaml` file. 
+
+   This file defines security context constraints for the cluster in your project. Do **not** alter this file. For more information about Security Context Constraints (SCCs), see [Managing Security Context Constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) (Red Hat). 
+
+    ```bash
+    oc apply -f openshift/scc.yaml
+    ```
+
+    You should receive the following response:
+
+    ```sh
+    securitycontextconstraints.security.openshift.io "redis-enterprise-scc" configured
+    ```
+
+1. Provide the operator permissions for the pods.
+
+    ```sh
+    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec>
+    ```
+
+    You can check the name of your project using the `oc project` command. To replace the project name, use `oc edit project myproject`. Replace `rec` with the name of your Redis Enterprise cluster, if different.
 
 1. Deploy the OpenShift operator bundle.
 
@@ -72,28 +94,6 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
     ```
 
 ## Create a Redis Enterprise cluster custom resource
-
-1. Apply the file `scc.yaml` file. 
-
-   This file defines security context constraints for the cluster in your project. Do **not** alter this file. For more information about Security Context Constraints (SCCs), see [Managing Security Context Constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) (Red Hat). 
-
-    ```bash
-    oc apply -f openshift/scc.yaml
-    ```
-
-    You should receive the following response:
-
-    ```sh
-    securitycontextconstraints.security.openshift.io "redis-enterprise-scc" configured
-    ```
-
-1. Provide the operator permissions for the pods.
-
-    ```sh
-    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec>
-    ```
-
-    You can check the name of your project using the `oc project` command. To replace the project name, use `oc edit project myproject`. Replace `rec` with the name of your Redis Enterprise cluster, if different.
 
 1. Apply the `RedisEnterpriseCluster` resource file ([rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml)).
 
