@@ -13,7 +13,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<r
 
 ## Step 1: Set up your identity provider (IdP)
 
-### Create the Azure AD SAML Toolkit integration application
+To create the Azure AD SAML Toolkit integration application:
 
 1. Sign in to Microsoft Azure account.
 
@@ -76,11 +76,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
 1. Fill in the information you saved previously in the **setup** form. This includes :
 
-   * **Issuer (IdP Entity ID)** -> Azure AD Identifier
-   * **IdP server URL** -> Login URL
-   * **Assertion signing certificate** - drag and drop the certificate file you downloaded to disk in the form textarea
+   * **Issuer (IdP Entity ID)**: Azure AD Identifier
+   * **IdP server URL**: Login URL
+   * **Assertion signing certificate**: Drag and drop the certificate file you downloaded to disk in the form textarea
 
-   You will also have to add :
+   Also add:
 
    * **Email domain binding** - The domain used in your company's email addresses
 
