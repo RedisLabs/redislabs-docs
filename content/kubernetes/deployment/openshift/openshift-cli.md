@@ -64,7 +64,10 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
 1. Provide the operator permissions for the pods.
 
     ```sh
-    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec>
+    oc adm policy add-scc-to-user redis-enterprise-scc \
+    system:serviceaccount:<my-project>:redis-enterprise-operator
+    oc adm policy add-scc-to-user redis-enterprise-scc \
+    system:serviceaccount:<my-project>:<rec>
     ```
 
     You can check the name of your project using the `oc project` command. To replace the project name, use `oc edit project myproject`. Replace `rec` with the name of your Redis Enterprise cluster, if different.
