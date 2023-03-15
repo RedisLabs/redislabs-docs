@@ -50,16 +50,13 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
 
 1. Deploy the OpenShift operator bundle.
 
-{{<warning>}} If you are using version 6.2.18-41 or earlier, you must apply the SCC ([step 1 of the following section](https://docs.redis.com/latest/kubernetes/deployment/openshift/openshift-cli/#create-a-redis-enterprise-cluster-custom-resource)()) before the operator bundle. {{</warning>}}
-
+   {{<note>}} If you are using version 6.2.18-41 or earlier, you must apply the SCC ([step 1 of the following section](https://docs.redis.com/latest/kubernetes/deployment/openshift/openshift-cli/#create-a-redis-enterprise-cluster-custom-resource)) before the operator bundle. {{</note>}}
     
     ```sh
     oc apply -f openshift.bundle.yaml
     ```
 
-    {{< warning >}}
-  Changes to the `openshift.bundle.yaml` file can cause unexpected results.
-    {{< /warning >}}
+    {{< warning >}}Changes to the `openshift.bundle.yaml` file can cause unexpected results.{{< /warning >}}
 
 1. Verify that your `redis-enterprise-operator` deployment is running.
 
