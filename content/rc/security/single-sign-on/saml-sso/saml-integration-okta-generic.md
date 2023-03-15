@@ -13,11 +13,11 @@ This guide shows how to use the Generic application template; you can also use t
 
 To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
 
-## Step 1 - Setup your demo identity provider (IdP)
+## Step 1: Set up your demo identity provider (IdP)
 
 ### Create the OKTA SAML integration application
 
-1. Log into the OKTA admin console.
+1. Log in to the OKTA admin console.
 
 * Click **Applications > Create App Integration**.
 
