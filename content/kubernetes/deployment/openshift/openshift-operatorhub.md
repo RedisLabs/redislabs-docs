@@ -31,7 +31,7 @@ You can deploy Redis Enterprise for Kubernetes from the Red Hat OpenShift CLI. Y
 
 4. Update the **channel** with the version you're installing.
 
-  By default, the image is pulled from RedHat's registry. 
+    By default, the image is pulled from RedHat's registry. 
 
     For more information about specific versions, see the [release notes]({{<relref "/kubernetes/release-notes/">}}).
 
