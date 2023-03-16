@@ -106,7 +106,8 @@ We recommend running Docker as a non-root user. To allow this, follow these step
   cd debezium-server/lib
   wget https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar
   ```
-  - Uncomment the following lines in the `application.properties` file and set the value for the property `quarkus.log.file.path`:
+
+ - Uncomment the following lines in the `application.properties` file and set the value for the property `quarkus.log.file.path`:
 
   ```properties
   quarkus.log.file.enable=true
@@ -121,7 +122,6 @@ We recommend running Docker as a non-root user. To allow this, follow these step
   # The maximum number of backups to keep.
   quarkus.log.file.rotation.max-backup-index=3
   ```
-
 
 - Start Debezium Server from `debezium-server` directory:
   ```bash

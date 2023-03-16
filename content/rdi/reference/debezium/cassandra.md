@@ -54,6 +54,16 @@ debezium.transforms.AddPrefix.type=org.apache.kafka.connect.transforms.RegexRout
 debezium.transforms.AddPrefix.regex=.*
 debezium.transforms.AddPrefix.replacement=data:$0
 
+
+# Logging
+# Uncomment the following lines if running Debezium Server as a Java standalone process (non-containerized).
+#quarkus.log.file.enable=true
+#quarkus.log.file.path=<LOG_FILE_PATH>
+#quarkus.log.file.rotation.max-file-size=100M
+#quarkus.log.file.rotation.rotate-on-boot=true
+#quarkus.log.file.rotation.file-suffix=.yyyy-MM-dd.gz
+#quarkus.log.file.rotation.max-backup-index=3
+
 # The default minimum log level for every log category, change only quarkus.log.level when needed.
 quarkus.log.min-level=TRACE
 # The default log level for every log category.
