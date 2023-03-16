@@ -215,6 +215,7 @@ WHERE inv.total > 8000
   ```properties
   debezium.source.message.key.columns=<databaseName>.<tableName1>:<columnName1>,<columnName2>;<databaseName>:<tableName>:<columnName1>,<columnName2>
   ```
+
 > Note: In case the property `column.include.list` is defined in your `application.properties` file, make sure it includes all the column names that are specified in the property `message.key.columns`.
 
 ### Fully-qualified table name
