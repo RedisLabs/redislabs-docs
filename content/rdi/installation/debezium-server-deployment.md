@@ -19,7 +19,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
 - Run:
 
   ```bash
-  docker run -d --rm --name debezium -v $PWD/debezium:/debezium/conf debezium/server:{{ site.debezium_server_version }}
+  docker run -d --name debezium --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:{{ site.debezium_server_version }}
   ```
 
 - Check the Debezium Server log:
@@ -33,7 +33,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
 The UTC timezone is used in the Debezium Server container by default. In order to use another timezone, specify it by setting the `TZ` environment variable when running the container, for example:
 
 ```bash
-docker run -d --rm --name debezium -e TZ=Europe/London -v $PWD/debezium:/debezium/conf debezium/server:{{ site.debezium_server_version }}
+docker run -d --name debezium -e TZ=Europe/London --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:{{ site.debezium_server_version }}
 ```
 
 ### SELinux
@@ -65,7 +65,7 @@ As result, it will fail with an error. You should follow these steps to add the 
 - Bind mount the driver into the container:
 
   ```bash
-  docker run -d --rm --name debezium -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar -v $PWD/debezium:/debezium/conf debezium/server:{{ site.debezium_server_version }}
+  docker run -d --name debezium --restart always -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:{{ site.debezium_server_version }}
   ```
 
 ### Running Docker as a non-root user
@@ -105,6 +105,22 @@ We recommend running Docker as a non-root user. To allow this, follow these step
   ```bash
   cd debezium-server/lib
   wget https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar
+  ```
+
+ - Uncomment the following lines in the `application.properties` file and set the value for the property `quarkus.log.file.path`:
+
+  ```properties
+  quarkus.log.file.enable=true
+  # The full path to the Debezium Server log files.
+  quarkus.log.file.path=<LOG_FILE_PATH>
+  # The maximum file size of the log file after which a rotation is executed.
+  quarkus.log.file.rotation.max-file-size=100M
+  # Indicates whether to rotate log files on server initialization.
+  quarkus.log.file.rotation.rotate-on-boot=true
+  # File handler rotation file suffix. When used, the file will be rotated based on its suffix.
+  quarkus.log.file.rotation.file-suffix=.yyyy-MM-dd.gz
+  # The maximum number of backups to keep.
+  quarkus.log.file.rotation.max-backup-index=3
   ```
 
 - Start Debezium Server from `debezium-server` directory:

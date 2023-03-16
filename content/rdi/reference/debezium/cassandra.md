@@ -54,6 +54,7 @@ debezium.transforms.AddPrefix.type=org.apache.kafka.connect.transforms.RegexRout
 debezium.transforms.AddPrefix.regex=.*
 debezium.transforms.AddPrefix.replacement=data:$0
 
+
 # Logging
 # Uncomment the following lines if running Debezium Server as a Java standalone process (non-containerized).
 #quarkus.log.file.enable=true
