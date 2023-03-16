@@ -21,15 +21,9 @@ You can deploy Redis Enterprise for Kubernetes from the Red Hat OpenShift CLI. Y
 
 ## Install the Redis Enterprise operator
 
-
-
 1. Select **Operators > OperatorHub**.
 
 2. Search for _Redis Enterprise_ in the search dialog and select the **Redis Enterprise Operator provided by Redis** marked as **Certified**.
-
-  {{<note>}}
-  Custom catalogs are not supported.
-  {{</note>}}
 
 3. On the **Install Operator** page, specify the namespace for the operator.
 
