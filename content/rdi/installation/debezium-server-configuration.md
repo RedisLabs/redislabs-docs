@@ -65,6 +65,7 @@ quarkus.log.file.rotation.max-file-size=5M
 quarkus.log.file.rotation.file-suffix=.yyyy-MM-dd.gz
 quarkus.log.file.rotation.max-backup-index=3
 ```
+
 With this configuration the log file, `debezium.log`, will be created in the directoy `/home/debezium-server/logs/`.
 When the log file size reaches 5M it will be renamed to `debezium.log.2023-01-22.1.gz`, and a new log file, `debezium.log`, will be created.
 if the size of the log file reaches 5M and there are already 3 backup log files, the first backup file, `debezium.log.2023-01-22.1.gz`, will be deleted.
