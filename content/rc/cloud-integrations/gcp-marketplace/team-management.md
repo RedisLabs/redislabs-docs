@@ -15,8 +15,8 @@ This article only applies to the [Redis Enterprise Cloud](https://console.cloud.
 If you subscribed to Redis Cloud through Google Cloud Marketplace using the [Redis Enterprise Cloud](https://console.cloud.google.com/marketplace/product/endpoints/gcp.redisenterprise.com) listing, use the IAM section of the Google Cloud console to manage your team.
 
 To grant Redis Cloud access to a Google Cloud user, select **Add** to add a member, insert the email address, and then assign the following roles to the user:
-    - To designate a viewer, assign serviceusage.serviceUsageViewer & redisenterprisecloud.viewer
-    - To designate an owner, assign serviceusage.serviceUsageViewer & redisenterprisecloud.admin
+- To designate a viewer, assign `serviceusage.serviceUsageViewer` & `redisenterprisecloud.viewer`
+- To designate an owner, assign `serviceusage.serviceUsageViewer` & `redisenterprisecloud.admin`
 
 
 If these roles are not available, you can add them to your project.
