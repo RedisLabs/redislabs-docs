@@ -180,7 +180,6 @@ If your users will be part of different Groups, you can create a Claim Condition
 
 {{<image filename="images/rc/saml/ad_saml_20.png" alt="" >}}{{</image>}}
 
-
 ## IdP initiated SSO
 
 If you correctly set the up the **Sign on URL**, the SAML application will appear by default on a user’s **My Apps** panel.
