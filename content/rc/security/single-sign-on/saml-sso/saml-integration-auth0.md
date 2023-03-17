@@ -82,7 +82,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     * We suggest that you update the default logo of the application to the [Redis icon](https://saml-integration-logo.s3.amazonaws.com/redis-cube-red_white-rgb.png) for better visibility. 
 
-9. From the newly created application, go to **Addons** and enable **SAML 2 WEB APP**
+1. From the newly created application, go to **Addons** and enable **SAML 2 WEB APP**.
 
     {{<image filename="images/rc/saml/auth0_saml_8.png" alt="" >}}{{</image>}}
 
