@@ -19,11 +19,11 @@ To create the OKTA SAML integration application:
 
 1. Log in to the OKTA admin console. Select **Applications > Create App Integration**.
 
-  {{<image filename="images/rc/saml/okta_saml_app_int_1.png" alt="" >}}{{</image>}}
+   {{<image filename="images/rc/saml/okta_saml_app_int_1.png" alt="" >}}{{</image>}}
 
 1. In this screen, select **SAML 2.0** and then select **Next**.
 
-    {{<image filename="images/rc/saml/okta_saml_app_int_2.png" alt="" >}}{{</image>}}
+   {{<image filename="images/rc/saml/okta_saml_app_int_2.png" alt="" >}}{{</image>}}
 
 1. Complete these fields for the SAML application **General Settings** section:
 
