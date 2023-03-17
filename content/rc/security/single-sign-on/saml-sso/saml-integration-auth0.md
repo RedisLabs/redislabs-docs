@@ -121,7 +121,7 @@ To activate SAML, you need to have a local user (or social sign-on user) with th
 
     Once you click **Enable**, wait a few seconds for the status to change.
 
-2. You will then be able to download the service provider (SP) metadata. Save the file to your local hard disk.
+1. Download the service provider (SP) metadata. Save the file to your local hard disk.
 
     {{<image filename="images/rc/saml/auth0_saml_15.png" alt="" >}}{{</image>}}
 
