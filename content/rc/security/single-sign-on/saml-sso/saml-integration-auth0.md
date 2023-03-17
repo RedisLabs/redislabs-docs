@@ -17,7 +17,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 1. Sign in to your Auth0 account and navigate to **User Management > Users**.
    * Select the SAML owner.
-   * Verify the details
+   * Verify the details.
 
     SAML assertion requires first and last name, which are not available in the default user profile. 
 
@@ -25,7 +25,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     {{<image filename="images/rc/saml/auth0_saml_1.png" alt="" >}}{{</image>}}
 
-1. Add `user_metadata` to fulfill the SAML assertion then select **Save**. 
+1. Add `user_metadata` to fulfill the SAML assertion, then select **Save**. 
    
    {{<image filename="images/rc/saml/auth0_saml_2.png" alt="" >}}{{</image>}}
 
@@ -43,9 +43,9 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     {{<image filename="images/rc/saml/auth0_saml_3.png" alt="" >}}{{</image>}}
 
-1. Pick a rule template then select **Empty rule**
+1. Pick a rule template then select **Empty rule**.
 
-1. Provide a **name** for the rule and add the following script:
+1. Provide a **name** for the rule and add the following script.
 
     ```
     function mapSamlAttributes(user, context, callback) {
@@ -155,8 +155,7 @@ To activate SAML, you need to have a local user (or social sign-on user) with th
       ]
     }
     ```
-    Scroll down and **Save** the configuration.
-
+    Scroll down and select **Save** to apply the configuration.
 
 ### IdP initiated SSO
 
@@ -165,7 +164,7 @@ To use IdP-initiated SSO with certain identity providers, you also need to set t
 `https://app.redislabs.com/#/login/?idpId=<ID>`
 
 {{< note >}}
-Replace <ID> so it matches the `AssertionConsumerService` Location URL ID (the content after the last forward slash "/"). To learn more about how to configure service provider apps, see your identity provider’s documentation.
+Replace `ID` so it matches the `AssertionConsumerService` Location URL ID (the content after the last forward slash "/"). To learn more about how to configure service provider apps, see your identity provider’s documentation.
 {{</ note >}}
 
 ## Step 4: Return to the Redis Cloud admin console
@@ -174,7 +173,7 @@ Replace <ID> so it matches the `AssertionConsumerService` Location URL ID (the c
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
-   A popup appears, explaining that in order to test the SAML connection, that we need to login with credentials of a user defined in Auth0.
+   A popup appears, explaining that, in order to test the SAML connection, that we need to login with credentials of a user defined in Auth0.
 
     {{<image filename="images/rc/saml/sm_saml_9.png" alt="" >}}{{</image>}}
 
