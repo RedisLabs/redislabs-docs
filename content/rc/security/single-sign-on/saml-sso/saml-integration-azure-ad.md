@@ -78,7 +78,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
    * **Issuer (IdP Entity ID)**: Azure AD Identifier
    * **IdP server URL**: Login URL
-   * **Assertion signing certificate**: Drag and drop the certificate file you downloaded to disk in the form textarea
+   * **Assertion signing certificate**: Drag-and-drop the certificate file you downloaded to disk in the form text area
 
    Also add:
 
@@ -94,11 +94,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
 1. Open the file in any text editor. Save the following text from the metadata:
 
-   * **EntityID** : The unique name of the service provider (SP)
+   * **EntityID**: The unique name of the service provider (SP)
 
     {{<image filename="images/rc/saml/sm_saml_4.png" alt="" >}}{{</image>}}
 
-   * **Location** : The location of the assertion consumer service
+   * **Location**: The location of the assertion consumer service
 
     {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
@@ -130,9 +130,9 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     * Modify Unique User Identifier (Name ID) to **user.mail**
   
-    * Modify Additional Claims to match SAML assertion as follows:
+    * Modify additional claims to match SAML assertion as follows:
   
-        * **Email** : user.mail
+        * **Email**: user.mail
         * **FirstName** : user.givenname
         * **LastName** : user.surname
         * **redisAccountMapping** : "98072=owner"

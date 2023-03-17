@@ -132,13 +132,13 @@ Also, make sure that the user has been assigned to the **Redis Cloud** Applicati
 
 ## Step 5: Activate SAML integration
 
-The final step in our SAML integration with AWS IAM identity Center is to **Activate** the SAML integration. 
+The final step in our SAML integration with AWS IAM identity Center is to activate the SAML integration. 
 
-1. In the Single Sign-On screen, click **Activate**.
+1. In the Single Sign-On screen, select **Activate**.
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_15.png" alt="" >}}{{</image>}}
 
-1. A Logout notification screen is shown, explaining that you will be redirected to AWS IAM Identity Center's login screen.
+  A logout notification screen displays, letting you know that you are redirected to AWS IAM Identity Center's login screen.
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_16.png" alt="" >}}{{</image>}}
 
@@ -146,11 +146,11 @@ The final step in our SAML integration with AWS IAM identity Center is to **Acti
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_18.png" alt="" >}}{{</image>}}
 
-1. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** in order to login to the Redis Cloud admin console.
+1. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** to log in to the Redis Cloud admin console.
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_19.png" alt="" >}}{{</image>}}
 
-1. A message appears stating that your local user will now be converted to a SAML user. Select **Confirm**.
+  A message displays, stating that your local user is now converted to a SAML user. Select **Confirm**.
 
    You have successfully configured AWS IAM Identity Center as an identification provider.
 
