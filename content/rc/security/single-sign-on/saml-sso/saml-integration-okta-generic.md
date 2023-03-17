@@ -93,11 +93,11 @@ To create the OKTA SAML integration application:
 
     {{<image filename="images/rc/saml/okta_saml_app_int_8.png" alt="" >}}{{</image>}}
 
-   Once you have the information saved, you can close the window.
+   Once you save the information, close the window.
 
 To modify the application user profile:
 
-1. Go to **Directory > "Profile Editor** in the left-hand menu, and select **Redis Cloud User**.
+1. Go to **Directory > Profile Editor** in the left-hand menu, and select **Redis Cloud User**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_9.png" alt="" >}}{{</image>}}
 
@@ -151,21 +151,21 @@ Now that your SAML IdP is configured, you need to create an OKTA group and assig
 
 ### Assign the application to the group
 
-Now that your group is populated with its users, it is time to assign the SAML integration application to your group. From **Applications > Applications > Redis Cloud**:
+Now that your group is populated with its users, you can assign the SAML integration application to your group. From **Applications > Applications > Redis Cloud**:
 
 1. Select **Assign to groups** menu item.
 
     {{<image filename="images/rc/saml/okta_saml_group_6.png" alt="" >}}{{</image>}}
 
-1. In the "Redis Cloud User Group" click on the "Assign" link.
+1. In the "Redis Cloud User Group", select the "Assign" link.
 
     {{<image filename="images/rc/saml/okta_saml_group_7.png" alt="" >}}{{</image>}}
 
-1. You will now define the redis account mapping string default for this group and click **"Save and go back"**. The key-value pair consists of the **lower-cased role name** (ie owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}). Click **"Done"**.
+1. Define the Redis account mapping string default for this group and select **"Save and go back"**. The key-value pair consists of the lowercase role name** (owner, member, manager, or viewer) and your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}). Select **"Done"**.
 
     {{<image filename="images/rc/saml/okta_saml_group_8.png" alt="" >}}{{</image>}}
 
-1. The mapping field has now been defined as a default for each member of the group.
+  The mapping field has now been defined as a default for each member of the group.
 
     {{<image filename="images/rc/saml/okta_saml_group_9.png" alt="" >}}{{</image>}}
 
@@ -181,11 +181,11 @@ You can modify the mapping field for the whole group on the edit screen that app
 
 ### Edit the mapping field for a specific user
 
-To override the Redis mapping field at an individual user level, select the **People** menu, and then on the pencil icon of the person you wish to modify the field for.
+To override the Redis mapping field at an individual user level, select the **People** menu, and then the pencil icon of the person whose field you want to modify.
 
 {{<image filename="images/rc/saml/okta_saml_group_15.png" alt="" >}}{{</image>}}
 
-Set the user's "Assignment master" to "Administrator". This will allow us to override the group's policy. Select **Save**.
+Set the user's **Assignment master** to **Administrator**, enabling the group's policy override. Select **Save**.
 
 {{<image filename="images/rc/saml/okta_saml_group_13.png" alt="" >}}{{</image>}}
 
@@ -193,7 +193,7 @@ The user's **Type** is set to **Individual**.
 
 {{<image filename="images/rc/saml/okta_saml_group_14.png" alt="" >}}{{</image>}}
 
-Select the pencil icon of the user to modify the Redis mapping field on the screen that appears.
+On the screen that appears, select the pencil icon of the user to modify the Redis mapping field.
 
 {{<image filename="images/rc/saml/okta_saml_group_15.png" alt="" >}}{{</image>}}
 
@@ -211,7 +211,7 @@ Sign in to your SM account at [https://app.redislabs.com/#/login](https://app.re
 
 To activate SAML, you must have a local user (or social sign-on user) with the **owner** role. If you have the correct permissions, you will see the **Single Sign-On** tab.
 
-1. Fill in the information you saved in [step 6 previously](#step6) in the **setup** form. This includes :
+1. Fill in the information you saved in step 6 in the **setup** form, including:
 
     * **Identity Provider Single Sign-On URL:**
     * **Identity Provider Issuer**
@@ -221,7 +221,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_2.png" alt="" >}}{{</image>}}
 
-1. Select **Enable** and wait a few seconds for the status to change. You will then be able to **Download** the service provider (SP) metadata. Save the file to your local hard disk.
+1. Select **Enable** and wait a few seconds for the status to change. You will then be able to download the service provider (SP) metadata. Save the file to your local hard disk.
 
     {{<image filename="images/rc/saml/sm_saml_3.png" alt="" >}}{{</image>}}
 
