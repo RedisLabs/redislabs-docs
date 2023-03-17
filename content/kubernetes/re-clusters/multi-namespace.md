@@ -136,8 +136,8 @@ If the REC is configured to watch a namespace without setting the role and role 
 2. Apply the files.
 
   ```sh
-  kubectl apply -f operator_role.yaml
-  kubectl apply -f operator_role_binding.yaml 
+  kubectl apply -f operator_cluster_role.yaml
+  kubectl apply -f operator_cluster_role_binding.yaml 
   ```
 
 3. Patch the ConfigMap in the REC namespace (`<rec-namespace>`) to identify the managed namespaces with your label (`<label-name>`).
