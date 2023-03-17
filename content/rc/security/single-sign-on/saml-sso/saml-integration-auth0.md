@@ -137,7 +137,7 @@ To activate SAML, you need to have a local user (or social sign-on user) with th
 
 ## Step 3: Finish SAML configuration in Auth0
 
-1. Go back to the Auth0 SAML application and select **Addons > Settings**:
+1. Return to the Auth0 SAML application and select **Addons > Settings**:
 
     {{<image filename="images/rc/saml/auth0_saml_10.png" alt="" >}}{{</image>}}
 
