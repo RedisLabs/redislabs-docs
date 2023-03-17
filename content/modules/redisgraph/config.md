@@ -8,9 +8,36 @@ toc: "false"
 categories: ["Modules"]
 ---
 
-[Redis Enterprise Software]({{<relref "/rs">}}) lets you manually change any [RedisGraph configuration setting](https://redis.io/docs/stack/graph/configuration/#redisgraph-configuration-parameters) with the [`GRAPH.CONFIG SET`](https://redis.io/commands/graph.config-set) command.
+You cannot use [`GRAPH.CONFIG SET`](https://redis.io/commands/graph.config-set) to configure RedisGraph in [Redis Enterprise Software]({{<relref "/rs">}}) or [Redis Enterprise Cloud]({{<relref "/rc">}}). Instead, use one of the following methods.
 
-[Redis Enterprise Cloud]({{<relref "/rc">}}) does not let you use [`GRAPH.CONFIG SET`](https://redis.io/commands/graph.config-set) to configure RedisGraph. However, if you have a Flexible or Annual [subscription]({{<relref "/rc/subscriptions">}}), you can contact [support](https://redis.com/company/support/) to request a configuration change. You cannot change RedisGraph configuration for Free or Fixed subscriptions.
+For Redis Cloud:
+
+- _Flexible or Annual [subscriptions]({{<relref "/rc/subscriptions">}})_: contact [support](https://redis.com/company/support/) to request a configuration change.
+    
+- _Free or Fixed subscriptions_: you cannot change RedisGraph configuration.
+
+For Redis Enterprise Software, use either:
+
+- [`rladmin tune db`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-db">}}):
+
+    ```sh
+    $ rladmin tune db db:<ID|name> module_name graph \
+        module_config_params "setting-name setting-value"
+    ```
+
+- [Configure module]({{<relref "/rs/references/rest-api/requests/modules/config">}}) REST API request:
+
+    ```sh
+    POST /v1/modules/config/bdb/<ID>
+    {
+      "modules": [
+        {
+          "module_name": "graph",
+          "module_args": "setting-name setting-value"
+        }
+      ]
+    }
+    ```
 
 | Setting | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|

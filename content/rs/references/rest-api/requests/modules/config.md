@@ -62,7 +62,7 @@ Use the module runtime configuration command (if defined) to configure new argum
 | Field | Type | Description |
 |-------|------|-------------|
 | modules | list of JSON objects | List of modules (module_name) and their new configuration settings (module_args) |
-| module_name | string | Module's name |
+| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf` | Module's name |
 | module_args | string | Module command line arguments (pattern does not allow special characters &,<,>,”) |
 
 ### Response {#post-response} 

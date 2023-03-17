@@ -4,6 +4,9 @@ LinkTitle: AWS cloud accounts
 description: Describes how to provision your Redis Enterprise Cloud subscription to use existing cloud provider accounts.
 weight: 40
 alwaysopen: false
+hidden: true
+bannerText: Self-managed AWS accounts are deprecated, so this article has been archived.
+bannerChildren: true
 categories: ["RC"]
 aliases: /rv/how-to/view-edit-cloud-account/
          /rv/how-to/creating-cloud-account/

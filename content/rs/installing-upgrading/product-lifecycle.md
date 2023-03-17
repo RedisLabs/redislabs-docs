@@ -26,27 +26,30 @@ The format is “Major1.Major2.Minor-Build”.
     capabilities to Redis  Enterprise Software. The Major1 and Major2 part of the
     version number are incremented based on the size and scale of the changes in each
     release.
-- The Minor section of the version number represents quality improvements and fixes to
-    existing capabilities. We increment the minor number when many quality improvements
-    are added to the release.
+- The Minor section of the version number represents quality improvements, fixes to
+    existing capabilities, and new capabilities which are typically minor, feature-flagged, or optional. 
 - Build number is incremented with any changes to the product. Build number is
     incremented with each build when any change is made to the binaries.
 
 Redis Enterprise Software typically gets two major releases every year but the product shipping cycles may vary.
+Maintenance releases, typically available on the last minor release of the current major1.major2 release are typically made available on a monthly cadence, although cycles may vary.
 
 ## End-of-life schedule {#endoflife-schedule}
 
-End-of-Life for a given Major release occurs 18 months after the formal release of
-that version.
+Beginning with Redis Enterprise Software release 6.4, end-of-life (EOL) for a given Major release occurs 18 months after the formal release of the subsequent Major. Maintenance will only be provided on the last minor release of the major1.major2 releases.
+This latest update to EOL policy ensures customers will have at least an 18 months lead time to upgrade to a newer release, after it is made available.
+
 
 | Version - Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 6.2 – August 2021                         | August 31, 2023*  |
+| 6.4 – February 2023						| -
+| 6.2 – August 2021                         | August 31, 2024  |
 | 6.0 – May 2020                            | May 31, 2022  |
 | 5.6 – April 2020                          | October 31, 2021  |
 | 5.4 – December 2018                       | December 31, 2020  |
 | 5.2 – June 2018                           | December 31, 2019  |
 
  {{< note >}}
- * On June 28th, 2022, release 6.2 EOL was extended by 6 months; from Feb 28, 2023 to Aug 31, 2023.
+ * EOL of release 6.2 was reset to occur 18 months after the release of version 6.4, in accordance with the updated EOL policy.
+ * EOL of release 6.4 will only be determined after the next major version is released and will be set to occur 18 months after that date.
 {{< /note >}}

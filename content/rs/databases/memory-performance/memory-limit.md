@@ -88,7 +88,7 @@ The admin console provides metrics that can help you evaluate your memory use.
 - Memory usage
 - Memory limit
 
-See [console metrics]({{<relref "/rs/clusters/monitoring/console-metrics-definitions.md">}}) for more detailed information.
+See [console metrics]({{<relref "/rs/references/metrics">}}) for more detailed information.
 
 ## Related info
 

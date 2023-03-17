@@ -2,7 +2,7 @@
 Title: Compatibility with open source Redis commands
 linkTitle: Commands
 description: Open source Redis commands compatible with Redis Enterprise.
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: 

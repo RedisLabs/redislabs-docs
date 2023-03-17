@@ -18,8 +18,6 @@ By default, Redis Enterprise Cloud subscriptions are hosted in cloud vendor acco
 
 To integrate Redis Enterprise Cloud into an existing cloud vendor account, you can:
 
-- Designate an existing AWS subscription as an [AWS cloud account]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/">}}) for your Redis Cloud subscription.
-
 - Subscribe to Redis Enterprise Cloud through [AWS Marketplace]({{<relref "/rc/cloud-integrations/aws-marketplace/">}}).
 
 - Subscribe to Redis Enterprise Cloud through [GCP Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}).
