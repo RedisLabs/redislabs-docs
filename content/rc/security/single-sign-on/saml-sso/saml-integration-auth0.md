@@ -184,7 +184,7 @@ Replace <ID> so it matches the `AssertionConsumerService` Location URL ID (the c
 
 1. If the test has succeeded, you will see the the admin console screen. Your local account is now considered a SAML account. To log in to the admin console from now on, click on **Sign in with SSO**.
 
-1. Enter your SAML email and click **Login**. 
+1. Enter your SAML email and select **Login**. 
 
 You have successfully configured SAML as an identification provider.
 
