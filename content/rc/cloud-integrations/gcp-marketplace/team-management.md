@@ -9,9 +9,7 @@ aliases:
 ---
 
 {{<banner-article bannerColor="#fff8dc">}}
-This article only applies to the [Redis Enterprise Cloud](https://console.cloud.google.com/marketplace/product/endpoints/gcp.redisenterprise.com) marketplace listing. For the [Redis Enterprise Cloud Flexible - Pay as You Go](https://console.cloud.google.com/marketplace/product/redis-marketplace-isaas/redis-enterprise-cloud-flexible-plan) listing, manage your team through the [Access Management]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}) screen.
-
-If you would like to subscribe to Redis Cloud through Google Cloud Marketplace, please use the [Redis Enterprise Cloud Flexible - Pay as You Go](https://console.cloud.google.com/marketplace/product/redis-marketplace-isaas/redis-enterprise-cloud-flexible-plan) listing. See [Flexible subscriptions with Google Cloud Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}) for more info.
+This article only applies to the [Redis Enterprise Cloud](https://console.cloud.google.com/marketplace/product/endpoints/gcp.redisenterprise.com) marketplace listing. For the [Redis Enterprise Cloud Flexible - Pay as You Go](https://console.cloud.google.com/marketplace/product/redis-marketplace-isaas/redis-enterprise-cloud-flexible-plan) listing, manage your team through the [Access Management]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}) screen. See [Flexible subscriptions with Google Cloud Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}) for more info.
 {{</banner-article>}}
 
 If you subscribed to Redis Cloud through Google Cloud Marketplace using the [Redis Enterprise Cloud](https://console.cloud.google.com/marketplace/product/endpoints/gcp.redisenterprise.com) listing, use the IAM section of the Google Cloud console to manage your team.
