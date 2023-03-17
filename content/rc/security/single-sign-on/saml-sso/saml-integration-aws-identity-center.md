@@ -112,7 +112,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_13.png" alt="" >}}{{</image>}}   
 
-   In the next screen, add the following attributes :
+   In the next screen, add these attributes:
 
    * Subject : **${user:email}**, **unspecified**
    * Email : **${user:email}**, **unspecified**
