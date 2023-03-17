@@ -114,11 +114,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
 
    In the next screen, add these attributes:
 
-   * Subject : **${user:email}**, **unspecified**
-   * Email : **${user:email}**, **unspecified**
-   * FirstName : **${user:givenName}**, **unspecified**
-   * LastName : **${user:familyName}**, **unspecified**
-   * redisAccountMapping : **XXXXXXX=owner**, **unspecified**
+   * Subject: **${user:email}**, **unspecified**
+   * Email: **${user:email}**, **unspecified**
+   * FirstName: **${user:givenName}**, **unspecified**
+   * LastName: **${user:familyName}**, **unspecified**
+   * redisAccountMapping: **XXXXXXX=owner**, **unspecified**
 
 The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
@@ -126,7 +126,7 @@ The `redisAccountMapping` key-value pair consists of the lowercase role name (ow
 
 ## Step 4: Ensure that the SM account user has an IAM Identity Center user account
 
-To complete SAML setup, ensure that the user who began SAML configuration in Redis Cloud admin console has a user defined in the AWS IAM identity center. This user account will be needed to complete SAML setup.
+To complete SAML setup, ensure that the user who began SAML configuration in Redis Cloud admin console has a user defined in the AWS IAM identity center. This user account is required to complete the SAML setup.
 
 Also, make sure that the user has been assigned to the **Redis Cloud** Application.
 
