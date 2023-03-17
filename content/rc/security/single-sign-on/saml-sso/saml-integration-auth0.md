@@ -91,7 +91,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
     * Copy and save the **Issuer** value.
     * Copy and save the **Identity Provider Login URL**.
     
-    Both of these values, along with the certificate value you copied in the previous step will be needed to configure SAML in SM.
+    You will need both of these values, along with the certificate value you copied in the previous step, to configure SAML in SM.
 
     {{<image filename="images/rc/saml/auth0_saml_9.png" alt="" >}}{{</image>}}
 
