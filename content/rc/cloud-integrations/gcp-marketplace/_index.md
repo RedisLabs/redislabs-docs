@@ -1,6 +1,6 @@
 ---
 Title: Flexible subscriptions with Google Cloud Marketplace
-LinkTitle: Google Cloud Marketplace subscription
+LinkTitle: Google Cloud subscription
 description: Shows how to subscribe to Redis Cloud using Google Cloud Marketplace
 weight: $weight
 alwaysopen: false
