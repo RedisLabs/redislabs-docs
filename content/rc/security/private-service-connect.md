@@ -11,7 +11,7 @@ aliases:
 
 [Private Service Connect](https://cloud.google.com/vpc/docs/private-service-connect) (PSC) creates a private endpoint that allows secure connections to Redis Cloud databases without exposing your application's [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC). 
 
-This feature is only available for Flexible and Annual subscriptions hosted on Google Cloud Platform (GCP).
+This feature is only available for Flexible and Annual subscriptions hosted on Google Cloud.
 
 ## Considerations
 
@@ -65,10 +65,10 @@ First, configure Private Service Connect in Redis Cloud:
 
     | Setting&nbsp;name | Description |
     |-------------------|-------------|
-    | _Google Cloud project ID_ | GCP project ID |
+    | _Google Cloud project ID_ | Google Cloud project ID |
     | _VPC name_ | Name of the VPC that hosts your application |
     | _Subnet name_ | Name of your VPC's subnet of IP address ranges |
-    | _Endpoint name_ | Prefix used to create PSC endpoints in the consumer application VPC, so endpoint names appear in GCP as _endpoint name prefix + endpoint number_ |
+    | _Endpoint name_ | Prefix used to create PSC endpoints in the consumer application VPC, so endpoint names appear in Google Cloud as _endpoint name prefix + endpoint number_ |
 
 1. Continue to the **Add connections** step:
     
@@ -86,7 +86,7 @@ First, configure Private Service Connect in Redis Cloud:
 
 Now that you have a pending Private Service Connect entry, you need to create the endpoints in your application's VPC:
 
-1. Follow GCP's guide to [enable Cloud DNS](https://cloud.google.com/dns/docs/set-up-dns-records-domain-name) for your GCP project if you haven't already.
+1. Follow Google Cloud's guide to [enable Cloud DNS](https://cloud.google.com/dns/docs/set-up-dns-records-domain-name) for your Google Cloud project if you haven't already.
 
     {{<note>}}
 Since it can take some time for the DNS changes to become active, we recommend you wait 10 minutes before running the `gcloud` script in the next steps.
@@ -106,7 +106,7 @@ Since it can take some time for the DNS changes to become active, we recommend y
 To ensure the `gcloud` script configures the endpoints correctly, do not make any changes to it.
     {{</warning>}}
 
-The `gcloud` script creates 40 endpoints in the consumer application VPC. Each endpoint appears in GCP as the configured endpoint name followed by the endpoint number.
+The `gcloud` script creates 40 endpoints in the consumer application VPC. Each endpoint appears in Google Cloud as the configured endpoint name followed by the endpoint number.
 
 Redis Cloud displays this collection of endpoints as a single endpoint in the admin console.
 

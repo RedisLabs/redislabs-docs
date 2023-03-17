@@ -93,7 +93,7 @@ Before you choose to backup to Google Cloud Storage, make sure that you have:
 
 {{< note >}}
 
-You can find the client and key details in your service account in the GCP console (**API & Services** > **Credentials** > **Create Credentials**).
+You can find the client and key details in your service account in the Google Cloud console (**API & Services** > **Credentials** > **Create Credentials**).
 
 - Make sure that the service account has the `Storage Legacy Bucket Writer` permission on the target bucket.
 - Make sure that the bucket doesn't use a retention policy because it can interfere with the process.

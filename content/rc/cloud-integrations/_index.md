@@ -20,7 +20,7 @@ To integrate Redis Enterprise Cloud into an existing cloud vendor account, you c
 
 - Subscribe to Redis Enterprise Cloud through [AWS Marketplace]({{<relref "/rc/cloud-integrations/aws-marketplace/">}}).
 
-- Subscribe to Redis Enterprise Cloud through [GCP Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}).
+- Subscribe to Redis Enterprise Cloud through [Google Cloud Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}).
 
 When you subscribe to Redis Enterprise Cloud through a cloud vendor marketplace, billing is handled through the marketplace.
 
@@ -42,10 +42,10 @@ For best results, we recommend:
 
 To change billing details for an AWS marketplace subscription, we recommend creating a second subscription using the updated billing details and then migrating your existing data to the new subscription. 
 
-If you're using GCP, you can migrate a GCP project to a new billing account without creating a new subscription.  To do so:
+If you're using Google Cloud, you can migrate a Google Cloud project to a new billing account without creating a new subscription.  To do so:
 
 1. Create a second project and associate with it your new billing account.
-2. With your second project, purchase Redis Enterprise via the GCP Marketplace.
+2. With your second project, purchase Redis Enterprise via the Google Cloud Marketplace.
 3. Activate the service by signing in to Redis Enterprise console using your original SSO credentials.
 4. Change the billing account for your original project to the new billing account.
 5. (Optional) Remove your second project.
