@@ -15,13 +15,13 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 ## Step 1: Set up your demo identity provider (IdP)
 
-To create the OKTA SAML integration application:
+To create the Okta SAML integration application:
 
-1. Log in to the OKTA admin console. Select **Applications > Create App Integration**.
+1. Log in to the Okta admin console. Select **Applications > Create App Integration**.
 
    {{<image filename="images/rc/saml/okta_saml_app_int_1.png" alt="" >}}{{</image>}}
 
-1. In this screen, select **SAML 2.0** and then select **Next**.
+1. Select **SAML 2.0** and then select **Next**.
 
    {{<image filename="images/rc/saml/okta_saml_app_int_2.png" alt="" >}}{{</image>}}
 
