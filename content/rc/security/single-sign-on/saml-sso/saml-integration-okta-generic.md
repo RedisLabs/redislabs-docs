@@ -265,7 +265,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_14.png" alt="" >}}{{</image>}}
 
-4. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to log in to SM going forward, click **Sign in with SSO**.
+1. If the test succeeds, your local account is now considered a SAML account. To log in to SM going forward, select **Sign in with SSO**.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
