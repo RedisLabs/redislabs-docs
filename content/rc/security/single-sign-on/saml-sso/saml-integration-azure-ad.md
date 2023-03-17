@@ -82,7 +82,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
    Also add:
 
-   * **Email domain binding** - The domain used in your company's email addresses
+   * **Email domain binding**: The domain used in your company's email addresses
 
      {{<image filename="images/rc/saml/sm_saml_1.png" alt="" >}}{{</image>}}
 
@@ -133,18 +133,18 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
     * Modify additional claims to match SAML assertion as follows:
   
         * **Email**: user.mail
-        * **FirstName** : user.givenname
-        * **LastName** : user.surname
-        * **redisAccountMapping** : "98072=owner"
+        * **FirstName**: user.givenname
+        * **LastName**: user.surname
+        * **redisAccountMapping**: "98072=owner"
         * Redis Cloud account IDs and user roles pairs. The key-value pair consists of the lowercase role name (owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
           {{<image filename="images/rc/saml/ad_saml_14.png" alt="" >}}{{</image>}}
 
-4. To add a user to the application, select **User and Groups > Add user/group**.
+1. To add a user to the application, select **User and Groups > Add user/group**.
 
     {{<image filename="images/rc/saml/ad_saml_15.png" alt="" >}}{{</image>}}
 
-5. Add the user and select **Assign**.
+1. Add the user and select **Assign**.
 
     {{<image filename="images/rc/saml/ad_saml_16.png" alt="" >}}{{</image>}}
 

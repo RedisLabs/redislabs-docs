@@ -53,17 +53,17 @@ To create the OKTA SAML integration application:
 
     Next, add **Attribute Statements** which are needed for the configuration:
 
-    First Attribute
-    * Name : **redisAccountMapping**
-    * Name Format : **Basic**
-    * Value : **appuser.redisAccountMapping**
+    * First attribute
+     * Name : **redisAccountMapping**
+     * Name Format: **Basic**
+     * Value: **appuser.redisAccountMapping**
 
-    Second Attribute
-    * Name : **FirstName**
-    * Name Format : **Basic**
-    * Value : **user.firstName**
+    * Second attribute
+     * Name: **FirstName**
+     * Name Format: **Basic**
+     * Value: **user.firstName**
 
-    Third Attribute
+    * Third attribute
     * Name : **LastName**
     * Name Format : **Basic**
     * Value : **user.lastName**
