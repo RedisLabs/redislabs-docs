@@ -29,15 +29,15 @@ To create the OKTA SAML integration application:
 
     * **App name**: **Redis Cloud**
 
-    * **App logo**: Upload a [Redis icon](https://saml-integration-logo.s3.amazonaws.com/redis-cube-red_white-rgb.png)
+    * **App logo**: Upload a [Redis icon](https://saml-integration-logo.s3.amazonaws.com/redis-cube-red_white-rgb.png).
 
-    Click **Next**.
+    Select **Next**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_3.png" alt="" >}}{{</image>}}
 
 1. In the **Configure SAML** tab, enter the following data under the **General** section:
 
-    * **Single sign on URL**: `http://www.fake.com` - This is a temporary fake URL that you will modify later.
+    * **Single sign-on URL**: `http://www.fake.com` - This is a temporary fake URL that you will modify later.
     * **Audience URI (SP Entity ID)**: `http://www.fake.com` - This is a temporary fake URL that you will modify later.
   
     {{< note >}}
@@ -51,27 +51,27 @@ To create the OKTA SAML integration application:
 
     {{<image filename="images/rc/saml/okta_saml_app_int_4.png" alt="" >}}{{</image>}}
 
-    Next, add **Attribute Statements** which are needed for the configuration:
+    Next, add **Attribute Statements**, which are needed for the configuration:
 
     * First attribute
-     * Name : **redisAccountMapping**
-     * Name Format: **Basic**
-     * Value: **appuser.redisAccountMapping**
+      * Name : **redisAccountMapping**
+      * Name Format: **Basic**
+      * Value: **appuser.redisAccountMapping**
 
     * Second attribute
-     * Name: **FirstName**
-     * Name Format: **Basic**
-     * Value: **user.firstName**
+      * Name: **FirstName**
+      * Name Format: **Basic**
+      * Value: **user.firstName**
 
     * Third attribute
-     * Name: **LastName**
-     * Name Format: **Basic**
-     * Value: **user.lastName**
+      * Name: **LastName**
+      * Name Format: **Basic**
+      * Value: **user.lastName**
 
     * Fourth attribute
-     * Name: **Email**
-     * Name Format: **Basic**
-     * Value: **user.login**
+      * Name: **Email**
+      * Name Format: **Basic**
+      * Value: **user.login**
 
     {{<image filename="images/rc/saml/okta_saml_app_int_5.png" alt="" >}}{{</image>}}
 
