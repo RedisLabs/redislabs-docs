@@ -261,7 +261,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_9.png" alt="" >}}{{</image>}}
 
-1. The OKTA login screen will appear. Enter the credentials and click **Sign In**.
+1. The Okta login screen appears. Enter the credentials and select **Sign In**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_14.png" alt="" >}}{{</image>}}
 
