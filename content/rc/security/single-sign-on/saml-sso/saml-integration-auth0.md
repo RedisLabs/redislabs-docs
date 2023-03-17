@@ -155,7 +155,7 @@ To activate SAML, you need to have a local user (or social sign-on user) with th
       ]
     }
     ```
-    Scroll down and **Save** the configuration
+    Scroll down and **Save** the configuration.
 
 
 ### IdP initiated SSO
