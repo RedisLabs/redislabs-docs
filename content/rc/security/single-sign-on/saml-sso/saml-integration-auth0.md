@@ -97,7 +97,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 ## Step 2: Configure SAML support in Redis Cloud
 
-Now that you have you Auth0 IdP server ready, you need to configure support for SAML in Redis Cloud.
+Now that you have you Auth0 IdP server ready, configure support for SAML in Redis Cloud.
 
 ### Log in to your Redis Cloud SM account
 
