@@ -64,28 +64,28 @@ To create the OKTA SAML integration application:
      * Value: **user.firstName**
 
     * Third attribute
-    * Name : **LastName**
-    * Name Format : **Basic**
-    * Value : **user.lastName**
+     * Name: **LastName**
+     * Name Format: **Basic**
+     * Value: **user.lastName**
 
-    Fourth Attribute
-    * Name : **Email**
-    * Name Format : **Basic**
-    * Value : **user.login**
+    * Fourth attribute
+     * Name: **Email**
+     * Name Format: **Basic**
+     * Value: **user.login**
 
     {{<image filename="images/rc/saml/okta_saml_app_int_5.png" alt="" >}}{{</image>}}
 
     Click **Next**.
 
-1. The last step is an optional feedback step for Okta. Select **I'm an Okta customer adding an internal app** and click **Finish**.
+1. The last step is an optional feedback step for Okta. Select **I'm an Okta customer adding an internal app** and then select **Finish**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_6.png" alt="" >}}{{</image>}}
 
-1. Next, scroll down the page of your newly created app integration and click **View Setup Instructions**. This will open a new browser window and will give us the information needed to configure the IdP in Redis Cloud.
+1. Next, scroll down the page of your newly created app integration and click **View Setup Instructions**. A new browser window opens, providing the information you need to configure the IdP in Redis Cloud.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_7.png" alt="" >}}{{</image>}}
 
-   Scroll down to section 6 in the page, and note down the following information :
+   Scroll down to section 6 in the page, and note down the following information:
    
     * **Identity Provider Single Sign-On URL**
     * **Identity Provider Issuer**
