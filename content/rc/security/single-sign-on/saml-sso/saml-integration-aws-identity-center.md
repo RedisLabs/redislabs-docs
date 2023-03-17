@@ -108,7 +108,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_12.png" alt="" >}}{{</image>}}
 
-1. Next, we need to configure the **Redis Cloud** application's attribute mappings. Click on the **Actions** menu and choose **Edit Attribute Mappings**. 
+1. Configure the **Redis Cloud** application's attribute mappings. Select **Actions > Edit Attribute Mappings**. 
 
    {{<image filename="images/rc/saml/aws_iam_identity_center_saml_13.png" alt="" >}}{{</image>}}   
 
