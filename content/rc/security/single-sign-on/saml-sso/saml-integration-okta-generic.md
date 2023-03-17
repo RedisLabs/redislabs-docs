@@ -227,11 +227,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
 1. Open the file in any text editor. Save the following text from the metadata:
 
-    * **EntityID** : The unique name of the service provider (SP)
+    * **EntityID**: The unique name of the service provider (SP)
 
     {{<image filename="images/rc/saml/sm_saml_4.png" alt="" >}}{{</image>}}
 
-    * **Location** : The location of the assertion consumer service
+    * **Location**: The location of the assertion consumer service
 
     {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
