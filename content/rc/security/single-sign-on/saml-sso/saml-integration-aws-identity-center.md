@@ -60,7 +60,7 @@ Now that you have your IAM Identity Center IdP server information, configure sup
 
 Log in to your SM account at [Redis admin console](https://app.redislabs.com/#/login)
 
-### Activate SAML in access management
+### Activate SAML in Access Management
 
 To activate SAML, you must have a local user (or social sign-on user) with the `owner` role. If you have the correct permissions, you will see the **Single Sign-On** tab.
 
