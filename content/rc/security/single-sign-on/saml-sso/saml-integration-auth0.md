@@ -21,7 +21,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     SAML assertion requires first and last name, which are not available in the default user profile. 
 
-    > **Note**: Depending how they are created, users can have different profiles. See Sample User Profiles.
+    > **Note**: Depending how they are created, users can have different profiles. 
 
     {{<image filename="images/rc/saml/auth0_saml_1.png" alt="" >}}{{</image>}}
 
