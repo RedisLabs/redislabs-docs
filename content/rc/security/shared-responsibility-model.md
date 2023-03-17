@@ -32,4 +32,4 @@ Customers are responsible for the security configurations in their Redis databas
 
 Customers are also responsible for the applications built on Redis and the data they store in Redis. Customers determine the cloud provider, region, and availability zone of their deployments.
 
-Customers understand that Redis Enterprise Cloud Fixed plans (including Free) are deployed to multi-tenant infrastructure. Flexible and Annual plans are deployed to single-tenant infrastructure dedicated to one specific customer.
+Customers understand that Redis Enterprise Cloud Fixed plans (including Free) are deployed to a multi-tenant infrastructure. Flexible and Annual plans are deployed to a single-tenant infrastructure dedicated to one specific customer.
