@@ -273,7 +273,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_15.png" alt="" >}}{{</image>}}
 
-1. If there is only one user defined in the SM account, you will get the following popup window. Click **Confirm** to convert the local user to a SAML user. 
+1. If only one user is defined in the SM account, you get a popup window where you select **Confirm** to convert the local user to a SAML user. 
 
     * The user will be converted into a SAML user. It is a good practice to have one more local user other than a SAML user.
 
