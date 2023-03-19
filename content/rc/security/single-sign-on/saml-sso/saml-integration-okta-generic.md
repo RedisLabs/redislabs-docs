@@ -40,10 +40,8 @@ To create the Okta SAML integration application:
     * **Single sign-on URL**: `http://www.fake.com`. This is a temporary mock URL that you will modify later.
     * **Audience URI (SP Entity ID)**: `http://www.fake.com`. This is a temporary mock URL that you will modify later.
   
-    {{< note >}}
-     Complete the **Default RelayState** field only if you need your SAML flow to be IdP initiated.
-    {{< /note >}}
-
+    > Complete the **Default RelayState** field only if you need your SAML flow to be IdP initiated.
+    
     * **Default RelayState**: `https://app.redislabs.com/#/login/?idpId=XXXXXX`. You will need to complete this URL with the `idpId` later. 
     * **Name ID forma**: `Unspecified`
     * **Application username**: `Okta username`
