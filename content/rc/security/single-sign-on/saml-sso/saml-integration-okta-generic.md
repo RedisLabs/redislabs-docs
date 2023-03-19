@@ -238,17 +238,15 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_12.png" alt="" >}}{{</image>}}
 
-1. Then, navigate to **Configure SAML** (step 2) and update the following information:
+1. Then, navigate to **Configure SAML** (step 2) and update the following information in **SAML Settings General**:
 
-    * SAML Settings General
-
-        * **Single sign on URL** : Use the information that you copied for **Location**
-        * **Audience URI (SP Entity ID)** : Use the information that you copied for **EntityID**
-        * **Default RelayState** : **Only needed if you want to have an IdP initiated flow**. Take the ID from the location URL in step 3 (the content after the last forward slash "/") and append to the url (ex: https://app.redislabs.com/#/login/?idpId=YOUR_LOCATION_ID).
+   * **Single sign on URL**: Use the information that you copied for **Location**.
+   * **Audience URI (SP Entity ID)**: Use the information that you copied for **EntityID**.
+   * **Default RelayState**: Only needed if you want to have an IdP initiated flow. Take the ID from the location URL in step 3 (the content after the last forward slash "/") and append to the url (for example, `https://app.redislabs.com/#/login/?idpId=YOUR_LOCATION_ID`).
 
     {{<image filename="images/rc/saml/okta_saml_app_int_13.png" alt="" >}}{{</image>}}
 
-    Once you have entered the information, select **Next**. Finally, select **Finish**.
+   Select **Next**, then select **Finish**.
 
 ### Return to Redis Cloud SM
 
