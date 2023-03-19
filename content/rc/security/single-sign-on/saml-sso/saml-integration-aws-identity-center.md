@@ -68,9 +68,9 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
 
 1. Add the information you saved previously in the **Configuration setup** screen. This includes:
 
-   * **Issuer (IdP Entity ID)** - IAM Identity Center SAML issuer URL.
-   * **IdP server URL** - IAM Identity Center sign-in URL.
-   * **Assertion signing certificate** - Drag and drop the certificate file you downloaded to disk in the form text area.
+   * **Issuer (IdP Entity ID)**: IAM Identity Center SAML issuer URL.
+   * **IdP server URL**: IAM Identity Center sign-in URL.
+   * **Assertion signing certificate**: Drag and drop the certificate file you downloaded to disk in the form text area.
 
    Also add:
 
@@ -114,11 +114,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
 
    In the next screen, add these attributes:
 
-   * Subject: **${user:email}**, **unspecified**
-   * Email: **${user:email}**, **unspecified**
-   * FirstName: **${user:givenName}**, **unspecified**
-   * LastName: **${user:familyName}**, **unspecified**
-   * redisAccountMapping: **XXXXXXX=owner**, **unspecified**
+   * **Subject**: `${user:email}`, `unspecified`
+   * **Email**: `${user:email}`, `unspecified`
+   * **FirstName**: `${user:givenName}`, `unspecified`
+   * **LastName**: `${user:familyName}`, `unspecified`
+   * **redisAccountMapping**: `XXXXXXX=owner`, `unspecified`
 
 The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
