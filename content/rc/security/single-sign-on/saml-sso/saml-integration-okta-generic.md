@@ -97,7 +97,7 @@ To create the Okta SAML integration application:
 
 To modify the application user profile:
 
-1. Go to **Directory > Profile Editor** in the left-hand menu, and select **Redis Cloud User**.
+1. Go to **Directory > Profile Editor** in the left menu, and select **Redis Cloud User**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_9.png" alt="" >}}{{</image>}}
 
@@ -122,11 +122,11 @@ To modify the application user profile:
 
 ## Step 2: Create a group and assign the application
 
-Now that your SAML IdP is configured, you need to create an OKta group and assign users to the Redis Cloud application.
+Now that your SAML IdP is configured, create an Okta group and assign users to the Redis Cloud application.
 
 ### Create the group
 
-1. In the left-hand menu, select on **Directory > Groups**, then select **Add group**.
+1. In the left menu, select **Directory > Groups**, then select **Add group**.
 
     {{<image filename="images/rc/saml/okta_saml_group_1.png" alt="" >}}{{</image>}}
 
@@ -138,11 +138,11 @@ Now that your SAML IdP is configured, you need to create an OKta group and assig
 
 ### Assign users to the group
 
-1. Select the group and then select **Assign people**.
+1. Select the group, then select **Assign people**.
 
     {{<image filename="images/rc/saml/okta_saml_group_4.png" alt="" >}}{{</image>}}
 
-1. For each user you wish to add to the group, highlight the user in the table and select **+**. You can also select **Add all** to add all users. Once you have added all the users to your group, select **Save**.
+1. For each user you want to add to the group, highlight the user in the table and select **+**. You can also select **Add all** to add all users. Once you add all the users to your group, select **Save**.
 
     {{<image filename="images/rc/saml/okta_saml_group_5.png" alt="" >}}{{</image>}}
 
