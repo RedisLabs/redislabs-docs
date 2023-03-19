@@ -51,22 +51,22 @@ To create the Okta SAML integration application:
 
     Next, add __attribute statements__, which are required for the configuration:
 
-    * Attribute 1
+    * **Attribute 1**:
       * **Name**: `redisAccountMapping`
       * **Name Format**: `Basic`
       * **Value**: `appuser.redisAccountMapping`
 
-    * Attribute 2
+    * **Attribute 2**:
       * **Name**: `FirstName`
       * **Name Format**: `Basic`
       * **Value**: `user.firstName`
 
-    * Attribute 3
+    * **Attribute 3**:
       * **Name**: `LastName`
       * **Name Format**: `Basic`
       * **Value**: `user.lastName`
 
-    * Attribute 4
+    * **Attribute 4**:
       * **Name**: `Email`
       * **Name Format**: `Basic`
       * **Value**: `user.login`
