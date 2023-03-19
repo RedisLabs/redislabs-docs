@@ -35,10 +35,10 @@ To create the Okta SAML integration application:
 
     {{<image filename="images/rc/saml/okta_saml_app_int_3.png" alt="" >}}{{</image>}}
 
-1. In the **Configure SAML** tab, enter the following data under the **General** section:
+1. In the **Configure SAML** tab, enter this data in the **General** section:
 
     * **Single sign-on URL**: `http://www.fake.com`. This is a temporary mock URL that you will modify later.
-    * **Audience URI (SP Entity ID)**: `http://www.fake.com. This is a temporary mock URL that you will modify later.
+    * **Audience URI (SP Entity ID)**: `http://www.fake.com`. This is a temporary mock URL that you will modify later.
   
     {{< note >}}
      Complete the **Default RelayState** field only if you need your SAML flow to be IdP initiated.
