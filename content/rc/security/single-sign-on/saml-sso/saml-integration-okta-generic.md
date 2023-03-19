@@ -21,7 +21,7 @@ To create the Okta SAML integration application:
 
    {{<image filename="images/rc/saml/okta_saml_app_int_1.png" alt="" >}}{{</image>}}
 
-1. Select **SAML 2.0** and then select **Next**.
+1. Select **SAML 2.0**, then select **Next**.
 
    {{<image filename="images/rc/saml/okta_saml_app_int_2.png" alt="" >}}{{</image>}}
 
@@ -37,14 +37,14 @@ To create the Okta SAML integration application:
 
 1. In the **Configure SAML** tab, enter the following data under the **General** section:
 
-    * **Single sign-on URL**: `http://www.fake.com`-This is a temporary mock URL that you will modify later.
-    * **Audience URI (SP Entity ID)**: `http://www.fake.com`-This is a temporary mock URL that you will modify later.
+    * **Single sign-on URL**: `http://www.fake.com`. This is a temporary mock URL that you will modify later.
+    * **Audience URI (SP Entity ID)**: `http://www.fake.com. This is a temporary mock URL that you will modify later.
   
     {{< note >}}
-    Complete the **Default RelayState** field only if you need your SAML flow to be IdP initiated.
+     Complete the **Default RelayState** field only if you need your SAML flow to be IdP initiated.
     {{< /note >}}
 
-    * **Default RelayState**: `https://app.redislabs.com/#/login/?idpId=XXXXXX` - You will need to complete this URL with the `idpId` later. 
+    * **Default RelayState**: `https://app.redislabs.com/#/login/?idpId=XXXXXX`. You will need to complete this URL with the `idpId` later. 
     * **Name ID forma**: `Unspecified`
     * **Application username**: `Okta username`
     * **Update application username on**: `Create and update`
