@@ -41,29 +41,6 @@ To enable auditing for your cluster, use:
        audit_reconnect_max_attempts <number of attempts>
     ```
 
-    where:
-
-    - _audit\_protocol_ indicates the protocol used to process notifications.  For production systems, _TCP_ is the only value. 
-
-    - _audit\_address_ defines the TCP/IP address where one can listen for notifications
-
-    - _audit\_port_ defines the port where one can listen for notifications
-   
-    - _audit\_reconnect\_interval_ defines the interval (in seconds) between attempts to reconnect to the listener. Default is 1 second.
-    
-    - _audit\_reconnect\_max\_attempts_ defines the maximum number of attempts to reconnect. Default is 0. (infinite)
-
-    Development systems can set _audit\_protocol_ to `local` for testing and training purposes; however, this setting is _not_ supported for production use.  
-    
-    When `audit_protocol` is set to `local`, `<address>` should be set to a [stream socket](https://man7.org/linux/man-pages/man7/unix.7.html) defined on the machine running Redis Enterprise and _`<port>`_ should not be specified: 
-    
-    ```
-    rladmin cluster config auditing db_conns \
-       audit_protocol local audit_address <output-file>
-    ```
-
-    The output file (and path) must be accessible by the user and group running Redis Enterprise Software.
-
 - the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/auditing-db-conns#put-cluster-audit-db-conns">}})
 
     ```
@@ -77,7 +54,7 @@ To enable auditing for your cluster, use:
     }
     ```
 
-    where `<address>` is a string containing the TCP/IP address, `<port>` is a numeric value representing the port, `<interval>` is a numeric value representing the interval in seconds, and `<max attempts>` is a numeric value representing the maximum number of attempts to execute.
+For more information about database connection auditing configuration, see the [policy reference]({{<relref "/rs/references/policies/db-conns-auditing#config-settings">}}).
 
 ### Database audits
 

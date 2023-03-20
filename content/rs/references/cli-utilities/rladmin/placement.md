@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Configures the shard placement policy for a specified database.
+Configures the [shard placement policy]({{<relref "/rs/references/policies/default-shards-placement">}}) for a specified database.
 
 ``` sh
 rladmin placement

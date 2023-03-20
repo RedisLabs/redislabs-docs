@@ -13,34 +13,41 @@ aliases: [
 
 ]
 ---
-In Redis Enterprise Software , the location of master and replica shards on the cluster nodes can impact the database and node performance.
+In Redis Enterprise Software, the location of master and replica shards on the cluster nodes can impact the database and node performance.
 Master shards and their corresponding replica shards are always placed on separate nodes for data resiliency.
 The [shard placement policy]({{<relref "/rs/references/policies/default-shards-placement">}}) helps to maintain optimal performance and resiliency.
 
+## Shard placement considerations
+
 {{< embed-md "shard-placement-intro.md"  >}}
 
-## Default shard placement policy
+### View default policy
 
-When you create a new cluster, the cluster configuration has a `dense` default shard placement policy.
-When you create a database, this default policy is applied to the new database.
+To see the current default shard placement policy, run [`rladmin info cluster`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-cluster">}}):
 
-To see the current default shard placement policy, run `rladmin info cluster`:
+```sh
+$ rladmin info cluster
+Cluster configuration:
+    ...
+    default_shards_placement: dense
+    ...
+```
 
-![shard_placement_info_cluster](/images/rs/shard_placement_info_cluster.png)
+### Change default policy
 
-To change the default shard placement policy so that new databases are created with the `sparse` shard placement policy, run:
+To change the default shard placement policy so that new databases are created with the `sparse` shard placement policy, run [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}):
 
 ```sh
 rladmin tune cluster default_shards_placement [ dense | sparse ]
 ```
 
-## Shard placement policy for a database
+### Override default policy
 
-To see the shard placement policy for a database in `rladmin status`.
+To see the shard placement policy for a database, run [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}):
 
 ![shard_placement_rladmin_status](/images/rs/shard_placement_rladmin_status.png)
 
-To change the shard placement policy for a database, run:
+To change the shard placement policy for a database, run [`rladmin placement`]({{<relref "/rs/references/cli-utilities/rladmin/placement">}}):
 
 ```sh
 rladmin placement db [ database name | database ID ] [ dense | sparse ]

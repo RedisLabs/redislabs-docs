@@ -15,7 +15,7 @@ A database can have one of these proxy policies:
 ## Policy values
 
 | Value | Description |
-|------------|-----------------|
+|-------|-------------|
 | single | There is only a single proxy that is bound to the database. This is the default database configuration and preferable in most use cases. |
 | <nobr>all-master-shards</nobr> | There are multiple proxies that are bound to the database, one on each node that hosts a database master shard. This mode fits most use cases that require multiple proxies. |
 | all-nodes | There are multiple proxies that are bound to the database, one on each node in the cluster, regardless of whether or not there is a shard from this database on the node. This mode should be used only in special cases. |

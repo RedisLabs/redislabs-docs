@@ -12,7 +12,7 @@ aliases:
 
 Number of objects evicted from the database per second.
 
-Objects are evicted from the database according to the [eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy" >}}).
+Objects are evicted from the database according to the [eviction policy]({{<relref "/rs/references/policies/eviction-policy">}}).
 
 Object information is not measured during [shard migration]({{< relref "/rs/databases/configure/replica-ha" >}}).
 

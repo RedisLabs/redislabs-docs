@@ -36,6 +36,7 @@ rladmin tune cluster
         [ expose_hostnames_for_all_suffixes { enabled | disabled } ]
         [ redis_upgrade_policy { latest | major } ]
         [ default_redis_version <value> ]
+        [ default_shards_placement { dense | sparse } ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
         [ acl_pubsub_default { resetchannels | allchannels } ]
@@ -56,6 +57,7 @@ Redis cluster watchdog supports two preconfigured profiles:
 | db_conns_auditing                      | `enabled`<br /> `disabled`      | Activates or deactivates [connection auditing]({{<relref "/rs/security/audit-events">}}) by default for new databases of a cluster                                                                  |
 | default_concurrent_restore_actions     | integer<br />`all`              | Default number of concurrent actions when restoring a node from a snapshot (positive integer or "all")                         |
 | default_redis_version                  | version number                    | The default Redis database compatibility version used to create new databases.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.<br/><br/>You cannot set _default_redis_version_ to a value higher than that supported by the current _redis_upgrade_policy_ value. |
+| default_shards_placement | `dense`<br />`sparse` | New databases created in the cluster place shards according to the [default shard placement policy]({{<relref "/rs/references/policies/default-shards-placement">}}).<br />• `dense` - place as many shards as possible on the smallest number of nodes to reduce the latency between the proxy and the database shards (default)<br />•`sparse` - spread the shards across as many nodes in the cluster as possible to spread the traffic across cluster nodes |
 | expose_hostnames_for_all_suffixes      | `enabled`<br />`disabled`       | Exposes hostnames for all DNS suffixes                                                                                       |
 | login_lockout_counter_reset_after      | time in seconds                   | Time after failed login attempt before the counter resets to 0                                                                   |
 | login_lockout_duration                 | time in seconds                   | Time a locked account remains locked ( "0" means only an admin can unlock the account)                                   |
