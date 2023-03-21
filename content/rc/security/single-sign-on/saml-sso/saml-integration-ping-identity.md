@@ -45,7 +45,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     * **redisAccountMapping**: `{accountID}={role}`
      
-    **accountID** is the account ID from [account settings]({{<relref "rc/accounts/account-settings">}}) and **role** represents the role that the user will be assigned in SM (owner, member, manager, or viewer):
+    **accountID** is the account ID from [account settings]({{<relref "rc/accounts/account-settings">}}) and **role** represents the role that the user will be assigned in admin console (owner, member, manager, or viewer):
 
     {{<image filename="images/rc/saml/ping_identity_saml_6.png" alt="" >}}{{</image>}}
 
@@ -95,9 +95,9 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 Now that we have our Ping Identity IdP server ready, we need to configure support for SAML in Redis Cloud.
 
-### Sign in to your Redis Cloud SM account
+### Sign in to admin console
 
-Log in to your SM account at [https://app.redislabs.com/#/login](https://app.redislabs.com/#/login)
+Log in to [admin console](https://app.redislabs.com/#/login)
 
 ### Activate SAML in access management
 
@@ -105,14 +105,14 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
 1. Fill in the information you copied previously, including:
 
-    * **Issuer (IdP Entity ID)** -> Issuer ID
-    * **IdP server URL** -> Single Signon Service
-    * **Single logout URL** -> Single Logout Service
-    * **Assertion signing certificate** - certificate info you copied from the Ping Identity XML file
+    * **Issuer (IdP Entity ID)**: `Issuer ID`
+    * **IdP server URL**: `Single Signon Service`
+    * **Single logout URL**: `Single Logout Service`
+    * **Assertion signing certificate**: Certificate info you copied from the Ping Identity XML file
 
     Also add:
 
-    * **Email domain binding** - The domain used in your company's email addresses
+    * **Email domain binding**: The domain used in your company's email addresses
 
     {{<image filename="images/rc/saml/ping_identity_saml_12.png" alt="" >}}{{</image>}}
 
@@ -124,11 +124,11 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
 1. Open the file in any text editor. Save the following text from the metadata:
 
-    * **EntityID** : The unique name of the service provider (SP)
+    * **EntityID**: The unique name of the service provider (SP)
 
     {{<image filename="images/rc/saml/sm_saml_4.png" alt="" >}}{{</image>}}
 
-    * **Location** : The location of the assertion consumer service
+    * **Location**: The location of the assertion consumer service
 
     {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
@@ -136,15 +136,15 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
 1. In Ping Identity, go to **Administrators > Connections > Applications** and select your application name. Select the **Configuration** tab and select **Edit**.
 
-    This is where we had entered dummy data. We will now enter the correct data for this step:
+    This is where we had entered mock data. We will now enter the correct data for this step:
 
-    * Paste **EntityID** information in the **Entity ID** field
+    * Paste **EntityID** information in the **Entity ID** field.
 
-    * Paste **Location** link in the ACS URLS field
+    * Paste **Location** link in the ACS URLS field.
 
-    * For the **Sign on URL** field, add the following URL: **https://app.redislabs.com/#/login/?idpId=** where you need to add the ID from the Reply URL’s ID. eg. https://app.redislabs.com/#/login/?idpId=0oa5pwatz2JfpfCb91d7
+    * For the **Sign on URL** field, add URL `https://app.redislabs.com/#/login/?idpId=`, where you need to add the ID from the Reply URL’s ID, for example, `https://app.redislabs.com/#/login/?idpId=0oa5pwatz2JfpfCb91d7`.
 
-    Once done, select **Save**.
+    Select **Save**.
 
     {{<image filename="images/rc/saml/ping_identity_saml_13.png" alt="" >}}{{</image>}}
 
@@ -152,7 +152,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ping_identity_saml_14.png" alt="" >}}{{</image>}}
 
-## Step 4: Return to Redis Cloud SM
+## Step 4: Return to admin console
 
 1. Return to the Redis Cloud admin console and select **Activate**.
 
