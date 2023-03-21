@@ -77,7 +77,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     This information will be needed once we configure SAML in the Redis Cloud admin console.
 
-    * Select **Download Metadata**. An XML file will be downloaded. Open it and copy the certificate, which is required for the configuration in SM.
+    * Select **Download Metadata**. An XML file will be downloaded. Open it and copy the certificate, which is required for the configuration in admin console.
 
     {{<image filename="images/rc/saml/ping_identity_saml_10.png" alt="" >}}{{</image>}}
 
