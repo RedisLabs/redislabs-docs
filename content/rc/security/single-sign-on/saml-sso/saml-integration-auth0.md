@@ -76,7 +76,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 1. From the newly created application, go to **Settings > Advanced Settings > Certificates**.
 
-    * Copy and save the **Signing Certificate**. You will need this information to configure SAML in SM.
+    * Copy and save the **Signing Certificate**. You will need this information to configure SAML in admin console.
 
     {{<image filename="images/rc/saml/auth0_saml_7.png" alt="" >}}{{</image>}}
 
@@ -91,7 +91,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
     * Copy and save the **Issuer** value.
     * Copy and save the **Identity Provider Login URL**.
     
-    You will need both of these values, along with the certificate value you copied in the previous step, to configure SAML in SM.
+    You will need both of these values, along with the certificate value you copied in the previous step, to configure SAML in admin console.
 
     {{<image filename="images/rc/saml/auth0_saml_9.png" alt="" >}}{{</image>}}
 
@@ -99,9 +99,9 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 Now that you have you Auth0 IdP server ready, configure support for SAML in Redis Cloud.
 
-### Log in to your Redis Cloud SM account
+### Log in to your Redis Cloud account
 
-Log in to your SM account at [https://app.redislabs.com/#/login](https://app.redislabs.com/#/login)
+Log in to your account at [https://app.redislabs.com/#/login](https://app.redislabs.com/#/login)
 
 ### Activate SAML in Access Management
 
@@ -109,9 +109,9 @@ To activate SAML, you need to have a local user (or social sign-on user) with th
 
 1. Fill in the information you saved previously in the **setup** form. This includes:
 
-    * **Issuer (IdP Entity ID)** - Issuer value from Auth0
-    * **IdP server URL** - Identity Provider Login URL from Auth0
-    * **Assertion signing certificate** - Certificate value from Auth0
+    * **Issuer (IdP Entity ID)**: Issuer value from Auth0
+    * **IdP server URL**: Identity Provider Login URL from Auth0
+    * **Assertion signing certificate**: Certificate value from Auth0
 
     You will also have to add:
 
