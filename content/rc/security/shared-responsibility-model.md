@@ -6,7 +6,7 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
-The security of all Redis Enterprise Cloud deployments is a shared responsibility. Redis, the public cloud providers (Amazon Web Services \[AWS], Google Cloud, and Microsoft Azure), and our customers all help ensure the security of these deployments.
+The security of all Redis Enterprise Cloud deployments is a shared responsibility. Redis, the public cloud providers (Amazon Web Services [AWS], Google Cloud, and Microsoft Azure), and our customers all help ensure the security of these deployments.
 
 ## Redis responsibility
 

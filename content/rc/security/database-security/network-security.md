@@ -34,7 +34,7 @@ A [Virtual Private Cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (
 
 Databases in Flexible and Annual subscriptions are almost always deployed in a Redis VPC. In most cases, you'll need to create a [VPC peering connection]({{<relref "/rc/security/vpc-peering">}}) to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
 
-How you create these connections and the features supported vary somewhat by public cloud provider. You can read about VPC usage for [AWS](#vpcs-with-aws), [Google Cloud](#vpcs-with-google-cloud), and [Azure](#vpcs-with-azure) below.
+Connection creation and supported features vary by public cloud provider. Learn more about VPC usage for [AWS](#vpcs-with-aws), [Google Cloud](#vpcs-with-google-cloud), and [Azure](#vpcs-with-azure).
 
 ### VPCs with AWS
 

@@ -86,7 +86,7 @@ First, configure Private Service Connect in Redis Cloud:
 
 Now that you have a pending Private Service Connect entry, you need to create the endpoints in your application's VPC:
 
-1. Follow Google Cloud's guide to [enable Cloud DNS](https://cloud.google.com/dns/docs/set-up-dns-records-domain-name) for your Google Cloud project if you haven't already.
+1. If you have not already done so, [enable Cloud DNS](https://cloud.google.com/dns/docs/set-up-dns-records-domain-name) for your Google Cloud project.
 
     {{<note>}}
 Since it can take some time for the DNS changes to become active, we recommend you wait 10 minutes before running the `gcloud` script in the next steps.
