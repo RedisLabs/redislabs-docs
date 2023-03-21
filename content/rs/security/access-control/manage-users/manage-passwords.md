@@ -35,7 +35,7 @@ These requirements reflect v6.2.12 and later. Earlier versions did not support n
 
 In addition, the password:
 
-- Cannot contain the user ID or reverse of the user ID.
+- Cannot contain the user's email address or the reverse of the email address.
 - Cannot have more than three repeating characters.
 
 Password complexity rules apply complexity rules are applied when a new user account is created and when the password is changed.  Password complexity rules are not applied to accounts authenticated by an external identity provider.  

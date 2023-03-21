@@ -95,10 +95,9 @@ Once the bucket is available and the permissions are set, use the name of your b
 
 To learn more, see [Configuring ACLs for buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html) on the AWS docs.
 
-### GCP Storage
+### Google Cloud Storage
 
-For [Google Cloud Platform (GCP)
-console](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
+For [Google Cloud](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
 
 1. Sign in to Google Cloud Platform console.
 

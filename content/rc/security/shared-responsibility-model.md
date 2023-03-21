@@ -6,7 +6,8 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
-The security of all Redis Enterprise Cloud deployments is a shared responsibility. Redis, the public cloud providers (Amazon Web Services [AWS], Google Cloud Platform [GCP], and Microsoft Azure), and our customers all help ensure the security of these deployments.
+
+The security of all Redis Enterprise Cloud deployments is a shared responsibility. Redis, the public cloud providers (Amazon Web Services [AWS], Google Cloud, and Microsoft Azure), and our customers all help ensure the security of these deployments.
 
 ## Redis responsibility
 
@@ -23,7 +24,7 @@ the security of the network, storage, servers, and virtualization that form the 
 Amazon, Microsoft, and Google public clouds embrace a wide range of security best practices and compliance standards. Compliance information—including audits, attestations, and certifications about resources hosted—can be found on these compliance pages:
 
 * [AWS Compliance](https://aws.amazon.com/compliance/)
-* [GCP Compliance](https://cloud.google.com/security/compliance)
+* [Google Cloud Compliance](https://cloud.google.com/security/compliance)
 * [Azure Compliance](https://azure.microsoft.com/en-us/overview/trusted-cloud/compliance/)
 
 ## Customer responsibility

@@ -8,6 +8,8 @@ categories: ["Platforms"]
 aliases: [
     /kubernetes/re-databases/ingress_routing_with_istio.md,
     /kubernetes/re-databases/ingress_routing_with_istio/,
+    /kubernetes/networking/ingress-routing-with-istio.md,
+    /kubernetes/networking/ingress_routing-with-istio/,
 ]
 ---
 
@@ -150,7 +152,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 ## Test your external access to the database
 
-To [test your external access]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) to the database, you need a client that supports [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication).
+To [test your external access]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) to the database, you need a client that supports [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication).
 
-See [Test your access with Openssl]({{<relref "/kubernetes/re-databases/set-up-ingress-controller#test-your-access-with-openssl">}}) or [Test your access with Python]({{<relref "/kubernetes/re-databases/set-up-ingress-controller#test-your-access-with-python">}}) for more info.
+See [Test your access with Openssl]({{<relref "/kubernetes/networking/set-up-ingress-controller#test-your-access-with-openssl">}}) or [Test your access with Python]({{<relref "/kubernetes/networking/set-up-ingress-controller#test-your-access-with-python">}}) for more info.
 

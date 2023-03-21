@@ -85,9 +85,9 @@ To finish VPC peering setup, [update your route tables for the peering connectio
 
 Once VPC peering is established, we recommend switching your application connection string to the private endpoint.
 
-## GCP VPC peering
+## Google Cloud VPC peering {#gcp-vpc-peering}
 
-If you want to peer a Redis Cloud VPC with a GCP VPC, you need to:
+If you want to peer a Redis Cloud VPC with a Google Cloud VPC, you need to:
 
 1. [Configure and initiate VPC peering](#config-gcp-vpc-peering) for your Redis Cloud subscription.
 
@@ -107,8 +107,8 @@ To set up VPC peering:
 
     | Setting&nbsp;name | Description |
     |-------------------|-------------|
-    | **Project ID** | GCP project ID (see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)) |
-    | **Network name** | GCP VPC network you want to peer with (see [View networks](https://cloud.google.com/vpc/docs/create-modify-vpc-networks#viewing-networks)) |
+    | **Project ID** | Google Cloud project ID (see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)) |
+    | **Network name** | Google Cloud VPC network you want to peer with (see [View networks](https://cloud.google.com/vpc/docs/create-modify-vpc-networks#viewing-networks)) |
 
 1. Copy the **Google cloud command** after you enter the other VPC peering settings. You need this command to accept the peering request later:
 
@@ -121,6 +121,6 @@ To set up VPC peering:
 
 ### Approve VPC peering request {#approve-gcp-vpc-peering}
 
-To approve the VPC peering request between Redis Cloud and GCP, use the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud) to run the **Google cloud command** that you copied before you initiated VPC peering.
+To approve the VPC peering request between Redis Cloud and Google Cloud, use the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud) to run the **Google cloud command** that you copied before you initiated VPC peering.
 
 Once VPC peering is established, we recommend switching your application connection string to the private endpoint.

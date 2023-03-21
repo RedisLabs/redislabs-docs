@@ -39,11 +39,6 @@ To import a dataset from any publicly available Redis server:
 
 If you have an RDB or a compressed RDB file from a Redis database, you can import data from that file into your Redis Enterprise Cloud database.
 
-{{< note >}}
-In order to import a sharded database that has multiple RDB files, you must first merge the files into a single RDB.
-For assistance, contact [Support](https://redis.com/company/support/).
-{{< /note >}}
-
 ### Via FTP or HTTP
 
 To import an RDB file stored on an FTP or HTTP server:
@@ -63,6 +58,8 @@ To import an RDB file stored on an FTP or HTTP server:
     - `port` - Port number of the server, if not `6379`
     - `path` - Path to the file, if necessary
     - `filename` - Filename of the RDB file, including the `.gz` suffix if the file is compressed
+
+1. For sharded databases with multiple RDB files, select **Add source** to add another RDB file.
 
 1. Select **Import**.
 
@@ -96,15 +93,17 @@ To share and import an RDB file that is stored in an AWS Simple Storage Service 
         - `path` - Path to the file, if necessary
         - `filename` - Filename of the RDB file, including the .gz suffix if the file is compressed
 
+1. For sharded databases with multiple RDB files, select **Add source** to add another RDB file.
+
 1. Select **Import**.
 
-### Via GCP Storage
+### Via Google Cloud Storage
 
-To use the Redis Cloud admin console to import your data, you must first share the file from the Google Cloud Platform (GCP) console.
+To use the Redis Cloud admin console to import your data, you must first share the file from the Google Cloud console.
 
-To share and import an RDB file that is stored in a GCP Storage bucket:
+To share and import an RDB file that is stored in a Google Cloud Storage bucket:
 
-1. In the GCP Storage bucket, edit the file's Access Control List to give read access to Redis Enterprise Cloud:
+1. In the Google Cloud Storage bucket, edit the file's Access Control List to give read access to Redis Enterprise Cloud:
     1. Select **Edit access** in the RDB file menu.
     1. Select **Add item**.
     1. Enter the user details and access:
@@ -126,6 +125,8 @@ To share and import an RDB file that is stored in a GCP Storage bucket:
         - `path` - Path to the file
         - `filename` - Filename of the RDB file, including the .gz suffix if the file is compressed
 
+1. For sharded databases with multiple RDB files, select **Add source** to add another RDB file.
+
 1. Select **Import**.
 
 ### Via Azure Blob Storage container
@@ -144,5 +145,7 @@ To import an RDB file stored in a Microsoft Azure Blog storage container:
         - `url` - URL of the storage account
         - `container` - Name of the container, if necessary
         - `filename` - Filename of the RDB file, including the .gz suffix if the file is compressed
+
+1. For sharded databases with multiple RDB files, select **Add source** to add another RDB file.
 
 1. Select **Import**.
