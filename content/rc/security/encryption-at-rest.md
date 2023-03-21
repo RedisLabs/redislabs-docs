@@ -17,12 +17,12 @@ Persistent data is written to [encrypted EBS volumes](https://docs.aws.amazon.co
 
 When Redis on Flash is enabled, the flash memory data is written to [encrypted NVMe SSD volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html).
 
-## Disk encryption on GCP {#gcp}
+## Disk encryption on Google Cloud {#gcp}
 
-All data written to disk on GCP-based Redis Cloud deployments is encrypted by default. When deploying
-a Redis Cloud database on GCP, you don't need to take any actions to enable this encryption.
+All data written to disk on Google Cloud-based Redis Cloud deployments is encrypted by default. When deploying
+a Redis Cloud database on Google Cloud, you don't need to take any actions to enable this encryption.
 
-To learn more, see the [GCP encryption at rest documentation](https://cloud.google.com/security/encryption-at-rest).
+To learn more, see the [Google Cloud encryption at rest documentation](https://cloud.google.com/security/encryption-at-rest).
 
 ## Disk encryption on Azure {#azure}
 
