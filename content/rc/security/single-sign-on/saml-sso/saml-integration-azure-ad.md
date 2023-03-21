@@ -136,7 +136,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
         * **FirstName**: user.givenname
         * **LastName**: user.surname
         * **redisAccountMapping**: "YOUR_SM_ACCOUNT_ID=owner"
-        * Redis Cloud account IDs and user roles pairs. The key-value pair consists of the lowercase role name (owner, member, manager, or viewer) AND your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
+        * Redis Cloud account IDs and user roles pairs. The key-value pair consists of the lowercase role name (owner, member, manager, or viewer) and your **Redis Cloud Account ID** found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
           {{<image filename="images/rc/saml/ad_saml_14.png" alt="" >}}{{</image>}}
 
@@ -148,13 +148,13 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ad_saml_16.png" alt="" >}}{{</image>}}
 
-## Step 4: Return to Redis Cloud SM
+## Step 4: Return to Redis Cloud admin console
 
-1. Return to Redis Cloud SM and select **Activate**.
+1. Return to Redis Cloud admin console and select **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
-1. A popup will appear, explaining that in order to test the SAML connection, that we need to login with credentials of a user defined in Azure AD.
+1. A popup appears, explaining that to test the SAML connection, you need to log in with the credentials of a user defined in Azure AD.
 
     {{<image filename="images/rc/saml/sm_saml_9.png" alt="" >}}{{</image>}}
 
@@ -162,7 +162,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ad_saml_19.png" alt="" >}}{{</image>}}
 
-1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to login to SM going forward, you click on the **Sign in with SSO** button.
+1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. To log in to admin console going forward, select **Sign in with SSO**.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
@@ -176,13 +176,13 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
 ## Claim conditions and user groups
 
-If your users will be part of different Groups, you can create a Claim Condition for the redisAccountMapping attribute.
+If your users are going to be part of different Groups, you can create a Claim Condition for the `redisAccountMapping` attribute.
 
 {{<image filename="images/rc/saml/ad_saml_20.png" alt="" >}}{{</image>}}
 
 ## IdP initiated SSO
 
-If you correctly set the up the **Sign on URL**, the SAML application will appear by default on a user’s **My Apps** panel.
+If you correctly set the up the **Sign on URL**, the SAML application appears by default on the user's **My Apps** panel.
 
 {{<image filename="images/rc/saml/ad_saml_25.png" alt="" >}}{{</image>}}
 
