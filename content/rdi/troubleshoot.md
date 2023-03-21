@@ -14,29 +14,28 @@ Learn how to diagnose common problems during installation and runtime of Redis D
 
 ### Problems with pip
 
-We have seen problems with using the [pip](https://pypi.org/project/pip/) installation due to the following reasons:
+Problems with [pip](https://pypi.org/project/pip/) installation can occur due to the following reasons:
 
-- **Wrong Python 3 Version**
+- **Wrong Python 3 version**
 
-  In many Linux distros the Python 3 version is still 3.6.\*. You can check this by running: `python --version`.
+  In many Linux distributions, the Python 3 version is still 3.6.\*. You can check this by running: `python --version`.
 
-- **More than one Python 3 Installed**
+- **More than one Python 3 installed**
 
   To solve this problem, create a Python virtual environment (venv) specifying
   the path to the right Python 3 installation for example `<PATH>/python3.8 -m venv <VENV-NAME>`. If you are not sure about the path run `which python3` and copy the path pointing to a Python installation with a version greater than `3.6`.
 
-- **Outdated Pip Version**
+- **Outdated pip version**
 
-  Some old pip versions will have problems with the wheel filename. It is best to update pip as well. In you `venv` run `pip install --upgrade pip`.
+  Some old pip versions can have problems with the wheel filename. It is best to update pip as well. In you `venv` run `pip install --upgrade pip`.
 
-- **Old RDI CLI Libraries from Previous Installations**
+- **Old RDI CLI libraries from previous installations**
 
   Sometimes RDI CLI libraries or its dependencies are already installed and they need an upgrade to get the latest version:
 
   ```bash
   # outputs the list of installed packages
   pip freeze > requirements.txt
-
   # updates all packages
   pip install -r requirements.txt --upgrade
   ```
@@ -56,8 +55,8 @@ The following problems can occur when running the `create` command:
 
   When running Redis Enterprise on Kubernetes, each Redis DB has a service that is created only after the DB had been created. In order to connect with the CLI from outside of Kubernetes and configure the Redis Data Integration DB, you need an `Ingress` resource for your Redis Data Integration database and `Ingress Controller` running on the Kubernetes cluster.
 
-  A Kubernetes `Service` and `Ingress` are mutually exclusive. So if your database has a `Service`, you should remove it and add an `Ingress` resource. Read [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/ingress/) for more information.
-  **Alternatively, you can run the CLI within the Kubernetes cluster as described [here](../installation/install-k8s.md).**
+  A Kubernetes `Service` and `Ingress` are mutually exclusive. So if your database has a `Service` you should remove it and add an `Ingress` resource. Read [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/ingress/) for more information.
+  **Alternatively, Just run the CLI withing the Kubernetes cluster as described [here](../installation/install-k8s.md).**
 
 ## Problems running Debezium
 
@@ -69,13 +68,13 @@ In `application.properties` configuration file, change/add:
 quarkus.log.level=DEBUG
 ```
 
-The most common problems with running Debezium Server are either:
+The most common problems with running Debezium Server are:
 
-- **Debezium Failing to Reach the Configuration File**
+- **Debezium failing to reach the configuration file**
 
   The error message for this one is not clear and typically Debezium reports it couldn't find the first element in the configuration file. Usually it implies that there is no `application.properties` file in `$PWD/debezium`. Make sure you run the `docker run` command from the right directory.
 
-- **Debezium Failing to Reach the Source Database**
+- **Debezium failing to reach the source database**
 
   The error message is not obvious again. It will typically report a problem reading the binary log of the source database. There are several potential reasons here:
 
@@ -90,7 +89,7 @@ The most common problems with running Debezium Server are either:
     - [PostgreSQL](https://tecadmin.net/postgresql-allow-remote-connections/)
     - [SQL Server](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/configure-the-remote-access-server-configuration-option?view=sql-server-ver16)
 
-- **Handling Debezium Container Crash**
+- **Handling Debezium container crash**
 
   The Debezium Server is stateless. In case it crashed, you can always remove it safely and run a new one using a fixed `application.properties` file:
 
@@ -100,14 +99,14 @@ The most common problems with running Debezium Server are either:
 
   - If there is a Debezium Server container that has exited, you can remove it using `docker rm -f <DEBEZIUM_CONTAINER_ID>`.
 
-- **Stopping and Starting Debezium Server**
+- **Stopping and starting Debezium Server**
 
   In case you want to fix something in the Debezium Server configuration and Debezium Server is still running:
 
   - Use `docker stop <DEBEZIUM_CONTAINER_NAME>`.
-  - You can start it later using `docker start <DEBEZIUM_CONTAINER_NAME>`. If you want the container to be attached to the terminal, run it with `--attach`.
+  - You can start it later using `docker start <DEBEZIUM_CONTAINER_NAME>`. If You want the container to be attached to the terminal, run it with `--attach`.
 
-## Getting Debezium server logs
+## Getting Debezium Server logs
 
 ### Containerized deployment
 
@@ -168,121 +167,23 @@ docker logs <DEBEZIUM_CONTAINER_NAME> -n 10 | tee /home/debezium-server/logs/deb
 
 > The last 10 lines of the Debezium Server log will be redirected to the stdout and to the file `/home/debezium-server/logs/debezium.log`.
 
-## Problems with processing change events from Debezium
+### Non-containerized deployment
 
-If change events are rejected by RDI, or if records aren't transformed as expected, you can run the [`redis-di trace`]({{<relref "/rdi/reference/cli/redis-di-trace">}}) command to find more details. The command puts RDI in `trace` mode for a specified time (default 20 seconds) and/or a maximum number of traced change records per shard. Detailed information about change events is displayed on standard output.
+The Debezium log files will be created in the directory set for the property `<quarkus.log.file.path>`.
 
-The example below walks through the typical output structure for a change event:
+#### Example
 
-```shell
-employee:EmployeeId:302 2023-02-02 14:48:56.483 (+0ms) event performed in source database
-employee:EmployeeId:302 2023-02-02 14:48:56.686 (+203ms) event received by collector
+```properties
+quarkus.log.file.path=/home/debezium-server/logs/debezium.log
+quarkus.log.file.rotation.max-file-size=100M
+quarkus.log.file.rotation.file-suffix=.yyyy-MM-dd.gz
+quarkus.log.file.rotation.max-backup-index=3
+quarkus.log.file.rotation.rotate-on-boot=true
 ```
 
-This is the notification of a change event record received by a stream in the RDI database. It records the elapsed time from when the change event occurred in the source database to when the change event record was received by the Debezium Server connector, in this example 203ms.
+With this configuration: 
 
-The event data received is a collector record with the following structure:
-
-```shell
-{'key': '{
-    "schema": {
-        "type": "struct",
-        "fields": [
-           ... 
-        ],
-        "optional": false,
-        "name": "chinook.public.Employee.Key"
-    },
-    "payload": {
-        "EmployeeId": 302
-    }
-}', 'value': '{
-    "schema": {
-        "type": "struct",
-        "fields": [
-           ...
-        ],
-        "optional": false,
-        "name": "chinook.public.Employee.Envelope",
-        "version": 1
-    },
-    "payload": {
-        "before": null,
-        "after": {
-            "EmployeeId": 302,
-            "LastName": "Bunter",
-            "FirstName": "William",
-            ...
-        },
-        "source": {
-            "version": "2.1.1.Final",
-            "connector": "postgresql",
-            "name": "chinook",
-            "ts_ms": 1675343987658,
-            "snapshot": "false",
-            "db": "chinook",
-            "sequence": "[\\"171530259376\\",\\"171597365344\\"]",
-            "schema": "public",
-            "table": "Employee",
-            "txId": 37801,
-            "lsn": 171597365344,
-            "xmin": null
-        },
-        "op": "c",
-        "ts_ms": 1675338367446,
-        "transaction": null
-    }
-}'
-```
-
-For a detailed explanation of change event records, please see the Debezium documentation, for example for [PostgreSQL](https://debezium.io/documentation/reference/stable/connectors/postgresql.html#postgresql-events).
-
-Next, the event is received by the RDI transformation pipeline:
-
-```shell
-employee:EmployeeId:302 2023-02-02 14:48:57.220 (+737ms) received c event in stream data:chinook.public.Employee
-```
-
-In this example, the total elapsed time is 737ms.
-
-If a transformation job applies to this record, there will be a notification:
-
-```shell
-For employee:EmployeeId:302 found transformation job: employee
-```
-
-If there is no transformation job, the message is:
-
-```shell
-INFO - employee:EmployeeId:302 could not find any transformation Job for event, using default transformation
-```
-
-The data record is shown before and after transformation:
-
-```shell
-employee:EmployeeId:302 Before transformation:
-{
-  "EmployeeId": 302,
-  "LastName": "Bunter",
-  "FirstName": "William",
-  ...
-}
-employee:EmployeeId:302 After transformation:
-{
-  "EmployeeId": 302,
-  "last_name": "Bunter",
-  "first_name": "William",
-  ...
-}
-```
-
-Finally, the command executed in the Redis target database is logged and the change record statistics are displayed:
-
-```shell
-employee:EmployeeId:302 Executed: JSON.SET "employee:EmployeeId:302" "$" "{\"EmployeeId\":302,\"last_name\":\"Bunter\",\"first_name\":\"William\",...}"
-employee:EmployeeId:302 Results: []
-employee:EmployeeId:302 -1 event processing completed
-"Change record stats:", "total", 1, "latency_min", 203, "latency_avg", 203, "latency_max", 203"
-```
-
-The trace session ends with `Done`.
+* A `debezium.log` file is created in the directory `/home/debezium-server/logs/`.
+* When the log file size reaches 100M it is renamed to `debezium.log.2023-01-22.1.gz`, and a new log file, `debezium.log`, is created.
+* If the size of the log file reaches 100M and there are already 3 backup log files, the first backup file, `debezium.log.2023-01-22.1.gz`, is deleted.
+* At any point in time, only 3 backup log files exist: `debezium.log.2023-01-22.1.gz`, `debezium.log.2023-01-22.2.gz`, `debezium.log.2023-01-22.3.gz`, and an active log file, `debezium.log`.
