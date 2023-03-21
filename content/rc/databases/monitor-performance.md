@@ -48,15 +48,15 @@ Several metric graphs are available:
 | [Writes/sec]({{< relref "/rs/references/metrics/database-operations#writessec" >}}) | The number of write operations per second |
 | [Other cmds/sec]({{< relref "/rs/references/metrics/database-operations#other-commandssec" >}}) | The number of other Redis commands per second |
 | [Latency]({{< relref "/rs/references/metrics/database-operations#latency" >}}) | Latency per operation, in milliseconds |
-| [Reads Latency]({{< relref "/rs/references/metrics/database-operations#reads-latency" >}}) | Latency per read operation, in milliseconds |
-| [Writes Latency]({{< relref "/rs/references/metrics/database-operations#writes-latency" >}}) | Latency per write operation, in milliseconds |
-| [Other Latency]({{< relref "/rs/references/metrics/database-operations#other-commands-latency" >}}) | Latency of other commands, in milliseconds |
-| [Used Memory]({{< relref "/rs/references/metrics/resource-usage#used-memory" >}}) | The amount of memory used by the database |
-| [Total Keys]({{< relref "/rs/references/metrics/database-operations#total-keys" >}}) | The total number of keys in the database |
-| [Connections]({{< relref "/rs/references/metrics/resource-usage#connections" >}}) | The total number of connections to the endpoint |
-| [Evicted Objects/sec]({{< relref "/rs/references/metrics/database-operations#evicted-objectssec" >}}) | Number of objects evicted from the database per second |
-| [Expired Objects/sec]({{< relref "/rs/references/metrics/database-operations#expired-objectssec" >}}) | Number of expired objects per sec. An expired object is an object with expired TTL that was deleted from the database. |
-| [Hit Ratio]({{< relref "/rs/references/metrics/database-operations#hit-ratio" >}}) | The percent of operations on existing keys out of the total number database operations. |
+| [Reads latency]({{< relref "/rs/references/metrics/database-operations#reads-latency" >}}) | Latency per read operation, in milliseconds |
+| [Writes latency]({{< relref "/rs/references/metrics/database-operations#writes-latency" >}}) | Latency per write operation, in milliseconds |
+| [Other latency]({{< relref "/rs/references/metrics/database-operations#other-commands-latency" >}}) | Latency of other commands, in milliseconds |
+| [Used memory]({{< relref "/rs/references/metrics/resource-usage#used-memory" >}}) | Amount of memory used by the database |
+| [Total keys]({{< relref "/rs/references/metrics/database-operations#total-keys" >}}) | Total number of keys in the database |
+| [Connections]({{< relref "/rs/references/metrics/resource-usage#connections" >}}) | Total number of connections to the endpoint |
+| [Evicted objects/sec]({{< relref "/rs/references/metrics/database-operations#evicted-objectssec" >}}) | Number of objects evicted from the database per second. |
+| [Expired objects/sec]({{< relref "/rs/references/metrics/database-operations#expired-objectssec" >}}) | Number of expired objects per second. An expired object is an object with expired TTL that was deleted from the database. |
+| [Hit ratio]({{< relref "/rs/references/metrics/database-operations#hit-ratio" >}}) | Percent of operations on existing keys out of the total number database operations |
 
 For more detailed analysis, consider using [RedisInsight]({{< relref "/ri/" >}}) or [Prometheus and Grafana]({{< relref "/rc/cloud-integrations/" >}}).
 
