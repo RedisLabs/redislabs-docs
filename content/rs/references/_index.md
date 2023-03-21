@@ -25,6 +25,10 @@ Documents the REST API available to Redis Enterprise Software deployments.
 
 Documents compatibility of open source Redis commands and configuration settings with Redis Enterprise Software and Redis Cloud.
 
+## [Policies]({{<relref "/rs/references/policies">}})
+
+References for Redis Enterprise Software policies.
+
 ## [Terminology]({{<relref "/rs/references/terminology">}})
 
 Explains terms used in Redis Enterprise Software documentation.

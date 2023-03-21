@@ -1,7 +1,7 @@
 ---
 Title: Database connection auditing
 linkTitle: db_conns_auditing
-description: Audit database connections.
+description: Configure and enable database connection auditing.
 weight: $weight
 alwaysopen: false
 toc: "true"

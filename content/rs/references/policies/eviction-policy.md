@@ -1,10 +1,10 @@
 ---
 Title: Data eviction policy
 linkTitle: eviction_policy
-description: Determines what happens when a database reaches its memory limit.
+description: Determines how to handle data when a database reaches its memory limit.
 weight: $weight
 alwaysOpen: false
-headerRange: "[1-2]"
+toc: "true"
 categories: ["RS"]
 aliases: 
 ---

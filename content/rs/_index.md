@@ -58,6 +58,7 @@ Create and manage a [Redis database]({{<relref "/rs/databases">}}) on a cluster.
 Use command-line utilities and the REST API to manage the cluster and databases.
 - [rladmin]({{<relref "/rs/references/cli-utilities/rladmin">}}), [crdb-cli]({{<relref "/rs/references/cli-utilities/crdb-cli">}}), & [other utilities]({{<relref "/rs/references/cli-utilities">}})
 - [REST API reference]({{<relref "/rs/references/rest-api">}}) & [examples]({{<relref "/rs/references/rest-api/quick-start">}})
+- [Policies]({{<relref "/rs/references/policies">}})
 - [Redis commands](https://redis.io/commands/) (redis.io)
 
 ## Related info

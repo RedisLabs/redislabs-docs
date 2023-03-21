@@ -8,9 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-TBA
-
-## Policies
+Here are several policies you can configure for a Redis Enterprise Software cluster.
 
 {{<table-children columnNames="Utility,Description" columnSources="LinkTitle,Description" enableLinks="LinkTitle">}}
 

@@ -1,7 +1,7 @@
 ---
 Title: Default shard placement policy
 linkTitle: default_shards_placement
-description: Detailed info about the shard placement policy.
+description: Determines the distribution of database shards across nodes in the cluster.
 weight: $weight
 alwaysopen: false
 toc: "true"

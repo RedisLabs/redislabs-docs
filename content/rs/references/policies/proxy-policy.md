@@ -1,7 +1,7 @@
 ---
 Title: Proxy policy
 linkTitle: proxy_policy
-description: Proxy policy 
+description: Determines the number and placement of active proxies to bind to a database endpoint.
 weight: $weight
 alwaysopen: false
 toc: "true"

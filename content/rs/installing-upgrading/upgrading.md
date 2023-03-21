@@ -17,7 +17,7 @@ You don't have to upgrade the databases in your cluster; however, new features a
 
 ## Default Redis database versions {#default-db-versions}
 
-When you upgrade an existing database or create a new one, it uses the default Redis version (`default_redis_version`) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}) or [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}).
+When you upgrade an existing database or create a new one, it uses the default Redis version ([`default_redis_version`]({{<relref "/rs/references/policies/default-redis-version">}})) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}) or [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}).
 
 Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2. The default Redis database version differs between Redis Enterprise releases as follows:
 
@@ -30,7 +30,7 @@ Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2
 
     Setting `redis_upgrade_policy` to `major` enforces this default. However, if you change `redis_upgrade_policy` to `latest`, this enforces 6.2 as the default.
     
-    The upgrade policy is only relevant for Redis Enterprise Software versions 6.2.4 through 6.2.18. For more information about upgrade policies, see the [6.2 version of this document](https://docs.redis.com/6.2/rs/installing-upgrading/upgrading/#redis-upgrade-policy).
+    The upgrade policy is only relevant for Redis Enterprise Software versions 6.2.4 through 6.2.18. For more information about upgrade policies, see the [Redis upgrade policy reference]({{<relref "/rs/references/policies/redis-upgrade-policy">}}).
 
 - v6.4.2: `default_redis_version` is 6.2.
 
