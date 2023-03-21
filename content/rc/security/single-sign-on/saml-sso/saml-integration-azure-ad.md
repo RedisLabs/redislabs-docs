@@ -45,14 +45,14 @@ To create the Azure AD SAML Toolkit integration application:
 
 1. Scroll down to **Step 4** in the configuration screen, and note down or copy the following information:
 
-   * **Login URL** is used as the "IdP server URL" in the SAML configuration in SM.
-   * **Azure AD Identifier** is used as the "Issuer (IdP Entity ID)" in the SAML configuration in SM.
+   * **Login URL** is used as the "IdP server URL" in the SAML configuration in admin console.
+   * **Azure AD Identifier** is used as the "Issuer (IdP Entity ID)" in the SAML configuration in admin console.
   
     {{<image filename="images/rc/saml/ad_saml_6.png" alt="" >}}{{</image>}}
 
 1. Scroll up to **Step 3** in the configuration screen.
 
-   * Certificate (Base 64) is needed in order to complete the SAML configuration in SM
+   * Certificate (Base 64) is required to complete the SAML configuration in admin console.
 
      {{<image filename="images/rc/saml/ad_saml_7.png" alt="" >}}{{</image>}}
 
@@ -66,9 +66,9 @@ To create the Azure AD SAML Toolkit integration application:
 
 Now that you have your AD IdP server ready, configure support for SAML in Redis Cloud.
 
-### Log in to your Redis Cloud SM account
+### Log in to your Redis Cloud account
 
-[Log in](https://app.redislabs.com/#/login) to your SM account.
+[Log in](https://app.redislabs.com/#/login) to your account.
 
 ### Activate SAML in access management
 
