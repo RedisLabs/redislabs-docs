@@ -99,7 +99,7 @@ To modify the application user profile:
 
     {{<image filename="images/rc/saml/okta_saml_app_int_9.png" alt="" >}}{{</image>}}
 
-1. Add the custom attribute to your user profile to specify which Redis Cloud role the user has and on which SM account. Select **Add Attribute**.
+1. Add the custom attribute to your user profile to specify which Redis Cloud role the user has and on which account. Select **Add Attribute**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_10.png" alt="" >}}{{</image>}}
 
@@ -200,9 +200,9 @@ Then, edit the user assignment.
 
 Now that you have a test IdP server ready as well as your user group, configure support for SAML in Redis Cloud.
 
-### Sign in to your Redis Cloud SM account
+### Sign in to your Redis Cloud account
 
-Sign in to your [SM account](https://app.redislabs.com/#/login).
+Sign in to your [admin console](https://app.redislabs.com/#/login).
 
 ### Activate SAML in Access Management
 
@@ -218,7 +218,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_2.png" alt="" >}}{{</image>}}
 
-1. Select **Enable** and wait a few seconds for the status to change. You will then be able to download the service provider (SP) metadata. Save the file to your local hard disk.
+1. Select **Enable** and wait a few seconds for the status to change. You are then able to download the service provider (SP) metadata. Save the file to your local hard disk.
 
     {{<image filename="images/rc/saml/sm_saml_3.png" alt="" >}}{{</image>}}
 
@@ -232,13 +232,13 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
-1. Return to OKTA, select **Applications > Redis Cloud > General** and select **Edit**.
+1. Return to Okta, select **Applications > Redis Cloud > General** and select **Edit**.
 
     {{<image filename="images/rc/saml/okta_saml_app_int_12.png" alt="" >}}{{</image>}}
 
 1. Then, navigate to **Configure SAML** (step 2) and update the following information in **SAML Settings General**:
 
-   * **Single sign on URL**: Use the information that you copied for **Location**.
+   * **Single sign-on URL**: Use the information that you copied for **Location**.
    * **Audience URI (SP Entity ID)**: Use the information that you copied for **EntityID**.
    * **Default RelayState**: Only needed if you want to have an IdP initiated flow. Take the ID from the location URL in step 3 (the content after the last forward slash "/") and append to the url (for example, `https://app.redislabs.com/#/login/?idpId=YOUR_LOCATION_ID`).
 
@@ -246,9 +246,9 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
    Select **Next**, then select **Finish**.
 
-### Return to Redis Cloud SM
+### Return to admin consol
 
-1. Return to Redis Cloud SM and select **Activate**.
+1. Return to admin console and select **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
@@ -260,7 +260,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_14.png" alt="" >}}{{</image>}}
 
-1. If the test succeeds, your local account is now considered a SAML account. To log in to SM going forward, select **Sign in with SSO**.
+1. If the test succeeds, your local account is now considered a SAML account. To log in to admin console going forward, select **Sign in with SSO**.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
@@ -268,7 +268,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_15.png" alt="" >}}{{</image>}}
 
-1. If only one user is defined in the SM account, you get a popup window where you select **Confirm** to convert the local user to a SAML user. 
+1. If only one user is defined in admin console, you get a popup window where you select **Confirm** to convert the local user to a SAML user. 
 
     > Consider setting up one more local user other than a SAML user.
 
