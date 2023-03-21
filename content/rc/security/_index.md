@@ -32,7 +32,7 @@ Secure access to the admin console by:
 
 - Assigning appropriate roles to [team members with access]({{<relref "/rc/security/access-management#team-management-roles">}}).
 
-- Enabling enabling [multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}}).
+- Enabling [multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}}).
 
 ## Database security
 
