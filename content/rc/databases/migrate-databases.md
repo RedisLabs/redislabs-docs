@@ -33,7 +33,7 @@ This approach also lets you transfer data between databases hosted by different 
 
 ## Sync using Active-Passive
 
-If your target database is hosted on a Flexible (or Annual) subscription, you can use Active-Passive to sync (synchronize) the source database to the target database.  (The source database can be hosted on a Fixed, Flexible, or Annual subscription.)
+If your target database is hosted on a paid Fixed, Flexible, or Annual subscription, you can use Active-Passive to sync the source database to the target database.  (The source database can be hosted on a Fixed, Flexible, or Annual subscription.)
 
 The source database remains active while the data migrates.
 

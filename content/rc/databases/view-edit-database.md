@@ -83,7 +83,7 @@ The Durability section helps protect your data when problems occur.  These setti
 | **Data persistence** | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type |
 | **Data eviction policy** | Defines what happens when your database reaches its [memory size limit]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) |
 | **Remote backup** | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}). |
-| **Active-passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
+| **Active-Passive Redis** | (_Paid Fixed, Flexible or Annual subscriptions only_) When enabled, identifies a path to a source database. See [Sync using Active-Passive]({{< relref "/rc/databases/migrate-databases#sync-using-active-passive" >}}) for more information. |
 
 ### Security section
 
