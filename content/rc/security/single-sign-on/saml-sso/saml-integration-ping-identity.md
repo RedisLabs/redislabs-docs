@@ -25,9 +25,9 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 3. Fill in the fields with the following values:
 
-    * Name : **redisAccountMapping**
-    * Display name : **redisAccountMapping**
-    * Description : **redisAccountMapping**
+    * **Name**: `redisAccountMapping`
+    * **Display name**: `redisAccountMapping`
+    * **Description**: `redisAccountMapping`
 
     {{<image filename="images/rc/saml/ping_identity_saml_3.png" alt="" >}}{{</image>}}
 
