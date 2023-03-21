@@ -56,7 +56,7 @@ The following problems can occur when running the `create` command:
   When running Redis Enterprise on Kubernetes, each Redis DB has a service that is created only after the DB had been created. In order to connect with the CLI from outside of Kubernetes and configure the Redis Data Integration DB, you need an `Ingress` resource for your Redis Data Integration database and `Ingress Controller` running on the Kubernetes cluster.
 
   A Kubernetes `Service` and `Ingress` are mutually exclusive. So if your database has a `Service` you should remove it and add an `Ingress` resource. Read [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/ingress/) for more information.
-  **Alternatively, Just run the CLI withing the Kubernetes cluster as described [here](../installation/install-k8s.md).**
+  Alternatively, run the CLI within the Kubernetes cluster as described in [Running on Kubernetes]({{<relref "/rdi/installation/install-k8s">}}).
 
 ## Problems running Debezium
 

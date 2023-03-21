@@ -27,7 +27,7 @@ Redis Data Integration using Debezium works in 2 modes:
 
 Currently Redis Data Integration supports transforming data from RDBMS row into a [Redis Hash](https://redis.io/docs/manual/data-types/#hashes).
 In the short term we will add support for RDBMS row into [RedisJSON](https://redis.io/docs/stack/json/) document.
-See the [data types list](data-transformation/data-type-conversion.md) for the exact mappings.
+See the [data types list]({{<relref "/rdi/reference/data-types-conversion">}}) for the exact mappings.
 
 ## Architecture and components
 
@@ -74,14 +74,14 @@ Credentials and Certificate can be served in one of the following ways:
 
 - Entered manually as parameters to a CLI command (where applicable).
 - Stored in environment variables.
-- Injected to the temp file system by a secret store agent (e.g. [HashiCorp Vault](https://www.vaultproject.io/)).
+- Injected to the temp file system by a secret store agent (for example, [HashiCorp Vault](https://www.vaultproject.io/)).
 
 ## Scalability and high availability
 
 Redis Data Integration is highly available:
 
 - At the feeder level: Debezium Server is deployed using [Kubernetes](https://kubernetes.io/) or [Pacemaker](https://clusterlabs.org/pacemaker/) for failover between stateless instances, while the state is secured in Redis.
-- At the Data and Control Plane: Using Redis Enterprise mechanisms for high availability (shard replica, cluster level configurations, etc.)
+- At the Data and Control Plane: Using Redis Enterprise mechanisms for high availability (shard replica, cluster level configurations, and so on)
 
 Redis Data Integration is horizontally scalable:
 
@@ -89,7 +89,7 @@ Redis Data Integration is horizontally scalable:
 
 ## Tested topologies
 
-Redis Data Integration is running on Redis Enterprise. It works on any installation of Redis Enterprise regardless of the runtime (bare metal, VMs or containers).
+Redis Data Integration is running on Redis Enterprise. It works on any installation of Redis Enterprise regardless of the runtime (bare metal, VMs, or containers).
 Redis Data Integration can be collocated with the target Redis DB or run on a different Redis Enterprise cluster.
 
 Debezium Server should run in warm High Availability topology in one of the following options:

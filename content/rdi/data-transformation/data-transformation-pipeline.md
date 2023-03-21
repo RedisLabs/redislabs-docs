@@ -20,7 +20,7 @@ Each job describes the transformation logic to perform on data from a single sou
 
 Each job will be in a separate YAML file. All of these files will be uploaded to Redis Data Integration using the `deploy` command (see [below](#deploy-configuration)). If you are using the [scaffold]({{<relref "/rdi/quickstart/ingest-guide#scaffold-configuration-files">}}) command, place the job files under the `jobs` folder.
 
-### Job YAML Structure
+### Job YAML structure
 
 #### Fields
 
@@ -99,7 +99,7 @@ output:
         language: jmespath
 ```
 
-### Deploy Configuration
+### Deploy configuration
 
 In order to deploy your jobs to the remote RDI database, run:
 
@@ -107,7 +107,7 @@ In order to deploy your jobs to the remote RDI database, run:
 redis-di deploy
 ```
 
-### Deploy Configuration on Kubernetes
+### Deploy configuration on Kubernetes
 
 If the RDI CLI is deployed as a pod in a Kubernetes cluster, then these steps are needed for deploying your jobs:
 
@@ -133,7 +133,7 @@ There are two options for updating the ConfigMap:
   kubectl edit configmap redis-di-jobs
   ```
 
-- For bigger changes (e.g. the addition of another job file), edit files in your local `jobs` folder and then run this command:
+- For bigger changes (for example, the addition of another job file), edit files in your local `jobs` folder and then run this command:
 
   ```bash
   kubectl create configmap redis-di-jobs --from-file=jobs/ --dry-run=client -o yaml | kubectl apply -f -
