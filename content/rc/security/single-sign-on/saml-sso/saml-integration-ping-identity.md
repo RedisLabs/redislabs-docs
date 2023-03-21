@@ -142,7 +142,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     * Paste **Location** link in the ACS URLS field.
 
-    * For the **Sign on URL** field, add URL `https://app.redislabs.com/#/login/?idpId=`, where you need to add the ID from the Reply URL’s ID, for example, `https://app.redislabs.com/#/login/?idpId=0oa5pwatz2JfpfCb91d7`.
+    * For the **Sign on URL** field, add URL `https://app.redislabs.com/#/login/?idpId=`, where you need to add the ID from the Reply URL ID, for example, `https://app.redislabs.com/#/login/?idpId=0oa5pwatz2JfpfCb91d7`.
 
     Select **Save**.
 
@@ -166,7 +166,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ping_identity_saml_20.png" alt="" >}}{{</image>}}
 
-1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. In order to login to SM going forward, select the **Sign in with SSO** button.
+1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. To log in to admin console going forward, select the **Sign in with SSO** button.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
