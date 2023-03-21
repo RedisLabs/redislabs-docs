@@ -28,7 +28,7 @@ Geo-distributed replication maintains copies of both primary and replica shards 
 
 ### Multiple active proxies
 
-Active-Active databases use a multi-primary architecture, which lets you read and write to a primary shard in any of your participating clusters. Having [multiple active proxies]({{<relref "/rs/databases/configure/proxy-policy#about-multiple-active-proxy-support">}}) allows users to connect to the cluster closest to them, reducing latency.
+Active-Active databases use a multi-primary architecture, which lets you read and write to a primary shard in any of your participating clusters. Having [multiple active proxies]({{<relref "/rs/databases/configure/proxy-policy#multiple-active-proxies">}}) allows users to connect to the cluster closest to them, reducing latency.
 
 ### Conflict resolution
 

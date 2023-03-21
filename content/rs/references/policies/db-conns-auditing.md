@@ -1,16 +1,15 @@
 ---
 Title: Database connection auditing
 linkTitle: db_conns_auditing
-description: Audit database connections 
+description: Audit database connections.
 weight: $weight
 alwaysopen: false
 toc: "true"
-headerRange: "[1-2]"
 categories: ["RS"]
 aliases: 
 ---
 
-Use (`db_conns_auditing`) to set a default [database connection auditing]({{<relref "/rs/security/audit-events">}}) policy for all new databases created in the cluster.
+Use `db_conns_auditing` to set a default [database connection auditing]({{<relref "/rs/security/audit-events">}}) policy for all new databases created in the cluster.
 
 When enabled, database connection auditing tracks the following events:
 
@@ -35,32 +34,23 @@ Auditing is not enabled by default. To enable auditing for all new databases cre
 
 ## Configuration {#config-settings}
 
-Audit database connections configuration:
+Before you can enable database connection auditing, you need to configure the following settings:
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| audit_address | string | TCP/IP address where one can listen for notifications. |
-| audit_port | integer | Port where one can listen for notifications. |
-| audit_protocol | `TCP`<br />`local` | Protocol used to process notifications. For production systems, `TCP` is the only valid value. |
+| audit_address | string | Use the TCP/IP address to listen for notifications.<br /><br />When `audit_protocol` is `local`, set `audit_address` to a [stream socket](https://man7.org/linux/man-pages/man7/unix.7.html) on the machine running Redis Enterprise Software. |
+| audit_port | integer | Use the port to listen for notifications.<br /><br />Don't specify a port if `audit_protocol` is `local`. |
+| audit_protocol | `TCP`<br />`local` | Protocol used to process notifications.<br /><br />For development and test environments, you can set `audit_protocol` to `local`. However, you must use `TCP` to audit production environments. |
 | audit_reconnect_interval | integer | Interval (in seconds) between attempts to reconnect to the listener. Default is 1 second. |
-| audit_reconnect_max_attempts | integer | Maximum number of attempts to reconnect. Default is 0 (infinite). |
-
-Development systems can set _audit\_protocol_ to `local` for testing and training purposes; however, this setting is _not_ supported for production use.  
-    
-When `audit_protocol` is set to `local`, `<address>` should be set to a [stream socket](https://man7.org/linux/man-pages/man7/unix.7.html) defined on the machine running Redis Enterprise and _`<port>`_ should not be specified: 
-    
-```
-rladmin cluster config auditing db_conns \
-   audit_protocol local audit_address <output-file>
-```
-
-The output file and path must be accessible by the user and group running Redis Enterprise Software.
+| audit_reconnect_max_attempts | integer | Maximum number of reconnection attempts. Default is 0 (infinite). |
 
 ## Examples
 
-To configure auditing for your cluster, use:
+### Configure auditing
 
-- `rladmin`
+To configure auditing for your cluster, use one of the following methods:
+
+- [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}})
 
     ```
     rladmin cluster config auditing db_conns \
@@ -71,7 +61,7 @@ To configure auditing for your cluster, use:
        audit_reconnect_max_attempts <number of attempts>
     ```
 
-- the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/auditing-db-conns#put-cluster-audit-db-conns">}})
+- [REST API request]({{<relref "/rs/references/rest-api/requests/cluster/auditing-db-conns#put-cluster-audit-db-conns">}})
 
     ```
     PUT /v1/cluster/auditing/db_conns
@@ -84,22 +74,31 @@ To configure auditing for your cluster, use:
     }
     ```
 
-To audit connections for new databases by default, use:
+### Use local audit_protocol
 
-- `rladmin`
+To configure auditing in a development or test environment using the `local` `audit_protocol`, run:
+
+```
+rladmin cluster config auditing db_conns \
+   audit_protocol local audit_address <output-file>
+```
+
+The user and group running Redis Enterprise Software must be able to access the output file.
+
+### Audit databases by default
+
+To audit connections for new databases by default, use one of the following methods:
+
+- [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}})
 
     ```
     rladmin tune cluster db_conns_auditing enabled
     ```
 
-    To deactivate this policy, set `db_conns_auditing` to `disabled`.
-
-- the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}})
+- [REST API request]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}})
 
     ```
     PUT /v1/cluster/policy
     { "db_conns_auditing": true }
     ```
-
-    To deactivate this policy, set `db_conns_auditing` to `false`.
 

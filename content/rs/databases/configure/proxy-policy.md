@@ -1,7 +1,7 @@
 ---
 Title: Configure proxy policy
 linktitle: Proxy policy
-description:
+description: Configure proxy policy.
 weight: 40
 alwaysopen: false
 categories: ["RS"]
@@ -13,38 +13,25 @@ aliases: [
 
 ]
 ---
-Redis Enterprise Software (RS) provides high-performance data access
-through a proxy process that manages and optimizes access to shards
-within the RS cluster. Each node contains a single proxy process.
-Each proxy can be active and take incoming traffic or it can be passive
-and wait for failovers.
+Redis Enterprise Software uses [proxies]({{<relref "/rs/references/terminology#proxy">}}) to manage and optimize access to database shards. Each node in the cluster runs a single proxy process, which can be active (receives incoming traffic) or passive (waits for failovers), depending on the database's [proxy policy]({{<relref "/rs/references/policies/proxy-policy">}}).
+
+When you create a database, Redis Enterprise creates a [database endpoint]({{<relref "/rs/references/terminology#database-endpoint">}}), which receives traffic for all database operations. By default, Redis Enterprise binds the database endpoint to one of the proxies on a single node in the cluster. This proxy becomes an active proxy, which receives all the operations for the database. If the node with the active proxy fails, a new proxy on another node automatically takes over as part of the failover process.
 
 ## Proxy policies
 
-A database can have one of these proxy policies:
+A database can use one of the following proxy policies:
 
-| **Proxy Policy** | **Description** |
-|------------|-----------------|
-| Single | There is only a single proxy that is bound to the database. This is the default database configuration and preferable in most use cases. |
-| All Master Shards | There are multiple proxies that are bound to the database, one on each node that hosts a database master shard. This mode fits most use cases that require multiple proxies. |
-| All Nodes | There are multiple proxies that are bound to the database, one on each node in the cluster, regardless of whether or not there is a shard from this database on the node. This mode should be used only in special cases. |
+- `single` - only one active proxy for the database
 
-{{< note >}}
-Manual intervention is also available via the rladmin bind add and
-remove commands.
-{{< /note >}}
+- `all-master-shards` - multiple active database proxies, one on each node that hosts a master shard
 
-## Database configuration
+- `all-nodes` - multiple active database proxies, one on each node in the cluster
 
-A database can be configured with a proxy policy using rladmin bind.
+See the [proxy policy reference]({{<relref "/rs/references/policies/proxy-policy">}}) for more information.
 
-Warning: Any configuration update which causes existing proxies to be
-unbounded can cause existing client connections to get disconnected.
+## View cluster proxy policy
 
-You can run rladmin to control and view the existing settings for proxy
-configuration.
-
-The **info** command on cluster returns the existing proxy policy for
+Run [`rladmin info cluster`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-cluster">}}) to view the current proxy policy for
 sharded and non-sharded (single shard) databases.
 
 ```sh
@@ -65,82 +52,59 @@ cluster configuration:
    watchdog profile: local-network
 ```
 
-You can configure the proxy policy using the `bind` command in
-rladmin. The following command is an example that changes the bind
-policy for a database called "db1" with an endpoint id "1:1" to "All
-Master Shards" proxy policy.
+## Change database proxy policy
+
+You can configure a database's proxy policy using [`rladmin bind`]({{<relref "/rs/references/cli-utilities/rladmin/bind">}}).
+
+{{<warning>}}
+Any configuration change that unbinds proxies can disrupt established client connections.
+{{</warning>}}
+
+The following command binds a database called "db1" with the endpoint ID "1:1" to the `all-master-shards` proxy policy:
 
 ```sh
 rladmin bind db db1 endpoint 1:1 policy all-master-shards
 ```
 
-{{< note >}}
-You can find the endpoint id for the endpoint argument by running
-*status* command for rladmin. Look for the endpoint id information under
-the *ENDPOINT* section of the output.
-{{< /note >}}
+{{<note>}}
+To find the endpoint ID, run [`rladmin status endpoints`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-endpoints">}}).
+{{</note>}}
 
-### Reapply policies after topology changes
+## Reapply policy after topology changes
 
-If you want to reapply the policy after topology changes, such as node restarts,
-failovers and migrations, run this command to reset the policy:
+During regular cluster operations, certain actions (such as automatic migration or automatic failover) change what proxy needs to be bound to what database. When such actions take place, the cluster attempts to automatically change proxy bindings to follow to the current proxy policy.
+
+However, in an attempt to prevent any established client connections from disconnecting, the cluster might not strictly enforce the proxy policy. You can use `rladmin` to enforce the policy.
+
+To reapply a proxy policy after topology changes such as node restarts, failovers, or migrations, run the following command to reset the policy:
 
 ```sh
-rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards|all-nodes>
+rladmin bind db <db_name> endpoint <endpoint ID> policy <all-master-shards | all-nodes>
 ```
 
-This is not required with single policies.
+{{<note>}}
+Databases that have the `single` proxy policy do not require you to reapply the proxy policy.
+{{</note>}}
 
-#### Other implications
-
-During the regular operation of the cluster different actions might take
-place, such as automatic migration or automatic failover, which change
-what proxy needs to be bound to what database. When such actions take
-place the cluster attempts, as much as possible, to automatically change
-proxy bindings to adhere to the defined policies. That said, the cluster
-attempts to prevent any existing client connections from being
-disconnected, and hence might not entirely enforce the policies. In such
-cases, you can enforce the policy using the appropriate rladmin
-commands.
-
-## About multiple active proxy support
-
-RS allows multiple databases to be created. Each database gets an
-endpoint (a unique URL and port on the FQDN). This endpoint receives all
-the traffic for all operations for that database. By default, RS binds
-this database endpoint to one of the proxies on a single node in the
-cluster. This proxy becomes an active proxy and receives all the
-operations for the given database. (note that if the node with the
-active proxy fails, a new proxy on another node takes over as part of
-the failover process automatically).
+## Multiple active proxies
 
 In most cases, a single proxy can handle a large number of operations
 without consuming additional resources. However, under high load,
 network bandwidth or a high rate of packets per second (PPS) on the
-single active proxy can become a bottleneck to how fast database
-operation can be performed. In such cases, having multiple active
-proxies, across multiple nodes, mapped to the same external database
-endpoint, can significantly improve throughput.
+single active proxy can limit how fast database
+operations can run.
 
-With the multiple active proxies capability, RS enables you to configure
-a database to have multiple internal proxies in order to improve
-performance, in some cases. It is important to note that, even though
-multiple active proxies can help improve the throughput of database
-operations, configuring multiple active proxies may cause additional
-latency in operations as the shards and proxies are spread across
-multiple nodes in the cluster.
+To improve performance, you can set up multiple active
+proxies across multiple nodes and map them to the same external database endpoint. Multiple active proxies can improve throughput and allow faster failover when proxies or nodes fail.
+
+However, because shards and proxies are spread across multiple nodes in the cluster, multiple active proxies can increase
+the latency of database operations.
 
 {{< note >}}
-When the network on a single active proxy becomes the bottleneck,
-you might also look into enabling the multiple NIC support in RS. With
+When the network on a single active proxy limits your throughput,
+consider enabling multiple NIC support. For
 nodes that have multiple physical NICs (Network Interface Cards), you
-can configure RS to separate internal and external traffic onto
-independent physical NICs. For more details, refer to [Multi-IP &
-IPv6]({{< relref "/rs/networking/multi-ip-ipv6.md" >}}).
+can configure Redis Enterprise Software to separate internal and external traffic onto
+independent physical NICs. For more details, see [Multi-IP and
+IPv6]({{< relref "/rs/networking/multi-ip-ipv6" >}}).
 {{< /note >}}
-
-Having multiple proxies for a database can improve RS's ability for fast
-failover in case of proxy and/or node failure. With multiple proxies for
-a database, there is no need for a client to wait for the cluster
-to spin up another proxy and a DNS change in most cases, the client
-just uses the next IP in the list to connect to another proxy.

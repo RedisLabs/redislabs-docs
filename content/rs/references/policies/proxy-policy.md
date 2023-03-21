@@ -5,24 +5,25 @@ description: Proxy policy
 weight: $weight
 alwaysopen: false
 toc: "true"
-headerRange: "[1-2]"
 categories: ["RS"]
 aliases: 
 ---
 
-A database can have one of these proxy policies:
+Redis Enterprise Software uses [proxies]({{<relref "/rs/references/terminology#proxy">}}) to manage and optimize access to database shards. Each node in the cluster runs a single proxy process, which can be active (receives incoming traffic) or passive (waits for failovers), depending on the database's [proxy policy]({{<relref "/rs/references/policies/proxy-policy">}}).
 
 ## Policy values
 
 | Value | Description |
 |-------|-------------|
 | single | There is only a single proxy that is bound to the database. This is the default database configuration and preferable in most use cases. |
-| <nobr>all-master-shards</nobr> | There are multiple proxies that are bound to the database, one on each node that hosts a database master shard. This mode fits most use cases that require multiple proxies. |
-| all-nodes | There are multiple proxies that are bound to the database, one on each node in the cluster, regardless of whether or not there is a shard from this database on the node. This mode should be used only in special cases. |
+| <nobr>all-master-shards</nobr> | [Multiple proxies]({{<relref "/rs/databases/configure/proxy-policy#multiple-active-proxies">}}) are bound to the database, one on each node that hosts a master shard. This policy fits most use cases that require multiple proxies. |
+| all-nodes | [Multiple proxies]({{<relref "/rs/databases/configure/proxy-policy#multiple-active-proxies">}}) are bound to the database, one on each node in the cluster, even if the node doesn't host any database shards. You should use this policy only in special cases. |
 
-## View proxy policy
+## Examples
 
-To view the current proxy policy, run `rladmin info cluster`:
+### View proxy policy
+
+To view the current proxy policy, run [`rladmin info cluster`]({{<relref "/rs/references/cli-utilities/rladmin/info#info-cluster">}}):
 
 ```sh
 $ rladmin info cluster
@@ -33,15 +34,11 @@ cluster configuration:
    ...
 ```
 
-## Change proxy policy
+### Change proxy policy
 
-You can configure the proxy policy using the `bind` command in
-rladmin.
-
-The following example changes the proxy policy for a database called "db1" with the endpoint ID "1:1" to `all-master-shards`.
+You can configure the proxy policy using [`rladmin bind`]({{<relref "/rs/references/cli-utilities/rladmin/bind">}}).
 
 ```sh
-$ rladmin bind db db1 endpoint 1:1 \
-          policy all-master-shards
+$ rladmin bind db db1 endpoint 1:1 policy all-master-shards
 ```
 
