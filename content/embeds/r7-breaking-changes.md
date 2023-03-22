@@ -1,13 +1,4 @@
----
-Title: Redis breaking changes
-linkTitle: Breaking changes
-description: Potentially breaking changes in Redis Enterprise, introduced by new versions of open source Redis. 
-weight: 90
-alwaysopen: false
-toc: "false"
-categories: ["RS"]
-aliases: 
----
+### Redis 7.0 breaking changes
 
 When new major versions of open source Redis change existing commands, upgrading your database to a new version can potentially break some functionality. Before you upgrade, make sure to read the provided list of breaking changes that affect Redis Enterprise and update any applications that connect to your database to handle these changes.
 
@@ -20,11 +11,9 @@ redis_version:7.0.8
 ..."
 ```
 
-## Redis 7.0 breaking changes
-
 Open source Redis version 7.0 introduces the following potentially breaking changes to Redis Enterprise:
 
-### Programmability
+#### Programmability
 
 -  Lua scripts no longer have access to the `print()` function ([#10651](https://github.com/redis/redis/pull/10651)) - The `print`  function was removed from Lua because it can potentially cause the Redis processes to get stuck (if no one reads from stdout). Users should use redis.log. An alternative is to override the  `print`  implementation and print the message to the log file.  
 
@@ -35,7 +24,7 @@ Open source Redis version 7.0 introduces the following potentially breaking chan
 
 - Hide the `may_replicate` flag from the [`COMMAND`](https://redis.io/commands/command/) command response  ([#10744](https://github.com/redis/redis/pull/10744)) - As part of the change to treat `may_replicate` commands `PFCOUNT` and `PUBLISH` as write commands in scripts, in addition to `EVAL`, the `may_replicate` flag has been removed from the `COMMAND` response.
 
-### Error handling
+#### Error handling
 
 - Rephrased some error responses about invalid commands or arguments ([#10612](https://github.com/redis/redis/pull/10612)) - 
   - Error response for unknown command introduced a case change (`Unknown` to `unknown`)
@@ -99,7 +88,7 @@ Open source Redis version 7.0 introduces the following potentially breaking chan
   - Because deleted entries are not claimed, `X[AUTO]CLAIM` does not return "nil" instead of an entry.
   - Added an array of all the deleted stream IDs to `XAUTOCLAIM` response.
 
-###  ACLs
+####  ACLs
 
 - [`ACL GETUSER`](https://redis.io/commands/acl-getuser/) reply now uses ACL syntax for `keys` and `channels` ([#9974](https://github.com/redis/redis/pull/9974)). `ACL GETUSER` now uses the ACL DSL (Domain Specific Language) for keys and channels. 
 
