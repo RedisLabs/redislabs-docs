@@ -60,6 +60,8 @@ Before installing, review these notes:
 
 - Review the [security considerations]({{< relref "/rs/security/" >}}) for your deployment.
 
+- If you want to use Redis on Flash (RoF) for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) for Redis on Flash databases.
+
 - [Disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
 
 - Make sure that you have root-level access to each node, either directly or with `sudo`.  
@@ -158,9 +160,8 @@ To install without answering the installation questions, either:
     Redis Enterprise Software is now installed on the node.
 
     Repeat this process for each node in the cluster.
-1. If you want to use Redis on Flash (RoF) for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
-
-    Use the `prepare_flash` script to prepare and format flash memory:
+    
+1. If you plan to create Redis on Flash databases, use the `prepare_flash` script to prepare and format flash memory:
 
     ```sh
     sudo /opt/redislabs/sbin/prepare_flash.sh
@@ -173,6 +174,7 @@ To install without answering the installation questions, either:
     ```sh
     sudo lsblk
     ```
+    
 1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
     or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing Redis Enterprise Software cluster.
 1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
