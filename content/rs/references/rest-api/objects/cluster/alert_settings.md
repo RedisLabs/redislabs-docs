@@ -21,6 +21,8 @@ categories: ["RS"]
 | cluster_node_remove_abort_failed | boolean (default:&nbsp;false) | Cancel node remove operation failed |
 | cluster_node_remove_completed | boolean (default:&nbsp;false) | Node removed from the cluster |
 | cluster_node_remove_failed | boolean (default:&nbsp;false) | Failed to remove a node from the cluster |
+| cluster_ocsp_query_failed | boolean (default:&nbsp;false) | Failed to query the OCSP server |
+| cluster_ocsp_status_revoked | boolean (default:&nbsp;false) | OCSP certificate status is REVOKED |
 | cluster_ram_overcommit | boolean (default:&nbsp;false) | RAM committed to databases is larger than cluster total RAM |
 | cluster_too_few_nodes_for_replication | boolean (default:&nbsp;false) | Replication requires at least 2 nodes in the cluster |
 | node_aof_slow_disk_io | boolean (default:&nbsp;false) | AOF reaching disk I/O limits

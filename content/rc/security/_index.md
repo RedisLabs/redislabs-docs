@@ -29,7 +29,7 @@ The admin console is the web application you use to manage your Redis Cloud depl
 
 Secure access to the admin console by:
 
-- Assigning appropriate roles to [team members with access]({{<relref "/rc/administration/access-management#team-management-roles">}})
+- Assigning appropriate roles to [team members with access]({{<relref "/rc/security/access-management#team-management-roles">}})
 
 - Enabling enabling [multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}})
 

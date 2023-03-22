@@ -1,6 +1,16 @@
 <div class="banner">
     {{ if .Site.Params.bannerLink  }}
-        <p><a href="{{ .Site.Params.bannerLink }}">{{ .Site.Params.bannerText }}</a></p>
+        {{ if in .Site.Params.bannerText "[" }}
+            {{ $splitText := slice }}
+            {{ $splitText1 := split .Site.Params.bannerText "[" }}
+            {{ range $i, $elem := $splitText1 }}
+                {{ $splitText2 := split $elem "]" }}
+                {{ $splitText = $splitText | append $splitText2 }}
+            {{ end }}
+            <p>{{ index $splitText 0 }}<a href="{{ .Site.Params.bannerLink }}">{{ index $splitText 1 }}</a>{{ index $splitText 2}}</p>
+        {{ else }}
+            <p><a href="{{ .Site.Params.bannerLink }}">{{ .Site.Params.bannerText }}</a></p>
+        {{ end }}
     {{ else }}
         <p>{{ .Site.Params.bannerText }}</p>
     {{ end }}

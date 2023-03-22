@@ -1,11 +1,14 @@
 User-agent: *
 Allow: /
 Disallow: /staging/
+Disallow: /0.91/
+Disallow: /0.93/
 Disallow: /5.2/
 Disallow: /5.4/
 Disallow: /5.6/
 Disallow: /6.0/
 Disallow: /6.2/
+Disallow: /6.4/
 Disallow: /latest/pdfs/
 Disallow: /latest/pdfs/archive/
 Disallow: /latest/pdfs/archive/tmp/

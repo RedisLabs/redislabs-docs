@@ -1,24 +1,29 @@
 
 Redis Enterprise Software is supported on several operating systems, cloud environments, and virtual environments.
 
-{{< note >}}
+## System requirements
+
 Make sure your system meets these requirements:
 
 - Only 64-bit operating systems are supported.
 - You must install Redis Enterprise Software directly on the host, not through system cloning.
-- You must install on a clean host with no other applications running so that all RAM is allocated to the OS and Redis Enterprise Software  only.
+- You must install on a clean host with no other applications running so that all RAM is allocated to the operating system and Redis Enterprise Software  only.
 - Linux distributions must be installed with at least "Minimal Install" configuration.
-{{< /note >}}
+
+## Supported platforms
 
 | **Platform** | **Versions/Information** |
 |------------|-----------------|
-| Ubuntu | 16.04, 18.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
-| RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
-| RHEL/CentOS 8 | 8.0, 8.1, 8.2, 8.3, 8.4 |
-| Oracle Linux 7 | Based on the corresponding RHEL version |
-| Amazon Linux | Version 1 |
-| Docker | [Docker images]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) of Redis Enterprise Software are certified for Development and Testing only. |
-| Kubernetes | See the [Redis Enterprise Software on Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
+| Ubuntu | 16.04 (deprecated), 18.04, 20.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
+| Red Hat Enterprise Linux (RHEL) 7, CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
+| <nobr>RHEL 8, CentOS 8</nobr> | 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, and 8.7 |
+| <nobr>Oracle Linux 7, Oracle Linux 8</nobr> | Based on the corresponding RHEL version |
+| <nobr>Rocky Linux 8</nobr> | Based on RHEL 8 |
+| Amazon Linux | Version 1 |
+| Docker | [Docker images]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) of Redis Enterprise Software are certified for development and testing only. |
+| Kubernetes | See the [Redis Enterprise for Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
+
+## Operating system limitations
 
 Be aware that Redis Enterprise Software relies on certain components that require support from the operating system.  You cannot enable support for components, services, protocols, or versions that aren't supported by the operating system running Redis Enterprise Software.  In addition, updates to the operating system or to Redis Enterprise Software can impact component support.
 
@@ -26,6 +31,16 @@ To illustrate, version 6.2.8 of Redis Enterprise Software removed support for TL
 
 If you have trouble enabling specific components, features, or versions, verify that they're supported by your operating system and that they're configured correctly.
 
+### Ubuntu 20 rejects SHA1 certificates
+
+With Ubuntu 20.04, you cannot use the SHA1 hash algorithm because [OpenSSL's security level is set to 2 by default](https://manpages.ubuntu.com/manpages/focal/man3/SSL_CTX_set_security_level.3ssl.html#notes). As a result, the operating system rejects SHA1 certificates, even if you enable the `mtls_allow_weak_hashing` option.
+
+To avoid issues with SHA1 certificates, replace them with new certificates that use SHA-256. Note that certificates provided by Redis Enterprise Software use SHA-256.
+
+### Upgrade RHEL when using modules
+
+RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules.
+Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 ## VMware
 

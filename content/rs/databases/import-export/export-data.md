@@ -1,0 +1,224 @@
+---
+Title: Export data from a database
+description: You can export data to import it into a new database or to make a backup.  This article shows how to do so.
+weight: 20
+alwaysopen: false
+categories: ["RS"]
+aliases: [
+    /rs/administering/import-export/exporting-data/,
+    /rs/administering/database-operations/exporting-data/,
+    /rs/databases/import-export/export-data.md,
+    /rs/databases/import-export/exporting-data/,
+    /rs/databases/import-export/export-data.md,
+    /rs/databases/import-export/export-data/,
+]
+---
+
+You can export the data from a specific database at any time.  The following destinations are supported:
+
+- FTP server
+- SFTP server
+- Amazon AWS S3
+- Local mount point
+- Azure Blob Storage
+- Google Cloud Storage
+
+If you export a database configured for database clustering, export files are created for each shard.
+
+## Storage space requirements
+
+Before exporting data, verify that you have enough space available in the storage destination and on the local storage associated with the node hosting the database.
+
+Export is a two-step process: a temporary copy of the data is saved to the local storage of the node and then copied to the storage destination.  (The temporary file is removed after the copy operation.)
+
+Export fails when there isn't enough space for either step.
+
+## Export database data
+
+To export data from a database:
+
+1.  Sign in to the admin console.
+1.  Select the **Databases** command from the console menu.
+
+    {{<image filename="images/rs/admin-console-menu.png" alt="Choose the **Databases** command from the admin console menu." >}}{{< /image >}}
+
+    The admin console commands vary according to your level of access.  Here, you see commands available to users with full access.
+
+1.  Select the database from the database list.
+
+1.  Select the **Configuration** tab.
+
+    {{<image filename="images/rs/database-tabs-configuration.png" alt="Select the **Configuration** tab to export data." >}}{{< /image >}}
+
+1.  Select the **Export** button.
+
+    {{<image filename="images/rs/database-configuration-export-button.png" alt="Select the **Export** button tab to export data." >}}{{< /image >}}
+
+    If the **Export** button is disabled, you do not have permission to export data.
+
+1.  Enter the export details.
+
+    {{<image filename="images/rs/database-export-details.png" alt="Enter export details and then select the Export button to begin exporting data." >}}{{< /image >}}
+
+    The **Choose storage type** list defines the destination storage container for the exported data; select the appropriate value and then enter the requested details.  Details vary for each storage type.  For help, see [Supported storage locations](#supported-storage-locations).
+
+1.  Select the **Export** button to begin the export process.
+
+    {{<image filename="images/rs/database-export-details-export-button.png" alt="Select the **Export** button to export data." >}}{{< /image >}}
+
+## Supported storage locations {#supported-storage-locations}
+
+Data can be exported to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage.
+
+When saved to a local mount point or a cloud provider, export locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
+
+Redis Enterprise Software needs the ability to view permissions and update objects in the storage location. Implementation details vary according to the provider and your configuration. To learn more, consult the provider's documentation.
+
+The following sections provide general guidelines.  Because provider features change frequently, use your provider's documentation for the latest info.
+
+### FTP server
+
+Before exporting data to an FTP server, verify that:
+
+- Your Redis Enterprise cluster can connect and authenticate to the FTP server.
+- The user specified in the FTP server location has read and write privileges.
+
+To export data to an FTP server, set **Path** using the following syntax:
+
+`ftp://[username]:[password]@[host]:[port]/[path]/`
+
+Where:
+
+- *protocol*: the server's protocol, can be either `ftp` or `ftps`.
+- *username*: your username, if needed.
+- *password*: your password, if needed.
+- *hostname*: the hostname or IP address of the server.
+- *port*: the port number of the server, if needed.
+- *path*: the export destination path, if needed.
+
+Example: `ftp://username:password@10.1.1.1/home/exports/`
+
+The user account needs permission to write files to the server.
+
+### SFTP server
+
+Before exporting data to an SFTP server, make sure that:
+
+- Your Redis Enterprise cluster can connect and authenticate to the SFTP server.
+- The user specified in the SFTP server location has read and write privileges.
+- The SSH private keys are specified correctly.  You can use the key generated by the cluster or specify a custom key.
+
+    When using the cluster key, copy the **Cluster SSH Public Key** to the appropriate location on the SFTP server.  This is available from the **General** tab of the **Settings** menu in the admin console.
+
+    Use the server documentation to determine the appropriate location for the SSH Public Key.
+
+To export data to an SFTP server, enter the SFTP server location in the format:
+
+```sh
+sftp://user:password@host<:custom_port>/path/
+```
+
+For example: `sftp://username:password@10.1.1.1/home/exports/`
+
+### Local mount point
+
+Before exporting data to a local mount point, verify that:
+
+- The node can connect to the destination server, the one hosting the mount point.
+- The `redislabs:redislabs` user has read and write privileges on the local mount point
+and on the destination server.
+- The export location has enough disk space for your exported data.
+
+To export to a local mount point:
+
+1. On each node in the cluster, create the mount point:
+    1. Connect to a shell running Redis Enterprise Software server hosting the node.
+    1. Mount the remote storage to a local mount point.
+
+        For example:
+
+        ```sh
+        sudo mount -t nfs 192.168.10.204:/DataVolume/Public /mnt/Public
+        ```
+
+1. In the path for the export location, enter the mount point.
+
+    For example: `/mnt/Public`
+
+1. Verify that the user running Redis Enterprise Software has permissions to access and update files in the mount location.
+
+### AWS Simple Storage Service
+
+To export data to an [Amazon Web Services](https://aws.amazon.com/) (AWS) Simple Storage Service (S3) bucket:
+
+1. Sign in to the [AWS console](https://console.aws.amazon.com/).
+
+1. [Create an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html) if you do not already have one.
+
+1. [Create an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console) with permission to add objects to the bucket.
+
+1. [Create an access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) for that user if you do not already have one.
+
+1. In the Redis Enterprise Software admin console, when you enter the export location details:
+
+    - Select "AWS S3" from the **Choose storage type** drop-down.
+
+    - In the **Path** field, enter the path of your bucket.
+
+    - In the **Access key ID** field, enter the access key ID.
+
+    - In the **Secret access key** field, enter the secret access key.
+
+### Google Cloud Storage
+
+To export to a [Google Cloud](https://developers.google.com/console/) storage bucket:
+
+1. Sign in to Google Cloud Platform console.
+
+1. [Create a JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating) if you do not already have one.
+
+1. [Create a bucket](https://cloud.google.com/storage/docs/creating-buckets#create_a_new_bucket) if you do not already have one.
+
+1. [Add a principal](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-add) to your bucket:
+
+    - In the **New principals** field, add the `client_email` from the service account key.
+
+    - Select "Storage Legacy Bucket Writer" from the **Role** list.
+
+1. In the Redis Enterprise Software admin console, when you enter the export location details:
+
+    - Select "Google Cloud Storage" from the **Choose storage type** drop-down.
+
+    - In the **Path** field, enter the path of your bucket.
+
+    - In the **Client id** field, enter the `client_id` from the service account key.
+
+    - In the **Client email** field, enter the `client_email` from the service account key.
+
+    - In the **Private key id** field, enter the `private_key_id` from the service account key.
+
+    - In the **Private key** field, enter the `private_key` from the service account key.
+      Replace `\n` with new lines, and then select the **Save** icon.
+
+
+### Azure Blob Storage
+
+To export to Microsoft Azure Blob Storage, sign in to the Azure portal and then:
+
+1. [Create an Azure Storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) if you do not already have one.
+
+1. [Create a container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) if you do not already have one.
+
+1. [Manage storage account access keys](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage) to find the storage account name and account keys.
+
+1. In the Redis Enterprise Software admin console, when you enter the export location details:
+
+    - Select "Azure Blob Storage" from the **Choose storage type** drop-down.
+
+    - In the **Path** field, enter the path of your bucket.
+
+    - In the **Account name** field, enter your storage account name.
+
+    - In the **Account key** field, enter the storage account key.
+
+To learn more, see [Authorizing access to data in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth).

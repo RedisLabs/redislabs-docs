@@ -361,12 +361,12 @@ Embed an HTML partial
 Syntax:
 
 ```sh
-{{</* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */>}}
+{{</* excerpt-include filename="rs/clusters/optimize/oss-cluster-api.md" */>}}
 ```
 
 Output:
 
-{{< excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" />}}
+{{< excerpt-include filename="rs/clusters/optimize/oss-cluster-api.md" />}}
 
 ### Excerpts
 
@@ -399,12 +399,12 @@ operated on.{{% /excerpt %}}
 Syntax:
 
 ```sh
-{{%/* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */%}}
+{{%/* excerpt-include filename="rs/clusters/optimize/oss-cluster-api.md" */%}}
 ```
 
 Output:
 
-{{< excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" />}}
+{{< excerpt-include filename="rs/clusters/optimize/oss-cluster-api.md" />}}
 
 ## Informative notices
 

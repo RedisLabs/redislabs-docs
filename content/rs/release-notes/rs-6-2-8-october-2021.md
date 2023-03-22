@@ -17,7 +17,7 @@ aliases: /rs/release-notes/rs-6-2-8-october-2021/
 This version features:
 
 - Support for Red Hat Linux Edition (RHEL) 8
-- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/administering/import-export/database-backup.md">}}) 
+- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/databases/import-export/schedule-backups.md">}}) 
 - Compatibility with version of [open source Redis 6.2.3](https://github.com/redis/redis/releases/tag/6.2.3) (starting with [Redis Enterprise Software v6.2.4]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}))
 - Compatibility with the security fixes of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6)
 - Enhancements and bug fixes
@@ -30,13 +30,18 @@ This version features:
 
 - Refer to the [v6.2.4 release notes]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}) for important notes regarding the upgrade process.
 
-- Upgrades from versions earlier than v6.0 are not supported
+- When upgrading a cluster from Redis Enterprise 6.0.8 and earlier to 6.2.8 only, the DMC proxy might crash when proxy certificates contain additional text as comments.  Redis removes these comments during upgrade, but a change to the v6.2.8 internal upgrade action sequence might cause this problem. 
+
+
+    If you plan to upgrade from a pre-6.0.8 release to 6.2.8, check whether your proxy certificate includes additional comments and manually remove them.  The change was reverted in 6.2.10.
+
+- Upgrades from versions earlier than v6.0 are not supported.
 
 ### Product lifecycle updates
 
 As of 31 October 2021, Redis Enterprise Software v5.6.0 is end of life (EOF).
 
-To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/administering/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
+To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
 Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
 
@@ -50,7 +55,7 @@ Redis Enterprise Software v6.2.8 includes the following Redis modules:
 - [RedisGraph v2.4.7]({{<relref "/modules/redisgraph/release-notes/redisgraph-2.4-release-notes.md">}})
 - [RedisTimeSeries v1.4.10]({{<relref "/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes.md">}})
 
-To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-module-to-cluster.md#upgrading-the-module-for-the-database.md#upgrading-the-module-for-the-database">}}).
+To learn more, see [Upgrade the module for a database]({{<relref "/modules/install/upgrade-module">}}).
 
 ## Resolved issues
 
@@ -79,6 +84,8 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-m
 
 ## Known limitations
 
+-RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
 - RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
 
     FIPS changes system-generated keys, which can limit secure access to the cluster or the admin console via port 8443.
@@ -88,6 +95,12 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-m
     Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) from v6.2.4 have been fixed. 
+
+## Known issues 
+
+- A new command was added as part of Redis 6.2: [`XAUTOCLAIM`](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+
+- The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
 
 ## Security
 

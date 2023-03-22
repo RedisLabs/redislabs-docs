@@ -1,5 +1,5 @@
 ---
-Title: Create and edit subscriptions
+Title: Create and manage subscriptions
 description: This article describes how to create and manage a subscription using `cURL` commands.
 weight: 10
 alwaysopen: false
@@ -11,94 +11,89 @@ aliases: /rv/api/how-to/create-and-manage-subscriptions/
          /rc/api/examples/manage-subscriptions.md
 ---
 
-You can use the Redis Enterprise Cloud REST API to create and manage subscriptions.
-
-These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api.md#using-the-curl-http-client" >}}); you can use any REST client to work with the Redis Cloud REST API.
+The Redis Enterprise Cloud REST API lets you create and manage a subscription.
 
 ## Create a subscription
 
-The API operation that creates a subscription is: `POST /subscriptions`
+Use `POST /v1/subscriptions` to create a subscription.
 
-The following Linux shell script sends a `POST /subscriptions/` request and waits for a cloud account ID.
-When the cloud account ID is received, the processing phase is complete and the provisioning phase starts.
-
-### Prerequisites
-
-- These examples require `jq`, [a JSON parser](https://stedolan.github.io/jq/).  
-
-    Use your package manager to install it  (Example: `sudo apt install jq`)
-
-- Define the expected variables needed to use the API:
-
-```shell
-{{% embed-code "rv/api/05-set-variables.sh" %}}
+```sh
+POST "https://[host]/v1/subscriptions"
+{
+    "name": "Basic subscription example",
+    "paymentMethodId": <payment_id>,
+    "cloudProviders": [
+      {
+        "cloudAccountId": <account_id>,
+        "regions": [
+          {
+            "region": "us-east-1",
+            "networking": {
+              "deploymentCIDR": "10.0.0.0/24"
+            }
+          }
+        ]
+      }
+    ],
+    "databases": [
+      {
+        "name": "Redis-database-example",
+        "memoryLimitInGb": 1.1
+      }
+    ]
+}
 ```
 
-### Subscription JSON body
+Modify the following parameters in the sample JSON document to create a subscription on your own account:
 
-The created subscription is defined by a JSON document that is sent as the body of the `POST subscriptions` request.
+- **`paymentMethodId`** - Specify a payment method connected to your account.
 
-In the example below, that JSON document is stored in the `create-subscription-basic.json` file:
+    Use `GET /payment-methods` to find a payment method ID.
 
-```shell
-{{% embed-code "rv/api/create-subscription-basic.json" %}}
-```
+    You don't need to pass this field in your API request if you subscribed to Redis Enterprise Cloud through Google Cloud Marketplace.
 
-### Subscription creation script
+- **`cloudAccountId`** - Set a cloud account ID connected to your account.
 
-You can run the **create subscription** script from the command line with: `bash path/script-name.sh`
+    To list cloud account IDs, use `GET /cloud-accounts`. To use internal resources, set it to `"cloudAccountId": 1`.
 
-Below is the sample script that you can use as a reference to call the API operation to create a subscription.
-The script contains the steps that are explained below.
+    If you subscribed to Redis Enterprise Cloud through Google Cloud Marketplace, use `1` for this field.
 
-```shell
-{{% embed-code "rv/api/10-create-subscription.sh" %}}
-```
+The request JSON body contains two primary segments: subscription specification and databases specification. When you create a subscription, you must specify one or more databases in the "`databases`" array.
 
-#### Step 1 of the subscription creation script
-
-This step executes a `POST` request to `subscriptions` with the defined parameters and a JSON body located within a separate JSON file.
-
-The POST response is a JSON document that contains the `taskId`,
-which is stored in a variable called `TASK_ID` that is used later to track the request's progress.
-
-#### Step 2 the subscription creation script
-
-This step queries the API for the status of the subscription creation request based on the `taskId` stored in the `$TASK_IS` variable.
-
-#### Step 3 the subscription creation script
-
-When the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`),
-this step prints the `response`, including the `resourceId`.
-In this case, the `resourceId` is a subscription ID.
-
-If the processing phase completed successfully, the status displayed
-in the [admin console](https://app.redislabs.com) is `pending`.
-This status indicates that the subscription is being provisioned.
-
-You can use the `GET /subscriptions/{subscriptionId}` API operation to track the created subscription
-until it changes to the `active` state.
-
-### Additional subscription parameters
-
-To use the sample JSON document in your own account, you must modify these parameters:
-
-- **`paymentMethodId`** - Specify a payment method that is defined for your account.
-
-    You can lookup the payment method identifier using the `GET /payment-methods` API operation.
-
-    If you subscribed to Redis Enterprise Cloud through the GCP Marketplace, you do not need to pass this field in your API requests.
-
-- **`cloudAccountId`** - Specify a cloud account that is defined for your account.
-
-    You can look up cloud account identifiers using the `GET /cloud-accounts` API operation or use `"cloudAccountId": 1` to use internal resources.
-
-    If you subscribed to Redis Enterprise Cloud through the GCP Marketplace, use the value `1` for this field.
-
-- The JSON document contains two primary segments: subscription specification and databases specification.
-- When you create a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file.
-- You can [copy-and-paste]({{< relref  "/rc/api/get-started/use-rest-api.md#swagger-user-interface" >}}) the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
+You can include the contents of the JSON document in the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html). See [Swagger user interface]({{< relref  "/rc/api/get-started/use-rest-api#swagger-user-interface" >}}) for more details.
 
 {{< note >}}
 The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
 {{< /note >}}
+
+The response body contains the `taskId` for the task that creates the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.
+
+## Update a subscription
+
+Use `PUT /v1/subscriptions/<subscriptionId>` to update a subscription.
+
+```sh
+PUT "https://[host]/v1/subscriptions/<subscriptionId>"
+{
+    "name": "new-subscription-name",
+    "paymentMethodId": <payment_id>
+}
+```
+
+You can only change the following settings with this endpoint:
+- **`name`** - Specify a new name for your subscription.
+
+- **`paymentMethodId`** - Specify a different payment method connected to your account.
+
+    Use `GET /payment-methods` to find a payment method ID.
+
+The response body contains the `taskId` for the task that updates the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.
+
+## Delete a subscription
+
+Use `DELETE /v1/subscriptions/<subscriptionId>` to delete a subscription.
+
+```sh
+DELETE "https://[host]/v1/subscriptions/<subscriptionId>"
+```
+The response body contains the `taskId` for the task that deletes the subscription. You can use `GET /v1/tasks/<taskId>` to track the task's status.

@@ -1,7 +1,7 @@
 ---
 Title: RedisBloom
 description:
-weight: 30
+weight: 60
 alwaysopen: false
 categories: ["Modules"]
 aliases:
@@ -104,3 +104,9 @@ have a good idea of how many items it is expected to contain. A filter
 whose initial layer can only contain a small number of elements will
 degrade performance significantly because it will take more layers to
 reach a larger capacity.
+
+## More info
+
+- [RedisBloom commands]({{<relref "/modules/redisbloom/commands">}})
+- [RedisBloom configuration]({{<relref "/modules/redisbloom/config">}})
+- [RedisBloom source](https://github.com/RedisBloom/RedisBloom/)

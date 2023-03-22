@@ -27,7 +27,7 @@ spec should include a *persistentSpec* section, in the
        storageClassName: "standard"
        volumeSize: "23Gi” #optional
 
-Persistence storage is a requirement for this deployment type.
+Persistence storage is a requirement for production deployments.
 
 {{< note >}}
 For **production deployments** of Redis Enterprise Cluster on Kubenetes,
@@ -38,10 +38,10 @@ The REC deployment files in the [Kubernetes documentation](https://github.com/Re
 ## Volume size
 
 *volumeSize* is an optional definition. By default, if the definition is
-omitted, Operator allocates five times (5x) the amount of memory (RAM)
+omitted, operator allocates five times (5x) the amount of memory (RAM)
 defined for nodes (see example below), which is the recommended
 persistent storage size as described in the [Hardware
-requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) article.
+requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}) article.
 
 To explicitly specify the persistent storage size, use the *volumeSize*
 property as described in the example above.
@@ -90,6 +90,10 @@ Below is an example of a response to the command.
 {{< note >}}
 storageClassName must be specified for this deployment type.
 {{< /note >}}
+
+{{< warning >}}
+The storage class cannot be changed after deployment. Trying to change this value after deployment could result in unexpected and potentially damaging behavior.
+{{< /warning >}}
 
 Example of the redisEnterpriseNodeResources definition:
 

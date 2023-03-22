@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise on Kubernetes FAQs
+Title: Redis Enterprise for Kubernetes FAQs
 linkTitle: FAQs
 description:
 weight: 100
@@ -18,7 +18,7 @@ An operator is a [Kubernetes custom controller](https://kubernetes.io/docs/conce
 
 ## Does Redis Enterprise operator support multiple RECs per namespace?
 
-The Redis Enterprise operator may only deploy a single Redis Enterprise cluster (REC) per [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/). Each REC can run multiple databases while maintaining high capacity and performance.
+Redis Enterprise for Kubernetes may only deploy a single Redis Enterprise cluster (REC) per [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/). Each REC can run multiple databases while maintaining high capacity and performance.
 
 ## Do I need to deploy a Redis Enterprise operator per namespace?
 
@@ -38,7 +38,7 @@ kubectl describe rec <my-cluster-name>
 
 The cluster admin user password is created by the operator during the deployment of the Redis Enterprise cluster (REC) and is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
-See [Manage REC credentials]({{< relref "/kubernetes/security/manage_REC_credentials">}}) for instructions on changing the admin password.
+See [Manage REC credentials]({{< relref "/kubernetes/security/manage-rec-credentials">}}) for instructions on changing the admin password.
 
 ## How is using Redis Enterprise operator superior to using Helm charts?
 
@@ -62,7 +62,7 @@ Connect to the UI by pointing your browser to `https://localhost:8443`
 
 ## How should I size Redis Enterprise cluster nodes?
 
-For nodes hosting the Redis Enterprise cluster [statefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [pods](https://kubernetes.io/docs/concepts/workloads/pods/), follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+For nodes hosting the Redis Enterprise cluster [statefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [pods](https://kubernetes.io/docs/concepts/workloads/pods/), follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}).
 
 For additional information please also refer to [Kubernetes operator deployment – persistent volumes]({{< relref "/kubernetes/memory/persistent-volumes.md" >}}).
 
@@ -184,7 +184,7 @@ spec:
     - '*'
 ```
 
-([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/psp.yaml))
+([latest version on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tags))
 
 The SYS_RESOURCE capability is required by the Redis Enterprise cluster (REC) container so that REC can set correct out of memory (OOM) scores to its processes inside the container.
 Also, some of the REC services must be able to increase default resource limits, especially the number of open file descriptors.

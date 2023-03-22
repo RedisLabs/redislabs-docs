@@ -1,5 +1,5 @@
 ---
-Title: Manage Redis Enterprise databases on Kubernetes
+Title: Manage Redis Enterprise databases for Kubernetes
 linkTitle: Manage databases
 description: This section describes how the database controller provides the ability to create, manage,
   and use databases via a database custom resource.
@@ -20,10 +20,10 @@ aliases: [
 
 A Redis Enterprise database (REDB) is created with a custom resource file. The custom resource defines the size, name, and other specifications for the REDB. The database is created when you apply the custom resource file.
 
-The database controller in the Redis Enterprise operator:
+The database controller in Redis Enterprise for Kubernetes:
 
 - Discovers the custom resource
-- Makes sure that it is created in the same namespace as the Redis Enterprise cluster (REC)
+- Makes sure the REDB is created in the same namespace as the Redis Enterprise cluster (REC)
 - Maintains consistency between the custom resource and the REDB
 
 The database controller recognizes the new custom resource and validates the specification.
@@ -32,7 +32,7 @@ the custom resource with default values to create a full specification. It then 
 database on the specified Redis Enterprise cluster (REC).
 
 Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
-If the database custom resource is deleted, the database and its services are deleted from the cluster.
+If the database [custom resource is deleted]({{<relref "/kubernetes/re-clusters/delete_custom_resources.md">}}), the database and its services are deleted from the cluster.
 
 ### Create a database
 
@@ -51,10 +51,10 @@ Your Redis Enterprise database custom resource must be of the `kind: RedisEnterp
 
     To create a REDB in a different namespace from your REC, you need to specify the cluster with `redisEnterpriseCluster` in the `spec` section of your RedisEnterpriseDatabase custom resource.
 
-        ```yaml
-          redisEnterpriseCluster:
-            name: rec
-        ```
+     ```YAML
+     redisEnterpriseCluster:
+       name: rec
+     ```
 
 1. Apply the file in the namespace you want your database to be in.
 
@@ -118,7 +118,7 @@ Connection information for the database is stored in a Kubernetes [secret](https
 The name of that secret is stored in the database custom resource.
 
 {{<note>}}
-The steps below are only for connecting to your database from within your K8s cluster. To access your database from outside the K8s cluster, you need to configure [ingress]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) or use OpenShift routes.
+Use these steps to connect to your database from within your K8s cluster. To access your database from outside the K8s cluster, set up the [ingress]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) controller or use OpenShift routes.
 {{</note>}}
 
 1. Retrieve the secret name.

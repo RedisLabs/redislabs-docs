@@ -1,7 +1,7 @@
 ---
-Title: RedisBloom quick start tutorial
+Title: RedisBloom quick start
 linkTitle: Quick start
-description:
+description: RedisBloom quick start
 weight: 20
 alwaysopen: false
 categories: ["Modules"]
@@ -13,8 +13,8 @@ For this quick start tutorial, you need:
     - A Redis Cloud database [with the RedisBloom module]({{< relref "/rc/databases/create-database.md" >}})
 
         You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
-    - A Redis Enterprise Software database with [the RedisBloom module]({{< relref "/modules/add-module-to-database.md" >}})
-- redis-cli with connectivity to a redis database
+    - A Redis Enterprise Software database with [the RedisBloom module]({{<relref "/modules/install/add-module-to-database">}})
+- [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) with connectivity to a Redis database
 
 {{< embed-md "tryout-redisbloom.md" >}}
 
@@ -43,7 +43,8 @@ about 5 bytes per element, and the uppermost filter is only at about 12%
 utilization. Had the initial capacity been greater, more space would
 have been saved and lookups would have been quicker.
 
-You can find more information in:
+## More info
 
-- [Developing with Bloom Filters]({{< relref "/modules/redisbloom/_index.md" >}})
-- [Original Cuckoo Filter paper](https://www.cs.cmu.edu/~dga/papers/cuckoo-conext2014.pdf)
+- [RedisBloom commands]({{<relref "/modules/redisbloom/commands">}})
+- [Develop with Bloom filters]({{<relref "/modules/redisbloom">}})
+- [Original cuckoo filter paper](https://www.cs.cmu.edu/~dga/papers/cuckoo-conext2014.pdf)

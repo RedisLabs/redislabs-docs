@@ -1,8 +1,8 @@
 ---
-Title: Configuration
-linkTitle: Configuration
+Title: Configure databases
+linkTitle: Configure
 description: Provides background information to help you configure Redis Enterprise Cloud databases to best fit your needs.
-weight: 85
+weight: 35
 alwaysopen: false
 categories: ["RC"]
 aliases:  /rv/concepts/

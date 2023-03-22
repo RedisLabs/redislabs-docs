@@ -10,10 +10,76 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisBloom v2.2.9 requires:
+RedisBloom v2.2.18 requires:
 
 - Minimum Redis compatibility version (database): 4.0.0
 - Minimum Redis Enterprise Software version (cluster): 5.0.0
+
+## v2.2.18 (July 2022)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#481](https://github.com/RedisBloom/RedisBloom/issues/481) CF crashes on expansion 0
+    - [#478](https://github.com/RedisBloom/RedisBloom/pull/478) [`BF.INFO`](https://redis.io/commands/bf.info/) reports an inaccurate result about the memory footprint
+
+## v2.2.17 (June 2022)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+    - [#451](https://github.com/RedisBloom/RedisBloom/pull/451) [`TOPK.INCRBY`](https://redis.io/commands/topk.incrby/): fix calculation when old fingerprint count is reduced to 0
+    - [#462](https://github.com/RedisBloom/RedisBloom/pull/462) [`CF.RESERVE`](https://redis.io/commands/cf.reserve/): fix potential crash on incorrect number of parameters
+    - [#434](https://github.com/RedisBloom/RedisBloom/pull/434) [`CF.INSERT`](https://redis.io/commands/cf.insert/): fix crash when capacity is negative
+    - [#450](https://github.com/RedisBloom/RedisBloom/pull/450) [`TOPK.INCRBY`](https://redis.io/commands/topk.incrby/): limit increment to 100,000 to prevent potential long freezes
+
+## v2.2.15 (May 2022)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: None.
+
+Details:
+
+- Enhancements:
+
+    - Added support for RedisBloom for AArch64 Linux
+
+## v2.2.14 (March 2022)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#419](https://github.com/RedisBloom/RedisBloom/pull/419) [`CMS.INCRBY`](https://oss.redis.com/redisbloom/CountMinSketch_Commands/#cmsincrby) now returns an error on overflow
+    - [#412](https://github.com/RedisBloom/RedisBloom/pull/412) Fixed macOS build
+
+## v2.2.12 (February 2022)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#392](https://github.com/RedisBloom/RedisBloom/pull/392) Fixed a potential crash on Bloom filter expansion when loading from [AOF](https://redis.io/topics/persistence)
+    - [#404](https://github.com/RedisBloom/RedisBloom/pull/404) Fixed a potential crash on Cuckoo filter when calling [`CF.LOADCHUNK`](https://oss.redis.com/redisbloom/Cuckoo_Commands/#cfloadchunk) on a filter with `EXPANSION` greater than 1
 
 ## v2.2.9 (November 2021)
 

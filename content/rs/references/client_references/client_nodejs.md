@@ -29,8 +29,10 @@ The following code creates a connection to Redis:
 ```js
 const redis = require('redis');
 const client = redis.createClient({
-    host: '<hostname>',
-    port: <port>,
+    socket: {
+        host: '<hostname>',
+        port: '<port>'
+    },
     password: '<password>'
 });
 
@@ -59,7 +61,7 @@ const fs = require('fs');
 
 const client = redis.createClient({
     host: '<hostname>',
-    port: <port>,
+    port: '<port>',
     tls: {
         key: fs.readFileSync('path_to_keyfile', encoding='ascii'),
         cert: fs.readFileSync('path_to_certfile', encoding='ascii'),
@@ -86,7 +88,7 @@ Example:
 const redis = require('redis');
 const client = redis.createClient({
     host: '127.0.0.1',
-    port: <port>
+    port: '<port>'
 });
 
 // Disable client's AUTH command.

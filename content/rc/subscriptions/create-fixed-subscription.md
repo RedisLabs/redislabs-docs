@@ -14,7 +14,7 @@ Fixed Size subscription plans support low throughput workflows.  Several tiers a
 
 When creating your subscription, you'll need to know which tier to choose.
 
-(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create a free subscription and an initial database.  You also learn how to connect to your database.)
+(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.)
 
 
 ## Fixed plan subscription tiers
@@ -28,9 +28,9 @@ Fixed plan pricing scales according to the memory size of all databases defined 
 | 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 | 4 |
 | 500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 | 4 |
 | 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 2 | 8 |
-| 2&half; GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | Unlimited | 2 | 8 |
-| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | Unlimited | 4 | 16 |
-| 10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | Unlimited | 4 | 32 |
+| 2&half; GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 | 8 |
+| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | 5000 | 4 | 16 |
+| 10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | 10000 | 4 | 32 |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
@@ -52,9 +52,15 @@ To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-pla
 
 3.  Choose a **Cloud Provider** and a **Region**.
 
-    {{<image filename="images/rc/subscription-new-cloud-vendor-options.png" alt="Available cloud vendor options." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-new-cloud-vendor-options-redis-7-preview.png" alt="Available cloud vendor options and Redis 7 preview." >}}{{</image>}}
 
-4.  In the **High-availability** panel, select your replication settings.  
+    A [preview of Redis 7.0]({{<relref "/rc/changelog/march-2023#redis-70-preview">}}) subscriptions is available for selected regions in AWS and GCP. However, some Redis 7.0 functionality might not be fully available during preview. Redis 7.0 also introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/march-2023#redis-70-breaking-changes">}}) for more details.
+    
+    If you want to try out Redis 7.0, turn on the **Redis 7.0 preview** toggle:
+
+    {{<image filename="images/rc/subscription-new-redis-7-preview-toggle.png" width="200px" alt="Turn on the Redis 7 preview toggle." >}}{{< /image >}}
+
+4.  In the **Availability Settings** panel, select your replication settings.  
 
     - _No-replication_ means that you will have a single copy of your database.
     - _Single-zone replication_ means that your database will have a primary and a replica located in the same cloud region.  If anything happens to the primary, the replica takes over and becomes the new primary.
@@ -74,7 +80,7 @@ To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-pla
 
 Here are few details to keep in mind:
 
-- You aren't prompted for payment details when creating a Free subscription. 
+- You can create a Free subscription without being prompted for payment details.
 
 - You can only have one free subscription at a time.
 
@@ -89,4 +95,3 @@ When you create your subscription, there's a brief pause while your request is p
 To create your first database, select the **New Database** button and then fill in the appropriate details.
 
 To learn more, see [Create a database]({{<relref "rc/databases/create-database.md">}}).
-

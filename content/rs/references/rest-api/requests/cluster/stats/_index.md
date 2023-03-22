@@ -20,23 +20,27 @@ aliases: /rs/references/rest-api/cluster/stats
 
 ## Get cluster stats {#get-cluster-stats}
 
-	GET /v1/cluster/stats
+```sh
+GET /v1/cluster/stats
+```
 
 Get cluster statistics.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [view_cluster_stats]({{<relref "/rs/references/rest-api/permissions#view_cluster_stats">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_cluster_stats]({{<relref "/rs/references/rest-api/permissions#view_cluster_stats">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /cluster/stats/1?interval=1hour&stime=2014-08-28T10:00:00Z 
+```sh
+GET /cluster/stats/1?interval=1hour&stime=2014-08-28T10:00:00Z
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -51,7 +55,7 @@ Get cluster statistics.
 | stime | ISO_8601 | Start time from which we want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the cluster.
 
@@ -88,7 +92,29 @@ Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) 
 }
 ```
 
-### Status codes {#get-status-codes} 
+### Example requests
+
+#### cURL
+
+```sh
+$ curl -k -u "[username]:[password]" -X GET
+        https://[host][:port]/v1/cluster/stats?interval=1hour
+```
+
+#### Python
+
+```python
+import requests
+
+url = "https://[host][:port]/v1/cluster/stats?interval=1hour"
+auth = ("[username]", "[password]")
+
+response = requests.request("GET", url, auth=auth)
+
+print(response.text)
+```
+
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|

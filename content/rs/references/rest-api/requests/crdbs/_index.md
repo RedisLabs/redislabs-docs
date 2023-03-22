@@ -24,28 +24,32 @@ aliases: /rs/references/rest-api/crdbs
 
 ## Get all Active-Active databases {#get-all-crdbs}
 
-	GET /v1/crdbs
+```sh
+GET /v1/crdbs
+```
 
 Get a list of all Active-Active databases on the cluster.
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
-    GET /crdbs
+```sh
+GET /crdbs
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | X-Task-ID | string | Specified task ID |
 | X-Result-TTL | integer | Time (in seconds) to keep task result |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns a JSON array of [CRDB objects]({{<relref "/rs/references/rest-api/objects/crdb">}}).
 
-### Status codes {#get-all-status-codes} 
+##### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -54,17 +58,21 @@ Returns a JSON array of [CRDB objects]({{<relref "/rs/references/rest-api/object
 
 ## Get an Active-Active database {#get-crdb}
 
-	GET /v1/crdbs/{crdb_guid}
+```sh
+GET /v1/crdbs/{crdb_guid}
+```
 
 Get a specific Active-Active database.
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-    GET /crdbs/1
+```sh
+ GET /crdbs/552bbccb-99f3-4142-bd17-93d245f0bc79
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -83,11 +91,11 @@ Get a specific Active-Active database.
 |-------|------|-------------|
 | instance_id | integer | Instance from which to get the Active-Active database information |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns a [CRDB object]({{<relref "/rs/references/rest-api/objects/crdb">}}).
 
-### Status codes {#get-status-codes} 
+#### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -97,19 +105,23 @@ Returns a [CRDB object]({{<relref "/rs/references/rest-api/objects/crdb">}}).
 
 ## Update an Active-Active database {#patch-crdbs}
 
-	PATCH /v1/crdbs/{crdb_guid}
+```sh
+PATCH /v1/crdbs/{crdb_guid}
+```
 
 Update an Active-Active database's configuration.
 
 In order to add or remove instances, use [<nobr>`POST crdbs/{crdb_guid}/updates`</nobr>]({{<relref "/rs/references/rest-api/requests/crdbs/updates#post-crdbs-updates">}}) instead.
 
-### Request {#patch-request} 
+### Request {#patch-request}
 
 #### Example HTTP request
 
-    PATCH /crdbs/1
+```sh
+ PATCH /crdbs/552bbccb-99f3-4142-bd17-93d245f0bc79
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -126,11 +138,11 @@ In order to add or remove instances, use [<nobr>`POST crdbs/{crdb_guid}/updates`
 
 Include a [CRDB object]({{<relref "/rs/references/rest-api/objects/crdb">}}) with updated fields in the request body.
 
-### Response {#patch-response} 
+### Response {#patch-response}
 
 Returns a [CRDB task object]({{<relref "/rs/references/rest-api/objects/crdb_task">}}).
 
-### Status codes {#patch-status-codes} 
+#### Status codes {#patch-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -142,17 +154,21 @@ Returns a [CRDB task object]({{<relref "/rs/references/rest-api/objects/crdb_tas
 
 ## Create an Active-Active database {#post-crdb}
 
-	POST /v1/crdbs
+```sh
+POST /v1/crdbs
+```
 
 Create a new Active-Active database.
 
-### Request {#post-request} 
+### Request {#post-request}
 
 #### Example HTTP request
 
-    POST /crdbs
+```sh
+ POST /crdbs
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -163,11 +179,55 @@ Create a new Active-Active database.
 
 Include a [CRDB object]({{<relref "/rs/references/rest-api/objects/crdb">}}), which defines the Active-Active database, in the request body.
 
-### Response {#post-response} 
+##### Example body
+
+```json
+{
+    "default_db_config":
+    {
+        "name": "sample-crdb",
+        "memory_size": 214748365
+    },
+    "instances":
+    [
+        {
+            "cluster":
+            {
+                "url": "http://<cluster1_FQDN>:9443",
+                "credentials":
+                {
+                    "username": "<username>",
+                    "password": "<password>"
+                },
+                "name": "cluster-1"
+            },
+            "compression": 6
+        },
+        {
+            "cluster":
+            {
+                "url": "http://<cluster2_FQDN>:9443",
+                "credentials":
+                {
+                    "username": "<username>",
+                    "password": "<password>"
+                },
+                "name": "cluster-2"
+            },
+            "compression": 6
+        }
+    ],
+    "name": "sample-crdb"
+}
+```
+
+This JSON body creates an Active-Active database without TLS and with two participating clusters.
+
+### Response {#post-response}
 
 Returns a [CRDB task object]({{<relref "/rs/references/rest-api/objects/crdb_task">}}).
 
-### Status codes {#post-status-codes} 
+#### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -178,17 +238,21 @@ Returns a [CRDB task object]({{<relref "/rs/references/rest-api/objects/crdb_tas
 
 ## Delete an Active-Active database {#delete-crdb}
 
-	DELETE /v1/crdbs/{crdb_guid}
+```sh
+DELETE /v1/crdbs/{crdb_guid}
+```
 
 Delete an Active-Active database.
 
-### Request {#delete-request} 
+### Request {#delete-request}
 
 #### Example HTTP request
 
-    DELETE /crdbs/1
+```sh
+ DELETE /crdbs/552bbccb-99f3-4142-bd17-93d245f0bc79
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -201,11 +265,11 @@ Delete an Active-Active database.
 |-------|------|-------------|
 | crdb_guid | string | Globally unique Active-Active database ID (GUID) |
 
-### Response {#delete-response} 
+### Response {#delete-response}
 
 Returns a [CRDB task object]({{<relref "/rs/references/rest-api/objects/crdb_task">}}).
 
-### Status codes {#delete-status-codes} 
+#### Status codes {#delete-status-codes}
 
 | Code | Description |
 |------|-------------|
