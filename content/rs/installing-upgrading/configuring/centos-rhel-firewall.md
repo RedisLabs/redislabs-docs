@@ -21,7 +21,7 @@ These services are defined but not allowed through the firewall by default.
 During Redis Enterprise Software installation, the [installer prompts]({{<relref "/rs/installing-upgrading/manage-installation-questions">}}) you to confirm auto-configuration of a default (public) zone
 to allow the **redislabs** service.
 
-While this simplifies installation, your deployment might not be secure if you did not use other methods to secure the host machine's network, such as external firewall rules or security groups.
+Although automatic firewall configuration simplifies installation, your deployment might not be secure if you did not use other methods to secure the host machine's network, such as external firewall rules or security groups.
 You can use firewalld configuration tools such as **firewall-cmd** (command line) or **firewall-config** (UI)
 to create more specific firewall policies that allow these two services through the firewall, as necessary.
 
