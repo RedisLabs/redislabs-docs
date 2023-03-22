@@ -202,9 +202,9 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
 
     - In the **Secret access key** field, enter the secret access key.
 
-### GCP Storage
+### Google Cloud Storage
 
-For [Google Cloud Platform (GCP) console](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
+For [Google Cloud](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
 
 1. Sign in to Google Cloud Platform console.
 

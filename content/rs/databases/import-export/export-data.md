@@ -169,9 +169,9 @@ To export data to an [Amazon Web Services](https://aws.amazon.com/) (AWS) Simple
 
     - In the **Secret access key** field, enter the secret access key.
 
-### GCP Storage
+### Google Cloud Storage
 
-To export to a [Google Cloud Platform (GCP)](https://developers.google.com/console/) storage bucket:
+To export to a [Google Cloud](https://developers.google.com/console/) storage bucket:
 
 1. Sign in to Google Cloud Platform console.
 

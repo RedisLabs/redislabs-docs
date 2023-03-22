@@ -48,7 +48,7 @@ To create a new subscription:
 1. Configure your subscription:
 
     1. Select **Fixed plans**.
-    1. For the cloud vendor, select **Amazon Web Services** (AWS), **Google Cloud Platform** (GCP), or **Microsoft Azure**.
+    1. For the cloud vendor, select **Amazon Web Services** (AWS), **Google Cloud** (GCP), or **Microsoft Azure**.
     1. Select a region to deploy the subscription to.
     1. From the dataset size list, select the Free tier (30MB).
     1. Enter a name for the subscription.

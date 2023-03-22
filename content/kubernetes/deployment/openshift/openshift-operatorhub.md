@@ -19,21 +19,22 @@ aliases: [
 
 You can deploy Redis Enterprise for Kubernetes from the Red Hat OpenShift CLI. You can also use a UI, [OperatorHub](https://docs.openshift.com/container-platform/4.11/operators/index.html) (Red Hat) to install operators and create custom resources.
 
+
 ## Install the Redis Enterprise operator
+
+{{<warning>}} If using version 6.2.18-41 or earlier, [Install the security context constraint](#install-security-context-constraint) before installing the operator. {{</warning>}}
 
 1. Select **Operators > OperatorHub**.
 
 2. Search for _Redis Enterprise_ in the search dialog and select the **Redis Enterprise Operator provided by Redis** marked as **Certified**.
 
-  {{<note>}}
-  Custom catalogs are not supported.
-  {{</note>}}
+    By default, the image is pulled from Red Hat's registry.
 
 3. On the **Install Operator** page, specify the namespace for the operator.
 
     Only one namespace per operator is supported.
 
-4. Update the **channel** with the version you're installing.
+4. Update the **channel** with the version you're installing. 
 
     For more information about specific versions, see the [release notes]({{<relref "/kubernetes/release-notes/">}}).
 

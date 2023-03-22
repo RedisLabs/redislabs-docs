@@ -97,13 +97,13 @@ To share and import an RDB file that is stored in an AWS Simple Storage Service 
 
 1. Select **Import**.
 
-### Via GCP Storage
+### Via Google Cloud Storage
 
-To use the Redis Cloud admin console to import your data, you must first share the file from the Google Cloud Platform (GCP) console.
+To use the Redis Cloud admin console to import your data, you must first share the file from the Google Cloud console.
 
-To share and import an RDB file that is stored in a GCP Storage bucket:
+To share and import an RDB file that is stored in a Google Cloud Storage bucket:
 
-1. In the GCP Storage bucket, edit the file's Access Control List to give read access to Redis Enterprise Cloud:
+1. In the Google Cloud Storage bucket, edit the file's Access Control List to give read access to Redis Enterprise Cloud:
     1. Select **Edit access** in the RDB file menu.
     1. Select **Add item**.
     1. Enter the user details and access:
