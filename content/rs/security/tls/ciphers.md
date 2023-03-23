@@ -59,7 +59,7 @@ rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES
 
 ### Data plane
 
-Data plane cipher suites use the OpenSSL library format in Redis Enterprise Software version 6.0.20 or later. See the OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html).
+Data plane cipher suites use the OpenSSL library format in Redis Enterprise Software version 6.0.20 or later. For a list of available OpenSSL configurations, see [Ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) (OpenSSL).
 
 To configure the cipher suites for communications between applications and databases, use the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command syntax:
 
