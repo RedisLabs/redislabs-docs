@@ -93,7 +93,7 @@ There are two methods of updating the operator ConfigMap (`operator-environment-
 - Method 1: Configure the operator to watch for a namespace label and add this label to managed namespaces.
 - Method 2: Configure the operator with an explicit list of namespaces to manage.
 
-You can create this ConfigMap manually before deployment, or it will be created automatically after.
+You can create this ConfigMap manually before deployment, or it will be created automatically after the operator was deployed.
 
 {{<note>}}
 If the REC is configured to watch a namespace without setting the role and role binding permissions, or a namespace that is not yet created, the operator will fail and halt normal operations.
