@@ -23,7 +23,7 @@ To prevent data eviction, make sure your database is large enough to hold all ke
 
 ## Active-Active database eviction
 
-[Active-Active databases]({{<relref "/rs/databases/active-active">}}) have a lower threshold for data eviction than standalone databases because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit.
+[Active-Active databases]({{<relref "/rs/databases/active-active">}}) have a lower threshold for data eviction than standalone databases because data eviction requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit.
 
 If memory usage continues to increase during data eviction, the rate of eviction will increase to avoid running out of memory.
 
