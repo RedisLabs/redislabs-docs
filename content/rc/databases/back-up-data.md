@@ -96,7 +96,7 @@ Once the bucket is available and the permissions are set, use the name of your b
 To learn more, see [Configuring ACLs for buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html) on the AWS docs.
 
 {{< note >}}
-An AWS S3 bucket can be used by only one Redis Cloud account. If you have more than one Redis Cloud account, [create more S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html) with the same settings for the other accounts.
+An AWS S3 bucket can be used by only one Redis Cloud account. If you have more than one Redis Cloud account, repeat the set up steps for multiple buckets. 
 {{< /note >}}
 
 ### Google Cloud Storage
