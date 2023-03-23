@@ -28,9 +28,9 @@ To prevent data eviction, make sure your database is large enough to hold all ke
 If memory usage continues to increase during data eviction, the rate of eviction will increase to avoid running out of memory.
 
 As with standalone Redis Enterprise databases, Active-Active eviction is calculated per shard.
-To prevent over eviction, internal heuristics might prevent keys from being evicted when the shard reaches the 80% memory limit.  In such cases, keys are evicted only when the shard's memory reaches 100%.
+To prevent overeviction, internal heuristics can prevent keys from being evicted when the shard reaches the 80% memory limit. In such cases, keys are evicted only when the shard's memory reaches 100%.
 
-In case of network issues between Active-Active instances, memory can be freed only when all instances are in sync. If there is no communication between participating clusters, this can cause the eviction of all keys and an Out of Memory (OOM) state in the instance.
+In case of network issues between Active-Active instances, memory can be freed only when all instances are in sync. If there is no communication between participating clusters, all keys are evicted, creating an out-of-memory (OOM) state in the instance.
 
 {{< note >}}
 Data eviction policies are not supported for Active-Active databases with [Redis on Flash]({{<relref "/rs/databases/redis-on-flash">}}).

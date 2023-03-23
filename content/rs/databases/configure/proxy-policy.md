@@ -72,7 +72,7 @@ To find the endpoint ID, run [`rladmin status endpoints`]({{<relref "/rs/referen
 
 ## Reapply policy after topology changes
 
-During regular cluster operations, certain actions (such as automatic migration or automatic failover) change what proxy needs to be bound to what database. When such actions take place, the cluster attempts to automatically change proxy bindings to follow to the current proxy policy.
+During regular cluster operations, certain actions (such as automatic migration or automatic failover) change which proxy needs to be bound to which database. When such actions take place, the cluster attempts to automatically change proxy bindings to follow the current proxy policy.
 
 However, in an attempt to prevent any established client connections from disconnecting, the cluster might not strictly enforce the proxy policy. You can use `rladmin` to enforce the policy.
 

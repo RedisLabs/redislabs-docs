@@ -13,7 +13,7 @@ In version 6.2.4, Redis Enterprise Software introduced the Redis database compat
 
 Changes to the upgrade policy do not affect existing databases. The policy is used only when you create a new database, upgrade a database, or change its configuration.
 
-For best results, we recommend changing the policy value only after upgrading to a major release of Redis Enterprise Software.
+For best results, change the policy value only after upgrading to a major release of Redis Enterprise Software.
 
 ## Policy values
 
@@ -24,7 +24,7 @@ For best results, we recommend changing the policy value only after upgrading to
 
 As of v6.2.4, `redis_upgrade_policy` defaults to `major`, which limits Redis database compatibility to the most recent major release.
 
-If you change the policy to `latest`, you need to upgrade Redis Enterprise Software every time there’s a minor release. Further, you’ll need to leave the policy set to `latest` until the next major release of Redis Enterprise Software, which generally happens every 18-24 months.
+If you change the policy to `latest`, you need to upgrade Redis Enterprise Software with each minor release. Furthermore, leave the policy set to `latest` until the next major release of Redis Enterprise Software, which generally happens every 18-24 months.
 
 ## Examples
 

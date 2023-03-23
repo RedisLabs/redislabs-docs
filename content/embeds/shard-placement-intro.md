@@ -15,7 +15,7 @@ The shard placement policies are:
 For standard (RAM-only) Redis databases, use `dense` shard placement to optimize memory resources.
     {{</note>}}
 
-- [`sparse`]({{<relref "/rs/references/policies/default-shards-placement#sparse-shard-placement">}}) - Spread the shards across as many nodes in the cluster as possible to spread the traffic across cluster nodes.
+- [`sparse`]({{<relref "/rs/references/policies/default-shards-placement#sparse-shard-placement">}}) - Spread the shards across as many cluster nodes as possible to spread the traffic across cluster nodes.
 
     {{<note>}}
 For [Redis on Flash]({{<relref "/rs/databases/redis-on-flash">}}) databases, use `sparse` shard placement to optimize disk resources.

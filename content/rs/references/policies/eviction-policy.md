@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-The data eviction policy determines what happens when a database reaches its [memory limit]({{<relref "/rs/databases/memory-performance/memory-limit">}}). To make room for new data, older data is [_evicted_]({{<relref "/rs/databases/memory-performance/data-eviction">}}) (removed) according to the selected policy.
+The data eviction policy determines what happens when a database reaches its [memory limit]({{<relref "/rs/databases/memory-performance/memory-limit">}}). To make room for new data, older data is [_evicted_]({{<relref "/rs/databases/memory-performance/data-eviction">}}) according to the selected policy.
 
 To prevent data eviction, make sure your database is large enough to hold all keys.
 
@@ -21,10 +21,10 @@ To prevent data eviction, make sure your database is large enough to hold all ke
 | allkeys-lru | Keeps most recently used keys; removes least recently used (LRU) keys. |
 | allkeys-lfu | Keeps frequently used keys; removes least frequently used (LFU) keys. |
 | allkeys-random | Randomly removes keys. |
-| volatile-lru | Removes least recently used keys with `expire` set to true (default for most databases, excluding Active-Active databases). |
-| volatile-lfu | Removes least frequently used keys with `expire` set to true. |
-| <nobr>volatile-random</nobr> | Randomly removes keys with `expire` set to true. |
-| volatile-ttl | Removes least frequently used keys with `expire` set to true and the shortest remaining time-to-live (TTL) value. |
+| volatile-lru | Removes least recently used keys with `expire` set to `true` (default for most databases, excluding Active-Active databases). |
+| volatile-lfu | Removes least frequently used keys with `expire` set to `true`. |
+| <nobr>volatile-random</nobr> | Randomly removes keys with `expire` set to `true`. |
+| volatile-ttl | Removes least frequently used keys with `expire` set to `true` and the shortest remaining time-to-live (TTL) value. |
 
 ## Examples
 

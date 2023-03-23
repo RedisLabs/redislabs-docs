@@ -18,7 +18,7 @@ When you [upgrade an existing database]({{<relref "/rs/installing-upgrading/upgr
 | 6.2.x | 6.0, 6.2 | 6.0 |
 | 6.4.2 | 6.0, 6.2 | 6.2 |
 
-The version number should be in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.
+The version number should be in the _x.y_ form, where _x_ represents the major version number and _y_ represents the minor version number.
 
 You cannot set `default_redis_version` to a value higher than that supported by the current [`redis_upgrade_policy`]({{<relref "/rs/references/policies/redis-upgrade-policy">}}) value.
 

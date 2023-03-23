@@ -9,15 +9,15 @@ categories: ["RS"]
 aliases: 
 ---
 
-Redis Enterprise Software uses [proxies]({{<relref "/rs/references/terminology#proxy">}}) to manage and optimize access to database shards. Each node in the cluster runs a single proxy process, which can be active (receives incoming traffic) or passive (waits for failovers), depending on the database's [proxy policy]({{<relref "/rs/references/policies/proxy-policy">}}).
+Redis Enterprise Software uses [proxies]({{<relref "/rs/references/terminology#proxy">}}) to manage and optimize access to database shards. Each node in the cluster runs a single proxy process, which can be _active_ (receives incoming traffic) or _passive_ (waits for failovers), depending on the database's [proxy policy]({{<relref "/rs/references/policies/proxy-policy">}}).
 
 ## Policy values
 
 | Value | Description |
 |-------|-------------|
-| single | There is only a single proxy that is bound to the database. This is the default database configuration and preferable in most use cases. |
+| single | There is a single proxy that is bound to the database. This is the default database configuration and preferable in most use cases. |
 | <nobr>all-master-shards</nobr> | [Multiple proxies]({{<relref "/rs/databases/configure/proxy-policy#multiple-active-proxies">}}) are bound to the database, one on each node that hosts a master shard. This policy fits most use cases that require multiple proxies. |
-| all-nodes | [Multiple proxies]({{<relref "/rs/databases/configure/proxy-policy#multiple-active-proxies">}}) are bound to the database, one on each node in the cluster, even if the node doesn't host any database shards. You should use this policy only in special cases. |
+| all-nodes | [Multiple proxies]({{<relref "/rs/databases/configure/proxy-policy#multiple-active-proxies">}}) are bound to the database, one on each node in the cluster, even if the node doesn't host any database shards. Use this policy only in special cases. |
 
 ## Examples
 
