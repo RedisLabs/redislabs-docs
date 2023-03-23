@@ -58,10 +58,10 @@ When all nodes have database shards, the shards are distributed evenly across th
 
 For example, for a database with two master and two replica shards on a cluster with three nodes and a sparse shard placement policy:
 
-- Node 1 hosts one of the master shards
-- Node 2 hosts the replica for the first master shard
-- Node 3 hosts the second master shard
-- Node 1 hosts the replica shard for master shard 2
+- Node 1 hosts one of the master shards.
+- Node 2 hosts the replica for the first master shard.
+- Node 3 hosts the second master shard.
+- Node 1 hosts the replica shard for master shard 2.
 
 ![sparse_placement](/images/rs/sparse_placement.png)
 
