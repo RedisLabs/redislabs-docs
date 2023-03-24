@@ -86,7 +86,7 @@ First, set up a SAML app to integrate Redis Cloud with your identity provider:
     | Email | User's email address (used as the username in the Redis Cloud console) |
     | redisAccountMapping | Maps the user to multiple Redis Cloud accounts and [roles]({{<relref "/rc/security/access-management#team-management-roles">}}) (roles must be lowercase) |
 
-    The key-value pair of `redisAccountMapping` consists of a lowercase [role name]({{<relref "/rc/security/access-management#team-management-roles">}}) (owner, member, manager, or viewer) and the user's Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
+    The key-value pair of `redisAccountMapping` consists of a lowercase [role name]({{<relref "/rc/security/access-management#team-management-roles">}}) (owner, member, manager, or viewer) and the user's Redis Cloud **Account number** found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
     For `redisAccountMapping`, you can add the same user to multiple SAML-enabled accounts using one of these options:
 
