@@ -5,7 +5,7 @@ description: Configure access control lists (ACLs).
 weight: 20
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: ["/rs/security/access-control/configure-acl/"]
 ---
 
 ## Redis ACL command syntax
