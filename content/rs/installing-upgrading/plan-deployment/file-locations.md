@@ -1,10 +1,13 @@
 ---
 Title: File locations
-description:
-weight: 20
+linkTitle: File locations
+description: Redis Enterprise Software file installation locations.
+weight: 60
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/installing-upgrading/file-locations/
+aliases: ["/rs/administering/installing-upgrading/file-locations/",
+    "/rs/installing-upgrading/file-locations/",
+]
 ---
 To make sure that Redis Enterprise Software functions properly, make sure that you handle the files in the application directories with care.
 

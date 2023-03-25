@@ -37,7 +37,7 @@ Before you add a node to the cluster:
 To add a node in RS:
 
 1. [Install the RS installation package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on a clean installation
-    of a [supported operating system]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
+    of a [supported operating system]({{< relref "/rs/installing-upgrading/plan-deployment/supported-platforms.md" >}}).
 1. To connect to the RS management UI of the new RS installation, go to: <https://URL or IP address:8443>
 
     For example, if you installed RS on a machine with IP address 10.0.1.34, go to `https://10.0.1.34:8443`.

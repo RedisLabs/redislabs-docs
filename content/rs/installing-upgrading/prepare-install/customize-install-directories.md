@@ -1,7 +1,7 @@
 ---
 Title: Customize installation directories
 linkTitle: Customize install locations
-description:
+description: Customize Redis Enterprise Software installation directories.
 weight: 30
 alwaysopen: false
 categories: ["RS"]

@@ -1,7 +1,7 @@
 ---
 Title: Get started with Redis Enterprise Software using Docker
-linkTitle: Docker
-description:
+linkTitle: Redis Enterprise on Docker
+description: Set up a development or test deployment of Redis Enterprise Software using Docker.
 weight: 2
 alwaysopen: false
 categories: ["RS"]
@@ -25,7 +25,7 @@ Docker containers are currently only supported for development and testing envir
 {{< /warning >}}
 
 For testing purposes, you can run Redis Enterprise Software (RS) on Docker containers on
-[Linux, Windows, or MacOS]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}).
+Linux, Windows, or MacOS.
 The [Redis Enterprise Software container](https://hub.docker.com/r/redislabs/redis/)
 represents a node in an RS Cluster. When deploying RS using Docker, there are a couple
 of common topologies:

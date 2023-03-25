@@ -1,12 +1,13 @@
 ---
 Title: Configure AWS EC2 instances for Redis Enterprise Software
 linkTitle: AWS EC2 configuration
-description:
-weight: 30
+description: Considerations for installing and running Redis Enterprise Software on Amazon Elastic Cloud Compute (EC2) instances. 
+weight: 80
 alwaysopen: false
 categories: ["RS"]
 aliases: [
     /rs/administering/installing-upgrading/configuring-aws-instances/,
+    /rs/installing-upgrading/configuring/configuring-aws-instances/,
     /rs/installing-upgrading/configuring/configuring-aws-instances/,
 ]
 ---
@@ -51,7 +52,7 @@ this feature could be critical to use:
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet RS's [hardware
-requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}).
+requirements]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}).
 
 In addition, some instance types are optimized for EBS backed volumes
 and some are not. If you are using persistent storage, you should use an
