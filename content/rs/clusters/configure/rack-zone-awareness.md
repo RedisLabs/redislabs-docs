@@ -39,7 +39,7 @@ Now, every time you add a new node to the cluster, define a **rack-zone ID** for
 The rack-zone ID must comply with the following rules:
 
 - Maximum length of 63 characters.
-- Characters consist of letters, digits, hyphens ('-') or underscore ('_').
+- Characters consist of letters, digits, hyphens ('-'), or underscores ('_').
 - ID starts with a letter and ends with a letter or a digit.
 
 {{< note >}}
