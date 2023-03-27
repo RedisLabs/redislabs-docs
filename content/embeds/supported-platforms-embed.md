@@ -12,16 +12,39 @@ Make sure your system meets these requirements:
 
 ## Supported platforms
 
-| **Platform** | **Versions/Information** |
-|------------|-----------------|
-| Ubuntu | 16.04 (deprecated), 18.04, 20.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
-| Red Hat Enterprise Linux (RHEL) 7, CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
-| <nobr>RHEL 8, CentOS 8</nobr> | 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, and 8.7 |
-| <nobr>Oracle Linux 7, Oracle Linux 8</nobr> | Based on the corresponding RHEL version |
-| <nobr>Rocky Linux 8</nobr> | Based on RHEL 8 |
-| Amazon Linux | Version 1 |
-| Docker | [Docker images]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) of Redis Enterprise Software are certified for development and testing only. |
-| Kubernetes | See the [Redis Enterprise for Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
+| Redis Enterprise | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
+|------------------|-------|--------|--------|--------|--------|-------|
+| **Ubuntu**<sup>[1](#table-note-1)</sup> |
+| 20.04 | <nobr>&#x2705; Supported</nobr> <nobr>(as of [6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2#642-43-march-2023">}}))</nobr> | | | | |
+| 18.04 | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> |
+| 16.04 | <nobr>Deprecated</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> |
+| **RHEL & CentOS**<sup>[2](#table-note-2)</sup>
+| 8.7 | <nobr>&#x2705; Supported</nobr> | | | | |
+| 8.5-8.6 | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | | |
+| 8.0-8.4 | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | |
+| 7.0-7.9 | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> |
+| **Oracle Linux**<sup>[3](#table-note-3)</sup> |
+| 8 | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | | |
+| 7 | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> |
+| **Rocky Linux**<sup>[3](#table-note-3)</sup> |
+| 8 | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | | | |
+| **Amazon Linux** |
+| 2 | <nobr>&#x2705; Supported</nobr> <nobr>(as of 6.4.2-TBA)</nobr> | | | | |
+| 1 | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> |
+| **Docker**<sup>[4](#table-note-4)</sup> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> |
+| **Kubernetes**<sup>[5](#table-note-5)</sup> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> | <nobr>&#x2705; Supported</nobr> |
+
+1. <a name="table-note-1" style="display: block; height: 80px; margin-top: -80px;"></a>The server version of Ubuntu is recommended for production installations. The desktop version is only recommended for development deployments.
+
+2. <a name="table-note-2" style="display: block; height: 80px; margin-top: -80px;"></a>RHEL and CentOS deployments require OpenSSL 1.0.2 and [firewall configuration]({{<relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall">}}).
+
+3. <a name="table-note-3" style="display: block; height: 80px; margin-top: -80px;"></a>Based on the corresponding RHEL version.
+
+4. <a name="table-note-4" style="display: block; height: 80px; margin-top: -80px;"></a>
+[Docker images]({{<relref "/rs/installing-upgrading/get-started-docker">}}) of Redis Enterprise Software are certified for development and testing only.
+
+5. <a name="table-note-5" style="display: block; height: 80px; margin-top: -80px;"></a>See the [Redis Enterprise for Kubernetes documentation]({{<relref "/kubernetes">}}).
+
 
 ## Operating system limitations
 
