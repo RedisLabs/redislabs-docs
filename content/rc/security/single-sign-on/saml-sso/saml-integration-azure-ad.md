@@ -2,7 +2,7 @@
 Title: Azure Active Directory SAML integration guide
 linkTitle: Azure AD integration
 description: This integration guide shows how to set up Microsoft Azure Active Directory (Azure AD) as a SAML single sign on provider for your Redis Cloud account.
-weight: 54
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---

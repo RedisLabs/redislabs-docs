@@ -2,7 +2,7 @@
 Title: PingIdentity SAML integration guide
 linkTitle: PingIdentity integration
 description: This integration guide shows how to set up PingIndentity as a SAML single sign-on provider for your Redis Cloud account.
-weight: 56
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---

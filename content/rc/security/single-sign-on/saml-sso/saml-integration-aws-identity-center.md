@@ -2,7 +2,7 @@
 Title: AWS IAM Identity Center SAML integration guide
 linkTitle: AWS IAM Identity Center integration
 description: This integration guide shows how to configure AWS IAM Identity Center as a SAML single sign on provider for your Redis Cloud account.
-weight: 52
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---

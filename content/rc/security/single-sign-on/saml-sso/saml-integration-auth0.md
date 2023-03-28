@@ -2,7 +2,7 @@
 Title: Auth0 SAML integration guide
 linkTitle: Auth0 integration
 description: This integration guide shows how to configure Auth0 as a SAML single sign on provider for your Redis Cloud account.
-weight: 58
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---

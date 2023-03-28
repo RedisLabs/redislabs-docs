@@ -2,7 +2,7 @@
 Title: Okta SAML integration guide (Org2Org)
 linkTitle: Okta integration (Org2Org)
 description: This integration guide shows how to set up Okta as a SAML single sign on provider for your Redis Cloud account.
-weight: 53
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
