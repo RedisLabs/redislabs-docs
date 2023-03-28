@@ -13,7 +13,7 @@ As an alternative to the traditional email/password account authentication metho
 
 - [SAML SSO]({{<relref "/rc/security/single-sign-on/saml-sso">}})
 
-  You can use any identity provider to integrate with Redis Enterprise Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers with SAML support:
+  You can use any identity provider to integrate with Redis Enterprise Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers:
 
   - [Auth0 SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-auth0">}})
   - [AWS IAM Identity Center SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-aws-identity-center">}})
