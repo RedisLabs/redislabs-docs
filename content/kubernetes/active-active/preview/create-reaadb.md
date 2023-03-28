@@ -103,8 +103,8 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
       name: example-aadb-1
     spec:
       participatingClusters:
-        - name: rec1.ns1
-        - name: rec2.ns2
+        - name: rerc1
+        - name: rerc2
       globalConfigurations:
         shardCount: 3
     ```
