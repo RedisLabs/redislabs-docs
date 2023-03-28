@@ -15,12 +15,12 @@ As an alternative to the traditional email/password account authentication metho
 
   See these guides for supported integrations:
 
+  - [Auth0 SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-auth0">}})
   - [AWS IAM Identity Center SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-aws-identity-center">}})
+  - [Azure Active Directory SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-azure-ad">}}) 
   - [Okta SAML integration (Generic)]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-generic">}})
   - [Okta SAML integration (Org2Org)]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-org2org">}})
-  - [Azure Active Directory SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-azure-ad">}}) 
   - [PingIdentity SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-ping-identity">}})
-  - [Auth0 SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-auth0">}})
 
 - [Social login]({{<relref "/rc/security/single-sign-on/social-login">}})
 
