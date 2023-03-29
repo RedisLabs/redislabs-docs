@@ -19,7 +19,7 @@ Make sure your system meets these requirements:
 | <nobr>RHEL 8, CentOS 8</nobr> | 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, and 8.7 |
 | <nobr>Oracle Linux 7, Oracle Linux 8</nobr> | Based on the corresponding RHEL version |
 | <nobr>Rocky Linux 8</nobr> | Based on RHEL 8 |
-| Amazon Linux | Version 1 |
+| Amazon Linux | Versions 1 and 2 |
 | Docker | [Docker images]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) of Redis Enterprise Software are certified for development and testing only. |
 | Kubernetes | See the [Redis Enterprise for Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
 
@@ -41,6 +41,10 @@ To avoid issues with SHA1 certificates, replace them with new certificates that 
 
 RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules.
 Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
+
+### Modules not supported for Amazon Linux 2
+
+A database with modules cannot reside on an Amazon Linux 2 node. Support will be added in a future maintenance release.
 
 ## VMware
 
