@@ -5,6 +5,7 @@ description: Pub/sub ACLs & default permissions. Validate client certificates by
 compatibleOSSVersion: Redis 6.2.6
 weight: 72
 alwaysopen: false
+toc: "true"
 categories: ["RS"]
 ---
 
@@ -27,3 +28,64 @@ This version offers:
 For more detailed release notes, select a build version from the following table:
 
 {{<table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes,OSS&nbsp;Redis compatibility" columnSources="LinkTitle,Description,compatibleOSSVersion" enableLinks="LinkTitle">}}
+
+## Known upgrade limitations
+
+Before you upgrade a cluster that hosts Active-Active databases with modules to v6.4.2-30, perform the following steps:
+
+1. Use `crdb-cli` to verify that the modules (`modules`) and their versions (in `module_list`) are as they appear in the database configuration and in the default database configuration:
+
+    ```sh
+    crdb-cli crdb get --crdb-guid <crdb-guid>
+    ```
+
+1. From the admin console's **redis modules** tab, validate that these modules with their specific versions are loaded to the cluster.
+
+1. If one or more of the modules/versions are missing or if you need help, [contact Redis support](https://redis.com/company/support/) before taking additional steps.
+
+This limitation has been fixed and resolved as of [v6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}).
+
+## Known operating system limitations
+
+#### RHEL 7 and RHEL 8
+
+RS95344 - CRDB database will not start on Redis Enterprise v6.4.2 with a custom installation path.
+
+For a workaround, use the following commands to add the relevant CRDB files to the Redis library:
+
+```sh
+$ yum install -y chrpath
+$ find $installdir -name "crdt.so" | xargs -n1 -I {} /bin/bash -c 'chrpath -r ${libdir} {}'
+```
+
+This limitation was fixed in Redis Enterprise [v6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}) (March maintenance release).
+
+#### RHEL 8
+
+Due to module binary differences between RHEL 7 and RHEL 8, you cannot upgrade RHEL 7 clusters to RHEL 8 when they host databases using modules. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
+
+#### Ubuntu 20.04
+
+By default, you cannot use the SHA1 hash algorithm ([OpenSSL’s default security level is set to 2](https://manpages.ubuntu.com/manpages/focal/man3/SSL_CTX_set_security_level.3ssl.html#notes)). The operating system will reject SHA1 certificates even if the `mtls_allow_weak_hashing` option is enabled. You need to replace SHA1 certificates with newer certificates that use SHA-256. Note that the certificates provided with Redis Enterprise Software use SHA-256.  
+
+## Known limitations
+
+#### Resharding fails for rack-aware databases with no replication
+
+When a database is configured as [rack-aware]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) and replication is turned off, the resharding operation fails.
+
+RS97971 - Fix will be included in the April maintenance release       
+
+Workaround:
+
+Before resharding your database, turn off rack awareness:
+
+```sh
+curl -k -u "<user>:<password>" -H "Content-type: application/json" -d '{"rack_aware": false}' -X PUT "https://localhost:9443/v1/bdbs/<bdb_uid>"
+```
+
+After the resharding process is complete, you can re-enable rack awareness:
+
+```sh
+curl -k -u "<user>:<password>" -H "Content-type: application/json" -d '{"rack_aware": true}' -X PUT "https://localhost:9443/v1/bdbs/<bdb_uid>"
+```
