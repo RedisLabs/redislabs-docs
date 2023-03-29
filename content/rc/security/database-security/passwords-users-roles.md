@@ -87,11 +87,9 @@ In open source Redis, you can create users and assign ACLs to them using the `AC
 Redis does not support generic roles.
 
 In Redis Enterprise Cloud, you configure RBAC using the admin console. As a result, certain open source Redis ACL
-subcommands are not available in Redis Cloud.
+subcommands are not available in Redis Cloud. The following table shows which ACL commands are supported.
 
-Specifically, Redis Cloud databases block the following ACL subcommands: `LOAD`, `SAVE`, `SETUSER`, `DELUSER`, `GENPASS`, and `LOG`.
-
-Redis Cloud databases allow these ACL subcommands: `LIST`, `USERS`, `GETUSER`, `CAT`, `WHOAMI`, and `HELP`.
+{{<embed-md "acl-command-compatibility.md">}}
 
 In open source Redis, you must explicitly provide access to the `MULTI`, `EXEC`, and `DISCARD` commands.
 In Redis Cloud, these commands, which are used in transactions, are always permitted. However, the commands
