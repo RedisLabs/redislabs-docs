@@ -47,6 +47,10 @@ To do this, specify the target database as an Active-Passive replica of the the 
 
 You need the public endpoint details for the source database.  These are available from the database list and the **General** section of the **Configuration** tab for the source database.
 
+{{< note >}}
+If the source database has [Transport Layer Security (TLS)]({{< relref  "/rc/databases/tls-ssl" >}}) enabled, an error will appear when attempting to sync the two databases. [Contact support](https://redis.com/company/support/) if you would like to migrate a TLS-enabled database using Active-Passive.
+{{< /note >}}
+
 Here's how this works for databases hosted on the same account:
 
 1.  Select **Databases** from the [admin menu](http://app.redis.com/) and locate the source database in the list.
