@@ -11,25 +11,25 @@ This guide shows how to configure [Google Workspace](https://workspace.google.co
 
 To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
 
-## Step 1: Setup your identity provider (IdP)
+## Step 1: Set up your identity provider (IdP)
 
 ### Create the Google Workspace SAML application
 
 1. Sign in to your [Google Workspace admin account](https://admin.google.com/).
 
-2. From the main menu, select **Apps** then **Web and mobile apps**.
+1. From the main menu, select **Apps** then **Web and mobile apps**.
 
    {{<image filename="images/rc/saml/google_workspace_saml_0.png" alt="" >}}{{</image>}}
 
-3. Once in Web and mobile apps, select **Add custom SAML app** from the dropdown list.
+1. Once in Web and mobile apps, select **Add custom SAML app** from the dropdown list.
 
    {{<image filename="images/rc/saml/google_workspace_saml_1.png" alt="" >}}{{</image>}}
 
-4. To begin, change the **App name** and **Description** to **Redis Cloud**. You can also choose an **App icon** for the application. We suggest you upload a Redis icon that you can find [here](https://saml-integration-logo.s3.amazonaws.com/redis-cube-red_white-rgb.png). Once complete, select **Continue**.
+1. To begin, change the **App name** and **Description** to **Redis Cloud**. You can also choose an **App icon** for the application. We suggest you upload a [Redis icon](https://saml-integration-logo.s3.amazonaws.com/redis-cube-red_white-rgb.png). Once complete, select **Continue**.
 
    {{<image filename="images/rc/saml/google_workspace_saml_2.png" alt="" >}}{{</image>}}
 
-5. In the next screen, you will find all of the information needed to configure SAML in Redis Cloud. Select the **copy** button for the three following sections of information:
+1. In the next screen, you will find all of the information needed to configure SAML in Redis Cloud. Select the **copy** button for the following information sections:
 
 * SSO URL
 * Entity ID
@@ -55,29 +55,29 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
 
 1. Add the information you saved previously in the **Google identity provider details** screen. This includes:
 
-    * **Issuer (IdP Entity ID)**: Entity ID.
-    * **IdP server URL**: SSO URL.
-    * **Assertion signing certificate**: Certificate.
+    * **Issuer (IdP Entity ID)**: `Entity ID`.
+    * **IdP server URL**: `SSO URL`.
+    * **Assertion signing certificate**: `Certificate`.
 
    Also add:
 
-    * **Email domain binding** - The domain used in your company's email addresses.
+    * **Email domain binding**: The domain used in your company's email addresses.
 
       {{<image filename="images/rc/saml/google_workspace_saml_4.png" alt="" >}}{{</image>}}
 
    Select **Enable** and wait a few seconds for the status to change.
 
-2. Select **Download** to get the service provider (SP) metadata. Save the file to your local hard disk.
+1. Select **Download** to get the service provider (SP) metadata. Save the file to your local hard disk.
 
    {{<image filename="images/rc/saml/google_workspace_saml_5.png" alt="" >}}{{</image>}}
 
-3. Open the file in any text editor. Save the following text from the metadata:
+1. Open the file in any text editor. Save the following text from the metadata:
 
-    * **EntityID** - The unique name of the service provider (SP).
+    * **EntityID**: The unique name of the service provider (SP).
 
       {{<image filename="images/rc/saml/sm_saml_4.png" alt="" >}}{{</image>}}
 
-   * **Location** : The location of the assertion consumer service.
+   * **Location**: The location of the assertion consumer service.
 
   {{<image filename="images/rc/saml/sm_saml_5.png" alt="" >}}{{</image>}}
 
@@ -87,29 +87,29 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
    
    {{<image filename="images/rc/saml/google_workspace_saml_7.png" alt="" >}}{{</image>}}
 
-2. From the **Manage user attributes** screen, select **Add Custom Attribute**
+1. From the **Manage user attributes** screen, select **Add Custom Attribute**.
 
    {{<image filename="images/rc/saml/google_workspace_saml_8.png" alt="" >}}{{</image>}}
 
-3. Add the following information for the new custom attribute:
+1. Add the following information for the new custom attribute:
 
-* **Category**: Redis Cloud
-* **Name** : redisAccountMapping
-* **Info type** : Text
-* **Visibility** : Visible to user and admin
-* **No. of values** : Single
+* **Category**: `Redis Cloud`
+* **Name**: `redisAccountMapping`
+* **Info type**: `Text`
+* **Visibility**: `Visible to user and admin`
+* **No. of values**: `Single`
 
    {{<image filename="images/rc/saml/google_workspace_saml_9.png" alt="" >}}{{</image>}}
 
-Once complete, select **Add**. The summary page now displays the new **redisAccountMapping** custom field.
+  Once complete, select **Add**. The summary page now displays the new **redisAccountMapping** custom field.
 
    {{<image filename="images/rc/saml/google_workspace_saml_10.png" alt="" >}}{{</image>}}
 
-4. From the main menu in Google Workspace, select **Directory** then **Users**, then select the user you wish to configure. 
+1. From the main menu in Google Workspace, select **Directory** then **Users**, then select the user you wish to configure. 
 
    {{<image filename="images/rc/saml/google_workspace_saml_11.png" alt="" >}}{{</image>}}
 
-5. Each user who needs to access Redis Cloud through SAML needs to define the **redisAccountMapping** attribute. The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
+1. Each user who needs to access Redis Cloud through SAML needs to define the **redisAccountMapping** attribute. The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
    {{<image filename="images/rc/saml/google_workspace_saml_12.png" alt="" >}}{{</image>}}
 
@@ -117,7 +117,7 @@ Once complete, select **Save**.
 
  {{<image filename="images/rc/saml/google_workspace_saml_13.png" alt="" >}}{{</image>}}
 
-6. Repeat step 5 for each user which needs to define the redisAccountMapping attribute.
+ Repeat this step for each user who needs to define the `redisAccountMapping` attribute.
 
 ## Step 4: Finish SAML configuration in Google Workspace's Redis Cloud Application
 
@@ -128,9 +128,9 @@ Once complete, select **Save**.
 
    {{<image filename="images/rc/saml/google_workspace_saml_6.png" alt="" >}}{{</image>}}
 
-Leave the **Name ID** default information as it is. Once complete, select **Continue**.
+   Leave the **Name ID** default information as it is. Once complete, select **Continue**.
 
-2. Configure the **Redis Cloud** application's attribute mappings. Select **Add Mapping**.
+1. Configure the **Redis Cloud** application's attribute mappings. Select **Add Mapping**.
 
    {{<image filename="images/rc/saml/google_workspace_saml_14.png" alt="" >}}{{</image>}}
 
@@ -143,9 +143,9 @@ Leave the **Name ID** default information as it is. Once complete, select **Cont
 
    {{<image filename="images/rc/saml/google_workspace_saml_15.png" alt="" >}}{{</image>}}
 
-Once complete, select **Finish**.
+   Once complete, select **Finish**.
 
-3. Next, we need to turn on the Redis Cloud service for all users, select **Web and mobile apps** -> **Redis Cloud** and then **service status**. Select **ON for everyone**. Once complete, select **Save**.
+1. Next, we need to turn on the Redis Cloud service for all users, select **Web and mobile apps** -> **Redis Cloud** and then **service status**. Select **ON for everyone**. Once complete, select **Save**.
 
    {{<image filename="images/rc/saml/google_workspace_saml_16.png" alt="" >}}{{</image>}}
 
@@ -159,11 +159,11 @@ The final step in our SAML integration with AWS IAM identity Center is to activa
 
 A logout notification screen displays, letting you know that you are redirected to Google's login screen.
 
-2. Select the Google account you wish to login with.
+1. Select the Google account you wish to login with.
 
    {{<image filename="images/rc/saml/google_workspace_saml_18.png" alt="" >}}{{</image>}}
 
-3. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** to log in to the Redis Cloud admin console.
+1. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** to log in to the Redis Cloud admin console.
 
    {{<image filename="images/rc/saml/google_workspace_saml_19.png" alt="" >}}{{</image>}}
 
