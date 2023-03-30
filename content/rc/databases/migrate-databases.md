@@ -48,20 +48,18 @@ To do this, specify the target database as an Active-Passive replica of the the 
 You need the public endpoint details for the source database.  These are available from the database list and the **General** section of the **Configuration** tab for the source database.
 
 {{< note >}}
-If the source database has [Transport Layer Security (TLS)]({{< relref  "/rc/databases/tls-ssl" >}}) enabled, an error will appear when attempting to sync the two databases. [Contact support](https://redis.com/company/support/) if you would like to migrate a TLS-enabled database using Active-Passive.
+If the source database has [Transport Layer Security (TLS)]({{< relref  "/rc/security/database-security/tls-ssl" >}}) enabled, an error will appear when attempting to sync the two databases. [Contact support](https://redis.com/company/support/) if you would like to migrate a TLS-enabled database using Active-Passive.
 {{< /note >}}
 
 Here's how this works for databases hosted on the same account:
 
-1.  Select **Databases** from the [admin menu](http://app.redis.com/) and locate the source database in the list.
+1.  Select **Databases** from the [admin menu](http://app.redis.com/) and select the source database in the list.
 
     {{<image filename="images/rc/migrate-database-select-source.png" alt="Select the source database from the database list." >}}{{< /image >}}
 
-2.  Select the **Copy** button in the **Endpoint** column for the source database, which copies the endpoint details to the Clipboard.
+2.  Select the **Copy** button next to the **Public endpoint** details for the source database to copy the endpoint details to the Clipboard.
 
-    {{<image filename="images/rc/button-database-copy.png" alt="The Copy button copies the public endpoint details to the Clipboard." >}}{{< /image >}}
-
-    (You can also use the **Copy** button next to the **Public endpoint** details in the **General** section of the **Configuration** tab for the source database.)
+    {{<image filename="images/rc/database-public-endpoint-copy.png" alt="The Copy button copies the public endpoint details to the Clipboard." >}}{{< /image >}}
 
 3.  Use the database list drop-down to select the target database.
 
