@@ -39,11 +39,11 @@ The source database remains active while the data migrates.
 
 To do this, specify the target database as an Active-Passive replica of the the source database.  The general process is:
 
-1.  Get the public endpoint of the source database
-2.  Enable the target database as an Active-Passive replica for the source
-3.  Wait for the data to sync
-4.  Switch apps and other connections to the target database
-5.  Disable Active-Passive for the target database
+1.  Get the public endpoint of the source database.
+2.  Enable the target database as an Active-Passive replica for the source.
+3.  Wait for the data to sync.
+4.  Switch apps and other connections to the target database.
+5.  Disable Active-Passive for the target database.
 
 You need the public endpoint details for the source database.  These are available from the database list and the **General** section of the **Configuration** tab for the source database.
 
@@ -65,11 +65,11 @@ Here's how this works for databases hosted on the same account:
 
     {{<image filename="images/rc/migrate-data-select-target-list.png" alt="Use the database list drop-down to select the target database." width="50%">}}{{< /image >}}
 
-4.  From the **Configuration** tab of the target database, select the **Edit database** button.
+4.  From the **Configuration** tab of the target database, select **Edit database**.
 
     {{<image filename="images/rc/migrate-data-target-edit.png" alt="Use the **Edit Database** button to change the configuration of the target database." >}}{{< /image >}}
 
-5.  In the **Durability** section, enable **Active-Passive Redis** and then select the **Add URI** button.
+5.  In the **Durability** section, enable **Active-Passive Redis** and then select **Add URI**.
 
     {{<image filename="images/rc/migrate-data-active-passive-enable.png" alt="Active-Passive settings are located in the **Durability** section of the database **Configuration** tab." >}}{{< /image >}}
 
@@ -79,13 +79,13 @@ Here's how this works for databases hosted on the same account:
 
     {{<image filename="images/rc/migrate-data-specify-source-uri.png" alt="The source URI must be specified using the 'redis://' protocol." >}}{{< /image >}}
 
-    Use the **Save** button to make sure you've specified the source URI correctly.
+    Select **Save** to make sure you've specified the source URI correctly.
 
     {{<image filename="images/rc/icon-database-save.png" alt="The **Save** button verifies the Source URI and you can't save until it validates." >}}{{< /image >}}
 
     If the endpoint cannot be verified, make sure that you've copied the details directly from the source database and that the value you entered starts with `redis://`.
 
-7.  Select the **Save Database** button to begin updating the database.
+7.  Select **Save Database** to begin updating the database.
 
     {{<image filename="images/rc/button-database-save.png" alt="Use the **Save Database** button to save your changes, deploy the database, and to start data migration." >}}{{< /image >}}
 
@@ -107,7 +107,7 @@ Active-Passive sync lets you migrate data while apps and other connections are u
 
 Active-Passive sync requires more memory than data import.  On average, you need an extra 25% memory on top of other requirements, though specific requirements depend on the data types and other factors.  
 
-To illustrate, suppose you want to migrate a 1&nbsp;GB source database without replication to a target database with replication enabled.  Here, the target database memory limit should be at least 2&frac12;&nbsp;GB to avoid data loss.
+To illustrate, suppose you want to migrate a 1&nbsp;GB source database without replication to a target database with replication enabled.  Here, the target database memory limit should be at least 2.5&nbsp;GB to avoid data loss.
 
 Once the databases are synced, you can disable Active-Passive for the target database.  Before doing so, however, verify that apps and other connections have switched to the target database; otherwise, you may lose data.
 
