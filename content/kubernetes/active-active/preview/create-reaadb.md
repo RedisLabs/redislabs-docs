@@ -100,7 +100,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseActiveActiveDatabase
     metadata:
-      name: example-reaadb-1
+      name: example-aadb-1
     spec:
       globalConfigurations:
         databaseSecretName: <my-secret>
