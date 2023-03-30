@@ -11,7 +11,7 @@ aliases: /ri/release-notes/v2.22.0/
 This is the General Availability (GA) release of RedisInsight 2.22.
 
 ### Highlights
-- Showcase your Redis expertise to your team or the wider community by building custom RedisInsight tutorials! These tutorials are easy to write and are an ideal way to describe practical implementations of Redis. Also, convenient to follow and interact with, in the context of a connected Redis database!
+- Share your Redis expertise with your team and the wider community by building custom RedisInsight tutorials. Use our instructions to describe your implementations of Redis for other users to follow and interact with in the context of a connected Redis database.
 - Take a quick tour of RedisInsight to discover how it can enhance your development experience when building with Redis. 
 - Select from a list of supported decompression formats to view your data in a human-readable format.
 
