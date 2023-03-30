@@ -57,8 +57,7 @@ For a full list of fields and options, see the [RERC API reference](https://gith
 * Admission is not blocking REAADB with `shardCount` which exceeds license quota. (RED-96301)
 
   Fix the problems with the REAADB and reapply.
-* RERC resources must have a unique name (`<rec-name>/<rec-namespace>`). (RED-96302)
+* The `<rec-name>/<rec-namespace>` value must be unique for each RERC resource. (RED-96302)
 
 * Only global database options are supported, not support for specifying configuration per location.
-* Can't automatically update the cluster secret via the operator (can be updated manually).
 * No support for migration from old (manual) Active-Active database method to new Active-Active controller.
