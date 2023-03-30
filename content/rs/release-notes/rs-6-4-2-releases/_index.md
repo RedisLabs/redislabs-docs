@@ -6,6 +6,7 @@ compatibleOSSVersion: Redis 6.2.6
 weight: 72
 alwaysopen: false
 toc: "true"
+headerRange: "[1-2]"
 categories: ["RS"]
 ---
 
@@ -29,7 +30,58 @@ For more detailed release notes, select a build version from the following table
 
 {{<table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes,OSS&nbsp;Redis compatibility" columnSources="LinkTitle,Description,compatibleOSSVersion" enableLinks="LinkTitle">}}
 
-## Known upgrade limitations
+## Deprecations
+
+### Ubuntu 16.04
+
+Ubuntu 16 support is considered deprecated and will be removed in a future release. Ubuntu 16.04 LTS (Xenial) has reached the end of its free initial five-year security maintenance period as of April 30, 2021.
+
+### Active-Active database persistence
+
+The snapshot option for Active-Active database persistence is deprecated. We advise customers running Active-Active databases, configured with snapshot data persistence, to reconfigure their data persistence mode to use the AOF (Append Only File) option with the following command:
+
+```sh
+crdb-cli crdb update --crdb-guid <CRDB_GUID> \
+    --default-db-config '{"data_persistence": "aof", "aof_policy":"appendfsync-every-sec"}'
+```
+
+### TLS 1.0 and TLS 1.1
+
+TLS 1.0 and TLS 1.1 connections are considered deprecated in favor of TLS 1.2 or later.
+Please verify that all clients, apps, and connections support TLS 1.2. Support for the earlier protocols will be removed in a future release.
+Certain operating systems, such as RHEL 8, have already removed support for the earlier protocols. Redis Enterprise Software cannot support connection protocols that are not supported by the underlying operating system.
+
+### 3DES encryption cipher
+
+The 3DES encryption cipher is considered deprecated in favor of stronger ciphers like AES.
+Please verify that all clients, apps, and connections support the AES cipher. Support for 3DES will be removed in a future release.
+Certain operating systems, such as RHEL 8, have already removed support for 3DES. Redis Enterprise Software cannot support cipher suites that are not supported by the underlying operating system.
+
+## Known limitations
+
+### Feature limitations
+
+#### Resharding fails for rack-aware databases with no replication
+
+When a database is configured as [rack-aware]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) and replication is turned off, the resharding operation fails.
+
+RS97971 - Fix will be included in the April maintenance release       
+
+Workaround:
+
+Before resharding your database, turn off rack awareness:
+
+```sh
+curl -k -u "<user>:<password>" -H "Content-type: application/json" -d '{"rack_aware": false}' -X PUT "https://localhost:9443/v1/bdbs/<bdb_uid>"
+```
+
+After the resharding process is complete, you can re-enable rack awareness:
+
+```sh
+curl -k -u "<user>:<password>" -H "Content-type: application/json" -d '{"rack_aware": true}' -X PUT "https://localhost:9443/v1/bdbs/<bdb_uid>"
+```
+
+### Upgrade limitations
 
 Before you upgrade a cluster that hosts Active-Active databases with modules to v6.4.2-30, perform the following steps:
 
@@ -45,7 +97,7 @@ Before you upgrade a cluster that hosts Active-Active databases with modules to 
 
 This limitation has been fixed and resolved as of [v6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}).
 
-## Known operating system limitations
+### Operating system limitations
 
 #### RHEL 7 and RHEL 8
 
@@ -67,25 +119,3 @@ Due to module binary differences between RHEL 7 and RHEL 8, you cannot upgrade R
 #### Ubuntu 20.04
 
 By default, you cannot use the SHA1 hash algorithm ([OpenSSL’s default security level is set to 2](https://manpages.ubuntu.com/manpages/focal/man3/SSL_CTX_set_security_level.3ssl.html#notes)). The operating system will reject SHA1 certificates even if the `mtls_allow_weak_hashing` option is enabled. You need to replace SHA1 certificates with newer certificates that use SHA-256. Note that the certificates provided with Redis Enterprise Software use SHA-256.  
-
-## Known limitations
-
-#### Resharding fails for rack-aware databases with no replication
-
-When a database is configured as [rack-aware]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) and replication is turned off, the resharding operation fails.
-
-RS97971 - Fix will be included in the April maintenance release       
-
-Workaround:
-
-Before resharding your database, turn off rack awareness:
-
-```sh
-curl -k -u "<user>:<password>" -H "Content-type: application/json" -d '{"rack_aware": false}' -X PUT "https://localhost:9443/v1/bdbs/<bdb_uid>"
-```
-
-After the resharding process is complete, you can re-enable rack awareness:
-
-```sh
-curl -k -u "<user>:<password>" -H "Content-type: application/json" -d '{"rack_aware": true}' -X PUT "https://localhost:9443/v1/bdbs/<bdb_uid>"
-```
