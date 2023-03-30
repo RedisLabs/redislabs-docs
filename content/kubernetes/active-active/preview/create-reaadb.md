@@ -100,16 +100,15 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseActiveActiveDatabase
     metadata:
-      name: example-aadb-1
+      name: example-reaadb-1
     spec:
-      participatingClusters:
-        - name: rerc1
-        - name: rerc2
       globalConfigurations:
+        databaseSecretName: <my-secret>
+        memorySize: 200MB
         shardCount: 3
-      databaseSecretName:
-       - name: redis-enterprise-rerc1
-       - name: redis-enterprise-rerc2
+      participatingClusters:
+          - name: rerc1
+          - name: rerc2
     ```
 
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
