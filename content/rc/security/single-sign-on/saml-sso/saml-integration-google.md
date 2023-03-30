@@ -130,35 +130,24 @@ Once complete, select **Save**.
 
 Leave the **Name ID** default information as it is. Once complete, select **Continue**.
 
-2. If you would like to also configure an IdP initiated workflow, fill in the **relay state** field in the **Application properties** section. Use this URL: `https://app.redislabs.com/#/login/?idpId=XXXXXX`. Take the ID from the location URL in step 3 (the content after the last forward slash "/") and append to the URL.
+2. Configure the **Redis Cloud** application's attribute mappings. Select **Add Mapping**.
 
-   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_11.png" alt="" >}}{{</image>}}
+   {{<image filename="images/rc/saml/google_workspace_saml_14.png" alt="" >}}{{</image>}}
 
-1. Select **Submit** to finish creating the application.
+   In the next screen, map these attributes:
 
-   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_12.png" alt="" >}}{{</image>}}
+   * **Primary Email**: `Email`
+   * **First name**: `FirstName`
+   * **Last name**: `LastName`
+   * **redisAccountMapping**: `redisAccountMapping`
 
-1. Configure the **Redis Cloud** application's attribute mappings. Select **Actions > Edit Attribute Mappings**.
+   {{<image filename="images/rc/saml/google_workspace_saml_15.png" alt="" >}}{{</image>}}
 
-   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_13.png" alt="" >}}{{</image>}}
+Once complete, select **Finish**.
 
-   In the next screen, add these attributes:
+3. Next, we need to turn on the Redis Cloud service for all users, select **Web and mobile apps** -> **Redis Cloud** and then **service status**. Select **ON for everyone**. Once complete, select **Save**.
 
-    * **Subject**: `${user:email}`, `unspecified`
-    * **Email**: `${user:email}`, `unspecified`
-    * **FirstName**: `${user:givenName}`, `unspecified`
-    * **LastName**: `${user:familyName}`, `unspecified`
-    * **redisAccountMapping**: `XXXXXXX=owner`, `unspecified`
-
-The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
-
-{{<image filename="images/rc/saml/aws_iam_identity_center_saml_14.png" alt="" >}}{{</image>}}
-
-## Step 4: Ensure that the Cloud account user has an IAM Identity Center user account
-
-To complete SAML setup, ensure that the user who began SAML configuration in Redis Cloud admin console has a user defined in the AWS IAM identity center. This user account is required to complete the SAML setup.
-
-Also, make sure that the user has been assigned to the **Redis Cloud** Application.
+   {{<image filename="images/rc/saml/google_workspace_saml_16.png" alt="" >}}{{</image>}}
 
 ## Step 5: Activate SAML integration
 
@@ -166,22 +155,20 @@ The final step in our SAML integration with AWS IAM identity Center is to activa
 
 1. In the Single Sign-On screen, select **Activate**.
 
-   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_15.png" alt="" >}}{{</image>}}
+   {{<image filename="images/rc/saml/google_workspace_saml_17.png" alt="" >}}{{</image>}}
 
-A logout notification screen displays, letting you know that you are redirected to AWS IAM Identity Center's login screen.
+A logout notification screen displays, letting you know that you are redirected to Google's login screen.
 
-{{<image filename="images/rc/saml/aws_iam_identity_center_saml_16.png" alt="" >}}{{</image>}}
+2. Select the Google account you wish to login with.
 
-1. Enter you AWS IAM Identity Center credentials.
+   {{<image filename="images/rc/saml/google_workspace_saml_18.png" alt="" >}}{{</image>}}
 
-   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_18.png" alt="" >}}{{</image>}}
+3. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** to log in to the Redis Cloud admin console.
 
-1. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** to log in to the Redis Cloud admin console.
-
-   {{<image filename="images/rc/saml/aws_iam_identity_center_saml_19.png" alt="" >}}{{</image>}}
+   {{<image filename="images/rc/saml/google_workspace_saml_19.png" alt="" >}}{{</image>}}
 
 A message displays, stating that your local user is now converted to a SAML user. Select **Confirm**.
 
-You have successfully configured AWS IAM Identity Center as an identification provider.
+You have successfully configured Google Workspace as an identification provider.
 
-{{<image filename="images/rc/saml/aws_iam_identity_center_saml_22.png" alt="" >}}{{</image>}}
+{{<image filename="images/rc/saml/google_workspace_saml_20.png" alt="" >}}{{</image>}}
