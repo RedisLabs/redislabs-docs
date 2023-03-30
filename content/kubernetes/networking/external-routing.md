@@ -46,7 +46,7 @@ By default, the operator creates a `ClusterIP` type service, which exposes a clu
 Redis Enterprise for Kubernetes supports three ingress controllers:
 * [HAProxy](https://haproxy-ingress.github.io/)
 * [NGINX](https://kubernetes.github.io/ingress-nginx/)
-* [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}})
+* [Istio](https://istio.io/latest/docs/setup/getting-started/)
 
 OpenShift users can use [routes]({{<relref "/kubernetes/networking/routes.md">}}) instead of an ingress controller.
 
