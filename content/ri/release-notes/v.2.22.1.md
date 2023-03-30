@@ -1,13 +1,13 @@
 ---
-Title: RedisInsight v2.22.0, March 2023
-linkTitle: v2.22.0 (Mar 2023)
+Title: RedisInsight v2.22.1, March 2023
+linkTitle: v2.22.1 (Mar 2023)
 date: 2023-03-30 00:00:00 +0000
-description: RedisInsight v2.22.0
+description: RedisInsight v2.22.1
 weight: 1
-aliases: /ri/release-notes/v2.22.0/
-         /ri/release-notes/v2.22.0.md
+aliases: /ri/release-notes/v2.22.1/
+         /ri/release-notes/v2.22.1.md
 ---
-## 2.22.0 (March 2023)
+## 2.22.1 (March 2023)
 This is the General Availability (GA) release of RedisInsight 2.22.
 
 ### Highlights
