@@ -24,5 +24,5 @@ This is the General Availability (GA) release of RedisInsight 2.22.
 - [#1787](https://github.com/RedisInsight/RedisInsight/pull/1787) Added UX improvements to the index search feature in Browser: Enable the search box after the index is selected.
 
 **Bugs**
-- [#1808](https://github.com/RedisInsight/RedisInsight/pull/1808) Prevent errors when running docker RedisInsight on Safari Version 16.2.
+- [#1808](https://github.com/RedisInsight/RedisInsight/pull/1808) Prevent errors when running Docker RedisInsight on Safari Version 16.2.
 - [#1835](https://github.com/RedisInsight/RedisInsight/pull/1835) Display total memory and total keys for replicas in Sentinel.
