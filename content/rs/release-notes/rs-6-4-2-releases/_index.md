@@ -119,3 +119,7 @@ Due to module binary differences between RHEL 7 and RHEL 8, you cannot upgrade R
 #### Ubuntu 20.04
 
 By default, you cannot use the SHA1 hash algorithm ([OpenSSL’s default security level is set to 2](https://manpages.ubuntu.com/manpages/focal/man3/SSL_CTX_set_security_level.3ssl.html#notes)). The operating system will reject SHA1 certificates even if the `mtls_allow_weak_hashing` option is enabled. You need to replace SHA1 certificates with newer certificates that use SHA-256. Note that the certificates provided with Redis Enterprise Software use SHA-256.  
+
+#### Modules not supported for Amazon Linux 2 release candidate
+
+A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support will be added in a future maintenance release.

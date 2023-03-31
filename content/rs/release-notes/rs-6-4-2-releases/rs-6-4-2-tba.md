@@ -27,7 +27,7 @@ The following table shows the MD5 checksums for the available packages:
 - Amazon Linux 2 supported as a release candidate (RC)
 
     {{<note>}}
-A database with modules cannot reside on an Amazon Linux 2 node. Support will be added in a future maintenance release.
+A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support will be added in a future maintenance release.
     {{</note>}}
 
 - Add node ID indication to [`debug_info` package]({{<relref "/rs/references/cli-utilities/rladmin/cluster/debug_info">}}) (RS95360)
@@ -35,8 +35,6 @@ A database with modules cannot reside on an Amazon Linux 2 node. Support will be
 - Add support for underscore ‘_’ as a valid character for [rack awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) (RS87458)
 
 - When updating a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}), the version property is immutable. Any validation will be performed according to the BDB object version that was set during upgrade or install (RS93294)
-
-- Maximum length of commands that internal clients can send was changed to 2GB (RS80816)
 
 #### Redis Stack v6.2.6
 
@@ -64,13 +62,13 @@ See [Upgrade modules](https://docs.redis.com/latest/modules/install/upgrade-modu
 
 ## Resolved issues
 
-- RS95873 - Remove known limitation for custom installation on RHEL 7 and RHEL 8
+- RS95344 - Fixed known limitation for RHEL 7 and RHEL 8 where CRDB databases fail to start when installed using custom installation paths
 
 - RS88010 - Roll back node configuration when the [remove node]({{<relref "/rs/clusters/remove-node">}}) operation fails
 
-- RS95824 - Remove known limitation when running `rl_rdbconvert` manually
+- RS95824 - Fixed an issue with running `rl_rdbconvert` on Ubuntu
 
-- RS97971 - Resharding fails for rack-aware, non-replicated databases
+- RS97971 - Fixed known limitation for the edge case where resharding fails for rack-aware databases with no replication
 
 ## Known limitations
 
@@ -78,4 +76,8 @@ See [Upgrade modules](https://docs.redis.com/latest/modules/install/upgrade-modu
 
 #### Ubuntu 20.04
 
-By default, you cannot use the SHA1 hash algorithm ([OpenSSL’s default security level is set to 2](https://manpages.ubuntu.com/manpages/focal/man3/SSL_CTX_set_security_level.3ssl.html#notes)). The operating system will reject SHA1 certificates even if the `mtls_allow_weak_hashing` option is enabled. You need to replace SHA1 certificates with newer certificates that use SHA-256. Note that the certificates provided with Redis Enterprise Software use SHA-256.  
+By default, you cannot use the SHA1 hash algorithm ([OpenSSL’s default security level is set to 2](https://manpages.ubuntu.com/manpages/focal/man3/SSL_CTX_set_security_level.3ssl.html#notes)). The operating system will reject SHA1 certificates even if the `mtls_allow_weak_hashing` option is enabled. You need to replace SHA1 certificates with newer certificates that use SHA-256. Note that the certificates provided with Redis Enterprise Software use SHA-256.
+
+#### Modules not supported for Amazon Linux 2 release candidate
+
+A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support will be added in a future maintenance release.
