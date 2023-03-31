@@ -38,7 +38,9 @@ Ubuntu 16 support is considered deprecated and will be removed in a future relea
 
 ### Active-Active database persistence
 
-The snapshot option for Active-Active database persistence is deprecated. We advise customers running Active-Active databases, configured with snapshot data persistence, to reconfigure their data persistence mode to use the AOF (Append Only File) option with the following command:
+The RDB snapshot option for [Active-Active database persistence]({{<relref "/rs/databases/active-active/manage#data-persistence">}}) is deprecated and will be removed in a future release.
+
+Please plan to reconfigure any Active-Active databases to use AOF (Append Only File) persistence with the following command:
 
 ```sh
 crdb-cli crdb update --crdb-guid <CRDB_GUID> \

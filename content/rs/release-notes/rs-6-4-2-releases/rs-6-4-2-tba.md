@@ -56,9 +56,20 @@ See [Upgrade modules](https://docs.redis.com/latest/modules/install/upgrade-modu
 
 ### Deprecations
 
-- Ubuntu 16 support is deprecated and will be removed in a future release.
+#### Ubuntu 16.04
 
-- [Active-Active data persistence]({{<relref "/rs/databases/active-active/manage#data-persistence">}}) based on RDB snapshots is deprecated and will be removed in a future release. It is recommended to use AOF (Append Only File) for data persistence instead.
+Ubuntu 16 support is deprecated and will be removed in a future release.
+
+#### Active-Active database persistence
+
+The RDB snapshot option for [Active-Active database persistence]({{<relref "/rs/databases/active-active/manage#data-persistence">}}) is deprecated and will be removed in a future release.
+
+Please plan to reconfigure any Active-Active databases to use AOF (Append Only File) persistence with the following command:
+
+```sh
+crdb-cli crdb update --crdb-guid <CRDB_GUID> \
+    --default-db-config '{"data_persistence": "aof", "aof_policy":"appendfsync-every-sec"}'
+```
 
 ## Resolved issues
 
