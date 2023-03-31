@@ -2,7 +2,7 @@
 Title: Google Workspace SAML integration guide
 linkTitle: Google workspace integration
 description: This integration guide shows how to configure Google Workspace as a SAML single sign on provider for your Redis Cloud account.
-weight: 52
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
