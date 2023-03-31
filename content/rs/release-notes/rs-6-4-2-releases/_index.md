@@ -65,7 +65,7 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
 
 When a database is configured as [rack-aware]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) and replication is turned off, the resharding operation fails.
 
-RS97971 - Fix will be included in the April maintenance release       
+RS97971 - This limitation will be fixed in a future 6.4.2 maintenance release.      
 
 Workaround:
 
@@ -110,7 +110,7 @@ $ yum install -y chrpath
 $ find $installdir -name "crdt.so" | xargs -n1 -I {} /bin/bash -c 'chrpath -r ${libdir} {}'
 ```
 
-This limitation was fixed in Redis Enterprise [v6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}) (March maintenance release).
+This limitation will be fixed in a future 6.4.2 maintenance release.
 
 #### RHEL 8
 
