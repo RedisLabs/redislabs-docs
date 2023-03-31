@@ -270,7 +270,7 @@ metadata:
   name: example-redisenterprisecluster
 spec:
   nodes: 3
-  rackAwarenessNodeLabel: topology.kubernetes.io/zone: "your_zone"
+  rackAwarenessNodeLabel: topology.kubernetes.io/zone
 ```
 
 {{< note >}}
