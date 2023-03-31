@@ -2,7 +2,7 @@
 Title: Role-based access control
 LinkTitle: Role-based access control
 description: Lets you define multiple users with fine-grained data authorization features.
-weight: $weight
+weight: 10
 alwaysopen: false
 toc: "true"
 headerRange: "[1-3]"

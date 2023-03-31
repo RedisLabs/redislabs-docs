@@ -2,7 +2,7 @@
 Title: Configure permissions with Redis ACLs
 LinkTitle: Configure ACLs
 description: 
-weight: $weight
+weight: 15
 alwaysopen: false
 toc: "true"
 headerRange: "[1-3]"

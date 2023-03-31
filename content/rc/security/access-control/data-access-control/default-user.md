@@ -1,7 +1,7 @@
 ---
 Title: Default User
 description:
-weight: 10
+weight: 5
 alwaysopen: false
 categories: ["RC"]
 aliases: 

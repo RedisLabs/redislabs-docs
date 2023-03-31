@@ -2,7 +2,7 @@
 Title: Multi-factor authentication
 linkTitle: Multi-factor authentication
 description:
-weight: 40
+weight: 20
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/security/admin-console-security/multi-factor-authentication/

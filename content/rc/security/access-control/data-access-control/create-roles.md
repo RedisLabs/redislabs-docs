@@ -2,7 +2,7 @@
 Title: Create and assign roles
 LinkTitle: Create roles
 description: 
-weight: $weight
+weight: 20
 alwaysopen: false
 toc: "true"
 headerRange: "[1-3]"
