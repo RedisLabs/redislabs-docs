@@ -5,7 +5,7 @@ description:
 weight: $weight
 alwaysopen: false
 toc: "true"
-headerRange: [1-3]
+headerRange: "[1-3]"
 categories: []
 aliases: 
 ---

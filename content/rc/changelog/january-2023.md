@@ -13,7 +13,7 @@ This changelog lists new features, enhancements, and other changes added to Redi
 
 ## New features and enhancements
 
-- [Pub/sub ACLs]({{<relref "/rc/security/database-security/passwords-users-roles#pubsub-acl-rules">}})
+- [Pub/sub ACLs]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control#pubsub-acl-rules">}})
 
 - Add users with first name and last name
 

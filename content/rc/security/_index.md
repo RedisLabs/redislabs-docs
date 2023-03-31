@@ -30,16 +30,16 @@ The admin console is the web application you use to manage your Redis Cloud depl
 
 Secure access to the admin console by:
 
-- Assigning appropriate roles to [team members with access]({{<relref "/rc/security/access-management#team-management-roles">}}).
+- Assigning appropriate roles to [team members with access]({{<relref "/rc/security/access-control/access-management#team-management-roles">}}).
 
-- Enabling [multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}}).
+- Enabling [multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}}).
 
 ## Database security
 
 You have several options when it comes to securing your Redis Cloud databases. For more information, see [Cloud database security]({{<relref "/rc/security/database-security/_index.md">}}). Options include:
 
 - [Encryption at rest]({{<relref "/rc/security/encryption-at-rest.md">}})
-- [Role-based access control]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
+- [Role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}})
 - [Network security]({{<relref "/rc/security/database-security/network-security.md">}})
 - [TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}})
 - [Network security]({{<relref "/rc/security/database-security/network-security.md">}}) using

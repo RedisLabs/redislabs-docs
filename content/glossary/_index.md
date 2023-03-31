@@ -18,7 +18,7 @@ aliases: /glossary/
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
-More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/access-control">}}); [Update database ACLs]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
+More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/access-control">}}); [Update database ACLs]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}); [Role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}})
 {{%/definition%}}
 
 <a name="active-active"></a>
@@ -212,7 +212,7 @@ More info: [multicast DNS wikipedia](https://en.wikipedia.org/wiki/Multicast_DNS
 {{%definition "multi-factor authentication (MFA)"%}}
 Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Enterprise Cloud, users must enter their username, password, and an authentication code when logging in.
 
-More info: [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication.md">}})
+More info: [Multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication.md">}})
 {{%/definition%}}
 
 {{%definition "multi-primary replication"%}}
@@ -349,7 +349,7 @@ More info: [Database replication]({{<relref "/rs/databases/durability-ha/replica
 {{%definition "role-based access control (RBAC)"%}}
 A security approach that restricts system access to authorized users.
 
-More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/access-control">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
+More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/access-control">}}); [Role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}})
 {{%/definition%}}
 
 ## S {#letter-s}

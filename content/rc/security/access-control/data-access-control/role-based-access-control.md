@@ -5,7 +5,7 @@ description: Lets you define multiple users with fine-grained data authorization
 weight: $weight
 alwaysopen: false
 toc: "true"
-headerRange: [1-3]
+headerRange: "[1-3]"
 categories: []
 aliases: 
 ---
