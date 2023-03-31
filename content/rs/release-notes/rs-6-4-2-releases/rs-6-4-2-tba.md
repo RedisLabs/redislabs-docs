@@ -3,7 +3,7 @@ Title: Redis Enterprise Software release notes 6.4.2-TBA (April 2023)
 linkTitle: 6.4.2-TBA (April 2023)
 description: Amazon Linux 2 support. Fixed known limitations for custom installation on RHEL 7 and RHEL 8, running rl_rdbconvert manually, and resharding rack-aware, non-replicated databases.
 compatibleOSSVersion: Redis 6.2.6
-weight: 71
+weight: 70
 alwaysopen: false
 categories: ["RS"]
 aliases: 
@@ -72,7 +72,9 @@ See [Upgrade modules](https://docs.redis.com/latest/modules/install/upgrade-modu
 
 - RS97971 - Resharding fails for rack-aware, non-replicated databases
 
-## Known operating system limitations
+## Known limitations
+
+### Operating system limitations
 
 #### Ubuntu 20.04
 
