@@ -6,7 +6,9 @@ weight: 50
 alwaysopen: false
 categories: ["RC"]
 aliases: [
-    "/rc/security/single-sign-on/saml-sso.md"
+    "/rc/security/single-sign-on/saml-sso.md",
+    "/rc/security/single-sign-on/saml-sso",
+    "/rc/security/single-sign-on"
 ]
 
 ---
@@ -18,6 +20,15 @@ You cannot use [SCIM (System for Cross-domain Identity Management)](https://en.w
 ## SAML SSO overview
 
 When SAML SSO is enabled, the [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider) admin handles SAML user management instead of the Redis Cloud account owner.
+
+You can use any identity provider to integrate with Redis Enterprise Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers:
+
+  - [Auth0 SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-auth0">}})
+  - [AWS IAM Identity Center SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-aws-identity-center">}})
+  - [Azure Active Directory SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-azure-ad">}}) 
+  - [Okta SAML integration (Generic)]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-generic">}})
+  - [Okta SAML integration (Org2Org)]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-org2org">}})
+  - [PingIdentity SAML integration]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-ping-identity">}})
 
 After you activate SAML SSO for a Redis Cloud account, all existing local users for the account, except for the user that set up SAML SSO, are converted to SAML users and are required to use SAML SSO to sign in. Before they can sign in to Redis Cloud, the identity provider admin needs to set up these users on the IdP side and configure the `redisAccountMapping` attribute to map them to the appropriate Redis Cloud accounts and [roles]({{<relref "/rc/security/access-management#team-management-roles">}}).
 
@@ -46,10 +57,6 @@ You can also initiate single sign-on from the Redis Cloud [admin console](https:
 The account owner remains a local user and should set up [multi-factor authentication (MFA)]({{<relref "/rc/security/multi-factor-authentication">}}) to help secure their account. After SAML activation, the account owner can set up additional local bypass users with MFA enabled.
 
 If MFA enforcement is enabled, note that Redis Cloud does not enforce MFA for SAML users since the identity provider handles MFA management and enforcement.
-
-## Integration guides
-
-SAML integration guides are available for several popular identity providers. See [Single sign-on]({{<relref "/rc/security/single-sign-on/">}}) for a complete list.
 
 ## Set up SAML SSO
 

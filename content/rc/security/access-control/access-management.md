@@ -12,7 +12,9 @@ aliases: [ "/rv/administration/account-team-settings/",
          "/rc/administration/account-team-settings/",
          "/rc/administration/account-team-settings.md",
          "/rc/administration/access-management/",
-         "/rc/administration/access-management.md" ]
+         "/rc/administration/access-management.md",
+         "/rc/security/access-management/",
+         "/rc/security/access-management.md/" ]
 ---
 
 The **Access management** screen helps you manage:
