@@ -18,6 +18,7 @@ An object that represents an Active-Active database health report.
 | connections | {{<code>}}
 [{
   "name": string,
+  "replication_links": ["link_uid":myid:repl_id, "status": up/down]
   "status": string
 }, ...] {{</code>}} | Connections to other clusters and their statuses |
 | name | string | Name of the Active-Active database |
