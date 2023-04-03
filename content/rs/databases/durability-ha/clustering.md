@@ -154,7 +154,8 @@ the following limitations:
     commands are not allowed across slots. The following multi-key
     commands **are allowed** across slots: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
 
-    In Active-Active databases, multi-key commands can only be run on keys that are in the same slot.
+    In Active-Active databases, write multi-key commands (DEL, MSET, UNLINK) can only be run on keys that are in the same slot.
+    In Active-Active databases, the following multi-key commands **are allowed** across slots: MGET, EXISTS, TOUCH 
 
     Commands that affect all keys or keys that match a specified pattern are allowed
     in a clustered database, for example: FLUSHDB, FLUSHALL, KEYS
