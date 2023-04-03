@@ -17,7 +17,7 @@ An object that represents the database configuration.
 | bigstore | boolean | Database driver is Redis on Flash |
 | bigstore_ram_size | integer | Memory size of RAM size |
 | data_persistence | string | Database on-disk persistence |
-| enforce_client_authentication | **'enabled'** <br />'disabled' | Require authentication of client certificates for SSL connections to the database. If set to 'enabled', a certificate should be provided in either authentication_ssl_client_certs or authentication_ssl_crdt_certs |
+| enforce_client_authentication | **'enabled'** <br />'disabled' | Require authentication of client certificates for SSL connections to the database. If enabled, a certificate should be provided in either `authentication_ssl_client_certs` or `authentication_ssl_crdt_certs` |
 | max_aof_file_size | integer | Hint for maximum AOF file size |
 | max_aof_load_time | integer | Hint for maximum AOF reload time |
 | memory_size | integer | Database memory size limit, in bytes |
