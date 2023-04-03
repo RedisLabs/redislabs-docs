@@ -32,7 +32,7 @@ For more detailed release notes, select a build version from the following table
 
 ### Active-Active database persistence
 
-The snapshot option for [data persistence on Active-Active databases](https://docs.redis.com/latest/rs/databases/active-active/manage/#data-persistence) will be deprecated in a future version of Redis Enterprise Software.  If you have an Active-Active database using snapshot persistence, we strongly encourage you to switch to AOF persistence.  Use `crdb-cli` to do so:
+The snapshot option for [data persistence on Active-Active databases](https://docs.redis.com/latest/rs/databases/active-active/manage/#data-persistence) will be deprecated in a future version of Redis Enterprise Software. If you have an Active-Active database using snapshot persistence, switch to AOF persistence. Use `crdb-cli` to do so:
 ```text
 crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config '{"data_persistence": "aof", "aof_policy":"appendfsync-every-sec"}'
 ```
@@ -43,7 +43,7 @@ TLS 1.0 and TLS 1.1 connections are considered deprecated in favor of TLS 1.2 or
 
 Please verify that all clients, apps, and connections support TLS 1.2.  Support for the earlier protocols will be removed in a future release.
 
-Certain operating systems, such as RHEL 8, have already removed support for the earlier protocols.  Redis Enterprise Software cannot support connection protocols that are not supported by the underlying operating system.
+Certain operating systems, such as RHEL 8, have removed support for the earlier protocols. Redis Enterprise Software does not support connection protocols that are not supported by the underlying operating system.
 
 ### 3DES encryption cipher
 
