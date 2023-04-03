@@ -18,7 +18,11 @@ An object that represents an Active-Active database health report.
 | connections | {{<code>}}
 [{
   "name": string,
-  "replication_links": ["link_uid":myid:repl_id, "status": up/down]
+  "replication_links": [ 
+    {
+      "link_uid": "bdb_uid:replica_uid", 
+      "status": "up | down" 
+    } ],
   "status": string
-}, ...] {{</code>}} | Connections to other clusters and their statuses |
+}, ...] {{</code>}} | Connections to other clusters and their statuses. A replication link's `bdb_uid` is the unique ID of a local database instance ([bdb]({{<relref "/rs/references/rest-api/objects/bdb">}})) in the current cluster. The `replica_uid` is the unique ID of the database's remote replica, located in the connected cluster. |
 | name | string | Name of the Active-Active database |
