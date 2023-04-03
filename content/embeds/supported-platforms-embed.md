@@ -12,11 +12,11 @@ Make sure your system meets these requirements:
 
 ## Supported platforms
 
-<span title="Check mark icon">&#x2705;</span> The platform is supported for this version of Redis Enterprise Software.
+<span title="Check mark icon">&#x2705;</span> Supported &#8212; The platform is supported for this version of Redis Enterprise Software.
 
-<span title="Warning icon">&#x26A0;&#xFE0F;</span> Deprecated, the platform is still supported for this version of Redis Enterprise Software, but support will be removed in a future release.
+<span title="Warning icon">&#x26A0;&#xFE0F;</span> Deprecated &#8212; The platform is still supported for this version of Redis Enterprise Software, but support will be removed in a future release.
 
-<span title="X icon">&#x274c;</span> Platform support ended in this version of Redis Enterprise Software.
+<span title="X icon">&#x274c;</span>End of life &#8212; Platform support ended in this version of Redis Enterprise Software.
 
 | Redis Enterprise | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
 |------------------|-------|--------|--------|--------|--------|-------|

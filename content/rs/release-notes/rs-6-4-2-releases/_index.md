@@ -16,7 +16,7 @@ This version offers:
 
 - Extended validation of client certificates via mTLS (mutual TLS) full subject support
 
-- Support for default restrictive permissions when using publish/subscribe commands and ACLs (access control lists)
+- Support for default restrictive permissions when using publish/subscribe commands and access control lists (ACLs)
 
 - Enhanced TLS performance when Redis returns large arrays in responses
 
@@ -40,7 +40,7 @@ Ubuntu 16 support is considered deprecated and will be removed in a future relea
 
 The RDB snapshot option for [Active-Active database persistence]({{<relref "/rs/databases/active-active/manage#data-persistence">}}) is deprecated and will be removed in a future release.
 
-Please plan to reconfigure any Active-Active databases to use AOF (Append Only File) persistence with the following command:
+Please plan to reconfigure any Active-Active databases to use append-only file (AOF) persistence with the following command:
 
 ```sh
 crdb-cli crdb update --crdb-guid <CRDB_GUID> \
