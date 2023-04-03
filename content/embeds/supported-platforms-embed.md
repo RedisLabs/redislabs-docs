@@ -53,7 +53,7 @@ Make sure your system meets these requirements:
 
 6. <a name="table-note-6" style="display: block; height: 80px; margin-top: -80px;"></a>Ubuntu 20.04 support was added in Redis Enterprise Software [6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}).
 
-7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software 6.4.2-TBA.
+7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-60]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-60">}}).
 
 ## Operating system limitations
 
