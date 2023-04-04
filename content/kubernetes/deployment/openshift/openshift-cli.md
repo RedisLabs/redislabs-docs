@@ -71,6 +71,8 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
     redis-enterprise-operator   1/1     1            1           0m36s
     ```
 
+{{<warning>}}DO NOT modify or delete the StatefulSet created during the deployment process. Doing so could destroy your Redis Enterprise cluster (REC).{{</warning>}}
+
 ## Install security context constraint
 
 The Redis Enterprise pods must run in OpenShift with privileges set in a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth). This grants the pod various rights, such as the ability to change system limits or run as a particular user.
