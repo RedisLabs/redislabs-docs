@@ -19,8 +19,8 @@ Redis Stack databases include the following modules:
 
 Alternatively, you can use one of these methods to set up a Redis database with modules:
 
-- [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started/get-started-redis-enterprise-software.md">}})
-- Redis Enterprise Software in a [Docker container]({{<relref "/rs/installing-upgrading/get-started/get-started-docker.md">}})
+- [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/get-started-redis-enterprise-software.md">}})
+- Redis Enterprise Software in a [Docker container]({{<relref "/rs/installing-upgrading/quickstarts/get-started-docker.md">}})
 - [Other platforms]({{<relref "/kubernetes/_index.md">}}) for Redis Enterprise Software
 
 ## Set up a Redis Cloud database

@@ -1,6 +1,6 @@
 ---
-Title: Get started with Redis Enterprise Software using Docker
-linkTitle: Redis Enterprise on Docker
+Title: Docker quickstart for Redis Enterprise Software
+linkTitle: Docker quickstart
 description: Set up a development or test deployment of Redis Enterprise Software using Docker.
 weight: 2
 alwaysopen: false

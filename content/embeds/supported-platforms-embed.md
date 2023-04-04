@@ -20,7 +20,7 @@ Make sure your system meets these requirements:
 | <nobr>Oracle Linux 7, Oracle Linux 8</nobr> | Based on the corresponding RHEL version |
 | <nobr>Rocky Linux 8</nobr> | Based on RHEL 8 |
 | Amazon Linux | Version 1 |
-| Docker | [Docker images]({{< relref "/rs/installing-upgrading/get-started/get-started-docker.md" >}}) of Redis Enterprise Software are certified for development and testing only. |
+| Docker | [Docker images]({{< relref "/rs/installing-upgrading/quickstarts/get-started-docker.md" >}}) of Redis Enterprise Software are certified for development and testing only. |
 | Kubernetes | See the [Redis Enterprise for Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
 
 ## Operating system limitations
