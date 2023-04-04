@@ -21,7 +21,7 @@ Depending on your needs, you may also want to [customize the installation](#more
 
 If you've already installed Redis Enterprise Software, you can also:
 
-- [Upgrade an existing deployment]({{<relref "rs/installing-upgrading/upgrading.md">}})
+- [Upgrade an existing deployment]({{<relref "rs/installing-upgrading/upgrading">}})
 
 - [Uninstall an existing deployment]({{<relref "rs/installing-upgrading/uninstalling.md">}})
 

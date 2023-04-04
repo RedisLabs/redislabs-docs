@@ -73,7 +73,7 @@ Redis Enterprise version 6.4.2 defaults to permissive pub/sub channels for backw
 
 To make default pub/sub permissions restrictive:
 
-1. [Upgrade all databases]({{<relref "/rs/installing-upgrading/upgrading#upgrade-a-database">}}) in the cluster to Redis version 6.2 or later.
+1. [Upgrade all databases]({{<relref "/rs/installing-upgrading/upgrading/upgrade-database">}}) in the cluster to Redis version 6.2 or later.
 
 1. Set the default to `resetchannels` with [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) or the [REST API]({{<relref "/rs/references/rest-api">}}).
 
