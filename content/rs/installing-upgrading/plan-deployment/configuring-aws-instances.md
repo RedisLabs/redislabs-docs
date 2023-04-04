@@ -26,8 +26,8 @@ AWS EC2 instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
 the storage must be located outside of the instance. Therefore, when you
 set up an instance make sure that it has a properly sized EBS backed volume
-connected. Later, when setting up RS on the instance, make sure that [the
-persistence storage]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
+connected. Later, when setting up Redis Enterprise Software on the instance, make sure that [the
+persistence storage]({{< relref "/rs/installing-upgrading/configuring/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
 
 {{< note >}}
 After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the instance

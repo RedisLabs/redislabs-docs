@@ -1,7 +1,7 @@
 ---
 Title: Node persistent and ephemeral storage
 linktitle: Persistent node storage
-description:
+description: Configure paths for persistent storage and ephemeral storage.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
