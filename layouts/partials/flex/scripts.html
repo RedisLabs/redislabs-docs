@@ -1,6 +1,6 @@
 <!-- Common code for version selectors -->
 {{if .Params.categories}}
-{{if or (eq (index .Params.categories 0) "RS") (eq (index .Params.categories 0) "Platforms") (eq (index .Params.categories 0) "RDI")}}
+{{if or (eq (index .Params.categories 0) "RS") (eq (index .Params.categories 0) "Platforms") (eq (index .Params.categories 0) "redis-di")}}
 <script>
     function _setVersion(ver, displayName) {
         document.getElementById('versionSelectorValue').innerText = displayName;
