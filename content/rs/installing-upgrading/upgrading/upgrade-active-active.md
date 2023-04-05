@@ -8,21 +8,21 @@ categories: ["RS"]
 aliases: 
 ---
 
-When you upgrade an Active-Active (CRDB) database, you can also upgrade the CRDB protocol version and feature version.
+When you upgrade an [Active-Active (CRDB) database]({{<relref "/rs/databases/active-active">}}), you can also upgrade the CRDB protocol version and feature version.
 
 ## CRDB protocol version guidelines
 
 Starting with version 5.4.2, a new CRDB protocol version helps support  Active-Active features.
 
-The CRDB protocol is backward-compatible, which means v5.4.2 CRDB instances can understand write-operations from instances using the the earlier CRDB protocol.  However, earlier CRDB instances (those using the older protocol cannot) understand write-operations from instances using the newer protocol version.
+The new CRDB protocol is backward compatible, which means v5.4.2 CRDB instances can understand write operations from instances using the the earlier CRDB protocol.  However, earlier CRDB instances using the older protocol cannot understand write operations from instances using the newer protocol version.
 
 After you upgrade the CRDB protocol on one instance, non-upgraded instances cannot receive write updates from the upgraded instance.
 
 The upgraded instance receives updates from upgraded and non-upgraded instances.
 
-When upgraded to the latest protocol version, upgraded instances automatically receives any missing write-operations.
+When upgraded to the latest protocol version, upgraded instances automatically receive any missing write operations.
 
-_Guidelines:_
+_Upgrade guidelines:_
 
 - Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
 
@@ -36,9 +36,9 @@ _Guidelines:_
 
 Starting with version 5.6.0, a new feature version (also called a _feature set version_) helps support new Active-Active features.
 
-When you update the feature version for an Active-Active database, the feature version is updated for all of the database instances.
+When you update the feature version for an Active-Active database, the feature version is updated for all database instances.
     
- _Guidelines:_
+ _Upgrade guidelines:_
 
 - As of v6.0.20, feature version 0 is deprecated; support will be removed in a future version.
 
@@ -48,9 +48,13 @@ When you update the feature version for an Active-Active database, the feature v
 
 To upgrade an Active-Active database (CRDB) instance:
 
-1. [Upgrade Redis Enterprise Software](#upgrading-a-node) on each node in the clusters where the Active-Active instances are located.
+1. [Upgrade Redis Enterprise Software]({{<relref "/rs/installing-upgrading/upgrading/upgrade-cluster">}}) on each node in the clusters where the Active-Active instances are located.
 
-1. To see the status of your Active-Active instances, run: `rladmin status`
+1. To see the status of your Active-Active instances, run: 
+
+    ```sh
+    rladmin status
+    ```
 
     The statuses of the Active-Active instances on the node can indicate:
 
@@ -75,7 +79,7 @@ To upgrade an Active-Active database (CRDB) instance:
     Use the `keep_crdt_protocol_version` option to upgrade the database feature version 
 without upgrading the CRDB protocol version.
 
-    If you use this option, make sure that you upgrade the CRDB protocol soon after with the `rladmin upgrade db` command.
+    If you use this option, make sure that you upgrade the CRDB protocol soon after with the [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}) command.
 
     You must upgrade the CRDB protocol before you update the CRDB feature set version.
 

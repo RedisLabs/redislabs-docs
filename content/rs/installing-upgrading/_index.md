@@ -48,7 +48,7 @@ If you already installed Redis Enterprise Software, you can:
 
 More information is available to help with customization and related questions:
 
-- [CentOS/RHEL firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
+- [CentOS/RHEL firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})

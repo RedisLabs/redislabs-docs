@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: /rs/installing-upgrading/manage-installation-questions/
 ---
 
-Several questions are displayed during the Redis Software installation process.
+Several questions are displayed during the Redis Enterprise Software installation process.
 
 Here, you'll find a list of these questions and learn how to automatically answer these questions to perform a silent install.
 
@@ -19,18 +19,18 @@ Several questions appear during installation:
 - **Linux swap file** - `Swap is enabled. Do you want to proceed? [Y/N]?`
 
     We recommend that you [disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) in the operating system configuration
-    to give Redis Software control of the memory allocation.
+    to give Redis Enterprise Software control of the memory allocation.
 
 - **Automatic OS tuning** - `Do you want to automatically tune the system for best performance [Y/N]?`
 
-    To allow the installation process to optimize the OS for Redis Software, answer `Y`.
+    To allow the installation process to optimize the OS for Redis Enterprise Software, answer `Y`.
     The installation process prompts you for additional information.
 
     The `/opt/redislabs/sbin/systune.sh` file contains details about the tuning process.
 
 - **Network time** - `Do you want to set up NTP time synchronization now [Y/N]?`
 
-    Redis Software requires that all cluster nodes have synchronized time.
+    Redis Enterprise Software requires that all cluster nodes have synchronized time.
     You can either let the installation process configure NTP
     or you can [configure NTP manually]({{< relref "/rs/clusters/configure/sync-clocks.md" >}}).
 
@@ -45,16 +45,20 @@ Several questions appear during installation:
 
 - **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`
 
-    We recommend running the `rlcheck` installation verification to make sure that the installation completed successfully.
-    If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
+    Run the `rlcheck` installation verification to make sure that the installation completed successfully.
+    If you want to run this verification at a later time, you can run:
+    
+    ```sh
+    /opt/redislabs/bin/rlcheck
+    ```
  
 ## Answer install questions automatically
 
-To perform a silent (or automated) install, answer the questions when you start the install.  
+To perform a silent (or automated) install, answer the questions when you start the [install]({{<relref "/rs/installing-upgrading/install/install-on-linux">}}).  
 
 ### Answer yes to all questions
 
-To automatically answer `yes` to all questions (which accepts the default values), start the install script with the `-y` parameter:
+To automatically answer `yes` to all questions (which accepts the default values), run the [installation script]({{<relref "/rs/installing-upgrading/install/install-script">}}) with the `-y` parameter:
 
 ```bash
 ./install.sh -y
@@ -66,7 +70,7 @@ Use an answer file to manage your response:
 
 1. Create a text file to serve as an answer file.
 
-    The answer file can contain any of the parameters for the installation questions and indicate the answer for the question with `yes` or `no`.
+    The answer file can contain any of the parameters for the installation questions and indicate the answer for each question with `yes` or `no`.
 
     For example:
 
@@ -80,7 +84,7 @@ Use an answer file to manage your response:
 
     If you use `systune=yes`, the installation answers `yes` to all of the system tuning questions.
 
-1. Start the install script with the `-c` command-line option and add the path to the answer file.
+1. Run the [installation script]({{<relref "/rs/installing-upgrading/install/install-script">}}) with the `-c` command-line option and add the path to the answer file.
 
     For example:
 

@@ -41,7 +41,7 @@ If you've already installed Redis Enterprise Software, you can also:
 More info is available to help with customization and related questions:
 
 - [AWS EC2 configuration]({{<relref "rs/installing-upgrading/plan-deployment/configuring-aws-instances.md">}})
-- [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
+- [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})

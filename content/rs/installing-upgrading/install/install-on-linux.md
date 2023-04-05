@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-After you download the .tar file installation package, install the package on one of the nodes in the cluster.
+After you [download a Redis Enterprise Software installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-prepare-install#download-the-installation-package">}}), install it on one of the nodes in the cluster.
 
 For installation on machines without an internet connection, see [Offline installation]({{<relref "/rs/installing-upgrading/install/offline-installation">}}).
 
@@ -86,7 +86,7 @@ To install without answering the installation questions, either:
 More info is available to help with customization and related questions:
 
 - [AWS EC2 configuration]({{<relref "rs/installing-upgrading/plan-deployment/configuring-aws-instances.md">}})
-- [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
+- [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})

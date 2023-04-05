@@ -45,13 +45,19 @@ Before upgrading a database:
 
     To determine the database version:
 
-    - Use the admin console to open the Configuration tab for the database.
+    - Use the admin console to open the **Configuration** tab for the database.
 
-    - Use the [`rladmin status extra all`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) command to display configuration details. When the database compatibility version is outdated, <nobr>`OLD REDIS VERSION`</nobr> appears in the command output.
+    - Use the [`rladmin status extra all`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) command to display configuration details:
+
+        ```sh
+        rladmin status extra all
+        ```
+    
+        When the database compatibility version is outdated, <nobr>`OLD REDIS VERSION`</nobr> appears in the command output.
 
 - Verify the cluster is fully upgraded and operational.
 
-    Use the admin console to display the Configuration tab for the cluster.  The tab displays the cluster version information and the Redis database compatibility version.
+    Use the admin console to display the **Configuration** tab for the cluster. The tab displays the cluster version information and the Redis database compatibility version.
 
 - To avoid data loss during the upgrade, take care to back up the data.  
 
@@ -71,7 +77,7 @@ To upgrade a database:
 
 1.  _(Optional)_  Back up the database to minimize data loss.
 
-1.  Use `rladmin` to upgrade the database:
+1.  Use [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}) to upgrade the database:
 
     ``` shell
     rladmin upgrade db <database name | database ID>
@@ -83,8 +89,12 @@ To upgrade a database:
 
     To do so:
 
-    - Use the admin console to open the Compatibility tab for the database; the Redis version displays the Redis database compatibility version.
+    - Use the admin console to open the **Compatibility** tab for the database; the Redis version displays the Redis database compatibility version.
 
-    - Use `rladmin status databases extra all` to display a list of the databases in your cluster and their current Redis database compatibility version.
+    - Use [`rladmin status databases extra all`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-databases">}}) to display a list of the databases in your cluster and their current Redis database compatibility version:
+
+        ```sh
+        rladmin status databases extra all
+        ```
 
     Verify that the Redis version is set to the expected value.

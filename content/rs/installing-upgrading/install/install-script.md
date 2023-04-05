@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-Run `./install.sh --help` to view command-line options supported by the install script.
+Run `./install.sh --help` to view command-line options supported by the installation script.
 
 The following options are supported:
 
@@ -19,6 +19,6 @@ The following options are supported:
 | <nobr>`-s <socket dir>`</s> | Specify directory for redislabs unix sockets  _(new installs only)_|
 | <nobr>`--install-dir <dir>`</nobr> | Specifies installation directory _(new installs only)_ <br/> See [Customize install locations]({{<relref "/rs/installing-upgrading/prepare-install/customize-install-directories">}})|  
 | <nobr>`--config-dir <dir>` | Configuration file directory *(new installs only)* <br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/prepare-install/customize-install-directories">}})|
-| <nobr>`--var-dir <dir>`</nobr> | Var dir used for installation *(new installs only)* <br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/prepare-install/customize-install-directories">}})|
+| <nobr>`--var-dir <dir>`</nobr> | Var directory used for installation *(new installs only)* <br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/prepare-install/customize-install-directories">}})|
 | <nobr>`--os-user <user>`| Operating system user account associated with install; default: `redislabs`<br/>See [Customize user and group]({{<relref "/rs/installing-upgrading/prepare-install/customize-user-and-group">}}) *(new installs only)*|
 |<nobr>`--os-group <group>` | Operating system group associated with install; default: `redislabs`<br/>See [Customize user and group]({{<relref "/rs/installing-upgrading/prepare-install/customize-user-and-group">}}) *(new installs only)* |
