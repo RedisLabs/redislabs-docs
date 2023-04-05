@@ -1,49 +1,67 @@
 ---
-Title: Install and setup
+Title: Install and set up Redis Enterprise Software
 linkTitle: Install and setup
-description:
+description: Learn how to install, set up, and upgrade Redis Enterprise Software.
 weight: 35
 alwaysopen: false
+toc: "true"
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/
         /rs/installing-upgrading/downloading-installing/
 ---
-This guide shows how to install Redis Enterprise Software, which includes several steps:
 
-1. [Plan your deployment](#plan-your-deployment)
-1. Download the [installation package](#download-the-installation-package)
-1. [Prepare to install](#prepare-to-install-on-linux)
-1. [Perform the install](#install-on-linux)
+## Quickstarts
+
+If you want to try out Redis Enterprise Software, see the following quickstarts:
+
+- [Redis Enterprise Software quickstart]({{<relref "/rs/installing-upgrading/quickstarts/get-started-redis-enterprise-software">}})
+
+- [Docker quickstart for Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/get-started-docker">}})
+
+## Install Redis Enterprise Software
+
+To install Redis Enterprise Software on a [supported platform]({{<relref "/rs/installing-upgrading/plan-deployment/supported-platforms">}}), you need to:
+
+1. [Plan your deployment]({{<relref "/rs/installing-upgrading/plan-deployment">}}).
+
+1. Download the [installation package]({{<relref "/rs/installing-upgrading/prepare-install#download-the-installation-package">}}) and [prepare to install]({{<relref "/rs/installing-upgrading/prepare-install#prepare-to-install-on-linux">}}).
+
+1. [Perform the install]({{<relref "/rs/installing-upgrading/install">}}).
 
 Depending on your needs, you may also want to [customize the installation](#more-info-and-options).
 
+## Upgrade existing deployment
+
+If you already installed Redis Enterprise Software, you can:
+
+- [Upgrade a cluster]({{<relref "/rs/installing-upgrading/upgrading/upgrade-cluster">}})
+
+- [Upgrade a database]({{<relref "/rs/installing-upgrading/upgrading/upgrade-database">}})
+
+- [Upgrade an Active-Active database]({{<relref "/rs/installing-upgrading/upgrading/upgrade-active-active">}})
+
+## Uninstall Redis Enterprise Software
+
+- [Uninstall existing deployment]({{<relref "/rs/installing-upgrading/uninstalling">}})
+
 ## More info and options
 
-If you've already installed Redis Enterprise Software, you can also:
+More information is available to help with customization and related questions:
 
-- [Upgrade an existing deployment]({{<relref "rs/installing-upgrading/upgrading">}})
-
-- [Uninstall an existing deployment]({{<relref "rs/installing-upgrading/uninstalling.md">}})
-
-More info is available to help with customization and related questions:
-
-- [AWS EC2 configuration]({{<relref "rs/installing-upgrading/plan-deployment/configuring-aws-instances.md">}})
-- [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
+- [CentOS/RHEL firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})
 - [File locations]({{<relref "rs/installing-upgrading/plan-deployment/file-locations.md">}})
-- [Supported platforms]({{<relref "rs/installing-upgrading/plan-deployment/supported-platforms.md">}})
 - [Linux swap space configuration]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
-- [Manage installation questions]({{<relref "rs/installing-upgrading/prepare-install/manage-installation-questions.md">}})
 - [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
-- [Offline installation]({{<relref "rs/installing-upgrading/offline-installation.md">}})
 - [User and group ownership]({{<relref "rs/installing-upgrading/prepare-install/customize-user-and-group.md">}})
 
 ## Next steps
 
-Now that your cluster is set up with nodes, you can:
+After you install Redis Enterprise Software and set up your cluster, you can:
 
 - [Add users]({{<relref "/rs/security/access-control/manage-users/add-users">}}) to the cluster with specific permissions.  To begin, start with [Access control]({{<relref "/rs/security/access-control">}}).
-- [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
+
+- [Create databases]({{<relref "/rs/databases/create">}}) to use with your applications.
 

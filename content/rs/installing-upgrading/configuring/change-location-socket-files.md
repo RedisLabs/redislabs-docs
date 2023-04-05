@@ -1,7 +1,7 @@
 ---
 Title: Change socket file locations
 LinkTitle: Socket file location
-description:
+description: Change socket file locations.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

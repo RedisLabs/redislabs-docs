@@ -52,17 +52,19 @@ Several questions appear during installation:
 
 To perform a silent (or automated) install, answer the questions when you start the install.  
 
-There are two ways to do so:
+### Answer yes to all questions
 
-- To automatically answer `yes` to all questions (which accepts the default values), start the install script with the `-y` parameter:
+To automatically answer `yes` to all questions (which accepts the default values), start the install script with the `-y` parameter:
 
-    ```bash
-    `% ./install.sh -y`
-    ```
+```bash
+./install.sh -y
+```
 
-- Use an answer file to manage your response:
+### Configure file to answer
 
-    1. Create a text file to serve as an answer file.
+Use an answer file to manage your response:
+
+1. Create a text file to serve as an answer file.
 
     The answer file can contain any of the parameters for the installation questions and indicate the answer for the question with `yes` or `no`.
 
@@ -78,7 +80,7 @@ There are two ways to do so:
 
     If you use `systune=yes`, the installation answers `yes` to all of the system tuning questions.
 
-    1. Start the install script with the `-c` command-line option and add the path to the answer file.
+1. Start the install script with the `-c` command-line option and add the path to the answer file.
 
     For example:
 
