@@ -40,7 +40,7 @@ Several questions appear during installation:
     You can either:
 
     - Answer `Y` to let the installation process open these ports.
-    - Answer `N` and configure the firewall manually for [RHEL/CentOS firewall]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
+    - Answer `N` and configure the firewall manually for [RHEL/CentOS firewall]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-firewall" >}}).
     - Answer `N` and configure the firewall on the node manually for your OS.
 
 - **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`

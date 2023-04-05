@@ -24,7 +24,11 @@ The communications for which you can modify ciphers are:
 - Data plane - The TLS configuration for the communication between applications and databases.
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service.md">}}).
 
-You can configure ciphers with the `rladmin` commands shown here or with the REST API. Note that configuring cipher suites overwrites existing ciphers rather than appending new ciphers to the list.
+You can configure ciphers with the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) commands shown here or with the [REST API]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}).
+
+{{<warning>}}
+Configuring cipher suites overwrites existing ciphers rather than appending new ciphers to the list.
+{{</warning>}}
 
 When you modify your cipher suites, make sure:
 
@@ -32,26 +36,16 @@ When you modify your cipher suites, make sure:
 - The certificates in use are properly signed to support the required cipher suites.
 
 {{<note>}}
-- Redis Enterprise Software doesn't support static Diffie–Hellman key exchange ciphers.
+- Redis Enterprise Software doesn't support static [Diffie–Hellman (`DH`) key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) ciphers.
 
-- It does support Ephemeral Diffie–Hellman key exchange ciphers on RHEL8 and Bionic OS.  
+- It does support Ephemeral Diffie–Hellman (`DHE` or `ECDHE`) key exchange ciphers on Red Hat Enterprise Linux (RHEL) 8 and Bionic OS.  
 {{</note>}}
 
 ### Control plane
 
-#### 6.0.8 or earlier
+As of Redis Enterprise Software version 6.0.12, control plane cipher suites can use the BoringSSL library format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99-L131).
 
-See the example below to configure cipher suites for the control plane:
-
-```sh
-rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305
-```
-
-#### 6.0.12 or later
-
-Control plane cipher suites use the BoringSSL library format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99-L131).
-
-To configure the cipher suites for cluster communications, use the following `rladmin` command syntax:
+To configure the cipher suites for cluster communication, use the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command syntax:
 
 ```sh
 rladmin cluster config cipher_suites <BoringSSL cipher list>
@@ -65,11 +59,9 @@ rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES
 
 ### Data plane
 
-#### 6.0.20 or later
+Data plane cipher suites use the OpenSSL library format in Redis Enterprise Software version 6.0.20 or later. For a list of available OpenSSL configurations, see [Ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) (OpenSSL).
 
-Data plane cipher suites use the OpenSSL library format. See the OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html).
-
-To configure the cipher suites for communications between applications and databases, use the following `rladmin` command syntax:
+To configure the cipher suites for communications between applications and databases, use the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command syntax:
 
 ```sh
 rladmin cluster config  data_cipher_list <OpenSSL cipher list>
@@ -83,11 +75,9 @@ rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA
 
 ### Discovery service
 
-#### 6.0.20 or later
+Sentinel service cipher suites use the golang.org OpenSSL format for [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) TLS connections in Redis Enterprise Software version 6.0.20 or later. See their documentation for a list of [available configurations](https://golang.org/src/crypto/tls/cipher_suites.go).
 
-Sentinel service cipher suites use the golang.org OpenSSL format for discovery service TLS connections. See their documentation for a list of [available configurations](https://golang.org/src/crypto/tls/cipher_suites.go).
-
-To configure the discovery service cipher suites, use the following `rladmin` command syntax:
+To configure the discovery service cipher suites, use the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command syntax:
 
 ```sh
 rladmin cluster config  sentinel_cipher_suites <golang cipher list> 

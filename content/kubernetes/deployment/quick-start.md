@@ -103,6 +103,8 @@ kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8
   deployment.apps/redis-enterprise-operator created
   ```
 
+{{<warning>}}DO NOT modify or delete the StatefulSet created during the deployment process. Doing so could destroy your Redis Enterprise cluster (REC).{{</warning>}}
+
 #### Verify the operator is running
 
 Check the operator deployment to verify it's running in your namespace:

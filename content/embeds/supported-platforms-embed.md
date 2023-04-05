@@ -15,7 +15,7 @@ Make sure your system meets these requirements:
 | **Platform** | **Versions/Information** |
 |------------|-----------------|
 | Ubuntu | 16.04 (deprecated), 18.04, 20.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
-| Red Hat Enterprise Linux (RHEL) 7, CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
+| Red Hat Enterprise Linux (RHEL) 7, CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-firewall" >}}) |
 | <nobr>RHEL 8, CentOS 8</nobr> | 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, and 8.7 |
 | <nobr>Oracle Linux 7, Oracle Linux 8</nobr> | Based on the corresponding RHEL version |
 | <nobr>Rocky Linux 8</nobr> | Based on RHEL 8 |

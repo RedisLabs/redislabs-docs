@@ -90,27 +90,11 @@ To make default pub/sub permissions restrictive:
         { "acl_pubsub_default": "resetchannels" }
         ```
 
-## Blocked ACL commands
+## ACL command support
 
-The following ACL commands are blocked in Redis Enterprise: 
+Redis Enterprise Software does not support certain open source Redis ACL commands. Instead, you can manage access controls from the admin console.
 
-- `LOAD` 
-- `SAVE` 
-- `SETUSER`
-- `DELUSER`
-- `GENPASS`
-- `LOG`
-
-## Allowed ACL subcommands
-
-The following ACL subcommands are allowed in Redis Enterprise: 
-
-- `LIST` 
-- `USER`
-- `GETUSER`
-- `CAT`
-- `WHOAMI`
-- `HELP`
+{{<embed-md "acl-command-compatibility.md">}}
 
 {{<note>}}
 The `MULTI`, `EXEC`, `DISCARD` commands are always allowed, but ACLs are enforced on `MULTI` subcommands.

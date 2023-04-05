@@ -58,12 +58,12 @@ Active-Active databases require external routing access to sync properly. To con
 
 ### Configure `ValidatingWebhookConfiguration`
 
-The admission controller using a validating webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to configure. Learn how to enable and configure admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
+The admission controller using a validating webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to enable and configure admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
 
 
 ### Collect REC credentials
 
-To communicate the other clusters, with all participating clusters will need access to the admin credentials for all other clusters.
+To communicate with other clusters, all participating clusters will need access to the admin credentials for all other clusters.
 
 1. Create a file to hold the admin credentials for all participating RECs (such as `all-rec-secrets.yaml`).
 
