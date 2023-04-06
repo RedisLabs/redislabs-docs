@@ -32,10 +32,8 @@ Before installing Redis Enterprise Software, you need to:
 
 After you finish planning your deployment, you can:
 
-- [Download an installation package]({{<relref "/rs/installing-upgrading/prepare-install#download-the-installation-package">}}) and [prepare to install]({{<relref "/rs/installing-upgrading/prepare-install#prepare-to-install-on-linux">}}) Redis Enterprise Software
+- [Download an installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}).
 
-- [View installation questions]({{<relref "/rs/installing-upgrading/prepare-install/manage-installation-questions">}}) and prepare answers before installation
+- [Prepare to install]({{<relref "/rs/installing-upgrading/prepare-install">}}) Redis Enterprise Software.
 
-- [Customize installation locations]({{<relref "rs/installing-upgrading/prepare-install/customize-install-directories">}})
-
-- [Customize users and groups]({{<relref "/rs/installing-upgrading/prepare-install/customize-user-and-group">}})
+- [View installation questions]({{<relref "/rs/installing-upgrading/prepare-install/manage-installation-questions">}}) and prepare answers before installation.

@@ -24,7 +24,9 @@ To install Redis Enterprise Software on a [supported platform]({{<relref "/rs/in
 
 1. [Plan your deployment]({{<relref "/rs/installing-upgrading/plan-deployment">}}).
 
-1. Download the [installation package]({{<relref "/rs/installing-upgrading/prepare-install#download-the-installation-package">}}) and [prepare to install]({{<relref "/rs/installing-upgrading/prepare-install#prepare-to-install-on-linux">}}).
+1. [Download the installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}).
+
+1. [Prepare to install]({{<relref "/rs/installing-upgrading/prepare-install">}}).
 
 1. [Perform the install]({{<relref "/rs/installing-upgrading/install">}}).
 
@@ -55,7 +57,7 @@ More information is available to help with customization and related questions:
 - [File locations]({{<relref "rs/installing-upgrading/plan-deployment/file-locations.md">}})
 - [Linux swap space configuration]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
 - [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
-- [User and group ownership]({{<relref "rs/installing-upgrading/prepare-install/customize-user-and-group.md">}})
+- [User and group ownership]({{<relref "rs/installing-upgrading/install/customize-user-and-group.md">}})
 
 ## Next steps
 

@@ -2,7 +2,7 @@
 Title: Manage installation questions
 linkTitle: Manage install questions
 description: Describes Redis Enterprise Software installation questions and how to answer automatically.
-weight: 80
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/installing-upgrading/manage-installation-questions/

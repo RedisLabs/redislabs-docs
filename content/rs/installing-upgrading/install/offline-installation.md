@@ -2,7 +2,7 @@
 Title: Offline installation
 linkTitle: Offline installation
 description: If you install Redis Enterprise Software on a machine with no internet connection, you need to perform two tasks manually.
-weight: 40
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/offline-installation/

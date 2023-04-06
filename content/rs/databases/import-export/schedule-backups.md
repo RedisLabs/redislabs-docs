@@ -102,7 +102,7 @@ For help with specific backup issues, [contact support](https://redis.com/compan
 
 Database backups can be saved to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage.
 
-When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/prepare-install/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
+When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/install/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
 
 Redis Enterprise Software needs the ability to view permissions and update objects in the storage location. Implementation details vary according to the provider and your configuration. To learn more, consult the provider's documentation.
 

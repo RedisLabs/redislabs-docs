@@ -10,14 +10,24 @@ aliases:
 
 Before you install Redis Enterprise Software:
 
-- [Download an installation package]({{<relref "/rs/installing-upgrading/prepare-install#download-the-installation-package">}}) and [prepare to install]({{<relref "/rs/installing-upgrading/prepare-install#prepare-to-install-on-linux">}}) Redis Enterprise Software
+- [Download an installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}).
 
-- [View installation questions]({{<relref "/rs/installing-upgrading/prepare-install/manage-installation-questions">}}) and prepare answers before installation
+- [View installation questions]({{<relref "/rs/installing-upgrading/prepare-install/manage-installation-questions">}}) and optionally prepare answers before installation.
 
-- Decide if you want to customize [installation locations]({{<relref "rs/installing-upgrading/prepare-install/customize-install-directories">}}) or [users and groups]({{<relref "/rs/installing-upgrading/prepare-install/customize-user-and-group">}})
+- Review the [security considerations]({{< relref "/rs/security/" >}}) for your deployment.
+
+- Make sure that you have root-level access to each node, either directly or with `sudo`.
+
+- Make sure all [required ports are available]({{<relref "/rs/installing-upgrading/prepare-install/port-availability">}}).
+
+- [Turn off Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
+
+- If you require the `redislabs` UID (user ID) and GID (group ID) numbers to be the same on all the nodes, create the `redislabs` user and group with the required numbers on each node.
+
+- If you want to use Redis on Flash (RoF) for your databases, see [Prepare Redis on Flash]({{<relref "/rs/installing-upgrading/prepare-install/prepare-flash">}}).
 
 ## Next steps
 
-- View [installation script options]({{<relref "/rs/installing-upgrading/install/install-script">}}) before starting the installation
+- View [installation script options]({{<relref "/rs/installing-upgrading/install/install-script">}}) before starting the installation.
 
-- [Install Redis Enterprise Software]({{<relref "/rs/installing-upgrading/install">}})
+- [Install Redis Enterprise Software]({{<relref "/rs/installing-upgrading/install">}}).

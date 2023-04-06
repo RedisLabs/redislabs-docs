@@ -8,17 +8,13 @@ categories: ["RS"]
 aliases: 
 ---
 
-## Install on Linux
+After you [download a Redis Enterprise Software installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}) and finish [installation preparation]({{<relref "/rs/installing-upgrading/prepare-install">}}):
 
-After you download the .tar file installation package, install the package on one of the nodes in the cluster.
+1. [Install the Redis Enterprise Software package]({{<relref "/rs/installing-upgrading/install/install-on-linux">}}) on one of the nodes in the cluster.
 
-Repeat this process for each node in the cluster.
+1. Repeat this process for each node in the cluster.
 
-1. [Create]({{< relref "/rs/clusters/new-cluster-setup.md" >}})
-    or [join]({{< relref "/rs/clusters/add-node.md" >}}) an existing Redis Enterprise Software cluster.
-1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
-
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/databases/active-active/create.md" >}}) database.
+For installation on machines without an internet connection, see [Offline installation]({{<relref "/rs/installing-upgrading/install/offline-installation">}}).
 
 ## Permissions and access
 
@@ -40,18 +36,15 @@ If you've already installed Redis Enterprise Software, you can also:
 
 More info is available to help with customization and related questions:
 
-- [AWS EC2 configuration]({{<relref "rs/installing-upgrading/plan-deployment/configuring-aws-instances.md">}})
 - [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})
 - [File locations]({{<relref "rs/installing-upgrading/plan-deployment/file-locations.md">}})
 - [Supported platforms]({{<relref "rs/installing-upgrading/plan-deployment/supported-platforms.md">}})
-- [Linux swap space configuration]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
 - [Manage installation questions]({{<relref "rs/installing-upgrading/prepare-install/manage-installation-questions.md">}})
 - [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
-- [Offline installation]({{<relref "rs/installing-upgrading/install/offline-installation.md">}})
-- [User and group ownership]({{<relref "rs/installing-upgrading/prepare-install/customize-user-and-group.md">}})
+- [User and group ownership]({{<relref "rs/installing-upgrading/install/customize-user-and-group.md">}})
 
 ## Next steps
 
