@@ -22,7 +22,7 @@ net.ipv4.ip_local_port_range = 30000 65535
 
 ## Port 53
 
-When port 53 is in use, the installation fails. This is known to happen in
+If port 53 is in use, the installation fails. This is known to happen in
 default Ubuntu 18.04 installations in which `systemd-resolved` (DNS server) is running.
 
 To work around this issue, change the system configuration to make this port available

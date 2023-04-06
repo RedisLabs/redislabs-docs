@@ -8,6 +8,16 @@ categories: ["RS"]
 aliases: 
 ---
 
-Try out Redis Enterprise Software using one of the following quickstarts.
+Try out Redis Enterprise Software using one of the following quickstarts:
 
-{{<allchildren style="h2" description="true"/>}}
+- [Redis Enterprise Software quickstart]({{<relref "/rs/installing-upgrading/quickstarts/get-started-redis-enterprise-software">}})
+
+- [Docker quickstart for Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/get-started-docker">}})
+
+Additional quickstart guides are available to help you:
+
+- Set up a [Redis on Flash cluster]({{< relref "/rs/databases/redis-on-flash/rof-quickstart.md" >}}) to optimize  memory resources.
+
+- Set up an [Active-Active cluster]({{< relref "/rs/databases/active-active/get-started.md" >}}) to enable high availability.
+
+- [Benchmark]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) Redis Enterprise Software performance.

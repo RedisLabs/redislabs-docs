@@ -21,52 +21,72 @@ aliases: [
 
 ---
 {{< warning >}}
-Docker containers are currently only supported for development and testing environments, not for production.
+Docker containers are currently only supported for development and test environments, not for production.
 {{< /warning >}}
 
-For testing purposes, you can run Redis Enterprise Software (RS) on Docker containers on
+For testing purposes, you can run Redis Enterprise Software on Docker containers on
 Linux, Windows, or MacOS.
 The [Redis Enterprise Software container](https://hub.docker.com/r/redislabs/redis/)
-represents a node in an RS Cluster. When deploying RS using Docker, there are a couple
-of common topologies:
-
-**Topology #1:** The simplest topology is to run a single-node RS Cluster with a single container in a single host machine. This is best for local development or functional testing. Obviously, single-node clusters come with limited functionality in a few ways. For instance, in a single-node topology, Redis Enterprise Software can't replicate to replica shards or provide any protection for failures. Simply follow the instruction in the Getting Started pages for Windows, macOS and Linux to build your development environment.
-
-![0-2](/images/rs/RS-Docker-container.png)
-
-**Topology #2:** You may also run multi-node RS Cluster with multiple RS containers deployed to a single host machine. This topology is similar to the Topology #1 except that you run a multi-node cluster to develop and test against. The result is a system that is scale-minimized but similar to your production Redis Enterprise Software deployment. It is important to note that this topology isn't ideal for performance-sensitive systems. In this topology, containers may interfere with each other under load. In addition, even though the RS cluster provides replication to protect against failures  the cluster cannot protect you against the failure of the single host (because all nodes reside on the same physical host). With all this, Topology #2 (or other hybrid deployment methods in which you put multiple RS nodes in containers on the same physical host) is not recommended if you are looking for predictable performance or high availability.
-
-![Docker Redis Enterprise Software Cluster](/images/rs/RS-Docker-cluster-single-host.png)
-
-**Topology #3:** You may also run multi-node RS Cluster with multiple RS containers each deployed to its own host machine. This topology minimizes interference between RS containers, so it performs more predictably than Topology #2.
-
-![0](/images/rs/RS-Docker-cluster-multi-host.png)
+acts as a node in a cluster.
 
 To get started with a single Redis Enterprise Software container:
 
-- Step 1: Install Docker Engine for your operating system
-- Step 2: Run the RS Docker container
-- Step 3: Set up a cluster
-- Step 4: Create a new database
-- Step 5: Connect to your database
+1. [Install Docker](#install-docker) for your operating system
 
-## Step 1: Install Docker Engine
+1. [Run the Redis Enterprise Software Docker container](#run-the-container)
 
-{{< note >}}
-Docker containers are currently only supported for development and testing environments, not for production.
-{{< /note >}}
+1. [Set up a cluster](#set-up-a-cluster)
 
-Go to the Docker installation page for your operating system for detailed instructions
-about installing Docker Engine:
+1. [Create a new database](#create-a-database)
+
+1. [Connect to your database](#connect-to-your-database)
+
+## Deployment topologies
+
+When deploying Redis Enterprise Software using Docker, there are several common topologies:
+
+- [Single-node cluster](#single-node) – for local development or functional testing
+
+- [Multi-node cluster on a single host](#multi-node-one-host) – for a small-scale deployment that is similar to production
+
+- [Multi-node cluster with multiple hosts](#multi-node-multi-host) – for more predictable performance or high availability compared to single-host deployments
+
+### Single node {#single-node}
+
+The simplest topology is to run a single-node Redis Enterprise Software cluster with a single container on a single host machine. You can use this topology for local development or functional testing.
+
+Single-node clusters have some limited functionality. For example, Redis Enterprise Software can't use replication or protect against failures if the cluster has only one node.
+
+![0-2](/images/rs/RS-Docker-container.png)
+
+### Multiple nodes on one host {#multi-node-one-host}
+
+You can create a multi-node Redis Enterprise Software cluster by deploying multiple containers to a single host machine. The resulting cluster is scale-minimized but similar to production deployments.
+
+However, if you need predictable performance or high availability, don't host multiple nodes in containers on the same physical host.
+
+![Docker Redis Enterprise Software Cluster](/images/rs/RS-Docker-cluster-single-host.png)
+
+### Multiple nodes and hosts {#multi-node-multi-host}
+
+You can also create a multi-node Redis Enterprise Software cluster with multiple containers by deploying each container to a different host machine.
+
+This topology minimizes interference between containers, so Redis Enterprise Software performs more predictably than if you host multiple nodes on a single machine.
+
+![0](/images/rs/RS-Docker-cluster-multi-host.png)
+
+## Install Docker
+
+Follow the Docker installation instructions for your operating system:
 
 - [Linux](https://docs.docker.com/install/#supported-platforms)
 - [MacOS](https://docs.docker.com/docker-for-mac/install/)
 - [Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-## Step 2: Run the container
+## Run the container
 
-To pull and start the Redis Enterprise Software Docker container, run this
-`docker run` command in the terminal or command-line for your operating system.
+To download and start the Redis Enterprise Software Docker container, run the following
+[`docker run`](https://docs.docker.com/engine/reference/commandline/run/) command in the terminal or command line for your operating system.
 
 {{< note >}}
 On Windows, make sure Docker is configured to run Linux-based containers.
@@ -76,18 +96,24 @@ On Windows, make sure Docker is configured to run Linux-based containers.
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
-The Docker container with RS runs on your localhost with port 8443 open for HTTPS
-connections, 9443 for REST API connections, and port 12000 open for redis client connections.
+The example command runs the Docker container with Redis Enterprise Software on localhost and opens the following ports: 
+
+- Port 8443 for HTTPS connections
+
+- Port 9443 for [REST API]({{<relref "/rs/references/rest-api">}}) connections
+
+- Port 12000 for Redis client connections
+
 You can publish other [ports]({{< relref "/rs/networking/port-configurations.md" >}})
 with `-p <host_port>:<container_port>` or use the `--network host` option to open all ports to the host network.
 
-## Step 3: Set up a cluster
+## Set up a cluster
 
 {{< embed-md "cluster-setup.md" >}}
 
-## Step 4: Create a database
+## Create a database
 
-1. Select "redis database" and the "single region" deployment, and click Next.
+1. Select **redis database** and the **Single Region** deployment, then select **Next**.
 
     ![Redis Enterprise Software create database](/images/rs/getstarted-newdatabase.png)
 
@@ -96,65 +122,60 @@ with `-p <host_port>:<container_port>` or use the `--network host` option to ope
     ![Redis Enterprise Software configure new database
 screen](/images/rs/getstarted-createdatabase.png)
 
-1. Click **Show advanced options** and, in the **Endpoint port number**,
-enter `12000` for the port number.
+1. Select **Show advanced options** and enter `12000` for the **Endpoint port number**.
 
-    If port 12000 is not available, enter any available port number between 10000 to 19999
-    and connect to the database with that port number.
+    If port 12000 is not available, enter any available port number between 10000 to 19999. You will use this port number to connect to the database.
 
-1. Click **Activate** to create your database
+1. Select **Activate** to create your database.
 
 {{< note >}}
 {{< embed-md "docker-memory-limitation.md" >}}
 {{< /note >}}
 
-The database configuration is shown.
-When you see a green check mark, the database is activated and ready for you to use.
+When you see a green check mark appear on the database configuration screen, the database is activated and ready for you to use.
 
 You now have a Redis database!
 
-## Step 5: Connect to your database
+## Connect to your database
 
-After you create the Redis database, you are ready to store data in your
-database. You can test connectivity to your database with:
+After you create the Redis database, you can start storing data.
 
-- redis-cli - the built-in command-line tool
-- A _Hello World_ application using Python
+You can test connecting to your database with:
 
-### Connecting using redis-cli {#connecting-using-rediscli}
+- [`redis-cli`](#connecting-using-rediscli)
+- [Python application](#python)
 
-redis-cli is a simple command-line tool to interact with Redis database.
+### redis-cli {#connecting-using-rediscli}
 
-Use "docker exec" to switch your context into the Redis Enterprise
-Software container
+You can use the [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool to interact with your Redis database.
 
-```sh
-docker exec -it rp bash
-```
+1. Use [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec/) to start an interactive shell session in the Redis Enterprise Software container:
 
-Run redis-cli, located in the /opt/redislabs/bin directory, to connect
-to the database port number, and store and retrieve a key in database1.
+    ```sh
+    docker exec -it rp bash
+    ```
 
-```sh
-$ /opt/redislabs/bin/redis-cli -p 12000
-127.0.0.1:16653> set key1 123
-OK
-127.0.0.1:16653> get key1
-"123"
-```
+1. Run `redis-cli` and provide the port number with `-p` to connect to the database. Then use [`SET`](https://redis.io/commands/set/) to store a key and [`GET`](https://redis.io/commands/get/) to retrieve it.
 
-### Connecting using _Hello World_ application in Python
+    ```sh
+    $ /opt/redislabs/bin/redis-cli -p 12000
+    127.0.0.1:12000> SET key1 123
+    OK
+    127.0.0.1:12000> GET key1
+    "123"
+    ```
 
-A simple python application running on the **host machine**, not the
-container, can also connect to database1.
+### Python
+
+You can also run a Python application on the host machine to connect to your database.
 
 {{< note >}}
 The following section assumes you already have Python
-and redis-py (python library for connecting to Redis) configured on the host machine running the container.
-You can find the instructions to configure redis-py on the [github page for redis-py](https://github.com/andymccurdy/redis-py).
+and the Python Redis client `redis-py` set up on the host machine running the container.
+You can find the instructions to configure `redis-py` on the [`redis-py` GitHub page](https://github.com/redis/redis-py).
 {{< /note >}}
 
-1. Create a new file called `redis_test.py` with this contents:
+1. Create a new file called `redis_test.py` and add the following code:
 
     ```python
     import redis
@@ -166,24 +187,19 @@ You can find the instructions to configure redis-py on the [github page for redi
     print(r.get('key1'))
     ```
 
-1. Run the redis_test.py application to store and retrieve a key:
+1. Run `redis_test.py` to store a key in your database and then retrieve it:
 
     ```sh
-    python.exe redis_test.py
+    $ python redis_test.py
+    set key1 123
+    True
+    get key1
+    123
     ```
-
-If the connection is successful, the output of the application looks like this:
-
-```sh
-set key1 123
-True
-get key1
-123
-```
 
 ## Next steps
 
-Now you have a Redis Enterprise cluster ready to go. You can connect to it with
-a [redis client](https://redis.io/clients) to start loading it with data or
-you can use the [memtier_benchmark Quick Start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}})
-to check the cluster performance.
+- Connect to your Redis database with a [Redis client](https://redis.io/clients) and start adding data.
+
+- Use the [`memtier_benchmark` quickstart]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) to check the cluster performance.
+
