@@ -147,7 +147,7 @@ To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/r
 
 - RS54732 - Fixed incorrect reporting of number database connections, which caused the number of connections to be reported as a 20 digit number
 
-- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. We recommend [upgrading the featureset]({{<relref "/rs/installing-upgrading/upgrading/upgrade-active-active">}}) version to the latest
+- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. [Upgrade the featureset]({{<relref "/rs/installing-upgrading/upgrading/upgrade-active-active">}}) version to the latest.
 
 - RS56122 - Fixed a bug that was causing AOF files to grow when the replicas of two Active-Active databases became disconnected during full synchronization
 

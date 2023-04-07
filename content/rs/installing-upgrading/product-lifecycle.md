@@ -37,7 +37,7 @@ Maintenance releases, typically available on the last minor release of the curre
 ## End-of-life schedule {#endoflife-schedule}
 
 Beginning with Redis Enterprise Software release 6.4, end-of-life (EOL) for a given Major release occurs 18 months after the formal release of the subsequent Major. Maintenance will only be provided on the last minor release of the major1.major2 releases.
-This latest update to EOL policy ensures customers will have at least an 18-month lead time to upgrade to a newer release, after it is made available.
+This update to the EOL policy ensures customers have a lead time of at least 18 months to upgrade to the new release after it is available.
 
 
 | Version - Release date | End of Life (EOL)  |

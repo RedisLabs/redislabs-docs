@@ -24,7 +24,9 @@ For installation on machines without an internet connection, see [Offline instal
 
 - Redis Enterprise Software is certified to run with permissions set to `750`, an industry standard.
 
-    We recommend against reducing permissions to `700`; this configuration has not been tested and is not supported.
+    {{<warning>}}
+Do not reduce permissions to `700`. This configuration has not been tested and is not supported.
+    {{</warning>}}
 
 ## More info and options
 

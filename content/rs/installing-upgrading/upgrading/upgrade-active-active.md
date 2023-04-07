@@ -28,7 +28,7 @@ Follow these upgrade guidelines:
 
 - Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
 
-- As of v6.0.20, protocol version 0 is deprecated; support will be removed in a future version.
+- As of v6.0.20, protocol version 0 is deprecated and support will be removed in a future version.
 
 - To avoid upgrade failures, update all Active-Active databases to the latest protocol version _before_ upgrading Redis Enterprise Software to v6.0.20 or later.
 
@@ -40,7 +40,7 @@ When you update the feature version for an Active-Active database, the feature v
     
 Follow these upgrade guidelines:
 
-- As of v6.0.20, feature version 0 is deprecated; support will be removed in a future version.
+- As of v6.0.20, feature version 0 is deprecated and support will be removed in a future version.
 
 - To avoid upgrade failures, update all Active-Active databases to the latest protocol version _before_ upgrading Redis Enterprise Software to v6.0.20 or later.
 

@@ -171,8 +171,8 @@ You can also run a Python application on the host machine to connect to your dat
 
 {{< note >}}
 The following section assumes you already have Python
-and the Redis Python client `redis-py` set up on the host machine running the container.
-You can find the instructions to configure `redis-py` on the [`redis-py` GitHub page](https://github.com/redis/redis-py).
+and the Redis Python client [`redis-py`](https://github.com/redis/redis-py) set up on the host machine running the container.
+For `redis-py` installation instructions, see the [Python client quickstart](https://redis.io/docs/clients/python/).
 {{< /note >}}
 
 1. Create a new file called `redis_test.py` and add the following code:

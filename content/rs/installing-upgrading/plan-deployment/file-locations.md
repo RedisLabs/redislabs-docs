@@ -9,7 +9,9 @@ aliases: ["/rs/administering/installing-upgrading/file-locations/",
     "/rs/installing-upgrading/file-locations/",
 ]
 ---
-To ensure that Redis Enterprise Software functions properly, be careful with the files in the application directories.
+{{<warning>}}
+To ensure that Redis Enterprise Software functions properly, be careful with the files in the application directories. If you modify or delete the application files, Redis Enterprise Software might not work as expected.
+{{</warning>}}
 
 ## Application directories
 
