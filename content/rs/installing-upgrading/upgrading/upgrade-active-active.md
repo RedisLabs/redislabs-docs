@@ -12,9 +12,9 @@ When you upgrade an [Active-Active (CRDB) database]({{<relref "/rs/databases/act
 
 ## CRDB protocol version guidelines
 
-Starting with version 5.4.2, a new CRDB protocol version helps support  Active-Active features.
+Starting with version 5.4.2, a new CRDB protocol version helps support Active-Active features.
 
-The new CRDB protocol is backward compatible, which means v5.4.2 CRDB instances can understand write operations from instances using the the earlier CRDB protocol.  However, earlier CRDB instances using the older protocol cannot understand write operations from instances using the newer protocol version.
+The new CRDB protocol is backward compatible, which means v5.4.2 CRDB instances can understand write operations from instances using the the earlier CRDB protocol. 
 
 After you upgrade the CRDB protocol on one instance, non-upgraded instances cannot receive write updates from the upgraded instance.
 
@@ -22,7 +22,7 @@ The upgraded instance receives updates from upgraded and non-upgraded instances.
 
 When upgraded to the latest protocol version, upgraded instances automatically receive any missing write operations.
 
-_Upgrade guidelines:_
+Follow these upgrade guidelines:
 
 - Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
 
@@ -38,7 +38,7 @@ Starting with version 5.6.0, a new feature version (also called a _feature set v
 
 When you update the feature version for an Active-Active database, the feature version is updated for all database instances.
     
- _Upgrade guidelines:_
+Follow these upgrade guidelines:
 
 - As of v6.0.20, feature version 0 is deprecated; support will be removed in a future version.
 

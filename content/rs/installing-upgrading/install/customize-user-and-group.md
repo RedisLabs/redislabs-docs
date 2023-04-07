@@ -1,7 +1,7 @@
 ---
 Title: Customize system user and group
 linkTitle: Customize user and group
-description: Specify the user and group that own all Redis Enterprise Software processes.
+description: Specify the user and group who own all Redis Enterprise Software processes.
 weight: 40
 alwaysopen: false
 categories: ["RS"]

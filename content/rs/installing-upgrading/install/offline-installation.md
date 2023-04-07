@@ -11,7 +11,7 @@ By default, the installation process requires an internet connection to
 enable installing dependency packages and for [synchronizing the
 operating system clock]({{< relref "/rs/clusters/configure/sync-clocks.md" >}}) against an NTP server.
 
-If you install Redis Enterprise Software on a machine with no
+If you install Redis Enterprise Software on a machine without an
 internet connection, you need to perform two tasks manually.
 
 ## Install required dependency packages
@@ -20,4 +20,4 @@ When you install Redis Enterprise Software on a machine that is not connected to
 
 ## Set up NTP time synchronization
 
-At the end of the installation, the process asks if you want to set up NTP time synchronization. If you choose "Yes" while you are not connected to the internet, the action fails and displays the appropriate error message, but the installation completes successfully. Despite the successful completion of the installation, you still have to configure all nodes for [NTP time synchronization]({{< relref "/rs/clusters/configure/sync-clocks.md" >}}).
+At the end of the installation, the process asks if you want to set up NTP time synchronization. If you choose `Yes` while you are not connected to the internet, the action fails and displays the appropriate error message, but the installation completes successfully. Despite the successful completion of the installation, you still have to configure all nodes for [NTP time synchronization]({{< relref "/rs/clusters/configure/sync-clocks.md" >}}).

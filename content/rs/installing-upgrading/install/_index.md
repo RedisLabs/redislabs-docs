@@ -30,11 +30,11 @@ For installation on machines without an internet connection, see [Offline instal
 
 If you've already installed Redis Enterprise Software, you can also:
 
-- [Upgrade an existing deployment]({{<relref "rs/installing-upgrading/upgrading">}})
+- [Upgrade an existing deployment]({{<relref "rs/installing-upgrading/upgrading">}}).
 
-- [Uninstall an existing deployment]({{<relref "rs/installing-upgrading/uninstalling.md">}})
+- [Uninstall an existing deployment]({{<relref "rs/installing-upgrading/uninstalling.md">}}).
 
-More info is available to help with customization and related questions:
+To learn more about customization and find answers to related questions, see:
 
 - [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})

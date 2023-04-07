@@ -16,9 +16,9 @@ Before you install Redis Enterprise Software:
 
 - Review the [security considerations]({{< relref "/rs/security/" >}}) for your deployment.
 
-- Make sure that you have root-level access to each node, either directly or with `sudo`.
+- Check that you have root-level access to each node, either directly or with `sudo`.
 
-- Make sure all [required ports are available]({{<relref "/rs/installing-upgrading/prepare-install/port-availability">}}).
+- Check that all [required ports are available]({{<relref "/rs/installing-upgrading/prepare-install/port-availability">}}).
 
 - [Turn off Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
 

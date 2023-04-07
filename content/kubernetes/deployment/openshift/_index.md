@@ -43,7 +43,7 @@ workloads can use:
 
 ## For OpenShift via the OperatorHub
 
-To [create a database on an OpenShift 4.x cluster via the OperatorHub]({{< relref "openshift-operatorhub.md" >}}) you only need the [OpenShift 4.x cluster installed](https://docs.openshift.com/container-platform/4.3/welcome/index.html) with at least three nodes that each meet the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}).
+To [create a database on an OpenShift 4.x cluster via the OperatorHub]({{< relref "openshift-operatorhub.md" >}}) you only need to have the [OpenShift 4.x cluster installed](https://docs.openshift.com/container-platform/4.3/welcome/index.html) with at least three nodes that each meet the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}).
 
 ## For OpenShift via the CLI
 

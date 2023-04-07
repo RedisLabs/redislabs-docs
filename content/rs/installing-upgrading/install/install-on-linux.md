@@ -84,7 +84,7 @@ To skip the installation questions, use one of the following methods:
 
 ## More info and options
 
-More info is available to help with customization and related questions:
+To learn more about customization and find answers to related questions, see:
 
 - [CentOS/RHEL firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})

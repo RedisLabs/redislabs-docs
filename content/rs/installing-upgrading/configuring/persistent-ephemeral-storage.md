@@ -32,7 +32,7 @@ For example, if you configure [persistence]({{< relref "/rs/databases/configure/
 for a database,
 then the persistence information is stored in this location.
     
-The persistent volume must be a SAN (Storage Area Network)
+The persistent volume must be a storage area network (SAN)
 using an EXT4 or XFS file system and be connected as an external storage volume.
     
 When using append-only file (AOF) persistence, use flash-based storage

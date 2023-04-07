@@ -112,7 +112,7 @@ You now have a Redis database!
 
 ## Connect to your database
 
-After you create the Redis database, you are ready to store data in your database.
+After you create the Redis database, it is ready for you to store data.
 See the [test connectivity]({{<relref "/rs/databases/connect/test-client-connectivity.md">}}) page to learn how to connect to your database.
 
 ## Supported web browsers

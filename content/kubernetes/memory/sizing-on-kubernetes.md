@@ -122,5 +122,5 @@ Then, apply the file by running:
 
 {{< warning >}}
 Be aware that [persistent volume size]({{< relref "/kubernetes/memory/persistent-volumes.md" >}} cannot be changed after deployment. When adjusting compute resources, make sure the ratio of persistent volume size and the new memory size are in accordance to the [Hardware
-requirements]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}) article.
+requirements]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}).
 {{< /warning >}}

@@ -59,7 +59,7 @@ Before upgrading a database:
 
     Use the admin console to display the **Configuration** tab for the cluster. The tab displays the cluster version information and the Redis database compatibility version.
 
-- To avoid data loss during the upgrade, take care to back up the data.  
+- To avoid data loss during the upgrade, back up your data.  
 
     You can export the data to an external location, enable replication, or enable persistence.
 
@@ -67,7 +67,7 @@ Before upgrading a database:
 
     - To reduce downtime when replication is enabled, a failover is performed before restarting the master database.
 
-    - When persistence is enabled without replication, the database is unavailable during restart because the data is restored from the persistence file.  AOF persistence restoration is slower than snapshot restoration.
+    - When persistence is enabled without replication, the database is unavailable during restart because the data is restored from the persistence file. AOF persistence restoration is slower than snapshot restoration.
 
 ## Upgrade database
 

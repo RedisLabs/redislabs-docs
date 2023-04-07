@@ -14,7 +14,7 @@ Before [installing Redis Enterprise Software]({{<relref "/rs/installing-upgradin
 
 Make sure that the ports [Redis assigns to databases]({{< relref "/rs/networking/port-configurations.md" >}}) are available and are not being used by the operating system or other processes.
 
-To avoid port collision, we recommend updating `/etc/sysctl.conf` to include:
+To avoid port collision, update `/etc/sysctl.conf` to include:
 
 ``` sh
 net.ipv4.ip_local_port_range = 30000 65535
@@ -22,10 +22,10 @@ net.ipv4.ip_local_port_range = 30000 65535
 
 ## Port 53
 
-If port 53 is in use, the installation fails. This is known to happen in
+If port 53 is in use, the installation fails. This can occur in
 default Ubuntu 18.04 installations in which `systemd-resolved` (DNS server) is running.
 
-To work around this issue, change the system configuration to make this port available
+To prevent this issue, change the system configuration to make this port available
 before installation.
 
 1. Edit `/etc/systemd/resolved.conf`: 

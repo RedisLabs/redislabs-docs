@@ -43,25 +43,25 @@ To get started with a single Redis Enterprise Software container:
 
 ## Deployment topologies
 
-When deploying Redis Enterprise Software using Docker, there are several common topologies:
+When deploying Redis Enterprise Software using Docker, several common topologies are available, according to your requirements:
 
-- [Single-node cluster](#single-node) – for local development or functional testing
+- [Single-node cluster](#single-node) – For local development or functional testing
 
-- [Multi-node cluster on a single host](#multi-node-one-host) – for a small-scale deployment that is similar to production
+- [Multi-node cluster on a single host](#multi-node-one-host) – For a small-scale deployment that is similar to production
 
-- [Multi-node cluster with multiple hosts](#multi-node-multi-host) – for more predictable performance or high availability compared to single-host deployments
+- [Multi-node cluster with multiple hosts](#multi-node-multi-host) – For more predictable performance or high availability compared to single-host deployments
 
 ### Single node {#single-node}
 
 The simplest topology is to run a single-node Redis Enterprise Software cluster with a single container on a single host machine. You can use this topology for local development or functional testing.
 
-Single-node clusters have some limited functionality. For example, Redis Enterprise Software can't use replication or protect against failures if the cluster has only one node.
+Single-node clusters have limited functionality. For example, Redis Enterprise Software can't use replication or protect against failures if the cluster has only one node.
 
 ![0-2](/images/rs/RS-Docker-container.png)
 
 ### Multiple nodes on one host {#multi-node-one-host}
 
-You can create a multi-node Redis Enterprise Software cluster by deploying multiple containers to a single host machine. The resulting cluster is scale-minimized but similar to production deployments.
+You can create a multi-node Redis Enterprise Software cluster by deploying multiple containers to a single host machine. The resulting cluster is scale minimized but similar to production deployments.
 
 However, if you need predictable performance or high availability, don't host multiple nodes in containers on the same physical host.
 
@@ -96,7 +96,7 @@ On Windows, make sure Docker is configured to run Linux-based containers.
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
-The example command runs the Docker container with Redis Enterprise Software on localhost and opens the following ports: 
+The example command runs the Docker container with Redis Enterprise Software on `localhost` and opens the following ports: 
 
 - Port 8443 for HTTPS connections
 
@@ -171,7 +171,7 @@ You can also run a Python application on the host machine to connect to your dat
 
 {{< note >}}
 The following section assumes you already have Python
-and the Python Redis client `redis-py` set up on the host machine running the container.
+and the Redis Python client `redis-py` set up on the host machine running the container.
 You can find the instructions to configure `redis-py` on the [`redis-py` GitHub page](https://github.com/redis/redis-py).
 {{< /note >}}
 

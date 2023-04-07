@@ -1,7 +1,7 @@
 ---
 Title: Manage installation questions
 linkTitle: Manage install questions
-description: Describes Redis Enterprise Software installation questions and how to answer automatically.
+description: Describes Redis Enterprise Software installation questions and how to answer them automatically.
 weight: 30
 alwaysopen: false
 categories: ["RS"]
