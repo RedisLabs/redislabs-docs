@@ -182,7 +182,7 @@ Each Redis Enterprise cluster requires at least 3 nodes. Single-node RECs are no
 1. Patch the validating webhook with the certificate.
 
     ```sh
-    kubectl patch ValidatingWebhookConfiguration redisenterprise-admission --patch "$(cat modified-webhook.yaml)"
+    kubectl patch ValidatingWebhookConfiguration redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
 ### Limit the webhook to relevant namespaces
@@ -215,7 +215,7 @@ If not limited, the webhook intercepts requests from all namespaces. If you have
 1. Apply the patch.
 
     ```bash
-    kubectl patch ValidatingWebhookConfiguration redisenterprise-admission --patch "$(cat modified-webhook.yaml)"
+    kubectl patch ValidatingWebhookConfiguration redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
   {{<note>}}
   For releases before 6.4.2-4, use this command instead:
