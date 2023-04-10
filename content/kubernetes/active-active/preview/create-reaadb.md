@@ -38,7 +38,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
       name: rerc1
     spec:
       recName: rec1
-     recNamespace: ns1
+      recNamespace: ns1
       apiFqdnUrl: test-example-api-rec1-ns1.redis.com
       dbFqdnSuffix: -example-cluster-rec1-ns1.redis.com
       secretName: redis-enterprise-rerc1
@@ -53,7 +53,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
       name: rerc2
     spec:
       recName: rec2
-     recNamespace: ns2
+      recNamespace: ns2
       apiFqdnUrl: test-example-api-rec2-ns2.redis.com
       dbFqdnSuffix: -example-cluster-rec2-ns2.redis.com
       secretName: redis-enterprise-rerc2
@@ -102,11 +102,13 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     metadata:
       name: example-aadb-1
     spec:
-      participatingClusters:
-        - name: rec1.ns1
-        - name: rec2.ns2
       globalConfigurations:
+        databaseSecretName: <my-secret>
+        memorySize: 200MB
         shardCount: 3
+      participatingClusters:
+          - name: rerc1
+          - name: rerc2
     ```
 
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).

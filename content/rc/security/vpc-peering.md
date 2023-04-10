@@ -32,17 +32,15 @@ If you want to peer a Redis Cloud VPC with an AWS VPC, you need to:
 
 To set up VPC peering:
 
-1. Select **Subscriptions** from the [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
+1. From the [admin console](https://app.redislabs.com/), select the **Subscriptions** menu and then select your subscription from the list.
 
-1. Select the **Connectivity** tab and then **VPC Peering**.
+1. Select **Connectivity > VPC Peering**.
 
-1. Select the **Add peering** button:
-
-    {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-add-peering.png" width="140px" alt="The Add peering button lets you set up VPC peering." >}}{{< /image >}}
+1. Select **Add peering**.
 
 1. Enter **VPC peering** details:
 
-    | Setting&nbsp;name | Description |
+    | Setting | Description |
     |-------------------|-------------|
     | _Consumer AWS Account_ | Your AWS account ID (see [Finding your AWS account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)) |
     | _Consumer region_ | AWS VPC region |
@@ -57,19 +55,13 @@ The [Redis Cloud Terraform provider](https://registry.terraform.io/providers/Red
     
     To add multiple VPC CIDRs:
 
-    1. Select the **Add CIDR** button:
-
-        {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-add-cidr.png" width="40px" alt="Select the Add CIDR button to add another VPC CIDR." >}}{{< /image >}}
-
-    1. Enter the additional CIDR-formatted IP address in the box:
+    1. Select **Add CIDR**.
+    1. Enter additional CIDR-formatted IP address in the box:
 
         {{<image filename="images/rc/subscription-connectivity-vpc-peering-add-multiple-cidrs.png" width="300px" alt="Select the Add CIDR button to add another VPC CIDR." >}}{{< /image >}}
 
-1. Select the **Initiate peering** button:
-
-    {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-initiate-peering.png" width="140px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
-
-1. Note the **Peering ID** of the VPC peering request:
+1. Select **Initiate peering**.
+1. Note the **Peering ID** of the VPC peering request.
 
     {{<image filename="images/rc/subscription-connectivity-vpc-peering-aws.png" width="350px" alt="View VPC peering list." >}}{{< /image >}}
 
@@ -107,11 +99,9 @@ To set up VPC peering:
 
 1. Select **Subscriptions** from the [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
 
-1. Select the **Connectivity** tab and then select **VPC Peering**.
+1. Select **Connectivity > VPC Peering**.
 
-1. Select the **Add peering** button:
-
-    {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-add-peering.png" width="140px" alt="The Add peering button lets you set up VPC peering." >}}{{< /image >}}
+1. Select **Add peering**.
 
 1. Enter the VPC peering details:
 
@@ -124,11 +114,8 @@ To set up VPC peering:
 
     {{<image filename="images/rc/subscription-connectivity-vpc-peering-gcloud-command.png" width="350px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
 
-1. Select the **Initiate peering** button:
-
-    {{<image filename="images/rc/button-subscription-connectivity-vpc-peering-initiate-peering.png" width="140px" alt="The Initiate peering button creates a VPC peering request." >}}{{< /image >}}
-
-1. Note the **Cloud peering ID** of the VPC peering request:
+1. Select **Initiate peering**.
+1. Note the **Cloud peering ID** of the VPC peering request.
 
     {{<image filename="images/rc/subscription-connectivity-vpc-peering-gcp.png" width="350px" alt="View VPC peering list." >}}{{< /image >}}
 

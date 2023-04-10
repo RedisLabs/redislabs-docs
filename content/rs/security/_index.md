@@ -16,7 +16,7 @@ When deploying Redis Enterprise Software to production, we recommend the followi
 
 - **Deploy Redis Enterprise inside a trusted network**:  Redis Enterprise is database software and should be deployed on a trusted network not accessible to the public internet. Deploying Redis Enterprise in a trusted network reduces the likelihood that someone can obtain unauthorized access to your data or the ability to manage your database configuration.
 
-- **Implement anti-virus exclusions**: To ensure that anti-virus solutions that scan files or intercept processes to protect memory do not interfere with Redis Enterprise software, customers should ensure that anti-virus exclusions are implemented across all nodes in their Redis Enterprise cluster in a consistent policy. This helps ensure that anti-virus software does not impact the availibility of your Redis Enterprise cluster.
+- **Implement anti-virus exclusions**: To ensure that anti-virus solutions that scan files or intercept processes to protect memory do not interfere with Redis Enterprise software, customers should ensure that anti-virus exclusions are implemented across all nodes in their Redis Enterprise cluster in a consistent policy. This helps ensure that anti-virus software does not impact the availability of your Redis Enterprise cluster.
 
     If you are replacing your existing antivirus solution or installing/supporting Redis Enterprise, make sure that the below paths are excluded:
 
@@ -40,9 +40,9 @@ For antivirus solutions that intercept processes, binary files may have to be ex
 
 - **Implement client-side encryption**: Client-side encryption, or the practice of encrypting data within an application before storing it in a database, such as Redis, is the most widely adopted method to achieve encryption in memory. Redis is an in-memory database and stores data in-memory. If you require encryption in memory, better known as encryption in use, then client side encryption may be the right solution for you. Please be aware that when implementing solutions using client-side encryption database functions that need to operate on data — such as simple searching functions, comparisons, and incremental operations — don’t work with client-side encryption.
 
-## Database Security
+## Database security
 
-Redis Enterprise offers several database security controls to help protect your data against unauthorized access and to improve the operational security of your databse. The following section details configurable security controls availible for implementation.
+Redis Enterprise offers several database security controls to help protect your data against unauthorized access and to improve the operational security of your database. The following section details configurable security controls available for implementation.
 
 - **Implement role-based access for users**: With [role-based access control (RBAC)]({{<relref "/rs/security/access-control">}}), you can manage ACLs for the entire cluster. You can reuse ACL templates across users, accounts, and multiple databases to precisely scale complex security configurations with a few simple clicks. RBAC lets you set permissions for your databases and for the Redis Enterprise management console itself, providing a complete security-management solution for your cluster.
 

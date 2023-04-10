@@ -46,6 +46,8 @@ You can deploy Redis Enterprise for Kubernetes from the Red Hat OpenShift CLI. Y
 
    You can monitor the subscription status in **Operators > Installed Operators**.
 
+{{<warning>}}DO NOT modify or delete the StatefulSet created during the deployment process. Doing so could destroy your Redis Enterprise cluster (REC).{{</warning>}}
+
 ## Install security context constraint
 
 The Redis Enterprise pods must run in OpenShift with privileges set in a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth). This grants the pod various rights, such as the ability to change system limits or run as a particular user.

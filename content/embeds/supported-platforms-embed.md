@@ -12,16 +12,48 @@ Make sure your system meets these requirements:
 
 ## Supported platforms
 
-| **Platform** | **Versions/Information** |
-|------------|-----------------|
-| Ubuntu | 16.04 (deprecated), 18.04, 20.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
-| Red Hat Enterprise Linux (RHEL) 7, CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
-| <nobr>RHEL 8, CentOS 8</nobr> | 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, and 8.7 |
-| <nobr>Oracle Linux 7, Oracle Linux 8</nobr> | Based on the corresponding RHEL version |
-| <nobr>Rocky Linux 8</nobr> | Based on RHEL 8 |
-| Amazon Linux | Version 1 |
-| Docker | [Docker images]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}}) of Redis Enterprise Software are certified for development and testing only. |
-| Kubernetes | See the [Redis Enterprise for Kubernetes documentation]({{< relref "/kubernetes/_index.md" >}}) |
+<span title="Check mark icon">&#x2705;</span> Supported – The platform is supported for this version of Redis Enterprise Software.
+
+<span title="Warning icon">&#x26A0;&#xFE0F;</span> Deprecated – The platform is still supported for this version of Redis Enterprise Software, but support will be removed in a future release.
+
+<span title="X icon">&#x274c;</span> End of life – Platform support ended in this version of Redis Enterprise Software.
+
+| Redis Enterprise | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
+|------------------|-------|--------|--------|--------|--------|-------|
+| **Ubuntu**<sup>[1](#table-note-1)</sup> |
+| 20.04 | <span title="Supported">&#x2705;</span><sup>[6](#table-note-6)</sup> | | | | |
+| 18.04 | <span title="Supported"><span title="Supported">&#x2705;</span></span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| 16.04 | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **RHEL & CentOS**<sup>[2](#table-note-2)</sup>
+| 8.7 | <span title="Supported">&#x2705;</span> | | | | |
+| 8.5-8.6 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | | |
+| 8.0-8.4 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | |
+| 7.0-7.9 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Oracle Linux**<sup>[3](#table-note-3)</sup> |
+| 8 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | | |
+| 7 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Rocky Linux**<sup>[3](#table-note-3)</sup> |
+| 8 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | | | |
+| **Amazon Linux** |
+| 2 | <span title="Supported">&#x2705;</span><sup>[7](#table-note-7)</sup> | | | | |
+| 1 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Docker**<sup>[4](#table-note-4)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Kubernetes**<sup>[5](#table-note-5)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+
+1. <a name="table-note-1" style="display: block; height: 80px; margin-top: -80px;"></a>The server version of Ubuntu is recommended for production installations. The desktop version is only recommended for development deployments.
+
+2. <a name="table-note-2" style="display: block; height: 80px; margin-top: -80px;"></a>RHEL and CentOS deployments require OpenSSL 1.0.2 and [firewall configuration]({{<relref "/rs/installing-upgrading/configuring/centos-rhel-firewall">}}).
+
+3. <a name="table-note-3" style="display: block; height: 80px; margin-top: -80px;"></a>Based on the corresponding RHEL version.
+
+4. <a name="table-note-4" style="display: block; height: 80px; margin-top: -80px;"></a>
+[Docker images]({{<relref "/rs/installing-upgrading/get-started-docker">}}) of Redis Enterprise Software are certified for development and testing only.
+
+5. <a name="table-note-5" style="display: block; height: 80px; margin-top: -80px;"></a>See the [Redis Enterprise for Kubernetes documentation]({{<relref "/kubernetes">}}).
+
+6. <a name="table-note-6" style="display: block; height: 80px; margin-top: -80px;"></a>Ubuntu 20.04 support was added in Redis Enterprise Software [6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}).
+
+7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}).
 
 ## Operating system limitations
 
@@ -41,6 +73,10 @@ To avoid issues with SHA1 certificates, replace them with new certificates that 
 
 RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules.
 Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
+
+### Modules not supported for Amazon Linux 2 release candidate
+
+A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support will be added in a future maintenance release.
 
 ## VMware
 
