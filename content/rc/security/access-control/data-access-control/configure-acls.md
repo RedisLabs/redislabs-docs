@@ -54,3 +54,5 @@ To configure a Redis ACL that you can assign to a data access role:
 1. Select the check mark to save your changes:
 
     {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to save your Redis ACL changes." >}}{{< /image >}}
+
+Once you've created a Redis ACL, you can [assign it to a role]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 

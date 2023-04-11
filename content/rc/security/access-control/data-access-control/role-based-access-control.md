@@ -24,25 +24,25 @@ The **Redis version** of a database is displayed in the **General** section of t
 
 {{<image filename="images/rc/database-fixed-configuration-general.png" alt="The Redis version appears in the General section of the Configuration tab on the database details screen." >}}{{< /image >}}
 
-### Set up RBAC
+## Set up RBAC
 
 To set up RBAC, first navigate to the **Data Access Control** screen.
 
 There are three tabs on this screen: **Users**, **Roles**, and **Redis ACLs**.
 
-In the **Redis ACLs** tab, you define named *permissions* for specific Redis commands, keys, and pub/sub channels.
+In the **Redis ACLs** tab, you [define named *permissions*]({{<relref "rc/security/access-control/data-access-control/configure-acls">}}) for specific Redis commands, keys, and pub/sub channels.
 
 {{<image filename="images/rc/data-access-control-acls.png" alt="Data access control screen." >}}{{< /image >}}
 
-In the **Roles** tab, you create roles. Each role consists of a set of permissions for one or more Redis Cloud databases.
+In the **Roles** tab, you [create roles]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). Each role consists of a set of permissions for one or more Redis Cloud databases.
 
 {{<image filename="images/rc/data-access-control-roles.png" alt="Data access control screen." >}}{{< /image >}}
 
-Finally, in the **Users** tab, you create users and assign each user a role.
+Finally, in the **Users** tab, you [create users]({{<relref "rc/security/access-control/data-access-control/create-assign-users">}}) and [assign each user a role]({{<relref "rc/security/access-control/data-access-control/create-assign-users#assign-roles-to-users">}}).
 
 {{<image filename="images/rc/data-access-control-users.png" alt="Data access control screen." >}}{{< /image >}}
 
-#### OSS Redis ACLs vs. Redis Enterprise Cloud RBAC
+### OSS Redis ACLs vs. Redis Enterprise Cloud RBAC
 
 In open source Redis, you can create users and assign ACLs to them using the `ACL` command. However, open source
 Redis does not support generic roles.
@@ -58,7 +58,7 @@ run within the transaction block are subject to RBAC permissions.
 
 When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
 
-### Define permissions
+## Define permissions
 
 To define permissions, go to the **Redis ACLs** tab of the **Data Access Control** screen.
 
@@ -75,7 +75,7 @@ The Redis ACL syntax emphasizes brevity:
 - `~` defines a permitted key pattern
 - `&` allows access to a [pub/sub channel](https://redis.io/docs/manual/pubsub/)
 
-#### Command ACL rules
+### Command ACL rules
 
 A **command** can be any [Redis command](https://redis.io/commands/).
 
@@ -85,7 +85,7 @@ For example, this Redis ACL rule indicates that the `SET` command is permitted:
 +set
 ```
 
-#### Command category ACL rules
+### Command category ACL rules
 
 A [**command category**](https://redis.io/docs/management/security/acl/#command-categories) is a predefined, named set of commands.
 
@@ -103,7 +103,7 @@ To find out which commands are included in the
 ACL CAT read
 ```
 
-#### Key ACL rules
+### Key ACL rules
 
 There's also a [syntax](https://redis.io/docs/management/security/acl/#key-permissions) for specifying which **keys** are accessible.
 
@@ -119,7 +119,7 @@ Whereas, this ACL rule only allows access to keys prefixed with `cache:`
 ~cache:*
 ```
 
-#### Pub/sub ACL rules
+### Pub/sub ACL rules
 
 Pub/sub ACL rules determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
 
@@ -133,7 +133,7 @@ Redis 7 changes pub/sub to restrictive and blocks access to all channels in open
 | 6.2 | Permissive | Permissive |
 | 7.0 | Restrictive | Permissive |
 
-##### Restrict channel access
+#### Restrict channel access
 
 To block access to all channels, use the following ACL rule:
 
@@ -147,7 +147,7 @@ If you want to limit access to specific channels, first include `resetchannels`.
 resetchannels &channel1 &channel2
 ```
 
-##### Allow all channels
+#### Allow all channels
 
 To make pub/sub explicitly permissive and allow users to access all channels, set the following rule:
 
@@ -155,8 +155,7 @@ To make pub/sub explicitly permissive and allow users to access all channels, se
 allchannels
 ```
 
-
-#### Predefined permissions
+### Predefined permissions
 
 Redis Cloud includes three, predefined permissions:
 

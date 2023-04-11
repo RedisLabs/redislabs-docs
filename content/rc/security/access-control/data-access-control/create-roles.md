@@ -1,5 +1,5 @@
 ---
-Title: Create and assign roles
+Title: Assign permissions to roles
 LinkTitle: Create roles
 description: 
 weight: 20
@@ -10,9 +10,7 @@ categories: []
 aliases: 
 ---
 
-## Assign permissions to roles
-
-To assign Redis ACLs to a data access role:
+To assign [Redis ACLs]({{<relref "rc/security/access-control/data-access-control/configure-acls">}}) to a data access role:
 
 1. Go to **Data Access Control > Roles** and either:
 
@@ -46,20 +44,7 @@ To assign Redis ACLs to a data access role:
 
     {{<image filename="images/rc/button-data-access-control-save-role.png" width="120px" alt="The Save role button saves your role changes." >}}{{< /image >}}
 
-Users assigned the role can access the databases according to the role's associated Redis ACLs.
+After you create a role, you can [assign a user]({{<relref "rc/security/access-control/data-access-control/create-assign-users#assign-roles-to-users">}}) to it. Users assigned the role can access the databases according to the role's associated Redis ACLs.
 
-## Assign roles to users
 
-To assign a role to a user:
 
-1. Go to **Data Access Control > Users**.
-
-1. Point to the user and select the **Edit** button when it appears:
-
-    {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing user's role." >}}{{< /image >}}
-
-1. Select a **Role** from the list.
-
-1. Select the check mark to assign the role to the user:
-
-    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to apply the user's role changes." >}}{{< /image >}}
