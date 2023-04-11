@@ -18,13 +18,22 @@ aliases: [
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps:
 
-
   1. Upgrade the Redis Enterprise operator
   2. Upgrade the Redis Enterprise cluster (REC)
+
+## Before upgrading
+
+Before you upgrade, verify you are using the correct image and your license is valid.
 
 {{< warning >}}
 When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info. 
   {{</warning>}}
+
+{{<warning>}}
+Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
+
+Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
+{{</warning>}}
 
 ## Upgrade the operator
 
@@ -133,6 +142,12 @@ redis-enterprise-operator   1/1     1            1           0m36s
  {{< /warning >}}
 
 ## Upgrade the Redis Enterprise cluster (REC)
+
+{{<warning>}}
+Verify your license is valid before upgrading. Invalid licenses will cause the upgrade to fail.
+
+Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
+{{</warning>}}
 
 The Redis Enterprise cluster (REC) can be updated automatically or manually. To trigger automatic upgrade of the REC after the operator upgrade completes, specify `autoUpgradeRedisEnterprise: true` in your REC spec. If you don't have automatic upgrade enabled, follow the below steps for the manual upgrade.
 
