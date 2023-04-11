@@ -30,7 +30,7 @@ When upgrading existing Redis Enterprise clusters running on RHEL7-based images,
   {{</warning>}}
 
 {{<warning>}}
-Verify you license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
+Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
 
 Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 {{</warning>}}
@@ -144,7 +144,7 @@ redis-enterprise-operator   1/1     1            1           0m36s
 ## Upgrade the Redis Enterprise cluster (REC)
 
 {{<warning>}}
-Verify you license is valid before upgrading. Invalid licenses will cause the upgrade to fail.
+Verify your license is valid before upgrading. Invalid licenses will cause the upgrade to fail.
 
 Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 {{</warning>}}
