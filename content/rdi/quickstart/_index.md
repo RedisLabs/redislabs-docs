@@ -1,6 +1,6 @@
 ---
-Title: Quick start
-linkTitle: Quick start
+Title: Quickstart
+linkTitle: Quickstart
 description: 
 weight: 10
 alwaysopen: false
