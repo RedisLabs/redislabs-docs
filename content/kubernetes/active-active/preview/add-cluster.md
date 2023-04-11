@@ -144,6 +144,18 @@ spec:
   rerc3   Active   Valid         true
   ```
 
+
 ## Edit REAADB spec
 
+1. Add the new RERC name to the `participatingClusters` list in the REAADB spec.
+
+  ```sh
+  kubectl patch reaadb < --type merge --patch '{"spec": {"participatingClusters": [{"name": "rerc3"}]}}'
+  ```
+
+1. View the REAADB `participatingClusters` status to verify the cluster was added.
+
+  ```sh
+  kubectl get reaadb <REAADB-name> -o=jsonpath='{.status.participatingClusters}'
+  ```
 
