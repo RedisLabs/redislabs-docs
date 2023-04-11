@@ -11,7 +11,7 @@ aliases: {
 ---
 ## Prerequisites
 
-To prepare the Redis Enterprise cluster (REC) to participate in an Active-Active database, perform the following tasks from [Prepare participating clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters">}}):
+To prepare the Redis Enterprise cluster (REC) to participate in an Active-Active database, perform the following tasks from [Prepare participating clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters.md">}}):
 
 - Make sure the cluster meets the hardware and naming requirements. 
 - Enable the Active-Active controllers
@@ -23,7 +23,7 @@ To prepare the Redis Enterprise cluster (REC) to participate in an Active-Active
 
 To communicate with other clusters, all participating clusters need access to the admin credentials for all other clusters.
 
-1. Locate the file holding the admin credentials for all participating RECs created while [preparing the clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters/">}}) (such as `all-rec-secrets.yaml`).
+1. Locate the file holding the admin credentials for all participating RECs created while [preparing the clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters.md">}}) (such as `all-rec-secrets.yaml`).
 
 1. Within that file, create a secret for the new participating cluster named `redis-enterprise-<rerc>`. 
   {{<note>}}The file should contain a secret for each exiting participating cluster.{{</note>}}
