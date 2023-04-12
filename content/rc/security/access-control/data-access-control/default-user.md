@@ -1,5 +1,6 @@
 ---
-Title: Default User
+Title: Default user
+linkTitle: Default user
 description:
 weight: 5
 alwaysopen: false

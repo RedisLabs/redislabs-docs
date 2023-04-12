@@ -42,7 +42,7 @@ Finally, in the **Users** tab, you [create users]({{<relref "rc/security/access-
 
 {{<image filename="images/rc/data-access-control-users.png" alt="Data access control screen." >}}{{< /image >}}
 
-### OSS Redis ACLs vs. Redis Enterprise Cloud RBAC
+## OSS Redis ACLs vs. Redis Enterprise Cloud RBAC
 
 In open source Redis, you can create users and assign ACLs to them using the `ACL` command. However, open source
 Redis does not support generic roles.
