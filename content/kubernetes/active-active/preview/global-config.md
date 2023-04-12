@@ -10,9 +10,17 @@ aliases: {
 
 }
 ---
-The Redis Enterprise Active-Active database custom resource contains the field called '.spec.globalConfigurations'. This field sets configurations for the Active-Active database across all participating clusters, such as memory size or shard count.
+
+{{<banner-article bannerColor="#fff8dc">}}
+This feature is currently in public preview. Contact Redis support if you plan to use this feature.
+See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.
+{{</banner-article>}}
+
+The Redis Enterprise Active-Active database (REAADB) custom resource contains the field '.spec.globalConfigurations'. This field sets configurations for the Active-Active database across all participating clusters, such as memory size or shard count.
 
 The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/redis_enterprise_active_active_database_api.md) contains a full list of available fields.
+
+## Edit global configurations
 
 1. Edit or patch the REAADB custom resource with your global configuration changes.
 
