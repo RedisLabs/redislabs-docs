@@ -14,12 +14,91 @@ The Redis Enterprise Active-Active database custom resource contains the field c
 
 The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/redis_enterprise_active_active_database_api.md) contains a full list of available fields.
 
-To add or change global configurations, patch or edit the REAADB custom resource YAML file.
+1. Edit or patch the REAADB custom resource with your global configuration changes.
 
-----example yaml---
+  The example command below patches the reaadb custom resource to set the global memory size to 200MB:
 
----example patch command----
+  ```sh
+  kubectl patch reaadb example-aadb-1 --type merge --patch /
+  '{"spec": {"globalConfigurations": {"memorySize": "200mb"}}}'
+  ```
 
+1. Verify the status is `active` and the spec status is `Valid`.
+
+  ```sh
+  kubectl get reaadb example-aadb-1
+
+  NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
+  example-aadb-1   active   Valid    
+  ```
+
+1. View the global configurations on each participating cluster to verify they are synced.
+
+  ```sh
+  kubectl get reaadb <REAADB name> -o yaml
+  ```
 
 ## Set global database secret
 
+One of the fields available for `globalConfigurations` is `databaseSecretName` which can point to a secret containing the database password.
+
+### On an existing participating cluster, do the following
+
+1. Generate a YAML file containing the database secret with the database password.
+
+  This example shoes a secret named `my-db-secret` with the password `my-password` encoded in base 64.
+
+  ```yaml
+  apiVersion: v1
+  data:
+    password: bXktcGFzcw
+  kind: Secret
+  metadata:
+    name: my-db-secret
+  type: Opaque
+  ```
+
+1. Apply the secret file from the previous step, substituting your own value for `<db-secret-file>`.
+
+  ```sh
+  kubectl apply -f <db-secret-file>
+  ```
+
+1. Patch the REAADB custom resource to specify the database secret.
+
+    ```sh
+    kubectl patch reaadb example-aadb-1 --type merge --patch /
+    '{"spec": {"globalConfigurations": {"databaseSecretName": "my-db-secret"}}}'
+    ```
+
+1. Check the REAADB status for an `active` status and `Valid` spec status.
+
+    ```sh
+    kubectl get reaadb <reaadb-name>
+
+    NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
+    example-aadb-1   active   Valid
+    ```
+
+### On each of the other existing participating clusters, do the following
+
+1. Check secret status.
+
+  ``sh
+  kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.secretsStatus}'
+
+  ```
+
+  The output should show the status as `Invalid`.
+
+  ```sh
+  [{"name":"my-db-secret","status":"Invalid"}]
+  ```
+
+1. Sync the secret.
+
+  ```sh
+  kubectl apply -f <db-secret-file>
+  ```
+
+1. Repeat the previous two steps on every participating cluster.
