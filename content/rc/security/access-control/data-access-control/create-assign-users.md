@@ -1,7 +1,7 @@
 ---
-Title: Create and edit users
+Title: Create and edit database users
 LinkTitle: Create users
-description: Create a user and assign it a role
+description: Create a database user and assign it a role.
 weight: 25
 alwaysopen: false
 toc: "true"
@@ -10,7 +10,7 @@ categories: []
 aliases: 
 ---
 
-Before you create a user, you must [create a data access role]({{<relref "rc/security/access-control/data-access-control/create-roles">}}) to assign to that user.
+Before you create a database user, you must [create a data access role]({{<relref "rc/security/access-control/data-access-control/create-roles">}}) to assign to that user.
 
 ## Create a user
 
