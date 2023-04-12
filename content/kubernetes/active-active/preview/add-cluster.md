@@ -1,12 +1,12 @@
 ---
-Title: 
-linkTitle: 
-description: 
-weight: 
+Title: Add participating cluster to an existing Active-Active database 
+linkTitle: Add participating cluster
+description: Steps to add a participating cluster to an existing Active-Active database with Redis Enterprise for Kubernetes.
+weight: 40
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
-
+/kubernetes/active-active/preview/add-cluster/,
 }
 ---
 ## Prerequisites
