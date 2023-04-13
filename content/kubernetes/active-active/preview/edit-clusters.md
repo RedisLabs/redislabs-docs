@@ -1,7 +1,7 @@
 ---
-Title: Add participating cluster to an existing Active-Active database 
-linkTitle: Add participating cluster
-description: Steps to add a participating cluster to an existing Active-Active database with Redis Enterprise for Kubernetes.
+Title: Edit participating clusters for Active-Active database 
+linkTitle: Edit participating clusters
+description: Steps to add or remove a participating cluster to an existing Active-Active database with Redis Enterprise for Kubernetes.
 weight: 40
 alwaysopen: false
 categories: ["Platforms"]
@@ -9,7 +9,16 @@ aliases: {
 /kubernetes/active-active/preview/add-cluster/,
 }
 ---
-## Prerequisites
+{{<banner-article bannerColor="#fff8dc">}}
+This feature is currently in public preview. Contact Redis support if you plan to use this feature.
+See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.
+{{</banner-article>}}
+
+## Add a participating cluster
+
+Use the following steps to add a participating cluster to an existing Redis Enterprise Active-Active database (REAADB) for Kubernetes.
+
+### Prerequisites
 
 To prepare the Redis Enterprise cluster (REC) to participate in an Active-Active database, perform the following tasks from [Prepare participating clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters.md">}}):
 
@@ -18,8 +27,7 @@ To prepare the Redis Enterprise cluster (REC) to participate in an Active-Active
 - Configure external routing
 - Configure `ValidatingWebhookConfiguration`
 
-
-## Collect REC credentials
+### Collect REC credentials
 
 To communicate with other clusters, all participating clusters need access to the admin credentials for all other clusters.
 
@@ -107,7 +115,7 @@ To communicate with other clusters, all participating clusters need access to th
 
  If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
 
-## Create RERC
+### Create RERC
 
 1. From one of the exiting particpating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for the new participating cluster. 
 
@@ -145,7 +153,7 @@ spec:
   ```
 
 
-## Edit REAADB spec
+### Edit REAADB spec
 
 1. Add the new RERC name to the `participatingClusters` list in the REAADB spec.
 
@@ -159,3 +167,28 @@ spec:
   kubectl get reaadb <REAADB-name> -o=jsonpath='{.status.participatingClusters}'
   ```
 
+## Remove a participating cluster
+
+### On an existing participating cluster
+
+Remove the desired cluster from the `participatingCluster` section of the REAADB spec.
+
+```sh
+kubectl edit reaadb <reaadb-name>
+```
+
+### On each of the other participating clusters
+
+Verify the status is `active` and the spec status is `Valid` and the cluster was removed.
+
+```sh
+kubectl get reaadb <reaadb-name -o=jasonpath=`{.status}`
+```
+
+### On the removed participating cluster
+
+List all REAADB resources on the cluster to verify they were deleted.
+
+```sh
+kubectl get reaadb -o+jasonpath=`{range.items[*]}{.metadata.name}`
+```
