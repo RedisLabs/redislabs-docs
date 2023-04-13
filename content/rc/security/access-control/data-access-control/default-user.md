@@ -1,7 +1,7 @@
 ---
 Title: Default user
 linkTitle: Default user
-description:
+description: Learn how to change your default user password or turn off access using the default user password.
 weight: 5
 alwaysopen: false
 categories: ["RC"]

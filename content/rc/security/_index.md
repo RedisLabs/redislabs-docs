@@ -18,7 +18,7 @@ Redis Enterprise Cloud provides a number of ways to secure subscriptions and dat
 
 As a Redis Cloud user, consider these security domains:
 
-- The [admin console]({{<relref "/rc/security/admin-console-security/_index.md">}})
+- The [admin console](#admin-console-security)
 - [Your databases]({{<relref "/rc/security/database-security/_index.md">}})
 - The [Redis Cloud API]({{<relref "/rc/api/get-started/enable-the-api.md">}})
 
@@ -33,6 +33,8 @@ Secure access to the admin console by:
 - Assigning appropriate roles to [team members with access]({{<relref "/rc/security/access-control/access-management#team-management-roles">}}).
 
 - Enabling [multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}}).
+
+- Enabling [SAML SSO]({{<relref "/rc/security/access-control/saml-sso">}}).
 
 ## Database security
 
