@@ -58,7 +58,7 @@ Reserve TCP ports 10000-19999 and 20000-29999 for Redis processes.
 To check if any processes are listening on these ports, run the following [`netstat`](https://man7.org/linux/man-pages/man8/netstat.8.html) command:
 
 ```sh
-sudo netstat -tlpn | grep -i tcp | grep -E '[1-2][0-9]{4}'
+sudo netstat -tlpn | grep -E '[1-2][0-9]{4}'
 ```
 
 ## Time server configuration
