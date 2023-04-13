@@ -23,7 +23,8 @@ You can use any identity provider to integrate with Redis Enterprise Cloud as lo
 
   - [Auth0 SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-auth0">}})
   - [AWS IAM Identity Center SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-aws-identity-center">}})
-  - [Azure Active Directory SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-azure-ad">}}) 
+  - [Azure Active Directory SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-azure-ad">}})
+  - [Google Workspace integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-google">}}) 
   - [Okta SAML integration (Generic)]({{<relref "/rc/security/access-control/saml-sso/saml-integration-okta-generic">}})
   - [Okta SAML integration (Org2Org)]({{<relref "/rc/security/access-control/saml-sso/saml-integration-okta-org2org">}})
   - [PingIdentity SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-ping-identity">}})
