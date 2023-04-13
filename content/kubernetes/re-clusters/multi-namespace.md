@@ -95,13 +95,13 @@ If the REC is configured to watch a namespace without setting the role and role 
 
 There are two methods of updating the operator ConfigMap (`operator-environment-config`) to specify which namespaces to manage.
 
-- Method 1: Configure the operator to watch for a namespace label and add this label to managed namespaces.
+- Method 1: Configure the operator to watch for a namespace label and add this label to managed namespaces (available in versions 6.4.2-4 or later).
 - Method 2: Configure the operator with an explicit list of namespaces to manage.
 
 You can create this ConfigMap manually before deployment, or it will be created automatically after the operator was deployed.
 
 
-### Method 1: Namespace label (recommended)
+### Method 1: Namespace label (available in versions 6.4.2-4 or later)
 
 1. Create the `cluster_role_binding.yaml` and `cluster_role.yaml` files. Replace the `<rec-namespace>` with the namespace the Redis Enterprise cluster (REC) resides in.
 

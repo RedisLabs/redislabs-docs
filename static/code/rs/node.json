@@ -75,7 +75,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "decimals": null,
           "format": "short",
           "gauge": {
@@ -155,7 +155,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "decimals": null,
           "format": "short",
           "gauge": {
@@ -235,7 +235,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "decimals": null,
           "format": "short",
           "gauge": {
@@ -315,7 +315,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "decimals": 2,
           "format": "percentunit",
           "gauge": {
@@ -394,7 +394,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "decimals": null,
           "format": "bytes",
           "gauge": {
@@ -488,7 +488,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "decimals": 2,
           "fill": 6,
           "id": 3,
@@ -654,7 +654,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "description": "display the egress and ingress traffic on the node's NIC",
           "fill": 1,
           "id": 4,
@@ -755,7 +755,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "description": "display the egress and ingress traffic on the node's NIC",
           "fill": 1,
           "id": 32,
@@ -857,7 +857,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 12,
           "legend": {
@@ -950,7 +950,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 27,
           "legend": {
@@ -1050,7 +1050,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 1,
           "legend": {
@@ -1141,7 +1141,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 13,
           "legend": {
@@ -1233,7 +1233,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 11,
           "legend": {
@@ -1315,7 +1315,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 17,
           "legend": {
@@ -1409,7 +1409,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 6,
           "legend": {
@@ -1488,7 +1488,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 8,
           "legend": {
@@ -1568,7 +1568,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 29,
           "legend": {
@@ -1659,7 +1659,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 30,
           "legend": {
@@ -1837,7 +1837,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 16,
           "legend": {
@@ -1916,7 +1916,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 28,
           "legend": {
@@ -2002,7 +2002,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 6,
           "id": 22,
           "legend": {
@@ -2118,7 +2118,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 5,
           "id": 25,
           "legend": {
@@ -2208,7 +2208,7 @@
           "bars": true,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 5,
           "id": 23,
           "legend": {
@@ -2288,7 +2288,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 6,
           "id": 24,
           "legend": {
@@ -2380,7 +2380,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 20,
           "legend": {
@@ -2465,7 +2465,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 18,
           "legend": {
@@ -2551,7 +2551,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 21,
           "legend": {
@@ -2637,7 +2637,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 19,
           "legend": {
@@ -2715,7 +2715,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 31,
           "legend": {
@@ -2826,7 +2826,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_PROMETHEUS1}",
+        "datasource": "DS_PROMETHEUS1",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -2846,7 +2846,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_PROMETHEUS1}",
+        "datasource": "DS_PROMETHEUS1",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -2866,7 +2866,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_PROMETHEUS1}",
+        "datasource": "DS_PROMETHEUS1",
         "hide": 2,
         "includeAll": false,
         "label": null,
