@@ -30,7 +30,7 @@ You can use any identity provider to integrate with Redis Enterprise Cloud as lo
 
 ## [Multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}})
 
-Redis Cloud supports Multi-factor authentication to reduce the risk of unauthorized admin console access. 
+Redis Cloud supports multi-factor authentication to reduce the risk of unauthorized admin console access. 
 
 ## [Data Access control]({{<relref "/rc/security/access-control/data-access-control">}})
 
