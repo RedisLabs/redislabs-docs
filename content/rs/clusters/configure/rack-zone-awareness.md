@@ -49,15 +49,17 @@ If a Redis Enterprise Software cluster consists of three nodes (the recommended 
 ## Set up rack-zone awareness
 
 To enable rack-zone awareness, you need to configure it for the
-cluster, nodes, and databases.
+cluster, nodes, and [databases](#enable-database-rack-zone-awareness).
 
 ### New cluster
 
-During cluster creation, you can configure
+You can set up rack-zone awareness for the cluster and its nodes during [cluster creation]({{<relref "/rs/clusters/new-cluster-setup">}}):
 
-1. When you [set up a new cluster]({{<relref "/rs/clusters/new-cluster-setup">}}), select **Enable rack-zone awareness**.
+1. In **node configuration** > **Cluster configuration**, select **Enable rack-zone awareness**.
 
 1. Enter a **Rack-zone ID** for the current node.
+
+1. Finish [cluster setup]({{<relref "/rs/clusters/new-cluster-setup">}}).
 
 1. For every [node you add to the cluster]({{<relref "/rs/clusters/add-node">}}), assign a different **Rack-zone ID** when prompted.
 
@@ -81,28 +83,43 @@ If you did not configure rack-zone awareness during cluster creation, you can co
 
 ## Enable database rack-zone awareness
 
-After configuring the cluster to support rack-zone awareness, you can create a rack-zone aware database.
+Before you can enable rack-zone awareness for a database, you must [set up rack-zone awareness](#set-up-rack-zone-awareness) for the cluster and its nodes.
 
-Rack-zone awareness is relevant only for databases that have replication enabled (such as databases with replica shards). After you
-enable replication for a database, you can also enable rack-zone awareness.
+You can use the admin console to enable rack-zone awareness for a database:
 
-### Rearrange existing database shards
+1. From **create database** (for [new databases]({{<relref "/rs/databases/create">}})) or **database** > **configuration** (for existing databases), make sure **Replication** is enabled.
 
-If you enable rack-zone awareness for an existing database, you also need to generate an optimized shard placement blueprint using the [REST API]({{<relref "/rs/references/rest-api">}}) and use it to rearrange the shards in different racks or zones.
+1. Select **Rack-zone awareness**.
+
+1. **Activate** or **Update** your database.
+
+1. For existing databases, you should [rearrange the database shards](#rearrange-database-shards) to ensure your database is optimized for rack-zone awareness.
+
+    {{<note>}}
+If you enabled rack-zone awareness during database creation, you can ignore this step.
+    {{</note>}}
+
+### Rearrange database shards
+
+After you enable rack-zone awareness for an existing database, you should generate an optimized shard placement blueprint using the [REST API]({{<relref "/rs/references/rest-api">}}) and use it to rearrange the shards in different racks or zones.
 
 1. [Generate an optimized shard placement blueprint]({{<relref "/rs/references/rest-api/requests/bdbs/actions/optimize_shards_placement#get-bdbs-actions-optimize-shards-placement">}}):
 
-    ```sh
-    GET /v1/bdbs/<database-ID>/actions/optimize_shards_placement
-    ```
+    1. Send the following `GET` request:
 
-1. Copy the `cluster-state-id` from the response headers and the shard placement blueprint from the JSON response.
+        ```sh
+        GET /v1/bdbs/<database-ID>/actions/optimize_shards_placement
+        ```
 
-1. [Rearrange the database shards]({{<relref "/rs/references/rest-api/requests/bdbs/actions/optimize_shards_placement#put-bdbs-rearrange-shards">}}) according to the optimized shard placement blueprint.
+    1. Copy the `cluster-state-id` from the response headers.
 
-    1. In the request headers, include the `cluster-state-id`.
+    1. Copy the JSON response body, which represents the new shard placement blueprint.
 
-    1. Include a JSON request body and replace <nobr>`<shard placement blueprint>`</nobr> with the generated blueprint:
+1. [Rearrange the database shards]({{<relref "/rs/references/rest-api/requests/bdbs/actions/optimize_shards_placement#put-bdbs-rearrange-shards">}}) according to the new shard placement blueprint:
+
+    1. In the request headers, include the <nobr>`cluster-state-id`</nobr> from the `optimize_shards_placement` response.
+
+    1. Add the following JSON in the request body and replace <nobr>`<shard placement blueprint>`</nobr> with the new blueprint:
 
         ```sh
         {
@@ -110,7 +127,7 @@ If you enable rack-zone awareness for an existing database, you also need to gen
         }
         ```
 
-    1. Send the `PUT` request:
+    1. Send the following `PUT` request to rearrange the shards:
 
         ```sh
         PUT /v1/bdbs/<database-ID>
