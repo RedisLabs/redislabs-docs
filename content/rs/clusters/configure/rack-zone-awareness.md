@@ -46,9 +46,7 @@ If a Redis Enterprise Software cluster consists of three nodes (the recommended 
 
 - When using availability zones, all three zones should exist within the same *region* to avoid potential latency issues.
 
-Keep in mind that one of the nodes in your cluster can be a quorum-only node, assuming compute resources are limited. Therefore, the minimum rack-zone aware Redis Enterprise Software deployment consists of two data nodes and one quorum-only node, where each node exists in a distinct rack or zone.
-
-## Configure rack-zone awareness
+## Set up rack-zone awareness
 
 To enable rack-zone awareness, you need to configure it for the
 cluster, nodes, and databases.
@@ -67,18 +65,18 @@ During cluster creation, you can configure
 
 If you did not configure rack-zone awareness during cluster creation, you can configure rack-zone awareness for existing clusters using the [REST API]({{<relref "/rs/references/rest-api">}}):
 
-1. [Update the cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) to enable rack-zone awareness:
-
-    ```sh
-    PUT /v1/cluster/policy
-    { "rack_aware": true }
-    ```
-
 1. For each node in the cluster, assign a different rack-zone ID using the REST API to [update the node]({{<relref "/rs/references/rest-api/requests/nodes#put-node">}}):
 
     ```sh
     PUT /v1/nodes/<node-ID>
     { "rack_id": "rack-zone-ID" }
+    ```
+
+1. [Update the cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) to enable rack-zone awareness:
+
+    ```sh
+    PUT /v1/cluster/policy
+    { "rack_aware": true }
     ```
 
 ## Enable database rack-zone awareness
@@ -87,6 +85,36 @@ After configuring the cluster to support rack-zone awareness, you can create a r
 
 Rack-zone awareness is relevant only for databases that have replication enabled (such as databases with replica shards). After you
 enable replication for a database, you can also enable rack-zone awareness.
+
+### Rearrange existing database shards
+
+If you enable rack-zone awareness for an existing database, you also need to generate an optimized shard placement blueprint using the [REST API]({{<relref "/rs/references/rest-api">}}) and use it to rearrange the shards in different racks or zones.
+
+1. [Generate an optimized shard placement blueprint]({{<relref "/rs/references/rest-api/requests/bdbs/actions/optimize_shards_placement#get-bdbs-actions-optimize-shards-placement">}}):
+
+    ```sh
+    GET /v1/bdbs/<database-ID>/actions/optimize_shards_placement
+    ```
+
+1. Copy the `cluster-state-id` from the response headers and the shard placement blueprint from the JSON response.
+
+1. [Rearrange the database shards]({{<relref "/rs/references/rest-api/requests/bdbs/actions/optimize_shards_placement#put-bdbs-rearrange-shards">}}) according to the optimized shard placement blueprint.
+
+    1. In the request headers, include the `cluster-state-id`.
+
+    1. Include a JSON request body and replace <nobr>`<shard placement blueprint>`</nobr> with the generated blueprint:
+
+        ```sh
+        {
+          "shards_blueprint": <shard placement blueprint>
+        }
+        ```
+
+    1. Send the `PUT` request:
+
+        ```sh
+        PUT /v1/bdbs/<database-ID>
+        ```
 
 ## Shard placement without rack-zone awareness
 
