@@ -1,18 +1,20 @@
 ---
 Title: Prometheus integration with Redis Cloud
 linkTitle: Prometheus integration
-description: To collect and display metrics data from your databases, you can connect your Prometheus or Grafana server to your Redis Cloud databases.
+description: Use Prometheus and Grafana to collect and visualize Redis Cloud metrics.
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 ---
 
-To collect and display metrics data from your databases, you can connect your Prometheus or Grafana server to your Redis Cloud subscription.
+You can use Prometheus and Grafana to collect and visualize your Redis Enterprise Cloud metrics.
 
 - [Prometheus](https://prometheus.io/) is an open source systems monitoring and alerting toolkit that can scrape metrics from different sources.
-- [Grafana](https://grafana.com/) is an open source metrics dashboard and graph editor that can process Prometheus data.
+- [Grafana](https://grafana.com/) is an open source metrics visualization tool that can process Prometheus data.
 
-Redis Cloud has an Prometheus compatible endpoint available in order to pull metrics. Prometheus needs to connect to the internal server on port 8070. This is only available on the internal network so [VPC peering](({{< relref "/rc/security/vpc-peering" >}})) is required. VPC peering is only available with Flexible or Annual subscriptions. Because VPC peering is not available on Fixed or Free subscriptions, Prometheus and Grafana cannot connect to databases on Fixed or Free subscriptions.
+Redis Cloud exposes its metrics through a Prometheus endpoint. You can configure your Prometheus server to scrape metrics from your Redis Cloud subscription on port 8070.
+
+The Redis Cloud Prometheus endpoint is exposed on Redis Cloud's internal network. To access this network, you need to enable [VPC peering](({{< relref "/rc/security/vpc-peering" >}})). VPC peering is only available with Flexible or Annual subscriptions. Because VPC peering is not available on Fixed or Free subscriptions, you cannot use Prometheus and Grafana with Fixed or Free subscriptions.
 
 For more information on how Prometheus communicates with Redis Enterprise clusters, see [Prometheus integration with Redis Enterprise Software]({{< relref "/rs/clusters/monitoring/prometheus-integration" >}}).
 
@@ -40,11 +42,11 @@ You can quickly set up Prometheus and Grafana for testing using the Prometheus a
     internal.<cluster_address>:8070
     ``` 
 
-1. Create an instance to run Prometheus and Grafana on the same provider as your Redis Cloud subscription (Amazon Web Services or Google Cloud Project). This instance must:
+1. Create an instance to run Prometheus and Grafana on the same cloud provider as your Redis Cloud subscription (e.g., Amazon Web Services or Google Cloud Platform). This instance must:
     - Exist in the same region as your Redis Cloud subscription.
     - Connect to the VPC subnet that is peered with your Redis Cloud subscription.
     - Allow outbound connections to port 8070, so that Prometheus can scrape the Redis Cloud server for data.
-    - Allow inbound connections to port 9090 for Prometheus and 3000 for Grafana.
+    - Allow inbound connections to port 9090 for Prometheus and port 3000 for Grafana.
 
 ### Set up Prometheus
 
@@ -142,7 +144,7 @@ Once the Prometheus and Grafana Docker containers are running, and Prometheus is
 
     {{<image filename="images/rs/prometheus-datasource.png" alt="The Prometheus data source in the list of data sources on Grafana.">}}{{< /image >}}
 
-1. Enter the Prometheus information:
+1. Enter the Prometheus configuration information:
 
     - Name: `redis-cloud`
     - URL: `http://<your prometheus address>:9090`
@@ -157,32 +159,19 @@ Once the Prometheus and Grafana Docker containers are running, and Prometheus is
 
     {{< /note >}}
 
-1. Add dashboards for cluster, node, and database metrics.
+1. Add dashboards for your subscription and database metrics.
     To add preconfigured dashboards:
     1. In the Grafana dashboards menu, select **Manage**.
     1. Select **Import**.
-    1. Copy and enter one of the following configuration files into the **Paste JSON** field.
-        {{% expand "database.json" %}}
+    1. Add the [subscription status](https://grafana.com/grafana/dashboards/18406-subscription-status-dashboard/) and [database status](https://grafana.com/grafana/dashboards/18407-database-status-dashboard/) dashboards.
 
-```json
-{{% embed-code "/rs/database.json" %}}
-```
+#### Grafana dashboards
 
-        {{% /expand%}}
-        {{%expand "node.json" %}}
+We publish two preconfigured dashboards for Redis Cloud and Grafana:
 
-```json
-{{% embed-code "/rs/node.json" %}}
-```
+* The [subscription status dashboard](https://grafana.com/grafana/dashboards/18406-subscription-status-dashboard/) provides an overview of our Redis Cloud subscriptions.
+* The [database status dashboard](https://grafana.com/grafana/dashboards/18408-database-status-dashboard/) displays specific database metrics, including latency, memory usage, ops/second, key count.
 
-        {{% /expand%}}
-        {{%expand "cluster.json" %}}
+These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository(https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
 
-```json
-{{% embed-code "/rs/cluster.json" %}}
-```
-
-        {{% /expand%}}
-    1. In the Import options, select the `redis-cloud` data source and select **Import**.
-
-These examples create sample dashboards. For more information about configuring dashboards, see the [Grafana documentation](https://grafana.com/docs/).
+For more information about configuring Grafana dashboards in general, see the [Grafana documentation](https://grafana.com/docs/).
