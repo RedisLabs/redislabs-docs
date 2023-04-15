@@ -165,11 +165,11 @@ Once the Prometheus and Grafana Docker containers are running, and Prometheus is
     1. Select **Import**.
     1. Add the [subscription status](https://grafana.com/grafana/dashboards/18406-subscription-status-dashboard/) and [database status](https://grafana.com/grafana/dashboards/18407-database-status-dashboard/) dashboards.
 
-#### Grafana dashboards
+### Grafana dashboards for Redis Cloud
 
 We publish two preconfigured dashboards for Redis Cloud and Grafana:
 
-* The [subscription status dashboard](https://grafana.com/grafana/dashboards/18406-subscription-status-dashboard/) provides an overview of our Redis Cloud subscriptions.
+* The [subscription status dashboard](https://grafana.com/grafana/dashboards/18406-subscription-status-dashboard/) provides an overview of your Redis Cloud subscriptions.
 * The [database status dashboard](https://grafana.com/grafana/dashboards/18408-database-status-dashboard/) displays specific database metrics, including latency, memory usage, ops/second, key count.
 
 These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository(https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
