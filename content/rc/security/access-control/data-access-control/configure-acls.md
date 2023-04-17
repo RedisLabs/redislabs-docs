@@ -12,7 +12,7 @@ aliases:
 
 To configure a Redis ACL that you can assign to a data access role:
 
-1. Go to **Data Access Control > ACLs** and either:
+1. Go to **Data Access Control > ACLs** and either select `+` to create a new Redis ACL or select the pencil icon to point to an existing ACL.
 
     - Create a new Redis ACL:
 
@@ -24,9 +24,8 @@ To configure a Redis ACL that you can assign to a data access role:
 
 1. Provide a descriptive name for the Redis ACL.
 
-1. Enter [ACL syntax](#define-permissions-with-acl-syntax) to define the ACL rule or select **Rule Builder** for help building the ACL rule with correct syntax.
+1. Create the ACL rule. [Define permissions using ACL syntax](#define-permissions-with-acl-syntax) or use **Rule Builder**. To create a Redis ACL rule using **Rule Builder**:
 
-1. To create a Redis ACL rule with the **Rule Builder**:
 
     1. For **Redis commands / categories**, enter a [command](https://redis.io/commands/) or [command category](https://redis.io/docs/management/security/acl/#command-categories).
 
@@ -55,14 +54,13 @@ To configure a Redis ACL that you can assign to a data access role:
 
     {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to save your Redis ACL changes." >}}{{< /image >}}
 
-Once you've created a Redis ACL, you can [assign it to a role]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 
+Once you create a Redis ACL, you can [assign it to a role]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 
 
 ## Define permissions with ACL syntax
 
 You can define these permissions using the [Redis ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules). This
 syntax lets you concisely specify which commands, command categories, keys, and pub/sub channels to allow.
 
-The Redis ACL syntax emphasizes brevity:
 
 - `+` *includes* commands or command categories
 - `-` *excludes* commands or command categories
@@ -100,7 +98,7 @@ ACL CAT read
 
 ### Key ACL rules
 
-There's also a [syntax](https://redis.io/docs/management/security/acl/#key-permissions) for specifying which **keys** are accessible.
+To specify which **keys** are accessible, use the [key permissions syntax](https://redis.io/docs/management/security/acl/#key-permissions).
 
 The following ACL rule allows access to all keys:
 
@@ -118,9 +116,9 @@ Whereas, this ACL rule only allows access to keys prefixed with `cache:`
 
 Pub/sub ACL rules determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
 
-For versions earlier than Redis 7, pub/sub is permissive and allows access to all channels by default.
+For versions older than Redis 7.0, pub/sub is permissive and allows access to all channels by default.
 
-Redis 7 changes pub/sub to restrictive and blocks access to all channels in open source (OSS) Redis. However, Redis Cloud still defaults to permissive pub/sub even for Redis 7 subscriptions.
+Redis 7.0 makes pub/sub restrictive and blocks access to all channels in open source (OSS) Redis. However, Redis Cloud still defaults to permissive pub/sub even for Redis 7.0 subscriptions.
 
 | Redis<br />version | OSS Redis<br />pub/sub ACLs | Redis Cloud<br />pub/sub ACLs |
 |:-------------:|-----------|-------------|
@@ -152,15 +150,15 @@ allchannels
 
 ### Predefined permissions
 
-Redis Cloud includes three, predefined permissions:
+Redis Cloud includes three predefined permissions:
 
-- Full-Access (`+@all ~*`) - All commands are allowed for all keys
+- Full-Access (`+@all ~*`) - All commands are allowed for all keys.
 
-- Read-Write (`+@all -@dangerous ~*`) - All commands except for the "dangerous" command category are allowed for all keys
+- Read-Write (`+@all -@dangerous ~*`) - All commands except for the `dangerous` command category are allowed for all keys.
 
-- Read-Only (`+@read ~*`) - Only the "read" command category is allowed for all keys
+- Read-Only (`+@read ~*`) - Only the `read` command category is allowed for all keys.
 
 ### Module command permissions
 
-Note that you can define permissions for the Redis module commands of any modules that are loaded on the subscription;
+Note that you can define permissions for the Redis module commands of any modules that are part of your subscription;
 however, these permissions can only be used for databases that support those modules.
