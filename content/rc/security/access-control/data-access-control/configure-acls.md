@@ -12,15 +12,7 @@ aliases:
 
 To configure a Redis ACL that you can assign to a data access role:
 
-1. Go to **Data Access Control > ACLs** and either select `+` to create a new Redis ACL or select the pencil icon to point to an existing ACL.
-
-    - Create a new Redis ACL:
-
-        {{<image filename="images/rc/icon-rbac-add.png" width="40px" alt="Select the Add button to create a new Redis ACL." >}}{{< /image >}}
-
-    - Point to an existing ACL and select **Edit**:
-
-        {{<image filename="images/rc/icon-rbac-edit.png" width="40px" alt="Select the Edit button to edit an existing ACL." >}}{{< /image >}}
+1. Go to **Data Access Control > ACLs** and either select `+` to create a new Redis ACL or point to an existing ACL and select the pencil icon to edit it.
 
 1. Provide a descriptive name for the Redis ACL.
 
@@ -42,24 +34,17 @@ To configure a Redis ACL that you can assign to a data access role:
 - If your account contains any Redis 6.0 subscriptions, you can't use pub/sub ACLs unless you contact support to upgrade the subscriptions to a later version.
         {{</note>}}
 
-    1. To add more commands, categories, keys, or pub/sub channels to the ACL rule, select **Add**:
+    1. To add more commands, categories, keys, or pub/sub channels to the ACL rule, select `+`.
 
-        {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-add.png"  alt="Use the Add button to add more commands, categories, or keys to the ACL rule." >}}{{< /image >}}
+    1. When you finish building the ACL rule, select **Save rule**.
 
-    1. When you finish building the ACL rule, select **Save rule**:
-
-        {{<image filename="images/rc/button-data-access-control-redis-acls-rule-builder-save-rule.png" width="120px" alt="The Save rule button saves your ACL rule changes." >}}{{< /image >}}
-
-1. Select the check mark to save your changes:
-
-    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to save your Redis ACL changes." >}}{{< /image >}}
+1. Select the check mark to save your changes.
 
 Once you create a Redis ACL, you can [assign it to a role]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 
 
 ## Define permissions with ACL syntax
 
-You can define these permissions using the [Redis ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules). This
-syntax lets you concisely specify which commands, command categories, keys, and pub/sub channels to allow.
+You can define these permissions using the [Redis ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules). This syntax lets you concisely specify which commands, command categories, keys, and pub/sub channels to allow.
 
 
 - `+` *includes* commands or command categories
