@@ -2,7 +2,7 @@
 Title: 6.4.2 release notes
 linkTitle: 6.4.2 releases
 description: Release notes for the 6.4.2 releases of Redis Enterprise Software for Kubernetes. 
-weight: 90
+weight: 57
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
