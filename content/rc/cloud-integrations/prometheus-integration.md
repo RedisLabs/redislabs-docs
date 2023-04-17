@@ -42,7 +42,7 @@ You can quickly set up Prometheus and Grafana for testing using the Prometheus a
     internal.<cluster_address>:8070
     ``` 
 
-1. Create an instance to run Prometheus and Grafana on the same cloud provider as your Redis Cloud subscription (e.g., Amazon Web Services or Google Cloud Platform). This instance must:
+1. Create an instance to run Prometheus and Grafana on the same cloud provider as your Redis Cloud subscription (for example, Amazon Web Services or Google Cloud Platform). This instance must:
     - Exist in the same region as your Redis Cloud subscription.
     - Connect to the VPC subnet that is peered with your Redis Cloud subscription.
     - Allow outbound connections to port 8070, so that Prometheus can scrape the Redis Cloud server for data.

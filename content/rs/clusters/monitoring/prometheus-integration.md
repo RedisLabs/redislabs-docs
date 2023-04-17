@@ -153,7 +153,7 @@ We recommend running Prometheus in Docker only for development and testing.
     To add preconfigured dashboards:
     1. In the Grafana dashboards menu, select **Manage**.
     1. Click **Import**.
-    1. Upload the dashboard JSON files listed below:
+    1. Upload one or more [Grafana dashboards](#grafana-dashboards-for-redis-enterprise).
 
 ### Grafana dashboards for Redis Enterprise
 
@@ -164,6 +164,6 @@ We publish four preconfigured dashboards for Redis Enterprise and Grafana:
 * The [node metrics dashboard](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards/blob/main/dashboards/software/basic/redis-software-node-dashboard.json) provide metrics for each of the nodes hosting your cluster.
 * The [shard metrics dashboard](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards/blob/main/dashboards/software/basic/redis-software-shard-dashboard.json) display metrics for the individual Redis processes running on your cluster nodes.
 
-These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository(https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
+These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
 
 For more information about configuring Grafana dashboards in general, see the [Grafana documentation](https://grafana.com/docs/).
