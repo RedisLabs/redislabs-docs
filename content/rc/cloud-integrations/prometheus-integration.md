@@ -14,7 +14,7 @@ You can use Prometheus and Grafana to collect and visualize your Redis Enterpris
 
 Redis Cloud exposes its metrics through a Prometheus endpoint. You can configure your Prometheus server to scrape metrics from your Redis Cloud subscription on port 8070.
 
-The Redis Cloud Prometheus endpoint is exposed on Redis Cloud's internal network. To access this network, you need to enable [VPC peering](({{< relref "/rc/security/vpc-peering" >}})). VPC peering is only available with Flexible or Annual subscriptions. Because VPC peering is not available on Fixed or Free subscriptions, you cannot use Prometheus and Grafana with Fixed or Free subscriptions.
+The Redis Cloud Prometheus endpoint is exposed on Redis Cloud's internal network. To access this network, you need to enable [VPC peering]({{< relref "/rc/security/vpc-peering" >}}) or [Private Service Connect]({{< relref "/rc/security/private-service-connect" >}}). Both options are only available with Flexible or Annual subscriptions. You cannot use Prometheus and Grafana with Fixed or Free subscriptions.
 
 For more information on how Prometheus communicates with Redis Enterprise clusters, see [Prometheus integration with Redis Enterprise Software]({{< relref "/rs/clusters/monitoring/prometheus-integration" >}}).
 
