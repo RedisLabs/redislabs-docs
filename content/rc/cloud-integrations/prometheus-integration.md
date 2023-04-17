@@ -42,7 +42,7 @@ You can quickly set up Prometheus and Grafana for testing using the Prometheus a
     internal.<cluster_address>:8070
     ``` 
 
-1. Create an instance to run Prometheus and Grafana on the same cloud provider as your Redis Cloud subscription (for example, Amazon Web Services or Google Cloud Platform). This instance must:
+1. Create an instance to run Prometheus and Grafana on the same cloud provider as your Redis Cloud subscription (for example, Amazon Web Services or Google Cloud). This instance must:
     - Exist in the same region as your Redis Cloud subscription.
     - Connect to the VPC subnet that is peered with your Redis Cloud subscription.
     - Allow outbound connections to port 8070, so that Prometheus can scrape the Redis Cloud server for data.
@@ -172,6 +172,6 @@ We publish two preconfigured dashboards for Redis Cloud and Grafana:
 * The [subscription status dashboard](https://grafana.com/grafana/dashboards/18406-subscription-status-dashboard/) provides an overview of your Redis Cloud subscriptions.
 * The [database status dashboard](https://grafana.com/grafana/dashboards/18408-database-status-dashboard/) displays specific database metrics, including latency, memory usage, ops/second, key count.
 
-These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository(https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
+These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
 
 For more information about configuring Grafana dashboards in general, see the [Grafana documentation](https://grafana.com/docs/).
