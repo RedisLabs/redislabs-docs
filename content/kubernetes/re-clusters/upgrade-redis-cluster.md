@@ -100,7 +100,7 @@ If you have the admission controller enabled, you need to manually reapply the `
 
 {{<note>}}
 
-The [6.4.2-4 release]({{<relref "/kubernetes/release-notes/k8s-6-4-2-4.md">}}) uses a new `ValidatingWebhookConfiguration` resource that replaces the old webhook resource. To use the 6.4.2-4 release, delete the old webhook resource and apply the new file.
+The [6.4.2-4 release]({{<relref "/content/kubernetes/release-notes/6-4-2-releases">}}) uses a new `ValidatingWebhookConfiguration` resource that replaces the old webhook resource. To use the 6.4.2-4 release, delete the old webhook resource and apply the new file.
 
 1. Delete the existing `ValidatingWebhookConfiguration` on the Kubernetes cluster (named `redb-admission`).
 
