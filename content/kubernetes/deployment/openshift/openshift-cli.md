@@ -223,7 +223,7 @@ If not limited, the webhook intercepts requests from all namespaces. If you have
     kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
-  The 6.4.2-4 release introduces a new `ValidatingWebhookConfiguration` to replace `redb-admission`. See the [6.4.2-4 release notes]({{<relref "/kubernetes/release-notes/6-4-2-releases/">}}).
+  The 6.4.2-4 release introduces a new `ValidatingWebhookConfiguration` to replace `redb-admission`. See the [6.4.2-4 release notes]({{<relref "/kubernetes/release-notes/k8s-6-4-2-4.md">}}).
   {{</note>}}
 
 ### Verify admission controller installation

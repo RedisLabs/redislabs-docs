@@ -2,7 +2,7 @@
 Title: 6.2.18-41 release notes
 linkTitle: 6.2.18-41 releases
 description: Release notes for the 6.2.18-41 releases of Redis Enterprise Software for Kubernetes. 
-weight: 59
+weight: 90
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
