@@ -174,4 +174,4 @@ Redis publishes two preconfigured dashboards for Redis Cloud and Grafana:
 
 These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
 
-For more information about configuring Grafana dashboards in general, see the [Grafana documentation](https://grafana.com/docs/).
+For more information about configuring Grafana dashboards, see the [Grafana documentation](https://grafana.com/docs/).
