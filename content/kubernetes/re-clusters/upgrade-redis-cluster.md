@@ -35,6 +35,10 @@ Verify your license is valid before upgrading your REC. Invalid licenses will ca
 Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 {{</warning>}}
 
+{{<note>}}
+On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases. A fix is available in the 6.4.2-5 release. Upgrade your Redis cluster to [6.4.2-5]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) before upgrading your Kubernetes cluster.
+{{</note>}}
+
 ## Upgrade the operator
 
 ### Download the bundle
@@ -100,7 +104,7 @@ If you have the admission controller enabled, you need to manually reapply the `
 
 {{<note>}}
 
-The [6.4.2-4 release]({{<relref "/kubernetes/release-notes/k8s-6-4-2-4.md">}}) uses a new `ValidatingWebhookConfiguration` resource that replaces the old webhook resource. To use the 6.4.2-4 release, delete the old webhook resource and apply the new file.
+The [6.4.2-4 release]({{<relref "/kubernetes/release-notes/6-4-2-releases/">}}) uses a new `ValidatingWebhookConfiguration` resource that replaces the old webhook resource. To use the 6.4.2-4 release, delete the old webhook resource and apply the new file.
 
 1. Delete the existing `ValidatingWebhookConfiguration` on the Kubernetes cluster (named `redb-admission`).
 
