@@ -57,7 +57,7 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
     
 ### Feature limitations
 
-- RS54131 Running QUIT command on TLS connected database closed connection and does not return a +OK reply
+- RS54131 Running the `QUIT` command on a TLS connected database closes connection and does not return a `+OK` reply
 
 ### Upgrade limitations
 
