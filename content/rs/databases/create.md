@@ -85,7 +85,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         For RoF databases, you can add modules that support RoF.
         
         {{< note >}}
-Modules can be add to database only when creating a new database.
+To use modules, add them when you create a new database.
 You can't add a module to an existing database.
         {{< /note >}} 
         
