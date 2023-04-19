@@ -18,8 +18,8 @@ You can use Prometheus and Grafana to collect and visualize your Redis Enterpris
 Metrics are exposed at the cluster, node, database, shard, and proxy levels.
 
 
-- [Prometheus](https://prometheus.io/) is an open source systems monitoring and alerting toolkit that can scrape metrics from different sources.
-- [Grafana](https://grafana.com/) is an open source metrics visualization tool that can process Prometheus data.
+- [Prometheus](https://prometheus.io/) is an open source systems monitoring and alerting toolkit that aggregates metrics from different sources.
+- [Grafana](https://grafana.com/) is an open source metrics visualization tool that processes Prometheus data.
 
 You can use Prometheus and Grafana to:
 - Collect and display metrics not available in the [admin console]({{< relref "/rs/references/metrics" >}})
@@ -28,7 +28,7 @@ You can use Prometheus and Grafana to:
 
 - Display Redis Enterprise Software metrics alongside data from other systems
 
-{{<image filename="images/rs/grafana-prometheus.png" alt="Graphic showing how Prometheus and Grafana collect and display data from a Redis Enterprise Cluster. Prometheus scrapes metrics from the Redis Enterprise cluster, and Grafana queries those metrics for visualization.">}}{{< /image >}}
+{{<image filename="images/rs/grafana-prometheus.png" alt="Graphic showing how Prometheus and Grafana collect and display data from a Redis Enterprise Cluster. Prometheus collects metrics from the Redis Enterprise cluster, and Grafana queries those metrics for visualization.">}}{{< /image >}}
 
 In each cluster, the metrics_exporter process exposes Prometheus metrics on port 8070.
 
@@ -157,13 +157,13 @@ We recommend running Prometheus in Docker only for development and testing.
 
 ### Grafana dashboards for Redis Enterprise
 
-We publish four preconfigured dashboards for Redis Enterprise and Grafana:
+Redis publishes four preconfigured dashboards for Redis Enterprise and Grafana:
 
 * The [cluster status dashboard](https://grafana.com/grafana/dashboards/18405-cluster-status-dashboard/) provides an overview of your Redis Enterprise clusters.
-* The [database status dashboard](https://grafana.com/grafana/dashboards/18408-database-status-dashboard/) displays specific database metrics, including latency, memory usage, ops/second, key count.
-* The [node metrics dashboard](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards/blob/main/dashboards/software/basic/redis-software-node-dashboard.json) provide metrics for each of the nodes hosting your cluster.
-* The [shard metrics dashboard](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards/blob/main/dashboards/software/basic/redis-software-shard-dashboard.json) display metrics for the individual Redis processes running on your cluster nodes.
+* The [database status dashboard](https://grafana.com/grafana/dashboards/18408-database-status-dashboard/) displays specific database metrics, including latency, memory usage, ops/second, and key count.
+* The [node metrics dashboard](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards/blob/main/dashboards/software/basic/redis-software-node-dashboard.json) provides metrics for each of the nodes hosting your cluster.
+* The [shard metrics dashboard](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards/blob/main/dashboards/software/basic/redis-software-shard-dashboard.json) displays metrics for the individual Redis processes running on your cluster nodes.
 
 These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
 
-For more information about configuring Grafana dashboards in general, see the [Grafana documentation](https://grafana.com/docs/).
+For more information about configuring Grafana dashboards, see the [Grafana documentation](https://grafana.com/docs/).

@@ -14,7 +14,7 @@ You can use Prometheus and Grafana to collect and visualize your Redis Enterpris
 
 Redis Cloud exposes its metrics through a Prometheus endpoint. You can configure your Prometheus server to scrape metrics from your Redis Cloud subscription on port 8070.
 
-The Redis Cloud Prometheus endpoint is exposed on Redis Cloud's internal network. To access this network, you need to enable [VPC peering]({{< relref "/rc/security/vpc-peering" >}}) or [Private Service Connect]({{< relref "/rc/security/private-service-connect" >}}). Both options are only available with Flexible or Annual subscriptions. You cannot use Prometheus and Grafana with Fixed or Free subscriptions.
+The Redis Cloud Prometheus endpoint is exposed on Redis Cloud's internal network. To access this network, enable [VPC peering]({{< relref "/rc/security/vpc-peering" >}}) or [Private Service Connect]({{< relref "/rc/security/private-service-connect" >}}). Both options are only available with Flexible or Annual subscriptions. You cannot use Prometheus and Grafana with Fixed or Free subscriptions.
 
 For more information on how Prometheus communicates with Redis Enterprise clusters, see [Prometheus integration with Redis Enterprise Software]({{< relref "/rs/clusters/monitoring/prometheus-integration" >}}).
 
@@ -167,10 +167,10 @@ Once the Prometheus and Grafana Docker containers are running, and Prometheus is
 
 ### Grafana dashboards for Redis Cloud
 
-We publish two preconfigured dashboards for Redis Cloud and Grafana:
+Redis publishes two preconfigured dashboards for Redis Cloud and Grafana:
 
 * The [subscription status dashboard](https://grafana.com/grafana/dashboards/18406-subscription-status-dashboard/) provides an overview of your Redis Cloud subscriptions.
-* The [database status dashboard](https://grafana.com/grafana/dashboards/18408-database-status-dashboard/) displays specific database metrics, including latency, memory usage, ops/second, key count.
+* The [database status dashboard](https://grafana.com/grafana/dashboards/18408-database-status-dashboard/) displays specific database metrics, including latency, memory usage, ops/second, and key count.
 
 These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
 
