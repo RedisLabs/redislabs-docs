@@ -15,7 +15,7 @@ define RERC and link to creation steps
 
 ## Edit RERC
 
-Use the `kubectl patch rerc rerc1 --type merge --patch` command to patch the local RERC custom resource with your changes. For a full list of available fields, see the RERC API reference.
+Use the `kubectl patch rerc <rerc-name> --type merge --patch` command to patch the local RERC custom resource with your changes. For a full list of available fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
 The following example edits the `dbFqdnSuffix` field for the RERC named `rerc1`.
 
@@ -26,3 +26,63 @@ kubectl patch rerc rerc1 --type merge --patch \
 
 ## Update RERC secret
 
+If the credentials are changed or updated for an REC participating in an Active-Active database, you also need to edit the RERC secret and apply it to all participating clusters. 
+
+### On the local cluster 
+
+1. Locate the file holding the secrets for all your participating clusters, [created during cluster preparation]({{<relref "/kubernetes/active-active/preview/prepare-clusters#collect-rec-credentials">}}).
+
+1. Update the secret containing the RERC name (`redis-enterprise-<rerc-name>`).
+
+  A secret for a remote cluster named `rerc1` would be similar to the following: 
+
+   ```yaml
+  apiVersion: v1
+  data:
+    password: PHNvbWUgcGFzc3dvcmQ+
+    username: PHNvbWUgdXNlcj4
+  kind: Secret
+  metadata:
+    name: redis-enterprise-rerc1
+  type: Opaque
+```
+
+1. Apply the file.
+
+  ```sh
+  kubectl apply -f <secret-file>
+  ```
+
+1. Watch the RERC to verify the status is "Active" and the spec status is "Valid."
+
+  ```sh
+  kubectl get rerc <rerc-name>
+  ```
+
+  The output should look like this:
+
+  ```sh
+   NAME        STATUS   SPEC STATUS   LOCAL
+    rerc1   Active   Valid         true
+  ```
+
+  To troubleshoot invalid configurations, view the RERC custom resource events and the [Redis Enterprise operator logs]({{<relref "/kubernetes/logs/">}}).
+
+1. Verify the status each REAADB using that RERC is "Active" and the spec status is "Valid."
+
+  ```sh 
+  kubectl get reaadb <reaadb-name>
+  ```
+
+  The output should look like this:
+
+  ```sh
+    NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
+  example-aadb-1   active   Valid                                      
+  example-aadb-2   active   Valid                                      
+  ```
+  To troubleshoot invalid configurations, view the RERC custom resource events and the [Redis Enterprise operator logs]({{<relref "/kubernetes/logs/">}}).
+
+### On the other participating clusters
+
+Repeat all the above steps?? Or only verify the status??
