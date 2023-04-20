@@ -10,7 +10,8 @@ aliases:
 
 Before installing Redis Enterprise Software, you need to:
 
-- Set up [your hardware]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}).
+- Set up your hardware. See [Hardware requirements]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}) and [Persistent and ephemeral node storage 
+]({{<relref "/rs/installing-upgrading/plan-deployment/persistent-ephemeral-storage">}}) for more information.
 
 - Choose your [deployment platform]({{< relref "/rs/installing-upgrading/plan-deployment/supported-platforms.md" >}}).
 
