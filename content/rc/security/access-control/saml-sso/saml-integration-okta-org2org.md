@@ -9,9 +9,9 @@ categories: ["RC"]
 
 This guide shows how to configure [Okta](https://help.okta.com/en-us/Content/Topics/Security/Identity_Providers.htm) as a SAML single sign-on identity provider (IdP) for your Redis Cloud account.
 
-This guide shows how to use the Org2Org application template. You can also use the [Generic]({{<relref "/rc/security/single-sign-on/saml-sso/saml-integration-okta-generic">}}) application template.
+This guide shows how to use the Org2Org application template. You can also use the [Generic]({{<relref "/rc/security/access-control/saml-sso/saml-integration-okta-generic">}}) application template.
 
-To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
+To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<relref "/rc/security/access-control/saml-sso">}}).
 
 ## Step 1: Set up your identity provider 
 

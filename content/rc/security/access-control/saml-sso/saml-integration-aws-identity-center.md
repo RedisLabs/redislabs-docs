@@ -9,7 +9,7 @@ categories: ["RC"]
 
 This guide shows how to configure [AWS IAM Identity Center](https://aws.amazon.com/iam/identity-center/) as a SAML single sign-on identity provider (IdP) for your Redis Cloud account.
 
-To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
+To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<relref "/rc/security/access-control/saml-sso">}}).
 
 ## Step 1: Setup your identity provider (IdP)
 

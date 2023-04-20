@@ -9,7 +9,7 @@ categories: ["RC"]
 
 This guide shows how to configure [Microsoft Azure Active Directory](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-architecture) (Azure AD) as a SAML single sign-on identity provider (IdP) for your Redis Cloud account.
 
-To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<relref "/rc/security/single-sign-on/saml-sso">}}).
+To learn more about Redis Cloud support for SAML, see [SAML single sign on]({{<relref "/rc/security/access-control/saml-sso">}}).
 
 ## Step 1: Set up your identity provider (IdP)
 

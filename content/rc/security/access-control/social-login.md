@@ -2,9 +2,13 @@
 Title: Social login
 linkTitle: Social login
 description: Social login with Redis Cloud.
-weight: 50
+weight: 10
 alwaysopen: false
 categories: ["RC"]
+aliases: [
+    "/rc/security/single-sign-on/social-login",
+    "/rc/security/single-sign-on/social-login.md"
+]
 ---
 
 Redis Cloud supports the following social logins:

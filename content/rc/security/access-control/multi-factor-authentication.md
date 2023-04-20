@@ -2,7 +2,7 @@
 Title: Multi-factor authentication
 linkTitle: Multi-factor authentication
 description:
-weight: 40
+weight: 15
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/security/admin-console-security/multi-factor-authentication/
@@ -80,6 +80,10 @@ You can deactivate MFA for your user account. To deactivate MFA, go to your prof
 
 Account owner users can enable MFA enforcement for all users in their account.
 After MFA is enforced for the account, all users who do not have MFA enabled will be required to configure MFA the next time they sign in to the Redis Cloud Admin Console.
+
+{{< note >}}
+Redis Cloud does not enforce MFA for [SAML SSO]({{<relref "rc/security/access-control/saml-sso">}}) users since the identity provider handles MFA management and enforcement.
+{{< /note >}}
 
 To enable MFA enforcement for all user accounts:
 
