@@ -1,6 +1,6 @@
 ---
-Title: Data Access Control
-LinkTitle: Data Access Control
+Title: Data access control
+LinkTitle: Data access control
 description: Secure access to the data in your Redis Cloud databases.
 weight: 25
 alwaysopen: false
