@@ -10,7 +10,7 @@ aliases:
 
 Password-based authentication is a basic but essential Redis security feature. When you create a Redis Cloud database, your database is given a randomly generated password called the **Default user password**.
 
-This appears in the **Security** section of the **Configuration** tab of the database details screen.
+This password appears in the **Security** section of the **Configuration** tab of the database details screen.
 
 {{<image filename="images/rc/database-fixed-configuration-security.png" alt="The Default user password appears in the Security section of the Configuration tab on the database details screen." >}}{{< /image >}}
 

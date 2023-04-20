@@ -18,34 +18,32 @@ To configure a Redis ACL that you can assign to a data access role:
 
 1. Create the ACL rule. [Define permissions using ACL syntax](#define-permissions-with-acl-syntax) or use **Rule Builder**. To create a Redis ACL rule using **Rule Builder**:
 
-
-    1. For **Redis commands / categories**, enter a [command](https://redis.io/commands/) or [command category](https://redis.io/docs/management/security/acl/#command-categories).
+    1. In **Redis commands / categories**, enter a command or command category. For more information, see [Commands](https://redis.io/commands/) and [Command categories](https://redis.io/docs/management/security/acl/#command-categories).
 
     1. Select whether to include or exclude the command or category.
 
-    1. For **Keys**, enter the [pattern for permitted keys](https://redis.io/docs/management/security/acl/#key-permissions).
+    1. For **Keys**, enter the pattern for permitted keys. For more information, see [Key permissions](https://redis.io/docs/management/security/acl/#key-permissions).
 
-    1. In **Pub/Sub channels**, enter a channel pattern to restrict [pub/sub](https://redis.io/docs/manual/pubsub/) so it only allows access to the specified channels.
+    1. In **Pub/Sub channels**, enter a channel pattern to restrict pub/sub so it only allows access to the specified channels. For more information, see [Redis pub/sub](https://redis.io/docs/manual/pubsub/).
     
-        The rule builder automatically adds `resetchannels` to the ACL rule when you save. This rule changes pub/sub access from permissive (allows access to all channels) to restrictive (blocks access to all channels).
+        The rule builder automatically adds `resetchannels` to the ACL rule when you save. This rule changes pub/sub access from _permissive_ (allows access to all channels) to _restrictive_ (blocks access to all channels).
 
         {{<note>}}
 - **Pub/Sub channels** are only available in the **Rule Builder** for accounts that have Redis version 6.2 or later for all subscriptions.
-- If your account contains any Redis 6.0 subscriptions, you can't use pub/sub ACLs unless you contact support to upgrade the subscriptions to a later version.
+- If your account contains any Redis 6.0 subscriptions, you can't use pub/sub ACLs. Contact support to upgrade the subscriptions to a later version.
         {{</note>}}
 
-    1. To add more commands, categories, keys, or pub/sub channels to the ACL rule, select `+`.
+    1.  Select `+` to add more commands, categories, keys, or pub/sub channels to the ACL rule.
 
     1. When you finish building the ACL rule, select **Save rule**.
 
 1. Select the check mark to save your changes.
 
-Once you create a Redis ACL, you can [assign it to a role]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 
+Once you create a Redis ACL, you can assign it to a role. For more information, see [Create roles]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 
 
 ## Define permissions with ACL syntax
 
 You can define these permissions using the [Redis ACL syntax](https://redis.io/docs/management/security/acl/#acl-rules). This syntax lets you concisely specify which commands, command categories, keys, and pub/sub channels to allow.
-
 
 - `+` *includes* commands or command categories
 - `-` *excludes* commands or command categories
@@ -99,7 +97,7 @@ Whereas, this ACL rule only allows access to keys prefixed with `cache:`
 
 ### Pub/sub ACL rules
 
-Pub/sub ACL rules determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
+Pub/sub ACL rules determine which pub/sub channels a user can access. For more information see, [Redis pub/sub](https://redis.io/docs/manual/pubsub/)
 
 For versions older than Redis 7.0, pub/sub is permissive and allows access to all channels by default.
 
