@@ -85,15 +85,17 @@ If you did not configure rack-zone awareness during cluster creation, you can co
 
 Before you can enable rack-zone awareness for a database, you must configure rack-zone awareness for the cluster and its nodes. For more information, see [set up rack-zone awareness](#set-up-rack-zone-awareness).
 
-To enable rack-zone awareness for a database, in the admin console:
+To enable rack-zone awareness for a database using the admin console:
 
-1. From **create database** (for [new databases]({{<relref "/rs/databases/create">}})) or **database** > **configuration** (for existing databases), make sure **Replication** is enabled.
+1. From **databases**, [create a new database]({{<relref "/rs/databases/create">}}) or edit an existing database's **configuration**.
+
+1. Enable [**Replication**]({{<relref "/rs/databases/durability-ha/replication">}}).
 
 1. Select **Rack-zone awareness**.
 
 1. **Activate** or **Update** your database.
 
-1. For existing databases, you should [rearrange the database shards](#rearrange-database-shards) to ensure your database is optimized for rack-zone awareness.
+1. [Rearrange database shards](#rearrange-database-shards) to optimize an existing database for rack-zone awareness.
 
     {{<note>}}
 If you enabled rack-zone awareness during database creation, you can ignore this step.
