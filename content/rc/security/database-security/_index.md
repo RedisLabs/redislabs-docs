@@ -12,8 +12,7 @@ Redis Cloud provides several features to help you secure your databases. These i
 
 ## Passwords, users, and roles
 
-All Redis Cloud databases [require a password]({{<relref "/rc/security/access-control/data-access-control/default-user">}}) to connect. However, we recommend going
-further by enabling [role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}}) (RBAC). With RBAC, you can define
+All Redis Cloud databases [require a password]({{<relref "/rc/security/access-control/data-access-control/default-user">}}) to connect. However, we recommend enabling [role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}}) (RBAC) for additional security. With RBAC, you can define
 all the roles you need, with the appropriate permissions, and assign those roles
 to your users.
 

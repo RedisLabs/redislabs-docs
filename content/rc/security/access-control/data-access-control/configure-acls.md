@@ -39,7 +39,7 @@ To configure a Redis ACL that you can assign to a data access role:
 
 1. Select the check mark to save your changes.
 
-Once you create a Redis ACL, you can assign it to a role. For more information, see [Create roles]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 
+After you create a Redis ACL, you can assign it to a role. For more information, see [Create roles]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 
 
 ## Define permissions with ACL syntax
 

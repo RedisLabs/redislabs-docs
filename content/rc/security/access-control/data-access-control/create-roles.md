@@ -24,7 +24,7 @@ To assign [Redis ACLs]({{<relref "rc/security/access-control/data-access-control
 
 1. Select **Save role**.
 
-After you create a role, you can assign a user to it. Users assigned to the role can access the databases according to the role's associated Redis ACLs. For more information, see [Assign roles to users]({{<relref "rc/security/access-control/data-access-control/create-assign-users#assign-roles-to-users">}}).
+After you create a role, you can assign it to a user. Users with this role can access the databases according to the role's associated Redis ACLs. For more information, see [Assign roles to users]({{<relref "rc/security/access-control/data-access-control/create-assign-users#assign-roles-to-users">}}).
 
 
 
