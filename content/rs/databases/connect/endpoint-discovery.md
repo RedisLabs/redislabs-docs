@@ -110,7 +110,7 @@ If the database endpoint is bound to a different node due to failures or configu
 
 ## Load balancer
 
-If you did not set up DNS for your Redis Enterprise Software deployment, consider [setting up a load balancer]({{<relref "/rs/networking/cluster-lba-setup">}}) to direct traffic to the cluster nodes.
+If you cannot set up DNS for your Redis Enterprise Software deployment, consider [setting up a load balancer]({{<relref "/rs/networking/cluster-lba-setup">}}) to direct traffic to the cluster nodes.
 
 ### Distribute requests across proxies
 
