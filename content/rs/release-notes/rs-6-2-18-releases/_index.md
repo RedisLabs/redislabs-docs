@@ -54,6 +54,10 @@ Please verify that all clients, apps, and connections support the AES cipher. Su
 Certain operating systems, such as RHEL 8, have already removed support for 3DES. Redis Enterprise Software cannot support cipher suites that are not supported by the underlying operating system.
 
 ## Known limitations
+    
+### Feature limitations
+
+- RS54131 Running the `QUIT` command on a TLS connected database closes connection and does not return a `+OK` reply
 
 ### Upgrade limitations
 

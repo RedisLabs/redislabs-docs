@@ -85,8 +85,8 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         For RoF databases, you can add modules that support RoF.
         
         {{< note >}}
-        Modules can be add to database only when creating a new database.
-        You can't add a module to an existing database.
+To use modules, add them when you create a new database.
+You can't add a module to an existing database.
         {{< /note >}} 
         
         To add a module to the database:
@@ -178,7 +178,7 @@ after the database is created.
     note the port number shown in the Endpoint field of the database **configuration**.
 
     ![database-port](/images/rs/database-port.png)
-```
+
 
 1. [Test your connectivity]({{<relref "/rs/databases/connect/test-client-connectivity.md">}}).
 
