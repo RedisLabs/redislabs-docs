@@ -51,7 +51,7 @@ The Redis Enterprise Software REST API uses [Self-signed certificates]({{<relref
 
 All calls must be made over SSL to port 9443. For the API to work, port 9443 must be exposed to incoming traffic or mapped to a different port.
 
-If you are using a [Redis Enterprise Software Docker image]({{<relref "/rs/installing-upgrading/quickstarts/get-started-docker">}}), run the following command to start the Docker image with port 9443 exposed:
+If you are using a [Redis Enterprise Software Docker image]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}}), run the following command to start the Docker image with port 9443 exposed:
 
 ```sh
 docker run -p 9443:9443 redislabs/redis

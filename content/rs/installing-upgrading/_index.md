@@ -14,9 +14,9 @@ aliases: /rs/administering/installing-upgrading/
 
 If you want to try out Redis Enterprise Software, see the following quickstarts:
 
-- [Redis Enterprise Software quickstart]({{<relref "/rs/installing-upgrading/quickstarts/get-started-redis-enterprise-software">}})
+- [Redis Enterprise Software quickstart]({{<relref "/rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart">}})
 
-- [Docker quickstart for Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/get-started-docker">}})
+- [Docker quickstart for Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}})
 
 ## Install Redis Enterprise Software
 

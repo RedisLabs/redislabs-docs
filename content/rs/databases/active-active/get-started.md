@@ -24,7 +24,7 @@ clusters for test and development environments. Here are the steps:
 - Step 3: Create a new Redis Enterprise Active-Active database
 - Step 4: Test connectivity to the Active-Active database
 
-To run an Active-Active database on installations from the [Redis Enterprise Software download package]({{< relref "rs/installing-upgrading/quickstarts/get-started-redis-enterprise-software.md" >}}),
+To run an Active-Active database on installations from the [Redis Enterprise Software download package]({{< relref "rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart" >}}),
 set up two Redis Enterprise Software installations and continue from Step 2.
 
 {{< note >}}

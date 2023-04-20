@@ -58,7 +58,7 @@ See the [client list](https://redis.io/docs/clients/) to view all Redis clients 
 {{< note >}}
 You can't use client libraries to configure Redis Enterprise Software.  Instead, use:
 
-- The Redis Software [admin console]({{< relref "/rs/installing-upgrading/quickstarts/get-started-redis-enterprise-software.md" >}})
+- The Redis Software [admin console]({{< relref "/rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart" >}})
 - The [REST API]({{<relref "/rs/references/rest-api">}})
 - Command-line utilities, such as [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}})
 {{< /note >}}

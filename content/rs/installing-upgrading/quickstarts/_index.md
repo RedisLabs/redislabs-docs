@@ -10,9 +10,9 @@ aliases:
 
 Try out Redis Enterprise Software using one of the following quickstarts:
 
-- [Redis Enterprise Software quickstart]({{<relref "/rs/installing-upgrading/quickstarts/get-started-redis-enterprise-software">}})
+- [Redis Enterprise Software quickstart]({{<relref "/rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart">}})
 
-- [Docker quickstart for Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/get-started-docker">}})
+- [Docker quickstart for Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}})
 
 Additional quickstart guides are available to help you:
 

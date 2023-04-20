@@ -47,7 +47,7 @@ Make sure your system meets these requirements:
 3. <a name="table-note-3" style="display: block; height: 80px; margin-top: -80px;"></a>Based on the corresponding RHEL version.
 
 4. <a name="table-note-4" style="display: block; height: 80px; margin-top: -80px;"></a>
-[Docker images]({{<relref "/rs/installing-upgrading/quickstarts/get-started-docker">}}) of Redis Enterprise Software are certified for development and testing only.
+[Docker images]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}}) of Redis Enterprise Software are certified for development and testing only.
 
 5. <a name="table-note-5" style="display: block; height: 80px; margin-top: -80px;"></a>See the [Redis Enterprise for Kubernetes documentation]({{<relref "/kubernetes">}}).
 
