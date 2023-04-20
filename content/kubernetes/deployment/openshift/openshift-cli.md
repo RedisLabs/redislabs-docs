@@ -204,7 +204,7 @@ If not limited, the webhook intercepts requests from all namespaces. If you have
     ```bash
     cat > modified-webhook.yaml <<EOF
     webhooks:
-    - name: redb.admission.redislabs
+    - name: redisenterprise.admission.redislabs
       namespaceSelector:
         matchLabels:
           namespace-name: staging
@@ -241,10 +241,10 @@ Apply an invalid resource as shown below to force the admission controller to re
    EOF
 ```
 
-You should see this error from the admission controller webhook `redb.admission.redislabs`.
+You should see this error from the admission controller webhook `redisenterprise.admission.redislabs`.
   
   ```bash
-  Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+  Error from server: error when creating "STDIN": admission webhook "redisenterprise.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
   ```
 
 ## Create a Redis Enterprise database custom resource
