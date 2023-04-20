@@ -2,7 +2,7 @@
 Title: Social login
 linkTitle: Social login
 description: Social login with Redis Cloud.
-weight: 15
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: [

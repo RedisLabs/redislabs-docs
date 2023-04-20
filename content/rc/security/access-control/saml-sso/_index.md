@@ -2,7 +2,7 @@
 Title: SAML single sign-on
 linkTitle: SAML SSO
 description: SAML single sign-on (SSO) with Redis Cloud.
-weight: 10
+weight: 20
 alwaysopen: false
 categories: ["RC"]
 aliases: [
