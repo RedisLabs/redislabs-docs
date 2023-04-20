@@ -18,6 +18,8 @@ This guide helps you install Redis Enterprise Software on a Linux host to test i
 
 When finished, you'll have a simple cluster with a single node:
 
+1. [Ensure port availability](#ensure-port-availability)
+
 1. [Install Redis Enterprise Software](#install-redis-enterprise-software)
 
 1. [Set up a Redis Enterprise Software cluster](#set-up-a-cluster)
@@ -30,6 +32,10 @@ When finished, you'll have a simple cluster with a single node:
 **This quickstart is designed for local testing only.**
 For production environments, see the [install and setup]({{< relref "/rs/installing-upgrading#install-redis-enterprise-software" >}}) guide for deployment options and instructions.
 {{< /note >}}
+
+## Ensure port availability
+
+{{<embed-md "port-53.md">}}
 
 ## Install Redis Enterprise Software
 
@@ -52,40 +58,6 @@ You are required to create a free account to access the download center.
 
     ```sh
     sudo ./install.sh -y
-    ```
-
-### Port availability
-
-If port 53 is in use, the installation fails. This is known to happen in
-default Ubuntu 18.04 installations in which `systemd-resolved` (DNS server) is running.
-
-To work around this issue, change the system configuration to make this port available
-before installation.
-
-1. Edit `/etc/systemd/resolved.conf`: 
-
-    ```sh
-    sudo vi /etc/systemd/resolved.conf
-    ```
-
-1. Add `DNSStubListener=no` as the last line in the file and save the file.
-
-1. Rename the current `/etc/resolv.conf` file:
-
-    ```sh
-    sudo mv /etc/resolv.conf /etc/resolv.conf.orig
-    ```
-
-1. Create a symbolic link for `/etc/resolv.conf`:
-
-    ```sh
-    sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
-    ```
-
-1. Restart the DNS service:
-
-    ```sh
-    sudo service systemd-resolved restart
     ```
 
 ## Set up a cluster
