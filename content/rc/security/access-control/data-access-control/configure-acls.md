@@ -30,7 +30,7 @@ To configure a Redis ACL that you can assign to a data access role:
 
         {{<note>}}
 - **Pub/Sub channels** are only available in the **Rule Builder** for accounts that have Redis version 6.2 or later for all subscriptions.
-- If your account contains any Redis 6.0 subscriptions, you can't use pub/sub ACLs. Contact support to upgrade the subscriptions to a later version.
+- If your account contains any Redis 6.0 subscriptions, you can't use pub/sub ACLs. [Contact support](https://redis.com/company/support/) to upgrade the subscriptions to a later version.
         {{</note>}}
 
     1.  Select `+` to add more commands, categories, keys, or pub/sub channels to the ACL rule.
