@@ -57,7 +57,7 @@ Manage [secure connections]({{<relref "/rc/security">}}) to cloud databases.
 - [Access management]({{<relref "/rc/security/access-control/access-management">}})
 - [Cloud database security]({{<relref "/rc/security/database-security">}})
 - [Multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}})
-- [Single sign-on]({{<relref "/rc/security/access-control/saml-sso">}})
+- [Single sign-on]({{<relref "/rc/security/access-control/saml-sso">}}) and [social login]({{<relref "/rc/security/access-control/social-login">}})
 
 ## REST API
 Use the [REST API]({{<relref "/rc/api">}}) to manage the database.
