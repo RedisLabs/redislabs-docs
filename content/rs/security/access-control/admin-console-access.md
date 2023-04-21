@@ -1,5 +1,5 @@
 ---
-Title: Grant cluster management access
+Title: Grant admin console and REST API access for cluster management
 linkTitle: Cluster management access
 description: Grant admin console access to a user.
 weight: 10

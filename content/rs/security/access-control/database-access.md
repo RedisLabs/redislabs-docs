@@ -1,6 +1,6 @@
 ---
 Title: Control database access using RBAC
-linkTitle: Database access (RBAC)
+linkTitle: Database access
 description: Control the user's level of access to a database.
 weight: 10
 alwaysopen: false
@@ -8,7 +8,15 @@ categories: ["RS"]
 aliases: 
 ---
 
-To control a user's level of access to a database, use role-based access control.
+## Default user
+
+When you create a database, [default user access]({{<relref "/rs/security/access-control/manage-users/default-user">}}) is enabled by default.
+
+If you set up [role-based access controls]({{<relref "/rs/security/access-control/rbac">}}) for your database and don't require backwards compatibility with versions earlier than Redis 6, you can [deactivate the default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}).
+
+## Role-based access control
+
+To control a user's level of access to a database, use [role-based access control]({{<relref "/rs/security/access-control/rbac">}}) (RBAC).
 
 1. [Configure Redis ACLs]({{<relref "/rs/security/access-control/rbac/configure-acl">}}).
 
