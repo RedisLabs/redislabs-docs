@@ -100,3 +100,6 @@ Redis Enterprise Software does not support certain open source Redis ACL command
 The `MULTI`, `EXEC`, `DISCARD` commands are always allowed, but ACLs are enforced on `MULTI` subcommands.
 {{</note>}}
 
+## Next steps
+
+- [Create or edit a role]({{<relref "/rs/security/access-control/rbac/create-roles">}}) and add Redis ACLs to it.

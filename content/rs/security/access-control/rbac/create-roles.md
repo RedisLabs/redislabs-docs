@@ -13,7 +13,7 @@ From **access control** > **roles**, you can configure user roles with:
 - **Management roles** - Management roles define user access to the cluster's admin console and API.
 - **Data access controls** - Data access controls define the permissions each role has for each database in the cluster.
 
-## Create roles for database access
+## Create roles for database access {#create-db-role}
 
 To create a role that grants database access to users but blocks access to the Redis Enterprise admin console and REST API, set the **Cluster management role** to **None**.
 
@@ -40,3 +40,7 @@ To define a role for database access:
 1. Select **Save**.
 
 {{< video "/images/rs/new-redis-role.mp4" "Create a new Redis Role" >}}
+
+## Next steps
+
+- [Assign the role to a user]({{<relref "/rs/security/access-control/rbac/assign-user-role">}}).
