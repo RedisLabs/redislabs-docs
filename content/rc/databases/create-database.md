@@ -87,16 +87,16 @@ You can select more than one module for a database, though there are limits:
 
 - The following modules can be combined in Flexible and Annual subscriptions:
 
-    - RediSearch 2
+    - RediSearch
     - RedisJSON
     - RedisTimeSeries
     - RedisBloom
 
 - RedisGraph cannot be combined with other modules
 
-- When you select RedisJSON, RediSearch 2 is automatically added because the modules complement each other.  
+- When you select RedisJSON, RediSearch is automatically added because the modules complement each other.  
 
-    You can remove RediSearch 2 if you prefer.
+    You can remove RediSearch if you prefer.
 
 You don't have to combine modules.  To remove a selected module, either clear the checkbox in the menu or select the module's **Delete** icon.  
 
