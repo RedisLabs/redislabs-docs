@@ -24,16 +24,31 @@ The predefined Redis ACLs are:
 
 Redis ACLs are defined by a [Redis syntax](https://redis.io/docs/manual/security/acl/#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 
-{{<note>}}
-Redis Enterprise modules do not have a command category.
-{{</note>}}
-
 Redis Enterprise lets you:
 
 - Include commands and categories with the "+" prefix for commands or "+@" prefix for command categories.
+
 - Exclude commands and categories with the "-" prefix for commands or "-@" prefix for command categories.
+
 - Include keys or key patterns with the "~" prefix.
+
 - Allow access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) with the "&" prefix (only supported for databases with Redis version 6.2 and later).
+
+{{<note>}}
+Module commands have several ACL limitations:
+
+- [Redis modules]({{<relref "/modules">}}) do not have command categories.
+
+- Other [command category](https://redis.io/docs/management/security/acl/#command-categories) ACLs, such as `+@read` and `+@write`, do not include Redis module commands. `+@all` is the only exception because it allows all Redis commands.
+
+- You have to include individual module commands in a Redis ACL rule to allow them.
+
+    For example, the following Redis ACL rule allows read-only commands and the RediSearch commands `FT.INFO` and `FT.SEARCH`:
+
+    ```sh
+    +@read +FT.INFO +FT.SEARCH
+    ```
+{{</note>}}
 
 ## Configure Redis ACLs
 
