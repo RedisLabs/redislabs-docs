@@ -92,7 +92,7 @@ You can select more than one module for a database, though there are limits:
     - RedisTimeSeries
     - RedisBloom
 
-- RedisGraph cannot be combined with other modules
+- RedisGraph cannot be combined with other modules.
 
 - When you select RedisJSON, RediSearch is automatically added because the modules complement each other.  
 
