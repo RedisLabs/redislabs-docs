@@ -10,9 +10,11 @@ aliases: [
 ]
 ---
  
- Kubernetes uses [node-pressure eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/) to terminate pods and free up node resources. Redis Enterprise for Kubernetes works best when you use the recommendations below.
 
-## Eviction thresholds
+
+## Node eviction thresholds
+
+ Kubernetes uses [node-pressure eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/) to terminate pods and free up node resources. Redis Enterprise for Kubernetes works best when you use the recommendations below.
 
 Eviction thresholds are managed by [kubelet arguments](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/).
 
@@ -22,7 +24,7 @@ We also recommend setting the [`eviction-soft-grace-period`](https://kubernetes.
 
 For more information about configuring eviction thresholds on specific platforms, see ["Freeing node resources"](https://docs.openshift.com/container-platform/4.9/nodes/nodes/nodes-nodes-garbage-collection.html) for OpenShift or ["Cluster architecture"](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#node_allocatable) for GKE.
 
-## Monitor node conditions
+### Monitor node conditions
 
 Redis recommends monitoring the node conditions. If both `MemoryPressure` and `DiskPressure` are true, the eviction threshold was met.
 
@@ -34,3 +36,24 @@ name:gke-7253cc19-42g0	MemoryPressure:False	DiskPressure:False
 ```
 
 For more information about monitoring node conditions, see [Node conditions](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#node-conditions) on [kubernetes.io](https://kubernetes.io/docs/home/).
+
+## Resource quotas
+
+Kubernetes uses the `ResourceQuota` object to limit resource consumption per namespace. This lets you limit the number of objects created by a namespace, or the amount of compute resources consumed by a namespace. 
+
+The resource settings for Redis Enterprise for Kubernetes are defined in the `operator.yaml`.
+
+The following settings are the minimum workloads for the operator to function.
+
+```yaml
+  resources:
+    limits:
+      cpu: 0.5
+      memory: 256Mi
+    requests:
+      cpu: 0.5
+      memory: 256Mi
+```
+For more details on using resource quotas, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/policy/resource-quotas/).
+
+
