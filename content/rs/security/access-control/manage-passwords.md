@@ -6,7 +6,8 @@ weight: 30
 alwaysopen: false
 toc: "true"
 categories: ["RS"]
-aliases: ["/rs/administering/access-control/password-rotation/"]
+aliases: ["/rs/administering/access-control/password-rotation/",
+    "/rs/security/access-control/manage-users/manage-passwords/"]
 ---
 
 Redis Enterprise Software provides several ways to manage the passwords of local accounts, including:
