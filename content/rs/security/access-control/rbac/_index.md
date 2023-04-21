@@ -35,6 +35,16 @@ There are three tabs on the **access control** screen:
 
 - **users** - create users and assign each user a role to grant database access to users.
 
+## Active-Active databases
+
+Users, roles, and Redis ACLs are cluster-level entities, which means:
+
+- They apply to the local participating cluster and Active-Active database instance.
+
+- They do not replicate or propagate to the other participating clusters and instances.
+
+- ACLs will be enforced according to the instance the client is connected to. The Active-Active replication mechanism will propagate all the effects of the operation.
+
 ## More info
 
 - [Redis ACL rules](https://redis.io/docs/manual/security/acl/#acl-rules)
