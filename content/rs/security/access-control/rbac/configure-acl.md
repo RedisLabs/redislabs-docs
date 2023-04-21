@@ -1,5 +1,5 @@
 ---
-Title: Configure ACLs
+Title: Configure ACLs to define database permissions
 linkTitle: Configure ACLs
 description: Configure access control lists (ACLs).
 weight: 20
@@ -7,6 +7,18 @@ alwaysopen: false
 categories: ["RS"]
 aliases: ["/rs/security/access-control/configure-acl/"]
 ---
+
+Redis ACLs allow you to define named permissions for specific Redis commands, keys, and pub/sub channels. You can use defined Redis ACLs for multiple databases and roles.
+
+## Predefined Redis ACLs
+
+The predefined Redis ACLs are:
+
+- **Full Access** - All commands are allowed on all keys.
+
+- **Not Dangerous** - All commands are allowed except those that are administrative, could affect availability, or could affect performance.
+
+- **Read Only** - Only read-only commands are allowed on keys.
 
 ## Redis ACL command syntax
 
@@ -22,18 +34,6 @@ Redis Enterprise lets you:
 - Exclude commands and categories with the "-" prefix for commands or "-@" prefix for command categories.
 - Include keys or key patterns with the "~" prefix.
 - Allow access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) with the "&" prefix (only supported for databases with Redis version 6.2 and later).
-
-To define database access control, you can:
-
-- Use the predefined user roles and add Redis ACLs for specific databases.
-- Create new user roles and select the management roles and Redis ACLs that apply to the user roles for specific databases.
-- Assign roles and Redis ACLs to a database in the access control list section of the database configuration.
-
-The predefined Redis ACLs are:
-
-- **Full Access** - All commands are allowed on all keys.
-- **Not Dangerous** - All commands are allowed except those that are administrative, could affect availability, or could affect performance.
-- **Read Only** - Only read-only commands are allowed on keys.
 
 ## Configure Redis ACLs
 
