@@ -57,21 +57,23 @@ For details about individual modules, see the corresponding documentation.
 
 [^4]: You currently cannot combine Redis on Flash and Active-Active with modules in Redis Cloud.
 
+[^5]: Although RedisTimeSeries supports Redis on Flash, it needs to be noted that the entire series either lives in RAM or on Flash.
+
 | Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
-|-------------------------|:------------:|:------------:|:----------:|:----------:| 
-| Active-Active (CRDB)[^4]    | No           | No           | Yes (v1.0) | No         | 
-| Backup/Restore          | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Clustering              | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Custom hashing policy   | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Eviction expiration     | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Failover/migration      | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Internode encryption    | Yes (v1.4.9) | Yes (v2.2.6) | Yes (v1.2) | Yes (v1.2) | 
-| Module datatypes        | Yes          | Yes          | Yes        | Yes        | 
-| Persistence (AOF)       | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Persistence (snapshot)  | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Redis on Flash (RoF)[^4]| No           | Yes (vTBD)   | Yes (vTBD) | No         | 
-| Replica Of              | Yes (v1.2)   | Yes (v2.0)   | No         | Yes (v1.0) | 
-| Reshard/rebalance       | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | No         | 
+|--------------------------|:--------------:|:------------:|:----------:|:----------:| 
+| Active-Active (CRDB)[^4] | No             | No           | Yes (v1.0) | No         | 
+| Backup/Restore           | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Clustering               | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Custom hashing policy    | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Eviction expiration      | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Failover/migration       | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Internode encryption     | Yes (v1.4.9)   | Yes (v2.2.6) | Yes (v1.2) | Yes (v1.2) | 
+| Module datatypes         | Yes            | Yes          | Yes        | Yes        | 
+| Persistence (AOF)        | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Persistence (snapshot)   | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Redis on Flash (RoF)[^4] | Yes (v1.6)[^5] | Yes (vTBD)   | Yes (vTBD) | No         | 
+| Replica Of               | Yes (v1.2)     | Yes (v2.0)   | No         | Yes (v1.0) | 
+| Reshard/rebalance        | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | No         | 
 
 
 ## Feature descriptions
