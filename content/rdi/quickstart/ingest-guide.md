@@ -14,10 +14,10 @@ This guide will take you through the creation of a write-behind pipeline.
 
 ## Prerequisites
 
-- Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli.md">}}).
+- Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli">}}).
 - An existing Redis Enterprise cluster version >= 6.2.
-- [RedisGears](https://redis.com/modules/redis-gears/) >= 1.2.5 installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
-- A target Redis DB (can be added after installation).
+- [RedisGears](https://redis.com/modules/redis-gears/) >= 1.2.5 installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears">}}) to install.
+- A target Redis database (can be added after installation).
 
 ## Create a new RDI database
 
@@ -54,11 +54,11 @@ The following files will be created in the provided directory:
 
 **Folder Structure**
 
-- `config.yaml` - Redis Data Integration configuration file (definitions of target database, applier, etc.)
+- `config.yaml` - Redis Data Integration configuration file (definitions of target database, applier, and so on).
 
-- `debezium/application.properties` - Debezium Server configuration file
+- `debezium/application.properties` - Debezium Server configuration file.
 
-- `jobs` - Data transformation's jobs, [read here](data-transformation/data-transformation-pipeline.md)
+- `jobs` - Data transformation jobs. For more information, see [Data transformation pipeline]({{<relref "rdi/data-transformation/data-transformation-pipeline">}}).
 
 ## Update Redis target connection details
 
