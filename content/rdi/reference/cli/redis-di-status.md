@@ -2,7 +2,7 @@
 Title: redis-di status
 linkTitle: redis-di status
 description: Display the status of the pipeline end to end
-weight: 190
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

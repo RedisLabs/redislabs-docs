@@ -2,7 +2,7 @@
 Title: redis-di scaffold
 linkTitle: redis-di scaffold
 description: Generate configuration files for RDI and Debezium (when ingesting data to Redis)
-weight: 150
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

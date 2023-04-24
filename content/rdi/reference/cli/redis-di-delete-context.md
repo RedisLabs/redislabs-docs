@@ -2,7 +2,7 @@
 Title: redis-di delete-context
 linkTitle: redis-di delete-context
 description: Delete a context
-weight: 70
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

@@ -2,7 +2,7 @@
 Title: redis-di deploy
 linkTitle: redis-di deploy
 description: Deploy RDI configurations including target
-weight: 80
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

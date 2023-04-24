@@ -2,7 +2,7 @@
 Title: redis-di configure
 linkTitle: redis-di configure
 description: Configure the RDI Database so it is ready to process data
-weight: 30
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

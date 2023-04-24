@@ -2,7 +2,7 @@
 Title: redis-di create
 linkTitle: redis-di create
 description: Create a RDI database instance
-weight: 40
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
@@ -113,6 +113,12 @@ Usage: redis-di create [OPTIONS]
 
   In-memory database replication
 
+* `redisgears_module`: 
+  * Type: STRING 
+  * Default: ``
+  * Usage: `--redisgears-module`
+
+  RedisGears module file
 
 * `help`: 
   * Type: BOOL 
@@ -153,6 +159,7 @@ Options:
   --rdi-shards INTEGER RANGE      Number of database server-side shards
                                   [x>=1]
   --replication                   In-memory database replication
+  --redisgears-module TEXT        RedisGears module file
   --help                          Show this message and exit.
 ```
 

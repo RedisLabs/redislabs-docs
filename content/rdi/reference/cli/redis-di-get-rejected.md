@@ -2,7 +2,7 @@
 Title: redis-di get-rejected
 linkTitle: redis-di get-rejected
 description: Return all stored rejected entries
-weight: 100
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

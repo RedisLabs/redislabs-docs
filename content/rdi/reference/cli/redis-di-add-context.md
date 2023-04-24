@@ -2,7 +2,7 @@
 Title: redis-di add-content
 linkTitle: redis-di add-content
 description: Add a new context
-weight: 20
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

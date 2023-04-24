@@ -2,7 +2,7 @@
 Title: redis-di delete-all-contexts
 linkTitle: redis-di delete-all-contexts
 description: Delete all contexts
-weight: 60
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
