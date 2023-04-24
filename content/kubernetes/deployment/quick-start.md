@@ -234,7 +234,7 @@ As part of the REC creation process, the operator stores the admission controlle
 
     cat > modified-webhook.yaml <<EOF
     webhooks:
-    - name: redb.admission.redislabs
+    - name: redisenterprise.admission.redislabs
       clientConfig:
         caBundle: $CERT
       admissionReviewVersions: ["v1beta1"]
@@ -278,7 +278,7 @@ The operator bundle includes a webhook file. The webhook will intercept requests
     ```sh
     cat > modified-webhook.yaml <<EOF
     webhooks:
-    - name: redb.admission.redislabs
+    - name: redisenterprise.admission.redislabs
       namespaceSelector:
         matchLabels:
           namespace-name: staging
@@ -306,10 +306,10 @@ The operator bundle includes a webhook file. The webhook will intercept requests
     EOF
     ```
 
-You should see your request was denied by the `admission webhook "redb.admission.redislabs"`.
+You should see your request was denied by the `admission webhook "redisenterprise.admission.redislabs"`.
 
 ```sh
-Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+Error from server: error when creating "STDIN": admission webhook "redisenterprise.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
 ```
 
 ## Create a Redis Enterprise Database (REDB)
