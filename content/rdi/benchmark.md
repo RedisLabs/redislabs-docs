@@ -9,7 +9,7 @@ headerRange: "[2]"
 aliases: 
 ---
 
-The goal of Redis Data Integration Benchmark Tool is to produce `INSERT` statements on the source DB and calculates the lag between the time the key is inserted into the source DB and the time at which the key is stored in the target Redis DB.
+The goal of Redis Data Integration Benchmark Tool is to produce `INSERT` statements on the source database and calculates the lag between the time the key is inserted into the source DB and the time at which the key is stored in the target Redis DB.
 
 ![Change record calculated latency](/images/rdi/monitoring-grafana-dash-running.png)
 
@@ -67,7 +67,7 @@ wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-benchmark-rhel8
 wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-benchmark-rhel7-latest.tar.gz -O /tmp/redis-di-benchmark.tar.gz
 ```
 
-## Install RDI Benchmark Tool
+## Install Redis Data Integration Benchmark Tool
 
 Unpack the downloaded `redis-di-benchmark.tar.gz` into `/tmp` directory:
 
@@ -85,7 +85,7 @@ Verify that `redis-di-benchmark` is installed by running:
 ```bash
 redis-di-benchmark --help
 
-Usage: redis_di_benchmark.py [OPTIONS] COMMAND [ARGS]...
+Usage: redis_di_benchmark [OPTIONS] COMMAND [ARGS]...
 
 Options:
 --help Show this message and exit.
@@ -95,9 +95,9 @@ bench
 
 ```
 
-## Run RDI Benchmark Tool
+## Running Redis Data Integration Benchmark Tool
 
-## Arguments
+### Arguments
 
 To get the list of arguments, run the following command on your terminal:
 
@@ -128,7 +128,7 @@ redis_di_benchmark.py bench --help
 | no-bulk            | Single `INSERT` into the source DB in each transaction                    | True                |
 | stream-name-prefix | The prefix with which the name of the stream(s) will be created           | data:`<serverName>` | The value of `<serverName>` should be taken from the property `debezium.source.database.server.name` from Debezium's `application.properties` file |
 
-## Running `redis-di-benchmark` Tool
+### Run `redis-di-benchmark` Tool
 
 From your current directory, run:
 
@@ -136,12 +136,12 @@ From your current directory, run:
 redis-di-benchmark bench
 ```
 
-> Note: non-root users should run the tool from the directory where the file `redis-di-benchmark.tar.gz` was extracted.
+> Note: Non-root users should run the tool from the directory where the file `redis-di-benchmark.tar.gz` was extracted.
 
 ### Output
 
-Per each key Redis Data Integration Benchmark Tool calculates the difference between the arrival time of the key to Redis target DB and the time it was inserted to the source DB.
-When all the keys arrive to Redis target DB, it displays the following statistics:
+For each key, Redis Data Integration Benchmark Tool calculates the difference between the arrival time of the key to Redis target DB and the time it was inserted to the source database.
+When all the keys arrive to Redis target database, it displays the following statistics:
 
 Statistics with input argument `no-bulk = True`
 
@@ -177,7 +177,7 @@ Throughput:
 - When `no-bulk = True`, the tool inserts one record at a time.
 - When `no-bulk = False`, the tool inserts `5000` records at a time.
 
-## Installation of Oracle Instant Client
+## Install Oracle Instant Client
 
 - Create a dedicated `Oracle` folder:
 
@@ -211,7 +211,7 @@ Throughput:
 
 - Install [unixODBC](http://www.unixodbc.org):
 
-  - Ubuntu18.04, Ubuntu20.04:
+  - Ubuntu 18.04, Ubuntu 20.04:
 
     ```bash
     sudo apt install unixodbc
