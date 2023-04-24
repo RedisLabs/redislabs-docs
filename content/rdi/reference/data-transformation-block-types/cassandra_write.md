@@ -1,14 +1,12 @@
 ---
 Title: cassandra.write
 linkTitle: cassandra.write
-description: 
-weight: 20
+description: Write into a Cassandra data store
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
-
-# cassandra.write
 
 Write into a Cassandra data store
 
@@ -24,6 +22,7 @@ Write into a Cassandra data store
 | **opcode_field**                                       | `string` | Name of the field in the payload that holds the operation (c - create, d - delete, u - update) for this record in the DB<br/> | yes      |
 
 **Additional Properties:** not allowed
+
 **Example**
 
 ```yaml

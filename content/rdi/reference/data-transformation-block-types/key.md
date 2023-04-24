@@ -1,16 +1,15 @@
 ---
 Title: key
 linkTitle: key
-description: 
-weight: 40
+description: Set the Redis key for this data entry
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
 
-# key
+Set the Redis key for this data entry
 
-Sets the Redis key for this data entry
 **Properties**
 
 | Name           | Type     | Description                                   | Required |
@@ -19,6 +18,7 @@ Sets the Redis key for this data entry
 | **language**   | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
 **Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml

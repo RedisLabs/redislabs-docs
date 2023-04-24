@@ -1,14 +1,12 @@
 ---
 Title: redis.write
 linkTitle: redis.write
-description: 
-weight: 60
+description: Write to a Redis data structure
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
-
-# redis.write
 
 Write to a Redis data structure
 
@@ -21,6 +19,7 @@ Write to a Redis data structure
 | [**key**](#key)                      | `object` | Field to use as the Redis key<br/>                                                                                       | yes      |
 
 **Additional Properties:** not allowed
+
 **Example**
 
 ```yaml

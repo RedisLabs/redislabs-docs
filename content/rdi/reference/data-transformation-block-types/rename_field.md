@@ -1,16 +1,14 @@
 ---
 Title: rename_field
 linkTitle: rename_field
-description: 
-weight: 90
+description: Rename fields. All other fields remain unchanged.
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
 
-# rename_field
-
-Renames fields. All other fields remain unchanged
+Rename fields. All other fields remain unchanged.
 
 **Option 1 (alternative):**
 Rename multiple fields
@@ -50,6 +48,7 @@ Rename one field
 | **to_field**   | `string` | To field<br/>   | yes      |
 
 **Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml
@@ -80,6 +79,7 @@ Fields
 | **to_field**   | `string` | To field<br/>   | yes      |
 
 **Item Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml
