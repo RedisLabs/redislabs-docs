@@ -2,7 +2,7 @@
 Title: redis-di set-context
 linkTitle: redis-di set-context
 description: Set context to active
-weight: 160
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

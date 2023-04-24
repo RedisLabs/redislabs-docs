@@ -2,7 +2,7 @@
 Title: redis-di describe-job
 linkTitle: redis-di describe-job
 description: Describe a transformation engine job
-weight: 90
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
@@ -13,7 +13,7 @@ Describe a transformation engine job
 ## Usage
 
 ```
-Usage: redis-di describe-job [OPTIONS] JOB_ID
+Usage: redis-di describe-job [OPTIONS] JOB_NAME
 ```
 
 ## Options
@@ -26,10 +26,10 @@ Usage: redis-di describe-job [OPTIONS] JOB_ID
   
 
 
-* `job_id` (REQUIRED): 
+* `job_name` (REQUIRED): 
   * Type: STRING 
   * Default: `none`
-  * Usage: `job-id`
+  * Usage: `job-name`
 
   
 
@@ -94,7 +94,7 @@ Usage: redis-di describe-job [OPTIONS] JOB_ID
 ## CLI Help
 
 ```
-Usage: redis-di describe-job [OPTIONS] JOB_ID
+Usage: redis-di describe-job [OPTIONS] JOB_NAME
 
   Describes a transformation engine's job
 

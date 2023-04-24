@@ -2,7 +2,7 @@
 Title: redis-di reset
 linkTitle: redis-di reset
 description: Reset the pipeline into initial full sync mode
-weight: 130
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

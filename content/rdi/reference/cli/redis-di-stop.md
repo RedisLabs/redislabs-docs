@@ -2,7 +2,7 @@
 Title: redis-di stop
 linkTitle: redis-di stop
 description: Stop the pipeline
-weight: 200
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

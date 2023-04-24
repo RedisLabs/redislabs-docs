@@ -2,7 +2,7 @@
 Title: redis-di upgrade
 linkTitle: redis-di upgrade
 description: Upgrade RDI Engine without losing data or downtime
-weight: 220
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

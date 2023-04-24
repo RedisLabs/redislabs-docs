@@ -1,19 +1,19 @@
 ---
-Title: redis-di list-jobs
-linkTitle: redis-di list-jobs
-description: List transformation engine jobs
+Title: redis-di dump-support-package
+linkTitle: redis-di dump-support-package
+description: Dump RDI support package
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
 
-List transformation engine jobs
+Dump RDI support package
 
 ## Usage
 
 ```
-Usage: redis-di list-jobs [OPTIONS]
+Usage: redis-di dump-support-package [OPTIONS]
 ```
 
 ## Options
@@ -74,6 +74,46 @@ Usage: redis-di list-jobs [OPTIONS]
   CA certificate file to verify with
 
 
+* `directory`: 
+  * Type: STRING 
+  * Default: `.`
+  * Usage: `--dir`
+
+  Directory where the support file should be generated
+
+
+* `dump_rejected`: 
+  * Type: INT 
+  * Default: `none`
+  * Usage: `--dump-rejected`
+
+  Dumps rejected records
+
+
+* `trace_timeout`: 
+  * Type: <IntRange 1<=x<=600> 
+  * Default: `none`
+  * Usage: `--trace-timeout`
+
+  Stops the trace after exceeding this timeout (in seconds)
+
+
+* `max_change_records`: 
+  * Type: <IntRange x>=1> 
+  * Default: `10`
+  * Usage: `--max-change-records`
+
+  Maximum traced change records per shard
+
+
+* `trace_only_rejected`: 
+  * Type: BOOL 
+  * Default: `false`
+  * Usage: `--trace-only-rejected`
+
+  Trace only rejected change records
+
+
 * `help`: 
   * Type: BOOL 
   * Default: `false`
@@ -86,9 +126,9 @@ Usage: redis-di list-jobs [OPTIONS]
 ## CLI Help
 
 ```
-Usage: redis-di list-jobs [OPTIONS]
+Usage: redis-di dump-support-package [OPTIONS]
 
-  Lists transformation engine's jobs
+  Dumps RDI support package
 
 Options:
   -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
@@ -99,6 +139,14 @@ Options:
   --rdi-key TEXT                  Private key file to authenticate with
   --rdi-cert TEXT                 Client certificate file to authenticate with
   --rdi-cacert TEXT               CA certificate file to verify with
+  --dir TEXT                      Directory where the support file should be
+                                  generated  [default: .]
+  --dump-rejected INTEGER         Dumps rejected records
+  --trace-timeout INTEGER RANGE   Stops the trace after exceeding this timeout
+                                  (in seconds)  [1<=x<=600]
+  --max-change-records INTEGER RANGE
+                                  Maximum traced change records per shard
+                                  [x>=1]
+  --trace-only-rejected           Trace only rejected change records
   --help                          Show this message and exit.
 ```
-

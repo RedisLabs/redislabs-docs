@@ -2,7 +2,7 @@
 Title: redis-di trace
 linkTitle: redis-di trace
 description: Start a trace session for troubleshooting data transformation
-weight: 210
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
@@ -76,7 +76,7 @@ Usage: redis-di trace [OPTIONS]
 
 * `max_change_records`: 
   * Type: <IntRange x>=1> 
-  * Default: `none`
+  * Default: `10`
   * Usage: `--max-change-records`
 
   Maximum traced change records per shard
@@ -90,10 +90,10 @@ Usage: redis-di trace [OPTIONS]
   Stops the trace after exceeding this timeout (in seconds)
 
 
-* `rejected_only`: 
+* `trace_only_rejected`: 
   * Type: BOOL 
   * Default: `false`
-  * Usage: `--rejected-only`
+  * Usage: `--trace_only_rejected`
 
   Trace only rejected change records
 
@@ -129,7 +129,7 @@ Options:
   --timeout INTEGER RANGE         Stops the trace after exceeding this timeout
                                   (in seconds)  [default: 20; 1<=x<=600;
                                   required]
-  --rejected-only                 Trace only rejected change records
+  --trace_only_rejected           Trace only rejected change records
   --help                          Show this message and exit.
 ```
 

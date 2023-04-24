@@ -2,7 +2,7 @@
 Title: redis-di delete
 linkTitle: redis-di delete
 description: Delete RDI database permanently
-weight: 50
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 

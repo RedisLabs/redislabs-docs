@@ -2,7 +2,7 @@
 Title: redis-di set-secret
 linkTitle: redis-di set-secret
 description: Write a secret to Redis secret store
-weight: 170
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
