@@ -121,25 +121,24 @@ By default, you're shown basic settings, which include:
 | Database&nbsp;setting | Description |
 |:---------|:-----------|
 | **Name** | A custom name for your database (_required_) |
-| **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**).throughput is measured for the database, either operations per second (_Ops/sec_) or _Number of shards_. |
+| **Advanced Capabilities** | Modules used by the database. Choose from [RedisSearch]({{< relref "/modules/redisearch/_index.md" >}}), [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}}), [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}). |
+| **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**). |
 | **Memory Limit (GB)** | The size limit for the database. Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).|
 | **High Availability** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |
 | **Quantity** | Identifies the number of databases to create with the selected settings. |
 
-Advanced options are also available.
+Select **More options** to specify values for the following settings.
 
 {{<image filename="images/rc/flexible-add-database-advanced.png" width="75%" alt="The New Database dialog with advanced settings." >}}{{< /image >}}
 
-Select **Advanced options** to specify values for the following settings:
-
-| Advanced&nbsp;option | Description |
+| Database&nbsp;option | Description |
 |:---------|:-----------|
 | **OSS Cluster API** | Enable to use the open-source Redis Cluster API. |
 | **Type** | Set to _Memcached_ database to support the legacy database; otherwise leave as _Redis_ |
 | **Data Persistence** | Defines the data persistence policy, if any. See [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}) |
-| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2]({{< relref "/modules/redisearch/_index.md" >}}), [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}}), [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}). |
+| **Quantity** | Number of databases to create with these settings. |
 
-When finished, select **Save Database** to create your database.
+When finished, select **Save database** to create your database.
 
 {{<image filename="images/rc/button-database-save.png" width="140px" alt="Select the Save Database button to define your new database." >}}{{< /image >}}
 
