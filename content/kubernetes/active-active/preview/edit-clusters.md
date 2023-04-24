@@ -23,9 +23,9 @@ Use the following steps to add a participating cluster to an existing Redis Ente
 To prepare the Redis Enterprise cluster (REC) to participate in an Active-Active database, perform the following tasks from [Prepare participating clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters.md">}}):
 
 - Make sure the cluster meets the hardware and naming requirements. 
-- Enable the Active-Active controllers
-- Configure external routing
-- Configure `ValidatingWebhookConfiguration`
+- Enable the Active-Active controllers.
+- Configure external routing.
+- Configure `ValidatingWebhookConfiguration`.
 
 ### Collect REC credentials
 
@@ -34,7 +34,7 @@ To communicate with other clusters, all participating clusters need access to th
 1. Locate the file holding the admin credentials for all participating RECs created while [preparing the clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters.md">}}) (such as `all-rec-secrets.yaml`).
 
 1. Within that file, create a secret for the new participating cluster named `redis-enterprise-<rerc>`. 
-  {{<note>}}The file should contain a secret for each exiting participating cluster.{{</note>}}
+  {{<note>}}The file should contain a secret for each existing participating cluster.{{</note>}}
 
     The example below shows a file (`all-rec-secrets.yaml`) holding secrets for two participating clusters:
 
@@ -67,7 +67,7 @@ To communicate with other clusters, all participating clusters need access to th
     kubectl get secret -o yaml <rec-name>
     ```
 
-    The admin credentials secret for an REC named `rec1` would be similar to this:
+    The admin credentials secret for an REC named `rec1` has this format:
 
     ```yaml
     apiVersion: v1
@@ -113,25 +113,25 @@ To communicate with other clusters, all participating clusters need access to th
     kubectl apply -f <all-rec-secrets-file>
     ```
 
- If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
+ If the admin credentials for any of the clusters change, update and reapply the file to all clusters.
 
 ### Create RERC
 
-1. From one of the exiting particpating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for the new participating cluster. 
+1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for the new participating cluster. 
 
   This example shows a RERC custom resource for an REC named `rec3` in the namespace `ns3`. 
 
   ```yaml
   apiVersion: app.redislabs.com/v1alpha1
-kind: RedisEnterpriseRemoteCluster
-metadata:
-  name: rerc3
-spec:
-  recName: rec3
-  recNamespace: ns3
-  apiFqdnUrl: test-example-api-rec3-ns3.redis.com
-  dbFqdnSuffix: -example-cluster-rec3-ns3.redis.com
-  secretName: redis-enterprise-rerc3
+  kind: RedisEnterpriseRemoteCluster
+  metadata:
+    name: rerc3
+  spec:
+    recName: rec3
+    recNamespace: ns3
+    apiFqdnUrl: test-example-api-rec3-ns3.redis.com
+    dbFqdnSuffix: -example-cluster-rec3-ns3.redis.com
+    secretName: redis-enterprise-rerc3
   ```
 
 1. Create the RERC custom resource. 
@@ -151,7 +151,6 @@ spec:
     NAME        STATUS   SPEC STATUS   LOCAL
   rerc3   Active   Valid         true
   ```
-
 
 ### Edit REAADB spec
 
