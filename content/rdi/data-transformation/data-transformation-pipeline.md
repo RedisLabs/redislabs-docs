@@ -14,11 +14,11 @@ The ingested format and types are different from one source to another. Currentl
 
 Each job describes the transformation logic to perform on data from a single source. The source is typically a database table or collection and is specified as the full name of this table/collection. The job may include a filtering logic, to skip data that matches a condition. Other logical steps in the job will transform the data into the desired output that will be stored in Redis (as Hash or JSON).
 
-![High-level data transformation pipeline](/images/rdi/pipeline.png)
+![Data transformation pipeline, high level](/images/rdi/data-transformation-pipeline.png)
 
 ## Jobs
 
-Each job will be in a separate YAML file. All of these files will be uploaded to Redis Data Integration using the `deploy` command (see [below](#deploy-configuration)). If you are using the [scaffold]({{<relref "/rdi/quickstart/ingest-guide#scaffold-configuration-files">}}) command, place the job files under the `jobs` folder.
+Each job will be in a separate YAML file. All of these files will be uploaded to Redis Data Integration using the `deploy` command (see [Deploy configuration](#deploy-configuration)). If you are using the [scaffold]({{<relref "/rdi/quickstart/ingest-guide.md">}}) command, place the job files in the `jobs` folder.
 
 ### Job YAML structure
 
@@ -28,16 +28,18 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
 
   This section describes what is the table that this job works on:
 
-  - `server_name`: logical server name (optional)
+  - `server_name`: Logical server name (optional). Corresponds to `debezium.source.topic.prefix` property specified in Debezium Server's `application.properties` config file
   - `db`: DB name (optional)
   - `schema`: DB schema (optional)
   - `table`: DB table
   - `row_format`: Format of the data to be transformed: data_only (default) - only payload, full - complete change record
 
+> Note: Any reference to `server_name`, `db`, `schema` and `table` properties will be treated by default as case insensitive. This can be changed by setting `case_insensitive` to `false`.
+
 - `transform`:
 
   This section includes a series of blocks that the data should go through.
-  See documentation of the [supported blocks](../reference/data-transformation-block-types.md) and [JMESPath custom functions](../reference/jmespath-custom-functions.md).
+  See documentation of the [supported blocks]({{<relref "/rdi/reference/data-transformation-block-types">}}) and [JMESPath custom functions]({{<relref "/rdi/reference/jmespath-custom-functions.md">}}).
 
 - `output`:
 
@@ -109,7 +111,7 @@ redis-di deploy
 
 ### Deploy configuration on Kubernetes
 
-If the RDI CLI is deployed as a pod in a Kubernetes cluster, then these steps are needed for deploying your jobs:
+If the RDI CLI is deployed as a pod in a Kubernetes cluster, perform these steps to deploy your jobs:
 
 - Create a ConfigMap from the YAML files in your `jobs` folder:
 
@@ -123,9 +125,9 @@ If the RDI CLI is deployed as a pod in a Kubernetes cluster, then these steps ar
   kubectl exec -it pod/redis-di-cli -- redis-di deploy
   ```
 
-> Note: There will be a delay between creating/modifying the ConfigMap and its availability in the `redis-di-cli` pod. You should wait for around 30 seconds before running the `redis-di deploy` command.
+> Note: A delay occurs between creating/modifying the ConfigMap and its availability in the `redis-di-cli` pod. Wait around 30 seconds before running the `redis-di deploy` command.
 
-There are two options for updating the ConfigMap:
+You have two options to update the ConfigMap:
 
 - For smaller changes, you can edit the ConfigMap directly with this command:
 
@@ -133,10 +135,10 @@ There are two options for updating the ConfigMap:
   kubectl edit configmap redis-di-jobs
   ```
 
-- For bigger changes (for example, the addition of another job file), edit files in your local `jobs` folder and then run this command:
+- For bigger changes (for example, adding another job file), edit the files in your local `jobs` folder and then run this command:
 
   ```bash
   kubectl create configmap redis-di-jobs --from-file=jobs/ --dry-run=client -o yaml | kubectl apply -f -
   ```
 
-You need to run `kubectl exec -it pod/redis-di-cli -- redis-di deploy` after updating the ConfigMap with either option.
+> Note: You need to run `kubectl exec -it pod/redis-di-cli -- redis-di deploy` after updating the ConfigMap with either option.
