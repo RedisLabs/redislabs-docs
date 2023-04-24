@@ -57,7 +57,7 @@ For details about individual modules, see the corresponding documentation.
 
 [^4]: You currently cannot combine Redis on Flash and Active-Active with modules in Redis Cloud.
 
-[^5]: Although RedisTimeSeries supports Redis on Flash, it needs to be noted that the entire series either lives in RAM or on Flash.
+[^5]: Although RedisTimeSeries supports Redis on Flash, the entire series either lives in RAM or on flash.
 
 | Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
 |--------------------------|:--------------:|:------------:|:----------:|:----------:| 
