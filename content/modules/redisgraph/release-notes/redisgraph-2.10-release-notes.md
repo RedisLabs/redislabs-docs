@@ -15,6 +15,21 @@ RedisGraph v2.10.8 requires:
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
 
+## v2.10.9 (April 2023)
+
+This is a maintenance release for RedisGraph 2.10.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#2880](https://github.com/RedisGraph/RedisGraph/issues/2880) Potential crash when using `WITH *` expressions
+  - [#2917](https://github.com/RedisGraph/RedisGraph/issues/2917) Potential crash when using `CASE` expressions (MOD-4873)
+  - [#2836](https://github.com/RedisGraph/RedisGraph/issues/2836) Potential crash on `*0` variable-length path (MOD-4817)
+  - [#2916](https://github.com/RedisGraph/RedisGraph/issues/2916) Potential crash when executing concurrent queries that utilize full-text indices (MOD-4818)
+
 ## v2.10.8 (February 2023)
 
 This is a maintenance release for RedisGraph 2.10.
