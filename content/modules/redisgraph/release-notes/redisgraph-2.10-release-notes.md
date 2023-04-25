@@ -10,7 +10,7 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.10.8 requires:
+RedisGraph v2.10.9 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
