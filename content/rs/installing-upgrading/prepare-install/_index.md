@@ -12,7 +12,7 @@ Before you install Redis Enterprise Software:
 
 - [Download an installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}).
 
-- [View installation questions]({{<relref "/rs/installing-upgrading/prepare-install/manage-installation-questions">}}) and optionally prepare answers before installation.
+- [View installation questions]({{<relref "/rs/installing-upgrading/install/manage-installation-questions">}}) and optionally prepare answers before installation.
 
 - Review the [security considerations]({{< relref "/rs/security/" >}}) for your deployment.
 

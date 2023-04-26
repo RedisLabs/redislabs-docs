@@ -44,7 +44,7 @@ To learn more about customization and find answers to related questions, see:
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})
 - [File locations]({{<relref "rs/installing-upgrading/plan-deployment/file-locations.md">}})
 - [Supported platforms]({{<relref "rs/installing-upgrading/plan-deployment/supported-platforms.md">}})
-- [Manage installation questions]({{<relref "rs/installing-upgrading/prepare-install/manage-installation-questions.md">}})
+- [Manage installation questions]({{<relref "rs/installing-upgrading/install/manage-installation-questions.md">}})
 - [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
 - [User and group ownership]({{<relref "rs/installing-upgrading/install/customize-user-and-group.md">}})
 

@@ -2,10 +2,11 @@
 Title: Manage installation questions
 linkTitle: Manage install questions
 description: Describes Redis Enterprise Software installation questions and how to answer them automatically.
-weight: 30
+weight: 25
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/installing-upgrading/manage-installation-questions/
+aliases: ["/rs/installing-upgrading/manage-installation-questions/",
+    "/rs/installing-upgrading/prepare-install/manage-installation-questions/"]
 ---
 
 Several questions are displayed during the Redis Enterprise Software installation process.
@@ -37,7 +38,7 @@ Several questions appear during installation:
 - **Firewall ports** - `Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?`
 
     Redis Enterprise Software requires that all nodes have [specific network ports]({{< relref "/rs/networking/port-configurations.md" >}}) open.
-    You can either:
+    To open the ports, you can:
 
     - Answer `Y` to let the installation process open these ports.
     - Answer `N` and configure the firewall manually for [RHEL/CentOS firewall]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-firewall" >}}).

@@ -58,13 +58,13 @@ To install Redis Enterprise Software using the command line:
 - You must either be the root user or use `sudo` to run the installation script.
     {{< /note >}}
 
-1. Answer the [installation questions]({{<relref "rs/installing-upgrading/prepare-install/manage-installation-questions.md">}}) when shown to complete the installation process.
+1. Answer the [installation questions]({{<relref "rs/installing-upgrading/install/manage-installation-questions.md">}}) when shown to complete the installation process.
 
     {{< note >}}
 To skip the installation questions, use one of the following methods:
 
 - Run `./install.sh -y` to answer yes to all of the questions.
-- Create an [answer file]({{<relref "rs/installing-upgrading/prepare-install/manage-installation-questions#configure-file-to-answer">}}) to answer installation questions automatically.
+- Create an [answer file]({{<relref "rs/installing-upgrading/install/manage-installation-questions#configure-file-to-answer">}}) to answer installation questions automatically.
     {{< /note >}}
 
 1. When installation completes successfully, the output displays the admin console's IP address:

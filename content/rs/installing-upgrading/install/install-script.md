@@ -14,8 +14,8 @@ The following options are supported:
 
 | Option | Description |
 |--------|-------------|
-| `-y` | Automatically answers `yes` to all install prompts, accepting all default values<br/>See [Manage install questions]({{<relref "/rs/installing-upgrading/prepare-install/manage-installation-questions">}})|
-| <nobr>`-c <answer file>`</nobr> | Specify answer file used to respond to install prompts<br/>See [Manage install questions]({{<relref "/rs/installing-upgrading/prepare-install/manage-installation-questions">}})|
+| `-y` | Automatically answers `yes` to all install prompts, accepting all default values<br/>See [Manage install questions]({{<relref "/rs/installing-upgrading/install/manage-installation-questions">}})|
+| <nobr>`-c <answer file>`</nobr> | Specify answer file used to respond to install prompts<br/>See [Manage install questions]({{<relref "/rs/installing-upgrading/install/manage-installation-questions">}})|
 | <nobr>`-s <socket dir>`</s> | Specify directory for redislabs unix sockets  _(new installs only)_|
 | <nobr>`--install-dir <dir>`</nobr> | Specifies installation directory _(new installs only)_ <br/> See [Customize install locations]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}})|  
 | <nobr>`--config-dir <dir>` | Configuration file directory *(new installs only)* <br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}})|

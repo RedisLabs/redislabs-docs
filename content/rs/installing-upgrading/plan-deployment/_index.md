@@ -37,4 +37,4 @@ After you finish planning your deployment, you can:
 
 - [Prepare to install]({{<relref "/rs/installing-upgrading/prepare-install">}}) Redis Enterprise Software.
 
-- [View installation questions]({{<relref "/rs/installing-upgrading/prepare-install/manage-installation-questions">}}) and prepare answers before installation.
+- [View installation questions]({{<relref "/rs/installing-upgrading/install/manage-installation-questions">}}) and prepare answers before installation.
