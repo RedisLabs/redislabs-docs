@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-When you [create a database]({{<relref "/rs/databases/create">}}), default user database access is enabled by default (**Default database password** check box is selected). This allows for backwards compatibility with versions of Redis before Redis 6.
+When you [create a database]({{<relref "/rs/databases/create">}}), default user database access is enabled by default (**Default database password** check box is selected). This enables compatibility with versions of Redis before Redis 6.
 
 {{<image filename="images/rs/database-config-default-user-enabled.png" alt="" >}}{{< /image >}}
 
@@ -38,6 +38,10 @@ To change the default user's password:
 ## Deactivate default user
 
 If you set up [role-based access control]({{<relref "/rs/security/access-control/rbac">}}) with [access control lists]({{<relref "/rs/security/access-control/rbac/configure-acl">}}) (ACLs) for your database and don't require backwards compatibility with versions earlier than Redis 6, you can [deactivate the default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}).
+
+{{<warning>}}
+Before you deactivate default user access, make sure the role associated with the database is [assigned to a user]({{<relref "/rs/security/access-control/rbac/assign-user-role">}}). Otherwise, the database will be inaccessible.
+{{</warning>}}
 
 To deactivate the default user:
 

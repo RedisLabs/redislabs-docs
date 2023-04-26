@@ -12,7 +12,11 @@ aliases:
 
 When you create a database, [default user access]({{<relref "/rs/security/access-control/manage-users/default-user">}}) is enabled by default.
 
-If you set up [role-based access controls]({{<relref "/rs/security/access-control/rbac">}}) for your database and don't require backwards compatibility with versions earlier than Redis 6, you can [deactivate the default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}).
+If you set up [role-based access controls]({{<relref "/rs/security/access-control/rbac">}}) for your database and don't require compatibility with versions earlier than Redis 6, you can [deactivate the default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}).
+
+{{<warning>}}
+Before you [deactivate default user access]({{<relref "/rs/security/access-control/manage-users/default-user#deactivate-default-user">}}), make sure the role associated with the database is [assigned to a user]({{<relref "/rs/security/access-control/rbac/assign-user-role">}}). Otherwise, the database will be inaccessible.
+{{</warning>}}
 
 ## Role-based access control
 
