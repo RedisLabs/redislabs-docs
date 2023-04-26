@@ -1,14 +1,12 @@
 ---
 Title: remove_field
 linkTitle: remove_field
-description: 
-weight: 80
+description: Remove fields
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
-
-# remove_field
 
 Remove fields
 
@@ -22,6 +20,7 @@ Remove multiple fields
 | [**fields**](#option1fields) | `object[]` | Fields<br/> | yes      |
 
 **Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml
@@ -75,6 +74,7 @@ Fields
 | **field** | `string` | Field<br/>  | yes      |
 
 **Item Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml

@@ -1,14 +1,12 @@
 ---
 Title: add_field
 linkTitle: add_field
-description: 
+description: Add fields to a record
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
-
-# add_field
 
 Add fields to a record
 
@@ -22,6 +20,7 @@ Add multiple fields
 | [**fields**](#option1fields) | `object[]` | Fields<br/> | yes      |
 
 **Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml
@@ -53,6 +52,7 @@ Add one field
 | **language**   | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
 **Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml
@@ -85,6 +85,7 @@ Fields
 | **language**   | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
 **Item Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml

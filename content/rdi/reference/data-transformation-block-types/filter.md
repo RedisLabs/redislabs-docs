@@ -1,14 +1,12 @@
 ---
 Title: filter
 linkTitle: filter
-description: 
-weight: 30
+description: Filter records
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
-
-# filter
 
 Filter records
 
@@ -20,6 +18,7 @@ Filter records
 | **language**   | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
 **Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml

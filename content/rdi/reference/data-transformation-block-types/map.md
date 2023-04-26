@@ -1,16 +1,14 @@
 ---
 Title: map
 linkTitle: map
-description: 
-weight: 50
+description: Map a record into a new output based on expressions
+weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases: 
 ---
 
-# map
-
-Maps a record into a new output based on expressions
+Map a record into a new output based on expressions
 
 **Properties**
 
@@ -20,6 +18,7 @@ Maps a record into a new output based on expressions
 | **language**                  | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
 **Additional Properties:** not allowed  
+
 **Example**
 
 ```yaml
