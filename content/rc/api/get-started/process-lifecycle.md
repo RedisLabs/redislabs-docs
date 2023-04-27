@@ -18,10 +18,6 @@ aliases: /rv/api/concepts/provisioning-lifecycle/
 ---
 Flexible and Annual Redis Enterprise Cloud [subscriptions]({{< relref "/rc/subscriptions/" >}}) can leverage a RESTful API that permits operations against a variety of resources, including servers, services, and related infrastructure.
 
-{{< note >}}
-The REST API is not supported for Fixed or Free subscriptions.
-{{< /note >}}
-
 [Once it's enabled]({{< relref "rc/api/get-started/enable-the-api.md" >}}), you can use the REST API to create, update, and delete subscriptions, databases, and other entities.
 
 API operations run asynchronously, which means that provisioning occurs in the background.  When you submit a request, a background process starts working on it.  The response object includes an ID that lets you determine the status of the background process as it performs its work.
