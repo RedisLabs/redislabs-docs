@@ -10,9 +10,9 @@ categories: []
 aliases: 
 ---
 
-You can define your own Redis ACL rules to assign to a data access role or use provided Redis ACLs.
+You can define custom Redis ACL rules to assign to a data access role or use predefined Redis ACLs.
 
-Redis provides three ACL rules marked with the Redis logo:
+Redis provides three predefined ACL rules, which are marked with the Redis logo:
 
     - **Full Access**: Allows all commands. 
     - **Read-Write**: Allows read and write commands and excludes dangerous commands.

@@ -18,7 +18,7 @@ For [Active-Active databases]({{<relref "rc/databases/active-active-redis">}}), 
 
 1. Select one or more Active-Active databases from the **Databases** list.
 
-1. To set the role's default level of access to the selected databases, pick a **Redis ACL** from the list and select the check mark to confirm the association.
+1. To set the role's default level of access to the selected databases, choose a **Redis ACL** from the list and select the check mark to confirm the association.
 
     {{< note >}}
 The default level of access to the selected database only applies to regions that exist when the role is created. If you add a new region to your Active-Active subscription, the new region will default to **No Access** for the role.
@@ -32,4 +32,4 @@ The default level of access to the selected database only applies to regions tha
 
 1. Select **Save role**.
 
-After you create a role, you can assign it to a user. Users with this role can access the databases according to the role's associated Redis ACLs. For more information, see [Assign roles to users]({{<relref "rc/security/access-control/data-access-control/create-assign-users#assign-roles-to-users">}}).
+After you create a role, you can assign it to a user. Users with this role can access the databases according to the role's associated Redis ACLs. For more information, see [Assign roles to users]({{<relref "rc/security/access-control/data-access-control/create-assign-users#assign-roles-to-existing-users">}}).

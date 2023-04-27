@@ -26,5 +26,5 @@ To assign [Redis ACLs]({{<relref "rc/security/access-control/data-access-control
 
 After you create a role, you can assign it to a user. Users with this role can access the databases according to the role's associated Redis ACLs. For more information, see [Assign roles to users]({{<relref "rc/security/access-control/data-access-control/create-assign-users#assign-roles-to-users">}}).
 
-To assign Redis ACLs to a role for an [Active-Active subscription]({{<relref "rc/databases/active-active-redis">}}), see [Active-Active access roles]({{<relref "rc/security/access-control/data-access-control/create-assign-users#assign-roles-to-users">}}).
+To assign Redis ACLs to a role for an [Active-Active subscription]({{<relref "rc/databases/active-active-redis">}}), see [Active-Active access roles]({{<relref "rc/security/access-control/data-access-control/active-active-roles">}}).
 
