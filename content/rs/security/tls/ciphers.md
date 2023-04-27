@@ -10,11 +10,6 @@ aliases:
 
 Ciphers are algorithms that help secure connections between clients and servers. You can change the ciphers to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
-Default cipher: 
-
-```sh
-HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
-```
 
 ## Configure cipher suites
 
