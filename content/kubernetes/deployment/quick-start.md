@@ -242,16 +242,16 @@ As part of the REC creation process, the operator stores the admission controlle
 1. Patch the webhook with the certificate.
 
     ```sh
-    kubectl patch ValidatingWebhookConfiguration /
-    redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
+    kubectl patch ValidatingWebhookConfiguration \
+      redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
   {{<note>}}
 
   For releases before 6.4.2-4, use this command instead:
     ```sh
-    kubectl patch ValidatingWebhookConfiguration /
-    redb-admission --patch "$(cat modified-webhook.yaml)"
+    kubectl patch ValidatingWebhookConfiguration \
+      redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
   The 6.4.2-4 release introduces a new `ValidatingWebhookConfiguration` to replace `redb-admission`. See the [6.4.2-4 release notes]({{<relref "/kubernetes/release-notes/6-4-2-releases/">}}).
@@ -288,8 +288,8 @@ The operator bundle includes a webhook file. The webhook will intercept requests
 1. Apply the patch.
 
     ```sh
-    kubectl patch ValidatingWebhookConfiguration /
-    redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
+    kubectl patch ValidatingWebhookConfiguration \
+      redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
 ## Verify the admission controller is working
