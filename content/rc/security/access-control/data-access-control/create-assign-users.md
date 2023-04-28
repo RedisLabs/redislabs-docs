@@ -20,7 +20,11 @@ To create a user:
 
 1. Select the `+` button to create a new user.
 
-1. Enter the username.
+1. Enter a username.
+
+    {{<note>}}
+An error occurs if a user tries to connect to a memcached database with the username `admin`. Do not use `admin` for a username if the user will be connecting to a memcached database.
+    {{</note>}}
 
 1. Select a [**Role**]({{<relref "rc/security/access-control/data-access-control/create-roles">}}) from the list.
 
