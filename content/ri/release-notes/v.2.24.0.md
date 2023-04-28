@@ -11,7 +11,7 @@ aliases: /ri/release-notes/v2.24.0/
 This is the General Availability (GA) release of RedisInsight 2.24.
 
 ### Highlights
-- Bulk data upload: upload the list of Redis commands from a text file using the new bulk action available in the Browser tool. Use the bulk data upload with custom RedisInsight tutorials to quickly load your example data set.
+- Bulk data upload: Upload the list of Redis commands from a text file using the new bulk action in the Browser tool. Use the bulk data upload with custom RedisInsight tutorials to quickly load your sample dataset.
 - Support for images in custom tutorials: showcase your Redis expertise with your team and the wider community by building shareable RedisInsight tutorials.
 - JSON formatter support for the [JSON.GET](https://redis.io/commands/json.get/), [JSON.MGET](https://redis.io/commands/json.mget/), [GET](https://redis.io/commands/get/) commands output in Workbench
 - Added Brotli and PHP GZcompress to the list of supported decompression formats to view your data in a human-readable format 
