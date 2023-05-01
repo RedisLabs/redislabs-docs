@@ -12,11 +12,11 @@ aliases:
 
 You can define custom Redis ACL rules to assign to a data access role or use predefined Redis ACLs.
 
-Redis provides three predefined ACL rules, which are marked with the Redis logo:
+Redis provides three predefined ACL rules, which are marked with the Redis logo and can not be changed:
 
-- **Full Access**: Allows all commands. 
+- **Full-Access**: Allows all commands. 
 - **Read-Write**: Allows read and write commands and excludes dangerous commands.
-- **Read-only**: Allows read commands only.
+- **Read-Only**: Allows read commands only.
 
 ACLs that are not marked with the Redis logo are user-defined ACL rules.
 
