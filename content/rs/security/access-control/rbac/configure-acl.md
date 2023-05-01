@@ -1,39 +1,54 @@
 ---
-Title: Configure ACLs
+Title: Configure ACLs to define database permissions
 linkTitle: Configure ACLs
 description: Configure access control lists (ACLs).
 weight: 20
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: ["/rs/security/access-control/configure-acl/"]
 ---
+
+Redis ACLs allow you to define named permissions for specific Redis commands, keys, and pub/sub channels. You can use defined Redis ACLs for multiple databases and roles.
+
+## Predefined Redis ACLs
+
+The predefined Redis ACLs are:
+
+- **Full Access** - All commands are allowed on all keys.
+
+- **Not Dangerous** - All commands are allowed except those that are administrative, could affect availability, or could affect performance.
+
+- **Read Only** - Only read-only commands are allowed on keys.
 
 ## Redis ACL command syntax
 
 Redis ACLs are defined by a [Redis syntax](https://redis.io/docs/manual/security/acl/#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 
-{{<note>}}
-Redis Enterprise modules do not have a command category.
-{{</note>}}
-
 Redis Enterprise lets you:
 
 - Include commands and categories with the "+" prefix for commands or "+@" prefix for command categories.
+
 - Exclude commands and categories with the "-" prefix for commands or "-@" prefix for command categories.
+
 - Include keys or key patterns with the "~" prefix.
+
 - Allow access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) with the "&" prefix (only supported for databases with Redis version 6.2 and later).
 
-To define database access control, you can:
+{{<note>}}
+Module commands have several ACL limitations:
 
-- Use the predefined user roles and add Redis ACLs for specific databases.
-- Create new user roles and select the management roles and Redis ACLs that apply to the user roles for specific databases.
-- Assign roles and Redis ACLs to a database in the access control list section of the database configuration.
+- [Redis modules]({{<relref "/modules">}}) do not have command categories.
 
-The predefined Redis ACLs are:
+- Other [command category](https://redis.io/docs/management/security/acl/#command-categories) ACLs, such as `+@read` and `+@write`, do not include Redis module commands. `+@all` is the only exception because it allows all Redis commands.
 
-- **Full Access** - All commands are allowed on all keys.
-- **Not Dangerous** - All commands are allowed except those that are administrative, could affect availability, or could affect performance.
-- **Read Only** - Only read-only commands are allowed on keys.
+- You have to include individual module commands in a Redis ACL rule to allow them.
+
+    For example, the following Redis ACL rule allows read-only commands and the RediSearch commands `FT.INFO` and `FT.SEARCH`:
+
+    ```sh
+    +@read +FT.INFO +FT.SEARCH
+    ```
+{{</note>}}
 
 ## Configure Redis ACLs
 
@@ -100,3 +115,6 @@ Redis Enterprise Software does not support certain open source Redis ACL command
 The `MULTI`, `EXEC`, `DISCARD` commands are always allowed, but ACLs are enforced on `MULTI` subcommands.
 {{</note>}}
 
+## Next steps
+
+- [Create or edit a role]({{<relref "/rs/security/access-control/rbac/create-roles">}}) and add Redis ACLs to it.

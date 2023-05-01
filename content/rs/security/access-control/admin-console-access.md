@@ -1,17 +1,20 @@
 ---
-Title: Create roles
-linkTitle: Create roles
-description: Create access control roles.
-weight: 20
+Title: Grant admin console and REST API access for cluster management
+linkTitle: Cluster management access
+description: Grant admin console access to a user.
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: 
 ---
 
-From **access control** > **roles**, you can configure user roles with:
+To grant a user access to a Redis Enterprise cluster's admin console and [REST API]({{<relref "/rs/references/rest-api">}}), assign a predefined management role to the user.
 
-- **Management roles** - Management roles define user access to the cluster's admin console and API.
-- **Data access controls** - Data access controls define the permissions each role has for each database in the cluster.
+## Grant cluster management access
+
+1. [Create a new user]({{<relref "/rs/security/access-control/manage-users/add-users">}}) or edit an existing one.
+
+2. [Assign a role to the user]({{<relref "/rs/security/access-control/rbac/assign-user-role">}}), either a [default role](#default-management-roles) or a [custom role]({{<relref "/rs/security/access-control/rbac/create-roles">}}) that has the appropriate cluster management role as a base.
 
 ## Default management roles
 
@@ -26,7 +29,7 @@ Redis Enterprise Software includes five predefined roles that determine a user's
 
 For more details about the privileges granted by each of these roles, see [admin console permissions](#admin-console-permissions) or [REST API permissions]({{<relref "/rs/references/rest-api/permissions">}}).
 
-### Admin console permissions
+## Admin console permissions
 
 Here's a summary of the admin console actions permitted by each default management role:
 
@@ -44,30 +47,8 @@ Here's a summary of the admin console actions permitted by each default manageme
 | View Redis database password | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> | <span title="Allowed">&#x2705; Yes</span> |
 | View and edit cluster settings |<span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Not allowed">&#x274c; No</span> | <span title="Allowed">&#x2705; Yes</span> |
 
-## Create roles for database access
+## More info
 
-To create a role that grants database access to users but blocks access to the Redis Enterprise admin console and REST API, set the **Cluster management role** to **None**.
+- [Add users]({{<relref "/rs/security/access-control/manage-users/add-users">}})
 
-To define a role for database access:
-
-1. From **access control** > **roles**, you can either:
-
-    - Point to a role and select ![Edit](/images/rc/icon_edit.png#no-click "Edit") to edit an existing role.
-
-    - Select ![Add](/images/rs/icon_add.png#no-click "Add") to create a new role.
-
-1. Enter a descriptive name for the role. This will be used to reference the role when configuring users.
-
-1. Select a **Cluster management role**. The default is **None**.
-
-1. Select **Add** under **Redis ACLs** ![Add](/images/rs/icon_add.png#no-click "Add").
-
-1. Select the databases the role applies to.
-
-1. Select the Redis ACL to apply to the role.
-
-1. Select the save icon.
-
-1. Select **Save**.
-
-{{< video "/images/rs/new-redis-role.mp4" "Create a new Redis Role" >}}
+- [Role-based access control (RBAC) overview]({{<relref "/rs/security/access-control/rbac">}})
