@@ -16,7 +16,9 @@ For [Active-Active databases]({{<relref "rc/databases/active-active-redis">}}), 
 
 1. In the **Associations** section of the **Edit role** or **Create new role** screen, you can select `+` to create a new association or point to an existing association and select the pencil icon to edit it.
 
-1. Select one or more Active-Active databases from the **Databases** list.
+1. Select one or more Active-Active databases from the **Databases** list. Active-Active subscriptions are marked with a globe icon.
+
+{{<image filename="images/rc/roles-select-aa-database.png" alt="List of subscriptions. Active-Active subscriptions are marked with a globe icon." >}}{{< /image >}}
 
 1. To set the role's default level of access to the selected databases, choose a **Redis ACL** from the list and select the check mark to confirm the association.
 
@@ -26,9 +28,9 @@ The default level of access to the selected database only applies to regions tha
 
 1. Select the ACL name next to a region to change which ACL applies to that region.
 
-    {{<image filename="images/rc/roles-assign-rules-active-active.png" alt="" >}}{{< /image >}}
+    {{<image filename="images/rc/roles-assign-rules-active-active.png" alt="Assign different ACL rules for different regions." >}}{{< /image >}}
 
-    In addition to the ACL rules that are already configured, you can set a role to have **No Access** in a region. This is a special rule that prevents a user with this role from running any commands when connecting to the database in that region.
+    In addition to the ACL rules that are already configured, you can set a role to have **No-Access** in a region. This is a special rule that prevents a user with this role from running any commands when connecting to the database in that region.
 
 1. Select **Save role**.
 
