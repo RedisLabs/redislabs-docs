@@ -18,7 +18,7 @@ For [Active-Active databases]({{<relref "rc/databases/active-active-redis">}}), 
 
 1. Select one or more Active-Active databases from the **Databases** list. Active-Active subscriptions are marked with a globe icon.
 
-{{<image filename="images/rc/roles-select-aa-database.png" alt="List of subscriptions. Active-Active subscriptions are marked with a globe icon." >}}{{< /image >}}
+    {{<image filename="images/rc/roles-select-aa-database.png" alt="List of subscriptions. Active-Active subscriptions are marked with a globe icon." >}}{{< /image >}}
 
 1. To set the role's default level of access to the selected databases, choose a **Redis ACL** from the list and select the check mark to confirm the association.
 
