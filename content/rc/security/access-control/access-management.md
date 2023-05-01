@@ -66,7 +66,9 @@ Use the dialog to specify these values.
 | **Billing emails** | Notifications when bills are issued, paid, and so on.<br/>_Note:_ Limited to a single user. |
 | **Multi-factor authentication** | Whether MFA is enabled for the member.  This is deactivated when members have not enabled or confirmed MFA in their user profile settings. |
 
-Use the **Add user** button to save your new team member details.
+Use the **Add user** button to save your new team member details. 
+
+Redis will send an activation email to the user once their details are saved. After following the activation link, they can sign in.
 
 ### Edit user
 
