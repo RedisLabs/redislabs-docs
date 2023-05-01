@@ -112,7 +112,7 @@ $ yum install -y chrpath
 $ find $installdir -name "crdt.so" | xargs -n1 -I {} /bin/bash -c 'chrpath -r ${libdir} {}'
 ```
 
-This limitation will be fixed in a future 6.4.2 maintenance release.
+This limitation has been fixed and resolved as of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}).
 
 #### RHEL 8
 
