@@ -68,7 +68,7 @@ Use the dialog to specify these values.
 
 Use the **Add user** button to save your new team member details. 
 
-Redis will send an activation email to the user once their details are saved. The user must click the activation link in the email before they can sign in to the Redis Cloud admin console.
+Redis will send an activation email to the user once their details are saved. After following the activation link, they can sign in.
 
 ### Edit user
 
