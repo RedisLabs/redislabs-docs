@@ -14,7 +14,7 @@ aliases: {
 This feature is currently in public preview. Contact Redis support if you plan to use this feature.
 {{</banner-article>}}
 
-Before a RedisEnterpriseCluster (REC) can participate in an Active-Active database, it needs an accompanying RedisEnterpriseRemoteCluster (RERC) custom resource. The RERC is the resource listed directly in the RedisEnterpriseActiveActiveDatabase (REAADB) resource as a participating clusters. You can add, edit, or delete RERC resources at any time.
+Before a RedisEnterpriseCluster (REC) can participate in an Active-Active database, it needs an accompanying RedisEnterpriseRemoteCluster (RERC) custom resource. The RERC contains details allowing the REC to link to the RedisEnterpriseActiveActiveDatabase (REAADB). The RERC resource is listed in the REAADB resource to become a participating cluster for the Active-Active database.
 
 For more details, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
