@@ -86,6 +86,9 @@ Run [deploy]({{<relref "/rdi/reference/cli/redis-di-deploy">}}) command to deplo
 redis-di deploy
 ```
 
+> Note: If you are specifying TLS `key`, `cert` and `cacert` locations in `config.yaml` or you use the `$file:<location>` pattern for the `password` property, make sure these files exist on the Redis Enterprise nodes that host RDI shards.
+ 
+
 ## Validate the install
 
 Run `redis-di status` to check the status of the installation.
