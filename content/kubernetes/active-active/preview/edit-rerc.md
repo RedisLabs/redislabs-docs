@@ -10,8 +10,13 @@ aliases: {
 
 }
 ---
+{{<banner-article bannerColor="#fff8dc">}}
+This feature is currently in public preview. Contact Redis support if you plan to use this feature.
+{{</banner-article>}}
 
-define RERC and link to creation steps
+Before a RedisEnterpriseCluster (REC) can participate in an Active-Active database, it needs an accompanying RedisEnterpriseRemoteCluster (RERC) custom resource. The RERC is the resource listed directly in the RedisEnterpriseActiveActiveDatabase (REAADB) resource as a participating clusters. You can add, edit, or delete RERC resources at any time.
+
+For more details, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
 ## Edit RERC
 
