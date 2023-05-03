@@ -55,7 +55,13 @@ See [Upgrade modules](https://docs.redis.com/latest/modules/install/upgrade-modu
 
 #### watchdog_profile
 
-The `watchdog_profile` setting is deprecated and will be removed in a future release. Instead, use the `failure_detection_sensitivity` policy, which has the following options for predefined thresholds and timeouts:
+The `watchdog_profile` setting is deprecated and will be removed in a future release. Instead, use the `failure_detection_sensitivity` policy for predefined thresholds and timeouts:
+
+```sh
+rladmin tune cluster failure_detection_sensitivity [ high | low ]
+```
+
+The `failure_detection_sensitivity` policy has the following options:
 
 - `high` (previously known as `local-network watchdog_profile`) – high failure detection sensitivity, lower thresholds, and faster failure detection and failover
 
