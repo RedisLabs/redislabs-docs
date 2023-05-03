@@ -53,6 +53,14 @@ See [Upgrade modules](https://docs.redis.com/latest/modules/install/upgrade-modu
 
 ### Deprecations
 
+#### watchdog_profile
+
+The `watchdog_profile` setting is deprecated and will be removed in a future release. Instead, use the `failure_detection_sensitivity` policy, which has the following options for predefined thresholds and timeouts:
+
+- `high` (previously known as `local-network watchdog_profile`) – high failure detection sensitivity, lower thresholds, and faster failure detection and failover
+
+- `low` (previously known as `cloud watchdog_profile`) – low failure detection sensitivity and higher tolerance for latency variance (also called network jitter)
+
 #### Ubuntu 16.04
 
 Ubuntu 16 support is deprecated and will be removed in a future release.
