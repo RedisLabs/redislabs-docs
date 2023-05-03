@@ -10,7 +10,7 @@ draft:
 hidden: false
 ---
 
-This guide provides details about configuring write-behind target connections.
+This guide shows you how to configure write-behind target connections.
 
 ## Overview
 Write-behind target connections are used in RDI write-behind jobs (commonly referred as recipes) to replicate changes to when they are captured in a RDI-enabled Redis Enterprise database. The connections must be configured in the `config.yaml` before deploying any jobs and must follow one of the formats shown below. Multiple connections can be specified in the `connections` section at the same time.
@@ -43,15 +43,15 @@ connections:
 
 ## Microsoft SQL Server
 
-**Microsoft SQL Server** supports different authentication mechanisms (SQL Server Authentication, Integrated Windows Authentication) and protocols (NTLM,  Kerberos). RDI can use all of them, however some additional configuration might be required for systems that should utilize Kerberos.
+Microsoft SQL Server supports different authentication mechanisms (SQL Server Authentication, Integrated Windows Authentication) and protocols (NTLM,  Kerberos). RDI can use all of them; however, systems that use Kerberos may require some additional configuration.
 
-### Account Permissions
+### Account permissions
 
-To enable RDI to work with a SQL Server database, you need to ensure that the account you specify has been assigned the `db_datawriter` role at a minimum.
+To enable RDI to work with a SQL Server database, check that the account you specify was assigned at the minimum the `db_datawriter` role.
 
-### SQL Server Authentication
+### SQL Server authentication
 
-To use SQL Authentication mode, you need to create a SQL user with login credentials, and then assign the necessary permissions to that user for the target database as described earlier.
+To use SQL Authentication mode, create a SQL user with login credentials, and then assign the necessary permissions to that user for the target database.
 
 ```yaml
 connections:
@@ -64,7 +64,7 @@ connections:
         password: secret
 ```
 
-### Windows Authentication
+### Windows authentication
 
 To use Windows Authentication mode, you need to create a Windows or AD account that has the necessary permissions to access the target database and is able to log into SQL Server. The Linux machine hosting RDI can be configured to support NTLM or Kerberos authentication protocols. Please consult with your security team as the configuration settings will vary.
 
@@ -86,13 +86,13 @@ connections:
 
 * Please contact Redis team
 
-After configuring the RDI connection and deploying the write-behind job, the operator can check whether RDI is using the expected authentication mechanism and protocol by running the following SQL query (note, this may require `sysadmin` role):
+After you configure the RDI connection and deploy the write-behind job, run the following SQL query to have the operator check if RDI is using the expected authentication mechanism and protocol. **Note:** This operation may require `sysadmin` role.
 
 ```sql
 SELECT session_id, auth_scheme FROM sys.dm_exec_connections;
 ```
 
-The results will indicate which `auth_scheme` is used by each session and may take the following values: `SQL`, `NTLM` and `Kerberos`.
+The results indicate which `auth_scheme` is used by each session and may take values `SQL`, `NTLM`, and `Kerberos`.
 
 ### Azure Active Directory
 
