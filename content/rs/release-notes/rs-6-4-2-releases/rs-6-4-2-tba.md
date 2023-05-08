@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 6.4.2-TBA (May 2023)
 linkTitle: 6.4.2-TBA (May 2023)
-description: Amazon Linux 2 support. Configure envoy ports using rladmin. Added option to avoid specific nodes when using the optimized shards placement API.
+description: Amazon Linux 2 support. Configure envoy ports using rladmin. Added option to avoid specific nodes when using the optimized shards placement API. Added failure_detection_sensitivity to replace watchdog_profile.
 compatibleOSSVersion: Redis 6.2.6
 weight: 69
 alwaysopen: false
@@ -33,13 +33,17 @@ The following table shows the MD5 checksums for the available packages:
 
 - Support the option to avoid specific nodes when using optimized shards placement API  (RS98795)
 
+- Check port availability before installation and upgrade (RS80815)
+
+- Added `failure_detection_sensitivity` policy (previously known as `watchdog_profile`) to [cluster policy REST API requests]({{<relref "/rs/references/rest-api/requests/cluster/policy">}})
+
 #### Redis Stack v6.2.6
 
 Redis Enterprise Software v6.4.2 includes the new features delivered in the latest [Redis Stack release (6.2.6 v6)](https://redis.com/blog/introducing-redis-stack-6-2-6-and-7-0-6/):
 
 - [RediSearch v2.6.6](https://docs.redis.com/latest/modules/redisearch)
 
-- [RedisJSON v2.4.6](https://docs.redis.com/latest/modules/redisjson)
+- [RedisJSON v2.4.7](https://docs.redis.com/latest/modules/redisjson)
 
 - [RedisBloom v2.4.5](https://docs.redis.com/latest/modules/redisbloom)
 
@@ -86,7 +90,7 @@ crdb-cli crdb update --crdb-guid <CRDB_GUID> \
 
 - RS97528 - Prevent [self-signed certificate]({{<relref "/rs/security/certificates/create-certificates">}}) script error on Ubuntu 20.04 by changing the user instructions.
 
-- RS99643 - Fix [`cipher_suites`]({{<relref "/rs/security/tls/ciphers">}}) configuration to allow default values: `HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH`
+- RS99643 - Fix [`cipher_suites`]({{<relref "/rs/security/tls/ciphers">}}) configuration to allow default cipher suites according to the [control plane]({{<relref "/rs/security/tls/ciphers#control-plane">}}), [data plane]({{<relref "/rs/security/tls/ciphers#data-plane">}}), and [discovery service]({{<relref "/rs/security/tls/ciphers#discovery-service">}}).
 
 ## Known limitations
 
