@@ -14,7 +14,7 @@ aliases: /rv/api/how-to/create-and-manage-databases/
 
 You can use the Redis Enterprise Cloud REST API to create databases.
 
-These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api.md#using-the-curl-http-client" >}}). You can use any REST client to work with the Redis Cloud REST API. The examples in this article refer to databases that are part of Flexible and Annual subscriptions. 
+These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api#use-the-curl-http-client" >}}). You can use any REST client to work with the Redis Cloud REST API. The examples in this article refer to databases that are part of Flexible and Annual subscriptions. 
 
 ## Create a database
 
