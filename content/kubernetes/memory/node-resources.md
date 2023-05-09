@@ -1,7 +1,7 @@
 ---
 Title: Manage node resources
 linktitle: Manage resources
-description: Recommendations on managing node resources and setting evictions thresholds with Redis Enterprise for Kubernetes. 
+description: Recommendations on managing node resources and setting eviction thresholds with Redis Enterprise for Kubernetes. 
 weight: 17
 alwaysopen: false
 categories: ["Platforms"]
