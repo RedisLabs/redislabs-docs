@@ -22,7 +22,7 @@ Use the following steps to add a participating cluster to an existing Redis Ente
 
 To prepare the Redis Enterprise cluster (REC) to participate in an Active-Active database, perform the following tasks from [Prepare participating clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters.md">}}):
 
-- Make sure the cluster meets the hardware and naming requirements. 
+- Make sure the cluster meets the hardware and naming requirements.
 - Enable the Active-Active controllers.
 - Configure external routing.
 - Configure `ValidatingWebhookConfiguration`.
@@ -31,43 +31,13 @@ To prepare the Redis Enterprise cluster (REC) to participate in an Active-Active
 
 To communicate with other clusters, all participating clusters need access to the admin credentials for all other clusters.
 
-1. Locate the file holding the admin credentials for all participating RECs created while [preparing the clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters.md">}}) (such as `all-rec-secrets.yaml`).
-
-1. Within that file, create a secret for the new participating cluster named `redis-enterprise-<rerc>`. 
-  {{<note>}}The file should contain a secret for each existing participating cluster.{{</note>}}
-
-    The example below shows a file (`all-rec-secrets.yaml`) holding secrets for two participating clusters:
-
-    ```yaml
-    apiVersion: v1
-    data:
-      password: 
-      username: 
-    kind: Secret
-    metadata:
-      name: redis-enterprise-rerc1
-    type: Opaque
-
-    ---
-
-    apiVersion: v1
-    data:
-      password: 
-      username: 
-    kind: Secret
-    metadata:
-      name: redis-enterprise-rerc2
-    type: Opaque
-
-    ```
-
 1. Get the REC credentials secret for the new participating cluster.
 
     ```sh
     kubectl get secret -o yaml <rec-name>
     ```
 
-    The admin credentials secret for an REC named `rec1` has this format:
+    This example shoes an admin credentials secret for an REC named `rec3`:
 
     ```yaml
     apiVersion: v1
@@ -76,13 +46,13 @@ To communicate with other clusters, all participating clusters need access to th
       username: GHij56789
     kind: Secret
     metadata:
-      name: rec1
+      name: rec3
     type: Opaque
     ```
 
-1. Add the username and password to the new secret for that REC and namespace.
+1. Create a secret for the new participating cluster named `redis-enterprise-<rerc>` and add the username and password.
 
-    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rec1` in namespace `ns1` and `rec2` in namespace `ns2`.
+    The example below shows a secret file for a remote cluster named `rerc3` .
 
     ```yaml
     apiVersion: v1
@@ -91,18 +61,7 @@ To communicate with other clusters, all participating clusters need access to th
       username: GHij56789
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc1
-    type: Opaque
-
-    ---
-
-    apiVersion: v1
-    data:
-      password: KLmndo123456
-      username: PQrst789010
-    kind: Secret
-    metadata:
-      name: redis-enterprise-rerc2
+      name: redis-enterprise-rerc3
     type: Opaque
 
     ```
@@ -110,14 +69,14 @@ To communicate with other clusters, all participating clusters need access to th
 1. Apply the file of collected secrets to every participating REC.
 
     ```sh
-    kubectl apply -f <all-rec-secrets-file>
+    kubectl apply -f <rec-secret-file>
     ```
 
  If the admin credentials for any of the clusters change, update and reapply the file to all clusters.
 
 ### Create RERC
 
-1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for the new participating cluster. 
+1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for the new participating cluster.
 
   This example shows a RERC custom resource for an REC named `rec3` in the namespace `ns3`. 
 
@@ -154,16 +113,22 @@ To communicate with other clusters, all participating clusters need access to th
 
 ### Edit REAADB spec
 
-1. Add the new RERC name to the `participatingClusters` list in the REAADB spec.
+1. Patch the REAADB spec to add the new RERC name to the `participatingClusters`, replacing `<reaadb-name>` and `<rerc-name>` with your own values.
 
   ```sh
-  kubectl patch reaadb < --type merge --patch '{"spec": {"participatingClusters": [{"name": "rerc3"}]}}'
+  kubectl patch reaadb <reaadb-name> < --type merge --patch '{"spec": {"participatingClusters": [{"name": "<rerc-name>"}]}}'
   ```
 
 1. View the REAADB `participatingClusters` status to verify the cluster was added.
 
   ```sh
-  kubectl get reaadb <REAADB-name> -o=jsonpath='{.status.participatingClusters}'
+  kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.participatingClusters}'
+  ```
+
+  Output should look like this:
+
+  ```sh
+  [{"id":1,"name":"rerc1"},{"id":2,"name":"rerc2"},{"id":3,"name":"rerc3"}]
   ```
 
 ## Remove a participating cluster
