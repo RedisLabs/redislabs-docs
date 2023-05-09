@@ -123,8 +123,8 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
 
 1. Return to the **Service provider details** screen in Google Workspace, and add the following information:
 
-   * **ACS URL**: The EntityID from the downloaded service provider (SP) metadata
-   * **Entity Id**: The Location from the downloaded service provider (SP) metadata
+   * **ACS URL**: The Location from the downloaded service provider (SP) metadata
+   * **Entity Id**: The EntityID from the downloaded service provider (SP) metadata
 
    {{<image filename="images/rc/saml/google_workspace_saml_6.png" alt="" >}}{{</image>}}
 
