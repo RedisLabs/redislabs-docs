@@ -21,9 +21,13 @@ The backup options for Redis Enterprise Cloud databases depend on your plan:
 
 - Free plans cannot perform backups through the Redis Cloud console.
 
+{{<note>}}
+The number of database backups that can run simultaneously on a cluster node is limited to 4 by default.
+{{</note>}}
+
 Backups are saved to predefined storage locations available to your subscription.
 
-Backup locations need to be available before you turn on database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations)
+Backup locations need to be available before you turn on database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations).
 
 Here, you'll learn how to store backups using different cloud providers.
 
