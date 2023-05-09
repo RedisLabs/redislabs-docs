@@ -86,6 +86,8 @@ The following additional parameters are required for Redis Cluster databases.
 {
     "name": "QA Redis Cluster DB",
     "connectionType": "CLUSTER",
+    "username": "USERNAME",
+    "password": "PASSWORD",
     "seedNodes": [
         {
             "host": "redis-cluster-node-1.acme.com",
