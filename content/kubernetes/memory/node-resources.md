@@ -22,7 +22,7 @@ Redis recommends setting a high [soft eviction threshold](https://kubernetes.io/
 
 We also recommend setting the [`eviction-soft-grace-period`](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#soft-eviction-thresholds) high enough for the administrator to scale the cluster.
 
-For more information about configuring eviction thresholds on specific platforms, see ["Freeing node resources"](https://docs.openshift.com/container-platform/4.9/nodes/nodes/nodes-nodes-garbage-collection.html) for OpenShift or ["Cluster architecture"](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#node_allocatable) for GKE.
+For more information about configuring eviction thresholds on specific platforms, see [Freeing node resources](https://docs.openshift.com/container-platform/4.9/nodes/nodes/nodes-nodes-garbage-collection.html) for OpenShift or [Cluster architecture](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#node_allocatable) for GKE.
 
 ### Monitor node conditions
 
