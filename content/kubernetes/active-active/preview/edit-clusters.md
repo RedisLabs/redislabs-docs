@@ -76,7 +76,7 @@ To communicate with other clusters, all participating clusters need access to th
 
 ### Create RERC
 
-1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for the new participating cluster.
+1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource for the new participating cluster.
 
   This example shows a RERC custom resource for an REC named `rec3` in the namespace `ns3`. 
 
@@ -93,7 +93,7 @@ To communicate with other clusters, all participating clusters need access to th
     secretName: redis-enterprise-rerc3
   ```
 
-1. Create the RERC custom resource. 
+1. Create the RERC custom resource.
 
   ```sh
   kubectl create -f <new-RERC-file>
@@ -105,9 +105,10 @@ To communicate with other clusters, all participating clusters need access to th
   kubectl get rerc <RERC-name>
   ```
 
-  The output should look like this: 
+  The output should look like this:
+
   ```sh
-    NAME        STATUS   SPEC STATUS   LOCAL
+  NAME        STATUS   SPEC STATUS   LOCAL
   rerc3   Active   Valid         true
   ```
 
