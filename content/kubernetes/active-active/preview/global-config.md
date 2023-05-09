@@ -24,7 +24,7 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
 
 1. Edit or patch the REAADB custom resource with your global configuration changes.
 
-  The example command below patches the reaadb custom resource to set the global memory size to 200MB:
+  The example command below patches the REAADB named `example-aadb-1` to set the global memory size to 200MB:
 
   ```sh
   kubectl patch reaadb example-aadb-1 --type merge --patch /
@@ -32,6 +32,8 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
   ```
 
 1. Verify the status is `active` and the spec status is `Valid`.
+
+  This example shows the status for the `example-aadb-1` database.
 
   ```sh
   kubectl get reaadb example-aadb-1
@@ -43,7 +45,7 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
 1. View the global configurations on each participating cluster to verify they are synced.
 
   ```sh
-  kubectl get reaadb <REAADB name> -o yaml
+  kubectl get reaadb <reaadb-name> -o yaml
   ```
 
 ## Set global database secret
@@ -72,11 +74,11 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
   kubectl apply -f <db-secret-file>
   ```
 
-1. Patch the REAADB custom resource to specify the database secret.
+1. Patch the REAADB custom resource to specify the database secret, substituting your own values for `<reaadb-name>` and `<secret-name>`.
 
     ```sh
-    kubectl patch reaadb example-aadb-1 --type merge --patch /
-    '{"spec": {"globalConfigurations": {"databaseSecretName": "my-db-secret"}}}'
+    kubectl patch reaadb <reaadb-name> --type merge --patch /
+    '{"spec": {"globalConfigurations": {"databaseSecretName": "secret-name"}}}'
     ```
 
 1. Check the REAADB status for an `active` status and `Valid` spec status.
@@ -94,7 +96,6 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
 
   ``sh
   kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.secretsStatus}'
-
   ```
 
   The output should show the status as `Invalid`.
