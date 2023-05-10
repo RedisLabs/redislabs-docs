@@ -80,6 +80,15 @@ To enable TLS for the discovery service:
   - `required` - Allows only TLS connections
   - `disabled` - Allows only non-TLS connections
 
+To set the minimum TLS protocol for the discovery service:
+
+- Default TLS Protocols: TLSv1.0
+- Syntax: `rladmin cluster config min_sentinel_TLS_version <TLS_Version>`
+- TLS versions available:
+  - For TLSv1 - 1
+  - For TLSv1.1 - 1.1
+  - For TLSv1.2 - 1.2
+
 To enforce a minimum TLS version for the discovery service, run the following commands:
 
 1. Allow only TLS connections:
