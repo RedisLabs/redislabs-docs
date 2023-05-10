@@ -82,7 +82,7 @@ To enable TLS for the discovery service:
 
 To enforce a minimum TLS version for the discovery service, run the following commands:
 
-1. Require TLS connections:
+1. Allow only TLS connections:
 
     ```sh
     rladmin cluster config sentinel_ssl_policy required
@@ -94,7 +94,7 @@ To enforce a minimum TLS version for the discovery service, run the following co
     rladmin cluster config min_sentinel_TLS_version 1.2
     ```
 
-1. Restart the discovery service to apply your changes:
+1. Restart the discovery service on all cluster nodes to apply your changes:
 
     ```sh
     supervisorctl restart sentinel_service
