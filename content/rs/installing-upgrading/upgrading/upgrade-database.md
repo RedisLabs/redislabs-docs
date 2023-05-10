@@ -85,6 +85,42 @@ To upgrade a database:
 
     This restarts the database.  No data is lost.
 
+    If the database has modules enabled and new module versions are available in the cluster, run `rladmin upgrade db` with the additional parameters to upgrade the module versions when you upgrade the database.
+
+    {{<warning>}}
+The upgrade process does not validate the module upgrade arguments, and incorrect arguments can cause unexpected downtime. Run module upgrade commands in a test environment before you upgrade modules in production. 
+    {{</warning>}}
+
+    To upgrade a database to the latest version of Redis and its modules to the latest versions without changing the module arguments:
+
+    ```sh
+    rladmin upgrade db <database_name | database_ID> latest_with_modules
+    ```
+
+    To specify which modules to upgrade, add the following parameters to the `rladmin upgrade db` command for each module you want to upgrade:
+
+    ```sh
+    and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>"
+    ```
+
+    Replace `<module_name>` with:
+
+    - `search` for RediSearch
+    - `ReJSON` for RedisJSON
+    - `graph` for RedisGraph
+    - `timeseries` for RedisTimeSeries
+    - `bf` for RedisBloom
+
+    Replace `module_args "<module arguments>"` with:
+
+    - `module_args "arg-name arg-value"` to update existing module arguments.
+
+    - `module_args ""` without arguments to remove existing module arguments.
+
+    - `module_args keep_args` to use the existing module arguments.
+
+    For module upgrade examples, see [Upgrade modules]({{<relref "/modules/install/upgrade-module#examples">}}).
+
 1. Check the Redis database compatibility version for the database to confirm the upgrade.  
 
     To do so:
