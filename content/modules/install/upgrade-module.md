@@ -75,6 +75,14 @@ The upgrade process does not validate the module upgrade arguments, and incorrec
         and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>"
         ```
 
+        Replace `<module_name>` with:
+
+        - `search` for RediSearch
+        - `ReJSON` for RedisJSON
+        - `graph` for RedisGraph
+        - `timeseries` for RedisTimeSeries
+        - `bf` for RedisBloom
+
         For the module arguments, use one of the following:
 
         - `module_args "<module_arguments>"` to replace the existing module arguments.
@@ -96,13 +104,13 @@ Here are some module upgrade examples:
 - Upgrade the database to the latest Redis version and upgrade RediSearch to 1.6.7 with the specified arguments:
 
     ```sh
-    rladmin upgrade db shopping_cart and module db_name shopping_cart module_name ft version 10607 module_args "PARTITIONS AUTO"
+    rladmin upgrade db shopping_cart and module module_name search version 10607 module_args "PARTITIONS AUTO"
     ```
 
 - Upgrade the database to the latest Redis version and upgrade RedisBloom to version 2.2.1 without arguments:
 
     ```sh
-    rladmin upgrade db db:3 and module db_name shopping_cart module_name bf version 20201 module_args ""
+    rladmin upgrade db db:3 and module module_name bf version 20201 module_args ""
     ```
 
 - Upgrade RedisJSON to 1.0.4 with the existing arguments and RedisBloom to version 2.2.1 without arguments:
