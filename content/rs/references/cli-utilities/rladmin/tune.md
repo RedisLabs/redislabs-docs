@@ -70,7 +70,7 @@ rladmin tune cluster
 | slave_ha_bdb_cooldown_period           | time in seconds                   | Time (in seconds) after shard relocation during which databases can't be relocated to another node                           |
 | slave_ha_cooldown_period               | time in seconds                   | Time (in seconds) after shard relocation during which the replica high-availability mechanism can't relocate to another node |
 | slave_ha_grace_period                  | time in seconds                   | Time (in seconds) between when a node fails and when replica high availability starts relocating shards to another node      |
-| watchdog_profile                       | `cloud` <br /> `local-network` | Watchdog profiles with preconfigured thresholds and timeouts (deprecated as of Redis Enterprise Software v6.4.2-TBA; use `failure_detection_sensitivity` instead)<br />• `cloud` is suitable for common cloud environments and has a higher tolerance for latency variance (also called network jitter).<br />• `local-network` is suitable for dedicated LANs and has better failure detection and failover times. |
+| watchdog_profile                       | `cloud` <br /> `local-network` | Watchdog profiles with preconfigured thresholds and timeouts (deprecated as of Redis Enterprise Software v6.4.2-69; use `failure_detection_sensitivity` instead)<br />• `cloud` is suitable for common cloud environments and has a higher tolerance for latency variance (also called network jitter).<br />• `local-network` is suitable for dedicated LANs and has better failure detection and failover times. |
 
 ### Returns
 
