@@ -85,7 +85,7 @@ To upgrade a database:
 
     This restarts the database.  No data is lost.
 
-    If the database has modules enabled and new module versions are available in the cluster, run `rladmin upgrade db` with the additional parameters to upgrade the module versions when you upgrade the database.
+    If the database has modules enabled and new module versions are available in the cluster, run `rladmin upgrade db` with additional parameters to upgrade the module versions when you upgrade the database.
 
     {{<warning>}}
 The upgrade process does not validate the module upgrade arguments, and incorrect arguments can cause unexpected downtime. Run module upgrade commands in a test environment before you upgrade modules in production. 
