@@ -52,9 +52,9 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
 
 One of the fields available for `globalConfigurations` is `databaseSecretName` which can point to a secret containing the database password.
 
-### On an existing participating cluster, do the following
 
-1. Generate a YAML file containing the database secret with the database password.
+
+1. On an existing participating cluster, generate a YAML file containing the database secret with the database password.
 
   This example shoes a secret named `my-db-secret` with the password `my-password` encoded in base 64.
 
@@ -90,9 +90,8 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
     example-aadb-1   active   Valid
     ```
 
-### On each of the other existing participating clusters, do the following
 
-1. Check secret status.
+1. On each other participating cluster, check the secret status.
 
   ``sh
   kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.secretsStatus}'
