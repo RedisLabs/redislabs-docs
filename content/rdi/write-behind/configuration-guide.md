@@ -66,7 +66,7 @@ connections:
 
 ### Windows authentication
 
-To use Windows Authentication mode, you need to create a Windows or AD account that has the necessary permissions to access the target database and is able to log into SQL Server. The Linux machine hosting RDI can be configured to support NTLM or Kerberos authentication protocols. Please consult with your security team as the configuration settings will vary.
+To use Windows Authentication mode, you need to create a Windows or AD account that has the necessary permissions to access the target database and is able to log into SQL Server. The Linux machine hosting RDI can be configured to support NTLM authentication protocol. 
 
 **For NTLM:**
 ```yaml
@@ -82,10 +82,6 @@ connections:
 
 > Note: User must be specified with the domain name for Windows Authentication to work
 
-**For Kerberos:**
-
-* Please contact Redis team
-
 After you configure the RDI connection and deploy the write-behind job, run the following SQL query to have the operator check if RDI is using the expected authentication mechanism and protocol. **Note:** This operation may require `sysadmin` role.
 
 ```sql
@@ -93,7 +89,3 @@ SELECT session_id, auth_scheme FROM sys.dm_exec_connections;
 ```
 
 The results indicate which `auth_scheme` is used by each session and may take values `SQL`, `NTLM`, and `Kerberos`.
-
-### Azure Active Directory
-
-* Please contact Redis team
