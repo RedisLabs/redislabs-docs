@@ -21,7 +21,7 @@ failure. As Redis Enterprise Software is not just a caching solution, but also a
 is critical. Therefore, Redis Enterprise Software supports persisting data to disk on a per-database basis and in multiple ways.
 
 [Persistence](https://redis.com/redis-enterprise/technology/durable-redis/) can be configured either during database creation or by editing an existing
-database's configuration. While the persistence model can be changed dynamically, just know that it can take time for your database to switch from one persistence model to the other. It depends on what you are switching from and to, but also on the size of your database.
+database's configuration. While the persistence model can be changed dynamically, it can take time for your database to switch from one persistence model to the other. It depends on what you are switching from and to, but also on the size of your database.
 
 ## Configure persistence for your database
 
@@ -31,8 +31,6 @@ database's configuration. While the persistence model can be changed dynamically
 1. Navigate to Persistence
 1. Select your database persistence option
 1. Select save or update
-
-{{< video "/images/rs/persistence.mp4" "Persistence" >}}
 
 ## Data persistence options
 
@@ -47,7 +45,7 @@ There are six options for persistence in Redis Enterprise Software:
 |  Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
 |  Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
 
-## Selecting a persistence strategy
+## Select a persistence strategy
 
 When selecting your persistence strategy, you should take into account your tolerance for data loss and performance needs. There will always be tradeoffs between the two.
 The fsync() system call syncs data from file buffers to disk. You can configure how often Redis performs an fsync() to most effectively make tradeoffs between performance and durability for your use case.
@@ -55,27 +53,26 @@ Redis supports three fsync policies: every write, every second, and disabled.
 
 Redis also allows snapshots through RDB files for persistence. Within Redis Enterprise, you can configure both snapshots and fsync policies.
 
-For any high availability needs, replication may also be used to further reduce any risk of data loss and is highly recommended.
+For any high availability needs, use replication to further reduce the risk of data loss.
 
 **For use cases where data loss has a high cost:**
 
-1. Append-only file (AOF) - Fsync every everywrite - Redis Enterprise sets the open-source Redis directive `appendfsyncalways`.  With this policy, Redis will wait for the write and the fsync to complete prior to sending an acknowledgement to the client that the data has written. This introduces the performance overhead of the fsync in addition to the execution of the command. The fsync policy always favors durability over performance and should be used when there is a high cost for data loss.
+Append-only file (AOF) - Fsync every everywrite - Redis Enterprise sets the open-source Redis directive `appendfsyncalways`.  With this policy, Redis will wait for the write and the fsync to complete prior to sending an acknowledgement to the client that the data has written. This introduces the performance overhead of the fsync in addition to the execution of the command. The fsync policy always favors durability over performance and should be used when there is a high cost for data loss.
 
 **For use cases where data loss is tolerable only limitedly:**
 
-1. Append-only file (AOF) - Fsync every 1 sec - Redis will fsync any newly written data every second. This policy balances performance and durability and should be used when minimal data loss is acceptable in the event of a failure. This is the default Redis policy. This policy could result in between 1 and 2 seconds worth of data loss but on average this will be closer to one second.
+Append-only file (AOF) - Fsync every 1 sec - Redis will fsync any newly written data every second. This policy balances performance and durability and should be used when minimal data loss is acceptable in the event of a failure. This is the default Redis policy. This policy could result in between 1 and 2 seconds worth of data loss but on average this will be closer to one second.
 
 {{< note >}}
-For performance reasons, if you are going to be using AOF, it is highly recommended to make sure replication is enabled for that database as well. When these two features are enabled, persistence is
-performed on the database replica and does not impact performance on the master.
+If you use AOF, enable replication to improve performance. When both features are enabled for a database, the replica handles persistence, which prevents any performance impact on the master.
 {{< /note >}}
 
 **For use cases where data loss is tolerable or recoverable for extended periods of time:**
 
-1. Snapshot, every 1 hour - Sets a full backup every 1 hour.
-1. Snapshot, every 6 hour - Sets a full backup every 6 hours.
-1. Snapshot, every 12 hour - Sets a full backup every 12 hours.
-1. None - Does not backup or persist data at all.
+- Snapshot, every 1 hour - Performs a full backup every hour.
+- Snapshot, every 6 hour - Performs a full backup every 6 hours.
+- Snapshot, every 12 hour - Performs a full backup every 12 hours.
+- None - Does not back up or persist data at all.
 
 ## Append-only file (AOF) vs snapshot (RDB)
 
@@ -113,10 +110,10 @@ are expected to hold larger datasets and repair times for shards can
 be longer under node failures. Having dual-persistence provides better
 protection against failures under these longer repair times.
 
-However, the dual data persistence with replication adds some processor
-and network overhead, especially in the case of cloud configurations
-with persistent storage that is network attached (e.g. EBS-backed
-volumes in AWS).
+However, dual data persistence with replication adds some processor
+and network overhead, especially for cloud configurations
+with network-attached persistent storage, such as EBS-backed
+volumes in AWS.
 
 There may be times where performance is critical for your use case and
 you don't want to risk data persistence adding latency. If that is the
