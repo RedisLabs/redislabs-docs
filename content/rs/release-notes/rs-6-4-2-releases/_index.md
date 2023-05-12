@@ -67,7 +67,7 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
 
 When a database is configured as [rack-aware]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) and replication is turned off, the resharding operation fails.
 
-RS97971 - This limitation was fixed and reolved as part of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}).   
+RS97971 - This limitation was fixed and resolved as part of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}).   
 
 Workaround:
 
