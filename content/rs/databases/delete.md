@@ -18,11 +18,7 @@ To delete a database from the admin console:
 
 1. From the **Databases** list, select the database, then select **Configuration**.
 
-    <!--TODO: add screenshot-->
-
-1. Open the **More actions** dropdown.
-
-    <!--TODO: add icon-->
+1. Select <img src="/images/rs/buttons/button-toggle-actions.png#no-click" alt="Toggle actions button" width="22px"> to open a list of additional actions.
 
 1. Select **Delete**.
 
