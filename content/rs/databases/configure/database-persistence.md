@@ -23,14 +23,19 @@ is critical. Therefore, Redis Enterprise Software supports persisting data to di
 [Persistence](https://redis.com/redis-enterprise/technology/durable-redis/) can be configured either during database creation or by editing an existing
 database's configuration. While the persistence model can be changed dynamically, it can take time for your database to switch from one persistence model to the other. It depends on what you are switching from and to, but also on the size of your database.
 
-## Configure persistence for your database
+## Configure database persistence
 
-1. In **databases**, either:
-    - Click **Add** (+) to create a new database.
-    - Click on the database that you want to configure and at the bottom of the page click edit.
-1. Navigate to Persistence
-1. Select your database persistence option
-1. Select save or update
+You can configure persistence when you [create a database]({{<relref "/rs/databases/create">}}), or you can edit an existing database's configuration:
+
+1. From the **Databases** list, select the database, then select **Configuration**.
+
+1. Select **Edit**.
+
+1. Expand the **High Availability** section.
+
+1. For **Persistence**, select an [option](#data-persistence-options) from the list.
+
+1. Select **Save**.
 
 ## Data persistence options
 
