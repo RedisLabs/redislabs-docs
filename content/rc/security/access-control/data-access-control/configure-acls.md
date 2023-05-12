@@ -10,6 +10,16 @@ categories: []
 aliases: 
 ---
 
+You can define custom Redis ACL rules to assign to a data access role or use predefined Redis ACLs.
+
+Redis provides three predefined ACL rules, which are marked with the Redis logo and can not be changed:
+
+- **Full-Access**: Allows all commands. 
+- **Read-Write**: Allows read and write commands and excludes dangerous commands.
+- **Read-Only**: Allows read commands only.
+
+ACLs that are not marked with the Redis logo are user-defined ACL rules.
+
 To configure a Redis ACL that you can assign to a data access role:
 
 1. Go to **Data Access Control > ACLs** and either select `+` to create a new Redis ACL or point to an existing ACL and select the pencil icon to edit it.
@@ -39,7 +49,7 @@ To configure a Redis ACL that you can assign to a data access role:
 
 1. Select the check mark to save your changes.
 
-After you create a Redis ACL, you can assign it to a role. For more information, see [Create roles]({{<relref "rc/security/access-control/data-access-control/create-roles">}}). 
+After you create a Redis ACL, you can assign it to a role. Redis ACLs are not fully verified until they are assigned to a role. For more information, see [Create roles]({{<relref "rc/security/access-control/data-access-control/create-roles">}}) or [Active-Active access roles]({{<relref "rc/security/access-control/data-access-control/active-active-roles">}}) for an [Active-Active subscription]({{<relref "rc/databases/active-active-redis">}}).
 
 ## Define permissions with ACL syntax
 

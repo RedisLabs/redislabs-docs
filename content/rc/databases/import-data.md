@@ -47,7 +47,7 @@ To import an RDB file stored on an FTP or HTTP server:
 1. In the **Danger Zone**, select **Import**.
 1. Enter the details for the RDB file:
     - Source type - Select **FTP** or **HTTP**.
-    - Source path - Enter the URL for the RDB file: `<protocol>://[username][:password]@[:port]/[path/]filename.rdb[.gz]`
+    - Source path - Enter the URL for the RDB file: `<protocol>://[username][:password]@hostname[:port]/[path/]filename.rdb[.gz]`
 
     Where:
 
