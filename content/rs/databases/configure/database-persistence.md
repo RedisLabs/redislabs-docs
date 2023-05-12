@@ -39,11 +39,11 @@ There are six options for persistence in Redis Enterprise Software:
 |  **Options** | **Description** |
 |  ------ | ------ |
 |  None | Data is not persisted to disk at all. |
-|  Append Only File (AoF) on every write | Data is fsynced to disk with every write. |
-|  Append Only File (AoF) one second | Data is fsynced to disk every second. |
-|  Snapshot every 1 hour | A snapshot of the database is created every hour. |
-|  Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
-|  Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
+|  Append-only file (AOF) - fsync every write | Data is fsynced to disk with every write. |
+|  Append-only file (AOF) - fsync every 1 sec | Data is fsynced to disk every second. |
+|  Snapshot, every 1 hour | A snapshot of the database is created every hour. |
+|  Snapshot, every 6 hours | A snapshot of the database is created every 6 hours. |
+|  Snapshot, every 12 hours | A snapshot of the database is created every 12 hours. |
 
 ## Select a persistence strategy
 
@@ -57,14 +57,14 @@ For any high availability needs, use replication to further reduce the risk of d
 
 **For use cases where data loss has a high cost:**
 
-Append-only file (AOF) - Fsync every everywrite - Redis Enterprise sets the open-source Redis directive `appendfsyncalways`.  With this policy, Redis will wait for the write and the fsync to complete prior to sending an acknowledgement to the client that the data has written. This introduces the performance overhead of the fsync in addition to the execution of the command. The fsync policy always favors durability over performance and should be used when there is a high cost for data loss.
+Append-only file (AOF) - fsync every everywrite - Redis Enterprise sets the open-source Redis directive `appendfsyncalways`.  With this policy, Redis will wait for the write and the fsync to complete prior to sending an acknowledgement to the client that the data has written. This introduces the performance overhead of the fsync in addition to the execution of the command. The fsync policy always favors durability over performance and should be used when there is a high cost for data loss.
 
 **For use cases where data loss is tolerable only limitedly:**
 
-Append-only file (AOF) - Fsync every 1 sec - Redis will fsync any newly written data every second. This policy balances performance and durability and should be used when minimal data loss is acceptable in the event of a failure. This is the default Redis policy. This policy could result in between 1 and 2 seconds worth of data loss but on average this will be closer to one second.
+Append-only file (AOF) - fsync every 1 sec - Redis will fsync any newly written data every second. This policy balances performance and durability and should be used when minimal data loss is acceptable in the event of a failure. This is the default Redis policy. This policy could result in between 1 and 2 seconds worth of data loss but on average this will be closer to one second.
 
 {{< note >}}
-If you use AOF, enable replication to improve performance. When both features are enabled for a database, the replica handles persistence, which prevents any performance impact on the master.
+If you use AOF for persistence, enable replication to improve performance. When both features are enabled for a database, the replica handles persistence, which prevents any performance impact on the master.
 {{< /note >}}
 
 **For use cases where data loss is tolerable or recoverable for extended periods of time:**
@@ -85,7 +85,7 @@ two:
 |  More resource intensive | Less resource intensive |
 |  Provides better durability (recover the latest point in time) | Less durable |
 |  Slower time to recover (Larger files) | Faster recovery time |
-|  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
+|  More disk space required (files tend to grow large and require compaction) | Requires less resources (I/O once every several hours and no compaction required) |
 
 ## Active-Active data persistence 
 
