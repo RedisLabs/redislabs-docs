@@ -57,6 +57,39 @@ rladmin cluster config cm_port <new-port>
 After changing the Redis Enterprise Software web UI port, you must connect any new node added to the cluster to the UI with the custom port number:
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
 
+## Change the envoy  ports
+
+For system health monitoring, Redis uses the following ports by default:
+
+- Port 8002 for envoy admin
+
+- Port 8004 for envoy management server
+
+- Port 8006 for gossip envoy admin
+
+You can change each envoy port to a custom port using the [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) command as long as the new port is not in use by another process. When you change `envoy_admin_port`, expect a restart of envoy.
+
+To change the envoy admin port, run:
+
+```sh
+$ rladmin cluster config envoy_admin_port <new-port>
+Updating envoy_admin_port... restarting now
+```
+
+To change the envoy management server port, run:
+
+```sh
+$ rladmin cluster config envoy_mgmt_server_port <new-port>
+Cluster configured successfully
+```
+
+To change the gossip envoy admin port, run:
+
+```sh
+$ rladmin cluster config gossip_envoy_admin_port <new-port>
+Cluster configured successfully
+```
+
 ## Change the REST API port
 
 For the REST API, Redis Enterprise Software uses port 9443 (secure) and port 8080 (not secure), by default. You can change this to a custom port as long as the new port is not in use by another process.

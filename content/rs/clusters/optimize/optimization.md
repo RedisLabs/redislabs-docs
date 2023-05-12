@@ -12,36 +12,45 @@ aliases: [
     /rs/clusters/optimize/optimization/,
 ]
 ---
-Redis Enterprise Software employs various algorithms to optimize
-performance. As part of this process, Redis Enterprise Software examines usage characteristics
-and load to adjust its run-time configuration accordingly. Depending
-on your specific usage characteristics and load, it might take Redis Enterprise Software some
-time to adjust itself to optimal performance.
+Redis Enterprise Software uses various algorithms to optimize
+performance. As part of this process, Redis Enterprise Software examines usage
+and load to adjust its runtime configuration. Depending
+on your specific usage and load, Redis Enterprise Software might take some
+time to adjust for optimal performance.
 
 To ensure optimal performance, you must run your workload several times
 and for a long duration until performance stabilizes.
 
-In addition, you can optimize your cluster for two different environments:
+## Failure detection sensitivity policies
 
-- Local-network environment
-- Cloud environment
+You can optimize your cluster's thresholds and timeouts for different environments using the `failure_detection_sensitivity` cluster policy:
 
-Depending on which configuration you choose, Redis Enterprise Software uses different
-thresholds to make operation related decisions.
+- `high` (previously known as `local-network watchdog_profile`) – high failure detection sensitivity, lower thresholds, and faster failure detection and failover
 
-The default configuration is for local-network environments. If you are
-running in a cloud environment, it is advisable that you change the
+- `low` (previously known as `cloud watchdog_profile`) – low failure detection sensitivity and higher tolerance for latency variance (also called network jitter)
+
+Depending on which policy you choose, Redis Enterprise Software uses different
+thresholds to make operation-related decisions.
+
+The default policy is `high` failure detection sensitivity for `local-network` environments. If you are
+running Redis Enterprise in a cloud environment, you should change the
 configuration.
 
-## How to change the cluster environment configuration
+## Change failure detection sensitivity
 
-In the `rladmin` command-line interface (CLI), run the following command:
+To change the cluster's `failure_detection_sensitivity`, run one of the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}) commands.
 
-```sh
-rladmin tune cluster watchdog_profile [cloud | local-network]
-```
+- For Redis Enterprise Software version 6.4.2-69 and later, run:
 
-If after following all of the instructions above, you find that RS still
-does not meet your performance expectations, contact us
-at <support@redislabs.com> to help you optimize RS to your specific
-needs.
+    ```sh
+    rladmin tune cluster failure_detection_sensitivity [ low | high ]
+    ```
+
+- For Redis Enterprise Software version 6.4.2-61 and earlier, run:
+
+    ```sh
+    rladmin tune cluster watchdog_profile [ cloud | local-network ]
+    ```
+
+If Redis Enterprise Software still
+does not meet your performance expectations after following these instructions, [contact support](https://redis.com/company/support/) for help optimizing your environment.
