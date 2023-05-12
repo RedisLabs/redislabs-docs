@@ -67,7 +67,7 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
 
 When a database is configured as [rack-aware]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) and replication is turned off, the resharding operation fails.
 
-RS97971 - This limitation will be fixed in a future 6.4.2 maintenance release.      
+RS97971 - This limitation was fixed and reolved as part of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}).   
 
 Workaround:
 
@@ -124,4 +124,4 @@ By default, you cannot use the SHA1 hash algorithm ([OpenSSL’s default securit
 
 #### Modules not supported for Amazon Linux 2 release candidate
 
-A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support will be added in a future maintenance release.
+A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support was added as part of [v6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
