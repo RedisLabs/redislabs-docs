@@ -28,9 +28,11 @@ during the trial period.
 
 To view the cluster license key, use:
 
-- admin console - Go to: **Cluster > Configuration > General** and scroll down to **License**
+- Admin console
 
-    The cluster license details are shown. Select **Change** to view the cluster license key.
+    1. Go to **Cluster > Configuration > General > License** to see the cluster license details.
+
+    1. Select **Change** to view the cluster license key.
 
 - REST API - GET `https://localhost:9443/v1/license`
 
@@ -53,16 +55,15 @@ You can update the cluster license key:
 
 - After cluster setup using the admin console:
 
-    1. Go to **Cluster > Configuration > General**.
+    1. Go to **Cluster > Configuration > General > License**.
     
-    1. Scroll down to **License** and select **Change**.
+    1. Select **Change**.
 
     1. Upload or enter your cluster license key.
     
     1. Select **Save**.
 
-An existing cluster key can be updated at any time provided the new
-cluster license key is valid. If saving of a new cluster key fails, the
+You can update an existing cluster key at any time. If saving a new cluster key fails, the
 operation returns the error "invalid license key". In this case, the
 existing key stays in effect.
 
