@@ -4,6 +4,7 @@ description: You can export data to import it into a new database or to make a b
 weight: 20
 alwaysopen: false
 categories: ["RS"]
+linktitle: Export data
 aliases: [
     /rs/administering/import-export/exporting-data/,
     /rs/administering/database-operations/exporting-data/,
