@@ -38,11 +38,11 @@
       redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
-  For releases before 6.4.2-4, use this command instead:
+  If installing or upgrading to a release before 6.4.2-4, use this command instead:
 
   ```sh
     kubectl patch ValidatingWebhookConfiguration \
       redb-admission --patch "$(cat modified-webhook.yaml)"
   ```
 
-  Releases prior to [6.2.4]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) use the ValidatingWebhookConfiguration named `redb-admission`.
+  Releases prior to [6.4.2]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) use the ValidatingWebhookConfiguration named `redb-admission`.

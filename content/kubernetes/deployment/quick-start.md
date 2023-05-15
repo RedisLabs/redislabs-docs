@@ -128,16 +128,16 @@ The following example creates a minimal Redis Enterprise cluster. See the [Redis
 
 1. Create a file (`my-rec.yaml`) that defines a Redis Enterprise cluster with three nodes:
 
-  ```sh
-  cat <<EOF > my-rec.yaml
-  apiVersion: "app.redislabs.com/v1"
-  kind: "RedisEnterpriseCluster"
-  metadata:
-    name: my-rec
-  spec:
-    nodes: 3
-  EOF
-  ```
+    ```sh
+    cat <<EOF > my-rec.yaml
+    apiVersion: "app.redislabs.com/v1"
+    kind: "RedisEnterpriseCluster"
+    metadata:
+      name: my-rec
+    spec:
+      nodes: 3
+    EOF
+    ```
 
     This will request a cluster with three Redis Enterprise nodes using the
     default requests (i.e., 2 CPUs and 4GB of memory per node).
