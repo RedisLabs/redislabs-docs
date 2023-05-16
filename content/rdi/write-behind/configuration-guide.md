@@ -48,7 +48,7 @@ Microsoft SQL Server supports different authentication mechanisms (SQL Server Au
 
 ### Account permissions
 
-To enable RDI to work with a SQL Server database, check that the account you specify was assigned at the minimum the `db_datawriter` role.
+To enable RDI to work with a SQL Server database, check that the account you specify was assigned at least the `db_datawriter` role.
 
 ### SQL Server authentication
 
@@ -67,7 +67,7 @@ connections:
 
 ### Windows authentication
 
-To use Windows Authentication mode, you need to create a Windows or AD account that has the necessary permissions to access the target database and is able to log into SQL Server. The Linux machine hosting RDI can be configured to support NTLM authentication protocol. 
+To use Windows Authentication mode, you need to create a Windows or AD account that has the necessary permissions to access the target database and is able to log into SQL Server. The Linux machine hosting RDI can be configured to support the NTLM authentication protocol. 
 
 **For NTLM:**
 ```yaml
