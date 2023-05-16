@@ -17,7 +17,15 @@ bannerChildren: true
 
 Redis Data Integration (RDI) is a product that helps [Redis Enterprise](https://redis.com/redis-enterprise-software/overview/) users ingest data in near real time, so that Redis becomes part of their data fabric without additional integration efforts.
 
-RDI currently supports the [ingest scenario]({{<relref "/rdi/quickstart/ingest-guide">}}). RDI mirrors the application primary database to Redis using a Capture Data Change (CDC) tool. RDI transforms the database model and types to Redis model and types. This scenario is useful when the application database is not performant and scalable enough to serve the read queries. RDI helps to offload all read queries to Redis.
+RDI currently supports these scenarios:
+
+* [Ingest scenario]({{<relref "/rdi/quickstart/ingest-guide">}}). RDI mirrors the application primary database to Redis using a Capture Data Change (CDC) tool. RDI transforms the database model and types to Redis model and types. This scenario is useful when the application database is not performant and scalable enough to serve the read queries. RDI helps to offload all read queries to Redis.
+
+  ![Ingest flow](/images/rdi/ingest.png)
+  
+* [Write-behind scenario]({{<relref "/rdi/quickstart/write-behind-guide">}}). Data changes in Redis are applied by RDI to one or more downstream data-stores. RDI can map and transform the Redis types and model to the downstream types and models. This scenario is useful when the application needs fast writes and reads for some of the queries, but has to provide data to other downstream services that needs them in different models for other uses.
+
+  ![Write-behind flow](/images/rdi/write-behind.png)  
 
 To learn more see [Architecture]({{<relref "/rdi/architecture">}}) for more details and architecture.
 
@@ -47,7 +55,7 @@ Redis Data Integration supports the following database sources using [Debezium S
 
 ## Features
 
-RDI is an enterprise grade product with an extensive set of features:
+RDI is an enterprise-grade product with an extensive set of features:
 
 ### Performance and scalability
 
