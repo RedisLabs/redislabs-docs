@@ -52,7 +52,7 @@ To enable RDI to work with a SQL Server database, check that the account you spe
 
 ### SQL Server authentication
 
-To use SQL Authentication mode, create a SQL user with login credentials, and then assign the necessary permissions to that user for the target database.
+To use SQL Authentication mode, create a SQL user with login credentials and then assign the necessary permissions for the target database to that user.
 
 ```yaml
 connections:
