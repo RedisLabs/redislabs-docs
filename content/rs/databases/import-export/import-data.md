@@ -28,12 +28,10 @@ Importing data erases all existing content in the database.
 
 To import data into a database:
 
-1. Sign in to the admin console and then select **Databases** from the main menu.
+1.  Select the database from the **Databases** list.
 1. Select the target database from the list.
-1. Select **More Actions > Import**.
-
-    {{<image filename="images/rs/database-more-actions-menu.png" alt="The more actions menu." >}}{{< /image >}}
-
+1. Click <img src="/images/rs/buttons/button-toggle-actions.png#no-click" alt="Toggle actions button" width="22px"> to open a list of additional actions.
+1. Select **Import**.
 1. Select the [storage location](#supported-storage-services) and enter the details for the import data file.
 1. Select **Import**.
 
