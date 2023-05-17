@@ -8,8 +8,8 @@ categories: ["Platforms"]
 aliases: {
     /kubernetes/preview/create-reaadb.md,
     /kubernetes/preview/create-reaadb/,
-    //kubernetes/active-active/preview/prepare-clusters.md,
-    //kubernetes/active-active/preview/prepare-clusters/,
+    /kubernetes/active-active/preview/prepare-clusters.md,
+    /kubernetes/active-active/preview/prepare-clusters/,
 }
 ---
 {{<banner-article bannerColor="#fff8dc">}}

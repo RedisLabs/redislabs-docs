@@ -113,9 +113,9 @@ To communicate with other clusters, all participating clusters will need access 
     type: Opaque
     ```
 
-1. Add the username and password new secret for that REC and namespace.
+1. Add the username and password to the new secret for that REC and namespace.
 
-    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rec1` in namespace `ns1` and `rec2` in namespace `ns2`.
+    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc1` (representing `rec1` in namespace `ns1`) and `rerc2` (reprsenting `rec2` in namespace `ns2`).
 
     ```yaml
     apiVersion: v1
