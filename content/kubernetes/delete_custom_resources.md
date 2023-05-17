@@ -78,6 +78,24 @@ You will also need to remove [the `namespaceSelector` section from the validatin
   kubectl get reaadb -o=jsonpath='{range .items[*]}{.metadata.name}'
   ```
 
+## Delete a remote cluster (RERC)
+
+1. Verify the RERC you want to delete isn't listed as a particpating cluster in any REAADB resources.
+
+  If an RERC is still listed as a participating cluster in any database, the deletion will fail.
+
+1. On one of the existing participating clusters, delete the RERC (substituting `<rerc-name>` with your database name).
+
+  ```sh
+  kubectl delete rerc <rerc-name>
+  ```
+
+1. Verify the RERC no longer exists.
+
+  ```sh
+  kubectl get rerc -o=jsonpath='{range .items[*]}{.metadata.name}'
+  ```
+
 ## Troubleshoot REDB deletion
 
 The operator attaches a finalizer to the Redis Enterprise database (REDB) object. This makes sure the database is deleted before the REDB custom resource is removed from the K8s cluster.
