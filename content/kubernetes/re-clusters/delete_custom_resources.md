@@ -29,6 +29,14 @@ When you delete your cluster, your databases and the REC custom resource are als
 
 ## Delete the operator
 
+To delete the operator, you can either delete the bundle across all namespaces, or delete the operator resources manually from one namespace. With either method, you need to delete the operator ConfigMap (`operator-environment-config).
+
+```sh
+kubectl delete cm operator-environment-config
+```
+
+### Delete operator bundle
+
 To delete the operator from your K8s cluster and namespace, you can delete the operator bundle with:
 
 - `kubectl delete -f bundle.yaml` for non-OpenShift K8s deployments
@@ -37,6 +45,8 @@ To delete the operator from your K8s cluster and namespace, you can delete the o
 This will remove the operator and its custom resource definitions (CRDs) from your K8s cluster.
 
 {{< warning >}} The Redis Enterprise CRDs are non-namespaced resources, meaning they are shared across your entire K8s cluster. Deleting CRDs in one namespace will delete custom resources in every other namespace across the K8s cluster.{{</warning>}}
+
+### Delete operator from one namespace
 
 If you have Redis Enterprise clusters running in different namespaces on the same K8s cluster, deleting the entire operator bundle might cause data loss.
 
@@ -52,7 +62,23 @@ kubectl delete -f operator.yaml
 
 You will also need to remove [the `namespaceSelector` section from the validating webhook]({{<relref "/kubernetes/deployment/quick-start#webhook">}}).
 
-### Troubleshoot REDB deletion
+## Delete an Active-Active database (REAADB)
+
+{{<note>}}The Redis Enterprise Active-Active database (REAADB) custom resource is currently in public preview. View [Preview REAADB]({{<relref "/kubernetes/active-active/preview/">}}) for more details.{{</note>}}
+
+1. On one of the existing participating clusters, delete the REEADB (substituting `<reaadb-name>` with your database name).
+
+  ```sh
+  kubectl delete reaadb <reaadb-name>
+  ```
+
+1. Verify the REAADB no longer exists. 
+
+  ```sh
+  kubectl get reaadb -o=jsonpath='{range .items[*]}{.metadata.name}'
+  ```
+
+## Troubleshoot REDB deletion
 
 The operator attaches a finalizer to the Redis Enterprise database (REDB) object. This makes sure the database is deleted before the REDB custom resource is removed from the K8s cluster.
 
@@ -67,7 +93,7 @@ kubectl patch redb <your-db-name> --type=json -p \
     '[{"op":"remove","path":"/metadata/finalizers","value":"finalizer.redisenterprisedatabases.app.redislabs.com"}]'
 ```
 
-### Troubleshoot REC deletion
+## Troubleshoot REC deletion
 
 The operator attaches a finalizer to the Redis Enterprise cluster (REC) object. This makes sure the Redis cluster is deleted before the REC custom resource is removed from the K8s cluster.
 
