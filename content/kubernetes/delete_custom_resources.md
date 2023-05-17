@@ -8,6 +8,7 @@ categories: ["Platforms"]
 aliases: [
     /kubernetes/re-clusters/delete_custom_resources.md,
     /kubernetes/re-clusters/delete_custom_resources/,
+    /kubernetes/delete_custom_resources/,
 ]
 ---
 
