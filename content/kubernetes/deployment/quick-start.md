@@ -128,16 +128,16 @@ The following example creates a minimal Redis Enterprise cluster. See the [Redis
 
 1. Create a file (`my-rec.yaml`) that defines a Redis Enterprise cluster with three nodes:
 
-  ```sh
-  cat <<EOF > my-rec.yaml
-  apiVersion: "app.redislabs.com/v1"
-  kind: "RedisEnterpriseCluster"
-  metadata:
-    name: my-rec
-  spec:
-    nodes: 3
-  EOF
-  ```
+    ```sh
+    cat <<EOF > my-rec.yaml
+    apiVersion: "app.redislabs.com/v1"
+    kind: "RedisEnterpriseCluster"
+    metadata:
+      name: my-rec
+    spec:
+      nodes: 3
+    EOF
+    ```
 
     This will request a cluster with three Redis Enterprise nodes using the
     default requests (i.e., 2 CPUs and 4GB of memory per node).
@@ -206,57 +206,7 @@ The admission controller dynamically validates REDB resources configured by the 
 
 As part of the REC creation process, the operator stores the admission controller certificate in a Kubernetes secret called `admission-tls`. You may have to wait a few minutes after creating your REC to see the secret has been created.
 
-1. Verify the secret has been created.
-
-    ```sh
-     kubectl get secret admission-tls
-    ```
-  
-    The output will look similar to
-  
-    ```
-     NAME            TYPE     DATA   AGE
-     admission-tls   Opaque   2      2m43s
-    ```
-
-1. Save the certificate to a local environment variable.
-
-    ```sh
-    CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
-    ```
-
-1. Create a patch file for the Kubernetes validating webhook.
-
-    ```sh
-    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
-
-    cat > modified-webhook.yaml <<EOF
-    webhooks:
-    - name: redisenterprise.admission.redislabs
-      clientConfig:
-        caBundle: $CERT
-      admissionReviewVersions: ["v1beta1"]
-    EOF
-    ```
-
-1. Patch the webhook with the certificate.
-
-    ```sh
-    kubectl patch ValidatingWebhookConfiguration \
-      redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
-    ```
-
-  {{<note>}}
-
-  For releases before 6.4.2-4, use this command instead:
-    ```sh
-    kubectl patch ValidatingWebhookConfiguration \
-      redb-admission --patch "$(cat modified-webhook.yaml)"
-    ```
-
-  The 6.4.2-4 release introduces a new `ValidatingWebhookConfiguration` to replace `redb-admission`. See the [6.4.2-4 release notes]({{<relref "/kubernetes/release-notes/6-4-2-releases/">}}).
-  {{</note>}}
-
+{{< embed-md "k8s-admission-webhook-cert.md"  >}}
 
 ### Limit the webhook to the relevant namespaces {#webhook}
 
