@@ -27,7 +27,7 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
   The example command below patches the REAADB named `example-aadb-1` to set the global memory size to 200MB:
 
   ```sh
-  kubectl patch reaadb example-aadb-1 --type merge --patch /
+  kubectl patch reaadb example-aadb-1 --type merge --patch \
   '{"spec": {"globalConfigurations": {"memorySize": "200mb"}}}'
   ```
 
@@ -77,7 +77,7 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
 1. Patch the REAADB custom resource to specify the database secret, substituting your own values for `<reaadb-name>` and `<secret-name>`.
 
     ```sh
-    kubectl patch reaadb <reaadb-name> --type merge --patch /
+    kubectl patch reaadb <reaadb-name> --type merge --patch \
     '{"spec": {"globalConfigurations": {"databaseSecretName": "secret-name"}}}'
     ```
 
