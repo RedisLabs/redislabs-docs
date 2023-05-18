@@ -19,7 +19,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
 - Run:
 
   ```bash
-  docker run -d --name debezium --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:{{ site.debezium_server_version }}
+  docker run -d --name debezium --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:2.1.1.Final
   ```
 
 - Check the Debezium Server log:
@@ -33,7 +33,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
 The UTC timezone is used in the Debezium Server container by default. In order to use another timezone, specify it by setting the `TZ` environment variable when running the container, for example:
 
 ```bash
-docker run -d --name debezium -e TZ=Europe/London --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:{{ site.debezium_server_version }}
+docker run -d --name debezium -e TZ=Europe/London --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:2.1.1.Final
 ```
 
 ### SELinux
@@ -65,7 +65,7 @@ As result, it will fail with an error. You should follow these steps to add the 
 - Bind mount the driver into the container:
 
   ```bash
-  docker run -d --name debezium --restart always -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:{{ site.debezium_server_version }}
+  docker run -d --name debezium --restart always -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:2.1.1.Final
   ```
 
 ### Running Docker as a non-root user
@@ -91,11 +91,11 @@ We recommend running Docker as a non-root user. To allow this, follow these step
 ## Non-containerized deployment
 
 - Install [Java 11](https://www.oracle.com/java/technologies/downloads/#java11) or [Java 17](https://www.oracle.com/java/technologies/downloads/#java17).
-- Download Debezium Server {{ site.debezium_server_version }} from [here](https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/{{ site.debezium_server_version }}/debezium-server-dist-{{ site.debezium_server_version }}.tar.gz).
+- Download Debezium Server 2.1.1.Final from [here](https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/2.1.1.Final/debezium-server-dist-2.1.1.Final.tar.gz).
 - Unpack Debezium Server:
 
   ```bash
-  tar xvfz debezium-server-dist-{{ site.debezium_server_version }}.tar.gz
+  tar xvfz debezium-server-dist-2.1.1.Final.tar.gz
   ```
 
 - Copy the scaffolded `application.properties` file (created by the [scaffold command]({{<relref "/rdi/quickstart/ingest-guide#scaffold-configuration-files">}}) to the extracted `debezium-server/conf` directory. Verify that you've configured this file based on these [instructions]({{<relref "/rdi/quickstart/ingest-guide#install-the-debezium-server">}}).
