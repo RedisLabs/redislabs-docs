@@ -12,7 +12,7 @@ hidden: false
 
 This guide takes you through the creation of a write-behind pipeline.
 
-> Note: Write Behind is Preview.
+> Note: Write Behind is currently in Preview.
 
 ## Concepts
 
