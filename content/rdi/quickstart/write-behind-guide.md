@@ -12,6 +12,8 @@ hidden: false
 
 This guide takes you through the creation of a write-behind pipeline.
 
+> Note: Write Behind is Preview.
+
 ## Concepts
 
 **Write-behind**: An RDI policy and pipeline to synchronize the data in a Redis DB with some downstream data store.
