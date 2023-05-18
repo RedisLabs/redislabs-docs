@@ -23,7 +23,7 @@ RDI currently supports these scenarios:
 
   ![Ingest flow](/images/rdi/ingest.png)
   
-* [Write-behind scenario]({{<relref "/rdi/quickstart/write-behind-guide">}}). Data changes in Redis are applied by RDI to one or more downstream data-stores. RDI can map and transform the Redis types and model to the downstream types and models. This scenario is useful when the application needs fast writes and reads for some of the queries, but has to provide data to other downstream services that needs them in different models for other uses.
+* [Write-behind scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}). Data changes in Redis are applied by RDI to one or more downstream data-stores. RDI can map and transform the Redis types and model to the downstream types and models. This scenario is useful when the application needs fast writes and reads for some of the queries, but has to provide data to other downstream services that needs them in different models for other uses.
 
   ![Write-behind flow](/images/rdi/write-behind.png)  
 
@@ -33,14 +33,16 @@ To learn more see [Architecture]({{<relref "/rdi/architecture">}}) for more deta
 
 Redis Data Integration supports the following database sources using [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) connectors:
 
-| Database       | Versions               |
-| -------------- | ---------------------- |
-| Oracle         | 12c, 19c, 21c          |
-| MariaDB        | >= 10.5                |
-| MySQL          | 5.7, 8.0.x             |
-| Percona XtraDB | 5.7, 8.0.x             |
-| Postgres       | 10, 11, 12, 13, 14, 15 |
-| SQL Server     | 2017, 2019             |
+| Database           | Versions               |
+| ------------------ | ---------------------- |
+| Oracle             | 12c, 19c, 21c          |
+| MariaDB            | >= 10.5                |
+| MySQL              | 5.7, 8.0.x             |
+| Percona XtraDB     | 5.7, 8.0.x             |
+| Postgres           | 10, 11, 12, 13, 14, 15 |
+| SQL Server         | 2017, 2019             |
+| Cassandra          | >= 3.0                 |
+| Datastax Cassandra | >= 6.8.0               |
 
 ## Supported targets (write-behind)
 
