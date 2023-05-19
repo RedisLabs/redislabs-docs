@@ -18,7 +18,7 @@ To learn more about designing a multi-namespace Redis Enterprise cluster, see [f
 
 ## Prerequisites
 
-Before configuring a multi-namespace deployment, you must have a running [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/deployment/quick-start.md">}}). See more information in the [deployment]({{<relref "/kubernetes/deployment/">}}) section. 
+Before configuring a multi-namespace deployment, you must have a running [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/deployment/quick-start.md">}}). See more information in the [deployment]({{<relref "/kubernetes/deployment/">}}) section.
 
 ## Create role and role binding for managed namespaces
 
@@ -71,9 +71,6 @@ subjects:
   name: redis-enterprise-operator
   namespace: <rec-namespace>
 - kind: ServiceAccount
-  name: redis-enterprise-admission
-  namespace: <rec-namespace>
-- kind: ServiceAccount
   name: <service-account-name>
   namespace: <rec-namespace>
 roleRef:
@@ -89,7 +86,83 @@ kubectl apply -f role.yaml
 kubectl apply -f role_binding.yaml
 ```
 
+{{<note>}}
+If the REC is configured to watch a namespace without setting the role and role binding permissions, or a namespace that is not yet created, the operator will fail and halt normal operations.
+{{</note>}}
+
+
 ## Update Redis Enterprise operator ConfigMap
+
+There are two methods of updating the operator ConfigMap (`operator-environment-config`) to specify which namespaces to manage.
+
+- Method 1: Configure the operator to watch for a namespace label and add this label to managed namespaces (available in versions 6.4.2-4 or later).
+- Method 2: Configure the operator with an explicit list of namespaces to manage.
+
+You can create this ConfigMap manually before deployment, or it will be created automatically after the operator was deployed.
+
+
+### Method 1: Namespace label (available in versions 6.4.2-4 or later)
+
+1. Create the `cluster_role_binding.yaml` and `cluster_role.yaml` files. Replace the `<rec-namespace>` with the namespace the Redis Enterprise cluster (REC) resides in.
+
+  `cluster_role.yaml` example:
+
+  ```yaml
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      name: redis-enterprise-operator
+    rules:
+      - apiGroups: [""]
+        resources: ["namespaces"]
+        verbs: ["list", "watch"]
+  ```
+
+  `cluster_role_binding.yaml` example:
+
+  ```yaml
+    kind: ClusterRoleBinding
+    apiVersion: rbac.authorization.k8s.io/v1
+    metadata:
+      name: redis-enterprise-operator
+    subjects:
+    - kind: ServiceAccount
+      name: redis-enterprise-operator
+      namespace: <rec-namespace>
+    roleRef:
+      kind: ClusterRole
+      name: redis-enterprise-operator
+      apiGroup: rbac.authorization.k8s.io
+  ```
+
+2. Apply the files.
+
+  ```sh
+  kubectl apply -f operator_cluster_role.yaml
+  kubectl apply -f operator_cluster_role_binding.yaml 
+  ```
+
+3. Patch the ConfigMap in the REC namespace (`<rec-namespace>`) to identify the managed namespaces with your label (`<label-name>`).
+
+  ```sh
+   kubectl patch ConfigMap/operator-environment-config \
+  -n <rec-namespace> \
+  --type merge \
+  -p '{"data": {"REDB_NAMESPACES_LABEL": "<label-name>"}}'
+  ```
+
+4. For each managed namespace, apply the same label. Replace `<managed-namespace>` with the namespace the REC will manage. Replace `<label-name>` with the value used in the previous step. If you specify a value for `<label-value>`, both the label name and value in managed namespaces must match to be detected by the operator. If the `<label-value>` is empty, only the label name needs to match on managed namespaces and the value is disregarded.
+
+
+  ```sh
+  kubectl label namespace <managed-namespace> <label-name>=<label-value>
+  ```
+
+{{<note>}}
+The operator restarts when it detects a namespace label was added or removed.
+{{</note>}}
+
+### Method 2: Explicit namespace list
 
 Patch the `operator-environment-config` in the REC namespace with a new environment variable (`REDB_NAMESPACES`).
 

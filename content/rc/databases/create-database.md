@@ -46,7 +46,7 @@ The available settings vary according to your subscription plan:
 | **Database name** | A name for your database (_required_) |
 | **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
 | **Type**  | Controls optional capabilities, such as modules or protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
-| **Modules** | Extend core Redis functionality using [modules]({{<relref "modules/">}}).  Redis Enterprise Cloud supports selected modules; for details, see [Redis Enterprise module support]({{<relref "modules/enterprise-capabilities#redis-enterprise-module-support">}}) |
+| **Advanced capabilities** | Extend core Redis functionality using [modules]({{<relref "modules/">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "modules/enterprise-capabilities#redis-enterprise-module-support">}}) |
 
 ### Database port
 
@@ -57,46 +57,46 @@ Flexible (and Annual) subscriptions let you choose between two options:
 - **Auto assign** automatically assigns a port number during database creation.
 - **Manually assign** lets you enter a custom port number between 10000 and 19999. You cannot assign a port that is reserved or already in use.
 
-### Modules
+### Advanced capabilities {#modules}
 
-Modules extend Redis database functionality by adding new data types and options.  
+Advanced capabilities extend Redis database functionality by adding new data types and options.  
 
 Available options depend on your subscription and your database **Type**.
 
-#### Fixed (and Free) module options
+#### Fixed (and Free) advanced capability options {#fixed-and-free-module-options}
 
 Fixed and Free subscriptions support [Redis Stack](https://redis.io/docs/stack/), which enables the most frequently used modules.
 
 {{<image filename="images/rc/new-database-general-type-free-stack.png" alt="For Fixed and Free subscriptions, the Type setting in the General section includes an option for Redis Stack." width="75%">}}{{< /image >}}
 
-When the database **Type** is set to _Redis Stack_, the modules section of the database details page displays the modules included with the database and their versions.
+When the database **Type** is set to _Redis Stack_, the Advanced capabilities section of the database details page displays the advanced capabilities included with the database and their versions.
 
-{{<image filename="images/rc/database-details-modules-stack-free.png" alt="For Fixed and Free subscriptions, the Database details page lists the modules and versions added by Redis Stack." width="75%">}}{{< /image >}}
+{{<image filename="images/rc/database-details-modules-stack-free.png" alt="For Fixed and Free subscriptions, the Database details page lists the capabilities and versions added by Redis Stack." width="75%">}}{{< /image >}}
 
-Redis Enterprise Cloud is updated on a regular basis, which includes the modules supported by the service.  Module versions displayed by the admin console may vary from those shown above.  For the latest details of any module, see [Redis modules]({{<relref "modules/">}}). 
+Redis Enterprise Cloud is updated on a regular basis, which includes the advanced capabilities supported by the service.  Module versions displayed by the admin console may vary from those shown above.  For the latest details of any module, see [Redis modules]({{<relref "modules/">}}). 
 
 Redis Stack is available only for Fixed and Free subscriptions.
 
-#### Flexible and Annual module options
+#### Flexible and Annual advanced capability options {#flexible-and-annual-module-options}
 
-Flexible and Annual subscriptions let you choose modules for each database.
+Flexible and Annual subscriptions let you choose advanced capabilities for each database.
 
 {{<image filename="images/rc/database-details-redis-module-select-flexible.png" alt="For Flexible and Annual subscriptions, you can select the modules included in your database." width="75%">}}{{< /image >}}
 
-You can select more than one module for a database, though there are limits:
+You can select more than one advanced capability for a database, though there are limits:
 
-- The following modules can be combined in Flexible and Annual subscriptions:
+- The following advanced capabilities can be combined in Flexible and Annual subscriptions:
 
-    - RediSearch 2
+    - RediSearch
     - RedisJSON
     - RedisTimeSeries
     - RedisBloom
 
-- RedisGraph cannot be combined with other modules
+- RedisGraph cannot be combined with other modules.
 
-- When you select RedisJSON, RediSearch 2 is automatically added because the modules complement each other.  
+- When you select RedisJSON, RediSearch is automatically added because the modules complement each other.  
 
-    You can remove RediSearch 2 if you prefer.
+    You can remove RediSearch if you prefer.
 
 You don't have to combine modules.  To remove a selected module, either clear the checkbox in the menu or select the module's **Delete** icon.  
 

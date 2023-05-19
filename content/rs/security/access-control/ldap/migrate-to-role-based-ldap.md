@@ -11,7 +11,7 @@ aliases: [
 
 Redis Enterprise Software supports LDAP through a [role-based mechanism]({{<relref "/rs/security/access-control/ldap/" >}}), first introduced [in v6.0.20]({{<relref "rs/release-notes/rs-6-0-20-april-2021" >}}).
 
-Earlier versions of Redis Enterprise Software supported a [cluster-based mechanism]({{<relref "/rs/security/access-control/ldap/cluster-based-ldap-authentication.md" >}}); however, that mechanism was removed in v6.2.12.
+Earlier versions of Redis Enterprise Software supported a cluster-based mechanism; however, that mechanism was removed in v6.2.12.
 
 If you're using the cluster-based mechanism to enable LDAP authentication, you need to migrate to the role-based mechanism before upgrading to Redis Enterprise Software v6.2.12 or later.
 

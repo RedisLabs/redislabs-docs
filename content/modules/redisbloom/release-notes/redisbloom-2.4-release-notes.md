@@ -10,10 +10,22 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisBloom v2.4.4 requires:
+RedisBloom v2.4.5 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.4.5 (April 2023)
+
+This is a maintenance release for RedisBloom 2.4.
+
+Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+  - Internal changes for supporting future Redis Enterprise releases
 
 ## v2.4.4 (February 2023)
 

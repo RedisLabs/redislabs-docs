@@ -51,7 +51,7 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Activated on** | Date and time the database was created |
 | **Active-Active Redis** | Checked when the database is part of an Active-Active relationship (_coming soon; Flexible or Annual subscriptions only_) |
 | **Last changed** | Date and time of last update |
-| **Module** | This setting appears when when a [module]({{< relref "modules/" >}}) is enabled for a database  |
+| **Advanced capabilites** | This setting appears when when an advanced capability, also know as a [module]({{< relref "modules/" >}}), is enabled for a database  |
 
 ### Scalability section
 

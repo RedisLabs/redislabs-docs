@@ -34,12 +34,12 @@ An API object that represents a managed database in the cluster.
 [{
   "CN": string,
   "O": string,
-  "OU": string,
+  "OU": [array of strings],
   "L": string,
   "ST": string,
   "C": string
 }, ...]
-{{</code>}} | A list of valid subjects used for additional certificate validations during TLS client authentication. All subject attributes are case-sensitive.<br />**Required subject fields**:<br />"CN" for Common Name<br />**Optional subject fields:**<br />"O" for Organization<br />"OU" for Organizational Unit<br />"L" for Locality (city)<br />"ST" for State/Province<br />"C" for 2-letter country code  |
+{{</code>}} | A list of valid subjects used for additional certificate validations during TLS client authentication. All subject attributes are case-sensitive.<br />**Required subject fields**:<br />"CN" for Common Name<br />**Optional subject fields:**<br />"O" for Organization<br />"OU" for Organizational Unit (array of strings)<br />"L" for Locality (city)<br />"ST" for State/Province<br />"C" for 2-letter country code  |
 | avoid_nodes | array of strings | Cluster node UIDs to avoid when placing the database's shards and binding its endpoints |
 | background_op | {{<code>}}
 [{
@@ -192,7 +192,7 @@ An API object that represents a managed database in the cluster.
 | tls_mode | 'enabled'<br /> **'disabled'** <br />'replica_ssl' | Require TLS-authenticated and encrypted connections to the database |
 | type | **'redis'** <br />'memcached' | Type of database |
 | use_nodes | array of strings | Cluster node UIDs to use for database shards and bound endpoints |
-| version | string | Database compatibility version: full Redis/memcached version number, e.g. 6.0.6 |
+| version | string | Database compatibility version: full Redis/memcached version number, such as 6.0.6. This value can only change during database creation and database upgrades.|
 | wait_command | boolean (default:&nbsp;true) | Supports Redis wait command (read-only) |
 
 

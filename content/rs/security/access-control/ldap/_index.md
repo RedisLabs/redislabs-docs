@@ -2,21 +2,19 @@
 title: LDAP authentication
 linkTitle: LDAP authentication
 description: Describes how Redis Enterprise Software integrates LDAP authentication and authorization. Also describes how to enable LDAP for your deployment of Redis Enterprise Software.
-weight: 25
+weight: 50
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/designing-production/security/ldap-integration/
-         /rs/security/admin-console-security/ldap/
-         /rs/security/ldap/
+aliases: /rs/administering/designing-production/security/ldap-integration/,
+         /rs/security/admin-console-security/ldap/,
+         /rs/security/ldap/,
+         /rs/security/ldap/cluster-based-ldap-authentication/,
+         /rs/security/access-control/ldap/cluster-based-ldap-authentication/
 ---
 
 Redis Enterprise Software supports [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization through its [role-based access controls]({{<relref "rs/security/access-control">}}) (RBAC).  You can use LDAP to authorize access to the admin console and to control database access.
 
 You can configure LDAP roles using the Redis Enterprise admin console or REST API.
-
-Previously, Redis Enterprise Software supported a [cluster-based LDAP integration]({{< relref "/rs/security/access-control/ldap/cluster-based-ldap-authentication" >}}); however, support for this approach was removed in v6.2.12.
-
-If you are using the earlier cluster-based LDAP mechanism, you need to [migrate to role-based LDAP]({{<relref "/rs/security/access-control/ldap/migrate-to-role-based-ldap">}}) before upgrading to v6.2.12.
 
 ## How it works
 

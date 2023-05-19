@@ -407,6 +407,12 @@ article > aside .menu .dd-item {
   list-style: none;
   font-size: 1rem;
 }
+article > aside .menu .dd-item.parent > a {
+  display: inline-block;
+  padding-top: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  }
 article > aside .menu .dd-item.alwaysopen > ul {
   display: block; }
 article > aside .menu .dd-item.parent > ul {
