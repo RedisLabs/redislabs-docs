@@ -63,7 +63,7 @@ If your Redis Enterprise Cluster version is 6.2.18 or higher, you can install Re
   #### RHEL 8
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{ <param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
   #### RHEL 7
