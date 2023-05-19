@@ -20,4 +20,4 @@ There are two types of Data Transformations in RDI:
 
 ## More info
 
-{{<allchildren style="h2" description="true">}}
+{{<allchildren style="h2" description="true"/>}}
