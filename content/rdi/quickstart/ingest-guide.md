@@ -38,7 +38,7 @@ The `create` command will create a BDB named `redis-di-<ID>` in your cluster. Yo
 Run `scaffold` command to generate configuration files for Redis Data Integration and Debezium Redis Sink Connector:
 
 ```bash
-redis-di scaffold --db-type <{{ site.db_types }}> --dir <PATH_TO_DIR>
+redis-di scaffold --db-type <{{<param rdi_db_types>}}> --dir <PATH_TO_DIR>
 ```
 
 The following files will be created in the provided directory:
