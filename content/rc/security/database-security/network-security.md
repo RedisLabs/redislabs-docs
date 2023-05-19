@@ -17,7 +17,7 @@ These features are available in most Redis Cloud configurations, as shown here:
 | Cloud&nbsp;provider | VPC peering | IP restrictions |
 |:-------------------:|-------------|-----------------|
 | AWS | Flexible and Annual | Fixed (paid), Flexible, and Annual |
-| GCP | Flexible and Annual | Fixed (paid), Flexible, and Annual |
+| Google Cloud | Flexible and Annual | Fixed (paid), Flexible, and Annual |
 | Azure | Annual | Annual |
 
 ## IP and subnet restrictions {#ip}
@@ -34,7 +34,7 @@ A [Virtual Private Cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (
 
 Databases in Flexible and Annual subscriptions are almost always deployed in a Redis VPC. In most cases, you'll need to create a [VPC peering connection]({{<relref "/rc/security/vpc-peering">}}) to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
 
-How you create these connections and the features supported vary somewhat by public cloud provider. You can read about VPC usage for [AWS](#vpcs-with-aws), [GCP](#vpcs-with-gcp), and [Azure](#vpcs-with-azure) below.
+Connection creation and supported features vary by public cloud provider. Learn more about VPC usage for [AWS](#vpcs-with-aws), [Google Cloud](#vpcs-with-google-cloud), and [Azure](#vpcs-with-azure).
 
 ### VPCs with AWS
 
@@ -42,9 +42,9 @@ Subscriptions that run on AWS support two VPC options. To ensure that that you c
 
 If you create a VPC peering connection, you can also [configure a CIDR allow list]({{<relref "/rc/security/cidr-whitelist">}}) to allow connections only from specific IP address blocks or security groups.
 
-### VPCs with GCP
+### VPCs with Google Cloud
 
-Subscriptions that run on GCP *require* a VPC peering connection. See [GCP VPC peering]({{<relref "/rc/security/vpc-peering#gcp-vpc-peering">}}) to learn how to set up VPC peering for GCP.
+Subscriptions that run on Google Cloud *require* a VPC peering connection. See [Google Cloud VPC peering]({{<relref "/rc/security/vpc-peering#gcp-vpc-peering">}}) to learn how to set up VPC peering for Google Cloud.
 
 ### VPCs with Azure
 

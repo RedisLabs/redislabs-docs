@@ -8,5 +8,5 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-{{<allchildren style="h2" description="true">}}
+{{<allchildren style="h2" description="true"/>}}
 

@@ -18,12 +18,12 @@ Open source [Redis](https://redislabs.com/redis-features/redis) is a single-thre
 to provide speed and simplicity.
 A single Redis process is bound by the CPU core that it is running on and available memory on the server.
 
-Redis Enterprise Software (RS) supports database clustering to allow customers
+Redis Enterprise Software supports database clustering to allow customers
 to spread the load of a Redis process over multiple cores and the RAM of multiple servers.
 A database cluster is a set of Redis processes where each process manages a subset of the database keyspace.
 
-In an RS cluster, the keyspace is partitioned into database shards.
-At any moment a shard resides on a single node and is managed by that node.
+The keyspace of a Redis Enterprise cluster is partitioned into database shards.
+Each shard resides on a single node and is managed by that node.
 Each node in a Redis database cluster can manage multiple shards.
 The key space in the shards is divided into hash slots.
 The slot of a key is determined by a hash of the key name or part of the key name.
@@ -52,22 +52,21 @@ Clustering is an efficient way of scaling Redis that should be used when:
 
 ## Number of shards
 
-When enabling database clustering you can set the number of database
+When enabling database clustering, you can set the number of database
 shards. The minimum number of shards per database is 2 and the maximum
 depends on the subscription you purchased.
 
-Once database clustering has been enabled and the number of shards has
-been set, you cannot disable database clustering or reduce the number of
+After you enable database clustering and set the number of shards, you cannot deactivate database clustering or reduce the number of
 shards. You can only increase the number of shards by a multiple of the
 current number of shards. For example, if the current number of shards
-was 3, you can increase to 6, 9, 12 and so on. 
+is 3, you can increase the number of shards to 6, 9, or 12. 
 
 ## Supported hashing policies
 
 ### Standard hashing policy
 
 When using the standard hashing policy, a clustered database behaves
-just like a standard, open-source, Redis cluster:
+just like a standard open source Redis cluster:
 
 - **Keys with a hash tag**: a key's hash tag is any substring between
     '{' and '}' in the key's name. That means that when a key's name
@@ -87,7 +86,7 @@ need to construct key names with hash tags.
 
 ### Custom hashing policy
 
-A clustered database can be configured to a custom hashing policy. A
+You can configure a custom hashing policy for a clustered database. A
 custom hashing policy is required when different keys need to be kept
 together on the same shard to allow multi-key operations. The custom
 hashing policy is provided through a set of Perl Compatible Regular
@@ -95,11 +94,11 @@ Expressions (PCRE) rules that describe the dataset's key name patterns.
 
 To configure a custom hashing policy, enter the regular expression
 (RegEx) rules that identify the substring in the key's name - hash tag
--- on which hashing is done. The hashing tag is denoted in the
+-- on which hashing is done. The hash tag is denoted in the
 RegEx by the use of the \`tag\` named subpattern. Different keys that
-have the same hash tag is stored and managed in the same slot.
+have the same hash tag are stored and managed in the same slot.
 
-Once you enable the custom hashing policy, the following default RegEx
+After you enable the custom hashing policy, the following default RegEx
 rules are implemented. Update these rules to fit your specific logic:
 
 |  RegEx Rule | Description |
@@ -107,19 +106,19 @@ rules are implemented. Update these rules to fit your specific logic:
 |  .\*{(?\<tag\>.\*)}.\* | Hashing is done on the substring between the curly braces. |
 |  (?\<tag\>.\*) | The entire key's name is used for hashing. |
 
-You can modify existing rules, add new ones, delete rules or change
+You can modify existing rules, add new ones, delete rules, or change
 their order to suit your application's requirements.
 
 ### Custom hashing policy notes and limitations
 
 1. You can define up to 32 RegEx rules, each up to 256 characters.
-2. RegEx rules are evaluated in their order and the first rule matched
-    is used. Therefore, strive to place common key name patterns at the
+2. RegEx rules are evaluated in order, and the first rule matched
+    is used. Therefore, you should place common key name patterns at the
     beginning of the rule list.
 3. Key names that do not match any of the RegEx rules trigger an
     error.
 4. The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot
-    because the hash key are always empty. Therefore, when used,
+    because the hash key is always empty. Therefore, when used,
     this should be the last, catch-all rule.
 5. The following flag is enabled in the regular expression parser:
     PCRE_ANCHORED: the pattern is constrained to match only at the
@@ -128,7 +127,7 @@ their order to suit your application's requirements.
 ## Changing the hashing policy
 
 The hashing policy of a clustered database can be changed. However,
-most hashing policy changes trigger the deletion (i.e., FLUSHDB) of the
+most hashing policy changes trigger the deletion (FLUSHDB) of the
 data before they can be applied.
 
 Examples of such changes include:
@@ -155,7 +154,7 @@ the following limitations:
     commands are not allowed across slots. The following multi-key
     commands **are allowed** across slots: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
 
-    In CRBDs, multi-key commands can only be run on keys that are in the same slot.
+    In Active-Active databases, multi-key write commands (DEL, MSET, UNLINK) can only be run on keys that are in the same slot. However, the following multi-key commands **are allowed** across slots in Active-Active databases: MGET, EXISTS, and TOUCH.
 
     Commands that affect all keys or keys that match a specified pattern are allowed
     in a clustered database, for example: FLUSHDB, FLUSHALL, KEYS

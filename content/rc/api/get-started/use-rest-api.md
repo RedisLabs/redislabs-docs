@@ -92,7 +92,7 @@ The Swagger UI generates default JSON examples for `POST` and `PUT` operations. 
 
 `cURL` is a popular command line tool used to perform HTTP requests,
 either as individual commands or within shell scripts (such as bash and zsh).
-For an introduction, see [How to start using cURL and why: a hands-on introduction](https://medium.freecodecamp.org/how-to-start-using-cURL-and-why-a-hands-on-introduction-ea1c913caaaa).
+For an introduction, see [How to start using cURL and why: a hands-on introduction](https://www.freecodecamp.org/news/how-to-start-using-curl-and-why-a-hands-on-introduction-ea1c913caaaa/).
 
 {{% info %}}
 Our examples use `cURL` and Linux shell scripts to demonstrate the API; you can use any standard REST client or library.<br/><br/>

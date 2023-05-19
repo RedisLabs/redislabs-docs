@@ -11,7 +11,7 @@ aliases: /rv/api/how-to/create-and-manage-subscriptions/
          /rc/api/examples/manage-subscriptions.md
 ---
 
-The Redis Enterprise Cloud REST API lets you create and manage a subscription.
+The Redis Enterprise Cloud REST API lets you create and manage all kinds of subscriptions. The examples in this article refer to Flexible subscriptions.
 
 ## Create a subscription
 
@@ -50,13 +50,13 @@ Modify the following parameters in the sample JSON document to create a subscrip
 
     Use `GET /payment-methods` to find a payment method ID.
 
-    You don't need to pass this field in your API request if you subscribed to Redis Enterprise Cloud through GCP Marketplace.
+    You don't need to pass this field in your API request if you subscribed to Redis Enterprise Cloud through Google Cloud Marketplace.
 
 - **`cloudAccountId`** - Set a cloud account ID connected to your account.
 
     To list cloud account IDs, use `GET /cloud-accounts`. To use internal resources, set it to `"cloudAccountId": 1`.
 
-    If you subscribed to Redis Enterprise Cloud through GCP Marketplace, use `1` for this field.
+    If you subscribed to Redis Enterprise Cloud through Google Cloud Marketplace, use `1` for this field.
 
 The request JSON body contains two primary segments: subscription specification and databases specification. When you create a subscription, you must specify one or more databases in the "`databases`" array.
 

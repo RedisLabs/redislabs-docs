@@ -21,3 +21,9 @@ To add a user to the cluster:
 
 1. Select the save icon.
 {{< video "/images/rs/new-user-add.mp4" "Create a new user" >}}
+
+## More info
+
+- [Grant admin console and REST API access for cluster management]({{<relref "/rs/security/access-control/admin-console-access">}})
+
+- [Control database access using RBAC]({{<relref "/rs/security/access-control/database-access">}})

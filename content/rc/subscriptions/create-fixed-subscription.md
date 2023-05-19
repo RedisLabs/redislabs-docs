@@ -52,9 +52,15 @@ To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-pla
 
 3.  Choose a **Cloud Provider** and a **Region**.
 
-    {{<image filename="images/rc/subscription-new-cloud-vendor-options.png" alt="Available cloud vendor options." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-new-cloud-vendor-options-redis-7-preview.png" alt="Available cloud vendor options and Redis 7 preview." >}}{{</image>}}
 
-4.  In the **High-availability** panel, select your replication settings.  
+    A [preview of Redis 7.0]({{<relref "/rc/changelog/march-2023#redis-70-preview">}}) subscriptions is available for selected regions in AWS and GCP. However, some Redis 7.0 functionality might not be fully available during preview. Redis 7.0 also introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/march-2023#redis-70-breaking-changes">}}) for more details.
+    
+    If you want to try out Redis 7.0, turn on the **Redis 7.0 preview** toggle:
+
+    {{<image filename="images/rc/subscription-new-redis-7-preview-toggle.png" width="200px" alt="Turn on the Redis 7 preview toggle." >}}{{< /image >}}
+
+4.  In the **Availability Settings** panel, select your replication settings.  
 
     - _No-replication_ means that you will have a single copy of your database.
     - _Single-zone replication_ means that your database will have a primary and a replica located in the same cloud region.  If anything happens to the primary, the replica takes over and becomes the new primary.

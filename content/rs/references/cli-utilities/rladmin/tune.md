@@ -24,6 +24,7 @@ rladmin tune cluster
         [ redis_provision_node_threshold_percent <percent> ]
         [ redis_migrate_node_threshold_percent <percent> ]
         [ max_simultaneous_backups <size> ]
+        [ failure_detection_sensitivity { high | low } ]
         [ watchdog_profile { cloud | local-network } ]
         [ slave_ha { enabled | disabled } ]
         [ slave_ha_grace_period <seconds> ]
@@ -41,12 +42,6 @@ rladmin tune cluster
         [ acl_pubsub_default { resetchannels | allchannels } ]
 ```
 
-Redis cluster watchdog supports two preconfigured profiles:
-
-- The `cloud` profile is suitable for common cloud environments. It has a higher tolerance for network jitter.
-
-- The `local-network` profile is suitable for dedicated LANs. It has better failure detection and failover times.
-
 ### Parameters
 
 | Parameters                             | Type/Value                        | Description                                                                                                                  |
@@ -57,6 +52,7 @@ Redis cluster watchdog supports two preconfigured profiles:
 | default_concurrent_restore_actions     | integer<br />`all`              | Default number of concurrent actions when restoring a node from a snapshot (positive integer or "all")                         |
 | default_redis_version                  | version number                    | The default Redis database compatibility version used to create new databases.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.<br/><br/>You cannot set _default_redis_version_ to a value higher than that supported by the current _redis_upgrade_policy_ value. |
 | expose_hostnames_for_all_suffixes      | `enabled`<br />`disabled`       | Exposes hostnames for all DNS suffixes                                                                                       |
+| failure_detection_sensitivity | `high`<br />`low` | Predefined thresholds and timeouts for failure detection (previously known as `watchdog_profile`)<br />• `high` (previously `local-network`) – high failure detection sensitivity, lower thresholds, faster failure detection and failover<br />• `low` (previously `cloud`) – low failure detection sensitivity, higher tolerance for latency variance (also called network jitter) |
 | login_lockout_counter_reset_after      | time in seconds                   | Time after failed login attempt before the counter resets to 0                                                                   |
 | login_lockout_duration                 | time in seconds                   | Time a locked account remains locked ( "0" means only an admin can unlock the account)                                   |
 | login_lockout_threshold                | integer                           | Number of failed sign-in attempts to trigger locking a user account ("0" means never lock the account)                   |
@@ -74,7 +70,7 @@ Redis cluster watchdog supports two preconfigured profiles:
 | slave_ha_bdb_cooldown_period           | time in seconds                   | Time (in seconds) after shard relocation during which databases can't be relocated to another node                           |
 | slave_ha_cooldown_period               | time in seconds                   | Time (in seconds) after shard relocation during which the replica high-availability mechanism can't relocate to another node |
 | slave_ha_grace_period                  | time in seconds                   | Time (in seconds) between when a node fails and when replica high availability starts relocating shards to another node      |
-| watchdog_profile                       | `cloud` <br /> `local-network` | Activates preconfigured watchdog profiles                                                          |
+| watchdog_profile                       | `cloud` <br /> `local-network` | Watchdog profiles with preconfigured thresholds and timeouts (deprecated as of Redis Enterprise Software v6.4.2-69; use `failure_detection_sensitivity` instead)<br />• `cloud` is suitable for common cloud environments and has a higher tolerance for latency variance (also called network jitter).<br />• `local-network` is suitable for dedicated LANs and has better failure detection and failover times. |
 
 ### Returns
 

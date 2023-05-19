@@ -1,6 +1,6 @@
 ---
 Title: Flexible subscriptions with AWS Marketplace
-LinkTitle: AWS Marketplace subscription
+LinkTitle: AWS Marketplace 
 description: Shows how to subscribe to Redis Cloud using AWS Marketplace
 weight: $weight
 alwaysopen: false

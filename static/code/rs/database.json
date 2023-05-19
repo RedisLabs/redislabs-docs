@@ -90,7 +90,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "decimals": null,
           "editable": true,
           "error": false,
@@ -171,7 +171,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "editable": true,
           "error": false,
           "format": "none",
@@ -250,7 +250,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "editable": true,
           "error": false,
           "format": "none",
@@ -329,7 +329,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "editable": true,
           "error": false,
           "format": "none",
@@ -408,7 +408,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -493,7 +493,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 1,
           "legend": {
@@ -620,7 +620,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 55,
           "legend": {
@@ -709,7 +709,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "description": "",
           "fill": 1,
           "id": 44,
@@ -817,7 +817,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 10,
           "legend": {
@@ -908,7 +908,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 14,
           "legend": {
@@ -1037,7 +1037,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 16,
           "legend": {
@@ -1129,7 +1129,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 43,
           "legend": {
@@ -1260,7 +1260,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 13,
           "legend": {
@@ -1340,7 +1340,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 53,
           "legend": {
@@ -1452,7 +1452,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 17,
           "legend": {
@@ -1537,7 +1537,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 11,
           "legend": {
@@ -1674,7 +1674,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 20,
           "legend": {
@@ -1755,7 +1755,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 21,
           "legend": {
@@ -1848,7 +1848,7 @@
           "bars": true,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 5,
           "id": 48,
           "legend": {
@@ -1926,7 +1926,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 5,
           "id": 57,
           "legend": {
@@ -2013,7 +2013,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 49,
           "legend": {
@@ -2117,7 +2117,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 23,
           "legend": {
@@ -2198,7 +2198,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 26,
           "legend": {
@@ -2277,7 +2277,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 47,
           "legend": {
@@ -2366,7 +2366,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 34,
           "legend": {
@@ -2461,7 +2461,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 50,
           "legend": {
@@ -2542,7 +2542,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 30,
           "legend": {
@@ -2620,7 +2620,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 22,
           "legend": {
@@ -2699,7 +2699,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 58,
           "legend": {
@@ -2792,7 +2792,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 51,
           "legend": {
@@ -2886,7 +2886,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 25,
           "legend": {
@@ -3005,7 +3005,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "description": "Positive is RAM, Negative is Flash",
           "fill": 1,
           "id": 52,
@@ -3114,7 +3114,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "description": "Positive is RAM, Negative is Flash",
           "fill": 1,
           "id": 54,
@@ -3201,7 +3201,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 19,
           "legend": {
@@ -3288,7 +3288,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 18,
           "legend": {
@@ -3383,7 +3383,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 33,
           "legend": {
@@ -3460,7 +3460,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 31,
           "legend": {
@@ -3537,7 +3537,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 37,
           "legend": {
@@ -3638,7 +3638,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 29,
           "legend": {
@@ -3715,7 +3715,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 27,
           "legend": {
@@ -3794,7 +3794,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 28,
           "legend": {
@@ -3901,7 +3901,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 32,
           "legend": {
@@ -3978,7 +3978,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 36,
           "legend": {
@@ -4055,7 +4055,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 35,
           "legend": {
@@ -4132,7 +4132,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 40,
           "legend": {
@@ -4219,7 +4219,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 46,
           "legend": {
@@ -4368,7 +4368,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 39,
           "legend": {
@@ -4517,7 +4517,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 42,
           "legend": {
@@ -4595,7 +4595,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 41,
           "legend": {
@@ -4673,7 +4673,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS1}",
+          "datasource": "DS_PROMETHEUS1",
           "fill": 1,
           "id": 56,
           "legend": {
@@ -4803,7 +4803,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_PROMETHEUS1}",
+        "datasource": "DS_PROMETHEUS1",
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -4823,7 +4823,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_PROMETHEUS1}",
+        "datasource": "DS_PROMETHEUS1",
         "hide": 0,
         "includeAll": false,
         "label": "BDB Id",
@@ -4843,7 +4843,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_PROMETHEUS1}",
+        "datasource": "DS_PROMETHEUS1",
         "hide": 2,
         "includeAll": false,
         "label": null,
@@ -4863,7 +4863,7 @@
       {
         "allValue": null,
         "current": {},
-        "datasource": "${DS_PROMETHEUS1}",
+        "datasource": "DS_PROMETHEUS1",
         "hide": 2,
         "includeAll": false,
         "label": null,

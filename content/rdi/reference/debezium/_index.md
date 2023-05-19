@@ -14,4 +14,4 @@ This file needs to be saved in the host running Debezium Server.  For details, s
 
 The following topics describe `application.properties` for specific database servers:
 
-{{<allchildren style="h2" description="true">}}
+{{<allchildren style="h2" description="true"/>}}

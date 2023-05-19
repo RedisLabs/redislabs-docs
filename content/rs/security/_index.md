@@ -16,7 +16,7 @@ When deploying Redis Enterprise Software to production, we recommend the followi
 
 - **Deploy Redis Enterprise inside a trusted network**:  Redis Enterprise is database software and should be deployed on a trusted network not accessible to the public internet. Deploying Redis Enterprise in a trusted network reduces the likelihood that someone can obtain unauthorized access to your data or the ability to manage your database configuration.
 
-- **Implement anti-virus exclusions**: To ensure that anti-virus solutions that scan files or intercept processes to protect memory do not interfere with Redis Enterprise software, customers should ensure that anti-virus exclusions are implemented across all nodes in their Redis Enterprise cluster in a consistent policy. This helps ensure that anti-virus software does not impact the availibility of your Redis Enterprise cluster.
+- **Implement anti-virus exclusions**: To ensure that anti-virus solutions that scan files or intercept processes to protect memory do not interfere with Redis Enterprise software, customers should ensure that anti-virus exclusions are implemented across all nodes in their Redis Enterprise cluster in a consistent policy. This helps ensure that anti-virus software does not impact the availability of your Redis Enterprise cluster.
 
     If you are replacing your existing antivirus solution or installing/supporting Redis Enterprise, make sure that the below paths are excluded:
 
@@ -40,17 +40,17 @@ For antivirus solutions that intercept processes, binary files may have to be ex
 
 - **Implement client-side encryption**: Client-side encryption, or the practice of encrypting data within an application before storing it in a database, such as Redis, is the most widely adopted method to achieve encryption in memory. Redis is an in-memory database and stores data in-memory. If you require encryption in memory, better known as encryption in use, then client side encryption may be the right solution for you. Please be aware that when implementing solutions using client-side encryption database functions that need to operate on data — such as simple searching functions, comparisons, and incremental operations — don’t work with client-side encryption.
 
-## Database Security
+## Database security
 
-Redis Enterprise offers several database security controls to help protect your data against unauthorized access and to improve the operational security of your databse. The following section details configurable security controls availible for implementation.
+Redis Enterprise offers several database security controls to help protect your data against unauthorized access and to improve the operational security of your database. The following section details configurable security controls available for implementation.
 
-- **Implement role-based access for users**: With [role-based access control (RBAC)]({{<relref "/rs/security/access-control">}}), you can manage ACLs for the entire cluster. You can reuse ACL templates across users, accounts, and multiple databases to precisely scale complex security configurations with a few simple clicks. RBAC lets you set permissions for your databases and for the Redis Enterprise management console itself, providing a complete security-management solution for your cluster.
+- **Implement role-based access for users**: With [role-based access control (RBAC)]({{<relref "/rs/security/access-control/rbac">}}), you can [manage access control lists (ACLs)]({{<relref "/rs/security/access-control/rbac/configure-acl">}}) for the entire cluster. You can reuse ACL templates across users, accounts, and multiple databases to scale complex security configurations. RBAC lets you set permissions for the Redis Enterprise Software [admin console]({{<relref "/rs/security/access-control/admin-console-access">}}), [REST API]({{<relref "/rs/references/rest-api">}}), and [databases]({{<relref "/rs/security/access-control/database-access">}}), providing a complete security management solution for your cluster.
 
 - **Prevent database users from logging into the admin console**: Redis Enterprise allows users to be provisioned with both control plane access and access to the database. In some senarios this may be helpful for administrative users, but for applications we recommend that you [disable their access to the control plane]({{<relref "/rs/security/access-control/manage-users">}}).
 
 - **Use strong Redis passwords**: A frequent recommendation in the security industry is to use strong passwords to authenticate users. This helps to prevent brute force password guessing attacks against your database. Its important to check that your password aligns with your organizations security policy.
 
-- **Disable the default user**: Redis Enterprise comes with a "default" user for backwards compatibility with applications designed with versions of Redis prior to Redis Enterprise 6. The default user is turned on by default. This allows you to access the database without specifying a username and only using a shared secret. For applications designed to use access control lists, we recommend that you [disable the default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}).
+- **Deactivate default user access**: Redis Enterprise comes with a "default" user for backwards compatibility with applications designed with versions of Redis prior to Redis Enterprise 6. The default user is turned on by default. This allows you to access the database without specifying a username and only using a shared secret. For applications designed to use access control lists, we recommend that you [deactivate default user access]({{<relref "/rs/security/access-control/manage-users/default-user#deactivate-default-user">}}).
 
 - **Enable client certificate authentication**: To prevent unauthorized access to your data, Redis Enterprise databases support the [TLS protocol]({{<relref "/rs/security/tls#client-certificate-authentication">}}), which includes authentication and encryption. Client certificate authentication can be used to ensure only authorized hosts can access the database.
 

@@ -22,11 +22,7 @@ To define the CIDR allow list for a database:
 
 1. From the database's **Configuration** screen, select the **Edit database** button:
 
-    {{<image filename="images/rc/button-database-edit.png" width="140px" alt="The Edit database button lets you change selected database properties." >}}{{< /image >}}
-
 1. In the **Security** section, turn on the **CIDR allow list** toggle:
-
-    {{<image filename="images/rc/database-details-configuration-tab-security-cidr-allowlist-toggle.png" width="140px" alt="Turn on the CIDR allow list toggle." >}}{{< /image >}}
 
 1. Enter the first IP address (in CIDR format) you want to allow in the text box and then select the check mark to add it to the allow list:
 
@@ -34,17 +30,13 @@ To define the CIDR allow list for a database:
    
 1. To allow additional IP addresses:
 
-    1. Select the **Add CIDR** button:
+    1. Select **Add CIDR**.
 
-        {{<image filename="images/rc/button-database-config-security-add-cidr.png" width="140px" alt="Add another IP address to the CIDR allow list." >}}{{< /image >}}
-
-    1. Enter the new IP address in the text box and then select the check mark to add it to the allow list:
+    1. Enter the new IP address in the text box and then select check to add it to the allow list.
 
         {{<image filename="images/rc/database-details-configuration-tab-security-cidr-allowlist-add-more-ips.png" width="300px" alt="Add a new IP address to the CIDR allow list." >}}{{< /image >}}
 
-1. Select the **Save database** button to apply your changes:
-
-    {{<image filename="images/rc/button-database-save.png" width="140px" alt="Use the Save database button to save database changes." >}}{{< /image >}}
+1. Select **Save database** to apply your changes.
 
 ## Subscription allow list
 
@@ -59,36 +51,28 @@ To add IP addresses or [AWS security groups](https://docs.aws.amazon.com/managed
 
 1. From the [admin console](https://app.redislabs.com/) menu, select **Subscriptions** and then select your subscription from the list.
 
-1. Select the **Connectivity** tab and then select **Allow List**.
+1. Select **Connectivity > Allow List**.
 
-1. If the allow list is empty, select the **Add allow list** button:
-
-    {{<image filename="images/rc/button-subscription-connectivity-add-allow-list.png" width="140px" alt="Add allow list button." >}}{{< /image >}}
+1. If the allow list is empty, select **Add allow list**.
 
 1. Select an entry **Type** from the list:
 
     {{<image filename="images/rc/subscription-connectivity-allow-list-type-dropdown.png" width="350px" alt="Select the type of entry to add to the allow list from the Type list." >}}{{< /image >}}
 
-1. In the **Value** box, enter either:
+1. In the **Value** box, enter one of these options:
 
     - An IP address in CIDR format
 
     - The AWS security group ID
 
-1. Select the check mark to add the entry to the allow list:
-
-    {{<image filename="images/rc/icon-check-mark.png" width="40px" alt="Select the Submit entry button to add the entry to the allow list." >}}{{< /image >}}
+1. Select check to add the entry to the allow list.
 
 1. To allow additional IP addresses or security groups:
 
-    1. Select the **Add entry** button:
+    1. Select **Add entry**.
 
-        {{<image filename="images/rc/icon-allow-list-add-entry.png" width="40px" alt="Select the Add entry button to add another entry to the allow list." >}}{{< /image >}}
-
-    1. Then select the new entry's **Type**, enter the **Value**, and select the check mark to add it to the allow list:
+    1. Select the new entry's **Type**, enter the **Value**, and select check to add it to the allow list.
 
         {{<image filename="images/rc/subscription-connectivity-allow-list-add-entry.png" width="350px" alt="Define the new entry and select the Submit entry button to add it to the allow list." >}}{{< /image >}}
 
-1. Select the **Apply all changes** button to apply the allow list updates:
-
-    {{<image filename="images/rc/button-subscription-connectivity-allow-list-apply-all-changes.png" width="140px" alt="Use the Apply all changes button to apply all updates to the allow list." >}}{{< /image >}}
+1. Select **Apply all changes** to apply the allow list updates.

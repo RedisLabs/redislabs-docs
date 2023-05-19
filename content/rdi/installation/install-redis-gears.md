@@ -8,6 +8,10 @@ categories: ["redis-di"]
 aliases: 
 ---
 
+# RedisGears Installation
+
+> Note: If your Redis Enterprise Cluster version is 6.2.18 or higher, you can use the `redis-di create` command in RDI CLI to install RedisGears.
+
 Redis Data Integration requires [RedisGears](https://redis.com/modules/redis-gears) module with [Python plugin](https://docs.redis.com/latest/modules/redisgears/python/) to be installed on the Redis Enterprise cluster.
 
 The Python plugin can be installed explicitly or alongside with the [JVM plugin](https://docs.redis.com/latest/modules/redisgears/jvm/) if the latter is needed on the cluster for other purposes.
@@ -16,68 +20,72 @@ The Python plugin can be installed explicitly or alongside with the [JVM plugin]
 
 Download RedisGears based on the Linux distribution of where Redis Enterprise is installed. As mentioned, Redis Data Integration only requires the Python plugin, so download only it unless the JVM plugin is also needed.
 
-### [Ubuntu](https://ubuntu.com/)
+> Note: If your Redis Enterprise Cluster is version 6.2.18 or higher, please download the RedisGears bundle that includes the Python plugin.
 
-#### 20.04
+### Ubuntu 20.04
 
-##### Python plugin only
+#### Bundle with Python Plugin
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu20.04-x86_64.{{ site.redis_gears_min_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
-##### Python and JVM Plugins
+#### Python Plugin Only
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{ site.redis_gears_min_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu20.04-x86_64.{{ site.redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
 ```
 
-#### 18.04
-
-##### Python plugin only
+#### Python and JVM Plugins
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu18.04-x86_64.{{ site.redis_gears_min_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{ site.redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
 ```
 
-##### Python and JVM plugins
+### Ubuntu 18.04
+
+#### Bundle with Python Plugin
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{ site.redis_gears_min_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
-### [Red Hat Enterprise Linux](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux)
-
-#### RHEL8
-
-##### Python plugin only
+#### Python Plugin Only
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-rhel8-x86_64.{{ site.redis_gears_min_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu18.04-x86_64.{{ site.redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
 ```
 
-##### Python and JVM plugins
+#### Python and JVM Plugins
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{ site.redis_gears_min_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{ site.redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
 ```
 
-#### RHEL7
+### RHEL8
 
-##### Python plugin only
+#### Bundle with Python Plugin
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-rhel7-x86_64.{{ site.redis_gears_min_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
-##### Python and JVM plugins
+#### Python Plugin Only
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{ site.redis_gears_min_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-rhel8-x86_64.{{ site.redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
 ```
 
-## Install RedisGears 
+#### Python and JVM Plugins
 
 ```bash
-curl -v -k -s -u "<REDIS_CLUSTER_USER>:<REDIS_CLUSTER_PASSWORD>" -F "module=@/tmp/redis-gears.zip" https://<REDIS_CLUSTER_HOST>:9443/v2/modules
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{ site.redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
+```
+
+### RHEL7
+
+#### Bundle with Python Plugin
+
+```bash
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
 ```

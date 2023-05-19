@@ -2,7 +2,7 @@
 Title: Reference
 linkTitle: Reference
 description: Reference material for the operator, cluster, and database deployment options. 
-weight: 90
+weight: 89
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
