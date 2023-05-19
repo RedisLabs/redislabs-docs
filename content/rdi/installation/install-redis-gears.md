@@ -47,13 +47,13 @@ curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu
 #### Bundle with Python Plugin
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
 #### Python Plugin Only
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu18.04-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}.zip -o /tmp/redis-gears.zip
 ```
 
 #### Python and JVM Plugins
