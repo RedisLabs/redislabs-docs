@@ -33,13 +33,13 @@ curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu
 #### Python Plugin Only
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu20.04-x86_64.{{ site.redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu20.04-x86_64.{{ <param rdi_redis_gears_current_version> }}.zip -o /tmp/redis-gears.zip
 ```
 
 #### Python and JVM Plugins
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{ site.redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{ <param rdi_redis_gears_current_version> }}.zip -o /tmp/redis-gears.zip
 ```
 
 ### Ubuntu 18.04
@@ -47,19 +47,19 @@ curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu
 #### Bundle with Python Plugin
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{param rdi_redis_gears_current_semantic_version }}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_current_semantic_version> }}-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
 #### Python Plugin Only
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu18.04-x86_64.{{param rdi_redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_current_semantic_version> }}.zip -o /tmp/redis-gears.zip
 ```
 
 #### Python and JVM Plugins
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{param rdi_redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_current_semantic_version> }}.zip -o /tmp/redis-gears.zip
 ```
 
 ### RHEL8
@@ -67,19 +67,19 @@ curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu
 #### Bundle with Python Plugin
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{param rdi_redis_gears_current_semantic_version }}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{<param rdi_redis_gears_current_semantic_version> }}-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
 #### Python Plugin Only
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-rhel8-x86_64.{{param rdi_redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears_python.Linux-rhel8-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}.zip -o /tmp/redis-gears.zip
 ```
 
 #### Python and JVM Plugins
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{param rdi_redis_gears_current_semantic_version }}.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}.zip -o /tmp/redis-gears.zip
 ```
 
 ### RHEL7
@@ -87,5 +87,5 @@ curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-
 #### Bundle with Python Plugin
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{param rdi_redis_gears_current_semantic_version }}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}-withdeps.zip -o /tmp/redis-gears.zip
 ```
