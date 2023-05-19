@@ -39,7 +39,7 @@ wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-rhel7-l
 ### Debezium Container Image
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/debezium/debezium_server_{{param rdi_debezium_server_version }}_offline.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/debezium/debezium_server_{{ <param rdi_debezium_server_version> }}_offline.tar.gz
 ```
 
 ## Install RedisGears and its dependencies
@@ -51,25 +51,25 @@ If your Redis Enterprise Cluster version is 6.2.18 or higher, you can install Re
   #### Ubuntu 20.04
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{ param rdi_redis_gears_current_semantic_version }}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
   #### Ubuntu 18.04
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{ param rdi_redis_gears_current_semantic_version }}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
   #### RHEL 8
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{  param rdi_redis_gears_current_semantic_version }}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{  <param rdi_redis_gears_current_semantic_version> }}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
   #### RHEL 7
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{ param rdi_redis_gears_current_semantic_version }}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
 - Run the `create` command in interactive mode:
@@ -100,11 +100,11 @@ If your Redis Enterprise Cluster version is 6.2.18 or higher, you can install Re
   ```bash
   # substitute <OS_VERSION> to ubuntu18.04 | ubuntu20.04 | rhel7 | rhel8
   mkdir -p $modulesdatadir/rg/{{ param rdi_redis_gears_current_semantic_version }}/deps/
-  cp /tmp/redis-di-offline/redis-gears/redisgears-python.Linux-<OS_VERSION>-x86_64.{{ param rdi_redis_gears_current_semantic_version }}.tgz $modulesdatadir/rg/{{ param rdi_redis_gears_current_version }}/deps/
-  curl -v -k -u "<CLUSTER_USERNAME>:<CLUSTER_PASSWORD>" -F "module=@/tmp/redis-di-offline/redis-gears/redisgears_python.Linux-<OS_VERSION>-x86_64.{{param rdi_redis_gears_current_semantic_version }}.zip" https://localhost:9443/v2/modules
+  cp /tmp/redis-di-offline/redis-gears/redisgears-python.Linux-<OS_VERSION>-x86_64.{{ <param rdi_redis_gears_current_semantic_version> }}.tgz $modulesdatadir/rg/{{ <param rdi_redis_gears_current_version> }}/deps/
+  curl -v -k -u "<CLUSTER_USERNAME>:<CLUSTER_PASSWORD>" -F "module=@/tmp/redis-di-offline/redis-gears/redisgears_python.Linux-<OS_VERSION>-x86_64.{{<param rdi_redis_gears_current_semantic_version> }}.zip" https://localhost:9443/v2/modules
   ```
 
-> Note: Make sure that the folder `$modulesdatadir/rg/{{ rdi rdi_redis_gears_current_version }}/deps` is accessible for the OS user running Redis Enterprise. Typically, this is user `redislabs`.
+> Note: Make sure that the folder `$modulesdatadir/rg/{{ <rdi rdi_redis_gears_current_version> }}/deps` is accessible for the OS user running Redis Enterprise. Typically, this is user `redislabs`.
 
 
 ## Install RDI CLI
@@ -138,12 +138,12 @@ Note: You can omit the `--rdi-port` argument and the BDB will be created on the 
 - Copy the downloaded `debezium_server_{{ param rdi_debezium_server_version }}_offline.tar.gz` into `/tmp`.
 - Load image:
   ```bash
-  docker load < /tmp/debezium_server_{{ param rdi_debezium_server_version }}_offline.tar.gz
+  docker load < /tmp/debezium_server_{{ <param rdi_debezium_server_version> }}_offline.tar.gz
   ```
 - Tag as latest:
   ```bash
-  docker tag debezium/server:{{ param rdi_debezium_server_version }}_offline debezium/server:{{ site.debezium_server_version }}
-  docker tag debezium/server:{{ param rdi_debezium_server_version }}_offline debezium/server:latest
+  docker tag debezium/server:{{ <param rdi_debezium_server_version> }}_offline debezium/server:{{ site.debezium_server_version }}
+  docker tag debezium/server:{{ <param rdi_debezium_server_version> }}_offline debezium/server:latest
   ```
 
 ## Finalize the installation
