@@ -4,6 +4,7 @@ linktitle: Cluster settings
 description: You can view and set various cluster settings such as cluster name, email service, time zone, and license.
 weight: 10
 alwaysopen: false
+toc: "true"
 categories: ["RS"]
 aliases: [
         /rs/administering/cluster-operations/settings/,
@@ -15,38 +16,51 @@ aliases: [
         /rs/clusters/configure/cluster-settings/,
 ]
 ---
-You can view and set various cluster settings such as cluster name, email service, time zone, and license in the **Settings > General** page.
+You can view and set various cluster settings, such as cluster name, email service, time zone, and license, on the **Cluster > Configuration** page.
 
-## Entering a cluster key
+## General configuration tab
 
-After purchasing a cluster key and if your account has the "Admin" role,
-you can enter the key in the Cluster Key field, either during initial\
-cluster creation or at any time afterward. The key defines various
+### Upload cluster license key
+
+After purchasing a cluster license and if your account has the "Admin" role,
+you can upload the cluster license key, either during initial
+cluster creation or at any time afterward. The license key defines various
 cluster settings, such as the maximum number of shards you can have in
-the cluster. For more detailed information see [Cluster License
-Keys]({{< relref "/rs/clusters/configure/license-keys.md" >}}).
+the cluster. For more detailed information see [Cluster license
+keys]({{< relref "/rs/clusters/configure/license-keys.md" >}}).
 
-## Viewing the maximum number of allowed shards
+### View max number of allowed shards
 
-The maximum number of allowed shards, which is determined by the Cluster
-Key, appears in the **Max number of shards** field.
+The maximum number of allowed shards, which is determined by the cluster license
+key, appears in the **Max number of shards** field in the **License** section.
 
-## Viewing the cluster name
+### View cluster name
 
-The cluster name appears in the **Cluster name** field. This gives a
+The cluster name appears in the **Cluster name** field in the **License** section. This gives a
 common name that your team or Redis support can refer to. It is
 especially helpful if you have multiple clusters.
 
-## Setting your time zone
+### Set time zone
 
-You can set your time zone in the **Timezone** field. This is
-recommended in order to make sure that the date, time fields, and log
+You can set your time zone in the **Time zone** field. This is
+recommended to make sure the date, time fields, and log
 entries are shown in your preferred time zone.
 
-## Configuring email server settings
+## Alert settings tab
 
-To enable receiving alerts by email, fill in the details for your email
-server in the email server settings section and select the requested
-connection security method: TLS/SSL, STARTTLS, or None. Upon completing
-to fill-in all details, it is advisable to verify the specified settings
-by clicking **Test Mail**.
+### Configure email server settings
+
+To enable email alerts:
+
+1. Enter your email
+server details in the **Email server settings** section.
+
+1. Select a connection security method:
+
+    - TLS/SSL 
+
+    - STARTTLS
+    
+    - None
+
+1. Send a test email to verify your email server settings.
