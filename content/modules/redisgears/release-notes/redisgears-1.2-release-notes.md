@@ -21,7 +21,7 @@ RedisGears v1.2.6 requires:
 
 ## 1.2.6 (March 2023)
 
-This is a maintenance release for RedisGears 1.2
+This is a maintenance release for RedisGears 1.2.
 
 Update urgency: `LOW` : No need to upgrade unless there are new features or fixes.
 
@@ -29,10 +29,10 @@ Update urgency: `LOW` : No need to upgrade unless there are new features or fixe
 
 **Features:**
 - [#832](https://github.com/RedisGears/RedisGears/pull/832), [#844](https://github.com/RedisGears/RedisGears/pull/844) Added IPV6 support
-- [#841](https://github.com/RedisGears/RedisGears/pull/841) Generate artefacts with dependencies included
+- [#841](https://github.com/RedisGears/RedisGears/pull/841) Generate artifacts with dependencies included
 
 **Bug fixes:**
-- [#810](https://github.com/RedisGears/RedisGears/pull/810) Fix invalid memory access when checking if a trigger is already register
+- [#810](https://github.com/RedisGears/RedisGears/pull/810) Fix invalid memory access when checking if a trigger is already registered
 
 ## v1.2.5 (July 2022)
 
