@@ -2,7 +2,7 @@
 title: LDAP authentication
 linkTitle: LDAP authentication
 description: Describes how Redis Enterprise Software integrates LDAP authentication and authorization. Also describes how to enable LDAP for your deployment of Redis Enterprise Software.
-weight: 25
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/security/ldap-integration/,

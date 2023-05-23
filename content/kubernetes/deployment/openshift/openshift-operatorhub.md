@@ -84,4 +84,7 @@ The **Installed Operators**->**Operator details** page shows the provided APIs: 
 
 Use the YAML view to create a custom resource file or let OperatorHub generate the YAML file for you by specifying your configuration options in the form view.
 
+{{<note>}} In versions 6.4.2-4 and 6.4.2-5, REC creation might fail when using the form view due to an error related to the cluster level LDAP. To avoid this, use the YAML view.
+{{</note>}}
+
 For more information on creating and maintaining Redis Enterprise custom resources, see [Redis Enterprise clusters (REC)]({{<relref "/kubernetes/re-clusters/">}}) and [Redis Enterprise databases (REDB)]({{<relref "/kubernetes/re-databases/">}}).

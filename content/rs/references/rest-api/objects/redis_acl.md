@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents a Redis [access control list (ACL)]({{<relref "/rs/security/access-control/configure-acl">}})
+An API object that represents a Redis [access control list (ACL)]({{<relref "/rs/security/access-control/rbac/configure-acl">}})
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

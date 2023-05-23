@@ -49,18 +49,17 @@ Throughout this guide, each command is applied to the namespace in which the Red
 
 1. Create a new namespace
 
-    ```sh
-    kubectl create namespace <rec-namespace>
-    ```
+  ```sh
+  kubectl create namespace <rec-namespace>
+  ```
 
-2. Change the namespace context to make the newly created namespace default for future commands.
+. Change the namespace context to make the newly created namespace default for future commands.
 
-    ```sh
-    kubectl config set-context --current --namespace=<rec-namespace>
-    ```
+  ```sh
+  kubectl config set-context --current --namespace=<rec-namespace>
+  ```
 
 You can use an existing namespace as long as it does not contain any existing Redis Enterprise cluster resources. It's best practice to create a new namespace to make sure there are no Redis Enterprise resources that could interfere with the deployment.
-
 
 ## Install the operator
 
@@ -146,13 +145,13 @@ The following example creates a minimal Redis Enterprise cluster. See the [Redis
     To test with a larger configuration, use the example below to add node resources to the `spec` section of your test cluster (`my-rec.yaml`).
 
     ```yaml
-      redisEnterpriseNodeResources:
-        limits:
-          cpu: 2000m
-          memory: 16Gi
-        requests:
-          cpu: 2000m
-          memory: 16Gi
+    redisEnterpriseNodeResources:
+      limits:
+        cpu: 2000m
+        memory: 16Gi
+      requests:
+        cpu: 2000m
+        memory: 16Gi
     ```
     {{<note>}}
 Each cluster must have at least 3 nodes. Single-node RECs are not supported.
@@ -163,28 +162,28 @@ Each cluster must have at least 3 nodes. Single-node RECs are not supported.
   
 1. Apply your custom resource file in the same namespace as `my-rec.yaml`.
 
-    ```sh
-    kubectl apply -f my-rec.yaml
-    ```
+  ```sh
+  kubectl apply -f my-rec.yaml
+  ```
 
-    You should see a result similar to this:
+  You should see a result similar to this:
 
-    ```sh
-    redisenterprisecluster.app.redislabs.com/my-rec created
-    ```
+  ```sh
+  redisenterprisecluster.app.redislabs.com/my-rec created
+  ```
 
 1. You can verify the creation of the cluster with:
 
-    ```sh
-    kubectl get rec
-    ```
+  ```sh
+  kubectl get rec
+  ```
 
-    You should see a result similar to this:
+  You should see a result similar to this:
 
-    ```sh
-    NAME           AGE
-    my-rec   1m
-    ```
+  ```sh
+  NAME           AGE
+  my-rec   1m
+  ```
 
    At this point, the operator will go through the process of creating various
    services and pod deployments.
@@ -208,55 +207,7 @@ The admission controller dynamically validates REDB resources configured by the 
 
 As part of the REC creation process, the operator stores the admission controller certificate in a Kubernetes secret called `admission-tls`. You may have to wait a few minutes after creating your REC to see the secret has been created.
 
-1. Verify the secret has been created.
-
-    ```sh
-     kubectl get secret admission-tls
-    ```
-  
-    The output will look similar to
-  
-    ```
-     NAME            TYPE     DATA   AGE
-     admission-tls   Opaque   2      2m43s
-    ```
-
-1. Save the certificate to a local environment variable.
-
-    ```sh
-    CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
-    ```
-
-1. Create a patch file for the Kubernetes validating webhook.
-
-    ```sh
-    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
-
-    cat > modified-webhook.yaml <<EOF
-    webhooks:
-    - name: redb.admission.redislabs
-      clientConfig:
-        caBundle: $CERT
-      admissionReviewVersions: ["v1beta1"]
-    EOF
-    ```
-
-1. Patch the webhook with the certificate.
-
-    ```sh
-    kubectl patch ValidatingWebhookConfiguration redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
-    ```
-
-  {{<note>}}
-
-  For releases before 6.4.2-4, use this command instead:
-    ```sh
-    kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
-    ```
-
-  The 6.4.2-4 release introduces a new `ValidatingWebhookConfiguration` to replace `redb-admission`. See the [6.4.2-4 release notes]({{<relref "/kubernetes/release-notes/k8s-6-4-2-4.md">}}).
-  {{</note>}}
-
+{{< embed-md "k8s-admission-webhook-cert.md"  >}}
 
 ### Limit the webhook to the relevant namespaces {#webhook}
 
@@ -278,7 +229,7 @@ The operator bundle includes a webhook file. The webhook will intercept requests
     ```sh
     cat > modified-webhook.yaml <<EOF
     webhooks:
-    - name: redb.admission.redislabs
+    - name: redisenterprise.admission.redislabs
       namespaceSelector:
         matchLabels:
           namespace-name: staging
@@ -288,7 +239,8 @@ The operator bundle includes a webhook file. The webhook will intercept requests
 1. Apply the patch.
 
     ```sh
-    kubectl patch ValidatingWebhookConfiguration redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
+    kubectl patch ValidatingWebhookConfiguration \
+      redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
 ## Verify the admission controller is working
@@ -296,7 +248,7 @@ The operator bundle includes a webhook file. The webhook will intercept requests
 1. Verify the admission controller is installed correctly by applying an invalid resource. This should force the admission controller to correct it.
 
     ```sh
-    $ kubectl apply -f - << EOF
+    kubectl apply -f - << EOF
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseDatabase
     metadata:
@@ -306,10 +258,10 @@ The operator bundle includes a webhook file. The webhook will intercept requests
     EOF
     ```
 
-You should see your request was denied by the `admission webhook "redb.admission.redislabs"`.
+You should see your request was denied by the `admission webhook "redisenterprise.admission.redislabs"`.
 
 ```sh
-Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+Error from server: error when creating "STDIN": admission webhook "redisenterprise.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
 ```
 
 ## Create a Redis Enterprise Database (REDB)

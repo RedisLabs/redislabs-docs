@@ -8,8 +8,8 @@ categories: ["Platforms"]
 aliases: {
     /kubernetes/preview/create-reaadb.md,
     /kubernetes/preview/create-reaadb/,
-    //kubernetes/active-active/preview/prepare-clusters.md,
-    //kubernetes/active-active/preview/prepare-clusters/,
+    /kubernetes/active-active/preview/prepare-clusters.md,
+    /kubernetes/active-active/preview/prepare-clusters/,
 }
 ---
 {{<banner-article bannerColor="#fff8dc">}}
@@ -122,13 +122,13 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
 1. Check the status of your RERC. If `STATUS` is `Active` and `SPEC STATUS` is `Valid`, your configurations are correct.
   
     ```sh
-    kubectl get raadb <raadb-name>
+    kubectl get reaadb <reaadb-name>
     ```
 
     Output should look similar to:
 
     ```sh
-    kubectl get raadb example-aadb-1
+    kubectl get reaadb example-aadb-1
 
     NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
     example-aadb-1   active   Valid             

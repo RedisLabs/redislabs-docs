@@ -85,8 +85,8 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         For RoF databases, you can add modules that support RoF.
         
         {{< note >}}
-        Modules can be add to database only when creating a new database.
-        You can't add a module to an existing database.
+To use modules, add them when you create a new database.
+You can't add a module to an existing database.
         {{< /note >}} 
         
         To add a module to the database:
@@ -117,14 +117,14 @@ If you are creating a Memcached database, enter a username and password for SASL
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{<relref "/rs/security/access-control/create-roles">}}) that have access to the database
-        and the [Redis ACLs]({{<relref "/rs/security/access-control/configure-acl">}}) that apply to those connections.
+    - **Access Control List** - You can specify the [user roles]({{<relref "/rs/security/access-control/rbac/create-roles">}}) that have access to the database
+        and the [Redis ACLs]({{<relref "/rs/security/access-control/rbac/configure-acl">}}) that apply to those connections.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [role]({{<relref "/rs/security/access-control/create-roles">}}) that you want to have access to the database.
-        1. Select the [ACL]({{<relref "/rs/security/access-control/configure-acl">}}) that you want the role to have in the database.
+        1. Select the [role]({{<relref "/rs/security/access-control/rbac/create-roles">}}) that you want to have access to the database.
+        1. Select the [ACL]({{<relref "/rs/security/access-control/rbac/configure-acl">}}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
@@ -178,7 +178,7 @@ after the database is created.
     note the port number shown in the Endpoint field of the database **configuration**.
 
     ![database-port](/images/rs/database-port.png)
-```
+
 
 1. [Test your connectivity]({{<relref "/rs/databases/connect/test-client-connectivity.md">}}).
 

@@ -13,7 +13,7 @@ The following tables show which open source Redis [server management commands](h
 
 ## Access control commands
 
-Several access control list (ACL) commands are not available in Redis Enterprise. Instead, you can manage access controls from the admin consoles for [Redis Enterprise Software]({{<relref "/rs/security/access-control">}}) and [Redis Cloud]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}}).
+Several access control list (ACL) commands are not available in Redis Enterprise. Instead, you can manage access controls from the admin consoles for [Redis Enterprise Software]({{<relref "/rs/security/access-control">}}) and [Redis Cloud]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}}).
 
 | <span style="min-width: 9em; display: table-cell">Command</span> | Redis<br />Enterprise | Redis<br />Cloud | <span style="min-width: 9em; display: table-cell">Notes</span> |
 |:--------|:----------------------|:-----------------|:------|
