@@ -24,10 +24,9 @@ so that you understand exactly what it represents.
 
 You can see the metrics of the cluster in:
 
-- **Cluster > Metrics**, including individual nodes
-- **Node > Metrics**
-- **Database > Metrics**, including individual shards
-- **Shards > Metrics**
+- **Cluster > Metrics**
+- **Node > Metrics** for each node
+- **Database > Metrics** for each database, including the shards for that database
 
 The scale selector at the top of the page allows you to set the X-axis (time) scale of the graph.
 
@@ -40,11 +39,11 @@ We recommend that you show two similar metrics in the top graphs so you can comp
 
 ## Cluster alerts
 
-In **settings** > **alerts**, you can enable alerts for node or cluster events, such as high memory usage or throughput.
+In **Cluster > Alert Settings**, you can enable alerts for node or cluster events, such as high memory usage or throughput.
 
 Configured alerts are shown:
 
-- As a warning icon (![Warning](/images/rs/icon_warning.png#no-click "Warning")) for the node and cluster
+- As a notification on the status icon ( <img src="/images/rs/icons/icon_warning.png#no-click" alt="Warning" width="18px"> ) for the node and cluster
 - In the **log**
 - In email notifications, if you configure [email alerts](#sending-alerts-by-email)
 
@@ -55,7 +54,8 @@ you must also enable "Receive email alerts" so that the notifications are sent.
 
 To enable alerts for a cluster:
 
-- In **settings** > **alerts**, select the alerts that you want to show for the cluster and click **Save**.
+1. In **Cluster > Alert Settings**, click **Edit**. 
+1. Select the alerts that you want to show for the cluster and click **Save**.
 
 ## Database alerts
 
@@ -63,19 +63,23 @@ For each database, you can enable alerts for database events, such as high memor
 
 Configured alerts are shown:
 
-- As a warning icon (![Warning](/images/rs/icon_warning.png#no-click "Warning")) for the database
+- As a notification on the status icon ( <img src="/images/rs/icons/icon_warning.png#no-click" alt="Warning" width="18px"> ) for the database
 - In the **log**
 - In emails, if you configure [email alerts](#sending-alerts-by-email)
 
 To enable alerts for a database:
 
-1. In **configuration** for each database, click **show advanced options** to see the database alerts and select the alerts that you want to get for the database.
-1. Click **Update**.
+1. In **Configuration** for the database, click **Edit**.
+1. Select the **Alerts** section to open it.
+1. Select the alerts that you want to show for the database and click **Save**.
 
 ## Sending alerts by email
 
-To send cluster or database alerts by email:
+To send cluster and database alerts by email:
 
-1. In **settings** > **alerts**, select **Receive email alerts** at the bottom of the page.
-1. Configure the [email server settings]({{< relref "/rs/clusters/configure/cluster-settings#configure-email-server-settings" >}}).
-1. In **access control**, select the [database and cluster alerts]({{< relref "/rs/security/access-control/manage-users" >}}) that you want each user to receive.
+1. In **Cluster > Alert Settings**, click **Edit**.
+1. Select **Set an email** to configure the [email server settings]({{< relref "/rs/clusters/configure/cluster-settings#configuring-email-server-settings" >}}).
+1. In **Configuration** for the database, click **Edit**.
+1. Select the **Alerts** section to open it.
+1. Select **Receive email alerts** and click **Save**.
+1. In **Access Control**, select the [database and cluster alerts]({{< relref "/rs/security/access-control/manage-users" >}}) that you want each user to receive.
