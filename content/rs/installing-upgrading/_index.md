@@ -24,8 +24,6 @@ To install Redis Enterprise Software on a [supported platform]({{<relref "/rs/in
 
 1. [Plan your deployment]({{<relref "/rs/installing-upgrading/plan-deployment">}}).
 
-1. [Download the installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}).
-
 1. [Prepare to install]({{<relref "/rs/installing-upgrading/prepare-install">}}).
 
 1. [Perform the install]({{<relref "/rs/installing-upgrading/install">}}).

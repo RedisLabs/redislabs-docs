@@ -10,7 +10,7 @@ aliases: /rs/administering/installing-upgrading/upgrading/,
 ---
 To upgrade Redis Enterprise Software:
 
-1. Verify appropriate [network ports]({{< relref "/rs/networking/port-configurations.md" >}}) are open.
+1. Verify appropriate [network ports]({{< relref "/rs/networking/port-configurations.md" >}}) are either open or used by Redis Enterprise Software.
 
 1. [Upgrade the software on all nodes of the cluster.]({{<relref "/rs/installing-upgrading/upgrading/upgrade-cluster">}})
 
