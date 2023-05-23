@@ -28,7 +28,13 @@ See [Compatibility with open source Redis commands]({{<relref "/rs/references/co
 
 ## Redis clients
 
-You can use any standard Redis client with Redis Enterprise.
+You can use any standard [Redis client](https://redis.io/docs/clients/) with Redis Enterprise.
+
+## RESP compatibility
+
+RESP (REdis Serialization Protocol) is the protocol that clients use to communicate with Redis databases. See the [RESP protocol specification](https://redis.io/docs/reference/protocol-spec/) for more information.
+
+Although open source Redis (version 6 and later) supports RESP2 and RESP3, Redis Enterprise only supports RESP2.
 
 ## Compatibility with open source Redis Cluster API
 

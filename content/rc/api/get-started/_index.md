@@ -19,10 +19,6 @@ To use the Redis Enterprise Cloud REST API, you need to:
 - Create a user key
 - Collect endpoint details
 
-{{< note >}}
-The Redis Cloud REST API is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
-{{< /note >}}
-
 To use the keys to authenticate and authorize your request, include the keys with the request headers:
 
 | Key name         | HTTP&nbsp;header&nbsp;name   |Description                                            |

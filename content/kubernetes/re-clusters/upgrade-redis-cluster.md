@@ -96,28 +96,17 @@ customresourcedefinition.apiextensions.k8s.io/redisenterprisedatabases.app.redis
 deployment.apps/redis-enterprise-operator configured
 ```
 
-### Reapply other manual configurations
+### Reapply the admission controller webhook {#reapply-webhook}
 
-When upgrading the operator, there are few configurations you'll need to reapply.
-
-If you have the admission controller enabled, you need to manually reapply the `ValidatingWebhookConfiguration`. See the [Enable the admission controller]({{<relref "/kubernetes/deployment/quick-start#enable-the-admission-controller">}}) step during deployment for more details.
+If you have the admission controller enabled, you need to manually reapply the `ValidatingWebhookConfiguration`.
 
 {{<note>}}
-
-The [6.4.2-4 release]({{<relref "/kubernetes/release-notes/6-4-2-releases/">}}) uses a new `ValidatingWebhookConfiguration` resource that replaces the old webhook resource. To use the 6.4.2-4 release, delete the old webhook resource and apply the new file.
-
-1. Delete the existing `ValidatingWebhookConfiguration` on the Kubernetes cluster (named `redb-admission`).
-
-    ```sh
-    kubectl delete ValidatingWebhookConfiguration redb-admission
-    ```
-
-1. Apply the resource from the new file.
-
-    ```sh
-    kubectl apply -f deploy/admission/webhook.yaml
-    ```
+{{< embed-md "k8s-642-redb-admission-webhook-name-change.md" >}}
 {{</note>}}
+
+{{< embed-md "k8s-admission-webhook-cert.md"  >}}
+
+### Reapply the SCC
 
 If you are using OpenShift, you will also need to manually reapply the [Security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})).
 
