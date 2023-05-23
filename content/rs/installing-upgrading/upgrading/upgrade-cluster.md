@@ -42,7 +42,7 @@ Starting with the master node, follow these steps for every node in the cluster.
     $ rladmin status extra all
     ```
 
-1.  [Download the Redis Enterprise Software installation package]({{< relref "/rs/installing-upgrading/prepare-install#download-the-installation-package" >}}) to the machine running the node.  
+1.  [Download the Redis Enterprise Software installation package]({{< relref "/rs/installing-upgrading/install/prepare-install#download-the-installation-package" >}}) to the machine running the node.  
 
 1.  Extract the installation package:
 

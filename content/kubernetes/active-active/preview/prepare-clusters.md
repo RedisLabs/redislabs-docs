@@ -23,7 +23,7 @@ See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/activ
 
 ## Prepare participating clusters
 
-An Active-Active database can span multiple clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md">}})).
+An Active-Active database can span multiple clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}})).
 
 ### Cluster names
 

@@ -2,7 +2,7 @@
 Title: Plan Redis Enterprise Software deployment
 linkTitle: Plan deployment
 description: Plan a deployment of Redis Enterprise Software.
-weight: 20
+weight: 4
 alwaysopen: false
 categories: ["RS"]
 aliases: 
@@ -10,10 +10,10 @@ aliases:
 
 Before installing Redis Enterprise Software, you need to:
 
-- Set up your hardware. See [Hardware requirements]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}) and [Persistent and ephemeral node storage 
-]({{<relref "/rs/installing-upgrading/plan-deployment/persistent-ephemeral-storage">}}) for more information.
+- Set up your hardware. See [Hardware requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}}) and [Persistent and ephemeral node storage 
+]({{<relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage">}}) for more information.
 
-- Choose your [deployment platform]({{< relref "/rs/installing-upgrading/plan-deployment/supported-platforms.md" >}}).
+- Choose your [deployment platform]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms.md" >}}).
 
     Redis Enterprise Software supports a variety of platforms, including:
 
@@ -22,7 +22,7 @@ Before installing Redis Enterprise Software, you need to:
     - [Docker container]({{< relref "/rs/installing-upgrading/quickstarts/docker-quickstart" >}}) (for development and testing only)
     - [Kubernetes]({{< relref "/kubernetes/_index.md" >}})
 
-    For more details, see [Supported platforms]({{< relref "/rs/installing-upgrading/plan-deployment/supported-platforms.md" >}}).
+    For more details, see [Supported platforms]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms.md" >}}).
 
 - Open appropriate [network ports]({{< relref "/rs/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
 
@@ -33,8 +33,8 @@ Before installing Redis Enterprise Software, you need to:
 
 After you finish planning your deployment, you can:
 
-- [Download an installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}).
+- [Download an installation package]({{<relref "/rs/installing-upgrading/install/prepare-install/download-install-package">}}).
 
-- [Prepare to install]({{<relref "/rs/installing-upgrading/prepare-install">}}) Redis Enterprise Software.
+- [Prepare to install]({{<relref "/rs/installing-upgrading/install/prepare-install">}}) Redis Enterprise Software.
 
 - [View installation questions]({{<relref "/rs/installing-upgrading/install/manage-installation-questions">}}) and prepare answers before installation.

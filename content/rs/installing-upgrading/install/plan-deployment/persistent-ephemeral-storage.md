@@ -51,7 +51,7 @@ Ephemeral storage must be a locally attached volume on each node.
 For disk size requirements, see:
 
 - [Hardware
-    requirements]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}})
+    requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}})
     for general guidelines regarding the ideal disk size for each type of
     storage
 - [Disk size requirements for extreme write

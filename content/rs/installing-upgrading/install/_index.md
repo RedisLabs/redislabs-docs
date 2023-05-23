@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-After you [download a Redis Enterprise Software installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}) and finish [installation preparation]({{<relref "/rs/installing-upgrading/prepare-install">}}):
+After you [plan your deployment]({{<relref "/rs/installing-upgrading/install/plan-deployment">}}), [download a Redis Enterprise Software installation package]({{<relref "/rs/installing-upgrading/install/prepare-install/download-install-package">}}), and finish [installation preparation]({{<relref "/rs/installing-upgrading/install/prepare-install">}}):
 
 1. [Install the Redis Enterprise Software package]({{<relref "/rs/installing-upgrading/install/install-on-linux">}}) on one of the nodes in the cluster.
 
@@ -42,8 +42,8 @@ To learn more about customization and find answers to related questions, see:
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})
-- [File locations]({{<relref "rs/installing-upgrading/plan-deployment/file-locations.md">}})
-- [Supported platforms]({{<relref "rs/installing-upgrading/plan-deployment/supported-platforms.md">}})
+- [File locations]({{<relref "rs/installing-upgrading/install/plan-deployment/file-locations.md">}})
+- [Supported platforms]({{<relref "rs/installing-upgrading/install/plan-deployment/supported-platforms.md">}})
 - [Manage installation questions]({{<relref "rs/installing-upgrading/install/manage-installation-questions.md">}})
 - [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
 - [User and group ownership]({{<relref "rs/installing-upgrading/install/customize-user-and-group.md">}})

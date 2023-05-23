@@ -37,7 +37,7 @@ Before you add a node to the cluster:
 To add a node in RS:
 
 1. [Install the RS installation package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on a clean installation
-    of a [supported operating system]({{< relref "/rs/installing-upgrading/plan-deployment/supported-platforms.md" >}}).
+    of a [supported operating system]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms.md" >}}).
 1. To connect to the RS management UI of the new RS installation, go to: <https://URL or IP address:8443>
 
     For example, if you installed RS on a machine with IP address 10.0.1.34, go to `https://10.0.1.34:8443`.
@@ -50,9 +50,9 @@ with a custom certificate.
 
 1. To start configuring RS, click **Setup**.
 1. Configure the RS network and storage settings:
-    1. You can enter a path for [*Persistent storage*]({{< relref "/rs/installing-upgrading/plan-deployment/persistent-ephemeral-storage" >}}),
+    1. You can enter a path for [*Persistent storage*]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}}),
         or leave the default path.
-    1. You can enter a path for [*Ephemeral storage*]({{< relref "/rs/installing-upgrading/plan-deployment/persistent-ephemeral-storage" >}}),
+    1. You can enter a path for [*Ephemeral storage*]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}}),
         or leave the default path.
     1. If you want to enable [*Redis on Flash*]({{< relref "/rs/databases/redis-on-flash/" >}}),
         select **Enable flash storage support** and enter the path to the Flash storage to use as RAM extension.

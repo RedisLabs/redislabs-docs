@@ -27,7 +27,7 @@ not be. If you require a persistent storage location for your database,
 the storage must be located outside of the instance. When you
 set up an instance, make sure it has a properly sized EBS-backed volume
 connected. When you set up Redis Enterprise Software on the instance, make sure that [the
-persistence storage]({{< relref "/rs/installing-upgrading/plan-deployment/persistent-ephemeral-storage" >}}) is configured to use this volume.
+persistence storage]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}}) is configured to use this volume.
 
 {{< note >}}
 After [installing the Redis Enterprise Software package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the instance
@@ -54,7 +54,7 @@ this feature could be critical to use:
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet the Redis Enterprise Software [hardware
-requirements]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}).
+requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}}).
 
 In addition, some instance types are optimized for EBS-backed volumes
 and some are not. If you are using persistent storage, you should use an
