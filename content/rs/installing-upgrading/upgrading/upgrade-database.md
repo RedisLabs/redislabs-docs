@@ -77,15 +77,15 @@ To upgrade a database:
 
 1.  _(Optional)_  Back up the database to minimize data loss.
 
-1.  Use [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}) to upgrade the database:
+1.  Use [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}) to upgrade the database. During the upgrade process, the database will restart without losing any data.
+
+    To upgrade a database without modules:
 
     ``` shell
     rladmin upgrade db <database name | database ID>
     ```
 
-    This restarts the database.  No data is lost.
-
-    If the database has modules enabled and new module versions are available in the cluster, run `rladmin upgrade db` with additional parameters to upgrade the module versions when you upgrade the database.
+    However, if the database has modules enabled and new module versions are available in the cluster, run `rladmin upgrade db` with additional parameters to upgrade the module versions when you upgrade the database.
 
     {{<warning>}}
 The upgrade process does not validate the module upgrade arguments, and incorrect arguments can cause unexpected downtime. Run module upgrade commands in a test environment before you upgrade modules in production. 
