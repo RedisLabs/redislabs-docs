@@ -10,10 +10,36 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.8.5 requires:
+RedisTimeSeries v1.8.9 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.8.9 (April 2023)
+
+This is a maintenance release for RedisTimeSeries 1.8.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#1421](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1421) Potential crash after deleting from a time series with an `AVG` compaction (MOD-4972)
+    - [#1422](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1422) Incorrectly return an error when deleting from a time series with a compaction and with no expiry
+
+## v1.8.8 (March 2023)
+
+This is a maintenance release for RedisTimeSeries 1.8
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#1290](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1290) Potential crash when using `FILTER_BY_TS`
+    - [#1397](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1397) Memory leak when trying to create an already existing key (MOD-4724, RED-93418)
 
 ## v1.8.5 (January 2023)
 

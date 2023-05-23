@@ -63,7 +63,7 @@ Changing the billing address for your account will remove any payment methods as
 
 The **Security** section lets you:
 
-- Manage [multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}}) (MFA) for your Redis Cloud account.
+- Manage [multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}}) (MFA) for your Redis Cloud account.
 
 - Download the [Redis Cloud certificate authority (CA) bundle]({{<relref "/rc/security/database-security/tls-ssl#download-certificates">}}) as a [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) file, which contains the certificates associated with your Redis Cloud account.
 

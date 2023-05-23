@@ -18,7 +18,7 @@ Redis Enterprise Cloud provides a number of ways to secure subscriptions and dat
 
 As a Redis Cloud user, consider these security domains:
 
-- The [admin console]({{<relref "/rc/security/admin-console-security/_index.md">}})
+- The [admin console](#admin-console-security)
 - [Your databases]({{<relref "/rc/security/database-security/_index.md">}})
 - The [Redis Cloud API]({{<relref "/rc/api/get-started/enable-the-api.md">}})
 
@@ -30,16 +30,18 @@ The admin console is the web application you use to manage your Redis Cloud depl
 
 Secure access to the admin console by:
 
-- Assigning appropriate roles to [team members with access]({{<relref "/rc/security/access-management#team-management-roles">}}).
+- Assigning appropriate roles to [team members with access]({{<relref "/rc/security/access-control/access-management#team-management-roles">}}).
 
-- Enabling [multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}}).
+- Enabling [multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}}).
+
+- Enabling [SAML SSO]({{<relref "/rc/security/access-control/saml-sso">}}).
 
 ## Database security
 
 You have several options when it comes to securing your Redis Cloud databases. For more information, see [Cloud database security]({{<relref "/rc/security/database-security/_index.md">}}). Options include:
 
 - [Encryption at rest]({{<relref "/rc/security/encryption-at-rest.md">}})
-- [Role-based access control]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
+- [Role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}})
 - [Network security]({{<relref "/rc/security/database-security/network-security.md">}})
 - [TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}})
 - [Network security]({{<relref "/rc/security/database-security/network-security.md">}}) using
