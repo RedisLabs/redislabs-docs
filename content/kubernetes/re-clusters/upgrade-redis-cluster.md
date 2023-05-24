@@ -25,11 +25,12 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
 
 Review the following warnings before starting your upgrade:
 
-{{<warning>}} If your OpenShift clusters running version 6.2.12 or earlier are upgrading to version 6.2.18 or later, and `node:1` is not the master node, the upgrade might get stuck. You'll see the upgrade is still incomplete after x minutes and and the ServicesRigger log shows an error containing "couldn't update pod." <br/>
+{{<warning>}} Due to an change in the SCC, on OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later, where `node1` is not the master node, the upgrade might get stuck. You'll see the upgrade is still incomplete after x minutes and and the ServicesRigger log shows an error containing "couldn't update pod."<br/><br/>
+This may also effect OpenShift clusters containing two RECs running different versions, if one is running version 6.2.12 or earlier and the other is running 6.2.18 or later. <br/>
 <br/>
 To prevent this, set node1 as the master node with `rladmin master set 1`. <br/>
 <br/>
-This is a newly discovered issue and more information will be available soon. If you have already encountered the error and are unable to wait to fix it, contact Redis support.
+This is a newly discovered issue and more information will be available soon. If you have already encountered the error and need it fixed immediately, contact Redis support.
 {{</warning>}}
 
 {{< warning >}}
