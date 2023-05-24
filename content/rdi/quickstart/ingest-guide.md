@@ -167,33 +167,6 @@ For information about a distributed installation (multi VM/Multi pod), see [Dist
   pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis_di_cli-latest-py3-none-any.whl
   ```
 
-## Installing from source
-
-- Set up a new virtual env for Python:
-
-  ```bash
-  python3.8 -m venv venv
-  ```
-
-- Activate virtual env:
-
-  ```bash
-  source venv/bin/activate
-  ```
-
-- Install [Poetry](https://python-poetry.org/) builder:
-
-  ```bash
-  pip install poetry
-  ```
-
-- Build cli:
-
-  ```bash
-  cd cli
-  poetry install
-  ```
-
 ## Upgrading
 
 To learn how you can upgrade RDI CLI, RDI engine, and RedisGears see the [Upgrade]({{<relref "/rdi/upgrade">}}) section.
