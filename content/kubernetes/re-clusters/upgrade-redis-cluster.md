@@ -1,5 +1,5 @@
 ---
-Title: Upgrade a Redis Enterprise cluster (REC) on Kubernetes
+Title: Upgrade a Redis Enterprise cluster (REC)
 linkTitle: Upgrade a Redis cluster
 description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
 weight: 19
@@ -23,21 +23,29 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
 
 ## Before upgrading
 
-Before you upgrade, verify you are using the correct image and your license is valid.
+Review the following warnings before starting your upgrade:
+
+{{<warning>}} If your OpenShift clusters running version 6.2.12 or earlier are upgrading to version 6.2.18 or later, and `node:1` is not the master node, the upgrade might get stuck. You'll see the upgrade is still incomplete after x minutes and and the ServicesRigger log shows an error containing "couldn't update pod." <br/>
+<br/>
+To prevent this, set node1 as the master node with `rladmin master set 1`. <br/>
+<br/>
+This is a newly discovered issue and more information will be available soon. If you have already encountered the error and are unable to wait to fix it, contact Redis support.
+{{</warning>}}
 
 {{< warning >}}
-When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info. 
-  {{</warning>}}
+When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info.{{</warning>}}
 
 {{<warning>}}
-Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
-
+Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.<br/>
+<br/>
 Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 {{</warning>}}
 
-{{<note>}}
-On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases. A fix is available in the 6.4.2-5 release. Upgrade your Redis cluster to [6.4.2-5]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) before upgrading your Kubernetes cluster.
-{{</note>}}
+{{<warning>}}
+On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases. <br/>
+<br/>
+A fix is available in the 6.4.2-5 release. Upgrade your Redis cluster to [6.4.2-5]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) before upgrading your Kubernetes cluster.
+{{</warning>}}
 
 ## Upgrade the operator
 
