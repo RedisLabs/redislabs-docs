@@ -14,10 +14,25 @@ aliases: /modules/redisgears/release-notes/redisgears-1.2-release-notes/
 
 ## Requirements
 
-RedisGears v1.2.5 requires:
+RedisGears v1.2.6 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.12
+
+## 1.2.6 (March 2023)
+
+This is a maintenance release for RedisGears 1.2.
+
+Update urgency: `LOW` : No need to upgrade unless there are new features or fixes.
+
+### Details
+
+**Features:**
+- [#832](https://github.com/RedisGears/RedisGears/pull/832), [#844](https://github.com/RedisGears/RedisGears/pull/844) Added IPV6 support
+- [#841](https://github.com/RedisGears/RedisGears/pull/841) Generate artifacts with dependencies included
+
+**Bug fixes:**
+- [#810](https://github.com/RedisGears/RedisGears/pull/810) Fix invalid memory access when checking if a trigger is already registered
 
 ## v1.2.5 (July 2022)
 
