@@ -389,8 +389,8 @@ Repeat the following steps on each of the Pacemaker cluster nodes.
 #### Download and install Debezium Server
 
 ```bash
-wget https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/{{ site.debezium_server_version }}.Final/debezium-server-dist-{{ site.debezium_server_version }}.Final.tar.gz
-sudo tar xvfz debezium-server-dist-{{ site.debezium_server_version }}.Final.tar.gz -C /opt
+wget https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/{{<param rdi_debezium_server_version>}}.Final/debezium-server-dist-{{<param rdi_debezium_server_version>}}.Final.tar.gz
+sudo tar xvfz debezium-server-dist-{{<param rdi_debezium_server_version>}}.Final.tar.gz -C /opt
 ```
 
 This will install Debezium Server in the directory _/opt/debezium-server_.
@@ -499,7 +499,7 @@ A healthy status looks like this:
     Tasks: 23 (limit: 22203)
    Memory: 179.6M
    CGroup: /system.slice/debezium.service
-           └─64740 java -cp debezium-server-dist-2.0.1.Final-runner.jar:conf:lib/* io.debezium.server.Main
+           └─64740 java -cp {{<param rdi_debezium_server_version>}}-runner.jar:conf:lib/* io.debezium.server.Main
 
 …
 2022-12-08 16:02:57,285 INFO  [io.deb.uti.Threads] (blc-gvb-mysql:3306) Creating thread debezium-mysqlconnector-chinook-binlog-client

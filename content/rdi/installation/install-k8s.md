@@ -62,7 +62,7 @@ The `create` command will create a BDB named `redis-di-1` in your cluster. You w
 
 ## Create configuration file for Redis Data Integration
 
-Run `redis-di scaffold --db-type <{{ site.db_types }}> --dir <PATH_TO_DIR>`.
+Run `redis-di scaffold --db-type <{{param  rdi_db_types}}> --dir <PATH_TO_DIR>`.
 Edit the file `config.yaml` which is located under the directory <NAME> to point to the correct Redis Target database settings:
 
 ```yaml
@@ -130,7 +130,7 @@ kubectl exec -it pod/redis-di-cli -- redis-di
 - Run the following command to create the configuration file for Redis Data Integration:
 
   ```bash
-  kubectl exec -it pod/redis-di-cli -- redis-di scaffold --db-type <{{ site.db_types }}> --preview config.yaml > config.yaml
+  kubectl exec -it pod/redis-di-cli -- redis-di scaffold --db-type <{{param  rdi_db_types}}> --preview config.yaml > config.yaml
   ```
 
 - Edit the file `config.yaml` to point to the correct Redis Target database settings.
@@ -178,7 +178,7 @@ Run `kubectl exec -it pod/redis-di-cli -- redis-di status` to check the status o
 - Run the following command to create the configuration file for Debezium Server:
 
   ```bash
-  kubectl exec -it pod/redis-di-cli -- redis-di scaffold --db-type <{{ site.db_types }}> --preview debezium/application.properties > application.properties
+  kubectl exec -it pod/redis-di-cli -- redis-di scaffold --db-type <{{param  rdi_db_types}}> --preview debezium/application.properties > application.properties
   ```
 
 - Edit the file `application.properties` and replace the values for the debezium.sink with the service name and credentials of the Redis Data Integration BDB that was created using the `create` command.
