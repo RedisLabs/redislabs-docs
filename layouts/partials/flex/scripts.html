@@ -90,12 +90,12 @@
         var pa = window.location.pathname.split('/');
         var pv = pa[1]; // latest, 0.96
 
-        if (pv == '0.96' || pv == 'latest') {
-            v = '0.96';
-            d = 'v0.96 (latest)';
-        } else if (pv == '0.91' || pv == 'stable') {
-            v = '0.91';
-            d = 'v0.91 (stable)';
+        v = 'latest';
+        d = 'latest';
+
+        if (pv == 'rdi-preview') {
+            v = 'rdi-preview';
+            d = 'preview';
         }
 
         _setVersion(v, d);
