@@ -10,7 +10,7 @@ aliases: [
 
 ]
 ---
-{{<warning>}} Due to an change in the SCC, on OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later, where `node1` is not the master node, the upgrade might get stuck. You'll see the upgrade is still incomplete after x minutes and and the ServicesRigger log shows an error containing "couldn't update pod."<br/><br/>
+{{<warning>}} Due to an change in the SCC, on OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later, where `node1` is not the master node, the upgrade might get stuck. You might have a pod that doesn't become fully ready and start seeing restarts. In the ServicesRigger log, you'll see an error message containing "couldn't update pod." <br/><br/>
 This may also effect OpenShift clusters containing two RECs running different versions, if one is running version 6.2.12 or earlier and the other is running 6.2.18 or later. <br/>
 <br/>
 To prevent this, set node1 as the master node with `rladmin master set 1`. <br/>
