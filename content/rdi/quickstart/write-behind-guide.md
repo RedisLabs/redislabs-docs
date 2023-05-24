@@ -12,7 +12,9 @@ hidden: false
 
 This guide takes you through the creation of a write-behind pipeline.
 
-> Note: Write Behind is currently in Preview.
+{{<banner-article bannerColor="#fff8dc">}}
+ **Note:** Write Behind is currently in Preview.
+{{</banner-article>}}
 
 ## Concepts
 
