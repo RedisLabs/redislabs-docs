@@ -10,9 +10,6 @@ aliases: /connect/
          /connect.md
          /redis-di/
          /redis-di.md
-bannerText: This is private preview content. See the [latest version] of the site.
-bannerLink: https://docs.redis.com/latest/
-bannerChildren: true
 ---
 
 Redis Data Integration (RDI) is a product that helps [Redis Enterprise](https://redis.com/redis-enterprise-software/overview/) users ingest data in near real-time, so that Redis becomes part of their data fabric without additional integration efforts.
