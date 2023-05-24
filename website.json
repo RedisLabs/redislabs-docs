@@ -48,6 +48,16 @@
         },
         {
             "Condition": {
+                "KeyPrefixEquals": "6.2/rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
+            }
+        },
+        {
+            "Condition": {
                 "KeyPrefixEquals": "6.2/modules/"
             },
             "Redirect": {
@@ -84,6 +94,16 @@
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
             }
         },
         {
