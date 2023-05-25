@@ -15,11 +15,6 @@ aliases: {
 
 }
 ---
-{{<banner-article bannerColor="#fff8dc">}}
-This feature is currently in public preview. Contact Redis support if you plan to use this feature.
-See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.
-{{</banner-article>}}
-
 
 ## Prepare participating clusters
 
@@ -31,26 +26,6 @@ The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) mu
 
 For example, if you have two K8s clusters, each with their own REC named `rec1` in a namespace named `ns1`. The value of `<rec-name>.<namespace-name>` for both RECs would be `rec1.ns1`. These can't be used for the same Active-Active database.
 
-### Enable Active-Active controllers
-
-To allow operator to handle managed Active-Active databases, enable the Active-Active and remote cluster controllers. You need to do this only once per cluster.
-
-1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-4) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
-
-1. Apply the new CRDs for the Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC) to install those controllers.
-
-    ```sh
-    kubectl apply -f crds/reaadb_crd.yaml
-    kubectl apply -f crds/rerc_crd.yaml
-    ```
-
-1. Enable the Active-Active and remote cluster controllers on the operator ConfigMap.
-
-    ```sh
-    kubectl patch cm  operator-environment-config --type merge --patch "{\"data\": \
-    {\"ACTIVE_ACTIVE_DATABASE_CONTROLLER_ENABLED\":\"true\", \
-    \"REMOTE_CLUSTER_CONTROLLER_ENABLED\":\"true\"}}"
-    ```
 
 ### Configure external routing
 
