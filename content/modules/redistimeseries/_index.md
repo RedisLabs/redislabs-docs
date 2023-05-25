@@ -9,6 +9,8 @@ aliases:
   - /redis-time-series/
   - /redis_time_series/ 
   - /rs/developing/modules/redistimeseries/
+  - /rs/getting-started/creating-database/redistimeseries/
+  - /modules/redistimeseries/redistimeseries-quickstart/
 ---
 The RedisTimeSeries module lets you manage time series data with Redis.
 

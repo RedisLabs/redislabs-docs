@@ -11,6 +11,9 @@ aliases:
   - /redis-search/
   - /redis_search/
   - /rs/developing/modules/redisearch/
+  - /rs/getting-started/creating-database/redisearch/
+  - /modules/redisearch/redisearch-quickstart/
+  - /modules/redisearch/search-json-quickstart/
 ---
 The [RediSearch 2.x module](https://redis.com/blog/introducing-redisearch-2-0/) is a source-available project that lets you build powerful search queries for open source Redis databases.
 When combined with Redis Enterprise Software, you can use the same RediSearch protocols and [commands]({{<relref "/modules/redisearch/commands">}})

@@ -10,6 +10,8 @@ aliases:
   - /redis-json/
   - /redis_json/
   - /rs/developing/modules/redisjson/
+  - /rs/getting-started/creating-database/redisjson-quick-start/
+  - /modules/redisjson/redisjson-quickstart/
 ---
 
 The [RedisJSON](https://redis.io/docs/stack/json/) module adds support for the [JSON data structure](http://www.json.org/) to Redis databases.
