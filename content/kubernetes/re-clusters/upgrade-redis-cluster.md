@@ -31,7 +31,7 @@ Due to a change in the SCC, on OpenShift clusters running version 6.2.12 or earl
 
 You might have a pod that doesn't become fully ready and start seeing restarts. In the ServicesRigger log, you'll see this error:
 
-```sh
+```text
 services-rigger.services - ERROR - couldn't update pod <POD NAME> labels
 ...
 ... pods <POD NAME> is forbidden: unable to validate against any security context constraint
