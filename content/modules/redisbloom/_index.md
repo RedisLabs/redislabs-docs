@@ -107,6 +107,7 @@ reach a larger capacity.
 
 ## More info
 
+- [Probabilistic quick start](https://redis.io/docs/stack/bloom/quick_start/)
 - [RedisBloom commands]({{<relref "/modules/redisbloom/commands">}})
 - [RedisBloom configuration]({{<relref "/modules/redisbloom/config">}})
 - [RedisBloom source](https://github.com/RedisBloom/RedisBloom/)

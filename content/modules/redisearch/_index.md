@@ -43,7 +43,7 @@ You can run [`HGETALL`](https://redis.io/commands/hgetall/) to retrieve the enti
 
 If a database has [RedisJSON]({{<relref "/modules/redisjson">}}) enabled, you can store documents as JSON and use RediSearch to index and search for them.
 
-For more information about how to use RediSearch with JSON documents, see the [Search JSON quick start]({{<relref "/modules/redisearch/search-json-quickstart">}}).
+For more information about how to use RediSearch with JSON documents, see the [Search and Query JSON quick start](https://redis.io/docs/stack/search/indexing_json/).
 
 ## Search features
 
@@ -71,7 +71,7 @@ Because the index on the new shard is created synchronously though, it's expecte
 ## More info
 
 - [Getting Started with RediSearch 2.0](https://redis.com/blog/getting-started-with-redisearch-2-0/)
-- [RediSearch quick start]({{<relref "/modules/redisearch/redisearch-quickstart">}})
+- [Search and Query quick start](https://redis.io/docs/stack/search/quick_start/)
 - [Configure RediSearch]({{<relref "/modules/redisearch/config">}})
 - [RediSearch commands]({{<relref "/modules/redisearch/commands">}})
 - [RediSearch references](https://redis.io/docs/stack/search/reference/)

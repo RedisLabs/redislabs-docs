@@ -14,6 +14,4 @@ Redis develops several modules that extend the core Redis feature set. Some of t
 
 [Redis Enterprise Software]({{< relref "/rs" >}}) and [Redis Enterprise Cloud]({{< relref "/rc" >}}) support all capabilities of [Redis Stack]({{< relref "/modules/redis-stack" >}}).
 
-Each module includes a quick start guide.
-
 {{< embed-html "modules.html" >}}

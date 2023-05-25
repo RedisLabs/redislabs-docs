@@ -69,7 +69,7 @@ You can only use the [legacy path syntax](#legacy-path-syntax) to access JSON ke
 
 If a Redis database has both RedisJSON and [RediSearch]({{<relref "/modules/redisearch">}}) modules enabled, you can index and search stored JSON documents.
 
-For more information about how to use RediSearch with JSON documents, see the [Search JSON quick start]({{<relref "/modules/redisearch/search-json-quickstart">}}).
+For more information about how to use RediSearch with JSON documents, see the [Search and Query JSON quick start](https://redis.io/docs/stack/search/indexing_json/).
 
 ## RedisJSON in Active-Active databases
 
@@ -79,6 +79,6 @@ For details about how RedisJSON resolves operation conflicts that can arise when
 
 ## More info
 
-- [RedisJSON quick start]({{<relref "/modules/redisjson/redisjson-quickstart">}})
+- [JSON quick start](https://redis.io/docs/stack/json/#use-redisjson)
 - [RedisJSON commands]({{<relref "/modules/redisjson/commands">}})
 - [RedisJSON source](https://github.com/RedisJSON/RedisJSON)

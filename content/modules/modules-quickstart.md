@@ -84,10 +84,9 @@ With this information, you can connect to your database with the [`redis-cli`]({
 
 ## Try modules
 
-To try out a module, follow its corresponding quick start guide:
+To try out a module, follow the examples provided by the corresponding quick start guides:
 
-- [RediSearch]({{<relref "/modules/redisearch/redisearch-quickstart.md">}})
-- [RedisJSON]({{<relref "/modules/redisjson/redisjson-quickstart.md">}})
-- [RedisGraph]({{<relref "/modules/redisgraph/redisgraph-quickstart.md">}})
-- [RedisTimeSeries]({{<relref "/modules/redistimeseries/redistimeseries-quickstart.md">}})
-- [RedisBloom]({{<relref "/modules/redisbloom/redisbloom-quickstart.md">}})
+- [Search and Query](https://redis.io/docs/stack/search/quick_start/)
+- [JSON](https://redis.io/docs/stack/json/#use-redisjson)
+- [Time Series](https://redis.io/docs/stack/timeseries/quickstart/)
+- [Probabilistic](https://redis.io/docs/stack/bloom/quick_start/)
