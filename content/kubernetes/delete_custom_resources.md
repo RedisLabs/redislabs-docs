@@ -30,7 +30,9 @@ When you delete your cluster, your databases and the REC custom resource are als
 
 ## Delete the operator
 
-To delete the operator, you can either delete the bundle across all namespaces, or delete the operator resources manually from one namespace. With either method, you need to delete the operator ConfigMap (`operator-environment-config).
+There are two ways to delete the operator. You can delete the entire operator bundle, but this will also delete any cluster-wide resources created by the operator. To only delete resources within a specific namespace, and leave other cluster-wide resources intact, you need to delete each resource manually.
+
+Whether you decide to delete the entire bundle or just resources from a specific namespace, it's important to delete the operator ConfigMap (`operator-environment-config).
 
 ```sh
 kubectl delete cm operator-environment-config
@@ -38,7 +40,7 @@ kubectl delete cm operator-environment-config
 
 ### Delete operator bundle
 
-To delete the operator from your K8s cluster and namespace, you can delete the operator bundle with:
+To delete the operator from your K8s cluster, you can delete the operator bundle with:
 
 - `kubectl delete -f bundle.yaml` for non-OpenShift K8s deployments
 - `kubectl delete -f openshift.bundle.yaml` for OpenShift deployments 
