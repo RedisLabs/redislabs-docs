@@ -43,7 +43,7 @@ To prevent this, set `node:1` as the master node.
 oc exec -it <rec-pod-name> -- rladmin cluster master set 1
 ```
 
-This may also effect OpenShift clusters containing two RECs running different versions, if one is running version 6.2.12 or earlier and the other is running 6.2.18 or later.
+This may also affect OpenShift clusters containing two RECs running different versions, if one is running version 6.2.12 or earlier and the other is running 6.2.18 or later.
 
 This is a newly discovered issue and more information will be available soon. If you have already encountered the error and need it fixed immediately, contact Redis support.
 
