@@ -1,5 +1,6 @@
 ---
-Title: RedisJSON
+Title: JSON
+linkTitle: JSON
 description: The RedisJSON module adds support for JSON to Redis databases.
 weight: 30
 alwaysopen: false

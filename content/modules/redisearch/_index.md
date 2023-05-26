@@ -1,6 +1,6 @@
 ---
-Title: RediSearch
-linkTitle: RediSearch
+Title: Search and Query
+linkTitle: Search and Query
 description:
 weight: 20
 alwaysopen: false

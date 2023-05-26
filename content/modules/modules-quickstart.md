@@ -1,23 +1,23 @@
 ---
-title: Modules quick start
+title: Redis Stack quick start
 linkTitle: Quick start
 description:
 weight: 1
 alwaysopen: false
 categories: ["Modules"]
 ---
-To quickly set up a Redis database with modules,
+To quickly set up a database with Redis Stack capabilities,
 you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/sign-up) subscription and create a [Redis Stack]({{<relref "/modules/redis-stack">}}) database.
 
-Redis Stack databases include the following modules:
+Redis Stack databases include the following capabilities:
 
-- [RediSearch]({{<relref "/modules/redisearch/_index.md">}})
-- [RedisJSON]({{<relref "/modules/redisjson/_index.md">}})
-- [RedisGraph]({{<relref "/modules/redisgraph/_index.md">}})
-- [RedisTimeSeries]({{<relref "/modules/redistimeseries/_index.md">}})
-- [RedisBloom]({{<relref "/modules/redisbloom/_index.md">}})
+- [Search and Query]({{<relref "/modules/redisearch">}})
+- [JSON]({{<relref "/modules/redisjson">}})
+- [Graph]({{<relref "/modules/redisgraph">}})
+- [Time Series]({{<relref "/modules/redistimeseries">}})
+- [Probabilistic]({{<relref "/modules/redisbloom">}})
 
-Alternatively, you can use one of these methods to set up a Redis database with modules:
+Alternatively, you can use one of these methods to set up a database with Redis Stack capabilities:
 
 - [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md">}})
 - Redis Enterprise Software in a [Docker container]({{<relref "/rs/installing-upgrading/get-started-docker.md">}})
@@ -25,7 +25,7 @@ Alternatively, you can use one of these methods to set up a Redis database with 
 
 ## Set up a Redis Cloud database
 
-To set up a Redis Cloud database with modules enabled, follow these steps:
+To set up a Redis Cloud database with Redis Stack capabilities, follow these steps:
 
 1. [Create a new Redis Cloud subscription](#create-a-subscription).
 
@@ -82,9 +82,9 @@ After creating the database, you can view its **Configuration** settings. You wi
 
 With this information, you can connect to your database with the [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool, an application, or [RedisInsight](https://redislabs.com/redisinsight/).
 
-## Try modules
+## Try Redis Stack capabilities
 
-To try out a module, follow the examples provided by the corresponding quick start guides:
+To try out Redis Stack capabilities, follow the examples provided by the corresponding quick start guides:
 
 - [Search and Query](https://redis.io/docs/stack/search/quick_start/)
 - [JSON](https://redis.io/docs/stack/json/#use-redisjson)

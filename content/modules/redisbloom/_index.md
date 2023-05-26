@@ -1,5 +1,6 @@
 ---
-Title: RedisBloom
+Title: Probabilistic data structures
+linkTitle: Probabilistic
 description:
 weight: 60
 alwaysopen: false

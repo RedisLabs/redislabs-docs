@@ -1,5 +1,6 @@
 ---
-Title: RedisTimeSeries
+Title: Time Series
+linkTitle: Time Series
 description:
 weight: 50
 alwaysopen: false

@@ -1,5 +1,6 @@
 ---
-Title: RedisGraph
+Title: Graph
+linkTitle: Graph
 description:
 weight: 40
 alwaysopen: false
