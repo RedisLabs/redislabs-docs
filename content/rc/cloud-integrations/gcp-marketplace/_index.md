@@ -9,11 +9,18 @@ aliases: /rc/cloud-integrations/gcp-marketplace/
          /rc/cloud-integrations/gcp-marketplace.md
 ---
 
-You can use Google Cloud Marketplace to subscribe to Redis Enterprise Cloud. This lets you provision according to your needs and pay using your Google Cloud account.
+You can use Google Cloud Marketplace to subscribe to Redis Cloud. This lets you provision according to your needs and pay using your Google Cloud account.
 
 Here's how to create a new Flexible subscription as part of your Google Cloud Marketplace commitment:
 
 1.  Sign in to the [Google Cloud console](https://console.cloud.google.com/).
+
+1. Identify the Google Cloud Billing account that will subscribe to Redis Cloud. This account must have one of the following sets of Identity and Access Management (IAM) Roles:
+
+    - [Billing Administrator](https://cloud.google.com/billing/docs/how-to/billing-access#overview-of-cloud-billing-roles-in-cloud-iam) (`roles/billing.admin`), OR
+    - [Billing User](https://cloud.google.com/billing/docs/how-to/billing-access#overview-of-cloud-billing-roles-in-cloud-iam) (`roles/billing.user`) AND [Consumer Procurement Order Administrator](https://cloud.google.com/marketplace/docs/access-control#roles-permissions)
+
+    If you don't have the correct role(s), request access from your Google Cloud Billing Administrator or Organization Administrator. For more information about granting roles, see [Access control for Google Cloud Marketplace](https://cloud.google.com/marketplace/docs/access-control).
 
 1.  Search Google Cloud Marketplace for [Redis Enterprise Cloud Flexible - Pay as You Go](https://console.cloud.google.com/marketplace/product/redis-marketplace-isaas/redis-enterprise-cloud-flexible-plan).
 
@@ -23,7 +30,7 @@ Here's how to create a new Flexible subscription as part of your Google Cloud Ma
 
 1.  Select the **Subscribe** button. This redirects you to the subscription details page.
 
-1. Review the subscription details, accept the terms, and select **Subscribe**.
+1. Under **Purchase Details**, select the Google Cloud Billing account that will subscribe to Redis Cloud. Review the subscription details, accept the terms, and select **Subscribe**.
 
 1. When you subscribe for the first time, select **Register with Redis**. This will redirect you to the Redis Cloud [admin console](https://app.redislabs.com).
 
@@ -46,5 +53,7 @@ Here's how to create a new Flexible subscription as part of your Google Cloud Ma
 At this point, you can create a new Flexible subscription using the [standard workflow]({{<relref "/rc/subscriptions/create-flexible-subscription">}}), with one important change. You don't need to enter a payment method, as it automatically uses your Google Cloud Marketplace account.
 
 To confirm this, review the payment method associated with your subscription.
+
+Additional users can be added on the Redis Cloud console using the [Access Management]({{<relref "/rc/security/access-control/access-management">}}) page.
 
 If your Google Cloud Marketplace account is deactivated or otherwise unavailable, you can't use your Flexible subscription until you update the billing method.  For help, [contact support](https://redis.com/company/support/).
