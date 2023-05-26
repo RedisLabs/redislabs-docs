@@ -83,21 +83,21 @@ The **Overview** summarizes the options use to created the subscription.
     | **Active-Active Redis** | Checked when Active-Active Redis is enabled for your subscription |
     | **Region** | Describes the region your subscription is deployed to |
 
-- The **Price** panel shows the monthly cost of your Flexible subscription
+- The **Price** panel shows the monthly cost of your Flexible subscription 
 
-- The Payment info panel shows your payment details.
-
-- The **Cost Estimate** section describes the shards required to deploy the subscription based on the choices made when the subscription was created.  
-
-- **Payment Method** shows the current payment details.
+- The **Payment Method** panel shows the current payment details.
 
     Select the ![**Change Payment Method**](/images/rc/icon-subscription-detail-change-payment-flexible.png) button to change the credit card associated with this subscription.
 
-- The **Required cloud resources** panel shows the storage resources used by your subscription.  
+- The **Provisioned cloud resources** panel shows the storage resources used by your subscription.  
 
     If your subscription is attached to a cloud account, the details appear in the panel header.
 
 - The **Redis price** panel breaks down your subscription price.
+
+- The **Maintenance Window** panel shows your current [maintenance window settings]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
+
+    See [Maintenance]({{<relref "/rc/subscriptions/maintenance">}}) for more information about subscription maintenance on Redis Cloud.
 
 ## **Connectivity** tab
 
