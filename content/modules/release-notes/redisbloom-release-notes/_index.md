@@ -1,8 +1,8 @@
 ---
 Title: RedisBloom release notes
-linkTitle: Release notes
-description:
-weight: 99
+linkTitle: RedisBloom
+description: RedisBloom release notes
+weight: 40
 alwaysopen: false
 categories: ["Modules"]
 ---

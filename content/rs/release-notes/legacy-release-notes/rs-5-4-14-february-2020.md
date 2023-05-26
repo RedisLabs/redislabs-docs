@@ -19,11 +19,11 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 - Version [5.0.7](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES) of OSS Redis is merged into RS 5.4.14.
 - The following GA releases of Redis Modules are bundled in RS 5.4.14:
-    - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version 2.2.1 (updated, [release notes]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md#redisbloom-221-january-2020)" >}}))
-    - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version 2.0.1 (updated, [release notes]({{< relref "/modules/redisgraph/release-notes/redisgraph-2.0-release-notes.md#redisgraph-20-ga-201---january-2020)" >}}))
-    - [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version 1.0.4 (update, [release notes]({{< relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md" >}}))
-    - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/redisearch/release-notes/redisearch-1.4-release-notes.md#redisearch-1425-march-2020" >}}))
-    - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version 1.2.3 (updated, [release notes]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}))
+    - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version 2.2.1 (updated, [release notes]({{< relref "/modules/release-notes/redisbloom-release-notes/redisbloom-2.2-release-notes.md#redisbloom-221-january-2020)" >}}))
+    - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version 2.0.1 (updated, [release notes]({{< relref "/modules/release-notes/redisgraph-release-notes/redisgraph-2.0-release-notes.md#redisgraph-20-ga-201---january-2020)" >}}))
+    - [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version 1.0.4 (update, [release notes]({{< relref "/modules/release-notes/redisjson-release-notes/redisjson-1.0-release-notes.md" >}}))
+    - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/release-notes/redisearch-release-notes/redisearch-1.4-release-notes.md#redisearch-1425-march-2020" >}}))
+    - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version 1.2.3 (updated, [release notes]({{< relref "/modules/release-notes/redistimeseries-release-notes/redistimeseries-1.2-release-notes.md" >}}))
 
 ## Additional capabilities
 

@@ -120,11 +120,11 @@ To learn more, see Redis Enterprise Software [compatibility with open source]({{
 
 Redis Enterprise Software v6.2.4 includes the following Redis modules:
 
-- [RediSearch v2.0.11]({{<relref "/modules/redisearch/release-notes/redisearch-2.0-release-notes.md">}})
-- [RedisJSON v1.0.8]({{<relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md">}})
-- [RedisBloom v2.2.6]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}}) 
-- [RedisGraph v2.4.7]({{<relref "/modules/redisgraph/release-notes/redisgraph-2.4-release-notes.md">}})
-- [RedisTimeSeries v1.4.10]({{<relref "/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes.md">}})
+- [RediSearch v2.0.11]({{<relref "/modules/release-notes/redisearch-release-notes/redisearch-2.0-release-notes.md">}})
+- [RedisJSON v1.0.8]({{<relref "/modules/release-notes/redisjson-release-notes/redisjson-1.0-release-notes.md">}})
+- [RedisBloom v2.2.6]({{<relref "/modules/release-notes/redisbloom-release-notes/redisbloom-2.2-release-notes.md">}}) 
+- [RedisGraph v2.4.7]({{<relref "/modules/release-notes/redisgraph-release-notes/redisgraph-2.4-release-notes.md">}})
+- [RedisTimeSeries v1.4.10]({{<relref "/modules/release-notes/redistimeseries-release-notes/redistimeseries-1.4-release-notes.md">}})
 
 ### Internode encryption for modules 
          

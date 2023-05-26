@@ -1,8 +1,8 @@
 ---
-Title: RedisTimeSeries release notes
-linkTitle: Release notes
-description:
-weight: 99
+Title: RedisGraph release notes
+linkTitle: RedisGraph
+description: RedisGraph release notes
+weight: 70
 alwaysopen: false
 categories: ["Modules"]
 ---

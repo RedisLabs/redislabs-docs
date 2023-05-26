@@ -1,8 +1,8 @@
 ---
 Title: RediSearch release notes
-linkTitle: Release notes
-description:
-weight: 99
+linkTitle: RediSearch
+description: RediSearch release notes
+weight: 20
 alwaysopen: false
 categories: ["Modules"]
 ---

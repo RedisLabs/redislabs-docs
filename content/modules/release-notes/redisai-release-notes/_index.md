@@ -1,7 +1,7 @@
 ---
 Title: RedisAI release notes
-linkTitle: Release notes
-description:
+linkTitle: RedisAI
+description: RedisAI release notes
 weight: 99
 alwaysopen: false
 categories: ["Modules"]

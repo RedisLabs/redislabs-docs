@@ -1,8 +1,8 @@
 ---
-Title: RedisGraph release notes
-linkTitle: Release notes
-description:
-weight: 99
+Title: RedisGears release notes
+linkTitle: RedisGears
+description: RedisGears release notes
+weight: 80
 alwaysopen: false
 categories: ["Modules"]
 ---

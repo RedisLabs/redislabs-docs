@@ -1,8 +1,8 @@
 ---
-Title: RedisJSON release notes
-linkTitle: Release notes
-description:
-weight: 99
+Title: RedisTimeSeries release notes
+linkTitle: RedisTimeSeries
+description: RedisTimeSeries release notes
+weight: 50
 alwaysopen: false
 categories: ["Modules"]
 ---
