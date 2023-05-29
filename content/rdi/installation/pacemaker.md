@@ -62,7 +62,7 @@ gpgkey=http://mirror.centos.org/centos/7/os/x86_64/RPM-GPG-KEY-CentOS-7
 EOF'
 ```
 
-#### Install Pacemaker and dependencies
+#### Install Pacemaker and Dependencies
 
 ```bash
 sudo yum install -y pacemaker pcs resource-agents
@@ -75,7 +75,7 @@ sudo systemctl start pcsd.service
 sudo systemctl enable pcsd.service
 ```
 
-#### Set a password for the cluster
+#### Set a Password for the Cluster
 
 Replace `<PASSWORD>` with a password of your choice.
 
@@ -83,7 +83,7 @@ Replace `<PASSWORD>` with a password of your choice.
 sudo bash -c 'echo <PASSWORD> | passwd --stdin hacluster'
 ```
 
-#### Run the Pacemaker cluster
+#### Run the Pacemaker Cluster
 
 Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>` and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
 
@@ -100,7 +100,7 @@ See [Validating the installation](#validating-the-installation) how to check tha
 
 Repeat the following steps on each of the VMs that will run the Debezium Server:
 
-#### Configure the repository in RHEL 8/Rocky 8
+#### Configure the Repository in RHEL 8/Rocky 8
 
 > Note: This step is not needed for CentOS Stream 8
 
@@ -110,7 +110,7 @@ Add the HA repository to your package manager to obtain Pacemaker binaries:
 sudo dnf config-manager --set-enabled ha
 ```
 
-#### Install Pacemaker and dependencies
+#### Install Pacemaker and Dependencies
 
 ```bash
 sudo dnf -y install pcs pacemaker
@@ -123,7 +123,7 @@ sudo systemctl start pcsd.service
 sudo systemctl enable pcsd.service
 ```
 
-#### Set a password for the cluster
+#### Set a Password for the Cluster
 
 Replace `<PASSWORD>` with a password of your choice.
 
@@ -131,7 +131,7 @@ Replace `<PASSWORD>` with a password of your choice.
 sudo bash -c 'echo <PASSWORD> | passwd --stdin hacluster'
 ```
 
-#### Run the Pacemaker cluster
+#### Run the Pacemaker Cluster
 
 Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>` and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
 
@@ -148,7 +148,7 @@ See [Validating the installation](#validating-the-installation) to check that th
 
 Repeat the following steps on each of the VMs that will run the Debezium Server:
 
-#### Install Pacemaker and dependencies
+#### Install Pacemaker and Dependencies
 
 ```bash
 sudo apt update
@@ -162,7 +162,7 @@ sudo systemctl start pcsd.service
 sudo systemctl enable pcsd.service
 ```
 
-#### Set a password for the cluster
+#### Set a Password for the Cluster
 
 Replace `<PASSWORD>` with a password of your choice.
 
@@ -170,7 +170,7 @@ Replace `<PASSWORD>` with a password of your choice.
 sudo bash -c 'echo "hacluster:<PASSWORD>" | chpasswd'
 ```
 
-#### Run the Pacemaker cluster
+#### Run the Pacemaker Cluster
 
 Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>` and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
 
@@ -187,7 +187,7 @@ See [here](#validating-the-installation) how to check that the cluster is runnin
 
 Repeat the following steps on each of the VMs that will run the Debezium Server:
 
-#### Install Pacemaker and dependencies
+#### Install Pacemaker and Dependencies
 
 ```bash
 sudo apt update
@@ -201,7 +201,7 @@ sudo systemctl start pcsd.service
 sudo systemctl enable pcsd.service
 ```
 
-#### Set a password for the cluster
+#### Set a Password for the Cluster
 
 Replace `<PASSWORD>` with a password of your choice.
 
@@ -209,7 +209,7 @@ Replace `<PASSWORD>` with a password of your choice.
 sudo bash -c 'echo "hacluster:<PASSWORD>" | chpasswd'
 ```
 
-#### Run the Pacemaker cluster
+#### Run the Pacemaker Cluster
 
 Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>` and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
 
@@ -223,7 +223,7 @@ sudo pcs property set stonith-enabled=false
 
 See [Validating the installation](#validating-the-installation) how to check that the cluster is running correctly.
 
-### Validating the installation
+### Validating the Installation
 
 Check the status of the cluster:
 
@@ -248,7 +248,7 @@ PCSD Status:
   gvb-deb7-1: Online
 ```
 
-## Set up Pacemaker to launch and control Debezium Server
+## Set up Pacemaker to Launch and Control Debezium Server
 
 The VM cluster is now ready to run Debezium Servers.
 
@@ -257,11 +257,11 @@ There are two methods for launching Debezium Server with Pacemaker:
 - [Running Debezium Server as a container](#running-debezium-server-as-a-container) using the Heartbeat resource agent for [Podman](https://podman.io/) or [Docker](https://www.docker.com/)
 - [Running Debezium Server as a standalone Java Process](#running-debezium-server-as-a-standalone-java-process) using the systemd resource agent
 
-### Running Debezium Server as a container
+### Running Debezium Server as a Container
 
 Repeat the following steps on each of the Pacemaker cluster nodes.
 
-#### Provide the Debezium configuration file
+#### Provide the Debezium Configuration File
 
 Debezium Server expects to find file _application.properties_ in a specified directory. Use the file created through command `redis-di scaffold` (edited for your source database) and upload it to the home directory of each VM:
 
@@ -270,7 +270,7 @@ mkdir conf
 mv application.properties conf
 ```
 
-#### Create the Pacemaker resource for the Debezium container
+#### Create the Pacemaker Resource for the Debezium Container
 
 > This guide uses Podman to illustrate the required commands. If you are using the Docker resource agent, simply replace `podman` with `docker` below.
 
@@ -306,7 +306,7 @@ If you are using Oracle as your source DB, please note that Debezium Server does
   sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes run_opts="-v $PWD/conf:/debezium/conf -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar"
   ```
 
-#### Verify status
+#### Verify Status
 
 ```bash
 sudo pcs status
@@ -386,13 +386,13 @@ The following tests can be manually performed to verify the expected behavior:
   sudo pcs status
   ```
 
-### Running Debezium Server as a standalone Java process
+### Running Debezium Server as a Standalone Java Process
 
 Debezium Server is a Java application, so Java 17 ([OpenJDK 17](https://openjdk.org/projects/jdk/17/)) must be installed as a prerequisite.
 
 Repeat the following steps on each of the Pacemaker cluster nodes.
 
-#### Download and install Debezium Server
+#### Download and Install Debezium Server
 
 ```bash
 wget https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/{{ site.debezium_server_version }}.Final/debezium-server-dist-{{ site.debezium_server_version }}.Final.tar.gz
@@ -401,7 +401,7 @@ sudo tar xvfz debezium-server-dist-{{ site.debezium_server_version }}.Final.tar.
 
 This will install Debezium Server in the directory _/opt/debezium-server_.
 
-#### Provide the Debezium configuration file
+#### Provide the Debezium Configuration File
 
 Debezium expects to find file _application.properties_ in a specified directory. Use the file created through command `redis-di scaffold` (edited for your source database) and upload it to the home directory of each VM, then move it to the Debezium Server conf directory:
 
@@ -409,7 +409,7 @@ Debezium expects to find file _application.properties_ in a specified directory.
 sudo mv application.properties /opt/debezium-server/conf
 ```
 
-#### Create a systemd unit file for Debezium Server
+#### Create a systemd Unit File for Debezium Server
 
 - Create file _debezium.service_ with the following content:
 
@@ -446,7 +446,7 @@ sudo wget -O /opt/debezium-server/lib/ojdbc10-19.17.0.0.jar \
 https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc10/19.17.0.0/ojdbc10-19.17.0.0.jar
 ```
 
-#### Set Up Pacemaker to launch and control Debezium
+#### Set Up Pacemaker to Launch and Control Debezium
 
 To launch Debezium Server use the systemd resource agent of Pacemaker:
 
@@ -454,7 +454,7 @@ To launch Debezium Server use the systemd resource agent of Pacemaker:
 sudo pcs resource create dbz_server systemd:debezium
 ```
 
-#### Verify status
+#### Verify Status
 
 ```bash
 sudo pcs status
