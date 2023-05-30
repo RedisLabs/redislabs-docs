@@ -83,7 +83,7 @@ The **Overview** summarizes the options use to created the subscription.
     | **Active-Active Redis** | Checked when Active-Active Redis is enabled for your subscription |
     | **Region** | Describes the region your subscription is deployed to |
 
-- The **Price** panel shows the monthly cost of your Flexible subscription 
+- The **Price** panel shows the monthly cost of your Flexible subscription.
 
 - The **Payment Method** panel shows the current payment details.
 
