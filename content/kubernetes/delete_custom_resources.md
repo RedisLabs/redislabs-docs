@@ -30,9 +30,9 @@ When you delete your cluster, your databases and the REC custom resource are als
 
 ## Delete the operator
 
-There are two ways to delete the operator. You can delete the entire operator bundle, but this will also delete any cluster-wide resources created by the operator. To only delete resources within a specific namespace, and leave other cluster-wide resources intact, you need to delete each resource manually.
+There are two ways to delete the operator. You can delete the entire operator bundle, but this will also delete any cluster-wide resources created by the operator. To only delete resources within a specific namespace and leave other cluster-wide resources intact, you need to delete each resource manually.
 
-Whether you decide to delete the entire bundle or just resources from a specific namespace, it's important to delete the operator ConfigMap (`operator-environment-config).
+Whether you decide to delete the entire bundle or just resources from a specific namespace, it's important to delete the operator ConfigMap (`operator-environment-config`).
 
 ```sh
 kubectl delete cm operator-environment-config
@@ -87,19 +87,19 @@ You will also need to remove [the `namespaceSelector` section from the validatin
 
 1. Verify the RERC you want to delete isn't listed as a particpating cluster in any REAADB resources.
 
-  If an RERC is still listed as a participating cluster in any database, the deletion will fail.
+    If an RERC is still listed as a participating cluster in any database, the deletion will fail.
 
 1. On one of the existing participating clusters, delete the RERC (substituting `<rerc-name>` with your database name).
 
-  ```sh
+    ```sh
   kubectl delete rerc <rerc-name>
-  ```
+    ```
 
 1. Verify the RERC no longer exists.
 
-  ```sh
+    ```sh
   kubectl get rerc -o=jsonpath='{range .items[*]}{.metadata.name}'
-  ```
+    ```
 
 ## Troubleshoot REDB deletion
 
