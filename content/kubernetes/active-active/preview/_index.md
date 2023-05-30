@@ -13,11 +13,6 @@ aliases: {
     
 }
 ---
-{{<banner-article bannerColor="#fff8dc">}}
-This feature is currently in public preview. Contact Redis support if you plan to use this feature.
-See [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}) for the currently supported procedure.
-{{</banner-article>}}
-
 
 ## Redis Enterprise Active-Active for Kubernetes
 
