@@ -12,7 +12,7 @@ aliases:
 
 By default, Redis will maintain your Redis Cloud subscriptions and databases as needed. During maintenance, you may notice some latency when connecting to your databases. For more information about the types of maintenance and how Redis maintains your subscriptions, see [Maintenance]({{<relref "/rc/subscriptions/maintenance">}}).
 
-You typically do not need to set a maintenance window manually as Redis will attempt to perform maintenance during low-traffic hours when possible. If you want to control when Redis performs maintenance for a Flexible or Annual subscription, you can [set manual maintenance windows](#set-manual-maintenance-windows) to ensure non-urgent maintenance will occur at set times. Or, you can [skip non-urgent maintenance temporarily](#skip-maintenance-temporarily) during busy periods.
+You typically do not need to set a maintenance window manually as Redis will attempt to perform maintenance during low-traffic hours when possible. If you want to control when Redis performs maintenance for a Flexible subscription, you can [set manual maintenance windows](#set-manual-maintenance-windows) to ensure non-urgent maintenance will occur at set times. Or, you can [skip non-urgent maintenance temporarily](#skip-maintenance-temporarily) during busy periods.
 
 ## Set manual maintenance windows
 
@@ -28,7 +28,7 @@ To set manual maintenance windows for a single flexible subscription:
 
 1. Enter the maintenance window time frame details.
 
-    {{<image filename="images/rc/subscriptions-set-maintenance-windows.png" alt="The set maintenance windows panel" >}}{{< /image >}}
+    {{<image filename="images/rc/subscriptions-set-maintenance-window.png" alt="The set maintenance windows panel" >}}{{< /image >}}
 
     - Select the days that Redis can perform maintenance in the **Days** drop-down.
     - Select the time that Redis can start performing maintenance on those days in the **From** drop-down.
