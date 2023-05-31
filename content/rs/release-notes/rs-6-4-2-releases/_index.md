@@ -65,9 +65,11 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
 
 - RS97971 - [Resharding fails for rack-aware databases with no replication](#resharding-fails-for-rack-aware-databases-with-no-replication) (fixed and resolved as part of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}})).
 
-- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid such cases, use `rladmin cluster config` to configure `handle_redirects` or `handle_metrics_redirects`.
+- RS101204 - High memory consumption caused by the `persistence_mgr` service when AOF persistence is configured for every second.
 
-- RS62986 - When upgrading from version 6.0.x to 6.2.x or 7.x, you need to restart `cnm_exec`.
+- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
+
+- RS62986 - When upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec`.
 
 #### Resharding fails for rack-aware databases with no replication
 
