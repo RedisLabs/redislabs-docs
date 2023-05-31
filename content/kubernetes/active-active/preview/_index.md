@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Active-Active database (REAADB) public preview
-linkTitle: Preview REAADB
-description: Preview content related to Active-Active Redis Enterprise for Kubernetes. 
+Title: Redis Enterprise Active-Active database controller
+linkTitle: Active-Active controller
+description: Overview of Active-Active for Kubernetes and REAADB and RERC custom resources. 
 weight: 40
 alwaysopen: false
 categories: ["Platforms"]
@@ -16,7 +16,7 @@ aliases: {
 
 ## Redis Enterprise Active-Active for Kubernetes
 
-{{<note>}} The preview features below are only available for the 6.4.2-4 release. {{</note>}}
+{{<note>}} The features below are only available for releases 6.4.2-4 and later. {{</note>}}
 
 [Active-Active]({{<relref "/rs/databases/active-active/">}}) databases give you read-and-write access to Redis Enterprise clusters (REC) in different Kubernetes clusters or namespaces. Active-Active deployments managed by the Redis Enterprise operator require two additional custom resources: Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC).
 
