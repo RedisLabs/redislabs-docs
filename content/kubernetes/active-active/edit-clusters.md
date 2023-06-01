@@ -7,6 +7,7 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: {
 /kubernetes/active-active/preview/add-cluster/,
+/kubernetes/active-active/edit-clusters/,
 }
 ---
 

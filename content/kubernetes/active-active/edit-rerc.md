@@ -6,7 +6,9 @@ weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 aliases: {
-    /kubernetes/active-active/preview/edit-rerc
+    /kubernetes/active-active/preview/edit-rerc,
+    /kubernetes/active-active/edit-rerc/,
+
 
 }
 ---

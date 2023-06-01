@@ -10,6 +10,7 @@ aliases: {
     /kubernetes/preview/create-reaadb/,
     /kubernetes/active-active/preview/prepare-clusters.md,
     /kubernetes/active-active/preview/prepare-clusters/,
+    /kubernetes/active-active/create-reaadb/,
 }
 ---
 

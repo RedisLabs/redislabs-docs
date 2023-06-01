@@ -12,6 +12,7 @@ aliases: {
     /kubernetes/active-active/prepare-clusters/,
     /kubernetes/active-active/preview/prepare-clusters.md,
     /kubernetes/active-active/preview/prepare-clusters/,
+    /kubernetes/active-active/prepare-clusters/,
 
 }
 ---

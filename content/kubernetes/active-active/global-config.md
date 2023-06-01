@@ -7,6 +7,7 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: {
     /kubernetes/active-active/preview/global-config/,
+    /kubernetes/active-active/global-config/,
 
 }
 ---
