@@ -46,7 +46,7 @@ Releases 6.4.2 or later support the new Active-Active controller. The new setup 
 
 To create an Active-Active Redis Enterprise deployment for Kubernetes with these new features, first [prepare participating clusters]({{<relref "/kubernetes/active-active/prepare-clusters.md">}}) then [create an Active-Active database]({{<relref "/kubernetes/active-active/create-reaadb.md">}}).
 
-For the currently supported procedure, see [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-database.md">}}).
+For the currently supported procedure, see [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-crdb-cli.md">}}).
 
 ### REAADB custom resource
 
