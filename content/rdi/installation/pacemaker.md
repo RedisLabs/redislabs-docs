@@ -287,6 +287,7 @@ If you are using the Docker resource agent, you should also specify some logging
 ```bash
 sudo pcs resource create dbz_server ocf:heartbeat:docker image=docker.io/debezium/server allow_pull=yes run_opts="-v $PWD/conf:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking"
 ```
+You can find details for all available logging options in the [Docker documentation](https://docs.docker.com/config/containers/logging/configure/).
 
 > Note the `run_opts` parameter that accepts any option you would normally provide to the Debezium Server container, most importantly the mapping of the `application.properties` configuration file. See [Containerized Deployment]({{<relref "/rdi/installation/debezium-server-deployment.md#containerized-deployment">}}) for details on other options you may need to provide.
 
