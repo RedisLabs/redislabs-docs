@@ -51,6 +51,7 @@ Include query parameters in a `GET` request to generate an optimized shard place
 | memory_size | integer (default:&nbsp;0) | Database memory limit (0 is unlimited), expressed in bytes |
 | shards_count | integer, <nobr>(range: 1-512)</nobr> (default:&nbsp;1) | Number of database server-side shards |
 | shards_placement | `dense` <br />`sparse` | Control the density of shards <br /> `dense`: Shards reside on as few nodes as possible <br /> `sparse`: Shards reside on as many nodes as possible |
+| bigstore_ram_size | integer (default:&nbsp;0) | Memory size of bigstore RAM part, expressed in bytes |
 
 The following example request includes `shards_count` and `memory_size` as query parameters:
 
