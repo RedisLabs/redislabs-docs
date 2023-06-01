@@ -10,9 +10,9 @@ categories: []
 aliases: 
 ---
 
-Redis will maintain your Redis Cloud subscriptions and databases as needed to ensure your databases are running the most stable and up-to-date version of Redis. During maintenance, you may notice some latency when connecting to your databases. Redis will attempt to perform maintenance during low-traffic hours when possible. 
+Redis will maintain your Redis Cloud subscriptions and databases as needed to ensure your databases are running the most stable and up-to-date version of Redis. During maintenance, you may notice some latency when connecting to your databases. 
 
-If you want to control when Redis can perform maintenance for a Flexible subscription, you can [set manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
+Redis will attempt to perform maintenance during low-traffic hours when possible, based on the region where your subscription is located. If you want to control when Redis can perform maintenance for a Flexible subscription, you can [set manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
 
 ## Maintenance activities
 
@@ -27,10 +27,26 @@ This includes, but is not limited to:
 - Restarting the cluster proxy
 - Applying security patches
 
-Redis will notify users by email when maintenance starts and ends. If Redis needs an action on your end to start maintenance, Redis will notify users with a reasonable amount of time before planned maintenance. 
+Redis will notify users by email when maintenance starts and ends. If Redis needs an action from a user to start maintenance, Redis will notify users with a reasonable amount of time before planned maintenance. 
 
 If you want to receive notifications by email, make sure **Operational emails** are activated in your user settings in [Access Management]({{<relref "/rc/security/access-control/access-management">}}). 
 
 ### Urgent maintenance
 
-Urgent maintenance refers to any activity that could affect service and cannot wait for scheduling. Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily skipped maintenance. Redis will notify users by email when urgent maintenance starts and ends.
+Urgent maintenance refers to any activity that could affect service and cannot wait for scheduling. This includes applying urgent security patches.
+
+Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily skipped maintenance. Redis will notify users by email when urgent maintenance starts and ends.
+
+## Skip maintenance temporarily
+
+To skip maintenance temporarily for a subscription:
+
+1. From the [admin console](https://app.redislabs.com/), select the **Subscriptions** menu and then select your subscription from the list.
+
+1. Select the **Overview** tab.
+
+1. In the **Maintenance Windows** panel, select **Skip the next 7 days**.
+
+1. Click **Continue** to confirm your selection.
+
+You will only be allowed to skip maintenance twice in one month. 
