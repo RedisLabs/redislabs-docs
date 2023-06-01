@@ -14,7 +14,7 @@ aliases: [
     /kubernetes/active-active/create-aa-crdb-cli/,
 ]
 ---
-{{<note>}} Versions 6.4.2 and later support the Active-Active database controller. This controller allows you to create Redis Enterprise Active-Active databases (REAADB) and Redis Enterprise remote clusters (RERC) with custom resources. We recommend using the [REAADB method for creating Active-Active databases]({{<relref "/kubernetes/active-active/preview/create-reaadb.md">}}).{{</note>}}
+{{<note>}} Versions 6.4.2 and later support the Active-Active database controller. This controller allows you to create Redis Enterprise Active-Active databases (REAADB) and Redis Enterprise remote clusters (RERC) with custom resources. We recommend using the [REAADB method for creating Active-Active databases]({{<relref "/kubernetes/active-active/create-reaadb.md">}}).{{</note>}}
 
 On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/">}}) databases provide read-and-write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/databases/active-active/">}}).
 
