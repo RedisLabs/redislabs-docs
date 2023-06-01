@@ -8,6 +8,7 @@ categories: ["Platforms"]
 aliases: [
     /kubernetes/re-clusters/delete_custom_resources.md,
     /kubernetes/re-clusters/delete_custom_resources/,
+    /kubernetes/delete_custom_resources/,
 ]
 ---
 
@@ -29,7 +30,9 @@ When you delete your cluster, your databases and the REC custom resource are als
 
 ## Delete the operator
 
-To delete the operator, you can either delete the bundle across all namespaces, or delete the operator resources manually from one namespace. With either method, you need to delete the operator ConfigMap (`operator-environment-config).
+There are two ways to delete the operator. You can delete the entire operator bundle, but this will also delete any cluster-wide resources created by the operator. To only delete resources within a specific namespace and leave other cluster-wide resources intact, you need to delete each resource manually.
+
+Whether you decide to delete the entire bundle or just resources from a specific namespace, it's important to delete the operator ConfigMap (`operator-environment-config`).
 
 ```sh
 kubectl delete cm operator-environment-config
@@ -37,7 +40,7 @@ kubectl delete cm operator-environment-config
 
 ### Delete operator bundle
 
-To delete the operator from your K8s cluster and namespace, you can delete the operator bundle with:
+To delete the operator from your K8s cluster, you can delete the operator bundle with:
 
 - `kubectl delete -f bundle.yaml` for non-OpenShift K8s deployments
 - `kubectl delete -f openshift.bundle.yaml` for OpenShift deployments 
@@ -77,6 +80,26 @@ You will also need to remove [the `namespaceSelector` section from the validatin
   ```sh
   kubectl get reaadb -o=jsonpath='{range .items[*]}{.metadata.name}'
   ```
+
+## Delete a remote cluster (RERC)
+
+{{<note>}}The Redis Enterprise Active-Active database (REAADB) custom resource is currently in public preview. View [Preview REAADB]({{<relref "/kubernetes/active-active/preview/">}}) for more details.{{</note>}}
+
+1. Verify the RERC you want to delete isn't listed as a participating cluster in any REAADB resources.
+
+    If an RERC is still listed as a participating cluster in any database, the deletion will be blocked.
+
+1. On one of the existing participating clusters, delete the RERC (substituting `<rerc-name>` with your database name).
+
+    ```sh
+  kubectl delete rerc <rerc-name>
+    ```
+
+1. Verify the RERC no longer exists.
+
+    ```sh
+  kubectl get rerc -o=jsonpath='{range .items[*]}{.metadata.name}'
+    ```
 
 ## Troubleshoot REDB deletion
 
