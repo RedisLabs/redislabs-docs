@@ -65,6 +65,8 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
 
 - RS62986 - When upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec`.
 
+- RS102128 - In a multi-cluster setup, each `crdt_syncer` disconnects from all peered clusters when only one cluster goes down.
+
 ### Upgrade limitations
 
 Before you upgrade a cluster that hosts Active-Active databases with modules to v6.2.18, perform the following steps:
