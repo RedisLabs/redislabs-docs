@@ -1,7 +1,7 @@
 ---
 Title: RedisBloom release notes
 linkTitle: RedisBloom
-description: RedisBloom release notes
+description: RedisBloom release notes for version 2.4 and earlier
 weight: 40
 alwaysopen: false
 categories: ["Modules"]

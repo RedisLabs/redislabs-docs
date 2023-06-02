@@ -1,7 +1,7 @@
 ---
 Title: RedisTimeSeries release notes
 linkTitle: RedisTimeSeries
-description: RedisTimeSeries release notes
+description: RedisTimeSeries release notes for version 1.8 and earlier
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
