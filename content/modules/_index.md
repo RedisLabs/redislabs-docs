@@ -1,17 +1,15 @@
 ---
-Title: Redis Stack and modules
-linkTitle: Redis Stack & modules
+Title: Redis Stack and Redis Enterprise
+linkTitle: Redis Stack and Redis Enterprise
 description:
 weight: 70
 alwaysopen: false
 categories: ["Modules"]
 aliases: /modules/
          /rs/developing/modules/
+         /modules/redis-stack/
 ---
-Redis develops several modules that extend the core Redis feature set. Some of the features these modules provide include [querying, indexing and full-text search]({{< relref "/modules/redisearch" >}}), [JSON support]({{< relref "/modules/redisjson" >}}), and [probabalistic data structures]({{< relref "/modules/redisbloom" >}}).
 
-[Redis Stack](https://redis.io/docs/stack/) lets you install and leverage modules quickly; it enables access to multiple modules in a single Redis database.  
+[Redis Enterprise Software]({{<relref "/rs">}}) and [Redis Enterprise Cloud]({{<relref "/rc">}}) support all [Redis Stack](https://redis.io/docs/stack/) capabilities, which extend the core Redis feature set. Some of the capabilities Redis Stack provides include querying, indexing, and full-text search and support for JSON, time series, and probabilistic data structures.
 
-[Redis Enterprise Software]({{< relref "/rs" >}}) and [Redis Enterprise Cloud]({{< relref "/rc" >}}) support all capabilities of [Redis Stack]({{< relref "/modules/redis-stack" >}}).
-
-{{< embed-html "modules.html" >}}
+{{<embed-html "modules.html">}}

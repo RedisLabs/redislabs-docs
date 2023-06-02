@@ -7,17 +7,9 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 To quickly set up a database with Redis Stack capabilities,
-you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/sign-up) subscription and create a [Redis Stack]({{<relref "/modules/redis-stack">}}) database.
+you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/sign-up) subscription and create a Redis Stack database.
 
-Redis Stack databases include the following capabilities:
-
-- [Search and Query]({{<relref "/modules/redisearch">}})
-- [JSON]({{<relref "/modules/redisjson">}})
-- [Graph]({{<relref "/modules/redisgraph">}})
-- [Time Series]({{<relref "/modules/redistimeseries">}})
-- [Probabilistic]({{<relref "/modules/redisbloom">}})
-
-Alternatively, you can use one of these methods to set up a database with Redis Stack capabilities:
+Alternatively, you can use one of these methods:
 
 - [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md">}})
 - Redis Enterprise Software in a [Docker container]({{<relref "/rs/installing-upgrading/get-started-docker.md">}})
@@ -84,9 +76,9 @@ With this information, you can connect to your database with the [`redis-cli`]({
 
 ## Try Redis Stack capabilities
 
-To try out Redis Stack capabilities, follow the examples provided by the corresponding quick start guides:
+To try out Redis Stack capabilities, follow the examples provided by the corresponding guides:
 
-- [Search and Query](https://redis.io/docs/stack/search/quick_start/)
-- [JSON](https://redis.io/docs/stack/json/#use-redisjson)
-- [Time Series](https://redis.io/docs/stack/timeseries/quickstart/)
-- [Probabilistic](https://redis.io/docs/stack/bloom/quick_start/)
+- [Search and query quick start](https://redis.io/docs/stack/search/quick_start/)
+- [JSON quick start](https://redis.io/docs/stack/json/#use-redisjson)
+- [Time series quick start](https://redis.io/docs/stack/timeseries/quickstart/)
+- [Probabilistic data structures quick start](https://redis.io/docs/stack/bloom/quick_start/)
