@@ -71,7 +71,7 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
 
 - RS62986 - When upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec`.
 
-- RS102128 - In a multi-cluster setup, each `crdt_syncer` disconnects from all peered clusters when only one cluster goes down.
+- RS102128 - In a multi-cluster setup, `crdt-syncer` on all participating clusters is restarted after one of them goes down. The `crdt-syncer` will successfully restart only if all sources are available.
 
 #### Resharding fails for rack-aware databases with no replication
 
