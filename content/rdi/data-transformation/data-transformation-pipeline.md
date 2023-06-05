@@ -55,7 +55,7 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
       - `mapping`: Array of mapping columns
       - `opcode_field`: Name of the field in the payload that holds the operation (c - create, d - delete, u - update) for this record in the DB
   - Redis:
-    - `uses`: `redis.write`: Write to a Redis data structure, multiple blocks of this type are allowed in the same job
+    - `uses`: `redis.write`: Write to a Redis data structure; multiple blocks of this type are allowed in the same job
     - `with`:
       - `connection`: Connection name as defined in `config.yaml` (by default, the connection named 'target' is used)
       - `data_type`: Target data structure when writing data to Redis (hash, json, set and stream are supported values)
