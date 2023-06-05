@@ -61,7 +61,7 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
       - `data_type`: Target data structure when writing data to Redis (hash, json, set and stream are supported values)
       - `key`: This allows to override the key of the record by applying a custom logic:
         - `expression`: Expression to execute
-        - `langauge`: Expression language, JMESPath or SQL
+        - `language`: Expression language, JMESPath or SQL
       - `expire`: Positive integer value indicating a number of seconds for the key to expire (if not set, the key will never expire)
   - SQL:
     - `uses`: `relational.write`: Write into a SQL-compatible data store
