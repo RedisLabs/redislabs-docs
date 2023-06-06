@@ -10,6 +10,7 @@ aliases: {
     /kubernetes/preview/create-reaadb/,
     /kubernetes/active-active/preview/prepare-clusters.md,
     /kubernetes/active-active/preview/prepare-clusters/,
+    /kubernetes/active-active/create-reaadb/,
 }
 ---
 
@@ -17,7 +18,7 @@ aliases: {
 
 {{<note>}}This feature is only available for versions 6.2.4-4 or later.{{</note>}}
 
-Before creating an Active-Active database on Redis Enterprise for Kubernetes, you'll need to prepare your participating Redis Enterprise clusters (REC). See [Prepare participating clusters]({{<relref "/kubernetes/active-active/preview/prepare-clusters.md">}}) before creating your Redis Enterprise remote cluster (RERC) and Redis Enterprise Active-Active database (REAADB).
+Before creating an Active-Active database on Redis Enterprise for Kubernetes, you'll need to prepare your participating Redis Enterprise clusters (REC). See [Prepare participating clusters]({{<relref "/kubernetes/active-active/prepare-clusters.md">}}) before creating your Redis Enterprise remote cluster (RERC) and Redis Enterprise Active-Active database (REAADB).
 
 ## Create `RedisEnterpriseRemoteCluster` resources
 

@@ -12,6 +12,7 @@ aliases: {
     /kubernetes/active-active/prepare-clusters/,
     /kubernetes/active-active/preview/prepare-clusters.md,
     /kubernetes/active-active/preview/prepare-clusters/,
+    /kubernetes/active-active/prepare-clusters/,
 
 }
 ---
@@ -125,4 +126,4 @@ To communicate with other clusters, all participating clusters will need access 
 
 ## Next steps
 
-Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/active-active/preview/create-reaadb.md">}}).
+Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/active-active/create-reaadb.md">}}).
