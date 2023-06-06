@@ -17,22 +17,25 @@ aliases: {
 
 On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/">}}) databases provide read and write access to the same dataset from different Kubernetes clusters.
 
-## Active-Active creation methods
+## Active-Active setup methods
 
-There are two methods for creating an Active-Active database with Redis Enterprise for Kubernetes. The `crdb-cli` method is available on all supported versions. The `RedisEnterpriseActiveActiveDatabase` (REAADB) custom resource is available for versions 6.4.2 and later.
+There are two methods for creating an Active-Active database with Redis Enterprise for Kubernetes:
+
+- The `crdb-cli` method is available for versions 6.4.2 or earlier. 
+- The `RedisEnterpriseActiveActiveDatabase` (REAADB) custom resource is available for versions 6.4.2 and later.
 
 ### `crdb-cli` method
 
-The currently supported Active-Active setup method includes the following steps:
+For versions 6.4.2 or earlier, this Active-Active setup method includes the following steps:
 
 1. Install and configure an ingress.
-2. Gathering configuration details.
-3. Adding the `ActiveActive` field to the REC spec.
-4. Creating the database with the `crdb-cli` tool.
+2. Gather configuration details.
+3. Add the `ActiveActive` field to the REC spec.
+4. Create the database with the `crdb-cli` tool.
 
 ### Active-Active controller method
 
-Releases 6.4.2 or later support the new Active-Active controller. The new setup method includes the following steps:
+Releases 6.4.2 or later support the Active-Active controller. This setup method includes the following steps:
 
 1. Collect and apply REC admin credentials for all participating RECs.
 2. Create `RedisEnterpriseRemoteCluster` (RERC) resources.
@@ -70,7 +73,10 @@ For a full list of fields and options, see the [RERC API reference](https://gith
 * The `<rec-name>/<rec-namespace>` value must be unique for each RERC resource. (RED-96302)
 
 * Only global database options are supported, not support for specifying configuration per location.
-* No support for migration from old (manual) Active-Active database method to new Active-Active controller.
+* No support for migration from old (`crdb-cli`) Active-Active database method to new Active-Active controller.
+* No support for multiple participating clusters on the same Kubernetes cluster.
+
+
 
 ## More info
 
