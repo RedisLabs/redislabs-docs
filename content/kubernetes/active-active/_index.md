@@ -69,14 +69,11 @@ For a full list of fields and options, see the [RERC API reference](https://gith
 * No support for upgrading the database Redis version
 * Admission is not blocking REAADB with `shardCount` which exceeds license quota. (RED-96301)
 
-  Fix the problems with the REAADB and reapply.
+    Workaround: Fix the problems with the REAADB and reapply.
 * The `<rec-name>/<rec-namespace>` value must be unique for each RERC resource. (RED-96302)
-
-* Only global database options are supported, not support for specifying configuration per location.
+* Only global database options are supported, no support for specifying configuration per location.
 * No support for migration from old (`crdb-cli`) Active-Active database method to new Active-Active controller.
 * No support for multiple participating clusters on the same Kubernetes cluster.
-
-
 
 ## More info
 
