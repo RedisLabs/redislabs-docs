@@ -131,26 +131,26 @@ To communicate with other clusters, all participating clusters need access to th
 
 ## Remove a participating cluster
 
-### On an existing participating cluster
+1. On an existing paticipating cluster, remove the desired cluster from the `participatingCluster` section of the REAADB spec.
 
-Remove the desired cluster from the `participatingCluster` section of the REAADB spec.
+    ```sh
+    kubectl edit reaadb <reaadb-name>
+    ```
 
-```sh
-kubectl edit reaadb <reaadb-name>
-```
+1. On each of the other participating clusters, verify the status is `active` and the spec status is `Valid` and the cluster was removed.
 
-### On each of the other participating clusters
+    ```sh
+    kubectl get reaadb <reaadb-name -o=jasonpath=`{.status}`
+    ```
 
-Verify the status is `active` and the spec status is `Valid` and the cluster was removed.
+    The output look like this:
 
-```sh
-kubectl get reaadb <reaadb-name -o=jasonpath=`{.status}`
-```
+    ```sh
+     {... ,"participatingClusters":[{"id":1,"name":"rerc1"},{"id":2,"name":"rerc2"}],"redisEnterpriseCluster":"rec1","specStatus":"Valid","status":"active"}
+     ```
 
-### On the removed participating cluster
+1. On the cluster that was removed, list all REAADB resources on the cluster to verify they were deleted.
 
-List all REAADB resources on the cluster to verify they were deleted.
-
-```sh
-kubectl get reaadb -o+jasonpath=`{range.items[*]}{.metadata.name}`
-```
+    ```sh
+    kubectl get reaadb -o+jasonpath=`{range.items[*]}{.metadata.name}`
+    ```
