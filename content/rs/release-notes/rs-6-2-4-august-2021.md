@@ -163,6 +163,9 @@ To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/r
 
 - RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
+- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
+
+- RS62986 - After upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec` on each cluster node. Failure to do so will prevent more advanced state machine handling capabilities from being enabled. To restart, run `supervisorctl restart cnm_exec`.
 
 ## Security
 

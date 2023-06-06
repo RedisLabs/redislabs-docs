@@ -33,6 +33,7 @@ We recommend these hardware requirements for production systems or for developme
 <sup>*</sup>Additional considerations:
 - Nodes per Cluster:
     - Clusters with more than 35 nodes are not supported. Please contact the Redis support team for assistance if your sizing calls for deploying a larger number of nodes.
+    - Quorum nodes also must comply with the above minimal hardware requirements.
     - To ensure synchronization and consistency, Active-Active deployments with three node clusters are strongly discouraged from using quorum nodes. Because quorum nodes do not store data shards, they cannot support replication. In case of a node failure, replica shards aren't available for Active-Active synchronization.
 - Cores:
     - When the CPU load reaches a certain level, Redis Enterprise Software sends an alert to the operator.  
