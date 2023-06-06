@@ -13,7 +13,7 @@ aliases: {
 ---
 
 
-The Redis Enterprise Active-Active database (REAADB) custom resource contains the field `.spec.globalConfigurations`. This field sets configurations for the Active-Active database across all participating clusters, such as memory size or shard count.
+The Redis Enterprise Active-Active database (REAADB) custom resource contains the field `.spec.globalConfigurations`. This field sets configurations for the Active-Active database across all participating clusters, such as memory size or shard count, as well as the global database secret.
 
 The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/redis_enterprise_active_active_database_api.md) contains a full list of available fields.
 
@@ -48,7 +48,6 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
 ## Set global database secret
 
 One of the fields available for `globalConfigurations` is `databaseSecretName` which can point to a secret containing the database password.
-
 
 1. On an existing participating cluster, generate a YAML file containing the database secret with the database password.
 
@@ -98,7 +97,7 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
     [{"name":"my-db-secret","status":"Invalid"}]
     ```
 
-1. Sync the secret.
+1. Sync the secret on each participating cluster.
 
     ```sh
     kubectl apply -f <db-secret-file>
@@ -106,4 +105,6 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
 
 1. Repeat the previous two steps on every participating cluster.
 
-## Manage 
+## Manage global configuration secrets
+
+
