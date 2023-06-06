@@ -1,6 +1,6 @@
 ---
-Title: Time Series
-linkTitle: Time Series
+Title: Time series
+linkTitle: Time series
 description:
 weight: 50
 alwaysopen: false

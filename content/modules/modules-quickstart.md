@@ -74,9 +74,9 @@ After creating the database, you can view its **Configuration** settings. You wi
 
 With this information, you can connect to your database with the [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool, an application, or [RedisInsight](https://redislabs.com/redisinsight/).
 
-## Try Redis Stack capabilities
+## Try Redis Stack features
 
-To try out Redis Stack capabilities, follow the examples provided by the corresponding guides:
+To try out Redis Stack features, follow the examples provided by the corresponding guides:
 
 - [Search and query quick start](https://redis.io/docs/stack/search/quick_start/)
 - [JSON quick start](https://redis.io/docs/stack/json/#use-redisjson)

@@ -1,6 +1,6 @@
 ---
-Title: Search and Query
-linkTitle: Search and Query
+Title: Search and query
+linkTitle: Search and query
 description:
 weight: 20
 alwaysopen: false
