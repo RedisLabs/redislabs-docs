@@ -1,5 +1,5 @@
 ---
-Title: Upgrade a Redis Enterprise cluster (REC) on Kubernetes
+Title: Upgrade a Redis Enterprise cluster (REC)
 linkTitle: Upgrade a Redis cluster
 description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
 weight: 19
@@ -23,21 +23,45 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
 
 ## Before upgrading
 
-Before you upgrade, verify you are using the correct image and your license is valid.
+Review the following warnings before starting your upgrade.
 
-{{< warning >}}
-When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info. 
-  {{</warning>}}
+#### OpenShift clusters running 6.2.12 or earlier
 
-{{<warning>}}
+Due to a change in the SCC, on OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later, where `node:1` is <b>not</b> the master node, the upgrade might get stuck.
+
+You might have a pod that doesn't become fully ready and start seeing restarts. In the ServicesRigger log, you'll see this error:
+
+```text
+services-rigger.services - ERROR - couldn't update pod <POD NAME> labels
+...
+... pods <POD NAME> is forbidden: unable to validate against any security context constraint
+```
+
+To prevent this, set `node:1` as the master node.
+
+```sh
+oc exec -it <rec-pod-name> -- rladmin cluster master set 1
+```
+
+This may also affect OpenShift clusters containing two RECs running different versions, if one is running version 6.2.12 or earlier and the other is running 6.2.18 or later.
+
+This is a newly discovered issue and more information will be available soon. If you have already encountered the error and need it fixed immediately, contact Redis support.
+
+#### RHEL7-based images
+
+When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info.
+
+#### Invalid license
+
 Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
 
 Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
-{{</warning>}}
 
-{{<note>}}
-On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases. A fix is available in the 6.4.2-5 release. Upgrade your Redis cluster to [6.4.2-5]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) before upgrading your Kubernetes cluster.
-{{</note>}}
+#### Large clusters
+
+On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases.
+
+A fix is available in the 6.4.2-5 release. Upgrade your Redis cluster to [6.4.2-5]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) before upgrading your Kubernetes cluster.
 
 ## Upgrade the operator
 
@@ -53,7 +77,6 @@ You can download the bundle for the latest release with the following `curl` com
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
 curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
-
 
 For OpenShift environments, the name of the bundle is `openshift.bundle.yaml`, and so the `curl` command to run is:
 

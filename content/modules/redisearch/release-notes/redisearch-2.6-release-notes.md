@@ -66,7 +66,7 @@ Details:
   
   - [#3256](https://github.com/RediSearch/RediSearch/pull/3256) Support IPv6 on cluster set command
   - [#3194](https://github.com/RediSearch/RediSearch/pull/3194) Add the query dialects that are in use to `FT.INFO` and `INFO MODULE` commands (MOD-4232)
-  - [#3258](https://github.com/RediSearch/RediSearch/pull/3258) Add the module version and Redis version to `INFO MODULE`
+  - [#3258](https://github.com/RediSearch/RediSearch/pull/3258) Add the module version and Redis version to `INFO MODULE`  
 
 ## v2.6 GA (v2.6.3) (November 2022)
 
