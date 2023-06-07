@@ -19,7 +19,7 @@ with a [backup path]({{<relref "/rc/databases/back-up-data">}}).
 This parameter enables periodic and on-demand backup operations for the specified database.
 
 {{<note>}}
-The number of database backups that can run simultaneously on a cluster node is limited to 4 by default.
+The number of database backups that can run simultaneously on a cluster is limited to 4 by default.
 {{</note>}}
 
 The API operation for on-demand backups is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
