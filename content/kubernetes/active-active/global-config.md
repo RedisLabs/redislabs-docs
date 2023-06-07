@@ -13,7 +13,7 @@ aliases: {
 ---
 
 
-The Redis Enterprise Active-Active database (REAADB) custom resource contains the field `.spec.globalConfigurations`. This field sets configurations for the Active-Active database across all participating clusters, such as memory size or shard count, as well as the global database secret.
+The Redis Enterprise Active-Active database (REAADB) custom resource contains the field `.spec.globalConfigurations`. This field sets configurations for the Active-Active database across all participating clusters, such as memory size or shard count, as well as the global database secrets.
 
 The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/redis_enterprise_active_active_database_api.md) contains a full list of available fields.
 

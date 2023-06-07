@@ -7,7 +7,6 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: {
  /kubernetes/active-active/global-db-secret/,
-
 }
 ---
 
