@@ -32,7 +32,7 @@ Redis Enterprise lets you:
 
 - Include keys or key patterns with the "~" prefix.
 
-- Allow access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) with the "&" prefix (only supported for databases with Redis version 6.2 and later).
+- Allow access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) with the "&" prefix (only supported for databases with Redis version 6.2 and later). When adding permissions to specific channel, add 'resetchannels' at the begining to flush default configuration.
 
 {{<note>}}
 Module commands have several ACL limitations:
