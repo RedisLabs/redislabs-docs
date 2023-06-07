@@ -29,6 +29,18 @@ output:
         language: jmespath
       args:
         member: InvoiceId
+  # this block will use the explicitly specified connection: target1 - it must be defined in config.yaml
+  # the data will be written to the Redis sorted set named invoices:sorted as specified in the key expression
+  - uses: redis.write
+    with:
+      connection: target1
+      data_type: sorted_set
+      key:
+        expression: "`invoices:sorted`"
+        language: jmespath
+      args:
+        score: Total
+        member: InvoiceId        
   # this block will use the specified connection: target2 - this, again, has to be defined in config.yaml
   # the data will be written to a Redis stream named invoice:events as specified in the key expression
   - uses: redis.write
