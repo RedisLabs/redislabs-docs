@@ -31,7 +31,7 @@ Each chunk has a predefined size of samples.
 Each sample is a tuple of the time and the value of 128 bits,
 64 bits for the timestamp and 64 bits for the value.
 
-## RedisTimeSeries capabilities
+## Time series capabilities
 
 In RedisTimeSeries, we introduce a new data type that uses chunks of memory of fixed size for time series samples, indexed by the same Radix Tree implementation as Redis Streams. With Streams, you can create [a capped stream](https://redis.io/commands/xadd), effectively limiting the number of messages by count. In RedisTimeSeries, you can apply a retention policy in milliseconds. This is better for time series use cases, because they are typically interested in the data during a given time window, rather than a fixed number of samples.
 
@@ -154,7 +154,7 @@ RedisTimeSeries can be seen to dramatically reduce the memory consumption when c
 
 ## More info
 
-- [Time Series quick start](https://redis.io/docs/stack/timeseries/quickstart/)
-- [RedisTimeSeries commands]({{<relref "/modules/redistimeseries/commands">}})
-- [RedisTimeSeries configuration]({{<relref "/modules/redistimeseries/config">}})
+- [Time series quick start](https://redis.io/docs/stack/timeseries/quickstart/)
+- [Time series commands]({{<relref "/modules/redistimeseries/commands">}})
+- [Time series configuration]({{<relref "/modules/redistimeseries/config">}})
 - [RedisTimeSeries source](https://github.com/RedisTimeSeries/RedisTimeSeries)

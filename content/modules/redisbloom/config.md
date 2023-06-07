@@ -1,7 +1,7 @@
 ---
-Title: RedisBloom configuration compatibility with Redis Enterprise 
+Title: Probabilistic data structure configuration compatibility with Redis Enterprise 
 linkTitle: Configuration 
-description: RedisBloom configuration settings supported by Redis Enterprise.
+description: Probabilistic data structure configuration settings supported by Redis Enterprise.
 weight: 30
 alwaysopen: false
 toc: "false"

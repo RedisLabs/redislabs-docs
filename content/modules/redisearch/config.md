@@ -1,7 +1,7 @@
 ---
-Title: RediSearch configuration compatibility with Redis Enterprise 
+Title: Search and query configuration compatibility with Redis Enterprise 
 linkTitle: Configuration 
-description: RediSearch configuration settings supported by Redis Enterprise.
+description: Search and query configuration settings supported by Redis Enterprise.
 weight: 30
 alwaysopen: false
 toc: "false"

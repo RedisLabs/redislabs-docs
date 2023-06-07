@@ -1,19 +1,19 @@
 ---
-Title: RedisJSON in Active-Active databases
+Title: Store JSON in Active-Active databases
 linkTitle: Active-Active databases
-description: RedisJSON support and conflict resolution rules for Active-Active databases.
+description: JSON support and conflict resolution rules for Active-Active databases.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
 ---
 
-RedisJSON v2.2 adds support for RedisJSON in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
+RedisJSON v2.2 adds support for JSON in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
 
 The design is based on [A Conflict-Free Replicated JSON Datatype](https://arxiv.org/abs/1608.03960) by Kleppmann and Beresford, but the implementation includes some changes. Several [conflict resolution rule](#conflict-resolution-rules) examples were adapted from this paper as well.
 
 ## Command differences
 
-Some RedisJSON commands work differently for Active-Active databases.
+Some JSON commands work differently for Active-Active databases.
 
 ### `JSON.CLEAR`
 
@@ -39,7 +39,7 @@ There are two types of conflict resolution:
 
     - Ignores the losing operation.
 
-The following conflict resolution rules show how Active-Active databases resolve conflicts for various RedisJSON commands.
+The following conflict resolution rules show how Active-Active databases resolve conflicts for various JSON commands.
 
 ### Assign different types to a key
 

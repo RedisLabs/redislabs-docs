@@ -1,14 +1,14 @@
 ---
-Title: RedisBloom commands 
+Title: Probabilistic data structure commands 
 linkTitle: Commands 
-description: Lists RedisBloom commands and provides links to the command reference pages.
+description: Lists probabilistic data structure commands and provides links to the command reference pages.
 weight: 25
 alwaysopen: false
 toc: "true"
 categories: ["Modules"]
 ---
 
-The following tables list RedisBloom commands. See the command links for more information about each command's syntax, arguments, and examples.
+The following tables list probabilistic data structure commands. See the command links for more information about each command's syntax, arguments, and examples.
 
 ## Bloom filter commands
 

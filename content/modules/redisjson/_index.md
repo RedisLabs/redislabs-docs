@@ -20,11 +20,11 @@ The [RedisJSON](https://redis.io/docs/stack/json/) module adds support for the [
 Applications developed with the [open source version of RedisJSON](https://github.com/RedisJSON/RedisJSON) are 100%
 compatible with RedisJSON in Redis Enterprise Software.
 
-## RedisJSON paths
+## JSON paths
 
 [Paths](https://redis.io/docs/stack/json/path) let you traverse the structure of a JSON document, starting from the root, and interact only with the data you want. You can also use paths to perform operations on specific JSON elements.
 
-Since there is no standard for JSON path syntax, RedisJSON implements its own.
+Since there is no standard for JSON path syntax, Redis Stack implements its own.
 
 ### JSONPath syntax
 
@@ -70,15 +70,15 @@ You can only use the [legacy path syntax](#legacy-path-syntax) to access JSON ke
 
 ## Index and search JSON documents
 
-If a Redis database has both RedisJSON and [RediSearch]({{<relref "/modules/redisearch">}}) modules enabled, you can index and search stored JSON documents.
+You can index, search, and query stored JSON documents.
 
-For more information about how to use RediSearch with JSON documents, see the [Search and Query JSON quick start](https://redis.io/docs/stack/search/indexing_json/).
+For more information about how to search and query JSON documents, see the [quick start](https://redis.io/docs/stack/search/indexing_json/).
 
-## RedisJSON in Active-Active databases
+## JSON in Active-Active databases
 
 RedisJSON v2.2 and later support the JSON data structure as a conflict-free replicated data type [(CRDT)](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
 
-For details about how RedisJSON resolves operation conflicts that can arise when replicas attempt to sync, see the RedisJSON [conflict resolution rules]({{<relref "/modules/redisjson/active-active#conflict-resolution-rules">}}).
+For details about how Redis Enterprise resolves JSON operation conflicts that can arise when replicas attempt to sync, see the JSON [conflict resolution rules]({{<relref "/modules/redisjson/active-active#conflict-resolution-rules">}}).
 
 ## More info
 

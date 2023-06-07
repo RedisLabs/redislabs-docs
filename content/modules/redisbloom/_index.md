@@ -1,7 +1,7 @@
 ---
 Title: Probabilistic data structures
 linkTitle: Probabilistic
-description:
+description: Probabilistic data structures
 weight: 60
 alwaysopen: false
 categories: ["Modules"]
@@ -110,7 +110,7 @@ reach a larger capacity.
 
 ## More info
 
-- [Probabilistic quick start](https://redis.io/docs/stack/bloom/quick_start/)
-- [RedisBloom commands]({{<relref "/modules/redisbloom/commands">}})
-- [RedisBloom configuration]({{<relref "/modules/redisbloom/config">}})
+- [Probabilistic data structures quick start](https://redis.io/docs/stack/bloom/quick_start/)
+- [Probabilistic data structure commands]({{<relref "/modules/redisbloom/commands">}})
+- [Probabilistic data structure configuration]({{<relref "/modules/redisbloom/config">}})
 - [RedisBloom source](https://github.com/RedisBloom/RedisBloom/)

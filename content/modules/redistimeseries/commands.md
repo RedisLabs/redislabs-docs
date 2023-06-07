@@ -1,14 +1,14 @@
 ---
-Title: RedisTimeSeries commands 
+Title: Time series commands 
 linkTitle: Commands 
-description: Lists RedisTimeSeries commands and provides links to the command reference pages.
+description: Lists time series commands and provides links to the command reference pages.
 weight: 25
 alwaysopen: false
 toc: "false"
 categories: ["Modules"]
 ---
 
-The following table lists RedisTimeSeries commands. See the command links for more information about each command's syntax, arguments, and examples.
+The following table lists time series commands. See the command links for more information about each command's syntax, arguments, and examples.
 
 | Command | Redis<br />Enterprise | Redis<br />Cloud | Description |
 |:--------|:----------------------|:-----------------|:------|

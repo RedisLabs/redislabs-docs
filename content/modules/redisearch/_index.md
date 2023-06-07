@@ -16,16 +16,16 @@ aliases:
   - /modules/redisearch/search-json-quickstart/
 ---
 The [RediSearch 2.x module](https://redis.com/blog/introducing-redisearch-2-0/) is a source-available project that lets you build powerful search queries for open source Redis databases.
-When combined with Redis Enterprise Software, you can use the same RediSearch protocols and [commands]({{<relref "/modules/redisearch/commands">}})
+When combined with Redis Enterprise Software, you can use the same protocols and [commands]({{<relref "/modules/redisearch/commands">}})
 to run geo-replicated queries and full-text searches over efficient in-memory indexes.
 
 ## Index documents
 
-The RediSearch engine indexes documents, which are objects that represent data as field-value pairs. You can index more than one field per document, and these fields can represent text, numeric, or geospatial data types.
+The search and query engine indexes documents, which are objects that represent data as field-value pairs. You can index more than one field per document, and these fields can represent text, numeric, or geospatial data types.
 
 As the documents in your database change, the index automatically processes these changes to keep the search results up to date.
 
-With RediSearch indexes, you can do:
+With indexes, you can do:
 - Language-aware [fuzzy matching](https://redis.io/docs/stack/search/reference/query_syntax/#fuzzy-matching)
 - Fast [auto-complete](https://redis.io/docs/stack/search/design/overview/#auto-completion)
 - [Exact phrase matching](https://redis.io/docs/stack/search/reference/query_syntax/)
@@ -44,9 +44,9 @@ You can run [`HGETALL`](https://redis.io/commands/hgetall/) to retrieve the enti
 
 ### JSON documents
 
-If a database has [RedisJSON]({{<relref "/modules/redisjson">}}) enabled, you can store documents as JSON and use RediSearch to index and search for them.
+You can index, search, and query JSON documents stored in your database.
 
-For more information about how to use RediSearch with JSON documents, see the [Search and Query JSON quick start](https://redis.io/docs/stack/search/indexing_json/).
+For more information about how to search and query JSON documents, see the [quick start](https://redis.io/docs/stack/search/indexing_json/).
 
 ## Search features
 
@@ -56,7 +56,7 @@ You can also sort by a specific field and limit the results with an offset to pr
 
 RediSearch supports [over 15 natural languages](https://redis.io/docs/stack/search/reference/stemming#supported-languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://redis.io/commands/ft.sugadd/).
 
-## RediSearch in Active-Active databases
+## Search and query Active-Active databases
 
 As a result of the new RediSearch architecture and methodology, [RediSearch 2.x supports Active-Active databases]({{<relref "/modules/redisearch/redisearch-active-active">}}).
 You can now serve your index information from geo-distributed database instances.
@@ -69,13 +69,13 @@ Because the index on the new shard is created synchronously though, it's expecte
 
 ## Limitations
 
-- You cannot use RediSearch with the [OSS Cluster API]({{<relref "/rs/databases/configure/oss-cluster-api">}}).
+- You cannot use search and query capabilities with the [OSS Cluster API]({{<relref "/rs/databases/configure/oss-cluster-api">}}).
 
 ## More info
 
 - [Getting Started with RediSearch 2.0](https://redis.com/blog/getting-started-with-redisearch-2-0/)
-- [Search and Query quick start](https://redis.io/docs/stack/search/quick_start/)
-- [Configure RediSearch]({{<relref "/modules/redisearch/config">}})
-- [RediSearch commands]({{<relref "/modules/redisearch/commands">}})
-- [RediSearch references](https://redis.io/docs/stack/search/reference/)
+- [Search and query quick start](https://redis.io/docs/stack/search/quick_start/)
+- [Search and query configuration]({{<relref "/modules/redisearch/config">}})
+- [Search and query commands]({{<relref "/modules/redisearch/commands">}})
+- [Search and query references](https://redis.io/docs/stack/search/reference/)
 - [RediSearch source](https://github.com/RediSearch/RediSearch)

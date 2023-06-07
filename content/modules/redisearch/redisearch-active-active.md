@@ -1,7 +1,7 @@
 ---
-Title: RediSearch in Active-Active databases
+Title: Search and query Active-Active databases
 linkTitle: Search Active-Active databases
-description: Search Active-Active databases.
+description: Search and query Active-Active databases.
 weight: 30
 alwaysopen: false
 categories: ["Modules"]
@@ -19,7 +19,7 @@ You can run search operations on any instance of an Active-Active database.
 
 ## Command compatibility
 
-Active-Active databases do not support the following RediSearch commands: 
+Active-Active databases do not support the following search and query commands: 
 
 - `FT.DROP`
 - [`FT.SUGADD`](https://redis.io/commands/ft.sugadd/)
@@ -29,7 +29,7 @@ Active-Active databases do not support the following RediSearch commands:
 
 ## Example
 
-Here's an example to help visualize Active-Active RediSearch:
+Here's an example to help visualize Active-Active search and query:
 
 | Time  | Description | CRDB Instance1 | RediSearch Instance 1 | CRDB Instance 2 | RediSearch Instance 2 |
 | :---: | :--- | :--- | :--- | :--- | :--- |
