@@ -14,9 +14,7 @@ aliases: [
 ]
 ---
 
-Every time the Redis Enterprise operator creates a Redis Enterprise database (REDB), it creates a [service](https://kubernetes.io/docs/concepts/services-networking/service/) that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
-
-By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the cluster. OpenShift routes allow requests to be routed to the REDB from outside the cluster. For OpenShift deployments, routes provide a preferred alternative to an ingress.
+OpenShift routes allow requests to be routed to the REDB from outside the cluster with the need for an ingress.
 
 ## Prerequisites
 
