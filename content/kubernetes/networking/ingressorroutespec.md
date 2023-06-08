@@ -21,12 +21,12 @@ An Ingress is an API resource that provides a standardized and flexible way to m
 
 Redis Enterprise for Kubernetes supports three Ingress controllers:
 * [HAProxy](https://haproxy-ingress.github.io/)
-* [NGINX](https://kubernetes.github.io/ingress-nginx/)
+* [NGINX](https://kubernetes.github.io/Ingress-nginx/)
 * [Istio](https://istio.io/latest/docs/setup/getting-started/)
 
 OpenShift users can use [routes]({{<relref "/kubernetes/networking/routes.md">}}) instead of an Ingress.
 
-Install your chosen ingress controller, making sure `ssl-passthrough` is enabled. `ssl-passthrough` is turned off by default for NGINX but enabled by default for HAProxy.
+Install your chosen Ingress controller, making sure `ssl-passthrough` is enabled. `ssl-passthrough` is turned off by default for NGINX but enabled by default for HAProxy.
 
 ## Configure DNS
 
@@ -36,7 +36,7 @@ Install your chosen ingress controller, making sure `ssl-passthrough` is enabled
    REAADB hostname: `*-db-<rec-name>-<rec-namespace>.<subdomain>`
      We recommend using a wildcard (`*`) in place of the database name, followed by the hostname suffix.
 
-1. Retrieve the `EXTERNAL-IP` of your ingress controller's `LoadBalancer` service.
+1. Retrieve the `EXTERNAL-IP` of your Ingress controller's `LoadBalancer` service.
 
     ``` sh
     $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> \
@@ -58,7 +58,7 @@ Edit the REC spec to add the `ingressOrRouteSpec` field, replacing `<placeholder
 
 Define the REC API hostname (`apiFqdnUrl`) and database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
 
-Add the annotations for your ingress and set `ssl-passthrough` to "true". The annotations below are for ingress; see OpenShift documentation for route annotations.
+Add the annotations for your Ingress and set `ssl-passthrough` to "true". The annotations below are for Ingress; see OpenShift documentation for route annotations.
 
 ```sh
 kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \

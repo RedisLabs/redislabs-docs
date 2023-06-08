@@ -14,7 +14,7 @@ aliases: [
 ]
 ---
 
-OpenShift routes allow requests to be routed to the REDB from outside the cluster with the need for an ingress.
+OpenShift routes allow requests to be routed to the REDB from outside the cluster with the need for an Ingress.
 
 ## Prerequisites
 

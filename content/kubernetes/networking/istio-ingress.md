@@ -14,9 +14,9 @@ aliases: [
 ]
 ---
 
-Redis Enterprise for Kubernetes version `6.2.8-11` introduces the ability to use an Istio ingress gateway as an alternative to NGINX or HaProxy ingress controllers.
+Redis Enterprise for Kubernetes version `6.2.8-11` introduces the ability to use an Istio Ingress gateway as an alternative to NGINX or HaProxy Ingress controllers.
 
-Istio can also understand ingress resources, but using that mechanism takes away the advantages and options that the native Istio resources provide. Istio offers its own configuration methods using custom resources.
+Istio can also understand Ingress resources, but using that mechanism takes away the advantages and options that the native Istio resources provide. Istio offers its own configuration methods using custom resources.
 
 To configure Istio to work with the Redis Kubernetes operator, we will use two custom resources: a `Gateway` and a `VirtualService`. Then you'll be able to establish external access to your database.
 
@@ -80,7 +80,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
     - Replace `.istio.k8s.my.redisdemo.com` with the domain that matches your DNS record.
     - TLS passthrough mode is required to allow secure access to the database.
 
-1. Apply `gateway.yaml` to create the ingress gateway.
+1. Apply `gateway.yaml` to create the Ingress gateway.
 
     ```sh
     kubectl apply -f gateway.yaml

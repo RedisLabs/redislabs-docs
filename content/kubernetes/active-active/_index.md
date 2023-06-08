@@ -25,7 +25,7 @@ There are two methods for creating an Active-Active database with Redis Enterpri
 
 The currently supported Active-Active setup method includes the following steps:
 
-1. Install and configure an ingress.
+1. Install and configure an Ingress.
 2. Gathering configuration details.
 3. Adding the `ActiveActive` field to the REC spec.
 4. Creating the database with the `crdb-cli` tool.
