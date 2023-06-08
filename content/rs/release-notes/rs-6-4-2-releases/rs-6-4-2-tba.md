@@ -1,0 +1,72 @@
+---
+Title: Redis Enterprise Software release notes 6.4.2-TBA (June 2023)
+linkTitle: 6.4.2-TBA (June 2023)
+description: Email alerts for database backup failures and replica high availability shard relocation failures.
+compatibleOSSVersion: Redis 6.2.6
+weight: 68
+alwaysopen: false
+toc: "true"
+categories: ["RS"]
+aliases: 
+---
+
+This is a maintenance release for ​[​Redis Enterprise Software version 6.4.2](https://redis.com/redis-enterprise-software/download-center/software/).
+
+The following table shows the MD5 checksums for the available packages:
+
+| Package | MD5 checksum (6.4.2-TBA June release) |
+|---------|---------------------------------------|
+| Ubuntu 16 |  |
+| Ubuntu 18 |  |
+| Ubuntu 20 |  |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
+| Amazon Linux 2 |  |
+
+## New features and enhancements
+
+- RS77279 - Database backup failures and replica high availability (formerly slave HA) failures (relocate a shard from a node) now generate email alerts
+
+#### Redis Stack v6.2.6
+
+Redis Enterprise Software v6.4.2 includes the new features delivered in the latest [Redis Stack release (6.2.6 v6)](https://redis.com/blog/introducing-redis-stack-6-2-6-and-7-0-6/):
+
+- [RediSearch v2.6.9](https://docs.redis.com/latest/modules/redisearch)
+
+- [RedisJSON v2.4.7](https://docs.redis.com/latest/modules/redisjson)
+
+- [RedisBloom v2.4.5](https://docs.redis.com/latest/modules/redisbloom)
+
+- [RedisGraph v2.10.9](https://docs.redis.com/latest/modules/redisgraph)
+
+- [RedisTimeSeries v1.8.10](https://docs.redis.com/latest/modules/redistimeseries)
+
+See [Upgrade modules](https://docs.redis.com/latest/modules/install/upgrade-module/) to learn how to upgrade a module for a database.
+
+## Resolved issues
+
+- RS101204 - Fixed high memory consumption that was caused by the `persistence_mgr` service when AOF persistence is configured for every second.
+
+- RS39322 , RS35526  - [`rlcheck`]({{<relref "/rs/references/cli-utilities/rlcheck">}}) no longer requires root privileges and can run with the `redislabs` group and user.
+
+- RS97315, RS100853  - Fixed the robustness of the support package process when collecting the shard configuration.
+
+- RS65110 - Fixed firewalld SELinux configuration.
+
+- RS101691 - Clean false error messages at the end of installation 
+
+## Known limitations
+
+### Feature limitations
+
+- RS78430 - When [tuning module arguments]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-db">}}), typos or unsupported arguments can cause shards to get stuck after restarting.
+
+- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
+
+- RS62986 - After upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec` on each cluster node. Failure to do so will prevent more advanced state machine handling capabilities from being enabled. To restart, run `supervisorctl restart cnm_exec`.
+
+### Operating system limitations
+
+#### Ubuntu 20.04
+
+By default, you cannot use the SHA1 hash algorithm ([OpenSSL’s default security level is set to 2](https://manpages.ubuntu.com/manpages/focal/man3/SSL_CTX_set_security_level.3ssl.html#notes)). The operating system will reject SHA1 certificates even if the `mtls_allow_weak_hashing` option is enabled. You need to replace SHA1 certificates with newer certificates that use SHA-256. Note that the certificates provided with Redis Enterprise Software use SHA-256.
