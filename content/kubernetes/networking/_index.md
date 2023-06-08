@@ -16,7 +16,7 @@ Redis Enterprise for Kubernetes supports several ways to route external traffic 
 - Ingress controllers [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/) require an `ingress` API resource.
 - [Istio](https://istio.io/latest/docs/setup/getting-started/) requires `Gateway` and `VirtualService` API resources.
 - OpenShift uses [routes]({{<relref "/kubernetes/networking/routes.md">}}) to route external traffic.
-- The RedisEnterpriseActiveActiveDatabase (REAADB) requires any of the above routing methods to be configured in the RedisEnterpriseCluster (REC) with the `ingressOrRoutesSpec` field.
+- The RedisEnterpriseActiveActiveDatabase (REAADB) requires any of the above routing methods to be configured in the RedisEnterpriseCluster (REC) with the `ingressOrRouteSpec` field.
 
 ## External routing using Redis Enterprise for Kubernetes
 

@@ -3,7 +3,7 @@
 Title: Create Active-Active databases with crdb-cli
 linkTitle: Create Active-Active with crdb-cli
 description: This section how to set up an Active-Active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
-weight: 15
+weight: 99
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
@@ -33,6 +33,8 @@ Before creating Active-Active databases, you'll need admin access to two or more
 - Routing for external access with an [ingress resources]({{<relref "/kubernetes/networking/ingress.md">}}) (or [route resources]({{<relref "/kubernetes/networking/routes.md">}}) on OpenShift).
 - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name.
 - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
+
+{{<note>}} The `activeActive` field and the `ingressOrRouteSpec` field cannot coexist in the same REC. If you configured your ingress via the `ingressOrRouteSpec` field in the REC, create your Active-Active database with the RedisEnterpriseActiveActiveDatabase (REAADB) custom resource.{{</note>}}
 
 ## Document required parameters
 
