@@ -22,7 +22,7 @@ Every time a Redis Enterprise database (REDB) is created with the Redis Enterpri
 
 By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
-Redis Enterprise for Kubernetes supports two ingress controllers: [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/). You can also use [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}) ingress routing for Redis Enterprise.
+Redis Enterprise for Kubernetes supports two ingress controllers: [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/). You can also use [Istio]({{<relref "/kubernetes/networking/istio-ingress.md">}}) ingress routing for Redis Enterprise.
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ Install one of the supported ingress controllers:
 - [NGINX Ingress Controller Installation Guide](https://kubernetes.github.io/ingress-nginx/deploy/)
 - [HAProxy Ingress Getting Started](https://haproxy-ingress.github.io/docs/getting-started/)
 
-To use Istio for your ingress resources, see [Configure Istio for external routing]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}).
+To use Istio for your ingress resources, see [Configure Istio for external routing]({{<relref "/kubernetes/networking/istio-ingress.md">}}).
 
 {{< warning >}}You'll need to make sure `ssl-passthrough` is enabled. It's enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{< /warning >}}  
 
