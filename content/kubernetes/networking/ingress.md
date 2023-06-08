@@ -30,7 +30,7 @@ Before creating an Ingress, you'll need:
 
 {{<note>}}Make sure your Ingress controller has `ssl-passthrough`enabled. This is enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{</note>}}
 
-## Create Ingress resource
+## Create an Ingress resource
 
 1. Retrieve the hostname of your Ingress controller's `LoadBalancer` service.
 
@@ -39,7 +39,7 @@ Before creating an Ingress, you'll need:
                         -n <ingress-ctrl-namespace>
     ```
 
-    Below is example output for an HAProxy Ingress controller running on a K8s cluster hosted by AWS.  
+    Below is example output for an HAProxy running on a K8s cluster hosted by AWS.  
 
     ``` sh
     NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE   
