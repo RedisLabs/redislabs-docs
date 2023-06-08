@@ -24,7 +24,6 @@ OpenShift routes allow requests to be routed to the REDB from outside the cluste
 
 - Your database also needs TLS encryption enabled.
 
-
 ## Create OpenShift route
 
 1. Select the **Networking/Routes** section of the OpenShift web console.
@@ -61,5 +60,3 @@ To connect with `openssl`:
   ```sh
   openssl s_client -connect <hostname>:443 -crlf -CAfile ./ca.pem -servername <hostname>
   ```
-
-
