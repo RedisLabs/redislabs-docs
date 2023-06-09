@@ -21,22 +21,22 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
 
 1. Edit or patch the REAADB custom resource with your global configuration changes.
 
-  The example command below patches the REAADB named `reaadb1boeing` to set the global memory size to 200MB:
+  The example command below patches the REAADB named `reaadb-boeing` to set the global memory size to 200MB:
 
   ```sh
-  kubectl patch reaadb reaadb1boeing --type merge --patch \
+  kubectl patch reaadb reaadb-boeing --type merge --patch \
   '{"spec": {"globalConfigurations": {"memorySize": "200mb"}}}'
   ```
 
 1. Verify the status is `active` and the spec status is `Valid`.
 
-  This example shows the status for the `reaadb1boeing` database.
+  This example shows the status for the `reaadb-boeing` database.
 
   ```sh
-  kubectl get reaadb reaadb1boeing
+  kubectl get reaadb reaadb-boeing
 
   NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-  reaadb1boeing   active   Valid    
+  reaadb-boeing   active   Valid    
   ```
 
 1. View the global configurations on each participating cluster to verify they are synced.
@@ -84,7 +84,7 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
     kubectl get reaadb <reaadb-name>
 
     NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    reaadb1boeing   active   Valid
+    reaadb-boeing   active   Valid
     ```
 
 

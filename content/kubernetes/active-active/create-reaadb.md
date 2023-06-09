@@ -26,34 +26,34 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
 
   Below are examples of RERC resources for two participating clusters. Substitute your own values to create your own resource.
 
-    Example RERC (`rerc1midway`) for the REC named `rec1chicago` in the namespace `ns1illinois`:
+    Example RERC (`rerc-midway`) for the REC named `rec-chicago` in the namespace `ns-illinois`:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseRemoteCluster
     metadata:
-      name: rerc1midway
+      name: rerc-midway
     spec:
-      recName: rec1chicago
-      recNamespace: ns1illinois
-      apiFqdnUrl: test-example-api-rec1chicago-ns1illinois.redis.com
-      dbFqdnSuffix: -example-cluster-rec1chicago-ns1illinois.redis.com
-      secretName: redis-enterprise-rerc1midway
+      recName: rec-chicago
+      recNamespace: ns-illinois
+      apiFqdnUrl: test-example-api-rec-chicago-ns-illinois.redis.com
+      dbFqdnSuffix: -example-cluster-rec-chicago-ns-illinois.redis.com
+      secretName: redis-enterprise-rerc-midway
     ```
 
-    Example RERC (`rerc2raegan`) for the REC named `rec2washington` in the namespace `ns2virginia`:
+    Example RERC (`rerc2raegan`) for the REC named `rec-washington` in the namespace `ns-virginia`:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseRemoteCluster
     metadata:
-      name: rerc2reagan
+      name: rerc-reagan
     spec:
-      recName: rec2washington
-      recNamespace: ns2virginia
-      apiFqdnUrl: test-example-api-rec2washington-ns2virginia.redis.com
-      dbFqdnSuffix: -example-cluster-rec2washington-ns2virginia.redis.com
-      secretName: redis-enterprise-rerc2reagan
+      recName: rec-washington
+      recNamespace: ns-virginia
+      apiFqdnUrl: test-example-api-rec-washington-ns-virginia.redis.com
+      dbFqdnSuffix: -example-cluster-rec-washington-ns-virginia.redis.com
+      secretName: redis-enterprise-rerc-reagan
     ```
 
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
@@ -73,10 +73,10 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     Output should look similar to:
 
     ```sh
-    kubectl get rerc rerc1midway
+    kubectl get rerc rerc-midway
 
     NAME        STATUS   SPEC STATUS   LOCAL
-    rerc1midway   Active   Valid         true
+    rerc-midway   Active   Valid         true
     ```
   
     In case of errors, review the RERC custom resource events and the Redis Enterprise operator logs.
@@ -91,21 +91,21 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     - starts with a letter
     - ends with a letter or digit
 
-    Example REAADB named `reaadb1-boeing` linked to the REC named `rec1chicago` with two participating clusters and a global database configuration with shard count set to 3:
+    Example REAADB named `reaadb-boeing` linked to the REC named `rec-chicago` with two participating clusters and a global database configuration with shard count set to 3:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseActiveActiveDatabase
     metadata:
-      name: reaadb1-boeing
+      name: reaadb-boeing
     spec:
       globalConfigurations:
         databaseSecretName: <my-secret>
         memorySize: 200MB
         shardCount: 3
       participatingClusters:
-          - name: rerc1midway
-          - name: rerc2reagan
+          - name: rerc-midway
+          - name: rerc-reagan
     ```
 
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
@@ -125,10 +125,10 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     Output should look similar to:
 
     ```sh
-    kubectl get reaadb reaadb1-boeing
+    kubectl get reaadb reaadb-boeing
 
     NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    reaadb1-boeing   active   Valid             
+    reaadb-boeing   active   Valid             
     ```
   
     In case of errors, review the REAADB custom resource events and the Redis Enterprise operator logs.
