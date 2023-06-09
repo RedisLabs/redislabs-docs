@@ -24,7 +24,7 @@ Throughout the document, the snippets make use of the Kubernetes `kubectl` tool.
 curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
-In case the wrong RedisGears binaries had been installed, use the following commands to fix it
+In case the wrong RedisGears binaries had been installed, use the following commands to fix it:
 
 ```bash
 # Start port forwarding to the Redis Enterprise Cluster API
