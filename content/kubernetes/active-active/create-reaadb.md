@@ -22,37 +22,38 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
 
 ## Create `RedisEnterpriseRemoteCluster` resources
 
-1. Create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for each participating Redis Enterprise cluster (REC). 
+1. Create a `RedisEnterpriseRemoteCluster` (RERC) custom resource file for each participating Redis Enterprise cluster (REC).
+
   Below are examples of RERC resources for two participating clusters. Substitute your own values to create your own resource.
 
-    Example RERC for a REC named `rec1` in the namespace `ns1`:
+    Example RERC (`rerc1midway`) for the REC named `rec1chicago` in the namespace `ns1illinois`:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseRemoteCluster
     metadata:
-      name: rerc1
+      name: rerc1midway
     spec:
-      recName: rec1
-      recNamespace: ns1
-      apiFqdnUrl: test-example-api-rec1-ns1.redis.com
-      dbFqdnSuffix: -example-cluster-rec1-ns1.redis.com
-      secretName: redis-enterprise-rerc1
+      recName: rec1chicago
+      recNamespace: ns1illinois
+      apiFqdnUrl: test-example-api-rec1chicago-ns1illinois.redis.com
+      dbFqdnSuffix: -example-cluster-rec1chicago-ns1illinois.redis.com
+      secretName: redis-enterprise-rerc1midway
     ```
 
-    Example RERC for a REC named `rec2` in the namespace `ns2`:
+    Example RERC (`rerc2raegan`) for the REC named `rec2washington` in the namespace `ns2virginia`:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseRemoteCluster
     metadata:
-      name: rerc2
+      name: rerc2reagan
     spec:
-      recName: rec2
-      recNamespace: ns2
-      apiFqdnUrl: test-example-api-rec2-ns2.redis.com
-      dbFqdnSuffix: -example-cluster-rec2-ns2.redis.com
-      secretName: redis-enterprise-rerc2
+      recName: rec2washington
+      recNamespace: ns2virginia
+      apiFqdnUrl: test-example-api-rec2washington-ns2virginia.redis.com
+      dbFqdnSuffix: -example-cluster-rec2washington-ns2virginia.redis.com
+      secretName: redis-enterprise-rerc2reagan
     ```
 
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
@@ -72,10 +73,10 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     Output should look similar to:
 
     ```sh
-    kubectl get rerc rerc1
+    kubectl get rerc rerc1midway
 
     NAME        STATUS   SPEC STATUS   LOCAL
-    rerc1   Active   Valid         true
+    rerc1midway   Active   Valid         true
     ```
   
     In case of errors, review the RERC custom resource events and the Redis Enterprise operator logs.
@@ -90,26 +91,26 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     - starts with a letter
     - ends with a letter or digit
 
-    Example REAADB named `example-aadb-1` linked to the REC named `rec1` with two participating clusters and a global database configuration with shard count set to 3:
+    Example REAADB named `reaadb1-boeing` linked to the REC named `rec1chicago` with two participating clusters and a global database configuration with shard count set to 3:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseActiveActiveDatabase
     metadata:
-      name: example-aadb-1
+      name: reaadb1-boeing
     spec:
       globalConfigurations:
         databaseSecretName: <my-secret>
         memorySize: 200MB
         shardCount: 3
       participatingClusters:
-          - name: rerc1
-          - name: rerc2
+          - name: rerc1midway
+          - name: rerc2reagan
     ```
 
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
-1. Create a Redis Enterprise Active-Active database from the REAADB custom resource file. 
+1. Create a Redis Enterprise Active-Active database from the REAADB custom resource file.
   
     ```sh
     kubectl create -f <reaadb-file>
@@ -124,10 +125,10 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     Output should look similar to:
 
     ```sh
-    kubectl get reaadb example-aadb-1
+    kubectl get reaadb reaadb1-boeing
 
     NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    example-aadb-1   active   Valid             
+    reaadb1-boeing   active   Valid             
     ```
   
     In case of errors, review the REAADB custom resource events and the Redis Enterprise operator logs.
