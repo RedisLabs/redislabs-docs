@@ -18,29 +18,29 @@ Throughout the document, the snippets make use of the Kubernetes `kubectl` tool.
 - [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
 - A target Redis DB (can be added after installation).
 
-> Note: The Gears binaries to install must match the base OS of REC containers. In case of [Rancher](https://www.rancher.com/), REC base OS will be Ubuntu 18.04. Use the following command to install Gears
+> Note: The Gears binaries to install must match the base OS of RE containers. In case of [Rancher](https://www.rancher.com/), REC base OS is Ubuntu 18.04. Use the following command to install Gears
 
 ```bash
 curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
-In case the wrong Gears binaries had been installed, use the following commands to fix it
+In case the wrong Redis Gears binaries had been installed, use the following commands to fix it
 
 ```bash
-# start port forwarding to the rec api
+# Start port forwarding to the Redis Enterprise Cluster API
 kubectl port-forward service/rec 9443:9443
 
-# find the uid of the gears module
-# note: skip piping to the jq if it is not installed
+# Find the uid of the Redis Gears module
+# Note: skip piping to the jq if it is not installed
 curl -k -v -u "user:pwd" https://localhost:9443/v1/modules | jq '.[] | {module_name,uid,semantic_version}'
 
-# put the gears module uid instead of <uid>
+# Put the Redis Gears module uid instead of <uid>
 curl -k -s -u "user:pwd" -X DELETE https://localhost:9443/v2/modules/<uid>
 
-# install the correct version of the gears module
+# Install the correct version of the Redis Gears module
 curl -k -s -u "user:pwd" -F "module=@/tmp/redis-gears.zip" https://localhost:9443/v2/modules
 
-# check the version of the newly installed module
+# Check the version of the newly installed module
 curl -k -v -u "user:pwd" https://localhost:9443/v1/modules | jq '.[] | {module_name,uid,semantic_version}'
 ```
 
