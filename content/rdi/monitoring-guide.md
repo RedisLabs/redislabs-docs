@@ -114,7 +114,7 @@ Optionally, you may deploy the sample Grafana dashboard to monitor the status of
 
 1. Log into Grafana and navigate to the list of dashboards, then choose **New -> Import**:
 
-![New dashboard creation](/images/rdi/monitoring-grafana-new-dash.png.png)
+![New dashboard creation](/images/rdi/monitoring-grafana-new-dash.png)
 
 1. On the next screen, select **Upload JSON file** and upload the file you downloaded in step 1. Make sure you select the data source that is connected to the OSS Metrics Exporter:
 
