@@ -78,7 +78,7 @@ If the credentials are changed or updated for a REC participating cluster, you n
 
     ```sh
       NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    example-aadb-1   active   Valid                                      
+    reaadb1boeing   active   Valid                                      
     example-aadb-2   active   Valid                                      
     ```
 
