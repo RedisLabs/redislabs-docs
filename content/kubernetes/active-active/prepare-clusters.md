@@ -36,7 +36,6 @@ Active-Active databases require external routing access to sync properly. To con
 
 The admission controller using a validating webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to enable and configure admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
 
-
 ### Collect REC credentials
 
 To communicate with other clusters, all participating clusters will need access to the admin credentials for all other clusters.
@@ -54,7 +53,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: 
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc-midway
+      name: redis-enterprise-rerc-ohare
     type: Opaque
 
     ---
@@ -91,7 +90,7 @@ To communicate with other clusters, all participating clusters will need access 
 
 1. Add the username and password to the new secret for that REC and namespace.
 
-    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc-midway` (representing `rec-chicago` in namespace `ns-illinois`) and `rerc-reagan` (representing `rec-arlington` in namespace `ns-virginia`).
+    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc-ohare` (representing `rec-chicago` in namespace `ns-illinois`) and `rerc-reagan` (representing `rec-arlington` in namespace `ns-virginia`).
 
     ```yaml
     apiVersion: v1
@@ -100,7 +99,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: GHij56789
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc-midway
+      name: redis-enterprise-rerc-ohare
     type: Opaque
 
     ---

@@ -26,19 +26,19 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
 
   Below are examples of RERC resources for two participating clusters. Substitute your own values to create your own resource.
 
-    Example RERC (`rerc-midway`) for the REC named `rec-chicago` in the namespace `ns-illinois`:
+    Example RERC (`rerc-ohare`) for the REC named `rec-chicago` in the namespace `ns-illinois`:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseRemoteCluster
     metadata:
-      name: rerc-midway
+      name: rerc-ohare
     spec:
       recName: rec-chicago
       recNamespace: ns-illinois
       apiFqdnUrl: test-example-api-rec-chicago-ns-illinois.redis.com
       dbFqdnSuffix: -example-cluster-rec-chicago-ns-illinois.redis.com
-      secretName: redis-enterprise-rerc-midway
+      secretName: redis-enterprise-rerc-ohare
     ```
 
     Example RERC (`rerc-raegan`) for the REC named `rec-arlington` in the namespace `ns-virginia`:
@@ -73,10 +73,10 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     Output should look similar to:
 
     ```sh
-    kubectl get rerc rerc-midway
+    kubectl get rerc rerc-ohare
 
     NAME        STATUS   SPEC STATUS   LOCAL
-    rerc-midway   Active   Valid         true
+    rerc-ohare   Active   Valid         true
     ```
   
     In case of errors, review the RERC custom resource events and the Redis Enterprise operator logs.
@@ -104,7 +104,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
         memorySize: 200MB
         shardCount: 3
       participatingClusters:
-          - name: rerc-midway
+          - name: rerc-ohare
           - name: rerc-reagan
     ```
 
