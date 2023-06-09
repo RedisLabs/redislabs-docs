@@ -25,7 +25,7 @@ An Active-Active database can span multiple clusters. Make sure you have enough 
 
 The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) must be unique for each participating cluster the Active-Active database.
 
-For example, if you have two K8s clusters, each with their own REC named `rec1` in a namespace named `ns1`. The value of `<rec-name>.<namespace-name>` for both RECs would be `rec1.ns1`. These can't be used for the same Active-Active database.
+For example, if you have two K8s clusters, each with their own REC named `rec1chicago` in a namespace named `ns1illinois`. The value of `<rec-name>.<namespace-name>` for both RECs would be `rec1chicago.ns1illinois`. These can't be used for the same Active-Active database.
 
 
 ### Configure external routing
@@ -54,7 +54,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: 
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc1
+      name: redis-enterprise-rerc1midway
     type: Opaque
 
     ---
@@ -65,7 +65,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: 
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc2
+      name: redis-enterprise-rerc2reagan
     type: Opaque
 
     ```
@@ -76,7 +76,7 @@ To communicate with other clusters, all participating clusters will need access 
     kubectl get secret -o yaml <rec-name>
     ```
 
-    The admin credentials secret for an REC named `rec1` would be similar to this:
+    The admin credentials secret for an REC named `rec1chicago` would be similar to this:
 
     ```yaml
     apiVersion: v1
@@ -85,13 +85,13 @@ To communicate with other clusters, all participating clusters will need access 
       username: GHij56789
     kind: Secret
     metadata:
-      name: rec1
+      name: rec1chicago
     type: Opaque
     ```
 
 1. Add the username and password to the new secret for that REC and namespace.
 
-    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc1` (representing `rec1` in namespace `ns1`) and `rerc2` (reprsenting `rec2` in namespace `ns2`).
+    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc1midway` (representing `rec1chicago` in namespace `ns1illinois`) and `rerc2reagan` (representing `rec2washington` in namespace `ms2virginia`).
 
     ```yaml
     apiVersion: v1
@@ -100,7 +100,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: GHij56789
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc1
+      name: redis-enterprise-rerc1midway
     type: Opaque
 
     ---
@@ -111,7 +111,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: PQrst789010
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc2
+      name: redis-enterprise-rerc2reagan
     type: Opaque
 
     ```

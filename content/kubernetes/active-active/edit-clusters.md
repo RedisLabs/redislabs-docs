@@ -126,7 +126,7 @@ To communicate with other clusters, all participating clusters need access to th
   Output should look like this:
 
   ```sh
-  [{"id":1,"name":"rerc1"},{"id":2,"name":"rerc2"},{"id":3,"name":"rerc3"}]
+  [{"id":1,"name":"rerc1midwaymidwaymidway"},{"id":2,"name":"rerc2reagan"},{"id":3,"name":"rerc3"}]
   ```
 
 ## Remove a participating cluster
