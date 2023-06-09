@@ -18,7 +18,7 @@ Throughout the document, the snippets make use of the Kubernetes `kubectl` tool.
 - [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
 - A target Redis DB (can be added after installation).
 
-> Note: The Redis Gears binaries to install must match the base OS of RE containers. In case of [Rancher](https://www.rancher.com/), REC base OS is Ubuntu 18.04. Use the following command to install Gears.
+> Note: The Redis Gears binaries to install must match the base OS of RE containers. In case of [Rancher](https://www.rancher.com/), REC base OS is Ubuntu 18.04. Use the following command to install Redis Gears.
 
 ```bash
 curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
