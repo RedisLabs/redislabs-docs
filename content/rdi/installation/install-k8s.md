@@ -18,26 +18,26 @@ Throughout the document, the snippets make use of the Kubernetes `kubectl` tool.
 - [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
 - A target Redis DB (can be added after installation).
 
-> Note: The Redis Gears binaries to install must match the base OS of RE containers. In case of [Rancher](https://www.rancher.com/), REC base OS is Ubuntu 18.04. Use the following command to install Redis Gears.
+> Note: The Redis Gears binaries to install must match the base OS of Redis Enterprise containers. In case of [Rancher](https://www.rancher.com/), Redis Enterprise container base OS is Ubuntu 18.04. Use the following command to install RedisGears.
 
 ```bash
 curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
-In case the wrong Redis Gears binaries had been installed, use the following commands to fix it
+In case the wrong RedisGears binaries had been installed, use the following commands to fix it
 
 ```bash
 # Start port forwarding to the Redis Enterprise Cluster API
 kubectl port-forward service/rec 9443:9443
 
-# Find the uid of the Redis Gears module
+# Find the uid of the RedisGears module
 # Note: skip piping to the jq if it is not installed
 curl -k -v -u "user:pwd" https://localhost:9443/v1/modules | jq '.[] | {module_name,uid,semantic_version}'
 
-# Put the Redis Gears module uid instead of <uid>
+# Put the RedisGears module uid instead of <uid>
 curl -k -s -u "user:pwd" -X DELETE https://localhost:9443/v2/modules/<uid>
 
-# Install the correct version of the Redis Gears module
+# Install the correct version of the RedisGears module
 curl -k -s -u "user:pwd" -F "module=@/tmp/redis-gears.zip" https://localhost:9443/v2/modules
 
 # Check the version of the newly installed module
@@ -84,7 +84,7 @@ There are two options for installing the RDI CLI in an Kubernetes environment:
 
   You should get a message - "Successfully configured redis-di instance on port <REDIS_DI_PORT>"
 
-The `create` command will create a BDB named `redis-di-1` in your cluster. You will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register Gears recipes, to run it.
+The `create` command will create a BDB named `redis-di-1` in your cluster. You will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register RedisGears recipes, to run it.
 
 ## Create configuration file for Redis Data Integration
 
