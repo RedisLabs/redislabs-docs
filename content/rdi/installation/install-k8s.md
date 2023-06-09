@@ -15,7 +15,7 @@ Throughout the document, the snippets make use of the Kubernetes `kubectl` tool.
 ## Prerequisites
 
 - An existing Redis Enterprise cluster version >= 6.2.18
-- [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install. 
+- [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
 - A target Redis DB (can be added after installation).
 
 > Note: The Gears binaries to install must match the base OS of REC containers. In case of [Rancher](https://www.rancher.com/), REC base OS will be Ubuntu 18.04. Use the following command to install Gears
