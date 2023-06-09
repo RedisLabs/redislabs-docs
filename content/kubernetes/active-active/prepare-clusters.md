@@ -91,7 +91,7 @@ To communicate with other clusters, all participating clusters will need access 
 
 1. Add the username and password to the new secret for that REC and namespace.
 
-    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc-midway` (representing `rec-chicago` in namespace `ns-illinois`) and `rerc-reagan` (representing `rec-washington` in namespace `ms2virginia`).
+    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc-midway` (representing `rec-chicago` in namespace `ns-illinois`) and `rerc-reagan` (representing `rec-arlington` in namespace `ns-virginia`).
 
     ```yaml
     apiVersion: v1

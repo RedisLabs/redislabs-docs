@@ -41,7 +41,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
       secretName: redis-enterprise-rerc-midway
     ```
 
-    Example RERC (`rerc2raegan`) for the REC named `rec-washington` in the namespace `ns-virginia`:
+    Example RERC (`rerc2raegan`) for the REC named `rec-arlington` in the namespace `ns-virginia`:
 
     ```yaml
     apiVersion: app.redislabs.com/v1alpha1
@@ -49,10 +49,10 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     metadata:
       name: rerc-reagan
     spec:
-      recName: rec-washington
+      recName: rec-arlington
       recNamespace: ns-virginia
-      apiFqdnUrl: test-example-api-rec-washington-ns-virginia.redis.com
-      dbFqdnSuffix: -example-cluster-rec-washington-ns-virginia.redis.com
+      apiFqdnUrl: test-example-api-rec-arlington-ns-virginia.redis.com
+      dbFqdnSuffix: -example-cluster-rec-arlington-ns-virginia.redis.com
       secretName: redis-enterprise-rerc-reagan
     ```
 
