@@ -18,6 +18,6 @@ aliases: [
 
 ]
 ---
-### Active-Active databases support JSON data structures.
-To learn about Redis conflict resolution for JSON (CRDT)
-read about developing for Active-Active databases with JSON data structure [here]({{< relref "/modules/redisjson/active-active.md" >}})
+Active-Active databases support JSON data structures.
+
+To learn more about JSON in Active-Active databases, see [CRDT JSON command differences and conflict resolution rules]({{<relref "/modules/redisjson/active-active">}}).
