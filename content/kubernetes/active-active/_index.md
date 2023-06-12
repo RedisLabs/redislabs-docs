@@ -62,8 +62,6 @@ For a full list of fields and options, see the [RERC API reference](https://gith
 
 ### Limitations
 
-* No support for Hashicorp Vault for storing secrets (RED-95805)
-* No support for upgrading the database Redis version
 * Admission is not blocking REAADB with `shardCount` which exceeds license quota. (RED-96301)
 
   Fix the problems with the REAADB and reapply.
