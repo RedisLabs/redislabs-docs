@@ -12,10 +12,10 @@ Map a record into a new output based on expressions
 
 **Properties**
 
-| Name                          | Type               | Description                                   | Required        |
-| ----------------------------- | ------------------ | --------------------------------------------- | --------------- | --- |
-| [**expression**](#expression) | `object`, `string` |                                               | Expression<br/> | yes |
-| **language**                  | `string`           | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes             |
+| Name                          | Type               | Description                                   | Required |
+| ----------------------------- | ------------------ | --------------------------------------------- | -------- |
+| [**expression**](#expression) | `object`, `string` | Expression<br/>                               | yes      |
+| **language**                  | `string`           | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
 **Additional Properties:** not allowed
 
