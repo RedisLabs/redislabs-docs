@@ -13,7 +13,7 @@ aliases: {
 ---
 
 
-The Redis Enterprise Active-Active database (REAADB) custom resource contains the field `.spec.globalConfigurations`. This field sets configurations for the Active-Active database across all participating clusters, such as memory size or shard count.
+The Redis Enterprise Active-Active database (REAADB) custom resource contains the field `.spec.globalConfigurations`. This field sets configurations for the Active-Active database across all participating clusters, such as memory size or shard count, as well as the global database secrets.
 
 The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/redis_enterprise_active_active_database_api.md) contains a full list of available fields.
 
@@ -45,13 +45,11 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
   kubectl get reaadb <reaadb-name> -o yaml
   ```
 
-## Set global database secret
+## Edit global configuration secrets
 
-One of the fields available for `globalConfigurations` is `databaseSecretName` which can point to a secret containing the database password.
+This section edits the secrets under the REAADB '.spec.globalConfigurations' section. For more information and all available fields, see the [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/redis_enterprise_active_active_database_api.md).
 
-
-
-1. On an existing participating cluster, generate a YAML file containing the database secret with the database password.
+1. On an existing participating cluster, generate a YAML file containing the database secret with the relevant data.
 
   This example shoes a secret named `my-db-secret` with the password `my-password` encoded in base 64.
 
@@ -67,9 +65,9 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
 
 1. Apply the secret file from the previous step, substituting your own value for `<db-secret-file>`.
 
-  ```sh
-  kubectl apply -f <db-secret-file>
-  ```
+    ```sh
+    kubectl apply -f <db-secret-file>
+    ```
 
 1. Patch the REAADB custom resource to specify the database secret, substituting your own values for `<reaadb-name>` and `<secret-name>`.
 
@@ -87,23 +85,22 @@ One of the fields available for `globalConfigurations` is `databaseSecretName` w
     example-aadb-1   active   Valid
     ```
 
-
 1. On each other participating cluster, check the secret status.
 
-  ``sh
-  kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.secretsStatus}'
-  ```
+    ``sh
+    kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.secretsStatus}'
+    ```
 
-  The output should show the status as `Invalid`.
+    The output should show the status as `Invalid`.
 
-  ```sh
-  [{"name":"my-db-secret","status":"Invalid"}]
-  ```
+    ```sh
+    [{"name":"my-db-secret","status":"Invalid"}]
+    ```
 
-1. Sync the secret.
+1. Sync the secret on each participating cluster.
 
-  ```sh
-  kubectl apply -f <db-secret-file>
-  ```
+    ```sh
+    kubectl apply -f <db-secret-file>
+    ```
 
 1. Repeat the previous two steps on every participating cluster.
