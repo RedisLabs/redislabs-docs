@@ -165,8 +165,6 @@ To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/r
 
 - RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
 
-- RS62986 - After upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec` on each cluster node. Failure to do so will prevent more advanced state machine handling capabilities from being enabled. To restart, run `supervisorctl restart cnm_exec`.
-
 ## Security
 
 -   The following [Open Source Redis](https://github.com/redis/redis) [CVE's](https://github.com/redis/redis/security/advisories) do not affect Redis Enterprise:

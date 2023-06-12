@@ -76,3 +76,9 @@ You cannot change the installation path or the user during the upgrade.
     If the admin console was open in a web browser during the upgrade, refresh the browser to reload the console.
 
 After all nodes are upgraded, the cluster is fully upgraded.
+
+After upgrading from version 6.0.x to 6.2.x, restart `cnm_exec` on each cluster node to enable more advanced state machine handling capabilities:
+
+```sh
+supervisorctl restart cnm_exec
+```
