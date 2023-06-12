@@ -5,7 +5,6 @@ description: Learn how to configure Debezium Server
 weight: 50
 alwaysopen: false
 categories: ["redis-di"]
-aliases:
 ---
 
 This reference document is following the original [Debezium documentation](https://debezium.io/documentation/reference/stable/operations/debezium-server.html). It explains how to use Debezium Server's configuration file named `application.properties` to configure Debezium Server.
