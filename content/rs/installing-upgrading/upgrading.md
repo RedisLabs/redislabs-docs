@@ -97,6 +97,12 @@ Starting with the master node, follow these steps for every node in the cluster.
 
 When each node is upgraded, the cluster is fully upgraded.
 
+After upgrading from version 6.0.x to 6.2.x, restart `cnm_exec` on each cluster node to enable more advanced state machine handling capabilities:
+
+```sh
+supervisorctl restart cnm_exec
+```
+
 ## Upgrade a database
 
 ### Upgrade prerequisites
