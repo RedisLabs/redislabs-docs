@@ -140,7 +140,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 ## Known limitations
 
--RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+- RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 - RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
 
@@ -157,6 +157,10 @@ All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#kno
 ## Known issues
 
 - The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
+
+- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
+
+- RS62986 - After upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec` on each cluster node. Failure to do so will prevent more advanced state machine handling capabilities from being enabled. To restart, run `supervisorctl restart cnm_exec`.
 
 ## Security
 
