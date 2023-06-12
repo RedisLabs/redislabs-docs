@@ -37,16 +37,3 @@ Urgent maintenance refers to any activity that could affect service and cannot w
 
 Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily skipped maintenance. Redis will notify users by email when urgent maintenance starts and ends.
 
-## Skip maintenance temporarily
-
-To skip maintenance temporarily for a subscription:
-
-1. From the [admin console](https://app.redislabs.com/), select the **Subscriptions** menu and then select your subscription from the list.
-
-1. Select the **Overview** tab.
-
-1. In the **Maintenance Windows** panel, select **Skip the next 7 days**.
-
-1. Click **Continue** to confirm your selection.
-
-You will only be allowed to skip maintenance twice in one month. 
