@@ -34,7 +34,7 @@ To communicate with other clusters, all participating clusters need access to th
     kubectl get secret -o yaml <rec-name>
     ```
 
-    This example shoes an admin credentials secret for an REC named `rec3`:
+    This example shoes an admin credentials secret for an REC named `rec-boston`:
 
     ```yaml
     apiVersion: v1
@@ -43,13 +43,13 @@ To communicate with other clusters, all participating clusters need access to th
       username: GHij56789
     kind: Secret
     metadata:
-      name: rec3
+      name: rec-boston
     type: Opaque
     ```
 
 1. Create a secret for the new participating cluster named `redis-enterprise-<rerc>` and add the username and password.
 
-    The example below shows a secret file for a remote cluster named `rerc3` .
+    The example below shows a secret file for a remote cluster named `rerc-logan` .
 
     ```yaml
     apiVersion: v1
@@ -58,7 +58,7 @@ To communicate with other clusters, all participating clusters need access to th
       username: GHij56789
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc3
+      name: redis-enterprise-rerc-logan
     type: Opaque
 
     ```
@@ -75,19 +75,19 @@ To communicate with other clusters, all participating clusters need access to th
 
 1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource for the new participating cluster.
 
-  This example shows a RERC custom resource for an REC named `rec3` in the namespace `ns3`. 
+  This example shows a RERC custom resource for an REC named `rec-boston` in the namespace `ns-massachusetts`. 
 
   ```yaml
   apiVersion: app.redislabs.com/v1alpha1
   kind: RedisEnterpriseRemoteCluster
   metadata:
-    name: rerc3
+    name: rerc-logan
   spec:
-    recName: rec3
-    recNamespace: ns3
-    apiFqdnUrl: test-example-api-rec3-ns3.redis.com
-    dbFqdnSuffix: -example-cluster-rec3-ns3.redis.com
-    secretName: redis-enterprise-rerc3
+    recName: rec-boston
+    recNamespace: ns-massachusetts
+    apiFqdnUrl: test-example-api-rec-boston-ns-massachusetts.redis.com
+    dbFqdnSuffix: -example-cluster-rec-boston-ns-massachusetts.redis.com
+    secretName: redis-enterprise-rerc-logan
   ```
 
 1. Create the RERC custom resource.
@@ -106,7 +106,7 @@ To communicate with other clusters, all participating clusters need access to th
 
   ```sh
   NAME        STATUS   SPEC STATUS   LOCAL
-  rerc3   Active   Valid         true
+  rerc-logan   Active   Valid         true
   ```
 
 ### Edit REAADB spec
@@ -126,7 +126,7 @@ To communicate with other clusters, all participating clusters need access to th
   Output should look like this:
 
   ```sh
-  [{"id":1,"name":"rerc-ohare"},{"id":2,"name":"rerc-reagan"},{"id":3,"name":"rerc3"}]
+  [{"id":1,"name":"rerc-ohare"},{"id":2,"name":"rerc-reagan"},{"id":3,"name":"rerc-logan"}]
   ```
 
 ## Remove a participating cluster
