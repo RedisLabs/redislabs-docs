@@ -76,6 +76,22 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
 - `source` is required.
 - Either `transform` and `key` (or both) should be specified.
 
+#### Using key in transformations
+
+In order to access the Redis key (for example in Write Behind job) you will need to take the following steps:
+
+- Set `row_format: full` to allow access to the key which is part of the full data entry.
+- Use the expression `key.key` to get the Redis key as a string.
+
+#### Before and After values
+
+Update events will typically report a `before` and `after` sections giving state before the update and after. 
+To access before values explicitly you will need to:
+
+- Set `row_format: full` to allow access to the key which is part of the full data entry.
+- Use the `before.<FIELD_NAME>` pattern.
+
+
 ### Example
 
 This example shows how to rename a certain field (`fname` to `first_name`) in a given table (`emp`) using the `rename_field` block. It also demonstrates how to set the key of this record instead of relying on the default logic.
