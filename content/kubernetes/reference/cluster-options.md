@@ -97,7 +97,7 @@ The version tag is as it appears on your repository, such as in [DockerHub](http
 
 ## `redisUpgradePolicy`
 
-[Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading.md#redis-upgrade-policy">}}) that controls the default Redis database version when creating or updating databases.
+[Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy">}}) that controls the default Redis database version when creating or updating databases.
 
 The supported values are:
 
@@ -105,8 +105,8 @@ The supported values are:
 - `latest`: sets default database version to the latest minor release
 
 More info:
-- [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading.md#redis-upgrade-policy">}})
-- [Upgrade policy values]({{<relref "/rs/installing-upgrading/upgrading.md#upgrade-policy-values">}})
+- [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy">}})
+- [Upgrade policy values]({{<relref "/rs/installing-upgrading/upgrading#upgrade-policy-values">}})
 
 ## Sample REC custom resource
 

@@ -14,7 +14,7 @@ This release includes an improved synchronization mechanism for Active-Active Re
 
 ## Overview
 
-Follow these [instructions]({{<relref "/rs/installing-upgrading/upgrading.md">}}) for upgrading to RS 5.4.10 from RS 5.0 and above.
+Follow these [instructions](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/) for upgrading to RS 5.4.10 from RS 5.0 and above.
 
 ## New features
 

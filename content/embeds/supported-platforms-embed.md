@@ -1,15 +1,6 @@
 
 Redis Enterprise Software is supported on several operating systems, cloud environments, and virtual environments.
 
-## System requirements
-
-Make sure your system meets these requirements:
-
-- Only 64-bit operating systems are supported.
-- You must install Redis Enterprise Software directly on the host, not through system cloning.
-- You must install on a clean host with no other applications running so that all RAM is allocated to the operating system and Redis Enterprise Software  only.
-- Linux distributions must be installed with at least "Minimal Install" configuration.
-
 ## Supported platforms
 
 <span title="Check mark icon">&#x2705;</span> Supported – The platform is supported for this version of Redis Enterprise Software.
@@ -47,7 +38,7 @@ Make sure your system meets these requirements:
 3. <a name="table-note-3" style="display: block; height: 80px; margin-top: -80px;"></a>Based on the corresponding RHEL version.
 
 4. <a name="table-note-4" style="display: block; height: 80px; margin-top: -80px;"></a>
-[Docker images]({{<relref "/rs/installing-upgrading/get-started-docker">}}) of Redis Enterprise Software are certified for development and testing only.
+[Docker images]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}}) of Redis Enterprise Software are certified for development and testing only.
 
 5. <a name="table-note-5" style="display: block; height: 80px; margin-top: -80px;"></a>See the [Redis Enterprise for Kubernetes documentation]({{<relref "/kubernetes">}}).
 
@@ -57,11 +48,9 @@ Make sure your system meets these requirements:
 
 ## Operating system limitations
 
-Be aware that Redis Enterprise Software relies on certain components that require support from the operating system.  You cannot enable support for components, services, protocols, or versions that aren't supported by the operating system running Redis Enterprise Software.  In addition, updates to the operating system or to Redis Enterprise Software can impact component support.
+### TLS 1.0 and TLS 1.1
 
-To illustrate, version 6.2.8 of Redis Enterprise Software removed support for TLS 1.0 and TLS 1.1 on Red Hat Enterprise Linux 8 (RHEL 8) because that operating system [does not enable support](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/using-the-system-wide-cryptographic-policies_security-hardening) for these versions by default.  
-
-If you have trouble enabling specific components, features, or versions, verify that they're supported by your operating system and that they're configured correctly.
+Redis Enterprise Software version 6.2.8 removed support for TLS 1.0 and TLS 1.1 on Red Hat Enterprise Linux 8 (RHEL 8) because that operating system [does not enable support](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/using-the-system-wide-cryptographic-policies_security-hardening) for these versions by default.  
 
 ### Ubuntu 20 rejects SHA1 certificates
 
@@ -85,5 +74,5 @@ Redis Enterprise is compatible with VMware, but make sure that you:
 - Configure your memory, CPU, network, and storage settings to allow for optimal Redis Enterprise performance.
 - Pin each Redis Enterprise shard to a specific ESX/ESXi host by setting the appropriate affinity rules.
 - If you must manually migrate a virtual machine to another host, follow the best practices for shard maintenance and contact support if you have questions.
-- Disable VMware VMotion because Redis Enterprise is not compatible with VMotion.
-- Don't use VMware snapshots because Redis Enterprise cluster manages state dynamically, so a snapshot might not have the correct node and cluster state.
+- Turn off VMware VMotion because Redis Enterprise is not compatible with VMotion.
+- Don't use VMware snapshots because Redis Enterprise cluster manages states dynamically, so a snapshot might not have the correct node and cluster states.

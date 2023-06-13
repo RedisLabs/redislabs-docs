@@ -7,11 +7,11 @@ the Redis Enterprise Software admin console.
 
     {{< /note >}}
 
-1. Choose **Setup** to begin configuring the node.
+1. Select **Setup** to start configuring the node.
 
     {{<image filename="images/rs/rs-setup-new-cluster.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
 
-1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local' and then select 
+1. In the **node configuration** settings, enter a cluster FQDN such as `cluster.local` and select 
 **Next**.
 
     {{<image filename="images/rs/rs-setup-node-config.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
@@ -24,6 +24,6 @@ the Redis Enterprise Software admin console.
 
     {{<image filename="images/rs/rs-setup-set-admin-creds.png" alt="Set the credentials for your admin user." >}}{{< /image >}}
 
-    These credentials are also used for connections to the REST API.
+    You can also use these credentials to connect to the [REST API]({{<relref "/rs/references/rest-api">}}).
 
 1. Select **OK** to acknowledge the replacement of the HTTPS TLS certificate on the node.  If you receive a browser warning, you can proceed safely.

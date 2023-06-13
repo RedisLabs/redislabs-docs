@@ -23,7 +23,7 @@ This version offers:
 
 ### Prerequisites and notes
 
-You can [upgrade to v6.2.4]({{<relref "/rs/installing-upgrading/upgrading.md">}}) from Redis Enterprise Software v6.0 and later. 
+You can [upgrade to v6.2.4]({{<relref "/rs/installing-upgrading/upgrading">}}) from Redis Enterprise Software v6.0 and later. 
 
 Keep the following in mind:
 
@@ -54,7 +54,7 @@ tune cluster redis_upgrade_policy latest
 tune cluster default_redis_version 6.2
 ```
 
-To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgrading/upgrading.md">}}).
+To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgrading/upgrading">}}).
 
 ### Product lifecycle updates
 
@@ -147,7 +147,7 @@ To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/r
 
 - RS54732 - Fixed incorrect reporting of number database connections, which caused the number of connections to be reported as a 20 digit number
 
-- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. We recommend [upgrading the featureset]({{<relref "/rs/installing-upgrading/upgrading.md#upgrading-activeactive-databases">}}) version to the latest
+- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. [Upgrade the featureset]({{<relref "/rs/installing-upgrading/upgrading/upgrade-active-active">}}) version to the latest.
 
 - RS56122 - Fixed a bug that was causing AOF files to grow when the replicas of two Active-Active databases became disconnected during full synchronization
 
