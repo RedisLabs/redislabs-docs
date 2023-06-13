@@ -16,11 +16,7 @@ aliases: /rv/api/concepts/provisioning-lifecycle/
          /rc/api/get-started/process-lifecycle.md
          /rc/api/get-started/process-lifecycle/
 ---
-Flexible and Annual Redis Enterprise Cloud [subscriptions]({{< relref "/rc/subscriptions/" >}}) can leverage a RESTful API that permits operations against a variety of resources, including servers, services, and related infrastructure.
-
-{{< note >}}
-The REST API is not supported for Fixed or Free subscriptions.
-{{< /note >}}
+All Redis Cloud [subscriptions]({{< relref "/rc/subscriptions/" >}}) can leverage a RESTful API that permits operations against a variety of resources, including servers, services, and related infrastructure.
 
 [Once it's enabled]({{< relref "rc/api/get-started/enable-the-api.md" >}}), you can use the REST API to create, update, and delete subscriptions, databases, and other entities.
 

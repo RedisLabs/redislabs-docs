@@ -88,7 +88,7 @@ easily and quickly test several containers to build the scalable
 and highly available cluster Redis Enterprise Software is famous for.
 
 For more information, go to [quick start with Redis Enterprise on
-Docker.]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}})
+Docker.](https://docs.redis.com/latest/rs/installing-upgrading/get-started-docker)
 
 ## LDAP Integration
 

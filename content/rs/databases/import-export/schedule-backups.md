@@ -40,7 +40,7 @@ Redis Enterprise Software creates a backup file for each shard in the configurat
 - Make sure that you have enough space available in your storage location.
     If there is not enough space in the backup location, the backup fails.
 - The backup configuration only applies to the database it is configured on.
-- To limit the parallel backup for shards, set both [`tune cluster max_simultaneous_backups`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}) and [`tune node max_redis_forks`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-node">}}). 
+- To limit the parallel backup for shards, set both [`tune cluster max_simultaneous_backups`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}) and [`tune node max_redis_forks`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-node">}}). `max_simultaneous_backups` is set to 4 by default.
 
 {{< /note >}}
 
@@ -108,7 +108,7 @@ For help with specific backup issues, [contact support](https://redis.com/compan
 
 Database backups can be saved to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage.
 
-When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
+When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/install/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
 
 Redis Enterprise Software needs the ability to view permissions and update objects in the storage location. Implementation details vary according to the provider and your configuration. To learn more, consult the provider's documentation.
 

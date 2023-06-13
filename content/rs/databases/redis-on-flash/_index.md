@@ -112,5 +112,5 @@ On-premises environments support more deployment options than other environments
 - [Redis on Flash metrics]({{< relref "/rs/references/metrics/redis-on-flash" >}})
 - [Redis on Flash quick start]({{<relref "/rs/databases/redis-on-flash/rof-quickstart.md">}})
 
-- [Ephemeral and persistent storage]({{<relref "/rs/installing-upgrading/persistent-ephemeral-storage.md">}})
-- [Hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md" >}})
+- [Ephemeral and persistent storage]({{<relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage">}})
+- [Hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}})

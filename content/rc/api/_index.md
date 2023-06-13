@@ -19,10 +19,6 @@ You can use the API to:
 - Audit access via logs  
 - Backup or import databases  
 
-{{< note >}}
-The Redis Cloud REST API is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
-{{< /note >}}
-
 ## Getting started
 
 1. [Enable the API]({{< relref  "/rc/api/get-started/enable-the-api.md" >}})
