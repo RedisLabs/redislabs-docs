@@ -30,7 +30,7 @@ Cluster resources management policy
 | login_lockout_duration | integer | Duration (in secs) of account lockout. If set to 0, the account lockout will persist until released by an admin. |
 | login_lockout_threshold | integer | Number of failed sign in attempts allowed before locking a user account |
 | max_saved_events_per_type | integer | Maximum saved events per event type |
-| max_simultaneous_backups | integer | Maximum number of backup processes allowed at the same time |
+| max_simultaneous_backups | integer <nobr>(default: 4)</nobr> | Maximum number of backup processes allowed at the same time |
 | parallel_shards_upgrade | integer | Maximum number of shards to upgrade in parallel |
 | rack_aware | boolean | Cluster operates in a rack-aware mode |
 | redis_migrate_node_threshold | integer | Minimum free memory (excluding reserved memory) allowed on a node before automatic migration of shards from it to free more memory |

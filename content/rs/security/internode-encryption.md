@@ -84,5 +84,5 @@ All certificates signed by the internal CA expire after ninety (90) days and aut
 You can use the Redis Enterprise Software REST API to rotate certificates manually:
 
 ``` rest
-put /v1/cluster/certificates/rotate
+POST /v1/cluster/certificates/rotate
 ```

@@ -21,9 +21,9 @@ To learn how to install Redis and `redis-cli`, see the following installation gu
 
 - [Open source Redis](https://redis.io/docs/getting-started/installation/)
 
-- [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software">}})
+- [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart">}})
 
-- [Redis Enterprise Software with Docker]({{<relref "/rs/installing-upgrading/get-started-docker">}})
+- [Redis Enterprise Software with Docker]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}})
 
 ## Connect to a database
 

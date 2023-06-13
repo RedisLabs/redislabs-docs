@@ -11,8 +11,8 @@ you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/
 
 Alternatively, you can use one of these methods:
 
-- [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software.md">}})
-- Redis Enterprise Software in a [Docker container]({{<relref "/rs/installing-upgrading/get-started-docker.md">}})
+- [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart">}})
+- Redis Enterprise Software in a [Docker container]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}})
 - [Other platforms]({{<relref "/kubernetes/_index.md">}}) for Redis Enterprise Software
 
 ## Set up a Redis Cloud database

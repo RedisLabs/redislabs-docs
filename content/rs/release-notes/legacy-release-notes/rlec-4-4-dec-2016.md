@@ -8,7 +8,7 @@ categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
+instructions](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/)
 before beginning the upgrade process.
 
 You can upgrade to this version from any 4.3 version. If you have a
@@ -28,7 +28,7 @@ upgrade to this version.
     when you upgrade the databases they will be updated to this version.
     If you would like to change the default version to Redis 3.0, refer
     to the instruction in the [Upgrading
-    databases]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
+    databases](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/)
     If you would like to upgrade existing databases to the latest 3.0
     minor version, refer to the Known Issues section below.
 - The cluster can now be configured to support both private and public
