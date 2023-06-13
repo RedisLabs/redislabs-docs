@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software product lifecycle
 linkTitle: Product lifecycle
-description:
+description: The product lifecycle of Redis Enterprise Software.
 weight: 100
 alwaysopen: false
 categories: ["RS"]
@@ -12,7 +12,7 @@ aliases: [
     /rs/installing-upgrading/product-lifecycle/,
 ]
 ---
-Redis Enterprise Software product lifecycle fully reflects our [subscription agreement](https://redis.com/software-subscription-agreement).
+The Redis Enterprise Software product lifecycle fully reflects the [subscription agreement](https://redis.com/software-subscription-agreement).
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
 Redis Enterprise modules follow the [modules lifecycle]({{< relref "/modules/modules-lifecycle.md" >}}).
@@ -37,10 +37,10 @@ Maintenance releases, typically available on the last minor release of the curre
 ## End-of-life schedule {#endoflife-schedule}
 
 Beginning with Redis Enterprise Software release 6.4, end-of-life (EOL) for a given Major release occurs 18 months after the formal release of the subsequent Major. Maintenance will only be provided on the last minor release of the major1.major2 releases.
-This latest update to EOL policy ensures customers will have at least an 18 months lead time to upgrade to a newer release, after it is made available.
+This update to the EOL policy ensures customers have a lead time of at least 18 months to upgrade to the new release after it is available.
 
 
-| Version - Release Date | End of Life (EOL)  |
+| Version - Release date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
 | 6.4 – February 2023						| -
 | 6.2 – August 2021                         | August 31, 2024  |

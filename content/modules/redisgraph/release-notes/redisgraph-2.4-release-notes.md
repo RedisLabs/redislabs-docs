@@ -8,6 +8,7 @@ weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
+
 ## Requirements
 
 RedisGraph v2.4.14 requires:
