@@ -63,11 +63,19 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
 
 ### Feature limitations
 
+- RS97971 - [Resharding fails for rack-aware databases with no replication](#resharding-fails-for-rack-aware-databases-with-no-replication) (fixed and resolved as part of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}})).
+
+- RS101204 - High memory consumption caused by the `persistence_mgr` service when AOF persistence is configured for every second (fixed and resolved as part of [v6.4.2-81]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-81">}})).
+
+- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
+
+- RS51144, RS102128 - Active-Active: To start successfully, the syncer (`crdt-syncer`) must connect to all sources. In multi-cluster configurations (more than 2 A-A clusters participating), in some cases, if one or more of the clusters is not available, A-A replication will be down.
+
 #### Resharding fails for rack-aware databases with no replication
 
 When a database is configured as [rack-aware]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) and replication is turned off, the resharding operation fails.
 
-RS97971 - This limitation will be fixed in a future 6.4.2 maintenance release.      
+RS97971 - This limitation was fixed and resolved as part of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}).   
 
 Workaround:
 
@@ -112,7 +120,7 @@ $ yum install -y chrpath
 $ find $installdir -name "crdt.so" | xargs -n1 -I {} /bin/bash -c 'chrpath -r ${libdir} {}'
 ```
 
-This limitation will be fixed in a future 6.4.2 maintenance release.
+This limitation has been fixed and resolved as of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}).
 
 #### RHEL 8
 
@@ -124,4 +132,4 @@ By default, you cannot use the SHA1 hash algorithm ([OpenSSL’s default securit
 
 #### Modules not supported for Amazon Linux 2 release candidate
 
-A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support will be added in a future maintenance release.
+A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support was added as part of [v6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).

@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-After you [download a Redis Enterprise Software installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}), install it on one of the nodes in the cluster.
+After you [download a Redis Enterprise Software installation package]({{<relref "/rs/installing-upgrading/install/prepare-install/download-install-package">}}), install it on one of the nodes in the cluster.
 
 For installation on machines without an internet connection, see [Offline installation]({{<relref "/rs/installing-upgrading/install/offline-installation">}}).
 
@@ -53,7 +53,7 @@ To install Redis Enterprise Software using the command line:
     ```
 
     {{< note >}}
-- The Redis Enterprise Software files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/plan-deployment/file-locations.md" >}}). 
+- The Redis Enterprise Software files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/install/plan-deployment/file-locations.md" >}}). 
 - By default, Redis Enterprise Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group]({{<relref "rs/installing-upgrading/install/customize-user-and-group.md">}}) during the installation.
 - You must either be the root user or use `sudo` to run the installation script.
     {{< /note >}}
@@ -91,8 +91,8 @@ To learn more about customization and find answers to related questions, see:
 - [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})
 - [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
-- [File locations]({{<relref "rs/installing-upgrading/plan-deployment/file-locations.md">}})
-- [Supported platforms]({{<relref "rs/installing-upgrading/plan-deployment/supported-platforms.md">}})
+- [File locations]({{<relref "rs/installing-upgrading/install/plan-deployment/file-locations.md">}})
+- [Supported platforms]({{<relref "rs/installing-upgrading/install/plan-deployment/supported-platforms.md">}})
 
 ## Next steps
 

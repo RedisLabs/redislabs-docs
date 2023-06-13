@@ -18,7 +18,7 @@ aliases: /glossary/
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
-More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/access-control">}}); [Update database ACLs]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
+More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/access-control">}}); [Update database ACLs]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}); [Role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}})
 {{%/definition%}}
 
 <a name="active-active"></a>
@@ -207,12 +207,12 @@ Deciding when and where shards will be moved if more network throughput, memory,
 Protocol that resolves hostnames to the IP addresses that do not include a local name server.
 
 More info: [multicast DNS wikipedia](https://en.wikipedia.org/wiki/Multicast_DNS)
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "multi-factor authentication (MFA)"%}}
 Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Enterprise Cloud, users must enter their username, password, and an authentication code when logging in.
 
-More info: [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication.md">}})
+More info: [Multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication.md">}})
 {{%/definition%}}
 
 {{%definition "multi-primary replication"%}}
@@ -220,7 +220,7 @@ Also known as multi-master replication, Active-Active databases have multiple pr
 
 More info: [Multi-primary replication]({{<relref "/rs/databases/active-active/#multi-primary-replication">}})
 
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "namespace"%}}
 An abstraction used by Kubernetes to support multiple virtual clusters on the same physical cluster.
@@ -322,7 +322,7 @@ More info: [Redis on Flash]({{<relref "/rs/databases/redis-on-flash/">}}), [Redi
 High availability feature of Redis Enterprise Software. After a node failure, the cluster automatically migrates remaining replica shards to available nodes. Previously known as "Slave HA" or `slave_ha`.
 
 More info: [High availability for replica shards]({{<relref "/rs/databases/configure/replica-ha.md">}})
-{{%definition%}}
+{{%/definition%}}
 
 {{%definition "Replica Of"%}}
 The Redis Enterprise implementation of active-passive database replication.
@@ -349,7 +349,7 @@ More info: [Database replication]({{<relref "/rs/databases/durability-ha/replica
 {{%definition "role-based access control (RBAC)"%}}
 A security approach that restricts system access to authorized users.
 
-More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/access-control">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
+More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/access-control">}}); [Role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}})
 {{%/definition%}}
 
 ## S {#letter-s}
@@ -382,7 +382,7 @@ Data persistence file that performs a data dump every one, six, or twelve hours.
 Process on each node hosting an Active-Active database instance that synchronizes a backlog of operations between participating clusters.
 
 More info: [Syncer process]({{<relref "/rs/databases/active-active/syncer.md">}})
-{{%definition%}}
+{{%/definition%}}
 
 ## T - Z {#letter-t}
 

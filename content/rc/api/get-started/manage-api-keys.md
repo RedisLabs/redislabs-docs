@@ -21,7 +21,7 @@ Every REST API request must include the following API keys:
 
 Use the **API Keys** tab of the **Access Management** screen to manage your keys:
 
-1. Sign in to your [Redis Cloud subscription](https://app.redislabs.com) as an account owner.
+1. Sign in to your [Redis Cloud account](https://app.redislabs.com) as an account owner.
 
 1. From the menu, choose **Access Management** and then select the **API Keys** tab.
 

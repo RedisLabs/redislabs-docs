@@ -13,7 +13,7 @@ aliases: [
 
 ## LDAP support for Redis Enterprise Software
 
-Redis Enterprise Software supports LDAP authentication and authorization through [role-based access controls]({{<relref "/rs/security/access-control/">}}) (RBAC). You can map LDAP groups to [Redis Enterprise roles]({{<relref "/rs/security/access-control/create-roles.md">}}) to control access to your database and the [admin console]({{<relref "/rs/security/admin-console-security/">}}). For more details on how LDAP works with Redis Enterprise, see [LDAP authentication]({{<relref "/rs/security/access-control/ldap/">}}).
+Redis Enterprise Software supports LDAP authentication and authorization through [role-based access controls]({{<relref "/rs/security/access-control/">}}) (RBAC). You can map LDAP groups to [Redis Enterprise roles]({{<relref "/rs/security/access-control/rbac/create-roles">}}) to control access to your database and the [admin console]({{<relref "/rs/security/admin-console-security/">}}). For more details on how LDAP works with Redis Enterprise, see [LDAP authentication]({{<relref "/rs/security/access-control/ldap/">}}).
 
 Redis Enterprise for Kubernetes supports enabling and configuring LDAP authentication using the `RedisEnterpriseCluster` (REC) custom resource. Currently, the Redis Enterprise cluster (REC) only supports configuration related to the LDAP server, such as server addresses, connection details, credentials, and query configuration.
 

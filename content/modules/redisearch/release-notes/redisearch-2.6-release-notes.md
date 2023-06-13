@@ -10,10 +10,26 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.6.5 requires:
+RediSearch v2.6.6 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.6.6 (April 2023)
+
+This is a maintenance release for RediSearch 2.6.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#3403](https://github.com/RediSearch/RediSearch/pull/3403) Fix suffix and prefix matching when using `CASESENSITIVE` flag (MOD-4872)
+
+- Improvements:
+
+  - [#3397](https://github.com/RediSearch/RediSearch/pull/3397) Improve the Vecsim initial capacity default value
 
 ## v2.6.5 (February 2023)
 
@@ -50,7 +66,7 @@ Details:
   
   - [#3256](https://github.com/RediSearch/RediSearch/pull/3256) Support IPv6 on cluster set command
   - [#3194](https://github.com/RediSearch/RediSearch/pull/3194) Add the query dialects that are in use to `FT.INFO` and `INFO MODULE` commands (MOD-4232)
-  - [#3258](https://github.com/RediSearch/RediSearch/pull/3258) Add the module version and Redis version to `INFO MODULE`
+  - [#3258](https://github.com/RediSearch/RediSearch/pull/3258) Add the module version and Redis version to `INFO MODULE`  
 
 ## v2.6 GA (v2.6.3) (November 2022)
 

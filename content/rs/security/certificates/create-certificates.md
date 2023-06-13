@@ -25,7 +25,7 @@ Here, you learn how to use this script to generate new certificates and how to i
 Sign in to the machine hosting the cluster's master node and then run the following command:
 
 ``` bash
-% sudo /opt/redislabs/utils/generate_self_signed_certs.sh \
+% sudo -u redislabs /opt/redislabs/utils/generate_self_signed_certs.sh \
    -f "<DomainName1 DomainName2>" -d <Days> -t <Type>
 ```
 
@@ -57,14 +57,14 @@ When you run the script, it either reports success (`"Self signed cert generated
 The following example generates all self signed certificates for `mycluster.example.com`; these certificates expire one year after the command is run:
 
 ``` bash
-$ sudo /opt/redislabs/utils/generate_self_signed_certs.sh \
+$ sudo -u redislabs /opt/redislabs/utils/generate_self_signed_certs.sh \
     -f "mycluster.example.com"`
 ```
 
 Suppose you want to create an admin console certificate to support two clusters for a period of two years.  The following example shows how:
 
 ``` bash
-$ sudo /opt/redislabs/utils/generate_self_signed_certs.sh \
+$ sudo -u redislabs /opt/redislabs/utils/generate_self_signed_certs.sh \
     -f "mycluster.example.com anothercluster.example.com" -d 730 -t cm
 ```
 

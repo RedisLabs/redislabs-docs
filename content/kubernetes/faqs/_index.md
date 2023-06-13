@@ -62,7 +62,7 @@ Connect to the UI by pointing your browser to `https://localhost:8443`
 
 ## How should I size Redis Enterprise cluster nodes?
 
-For nodes hosting the Redis Enterprise cluster [statefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [pods](https://kubernetes.io/docs/concepts/workloads/pods/), follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}).
+For nodes hosting the Redis Enterprise cluster [statefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [pods](https://kubernetes.io/docs/concepts/workloads/pods/), follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}}).
 
 For additional information please also refer to [Kubernetes operator deployment – persistent volumes]({{< relref "/kubernetes/memory/persistent-volumes.md" >}}).
 
@@ -133,7 +133,7 @@ Retrieve your password by selecting “Reveal Secret.”
 ![openshift-password-retrieval]( /images/rs/openshift-password-retrieval.png )
 
 
-## What capabilities, privileges and permissions are defined by the Security Context Constraint (SCC) yaml and the Pod Security Policy (PSP) yaml?
+## What capabilities, privileges and permissions are defined by the Security Context Constraint (SCC) yaml?
 
 The `scc.yaml` file is defined like this:
 
@@ -157,45 +157,10 @@ seLinuxContext:
 
 ([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/scc.yaml))
 
-The `psp.yaml` file is defined like this:
-
-```yaml
-apiVersion: extensions/v1beta1
-kind: PodSecurityPolicy
-metadata:
-  name: redis-enterprise-psp
-spec:
-  privileged: false
-  allowPrivilegeEscalation: false
-  allowedCapabilities:
-    - SYS_RESOURCE
-  runAsUser:
-    rule: MustRunAsNonRoot
-  fsGroup:
-    rule: MustRunAs
-    ranges:
-    - min: 1001
-      max: 1001
-  seLinux:
-    rule: RunAsAny
-  supplementalGroups:
-    rule: RunAsAny
-  volumes:
-    - '*'
-```
-
 ([latest version on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tags))
 
 The SYS_RESOURCE capability is required by the Redis Enterprise cluster (REC) container so that REC can set correct out of memory (OOM) scores to its processes inside the container.
 Also, some of the REC services must be able to increase default resource limits, especially the number of open file descriptors.
-
-While the REC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file. The psp.yaml example defines the specific uid.
-
-The REC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift CLI deployment article]({{< relref "/kubernetes/deployment/openshift/openshift-cli" >}}).
-
-REC PSP definitions are controlled with role-based access control (RBAC).
-A cluster role allowing the REC PSP is granted to the redis-enterprise-operator service account
-and allows that account to create pods with the PSP shown above.
 
 {{< note >}}
 - Removing NET_RAW blocks 'ping' from being used on the solution containers.

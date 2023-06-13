@@ -54,10 +54,11 @@ Create and manage [Redis databases]({{<relref "/rc/databases">}}) in the cloud.
 
 ## Security
 Manage [secure connections]({{<relref "/rc/security">}}) to cloud databases.
-- [Access management]({{<relref "/rc/security/access-management">}})
+- [Access management]({{<relref "/rc/security/access-control/access-management">}}) for admin console security and account management
 - [Cloud database security]({{<relref "/rc/security/database-security">}})
-- [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}})
-- [Single sign-on]({{<relref "/rc/security/single-sign-on">}})
+- [Multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}})
+- [Single sign-on]({{<relref "/rc/security/access-control/saml-sso">}}) and [social login]({{<relref "/rc/security/access-control/social-login">}})
+- [Data access control]({{<relref "/rc/security/access-control/data-access-control">}})
 
 ## REST API
 Use the [REST API]({{<relref "/rc/api">}}) to manage the database.

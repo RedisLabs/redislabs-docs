@@ -1,6 +1,6 @@
 ---
-Title: Install and set up Redis Enterprise Software
-linkTitle: Install and setup
+Title: Install, set up, and upgrade Redis Enterprise Software
+linkTitle: Install and upgrade
 description: Learn how to install, set up, and upgrade Redis Enterprise Software.
 weight: 35
 alwaysopen: false
@@ -20,13 +20,11 @@ If you want to try out Redis Enterprise Software, see the following quickstarts:
 
 ## Install Redis Enterprise Software
 
-To install Redis Enterprise Software on a [supported platform]({{<relref "/rs/installing-upgrading/plan-deployment/supported-platforms">}}), you need to:
+To install Redis Enterprise Software on a [supported platform]({{<relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms">}}), you need to:
 
-1. [Plan your deployment]({{<relref "/rs/installing-upgrading/plan-deployment">}}).
+1. [Plan your deployment]({{<relref "/rs/installing-upgrading/install/plan-deployment">}}).
 
-1. [Download the installation package]({{<relref "/rs/installing-upgrading/prepare-install/download-install-package">}}).
-
-1. [Prepare to install]({{<relref "/rs/installing-upgrading/prepare-install">}}).
+1. [Prepare to install]({{<relref "/rs/installing-upgrading/install/prepare-install">}}).
 
 1. [Perform the install]({{<relref "/rs/installing-upgrading/install">}}).
 
@@ -54,7 +52,7 @@ More information is available to help with customization and related questions:
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/networking/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/networking/cluster-lba-setup.md" >}})
-- [File locations]({{<relref "rs/installing-upgrading/plan-deployment/file-locations.md">}})
+- [File locations]({{<relref "rs/installing-upgrading/install/plan-deployment/file-locations.md">}})
 - [Linux swap space configuration]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
 - [mDNS client prerequisites]({{< relref "rs/networking/mdns.md" >}})
 - [User and group ownership]({{<relref "rs/installing-upgrading/install/customize-user-and-group.md">}})

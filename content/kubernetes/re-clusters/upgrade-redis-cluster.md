@@ -1,5 +1,5 @@
 ---
-Title: Upgrade a Redis Enterprise cluster (REC) on Kubernetes
+Title: Upgrade a Redis Enterprise cluster (REC)
 linkTitle: Upgrade a Redis cluster
 description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
 weight: 19
@@ -18,13 +18,50 @@ aliases: [
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps:
 
-
   1. Upgrade the Redis Enterprise operator
   2. Upgrade the Redis Enterprise cluster (REC)
 
-{{< warning >}}
-When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info. 
-  {{</warning>}}
+## Before upgrading
+
+Review the following warnings before starting your upgrade.
+
+#### OpenShift clusters running 6.2.12 or earlier
+
+Due to a change in the SCC, on OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later, where `node:1` is <b>not</b> the master node, the upgrade might get stuck.
+
+You might have a pod that doesn't become fully ready and start seeing restarts. In the ServicesRigger log, you'll see this error:
+
+```text
+services-rigger.services - ERROR - couldn't update pod <POD NAME> labels
+...
+... pods <POD NAME> is forbidden: unable to validate against any security context constraint
+```
+
+To prevent this, set `node:1` as the master node.
+
+```sh
+oc exec -it <rec-pod-name> -- rladmin cluster master set 1
+```
+
+This may also affect OpenShift clusters containing two RECs running different versions, if one is running version 6.2.12 or earlier and the other is running 6.2.18 or later.
+
+This is a newly discovered issue and more information will be available soon. If you have already encountered the error and need it fixed immediately, contact Redis support.
+
+#### RHEL7-based images
+
+When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info.
+
+#### Invalid license
+
+Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
+
+Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
+
+#### Large clusters
+
+On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases.
+
+A fix is available in the 6.4.2-5 release. Upgrade your Redis cluster to [6.4.2-5]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) before upgrading your Kubernetes cluster.
 
 ## Upgrade the operator
 
@@ -40,7 +77,6 @@ You can download the bundle for the latest release with the following `curl` com
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
 curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
-
 
 For OpenShift environments, the name of the bundle is `openshift.bundle.yaml`, and so the `curl` command to run is:
 
@@ -83,28 +119,17 @@ customresourcedefinition.apiextensions.k8s.io/redisenterprisedatabases.app.redis
 deployment.apps/redis-enterprise-operator configured
 ```
 
-### Reapply other manual configurations
+### Reapply the admission controller webhook {#reapply-webhook}
 
-When upgrading the operator, there are few configurations you'll need to reapply.
-
-If you have the admission controller enabled, you need to manually reapply the `ValidatingWebhookConfiguration`. See the [Enable the admission controller]({{<relref "/kubernetes/deployment/quick-start#enable-the-admission-controller">}}) step during deployment for more details.
+If you have the admission controller enabled, you need to manually reapply the `ValidatingWebhookConfiguration`.
 
 {{<note>}}
-
-The [6.4.2-4 release]({{<relref "/kubernetes/release-notes/k8s-6-4-2-4.md">}}) uses a new `ValidatingWebhookConfiguration` resource that replaces the old webhook resource. To use the 6.4.2-4 release, delete the old webhook resource and apply the new file.
-
-1. Delete the existing `ValidatingWebhookConfiguration` on the Kubernetes cluster (named `redb-admission`).
-
-    ```sh
-    kubectl delete ValidatingWebhookConfiguration redb-admission
-    ```
-
-1. Apply the resource from the new file.
-
-    ```sh
-    kubectl apply -f deploy/admission/webhook.yaml
-    ```
+{{< embed-md "k8s-642-redb-admission-webhook-name-change.md" >}}
 {{</note>}}
+
+{{< embed-md "k8s-admission-webhook-cert.md"  >}}
+
+### Reapply the SCC
 
 If you are using OpenShift, you will also need to manually reapply the [Security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})).
 
@@ -133,6 +158,12 @@ redis-enterprise-operator   1/1     1            1           0m36s
  {{< /warning >}}
 
 ## Upgrade the Redis Enterprise cluster (REC)
+
+{{<warning>}}
+Verify your license is valid before upgrading. Invalid licenses will cause the upgrade to fail.
+
+Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
+{{</warning>}}
 
 The Redis Enterprise cluster (REC) can be updated automatically or manually. To trigger automatic upgrade of the REC after the operator upgrade completes, specify `autoUpgradeRedisEnterprise: true` in your REC spec. If you don't have automatic upgrade enabled, follow the below steps for the manual upgrade.
 

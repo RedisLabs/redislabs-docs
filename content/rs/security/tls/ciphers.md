@@ -10,11 +10,6 @@ aliases:
 
 Ciphers are algorithms that help secure connections between clients and servers. You can change the ciphers to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
-Default cipher: 
-
-```sh
-HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
-```
 
 ## Configure cipher suites
 
@@ -54,7 +49,7 @@ rladmin cluster config cipher_suites <BoringSSL cipher list>
 See the example below to configure cipher suites for the control plane:
 
 ```sh
-rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305
+rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:!3DES
 ```
 
 ### Data plane
@@ -70,7 +65,7 @@ rladmin cluster config  data_cipher_list <OpenSSL cipher list>
 See the example below to configure cipher suites for the data plane:
 
 ```sh
-rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA
+rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA:!3DES
 ```
 
 ### Discovery service

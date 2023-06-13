@@ -23,7 +23,6 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 | [RedisTimeSeries]({{<relref "/modules/redistimeseries">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RedisBloom]({{<relref "/modules/redisbloom">}}) | &#x2705; Yes | &#x2705; Yes |
 | [RedisGears]({{<relref "/modules/redisgears">}}) | &#x2705; Yes | &#x274c; No |
-| [RedisAI]({{<relref "/modules/redisai">}})       | &#x2705; Yes | &#x274c; No |
 
 ## Module feature support
 
@@ -57,21 +56,23 @@ For details about individual modules, see the corresponding documentation.
 
 [^4]: You currently cannot combine Redis on Flash and Active-Active with modules in Redis Cloud.
 
-| Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
-|-------------------------|:------------:|:------------:|:----------:|:----------:| 
-| Active-Active (CRDB)[^4]    | No           | No           | Yes (v1.0) | No         | 
-| Backup/Restore          | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Clustering              | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Custom hashing policy   | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Eviction expiration     | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Failover/migration      | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Internode encryption    | Yes (v1.4.9) | Yes (v2.2.6) | Yes (v1.2) | Yes (v1.2) | 
-| Module datatypes        | Yes          | Yes          | Yes        | Yes        | 
-| Persistence (AOF)       | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Persistence (snapshot)  | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
-| Redis on Flash (RoF)[^4]| No           | Yes (vTBD)   | Yes (vTBD) | No         | 
-| Replica Of              | Yes (v1.2)   | Yes (v2.0)   | No         | Yes (v1.0) | 
-| Reshard/rebalance       | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | No         | 
+[^5]: Although RedisTimeSeries supports Redis on Flash, the entire series either lives in RAM or on flash.
+
+| Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) |
+|--------------------------|:--------------:|:------------:|:----------:| 
+| Active-Active (CRDB)[^4] | No             | No           | Yes (v1.0) |
+| Backup/Restore           | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
+| Clustering               | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
+| Custom hashing policy    | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
+| Eviction expiration      | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
+| Failover/migration       | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
+| Internode encryption     | Yes (v1.4.9)   | Yes (v2.2.6) | Yes (v1.2) |
+| Module datatypes         | Yes            | Yes          | Yes        |
+| Persistence (AOF)        | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
+| Persistence (snapshot)   | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
+| Redis on Flash (RoF)[^4] | Yes (v1.6)[^5] | Yes (vTBD)   | Yes (vTBD) |
+| Replica Of               | Yes (v1.2)     | Yes (v2.0)   | No         |
+| Reshard/rebalance        | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | 
 
 
 ## Feature descriptions

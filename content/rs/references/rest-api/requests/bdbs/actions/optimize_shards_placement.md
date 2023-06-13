@@ -41,6 +41,24 @@ Get optimized shards placement for the given database.
 GET /bdbs/1/actions/optimize_shards_placement
 ```
 
+#### Query parameters
+
+Include query parameters in a `GET` request to generate an optimized shard placement blueprint for a database, using settings that are different from the database's current configuration.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| avoid_nodes | list of integers | Comma-separated list of cluster node IDs to avoid when placing the database’s shards and binding its endpoints (for example, `avoid_nodes=1,2`) |
+| memory_size | integer (default:&nbsp;0) | Database memory limit (0 is unlimited), expressed in bytes |
+| shards_count | integer, <nobr>(range: 1-512)</nobr> (default:&nbsp;1) | Number of database server-side shards |
+| shards_placement | `dense` <br />`sparse` | Control the density of shards <br /> `dense`: Shards reside on as few nodes as possible <br /> `sparse`: Shards reside on as many nodes as possible |
+| bigstore_ram_size | integer (default:&nbsp;0) | Memory size of bigstore RAM part, expressed in bytes |
+
+The following example request includes `shards_count` and `memory_size` as query parameters:
+
+```sh
+GET /bdbs/1/actions/optimize_shards_placement?shards_count=10&memory_size=10000
+```
+
 ### Response {#get-response}
 
 To rearrange the database shards, you can submit the blueprint returned in this response body as the `shards_blueprint` field in the [`PUT`&nbsp;`/bdbs/{uid}`](#put-bdbs-rearrange-shards) request.

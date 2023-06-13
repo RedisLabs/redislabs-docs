@@ -50,7 +50,7 @@ Create and manage a [Redis database]({{<relref "/rs/databases">}}) on a cluster.
 ## Security
 [Manage secure connections]({{<relref "/rs/security">}}) to the cluster and databases.
 - [Access control]({{<relref "/rs/security/access-control">}})
-- [Users]({{<relref "/rs/security/access-control/manage-users">}}) & [roles]({{<relref "/rs/security/access-control/create-roles">}})
+- [Users]({{<relref "/rs/security/access-control/manage-users">}}) & [roles]({{<relref "/rs/security/access-control/rbac/create-roles">}})
 - [Certificates]({{<relref "/rs/security/certificates">}})
 - [TLS]({{<relref "/rs/security/tls">}}) & [Encryption]({{<relref "/rs/security/internode-encryption">}})
 

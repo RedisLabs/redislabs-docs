@@ -17,7 +17,7 @@
       <link href="{{"css/foundation-icons.css" | absURL }}" rel="stylesheet">
       <link href="{{"theme-flex/style.css" | absURL }}" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
-      <script src="{{"js/jquery-2.x.min.js" | absURL }}"></script>
+      <script src="{{"js/jquery-3.x.min.js" | absURL }}"></script>
       <script type="text/javascript">
             var baseurl = "{{.Site.BaseURL}}";
       </script>
@@ -68,61 +68,86 @@
 <article>
     {{if not .IsHome}}
     <aside>
-      <ul class="menu">
-        {{if .Params.categories}}
-          {{if eq (index .Params.categories 0) "RS"}}
+        <ul class="menu">
+            {{if .Params.categories}}
+            {{if eq (index .Params.categories 0) "RS"}}
             <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
-              <button class="menu__version-selector-btn version-selector-control">
-                <span id="versionSelectorValue" class="version-selector-control"></span>
-                <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
-                <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
-              </button>
-              <div class="menu__version-selector__list version-selector-control">
-                <a href="https://docs.redis.com/6.4/rs" id="version-select-6.4" onclick="_setSelectedVersion('6.4', 'v6.4 (latest)')">v6.4 (latest)</a>
-                <a href="https://docs.redis.com/6.2/rs" id="version-select-6.2" onclick="_setSelectedVersion('6.2', 'v6.2')">v6.2</a>
-                <a href="https://docs.redis.com/6.0/rs" id="version-select-6.0" onclick="_setSelectedVersion('6.0', 'v6.0')">v6.0</a>
-              </div>
+                <button class="menu__version-selector-btn version-selector-control">
+                    <span id="versionSelectorValue" class="version-selector-control"></span>
+                    <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
+                    <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
+                </button>
+                <div class="menu__version-selector__list version-selector-control">
+                    <a href="https://docs.redis.com/6.4/rs" id="version-select-6.4" onclick="_setSelectedVersion('6.4', 'v6.4 (latest)')">v6.4 (latest)</a>
+                    <a href="https://docs.redis.com/6.2/rs" id="version-select-6.2" onclick="_setSelectedVersion('6.2', 'v6.2')">v6.2</a>
+                    <a href="https://docs.redis.com/6.0/rs" id="version-select-6.0" onclick="_setSelectedVersion('6.0', 'v6.0')">v6.0</a>
+                </div>
             </div>
-          {{end}}
+            {{end}}
 
-          {{if eq (index .Params.categories 0) "Platforms"}}
+            {{if eq (index .Params.categories 0) "Platforms"}}
             <!-- Remove style="display: none;" to enable Kubernetes version selector -->
             <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()" style="display: none;">
-              <button class="menu__version-selector-btn version-selector-control">
-                <span id="versionSelectorValue" class="version-selector-control"></span>
-                <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
-                <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
-              </button>
-              <div class="menu__version-selector__list version-selector-control">
-                <a href="https://docs.redis.com/6.0/platforms" id="version-select-6.x" onclick="_setSelectedVersion('6.0', 'v6.x (latest)')">v6.x (latest)</a>
-                <a href="https://docs.redis.com/5.6/platforms" id="version-select-5.x" onclick="_setSelectedVersion('5.6', 'v5.x')">v5.x</a>
-              </div>
+                <button class="menu__version-selector-btn version-selector-control">
+                    <span id="versionSelectorValue" class="version-selector-control"></span>
+                    <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
+                    <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
+                </button>
+                <div class="menu__version-selector__list version-selector-control">
+                    <a href="https://docs.redis.com/6.0/platforms" id="version-select-6.x" onclick="_setSelectedVersion('6.0', 'v6.x (latest)')">v6.x (latest)</a>
+                    <a href="https://docs.redis.com/5.6/platforms" id="version-select-5.x" onclick="_setSelectedVersion('5.6', 'v5.x')">v5.x</a>
+                </div>
             </div>
-          {{end}}
-        {{end}}
+            {{end}}
+
+            {{if eq (index .Params.categories 0) "redis-di"}}
+            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
+                <button class="menu__version-selector-btn version-selector-control">
+                    <span id="versionSelectorValue" class="version-selector-control"></span>
+                    <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
+                    <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
+                </button>
+                <div class="menu__version-selector__list version-selector-control">
+                    <a href="https://docs.redis.com/latest/rdi" id="version-select-latest"
+                      onclick="_setSelectedVersion('latest', 'latest')">latest</a>
+                    <a href="https://docs.redis.com/rdi-preview/rdi" id="version-select-rdi-preview"
+                      onclick="_setSelectedVersion('rdi-preview', 'preview')">preview</a>
+                </div>
+            </div>
+            {{end}}
+            {{end}}
 
             <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
-              <a href="{{"/" | relLangURL}}">
-                <i class="fa fa-fw fa-home"></i>
-              </a>
+                <a href="{{"/" | relLangURL}}">
+                    <i class="fa fa-fw fa-home"></i>
+                </a>
             </li>
 
             <li data-nav-id="/rs/" class="dd-item haschildren menu-expanded menu-root">
-              <a href="{{"rs" | absURL }}">Redis Enterprise Software</a></li>
+                <a href="{{"rs" | absURL }}">Redis Enterprise Software</a>
+            </li>
 
             <li data-nav-id="/rc/" class="dd-item haschildren menu-expanded menu-root">
-              <a href="{{"rc" | absURL }}">Redis Enterprise Cloud</a></li>
+                <a href="{{"rc" | absURL }}">Redis Enterprise Cloud</a>
+            </li>
 
             <li data-nav-id="/platforms/" class="dd-item haschildren menu-expanded menu-root">
-              <a href="{{"platforms" | absURL }}">Platforms</a></li>
+                <a href="{{"platforms" | absURL }}">Platforms</a>
+            </li>
 
             <li data-nav-id="/modules/" class="dd-item haschildren menu-expanded menu-root">
-              <a href="{{"modules" | absURL }}">Redis Modules</a></li>
+                <a href="{{"modules" | absURL }}">Redis Stack & modules</a>
+            </li>
+            <li data-nav-id="/modules/" class="dd-item haschildren menu-expanded menu-root">
+                <a href="{{"rdi" | absURL }}">Redis Data Integration</a>
+            </li>
             <li data-nav-id="/ri/" class="dd-item haschildren menu-expanded menu-root">
-              <a href="{{"ri" | absURL}}">RedisInsight</a></li>
+                <a href="{{"ri" | absURL}}">RedisInsight</a>
+            </li>
             <li data-nav-id="/glossary/" class="dd-item haschildren menu-expanded menu-root">
-              <a href="{{"glossary" | absURL}}">Glossary</a></li>
-      </ul>
+                <a href="{{"glossary" | absURL}}">Glossary</a>
+            </li>
+        </ul>
 
       {{- partial "language-selector.html" . }}
       <section>

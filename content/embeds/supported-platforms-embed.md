@@ -1,15 +1,6 @@
 
 Redis Enterprise Software is supported on several operating systems, cloud environments, and virtual environments.
 
-## System requirements
-
-Make sure your system meets these requirements:
-
-- Only 64-bit operating systems are supported.
-- You must install Redis Enterprise Software directly on the host, not through system cloning.
-- You must install on a clean host with no other applications running so that all RAM is allocated to the operating system and Redis Enterprise Software  only.
-- Linux distributions must be installed with at least "Minimal Install" configuration.
-
 ## Supported platforms
 
 <span title="Check mark icon">&#x2705;</span> Supported – The platform is supported for this version of Redis Enterprise Software.
@@ -53,15 +44,13 @@ Make sure your system meets these requirements:
 
 6. <a name="table-note-6" style="display: block; height: 80px; margin-top: -80px;"></a>Ubuntu 20.04 support was added in Redis Enterprise Software [6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}).
 
-7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}).
+7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}). Official support for Amazon Linux 2 was added in Redis Enterprise Software [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
 
 ## Operating system limitations
 
-Be aware that Redis Enterprise Software relies on certain components that require support from the operating system.  You cannot enable support for components, services, protocols, or versions that aren't supported by the operating system running Redis Enterprise Software.  In addition, updates to the operating system or to Redis Enterprise Software can impact component support.
+### TLS 1.0 and TLS 1.1
 
-To illustrate, version 6.2.8 of Redis Enterprise Software removed support for TLS 1.0 and TLS 1.1 on Red Hat Enterprise Linux 8 (RHEL 8) because that operating system [does not enable support](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/using-the-system-wide-cryptographic-policies_security-hardening) for these versions by default.  
-
-If you have trouble enabling specific components, features, or versions, verify that they're supported by your operating system and that they're configured correctly.
+Redis Enterprise Software version 6.2.8 removed support for TLS 1.0 and TLS 1.1 on Red Hat Enterprise Linux 8 (RHEL 8) because that operating system [does not enable support](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/using-the-system-wide-cryptographic-policies_security-hardening) for these versions by default.  
 
 ### Ubuntu 20 rejects SHA1 certificates
 
@@ -76,7 +65,7 @@ Due to binary differences in modules between the two operating systems, you cann
 
 ### Modules not supported for Amazon Linux 2 release candidate
 
-A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. Support will be added in a future maintenance release.
+A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. This limitation affects Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}) but was fixed in version [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
 
 ## VMware
 

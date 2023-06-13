@@ -23,9 +23,8 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
 
 ## Prerequisites
 
-- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) with at least 3 nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/plan-deployment/hardware-requirements.md" >}}))
-- [kubectl tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/) version 1.9 or higher
-- [OpenShift CLI](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html) 
+- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) with at least 3 nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements" >}}))
+- [OpenShift CLI](https://docs.openshift.com/container-platform/latest/cli_reference/openshift_cli/getting-started-cli.html)
 
 ## Deploy the operator
 
@@ -95,7 +94,7 @@ The Redis Enterprise pods must run in OpenShift with privileges set in a [Securi
 
     ```sh
     oc adm policy add-scc-to-user redis-enterprise-scc \
-    system:serviceaccount:<my-project>:<rec>
+      system:serviceaccount:<my-project>:<rec>
     ```
 
   {{<note>}} If you are using version 6.2.18-41 or earlier, add additional permissions for your cluster.
@@ -128,7 +127,7 @@ Each Redis Enterprise cluster requires at least 3 nodes. Single-node RECs are no
 1. Check the cluster status.
 
     ```sh
-    kubectl get pod
+    oc get pod
     ```
 
     You should receive a response similar to the following:
@@ -150,7 +149,7 @@ Each Redis Enterprise cluster requires at least 3 nodes. Single-node RECs are no
    The operator creates a Kubernetes secret for the admission controller during deployment.
 
       ```sh
-      kubectl get secret admission-tls
+      oc get secret admission-tls
       ```
 
     The response will be similar to this:
@@ -163,13 +162,13 @@ Each Redis Enterprise cluster requires at least 3 nodes. Single-node RECs are no
 1. Save the automatically generated certificate to a local environment variable.
 
     ```bash
-    CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
+    CERT=`oc get secret admission-tls -o jsonpath='{.data.cert}'`
     ```
 
 1. Create a patch file for the Kubernetes webhook using your own values for the namespace and webhook name.
 
     ```sh
-    sed '<your_namespace>' admission/webhook.yaml | kubectl create -f -
+    sed '<your_namespace>' admission/webhook.yaml | oc create -f -
     cat > modified-webhook.yaml <<EOF
     webhooks:
       - name: <your.admission.webhook>
@@ -182,7 +181,8 @@ Each Redis Enterprise cluster requires at least 3 nodes. Single-node RECs are no
 1. Patch the validating webhook with the certificate.
 
     ```sh
-    kubectl patch ValidatingWebhookConfiguration redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
+    oc patch ValidatingWebhookConfiguration \
+      redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
 ### Limit the webhook to relevant namespaces
@@ -204,26 +204,27 @@ If not limited, the webhook intercepts requests from all namespaces. If you have
     ```bash
     cat > modified-webhook.yaml <<EOF
     webhooks:
-    - name: redb.admission.redislabs
+    - name: redisenterprise.admission.redislabs
       namespaceSelector:
         matchLabels:
           namespace-name: staging
     EOF
-
     ```
 
 1. Apply the patch.
 
     ```bash
-    kubectl patch ValidatingWebhookConfiguration redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
+    oc patch ValidatingWebhookConfiguration \
+      redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
   {{<note>}}
   For releases before 6.4.2-4, use this command instead:
     ```sh
-    kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
+    oc patch ValidatingWebhookConfiguration \
+      redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
-  The 6.4.2-4 release introduces a new `ValidatingWebhookConfiguration` to replace `redb-admission`. See the [6.4.2-4 release notes]({{<relref "/kubernetes/release-notes/k8s-6-4-2-4.md">}}).
+  The 6.4.2-4 release introduces a new `ValidatingWebhookConfiguration` to replace `redb-admission`. See the [6.4.2-4 release notes]({{<relref "/kubernetes/release-notes/6-4-2-releases/">}}).
   {{</note>}}
 
 ### Verify admission controller installation
@@ -231,7 +232,7 @@ If not limited, the webhook intercepts requests from all namespaces. If you have
 Apply an invalid resource as shown below to force the admission controller to reject it. If it applies successfully, the admission controller is not installed correctly.
 
 ```bash
-  $ kubectl apply -f - << EOF
+  oc apply -f - << EOF
    apiVersion: app.redislabs.com/v1alpha1
    kind: RedisEnterpriseDatabase
    metadata:
@@ -241,10 +242,10 @@ Apply an invalid resource as shown below to force the admission controller to re
    EOF
 ```
 
-You should see this error from the admission controller webhook `redb.admission.redislabs`.
+You should see this error from the admission controller webhook `redisenterprise.admission.redislabs`.
   
   ```bash
-  Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+  Error from server: error when creating "STDIN": admission webhook "redisenterprise.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
   ```
 
 ## Create a Redis Enterprise database custom resource

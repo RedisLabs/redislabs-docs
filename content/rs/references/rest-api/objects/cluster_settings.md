@@ -25,11 +25,12 @@ Cluster resources management policy
 | default_sharded_proxy_policy | `single`<br />`all-master-shards`<br />`all-nodes` | Default proxy_policy for newly created sharded databases' endpoints |
 | default_shards_placement | `dense`<br />`sparse` | Default shards_placement for a newly created databases |
 | endpoint_rebind_propagation_grace_time | integer | Time to wait between the addition and removal of a proxy |
+| failure_detection_sensitivity | `high`<br />`low` | Predefined thresholds and timeouts for failure detection (previously known as `watchdog_profile`)<br />• `high` (previously `local-network`) – high failure detection sensitivity, lower thresholds, faster failure detection and failover<br />• `low` (previously `cloud`) – low failure detection sensitivity, higher tolerance for latency variance (also called network jitter) |
 | login_lockout_counter_reset_after | integer | Number of seconds that must elapse between failed sign in attempts before the lockout counter is reset to 0. |
 | login_lockout_duration | integer | Duration (in secs) of account lockout. If set to 0, the account lockout will persist until released by an admin. |
 | login_lockout_threshold | integer | Number of failed sign in attempts allowed before locking a user account |
 | max_saved_events_per_type | integer | Maximum saved events per event type |
-| max_simultaneous_backups | integer | Maximum number of backup processes allowed at the same time |
+| max_simultaneous_backups | integer <nobr>(default: 4)</nobr> | Maximum number of backup processes allowed at the same time |
 | parallel_shards_upgrade | integer | Maximum number of shards to upgrade in parallel |
 | rack_aware | boolean | Cluster operates in a rack-aware mode |
 | redis_migrate_node_threshold | integer | Minimum free memory (excluding reserved memory) allowed on a node before automatic migration of shards from it to free more memory |
