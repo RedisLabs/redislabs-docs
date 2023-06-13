@@ -46,7 +46,7 @@ Each release of Redis Enterprise for Kubernetes is thoroughly tested against a s
 | VMware TKG 1.6          |            | deprecated | deprecated |            |            |            |
 | **OpenShift version**   | **4.9**    | **4.10**   | **4.11**   | **4.12**   |            |            |
 |                         |            | deprecated | supported  | supported  |            |            |
-| **VMware TKGI version** | **1.13**   | **1.14**   |            |            |            |            |
-|                         | deprecated | deprecated |            |            |            |            |
+| **VMware TKGI version** | **1.13**   | **1.14**   | **1.15**   |            |            |            |
+|                         | deprecated | deprecated | supported  |            |            |            |
 
 \* Support added in latest release
