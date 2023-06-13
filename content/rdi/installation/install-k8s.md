@@ -84,7 +84,7 @@ There are two options for installing the RDI CLI in an Kubernetes environment:
 
   You should get a message - "Successfully configured redis-di instance on port <REDIS_DI_PORT>"
 
-The `create` command will create a BDB named `redis-di-1` in your cluster. You will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register RedisGears recipes, to run it.
+The `create` command will create a database named `redis-di-1` in your cluster. You must use a privileged Redis Enterprise user with the necessary permissions to create a database and register RedisGears recipes to run it.
 
 ## Create configuration file for Redis Data Integration
 
