@@ -23,9 +23,9 @@ An Active-Active database can span multiple clusters. Make sure you have enough 
 
 ### Cluster names
 
-The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) must be unique for each participating cluster the Active-Active database.
+The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) must be unique for each participating cluster in the Active-Active database.
 
-For example, if you have two K8s clusters, each with their own REC named `rec-chicago` in a namespace named `ns-illinois`. The value of `<rec-name>.<namespace-name>` for both RECs would be `rec-chicago.ns-illinois`. These can't be used for the same Active-Active database.
+For example, if you have two K8s clusters, each with their own REC named `rec-chicago` in a namespace named `ns-illinois`, the value of `<rec-name>.<namespace-name>` for both RECs would be `rec-chicago.ns-illinois`. These can't be used for the same Active-Active database.
 
 
 ### Configure external routing
@@ -34,7 +34,7 @@ Active-Active databases require external routing access to sync properly. To con
 
 ### Configure `ValidatingWebhookConfiguration`
 
-The admission controller using a validating webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to enable and configure admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
+The admission controller uses a webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to enable and configure the admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
 
 ### Collect REC credentials
 

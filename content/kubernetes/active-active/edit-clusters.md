@@ -34,7 +34,7 @@ To communicate with other clusters, all participating clusters need access to th
     kubectl get secret -o yaml <rec-name>
     ```
 
-    This example shoes an admin credentials secret for an REC named `rec-boston`:
+    This example shows an admin credentials secret for an REC named `rec-boston`:
 
     ```yaml
     apiVersion: v1
@@ -75,7 +75,7 @@ To communicate with other clusters, all participating clusters need access to th
 
 1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource for the new participating cluster.
 
-  This example shows a RERC custom resource for an REC named `rec-boston` in the namespace `ns-massachusetts`. 
+  This example shows an RERC custom resource for an REC named `rec-boston` in the namespace `ns-massachusetts`. 
 
   ```yaml
   apiVersion: app.redislabs.com/v1alpha1
