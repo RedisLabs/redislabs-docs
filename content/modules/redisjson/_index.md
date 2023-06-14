@@ -1,7 +1,7 @@
 ---
 Title: JSON
 linkTitle: JSON
-description: The RedisJSON module adds support for JSON to Redis databases.
+description: Redis Stack adds support for JSON to Redis databases.
 weight: 30
 alwaysopen: false
 toc: "true"
@@ -15,10 +15,10 @@ aliases:
   - /modules/redisjson/redisjson-quickstart/
 ---
 
-The [RedisJSON](https://redis.io/docs/stack/json/) module adds support for the [JSON data structure](http://www.json.org/) to Redis databases.
+Redis Stack adds support for the [JSON data structure](http://www.json.org/) to Redis databases.
 
 Applications developed with the [open source version of RedisJSON](https://github.com/RedisJSON/RedisJSON) are 100%
-compatible with RedisJSON in Redis Enterprise Software.
+compatible with Redis Enterprise databases with JSON enabled.
 
 ## JSON paths
 
@@ -83,5 +83,5 @@ For details about how Redis Enterprise resolves JSON operation conflicts that ca
 ## More info
 
 - [JSON quick start](https://redis.io/docs/stack/json/#use-redisjson)
-- [RedisJSON commands]({{<relref "/modules/redisjson/commands">}})
+- [JSON commands]({{<relref "/modules/redisjson/commands">}})
 - [RedisJSON source](https://github.com/RedisJSON/RedisJSON)

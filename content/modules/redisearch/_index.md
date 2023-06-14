@@ -34,7 +34,7 @@ With indexes, you can do:
 
 ## Supported document types
 
-You can store documents as Redis [hashes](https://redis.io/docs/manual/data-types/#hashes) or [JSON](http://www.json.org/). To use JSON documents with RediSearch, you also need to enable the [RedisJSON]({{<relref "/modules/redisjson">}}) module in your database.
+You can store documents as Redis [hashes](https://redis.io/docs/manual/data-types/#hashes) or [JSON](http://www.json.org/). To search and query JSON documents, you also need to enable [JSON]({{<relref "/modules/redisjson">}}) in your database.
 
 ### Hash documents
 
@@ -54,18 +54,18 @@ For full-text searches, you can customize the field queries and ranking of the s
 When querying, you can use multiple predicates that query text, numeric, and geospatial fields in one query.
 You can also sort by a specific field and limit the results with an offset to produce customized results pages.
 
-RediSearch supports [over 15 natural languages](https://redis.io/docs/stack/search/reference/stemming#supported-languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://redis.io/commands/ft.sugadd/).
+Redis search and query supports [over 15 natural languages](https://redis.io/docs/stack/search/reference/stemming#supported-languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://redis.io/commands/ft.sugadd/).
 
 ## Search and query Active-Active databases
 
 As a result of the new RediSearch architecture and methodology, [RediSearch 2.x supports Active-Active databases]({{<relref "/modules/redisearch/redisearch-active-active">}}).
 You can now serve your index information from geo-distributed database instances.
 
-## Resharding and RediSearch
+## Resharding indexed data
 
 By moving the index out of the keyspace and structuring the data as hashes, RediSearch 2.x makes it possible to reshard the database.
-When half of the data moves to the new shard, the index related to that data is created synchronously and RediSearch removes the keys from the index when it detects that the keys were deleted.
-Because the index on the new shard is created synchronously though, it's expected that the resharding process will take longer than resharding of a database without RediSearch.
+When half of the data moves to the new shard, the index related to that data is created synchronously and Redis removes the keys from the index when it detects that the keys were deleted.
+Because the index on the new shard is created synchronously though, it's expected that the resharding process will take longer than resharding of a database without search and query enabled.
 
 ## Limitations
 

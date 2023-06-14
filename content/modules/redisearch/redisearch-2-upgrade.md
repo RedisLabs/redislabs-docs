@@ -1,7 +1,7 @@
 ---
-Title: Upgrade a database to RediSearch 2.x
+Title: Upgrade a database to Search 2.x
 linkTitle: Upgrade a database
-description: Upgrade a database from RediSearch 1.x to RediSearch 2.x.
+description: Upgrade a database from Search 1.x to Search 2.x.
 weight: 30
 alwaysopen: false
 categories: ["Modules"]
