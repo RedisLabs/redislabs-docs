@@ -26,7 +26,7 @@ Redis Enterprise supports three [types of services](https://kubernetes.io/docs/c
 
 By default, the operator creates a `ClusterIP` type service, which exposes a cluster-internal IP and that can only be accessed from within the K8s cluster. For requests to be routed from outside the K8s cluster, you need an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) (or [route](https://docs.openshift.com/container-platform/4.12/networking/routes/route-configuration.html) if you are using OpenShift). See [kubernetes.io](https://kubernetes.io/docs/) for more details on [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) and [Ingress controllers](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/).
 
-* To use NGNX or HAProxy Ingress controllers, see [Ingress routing]({{<relref "/kubernetes/networking/ingress.md">}}).
+* To use NGINX or HAProxy Ingress controllers, see [Ingress routing]({{<relref "/kubernetes/networking/ingress.md">}}).
 * To use OpenShift routes, see [OpenShift routes]({{<relref "/kubernetes/networking/routes.md">}}).
 * To use Istio as an Ingress controller, see [Istio Ingress routing]({{<relref "/kubernetes/networking/istio-ingress.md">}})
 
