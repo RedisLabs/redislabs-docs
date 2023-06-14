@@ -2,7 +2,7 @@
 
 Title: Create Active-Active databases with crdb-cli
 linkTitle: Create Active-Active with crdb-cli
-description: This section how to set up an Active-Active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
+description: This section shows how to set up an Active-Active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
 weight: 99
 alwaysopen: false
 categories: ["Platforms"]
