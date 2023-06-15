@@ -15,11 +15,11 @@ You will find similar explanations inside the `application.properties` file gene
 redis-di scaffold --db-type {{<param rdi_db_types>}} --dir <PATH_TO_DIR>
 ```
 
-## Target (Sink) Connector
+## Target (sink) connector
 
 The target connector is [Redis](https://debezium.io/documentation/reference/stable/operations/debezium-server.html#_redis_stream).
 
-### Basic Configuration
+### Basic configuration
 
 ```properties
 debezium.sink.type=redis
@@ -27,7 +27,7 @@ debezium.sink.redis.address=<REDIS_DI_BDB_HOST>:12001
 debezium.sink.redis.password=<REDIS_DI_PASSWORD>
 ```
 
-### Preventing Data Loss
+### Preventing data loss
 
 In order to prevent data loss, the Debezium Redis Sink Connector needs to be configured to [wait](https://redis.io/commands/wait/) for write acknowledgment from the RDI database replica shard.
 
@@ -40,7 +40,7 @@ debezium.sink.redis.wait.retry.enabled=true
 In addition you can configure the timeout on waiting for the replica shard acknowledgment and the delay between write retries (both 1000 milliseconds by default).
 See the [reference section](#redis-data-integration-configuration-reference) of this document for full reference.
 
-### Redis Data Integration Configuration Reference
+### Redis data integration configuration reference
 
 | Property                                   | Default | Description                                                                                                                                                                  |
 | ------------------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -65,11 +65,11 @@ See the [reference section](#redis-data-integration-configuration-reference) of 
 - When using Redis to store schema history and offsets, the values of the properties `debezium.source.offset.storage.redis.*` and `debezium.source.schema.history.internal.redis.*` will be inherited from the corresponding `debezium.sink.redis.*` properties.
 - In case you would like to override any of these defaults inherited from the sink, add them explicitly as `debezium.source.offset.storage.redis.*` and/or `debezium.source.schema.history.internal.redis.*` properties.
 
-## Source (Database) Connector
+## Source (database) connector
 
 The source connector depends on the database you get data from. The basic configurations are the same for all database type except for the connector class.
 
-### Essential Source Properties
+### Essential source properties
 
 > Note: Add `debezium.source.` prefix to the listed properties when using in `application.properties`.
 
@@ -110,7 +110,7 @@ The source connector depends on the database you get data from. The basic config
 | collection.exclude.list                     |                                | MongoDB                                         | An optional comma-separated list of regular expressions that match fully-qualified namespaces for `MongoDB` collections to be excluded from monitoring. Fully qualified names are of the form `databaseName.collectionName`                                                                                                                                                                                                 |
 | field_exclude_list                          |                                | MongoDB                                         | An optional comma-separated list of the fully-qualified names of fields that should be excluded from change event message values. Fully-qualified names for fields are of the form `databaseName.collectionName.fieldName`.                                                                                                                                                                                                 |
 
-### Advanced Source Properties
+### Advanced source properties
 
 > Note: Add `debezium.source.` prefix to the listed properties when using in `application.properties`.
 
@@ -130,11 +130,11 @@ For additional properties consult Debezium documentation for a specific connecto
 - [PostgreSQL](https://debezium.io/documentation/reference/stable/connectors/postgresql.html)
 - [SQL Server](https://debezium.io/documentation/reference/stable/connectors/sqlserver.html)
 
-## Configuring Initial Snapshot Without Filtering Queries (Relevant for MySQL, Oracle, PostgreSQL and SQLServer)
+## Configuring initial snapshot without filtering queries (relevant for MySQL, Oracle, PostgreSQL and SQLServer)
 
 Tables to be included in the initial snapshot require the property `debezium.source.table.include.list`. They should be specified as a comma-separated list of [fully-qualified table names](#fully-qualified-table-name).
 
-## Using Queries in Initial Snapshot (Relevant for MySQL, Oracle, PostgreSQL and SQLServer)
+## Using queries in initial snapshot (relevant for MySQL, Oracle, PostgreSQL and SQLServer)
 
 - In case you want a snapshot to include only a subset of the rows in a table, you need to add the property `debezium.source.snapshot.select.statement.overrides` and add a comma-separated list of [fully-qualified table names](#fully-qualified-table-name). The list should include every table for which you want to add a SELECT statement.
 
@@ -171,7 +171,7 @@ ON c.CustomerId = inv.CustomerId  \
 WHERE inv.total > 8000
 ```
 
-## Form Custom Message Key(s) for Change Event Records
+## Form custom message key(s) for change event records
 
 - By default, Debezium uses the primary key column(s) of a table as the message key for records that it emits.
   In place of the default, or to specify a key for tables that lack a primary key, you can configure custom message keys based on one or more columns.
@@ -197,7 +197,7 @@ WHERE inv.total > 8000
 
 > Note: In case the property `column.include.list` is defined in your `application.properties` file, make sure it includes all the column names that are specified in the property `message.key.columns`.
 
-### Fully-qualified Table Name
+### Fully-qualified table name
 
 In this document we refer to the fully-qualified table name as `<databaseName>.<tableName>`. This format is for MySQL database. For Oracle, SQLServer and Postgresql databases use `<schemaName>`.`<tableName>` instead.
 
@@ -227,7 +227,7 @@ In this document we refer to the fully-qualified table name as `<databaseName>.<
   chinook.customer:FirstName,LastName;(.*).employee:FirstName,LastName
   ```
 
-## Configuring Debezium Connector to Fetch Source Database Secrets From Secret Store
+## Configuring debezium connector to fetch source database secrets from secret store
 
 Providing Source Database password in clear text is not an acceptable option.
 Fortunately, Debezium supports fetching secrets from environment variables or file system.
@@ -245,7 +245,7 @@ database.password="${MYSQL_PASSWORD}"
 ...
 ```
 
-### Getting Secrets From File System
+### Getting secrets from file system
 
 In addition, Debezium `application.properties` supports the `${file:path:key}` variable syntax - the `path` is the path to the file and the `key` is the property key.
 
