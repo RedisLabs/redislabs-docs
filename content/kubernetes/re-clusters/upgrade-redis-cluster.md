@@ -27,25 +27,7 @@ Review the following warnings before starting your upgrade.
 
 #### OpenShift clusters running 6.2.12 or earlier
 
-Due to a change in the SCC, on OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later, where `node:1` is <b>not</b> the master node, the upgrade might get stuck.
-
-You might have a pod that doesn't become fully ready and start seeing restarts. In the ServicesRigger log, you'll see this error:
-
-```text
-services-rigger.services - ERROR - couldn't update pod <POD NAME> labels
-...
-... pods <POD NAME> is forbidden: unable to validate against any security context constraint
-```
-
-To prevent this, set `node:1` as the master node.
-
-```sh
-oc exec -it <rec-pod-name> -- rladmin cluster master set 1
-```
-
-This may also affect OpenShift clusters containing two RECs running different versions, if one is running version 6.2.12 or earlier and the other is running 6.2.18 or later.
-
-This is a newly discovered issue and more information will be available soon. If you have already encountered the error and need it fixed immediately, contact Redis support.
+If you are upgrading OpenShift clusters running version 6.2.12 or earlier to version 6.2.18 or later, you need to bind a the new SCC to your service account. If the new SCC isn't bound to your service account, the upgrade might get stuck. See [reapply SCC]({{<relref "/kubernetes/re-clusters/upgrade-redis-cluster#reapply-the-scc">}}) for details.
 
 #### RHEL7-based images
 
@@ -131,10 +113,15 @@ If you have the admission controller enabled, you need to manually reapply the `
 
 ### Reapply the SCC
 
-If you are using OpenShift, you will also need to manually reapply the [Security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})).
+If you are using OpenShift, you will also need to manually reapply the [Security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})) and bind it to your service account.
 
 ```sh
 oc apply -f openshift/scc.yaml
+```
+
+```sh
+oc adm policy add-scc-to-user redis-enterprise-scc-v2 \
+  system:serviceaccount:<my-project>:redis-enterprise-operator
 ```
 
 ### Verify the operator is running
