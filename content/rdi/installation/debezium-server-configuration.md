@@ -119,7 +119,7 @@ The source connector depends on the database you get data from. The basic config
 | value.converter.schemas.enable | true    | Cassandra, MongoDB, MySQL, Oracle, PostgreSQL, SQLServer, | If set to false the schema payload will be excluded from each change event record. |
 | key.converter.schemas.enable   | true    | Cassandra, MongoDB, MySQL, Oracle, PostgreSQL, SQLServer  | If set to false the key payload will be excluded from each change event record.    |
 
-### Debezium Connectors for Various Databases
+### Debezium connectors for various databases
 
 For additional properties consult Debezium documentation for a specific connector:
 
