@@ -78,15 +78,15 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
 
 #### Using key in transformations
 
-In order to access the Redis key (for example in Write Behind job) you will need to take the following steps:
+In order to access the Redis key (for example in a Write Behind job) you will need to take the following steps:
 
 - Set `row_format: full` to allow access to the key which is part of the full data entry.
 - Use the expression `key.key` to get the Redis key as a string.
 
-#### Before and After values
+#### Before and after values
 
-Update events will typically report a `before` and `after` sections giving state before the update and after. 
-To access before values explicitly you will need to:
+Update events typically report `before` and `after` sections providing access to the data state before and after the update. 
+To access the "before" values explicitly, you will need to:
 
 - Set `row_format: full` to allow access to the key which is part of the full data entry.
 - Use the `before.<FIELD_NAME>` pattern.
