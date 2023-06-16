@@ -1,4 +1,13 @@
-# Write-behind foreach example
+---
+Title: Write-behind foreach example
+linkTitle: Write-behind foreach example
+description:
+weight: 30
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
+---
+
 
 The `foreach` section is used in order to explode a list of objects or arrays to rows in a selected target.
 The `foreach` expression is structured as <field_name>:<JMESPath expression>`.
