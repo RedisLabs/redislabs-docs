@@ -31,23 +31,24 @@ Install your chosen Ingress controller, making sure `ssl-passthrough` is enabled
 
 1. Choose the hostname (FQDN) you will use to access your database according to the recommended naming conventions below, replacing `<placeholders>` with your own values.
 
-   REC API hostname: `api-<rec-name>-<rec-namespace>.<subdomain>`
-   REAADB hostname: `*-db-<rec-name>-<rec-namespace>.<subdomain>`
+     REC API hostname: `api-<rec-name>-<rec-namespace>.<subdomain>`
+     REAADB hostname: `*-db-<rec-name>-<rec-namespace>.<subdomain>`
+     
      We recommend using a wildcard (`*`) in place of the database name, followed by the hostname suffix.
 
 1. Retrieve the `EXTERNAL-IP` of your Ingress controller's `LoadBalancer` service.
 
-    ``` sh
-    $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> \
-                        -n <ingress-ctrl-namespace>
-    ```
+     ``` sh
+     $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> \
+                         -n <ingress-ctrl-namespace>
+     ```
 
-    Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.  
+     Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.  
 
-    ``` sh
-    NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE   
-    haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
-    ```
+     ``` sh
+     NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE   
+     haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
+     ```
 
 1. Create DNS records to resolve your chosen REC API hostname and database hostname to the `EXTERNAL-IP` found in the previous step.
 
@@ -55,8 +56,8 @@ Install your chosen Ingress controller, making sure `ssl-passthrough` is enabled
 
 Edit the RedisEnterpriseCluster (REC) spec to add the `ingressOrRouteSpec` field, replacing `<placeholders>` below with your own values.
 
-- Define the REC API hostname (`apiFqdnUrl`) and database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
-- Add the annotations for your Ingress and set `ssl-passthrough` to "true". The annotations below are for Ingress; see OpenShift documentation for route annotations.
+* Define the REC API hostname (`apiFqdnUrl`) and database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
+* Add the annotations for your Ingress and set `ssl-passthrough` to "true". The annotations below are for Ingress; see OpenShift documentation for route annotations.
 
 ```sh
 kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
