@@ -8,7 +8,9 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-Generate configuration files for RDI and Debezium (when ingesting data to Redis)
+
+
+Generates configuration files for RDI and Debezium (when ingesting data to Redis)
 
 ## Usage
 
@@ -27,7 +29,7 @@ Usage: redis-di scaffold [OPTIONS]
 
 
 * `db_type` (REQUIRED): 
-  * Type: Choice([<DbType.CASSANDRA: 'cassandra'>, <DbType.MYSQL: 'mysql'>, <DbType.ORACLE: 'oracle'>, <DbType.POSTGRESQL: 'postgresql'>, <DbType.SQLSERVER: 'sqlserver'>]) 
+  * Type: Choice([<DbType.CASSANDRA: 'cassandra'>, <DbType.MYSQL: 'mysql'>, <DbType.ORACLE: 'oracle'>, <DbType.POSTGRESQL: 'postgresql'>, <DbType.SQLSERVER: 'sqlserver'>, <DbType.MONGODB: 'mongodb'>]) 
   * Default: `none`
   * Usage: `--db-type`
 
@@ -54,11 +56,11 @@ Usage: redis-di scaffold [OPTIONS]
 
 
 * `preview`: 
-  * Type: STRING 
+  * Type: Choice(['debezium/application.properties', 'config.yaml']) 
   * Default: `none`
   * Usage: `--preview`
 
-  Print the content of specified config file (debezium/application.properties | config.yaml) to CLI output
+  Print the content of specified config file to CLI output
 
 
 * `help`: 
@@ -70,7 +72,7 @@ Usage: redis-di scaffold [OPTIONS]
 
 
 
-## CLI Help
+## CLI help
 
 ```
 Usage: redis-di scaffold [OPTIONS]
@@ -81,16 +83,15 @@ Usage: redis-di scaffold [OPTIONS]
 Options:
   -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
-  --db-type [cassandra|mysql|oracle|postgresql|sqlserver]
+  --db-type [cassandra|mysql|oracle|postgresql|sqlserver|mongodb]
                                   DB type  [required]
   --strategy [ingest|write_behind]
                                   Strategy  [default: ingest]
   Output formats: [mutually_exclusive, required]
                                   Output to directory or stdout
     --dir TEXT                    Directory containing RDI configuration
-    --preview TEXT                Print the content of specified config file
-                                  (debezium/application.properties |
-                                  config.yaml) to CLI output
+    --preview [debezium/application.properties|config.yaml]
+                                  Print the content of specified config file
+                                  to CLI output
   --help                          Show this message and exit.
 ```
-
