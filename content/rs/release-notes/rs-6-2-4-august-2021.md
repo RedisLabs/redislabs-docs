@@ -62,7 +62,7 @@ Redis Enterprise Software v5.6.0 will reach end of life (EOF) on October 31, 202
 
 To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
-Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
+Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/stack/modules-lifecycle.md">}}).
 
 ### Deprecation notices
 
@@ -120,17 +120,17 @@ To learn more, see Redis Enterprise Software [compatibility with open source]({{
 
 Redis Enterprise Software v6.2.4 includes the following Redis modules:
 
-- [RediSearch v2.0.11]({{<relref "/modules/release-notes/redisearch/redisearch-2.0-release-notes.md">}})
-- [RedisJSON v1.0.8]({{<relref "/modules/release-notes/redisjson/redisjson-1.0-release-notes.md">}})
-- [RedisBloom v2.2.6]({{<relref "/modules/release-notes/redisbloom/redisbloom-2.2-release-notes.md">}}) 
-- [RedisGraph v2.4.7]({{<relref "/modules/release-notes/redisgraph/redisgraph-2.4-release-notes.md">}})
-- [RedisTimeSeries v1.4.10]({{<relref "/modules/release-notes/redistimeseries/redistimeseries-1.4-release-notes.md">}})
+- [RediSearch v2.0.11]({{<relref "/stack/release-notes/redisearch/redisearch-2.0-release-notes.md">}})
+- [RedisJSON v1.0.8]({{<relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md">}})
+- [RedisBloom v2.2.6]({{<relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md">}}) 
+- [RedisGraph v2.4.7]({{<relref "/stack/release-notes/redisgraph/redisgraph-2.4-release-notes.md">}})
+- [RedisTimeSeries v1.4.10]({{<relref "/stack/release-notes/redistimeseries/redistimeseries-1.4-release-notes.md">}})
 
 ### Internode encryption for modules 
          
 To utilize data plane encryption for existing databases with modules, update the module to the latest version prior to enabling data plane encryption. 
 
-For help, see [Upgrade the module for a database]({{<relref "/modules/install/upgrade-module">}}).
+For help, see [Upgrade the module for a database]({{<relref "/stack/install/upgrade-module">}}).
 
 ### Module-related enhancements
 

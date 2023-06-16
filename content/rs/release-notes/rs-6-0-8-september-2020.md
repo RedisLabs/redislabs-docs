@@ -36,19 +36,19 @@ For more information about Redis 6.0.5, check out the [release notes](https://ra
 
 The [`rladmin` CLI]({{<relref "/rs/references/cli-utilities/rladmin">}}) introduces several updates to the commands for upgrading modules.
 It is now easier to upgrade your modules to the latest module version.
-Find out more [here]({{<relref "/modules/install/upgrade-module">}}).
+Find out more [here]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Redis modules
 
 The following GA releases of Redis Modules are bundled in RS 6.0:
 
-- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/modules/release-notes/redisearch" >}}) (updated)
-- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/modules/release-notes/redisjson/redisjson-1.0-release-notes.md" >}})
-- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/modules/release-notes/redisgraph/redisgraph-2.0-release-notes.md" >}}) (updated)
-- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/modules/release-notes/redistimeseries/redistimeseries-1.2-release-notes.md" >}}) (updated)
-- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/modules/release-notes/redisbloom/redisbloom-2.2-release-notes.md" >}}) (updated)
+- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/stack/release-notes/redisearch" >}}) (updated)
+- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md" >}})
+- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/stack/release-notes/redisgraph/redisgraph-2.0-release-notes.md" >}}) (updated)
+- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/stack/release-notes/redistimeseries/redistimeseries-1.2-release-notes.md" >}}) (updated)
+- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md" >}}) (updated)
 
-To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/install/upgrade-module">}}).
+To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Additional capabilities
 
