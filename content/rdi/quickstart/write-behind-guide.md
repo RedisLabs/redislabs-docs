@@ -36,7 +36,9 @@ RDI write-behind currently supports these target data stores:
 | MySQL      |
 | Oracle     |
 | PostgreSQL |
+| Redis Enterprise     |
 | SQL Server |
+
 
 ## Prerequisites
 
