@@ -75,82 +75,76 @@ To communicate with other clusters, all participating clusters need access to th
 
 1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource for the new participating cluster.
 
-  This example shows an RERC custom resource for an REC named `rec-boston` in the namespace `ns-massachusetts`. 
+    This example shows an RERC custom resource for an REC named `rec-boston` in the namespace `ns-massachusetts`. 
 
-  ```yaml
-  apiVersion: app.redislabs.com/v1alpha1
-  kind: RedisEnterpriseRemoteCluster
-  metadata:
-    name: rerc-logan
-  spec:
-    recName: rec-boston
-    recNamespace: ns-massachusetts
-    apiFqdnUrl: test-example-api-rec-boston-ns-massachusetts.redis.com
-    dbFqdnSuffix: -example-cluster-rec-boston-ns-massachusetts.redis.com
-    secretName: redis-enterprise-rerc-logan
-  ```
+    ```yaml
+    apiVersion: app.redislabs.com/v1alpha1
+    kind: RedisEnterpriseRemoteCluster
+    metadata:
+      name: rerc-logan
+    spec:
+      recName: rec-boston
+      recNamespace: ns-massachusetts
+      apiFqdnUrl: test-example-api-rec-boston-ns-massachusetts.redis.com
+      dbFqdnSuffix: -example-cluster-rec-boston-ns-massachusetts.redis.com
+      secretName: redis-enterprise-rerc-logan
+    ```
 
 1. Create the RERC custom resource.
 
-  ```sh
-  kubectl create -f <new-RERC-file>
-  ```
+    ```sh
+    kubectl create -f <new-RERC-file>
+    ```
 
 1. Check the status of the newly created RERC custom resource.
 
-  ```sh
-  kubectl get rerc <RERC-name>
-  ```
+    ```sh
+    kubectl get rerc <RERC-name>
+    ```
 
-  The output should look like this:
+    The output should look like this:
 
-  ```sh
-  NAME        STATUS   SPEC STATUS   LOCAL
-  rerc-logan   Active   Valid         true
-  ```
+    ```sh
+    NAME        STATUS   SPEC STATUS   LOCAL
+    rerc-logan   Active   Valid         true
+    ```
 
 ### Edit REAADB spec
 
 1. Patch the REAADB spec to add the new RERC name to the `participatingClusters`, replacing `<reaadb-name>` and `<rerc-name>` with your own values.
 
-  ```sh
-  kubectl patch reaadb <reaadb-name> < --type merge --patch '{"spec": {"participatingClusters": [{"name": "<rerc-name>"}]}}'
-  ```
+    ```sh
+    kubectl patch reaadb <reaadb-name> < --type merge --patch '{"spec": {"participatingClusters": [{"name": "<rerc-name>"}]}}'
+    ```
 
 1. View the REAADB `participatingClusters` status to verify the cluster was added.
 
-  ```sh
-  kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.participatingClusters}'
-  ```
+    ```sh
+    kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.participatingClusters}'
+    ```
 
-  Output should look like this:
+    Output should look like this:
 
-  ```sh
-  [{"id":1,"name":"rerc-ohare"},{"id":2,"name":"rerc-reagan"},{"id":3,"name":"rerc-logan"}]
-  ```
+    ```sh
+    [{"id":1,"name":"rerc-ohare"},{"id":2,"name":"rerc-reagan"},{"id":3,"name":"rerc-logan"}]
+    ```
 
 ## Remove a participating cluster
 
-### On an existing participating cluster
+1. On an existing participating cluster,remove the desired cluster from the `participatingCluster` section of the REAADB spec.
 
-Remove the desired cluster from the `participatingCluster` section of the REAADB spec.
+    ```sh
+    kubectl edit reaadb <reaadb-name>
+    ```
 
-```sh
-kubectl edit reaadb <reaadb-name>
-```
+1. On each of the other participating clusters, verify the status is `active` and the spec status is `Valid` and the cluster was removed.
 
-### On each of the other participating clusters
+   ```sh
+   kubectl get reaadb <reaadb-name -o=jasonpath=`{.status}`
+   ```
 
-Verify the status is `active` and the spec status is `Valid` and the cluster was removed.
+1. On the removed participating cluster, list all REAADB resources on the cluster to verify they were deleted.
 
-```sh
-kubectl get reaadb <reaadb-name -o=jasonpath=`{.status}`
-```
-
-### On the removed participating cluster
-
-List all REAADB resources on the cluster to verify they were deleted.
-
-```sh
-kubectl get reaadb -o+jasonpath=`{range.items[*]}{.metadata.name}`
-```
+    ```sh
+    kubectl get reaadb -o+jasonpath=`{range.items[*]}{.metadata.name}`
+    ```
