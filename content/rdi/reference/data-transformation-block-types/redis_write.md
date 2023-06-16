@@ -110,7 +110,7 @@ Nest (embed) object within a different key
 | **parent_key**           | `string` | Field name used to identify the parent key (usually FK).                                                                           | yes      |
 | **nesting_key**          | `string` | Field name used to create the nesting key (usually PK).                                                                            | yes      |
 | **path**                 | `string` | Path, where the nested object should reside in a parent document.<br/>Must start with the root (e.g. `$.<children-elements-here>`) | yes      |
-| **structure**            | `string` | Data structure used to represent the object in a parent document (`map` is the only supported value).p                             | yes      |
+| **structure**            | `string` | Data structure used to represent the object in a parent document (`map` is the only supported value).                              | yes      |
 
 > Note: When `nest` object is defined, RDI will automatically assume `data_type: json` and `on_update: merge` regardless of what was declared in the job file.
 
