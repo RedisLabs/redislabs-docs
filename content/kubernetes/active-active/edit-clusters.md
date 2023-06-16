@@ -142,8 +142,15 @@ To communicate with other clusters, all participating clusters need access to th
    ```sh
    kubectl get reaadb <reaadb-name -o=jasonpath=`{.status}`
    ```
+   
+    The output will look like this:
+    
+    ```sh
+    {... ,"participatingClusters":[{"id":1,"name":"rerc1"},{"id":2,"name":"rerc2"}],"redisEnterpriseCluster":"rec1","specStatus":"Valid","status":"active"}
+    ```
 
 1. On the removed participating cluster, list all REAADB resources on the cluster to verify they were deleted.
+
 
     ```sh
     kubectl get reaadb -o+jasonpath=`{range.items[*]}{.metadata.name}`

@@ -17,26 +17,31 @@ aliases: {
 
 On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/">}}) databases provide read and write access to the same dataset from different Kubernetes clusters.
 
-## Active-Active creation methods
+## Active-Active setup methods
 
-There are two methods for creating an Active-Active database with Redis Enterprise for Kubernetes. The `crdb-cli` method is available on all supported versions. The `RedisEnterpriseActiveActiveDatabase` (REAADB) custom resource is available for versions 6.4.2 and later.
+There are two methods for creating an Active-Active database with Redis Enterprise for Kubernetes:
 
-### `crdb-cli` method
+- The `RedisEnterpriseActiveActiveDatabase` (REAADB) custom resource is available for versions 6.4.2 and later.
+- The `crdb-cli` method is available for versions 6.4.2 or earlier.
 
-The currently supported Active-Active setup method includes the following steps:
-
-1. Install and configure an ingress.
-2. Gathering configuration details.
-3. Adding the `ActiveActive` field to the REC spec.
-4. Creating the database with the `crdb-cli` tool.
+We recommend creating new Active-Active databases using the RedisEnterpriseActiveActiveDatabase (REAADB) custom resource. This allows you to manage your Active-Active database with the operator and ensures you have the latest features and functionality.
 
 ### Active-Active controller method
 
-Releases 6.4.2 or later support the new Active-Active controller. The new setup method includes the following steps:
+Releases 6.4.2 or later support the Active-Active controller. This setup method includes the following steps:
 
 1. Collect and apply REC admin credentials for all participating RECs.
 2. Create `RedisEnterpriseRemoteCluster` (RERC) resources.
 3. Create `RedisEnterpriseActiveActiveDatabase` (REAADB) resource.
+
+### `crdb-cli` method
+
+For versions 6.4.2 or earlier, this Active-Active setup method includes the following steps:
+
+1. Install and configure an ingress.
+2. Gather configuration details.
+3. Add the `ActiveActive` field to the REC spec.
+4. Create the database with the `crdb-cli` tool.
 
 ## Redis Enterprise Active-Active controller for Kubernetes
 
@@ -66,11 +71,11 @@ For a full list of fields and options, see the [RERC API reference](https://gith
 * No support for upgrading the database Redis version
 * Admission is not blocking REAADB with `shardCount` which exceeds license quota. (RED-96301)
 
-  Fix the problems with the REAADB and reapply.
+    Workaround: Fix the problems with the REAADB and reapply.
 * The `<rec-name>/<rec-namespace>` value must be unique for each RERC resource. (RED-96302)
-
-* Only global database options are supported, not support for specifying configuration per location.
-* No support for migration from old (manual) Active-Active database method to new Active-Active controller.
+* Only global database options are supported, no support for specifying configuration per location.
+* No support for migration from old (`crdb-cli`) Active-Active database method to new Active-Active controller.
+* No support for multiple participating clusters on the same Kubernetes cluster.
 
 ## More info
 
