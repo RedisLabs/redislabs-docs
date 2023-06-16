@@ -1,7 +1,7 @@
 ---
 Title: Customize installation directories
 linkTitle: Customize install locations
-description:
+description: Customize Redis Enterprise Software installation directories.
 weight: 30
 alwaysopen: false
 categories: ["RS"]
@@ -13,14 +13,14 @@ When installing Redis Enterprise Software, you can customize the installation di
 The files are installed in the `redislabs` directory located in the path that you specify.
 
 {{< note >}}
-- Custom installation directories are supported on RedHat Enterprise Linux version 7 and 8.
+- Custom installation directories are supported on Red Hat Enterprise Linux versions 7 and 8.
 - When you install with custom directories, the installation does not run as an RPM file.
 - If a `redislabs` directory already exists in the path that you specify, the installation fails.
 - All nodes in a cluster must be installed with the same file locations.
 - Custom installation directories are not supported for databases using Redis on Flash.
 {{< /note >}}
 
-You can specify any or all of these file locations:
+You can specify these file locations:
 
 | Files               | Installer flag | Example parameter | Example file location |
 | ------------------- | -------------- | ----------------- | --------------------- |
@@ -46,7 +46,7 @@ These files are not in the custom directories:
     - /etc/opt/redislabs/redislabs_custom_install_version
     - /etc/opt/redislabs/redislabs_env_config.sh
 
-To install to specific directories, run:
+To specify directories during [installation]({{<relref "/rs/installing-upgrading/install/install-on-linux">}}), include installer flags as [command-line options]({{<relref "/rs/installing-upgrading/install/install-script">}}) when you run the `install.sh` script. For example:
 
 ```sh
 sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
