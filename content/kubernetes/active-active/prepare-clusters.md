@@ -121,7 +121,7 @@ To communicate with other clusters, all participating clusters will need access 
     kubectl apply -f <all-rec-secrets-file>
     ```
 
- If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
+   If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
 
 ## Next steps
 
