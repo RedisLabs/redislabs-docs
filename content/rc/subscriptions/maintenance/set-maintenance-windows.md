@@ -14,6 +14,8 @@ By default, Redis will maintain your Redis Cloud subscriptions and databases as 
 
 You typically do not need to set a maintenance window manually as Redis will attempt to perform maintenance during low-traffic hours when possible, based on the region where your subscription is located. If you want to control when Redis performs maintenance for a Flexible subscription, you can [set manual maintenance windows](#set-manual-maintenance-windows) to ensure non-urgent maintenance will occur at set times.
 
+Once you have set a maintenance window, you can change it at any time. However, changing your maintenance window will not affect any maintenance that is scheduled in the next 24 hours.
+
 ## Set manual maintenance windows
 
 To set manual maintenance windows for a single flexible subscription:
