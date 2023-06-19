@@ -26,7 +26,7 @@ This version features:
 
 ### Prerequisites and notes
 
-- You can [upgrade to v6.2.8]({{<relref "/rs/installing-upgrading/upgrading.md">}}) from Redis Enterprise Software v6.0 and later. 
+- You can [upgrade to v6.2.8]({{<relref "/rs/installing-upgrading/upgrading">}}) from Redis Enterprise Software v6.0 and later. 
 
 - Refer to the [v6.2.4 release notes]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}) for important notes regarding the upgrade process.
 
@@ -103,8 +103,6 @@ All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#kno
 - The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
 
 - RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
-
-- RS62986 - After upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec` on each cluster node. Failure to do so will prevent more advanced state machine handling capabilities from being enabled. To restart, run `supervisorctl restart cnm_exec`.
 
 ## Security
 

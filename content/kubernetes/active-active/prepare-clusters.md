@@ -19,13 +19,13 @@ aliases: {
 
 ## Prepare participating clusters
 
-An Active-Active database can span multiple clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
+An Active-Active database can span multiple clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}})).
 
 ### Cluster names
 
-The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) must be unique for each participating cluster the Active-Active database.
+The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) must be unique for each participating cluster in the Active-Active database.
 
-For example, if you have two K8s clusters, each with their own REC named `rec1` in a namespace named `ns1`. The value of `<rec-name>.<namespace-name>` for both RECs would be `rec1.ns1`. These can't be used for the same Active-Active database.
+For example, if you have two K8s clusters, each with their own REC named `rec-chicago` in a namespace named `ns-illinois`, the value of `<rec-name>.<namespace-name>` for both RECs would be `rec-chicago.ns-illinois`. These can't be used for the same Active-Active database.
 
 
 ### Configure external routing
@@ -34,8 +34,7 @@ Active-Active databases require external routing access to sync properly. To con
 
 ### Configure `ValidatingWebhookConfiguration`
 
-The admission controller using a validating webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to enable and configure admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
-
+The admission controller uses a webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to enable and configure the admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
 
 ### Collect REC credentials
 
@@ -54,7 +53,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: 
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc1
+      name: redis-enterprise-rerc-ohare
     type: Opaque
 
     ---
@@ -65,7 +64,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: 
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc2
+      name: redis-enterprise-rerc-reagan
     type: Opaque
 
     ```
@@ -76,7 +75,7 @@ To communicate with other clusters, all participating clusters will need access 
     kubectl get secret -o yaml <rec-name>
     ```
 
-    The admin credentials secret for an REC named `rec1` would be similar to this:
+    The admin credentials secret for an REC named `rec-chicago` would be similar to this:
 
     ```yaml
     apiVersion: v1
@@ -85,13 +84,13 @@ To communicate with other clusters, all participating clusters will need access 
       username: GHij56789
     kind: Secret
     metadata:
-      name: rec1
+      name: rec-chicago
     type: Opaque
     ```
 
 1. Add the username and password to the new secret for that REC and namespace.
 
-    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc1` (representing `rec1` in namespace `ns1`) and `rerc2` (reprsenting `rec2` in namespace `ns2`).
+    This example shows the collected secrets file (`all-rec-secrets.yaml`) for `rerc-ohare` (representing `rec-chicago` in namespace `ns-illinois`) and `rerc-reagan` (representing `rec-arlington` in namespace `ns-virginia`).
 
     ```yaml
     apiVersion: v1
@@ -100,7 +99,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: GHij56789
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc1
+      name: redis-enterprise-rerc-ohare
     type: Opaque
 
     ---
@@ -111,7 +110,7 @@ To communicate with other clusters, all participating clusters will need access 
       username: PQrst789010
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc2
+      name: redis-enterprise-rerc-reagan
     type: Opaque
 
     ```
@@ -122,7 +121,7 @@ To communicate with other clusters, all participating clusters will need access 
     kubectl apply -f <all-rec-secrets-file>
     ```
 
- If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
+   If the admin credentials for any of the clusters changes, the file will need to be updated and reapplied to all clusters.
 
 ## Next steps
 

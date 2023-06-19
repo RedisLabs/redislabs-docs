@@ -21,11 +21,11 @@ For more details, see the [RERC API reference](https://github.com/RedisLabs/redi
 
 Use the `kubectl patch rerc <rerc-name> --type merge --patch` command to patch the local RERC custom resource with your changes. For a full list of available fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
-The following example edits the `dbFqdnSuffix` field for the RERC named `rerc1`.
+The following example edits the `dbFqdnSuffix` field for the RERC named `rerc-ohare`.
 
 ```sh
-kubectl patch rerc rerc1 --type merge --patch \
-'{"spec":{"dbFqdnSuffix": "-example2-cluster-rec1-ns1.redis.com"}}'
+kubectl patch rerc rerc-ohare --type merge --patch \
+'{"spec":{"dbFqdnSuffix": "-example2-cluster-rec-chicago-ns-illinois.redis.com"}}'
 ```
 
 ## Update RERC secret
@@ -34,7 +34,7 @@ If the credentials are changed or updated for a REC participating cluster, you n
 
 1. On the local cluster, update the secret with new credentials and name it with the following convention:  `redis-enterprise-<rerc-name>`.
 
-    A secret for a remote cluster named `rerc1` would be similar to the following:
+    A secret for a remote cluster named `rerc-ohare` would be similar to the following:
 
     ```yaml
     apiVersion: v1
@@ -43,7 +43,7 @@ If the credentials are changed or updated for a REC participating cluster, you n
       username: PHNvbWUgdXNlcj4
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc1
+      name: redis-enterprise-rerc-ohare
     type: Opaque
     ```
 
@@ -63,7 +63,7 @@ If the credentials are changed or updated for a REC participating cluster, you n
   
       ```sh
        NAME        STATUS   SPEC STATUS   LOCAL
-        rerc1   Active   Valid         true
+        rerc-ohare   Active   Valid         true
       ```
       
     To troubleshoot invalid configurations, view the RERC custom resource events and the [Redis Enterprise operator logs]({{<relref "/kubernetes/logs/">}}).
@@ -78,7 +78,7 @@ If the credentials are changed or updated for a REC participating cluster, you n
 
     ```sh
       NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    example-aadb-1   active   Valid                                      
+    reaadb-boeing   active   Valid                                      
     example-aadb-2   active   Valid                                      
     ```
 

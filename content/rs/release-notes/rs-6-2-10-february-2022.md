@@ -27,9 +27,9 @@ The following table shows the MD5 checksums for the available packages.
 
 - Upgrade the Redis Enterprise infrastructure to [Python v3.9](https://www.python.org/).
 
-- [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) and [Red Hat Enterprise Linux (RHEL) v8.6](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.6_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
+- [Red Hat Enterprise Linux (RHEL) v8.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.5_release_notes/index) and [Red Hat Enterprise Linux (RHEL) v8.6](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.6_release_notes/index) is now a [supported platform]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms" >}}).
 
-- [Oracle Linux v8](https://docs.oracle.com/en/operating-systems/oracle-linux/8/) is now a [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms" >}}).
+- [Oracle Linux v8](https://docs.oracle.com/en/operating-systems/oracle-linux/8/) is now a [supported platform]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms" >}}).
 
 - Compatibility with [open source Redis 6.2.5](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES).
 
@@ -159,8 +159,6 @@ All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#kno
 - The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
 
 - RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
-
-- RS62986 - After upgrading from version 6.0.x to 6.2.x, you must restart `cnm_exec` on each cluster node. Failure to do so will prevent more advanced state machine handling capabilities from being enabled. To restart, run `supervisorctl restart cnm_exec`.
 
 ## Security
 
