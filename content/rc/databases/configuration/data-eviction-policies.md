@@ -26,7 +26,7 @@ For each database, you can choose from these data eviction policies:
 | volatile-lru | Removes least recently used keys with `expire` field set to true (*Default*) |
 | volatile-lfu | Removes least frequently used keys with `expire` field set to true |
 | volatile-random | Randomly removes keys with `expire` field set to true |
-| volatile-ttl | Removes least frequently used keys with `expire` field set to true and the shortest remaining time-to-live (TTL) value |
+| volatile-ttl | Removes keys with expire field set to true and the shortest remaining time-to-live (TTL) value |
 | no eviction | New values aren't saved when memory limit is reached<br/><br/>When a database uses replication, this applies to the primary database |
 
 Redis Cloud supports [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) (RoF)

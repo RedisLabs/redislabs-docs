@@ -113,7 +113,7 @@ You can also use client libraries to make API requests in your preferred languag
 
 To follow these examples, you need:
 
-- A [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software">}}) node
+- A [Redis Enterprise Software]({{<relref "/rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart">}}) node
 - Python 3 and the [requests](https://pypi.org/project/requests/) Python library
 - [node.js](https://nodejs.dev/) and [node-fetch](https://www.npmjs.com/package/node-fetch)
 

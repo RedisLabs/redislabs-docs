@@ -56,10 +56,6 @@ feature, which is used for creating a master / replica configuration that
 enables ensuring database high-availability.
 {{< /note >}}
 
-For a quick overview of Replica Of capabilities watch this quick video.
-
-{{< youtube AG-XGn7BQkQ >}}
-
 ## Replication process
 
 When a database is defined as a replica of another database, all its
@@ -224,6 +220,6 @@ For an Active-Passive database:
 rladmin tune db <db:id | name> repl_backlog <Backlog size in MB or 'auto'>
 ```
 
-    {{< note >}}
+{{<note>}}
 On an Active-Passive database, the replication backlog configuration applies to both the replication backlog for shards synchronization and for synchronization of database instances between clusters.
-    {{< /note >}}
+{{</note>}}

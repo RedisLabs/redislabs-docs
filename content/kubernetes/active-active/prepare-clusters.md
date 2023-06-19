@@ -19,7 +19,7 @@ aliases: {
 
 ## Prepare participating clusters
 
-An Active-Active database can span multiple clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
+An Active-Active database can span multiple clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}})).
 
 ### Cluster names
 

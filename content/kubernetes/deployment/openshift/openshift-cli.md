@@ -23,7 +23,7 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
 
 ## Prerequisites
 
-- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) with at least 3 nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}))
+- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) with at least 3 nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements" >}}))
 - [OpenShift CLI](https://docs.openshift.com/container-platform/latest/cli_reference/openshift_cli/getting-started-cli.html)
 
 ## Deploy the operator
