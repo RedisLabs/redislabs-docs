@@ -27,7 +27,7 @@ Review the following warnings before starting your upgrade.
 
 #### OpenShift clusters running 6.2.12 or earlier
 
-If you are upgrading OpenShift clusters running version 6.2.12 or earlier to version 6.2.18 or later, you need to bind a the new SCC to your service account. If the new SCC isn't bound to your service account, the upgrade might get stuck. See [reapply SCC]({{<relref "/kubernetes/re-clusters/upgrade-redis-cluster#reapply-the-scc">}}) for details.
+   Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC]({{<relref "/kubernetes/re-clusters/upgrade-redis-cluster#reapply-the-scc">}}) for details.
 
 #### RHEL7-based images
 
