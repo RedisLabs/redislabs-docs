@@ -69,7 +69,7 @@ See the [reference section](#redis-data-integration-configuration-reference) of 
 
 The source connector depends on the database you get data from. The basic configurations are the same for all database type except for the connector class.
 
-### Essential Source Properties
+### Essential source properties
 
 > Note: Add `debezium.source.` prefix to the listed properties when using in `application.properties`.
 
