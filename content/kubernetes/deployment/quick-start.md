@@ -157,7 +157,8 @@ The following example creates a minimal Redis Enterprise cluster. See the [Redis
 Each cluster must have at least 3 nodes. Single-node RECs are not supported.
     {{</note>}}
 
-  See the [Redis Enterprise hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md">}}) for more information on sizing Redis Enterprise node resource requests.
+    See the [Redis Enterprise hardware requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}}) for more
+    information on sizing Redis Enterprise node resource requests.
   
 1. Apply your custom resource file in the same namespace as `my-rec.yaml`.
 

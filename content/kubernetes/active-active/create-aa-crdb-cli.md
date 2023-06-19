@@ -32,7 +32,7 @@ Before creating Active-Active databases, you'll need admin access to two or more
 
 - Routing for external access with an [ingress resources]({{<relref "/kubernetes/networking/ingress.md">}}) (or [route resources]({{<relref "/kubernetes/networking/routes.md">}}) on OpenShift).
 - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name.
-- Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/hardware-requirements.md">}})).
+- Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}})).
 
 {{<note>}} The `activeActive` field and the `ingressOrRouteSpec` field cannot coexist in the same REC. If you configured your ingress via the `ingressOrRouteSpec` field in the REC, create your Active-Active database with the RedisEnterpriseActiveActiveDatabase (REAADB) custom resource.{{</note>}}
 

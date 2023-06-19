@@ -34,7 +34,7 @@ To communicate with other clusters, all participating clusters need access to th
     kubectl get secret -o yaml <rec-name>
     ```
 
-    This example shoes an admin credentials secret for an REC named `rec3`:
+    This example shows an admin credentials secret for an REC named `rec-boston`:
 
     ```yaml
     apiVersion: v1
@@ -43,13 +43,13 @@ To communicate with other clusters, all participating clusters need access to th
       username: GHij56789
     kind: Secret
     metadata:
-      name: rec3
+      name: rec-boston
     type: Opaque
     ```
 
 1. Create a secret for the new participating cluster named `redis-enterprise-<rerc>` and add the username and password.
 
-    The example below shows a secret file for a remote cluster named `rerc3` .
+    The example below shows a secret file for a remote cluster named `rerc-logan` .
 
     ```yaml
     apiVersion: v1
@@ -58,7 +58,7 @@ To communicate with other clusters, all participating clusters need access to th
       username: GHij56789
     kind: Secret
     metadata:
-      name: redis-enterprise-rerc3
+      name: redis-enterprise-rerc-logan
     type: Opaque
 
     ```
@@ -75,63 +75,63 @@ To communicate with other clusters, all participating clusters need access to th
 
 1. From one of the existing participating clusters, create a `RedisEnterpriseRemoteCluster` (RERC) custom resource for the new participating cluster.
 
-  This example shows a RERC custom resource for an REC named `rec3` in the namespace `ns3`. 
+    This example shows an RERC custom resource for an REC named `rec-boston` in the namespace `ns-massachusetts`. 
 
-  ```yaml
-  apiVersion: app.redislabs.com/v1alpha1
-  kind: RedisEnterpriseRemoteCluster
-  metadata:
-    name: rerc3
-  spec:
-    recName: rec3
-    recNamespace: ns3
-    apiFqdnUrl: test-example-api-rec3-ns3.redis.com
-    dbFqdnSuffix: -example-cluster-rec3-ns3.redis.com
-    secretName: redis-enterprise-rerc3
-  ```
+    ```yaml
+    apiVersion: app.redislabs.com/v1alpha1
+    kind: RedisEnterpriseRemoteCluster
+    metadata:
+      name: rerc-logan
+    spec:
+      recName: rec-boston
+      recNamespace: ns-massachusetts
+      apiFqdnUrl: test-example-api-rec-boston-ns-massachusetts.redis.com
+      dbFqdnSuffix: -example-cluster-rec-boston-ns-massachusetts.redis.com
+      secretName: redis-enterprise-rerc-logan
+    ```
 
 1. Create the RERC custom resource.
 
-  ```sh
-  kubectl create -f <new-RERC-file>
-  ```
+    ```sh
+    kubectl create -f <new-RERC-file>
+    ```
 
 1. Check the status of the newly created RERC custom resource.
 
-  ```sh
-  kubectl get rerc <RERC-name>
-  ```
+    ```sh
+    kubectl get rerc <RERC-name>
+    ```
 
-  The output should look like this:
+    The output should look like this:
 
-  ```sh
-  NAME        STATUS   SPEC STATUS   LOCAL
-  rerc3   Active   Valid         true
-  ```
+    ```sh
+    NAME        STATUS   SPEC STATUS   LOCAL
+    rerc-logan   Active   Valid         true
+    ```
 
 ### Edit REAADB spec
 
 1. Patch the REAADB spec to add the new RERC name to the `participatingClusters`, replacing `<reaadb-name>` and `<rerc-name>` with your own values.
 
-  ```sh
-  kubectl patch reaadb <reaadb-name> < --type merge --patch '{"spec": {"participatingClusters": [{"name": "<rerc-name>"}]}}'
-  ```
+    ```sh
+    kubectl patch reaadb <reaadb-name> < --type merge --patch '{"spec": {"participatingClusters": [{"name": "<rerc-name>"}]}}'
+    ```
 
 1. View the REAADB `participatingClusters` status to verify the cluster was added.
 
-  ```sh
-  kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.participatingClusters}'
-  ```
+    ```sh
+    kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.participatingClusters}'
+    ```
 
-  Output should look like this:
+    Output should look like this:
 
-  ```sh
-  [{"id":1,"name":"rerc1"},{"id":2,"name":"rerc2"},{"id":3,"name":"rerc3"}]
-  ```
+    ```sh
+    [{"id":1,"name":"rerc-ohare"},{"id":2,"name":"rerc-reagan"},{"id":3,"name":"rerc-logan"}]
+    ```
 
 ## Remove a participating cluster
 
-1. On an existing paticipating cluster, remove the desired cluster from the `participatingCluster` section of the REAADB spec.
+1. On an existing participating cluster,remove the desired cluster from the `participatingCluster` section of the REAADB spec.
 
     ```sh
     kubectl edit reaadb <reaadb-name>
@@ -139,17 +139,18 @@ To communicate with other clusters, all participating clusters need access to th
 
 1. On each of the other participating clusters, verify the status is `active` and the spec status is `Valid` and the cluster was removed.
 
+   ```sh
+   kubectl get reaadb <reaadb-name -o=jasonpath=`{.status}`
+   ```
+   
+    The output will look like this:
+    
     ```sh
-    kubectl get reaadb <reaadb-name -o=jasonpath=`{.status}`
+    {... ,"participatingClusters":[{"id":1,"name":"rerc1"},{"id":2,"name":"rerc2"}],"redisEnterpriseCluster":"rec1","specStatus":"Valid","status":"active"}
     ```
 
-    The output look like this:
+1. On the removed participating cluster, list all REAADB resources on the cluster to verify they were deleted.
 
-    ```sh
-     {... ,"participatingClusters":[{"id":1,"name":"rerc1"},{"id":2,"name":"rerc2"}],"redisEnterpriseCluster":"rec1","specStatus":"Valid","status":"active"}
-     ```
-
-1. On the cluster that was removed, list all REAADB resources on the cluster to verify they were deleted.
 
     ```sh
     kubectl get reaadb -o+jasonpath=`{range.items[*]}{.metadata.name}`

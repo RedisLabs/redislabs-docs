@@ -21,47 +21,48 @@ The [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operato
 
 1. Edit or patch the REAADB custom resource with your global configuration changes.
 
-  The example command below patches the REAADB named `example-aadb-1` to set the global memory size to 200MB:
+    The example command below patches the REAADB named `reaadb-boeing` to set the global memory size to 200MB:
 
-  ```sh
-  kubectl patch reaadb example-aadb-1 --type merge --patch \
-  '{"spec": {"globalConfigurations": {"memorySize": "200mb"}}}'
-  ```
+    ```sh
+    kubectl patch reaadb reaadb-boeing --type merge --patch \
+    '{"spec": {"globalConfigurations": {"memorySize": "200mb"}}}'
+    ```
 
 1. Verify the status is `active` and the spec status is `Valid`.
 
-  This example shows the status for the `example-aadb-1` database.
+    This example shows the status for the `reaadb-boeing` database.
 
-  ```sh
-  kubectl get reaadb example-aadb-1
+    ```sh
+    kubectl get reaadb reaadb-boeing
 
-  NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-  example-aadb-1   active   Valid    
-  ```
+    NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
+    reaadb-boeing   active   Valid    
+    ```
 
 1. View the global configurations on each participating cluster to verify they are synced.
 
-  ```sh
-  kubectl get reaadb <reaadb-name> -o yaml
-  ```
+    ```sh
+    kubectl get reaadb <reaadb-name> -o yaml
+    ```
 
 ## Edit global configuration secrets
 
 This section edits the secrets under the REAADB '.spec.globalConfigurations' section. For more information and all available fields, see the [REAADB API reference](https://github.com/RedisLabs/redis-enterprise-operator/blob/master/deploy/redis_enterprise_active_active_database_api.md).
 
+
 1. On an existing participating cluster, generate a YAML file containing the database secret with the relevant data.
 
-  This example shoes a secret named `my-db-secret` with the password `my-password` encoded in base 64.
+    This example shoes a secret named `my-db-secret` with the password `my-password` encoded in base 64.
 
-  ```yaml
-  apiVersion: v1
-  data:
-    password: bXktcGFzcw
-  kind: Secret
-  metadata:
-    name: my-db-secret
-  type: Opaque
-  ```
+    ```yaml
+    apiVersion: v1
+     data:
+      password: bXktcGFzcw
+    kind: Secret
+    metadata:
+      name: my-db-secret
+    type: Opaque
+    ```
 
 1. Apply the secret file from the previous step, substituting your own value for `<db-secret-file>`.
 
@@ -82,7 +83,7 @@ This section edits the secrets under the REAADB '.spec.globalConfigurations' sec
     kubectl get reaadb <reaadb-name>
 
     NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    example-aadb-1   active   Valid
+    reaadb-boeing   active   Valid
     ```
 
 1. On each other participating cluster, check the secret status.
