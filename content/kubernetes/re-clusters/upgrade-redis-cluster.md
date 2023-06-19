@@ -120,8 +120,7 @@ oc apply -f openshift/scc.yaml
 ```
 
 ```sh
-oc adm policy add-scc-to-user redis-enterprise-scc-v2 \
-  system:serviceaccount:<my-project>:redis-enterprise-operator
+oc adm policy add-scc-to-user redis-enterprise-scc-v2 \ system:serviceaccount:<my-project>:<rec-name>
 ```
 
 ### Verify the operator is running

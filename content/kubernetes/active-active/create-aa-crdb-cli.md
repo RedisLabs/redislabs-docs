@@ -165,6 +165,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
     ```
 
     If the rec name was modified, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
+    
     ```sh
     oc apply -f scc.yaml
     oc adm policy add-scc-to-group redis-enterprise-scc-v2  system:serviceaccounts:<namespace>
