@@ -90,7 +90,7 @@ The Redis Enterprise pods must run in OpenShift with privileges set in a [Securi
     securitycontextconstraints.security.openshift.io "redis-enterprise-scc-v2" configured
     ```
 
-    Releases before 6.4.2-6 use the earlier version of the SCC, named `redis-enterprise-scc-v2`.
+    Releases before 6.4.2-6 use the earlier version of the SCC, named `redis-enterprise-scc`.
 
 1. Provide the operator permissions for the pods.
 
