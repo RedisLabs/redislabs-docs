@@ -29,6 +29,8 @@ To learn how to install Redis and `redis-cli`, see the following installation gu
 
 To run Redis commands with `redis-cli`, you need to connect to your Redis database.
 
+Endpoint and port details are available from the **Databases** list or the database’s **Configuration** screen.
+
 ### Connect from a node
 
 If you have SSH access to a node in a Redis cluster, you can run `redis-cli` directly from the node:
@@ -55,6 +57,29 @@ You can also provide the password with the `REDISCLI_AUTH` environment variable 
 $ export REDISCLI_AUTH=<password>
 $ redis-cli -h <endpoint> -p <port>
 ```
+
+### Connect over TLS
+
+To connect to a Redis Enterprise Software or Redis Enterprise Cloud database over TLS:
+
+1. Download or copy the Redis Enterprise server (or proxy) certificates.
+
+    - For Redis Enterprise Cloud, see [Download certificates]({{<relref "/rc/security/database-security/tls-ssl#download-certificates">}}) for detailed instructions on how to download the server certificates (`redis_ca.pem`) from the [admin console](https://app.redislabs.com/).
+
+    - For Redis Enterprise Software, copy the proxy certificate from the admin console (**settings** > **general** > **Proxy Certificate**) or from a cluster node (`/etc/opt/redislabs/proxy_cert.pem`).
+
+1. If your database doesn't require client authentication, provide the Redis Enterprise server certificate (`redis_ca.pem` for Cloud or `proxy_cert.pem` for Software) when you connect:
+
+    ```sh
+    redis-cli -h <endpoint> -p <port> --tls --cacert <redis_cert>.pem
+    ```
+
+1. If your database requires client authentication, then you also need to provide your client's private and public keys:
+
+    ```sh
+    redis-cli -h <endpoint> -p <port> --tls --cacert <redis_cert>.pem \
+        --cert redis_user.crt --key redis_user_private.key
+    ```
 
 ### Connect with Docker
 
@@ -106,6 +131,26 @@ OK
 127.0.0.1:12000> GET mykey
 "Hello world"
 ```
+
+## Examples
+
+### Check slowlog
+
+Run [`slowlog get`](https://redis.io/commands/slowlog-get/) for a list of recent slow commands:
+
+```sh
+redis-cli -h <endpoint> -p <port> slowlog get <number of entries> with-complexity
+```
+
+### Scan for big keys
+
+Scan the database for big keys:
+
+```sh
+redis-cli -h <endpoint> -p <port> --bigkeys
+```
+
+See [Scanning for big keys](https://redis.io/docs/ui/cli/#scanning-for-big-keys) for more information.
 
 ## More info
 
