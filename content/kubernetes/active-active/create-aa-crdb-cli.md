@@ -165,10 +165,13 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
     ```
 
     If the rec name was modified, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
+    
     ```sh
     oc apply -f scc.yaml
-    oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<namespace>
+    oc adm policy add-scc-to-group redis-enterprise-scc-v2  system:serviceaccounts:<namespace>
     ```
+
+    Releases before 6.4.2-6 use the earlier version of the SCC, named `redis-enterprise-scc`.
 
 1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the route IP address. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 

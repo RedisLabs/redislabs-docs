@@ -35,18 +35,18 @@ Each release of Redis Enterprise for Kubernetes is thoroughly tested against a s
 - "deprecated" indicates this distribution is supported for this release, but will be dropped in a future release.
 - Any distribution not listed below is not supported for production workloads.
 
-| **Kubernetes version**  | 1.21       | 1.22       | 1.23       | 1.24       | 1.25       | 1.26       |
+| **Kubernetes version**  | 1.22       | 1.23       | 1.24       | 1.25       | 1.26       | 1.27       |
 |:------------------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Community Kubernetes    |            | deprecated | supported  | supported  | supported  | supported* |
-| Amazon EKS              |            | supported  | supported  | supported* |            |            |
-| Azure AKS               |            |            | deprecated | supported  | supported* |            |
-| Google GKE              |            | supported  | supported  | supported  | supported  |            |
-| Rancher 2.6             | deprecated | supported  | supported  | supported  |            |            |
-| Rancher 2.7             |            |            | supported* | supported* |            |            |
-| VMware TKG 1.6          |            | supported  | supported  |            |            |            |
-| **OpenShift version**   | **4.8**    | **4.9**    | **4.10**   | **4.11**   |  **4.12**  |            |
-|                         | deprecated | deprecated | supported  | supported  | supported* |            |
-| **VMware TKGI version** | **1.12**   | **1.13**   | **1.14**   | **1.15**   |            |            |
+| Amazon EKS              | deprecated | deprecated | supported  | supported* |            |            |
+| Azure AKS               |            | deprecated | supported  | supported  | supported* |
+| Google GKE              | deprecated | deprecated | supported  | supported  | supported* |            |
+| Rancher 2.6             | deprecated | deprecated | supported  |            |            |            |
+| Rancher 2.7             |            | deprecated | supported  |            |            |            |
+| VMware TKG 1.6          |            | deprecated | deprecated |            |            |            |
+| **OpenShift version**   | **4.9**    | **4.10**   | **4.11**   | **4.12**   |            |            |
 |                         |            | deprecated | supported  | supported  |            |            |
+| **VMware TKGI version** | **1.13**   | **1.14**   | **1.15**   |            |            |            |
+|                         | deprecated | deprecated | supported  |            |            |            |
 
-\* Support added in this release 
+\* Support added in latest release
