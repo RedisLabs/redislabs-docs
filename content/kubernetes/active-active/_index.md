@@ -24,7 +24,9 @@ There are two methods for creating an Active-Active database with Redis Enterpri
 - The `RedisEnterpriseActiveActiveDatabase` (REAADB) custom resource is available for versions 6.4.2 and later.
 - The `crdb-cli` method is available for versions 6.4.2 or earlier.
 
+
 We recommend creating new Active-Active databases using the RedisEnterpriseActiveActiveDatabase (REAADB) custom resource. This allows you to manage your Active-Active database with the operator and ensures you have the latest features and functionality.
+
 
 ### Active-Active controller method
 

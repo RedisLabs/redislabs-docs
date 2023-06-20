@@ -2,8 +2,8 @@
 
 Title: Create Active-Active databases with crdb-cli
 linkTitle: Create Active-Active with crdb-cli
-description: This section how to set up an Active-Active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
-weight: 15
+description: This section shows how to set up an Active-Active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
+weight: 99
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
@@ -30,9 +30,11 @@ This process consists of:
 
 Before creating Active-Active databases, you'll need admin access to two or more working Kubernetes clusters that each have:
 
-- Routing for external access with an [ingress resources]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) (or [route resources]({{<relref "/kubernetes/networking/routes.md">}}) on OpenShift).
+- Routing for external access with an [ingress resources]({{<relref "/kubernetes/networking/ingress.md">}}) (or [route resources]({{<relref "/kubernetes/networking/routes.md">}}) on OpenShift).
 - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name.
 - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}})).
+
+{{<note>}} The `activeActive` field and the `ingressOrRouteSpec` field cannot coexist in the same REC. If you configured your ingress via the `ingressOrRouteSpec` field in the REC, create your Active-Active database with the RedisEnterpriseActiveActiveDatabase (REAADB) custom resource.{{</note>}}
 
 ## Document required parameters
 
@@ -101,7 +103,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 ### Using ingress controller
 
-1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
+1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/networking/ingress.md">}}), add the following to the `spec` section of your REC resource file.
 
   Nginx:
 
@@ -148,7 +150,7 @@ HAproxy:
 
 #### If using Istio Gateway and VirtualService
 
-No changes are required to the REC spec if you are using [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}) in place of an ingress controller. The `activeActive` section added above creates ingress resources. The two custom resources used to configure Istio (Gateway and VirtualService) replace the need for ingress resources.
+No changes are required to the REC spec if you are using [Istio]({{<relref "/kubernetes/networking/istio-ingress.md">}}) in place of an ingress controller. The `activeActive` section added above creates ingress resources. The two custom resources used to configure Istio (Gateway and VirtualService) replace the need for ingress resources.
 
 {{<warning>}}
 These custom resources are not controlled by the operator and will need to be configured and maintained manually.
