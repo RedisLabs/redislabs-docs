@@ -22,7 +22,9 @@ RDI currently supports these scenarios:
   
 * [Write-behind scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}). RDI applies data changes in Redis to one or more downstream data stores. RDI can map and transform the Redis types and models to the downstream types and models. This scenario is useful when the application needs fast writes and reads for some of the queries but has to provide data to other downstream services that need them in different models for other uses.
 
-  ![Write-behind flow](/images/rdi/write-behind.png)  
+* [Write-behind flow](/images/rdi/write-behind.png)({{<relref "/rdi/quickstart/write-behind-guide">}}). RDI is triggered by client requests of configured key-patterns that result in cache miss and instead of returning nothing, fetches the data from a downstream database, writes it to cache and returns the requested data.
+
+  * [Read-through scenario (Preview)] 
 
 To learn more see [Architecture]({{<relref "/rdi/architecture">}}) for more details and architecture.
 
