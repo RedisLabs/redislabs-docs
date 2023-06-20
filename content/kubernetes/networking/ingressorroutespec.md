@@ -83,7 +83,9 @@ kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
 ```sh
 kubectl patch rec <rec-name> --type merge --patch "{\"spec\": \
      {\"ingressOrRouteSpec\": \
-     {\"apiFqdnUrl\": \"api-<rec-name>-<rec-namespace>.redis.com\", \"dbFqdnSuffix\": \"-db-<rec-name>-<rec-namespace>.redis.com\", \"method\": \"openShiftRoute\"}}}"
+     {\"apiFqdnUrl\": \"api-<rec-name>-<rec-namespace>.redis.com\" \ 
+     \"dbFqdnSuffix\": \"-db-<rec-name>-<rec-namespace>.redis.com\", \
+     \"method\": \"openShiftRoute\"}}}"
 ```
 
 OpenShift routes do not require any `ingressAnnotations` in the `ingressOrRouteSpec`.
