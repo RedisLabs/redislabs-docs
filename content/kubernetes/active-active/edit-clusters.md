@@ -102,7 +102,7 @@ To communicate with other clusters, all participating clusters need access to th
     kubectl get rerc <RERC-name>
     ```
 
-    The output should look like this:
+    The output will look like this:
 
     ```sh
     NAME        STATUS   SPEC STATUS   LOCAL
@@ -123,7 +123,7 @@ To communicate with other clusters, all participating clusters need access to th
     kubectl get reaadb <reaadb-name> -o=jsonpath='{.status.participatingClusters}'
     ```
 
-    Output should look like this:
+    The output will look like this:
 
     ```sh
     [{"id":1,"name":"rerc-ohare"},{"id":2,"name":"rerc-reagan"},{"id":3,"name":"rerc-logan"}]
