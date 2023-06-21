@@ -27,7 +27,7 @@ Review the following warnings before starting your upgrade.
 
 ### OpenShift clusters running 6.2.12 or earlier
 
-   Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
+Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
 
 ### RHEL7-based images
 
@@ -122,10 +122,11 @@ oc apply -f openshift/scc.yaml
 oc adm policy add-scc-to-user redis-enterprise-scc-v2 \ system:serviceaccount:<my-project>:<rec-name>
 ```
 
+If you are upgrading from operator version 6.4.2-6 or before, see the ["after upgrading"](#after-upgrading) section to delete the old SCC and role binding after all clusters are running 6.4.2-6 or later.
+
 ### Verify the operator is running
 
 You can check your deployment to verify the operator is running in your namespace.
-
 
 ```sh
 kubectl get deployment/redis-enterprise-operator
@@ -196,19 +197,30 @@ To see the status of the current rolling upgrade, run:
 kubectl rollout status sts <REC_name>
 ```
 
-### Delete old SCC
+### After upgrading
 
-If your clusters were running version 6.2.18 or earlier before upgrade, delete the old security context constraint after the upgrade completes.
+For OpenShift users, operator version 6.4.2-6 introduces a new SCC (`redis-enterprise-scc-v2`). If any of your OpenShift RedisEnterpriseClusters are running versions earlier than 6.2.4-6, you need to keep both the new and old versions of the SCC.
 
-```sh
-oc delete scc redis-enterprise-scc
-```
+If all of your clusters have been upgraded to operator version 6.4.2-6 or later, you can delete the old version of the SCC (`redis-enterprise-scc`) and remove the binding to your service account.
 
-The output should look similar to the following:
+1. Delete the old version of the SCC
 
-```sh
-securitycontextconstraints.security.openshift.io "redis-enterprise-scc" deleted
-```
+   ```sh
+   oc delete scc redis-enterprise-scc
+   ```
+
+   The output should look similar to the following:
+
+   ```sh
+   securitycontextconstraints.security.openshift.io "redis-enterprise-scc" deleted
+   ```
+
+1. Remove the binding to your service account.
+
+   ```sh
+   oc adm policy remove-scc-from-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec-name>
+   ```
+
 
 ### Upgrade databases
 
