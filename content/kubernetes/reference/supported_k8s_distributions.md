@@ -43,7 +43,7 @@ Each release of Redis Enterprise for Kubernetes is thoroughly tested against a s
 | Google GKE              | deprecated | deprecated | supported  | supported  | supported* |            |
 | Rancher 2.6             | deprecated | deprecated | supported  |            |            |            |
 | Rancher 2.7             |            | deprecated | supported  |            |            |            |
-| VMware TKG 1.6          |            | deprecated | deprecated |            |            |            |
+| VMware TKG 1.6          | deprecated | deprecated |            |            |            |            |
 | **OpenShift version**   | **4.9**    | **4.10**   | **4.11**   | **4.12**   |            |            |
 |                         |            | deprecated | supported  | supported  |            |            |
 | **VMware TKGI version** | **1.13**   | **1.14**   | **1.15**   |            |            |            |
