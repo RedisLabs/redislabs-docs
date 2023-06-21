@@ -25,6 +25,10 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
 
 Review the following warnings before starting your upgrade.
 
+### Supported upgrade paths**
+
+   If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
+
 ### OpenShift clusters running 6.2.12 or earlier
 
    Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
