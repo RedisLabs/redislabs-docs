@@ -27,7 +27,7 @@ Review the following warnings before starting your upgrade.
 
 ### OpenShift clusters running 6.2.12 or earlier
 
-   Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
+Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
 
 ### RHEL7-based images
 
@@ -122,10 +122,11 @@ oc apply -f openshift/scc.yaml
 oc adm policy add-scc-to-user redis-enterprise-scc-v2 \ system:serviceaccount:<my-project>:<rec-name>
 ```
 
+If you are upgrading from versions 6.4.2-6 or before, see the ["after upgrading"](#after-upgrading) section to delete the old SCC and role binding after all clusters are running version 6.4.2-6 or later.
+
 ### Verify the operator is running
 
 You can check your deployment to verify the operator is running in your namespace.
-
 
 ```sh
 kubectl get deployment/redis-enterprise-operator
