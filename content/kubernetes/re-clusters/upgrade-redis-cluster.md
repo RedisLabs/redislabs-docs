@@ -25,6 +25,10 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
 
 Review the following warnings before starting your upgrade.
 
+### Supported upgrade paths**
+
+   If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
+
 ### OpenShift clusters running 6.2.12 or earlier
 
 Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
@@ -43,7 +47,7 @@ Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before
 
 On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases.
 
-A fix is available in the 6.4.2-5 release. Upgrade your Redis cluster to [6.4.2-5]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) before upgrading your Kubernetes cluster.
+A fix is available in the 6.4.2-5 release. Upgrade your operator version to 6.4.2-5 or later before upgrading your Kubernetes cluster. 
 
 ## Upgrade the operator
 

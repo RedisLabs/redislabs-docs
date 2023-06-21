@@ -50,3 +50,7 @@ Each release of Redis Enterprise for Kubernetes is thoroughly tested against a s
 |                         | deprecated | deprecated | supported  |            |            |            |
 
 \* Support added in latest release
+
+### Supported upgrade paths**
+
+   If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
