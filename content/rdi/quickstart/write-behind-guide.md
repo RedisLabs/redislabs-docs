@@ -307,7 +307,7 @@ The `source` section must specify the following attributes:
 
 The `source` section can optionally include the following attributes:
 
-- `retries` - Number of attempts to read from the database in case of disconnect. The default is 1.
+- `retries` - Number of attempts to read from the database. The default is 1.
 - `timeout` - Number of seconds to wait before reading of data is timed-out (0 - no limit). The default is 3 seconds.
 
 ##### Using custom sql queries
