@@ -122,7 +122,7 @@ oc apply -f openshift/scc.yaml
 oc adm policy add-scc-to-user redis-enterprise-scc-v2 \ system:serviceaccount:<my-project>:<rec-name>
 ```
 
-If you are upgrading from versions 6.4.2-6 or before, see the ["after upgrading"](#after-upgrading) section to delete the old SCC and role binding after all clusters are running version 6.4.2-6 or later.
+If you are upgrading from operator version 6.4.2-6 or before, see the ["after upgrading"](#after-upgrading) section to delete the old SCC and role binding after all clusters are running 6.4.2-6 or later.
 
 ### Verify the operator is running
 
@@ -199,9 +199,9 @@ kubectl rollout status sts <REC_name>
 
 ### After upgrading
 
-For OpenShift users, version 6.2.4-6 introduces a new SCC (`redis-enterprise-scc-v2`). If any of your OpenShift RedisEnterpriseClusters are running versions earlier than 6.2.4-6, you need to keep both the new and old versions of the SCC.
+For OpenShift users, operator version 6.4.2-6 introduces a new SCC (`redis-enterprise-scc-v2`). If any of your OpenShift RedisEnterpriseClusters are running versions earlier than 6.2.4-6, you need to keep both the new and old versions of the SCC.
 
-If all of your clusters have been upgraded to 6.2.4-6 or later, you can delete the old version of the SCC (`redis-enterprise-scc`) and remove the binding to your service account.
+If all of your clusters have been upgraded to operator version 6.4.2-6 or later, you can delete the old version of the SCC (`redis-enterprise-scc`) and remove the binding to your service account.
 
 1. Delete the old version of the SCC
 
