@@ -56,8 +56,12 @@ Install your chosen Ingress controller, making sure `ssl-passthrough` is enabled
 
 Edit the RedisEnterpriseCluster (REC) spec to add the `ingressOrRouteSpec` field, replacing `<placeholders>` below with your own values.
 
+### NGINX or HAproxy ingress controllers
+
 * Define the REC API hostname (`apiFqdnUrl`) and database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
-* Add the annotations for your Ingress and set `ssl-passthrough` to "true". The annotations below are for Ingress; see OpenShift documentation for route annotations.
+* Set `method` to `ingress`.
+* Set `ssl-passthrough` to "true".
+* Add any additional annotations required for your ingress controller. See [NGINX docs](https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/) or [HAproxy docs](https://www.haproxy.com/documentation/kubernetes/latest/community/configuration-reference/ingress/) for more information.
 
 ```sh
 kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
@@ -70,3 +74,18 @@ kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
        \"<ingress-controller>.ingress.kubernetes.io/ssl-passthrough\": \ \"true\"}, \
       \"method\": \"ingress\"}}}"
 ```
+
+### OpenShift routes
+
+* Define the REC API hostname (`apiFqdnUrl`) and database hostname suffix (`dbFqdnSuffix`) you chose when configuring DNS.
+* Set `method` to `openShiftRoute`.
+
+```sh
+kubectl patch rec <rec-name> --type merge --patch "{\"spec\": \
+     {\"ingressOrRouteSpec\": \
+     {\"apiFqdnUrl\": \"api-<rec-name>-<rec-namespace>.redis.com\" \ 
+     \"dbFqdnSuffix\": \"-db-<rec-name>-<rec-namespace>.redis.com\", \
+     \"method\": \"openShiftRoute\"}}}"
+```
+
+OpenShift routes do not require any `ingressAnnotations` in the `ingressOrRouteSpec`.
