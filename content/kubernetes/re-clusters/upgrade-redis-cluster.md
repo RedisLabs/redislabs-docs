@@ -18,28 +18,28 @@ aliases: [
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps:
 
-  1. Upgrade the Redis Enterprise operator
-  2. Upgrade the Redis Enterprise cluster (REC)
+  1. [Upgrade the Redis Enterprise operator](#upgrade-the-operator)
+  2. [Upgrade the Redis Enterprise cluster (REC)](#upgrade-the-redis-enterprise-cluster-rec)
 
 ## Before upgrading
 
 Review the following warnings before starting your upgrade.
 
-#### OpenShift clusters running 6.2.12 or earlier
+### OpenShift clusters running 6.2.12 or earlier
 
-   Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC]({{<relref "/kubernetes/re-clusters/upgrade-redis-cluster#reapply-the-scc">}}) for details.
+   Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
 
-#### RHEL7-based images
+### RHEL7-based images
 
 When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info.
 
-#### Invalid license
+### Invalid license
 
 Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
 
 Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 
-#### Large clusters
+### Large clusters
 
 On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases.
 
@@ -79,7 +79,6 @@ If you have made changes to the role, role binding, RBAC, or custom resource def
 
 Upgrade the bundle and operator with a single command, passing in the bundle YAML file:
 
-
 ```sh
 kubectl apply -f bundle.yaml
 ```
@@ -113,7 +112,7 @@ If you have the admission controller enabled, you need to manually reapply the `
 
 ### Reapply the SCC
 
-If you are using OpenShift, you will also need to manually reapply the [Security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})) and bind it to your service account.
+If you are using OpenShift, you will also need to manually reapply the [security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})) and bind it to your service account.
 
 ```sh
 oc apply -f openshift/scc.yaml
@@ -195,6 +194,20 @@ To see the status of the current rolling upgrade, run:
 
 ```sh
 kubectl rollout status sts <REC_name>
+```
+
+### Delete old SCC
+
+If your clusters were running version 6.2.18 or earlier before upgrade, delete the old security context constraint after the upgrade completes.
+
+```sh
+oc delete scc redis-enterprise-scc
+```
+
+The output should look similar to the following:
+
+```sh
+securitycontextconstraints.security.openshift.io "redis-enterprise-scc" deleted
 ```
 
 ### Upgrade databases

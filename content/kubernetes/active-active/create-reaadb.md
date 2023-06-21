@@ -70,7 +70,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     kubectl get rerc <rerc-name>
     ```
 
-    The output will look similar to:
+    The output should look similar to:
 
     ```sh
     kubectl get rerc rerc-ohare
@@ -122,7 +122,7 @@ Before creating an Active-Active database on Redis Enterprise for Kubernetes, yo
     kubectl get reaadb <reaadb-name>
     ```
 
-    The output will look similar to:
+    The output should look similar to:
 
     ```sh
     kubectl get reaadb reaadb-boeing
