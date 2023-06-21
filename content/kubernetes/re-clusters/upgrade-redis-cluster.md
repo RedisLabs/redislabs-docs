@@ -199,7 +199,7 @@ kubectl rollout status sts <REC_name>
 
 ### After upgrading
 
-Version 6.2.4-6 introduces a new SCC (`redis-enterprise-scc-v2`). If any of your RedisEnterpriseClusters are running versions earlier than this, you need to keep both the new and old versions of the SCC. 
+For OpenShift users, version 6.2.4-6 introduces a new SCC (`redis-enterprise-scc-v2`). If any of your OpenShift RedisEnterpriseClusters are running versions earlier than 6.2.4-6, you need to keep both the new and old versions of the SCC.
 
 If all of your clusters have been upgraded to 6.2.4-6 or later, you can delete the old version of the SCC (`redis-enterprise-scc`) and remove the binding to your service account.
 
