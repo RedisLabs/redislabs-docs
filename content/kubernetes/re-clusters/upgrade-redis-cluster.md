@@ -196,19 +196,30 @@ To see the status of the current rolling upgrade, run:
 kubectl rollout status sts <REC_name>
 ```
 
-### Delete old SCC
+### After upgrading
 
-If your clusters were running version 6.2.18 or earlier before upgrade, delete the old security context constraint after the upgrade completes.
+Version 6.2.4-6 introduces a new SCC (`redis-enterprise-scc-v2`). If any of your RedisEnterpriseClusters are running versions earlier than this, you need to keep both the new and old versions of the SCC. 
 
-```sh
-oc delete scc redis-enterprise-scc
-```
+If all of your clusters have been upgraded to 6.2.4-6 or later, you can delete the old version of the SCC (`redis-enterprise-scc`) and remove the binding to your service account.
 
-The output should look similar to the following:
+1. Delete the old version of the SCC
 
-```sh
-securitycontextconstraints.security.openshift.io "redis-enterprise-scc" deleted
-```
+   ```sh
+   oc delete scc redis-enterprise-scc
+   ```
+
+   The output should look similar to the following:
+
+   ```sh
+   securitycontextconstraints.security.openshift.io "redis-enterprise-scc" deleted
+   ```
+
+1. Remove the binding to your service account.
+
+   ```sh
+   oc adm policy remove-scc-from-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec-name>
+   ```
+
 
 ### Upgrade databases
 
