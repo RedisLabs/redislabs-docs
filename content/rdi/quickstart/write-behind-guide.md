@@ -241,6 +241,8 @@ Job definition has the following structure:
 
 ```yaml
 source:
+  retries: 1
+  timeout: 3 #seconds
   keyspace:
     trigger: read-through
     pattern: emp:*
@@ -302,6 +304,11 @@ The `source` section must specify the following attributes:
 - `table` or `sql` attributes:
   - `table` - the table to query.
   - `sql` - a SQL statement in case you would like to `JOIN` several tables or to perform a different complex query. see more below about using this option.
+
+The `source` section can optionally include the following attributes:
+
+- `retries` - Number of attempts to read from the database in case of disconnect. The default is 1.
+- `timeout` - Number of seconds to wait before reading of data is timed-out (0 - no limit). The default is 3 seconds.
 
 ##### Using custom sql queries
 
