@@ -21,6 +21,7 @@ aliases: {
 To create an Active-Active database, make sure you've completed all the following steps and have gathered the information listed below each step.
 
 1. Configure the [admission controller and ValidatingWebhook]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}).
+   {{<note>}}These are installed and enabled by default on clusters created via the OpenShift OperatorHub. {{</note>}}
 
 2. Create two or more [RedisEnterpriseCluster (REC) custom resources]({{<relref "/kubernetes/deployment/quick-start#create-a-redis-enterprise-cluster-rec">}}) with enough [memory resources]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}})).
    * Name of each REC (`<rec-name>`)
