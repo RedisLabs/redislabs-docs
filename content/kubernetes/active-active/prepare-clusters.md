@@ -17,32 +17,33 @@ aliases: {
 }
 ---
 
+{{<note>}}This feature is only available for versions 6.2.4 or later.{{</note>}}
+
 ## Prepare participating clusters
 
-An Active-Active database can span multiple clusters. Make sure you have enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}})).
+Before you prepare your clusters to participate in an Active-Active database, make sure you've completed all the following steps and have gathered the information listed below each step.
 
-### Cluster names
+1. Configure the [admission controller and ValidatingWebhook]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}).
 
-The combination of the REC name and namespace (`<rec-name>.<namespace-name>`) must be unique for each participating cluster in the Active-Active database.
+2. Create two or more [RedisEnterpriseCluster (REC) custom resources]({{<relref "/kubernetes/deployment/quick-start#create-a-redis-enterprise-cluster-rec">}}) with enough [memory resources]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}}).
+   * Name of each REC (`<rec-name>`)
+   * Namespace for each REC (`<rec-namespace>`)
 
-For example, if you have two K8s clusters, each with their own REC named `rec-chicago` in a namespace named `ns-illinois`, the value of `<rec-name>.<namespace-name>` for both RECs would be `rec-chicago.ns-illinois`. These can't be used for the same Active-Active database.
+3. Configure the REC [`ingressOrRoutes` field]({{<relref "/kubernetes/networking/ingressorroutespec.md">}}) and [create DNS records]({{<relref "/kubernetes/networking/ingressorroutespec#configure-dns/">}}).
+   * REC API hostname (`api-<rec-name>-<rec-namespace>.<subdomain>`)
+   * Database hostname suffix (`-db-<rec-name>-<rec-namespace>.<subdomain>`)
 
+Next you'll [collect credentials](#collect-rec-credentials) for your participating clusters and create secrets for the RedisEnterprsieRemoteCluster (RERC) to use.
 
-### Configure external routing
+For a list of example values used throughout this article, see the [Example values](#example-values) section.
 
-Active-Active databases require external routing access to sync properly. To configure external routing through an Ingress or OpenShift route, see [Establish external routing on the REC]({{<relref "/kubernetes/networking/ingressorroutespec.md">}}).
-
-### Configure `ValidatingWebhookConfiguration`
-
-The admission controller uses a webhook to dynamically validate resources configured by the operator. The `ValidatingWebhookConfiguration` is required for Active-Active databases. Learn how to enable and configure the admission controller in the [Enable admission controller]({{<relref "/kubernetes/deployment/quick-start.md#enable-the-admission-controller/">}}) section of the [Deploy Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) instructions.
-
-### Collect REC credentials
+## Collect REC credentials
 
 To communicate with other clusters, all participating clusters will need access to the admin credentials for all other clusters.
 
 1. Create a file to hold the admin credentials for all participating RECs (such as `all-rec-secrets.yaml`).
 
-1. Within that file, create a new secret for each participating cluster named `redis-enterprise-<rerc>`.
+1. Within that file, create a new secret for each participating cluster named `redis-enterprise-<rerc-name>`.
 
     The example below shows a file (`all-rec-secrets.yaml`) holding secrets for two participating clusters:
 
@@ -126,3 +127,25 @@ To communicate with other clusters, all participating clusters will need access 
 ## Next steps
 
 Now you are ready to [create your Redis Enterprise Active-Active database]({{<relref "/kubernetes/active-active/create-reaadb.md">}}).
+
+## Example values
+
+This article uses the following example values:
+
+#### Example cluster 1
+
+* REC name: `rec-chicago`
+* REC namespace: `ns-illinois`
+* RERC name: `rerc-ohare`
+* RERC secret name: `redis-enterprise-rerc-ohare`
+* API FQDN: `api-rec-chicago-ns-illinois.redis.com`
+* DB FQDN suffix: `-db-rec-chicago-ns-illinois.redis.com`
+
+#### Example cluster 2
+
+* REC name: `rec-arlington`
+* REC namespace: `ns-virginia`
+* RERC name: `rerc-raegan`
+* RERC secret name: `redis-enterprise-rerc-reagan`
+* API FQDN: `api-rec-arlington-ns-virginia.redis.com`
+* DB FQDN suffix: `-db-rec-arlington-ns-virginia.redis.com`
