@@ -60,7 +60,6 @@ To communicate with other clusters, all participating clusters need access to th
     metadata:
       name: redis-enterprise-rerc-logan
     type: Opaque
-
     ```
 
 1. Apply the file of collected secrets to every participating REC.
