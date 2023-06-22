@@ -67,7 +67,7 @@ You will also need to remove [the `namespaceSelector` section from the validatin
 
 ## Delete an Active-Active database (REAADB)
 
-{{<note>}}The Redis Enterprise Active-Active database (REAADB) custom resource is currently in public preview. View [Preview REAADB]({{<relref "/kubernetes/active-active/preview/">}}) for more details.{{</note>}}
+{{<note>}}The Redis Enterprise Active-Active database (REAADB) custom resource is currently in public preview. View [Preview REAADB]({{<relref "/kubernetes/active-active/">}}) for more details.{{</note>}}
 
 1. On one of the existing participating clusters, delete the REEADB (substituting `<reaadb-name>` with your database name).
 
@@ -83,7 +83,7 @@ You will also need to remove [the `namespaceSelector` section from the validatin
 
 ## Delete a remote cluster (RERC)
 
-{{<note>}}The Redis Enterprise Active-Active database (REAADB) custom resource is currently in public preview. View [Preview REAADB]({{<relref "/kubernetes/active-active/preview/">}}) for more details.{{</note>}}
+{{<note>}}The Redis Enterprise Active-Active database (REAADB) custom resource is currently in public preview. View [Preview REAADB]({{<relref "/kubernetes/active-active/">}}) for more details.{{</note>}}
 
 1. Verify the RERC you want to delete isn't listed as a participating cluster in any REAADB resources.
 

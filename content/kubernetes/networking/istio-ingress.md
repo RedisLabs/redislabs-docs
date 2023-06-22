@@ -10,12 +10,13 @@ aliases: [
     /kubernetes/re-databases/ingress_routing_with_istio/,
     /kubernetes/networking/ingress-routing-with-istio.md,
     /kubernetes/networking/ingress_routing-with-istio/,
+    /kubernetes/networking/istio-ingress/,
 ]
 ---
 
-Redis Enterprise for Kubernetes version `6.2.8-11` introduces the ability to use an Istio ingress gateway as an alternative to NGINX or HaProxy ingress controllers.
+Redis Enterprise for Kubernetes version `6.2.8-11` introduces the ability to use an Istio Ingress gateway as an alternative to NGINX or HaProxy Ingress controllers.
 
-Istio can also understand ingress resources, but using that mechanism takes away the advantages and options that the native Istio resources provide. Istio offers its own configuration methods using custom resources.
+Istio can also understand Ingress resources, but using that mechanism takes away the advantages and options that the native Istio resources provide. Istio offers its own configuration methods using custom resources.
 
 To configure Istio to work with the Redis Kubernetes operator, we will use two custom resources: a `Gateway` and a `VirtualService`. Then you'll be able to establish external access to your database.
 
@@ -79,7 +80,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
     - Replace `.istio.k8s.my.redisdemo.com` with the domain that matches your DNS record.
     - TLS passthrough mode is required to allow secure access to the database.
 
-1. Apply `gateway.yaml` to create the ingress gateway.
+1. Apply `gateway.yaml` to create the Ingress gateway.
 
     ```sh
     kubectl apply -f gateway.yaml
@@ -152,7 +153,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 ## Test your external access to the database
 
-To [test your external access]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) to the database, you need a client that supports [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication).
+To [test your external access]({{<relref "/kubernetes/networking/ingress.md">}}) to the database, you need a client that supports [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication).
 
-See [Test your access with Openssl]({{<relref "/kubernetes/networking/set-up-ingress-controller#test-your-access-with-openssl">}}) or [Test your access with Python]({{<relref "/kubernetes/networking/set-up-ingress-controller#test-your-access-with-python">}}) for more info.
+See [Test your access with Openssl]({{<relref "/kubernetes/networking/ingress#test-your-access-with-openssl">}}) or [Test your access with Python]({{<relref "/kubernetes/networking/ingress#test-your-access-with-python">}}) for more info.
 
