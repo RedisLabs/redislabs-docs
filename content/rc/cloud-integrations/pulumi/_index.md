@@ -26,16 +26,30 @@ With the recent availability of the [Redis Cloud Resource Provider](https://www.
 
 The Pulumi Redis Cloud Provider is based upon the TerraForm Redis Cloud Provider, thus for those who have experience using the TerraForm provider should quickly grasp the concepts behind the Pulumi provider.
 
-> NOTE : The provider supports the creation of "Flexible/Annual" subscriptions, but cannot be used to create "Fixed" subscriptions 
+{{<note>}}
+The provider supports the creation of "Flexible/Annual" subscriptions, but cannot be used to create "Fixed" subscriptions
+{{</note>}}
 
 Let's examine an example of creating a "Flexible" Redis Cloud subscription using Python.
 
-1.  Sign in to the [AWS console](https://console.aws.amazon.com/).
+1.  Make sure you have your Pulumi environment installed. Information on setting up your environment can be found [here](https://www.pulumi.com/docs/install/).
 
-1.  Search AWS Marketplace for [Redis Enterprise Cloud - Flexible plan](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq).
+1.  In your Python project, create an empty folder and from this folder run `pulumi new rediscloud-python`.
 
-    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Enterprise Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
+1.  Next, enter a project name, description, and stack name.
 
+1.  The next step will ask for your Redis Cloud access and secret keys. Since Pulumi uses the Redis Cloud API in the background, an **access Key** and **secret key** are required. For more information on creating these keys, please refer to [Cloud API Keys]({{<relref "/rc/api/how-to/manage-api-keys">}})
 
+1.  Next, enter the credit card type (Visa, Mastercard) of the card on file with your Redis Cloud account.
 
-If, for whatever reason, your AWS Marketplace account is disabled or otherwise unavailable, you won't be able to use your Flexible subscription until the billing method is updated.  For help, [contact support](https://redis.com/company/support/).
+1.  Finally, enter the last four numbers of the card on file with your Redis Cloud account.
+
+Once these steps are completed, the dependencies needed for the project will be installed and a Python virtual environment will be created.
+
+The Pulumi project includes three main files :
+
+1.  The **Pulumi.yaml** file : A metadata file which is used to help configure the Python runtime environment.
+
+1.  The **Pulumi.YOUR_PROJECT_NAME.yaml** file : Contains the information related to the Cloud API acess and secret key, credit card type and last 4 digits.
+
+1.  The **__main__.py** file : A Pulumi template file which creates a **Redis Cloud Flexible subscription**. Use this template file as a starting point to create the subscription in a specified cloud provider and the specifications of the database (this includes memory, throughput, Redis modules etc).
