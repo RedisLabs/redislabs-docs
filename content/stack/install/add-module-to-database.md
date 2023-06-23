@@ -69,8 +69,8 @@ Depending on the [features supported by an enabled module]({{<relref "/stack/ent
 
 ## Module configuration options
 
-- [RediSearch configuration options](https://oss.redis.com/redisearch/Configuring#redisearch_configuration_options)
+- [RediSearch configuration options]({{<relref "/stack/redisearch/config">}})
 
-- [RedisGraph configuration options](https://oss.redis.com/redisgraph/configuration#redisgraph-configuration-options)
+- [RedisTimeSeries configuration options]({{<relref "/stack/redistimeseries/config">}})
 
-- [RedisTimeSeries configuration options](https://oss.redislabs.com/redistimeseries/configuration#redistimeseries-configuration-options)
+- [RedisBloom configuration options]({{<relref "/stack/redisbloom/config">}})
