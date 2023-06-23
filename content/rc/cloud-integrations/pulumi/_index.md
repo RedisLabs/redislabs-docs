@@ -38,7 +38,7 @@ Let's examine an example of creating a "Flexible" Redis Cloud subscription using
 
 1.  Next, enter a project name, description, and stack name.
 
-1.  The next step will ask for your Redis Cloud access and secret keys. Since Pulumi uses the Redis Cloud API in the background, an **access Key** and **secret key** are required. For more information on creating these keys, please refer to [Cloud API Keys]({{< relref "/rc/api/how-to/manage-api-keys.md" >}})
+1.  The next step will ask for your Redis Cloud access and secret keys. Since Pulumi uses the Redis Cloud API in the background, an **access Key** and **secret key** are required. For more information on creating these keys, please refer to [Cloud API Keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
 
 1.  Next, enter the credit card type (Visa, Mastercard) of the card on file with your Redis Cloud account.
 
