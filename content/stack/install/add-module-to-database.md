@@ -69,8 +69,8 @@ Depending on the [features supported by an enabled module]({{<relref "/stack/ent
 
 ## Module configuration options
 
-- [RediSearch configuration options]({{<relref "/stack/redisearch/config">}})
+- [RediSearch configuration options]({{<relref "/stack/search/config">}})
 
-- [RedisTimeSeries configuration options]({{<relref "/stack/redistimeseries/config">}})
+- [RedisTimeSeries configuration options]({{<relref "/stack/timeseries/config">}})
 
-- [RedisBloom configuration options]({{<relref "/stack/redisbloom/config">}})
+- [RedisBloom configuration options]({{<relref "/stack/bloom/config">}})

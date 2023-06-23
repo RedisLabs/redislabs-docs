@@ -17,11 +17,11 @@ The following table shows which Redis Stack features are supported by Redis Ente
 
 | Feature | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
 |:-------|:-------------------------|:-----------------------|
-| [Search and query]({{<relref "/stack/redisearch">}}) | &#x2705; Supported | &#x2705; Supported |
-| [JSON]({{<relref "/stack/redisjson">}})   | &#x2705; Supported | &#x2705; Supported |
+| [Search and query]({{<relref "/stack/search">}}) | &#x2705; Supported | &#x2705; Supported |
+| [JSON]({{<relref "/stack/json">}})   | &#x2705; Supported | &#x2705; Supported |
 | [Graph]({{<relref "/stack/previous-features/graph">}}) | &#x26A0;&#xFE0F; Deprecated | &#x26A0;&#xFE0F; Deprecated |
-| [Time series]({{<relref "/stack/redistimeseries">}}) | &#x2705; Supported | &#x2705; Supported |
-| [Probabilistic]({{<relref "/stack/redisbloom">}}) | &#x2705; Supported | &#x2705; Supported |
+| [Time series]({{<relref "/stack/timeseries">}}) | &#x2705; Supported | &#x2705; Supported |
+| [Probabilistic]({{<relref "/stack/bloom">}}) | &#x2705; Supported | &#x2705; Supported |
 | [Gears v1]({{<relref "/stack/redisgears">}}) | &#x2705; Supported | &#x274c; Not supported |
 
 ## Feature compatibility
@@ -32,7 +32,7 @@ Version numbers indicate when the feature was first supported.  If you're using 
 
 For details about individual features, see the corresponding documentation.
 
-| Feature name/capability   | [Search and query]({{< relref  "/stack/redisearch" >}}) | [JSON]({{< relref  "/stack/redisjson" >}})    |  [Graph]({{< relref  "/stack/previous-features/graph" >}})   | 
+| Feature name/capability   | [Search and query]({{< relref  "/stack/search" >}}) | [JSON]({{< relref  "/stack/json" >}})    |  [Graph]({{< relref  "/stack/previous-features/graph" >}})   | 
 |---------------------------|:--------------:|:------------:|:------------:|
 | Active-Active (CRDB)[^4]  | Yes (v2.0)     | Yes (v2.2)   | No           |
 | Backup/Restore            | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
@@ -58,7 +58,7 @@ For details about individual features, see the corresponding documentation.
 
 [^5]: Although time series support Redis on Flash, the entire series either lives in RAM or on flash.
 
-| Feature name/capability | [Time series]({{< relref  "/stack/redistimeseries" >}}) | [Probabilistic]({{< relref  "/stack/redisbloom" >}}) | [Gears v1]({{< relref  "/stack/redisgears" >}}) |
+| Feature name/capability | [Time series]({{< relref  "/stack/timeseries" >}}) | [Probabilistic]({{< relref  "/stack/bloom" >}}) | [Gears v1]({{< relref  "/stack/redisgears" >}}) |
 |--------------------------|:--------------:|:------------:|:----------:| 
 | Active-Active (CRDB)[^4] | No             | No           | Yes (v1.0) |
 | Backup/Restore           | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |

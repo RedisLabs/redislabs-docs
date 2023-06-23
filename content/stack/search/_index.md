@@ -17,7 +17,7 @@ aliases:
   - /modules/redisearch/
 ---
 The [RediSearch 2.x module](https://redis.com/blog/introducing-redisearch-2-0/) is a source-available project that lets you build powerful search queries for open source Redis databases.
-When combined with Redis Enterprise Software, you can use the same protocols and [commands]({{<relref "/stack/redisearch/commands">}})
+When combined with Redis Enterprise Software, you can use the same protocols and [commands]({{<relref "/stack/search/commands">}})
 to run geo-replicated queries and full-text searches over efficient in-memory indexes.
 
 ## Index documents
@@ -35,7 +35,7 @@ With indexes, you can do:
 
 ## Supported document types
 
-You can store documents as Redis [hashes](https://redis.io/docs/manual/data-types/#hashes) or [JSON](http://www.json.org/). To search and query JSON documents, you also need to enable [JSON]({{<relref "/stack/redisjson">}}) in your database.
+You can store documents as Redis [hashes](https://redis.io/docs/manual/data-types/#hashes) or [JSON](http://www.json.org/). To search and query JSON documents, you also need to enable [JSON]({{<relref "/stack/json">}}) in your database.
 
 ### Hash documents
 
@@ -59,7 +59,7 @@ Redis search and query supports [over 15 natural languages](https://redis.io/doc
 
 ## Search and query Active-Active databases
 
-As a result of the new RediSearch architecture and methodology, [RediSearch 2.x supports Active-Active databases]({{<relref "/stack/redisearch/redisearch-active-active">}}).
+As a result of the new RediSearch architecture and methodology, [RediSearch 2.x supports Active-Active databases]({{<relref "/stack/search/search-active-active">}}).
 You can now serve your index information from geo-distributed database instances.
 
 ## Resharding indexed data
@@ -76,7 +76,7 @@ Because the index on the new shard is created synchronously though, it's expecte
 
 - [Getting Started with RediSearch 2.0](https://redis.com/blog/getting-started-with-redisearch-2-0/)
 - [Search and query quick start](https://redis.io/docs/stack/search/quick_start/)
-- [Search and query configuration]({{<relref "/stack/redisearch/config">}})
-- [Search and query commands]({{<relref "/stack/redisearch/commands">}})
+- [Search and query configuration]({{<relref "/stack/search/config">}})
+- [Search and query commands]({{<relref "/stack/search/commands">}})
 - [Search and query references](https://redis.io/docs/stack/search/reference/)
 - [RediSearch source](https://github.com/RediSearch/RediSearch)

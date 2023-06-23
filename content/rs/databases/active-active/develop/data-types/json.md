@@ -20,4 +20,4 @@ aliases: [
 ---
 Active-Active databases support JSON data structures.
 
-To learn more about JSON in Active-Active databases, see [CRDT JSON command differences and conflict resolution rules]({{<relref "/stack/redisjson/active-active">}}).
+To learn more about JSON in Active-Active databases, see [CRDT JSON command differences and conflict resolution rules]({{<relref "/stack/json/active-active">}}).

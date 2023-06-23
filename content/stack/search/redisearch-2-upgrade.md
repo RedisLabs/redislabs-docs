@@ -14,7 +14,7 @@ This makes commands more efficient and improves replication between clusters bec
 
 This change allows databases with RediSearch to support:
 
-- [Active-Active databases]({{<relref "/stack/redisearch/redisearch-active-active">}})
+- [Active-Active databases]({{<relref "/stack/search/search-active-active">}})
 - Database cluster re-sharding
 - Replica Of to a sharded destination database
 - [EXPIRE](https://redis.io/commands/ttl) of documents reflected in the index

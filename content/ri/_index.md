@@ -21,7 +21,7 @@ RedisInsight is a free GUI for Redis that is available on all platforms (Windows
 - Identify and troubleshoot bottlenecks with the [Slowlog tool]({{<relref "/ri/using-redisinsight/slowlog.md">}})
 - Edit the configuration of your Redis instance with the [Configuration tool]({{<relref "/ri/using-redisinsight/configuration.md">}}) 
 
-RedisInsight also has support for several Redis modules, including [RedisGraph]({{<relref "/stack/previous-features/graph">}}), [RedisTimeSeries]({{<relref "/stack/redistimeseries">}}), and [RediSearch]({{<relref "/stack/redisearch">}}).
+RedisInsight also has support for several Redis modules, including [RedisGraph]({{<relref "/stack/previous-features/graph">}}), [RedisTimeSeries]({{<relref "/stack/timeseries">}}), and [RediSearch]({{<relref "/stack/search">}}).
 
 
 ## Start using RedisInsight

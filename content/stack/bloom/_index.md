@@ -112,6 +112,6 @@ reach a larger capacity.
 ## More info
 
 - [Probabilistic data structures quick start](https://redis.io/docs/stack/bloom/quick_start/)
-- [Probabilistic data structure commands]({{<relref "/stack/redisbloom/commands">}})
-- [Probabilistic data structure configuration]({{<relref "/stack/redisbloom/config">}})
+- [Probabilistic data structure commands]({{<relref "/stack/bloom/commands">}})
+- [Probabilistic data structure configuration]({{<relref "/stack/bloom/config">}})
 - [RedisBloom source](https://github.com/RedisBloom/RedisBloom/)

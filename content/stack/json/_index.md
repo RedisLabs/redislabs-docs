@@ -79,10 +79,10 @@ For more information about how to search and query JSON documents, see the [quic
 
 RedisJSON v2.2 and later support the JSON data structure as a conflict-free replicated data type [(CRDT)](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) in [Active-Active Redis Enterprise databases]({{<relref "/rs/databases/active-active">}}).
 
-For details about how Redis Enterprise resolves JSON operation conflicts that can arise when replicas attempt to sync, see the JSON [conflict resolution rules]({{<relref "/stack/redisjson/active-active#conflict-resolution-rules">}}).
+For details about how Redis Enterprise resolves JSON operation conflicts that can arise when replicas attempt to sync, see the JSON [conflict resolution rules]({{<relref "/stack/json/active-active#conflict-resolution-rules">}}).
 
 ## More info
 
 - [JSON quick start](https://redis.io/docs/stack/json/#use-redisjson)
-- [JSON commands]({{<relref "/stack/redisjson/commands">}})
+- [JSON commands]({{<relref "/stack/json/commands">}})
 - [RedisJSON source](https://github.com/RedisJSON/RedisJSON)

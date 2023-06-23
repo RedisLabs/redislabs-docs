@@ -156,6 +156,6 @@ Time series can dramatically reduce the memory consumption when compared against
 ## More info
 
 - [Time series quick start](https://redis.io/docs/stack/timeseries/quickstart/)
-- [Time series commands]({{<relref "/stack/redistimeseries/commands">}})
-- [Time series configuration]({{<relref "/stack/redistimeseries/config">}})
+- [Time series commands]({{<relref "/stack/timeseries/commands">}})
+- [Time series configuration]({{<relref "/stack/timeseries/config">}})
 - [RedisTimeSeries source](https://github.com/RedisTimeSeries/RedisTimeSeries)

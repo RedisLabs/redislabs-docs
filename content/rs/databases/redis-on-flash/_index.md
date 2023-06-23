@@ -100,10 +100,10 @@ On-premises environments support more deployment options than other environments
 
 - Using Active-Active distributed databases
 - Using Redis Stack features:
-  - [Search and query]({{<relref "/stack/redisearch">}})
-  - [JSON]({{<relref "/stack/redisjson">}})
-  - [Time series]({{<relref "/stack/redistimeseries">}})
-  - [Probabilistic data structures]({{<relref "/stack/redisbloom">}})
+  - [Search and query]({{<relref "/stack/search">}})
+  - [JSON]({{<relref "/stack/json">}})
+  - [Time series]({{<relref "/stack/timeseries">}})
+  - [Probabilistic data structures]({{<relref "/stack/bloom">}})
 
 {{<warning>}} Redis on Flash is not supported running on network attached storage (NAS), storage area network (SAN), or with local HDD drives. {{</warning>}}
 
