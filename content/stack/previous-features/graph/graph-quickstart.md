@@ -1,7 +1,7 @@
 ---
-Title: RedisGraph quick start
+Title: Graph quick start
 linkTitle: Quick start
-description: RedisGraph quick start
+description: Graph quick start
 weight: 20
 alwaysopen: false
 categories: ["Modules"]
@@ -23,7 +23,7 @@ For this quick start tutorial, you need:
 
 - [`redis-py`](https://github.com/redis/redis-py) client library v4.1.0 or later
 
-## RedisGraph with `redis-cli`
+## Graph with `redis-cli`
 
 To begin, [connect to your database]({{<relref "/rs/references/cli-utilities/redis-cli#connect-to-a-database">}}) with `redis-cli`.
 
@@ -142,11 +142,11 @@ To delete an entire graph, including all nodes and relationships, run the [`GRAP
 "Graph removed, internal execution time: 0.013138 milliseconds"
 ```
 
-## RedisGraph with Python
+## Graph with Python
 
-If you want to use RedisGraph within an application, you can use one of these [client libraries](https://redis.io/docs/stack/graph/clients/).
+If you want to use graphs within an application, you can use one of these [client libraries](https://redis.io/docs/stack/graph/clients/).
 
-The following example uses the Redis Python client library [redis-py](https://github.com/redis/redis-py), which supports RedisGraph commands as of v4.1.0.
+The following example uses the Redis Python client library [redis-py](https://github.com/redis/redis-py), which supports graph commands as of v4.1.0.
 
 This Python code creates a graph that represents friendships between users on a social media website. It also shows how to run queries and change relationships between users.
 
@@ -222,7 +222,7 @@ You can use the [RedisInsight]({{<relref "/ri">}}) workbench to visualize the re
 
    {{<image filename="images/ri/icon-workbench.png" width="30px" alt="The Workbench icon">}}{{</image>}}
 
-1. Enter a RedisGraph query in the text editor.
+1. Enter a graph query in the text editor.
 
    For example, this query returns all nodes and relationships in the graph:
 
@@ -240,5 +240,5 @@ After you run a query, the output log displays a visual representation of your g
 
 ## More info
 
-- [RedisGraph commands]({{<relref "/stack/redisgraph/commands">}})
+- [Graph commands]({{<relref "/stack/previous-features/graph/commands">}})
 - [RedisGraph client libraries](https://redis.io/docs/stack/graph/clients/)

@@ -1,7 +1,7 @@
 ---
 Title: Graph
 linkTitle: Graph
-description:
+description: RedisGraph is a queryable graph database built on Redis.
 weight: 40
 alwaysopen: false
 categories: ["Modules"]
@@ -26,6 +26,6 @@ Primary features:
 
 ## More info
 
-- [RedisGraph commands]({{<relref "/stack/redisgraph/commands">}})
-- [RedisGraph configuration]({{<relref "/stack/redisgraph/config">}})
+- [Graph commands]({{<relref "/stack/previous-features/graph/commands">}})
+- [Graph configuration]({{<relref "/stack/previous-features/graph/config">}})
 - [RedisGraph source](https://github.com/RedisGraph/RedisGraph)

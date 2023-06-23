@@ -1,7 +1,7 @@
 ---
-Title: RedisGraph configuration compatibility with Redis Enterprise 
+Title: Graph configuration compatibility with Redis Enterprise 
 linkTitle: Configuration 
-description: RedisGraph configuration settings supported by Redis Enterprise.
+description: Graph configuration settings supported by Redis Enterprise.
 weight: 30
 alwaysopen: false
 toc: "false"
