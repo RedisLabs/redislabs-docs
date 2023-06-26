@@ -82,7 +82,7 @@ of the configuration and persistence files on each of the nodes.
     from the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command-line interface (CLI):
 
     ```sh
-    cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
+    rladmin cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
     ```
 
     {{% expand "Command syntax" %}}
@@ -112,10 +112,10 @@ Otherwise, the node gets the same rack ID as the original node.
     When the recovery command succeeds,
     this node is configured as the node from the old cluster that has ID 1.
 
-1. To join the remaining servers to the new cluster, from the rladmin CLI of each new node run:
+1. To join the remaining servers to the new cluster, run `rladmin cluster join` from each new node:
 
     ```sh
-    cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
+    rladmin cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
     ```
 
     {{% expand "Command syntax" %}}

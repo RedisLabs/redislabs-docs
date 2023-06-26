@@ -50,13 +50,13 @@ To configure distributed synchronization:
 1. To configure the database to use distributed synchronization, run:
 
     ```sh
-    tune db <db_name> syncer_mode distributed
+    rladmin tune db <db_name> syncer_mode distributed
     ```
 
     To change back to centralized synchronization, run:
 
     ```sh
-    tune db <db_name> syncer_mode centralized
+    rladmin tune db <db_name> syncer_mode centralized
     ```
 
 ## Verify database synchronization
