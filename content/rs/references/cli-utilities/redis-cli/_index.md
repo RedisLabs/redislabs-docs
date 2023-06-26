@@ -29,7 +29,7 @@ To learn how to install Redis and `redis-cli`, see the following installation gu
 
 To run Redis commands with `redis-cli`, you need to connect to your Redis database.
 
-Endpoint and port details are available from the **Databases** list or the database’s **Configuration** screen.
+You can find endpoint and port details in the **Databases** list or the database’s **Configuration** screen.
 
 ### Connect from a node
 
