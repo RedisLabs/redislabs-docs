@@ -144,7 +144,7 @@ To delete an entire graph, including all nodes and relationships, run the [`GRAP
 
 ## Graph with Python
 
-If you want to use graphs within an application, you can use one of these [client libraries](https://redis.io/docs/stack/graph/clients/).
+If you want to use graphs within an application, you can use one of these [client libraries](https://github.com/RedisGraph/RedisGraph/blob/master/docs/docs/clients.md).
 
 The following example uses the Redis Python client library [redis-py](https://github.com/redis/redis-py), which supports graph commands as of v4.1.0.
 
@@ -241,4 +241,5 @@ After you run a query, the output log displays a visual representation of your g
 ## More info
 
 - [Graph commands]({{<relref "/stack/previous-features/graph/commands">}})
-- [RedisGraph client libraries](https://redis.io/docs/stack/graph/clients/)
+- [RedisGraph client libraries](https://github.com/RedisGraph/RedisGraph/blob/master/docs/docs/clients.md)
+- [RedisGraph documentation on GitHub](https://github.com/RedisGraph/RedisGraph/tree/master/docs/docs)
