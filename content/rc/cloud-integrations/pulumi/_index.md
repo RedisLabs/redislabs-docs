@@ -21,6 +21,8 @@ With the recent availability of the [Redis Cloud Resource Provider](https://www.
 
 * TypeScript
 * Python
+* C#
+* Java
 * Go
 * YAML
 
@@ -46,10 +48,59 @@ Let's examine an example of creating a "Flexible" Redis Cloud subscription using
 
 Once these steps are completed, the dependencies needed for the project will be installed and a Python virtual environment will be created.
 
-The Pulumi project includes three main files :
+The Pulumi Python project includes three main files :
 
 1.  The **Pulumi.yaml** file : A metadata file which is used to help configure the Python runtime environment.
 
-1.  The **Pulumi.YOUR_PROJECT_NAME.yaml** file : Contains the information related to the Cloud API acess and secret key, credit card type and last 4 digits.
+1.  The **Pulumi.YOUR_PROJECT_NAME.yaml** file : Contains the information related to the Cloud API access and secret key, credit card type and last 4 digits.
 
 1.  The **__main__.py** file : A Pulumi template file which creates a **Redis Cloud Flexible subscription**. Use this template file as a starting point to create the subscription in a specified cloud provider and the specifications of the database (this includes memory, throughput, Redis modules etc).
+
+## Pulumi Redis Cloud Provider Resources and Functions 
+
+{{<note>}}
+For more information on the different Redis Cloud Provider Resources and Functions, please refer to Pulumi's official documentation for the Redis Cloud provider which can be found [here](https://www.pulumi.com/registry/packages/rediscloud/api-docs/).
+{{</note>}}
+
+Pulumi `resources` represent the **fundamental units that make up cloud infrastructure**. A provider may make `functions` available in its SDK as well as resource types. These `functions` are often **used to acquire information that is not part of a resource**. 
+
+Pulumi Redis Cloud Provider `resources` include :
+
+* `Subscription`
+* `SubscriptionDatabase`
+* `SubscriptionPeering`
+* `CloudAccount`
+* `ActiveActiveSubscription`
+* `ActiveActiveSubscriptionDatabase`
+* `ActiveActiveSubscriptionRegions`
+* `ActiveActiveSubscriptionPeering`
+
+Pulumi Redis Cloud Provider `functions` include :
+
+* `GetCloudAccount`
+* `GetDataPersistence`
+* `GetDatabase`
+* `GetDatabaseModules`
+* `GetPaymentMethod`
+* `GetRegions`
+* `GetSubscription`
+* `GetSubscriptionPeerings`
+
+
+## Redis Cloud Subscription Types
+
+Using the Pulumi Redis Cloud Provider, you can provision two different types of Redis Cloud subscriptions :
+
+### Basic Subscription
+
+In order to create a minimal basic subscription, you will need to define the following resources in your configuration file :
+
+* `rediscloud_subscription`: represents the Redis Cloud subscription you wish to create
+  * **Cloud Provider Information**: The information related to the Cloud Provider you wish to deploy this subscription to.
+  * **Creation Plan Information**: Metadata used to determine the most optimal cloud infrastructure footprint needed to support the different databases hosted in the subscription.
+
+* `rediscloud_subscription`:
+
+### Active-Active Subscriptions
+
+In order to create an active-active subscription, you will need to define the following resources in your configuration file :
