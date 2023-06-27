@@ -1,5 +1,5 @@
 ---
-Title: Establish external routing with an ingress controller
+Title: Configure Ingress for external routing
 linkTitle: Ingress routing
 description: Configure an ingress controller to access your Redis Enterprise databases from outside the Kubernetes cluster.
 weight: 5
@@ -14,59 +14,32 @@ aliases: [
   /kubernetes/re-databases/set-up-ingress-controller/,
   /kubernetes/networking/set-up-ingress-controller.md,
   /kubernetes/networking/set-up-ingress-controller/,
+  /kubernetes/networking/ingress/,
 ]
 ---
 
-Every time a Redis Enterprise database (REDB) is created with the Redis Enterprise operator, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
-
-By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
-
-Redis Enterprise for Kubernetes supports two ingress controllers: [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/). You can also use [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}) ingress routing for Redis Enterprise.
-
 ## Prerequisites
 
-### Redis Enterprise database (REDB)
+Before creating an Ingress, you'll need:
 
-Create a Redis Enterprise database with "TLS for all communication" enabled and "client authentication" disabled.  
+ - A RedisEnterpriseDatabase (REDB) with TLS enabled for client connections
+ - A supported Ingress controller with `ssl-passthrough` enabled
+    - [NGINX Ingress Controller Installation Guide](https://kubernetes.github.io/ingress-nginx/deploy/)
+    - [HAProxy Ingress Getting Started](https://haproxy-ingress.github.io/docs/getting-started/)
+    - To use Istio for your Ingress resources, see [Configure Istio for external routing]({{<relref "/kubernetes/networking/istio-ingress.md">}})
 
-The YAML to create this REDB must include `tlsMode: enabled` as shown in this example:  
+{{<note>}}Make sure your Ingress controller has `ssl-passthrough`enabled. This is enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{</note>}}
 
-``` YAML
-apiVersion: app.redislabs.com/v1alpha1
-kind: RedisEnterpriseDatabase
-metadata:
-  name: <your-db-name>
-spec:
-  tlsMode: enabled
-```  
+## Create an Ingress resource
 
-##### Use a previously created database  
-
-If you are using an existing REDB that was created with a YAML file, you cannot make edits to that database in the Redis Enterprise UI. All changes need to be made in the YAML file.  
-
-If you are using an existing database that is managed from the UI, see [Enable TLS for client connections]({{<relref "/rs/security/tls/enable-tls">}}) for more information on these security settings.  
-
-### Ingress controller  
-
-Install one of the supported ingress controllers:  
-
-- [NGINX Ingress Controller Installation Guide](https://kubernetes.github.io/ingress-nginx/deploy/)
-- [HAProxy Ingress Getting Started](https://haproxy-ingress.github.io/docs/getting-started/)
-
-To use Istio for your ingress resources, see [Configure Istio for external routing]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}).
-
-{{< warning >}}You'll need to make sure `ssl-passthrough` is enabled. It's enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{< /warning >}}  
-
-## Create ingress resource
-
-1. Retrieve the hostname of your ingress controller's `LoadBalancer` service.
+1. Retrieve the hostname of your Ingress controller's `LoadBalancer` service.
 
     ``` sh
     $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> \
                         -n <ingress-ctrl-namespace>
     ```
 
-    Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.  
+    Below is example output for an HAProxy running on a K8s cluster hosted by AWS.  
 
     ``` sh
     NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE   
@@ -75,9 +48,9 @@ To use Istio for your ingress resources, see [Configure Istio for external routi
 
 1. Choose the hostname you will use to access your database (this value will be represented in this article with `<my-db-hostname>`).  
 
-1. Create a DNS entry that resolves your chosen database hostname to the IP address for the ingress controller's LoadBalancer.  
+1. Create a DNS entry that resolves your chosen database hostname to the IP address for the Ingress controller's LoadBalancer.  
 
-1. Create the ingress resource YAML file.  
+1. Create the Ingress resource YAML file.  
 
     ``` YAML
     apiVersion: networking.k8s.io/v1
@@ -114,7 +87,7 @@ To use Istio for your ingress resources, see [Configure Istio for external routi
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     ```  
 
-    The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending on your ingress controller and any additional customizations. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.  
+    The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending on your Ingress controller and any additional customizations. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.  
 
 ## Test your external access  
 

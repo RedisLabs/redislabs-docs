@@ -230,13 +230,13 @@ Notice that for each credential, we define a Python function that returns the sp
 This code references three parameters: `MySqlUser`, `MySqlPassword`, and `MySqlDB`. In Redis Enterprise, you can set these parameters using the `rladmin` tool. The command to set these parameters takes the following form:
 
 ```sh
-rladmin> tune db [DB-NAME] module_name rg module_config_params "[PARAM-NAME] [PARAM-VALUE]"
+rladmin tune db [DB-NAME] module_name rg module_config_params "[PARAM-NAME] [PARAM-VALUE]"
 ```
 
 To set the `MySqlPassword` parameter to "Password123!" on a database named "user-api", you would run the this `rladmin` command:
 
 ```sh
-rladmin> tune db user-api module_name rg module_config_params "MySqlPassword Password123!"
+rladmin tune db user-api module_name rg module_config_params "MySqlPassword Password123!"
 ```
 
 Once a connection is successfully established, RedisGears will not attempt to reconnect until a disconnect occurs.

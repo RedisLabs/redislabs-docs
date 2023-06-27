@@ -43,7 +43,7 @@ As of v6.2.4, the default behavior for `upgrade db` has changed.  It is now cont
 | force                      |                          | Forces upgrade and skips warnings and confirmations                                                                    |
 | force_discard              |                          | Forces `discard_data` if replication or persistence is enabled                                                   |
 | keep_crdt_protocol_version |                          | Keeps the current CRDT protocol version                                                                                |
-| keep_current_version       |                          | Upgrades to a new patch release, not to the latest major.minor version                                                 |
+| keep_redis_version       |                          | Upgrades to a new patch release, not to the latest major.minor version                                                 |
 | latest_with_modules        |                          | Upgrades the Redis Enterprise Software version and all modules in the database                                                             |
 | parallel_shards_upgrade    | integer <br />'all'        | Maximum number of shards to upgrade all at once                                                                        |
 | preserve_roles             |                          | Performs an additional failover to guarantee the shards' roles are preserved                                             |

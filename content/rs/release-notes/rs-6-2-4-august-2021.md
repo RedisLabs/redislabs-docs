@@ -50,8 +50,8 @@ The Redis Enterprise Software 6.2.4 package includes compatibility with the most
 By default, compatibility with v6.0 will be installed.  To change this, use `rladmin` to set the upgrade policy and the default Redis version:
 
 ``` shell
-tune cluster redis_upgrade_policy latest
-tune cluster default_redis_version 6.2
+$ rladmin tune cluster redis_upgrade_policy latest
+$ rladmin tune cluster default_redis_version 6.2
 ```
 
 To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgrading/upgrading">}}).
