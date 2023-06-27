@@ -2,8 +2,8 @@
 
 Title: Create Active-Active databases with crdb-cli
 linkTitle: Create Active-Active with crdb-cli
-description: This section how to set up an Active-Active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
-weight: 15
+description: This section shows how to set up an Active-Active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
+weight: 99
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
@@ -11,8 +11,11 @@ aliases: [
     /kubernetes/re-clusters/create-aa-database.md,
     /kubernetes/active-active/create-aa-database.md,
     /kubernetes/active-active/create-aa-database/,
+    /kubernetes/active-active/create-aa-crdb-cli/,
 ]
 ---
+{{<note>}} Versions 6.4.2 and later support the Active-Active database controller. This controller allows you to create Redis Enterprise Active-Active databases (REAADB) and Redis Enterprise remote clusters (RERC) with custom resources. We recommend using the [REAADB method for creating Active-Active databases]({{<relref "/kubernetes/active-active/create-reaadb.md">}}).{{</note>}}
+
 On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/databases/active-active/">}}) databases provide read-and-write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/databases/active-active/">}}).
 
 Creating an Active-Active database requires routing [network access]({{<relref "/kubernetes/networking/">}}) between two Redis Enterprise clusters residing in different Kubernetes clusters. Without the proper access configured for each cluster, syncing between the databases instances will fail.
@@ -27,9 +30,11 @@ This process consists of:
 
 Before creating Active-Active databases, you'll need admin access to two or more working Kubernetes clusters that each have:
 
-- Routing for external access with an [ingress resources]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) (or [route resources]({{<relref "/kubernetes/networking/routes.md">}}) on OpenShift).
+- Routing for external access with an [ingress resources]({{<relref "/kubernetes/networking/ingress.md">}}) (or [route resources]({{<relref "/kubernetes/networking/routes.md">}}) on OpenShift).
 - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name.
 - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md">}})).
+
+{{<note>}} The `activeActive` field and the `ingressOrRouteSpec` field cannot coexist in the same REC. If you configured your ingress via the `ingressOrRouteSpec` field in the REC, create your Active-Active database with the RedisEnterpriseActiveActiveDatabase (REAADB) custom resource.{{</note>}}
 
 ## Document required parameters
 
@@ -98,7 +103,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 ### Using ingress controller
 
-1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
+1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/networking/ingress.md">}}), add the following to the `spec` section of your REC resource file.
 
   Nginx:
 
@@ -145,7 +150,7 @@ HAproxy:
 
 #### If using Istio Gateway and VirtualService
 
-No changes are required to the REC spec if you are using [Istio]({{<relref "/kubernetes/networking/ingress-routing-with-istio.md">}}) in place of an ingress controller. The `activeActive` section added above creates ingress resources. The two custom resources used to configure Istio (Gateway and VirtualService) replace the need for ingress resources.
+No changes are required to the REC spec if you are using [Istio]({{<relref "/kubernetes/networking/istio-ingress.md">}}) in place of an ingress controller. The `activeActive` section added above creates ingress resources. The two custom resources used to configure Istio (Gateway and VirtualService) replace the need for ingress resources.
 
 {{<warning>}}
 These custom resources are not controlled by the operator and will need to be configured and maintained manually.
@@ -162,10 +167,13 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
     ```
 
     If the rec name was modified, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
+    
     ```sh
     oc apply -f scc.yaml
-    oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<namespace>
+    oc adm policy add-scc-to-group redis-enterprise-scc-v2  system:serviceaccounts:<namespace>
     ```
+
+    Releases before 6.4.2-6 use the earlier version of the SCC, named `redis-enterprise-scc`.
 
 1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the route IP address. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
@@ -190,7 +198,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 
 ## Create an Active-Active database with `crdb-cli`
 
-The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{< relref "kubernetes/active-active/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
+The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{< relref "/kubernetes/active-active/create-aa-crdb-cli#document-required-parameters" >}}) for each Redis Enterprise cluster.
 
 ```sh
 crdb-cli crdb create \

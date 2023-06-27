@@ -247,19 +247,19 @@ Use [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/st
 ### Example
 
 ```sh
-rladmin> status shards db db:5
+$ rladmin status shards db db:5
 SHARDS:
 DB:ID  NAME        ID         NODE     ROLE     SLOTS     USED_MEMORY    STATUS
 db:5   tr01        redis:12   node:2   master   0-16383   3.01MB         OK
 db:5   tr01        redis:13   node:3   slave    0-16383   3.1MB          OK
-rladmin> migrate shard 13 target_node 1
+$ rladmin migrate shard 13 target_node 1
 Monitoring d2637eea-9504-4e94-a70c-76df087efcb2
 queued - migrate_shards
 .running - migrate_shards
 Executing migrate_redis with shards_uids ['13']
 Ocompleted - migrate_shards
 Done
-rladmin> status shards db db:5
+$ rladmin status shards db db:5
 SHARDS:
 DB:ID  NAME        ID         NODE     ROLE     SLOTS     USED_MEMORY    STATUS
 db:5   tr01        redis:12   node:2   master   0-16383   3.01MB         OK
