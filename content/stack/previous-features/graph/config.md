@@ -9,7 +9,7 @@ categories: ["Modules"]
 aliases: /modules/redisgraph/config/
 ---
 
-You cannot use [`GRAPH.CONFIG SET`](https://redis.io/commands/graph.config-set) to configure RedisGraph in [Redis Enterprise Software]({{<relref "/rs">}}) or [Redis Enterprise Cloud]({{<relref "/rc">}}). Instead, use one of the following methods.
+You cannot use `GRAPH.CONFIG SET` to configure RedisGraph in [Redis Enterprise Software]({{<relref "/rs">}}) or [Redis Enterprise Cloud]({{<relref "/rc">}}). Instead, use one of the following methods.
 
 For Redis Cloud:
 

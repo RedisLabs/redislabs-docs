@@ -35,7 +35,7 @@ When you create a graph, you can define nodes and the relationships between them
 
 To define multiple nodes and relationships in a single creation query, separate the entries with commas.
 
-For example, use the [`CREATE`](https://redis.io/commands/graph.query/#create) query to create a new graph of motorcycle riders and teams participating in the MotoGP league:
+For example, use the [`CREATE`](https://github.com/RedisGraph/RedisGraph/blob/master/docs/commands/graph.query.md#create) query to create a new graph of motorcycle riders and teams participating in the MotoGP league:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
@@ -72,7 +72,7 @@ To create new relationships between nodes of a graph:
 
 ### Query the graph
 
-After you create a graph, you can use the [`GRAPH.QUERY`](https://redis.io/commands/graph.query/) command to query the graph's data.
+After you create a graph, you can use the [`GRAPH.QUERY`](https://github.com/RedisGraph/RedisGraph/blob/master/docs/commands/graph.query.md) command to query the graph's data.
 
 The following example returns which motorcycle riders compete for team Yamaha:
 
@@ -98,7 +98,7 @@ The following example returns which motorcycle riders compete for team Yamaha:
    2) "Query internal execution time: 0.500535 milliseconds"
 ```
 
-You can also use [functions](https://redis.io/commands/graph.query/#functions) to create more complex queries.
+You can also use [functions](https://github.com/RedisGraph/RedisGraph/blob/master/docs/commands/graph.query.md#functions) to create more complex queries.
 
 For example, you can use the `count` function to check how many riders represent team Honda:
 
@@ -112,7 +112,7 @@ For example, you can use the `count` function to check how many riders represent
 
 ### Delete nodes
 
-You can use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query to remove a specific node and its relationships from the graph:
+You can use the [`DELETE`](https://github.com/RedisGraph/RedisGraph/blob/master/docs/commands/graph.query.md#delete) query to remove a specific node and its relationships from the graph:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider {name: 'Dani Pedrosa'}) DELETE r"
@@ -124,7 +124,7 @@ You can use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query 
 
 ### Delete relationships
 
-You can also use the [`DELETE`](https://redis.io/commands/graph.query/#delete) query to delete a node's relationships without removing any nodes:
+You can also use the [`DELETE`](https://github.com/RedisGraph/RedisGraph/blob/master/docs/commands/graph.query.md#delete) query to delete a node's relationships without removing any nodes:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (:Rider {name: 'Valentino Rossi'})-[r:rides]->() DELETE r"
@@ -135,7 +135,7 @@ You can also use the [`DELETE`](https://redis.io/commands/graph.query/#delete) q
 
 ### Delete a graph
 
-To delete an entire graph, including all nodes and relationships, run the [`GRAPH.DELETE`](https://redis.io/commands/graph.delete/) command:
+To delete an entire graph, including all nodes and relationships, run the [`GRAPH.DELETE`](https://github.com/RedisGraph/RedisGraph/blob/master/docs/commands/graph.delete.md) command:
 
 ```sh
 127.0.0.1:12543> GRAPH.DELETE MotoGP
