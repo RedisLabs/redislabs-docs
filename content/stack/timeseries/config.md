@@ -1,7 +1,7 @@
 ---
-Title: Time series configuration compatibility with Redis Enterprise 
+Title: Time Series configuration compatibility with Redis Enterprise 
 linkTitle: Configuration 
-description: Time series configuration settings supported by Redis Enterprise.
+description: Time Series configuration settings supported by Redis Enterprise.
 weight: 30
 alwaysopen: false
 toc: "false"

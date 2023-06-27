@@ -1,6 +1,6 @@
 ---
-Title: Search and query
-linkTitle: Search and query
+Title: Search and Query
+linkTitle: Search and Query
 description:
 weight: 20
 alwaysopen: false
@@ -75,8 +75,8 @@ Because the index on the new shard is created synchronously though, it's expecte
 ## More info
 
 - [Getting Started with RediSearch 2.0](https://redis.com/blog/getting-started-with-redisearch-2-0/)
-- [Search and query quick start](https://redis.io/docs/stack/search/quick_start/)
-- [Search and query configuration]({{<relref "/stack/search/config">}})
-- [Search and query commands]({{<relref "/stack/search/commands">}})
-- [Search and query references](https://redis.io/docs/stack/search/reference/)
+- [Search and Query quick start](https://redis.io/docs/stack/search/quick_start/)
+- [Search and Query configuration]({{<relref "/stack/search/config">}})
+- [Search and Query commands]({{<relref "/stack/search/commands">}})
+- [Search and Query references](https://redis.io/docs/stack/search/reference/)
 - [RediSearch source](https://github.com/RediSearch/RediSearch)

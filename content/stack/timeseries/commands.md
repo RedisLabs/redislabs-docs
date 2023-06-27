@@ -1,5 +1,5 @@
 ---
-Title: Time series commands 
+Title: Time Series commands 
 linkTitle: Commands 
 description: Lists time series commands and provides links to the command reference pages.
 weight: 25

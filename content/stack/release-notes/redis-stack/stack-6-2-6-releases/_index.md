@@ -1,7 +1,7 @@
 ---
 Title: Redis Stack 6.2.6 release notes
 linkTitle: 6.2.6 releases
-description: Multi-value index and query for text, tag, numeric, geo and vector. Suffix search *vatore and wildcard search ant?rez. Support for FP64 vectors and range queries from a given vector. Faster JSONPath parser. New probabilistic data structure t-digest. New path-finding algorithms for Graph. Time series gap filling.
+description: Multi-value index and query for text, tag, numeric, geo and vector. Suffix search *vatore and wildcard search ant?rez. Support for FP64 vectors and range queries from a given vector. Faster JSONPath parser. New probabilistic data structure t-digest. New path-finding algorithms for Graph. Time Series gap filling.
 weight: 95
 alwaysopen: false
 categories: ["Modules"]
@@ -23,7 +23,7 @@ Redis Stack version 6.2.6 highlights:
 
 - New path-finding algorithms `algo.SPpaths` and `algo.SSpaths` for Graph
 
-- Support for gap filling for Time series
+- Support for gap filling for Time Series
 
 ## Detailed release notes 
 

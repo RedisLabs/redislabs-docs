@@ -1,6 +1,6 @@
 ---
-Title: Time series
-linkTitle: Time series
+Title: Time Series
+linkTitle: Time Series
 description:
 weight: 50
 alwaysopen: false
@@ -32,7 +32,7 @@ Each chunk has a predefined size of samples.
 Each sample is a tuple of the time and the value of 128 bits,
 64 bits for the timestamp and 64 bits for the value.
 
-## Time series capabilities
+## Time Series capabilities
 
 Redis Stack provides a new data type that uses chunks of memory of fixed size for time series samples, indexed by the same Radix Tree implementation as Redis streams. With streams, you can create [a capped stream](https://redis.io/commands/xadd), effectively limiting the number of messages by count. For time series, you can apply a retention policy in milliseconds. This is better for time series use cases, because they are typically interested in the data during a given time window, rather than a fixed number of samples.
 
@@ -155,7 +155,7 @@ Time series can dramatically reduce the memory consumption when compared against
 
 ## More info
 
-- [Time series quick start](https://redis.io/docs/stack/timeseries/quickstart/)
-- [Time series commands]({{<relref "/stack/timeseries/commands">}})
-- [Time series configuration]({{<relref "/stack/timeseries/config">}})
+- [Time Series quick start](https://redis.io/docs/stack/timeseries/quickstart/)
+- [Time Series commands]({{<relref "/stack/timeseries/commands">}})
+- [Time Series configuration]({{<relref "/stack/timeseries/config">}})
 - [RedisTimeSeries source](https://github.com/RedisTimeSeries/RedisTimeSeries)

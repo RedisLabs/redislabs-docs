@@ -1,5 +1,5 @@
 ---
-Title: Search and query commands 
+Title: Search and Query commands 
 linkTitle: Commands 
 description: Lists search and query commands and provides links to the command reference pages.
 weight: 25

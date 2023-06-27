@@ -25,7 +25,7 @@ Highlights:
 
 - New path-finding algorithms `algo.SPpaths` and `algo.SSpaths` for Graph
 
-- Support for gap filling for Time series
+- Support for gap filling for Time Series
 
 ## New features and enhancements
 
