@@ -243,8 +243,8 @@ Details:
 
     - [#1493](https://github.com/RedisGraph/RedisGraph/issues/1493), [#2240](https://github.com/RedisGraph/RedisGraph/pull/2240) Fixed crash on certain queries
     - [#2229](https://github.com/RedisGraph/RedisGraph/issues/2229), [#2222](https://github.com/RedisGraph/RedisGraph/pull/2222) Fixed crash on certain queries
-    - [#2209](https://github.com/RedisGraph/RedisGraph/issues/2209), [#2228](https://github.com/RedisGraph/RedisGraph/pull/2228) Fixed crash on certain invalid [`DELETE`](https://redis.io/commands/graph.query/#delete) queries
-    - [#2237](https://github.com/RedisGraph/RedisGraph/issues/2237), [#2242](https://github.com/RedisGraph/RedisGraph/pull/2242) Fixed crash on certain [`PROFILE`](https://redis.io/commands/graph.profile/) queries
+    - [#2209](https://github.com/RedisGraph/RedisGraph/issues/2209), [#2228](https://github.com/RedisGraph/RedisGraph/pull/2228) Fixed crash on certain invalid `DELETE` queries
+    - [#2237](https://github.com/RedisGraph/RedisGraph/issues/2237), [#2242](https://github.com/RedisGraph/RedisGraph/pull/2242) Fixed crash on certain `PROFILE` queries
     - [#2230](https://github.com/RedisGraph/RedisGraph/issues/2230), [#2232](https://github.com/RedisGraph/RedisGraph/pull/2232) Fixed wrong number of reported deleted relationships on certain queries
     - [#2233](https://github.com/RedisGraph/RedisGraph/pull/2233) Certain valid queries were reported invalid
     - [#2246](https://github.com/RedisGraph/RedisGraph/issues/2246) Fixed memory leaks

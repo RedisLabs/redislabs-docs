@@ -71,7 +71,7 @@ Details:
 
   - [#2757](https://github.com/RedisGraph/RedisGraph/pull/2757) Improved performance of `indegree` and `outdegree`
   - [#2681](https://github.com/RedisGraph/RedisGraph/issues/2681) Fixed some error messages
-  - [#2740](https://github.com/RedisGraph/RedisGraph/issues/2740) Don’t show partial results for timed-out [GRAPH.PROFILE](https://redis.io/commands/graph.profile/)
+  - [#2740](https://github.com/RedisGraph/RedisGraph/issues/2740) Don’t show partial results for timed-out `GRAPH.PROFILE`
 
 ## v2.10 GA (v2.10.4) (November 2022)
 
