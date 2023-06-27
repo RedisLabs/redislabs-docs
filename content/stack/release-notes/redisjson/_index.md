@@ -4,6 +4,7 @@ linkTitle: RedisJSON
 description: RedisJSON release notes for version 2.4 and earlier
 weight: 30
 alwaysopen: false
+tags: ["visible"]
 categories: ["Modules"]
 aliases: /modules/redisjson/release-notes/
 ---

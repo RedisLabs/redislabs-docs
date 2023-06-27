@@ -4,6 +4,8 @@ linkTitle: Redis Stack
 description: Redis Stack release notes
 weight: 10
 alwaysopen: false
+hidden: true
+tags: ["hidden"]
 categories: ["Modules"]
 ---
 

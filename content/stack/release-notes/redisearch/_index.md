@@ -4,6 +4,7 @@ linkTitle: RediSearch
 description: RediSearch release notes for version 2.6 and earlier
 weight: 20
 alwaysopen: false
+tags: ["visible"]
 categories: ["Modules"]
 aliases: /modules/redisearch/release-notes/
 ---

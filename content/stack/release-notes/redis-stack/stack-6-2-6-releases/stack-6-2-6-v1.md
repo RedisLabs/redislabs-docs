@@ -4,6 +4,7 @@ linkTitle: 6.2.6-v0
 description: Multi-value index and query for text, tag, numeric, geo and vector. Suffix search *vatore and wildcard search ant?rez. Support for FP64 vectors and range queries from a given vector. Faster JSONPath parser. New probabilistic data structure t-digest. New path-finding algorithms for Graph. Time series gap filling.
 weight: 99
 alwaysopen: false
+hidden: true
 categories: ["Modules"]
 ---
 

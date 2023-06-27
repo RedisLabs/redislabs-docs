@@ -4,6 +4,7 @@ linkTitle: RedisBloom
 description: RedisBloom release notes for version 2.4 and earlier
 weight: 40
 alwaysopen: false
+tags: ["visible"]
 categories: ["Modules"]
 aliases: /modules/redisbloom/release-notes/
 ---

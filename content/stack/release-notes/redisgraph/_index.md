@@ -4,6 +4,7 @@ linkTitle: RedisGraph
 description: RedisGraph release notes for version 2.10 and earlier
 weight: 70
 alwaysopen: false
+tags: ["visible"]
 categories: ["Modules"]
 aliases: /modules/redisgraph/release-notes/
 ---

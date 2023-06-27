@@ -4,6 +4,7 @@ linkTitle: RedisGears
 description: RedisGears release notes for version 1.2 and earlier
 weight: 80
 alwaysopen: false
+tags: ["visible"]
 categories: ["Modules"]
 aliases: /modules/redisgears/release-notes/
 ---

@@ -4,6 +4,7 @@ linkTitle: RedisTimeSeries
 description: RedisTimeSeries release notes for version 1.8 and earlier
 weight: 50
 alwaysopen: false
+tags: ["visible"]
 categories: ["Modules"]
 aliases: /modules/redistimeseries/release-notes/
 ---
