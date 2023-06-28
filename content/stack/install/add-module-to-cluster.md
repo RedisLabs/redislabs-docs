@@ -33,7 +33,7 @@ Use one of the following methods to add a module to a Redis Enterprise cluster:
 
 - Redis Enterprise admin console
 
-- For RedisGears, follow these [installation instructions]({{<relref "/stack/previous-features/gears-v1/installing-redisgears">}})
+- For RedisGears, follow these [installation instructions]({{<relref "/stack/gears-v1/installing-redisgears">}})
 
 ### REST API method
 
