@@ -1,7 +1,7 @@
 ---
-Title: The Pulumi Redis Cloud Resource Provider
+Title: The Pulumi Redis Cloud Provider
 LinkTitle: Pulumi
-description: Explains how to use Pulumi to provision Redis Cloud resources
+description: Explains how to use Pulumi to provision Redis Cloud infrastructure
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
@@ -15,9 +15,9 @@ Pulumi has gained significant popularity within the developer community due to i
 
 This developer-friendly approach makes it easier for software engineers to leverage their existing programming skills and apply them to infrastructure provisioning, making the learning curve smoother. Pulumi's support for multiple programming languages also provides flexibility and caters to a wider range of developers, enabling teams to collaborate effectively and work with their preferred language.
 
-## The Pulumi Redis Cloud Resource Provider
+## The Pulumi Redis Cloud Provider
 
-With the recent availability of the [Redis Cloud Resource Provider](https://www.pulumi.com/registry/packages/rediscloud/), developers can now take advantage of this popular technology to create Redis Cloud resources in their favorite programming language. As of this writing, the Pulumi Redis Cloud Provider supports the following programming languages :
+With the recent availability of the [Pulumi Redis Cloud Provider](https://www.pulumi.com/registry/packages/rediscloud/), developers can now take advantage of this popular technology to create Redis Cloud resources in their favorite programming language. As of this writing, the Pulumi Redis Cloud Provider supports the following programming languages :
 
 * TypeScript
 * Python
