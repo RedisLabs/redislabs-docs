@@ -32,30 +32,6 @@ The Pulumi Redis Cloud Provider is based upon the TerraForm Redis Cloud Provider
 The provider supports the creation of "Flexible/Annual" subscriptions, but cannot be used to create "Fixed" subscriptions
 {{</note>}}
 
-Let's examine an example of creating a "Flexible" Redis Cloud subscription using Python.
-
-1.  Make sure you have your [Pulumi environment installed](https://www.pulumi.com/docs/install/).
-
-1.  In your Python project, create an empty folder and from this folder run `pulumi new rediscloud-python`.
-
-1.  Next, enter a project name, description, and stack name.
-
-1.  The next step will ask for your Redis Cloud access and secret keys. Since Pulumi uses the Redis Cloud API in the background, an **access Key** and **secret key** are required. For more information on creating these keys, please refer to [Cloud API Keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
-
-1.  Next, enter the credit card type (Visa, Mastercard) of the card on file with your Redis Cloud account.
-
-1.  Finally, enter the last four numbers of the card on file with your Redis Cloud account.
-
-Once these steps are completed, the dependencies needed for the project will be installed and a Python virtual environment will be created.
-
-The Pulumi Python project includes three main files :
-
-1.  The **Pulumi.yaml** file : A metadata file which is used to help configure the Python runtime environment.
-
-1.  The **Pulumi.YOUR_PROJECT_NAME.yaml** file : Contains the information related to the Cloud API access and secret key, credit card type and last 4 digits.
-
-1.  The **__main__.py** file : A Pulumi template file which creates a **Redis Cloud Flexible subscription**. Use this template file as a starting point to create the subscription in a specified cloud provider and the specifications of the database (this includes memory, throughput, Redis modules etc).
-
 ## Pulumi Redis Cloud Provider Resources and Functions
 
 Pulumi `resources` represent the **fundamental units that make up cloud infrastructure**. A provider may make `functions` available in its SDK as well as resource types. These `functions` are often **used to acquire information that is not part of a resource**. 
@@ -95,3 +71,29 @@ The "bring your own AWS account" for Redis Cloud has now been deprecated. The "C
 {{<note>}}
 For more information on the different Redis Cloud Provider Resources and Functions, please refer to Pulumi's [official documentation for the Redis Cloud provider](https://www.pulumi.com/registry/packages/rediscloud/api-docs/).
 {{</note>}}
+
+## Pulumi Quick-Start Python Project
+
+Let's examine an example of creating a "Flexible" Redis Cloud subscription using Python.
+
+1.  Make sure you have your [Pulumi environment installed](https://www.pulumi.com/docs/install/).
+
+1.  In your Python project, create an empty folder and from this folder run `pulumi new rediscloud-python`.
+
+1.  Next, enter a project name, description, and stack name.
+
+1.  The next step will ask for your Redis Cloud access and secret keys. Since Pulumi uses the Redis Cloud API in the background, an **access Key** and **secret key** are required. For more information on creating these keys, please refer to [Cloud API Keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
+
+1.  Next, enter the credit card type (Visa, Mastercard) of the card on file with your Redis Cloud account.
+
+1.  Finally, enter the last four numbers of the card on file with your Redis Cloud account.
+
+Once these steps are completed, the dependencies needed for the project will be installed and a Python virtual environment will be created.
+
+The Pulumi Python project includes three main files :
+
+1.  The **Pulumi.yaml** file : A metadata file which is used to help configure the Python runtime environment.
+
+1.  The **Pulumi.YOUR_PROJECT_NAME.yaml** file : Contains the information related to the Cloud API access and secret key, credit card type and last 4 digits.
+
+1.  The **__main__.py** file : A Pulumi template file which creates a **Redis Cloud Flexible subscription**. Use this template file as a starting point to create the subscription in a specified cloud provider and the specifications of the database (this includes memory, throughput, Redis modules etc).
