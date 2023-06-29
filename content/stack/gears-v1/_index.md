@@ -1,6 +1,6 @@
 ---
-Title: Gears v1
-linkTitle: Gears v1
+Title: Gears
+linkTitle: Gears
 description: RedisGears supports batch and event-driven processing for Redis data.
 weight: 70
 alwaysopen: false
