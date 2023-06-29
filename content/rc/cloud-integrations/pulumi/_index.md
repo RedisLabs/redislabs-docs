@@ -95,21 +95,3 @@ The "bring your own AWS account" for Redis Cloud has now been deprecated. The "C
 {{<note>}}
 For more information on the different Redis Cloud Provider Resources and Functions, please refer to Pulumi's [official documentation for the Redis Cloud provider](https://www.pulumi.com/registry/packages/rediscloud/api-docs/).
 {{</note>}}
-
-## Redis Cloud Subscription Types
-
-Using the Pulumi Redis Cloud Provider, you can provision two different types of Redis Cloud subscriptions :
-
-### Basic Subscription
-
-In order to create a minimal basic subscription, you will need to define the following resources in your configuration file :
-
-* `rediscloud_subscription`: represents the Redis Cloud subscription you wish to create
-  * **Cloud Provider Information**: The information related to the Cloud Provider you wish to deploy this subscription to.
-  * **Creation Plan Information**: Metadata used to determine the most optimal cloud infrastructure footprint needed to support the different databases hosted in the subscription.
-
-* `rediscloud_subscription`:
-
-### Active-Active Subscriptions
-
-In order to create an active-active subscription, you will need to define the following resources in your configuration file :
