@@ -77,3 +77,9 @@ ufw status
 ```sh
 firewall-cmd –list-all
 ```
+
+To resolve firewall issues:
+
+- If a firewall is configured for your database, add the client IP address to the firewall rules.
+
+- Configure third-party firewalls and external proxies to allow the cluster FQDN, database endpoint IP address, and database ports.
