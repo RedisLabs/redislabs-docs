@@ -87,7 +87,7 @@ rladmin upgrade module
 | Parameters                 | Type/Value               | Description                                                                                                            |
 |----------------------------|--------------------------|------------------------------------------------------------------------------------------------------------------------|
 | db_name                    | db:\<id\> <br />name     | Upgrade a module for the specified database                                                                                     |
-| module_name                | 'ReJSON'<br />'graph'<br />'search'<br />'bf'<br />'timeseries' | Redis module to upgrade                                       |
+| module_name                | 'ReJSON'<br />'graph'<br />'search'<br />'bf'<br />'rg'<br />'timeseries' | Redis module to upgrade                                       |
 | version                    | module version number    | Upgrades the module to the specified version                                                                               |
 | module_args                | 'keep_args'<br />string    | Module configuration options                                                                                                       |
 
