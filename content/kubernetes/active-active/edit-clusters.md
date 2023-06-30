@@ -10,6 +10,7 @@ aliases: {
 /kubernetes/active-active/edit-clusters/,
 }
 ---
+{{<note>}}This feature is supported for general availability in releases 6.4.2-6 and later.{{</note>}}
 
 ## Add a participating cluster
 
