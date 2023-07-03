@@ -46,17 +46,19 @@ To quickly create a database and skip additional configuration options during in
 
 1. On the **Databases** screen, select **Quick database**.
 
-1. Configure basic database settings:
+1. Configure settings that are required for database creation but can be changed later:
 
     - Database name
 
-    - Port (optional; set by the cluster if not set manually)
-
     - Memory limit (GB)
 
-    - Modules and modules parameters (optional)
+2. Configure optional settings that can't be changed after database creation:
 
-1. Optionally select **Full options** to configure additional settings.
+    - Endpoint port (set by the cluster if not set manually)
+
+    - Modules to enable
+
+1. Optionally select **Full options** to configure [additional settings]({{<relref "/rs/databases/configure#config-settings">}}).
 
 1. Select **Create**.
 
