@@ -14,7 +14,7 @@ aliases:
   - /modules/redistimeseries/redistimeseries-quickstart/
   - /modules/redistimeseries/
 ---
-You can manage time series data in Redis Enterprise using the Redis Stack time series feature.
+You can manage time series data in Redis Enterprise with Redis Stack.
 
 ## Features
 

@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /modules/modules-quickstart/
 ---
-To quickly set up a database with Redis Stack capabilities,
+To quickly set up a database with Redis Stack features,
 you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/sign-up) subscription and create a Redis Stack database.
 
 Alternatively, you can use one of these methods:
@@ -18,7 +18,7 @@ Alternatively, you can use one of these methods:
 
 ## Set up a Redis Cloud database
 
-To set up a Redis Cloud database with Redis Stack capabilities, follow these steps:
+To set up a Redis Cloud database with Redis Stack features, follow these steps:
 
 1. [Create a new Redis Cloud subscription](#create-a-subscription).
 

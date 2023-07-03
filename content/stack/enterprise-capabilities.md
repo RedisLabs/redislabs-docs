@@ -9,7 +9,7 @@ aliases: /modules/enterprise-capabilities/
          /modules/enterprise-capabilities.md
 ---
 
-This article describes compatibility between Redis Enterprise features and Redis Stack features (also known as modules). Version numbers indicate the minimum module version required for feature support.
+This article describes compatibility between Redis Enterprise features and Redis Stack features. Version numbers indicate the minimum module version required for feature support.
 
 ## Supported Redis Stack features
 
@@ -22,7 +22,7 @@ The following table shows which Redis Stack features are supported by Redis Ente
 | [Graph]({{<relref "/stack/previous-features/graph">}}) | &#x26A0;&#xFE0F; Deprecated | &#x26A0;&#xFE0F; Deprecated |
 | [Time Series]({{<relref "/stack/timeseries">}}) | &#x2705; Supported | &#x2705; Supported |
 | [Probabilistic]({{<relref "/stack/bloom">}}) | &#x2705; Supported | &#x2705; Supported |
-| [Gears v1]({{<relref "/stack/gears-v1">}}) | &#x2705; Supported | &#x274c; Not supported |
+| [Gears]({{<relref "/stack/gears-v1">}}) | &#x2705; Supported | &#x274c; Not supported |
 
 ## Feature compatibility
 
@@ -48,7 +48,7 @@ For details about individual features, see the corresponding documentation.
 | Replica Of                | Yes (v1.6)[^2] | Yes (v1.0)   | Yes (v2.2)   |
 | Reshard/rebalance         | Yes (v2.0)     | Yes (v1.0)   | No           |
 
-[^1]: Graphs support clustering; however, individual graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, [contact support](https://redis.com/company/support/).
+[^1]: Graphs are compatible with clustering; however, individual graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, [contact support](https://redis.com/company/support/).
 
 [^2]: RediSearch version 1.6 supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
 
@@ -56,9 +56,9 @@ For details about individual features, see the corresponding documentation.
 
 [^4]: You currently cannot combine Redis on Flash and Active-Active with Redis Stack features in Redis Cloud.
 
-[^5]: Although time series support Redis on Flash, the entire series either lives in RAM or on flash.
+[^5]: Although time series are compatible with Redis on Flash, the entire series either lives in RAM or on flash.
 
-| Feature name/capability | [Time Series]({{< relref  "/stack/timeseries" >}}) | [Probabilistic]({{< relref  "/stack/bloom" >}}) | [Gears v1]({{< relref  "/stack/gears-v1" >}}) |
+| Feature name/capability | [Time Series]({{< relref  "/stack/timeseries" >}}) | [Probabilistic]({{< relref  "/stack/bloom" >}}) | [Gears]({{< relref  "/stack/gears-v1" >}}) |
 |--------------------------|:--------------:|:------------:|:----------:| 
 | Active-Active (CRDB)[^4] | No             | No           | Yes (v1.0) |
 | Backup/Restore           | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
