@@ -36,13 +36,14 @@ Redis Data Integration supports the following database sources using [Debezium S
 | ------------------ | ---------------------- |
 | Oracle             | 12c, 19c, 21c          |
 | MariaDB            | >= 10.5                |
+| MongoDB            | 4.2, 4.4, 5.0, 6.0  driver: 4.7 |
 | MySQL              | 5.7, 8.0.x             |
 | Percona XtraDB     | 5.7, 8.0.x             |
 | Postgres           | 10, 11, 12, 13, 14, 15 |
 | SQL Server         | 2017, 2019             |
 | Cassandra          | >= 3.0                 |
 | Datastax Cassandra | >= 6.8.0               |
-| MongoDB            | 4.2, 4.4, 5.0, 6.0  driver: 4.7 |
+
 
 ## Supported targets (write-behind)
 
