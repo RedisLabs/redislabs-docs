@@ -10,16 +10,16 @@ draft:
 hidden: false
 ---
 
-This guide takes you through the creation of a write-behind and readh-through pipeline.
+This guide takes you through the creation of a write-behind and read-through pipeline.
 
 > Note: Write Behind & Read-Through are currently in Preview.
 
 ## Concepts
 
-**Write-behind**: An RDI policy and pipeline to synchronize the data in a Redis DB with some downstream data store.
+**Write-behind**: RDI pipeline to synchronize the data in a Redis DB with some downstream data store.
 You can think about it as a pipeline that starts with change data capture (CDC) events for a Redis database and then filters, transforms, and maps the data to the target data store data structure.
 
-**Read-through**: An RDI policy and pipeline to automatically retrieve data from a downstream data store back to Redis cache in case of cache-miss. The read-through will be triggered by a client trying to get a key from Redis where this key doesn't exist. RDI will retrieve the key, write it to cache and return a response to the client in a sync flow.
+**Read-through**: RDI pipeline to automatically fetch data from a downstream data store back to Redis cache in case of cache-miss. This read-through is initiated by a client attempt to retrieve a key from Redis that does not exist. RDI will retrieve the key, store it in the cache and then provide a synchronous response to the client.
 
 **Target**: The data store to which the write-behind pipeline connects and writes data.
 
@@ -46,14 +46,14 @@ RDI write-behind currently supports these target data stores:
 The only prerequisite for running RDI write-behind is [Redis Gears Python](https://redis.com/modules/redis-gears/) >= 1.2.6 installed on the Redis Enterprise Cluster and enabled for the database you want to mirror to the downstream data store.
 For more information, see [Redis Gears installation]({{<relref "/rdi/installation/install-redis-gears">}}).
 
-## Preparing the write-behind & read-through pipeline
+## Preparing the write-behind & read-through pipelines
 
 - Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli">}}) on a Linux host that has connectivity to your Redis Enterprise Cluster.
 - Run the [`configure`]({{<relref "/rdi/reference/cli/redis-di-configure">}}) command to install the RDI Engine on your Redis database, if you have not used this Redis database with RDI write-behind before.
-- **For Read Through only** the Redis database proxy has to be reconfigured using the [rladmin CLI](https://docs.redis.com/latest/rs/references/cli-utilities/rladmin/):
+- **For read-through only** the Redis database proxy has to be reconfigured using the [rladmin CLI](https://docs.redis.com/latest/rs/references/cli-utilities/rladmin/):
 
   ```bash
-  rladmin> tune db redis-di-1 schedpolicy mnp
+  rladmin> tune db <RDI_BDB_NAME> schedpolicy mnp
   ```
 
 - Run the [`scaffold`]({{<relref "/rdi/reference/cli/redis-di-scaffold">}}) command with the type of data store you want to use, for example:
@@ -239,19 +239,19 @@ To use the metrics you can either:
 ### Read-through jobs
 
 Read-through jobs are a mandatory part of the read-through pipeline configuration.
-Under the `jobs` directory (parallel to `config.yaml`) you should have a job definition in a YAML file per every key pattern you want to read into cache from a downstream database table in case of cache miss.
 
-The YAML file can be named using the database table name or another naming convention, but has to have a unique name.
+In the jobs directory, which is located parallel to the config.yaml file, you should include a YAML file for each key pattern you want to read into the cache from a downstream database table in the event of a cache miss.
+
+You can choose to name the YAML file based on the database table name or use another naming convention.
 
 Job definition has the following structure:
 
 ```yaml
 source:
   retries: 1
-  timeout: 3 #seconds
-  keyspace:
+  redis:
     trigger: read-through
-    pattern: emp:*
+    key_pattern: emp:*
   keys:
     delimiter: ":"
     # alternatively use expression with RegExp
@@ -292,11 +292,11 @@ output:
   expire: 100
 ```
 
-#### The keyspace section
+#### The redis section
 
-This section describes the Redis keyspace pattern and job type:
+This section describes the Redis key-pattern and job type:
 
-- The `pattern` attribute that would trigger the read-through job.
+- The `key_pattern` attribute for the key-pattern that would trigger the read-through job.
 - The `trigger` attribute: indicates it is a read-through and not a write-behind job, using the `read-through` value.
 
 #### The keys section
@@ -305,23 +305,22 @@ This section has the following attributes:
 
 - The `delimiter` attribute: specifies a delimiter for tokenizing the Redis key. These tokens are used with the `fields` attribute (see below).
 - Alternatively, specify the `expression` attribute. In this case, the regular expression will be used to tokenize the the Redis key. for example, `expression: "(.+):(\\d+)"` will tokenize the key to anything before the colon and a number after the colon.
-- The `fields` attribute is a map of field name and its offset in the array of tokens generated by the `expression` or or the `delimiter` attributes.
+- The `fields` attribute is a map of field name and its offset in the array of tokens generated by the `expression` or the `delimiter` attributes.
 
-#### downstream database information
+#### Downstream database information
 
 The `source` section must specify the following attributes:
 
-- `connection` - a connection alias, referring to a connection section in the `config.yaml` file.
-- `db` - the name of the database endpoint to connect use.
-- `schema` - the name of the schema to use.
+- `connection` - A connection alias, referring to a connection section in the `config.yaml` file.
+- `schema` - The name of the schema to use.
 - `table` or `sql` attributes:
-  - `table` - the table to query.
-  - `sql` - a SQL statement in case you would like to `JOIN` several tables or to perform a different complex query. see more below about using this option.
+  - `table` - The table to query.
+  - `columns` - The columns to fetch
+  - `sql` - A SQL statement in case you would like to `JOIN` several tables or to perform a different complex query. see more below about using this option.
 
 The `source` section can optionally include the following attributes:
 
 - `retries` - Number of attempts to read from the database. The default is 1.
-- `timeout` - Number of seconds to wait before reading of data is timed-out (0 - no limit). The default is 3 seconds.
 
 ##### Using custom sql queries
 
@@ -329,12 +328,12 @@ You can use any valid `SELECT` statement that can be parsed by the specific down
 
 #### Using transformations
 
-RDI supports transformation blocks with read-through jobs. You can use transformations to remove fields, map fields, add fields etc.
-Keep in mind that removing all fields or applying a filter will result in an error as no record can be written to Redis and returned to the client.
+RDI provides support for transformation blocks within read-through jobs. These transformations can be utilized to perform various operations such as removing fields, mapping fields, adding fields, and more.
+However, it is important to note that certain transformations, such as removing all fields or applying a filter that results in no records, will lead to an error. This occurs because there will be no valid record to write to Redis and return to the client. Therefore, it's crucial to ensure that transformations do not unintentionally result in empty or filtered data sets.
 
 #### The output section
 
-Unlike write-behind the output section does not specify which key and type to write to Redis as this is provided by the client command. However, it has an optional `expires` attribute to specify the TTL of the retrieved key.
+Unlike write-behind the output section does not specify which key and type to write to Redis as this is provided by the client command. However, it has an optional `expires` attribute to specify the TTL of the retrieved key in seconds.
 
 ## Upgrading
 
