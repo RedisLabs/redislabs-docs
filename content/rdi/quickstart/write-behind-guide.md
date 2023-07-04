@@ -336,7 +336,7 @@ However, it is important to note that certain transformations, such as removing 
 
 #### The output section
 
-Unlike write-behind the output section does not specify which key and type to write to Redis as this is provided by the client command. However, it has an optional `expires` attribute to specify the TTL of the retrieved key in seconds.
+Unlike write-behind the output section does not specify which key and type to write to Redis as this is provided by the client command. However, it has an optional `expire` attribute to specify the TTL of the retrieved key in seconds.
 
 ## Upgrading
 
