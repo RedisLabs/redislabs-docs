@@ -10,7 +10,7 @@ draft:
 hidden: false
 ---
 
-This guide takes you through the creation of a write-behind and read-through pipeline.
+This guide takes you through the creation of a write-behind and read-through pipelines.
 
 > Note: Write Behind & Read-Through are currently in Preview.
 
