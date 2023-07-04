@@ -1,7 +1,7 @@
 ---
 Title: Write-behind & Read-Through quickstart
 linkTitle: Write-behind & Read-Through
-description: Get started creating a write-behind and read-through pipeline
+description: Get started creating a pipeline for redis synchronization with a downstream database (write behind, read through, write through (pending))
 weight: 40
 alwaysopen: false
 categories: ["redis-di"]
