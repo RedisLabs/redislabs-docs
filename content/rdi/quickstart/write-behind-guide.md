@@ -173,7 +173,9 @@ The `output` section is critical. It specifies a reference to a connection from 
 
 - The `keys` section specifies the field(s) in the table that are the unique constraints in that table.
 
-- The `mapping` section is optional and used to map a subset of the fields in the Redis hash or JSON document to the columns that will be written to the target table.
+- The `mapping` section is used to map database columns to redis fields with different names or to expressions. The mapping can be of all redis data fields or a subset of them.
+
+> Note: The columns used in `keys` will be automatically included and no need to repeat them in the `mapping` section.
 
 ### Apply filters and transformations to write-behind
 
