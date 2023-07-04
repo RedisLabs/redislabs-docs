@@ -122,7 +122,7 @@ Job definition has the following structure:
 source:
   redis:
     key_pattern: emp:*
-    exclude-commands: ["json.del"]
+    exclude_commands: ["json.del"]
 transform:
   - uses: rename_field
     with:
@@ -152,12 +152,12 @@ The `redis` section is common for every pipeline initiated by event in Redis suc
 
 - The `key_pattern` attribute specifies the pattern of Redis keys to listen on. The pattern has to correspond to keys that are of Hash or JSON value.
 
-- The `exclude-commands` attribute specifies which commands not to act on. For example, if you listen on key pattern that has Hash values, you can exclude the `HDEL` command so no deletions of data will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
+- The `exclude_commands` attribute specifies which commands not to act on. For example, if you listen on key pattern that has Hash values, you can exclude the `HDEL` command so no deletions of data will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
 
 - The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for Write Behind events the `before` value of the key is never provided.
 
  > Note: RDI write-behind does not support the [`Expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
-> Notes: The `redis` attribute is a breaking change replacing the `keyspace` attrribute. The key_pattern attribute replaces the `pattern` attribute. If you upgrade to version 0.105 and beyond, you must edit your existing jobs and redeploy them.
+> Notes: The `redis` attribute is a breaking change replacing the `keyspace` attrribute. The key_pattern attribute replaces the `pattern` attribute. THe `exclude_commands` attributes replaces the `exclude-commands` attribute. If you upgrade to version 0.105 and beyond, you must edit your existing jobs and redeploy them.
 
 ### Output section
 
