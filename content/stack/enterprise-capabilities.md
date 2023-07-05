@@ -19,7 +19,7 @@ The following table shows which Redis Stack features are supported by Redis Ente
 |:-------|:-------------------------|:-----------------------|
 | [Search and Query]({{<relref "/stack/search">}}) | &#x2705; Supported | &#x2705; Supported |
 | [JSON]({{<relref "/stack/json">}})   | &#x2705; Supported | &#x2705; Supported |
-| [Graph]({{<relref "/stack/previous-features/graph">}}) | &#x26A0;&#xFE0F; Deprecated | &#x26A0;&#xFE0F; Deprecated |
+| [Graph]({{<relref "/stack/deprecated-features/graph">}}) | &#x26A0;&#xFE0F; Deprecated | &#x26A0;&#xFE0F; Deprecated |
 | [Time Series]({{<relref "/stack/timeseries">}}) | &#x2705; Supported | &#x2705; Supported |
 | [Probabilistic]({{<relref "/stack/bloom">}}) | &#x2705; Supported | &#x2705; Supported |
 | [Gears]({{<relref "/stack/gears-v1">}}) | &#x2705; Supported | &#x274c; Not supported |
@@ -32,7 +32,7 @@ Version numbers indicate when the feature was first supported.  If you're using 
 
 For details about individual features, see the corresponding documentation.
 
-| Feature name/capability   | [Search and Query]({{< relref  "/stack/search" >}}) | [JSON]({{< relref  "/stack/json" >}})    |  [Graph]({{< relref  "/stack/previous-features/graph" >}})   | 
+| Feature name/capability   | [Search and Query]({{< relref  "/stack/search" >}}) | [JSON]({{< relref  "/stack/json" >}})    |  [Graph]({{< relref  "/stack/deprecated-features/graph" >}})   | 
 |---------------------------|:--------------:|:------------:|:------------:|
 | Active-Active (CRDB)[^4]  | Yes (v2.0)     | Yes (v2.2)   | No           |
 | Backup/Restore            | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
