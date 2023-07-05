@@ -1,7 +1,7 @@
 ---
 Title: Write-behind & Read-Through quickstart
 linkTitle: Write-behind & Read-Through
-description: Get started creating a pipeline for redis synchronization with a downstream database (write behind, read through, write through (pending))
+description: Get started creating a pipeline for redis synchronization with a downstream database (write-behind, read-through, write-through (pending))
 weight: 40
 alwaysopen: false
 categories: ["redis-di"]
@@ -163,7 +163,7 @@ The `redis` section is common for every pipeline initiated by event in Redis suc
 
 The `output` section is critical. It specifies a reference to a connection from the `config.yaml` `connections` section:
 
-- The `uses` attribute specifies the type of **writer** RDI Write Behind will use to prepare and write the data to the target.
+- The `uses` attribute specifies the type of **writer** RDI write-behind will use to prepare and write the data to the target.
   In this example, it is `relational.write`, a writer that translates the data into a SQL statement with the specific dialect of the downstream relational database.
   For a full list of supported writers, look [Data transformation block types]({{<relref "/rdi/reference/data-transformation-block-types">}}).
 
@@ -179,7 +179,7 @@ The `output` section is critical. It specifies a reference to a connection from 
 
 ### Apply filters and transformations to write-behind
 
-The RDI Write Behind jobs can apply filters and transformations to the data before it is written to the target. Specify the filters and transformations under the `transform` section.
+The RDI write-behind jobs can apply filters and transformations to the data before it is written to the target. Specify the filters and transformations under the `transform` section.
 
 #### Filters
 
@@ -316,7 +316,7 @@ This section has the following attributes:
 
 The `source` section must specify the following attributes:
 
-- `connection` - A connection alias, referring to a connection section in the `config.yaml` file.
+- `connection` - A connection alias, referring to connection in the `config.yaml` file.
 - `schema` - The name of the schema to use.
 - `table` or `sql` attributes:
   - `table` - The table to query.
