@@ -4,7 +4,7 @@
      kubectl get secret admission-tls
     ```
   
-    The output will look similar to
+    The output should look similar to
   
     ```
      NAME            TYPE     DATA   AGE
