@@ -11,12 +11,24 @@ aliases: /modules/redistimeseries/release-notes/redistimeseries-1.8-release-note
 ---
 ## Requirements
 
-RedisTimeSeries v1.8.9 requires:
+RedisTimeSeries v1.8.10 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
 
-## v1.8.9 (April 2023)
+## v1.8.10 (April 2023)
+
+This is a maintenance release for RedisTimeSeries 1.8.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#1455](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1455) `TS.ADD` - optional arguments are not replicated (MOD-5110)
+
+## v1.8.9 (March 2023)
 
 This is a maintenance release for RedisTimeSeries 1.8.
 

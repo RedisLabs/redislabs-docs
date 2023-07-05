@@ -22,7 +22,7 @@ You can run search operations on any instance of an Active-Active database.
 
 Active-Active databases do not support the following search and query commands: 
 
-- `FT.DROP`
+- [`FT.DROPINDEX` ](https://redis.io/commands/ft.dropindex/)
 - [`FT.SUGADD`](https://redis.io/commands/ft.sugadd/)
 - [`FT.SUGGET`](https://redis.io/commands/ft.sugget/)
 - [`FT.SUGDEL`](https://redis.io/commands/ft.sugdel/)

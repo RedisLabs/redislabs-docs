@@ -11,12 +11,24 @@ aliases: /modules/redisjson/release-notes/redisjson-2.4-release-notes/
 ---
 ## Requirements
 
-RedisJSON v2.4.6 requires:
+RedisJSON v2.4.7 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.18
 
-## v2.4.6 (April 2023)
+## v2.4.7 (April 2023)
+
+This is a maintenance release for RedisJSON 2.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#947](https://github.com/RedisJSON/RedisJSON/issues/947) Crash when using array slice operator (`[start:end:step]`) with step `0`
+
+## v2.4.6 (March 2023)
 
 This is a maintenance release for RedisJSON 2.4.
 

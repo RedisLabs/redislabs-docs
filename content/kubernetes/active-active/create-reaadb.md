@@ -14,7 +14,7 @@ aliases: {
 }
 ---
 
-{{<note>}}This feature is only available for versions 6.2.4 or later.{{</note>}}
+{{<note>}}This feature is supported for general availability in releases 6.4.2-6 and later.{{</note>}}
 
 ## Prerequisites
 

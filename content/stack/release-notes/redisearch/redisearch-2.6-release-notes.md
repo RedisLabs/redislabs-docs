@@ -11,12 +11,33 @@ aliases: /modules/redisearch/release-notes/redisearch-2.6-release-notes/
 ---
 ## Requirements
 
-RediSearch v2.6.6 requires:
+RediSearch v2.6.9 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
 
-## v2.6.6 (April 2023)
+## v2.6.9 (April 2023)
+
+This is a maintenance release for RediSearch 2.6.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#3468](https://github.com/RediSearch/RediSearch/pull/3468) KNN searching for 0 vectors with a filter resulted in crash (MOD-5006)
+  - [#3499](https://github.com/RediSearch/RediSearch/pull/3499) `MAXSEARCHRESULTS` set to `0` causing `FT.SEARCH` to crash (MOD-5062)
+  - [#3494](https://github.com/RediSearch/RediSearch/pull/3494) Removing `MAXSEARCHRESULTS` limit causes crash on `FT.AGGREGATE` (MOD-4974)
+  - [#3504](https://github.com/RediSearch/RediSearch/pull/3504) Uninitialised vector similarity query parameter bug (MOD-5063)
+
+- Improvements:
+
+  - [#3430](https://github.com/RediSearch/RediSearch/pull/3430) Improve min-max heap structure for better readability and performance
+  - [#3450](https://github.com/RediSearch/RediSearch/pull/3450) Display `NOHL` option in `FT.INFO` command
+  - [#3534](https://github.com/RediSearch/RediSearch/pull/3534) Vector Similarity 0.6.1: Improve multi-value index deletion logic ([#346](https://github.com/RedisAI/VectorSimilarity/pull/346))
+
+## v2.6.6 (March 2023)
 
 This is a maintenance release for RediSearch 2.6.
 

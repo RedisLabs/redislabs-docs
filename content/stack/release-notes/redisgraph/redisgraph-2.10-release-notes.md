@@ -11,12 +11,40 @@ aliases: /modules/redisgraph/release-notes/redisgraph-2.10-release-notes/
 ---
 ## Requirements
 
-RedisGraph v2.10.9 requires:
+RedisGraph v2.10.11 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
 
-## v2.10.9 (April 2023)
+## v2.10.11 (June 2023)
+
+This is a maintenance release for RedisGraph 2.10.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#3096](https://github.com/RedisGraph/RedisGraph/pull/3096) Potential crash on query timeout (MOD-5202)
+  - [#3042](https://github.com/RedisGraph/RedisGraph/issues/3042), [#3052](https://github.com/RedisGraph/RedisGraph/issues/3052) Potential crashes due to false assertions
+
+## v2.10.10 (April 2023)
+
+This is a maintenance release for RedisGraph 2.10.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#3038](https://github.com/RedisGraph/RedisGraph/issues/3038) Potential crash when a query with a `UNION` clause sets or modifies an indexed property
+  - [#2631](https://github.com/RedisGraph/RedisGraph/issues/2631), [#2968](https://github.com/RedisGraph/RedisGraph/issues/2968) Potential crash on certain `MATCH` clauses where label filters are used (MOD-5093)
+  - [#2957](https://github.com/RedisGraph/RedisGraph/issues/2957) Label filters in expressions such as `WITH n MATCH (n:X)` are ignored
+  - [#2931](https://github.com/RedisGraph/RedisGraph/issues/2931), [#3027](https://github.com/RedisGraph/RedisGraph/issues/3027) Wrong overflow error message
+
+## v2.10.9 (March 2023)
 
 This is a maintenance release for RedisGraph 2.10.
 
