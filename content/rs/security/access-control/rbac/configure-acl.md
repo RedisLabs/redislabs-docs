@@ -37,7 +37,7 @@ Redis Enterprise lets you:
 {{<note>}}
 Module commands have several ACL limitations:
 
-- [Redis modules]({{<relref "/modules">}}) do not have command categories.
+- [Redis modules]({{<relref "/stack">}}) do not have command categories.
 
 - Other [command category](https://redis.io/docs/management/security/acl/#command-categories) ACLs, such as `+@read` and `+@write`, do not include Redis module commands. `+@all` is the only exception because it allows all Redis commands.
 

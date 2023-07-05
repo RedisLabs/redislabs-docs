@@ -28,7 +28,7 @@ The database must:
 In addition, the database must _not_:
 
 - Use node `include` or `exclude` in the proxy policy.
-- Use [RediSearch]({{<relref "/modules/redisearch">}}), [RedisTimeSeries]({{<relref "/modules/redistimeseries">}}), or [RedisGears]({{<relref "/modules/redisgears">}}) modules.
+- Use [RediSearch]({{<relref "/stack/search">}}), [RedisTimeSeries]({{<relref "/stack/timeseries">}}), or [RedisGears]({{<relref "/stack/gears-v1">}}) modules.
 
 The OSS Cluster API setting applies to individual databases, as opposed to the overall cluster.
 
