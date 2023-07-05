@@ -121,7 +121,7 @@ By default, you're shown basic settings, which include:
 | Database&nbsp;setting | Description |
 |:---------|:-----------|
 | **Name** | A custom name for your database (_required_) |
-| **Advanced Capabilities** | Modules used by the database. Choose from [RedisSearch]({{< relref "/stack/search" >}}), [RedisJSON]({{< relref "/stack/json" >}}), [RedisTimeSeries]({{< relref "/stack/timeseries" >}}), [RedisBloom]({{< relref "/stack/bloom" >}}), or [RedisGraph]({{< relref "/stack/previous-features/graph" >}}). |
+| **Advanced Capabilities** | Modules used by the database. Choose from [RedisSearch]({{< relref "/stack/search" >}}), [RedisJSON]({{< relref "/stack/json" >}}), [RedisTimeSeries]({{< relref "/stack/timeseries" >}}), [RedisBloom]({{< relref "/stack/bloom" >}}), or [RedisGraph]({{< relref "/stack/deprecated-features/graph" >}}). |
 | **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**). |
 | **Memory Limit (GB)** | The size limit for the database. Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).|
 | **High Availability** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |

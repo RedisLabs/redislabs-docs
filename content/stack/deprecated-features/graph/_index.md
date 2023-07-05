@@ -15,6 +15,7 @@ aliases:
   - /redis_graph/
   - /rs/developing/modules/redisgraph/
   - /modules/redisgraph/
+  - /stack/previous-features/graph/
 ---
 RedisGraph is the first queryable [Property Graph](https://github.com/opencypher/openCypher/blob/master/docs/property-graph-model.adoc) database to use [sparse matrices](https://en.wikipedia.org/wiki/Sparse_matrix) to represent the [adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) in graphs and [linear algebra](http://faculty.cse.tamu.edu/davis/GraphBLAS.html) to query the graph.
 
@@ -30,7 +31,7 @@ RedisGraph is the first queryable [Property Graph](https://github.com/opencypher
 
 ## Commands
 
-See [Graph commands]({{<relref "/stack/previous-features/graph/commands">}}) for a list of graph commands that are supported in Redis Enterprise.
+See [Graph commands]({{<relref "/stack/deprecated-features/graph/commands">}}) for a list of graph commands that are supported in Redis Enterprise.
 
 ## Clients
 
@@ -40,7 +41,7 @@ For a list of available RedisGraph clients, see [RedisGraph client libraries](ht
 
 See [Configuration parameters](https://github.com/RedisGraph/RedisGraph/blob/master/docs/docs/configuration.md) for the complete list of RedisGraph configuration parameters.
 
-To learn which configuration parameters are supported in Redis Enterprise, see [Graph configuration compatibility with Redis Enterprise]({{<relref "/stack/previous-features/graph/config">}}).
+To learn which configuration parameters are supported in Redis Enterprise, see [Graph configuration compatibility with Redis Enterprise]({{<relref "/stack/deprecated-features/graph/config">}}).
 
 ## Design
 
@@ -97,7 +98,7 @@ RedisGraph has several [known limitations](https://github.com/RedisGraph/RedisGr
 
 ## More info
 
-- [Graph quick start]({{<relref "/stack/previous-features/graph/graph-quickstart">}})
+- [Graph quick start]({{<relref "/stack/deprecated-features/graph/graph-quickstart">}})
 
 - [RedisGraph documentation on GitHub](https://github.com/RedisGraph/RedisGraph/tree/master/docs/docs)
 
