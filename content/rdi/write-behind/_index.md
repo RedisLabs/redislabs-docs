@@ -1,6 +1,6 @@
 ---
-Title: Write-behind
-linkTitle: write-behind
+Title: Write-behind & read-through
+linkTitle: write-behind & read-through
 description: 
 weight: 10
 alwaysopen: false
