@@ -5,6 +5,9 @@ description: RedisGraph is a queryable graph database built on Redis.
 weight: 40
 alwaysopen: false
 toc: "true"
+bannerText: Redis, Inc. has announced the end of life of RedisGraph. We will carry out the process gradually and in accordance with our commitment to our customers. See [details].
+bannerLink: https://redis.com/blog/redisgraph-eol/
+bannerChildren: true
 categories: ["Modules"]
 aliases:
   - /redisgraph/
