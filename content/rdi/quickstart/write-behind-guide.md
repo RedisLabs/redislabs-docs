@@ -154,7 +154,7 @@ The `redis` section is common for every pipeline initiated by event in Redis suc
 
 - The `exclude_commands` attribute specifies which commands not to act on. For example, if you listen on key pattern that has Hash values, you can exclude the `HDEL` command so no deletions of data will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
 
-- The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for Write Behind events the `before` value of the key is never provided.
+- The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for write-behind events the `before` value of the key is never provided.
 
  > Note: RDI write-behind does not support the [`Expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
 > Notes: The `redis` attribute is a breaking change replacing the `keyspace` attrribute. The key_pattern attribute replaces the `pattern` attribute. THe `exclude_commands` attributes replaces the `exclude-commands` attribute. If you upgrade to version 0.105 and beyond, you must edit your existing jobs and redeploy them.
@@ -320,7 +320,7 @@ The `source` section must specify the following attributes:
 - `schema` - The name of the schema to use.
 - `table` or `sql` attributes:
   - `table` - The table to query.
-  - `columns` - The columns to fetch if `table` is used
+  - `columns` - The columns to fetch if `table` is used.
   - `sql` - A SQL statement in case you would like to `JOIN` several tables or to perform a different complex query. see more below about using this option.
 
 The `source` section can optionally include the following attributes:

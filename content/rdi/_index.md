@@ -53,6 +53,7 @@ Redis Data Integration supports the following database sources using [Debezium S
 | MySQL      |
 | Oracle     |
 | Postgres   |
+| Redis Enterprise |
 | SQL Server |
 
 
