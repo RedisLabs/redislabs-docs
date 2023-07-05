@@ -15,7 +15,7 @@ aliases: [
 The Redis Enterprise Software product lifecycle fully reflects the [subscription agreement](https://redis.com/software-subscription-agreement).
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
-Redis Enterprise modules follow the [modules lifecycle]({{< relref "/modules/modules-lifecycle.md" >}}).
+Redis Enterprise modules follow the [modules lifecycle]({{<relref "/stack/modules-lifecycle">}}).
 
 ## Release numbers
 
