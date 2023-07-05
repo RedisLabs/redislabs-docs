@@ -12,14 +12,14 @@ hidden: false
 
 This guide takes you through the creation of a write-behind and read-through pipelines.
 
-> Note: Write Behind & Read-Through are currently in Preview.
+> Note: write-behind & read-through are currently in Preview.
 
 ## Concepts
 
 **Write-behind**: RDI pipeline to synchronize the data in a Redis DB with some downstream data store.
 You can think about it as a pipeline that starts with change data capture (CDC) events for a Redis database and then filters, transforms, and maps the data to the target data store data structure.
 
-**Read-through**: RDI pipeline to automatically fetch data from a downstream data store back to Redis cache in case of cache-miss. This read-through is initiated by a client attempt to retrieve a key from Redis that does not exist. RDI will retrieve the key, store it in the cache and then provide a synchronous response to the client.
+**Read-through**: RDI pipeline to automatically fetch data from a downstream data store back to Redis cache in case of cache-miss. This read-through is initiated by client attempt to retrieve a key from Redis that does not exist. RDI will retrieve the key, store it in the cache and then provide a synchronous response to the client.
 
 **Target**: The data store to which the write-behind pipeline connects and writes data.
 
@@ -245,7 +245,7 @@ To use the metrics you can either:
 
 Read-through jobs are a mandatory part of the read-through pipeline configuration.
 
-In the jobs directory, which is located parallel to the config.yaml file, you should include a YAML file for each key pattern you want to read into the cache from a downstream database table in the event of a cache miss.
+In the jobs directory, which is located parallel to the `config.yaml` file, you should include a YAML file for each key pattern you want to read into the cache from a downstream database table in the event of a cache miss.
 
 You can choose to name the YAML file based on the database table name or use another naming convention.
 
@@ -320,7 +320,7 @@ The `source` section must specify the following attributes:
 - `schema` - The name of the schema to use.
 - `table` or `sql` attributes:
   - `table` - The table to query.
-  - `columns` - The columns to fetch
+  - `columns` - The columns to fetch if `table` is used
   - `sql` - A SQL statement in case you would like to `JOIN` several tables or to perform a different complex query. see more below about using this option.
 
 The `source` section can optionally include the following attributes:

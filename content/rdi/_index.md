@@ -22,7 +22,7 @@ RDI currently supports these scenarios:
   
 * [Write-behind scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}). RDI applies data changes in Redis to one or more downstream data stores. RDI can map and transform the Redis types and models to the downstream types and models. This scenario is useful when the application needs fast writes and reads for some of the queries but has to provide data to other downstream services that need them in different models for other uses.
 
-* [Read-through scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}) RDI is activated in response to client requests for specific key-patterns that are not found in the cache. Rather than returning an empty result, RDI fetches the data from a downstream database,stores it, and finally provides the requested data.
+* [Read-through scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}) RDI is activated in response to client requests for specific key-patterns that are not found in the cache. Rather than returning an empty result, RDI fetches the data from a downstream database, stores it, and finally provides the requested data.
 
 To learn more see [Architecture]({{<relref "/rdi/architecture">}}) for more details and architecture.
 
@@ -32,27 +32,29 @@ Redis Data Integration supports the following database sources using [Debezium S
 
 | Database           | Versions               |  Comments |
 | ------------------ | ---------------------- | ----------
-| Oracle             | 12c, 19c, 21c          ||
+| Cassandra          | >= 3.0                 ||
+| Datastax Cassandra | >= 6.8.0               ||
 | MariaDB            | >= 10.5                ||
-| MongoDB            | 4.2, 4.4, 5.0, 6.0     | driver: 4.7  |
+| MongoDB            | 4.2, 4.4, 5.0, 6.0     | Driver: 4.7  |
 | MySQL              | 5.7, 8.0.x             ||
+| Oracle             | 12c, 19c, 21c          ||
 | Percona XtraDB     | 5.7, 8.0.x             ||
 | Postgres           | 10, 11, 12, 13, 14, 15 ||
 | SQL Server         | 2017, 2019             ||
-| Cassandra          | >= 3.0                 ||
-| Datastax Cassandra | >= 6.8.0               ||
+
 
 
 ## Supported targets (write-behind)
 
 | Database   |
 | ---------- |
-| Oracle     |
+| Cassandra  |
 | MariaDB    |
 | MySQL      |
+| Oracle     |
 | Postgres   |
 | SQL Server |
-| Cassandra  |
+
 
 ## Features
 
