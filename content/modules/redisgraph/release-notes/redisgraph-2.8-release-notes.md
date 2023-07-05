@@ -10,10 +10,26 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.8.25 requires:
+RedisGraph v2.8.26 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.8.26 (March 2023)
+
+This is a maintenance release for RedisGraph 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#2880](https://github.com/RedisGraph/RedisGraph/issues/2880) Potential crash when using WITH * expressions
+  - [#2917](https://github.com/RedisGraph/RedisGraph/issues/2917) Potential crash when using CASE expressions (MOD-4873)
+  - [#2836](https://github.com/RedisGraph/RedisGraph/issues/2836) Potential crash on *0 variable-length path (MOD-4817)
+  - [#2916](https://github.com/RedisGraph/RedisGraph/issues/2916) Potential crash when executing concurrent queries that utilize full-text indices (MOD-4818)
+
 
 ## v2.8.25 (February 2023)
 
