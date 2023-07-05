@@ -5,8 +5,8 @@ The `redis.write` block can be used in the `output` section of the write-behind 
 ```yaml
 source:
   trigger: write-behind
-  keyspace:
-    pattern: address:*
+  redis:
+    key_pattern: address:*
 transform:
   - uses: add_field
     with:

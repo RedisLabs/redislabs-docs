@@ -8,8 +8,8 @@ In this example, the `JMESPath` function `to_string` is used to flatten an array
 
 ```yaml
 source:
-  keyspace:
-          pattern: orderdetail:*
+  redis:
+    key_pattern: orderdetail:*
 transform:
   - uses: add_field
     with:
