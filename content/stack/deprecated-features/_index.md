@@ -5,10 +5,7 @@ description: Features (modules) that have been deprecated or replaced with a new
 weight: 90
 alwaysopen: false
 categories: ["Modules"]
-aliases: /modules/
-         /rs/developing/modules/
-         /modules/redis-stack/
-         /stack/previous-features/
+aliases: /stack/previous-features/
 ---
 
 The following features (modules) have been deprecated or replaced with a new version:
