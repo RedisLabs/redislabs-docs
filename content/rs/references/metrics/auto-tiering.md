@@ -5,7 +5,11 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases:
+aliases: {
+    /rs/references/metrics/redis-on-flash/,
+    /rs/references/metrics/auto-tiering/,
+    
+}
 ---
 
 These metrics are additional metrics for [Auto Tiering ]({{< relref "/rs/databases/auto-tiering" >}}) databases.

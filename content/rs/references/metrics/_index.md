@@ -25,7 +25,7 @@ In the Redis Enterprise admin console, you can see real-time metrics and configu
 See the following topics for metrics definitions:
 - [Database operations]({{< relref "/rs/references/metrics/database-operations" >}}) for database metrics
 - [Resource usage]({{< relref "/rs/references/metrics/resource-usage" >}}) for resource and database usage metrics
-- [Auto Tiering]({{< relref "/rs/references/metrics/redis-on-flash" >}}) for additional metrics for [Auto Tiering ]({{< relref "/rs/databases/auto-tiering" >}}) databases
+- [Auto Tiering]({{< relref "/rs/references/metrics/auto-tiering" >}}) for additional metrics for [Auto Tiering ]({{< relref "/rs/databases/auto-tiering" >}}) databases
 
 ## [Prometheus metrics]({{< relref "/rs/clusters/monitoring/prometheus-metrics-definitions" >}})
 
