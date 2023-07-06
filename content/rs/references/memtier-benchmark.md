@@ -1,13 +1,13 @@
 ---
-Title: Benchmark a Redis on Flash enabled database
-linkTitle: Benchmark Redis on Flash
+Title: Benchmark a Auto Tiering enabled database
+linkTitle: Benchmark Auto Tiering
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/references/cli-reference/memtier-benchmark/
 ---
-Redis on Flash on Redis Enterprise Software lets you use cost-effective Flash memory as a RAM extension for your database.
+Auto Tiering on Redis Enterprise Software lets you use cost-effective Flash memory as a RAM extension for your database.
 
 But what does the performance look like as compared to a memory-only database, one stored solely in RAM?
 
@@ -20,7 +20,7 @@ For additional, such as assistance with larger clusters, [contact support](https
 
 ## Benchmark and performance test considerations
 
-These tests assume you're using a trial version of Redis Enterprise Software and want to test the performance of a Redis on Flash enabled database in the following scenarios:
+These tests assume you're using a trial version of Redis Enterprise Software and want to test the performance of a Auto Tiering enabled database in the following scenarios:
 
 - Without replication: Four (4) master shards
 - With replication: Two (2) primary and two replica shards
@@ -59,7 +59,7 @@ To learn how to install Redis Enterprise Software and set up a cluster, see:
 
 These tests use a quorum node to reduce AWS EC2 instance use while maintaining the three nodes required to support a quorum node in case of node failure.  Quorum nodes can be on less powerful instances because they do not have shards or support traffic.
 
-As of this writing, i3.2xlarge instances are required because they support NVMe SSDs, which are required to support RoF.  Redis on Flash requires Flash-enabled storage, such as NVMe SSDs.
+As of this writing, i3.2xlarge instances are required because they support NVMe SSDs, which are required to support RoF.  Auto Tiering requires Flash-enabled storage, such as NVMe SSDs.
 
 For best results, compare performance of a Flash-enabled deployment to the performance in a RAM-only environment, such as a strictly on-premises deployment.
 
@@ -79,7 +79,7 @@ For these tests, the load generation host uses a c4.8xlarge instance type.
 
 ## Database configuration parameters
 
-### Create a Redis on Flash test database
+### Create a Auto Tiering test database
 
 You can use the RS admin console to create a test database.
 We recommend that you use a separate database for each test case with these requirements:

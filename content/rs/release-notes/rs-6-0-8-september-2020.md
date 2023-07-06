@@ -69,7 +69,7 @@ With build 6.0.8-32:
 
 ## Known limitations
 
--RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+-RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 ### Active-Active databases
 - RS44656 - A bug causing TLS mode for clients connections to toggle between ‘all communication’ to ‘for crdb communication only’ when performing a global configuration change. ***TBD***

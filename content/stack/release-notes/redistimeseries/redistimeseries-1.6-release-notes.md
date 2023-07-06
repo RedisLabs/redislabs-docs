@@ -143,4 +143,4 @@ RedisTimeSeries 1.6 adds support for aggregating across multiple time series (mu
 
 - [#675](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/675) Add keyspace notifications for all CRUD commands. Check out [this test](https://github.com/RedisTimeSeries/RedisTimeSeries/blob/master/tests/flow/test_ts_keyspace.py) for the details.
 
-- [#882](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/882) [Redis on Flash (RoF)](https://docs.redis.com/latest/rs/databases/redis-on-flash//#:~:text=Redis%20on%20Flash%20(RoF)%20offers,dedicated%20flash%20memory%20(SSD).) support.
+- [#882](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/882) [Auto Tiering (RoF)](https://docs.redis.com/latest/rs/databases/redis-on-flash//#:~:text=Redis%20on%20Flash%20(RoF)%20offers,dedicated%20flash%20memory%20(SSD).) support.

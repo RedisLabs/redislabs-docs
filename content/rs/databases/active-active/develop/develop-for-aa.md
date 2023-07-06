@@ -102,7 +102,7 @@ execute them in script-replication mode.
 
 ## Eviction
 
-The default policy for Active-Active databases is _noeviction_ mode. Redis Enterprise version 6.0.20 and later support all eviction policies for Active-Active databases, unless [Redis on Flash]({{<relref "/rs/databases/redis-on-flash">}}) is enabled.
+The default policy for Active-Active databases is _noeviction_ mode. Redis Enterprise version 6.0.20 and later support all eviction policies for Active-Active databases, unless [Auto Tiering]({{<relref "/rs/databases/redis-on-flash">}}) is enabled.
 For details, see [eviction for Active-Active databases]({{<relref "/rs/databases/memory-performance/eviction-policy#active-active-database-eviction">}}).
 
 

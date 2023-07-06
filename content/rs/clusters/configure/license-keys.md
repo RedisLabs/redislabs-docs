@@ -21,7 +21,7 @@ When the cluster does not have a cluster key, the cluster is in trial mode.
 Trial mode is limited to thirty days and a total of four shards, including master and replica
 shards. Any new installation starts its thirty-day clock from the day
 the cluster setup was done (with the first cluster node provisioned).
-This mode allows all features to be enabled, including Redis on Flash,
+This mode allows all features to be enabled, including Auto Tiering,
 during the trial period.
 
 ## Viewing the cluster key

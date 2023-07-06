@@ -1,14 +1,14 @@
 ---
-Title: Prepare Redis on Flash
-linkTitle: Prepare Redis on Flash
-description: Prepare to enable Redis on Flash during installation.
+Title: Prepare Auto Tiering
+linkTitle: Prepare Auto Tiering
+description: Prepare to enable Auto Tiering during installation.
 weight: 80
 alwaysopen: false
 categories: ["RS"]
 aliases: 
 ---
 
-If you want to use Redis on Flash for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/databases/redis-on-flash/" >}}) for RoF databases and prepare and format the flash memory.
+If you want to use Auto Tiering for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/databases/redis-on-flash/" >}}) for RoF databases and prepare and format the flash memory.
 
 Use the `prepare_flash` script to prepare and format flash memory:
 

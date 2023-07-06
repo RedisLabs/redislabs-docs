@@ -1,7 +1,7 @@
 ---
-Title: Use Redis on Flash on Kubernetes
-linkTitle: Redis on Flash
-description: Deploy a cluster with Redis on Flash on Kubernetes.
+Title: Use Auto Tiering on Kubernetes
+linkTitle: Auto Tiering
+description: Deploy a cluster with Auto Tiering on Kubernetes.
 weight: 16
 alwaysopen: false
 categories: ["Platforms"]
@@ -13,7 +13,7 @@ aliases: [
 
 ## Prerequisites
 
-Redis Enterprise Software for Kubernetes supports using Redis on Flash, which extends your node memory to use both RAM and flash storage. SSDs (solid state drives) can store infrequently used (warm) values while your keys and frequently used (hot) values are still stored in RAM. This improves performance and lowers costs for large datasets.
+Redis Enterprise Software for Kubernetes supports using Auto Tiering, which extends your node memory to use both RAM and flash storage. SSDs (solid state drives) can store infrequently used (warm) values while your keys and frequently used (hot) values are still stored in RAM. This improves performance and lowers costs for large datasets.
 
 {{<note>}}
 NVMe (non-volatile memory express) SSDs are strongly recommended to achieve the best performance.
@@ -35,7 +35,7 @@ For more information on node storage, see [Node persistent and ephemeral storage
 
 To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to specify the following in the `redisOnFlashSpec` section of your [REC custom resource]({{<relref "/kubernetes/reference/cluster-options.md">}}):
 
-- enable Redis on Flash (`enabled: true`)
+- enable Auto Tiering (`enabled: true`)
 - flash storage driver (`flashStorageEngine`)
   - The only supported value is `rocksdb`
 - storage class name (`storageClassName`)
@@ -62,7 +62,7 @@ spec:
 
 By default, any new database will use RAM only. To create a Redis Enterprise database (REDB) that can use flash storage, specify the following in the `redisEnterpriseCluster` section of the REDB custom resource definition:
 
-- `isRof: true` enables Redis on Flash
+- `isRof: true` enables Auto Tiering
 - `rofRamSize` defines the RAM capacity for the database
 
 Below is an example REDB custom resource:
@@ -81,7 +81,7 @@ spec:
 ```
 
 {{< note >}}
-This example defines both `memorySize` and `rofRamSize`. When using Redis on Flash, `memorySize` refers to the total combined memory size (RAM + flash) allocated for the database. `rofRamSize` specifies only the RAM capacity for the database. `rofRamSize` must be at least 10% of `memorySize`.
+This example defines both `memorySize` and `rofRamSize`. When using Auto Tiering, `memorySize` refers to the total combined memory size (RAM + flash) allocated for the database. `rofRamSize` specifies only the RAM capacity for the database. `rofRamSize` must be at least 10% of `memorySize`.
 {{< /note >}}
 
 

@@ -19,7 +19,7 @@ aliases: [
 Redis Enterprise Software lets you create databases and distribute them across a cluster of nodes.
 These databases can use Redis Enterprise features like:
 
-- [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
+- [Auto Tiering]({{< relref "/rs/databases/redis-on-flash/" >}})
 - [High availability]({{< relref "/rs/databases/durability-ha/" >}})
 - [Data persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}})
 - [Redis Stack]({{<relref "/stack">}})
@@ -45,7 +45,7 @@ To create a new database:
 
 1. Click **Next** to create a single-region, in-memory database.
 
-    If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash/" >}}),
+    If your cluster supports [Auto Tiering (RoF)]({{< relref "/rs/databases/redis-on-flash/" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
     ![getstarted-newdatabase](/images/rs/getstarted-newdatabase.png)
@@ -68,7 +68,7 @@ The database name is not case-sensitive
         then the data eviction policy for the database is enforced.
 
         {{< note >}}
-If you create a Redis on Flash
+If you create a Auto Tiering
 or a Memcached Flash database, you also have to set the RAM-to-Flash ratio
 for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         {{< /note >}}

@@ -84,7 +84,7 @@ To learn more, see [Upgrade the module for a database]({{<relref "/stack/install
 
 ## Known limitations
 
--RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+-RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 - RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
 

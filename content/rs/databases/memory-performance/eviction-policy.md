@@ -50,14 +50,14 @@ To prevent over eviction, internal heuristics might prevent keys from being evic
 In case of network issues between Active-Active instances, memory can be freed only when all instances are in sync. If there is no communication between participating clusters, it can result in eviction of all keys and the instance reaching an Out-of-Memory state.
 
 {{< note >}}
-Data eviction policies are not supported for Active-Active databases with Redis on Flash (RoF).
+Data eviction policies are not supported for Active-Active databases with Auto Tiering (RoF).
 {{< /note >}}
 
 ## Avoid data eviction
 
 To avoid data eviction, make sure your database is large enough to hold required values.  
 
-For larger databases, consider using [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash/" >}}).
+For larger databases, consider using [Auto Tiering (RoF)]({{< relref "/rs/databases/redis-on-flash/" >}}).
 
-Redis on Flash stores actively-used data (also known as _hot data_) in RAM and the remaining data in flash memory (SSD).
+Auto Tiering stores actively-used data (also known as _hot data_) in RAM and the remaining data in flash memory (SSD).
 This lets you retain more data while ensuring the fastest access to the most critical data.

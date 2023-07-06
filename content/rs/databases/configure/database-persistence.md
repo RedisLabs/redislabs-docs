@@ -101,7 +101,7 @@ crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config \
    '{"data_persistence": "aof", "aof_policy":"appendfsync-every-sec"}'
 ```
 
-## Redis on Flash data persistence
+## Auto Tiering data persistence
 
 If you are enabling data persistence for databases running on Redis
 Enterprise Flash, by default both master and replica shards are

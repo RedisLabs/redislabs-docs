@@ -1,6 +1,6 @@
 ---
-Title: Redis on Flash Metrics
-linkTitle: Redis on Flash
+Title: Auto Tiering Metrics
+linkTitle: Auto Tiering
 description: 
 weight: $weight
 alwaysopen: false
@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-These metrics are additional metrics for [Redis on Flash (RoF)]({{< relref "/rs/databases/redis-on-flash" >}}) databases.
+These metrics are additional metrics for [Auto Tiering (RoF)]({{< relref "/rs/databases/redis-on-flash" >}}) databases.
 
 ## % Values in RAM
 
