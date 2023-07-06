@@ -90,7 +90,7 @@ The following table briefly describes each feature shown in the earlier tables.
 | Internode encryption    | Compatible with encryption on the data plane |
 | Persistence (AOF)       | Compatible with databases using AoF persistence |
 | Persistence (snapshot)  | Compatible with databases using snapshot persistence | 
-| Redis on Flash (RoF)    | Compatible with Redis on Flash (RoF) |
+| Redis on Flash    | Compatible with Redis on Flash |
 | Replica Of              | Compatible with Active-Passive replication | 
 | Reshard/rebalance       | Compatible with database scaling for clustered databases, which redistributes data between the new shards. |
 

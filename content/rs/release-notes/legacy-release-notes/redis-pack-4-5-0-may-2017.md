@@ -39,7 +39,7 @@ With Redis Enterprise Pack 4.5, Redis on Flash v2 is production
 ready. RFv2 brings performance, reliability, and stability enhancements
 as well as many features customers have been waiting for.
 
-Redis on Flash (RoF) offers users of Redis Enterprise Pack and
+Redis on Flash offers users of Redis Enterprise Pack and
 Redis Enterprise Cloud Private the unique ability to operate a Redis
 database that spans both RAM and flash memory (SSD), but remains
 separate from Redis Enterprise Pack's persistence mechanisms. Whilst

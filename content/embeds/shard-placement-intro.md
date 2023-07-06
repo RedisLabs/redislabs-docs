@@ -1,7 +1,7 @@
 In addition to the shard placement policy, considerations that determine shard placement are:
 
 - Separation of master and replica shards
-- Available persistence and Redis on Flash (RoF) storage
+- Available persistence and Redis on Flash  storage
 - [Rack awareness]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}})
 - Memory available to host the database when fully populated
 

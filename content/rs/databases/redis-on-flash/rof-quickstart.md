@@ -1,5 +1,5 @@
 ---
-Title: Redis on Flash (RoF) quick start
+Title: Redis on Flash quick start
 linkTitle: Quick start
 description: Get started with Redis on Flash quickly, creating a cluster and database using flash storage. 
 weight: 80
