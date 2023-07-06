@@ -113,7 +113,7 @@ On-premises environments support more deployment options than other environments
 ## Next steps
 
 - [Auto Tiering metrics]({{< relref "/rs/references/metrics/redis-on-flash" >}})
-- [Auto Tiering quick start]({{<relref "/rs/databases/auto-tiering/rof-quickstart.md">}})
+- [Auto Tiering quick start]({{<relref "/rs/databases/auto-tiering/quickstart.md">}})
 
 - [Ephemeral and persistent storage]({{<relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage">}})
 - [Hardware requirements]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}})
