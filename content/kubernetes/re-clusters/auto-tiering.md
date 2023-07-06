@@ -8,6 +8,8 @@ categories: ["Platforms"]
 aliases: [
     /kubernetes/re-clusters/redis-on-flash.md,
     /kubernetes/re-clusters/redis-on-flash/,
+    /kubernetes/re-clusters/auto-tiering/,
+    
 ]  
 ---
 
