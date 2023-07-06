@@ -315,7 +315,7 @@ Single-threaded Redis OSS database.
 {{%definition "Auto Tiering "%}}
 Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Auto Tiering manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
 
-More info: [Auto Tiering]({{<relref "/rs/databases/redis-on-flash/">}}), [Auto Tiering  quick start]({{<relref "/rs/databases/redis-on-flash/rof-quickstart.md">}})
+More info: [Auto Tiering]({{<relref "/rs/databases/auto-tiering/">}}), [Auto Tiering  quick start]({{<relref "/rs/databases/auto-tiering/rof-quickstart.md">}})
 {{%/definition%}}
 
 {{%definition "replica high availability (replicaHA)"%}}

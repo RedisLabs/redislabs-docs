@@ -131,7 +131,7 @@ Here are some general guidelines:
 
 - Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory size when replication is enabled.
 
-- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Auto Tiering]({{< relref "/rs/databases/redis-on-flash/" >}}) is enabled.)
+- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}) is enabled.)
 
 - Modules also consume memory.
 

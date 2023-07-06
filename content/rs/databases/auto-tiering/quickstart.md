@@ -14,11 +14,13 @@ aliases: /rs/getting-started/creating-database/redis-flash/
          /rs/databases/redis-on-flash/getting-started-redis-flash/
          /rs/databases/redis-on-flash/rof-quickstart.md
          /rs/databases/redis-on-flash/rof-quickstart/
+         /rs/databases/auto-tiering/quickstart.md
+         /rs/databases/auto-tiering/quickstart/
          
 
 ---
 This page guides you through a quick setup of a [Redis on
-Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) cluster with a single node for testing and demo purposes. 
+Flash]({{< relref "/rs/databases/auto-tiering/" >}}) cluster with a single node for testing and demo purposes. 
 
 For production environments, you can find more detailed installation instructions in the [install and setup]({{< relref "/rs/installing-upgrading/_index.md" >}}) section.
 
@@ -115,4 +117,4 @@ You are ready to connect to your database to store data. See the [test connectiv
 If you want to generate load against the
 database or add a bunch of data for cluster testing, see the [memtier_benchmark quick start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) for help.
 
-To see the true performance and scale of Auto Tiering, you must tune your I/O path and set the flash path to the mounted path of SSD or NVMe flash memory as that is what it is designed to run on. For more information, see [Auto Tiering]({{< relref "/rs/databases/redis-on-flash/" >}}).
+To see the true performance and scale of Auto Tiering, you must tune your I/O path and set the flash path to the mounted path of SSD or NVMe flash memory as that is what it is designed to run on. For more information, see [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}).

@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases:
 ---
 
-These metrics are additional metrics for [Auto Tiering (RoF)]({{< relref "/rs/databases/redis-on-flash" >}}) databases.
+These metrics are additional metrics for [Auto Tiering (RoF)]({{< relref "/rs/databases/auto-tiering" >}}) databases.
 
 ## % Values in RAM
 

@@ -52,9 +52,9 @@ For more info on data persistence see [Database persistence with Redis Enterpris
 
 ## Auto Tiering (RoF)
 
-By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Auto Tiering]({{<relref "/rs/databases/redis-on-flash/">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)). Keys are always stored in RAM, but Auto Tiering manages the location of their values. Frequently used (hot) values are stored on RAM, but infrequently used (warm) values are moved to flash memory. This saves on expensive RAM space, which give you comparable performance at a lower cost for large datasets.
+By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Auto Tiering]({{<relref "/rs/databases/auto-tiering/">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)). Keys are always stored in RAM, but Auto Tiering manages the location of their values. Frequently used (hot) values are stored on RAM, but infrequently used (warm) values are moved to flash memory. This saves on expensive RAM space, which give you comparable performance at a lower cost for large datasets.
 
-For more info, see [Auto Tiering]({{<relref "/rs/databases/redis-on-flash/">}}).
+For more info, see [Auto Tiering]({{<relref "/rs/databases/auto-tiering/">}}).
 
 ## Shard placement
 

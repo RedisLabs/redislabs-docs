@@ -57,7 +57,7 @@ Data eviction policies are not supported for Active-Active databases with Auto T
 
 To avoid data eviction, make sure your database is large enough to hold required values.  
 
-For larger databases, consider using [Auto Tiering (RoF)]({{< relref "/rs/databases/redis-on-flash/" >}}).
+For larger databases, consider using [Auto Tiering (RoF)]({{< relref "/rs/databases/auto-tiering/" >}}).
 
 Auto Tiering stores actively-used data (also known as _hot data_) in RAM and the remaining data in flash memory (SSD).
 This lets you retain more data while ensuring the fastest access to the most critical data.
