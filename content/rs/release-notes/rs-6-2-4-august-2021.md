@@ -161,7 +161,7 @@ To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/r
 
 - The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
 
-- RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+- RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 - RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
 

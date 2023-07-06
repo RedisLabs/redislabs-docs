@@ -45,7 +45,7 @@ To create a new database:
 
 1. Click **Next** to create a single-region, in-memory database.
 
-    If your cluster supports [Auto Tiering (RoF)]({{< relref "/rs/databases/auto-tiering/" >}}),
+    If your cluster supports [Auto Tiering ]({{< relref "/rs/databases/auto-tiering/" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
     ![getstarted-newdatabase](/images/rs/getstarted-newdatabase.png)

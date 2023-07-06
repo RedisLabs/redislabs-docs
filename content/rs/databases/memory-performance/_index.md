@@ -50,7 +50,7 @@ Snapshots capture all the data as it exists in one moment in time and writes it 
 
 For more info on data persistence see [Database persistence with Redis Enterprise Software]({{<relref "/rs/databases/configure/database-persistence.md">}}) or [Durable Redis](https://redis.com/redis-enterprise/technology/durable-redis/).
 
-## Auto Tiering (RoF)
+## Auto Tiering 
 
 By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Auto Tiering]({{<relref "/rs/databases/auto-tiering/">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)). Keys are always stored in RAM, but Auto Tiering manages the location of their values. Frequently used (hot) values are stored on RAM, but infrequently used (warm) values are moved to flash memory. This saves on expensive RAM space, which give you comparable performance at a lower cost for large datasets.
 
