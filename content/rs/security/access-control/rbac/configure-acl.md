@@ -16,9 +16,9 @@ The predefined Redis ACLs are:
 
 - **Full Access** - All commands are allowed on all keys.
 
-- **Not Dangerous** - All commands are allowed except those that are administrative, could affect availability, or could affect performance.
+- **Not Dangerous** - (Deprecated) All commands are allowed except those that are administrative, could affect availability, or could affect performance.
 
-- **Read Only** - Only read-only commands are allowed on keys.
+- **Read Only** - (Deprecated) Only read-only commands are allowed on keys.
 
 ## Redis ACL command syntax
 
