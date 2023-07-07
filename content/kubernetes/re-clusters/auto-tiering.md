@@ -15,7 +15,7 @@ aliases: [
 
 ## Prerequisites
 
-Redis Enterprise Software for Kubernetes supports using Auto Tiering, which extends your node memory to use both RAM and flash storage. SSDs (solid state drives) can store infrequently used (warm) values while your keys and frequently used (hot) values are still stored in RAM. This improves performance and lowers costs for large datasets.
+Redis Enterprise Software for Kubernetes supports using Auto Tiering (previously known as Redis on Flash), which extends your node memory to use both RAM and flash storage. SSDs (solid state drives) can store infrequently used (warm) values while your keys and frequently used (hot) values are still stored in RAM. This improves performance and lowers costs for large datasets.
 
 {{<note>}}
 NVMe (non-volatile memory express) SSDs are strongly recommended to achieve the best performance.
@@ -39,7 +39,7 @@ To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to sp
 
 - enable Auto Tiering (`enabled: true`)
 - flash storage driver (`flashStorageEngine`)
-  - The only supported value is `rocksdb`
+  - `rocksdb` or `speedb`
 - storage class name (`storageClassName`)
 - minimal flash disk size (`flashDiskSize`)
 
