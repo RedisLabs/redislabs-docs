@@ -70,16 +70,12 @@ If the credentials are changed or updated for a REC participating cluster, you n
 
 1. Verify the status of each REAADB using that RERC is "Active" and the spec status is "Valid."
 
-    ```sh 
-    kubectl get reaadb <reaadb-name>
-    ```
-
-    The output should look like this:
-
     ```sh
-      NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    reaadb-boeing   active   Valid                                      
-    example-aadb-2   active   Valid                                      
+    kubectl get reaadb reaadb-boeing
+
+    NAME              STATUS   SPEC STATUS   LINKED REDBS   REPLICATION STATUS
+    reaadb-boeing     active   Valid                        up
+    example-reaadb-2  active   Valid                        up             
     ```
 
     To troubleshoot invalid configurations, view the RERC custom resource events and the [Redis Enterprise operator logs]({{<relref "/kubernetes/logs/">}}).
