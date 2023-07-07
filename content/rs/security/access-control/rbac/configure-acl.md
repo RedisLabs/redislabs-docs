@@ -20,21 +20,16 @@ The predefined Redis ACLs are:
 
 - **Read Only** - (Deprecated) Only read-only commands are allowed on keys.
 
-## Redis ACL command syntax
+## Redis ACL syntax
 
 Redis ACLs are defined by a [Redis syntax](https://redis.io/docs/manual/security/acl/#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 
-Redis Enterprise lets you:
+### Commands and categories
 
 - Include commands and categories with the "+" prefix for commands or "+@" prefix for command categories.
 
 - Exclude commands and categories with the "-" prefix for commands or "-@" prefix for command categories.
 
-- Include keys or key patterns with the "~" prefix.
-
-- Allow access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) with the "&" prefix (only supported for databases with Redis version 6.2 and later).
-
-{{<note>}}
 Module commands have several ACL limitations:
 
 - [Redis modules]({{<relref "/stack">}}) do not have command categories.
@@ -48,7 +43,28 @@ Module commands have several ACL limitations:
     ```sh
     +@read +FT.INFO +FT.SEARCH
     ```
-{{</note>}}
+
+### Key patterns
+
+To define access to specific keys or key patterns, you can use the following prefixes:
+
+- `~` or `%RW~` allows read and write access to keys.
+
+- `%R~`allows read access to keys.
+
+- `%W~` allows write access to keys.
+
+### Pub/sub channels
+
+The "&" prefix allows access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) (only supported for databases with Redis version 6.2 and later).
+
+### Selectors
+
+[Selectors](https://redis.io/docs/management/security/acl/#selectors) let you define additional ACL rules. A command is allowed if it matches the root permissions or any selector.
+
+- `(<rule list>)` creates a new selector.
+
+- `clearselectors` deletes all existing selectors attached to the user.
 
 ## Configure Redis ACLs
 
