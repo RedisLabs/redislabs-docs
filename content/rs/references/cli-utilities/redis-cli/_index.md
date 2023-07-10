@@ -31,18 +31,6 @@ To run Redis commands with `redis-cli`, you need to connect to your Redis databa
 
 You can find endpoint and port details in the **Databases** list or the database’s **Configuration** screen.
 
-### Connect from a node
-
-If you have SSH access to a node in a Redis cluster, you can run `redis-cli` directly from the node:
-
-1. Use SSH to sign in to a node in the Redis Enterprise cluster.
-
-1. Connect to the database with `redis-cli`:
-
-    ```sh
-    $ redis-cli -p <port>
-    ```
-
 ### Connect remotely
 
 If you have `redis-cli` installed on your local machine, you can use it to connect to a remote Redis database. You will need to provide the database's connection details, such as the hostname or IP address, port, and password.
@@ -94,17 +82,17 @@ $ docker exec -it <Redis container name> redis-cli -p <port>
 You can run `redis-cli` commands directly from the command-line terminal:
 
 ```sh
-$ redis-cli -p <port> <Redis command>
+$ redis-cli -h <endpoint> -p <port> <Redis command>
 ```
 
 For example, you can use `redis-cli` to test your database connection and store a new Redis string in the database:
 
 ```sh
-$ redis-cli -p 12000 PING
+$ redis-cli -h <endpoint> -p 12000 PING
 PONG
-$ redis-cli -p 12000 SET mykey "Hello world"
+$ redis-cli -h <endpoint> -p 12000 SET mykey "Hello world"
 OK
-$ redis-cli -p 12000 GET mykey              
+$ redis-cli -h <endpoint> -p 12000 GET mykey              
 "Hello world"
 ```
 
@@ -139,7 +127,7 @@ OK
 Run [`slowlog get`](https://redis.io/commands/slowlog-get/) for a list of recent slow commands:
 
 ```sh
-redis-cli -h <endpoint> -p <port> slowlog get <number of entries> with-complexity
+redis-cli -h <endpoint> -p <port> slowlog get <number of entries>
 ```
 
 ### Scan for big keys
