@@ -12,7 +12,9 @@ aliases:
 
 When you upgrade an existing database or create a new one, it uses the default Redis version (`default_redis_version`) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}) or [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}).
 
-Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2. The default Redis database version differs between Redis Enterprise releases as follows:
+Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2. As of version 7.2, Redis Enterprise Software includes three Redis database versions.
+
+The default Redis database version differs between Redis Enterprise releases as follows:
 
 | Redis<br />Enterprise | Bundled Redis<br />DB versions | Default DB version<br />(upgraded/new databases) |
 |-------|----------|-----|
