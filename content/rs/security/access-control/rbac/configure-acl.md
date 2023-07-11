@@ -26,9 +26,21 @@ Redis ACLs are defined by a [Redis syntax](https://redis.io/docs/manual/security
 
 ### Commands and categories
 
-- Include commands and categories with the "+" prefix for commands or "+@" prefix for command categories.
+Redis ACL rules can allow or block specific [Redis commands](https://redis.io/commands/) or [command categories](https://redis.io/docs/management/security/acl/#command-categories).
 
-- Exclude commands and categories with the "-" prefix for commands or "-@" prefix for command categories.
+- `+` includes commands
+
+- `-` excludes commands
+
+- `+@` includes command categories
+
+- `-@` excludes command categories
+
+The following example allows all `read` commands and the `SET` command:
+
+```sh
++@read +SET
+```
 
 Module commands have several ACL limitations:
 
@@ -46,7 +58,7 @@ Module commands have several ACL limitations:
 
 ### Key patterns
 
-To define access to specific keys or key patterns, you can use the following prefixes:
+To define access to specific keys or key patterns, use the following prefixes:
 
 - `~` or `%RW~` allows read and write access to keys.
 
@@ -54,17 +66,35 @@ To define access to specific keys or key patterns, you can use the following pre
 
 - `%W~` allows write access to keys.
 
+The following example allows read and write access to all keys that start with "app1" and read-only access to all keys that start with "app2":
+
+```sh
+~app1* %R~app2*
+```
+
 ### Pub/sub channels
 
-The "&" prefix allows access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) (only supported for databases with Redis version 6.2 and later).
+The `&` prefix allows access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) (only supported for databases with Redis version 6.2 and later).
+
+To limit access to specific channels, include `resetchannels` before the allowed channels:
+
+```sh
+resetchannels &channel1 &channel2
+```
 
 ### Selectors
 
-[Selectors](https://redis.io/docs/management/security/acl/#selectors) let you define additional ACL rules. A command is allowed if it matches the root permissions or any selector.
+[Selectors](https://redis.io/docs/management/security/acl/#selectors) let you define multiple sets of rules in a single Redis ACL. A command is allowed if it matches the base rule or any selector in the Redis ACL.
 
-- `(<rule list>)` creates a new selector.
+- `(<rule set>)` creates a new selector.
 
-- `clearselectors` deletes all existing selectors attached to the user.
+- `clearselectors` deletes all existing selectors for a user. This action does not delete the base ACL rule.
+
+In the following example, the base rule allows `GET key1` and the selector allows `SET key2`:
+
+```sh
++GET ~key1 (+SET ~key2)
+```
 
 ## Configure Redis ACLs
 
