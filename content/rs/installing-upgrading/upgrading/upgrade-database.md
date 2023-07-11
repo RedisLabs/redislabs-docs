@@ -18,6 +18,7 @@ Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2
 |-------|----------|-----|
 | 6.2.x | 6.0, 6.2 | 6.0 |
 | 6.4.2 | 6.0, 6.2 | 6.2 |
+| 7.2 | 6.0, 6.2, 7.2 | 7.2 |
 
 - v6.2.x: `default_redis_version` is 6.0.
 
