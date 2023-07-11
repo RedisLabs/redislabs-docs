@@ -15,8 +15,9 @@ The following upgrade paths are supported:
 
 | Current<br/>cluster version | Upgrade to<br/>cluster version |
 |:-----:|:-----:|
-| 6.2.x | 6.4.2 |
-| 6.0.x | 6.4.2<br />6.2.x |
+| 6.4.x | 7.2 |
+| 6.2.x | 7.2<br />6.4.x |
+| 6.0.x | 7.2<br />6.4.x<br />6.2.x |
 | 5.6   | 6.0.x |
 
 ## Upgrade prerequisites
