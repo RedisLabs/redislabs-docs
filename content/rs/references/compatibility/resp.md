@@ -47,6 +47,36 @@ To use RESP3 with Redis Enterprise:
 You cannot use sharded pub/sub if you deactivate RESP3 support.
 {{</note>}}
 
-## Migration guides
+## Client prerequisites for Redis 7.2 upgrade
 
-TBA
+The Redis clients [Go-Redis](https://redis.uptrace.dev/) version 9 and [Lettuce](https://lettuce.io/) versions 6 and later use RESP3 by default. If you use either client to run Redis Stack commands, you should set the client's protocol version to RESP2 before upgrading your database to Redis version 7.2 to prevent potential downtime.
+
+### Go-Redis
+
+For applications using Go-Redis v9.0.5 or later, set the protocol version to RESP2:
+
+```go
+client := redis.NewClient(&redis.Options{
+    Addr:     "<database_endpoint>",
+    Protocol: 2, // Pin the protocol version
+})
+```
+
+### Lettuce
+
+To set the protocol version to RESP2 with Lettuce v6 or later:
+
+```java
+import io.lettuce.core.*;
+import io.lettuce.core.api.*;
+import io.lettuce.core.protocol.ProtocolVersion;
+
+// ...
+RedisClient client = RedisClient.create("<database_endpoint>");
+client.setOptions(ClientOptions.builder()
+        .protocolVersion(ProtocolVersion.RESP2) // Pin the protocol version 	
+        .build());
+// ...
+```
+
+If you are using [LettuceMod](https://github.com/redis-developer/lettucemod/), you need to upgrade to [v3.6.0](https://github.com/redis-developer/lettucemod/releases/tag/v3.6.0).
