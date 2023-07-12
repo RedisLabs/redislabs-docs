@@ -26,7 +26,6 @@ Details:
 
 - Bug fixes:
 
-    - [#1455](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1455) `TS.ADD` - optional arguments are not replicated (MOD-5110)
     - [#1486](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1486) When using `LATEST`, results may contain samples earlier than `fromTimestamp` (`TS.RANGE`, `TS.REVRANGE`, `TS.MRANGE`, and `TS.MREVRANGE`)
     - [#1471](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1471) Potential crash on `TS.MRANGE` when aggregating millions of time series
     - [#1469](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1469) Potential memory leak in `TS.MRANGE` after eviction
