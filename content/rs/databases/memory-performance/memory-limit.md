@@ -38,7 +38,7 @@ Factors to consider when sizing your database:
 
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
-- [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
+- [**modules**]({{<relref "/stack">}}): using modules with your database consumes more memory.
 - [**database clustering**]({{<relref "/rs/databases/durability-ha/clustering.md">}}): enables you to spread your data into shards across multiple nodes.
 - [**database replication**]({{<relref "/rs/databases/durability-ha/replication.md">}}): enabling replication doubles memory consumption.
 

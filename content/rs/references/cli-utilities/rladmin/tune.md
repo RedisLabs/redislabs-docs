@@ -155,7 +155,7 @@ rladmin tune db { db:<id> | <name> }
 | metrics_export_all                   | `enabled`<br /> `disabled`       | Activates the exporter to expose all shard metrics                                                                                    |
 | mkms                                 | `enabled`<br /> `disabled`       | Activates multi-key multi-slot commands                                                                                               |
 | module_config_params | string | Configures module arguments at runtime. Enclose `module_config_params` within quotation marks. |
-| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf` | The module to configure with `module_config_params` |
+| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf`<br />`rg` | The module to configure with `module_config_params` |
 | mtls_allow_outdated_cert             | `enabled`<br /> `disabled`       | Activates outdated certificates in mTLS connections                                   |
 | mtls_allow_weak_hashing              | `enabled`<br /> `disabled`       | Activates weak hashing (less than 2048 bits) in mTLS connections                       |
 | oss_cluster                          | `enabled`<br /> `disabled`       | Activates OSS cluster API                                                                                                             |

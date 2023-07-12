@@ -99,11 +99,11 @@ When you begin planning the deployment of Redis on Flash in production, we recom
 On-premises environments support more deployment options than other environments such as:
 
 - Using Active-Active distributed databases
-- Using supported modules
-  - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
-  - [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
-  - [RedisTimeSeries]({{< relref "modules/redistimeseries/_index.md" >}})
-  - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
+- Using Redis Stack features:
+  - [Search and query]({{<relref "/stack/search">}})
+  - [JSON]({{<relref "/stack/json">}})
+  - [Time series]({{<relref "/stack/timeseries">}})
+  - [Probabilistic data structures]({{<relref "/stack/bloom">}})
 
 {{<warning>}} Redis on Flash is not supported running on network attached storage (NAS), storage area network (SAN), or with local HDD drives. {{</warning>}}
 

@@ -1,5 +1,5 @@
 ---
-Title: Replace a faulty cluster node
+Title: Replace a cluster node
 linkTitle: Replace node
 description: Replace a node in your cluster that is down. 
 weight: 90
@@ -13,37 +13,29 @@ aliases: [
     /rs/clusters/replace-node/,
 ]
 ---
-If a node in your Redis Enterprise Software cluster is faulty, its status appears as **Down** in
-the **Status** column of the **Nodes** page, and in the **Cluster \>
-Configuration** page.
+A failed node will appear as `Down` (![Node down indicator](/images/rs/icons/node-down-icon.png)) in the **Nodes** list.
 
-![Example of a node
-failure](/images/rs/node-failure.png)
+To replace a failed node: 
 
-**To replace a faulty node**:
+1. Acquire a new node identical to the old one.
 
-1. Acquire a new node that is identical to the old node, install and
-    configure Redis Enterprise Software on it per the [install
-    instructions]({{< relref "/rs/installing-upgrading/_index.md" >}}).
+1.  Install and
+    configure Redis Enterprise Software on the node. See [Install and setup]({{< relref "/rs/installing-upgrading" >}}) for more information.
 
     {{< note >}}
-If you are using [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}),
-you must make sure the required flash storage is set up on this new node.
+If you are using [Redis on Flash]({{< relref "/rs/databases/redis-on-flash" >}}), make sure the required flash storage is set up on this new node.
     {{< /note >}}
 
-1. Add a new node, as described in [adding a new node to a
-    cluster]({{< relref "/rs/clusters/add-node.md" >}}).
-1. Make sure the new node has as much available memory as the faulty
+1. [Add the node]({{< relref "/rs/clusters/add-node" >}}) to the cluster. Make sure the new node has as much available memory as the faulty
     node.
-1. A message appears, informing you that the cluster has a faulty node
-    and that the new node replaces the faulty node.
-1. If the new node has insufficient memory, you are prompted to add a
-    different node - one with sufficient memory.
+
+    If the new node does not have enough memory, you will be prompted to add a node with enough memory.
+
+1. A message will appear informing you that the cluster has a faulty node
+    and that the new node will replace the faulty node.
 
     {{< note >}}
-- If there is a faulty node in the cluster to which you are adding a node,
-- RS enforces using the new node to replace the faulty one.
-- If you are using the DNS NS record based connection approach,
-the [DNS records must be updated]({{< relref "/rs/networking/cluster-dns/_index.md" >}})
+- If there is a faulty node in the cluster to which you are adding a node, Redis Enterprise Software will use the new node to replace the faulty one.
+- Any existing [DNS records]({{< relref "/rs/networking/cluster-dns" >}}) must be updated
 each time a node is added or replaced.
     {{< /note >}}
