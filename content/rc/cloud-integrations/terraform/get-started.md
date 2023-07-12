@@ -10,7 +10,7 @@ categories: []
 aliases: 
 ---
 
-Here, you'll learn how to use the Redis Cloud Terraform Provider to create a subscription and a database.
+Here, you'll learn how to use the [Redis Cloud Terraform Provider]({{<relref "/rc/cloud-integrations/terraform">}}) to create a subscription and a database.
 
 ## Prerequisites
 

@@ -1,5 +1,5 @@
 ---
-Title: The Pulumi Redis Cloud Provider
+Title: The Redis Cloud Pulumi provider
 LinkTitle: Pulumi
 description: Explains how to use Pulumi to provision Redis Cloud infrastructure
 weight: $weight
@@ -9,13 +9,9 @@ aliases: /rc/cloud-integrations/pulumi/
          /rc/cloud-integrations/pulumi.md
 ---
 
-## Introduction to Pulumi
+[Pulumi](https://www.pulumi.com/) is an automation tool that allows you to easily provision infrastructure as code. Pulumi allows developers to write infrastructure code using programming languages rather than using domain-specific languages.
 
-Pulumi has gained significant popularity within the developer community due to its innovative approach to infrastructure as code (IaC) and its ability to simplify and streamline the process of cloud resource provisioning and management. Unlike traditional IaC tools, Pulumi allows developers to write infrastructure code using familiar programming languages, such as Python, JavaScript, TypeScript, and Go, rather than using domain-specific languages.
-
-## The Pulumi Redis Cloud Provider
-
-With the [Redis Cloud Resource Provider](https://www.pulumi.com/registry/packages/rediscloud/), developers can create Redis Cloud resources in their favorite programming language. The Pulumi Redis Cloud Provider supports the following programming languages :
+With the [Redis Cloud Resource Provider](https://www.pulumi.com/registry/packages/rediscloud/), you can create Redis Cloud resources in a programming language. The Pulumi Redis Cloud Provider supports the following programming languages:
 
 * TypeScript
 * Python
@@ -24,82 +20,52 @@ With the [Redis Cloud Resource Provider](https://www.pulumi.com/registry/package
 * Go
 * YAML
 
-The Pulumi Redis Cloud Provider is based upon the TerraForm Redis Cloud Provider.
+The Redis Cloud Pulumi provider is based on the [Redis Cloud Terraform provider]({{<relref "/rc/cloud-integrations/terraform">}}).
 
 {{<note>}}
-The provider supports the creation of "Flexible/Annual" subscriptions, but cannot be used to create "Fixed" subscriptions
+The Redis Cloud Pulumi Redis Cloud provider supports Flexible subscriptions. It does not support Fixed subscriptions.
 {{</note>}}
+
+See [Get started with Pulumi]({{< relref  "/rc/cloud-integrations/pulumi/get-started" >}}) for an example of how to use the Pulumi provider with Python.
 
 ## Resources and functions
 
-Pulumi **resources** represent the fundamental units that make up cloud infrastructure. A provider can make **functions** available in its SDK and resource types. These functions are often used to acquire information that is not part of a resource.
+Pulumi resources represent the fundamental units that make up cloud infrastructure. A provider can make functions available in its SDK and resource types. These functions are often used to acquire information that is not part of a resource.
 
-### Resources
+The Redis Cloud Pulumi provider allows for the following resources:
 
-Pulumi Redis Cloud Provider `resources` include :
+* [`Subscription`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/subscription/): The basic building block of a Redis Cloud subscription.
+* [`SubscriptionDatabase`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/subscriptiondatabase/): Represents a Redis database which belongs to a specific Redis Cloud subscription.
+* [`SubscriptionPeering`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/subscriptionpeering/): A VPC peering connection (AWS or GCP) to a specific Redis Cloud subscription.
+* [`CloudAccount`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/cloudaccount/): Represents an AWS account in which you want to deploy Redis Cloud infrastructure components.
 
-* `Subscription`: The basic building block of a Redis Cloud subscription.
-* `SubscriptionDatabase` : Represents a Redis database which belongs to a specific Redis Cloud subscription.
-* `SubscriptionPeering` : A VPC peering connection (AWS or GCP) to a specific Redis Cloud subscription.
-* `CloudAccount` : Represents an AWS account in which you want to deploy Redis Cloud infrastructure components.
+    {{<note>}}
+The "bring your own AWS account" option for Redis Cloud has been deprecated. The `CloudAccount` resource is only available for legacy Redis Cloud integrations.
+    {{</note>}}
 
-{{<note>}}
-The "bring your own AWS account" option for Redis Cloud has been deprecated. The "CloudAccount" resource is only available for legacy Redis Cloud integrations.
-{{</note>}}
+* [`ActiveActiveSubscription`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/activeactivesubscription/): The basic building block of an active-active Redis Cloud subscription.
+* [`ActiveActiveSubscriptionDatabase`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/activeactivesubscriptiondatabase/): Represents a Redis database which belongs to a specific Redis Cloud active-active subscription.
+* [`ActiveActiveSubscriptionRegions`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/activeactivesubscriptionregions/): The different regions where the active-active subscription will be deployed.
+* [`ActiveActiveSubscriptionPeering`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/activeactivesubscriptionpeering/): A VPC peering connection (AWS or GCP) to a specific Redis Cloud active-active subscription.
 
-* `ActiveActiveSubscription`: The basic building block of an active-active Redis Cloud subscription.
-* `ActiveActiveSubscriptionDatabase`: Represents a Redis database which belongs to a specific Redis Cloud active-active subscription.
-* `ActiveActiveSubscriptionRegions`: The different regions where the active-active subscription will be deployed.
-* `ActiveActiveSubscriptionPeering`: A VPC peering connection (AWS or GCP) to a specific Redis Cloud active-active subscription.
+It also allows for the following functions:
 
-### Functions
+* [`GetCloudAccount`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getcloudaccount/): Get the information related to the AWS account.
 
-Pulumi Redis Cloud Provider `functions` include :
+    {{<note>}}
+The "bring your own AWS account" option for Redis Cloud has been deprecated. The `CloudAccount` resource is only available for legacy Redis Cloud integrations.
+    {{</note>}}
 
-* `GetCloudAccount`: Get the information related to the AWS account.
+* [`GetDataPersistence`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getdatapersistence/): Get the type of database persistence.
+* [`GetDatabase`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getdatabase/): Get the information related to a specific database.
+* [`GetDatabaseModules`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getdatabasemodules/): Get the modules for a specific database.
+* [`GetPaymentMethod`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getpaymentmethod/): Get the payment method related to the Redis Cloud account.
+* [`GetRegions`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getregions/): Get the regions related to an active-active subscription
+* [`GetSubscription`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getsubscription/): Get the information related to a specific subscription.
+* [`GetSubscriptionPeerings`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getsubscriptionpeerings/): Get the VPC peerings (AWS or GCP) related to a specific subscription.
 
-{{<note>}}
-The "bring your own AWS account" option for Redis Cloud has been deprecated. The "CloudAccount" resource is only available for legacy Redis Cloud integrations.
-{{</note>}}
+## More info
 
-* `GetDataPersistence`: Get the type of database persistence.
-* `GetDatabase`: Get the information related to a specific database.
-* `GetDatabaseModules`: Get the modules for a specific database.
-* `GetPaymentMethod`: Get the payment method related to the Redis Cloud account.
-* `GetRegions`: Get the regions related to an active-active 
-* `GetSubscription`: Get the information related to a specific subscription.
-* `GetSubscriptionPeerings`: Get the VPC peerings (AWS or GCP) related to a specific subscription.
-
-{{<note>}}
-For more information on the different Redis Cloud Provider Resources and Functions, please refer to Pulumi's [official documentation for the Redis Cloud provider](https://www.pulumi.com/registry/packages/rediscloud/api-docs/).
-{{</note>}}
-
-## Pulumi quickstart Python project
-
-Let's examine an example of creating a "Flexible" Redis Cloud subscription using Python.
-
-1.  Make sure you have your [Pulumi environment installed](https://www.pulumi.com/docs/install/).
-
-1.  In your Python project, create an empty folder and from this folder run `pulumi new rediscloud-python`.
-
-1.  Enter a project name, description, and stack name.
-
-1.  Enter your Redis Cloud access and secret keys.
-
-Since Pulumi uses the Redis Cloud API in the background, an **access key** and **secret key** are required. For more information on creating these keys, please refer to [Cloud API Keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
-
-1.  Enter the credit card type (Visa, Mastercard) on file with your Redis Cloud account.
-
-1.  Enter the last four numbers of the card on file with your Redis Cloud account.
-
-Once these steps are completed, the dependencies needed for the project will be installed and a Python virtual environment will be created.
-
-### Project files
-
-The Pulumi Python project includes three main files :
-
-1.  `pulumi.yaml` : A metadata file which is used to help configure the Python runtime environment.
-
-1.  `pulumi.YOUR_PROJECT_NAME.yaml`: Contains the information related to the Cloud API access and secret key, credit card type and last 4 digits.
-
-1.  `__main__.py`: A Pulumi template file that creates a Redis Cloud flexible subscription. Use this template file as a starting point to create the subscription with a cloud provider and define specifications for the database (this includes memory, throughput, Redis modules etc).
+- [Get started with Pulumi]({{< relref  "/rc/cloud-integrations/terraform/get-started" >}})
+- [Redis Cloud Pulumi registry](https://www.pulumi.com/registry/packages/rediscloud/)
+- [Pulimi documentation](https://www.pulumi.com/docs/)
