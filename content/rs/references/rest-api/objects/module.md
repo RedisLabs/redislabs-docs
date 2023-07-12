@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-Represents a [Redis module]({{<relref "/modules">}}).
+Represents a [Redis module]({{<relref "/stack">}}).
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
