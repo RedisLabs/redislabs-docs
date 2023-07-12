@@ -11,10 +11,22 @@ aliases: /modules/redisgraph/release-notes/redisgraph-2.10-release-notes/
 ---
 ## Requirements
 
-RedisGraph v2.10.11 requires:
+RedisGraph v2.10.12 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.10.12 (July 2023)
+
+This is a maintenance release for RedisGraph 2.10.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#3129](https://github.com/RedisGraph/RedisGraph/pull/3129) Crash on certain queries (`INDEX SCAN` followed by `DEL` followed by `SET`) (MOD-5430)
 
 ## v2.10.11 (June 2023)
 
