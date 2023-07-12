@@ -127,6 +127,7 @@ rladmin tune db { db:<id> | <name> }
         [ mtls_allow_outdated_cert { enabled | disabled } ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
+        [ resp3 { enabled | disabled } ]
 ```
 
 ### Parameters
