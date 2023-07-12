@@ -10,7 +10,7 @@ categories: []
 aliases: 
 ---
 
-[Terraform](https://developer.hashicorp.com/terraform) is an open-source automation tool developed by Hashicorp that allows you to easily provision infrastructure as code.
+[Terraform](https://developer.hashicorp.com/terraform) is an open source automation tool developed by Hashicorp that allows you to easily provision infrastructure as code.
 
 Redis develops and maintains a [Terraform provider for Redis Cloud](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest). The Redis Cloud Terraform provider allows many of the same actions as found in the [Redis Cloud API]({{< relref  "/rc/api" >}}).
 
@@ -29,11 +29,11 @@ The Redis Cloud Terraform provider allows for the following data sources:
 - [Subscriptions](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_subscription)
 - [Databases](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_database)
 - [Database modules](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_database_modules)
-- [Cloud Accounts](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_cloud_account)
+- [Cloud accounts](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_cloud_account)
 - [Supported persistence options](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_data_persistence)
 - [Payment methods](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_payment_method)
 - [Supported cloud provider regions](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_regions)
-- [VPC Peering connections](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_subscription_peerings)
+- [VPC peering connections](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_subscription_peerings)
 
 It also allows you to create and manage the following resources:
 
@@ -51,5 +51,5 @@ It also allows you to create and manage the following resources:
 
 - [Get started with Terraform]({{< relref  "/rc/cloud-integrations/terraform/get-started" >}})
 - [Redis Cloud Terraform Registry](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs)
-- [Terraform docs](https://developer.hashicorp.com/terraform/docs)
+- [Terraform documentation](https://developer.hashicorp.com/terraform/docs)
 - [Terraform configuration syntax](https://developer.hashicorp.com/terraform/language/syntax/configuration)

@@ -25,7 +25,7 @@ Here, you'll learn how to use the Redis Cloud Terraform Provider to create a sub
     - Set `REDISCLOUD_ACCESS_KEY` to your API account key.
     - Set `REDISCLOUD_SECRET_KEY` to your API user key.
 
-1. Set a [payment method]({{<relref "/rc/billing-and-payments#add-payment-method">}}) for payment.
+1. Set a [payment method]({{<relref "/rc/billing-and-payments#add-payment-method">}}).
 
 ## Install the Redis Cloud provider
 
@@ -39,7 +39,7 @@ Here, you'll learn how to use the Redis Cloud Terraform Provider to create a sub
 
 ## Create a Redis Cloud subscription with Terraform
 
-In your Terraform configuration file, you can add resources and data sources to plan and create subscriptions and databases. See the [Redis Cloud Terraform Registry docs](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs) for more info about the resources and data sources you can use as part of the Redis Cloud provider.
+In your Terraform configuration file, you can add resources and data sources to plan and create subscriptions and databases. See the [Redis Cloud Terraform Registry documentation](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs) for more info about the resources and data sources you can use as part of the Redis Cloud provider.
 
 The steps in this section show you how to plan and create a flexible subscription with one database.
 
@@ -146,5 +146,5 @@ The steps in this section show you how to plan and create a flexible subscriptio
 ## More info
 
 - [Redis Cloud Terraform Registry](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs)
-- [Terraform docs](https://developer.hashicorp.com/terraform/docs)
+- [Terraform documentation](https://developer.hashicorp.com/terraform/docs)
 - [Terraform configuration syntax](https://developer.hashicorp.com/terraform/language/syntax/configuration)
