@@ -56,7 +56,7 @@ To create an Active-Active Redis Enterprise deployment for Kubernetes with these
 
 For the currently supported procedure, see [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-crdb-cli.md">}}).
 
-{{<note>}} If you are using a preview version of these features (operator version 6.4.2-4 or 6.4.2-5), you'll need to enable the Active-Active controller with the following steps. You need to do this only once per cluster.
+{{<note>}} If you are using a preview version of these features (operator version 6.4.2-4 or 6.4.2-5), you'll need to enable the Active-Active controller with the following steps. You need to do this only once per cluster. We recommend using the fully supported 6.4.2-6 version.
 
 1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-4) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
 

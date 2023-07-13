@@ -37,7 +37,7 @@ Next you'll [collect credentials](#collect-rec-credentials) for your participati
 
 For a list of example values used throughout this article, see the [Example values](#example-values) section.
 
-{{<note>}} If you are using a preview version of these features (operator version 6.4.2-4 or 6.4.2-5), you'll need to enable the Active-Active controller with the following steps. You need to do this only once per cluster.
+{{<note>}} If you are using a preview version of these features (operator version 6.4.2-4 or 6.4.2-5), you'll need to enable the Active-Active controller with the following steps. You need to do this only once per cluster. We recommend using the fully supported 6.4.2-6 version.
 
 1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-4) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
 
