@@ -154,6 +154,16 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) listed in the v6.2.4 release notes have been addressed.
 
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
+
 ## Known issues
 
 - The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
