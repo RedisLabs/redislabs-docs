@@ -41,7 +41,7 @@ The credentials can be used to access the Redis Enterprise admin console or the 
     echo MVUyTjd1Mm0= | base64 --decodexc
     ```
 
-    This outputs the password and username in plain text. In this example, the plain text password is `12345678` and the username is `demo@redis.com`.
+    This outputs the password and username in plain text. In this example, the plain text password is `12345678` and the username is `demo@example.com`.
 
 ## Change the Redis Enterprise cluster (REC) credentials
 

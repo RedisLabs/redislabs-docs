@@ -66,8 +66,8 @@ Edit the RedisEnterpriseCluster (REC) spec to add the `ingressOrRouteSpec` field
 ```sh
 kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
     {\"ingressOrRouteSpec\": \
-      {\"apiFqdnUrl\": \"api-<rec-name>-<rec-namespace>.redis.com\", \
-      \"dbFqdnSuffix\": \"-db-<rec-name>-<rec-namespace>.redis.com\", \
+      {\"apiFqdnUrl\": \"api-<rec-name>-<rec-namespace>.example.com\", \
+      \"dbFqdnSuffix\": \"-db-<rec-name>-<rec-namespace>.example.com\", \
       \"ingressAnnotations\": \
        {\"kubernetes.io/ingress.class\": \
        \"<ingress-controller>\", \
@@ -83,8 +83,8 @@ kubectl patch rec  <rec-name> --type merge --patch "{\"spec\": \
 ```sh
 kubectl patch rec <rec-name> --type merge --patch "{\"spec\": \
      {\"ingressOrRouteSpec\": \
-     {\"apiFqdnUrl\": \"api-<rec-name>-<rec-namespace>.redis.com\" \ 
-     \"dbFqdnSuffix\": \"-db-<rec-name>-<rec-namespace>.redis.com\", \
+     {\"apiFqdnUrl\": \"api-<rec-name>-<rec-namespace>.example.com\" \ 
+     \"dbFqdnSuffix\": \"-db-<rec-name>-<rec-namespace>.example.com\", \
      \"method\": \"openShiftRoute\"}}}"
 ```
 
