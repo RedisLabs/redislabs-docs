@@ -62,9 +62,11 @@ To define access to specific keys or key patterns, use the following prefixes:
 
 - `~` or `%RW~` allows read and write access to keys.
 
-- `%R~`allows read access to keys.
+- `%R~` allows read access to keys.
 
 - `%W~` allows write access to keys.
+
+`%RW~`, `%R~`, and `%W~` are only supported for databases with Redis version 7.2 or later.
 
 The following example allows read and write access to all keys that start with "app1" and read-only access to all keys that start with "app2":
 
@@ -74,7 +76,7 @@ The following example allows read and write access to all keys that start with "
 
 ### Pub/sub channels
 
-The `&` prefix allows access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) (only supported for databases with Redis version 6.2 and later).
+The `&` prefix allows access to [pub/sub channels](https://redis.io/docs/manual/pubsub/) (only supported for databases with Redis version 6.2 or later).
 
 To limit access to specific channels, include `resetchannels` before the allowed channels:
 
@@ -84,7 +86,7 @@ resetchannels &channel1 &channel2
 
 ### Selectors
 
-[Selectors](https://redis.io/docs/management/security/acl/#selectors) let you define multiple sets of rules in a single Redis ACL. A command is allowed if it matches the base rule or any selector in the Redis ACL.
+[Selectors](https://redis.io/docs/management/security/acl/#selectors) let you define multiple sets of rules in a single Redis ACL (only supported for databases with Redis version 7.2 or later). A command is allowed if it matches the base rule or any selector in the Redis ACL.
 
 - `(<rule set>)` creates a new selector.
 
