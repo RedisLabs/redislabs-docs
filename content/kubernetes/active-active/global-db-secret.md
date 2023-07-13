@@ -9,7 +9,7 @@ aliases: {
  /kubernetes/active-active/global-db-secret/,
 }
 ---
-{{<note>}}This feature is supported for general availability in releases 6.4.2-6 and later.{{</note>}}
+{{<note>}}This feature is supported for general availability in releases 6.4.2-6 and later. Preview of this feature is available in versions 6.4.2-4 and 6.4.2-5, but we recommend using the GA version 6.4.2-6. This feature is not supported in versions 6.2.18-41 and before.{{</note>}}
 
 ## Set global database secret
 

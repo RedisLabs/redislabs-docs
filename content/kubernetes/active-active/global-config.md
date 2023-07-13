@@ -11,7 +11,7 @@ aliases: {
 
 }
 ---
-{{<note>}}This feature is supported for general availability in releases 6.4.2-6 and later.{{</note>}}
+{{<note>}}This feature is supported for general availability in releases 6.4.2-6 and later. Preview of this feature is available in versions 6.4.2-4 and 6.4.2-5, but we recommend using the GA version 6.4.2-6. This feature is not supported in versions 6.2.18-41 and before.{{</note>}}
 
 The Redis Enterprise Active-Active database (REAADB) custom resource contains the field `.spec.globalConfigurations`. This field sets configurations for the Active-Active database across all participating clusters, such as memory size, shard count, and the global database secrets.
 
