@@ -112,7 +112,7 @@ The download contains a file called `redis_ca.pem`, which includes the following
 - Publicly trusted GlobalSign Root CA
 
 {{<note>}}
-The downloaded PEM file contains multiple certificates, so please make sure to import **all** certificates to your client trust store. Client code often imports the first certficate only unless done properly.
+The downloaded PEM file contains multiple certificates. Make sure to import **all** certificates to your client trust store. If your client code is not implemented properly, it may only import the first certificate. 
 {{</note>}}
 
 To inspect the certificates in `redis_ca.pem`, run the `keytool` command:
