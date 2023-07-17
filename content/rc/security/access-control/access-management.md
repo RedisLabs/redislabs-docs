@@ -63,7 +63,7 @@ Use the dialog to specify these values.
 | **Email** | The address used for alerts and other email messages regarding the account | 
 | **Alert emails** | Enable to be notified when subscription databases cross certain thresholds, such as exceeding memory limits or latency requirements |
 | **Operational emails** | Notifications about subscription and database changes, such as creating or deleting a database, and [subscription and database maintenance]({{<relref "/rc/subscriptions/maintenance">}}) |
-| **Billing emails** | Notifications when bills are issued, paid, and so on.<br/>_Note:_ Limited to a single user. |
+| **Billing emails** | Notifications about billing, such as when bills are issued and paid |
 | **Multi-factor authentication** | Whether MFA is enabled for the member.  This is deactivated when members have not enabled or confirmed MFA in their user profile settings. |
 
 Use the **Add user** button to save your new team member details. 
