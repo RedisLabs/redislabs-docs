@@ -144,9 +144,10 @@ For a list of example values used throughout this article, see the [Example valu
     ```sh
     kubectl get reaadb reaadb-boeing
 
-    NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    reaadb-boeing   active   Valid             
+    NAME              STATUS   SPEC STATUS   LINKED REDBS   REPLICATION STATUS
+    reaadb-boeing     active   Valid                        up             
     ```
+
   
     In case of errors, review the REAADB custom resource events and the Redis Enterprise operator logs.
 
