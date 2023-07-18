@@ -66,6 +66,6 @@ For more info about configuring the `ServiceMonitor` resource, see the [`Service
   - [Running exporters](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/running-exporters.md)
   - [Related resources](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md#related-resources)
   - [Troubleshooting ServiceMonitor changes](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/custom-metrics-elements.png)
-- docs.example.com
+- docs.redis.com
   - [Metrics in Prometheus]({{<relref "/rs/clusters/monitoring/prometheus-metrics-definitions.md">}})
   - [Monitoring and metrics]({{<relref "/rs/clusters/monitoring/_index.md">}})
