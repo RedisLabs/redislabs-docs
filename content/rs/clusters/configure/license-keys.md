@@ -63,9 +63,14 @@ You can update the cluster license key:
     
     1. Select **Save**.
 
-You can update an existing cluster key at any time. If saving a new cluster key fails, the
-operation returns the error "invalid license key". In this case, the
-existing key stays in effect.
+You can update an existing cluster key at any time.
+Redis Enterprise checks the validay of it in terms of:
+- cluster name
+- activation and expiration dates
+- shard usage and limits
+- features
+If saving a new cluster key fails, the operation returns an error including failure reason.
+In this case, the existing key stays in effect.
 
 ## Expired cluster license
 
