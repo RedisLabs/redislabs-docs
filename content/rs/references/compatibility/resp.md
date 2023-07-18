@@ -13,7 +13,7 @@ RESP (REdis Serialization Protocol) is the protocol that clients use to communic
 
 ## Supported RESP versions
 
-- RESP2 is supported by Redis Enterprise 6.0 and later.
+- RESP2 is supported by all Redis Enterprise versions.
 
 - RESP3 is supported by Redis Enterprise 7.2 and later.
 
@@ -43,13 +43,15 @@ To use RESP3 with Redis Enterprise:
  rladmin tune db db:<ID> resp3 disabled
  ```
 
+ When RESP3 is deactivated, connected clients that use RESP3 are disconnected from the database.
+
 {{<note>}}
 You cannot use sharded pub/sub if you deactivate RESP3 support.
 {{</note>}}
 
 ## Client prerequisites for Redis 7.2 upgrade
 
-The Redis clients [Go-Redis](https://redis.uptrace.dev/) version 9 and [Lettuce](https://lettuce.io/) versions 6 and later use RESP3 by default. If you use either client to run Redis Stack commands, you should set the client's protocol version to RESP2 before upgrading your database to Redis version 7.2 to prevent potential downtime.
+The Redis clients [Go-Redis](https://redis.uptrace.dev/) version 9 and [Lettuce](https://lettuce.io/) versions 6 and later use RESP3 by default. If you use either client to run Redis Stack commands, you should set the client's protocol version to RESP2 before upgrading your database to Redis version 7.2 to prevent potential application issues due to RESP3 breaking changes.
 
 ### Go-Redis
 
