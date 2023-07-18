@@ -147,6 +147,7 @@ The `redis` section is common for every pipeline initiated by event in Redis suc
 - The `key_pattern` attribute specifies the pattern of Redis keys to listen on. The pattern has to correspond to keys that are of Hash or JSON value.
 
 - The `exclude_commands` attribute specifies which commands not to act on. For example, if you listen on key pattern that has Hash values, you can exclude the `HDEL` command so no deletions of data will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
+- The `trigger` attribute is mandatory and must be set to `write-behind`.
 
 - The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for write-behind events the `before` value of the key is never provided.
 
