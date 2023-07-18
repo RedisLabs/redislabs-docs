@@ -85,3 +85,17 @@ When the license is expired:
     - Change cluster settings including license key, security for administrators, and cluster alerts
     - Failover when a node fails and explicitly migrate shard between nodes
     - Upgrade node to a new version of Redis Enterprise Software
+ 
+## Monitor cluster license
+Starting v7.2, Redis Enterprise exposes the license quotas and the shards consumption metrics via the [Prometheus integration]({{< relref "/rs/clusters/monitoring/prometheus-integration.md" >}}).
+
+The 'cluster_shards_limit' metric displays the total shard limit by the license by shard type (ram / flash).
+Examples:
+- cluster_shards_limit{cluster="mycluster.local",shard_type="ram"} 100.0
+- cluster_shards_limit{cluster="mycluster.local",shard_type="flash"} 50.0
+
+The 'bdb_shards_used' metric displays the used shard count by database and by shard type (ram / flash).
+Examples:
+- bdb_shards_used{bdb="2",cluster="mycluster.local",shard_type="ram"} 86.0
+- bdb_shards_used{bdb="3",cluster="mycluster.local",shard_type="flash"} 23.0
+
