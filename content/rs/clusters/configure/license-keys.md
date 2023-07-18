@@ -41,7 +41,12 @@ To view the cluster license key, use:
     - expired - If the cluster key is expired (True or False)
     - activation_date - The date of the cluster key activation
     - expiration_date - The date of the cluster key expiration
-    - shards_limit - The number of shards allowed by the cluster key
+    - shards_limit - The total number of shards allowed by the cluster key
+    - ram_shards_limit - The number of RAM shards allowed by the cluster key (starting v7.2)
+    - flash_shards_limit - The number of Flash shards (Auto Tiering) allowed by the cluster key (starting v7.2)
+
+Starting v7.2, Redis Enteprise will enforce the shard limits by their types (RAM, Flash) rather than total number of shards.
+
 
 ## Update cluster license
 
