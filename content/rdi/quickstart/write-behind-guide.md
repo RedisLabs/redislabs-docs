@@ -142,7 +142,7 @@ output:
 
 The `source` section describes the source of data in the pipeline.
 
-The `redis` section is common for every pipeline initiated by event in Redis such key miss or applying changes to data. In the case of write-behind it has the information required to activate a pipeline dealing with changes to data. it includes the following attributes:
+The `redis` section is common for every pipeline initiated by event in Redis such as applying changes to data. In the case of write-behind it has the information required to activate a pipeline dealing with changes to data. it includes the following attributes:
 
 - The `key_pattern` attribute specifies the pattern of Redis keys to listen on. The pattern has to correspond to keys that are of Hash or JSON value.
 
