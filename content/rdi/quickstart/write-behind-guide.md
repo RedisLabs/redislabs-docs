@@ -46,16 +46,10 @@ RDI write-behind currently supports these target data stores:
 The only prerequisite for running RDI write-behind is [Redis Gears Python](https://redis.com/modules/redis-gears/) >= 1.2.6 installed on the Redis Enterprise Cluster and enabled for the database you want to mirror to the downstream data store.
 For more information, see [Redis Gears installation]({{<relref "/rdi/installation/install-redis-gears">}}).
 
-## Preparing the write-behind & read-through pipelines
+## Preparing the write-behind pipeline
 
 - Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli">}}) on a Linux host that has connectivity to your Redis Enterprise Cluster.
 - Run the [`configure`]({{<relref "/rdi/reference/cli/redis-di-configure">}}) command to install the RDI Engine on your Redis database, if you have not used this Redis database with RDI write-behind before.
-- **For read-through only** the Redis database proxy has to be reconfigured using the [rladmin CLI](https://docs.redis.com/latest/rs/references/cli-utilities/rladmin/):
-
-  ```bash
-  rladmin> tune db <RDI_BDB_NAME> schedpolicy mnp
-  ```
-
 - Run the [`scaffold`]({{<relref "/rdi/reference/cli/redis-di-scaffold">}}) command with the type of data store you want to use, for example:
 
   ```bash
@@ -122,6 +116,7 @@ Job definition has the following structure:
 source:
   redis:
     key_pattern: emp:*
+    trigger: write-behind
     exclude_commands: ["json.del"]
 transform:
   - uses: rename_field
