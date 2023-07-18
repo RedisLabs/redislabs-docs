@@ -156,8 +156,8 @@ This article uses the following example values:
 * REC namespace: `ns-illinois`
 * RERC name: `rerc-ohare`
 * RERC secret name: `redis-enterprise-rerc-ohare`
-* API FQDN: `api-rec-chicago-ns-illinois.redis.com`
-* DB FQDN suffix: `-db-rec-chicago-ns-illinois.redis.com`
+* API FQDN: `api-rec-chicago-ns-illinois.example.com`
+* DB FQDN suffix: `-db-rec-chicago-ns-illinois.example.com`
 
 #### Example cluster 2
 
@@ -165,5 +165,5 @@ This article uses the following example values:
 * REC namespace: `ns-virginia`
 * RERC name: `rerc-raegan`
 * RERC secret name: `redis-enterprise-rerc-reagan`
-* API FQDN: `api-rec-arlington-ns-virginia.redis.com`
-* DB FQDN suffix: `-db-rec-arlington-ns-virginia.redis.com`
+* API FQDN: `api-rec-arlington-ns-virginia.example.com`
+* DB FQDN suffix: `-db-rec-arlington-ns-virginia.example.com`
