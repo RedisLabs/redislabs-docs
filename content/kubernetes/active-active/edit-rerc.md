@@ -75,7 +75,6 @@ If the credentials are changed or updated for a REC participating cluster, you n
 
     NAME              STATUS   SPEC STATUS   LINKED REDBS   REPLICATION STATUS
     reaadb-boeing     active   Valid                        up
-    example-reaadb-2  active   Valid                        up             
     ```
 
     To troubleshoot invalid configurations, view the RERC custom resource events and the [Redis Enterprise operator logs]({{<relref "/kubernetes/logs/">}}).
