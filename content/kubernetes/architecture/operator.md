@@ -41,7 +41,7 @@ Redis created an operator that deploys and manages the lifecycle of a Redis Ente
 
 The Redis Enterprise operator acts as a custom controller for the custom
 resource RedisEnterpriseCluster, or ‘rec’, which is defined through K8s
-CRD ([customer resource definition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-resources))
+CRD ([custom resource definition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-resources))
 and deployed with a yaml file.
 
 The operator functions include:

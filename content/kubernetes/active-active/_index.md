@@ -29,7 +29,7 @@ We recommend creating new Active-Active databases using the RedisEnterpriseActiv
 
 ### Active-Active controller method
 
-Versions 6.4.2-6 or later fully support the Active-Active controller. Some of these features were available as a preview in 6.4.2-4 and 6.4.2-5. Please upgrade to 6.4.2-6 for the full set of general availability features.
+Versions 6.4.2-6 or later fully support the Active-Active controller. Some of these features were available as a preview in 6.4.2-4 and 6.4.2-5. Please upgrade to 6.4.2-6 for the full set of general availability features and bug fixes.
 
 This setup method includes the following steps:
 
@@ -54,7 +54,23 @@ For versions 6.4.2 or earlier, this Active-Active setup method includes the foll
 
 To create an Active-Active Redis Enterprise deployment for Kubernetes with these new features, first [prepare participating clusters]({{<relref "/kubernetes/active-active/prepare-clusters.md">}}) then [create an Active-Active database]({{<relref "/kubernetes/active-active/create-reaadb.md">}}).
 
-For the currently supported procedure, see [Create Active-Active databases for Kubernetes]({{<relref "/kubernetes/active-active/create-aa-crdb-cli.md">}}).
+{{<note>}} If you are using a preview version of these features (operator version 6.4.2-4 or 6.4.2-5), you'll need to enable the Active-Active controller with the following steps. You need to do this only once per cluster. We recommend using the fully supported 6.4.2-6 version.
+
+1. Download the custom resource definitions (CRDs) for the most recent release (6.4.2-4) from [redis-enterprise-k8s-docs Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/crds).
+
+1. Apply the new CRDs for the Redis Enterprise Active-Active database (REAADB) and Redis Enterprise remote cluster (RERC) to install those controllers.
+
+    ```sh
+    kubectl apply -f crds/reaadb_crd.yaml
+    kubectl apply -f crds/rerc_crd.yaml
+    ```
+1. Enable the Active-Active and remote cluster controllers on the operator ConfigMap.
+    ```sh
+    kubectl patch cm  operator-environment-config --type merge --patch "{\"data\": \
+    {\"ACTIVE_ACTIVE_DATABASE_CONTROLLER_ENABLED\":\"true\", \
+    \"REMOTE_CLUSTER_CONTROLLER_ENABLED\":\"true\"}}"
+
+{{</note>}}
 
 ### REAADB custom resource
 
