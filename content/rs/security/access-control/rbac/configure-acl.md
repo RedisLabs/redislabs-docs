@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: ["/rs/security/access-control/configure-acl/"]
 ---
 
-Redis ACLs allow you to define named permissions for specific Redis commands, keys, and pub/sub channels. You can use defined Redis ACLs for multiple databases and roles.
+Redis access control lists (Redis ACLs) allow you to define named permissions for specific Redis commands, keys, and pub/sub channels. You can use defined Redis ACLs for multiple databases and roles.
 
 ## Predefined Redis ACLs
 
@@ -146,9 +146,47 @@ In Redis Enterprise:
 - For multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
 {{</note>}}
 
-## Change default pub/sub permissions
+## Default pub/sub permissions
 
-Pub/sub ACL rules determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
+Redis database version 6.2 introduced pub/sub ACL rules that determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
+
+The configuration option `acl-pubsub-default`, added in Redis Enterprise Software version 6.4.2, determines the cluster-wide default level of access for all pub/sub channels. Redis Enterprise Software uses the following pub/sub permissions by default:
+
+- For versions 6.4.2 and 7.2, `acl-pubsub-default` is permissive (`allchannels` or `&*`) by default to accommodate earlier Redis versions.
+
+- In future versions, `acl-pubsub-default` will change to restrictive (`resetchannels`). Restrictive permissions block all pub/sub channels by default, unless explicitly permitted by an ACL rule.
+
+If you use ACLs and pub/sub channels, you should review your databases and ACL settings and plan to transition your cluster to restrictive pub/sub permissions in preparation for future Redis Enterprise Software releases.
+
+### Prepare for restrictive pub/sub permissions
+
+To secure pub/sub channels and prepare your cluster for future Redis Enterprise Software releases that default to restrictive pub/sub permissions:
+
+1. Upgrade Redis databases:
+
+    - For Redis Enterprise Software version 6.4.2, upgrade all databases in the cluster to Redis DB version 6.2.
+    
+    - For Redis Enterprise Software version 7.2, upgrade all databases in the cluster to Redis DB version 7.2 or 6.2.
+
+1. Create or update ACLs with permissions for specific channels using the `resetchannels &channel` format.
+
+1. Associate the ACLs with relevant databases.
+
+1. Set default pub/sub permissions (`acl-pubsub-default`) to restrictive. See [Change default pub/sub permissions](#change-default-pubsub-permissions) for details.
+
+1. If any issues occur, you can temporarily change the default pub/sub setting back to permissive. Resolve any problematic ACLs before making pub/sub permissions restrictive again.
+
+{{<note>}}
+When you change the cluster's default pub/sub permissions to restrictive, `&*` is added to the **Full Access** ACL. Before you make this change, consider the following:
+
+- Because pub/sub ACL syntax was added in Redis 6.2, you can't associate the **Full Access** ACL with database versions 6.0 or lower after this change.
+
+- The **Full Access** ACL is not reverted if you change `acl-pubsub-default` to permissive again.
+
+- Every database with the default user enabled uses the **Full Access** ACL.
+{{</note>}}
+
+### Change default pub/sub permissions
 
 As of Redis Enterprise version 6.4.2, you can configure `acl_pubsub_default`, which determines the default pub/sub permissions for all databases in the cluster. You can set `acl_pubsub_default` to the following values:
 
@@ -156,21 +194,25 @@ As of Redis Enterprise version 6.4.2, you can configure `acl_pubsub_default`, wh
 
 - `allchannels` is permissive and allows access to all channels by default. 
 
-Redis Enterprise version 6.4.2 defaults to permissive pub/sub channels for backward compatibility. We recommend you change your cluster's default pub/sub ACLs to be restrictive.
-
 To make default pub/sub permissions restrictive:
 
 1. [Upgrade all databases]({{<relref "/rs/installing-upgrading/upgrading/upgrade-database">}}) in the cluster to Redis version 6.2 or later.
 
-1. Set the default to `resetchannels` with [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) or the [REST API]({{<relref "/rs/references/rest-api">}}).
+1. Set the default to restrictive (`resetchannels`) using one of the following methods:
 
-    - Method 1 - [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}):
+    - New admin console (only available for Redis Enterprise versions 7.2 and later):
+    
+        1. Navigate to **Access Control > Settings > Pub/Sub ACLs** and select **Edit**.
+        
+        1. For **Default permissions for Pub/Sub ACLs**, select **Restrictive**, then **Save**.
+
+    - [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}):
 
         ```sh
         rladmin tune cluster acl_pubsub_default resetchannels
         ```
 
-    - Method 2 - [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
+    - [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
 
         ```sh
         PUT /v1/cluster/policy
