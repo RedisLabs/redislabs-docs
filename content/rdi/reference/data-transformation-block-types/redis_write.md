@@ -13,7 +13,7 @@ Write to a Redis Enterprise database
 **Properties**
 
 | Name                    | Type      | Description                                                                                                                                                          | Required |
-|-------------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| ----------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | **connection**          | `string`  | Name of Redis connection specified in `config.yaml`.<br/>Defaults to connection named `target`.                                                                      | no       |
 | **data_type**<br/>      | `string`  | Type of Redis target data structure.<br/>Enum: `hash`(default), `json`, `set`, `sorted_set`, `stream`.<br/>Takes precedence over system property `target_data_type`. | no       |
 | [**nest**](#nest)       | `object`  | Nest (embed) object within a different key.<br/>If nesting is specified, all other parameters are ignored.                                                           | no       |
@@ -89,7 +89,7 @@ Arguments for modifying the target key
 **Properties**
 
 | Name       | Type     | Description                                                                                    | Required |
-|------------|----------|------------------------------------------------------------------------------------------------|----------|
+| ---------- | -------- | ---------------------------------------------------------------------------------------------- | -------- |
 | **score**  | `string` | Field name used as a score for sorted sets.<br/>Valid for sorted sets only.                    | yes      |
 | **member** | `string` | Field name used as a member for sets and sorted sets.<br/>Valid for sets and sorted sets only. | yes      |
 
@@ -101,16 +101,17 @@ Nest (embed) object within a different key
 
 **Properties**
 
-| Name                     | Type     | Description                                                                                                                        | Required |
-|--------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **parent**               | `object` | Parent object definition.                                                                                                          | yes      |
-| &#x221F; **server_name** | `string` | Server name.                                                                                                                       | no       |
-| &#x221F; **schema**      | `string` | Schema name.                                                                                                                       | no       |
-| &#x221F; **table**       | `string` | Parent table.                                                                                                                      | yes      |
-| **parent_key**           | `string` | Field name used to identify the parent key (usually FK).                                                                           | yes      |
-| **nesting_key**          | `string` | Field name used to create the nesting key (usually PK).                                                                            | yes      |
-| **path**                 | `string` | Path, where the nested object should reside in a parent document.<br/>Must start with the root (e.g. `$.<children-elements-here>`) | yes      |
-| **structure**            | `string` | Data structure used to represent the object in a parent document (`map` is the only supported value).                              | yes      |
+| Name                     | Type     | Description                                                                                                                                                                                                    | Required |
+| ------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| **parent**               | `object` | Parent object definition.                                                                                                                                                                                      | yes      |
+| &#x221F; **server_name** | `string` | Server name.                                                                                                                                                                                                   | no       |
+| &#x221F; **schema**      | `string` | Schema name.                                                                                                                                                                                                   | no       |
+| &#x221F; **table**       | `string` | Parent table.                                                                                                                                                                                                  | yes      |
+| **parent_key**           | `string` | Field name used to identify the parent key (usually FK).                                                                                                                                                       | yes      |
+| **child_key**            | `string` | Optional field name used to identify the parent key value (if different from **parent_key**) in the child record. If not specified, then the field name defined in **parent_key** is used to lookup the value. | no       |
+| **nesting_key**          | `string` | Field name used to create the nesting key (usually PK).                                                                                                                                                        | yes      |
+| **path**                 | `string` | Path, where the nested object should reside in a parent document.<br/>Must start with the root (e.g. `$.<children-elements-here>`)                                                                             | yes      |
+| **structure**            | `string` | Data structure used to represent the object in a parent document (`map` is the only supported value).                                                                                                          | no       |
 
 > Note: When `nest` object is defined, RDI will automatically assume `data_type: json` and `on_update: merge` regardless of what was declared in the job file.
 
@@ -133,6 +134,9 @@ output:
           table: Invoice
         nesting_key: InvoiceLineId
         parent_key: InvoiceId
+        # child_key: ParentInvoiceId
         path: $.InvoiceLineItems
-        structure: map
+        # structure: map
 ```
+
+> Note: In the example above `child_key` is not needed, because the FK in the child table `InvoiceLine` is defined using the same field name `InvoiceId` as in the parent table `Invoice`. If instead a FK was defined differently (e.g. InvoiceLine.ParentInvoivceId = Invoice.InvoiceId), then `child_key` parameter would be required to describe this relationship in the child job.
