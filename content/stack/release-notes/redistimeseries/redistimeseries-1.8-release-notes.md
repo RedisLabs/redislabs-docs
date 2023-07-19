@@ -11,10 +11,28 @@ aliases: /modules/redistimeseries/release-notes/redistimeseries-1.8-release-note
 ---
 ## Requirements
 
-RedisTimeSeries v1.8.10 requires:
+RedisTimeSeries v1.8.11 requires:
 
 - Minimum Redis compatibility version (database): 6.0.16
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v1.8.11 (July 2023)
+
+This is a maintenance release for RedisTimeSeries 1.8.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#1486](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1486) When using `LATEST`, results may contain samples earlier than `fromTimestamp` (`TS.RANGE`, `TS.REVRANGE`, `TS.MRANGE`, and `TS.MREVRANGE`)
+    - [#1471](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1471) Potential crash on `TS.MRANGE` when aggregating millions of time series
+    - [#1469](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1469) Potential memory leak in `TS.MRANGE` after eviction
+
+- Performance enhancements:
+
+    - [#1476](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/1476) Significant performance improvement when using multiple label filters (`TS.MGET`, `TS.MRANGE`, `TS.MREVRANGE`, and `TS.QUERYINDEX`) (MOD-5338)
 
 ## v1.8.10 (April 2023)
 
