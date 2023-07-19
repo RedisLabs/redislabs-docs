@@ -46,7 +46,7 @@ RDI write-behind currently supports these target data stores:
 The only prerequisite for running RDI write-behind is [Redis Gears Python](https://redis.com/modules/redis-gears/) >= 1.2.6 installed on the Redis Enterprise Cluster and enabled for the database you want to mirror to the downstream data store.
 For more information, see [Redis Gears installation]({{<relref "/rdi/installation/install-redis-gears">}}).
 
-## Preparing the write-behind pipeline
+## Preparing the write-behind & read-through pipeline
 
 - Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli">}}) on a Linux host that has connectivity to your Redis Enterprise Cluster.
 - Run the [`configure`]({{<relref "/rdi/reference/cli/redis-di-configure">}}) command to install the RDI Engine on your Redis database, if you have not used this Redis database with RDI write-behind before.
@@ -145,6 +145,7 @@ The `source` section describes the source of data in the pipeline.
 
 The `redis` section is common for every pipeline initiated by event in Redis such key miss or applying changes to data. In the case of write-behind it has the information required to activate a pipeline dealing with changes to data. it includes the following attributes:
 
+- The `trigger` attribute must be set to `write-behind`.
 - The `key_pattern` attribute specifies the pattern of Redis keys to listen on. The pattern has to correspond to keys that are of Hash or JSON value.
 
 - The `exclude_commands` attribute specifies which commands not to act on. For example, if you listen on key pattern that has Hash values, you can exclude the `HDEL` command so no deletions of data will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
