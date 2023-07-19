@@ -142,11 +142,11 @@ output:
 
 The `source` section describes the source of data in the pipeline.
 
-The `redis` section is common for every pipeline initiated by event in Redis such as applying changes to data. In the case of write-behind it has the information required to activate a pipeline dealing with changes to data. it includes the following attributes:
+The `redis` section is common for every pipeline initiated by an event in Redis, such as applying changes to data. In the case of write-behind, it has the information required to activate a pipeline dealing with changes to data. It includes the following attributes:
 
 - The `key_pattern` attribute specifies the pattern of Redis keys to listen on. The pattern has to correspond to keys that are of Hash or JSON value.
 
-- The `exclude_commands` attribute specifies which commands not to act on. For example, if you listen on key pattern that has Hash values, you can exclude the `HDEL` command so no deletions of data will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
+- The `exclude_commands` attribute specifies which commands not to act on. For example, if you listen on a key pattern with Hash values, you can exclude the `HDEL` command so no data deletions will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
 - The `trigger` attribute is mandatory and must be set to `write-behind`.
 
 - The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for write-behind events the `before` value of the key is never provided.
