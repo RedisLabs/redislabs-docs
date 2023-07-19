@@ -54,7 +54,7 @@ Before upgrading a database:
 
     To determine the database version:
 
-    - Use the admin console to open the **Configuration** tab for the database and select **About**. <!--icon TBA-->
+    - Use the admin console to open the **Configuration** tab for the database and select <img src="/images/rs/icons/info-icon.png#no-click" alt="The About database button" width="18px"> **About**.
 
     - _(Optional)_ Use the [`rladmin status extra all`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) command to display configuration details:
 
