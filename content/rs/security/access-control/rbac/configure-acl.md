@@ -98,6 +98,30 @@ In the following example, the base rule allows `GET key1` and the selector allow
 +GET ~key1 (+SET ~key2)
 ```
 
+### Known ACL limitations
+
+Redis Enterprise has the following known Redis ACL limitations:
+
+- Nested selectors are not supported.
+
+    For example, the following selectors are not valid in Redis Enterprise: <nobr>`+GET ~key1 (+SET (+SET ~key2) ~key3)`</nobr>
+
+- Key and pub/sub patterns do not allow the following characters: `'(', ')'`
+
+- The following password configuration syntax is not supported: `'>', '<', '#!', 'resetpass'`
+
+    To configure passwords in Redis Enterprise Software, use one of the following methods:
+
+    - [`rladmin cluster reset_password`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/reset_password">}}):
+    
+        ```sh
+        rladmin cluster reset_password <user email>
+        ```
+
+    - REST API [`PUT /v1/users`]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) request and provide `password`
+
+- The rule builder in the Redis Enterprise admin console does not support selectors and key permissions.
+
 ## Configure Redis ACLs
 
 To configure a Redis ACL rule that you can assign to a user role:
