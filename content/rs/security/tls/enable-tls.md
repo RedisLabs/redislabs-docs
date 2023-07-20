@@ -17,18 +17,21 @@ You can use TLS authentication for one or more of the following types of communi
 
 ## Enable TLS for client connections {#client}
 
-You can enable TLS by editing the configuration of an existing database (as shown below) or by selecting **Advanced Options** when you are creating a new database.
+You can enable TLS for new or existing databases.
 
-1. Select your database from your database list and navigate to the **configuration** tab.
-1. Select **Edit** at the bottom of your screen.
-1. Enable **TLS**.
-    - **Enforce client authentication** is selected by default. If you clear this option, you will still enforce encryption, but TLS client authentication will be deactivated.
+1. Select your database from your database list and navigate to the **Security** tab.
+
+1. Select **Edit**.
+
+1. In the **Secure connections (via TLS - Transport Layer Security)** section:
+
 1. Select **Advanced Options** and **Require TLS for All Communications** from the dropdown menu.
     ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
-1. Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add")
-1. Paste your certificate or certificate authority (CA) into the text box.
-    ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
-1. Save the certificate. ![icon_save](/images/rs/icon_save.png#no-click "Save")
+
+1. Select **+ Add certificate**.
+
+1. Paste or upload your certificate, then select **Done**.
+
 1. Repeat for each client certificate you need to add.
     - If your database uses Replica Of or Active-Active replication, you will need to add the syncer certificates for the participating clusters. The steps for each are below.
 
@@ -36,18 +39,15 @@ You can enable TLS by editing the configuration of an existing database (as show
 
     Additional certificate validations occur only when loading a [certificate chain](https://en.wikipedia.org/wiki/Chain_of_trust#Computer_security) that includes the [root certificate](https://en.wikipedia.org/wiki/Root_certificate) and intermediate [CA](https://en.wikipedia.org/wiki/Certificate_authority) certificate but does not include a leaf (end-entity) certificate. If you include a leaf certificate, mutual client authentication skips any additional certificate validations.
 
-    {{<image filename="images/rs/database-tls-config-full-subject.png" alt="Configure additional certificate validations with Common Name or full subject." >}}{{< /image >}}
-
-
     1. Select a certificate validation option.
 
         | Validation option | Description |
         |-------------------|-------------|
         | _No validation_ | Authenticates clients with valid certificates. No additional validations are enforced. |
-        | _By Subject Alternative Name (SAN) / Common Name (CN) only_ | A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes. |
-        | _By full subject_ | A client certificate is valid only if its [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes match an entry in the list of valid subjects. |
+        | _By Subject Alternative Name_ | A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes. |
+        | _By full Subject Name_ | A client certificate is valid only if its [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes match an entry in the list of valid subjects. |
 
-    1. If you selected **No validation**, you can skip this step. Otherwise, select **Add** ![Add](/images/rs/icon_add.png#no-click "Add") to create a new entry and then enter valid [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes for your client certificates. All `Subject` attributes are case-sensitive.
+    1. If you selected **No validation**, you can skip this step. Otherwise, select **+ Add validation** to create a new entry and then enter valid [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes for your client certificates. All `Subject` attributes are case-sensitive.
 
         | Subject attribute<br />(case-sensitive) | Description |
         |-------------------|-------------|
@@ -62,7 +62,8 @@ You can enable TLS by editing the configuration of an existing database (as show
 
         **Breaking change:** If you use the [REST API]({{<relref "/rs/references/rest-api">}}) instead of the admin console to configure additional certificate validations, note that `authorized_names` is deprecated as of Redis Enterprise v6.4.2. Use `authorized_subjects` instead. See the [BDB object reference]({{<relref "/rs/references/rest-api/objects/bdb">}}) for more details.
 
-1. Select **Update** at the bottom of the screen to save your configuration.
+1. Select **Save**.
+
 1. Optional: By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to turn off this behavior.
     ```sh
     rladmin tune db < db:id | name > mtls_allow_outdated_certs enabled
