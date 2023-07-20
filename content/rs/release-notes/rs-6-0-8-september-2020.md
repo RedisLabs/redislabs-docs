@@ -75,6 +75,16 @@ With build 6.0.8-32:
 - RS44656 - A bug causing TLS mode for clients connections to toggle between ‘all communication’ to ‘for crdb communication only’ when performing a global configuration change. ***TBD***
 - RS51359 - Active-Active databases, using replication and Append Only File (AOF) for [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}), are suffering from memory leaks on replica shards, causing them to grow bigger than the master shards. Customers are advised to upgrade to RS 6.0.12 ***TBD***. Meanwhile you can use snapshots for database persistence or restart the replica shards ***TBD***.
 
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
+
 ### Upgrade
 
 - [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md" >}}) introduced new Active-Active Redis Database capabilities that improve its compatibility with open source Redis. Now the string data-type in Active-Active Redis Database is implicitly and dynamically typed, just like open source Redis. To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower, you must [upgrade the Active-Active Redis Database protocol]({{< relref "/rs/installing-upgrading/upgrading#upgrading-crdbs" >}}).
