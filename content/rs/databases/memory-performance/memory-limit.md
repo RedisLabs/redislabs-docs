@@ -50,7 +50,7 @@ Additional factors for Active-Active databases:
 
   It's also important to know Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit.
 
-Additional factors for Auto Tiering databases:
+Additional factors for  databases with Auto Tiering enabled:
 
 - [**database persistence**]({{<relref "/rs/databases/configure/database-persistence.md">}}): Auto Tiering uses dual database persistence where both the primary and replica shards persist to disk. This may add some processor and network overhead, especially in cloud configurations with network attached storage.
 

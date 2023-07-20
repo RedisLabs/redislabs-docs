@@ -31,7 +31,7 @@ with a single node are:
     container.
 1. Set up a Redis Enterprise Software cluster with Redis on
     Flash.
-1. Create a new Auto Tiering database.
+1. Create a new database with Auto Tiering enabled.
 1. Connect to your new database.
 
 ## Install Redis Enterprise Software
@@ -106,7 +106,7 @@ On the **create database** page:
 ![new redis flash
 db](/images/rs/newredisflashdb.png)
 
-You now have a Auto Tiering database!
+You now have a  database with Auto Tiering enabled!
 
 ## Connect to your database
 

@@ -37,9 +37,9 @@ Additional factors for sizing Active-Active databases:
 Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit.
 {{</note>}}
 
-### Auto Tiering database sizing {#redis-on-flash-sizing}
+### Sizing databases with Auto Tiering enabled  {#redis-on-flash-sizing}
 
-Additional factors for sizing Auto Tiering databases:
+Additional factors for sizing  databases with Auto Tiering enabled:
 
 - [**Database persistence**]({{<relref "/rs/databases/configure/database-persistence#redis-on-flash-data-persistence">}}) – Auto Tiering uses dual database persistence where both the primary and replica shards persist to disk. This may add some processor and network overhead, especially in cloud configurations with network-attached storage.
 
