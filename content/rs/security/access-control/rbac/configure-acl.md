@@ -126,11 +126,11 @@ Redis Enterprise has the following known Redis ACL limitations:
 
 To configure a Redis ACL rule that you can assign to a user role:
 
-1. From **access control** > **redis acls**, you can either:
+1. From **Access Control > Redis ACLs**, you can either:
 
-    - Point to a Redis ACL and select ![Edit](/images/rc/icon_edit.png#no-click "Edit") to edit an existing Redis ACL.
+    - Point to a Redis ACL and select <img src="/images/rs/buttons/edit-button.png#no-click" alt="The Edit button" width="25px"> to edit an existing Redis ACL.
 
-    - Select ![Add](/images/rs/icon_add.png#no-click "Add") to create a new Redis ACL.
+    - Select **+ Add Redis ACL** to create a new Redis ACL.
 
 1. Enter a descriptive name for the Redis ACL. This will be used to reference the ACL rule to the role.
 
@@ -138,12 +138,10 @@ To configure a Redis ACL rule that you can assign to a user role:
 
 1. Select **Save**.
 
-{{< video "/images/rs/new-redis-acl-rule.mp4" "Create a new Redis ACL Rule" >}}
-
 {{<note>}}
-In Redis Enterprise:
 - External users are not currently supported for database authentication.
-- For multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
+
+- For multi-key commands on multi-slot keys, the return value is `failure`, but the command runs on the keys that are allowed.
 {{</note>}}
 
 ## Default pub/sub permissions
