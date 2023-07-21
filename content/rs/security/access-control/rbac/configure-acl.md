@@ -14,7 +14,7 @@ Redis access control lists (Redis ACLs) allow you to define named permissions fo
 
 The predefined Redis ACLs are:
 
-- **Full Access** - All commands are allowed on all keys.
+- **Full Access** - All commands are allowed on all keys (cannot be edited). The [default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}) has **Full Access** when enabled for a database.
 
 - **Not Dangerous** - (Deprecated) All commands are allowed except those that are administrative, could affect availability, or could affect performance.
 
@@ -139,9 +139,7 @@ To configure a Redis ACL rule that you can assign to a user role:
 1. Select **Save**.
 
 {{<note>}}
-- External users are not currently supported for database authentication.
-
-- For multi-key commands on multi-slot keys, the return value is `failure`, but the command runs on the keys that are allowed.
+For multi-key commands on multi-slot keys, the return value is `failure`, but the command runs on the keys that are allowed.
 {{</note>}}
 
 ## Default pub/sub permissions
