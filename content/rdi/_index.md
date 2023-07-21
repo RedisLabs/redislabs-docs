@@ -24,7 +24,7 @@ RDI currently supports these scenarios:
 
   ![Write-behind flow](/images/rdi/write-behind.png)
 
-* [Read-through scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}) RDI is activated in response to client requests for specific key-patterns that are not found in the cache. Rather than returning an empty result, RDI fetches the data from a downstream database, stores it, and finally provides the requested data.
+* [Read-through scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}) RDI is activated in response to client requests for specific key-patterns that are not found in Redis. Rather than returning an empty result, RDI fetches the data from a downstream database, stores it, transforms it (if needed) and finally provides the requested data.
 
 To learn more see [Architecture]({{<relref "/rdi/architecture">}}) for more details and architecture.
 
