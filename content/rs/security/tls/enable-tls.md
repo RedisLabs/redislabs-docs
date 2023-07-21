@@ -72,6 +72,8 @@ To enable TLS for Active-Active cluster connections:
 
 1. If you are using the new admin console, switch to the legacy admin console.
 
+    {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
+
 1. [Retrieve syncer certificates.](#retrieve-syncer-certificates)
 
 1. [Configure TLS certificates for Active-Active.](#configure-tls-certificates-for-active-active)
