@@ -127,6 +127,7 @@ rladmin tune db { db:<id> | <name> }
         [ mtls_allow_outdated_cert { enabled | disabled } ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
+        [ resp3 { enabled | disabled } ]
 ```
 
 ### Parameters
@@ -163,6 +164,7 @@ rladmin tune db { db:<id> | <name> }
 | repl_backlog                         | size in MB<br /> `auto`          | Size of the replication buffer                                                                                        |
 | repl_diskless                        | `enabled`<br /> `disabled`<br /> `default`   | Activates or deactivates diskless replication (defaults to the cluster setting)                                          |
 | repl_timeout                         | time in seconds                  | Replication timeout (in seconds)                                                                                                      |
+| resp3 | `enabled`<br /> `disabled` | Enables or deactivates RESP3 support (defaults to `enabled`) |
 | schedpolicy                          | `cmp`<br /> `mru`<br /> `spread`<br /> `mnp` | Controls how server-side connections are used when forwarding traffic to shards                                           |
 | skip_import_analyze                  | `enabled`<br /> `disabled`       | Skips the analyzing step when importing a database                                                                                    |
 | slave_buffer                         | value in MB<br /> hard:soft:time | Redis replica output buffer limits                                                                                                    |
