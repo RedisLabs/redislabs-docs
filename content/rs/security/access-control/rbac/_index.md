@@ -12,13 +12,13 @@ Role-based access control (RBAC) allows you to configure the level of access eac
 
 ## Role types
 
-Assign a role, which grants specific cluster and database permissions, to multiple users.
+You can create custom user roles that determine cluster management permissions, data access permissions, or a combination of both.
 
-There are two types of roles:
+- [Management roles]({{<relref "/rs/security/access-control/admin-console-access">}}) determine user access to the cluster’s admin console and [REST API]({{<relref "/rs/references/rest-api">}}).
 
-- [Management roles]({{<relref "/rs/security/access-control/admin-console-access">}}), which determine user access to the cluster’s admin console and [REST API]({{<relref "/rs/references/rest-api">}}).
+- [Data access controls]({{<relref "/rs/security/access-control/database-access">}}) determine the permissions each role grants for each database in the cluster.
 
-- [Data access controls]({{<relref "/rs/security/access-control/database-access">}}), which determine the permissions each role grants for each database in the cluster.
+Multiple users can share the same role.
 
 ## Access control screen
 
@@ -28,7 +28,7 @@ The **Access Control** screen has the following tabs:
 
 - **Roles** - [Create roles]({{<relref "/rs/security/access-control/rbac/create-roles">}}). Each role consists of a set of permissions (Redis ACLs) for one or more Redis databases. You can reuse these roles for multiple users.
 
-- **Redis ACLs** - [Define named permissions]({{<relref "/rs/security/access-control/rbac/configure-acl">}}) for specific Redis commands, keys, and pub/sub channels. You can use defined Redis ACLs for multiple databases and roles.
+- **Redis ACLs** - [Define named permissions]({{<relref "/rs/security/access-control/rbac/configure-acl">}}) for specific Redis commands, keys, and pub/sub channels. Redis version 7.2 lets you specify read and write access for key patterns and use selectors to define multiple sets of rules in a single Redis ACL. You can use defined Redis ACLs for multiple databases and roles.
 
 - **LDAP Mappings** - Map LDAP groups to access control roles.
 

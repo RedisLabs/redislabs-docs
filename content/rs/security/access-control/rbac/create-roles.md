@@ -8,9 +8,10 @@ categories: ["RS"]
 aliases: ["/rs/security/access-control/create-roles/"]
 ---
 
-From **access control** > **roles**, you can configure user roles with:
+From **Access Control** > **Roles**, you can create custom user roles that determine cluster management permissions, data access permissions, or a combination of both.
 
 - [**Management roles**](#default-management-roles) - Management roles define user access to the cluster's admin console and API.
+
 - **Data access controls** - Data access controls define the permissions each role has for each database in the cluster.
 
 ## Default management roles
