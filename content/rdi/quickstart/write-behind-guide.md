@@ -1,7 +1,7 @@
 ---
 Title: Write-behind & Read-Through quickstart
 linkTitle: Write-behind & Read-Through
-description: Get started creating a pipeline for redis synchronization with a downstream database (write-behind, read-through, write-through (pending))
+description: Get started creating a pipeline for redis synchronization with a downstream database (write-behind, read-through)
 weight: 40
 alwaysopen: false
 categories: ["redis-di"]
@@ -10,16 +10,16 @@ draft:
 hidden: false
 ---
 
-This guide takes you through the creation of a write-behind and read-through pipelines.
+This guide takes you through the creation of write-behind and read-through pipelines.
 
-> Note: write-behind & read-through are currently in Preview.
+> Note: read-through is currently in Preview.
 
 ## Concepts
 
-**Write-behind**: RDI pipeline to synchronize the data in a Redis DB with some downstream data store.
+**Write-behind**: RDI pipeline to synchronize the data in a Redis DB with some downstream data stores.
 You can think about it as a pipeline that starts with change data capture (CDC) events for a Redis database and then filters, transforms, and maps the data to the target data store data structure.
 
-**Read-through**: RDI pipeline to automatically fetch data from a downstream data store back to Redis cache in case of cache-miss. This read-through is initiated by client attempt to retrieve a key from Redis that does not exist. RDI will retrieve the key, store it in the cache and then provide a synchronous response to the client.
+**Read-through**: RDI pipeline to automatically fetch data from a downstream data store back to Redis cache in case of cache-miss. This read-through is initiated by client attempt to retrieve a key from Redis that does not exist. RDI will retrieve the key, store it in the cache and then provide a synchronous response to the client. Like other RDI pipelines, read-through can manipulate the data using the RDI declarative transformations.
 
 **Target**: The data store to which the write-behind pipeline connects and writes data.
 
@@ -46,7 +46,7 @@ RDI write-behind currently supports these target data stores:
 The only prerequisite for running RDI write-behind is [Redis Gears Python](https://redis.com/modules/redis-gears/) >= 1.2.6 installed on the Redis Enterprise Cluster and enabled for the database you want to mirror to the downstream data store.
 For more information, see [Redis Gears installation]({{<relref "/rdi/installation/install-redis-gears">}}).
 
-## Preparing the write-behind & read-through pipeline
+## Preparing the write-behind & read-through pipelines
 
 - Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli">}}) on a Linux host that has connectivity to your Redis Enterprise Cluster.
 - Run the [`configure`]({{<relref "/rdi/reference/cli/redis-di-configure">}}) command to install the RDI Engine on your Redis database, if you have not used this Redis database with RDI write-behind before.
@@ -152,8 +152,13 @@ The `redis` section is common for every pipeline initiated by event in Redis suc
 
 - The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for write-behind events the `before` value of the key is never provided.
 
- > Note: RDI write-behind does not support the [`Expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
-> Notes: The `redis` attribute is a breaking change replacing the `keyspace` attrribute. The key_pattern attribute replaces the `pattern` attribute. THe `exclude_commands` attributes replaces the `exclude-commands` attribute. If you upgrade to version 0.105 and beyond, you must edit your existing jobs and redeploy them.
+ > Note: 
+
+ - RDI write-behind does not support the [`Expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
+ 
+
+- The `redis` attribute is a breaking change replacing the `keyspace` attribute. 
+- The `key_pattern` attribute replaces the `pattern` attribute. The `exclude_commands` attribute replaces the `exclude-commands` attribute. If you upgrade to version 0.105 and beyond, you must edit your existing jobs and redeploy them.
 
 ### Output section
 
@@ -241,7 +246,7 @@ To use the metrics you can either:
 
 Read-through jobs are a mandatory part of the read-through pipeline configuration.
 
-In the jobs directory, which is located parallel to the `config.yaml` file, you should include a YAML file for each key pattern you want to read into the cache from a downstream database table in the event of a cache miss.
+In the jobs directory, which is located adjacent to the `config.yaml` file, you should include a YAML file for each key pattern you want to read into the cache from a downstream database table in the event of a cache miss.
 
 You can choose to name the YAML file based on the database table name or use another naming convention.
 
@@ -317,7 +322,7 @@ The `source` section must specify the following attributes:
 - `table` or `sql` attributes:
   - `table` - The table to query.
   - `columns` - The columns to fetch if `table` is used.
-  - `sql` - A SQL statement in case you would like to `JOIN` several tables or to perform a different complex query. see more below about using this option.
+  - `sql` - A SQL statement in case you would like to `JOIN` several tables or to perform a different complex query. See more below about using this option.
 
 The `source` section can optionally include the following attributes:
 
@@ -326,6 +331,7 @@ The `source` section can optionally include the following attributes:
 ##### Using custom sql queries
 
 You can use any valid `SELECT` statement that can be parsed by the specific downstream database. The values to use in `WHERE` or `ON` sections can be calculated at runtime if you specify one of the keys in the `keys` section.
+In the SQL statement you can specify field names that will be automatically populated with the right field value. The syntax to specify such a binding variable is a colon (`:`) followed by field name, for example `:user_id`.
 
 #### Using transformations
 
@@ -334,7 +340,7 @@ However, it is important to note that certain transformations, such as removing 
 
 #### The output section
 
-Unlike write-behind the output section does not specify which key and type to write to Redis as this is provided by the client command. However, it has an optional `expire` attribute to specify the TTL of the retrieved key in seconds.
+Unlike write-behind, the output section does not specify which key and type to write to Redis as this is provided by the client command. However, it has an optional `expire` attribute to specify the TTL of the retrieved key in seconds.
 
 ## Upgrading
 
