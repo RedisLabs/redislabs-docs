@@ -24,9 +24,9 @@ The default Redis database version differs between Redis Enterprise releases as 
 
 | Redis<br />Enterprise | Bundled Redis<br />DB versions | Default DB version<br />(upgraded/new databases) |
 |-------|----------|-----|
-| 6.2.x | 6.0, 6.2 | 6.0 |
-| 6.4.2 | 6.0, 6.2 | 6.2 |
 | 7.2 | 6.0, 6.2, 7.2 | 7.2 |
+| 6.4.2 | 6.0, 6.2 | 6.2 |
+| 6.2.x | 6.0, 6.2 | 6.0 |
 
 - v6.2.x: `default_redis_version` is 6.0.
 
@@ -74,7 +74,7 @@ Before upgrading a database:
 
     When choosing how to back up data, keep the following in mind:
 
-    - To reduce downtime when replication is enabled, a failover is performed before restarting the master database.
+    - To reduce downtime when replication is enabled, a failover is performed before restarting the primary (master) database.
 
     - When persistence is enabled without replication, the database is unavailable during restart because the data is restored from the persistence file. AOF persistence restoration is slower than snapshot restoration.
 
@@ -104,7 +104,7 @@ To upgrade a database:
 
     To do so:
 
-    - Use the admin console to open the **Compatibility** tab for the database; the Redis version displays the Redis database compatibility version.
+    - Use the admin console to open the **Configuration** tab for the database and select <img src="/images/rs/icons/info-icon.png#no-click" alt="The About database button" width="18px"> **About**.
 
     - Use [`rladmin status databases extra all`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-databases">}}) to display a list of the databases in your cluster and their current Redis database compatibility version:
 
