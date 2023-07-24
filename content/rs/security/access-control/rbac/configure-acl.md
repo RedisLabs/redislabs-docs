@@ -98,30 +98,6 @@ In the following example, the base rule allows `GET key1` and the selector allow
 +GET ~key1 (+SET ~key2)
 ```
 
-### Known ACL limitations
-
-Redis Enterprise has the following known Redis ACL limitations:
-
-- Nested selectors are not supported.
-
-    For example, the following selectors are not valid in Redis Enterprise: <nobr>`+GET ~key1 (+SET (+SET ~key2) ~key3)`</nobr>
-
-- Key and pub/sub patterns do not allow the following characters: `'(', ')'`
-
-- The following password configuration syntax is not supported: `'>', '<', '#!', 'resetpass'`
-
-    To configure passwords in Redis Enterprise Software, use one of the following methods:
-
-    - [`rladmin cluster reset_password`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/reset_password">}}):
-    
-        ```sh
-        rladmin cluster reset_password <user email>
-        ```
-
-    - REST API [`PUT /v1/users`]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) request and provide `password`
-
-- The rule builder in the Redis Enterprise admin console does not support selectors and key permissions.
-
 ## Configure Redis ACLs
 
 To configure a Redis ACL rule that you can assign to a user role:
@@ -135,6 +111,10 @@ To configure a Redis ACL rule that you can assign to a user role:
 1. Enter a descriptive name for the Redis ACL. This will be used to reference the ACL rule to the role.
 
 1. Define the ACL rule.
+
+    {{<note>}}
+The **ACL builder** does not support selectors and key permissions. Use **Free text command** to manually define them instead.
+    {{</note>}}
 
 1. Select **Save**.
 
@@ -221,9 +201,27 @@ Redis Enterprise Software does not support certain open source Redis ACL command
 
 {{<embed-md "acl-command-compatibility.md">}}
 
-{{<note>}}
-The `MULTI`, `EXEC`, `DISCARD` commands are always allowed, but ACLs are enforced on `MULTI` subcommands.
-{{</note>}}
+Redis ACLs also have the following differences in Redis Enterprise Software:
+
+- The `MULTI`, `EXEC`, `DISCARD` commands are always allowed, but ACLs are enforced on `MULTI` subcommands.
+
+- Nested selectors are not supported.
+
+    For example, the following selectors are not valid in Redis Enterprise: <nobr>`+GET ~key1 (+SET (+SET ~key2) ~key3)`</nobr>
+
+- Key and pub/sub patterns do not allow the following characters: `'(', ')'`
+
+- The following password configuration syntax is not supported: `'>', '<', '#!', 'resetpass'`
+
+    To configure passwords in Redis Enterprise Software, use one of the following methods:
+
+    - [`rladmin cluster reset_password`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/reset_password">}}):
+    
+        ```sh
+        rladmin cluster reset_password <user email>
+        ```
+
+    - REST API [`PUT /v1/users`]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) request and provide `password`
 
 ## Next steps
 
