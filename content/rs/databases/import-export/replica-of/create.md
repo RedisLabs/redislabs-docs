@@ -39,69 +39,89 @@ When you change the replica status of a database by adding, removing, or changin
 
 To configure a destination database as a Replica Of:
 
-1. Open the database settings:
+1. [Create a new database]({{<relref "/rs/databases/create">}}) or select an existing database from the **Databases** screen.
 
-    1. For a new database, [create the database]({{<relref "/rs/databases/create.md" >}}) with its settings.
+1. For an existing database, select **Edit** from the **Configuration** tab.
 
-    1. For an existing database:
+1. Expand the **Replica Of** section.
 
-        1. Go to **databases**.
-        1. Select the database and then select the **Configuration** tab.
-        1. Select the **Edit** button.
+1. Select **+ Add source database** to open the **Connect a Replica Of source database** dialog.
 
-1. Select **Replica Of** to display the **Add** button.  
-![icon_add](/images/rs/icon_add.png#no-click "Add")
+1. Select the database that you want to use as the source.
 
-1. Select the **Add** button to display the source database prompt.
-
-1. Enter the URL of the source database endpoint.
+    <!--Link to different cluster source scenarios below-->
 
     The order of the multiple Replica Of sources has no material impact on replication.
 
-    - For a source database in the same Redis Enterprise cluster - Enter the URL of the source database in the following format:
+### Same Redis Enterprise cluster
 
-    ```sh
-    <database name>: redis://admin:<password>@<endpoint>:<port>
-    ```
+To add a source database from the same Redis Enterprise cluster:
 
-    You can select the database that you want to use as the source.
+1. In the **Connect a Replica Of source database** dialog, select **Current cluster**.
 
-    - For a source database in a different cluster:
+1. Select the source database from the list.
 
-        1. Sign in to the admin console of the cluster hosting the source database.
-        1. In **Databases**, select the source database and then select the **Configuration** tab.
-        1. Under **Endpoint**, select **Get Replica Of source URL**.
+1. Select **Add source**.
 
-            ![Replica Of source URL](/images/rs/replicaof-source-url.png)
+1. Select **Save**.
 
-        1. Select **Copy to Clipboard** to copy the URL of the source endpoint to your Clipboard.
+### Different Redis Enterprise cluster
 
-            To change the internal password, select **Regenerate Password**.
+To add a source database from a different Redis Enterprise cluster:
 
-            If you regenerate the password, replication to existing destinations fails until their credentials are updated with the new password.
+1. In the **Connect a Replica Of source database** dialog, select **External**.
 
-        1. In the destination database, paste the URL of the source endpoint to the **Replica Of** edit box.  
+1. Enter the URL of the source database endpoint.
+
+1. Select **Add source**.
+
+1. Select **Save**.
+
+1. Sign in to the admin console of the cluster hosting the source database.
+
+1. In **Databases**, select the source database and then select the **Configuration** tab.
+
+1. Under **Endpoint**, select **Get Replica Of source URL**.
+
+    ![Replica Of source URL](/images/rs/replicaof-source-url.png)
+
+1. Select **Copy to Clipboard** to copy the URL of the source endpoint to your Clipboard.
+
+    To change the internal password, select **Regenerate Password**.
+
+    If you regenerate the password, replication to existing destinations fails until their credentials are updated with the new password.
+
+1. In the destination database, paste the URL of the source endpoint to the **Replica Of** edit box.  
         
-        1. Use the **Save** button to save your changes.  
-        ![Save](/images/rs/icon_save.png#no-click "Save")
+1. Use the **Save** button to save your changes.  
 
-        For source databases on different clusters, you can [compress replication data]({{<relref "/rs/databases/import-export/replica-of/#data-compression-for-replica-of">}}) to save bandwidth.
+For source databases on different clusters, you can [compress replication data]({{<relref "/rs/databases/import-export/replica-of/#data-compression-for-replica-of">}}) to save bandwidth.
         
-    - For a source database on an open source Redis (OSS) cluster - Enter the URL of the source endpoint in one of the following formats:
+### Open source Redis cluster
 
-        - For databases with passwords:
+To add a source database from an open source Redis cluster:
 
-            ```sh
-            redis://:<password>@<host>:<port>
-            ```
+1. In the **Connect a Replica Of source database** dialog, select **External**.
 
-            Where the password is the Redis password represented with URL encoding escape characters.
+1. Enter the URL of the source endpoint in one of the following formats:
 
-        - For databases without passwords:
+    - For databases with passwords:
 
-            ```sh
-            redis://<host>:<port>
-            ```
+        ```sh
+        redis://:<password>@<host>:<port>
+        ```
+
+        Where the password is the Redis password represented with URL encoding escape characters.
+
+    - For databases without passwords:
+
+        ```sh
+        redis://<host>:<port>
+        ```
+
+1. Select **Add source**.
+
+1. Select **Save**.
 
 For best results when using the [Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS) (mDNS) protocol to resolve the fully-qualified domain name (FQDN) of the cluster, verify that your client connections meet the [client mDNS prerequisites]({{< relref "/rs/networking/mdns.md" >}}).
 
