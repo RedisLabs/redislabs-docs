@@ -17,37 +17,33 @@ You can use TLS authentication for one or more of the following types of communi
 
 ## Enable TLS for client connections {#client}
 
-You can enable TLS by editing the configuration of an existing database (as shown below) or by selecting **Advanced Options** when you are creating a new database.
+To enable TLS for client connections:
 
-1. Select your database from your database list and navigate to the **configuration** tab.
-1. Select **Edit** at the bottom of your screen.
-1. Enable **TLS**.
-    - **Enforce client authentication** is selected by default. If you clear this option, you will still enforce encryption, but TLS client authentication will be deactivated.
-1. Select **Advanced Options** and **Require TLS for All Communications** from the dropdown menu.
-    ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
-1. Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add")
-1. Paste your certificate or certificate authority (CA) into the text box.
-    ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
-1. Save the certificate. ![icon_save](/images/rs/icon_save.png#no-click "Save")
-1. Repeat for each client certificate you need to add.
-    - If your database uses Replica Of or Active-Active replication, you will need to add the syncer certificates for the participating clusters. The steps for each are below.
+1. From your database's **Security** tab, select **Edit**.
+
+1. In the **Secure connections (via TLS - Transport Layer Security)** section, select **Mutual TLS authentication**.
+
+    {{<image filename="images/rs/screenshots/databases/security-mtls-clients.png"  alt="Mutual TLS authentication configuration.">}}{{</image>}}
+
+1. For **Communication scope**, select **Replica Of source database and clients**.
+
+1. For each client certificate, select **+ Add certificate**, paste or upload the client certificate, then select **Done**.
+
+    If your database uses Replica Of or Active-Active replication, you also need to add the syncer certificates for the participating clusters. See [Enable TLS for Replica Of cluster connections](#enable-tls-for-replica-of-cluster-connections) or [Enable TLS for Active-Active cluster connections](#enable-tls-for-active-active-cluster-connections) for instructions.
 
 1. You can configure **Additional certificate validations** to further limit connections to clients with valid certificates.
 
     Additional certificate validations occur only when loading a [certificate chain](https://en.wikipedia.org/wiki/Chain_of_trust#Computer_security) that includes the [root certificate](https://en.wikipedia.org/wiki/Root_certificate) and intermediate [CA](https://en.wikipedia.org/wiki/Certificate_authority) certificate but does not include a leaf (end-entity) certificate. If you include a leaf certificate, mutual client authentication skips any additional certificate validations.
-
-    {{<image filename="images/rs/database-tls-config-full-subject.png" alt="Configure additional certificate validations with Common Name or full subject." >}}{{< /image >}}
-
 
     1. Select a certificate validation option.
 
         | Validation option | Description |
         |-------------------|-------------|
         | _No validation_ | Authenticates clients with valid certificates. No additional validations are enforced. |
-        | _By Subject Alternative Name (SAN) / Common Name (CN) only_ | A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes. |
-        | _By full subject_ | A client certificate is valid only if its [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes match an entry in the list of valid subjects. |
+        | _By Subject Alternative Name_ | A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes. |
+        | _By full Subject Name_ | A client certificate is valid only if its [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes match an entry in the list of valid subjects. |
 
-    1. If you selected **No validation**, you can skip this step. Otherwise, select **Add** ![Add](/images/rs/icon_add.png#no-click "Add") to create a new entry and then enter valid [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes for your client certificates. All `Subject` attributes are case-sensitive.
+    1. If you selected **No validation**, you can skip this step. Otherwise, select **+ Add validation** to create a new entry and then enter valid [`Subject`](https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.6) attributes for your client certificates. All `Subject` attributes are case-sensitive.
 
         | Subject attribute<br />(case-sensitive) | Description |
         |-------------------|-------------|
@@ -62,13 +58,27 @@ You can enable TLS by editing the configuration of an existing database (as show
 
         **Breaking change:** If you use the [REST API]({{<relref "/rs/references/rest-api">}}) instead of the admin console to configure additional certificate validations, note that `authorized_names` is deprecated as of Redis Enterprise v6.4.2. Use `authorized_subjects` instead. See the [BDB object reference]({{<relref "/rs/references/rest-api/objects/bdb">}}) for more details.
 
-1. Select **Update** at the bottom of the screen to save your configuration.
-1. Optional: By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to turn off this behavior.
+1. Select **Save**.
+
+1. _(Optional)_ By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to turn off this behavior.
+
     ```sh
     rladmin tune db < db:id | name > mtls_allow_outdated_certs enabled
     ```
 
 ## Enable TLS for Active-Active cluster connections
+
+To enable TLS for Active-Active cluster connections:
+
+1. If you are using the new admin console, switch to the legacy admin console.
+
+    {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
+
+1. [Retrieve syncer certificates.](#retrieve-syncer-certificates)
+
+1. [Configure TLS certificates for Active-Active.](#configure-tls-certificates-for-active-active)
+
+1. [Configure TLS on all participating clusters.](#configure-tls-on-all-participating-clusters)
 
 {{< note >}}
 You cannot enable or turn off TLS after the Active-Active database is created, but you can change the TLS configuration.
@@ -76,8 +86,9 @@ You cannot enable or turn off TLS after the Active-Active database is created, b
 
 ### Retrieve syncer certificates
 
-1. For each participating cluster, copy the syncer certificate from the **general** settings tab.
-    ![general-settings-syncer-cert](/images/rs/general-settings-syncer-cert.png "general-settings-syncer-cert")
+For each participating cluster, copy the syncer certificate from the **general** settings tab.
+
+![general-settings-syncer-cert](/images/rs/general-settings-syncer-cert.png "general-settings-syncer-cert")
 
 ### Configure TLS certificates for Active-Active
 
@@ -102,19 +113,30 @@ To enforce TLS authentication, Active-Active databases require syncer certificat
 
 ## Enable TLS for Replica Of cluster connections
 
-You can enable TLS by editing the configuration of an existing database (as shown below) or by selecting **Advanced Options** when you are creating a new database.
+To enable TLS for Replica Of cluster connections:
 
-1. For each cluster hosting a replica, copy the syncer certificate from the **general** settings tab.
-1. Select your database from your database list and navigate to the **configuration** tab.
-1. Select **Edit** at the bottom of your screen.
-1. Enable **TLS**.
-    - **Enforce client authentication** is selected by default. If you clear this option, you will still enforce encryption, but TLS client authentication will be deactivated.
-1. Under **Advanced Options**, Select **Require TLS for Replica Of Only** from the dropdown menu.
-    ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
-1. Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add")
-1. Paste a syncer certificate into the text box.
-    ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
-1. Save the syncer certificate. ![icon_save](/images/rs/icon_save.png#no-click "Save")
-1. Repeat this process, adding the syncer certificate for each cluster hosting a replica of this database.
-1. Optional: If you also want to require TLS for client connections, select **Require TLS for All Communications** from the dropdown and add client certificates as well.
-1. Select **Update** at the bottom of the screen to save your configuration.
+1. For each cluster hosting a replica:
+
+    1. Go to **Cluster > Security > Certificates**.
+
+    1. Expand the **Replica Of and Active-Active authentication (Syncer certificate)** section.
+
+        {{<image filename="images/rs/screenshots/cluster/security-syncer-cert.png"  alt="Syncer certificate for Replica Of and Active-Active authentication.">}}{{</image>}}
+    
+    1. Download or copy the syncer certificate.
+
+1. From the **Security** tab of the Replica Of source database, select **Edit**.
+
+1. In the **Secure connections (via TLS - Transport Layer Security)** section, select **Mutual TLS authentication**.
+
+    {{<image filename="images/rs/screenshots/databases/security-tls-replica-of.png"  alt="Replica Of TLS authentication configuration.">}}{{</image>}}
+
+1. For **Communication scope**, select **Replica Of source database**.
+
+1. Select **+ Add certificate**, paste or upload the syncer certificate, then select **Done**.
+
+    Repeat this process, adding the syncer certificate for each cluster hosting a replica of this database.
+
+1. _(Optional)_ If you also want to require TLS for client connections, change **Communication scope** to **Replica Of source database and clients** and add client certificates.
+
+1. Select **Save**.
