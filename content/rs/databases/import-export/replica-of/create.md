@@ -90,21 +90,21 @@ To configure a Replica Of database in a different Redis Enterprise cluster from 
 
 1. Sign in to the admin console of the destination database's cluster.
 
-    1. [Create a new database]({{<relref "/rs/databases/create">}}) or select an existing database from the **Databases** screen.
+1. [Create a new database]({{<relref "/rs/databases/create">}}) or select an existing database from the **Databases** screen.
 
-    1. For an existing database, select **Edit** from the **Configuration** tab.
+1. For an existing database, select **Edit** from the **Configuration** tab.
 
-    1. Expand the **Replica Of** section.
+1. Expand the **Replica Of** section.
 
-    1. Select **+ Add source database**.
+1. Select **+ Add source database**.
 
-    1. In the **Connect a Replica Of source database** dialog, select **External**.
+1. In the **Connect a Replica Of source database** dialog, select **External**.
 
-    1. Enter the URL of the source database endpoint.
+1. Enter the URL of the source database endpoint.
 
-    1. Select **Add source**.
+1. Select **Add source**.
 
-    1. Select **Save**.
+1. Select **Save**.
 
 For source databases on different clusters, you can [compress replication data]({{<relref "/rs/databases/import-export/replica-of/#data-compression-for-replica-of">}}) to save bandwidth.
         
@@ -142,11 +142,13 @@ To use a database from an open source Redis cluster as a Replica Of source:
 
 1. Select **Save**.
 
-## Configure TLS on replica database
+## Configure TLS for Replica Of
 
 When you enable TLS for Replica Of, the Replica Of synchronization traffic uses TLS certificates to authenticate the communication between the source and destination clusters.
 
-To encrypt the Replica Of synchronization traffic, you must also [configure encryption for the source database](#encrypt-source-database-traffic).
+To encrypt Replica Of synchronization traffic, configure encryption for the [replica database](#encrypt-replica-database-traffic) (the destination) and the [source database](#encrypt-source-database-traffic).
+
+### Encrypt replica database traffic
 
 To enable TLS for Replica Of in the destination database:
 
@@ -156,14 +158,20 @@ To enable TLS for Replica Of in the destination database:
 
     1. Expand the **Replica Of and Active-Active authentication (Syncer certificate)** section.
 
+        {{<image filename="images/rs/screenshots/cluster/security-syncer-cert.png"  alt="Syncer certificate for Replica Of and Active-Active authentication.">}}{{</image>}}
+
      1. Download or copy the syncer certificate.
 
-1. Enter the copied certificate text as the **Source Cluster Certificate** for the destination database:
+1. From the **Configuration** tab of the Replica Of destination database, select **Edit**.
 
-    ![Replica-of Destination - Certificate](/images/rs/replicaof-certificate.png)
+1. Expand the **Replica Of** section.
 
-1. Select **Continue** to save the certificate, save the Replica Of endpoint, and then select  **Update** to save your changes.
+1. Point to the source database entry and select <img src="/images/rs/buttons/edit-button.png#no-click" alt="The Edit button" width="25px"> to edit it.
 
-## Encrypt source database traffic
+1. Paste or upload the source syncer certificate, then select **Done**.
 
-{{< embed-md "tls-configuration-procedure.md"  >}}
+1. Select **Save**.
+
+### Encrypt source database traffic
+
+{{<embed-md "replica-of-tls-config.md">}}
