@@ -66,6 +66,6 @@ The "bring your own AWS account" option for Redis Cloud has been deprecated. The
 
 ## More info
 
-- [Get started with Pulumi]({{< relref  "/rc/cloud-integrations/terraform/get-started" >}})
+- [Get started with Pulumi]({{< relref  "/rc/cloud-integrations/pulumi/get-started" >}})
 - [Redis Cloud Pulumi registry](https://www.pulumi.com/registry/packages/rediscloud/)
-- [Pulimi documentation](https://www.pulumi.com/docs/)
+- [Pulumi documentation](https://www.pulumi.com/docs/)
