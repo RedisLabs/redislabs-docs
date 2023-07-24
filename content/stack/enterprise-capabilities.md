@@ -44,7 +44,7 @@ For details about individual features, see the corresponding documentation.
 | Module data types         | Yes            | Yes          | Yes          |
 | Persistence (AOF)         | Yes (v1.4)     | Yes (v1.0)   | Yes (v2.0)   |
 | Persistence (snapshot)    | Yes (v1.6)     | Yes (v1.0)   | Yes (v1.0)   |
-| Redis on Flash (RoF)[^4]  | Yes (v2.0)     | Yes (v1.0)   | No           |
+| Auto Tiering [^4]  | Yes (v2.0)     | Yes (v1.0)   | No           |
 | Replica Of                | Yes (v1.6)[^2] | Yes (v1.0)   | Yes (v2.2)   |
 | Reshard/rebalance         | Yes (v2.0)     | Yes (v1.0)   | No           |
 
@@ -54,9 +54,9 @@ For details about individual features, see the corresponding documentation.
 
 [^3]: You cannot use search and query with the [OSS Cluster API]({{<relref "/rs/databases/configure/oss-cluster-api">}}).
 
-[^4]: You currently cannot combine Redis on Flash and Active-Active with Redis Stack features in Redis Cloud.
+[^4]: You currently cannot combine Auto Tiering and Active-Active with Redis Stack features in Redis Cloud.
 
-[^5]: Although time series are compatible with Redis on Flash, the entire series either lives in RAM or on flash.
+[^5]: Although time series are compatible with Auto Tiering, the entire series either lives in RAM or on flash.
 
 | Feature name/capability | [Time Series]({{< relref  "/stack/timeseries" >}}) | [Probabilistic]({{< relref  "/stack/bloom" >}}) | [Gears]({{< relref  "/stack/gears-v1" >}}) |
 |--------------------------|:--------------:|:------------:|:----------:| 
@@ -70,7 +70,7 @@ For details about individual features, see the corresponding documentation.
 | Module data types        | Yes            | Yes          | Yes        |
 | Persistence (AOF)        | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
 | Persistence (snapshot)   | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) |
-| Redis on Flash (RoF)[^4] | Yes (v1.6)[^5] | Yes (vTBD)   | Yes (vTBD) |
+| Auto Tiering [^4] | Yes (v1.6)[^5] | Yes (vTBD)   | Yes (vTBD) |
 | Replica Of               | Yes (v1.2)     | Yes (v2.0)   | No         |
 | Reshard/rebalance        | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | 
 
@@ -90,7 +90,7 @@ The following table briefly describes each feature shown in the earlier tables.
 | Internode encryption    | Compatible with encryption on the data plane |
 | Persistence (AOF)       | Compatible with databases using AoF persistence |
 | Persistence (snapshot)  | Compatible with databases using snapshot persistence | 
-| Redis on Flash (RoF)    | Compatible with Redis on Flash (RoF) |
+| Auto Tiering    | Compatible with Auto Tiering |
 | Replica Of              | Compatible with Active-Passive replication | 
 | Reshard/rebalance       | Compatible with database scaling for clustered databases, which redistributes data between the new shards. |
 

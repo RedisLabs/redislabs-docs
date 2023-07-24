@@ -23,7 +23,7 @@ To replace a failed node:
     configure Redis Enterprise Software on the node. See [Install and setup]({{< relref "/rs/installing-upgrading" >}}) for more information.
 
     {{< note >}}
-If you are using [Redis on Flash]({{< relref "/rs/databases/redis-on-flash" >}}), make sure the required flash storage is set up on this new node.
+If you are using [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}), make sure the required flash storage is set up on this new node.
     {{< /note >}}
 
 1. [Add the node]({{< relref "/rs/clusters/add-node" >}}) to the cluster. Make sure the new node has as much available memory as the faulty

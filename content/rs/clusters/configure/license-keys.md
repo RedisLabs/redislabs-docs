@@ -21,7 +21,7 @@ When the cluster does not have a cluster key, the cluster is in trial mode.
 Trial mode is limited to thirty days and a total of four shards, including master and replica
 shards. Any new installation starts its thirty-day clock from the day
 the cluster setup was done (with the first cluster node provisioned).
-This mode allows all features to be enabled, including Redis on Flash,
+This mode allows all features to be enabled, including Auto Tiering,
 during the trial period.
 
 ## View cluster license key
@@ -41,7 +41,12 @@ To view the cluster license key, use:
     - expired - If the cluster key is expired (True or False)
     - activation_date - The date of the cluster key activation
     - expiration_date - The date of the cluster key expiration
-    - shards_limit - The number of shards allowed by the cluster key
+    - shards_limit - The total number of shards allowed by the cluster key
+    - ram_shards_limit - The number of RAM shards allowed by the cluster key (starting v7.2)
+    - flash_shards_limit - The number of Flash shards (Auto Tiering) allowed by the cluster key (starting v7.2)
+
+Starting v7.2, Redis Enteprise will enforce the shard limits by their types (RAM, Flash) rather than total number of shards.
+
 
 ## Update cluster license
 
@@ -63,9 +68,14 @@ You can update the cluster license key:
     
     1. Select **Save**.
 
-You can update an existing cluster key at any time. If saving a new cluster key fails, the
-operation returns the error "invalid license key". In this case, the
-existing key stays in effect.
+You can update an existing cluster key at any time.
+Redis Enterprise checks the validay of it in terms of:
+- cluster name
+- activation and expiration dates
+- shard usage and limits
+- features
+If saving a new cluster key fails, the operation returns an error including failure reason.
+In this case, the existing key stays in effect.
 
 ## Expired cluster license
 
@@ -85,3 +95,17 @@ When the license is expired:
     - Change cluster settings including license key, security for administrators, and cluster alerts
     - Failover when a node fails and explicitly migrate shard between nodes
     - Upgrade node to a new version of Redis Enterprise Software
+ 
+## Monitor cluster license
+Starting v7.2, Redis Enterprise exposes the license quotas and the shards consumption metrics via the [Prometheus integration]({{< relref "/rs/clusters/monitoring/prometheus-integration.md" >}}).
+
+The 'cluster_shards_limit' metric displays the total shard limit by the license by shard type (ram / flash).
+Examples:
+- cluster_shards_limit{cluster="mycluster.local",shard_type="ram"} 100.0
+- cluster_shards_limit{cluster="mycluster.local",shard_type="flash"} 50.0
+
+The 'bdb_shards_used' metric displays the used shard count by database and by shard type (ram / flash).
+Examples:
+- bdb_shards_used{bdb="2",cluster="mycluster.local",shard_type="ram"} 86.0
+- bdb_shards_used{bdb="3",cluster="mycluster.local",shard_type="flash"} 23.0
+

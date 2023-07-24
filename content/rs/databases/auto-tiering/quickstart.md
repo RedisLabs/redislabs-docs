@@ -1,7 +1,7 @@
 ---
-Title: Redis on Flash (RoF) quick start
+Title: Auto Tiering quick start
 linkTitle: Quick start
-description: Get started with Redis on Flash quickly, creating a cluster and database using flash storage. 
+description: Get started with Auto Tiering quickly, creating a cluster and database using flash storage. 
 weight: 80
 alwaysopen: false
 categories: ["RS"]
@@ -14,22 +14,24 @@ aliases: /rs/getting-started/creating-database/redis-flash/
          /rs/databases/redis-on-flash/getting-started-redis-flash/
          /rs/databases/redis-on-flash/rof-quickstart.md
          /rs/databases/redis-on-flash/rof-quickstart/
+         /rs/databases/auto-tiering/quickstart.md
+         /rs/databases/auto-tiering/quickstart/
          
 
 ---
 This page guides you through a quick setup of a [Redis on
-Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) cluster with a single node for testing and demo purposes. 
+Flash]({{< relref "/rs/databases/auto-tiering/" >}}) cluster with a single node for testing and demo purposes. 
 
 For production environments, you can find more detailed installation instructions in the [install and setup]({{< relref "/rs/installing-upgrading/_index.md" >}}) section.
 
-The steps to set up a Redis Enterprise Software cluster using Redis on Flash
+The steps to set up a Redis Enterprise Software cluster using Auto Tiering
 with a single node are:
 
 1. Install Redis Enterprise Software or run it in a Docker
     container.
 1. Set up a Redis Enterprise Software cluster with Redis on
     Flash.
-1. Create a new Redis on Flash database.
+1. Create a new database with Auto Tiering enabled.
 1. Connect to your new database.
 
 ## Install Redis Enterprise Software
@@ -63,7 +65,7 @@ Docker container on Windows, MacOS, and Linux.
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
-## Set up a cluster and enable Redis on Flash
+## Set up a cluster and enable Auto Tiering
 
 1. Direct your browser to `https://localhost:8443/` on the host machine to
 see the Redis Enterprise Software admin console. Select the
@@ -104,7 +106,7 @@ On the **create database** page:
 ![new redis flash
 db](/images/rs/newredisflashdb.png)
 
-You now have a Redis on Flash database!
+You now have a  database with Auto Tiering enabled!
 
 ## Connect to your database
 
@@ -115,4 +117,4 @@ You are ready to connect to your database to store data. See the [test connectiv
 If you want to generate load against the
 database or add a bunch of data for cluster testing, see the [memtier_benchmark quick start]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) for help.
 
-To see the true performance and scale of Redis on Flash, you must tune your I/O path and set the flash path to the mounted path of SSD or NVMe flash memory as that is what it is designed to run on. For more information, see [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}).
+To see the true performance and scale of Auto Tiering, you must tune your I/O path and set the flash path to the mounted path of SSD or NVMe flash memory as that is what it is designed to run on. For more information, see [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}).

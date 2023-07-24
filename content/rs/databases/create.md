@@ -35,6 +35,7 @@ To create a new database:
 
 1. [Test client connectivity]({{<relref "/rs/databases/connect/test-client-connectivity">}}).
 
+
 {{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
 see [Create an Active-Active database]({{< relref "/rs/databases/active-active/create.md" >}}).
