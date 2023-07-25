@@ -15,20 +15,25 @@ Redis Enterprise Auto Tiering supports two storage engines:
 * [Speedb](https://www.speedb.io/) (default, recommended)
 * [RocksDB](https://rocksdb.org/)
 
-{{<note>}}Switching between the two storage engines requires guidance by Redis Support or your Account Manager.{{</note>}}
+{{<warning>}}Switching between storage engines requires guidance by Redis Support or your Account Manager.{{</warning>}}
 
 ### Change the storage engine
 
 1. Change the cluster level configuration for default storage engine.
-     ``` sh
-     curl -k -u <username>:<password> -X PUT -H "Content-Type: application/json" -d '{"bigstore_driver":"speedb"}' https://localhost:9443/v1/cluster
+
+  * API:
+
+      ``` sh
+      curl -k -u <username>:<password> -X PUT -H "Content-Type: application/json" -d '{"bigstore_driver":"speedb"}' https://localhost:9443/v1/cluster
      ```
 
-     ```sh
-     rladmin cluster config bigstore_driver {speedb | rocksdb}
-     ```
+  * CLI:
 
-1. One by one, per each database on the cluster, restart the database.
+      ```sh
+      rladmin cluster config bigstore_driver {speedb | rocksdb}
+      ```
+
+1. Restart the each database on the cluster one by one.
 
      ```sh
      rladmin restart db { db:<id> | <name> }
@@ -42,15 +47,14 @@ To get the current cluster level default storage engine run:
 
 * Use the `rladmin info cluster` command look for ‘bigstore_driver’.
 
-* Using the REST API:
+* Use the REST API:
 
      ```sh
      curl -k -u <username>:<password> -X GET -H "Content-Type: application/json" https://localhost:9443/v1/cluster
      ```
 
-Versions of Redis Enterprise 7.2 and later provide a metric called `bdb_bigstore_shard_count` to help track the shard count per database, filtered by `bdb_id` and by storage engine.
+Versions of Redis Enterprise 7.2 and later provide a metric called `bdb_bigstore_shard_count` to help track the shard count per database, filtered by `bdb_id` and by storage engine as shown below:
 
-See examples:
 
   ```sh
   bdb_bigstore_shard_count{bdb="1",cluster="mycluster.local",driver="rocksdb"} 1.0
