@@ -57,4 +57,4 @@ See examples:
   bdb_bigstore_shard_count{bdb="1",cluster="mycluster.local",driver="speedb"} 2.0
   ```
 
-For more about metrics for Redis Enterprise’s integration with Prometheus, see [Prometheus integration]({{<relref "/clusters/monitoring/prometheus-metrics-definitions/">}}).
+For more about metrics for Redis Enterprise’s integration with Prometheus, see [Prometheus integration]({{<relref "/rs/clusters/monitoring/prometheus-metrics-definitions">}}).
