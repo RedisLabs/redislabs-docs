@@ -5,8 +5,8 @@ description: Get started creating a pipeline for redis synchronization with a do
 weight: 40
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
-draft: 
+aliases:
+draft:
 hidden: false
 ---
 
@@ -31,15 +31,15 @@ You can think about it as a pipeline that starts with change data capture (CDC) 
 
 RDI write-behind currently supports these target data stores:
 
-| Data Store |
-| ---------- |
-| Cassandra  |
-| MariaDB    |
-| MySQL      |
-| Oracle     |
-| PostgreSQL |
-| Redis Enterprise     |
-| SQL Server |
+| Data Store       |
+| ---------------- |
+| Cassandra        |
+| MariaDB          |
+| MySQL            |
+| Oracle           |
+| PostgreSQL       |
+| Redis Enterprise |
+| SQL Server       |
 
 ## Prerequisites
 
@@ -50,11 +50,12 @@ For more information, see [Redis Gears installation]({{<relref "/rdi/installatio
 
 - Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli">}}) on a Linux host that has connectivity to your Redis Enterprise Cluster.
 - Run the [`configure`]({{<relref "/rdi/reference/cli/redis-di-configure">}}) command to install the RDI Engine on your Redis database, if you have not used this Redis database with RDI write-behind before.
--  **For read-through only** run the following command using the `rladmin` CLI:
+- **For read-through only** run the following command using the `rladmin` CLI:
 
 ```bash
 rladmin> tune db <RDI_BDB_NAME> schedpolicy mnp
 ```
+
 - Run the [`scaffold`]({{<relref "/rdi/reference/cli/redis-di-scaffold">}}) command with the type of data store you want to use, for example:
 
   ```bash
@@ -152,17 +153,13 @@ The `redis` section is common for every pipeline initiated by event in Redis suc
 
 - The `trigger` attribute must be set to `write-behind`.
 - The `key_pattern` attribute specifies the pattern of Redis keys to listen on. The pattern has to correspond to keys that are of Hash or JSON value.
-
 - The `exclude_commands` attribute specifies which commands not to act on. For example, if you listen on key pattern that has Hash values, you can exclude the `HDEL` command so no deletions of data will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
-
 - The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for write-behind events the `before` value of the key is never provided.
 
- > Note: 
+> Note:
 
- - RDI write-behind does not support the [`Expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
- 
-
-- The `redis` attribute is a breaking change replacing the `keyspace` attribute. 
+- RDI write-behind does not support the [`Expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
+- The `redis` attribute is a breaking change replacing the `keyspace` attribute.
 - The `key_pattern` attribute replaces the `pattern` attribute. The `exclude_commands` attribute replaces the `exclude-commands` attribute. If you upgrade to version 0.105 and beyond, you must edit your existing jobs and redeploy them.
 
 ### Output section
@@ -267,8 +264,8 @@ source:
     delimiter: ":"
     # alternatively use expression with RegExp
     fields:
-    - first_name: 1
-    - last_name: 2
+      - first_name: 1
+      - last_name: 2
   connection: my-oracle
   db: test
   schema: test

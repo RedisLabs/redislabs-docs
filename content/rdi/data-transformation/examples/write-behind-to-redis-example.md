@@ -1,11 +1,11 @@
 # Write-behind to Redis Enterprise target example
 
-The `redis.write` block can be used in the `output` section of the write-behind job in order to enable writing data to the Redis Enterprise target database. Multiple blocks can be used at the same time to write data to different data types. The following example captures data modified in the `address:*` keyspace, then creates a new JSON-like string field named `json_addr` and, finally, writes the results to multiple keys in target Redis Enteprise:
+The `redis.write` block can be used in the `output` section of the write-behind job in order to enable writing data to the Redis Enterprise target database. Multiple blocks can be used at the same time to write data to different data types. The following example captures data modified in the `address:*` keyspace, then creates a new JSON-like string field named `json_addr` and, finally, writes the results to multiple keys in target Redis Enterprise:
 
 ```yaml
 source:
-  trigger: write-behind
   redis:
+    trigger: write-behind
     key_pattern: address:*
 transform:
   - uses: add_field
