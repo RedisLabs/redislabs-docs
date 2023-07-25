@@ -16,7 +16,7 @@ An API object that represents a node in the cluster.
 | addr | string | Internal IP address of node |
 | architecture | string | Hardware architecture (read-only) |
 | bigredis_storage_path | string | Flash storage path (read-only) |
-| bigstore_driver | 'ibm-capi-ga1'<br />'ibm-capi-ga2'<br />'ibm-capi-ga4'<br />'rocksdb' | Bigstore driver name or none |
+| bigstore_driver | 'ibm-capi-ga1'<br />'ibm-capi-ga2'<br />'ibm-capi-ga4'<br />'speedb'<br />'rocksdb' | Bigstore driver name or none |
 | bigstore_size | integer | Storage size of bigstore storage (read-only) |
 | cores | integer | Total number of CPU cores (read-only) |
 | ephemeral_storage_path | string | Ephemeral storage path (read-only) |
