@@ -51,7 +51,10 @@ Redis Enterprise provides log files for auditing and troubleshooting. You can se
 
 To view the audit logs:
 
-1. Log in to the Redis Enterprise Software admin console.
+1. If you are using the new admin console, switch to the legacy admin console.
+
+    {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
+    
 1. Go to the **Log** tab.
 1. Review logs directly in the UI, or export them to CSV using the export button.
 
@@ -65,5 +68,6 @@ These log files are used by the Redis support team to troubleshoot issues. The l
 
 Redis Enterprise allows you to configure log timestamps. To configure log timestamps:
 
-1. In **Settings** > **General** navigate to the timezone section.
-1. Select the timezone for the logs based on your location.
+1. Go to **Cluster > Configuration > General** in the new admin console or **Settings > General** in the legacy admin console.
+
+1. Change the **Time zone** for the logs based on your location.
