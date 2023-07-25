@@ -36,6 +36,10 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
 
 > Note: Any reference to `server_name`, `db`, `schema` and `table` properties will be treated by default as case insensitive. This can be changed by setting `case_insensitive` to `false`.
 
+> Cassandra only: In Cassandra, a `keyspace` is roughly the equivalent to a `schema` in other databases. RDI will use the `schema` property declared in a job file to match with the `keyspace` attribute of the incoming change record.
+
+> MongoDB only: In MongoDB, a `replica set` is roughly equivalent to a `schema`, and a `collection` is similar to a `table`, as compared to other databases. RDI will use the `schema` and `table` properties declared in a job file to match with the `replica set` and `collection` attributes of the incoming change record, respectively.
+
 - `transform`:
 
   This section includes a series of blocks that the data should go through.
