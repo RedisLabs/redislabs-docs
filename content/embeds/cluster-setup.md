@@ -1,5 +1,5 @@
-1. In the web browser on the host machine, go to [https://localhost:8443](https://localhost:8443) to see
-the Redis Enterprise Software admin console.
+1. In the web browser on the host machine, go to [https://localhost:8443/new#](https://localhost:8443/new#) to see
+the new Redis Enterprise Software admin console.
 
     {{< note >}}
 - If your browser displays a certificate error, you can safely proceed.
@@ -7,23 +7,24 @@ the Redis Enterprise Software admin console.
 
     {{< /note >}}
 
-1. Select **Setup** to start configuring the node.
+1. Select **Create new cluster**.
 
-    {{<image filename="images/rs/rs-setup-new-cluster.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
+    {{<image filename="images/rs/screenshots/cluster/setup/create-cluster.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{</image>}}
 
-1. In the **node configuration** settings, enter a cluster FQDN such as `cluster.local` and select 
-**Next**.
+1. Enter an email and password for the administrator account, then select **Next** to proceed to cluster setup.
 
-    {{<image filename="images/rs/rs-setup-node-config.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
-
-1. If you have a license key, enter it and then select **Next**.
-
-    If you do not have a license key, a trial version is installed.
-
-1. Enter an email and password for the administrator account.
-
-    {{<image filename="images/rs/rs-setup-set-admin-creds.png" alt="Set the credentials for your admin user." >}}{{< /image >}}
+    {{<image filename="images/rs/screenshots/cluster/setup/admin-credentials.png" alt="Set the credentials for your admin user." >}}{{</image>}}
 
     You can also use these credentials to connect to the [REST API]({{<relref "/rs/references/rest-api">}}).
+
+1. Enter your cluster license key if you have one. Otherwise, a trial version is installed.
+
+    {{<image filename="images/rs/screenshots/cluster/setup/cluster-license-key.png" alt="Enter your cluster license key if you have one." >}}{{</image>}}
+
+1. In the **Configuration** section, enter a cluster FQDN such as `cluster.local`, then select **Next**.
+
+    {{<image filename="images/rs/screenshots/cluster/setup/config-cluster.png" alt="Configure the cluster FQDN." >}}{{</image>}}
+
+1. On the node setup screen, select **Create cluster**.
 
 1. Select **OK** to acknowledge the replacement of the HTTPS TLS certificate on the node.  If you receive a browser warning, you can proceed safely.
