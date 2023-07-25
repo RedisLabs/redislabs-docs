@@ -11,7 +11,7 @@ aliases: /ri/release-notes/v2.30.0/
 This is the General Availability (GA) release of RedisInsight 2.30.
 
 ### Highlights
-Introducting support for [triggers and functions](_add link_) that bring application logic closer to your data and give Redis powerful features for event-driven data processing
+Introducing support for [triggers and functions](_add link_) that bring application logic closer to your data and give Redis powerful features for event-driven data processing
 
 ### Details
 
