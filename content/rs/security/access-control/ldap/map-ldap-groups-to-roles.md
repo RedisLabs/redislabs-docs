@@ -17,24 +17,21 @@ Once LDAP is enabled, you need to map LDAP groups to Redis Enterprise access con
 
 To map LDAP groups to access control roles:
 
-1. From the admin console menu, select **Access control > LDAP mappings**.
+1. From the admin console menu, select **Access Control > LDAP Mappings**.
 
-    {{<image filename="images/rs/rs-access-control-ldap-mappings.png" width="75%" alt="The Access control | LDAP mappings screen in the Redis Software admin console" >}}{{< /image >}}
-
-
-   If you see an "LDAP configuration is disabled" message, go to **Settings > LDAP** to [enable role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
+   If you see an "LDAP configuration is off or disabled" message, go to **Cluster > Security > LDAP** to [enable role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
 
    You can map LDAP roles when LDAP configuration is not enabled, but they won't have any effect until you configure and enable LDAP.
 
-1.  Select the **Add** button to create a new mapping and then enter the following details:
+1.  Select the **+ Add LDAP Mapping** button to create a new mapping and then enter the following details:
 
     | _Setting_ | _Description_ | 
 |:----------|:--------------|
 | **Name** | A descriptive, unique name for the mapping |
 | **Distinguished Name** | The distinguished name of the LDAP group to be mapped.  <br/>Example: `cn=admins,ou=groups,dc=example,dc=com` |
 | **Role** | The Redis Software access control role defined for this group |
-| **Notified email** | _(Optional)_ An address to receive alerts|
-| **Email alerts**  | Selections identifying the desired alerts.  Select **Edit** to change. |
+| **Email** | _(Optional)_ An address to receive alerts|
+| **Alerts**  | Selections identifying the desired alerts. |
 
 1.  When finished, select the **Save** button.
 
