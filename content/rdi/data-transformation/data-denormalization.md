@@ -69,7 +69,7 @@ The job has to include these attributes in the `nest` block:
 - If `expire` is specified in the `nest` output block it will set the expiration on the **parent** object.
 - Only one level of nesting is currently supported.
 - Only applicable to PostgreSQL: To enable nested operations for tables in PostgreSQL databases, the following changes must be made to all child tables:
->
+  >
   > ```sql
   > ALTER TABLE <TABLE_NAME> REPLICA IDENTITY FULL;
   > ```
