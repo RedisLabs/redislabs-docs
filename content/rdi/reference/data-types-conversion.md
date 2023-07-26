@@ -10,6 +10,57 @@ aliases:
 
 This document describes default conversions of data types of supported databases into target redis data types.
 
+## Hash data types
+
+| Source Data Type | Target data type | Example |
+| :-- | :-- | :-- |
+| array | not supported | |
+| bigint | string | 2147483648 will be saved as '2147483648'|
+| binary | bytes string <br />bytes or base64-encoded String, or a hex-encoded String, based on the connector configuration property setting `binary.handling.mode` | When `binary.handling.mode = bytes` the string `'hello'` will be added to the table as the binary string `'0x68656C6C6F'`,will be converted by Debezium to `'aGVsbG8AAAAAAAAAAAAAAAAAAAA='` and will be stored in Redis Target DB as: `'aGVsbG8AAAAAAAAAAAAAAAAAAAA='` |
+| bit string | not supported |  |
+| blob | bytes string <br />bytes or base64-encoded String, or a hex-encoded String, based on the connector configuration property setting `binary.handling.mode` | When `binary.handling.mode = bytes` the binary image file ,which was loaded into the table ,will be converted by Debezium to bytes and will be stored in Redis Target DB as bytes string  |
+| boolean | string | The boolean value: false will be converted by the Applier to 0 and will be saved in Redis Target DB as the string '0' |
+| char | string | When PostgreSQL data type is char(14) 'hello world' will be saved as 'hello world &ensp; ' |
+| date | string <br />Mapped to ms.microsec since epoch | PG field value: `'2021-01-29'` will be converted by Debezium to the int `18656` (number of dates since epoch), which will be converted to number of ms since epoch and will be stored in Redis Target DB as: `'1611878400000'` |
+| integer | string | `2147483640` will be saved as `'2147483640'` |
+| interval | not supported | |
+| null |  | The field with `null` value will be sent by Debezium as `null` and will not be stored in Redis target database  |
+| numeric | string <br />Debezium configuration parameter `decimal.handling.mode` determines how the connector maps decimal values.When `decimal.handling.mode = 'precision'` the binary string,recieved by Debezium,will be converted to its corresponding numeric value and will be stored in Redis Target DB as string  | PG field value: `4521398.56` will be converted by Debezium to binary string `'GvMbUA=='`, which will be converted to numeric value and will be stored in Redis Target DB as: `'4521398.56'` |
+| smallint | string | 32767 will be saved as '32767'  |
+| text | string | 'This is a very long text for the PostgreSQL text column' |
+| time | string <br />mapped to number of seconds past midnight | `'14:23:46'` will be converted to `'51826000000'` sec   |
+| PostgreSQL, Oracle, Cassandra: timestamp <br /> MySQL, SQL Server: datetime | string <br />mapped to ms.microsec since epoch. <br /> SQL Server datetime format: `YYYY-MM-DD hh:mm:ss[.nnn]`, <br />range: `1753-01-01` through `9999-12-31` | PG field value: `'2018-06-20 15:13:16.945104'` will be converted by Debezium to `'1529507596945104'`(micro seconds) and will be stored in Redis Target DB as `'1529507596945.104'` |
+| PosrgreSQL: timestamptz <br />Oracle: timestamp with local timezone<br />MySQL: timestamp | string <br />converted to UTC and stored as number of ms.microsec since epoch | |
+| timetz | string <br />converted to UTC and stored as number of seconds past midnight | |
+| varbinary | bytes string <br />bytes or base64-encoded String, or a hex-encoded String, based on the connector configuration property setting `binary.handling.mode` | PG field value: `'14:23:46.12345'` will be converted by Debezium to the string `'12:23:46.12345Z'` and will be stored in Redis Target DB as: `'44638.345'`  |
+| varchar | string | When `binary.handling.mode = bytes` the string `'hello'` will be added to the table as the binary string `'0x68656C6C6F'`,will be converted by Debezium to `'aGVsbG8='` and will be stored in Redis Target DB as: `'aGVsbG8='` |
+| xml | string |  'hello world' will be saved as 'hello world'  |
+
+## JSON data types
+
+| Source Data Type | Target data type | Example |
+| :-- | :-- | :-- |
+| array | | |
+| bigint |  | |
+| bit string |  | |
+| blob |  | |
+| boolean |  | |
+| char |  | |
+| date |  | |
+| integer |  | |
+| interval |  | |
+| null |  | |
+| numeric |  | |
+| smallint |  | |
+| text |  | |
+| time |  | |
+| PostgreSQL, Oracle, Cassandra: timestamp <br /> MySQL, SQL Server: datetime |  | |
+| PosrgreSQL: timestamptz <br />Oracle: timestamp with local timezone<br />MySQL: timestamp | | |
+| timetz | | |
+| varbinary | | |
+| varchar | | |
+| xml | | |
+
 
 ## General ANSI SQL Data Types
 
