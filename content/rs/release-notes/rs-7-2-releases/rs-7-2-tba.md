@@ -74,7 +74,92 @@ TBA
 
 #### New cluster management UI preview
 
-TBA
+A preview of the redesigned cluster management UI (admin console) is available in Redis Enterprise Software version 7.2.
+
+To try out the new UI:
+
+- On the sign in screen:
+
+    1. Enter your credentials.
+
+    1. Select **Sign in the new interface**.
+
+- If you are currently signed in to the legacy UI:
+
+    1. Select **Switch to the new Admin Console** to expand the banner at the top of the screen.
+    
+    1. Click the **Try it now** button to open the new UI in another tab.
+
+##### New UI benefits
+
+- User-driven design
+
+- Provides full functionality to complete tasks entirely in the UI
+
+- New attributes and improved feature visibility
+
+- Provides configuration flexibility while highlighting the recommended path
+
+- Addresses the needs of different personas and use cases
+
+- Quicker troubleshooting and easier maintenance
+
+##### New UI highlights
+
+- More configurable database attributes, including replica high availability, shards placement, and proxy policy.
+
+- Nodes indicate whether it’s a primary or secondary node.
+
+- Modules show the databases that are using them.
+
+- Certificates show expiration and validity, and you can upload and copy certificates.
+
+- Cluster license displays the number of shards that are used out of the number of shards that are licensed to the cluster. The new UI allows you to paste or upload a new license.
+
+- Role-based access control (RBAC) has explanations to improve clarity. 
+
+- Access Control List (ACLs) now support defining ACLs for modules.
+
+- The databases screen has more information per database for faster troubleshooting. It also allows you to filter databases and compare database metrics.
+
+- The cluster name, user, and user role are shown in the upper right for quickly identifying the cluster from any screen. You can also **Change user password** from the dropdown menu.
+
+- Auto Tiering licensing and an emergency switch for the flash engine (available only in the new UI).
+
+- Input validations.
+
+##### New UI limitations
+
+The following features are not supported in this preview but will be added in future releases. Until then, temporarily switch to the legacy UI to do the following:
+
+- Provision and configure Active-Active databases (viewing is available).
+
+- Search and export the event log.
+
+- Remove a node from the UI.
+
+Additional limitations:
+
+- Although Redis supports memcached databases, the new UI only allows view and delete. Memcached users are advised to migrate to Redis to enjoy the full benefits of Redis and its UI.
+
+To open the legacy admin console when signed in to the new UI, select your username, then select **Switch to legacy Admin Console** from the list:
+
+{{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
+
+##### Future UI enhancements
+
+- Configure default database settings and database upgrade settings
+
+- Security preferences related to password and login management
+
+- LDAP improvements
+
+- IPv6 support
+
+- ACL improvements, such as ACLv2 smart validations
+
+- And more
+
 
 #### Triggers and Functions preview
 
