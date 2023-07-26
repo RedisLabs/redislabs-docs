@@ -65,6 +65,14 @@ The following settings are defined in the **General settings** of the **Setup** 
 | **Active-Active Redis** | Hosts your datasets in multiple read-write locations to support distributed applications and disaster recovery. See [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active" >}}) |
 | **Redis on Flash**| Determines if your databases are stored only in memory (RAM) or are split between memory and Flash storage (RAM+Flash).  See [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})|
 
+### Version
+
+{{<image filename="images/rc/subscription-new-flexible-version-selection.png" width="75%" alt="The General settings of the Setup tab." >}}{{< /image >}}
+
+The **Version** section lets you choose the Redis version of your database. Choose **Redis 7.2** if you want to use the latest advanced features of Redis.
+
+Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
+
 ### Advanced options {#advanced-options}
 
 {{<image filename="images/rc/subscription-new-flexible-setup-advanced.png" width="75%" alt="The Advanced settings of the Setup tab." >}}{{< /image >}}
