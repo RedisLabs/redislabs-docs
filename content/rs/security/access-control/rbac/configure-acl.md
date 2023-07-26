@@ -12,13 +12,7 @@ Redis access control lists (Redis ACLs) allow you to define named permissions fo
 
 ## Predefined Redis ACLs
 
-The predefined Redis ACLs are:
-
-- **Full Access** - All commands are allowed on all keys (cannot be edited). The [default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}) has **Full Access** when enabled for a database.
-
-- **Not Dangerous** - (Deprecated) All commands are allowed except those that are administrative, could affect availability, or could affect performance.
-
-- **Read Only** - (Deprecated) Only read-only commands are allowed on keys.
+Redis Enterprise Software provides one predefined Redis ACL named **Full Access**. This ACL allows all commands on all keys and cannot be edited. The [default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}) has **Full Access** when enabled for a database.
 
 ## Redis ACL syntax
 
