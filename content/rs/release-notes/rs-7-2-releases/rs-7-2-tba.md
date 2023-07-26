@@ -46,7 +46,14 @@ See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module
 
 ### Deprecations
 
-TBA
+
+#### Access control deprecations
+
+The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
+
+- Custom roles (not management roles): Cluster Member, Cluster Viewer, DB Member, DB Viewer, None.
+
+- Redis ACLs: Not Dangerous and Read Only.
 
 ## Resolved issues
 
