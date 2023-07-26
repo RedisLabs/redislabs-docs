@@ -67,7 +67,7 @@ The following settings are defined in the **General settings** of the **Setup** 
 
 ### Version
 
-{{<image filename="images/rc/subscription-new-flexible-version-selection.png" width="75%" alt="The General settings of the Setup tab." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-new-flexible-version-section.png" width="75%" alt="The General settings of the Setup tab." >}}{{< /image >}}
 
 The **Version** section lets you choose the Redis version of your database. Choose **Redis 7.2** if you want to use the latest advanced features of Redis.
 
