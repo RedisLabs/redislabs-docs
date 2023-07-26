@@ -13,7 +13,21 @@ aliases:
 
 This version offers:
 
-- TBA
+- Redis 7.0 and 7.2 features
+
+- Three Redis database versions: 7.2, 6.2, 6.0
+
+- Enhanced Auto Tiering (Redis on Flash) with Speedb and license updates
+
+- Redis ACL selectors and enhanced key-based permissions
+
+- RESP3 support
+
+- Sharded pub/sub
+
+- A preview of the redesigned cluster management UI (admin console)
+
+- Triggers and Functions preview
 
 The following table shows the MD5 checksums for the available packages:
 
@@ -27,6 +41,42 @@ The following table shows the MD5 checksums for the available packages:
 | Amazon Linux 2 |  |
 
 ## New features and enhancements
+
+#### Redis 7.0 features
+
+TBA
+
+#### Redis 7.2 features
+
+TBA
+
+#### Three Redis database versions
+
+TBA
+
+7.2, 6.2, 6.0
+
+#### Auto Tiering (Redis on Flash) enhancements
+
+TBA
+
+#### Redis ACL selectors and key-based permissions
+
+TBA
+
+#### RESP3 support
+
+TBA
+
+#### Sharded pub/sub
+
+TBA
+
+#### New cluster management UI preview
+
+TBA
+
+#### Triggers and Functions preview
 
 TBA
 
