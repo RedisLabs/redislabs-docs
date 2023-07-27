@@ -12,6 +12,11 @@ aliases: [
     /rs/monitoring-metrics/prometheus-integration/,
 ]
 ---
+
+{{<banner-article bannerColor="#fff8dc">}}
+The Nagios plugin is deprecated as of Redis version 7.
+{{</banner-article>}}
+
 The Redis Enterprise Software (RS) Nagios plugin enables you to monitor the status of RS related
 objects and alerts. The RS alerts can be related to the cluster, nodes,
 or databases.
