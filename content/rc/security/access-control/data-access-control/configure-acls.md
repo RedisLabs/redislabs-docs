@@ -61,6 +61,8 @@ You can define these permissions using the [Redis ACL syntax](https://redis.io/d
 - `~` defines a permitted key pattern
 - `&` allows access to a [pub/sub channel](https://redis.io/docs/manual/pubsub/)
 
+The admin console will validate your ACL syntax while you are typing.
+
 ### Command ACL rules
 
 A **command** can be any [Redis command](https://redis.io/commands/).
