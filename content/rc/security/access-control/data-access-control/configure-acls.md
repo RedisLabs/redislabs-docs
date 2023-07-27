@@ -88,6 +88,16 @@ Whereas, this ACL rule only allows access to keys prefixed with `cache:`
 ~cache:*
 ```
 
+Starting with Redis 7.0, key patterns can also be used to define how a command is able to read or write a key.
+
+The following ACL rule allows you to copy information from keys prefixed with `cache:` into keys prefixed with `app:`:
+
+```text
++@all ~app:* %R~cache:*
+```
+
+For more information on how this works, see the [key permissions syntax](https://redis.io/docs/management/security/acl/#key-permissions).
+
 ### Pub/sub ACL rules
 
 Pub/sub ACL rules determine which pub/sub channels a user can access. For more information see, [Redis pub/sub](https://redis.io/docs/manual/pubsub/)
@@ -122,6 +132,16 @@ To make pub/sub explicitly permissive and allow users to access all channels, se
 
 ```sh
 allchannels
+```
+
+### Selectors
+
+Starting with Redis 7.0, Redis supports adding multiple sets of rules that are evaluated independently of each other, called [selectors](https://redis.io/docs/management/security/acl/#selectors). 
+
+The following ACL rule allows a user to execute `GET` on keys prefixed with `cache` and `SET` on keys prefixed with `app`:
+
+```text
++GET ~cache:* (+SET ~app:*)
 ```
 
 ### Predefined permissions
