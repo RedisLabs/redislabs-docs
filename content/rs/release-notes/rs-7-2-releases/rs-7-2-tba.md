@@ -390,11 +390,13 @@ To secure pub/sub channels and prepare your cluster for future Redis Enterprise 
 
 #### Access control deprecations
 
-The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
+- The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
 
-- Custom roles (not management roles): Cluster Member, Cluster Viewer, DB Member, DB Viewer, None.
+    - Custom roles (not management roles): Cluster Member, Cluster Viewer, DB Member, DB Viewer, None.
 
-- Redis ACLs: Not Dangerous and Read Only.
+    - Redis ACLs: Not Dangerous and Read Only.
+
+- A deprecation notice for SASL-based LDAP was included in [previous Redis Enterprise Software release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/#deprecation-notices). When you upgrade to Redis Enterprise Software version 7.2, all existing "external" users (previously used to support SASL-based LDAP) will be removed.
 
 #### RedisGraph
 
