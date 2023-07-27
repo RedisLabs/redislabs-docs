@@ -27,6 +27,8 @@ This version offers:
 
 - A preview of the redesigned cluster management UI (admin console)
 
+- New INFO fields
+
 - Triggers and Functions preview
 
 The following table shows the MD5 checksums for the available packages:
@@ -266,6 +268,23 @@ To open the legacy admin console when signed in to the new UI, select your usern
 
 - And more
 
+#### New INFO fields
+
+The [`INFO`](https://redis.io/commands/info/) command includes new fields:
+
+- Under the `STATS` section:
+
+    - `current_eviction_exceeded_time` - Redis Enterprise reply is always “0”
+
+    - `total_eviction_exceeded_time` - Redis Enterprise reply is always “0”
+
+    - `current_active_defrag_time` - Redis Enterprise reply is always “0”
+
+    - `total_active_defrag_time` - Redis Enterprise reply is always “0”
+
+- Under the `MEMORY` section:
+
+    - `maxmemory_policy` - The value of the `maxmemory-policy` configuration directive
 
 #### Triggers and Functions preview
 
