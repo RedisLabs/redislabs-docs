@@ -396,6 +396,20 @@ The following predefined roles and Redis ACLs are not available after upgrading 
 
 - Redis ACLs: Not Dangerous and Read Only.
 
+#### RedisGraph
+
+Redis has announced the end of life of RedisGraph. Redis will continue to support all RedisGraph customers, including releasing patch versions until January 31, 2025.
+
+See the [RedisGraph end-of-life announcement](https://redis.com/blog/redisgraph-eol/) for more details.
+
+#### Ubuntu 16.04
+
+The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2, Ubuntu 16.04 is no longer supported.
+
+#### RC4 cipher suites
+
+RC4 cipher suites are deprecated.
+
 ## Resolved issues
 
 - TBA

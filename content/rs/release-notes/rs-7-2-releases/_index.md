@@ -38,6 +38,12 @@ For more detailed release notes, select a build version from the following table
 
 ## Deprecations
 
+#### Command deprecations
+
+- [`CLUSTER SLOTS`](https://redis.io/commands/cluster-slots) is deprecated as of Redis 7.0
+
+- [`QUIT`](https://redis.io/commands/quit/) is deprecated as of Redis 7.2
+
 #### Access control deprecations
 
 The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
@@ -45,6 +51,20 @@ The following predefined roles and Redis ACLs are not available after upgrading 
 - Custom roles (not management roles): Cluster Member, Cluster Viewer, DB Member, DB Viewer, None.
 
 - Redis ACLs: Not Dangerous and Read Only.
+
+### RedisGraph
+
+Redis has announced the end of life of RedisGraph. Redis will continue to support all RedisGraph customers, including releasing patch versions until January 31, 2025.
+
+See the [RedisGraph end-of-life announcement](https://redis.com/blog/redisgraph-eol/) for more details.
+
+#### Ubuntu 16.04
+
+The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2, Ubuntu 16.04 is no longer supported.
+
+#### RC4 cipher suites
+
+RC4 cipher suites are deprecated.
 
 ## Known limitations
 
