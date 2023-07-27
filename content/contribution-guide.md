@@ -99,11 +99,6 @@ and the concepts must explain any background information that is needed to know 
 
 ### Writing structure
 
-- The concept section consists of:
-    - 2-4 paragraphs in the section or subsection
-    - 2-4 sentences in each paragraph
-    - 10-15 words in each sentence section
-    - Break lines at logical sentence breaks (end of sentence, comma)
 - The prerequisites are listed as bullet points
 - List notes and warnings before the procedure
 - For procedures:
@@ -136,7 +131,6 @@ and the concepts must explain any background information that is needed to know 
 - We recommend that you use a markdown linter in your IDE to maintain good markdown syntax.
 - Format names of UI controls in bold - **OK**
 - Format commands, filenames, and input text in code - `rladmin`
-- Introduce a procedure with the goal of the procedure and a colon (:) - To authenticate to the Swagger UI:
 - Lead the sentence with the subject
 - Use “must” instead of - needs, wants, has to, desire, ...
 - Subject and verb must agree in number - blueprint exists, blueprints exist
