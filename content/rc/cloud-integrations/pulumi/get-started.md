@@ -55,4 +55,4 @@ If you want to remove these resources, run `pulumi down`.
 ## More info
 
 - [Redis Cloud Pulumi registry](https://www.pulumi.com/registry/packages/rediscloud/)
-- [Pulimi documentation](https://www.pulumi.com/docs/)
+- [Pulumi documentation](https://www.pulumi.com/docs/)
