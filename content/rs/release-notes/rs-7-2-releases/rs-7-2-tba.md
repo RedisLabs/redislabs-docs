@@ -96,7 +96,45 @@ TBA
 
 #### Redis ACL selectors and key-based permissions
 
-TBA
+Redis ACLs in Redis Enterprise version 7.2 support key permissions and selectors.
+
+Key permissions:
+
+- `%R~<pattern>`: Grants read access to keys that match the given pattern.
+
+- `%W~<pattern>`: Grants write access to keys that match the given pattern.
+
+- `%RW~<pattern>`: Alias for `~<pattern>`. Grants read and write access to keys that match the given pattern.
+
+    See [key permissions](https://redis.io/docs/management/security/acl/#key-permissions) for more information.
+
+Selectors let you define multiple sets of rules in a single Redis ACL (only supported for databases with Redis version 7.2 or later). A command is allowed if it matches the base rule or any selector in the Redis ACL. See [selectors](https://redis.io/docs/management/security/acl/#selectors) for more information.
+
+- `(<rule list>)`: Creates a new selector.
+
+- `clearselectors`: Deletes all existing selectors for a user. This action does not delete the base ACL rule.
+
+Redis ACLs have the following differences in Redis Enterprise Software:
+
+- Nested selectors are not supported.
+
+    For example, the following selectors are not valid in Redis Enterprise: <nobr>`+GET ~key1 (+SET (+SET ~key2) ~key3)`</nobr>
+
+- Key and pub/sub patterns do not allow the following characters: `'(', ')'`
+
+- The following password configuration syntax is not supported: `'>', '<', '#!', 'resetpass'`
+
+    To configure passwords in Redis Enterprise Software, use one of the following methods:
+
+    - [`rladmin cluster reset_password`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/reset_password">}}):
+    
+        ```sh
+        rladmin cluster reset_password <user email>
+        ```
+
+    - REST API [`PUT /v1/users`]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) request and provide `password`
+
+- The **ACL builder** does not support selectors and key permissions. Use **Free text command** to manually define them instead.
 
 #### RESP3 support
 
@@ -260,6 +298,44 @@ client.setOptions(ClientOptions.builder()
 ```
 
 If you are using [LettuceMod](https://github.com/redis-developer/lettucemod/), you need to upgrade to [v3.6.0](https://github.com/redis-developer/lettucemod/releases/tag/v3.6.0).
+
+### Upcoming changes
+
+#### Prepare for restrictive pub/sub permissions
+
+Redis database version 6.2 introduced pub/sub ACL rules that determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
+
+The configuration option `acl-pubsub-default`, added in Redis Enterprise Software version 6.4.2, determines the cluster-wide default level of access for all pub/sub channels. Redis Enterprise Software uses the following pub/sub permissions by default:
+
+- For versions 6.4.2 and 7.2, `acl-pubsub-default` is permissive (`allchannels` or `&*`) by default to accommodate earlier Redis versions.
+
+- In future versions, `acl-pubsub-default` will change to restrictive (`resetchannels`). Restrictive permissions block all pub/sub channels by default, unless explicitly permitted by an ACL rule.
+
+If you use ACLs and pub/sub channels, you should review your databases and ACL settings and plan to transition your cluster to restrictive pub/sub permissions in preparation for future Redis Enterprise Software releases.
+
+When you change the cluster's default pub/sub permissions to restrictive, `&*` is added to the **Full Access** ACL. Before you make this change, consider the following:
+
+- Because pub/sub ACL syntax was added in Redis 6.2, you can't associate the **Full Access** ACL with database versions 6.0 or lower after this change.
+
+- The **Full Access** ACL is not reverted if you change `acl-pubsub-default` to permissive again.
+
+- Every database with the default user enabled uses the **Full Access** ACL.
+
+To secure pub/sub channels and prepare your cluster for future Redis Enterprise Software releases that default to restrictive pub/sub permissions:
+
+1. Upgrade Redis databases:
+
+    - For Redis Enterprise Software version 6.4.2, upgrade all databases in the cluster to Redis DB version 6.2.
+
+    - For Redis Enterprise Software version 7.2, upgrade all databases in the cluster to Redis DB version 7.2 or 6.2.
+
+1. Create or update ACLs with permissions for specific channels using the `resetchannels &channel` format.
+
+1. Associate the ACLs with relevant databases.
+
+1. Set default pub/sub permissions (`acl-pubsub-default`) to restrictive. See [Change default pub/sub permissions](#change-default-pubsub-permissions) for details.
+
+1. If any issues occur, you can temporarily change the default pub/sub setting back to permissive. Resolve any problematic ACLs before making pub/sub permissions restrictive again.
 
 ### Deprecations
 
