@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Cloud changelog (August 2023)
-linktitle: July 2023
+linktitle: August 2023
 description: New features, enhancements, and other changes added to Redis Enterprise Cloud during August 2023.
 highlights: Triggers and Functions
 weight: 80
