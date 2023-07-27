@@ -44,11 +44,45 @@ The following table shows the MD5 checksums for the available packages:
 
 #### Redis 7.0 features
 
-TBA
+The following Redis 7.0 features are now supported:
+
+- [Redis functions](https://redis.io/docs/interact/programmability/functions-intro/)
+
+    In Redis Enterprise Software, [`FUNCTION STATS`](https://redis.io/commands/function-stats/) returns an extra parameter, an array called `all_running_scripts`, to reflect multiple functions running at the same time.
+
+- [Multipart AOF](https://redis.io/docs/management/persistence/#append-only-file) (append-only files)
+
+- New commands
+
+- Sharded `PUBSUB` (see [Sharded pub/sub](#sharded-pubsub) for details)
 
 #### Redis 7.2 features
 
-TBA
+The following Redis 7.2 features are now supported:
+
+- Various performance improvements
+
+- `CONFIG SET` for locale
+
+- Module API improvements
+
+- Connection layer modularization
+
+- Encoding improvements: listpack for sets and lists
+
+- Observability: authentication metrics (exposed by `INFO` command)
+
+- Stream consumer group improvements
+
+- Commands: `ZRANK`, `ZREVRANK` new `WITHSCORE` option
+
+- Shard IDs in cluster shards topology
+
+- Introduce shard ID to Redis cluster
+
+- Support `CLIENT NO-TOUCH` command
+
+- `WAIT AOF`
 
 #### Three Redis database versions
 
