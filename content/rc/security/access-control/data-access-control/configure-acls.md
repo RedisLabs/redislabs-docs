@@ -26,26 +26,7 @@ To configure a Redis ACL that you can assign to a data access role:
 
 1. Provide a descriptive name for the Redis ACL.
 
-1. Create the ACL rule. [Define permissions using ACL syntax](#define-permissions-with-acl-syntax) or use **Rule Builder**. To create a Redis ACL rule using **Rule Builder**:
-
-    1. In **Redis commands / categories**, enter a command or command category. For more information, see [Commands](https://redis.io/commands/) and [Command categories](https://redis.io/docs/management/security/acl/#command-categories).
-
-    1. Select whether to include or exclude the command or category.
-
-    1. For **Keys**, enter the pattern for permitted keys. For more information, see [Key permissions](https://redis.io/docs/management/security/acl/#key-permissions).
-
-    1. In **Pub/Sub channels**, enter a channel pattern to restrict pub/sub so it only allows access to the specified channels. For more information, see [Redis pub/sub](https://redis.io/docs/manual/pubsub/).
-    
-        The rule builder automatically adds `resetchannels` to the ACL rule when you save. This rule changes pub/sub access from _permissive_ (allows access to all channels) to _restrictive_ (blocks access to all channels).
-
-        {{<note>}}
-- **Pub/Sub channels** are only available in the **Rule Builder** for accounts that have Redis version 6.2 or later for all subscriptions.
-- If your account contains any Redis 6.0 subscriptions, you can't use pub/sub ACLs. [Contact support](https://redis.com/company/support/) to upgrade the subscriptions to a later version.
-        {{</note>}}
-
-    1.  Select `+` to add more commands, categories, keys, or pub/sub channels to the ACL rule.
-
-    1. When you finish building the ACL rule, select **Save rule**.
+1. Create the ACL rule. Enter the rule [using ACL syntax](#define-permissions-with-acl-syntax).
 
 1. Select the check mark to save your changes.
 
