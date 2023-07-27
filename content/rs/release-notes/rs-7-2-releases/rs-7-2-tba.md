@@ -302,7 +302,9 @@ See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module
 
 ### Breaking changes
 
-#### Client prerequisites for Redis 7.2 upgrade
+{{<embed-md "r7.2-breaking-changes.md">}}
+
+### Client prerequisites for Redis 7.2 upgrade
 
 The Redis clients [Go-Redis](https://redis.uptrace.dev/) version 9 and [Lettuce](https://lettuce.io/) versions 6 and later use RESP3 by default. If you use either client to run Redis Stack commands, you should set the client's protocol version to RESP2 before upgrading your database to Redis version 7.2 to prevent potential application issues due to RESP3 breaking changes.
 
@@ -372,6 +374,11 @@ To secure pub/sub channels and prepare your cluster for future Redis Enterprise 
 
 ### Deprecations
 
+#### Command deprecations
+
+- [`CLUSTER SLOTS`](https://redis.io/commands/cluster-slots) is deprecated as of Redis 7.0
+
+- [`QUIT`](https://redis.io/commands/quit/) is deprecated as of Redis 7.2
 
 #### Access control deprecations
 
@@ -389,7 +396,7 @@ The following predefined roles and Redis ACLs are not available after upgrading 
 
 ### Feature limitations
 
-- TBA
+{{<embed-md "r7.2-known-limitations.md">}}
 
 ### Upgrade limitations
 
