@@ -414,7 +414,9 @@ RC4 cipher suites are deprecated.
 
 ## Resolved issues
 
-- TBA
+- RED-54131 - `+OK` reply not received on TLS-enabled database
+
+- RED-101525 - Cluster provides wrong number of database connections on Grafana
 
 ## Known limitations
 
