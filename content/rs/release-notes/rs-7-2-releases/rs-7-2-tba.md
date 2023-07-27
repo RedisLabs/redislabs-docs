@@ -86,9 +86,23 @@ The following Redis 7.2 features are now supported:
 
 #### Three Redis database versions
 
-TBA
+Redis Enterprise Software version 6.x includes two Redis database versions: 6.0 and 6.2. As of version 7.2, Redis Enterprise Software includes three Redis database versions: 6.0, 6.2, and 7.2.
 
-7.2, 6.2, 6.0
+To view available Redis database versions:
+
+- In the admin console, see **Redis database versions** on the **Cluster > Configuration** screen.
+
+- Send a [`GET /nodes` REST API request]({{<relref "/rs/references/rest-api/requests/nodes">}}) and see `supported_database_versions` in the response.
+
+The default Redis database version, which is used when you upgrade an existing database or create a new one, differs between Redis Enterprise releases as follows:
+
+| Redis<br />Enterprise | Bundled Redis<br />DB versions | Default DB version<br />(upgraded/new databases) |
+|-------|----------|-----|
+| 7.2 | 6.0, 6.2, 7.2 | 7.2 |
+| 6.4.2 | 6.0, 6.2 | 6.2 |
+| 6.2.x | 6.0, 6.2 | 6.0 |
+
+For Redis Enterprise Software version 7.2, `default_redis_version` is 7.2 for both `major` and `latest` upgrade policies.
 
 #### Auto Tiering (Redis on Flash) enhancements
 
