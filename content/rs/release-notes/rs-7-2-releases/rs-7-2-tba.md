@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (July 2023)
 linkTitle: 7.2-TBA (July 2023)
-description: 
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Enhanced Auto Tiering (Redis on Flash) with Speedb and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned cluster management UI. New INFO fields. Triggers and Functions preview.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
