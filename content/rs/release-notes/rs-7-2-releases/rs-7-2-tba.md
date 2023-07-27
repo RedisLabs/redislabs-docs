@@ -100,11 +100,31 @@ TBA
 
 #### RESP3 support
 
-TBA
+Support for RESP3 and the [`HELLO`](https://redis.io/commands/hello/) command was added in Redis Enterprise 7.2.
+
+To use RESP3 with Redis Enterprise:
+
+1. Upgrade Redis servers to version 7.2 or later.
+
+    For Active-Active and Replica Of databases:
+ 
+    1. Upgrade all participating clusters to Redis Enterprise version 7.2.x or later.
+ 
+    1. Upgrade all databases to version 7.x or later.
+
+1. Enable RESP3 support for your database (`enabled` by default):
+
+    ```sh
+    rladmin tune db db:<ID> resp3 enabled
+    ```
+
+If you run Redis Stack commands with Redis clients [Go-Redis](https://redis.uptrace.dev/) version 9 or [Lettuce](https://lettuce.io/) versions 6 and later, see [client prerequisites](#client-prerequisites-for-redis-72-upgrade) before you upgrade to Redis 7.2 to learn how to prevent potential application issues due to RESP3 breaking changes.
 
 #### Sharded pub/sub
 
-TBA
+[Sharded pub/sub](https://redis.io/docs/interact/pubsub/#sharded-pubsub) is now supported.
+
+You cannot use sharded pub/sub if you [deactivate RESP3 support]({{<relref "/rs/references/compatibility/resp#deactivate-resp3">}}).
 
 #### New cluster management UI preview
 
@@ -211,7 +231,35 @@ See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module
 
 ### Breaking changes
 
-- TBA
+#### Client prerequisites for Redis 7.2 upgrade
+
+The Redis clients [Go-Redis](https://redis.uptrace.dev/) version 9 and [Lettuce](https://lettuce.io/) versions 6 and later use RESP3 by default. If you use either client to run Redis Stack commands, you should set the client's protocol version to RESP2 before upgrading your database to Redis version 7.2 to prevent potential application issues due to RESP3 breaking changes.
+
+For applications using Go-Redis v9.0.5 or later, set the protocol version to RESP2:
+
+```go
+client := redis.NewClient(&redis.Options{
+    Addr:     "<database_endpoint>",
+    Protocol: 2, // Pin the protocol version
+})
+```
+
+To set the protocol version to RESP2 with Lettuce v6 or later:
+
+```java
+import io.lettuce.core.*;
+import io.lettuce.core.api.*;
+import io.lettuce.core.protocol.ProtocolVersion;
+
+// ...
+RedisClient client = RedisClient.create("<database_endpoint>");
+client.setOptions(ClientOptions.builder()
+        .protocolVersion(ProtocolVersion.RESP2) // Pin the protocol version 	
+        .build());
+// ...
+```
+
+If you are using [LettuceMod](https://github.com/redis-developer/lettucemod/), you need to upgrade to [v3.6.0](https://github.com/redis-developer/lettucemod/releases/tag/v3.6.0).
 
 ### Deprecations
 
