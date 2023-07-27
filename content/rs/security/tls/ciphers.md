@@ -52,7 +52,7 @@ See the example below to configure cipher suites for the control plane:
 rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:!3DES
 ```
 {{<note>}}
-- The phrase '!3DES' is used to disable all 3DES cipher suites
+- The phrase '!3DES' disables all 3DES cipher suites.
 {{</note>}}
 
 
@@ -72,7 +72,7 @@ See the example below to configure cipher suites for the data plane:
 rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA:!3DES
 ```
 {{<note>}}
-- The phrase '!3DES' is used to disable all 3DES cipher suites
+- The phrase '!3DES' disables all 3DES cipher suites.
 {{</note>}}
 
 ### Discovery service
