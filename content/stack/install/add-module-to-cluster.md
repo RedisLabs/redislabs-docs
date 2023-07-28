@@ -10,13 +10,9 @@ aliases:
     - /modules/install/add-module-to-cluster/
 ---
 
-[Redis Enterprise]({{<relref "/rs">}}) comes packaged with several modules. You can view the installed modules and their versions from **settings > redis modules** in the Redis Enterprise admin console.
+[Redis Enterprise]({{<relref "/rs">}}) comes packaged with several modules. You can view the installed modules and their versions from **Cluster > Modules** in the Redis Enterprise admin console.
 
 To use other modules or upgrade an existing module to a more recent version, you need to install the new module package on your cluster.
-
-{{<note>}}
-Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
-{{</note>}}
 
 ## Get packaged modules
 
