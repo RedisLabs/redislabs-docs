@@ -386,6 +386,8 @@ To secure pub/sub channels and prepare your cluster for future Redis Enterprise 
 
 - [`CLUSTER SLOTS`](https://redis.io/commands/cluster-slots) is deprecated as of Redis 7.0
 
+- [`JSON.RESP`](https://redis.io/commands/json.resp/) is deprecated as of Redis Stack 7.2.
+
 - [`QUIT`](https://redis.io/commands/quit/) is deprecated as of Redis 7.2
 
 #### Access control deprecations
@@ -410,7 +412,7 @@ The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 
 
 #### RC4 cipher suites
 
-RC4 cipher suites are deprecated.
+The RC4 encryption cipher is considered deprecated in favor of stronger ciphers. Support for RC4 by the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) will be removed in a future release.
 
 ## Resolved issues
 
