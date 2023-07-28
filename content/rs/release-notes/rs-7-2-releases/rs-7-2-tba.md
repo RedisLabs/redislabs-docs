@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (July 2023)
 linkTitle: 7.2-TBA (July 2023)
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Enhanced Auto Tiering (Redis on Flash) with Speedb and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned cluster management UI. New INFO fields. Triggers and Functions preview.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Enhanced Auto Tiering (Redis on Flash) with Speedb and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Triggers and Functions preview.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -25,7 +25,7 @@ This version offers:
 
 - Sharded pub/sub
 
-- A preview of the redesigned cluster management UI (admin console)
+- A preview of the redesigned Cluster Manager UI (admin console)
 
 - New INFO fields
 
@@ -180,17 +180,19 @@ If you run Redis Stack commands with Redis clients [Go-Redis](https://redis.uptr
 
 You cannot use sharded pub/sub if you [deactivate RESP3 support]({{<relref "/rs/references/compatibility/resp#deactivate-resp3">}}).
 
-#### New cluster management UI preview
+#### New Cluster Manager UI preview
 
-A preview of the redesigned cluster management UI (admin console) is available in Redis Enterprise Software version 7.2.
+A preview of the redesigned Cluster Manager UI (admin console) is available in Redis Enterprise Software version 7.2.
 
 To try out the new UI:
 
-- On the sign in screen:
+- On the sign-in screen:
 
     1. Enter your credentials.
 
     1. Select **Sign in the new interface**.
+
+- Sign in directly from the new UI's sign-in screen at <nobr>`https://<hostname or IP address>:8443/new#`</nobr>
 
 - If you are currently signed in to the legacy UI:
 
