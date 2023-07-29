@@ -426,7 +426,35 @@ The RC4 encryption cipher is considered deprecated in favor of stronger ciphers.
 
 ### Feature limitations
 
+#### Redis 7.2 limitations
+
 {{<embed-md "r7.2-known-limitations.md">}}
+
+#### New UI preview license limitations
+
+The preview of the new Cluster Manager UI (admin console) has the following limitations for the updated license structure:
+
+- Only shows the total shards limit (combined RAM and flash shards) and does not display separate RAM and flash shards limits.
+
+- Does not return informative errors when loading an invalid license.
+
+#### Pub/sub channel ACL limitations
+
+In Redis Enterprise Software version 6.4.2, you could use `&channel` syntax in Redis ACL rules to allow access to specific pub/sub channels even when default pub/sub permissions were permissive (`&allchannels` or `&*`), allowing all channels by default. However, `&allchannels &channel` is not valid syntax.
+
+As of Redis Enterprise Software version 7.2, you cannot create Redis ACLs with this combination of rules. You can only use `&channel` to allow access to specific channels if the default pub/sub permissions are restrictive (`resetchannels`).
+
+Associating an ACL that contains the invalid syntax <nobr>`&allchannels &channel`</nobr> (created before version 7.2) with a user and database might leave the database in a pending state, unable to function.
+
+To prevent this issue:
+
+1. Review all existing ACL rules.
+
+1. For each rule containing `&channel`, either:
+
+    - Add the `resetchannels` prefix to restrict access to all channels by default.
+    
+    - Delete the rule if not needed.
 
 ### Upgrade limitations
 

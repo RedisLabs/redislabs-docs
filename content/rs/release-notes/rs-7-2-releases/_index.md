@@ -42,19 +42,24 @@ For more detailed release notes, select a build version from the following table
 
 #### Command deprecations
 
+
 - [`CLUSTER SLOTS`](https://redis.io/commands/cluster-slots) is deprecated as of Redis 7.0
+
+- [`JSON.RESP`](https://redis.io/commands/json.resp/) is deprecated as of Redis Stack 7.2.
 
 - [`QUIT`](https://redis.io/commands/quit/) is deprecated as of Redis 7.2
 
 #### Access control deprecations
 
-The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
+- The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
 
-- Custom roles (not management roles): Cluster Member, Cluster Viewer, DB Member, DB Viewer, None.
+    - Custom roles (not management roles): Cluster Member, Cluster Viewer, DB Member, DB Viewer, None.
 
-- Redis ACLs: Not Dangerous and Read Only.
+    - Redis ACLs: Not Dangerous and Read Only.
 
-### RedisGraph
+- A deprecation notice for SASL-based LDAP was included in [previous Redis Enterprise Software release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/#deprecation-notices). When you upgrade to Redis Enterprise Software version 7.2, all existing "external" users (previously used to support SASL-based LDAP) will be removed.
+
+#### RedisGraph
 
 Redis has announced the end of life of RedisGraph. Redis will continue to support all RedisGraph customers, including releasing patch versions until January 31, 2025.
 
@@ -66,13 +71,41 @@ The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 
 
 #### RC4 cipher suites
 
-RC4 cipher suites are deprecated.
+The RC4 encryption cipher is considered deprecated in favor of stronger ciphers. Support for RC4 by the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) will be removed in a future release.
 
 ## Known limitations
 
 ### Feature limitations
 
-- TBA
+#### Redis 7.2 limitations
+
+{{<embed-md "r7.2-known-limitations.md">}}
+
+#### New UI preview license limitations
+
+The preview of the new Cluster Manager UI (admin console) has the following limitations for the updated license structure:
+
+- Only shows the total shards limit (combined RAM and flash shards) and does not display separate RAM and flash shards limits.
+
+- Does not return informative errors when loading an invalid license.
+
+#### Pub/sub channel ACL limitations
+
+In Redis Enterprise Software version 6.4.2, you could use `&channel` syntax in Redis ACL rules to allow access to specific pub/sub channels even when default pub/sub permissions were permissive (`&allchannels` or `&*`), allowing all channels by default. However, `&allchannels &channel` is not valid syntax.
+
+As of Redis Enterprise Software version 7.2, you cannot create Redis ACLs with this combination of rules. You can only use `&channel` to allow access to specific channels if the default pub/sub permissions are restrictive (`resetchannels`).
+
+Associating an ACL that contains the invalid syntax <nobr>`&allchannels &channel`</nobr> (created before version 7.2) with a user and database might leave the database in a pending state, unable to function.
+
+To prevent this issue:
+
+1. Review all existing ACL rules.
+
+1. For each rule containing `&channel`, either:
+
+    - Add the `resetchannels` prefix to restrict access to all channels by default.
+    
+    - Delete the rule if not needed.
 
 ### Upgrade limitations
 
