@@ -9,7 +9,7 @@ aliases: [
 ]  
 ---
 
-There are some best practices we recommend using for production environments of Redis Enterprise for Kubernetes. More information about these Kubernetes settings is available at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/). These settings are not unique to the Redis Enterprise operator but affect the performance and reliability of your deployment.
+There are some best practices we recommend using for production environments of Redis Enterprise for Kubernetes. These settings are not unique to the Redis Enterprise operator but affect the performance and reliability of your deployment. More information about these Kubernetes settings is available at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/).
 
 ## Quality of service
 
@@ -72,8 +72,12 @@ name:gke-7253cc19-42g0	MemoryPressure:False	DiskPressure:False
 
 ## Resource limits
 
-resource section in spec, operator has resource limits and requests, 
-example shows operator defaults
+The Redis Enterprise operator is set with resource limits and requests by default. You can find the recommended settings in the []`operator.yaml`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/operator.yaml) file.
 
+If you create a [ResourceQuota](https://kubernetes.io/docs/concepts/policy/resource-quotas/) on the namespace containing the RedisEnterpriseCluster, be careful applying the quotas to ConfigMaps, as it can reach the limit with as little as one ConfigMap.
 
 ## Pod security
+
+[PodSecurityPolicy](https://kubernetes.io/docs/concepts/security/pod-security-policy/) has been deprecated for Kubernetes versions 1.21 and after and is invalid for versions 1.25 and after. Please migrate to using the [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/).
+
+There are three Pod Security Admission levels: `restricted`, `baseline`, and `privileged`. Redis Enterprise pods require the `privileged` level.
