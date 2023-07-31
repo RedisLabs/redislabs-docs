@@ -1,5 +1,5 @@
-1. In the web browser on the host machine, go to [https://localhost:8443/new#](https://localhost:8443/new#) to see
-the new Redis Enterprise Software admin console.
+1. In the web browser on the host machine, go to [https://localhost:8443/new](https://localhost:8443/new) to see
+the new Redis Enterprise Software Cluster Manager UI.
 
     {{< note >}}
 - If your browser displays a certificate error, you can safely proceed.
