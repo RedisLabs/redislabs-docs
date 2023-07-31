@@ -33,7 +33,7 @@ description: "This priority class should be used for Redis Enterprise pods only.
 
 ## Dedicated resources
 
-Redis Enterprise clusters should run have dedicated resources. If Redis Enterprise is sharing resources with other applications, this can lead to performance issues. Most Kubernetes environments use labels on nodes, but it can vary depending on your provider and environment. Google Kubernetes Engine (GKE) uses node pools to manage this. 
+Redis Enterprise clusters should run have dedicated resources. If Redis Enterprise is sharing resources with other applications, this can lead to performance issues. Most Kubernetes environments use labels on nodes, but it can vary depending on your provider and environment. Google Kubernetes Engine (GKE) uses node pools to manage this.
 
 The example below uses the `nodeSelector` field in the RedisEnterpriseCluster to run only on nodes with a specific GKE node pool label.
 
@@ -49,16 +49,26 @@ spec:
   nodeSelector:
     cloud.google.com/gke-nodepool: pool1
 ```
+## Eviction thresholds
+
+Kubernetes uses [node-pressure eviction](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/) to terminate pods and reclaim node resources. Best practice for production Redis Enterprise deployments: 
+
+* Set a high [soft eviction threshold](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#soft-eviction-thresholds), which will change the node condition early and notify the administrator.
+* Set the `eviction-soft-grace-period` high enough for the administrator to scale the deployment up or out when needed.
+* Set the `eviction-max-pod-grace-period` high enough to allow Redis Enterprise pods to migrate the database before being evicted.
 
 ## Monitor resources
 
-node conditions to watch: MemoryPressure and DiskPressure
+There are two [node conditions](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#node-conditions) that are `True` if your [eviction threshold](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-thresholds) has been met and a pod eviction is likely:  `MemoryPressure` and `DiskPressure`.
 
-## Eviction thresholds
+Use the `kubectl get nodes` command to monitor these conditions.
 
-high soft evcition threshold
-high eviction-max-pod-grace-period
-high eviction-soft-grace-period
+```yaml
+> kubectl get nodes -o jsonpath='{range .items[*]}name:{.metadata.name}{"\t"}MemoryPressure:{.status.conditions[?(@.type == "MemoryPressure")].status}{"\t"}DiskPressure:{.status.conditions[?(@.type == "DiskPressure")].status}{"\n"}{end}'
+name:gke-55d1ac88-213c	MemoryPressure:False	DiskPressure:False
+name:gke-55d1ac88-vrpp	MemoryPressure:False	DiskPressure:False
+name:gke-7253cc19-42g0	MemoryPressure:False	DiskPressure:False
+```
 
 ## Resource limits
 
