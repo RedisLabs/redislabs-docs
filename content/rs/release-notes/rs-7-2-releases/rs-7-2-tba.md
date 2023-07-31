@@ -312,7 +312,7 @@ See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module
 
 - When sending a `PUBSUB SHARDNUMSUB` command in OSS Cluster mode in Redis Enterprise, Redis Enterprise checks the hash slots of the requested channels. Redis Enterprise responds with a `CROSSSLOT` error if the channels don’t hash to the same slot, or a `MOVED` error if the channels hash to a different node.
 
-{{<embed-md "r7.2-breaking-changes.md">}}
+{{<embed-md "r7.2-combined-breaking-changes.md">}}
 
 ### Client prerequisites for Redis 7.2 upgrade
 
