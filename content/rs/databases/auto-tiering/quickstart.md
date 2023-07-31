@@ -65,8 +65,8 @@ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redis
 
 ## Set up a cluster and enable Auto Tiering
 
-1. Direct your browser to `https://localhost:8443/new#/` on the host machine to
-see the Redis Enterprise Software admin console.
+1. Direct your browser to `https://localhost:8443/new` on the host machine to
+see the Redis Enterprise Software Cluster Manager UI.
 
     {{<note>}}
 Depending on your browser, you may see a certificate error.
