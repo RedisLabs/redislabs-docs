@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (July 2023)
 linkTitle: 7.2-TBA (July 2023)
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Enhanced Auto Tiering (Redis on Flash) with Speedb and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Triggers and Functions preview.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Triggers and Functions preview.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -17,7 +17,7 @@ This version offers:
 
 - Three Redis database versions: 7.2, 6.2, 6.0
 
-- Enhanced Auto Tiering (Redis on Flash) with Speedb and license updates
+- Auto Tiering (enhanced Redis on Flash with Speedb) and license updates
 
 - Redis ACL selectors and enhanced key-based permissions
 
@@ -106,9 +106,21 @@ The default Redis database version, which is used when you upgrade an existing d
 
 For Redis Enterprise Software version 7.2, `default_redis_version` is 7.2 for both `major` and `latest` upgrade policies.
 
-#### Auto Tiering (Redis on Flash) enhancements
+#### Auto Tiering - Redis on Flash evolution doubling performance
 
-TBA
+Redis Enterprise version 7.2 introduces Auto Tiering as an enhanced successor to Redis on Flash.
+
+Redis Enterprise Auto Tiering uses [Speedb](https://www.speedb.io/) as its storage engine, doubling the throughput achieved. For example, a 1 TB database with 50K ops/sec can now serve 100K ops/sec based on the same infrastructure.
+
+For more information about Auto Tiering, see:
+
+- [Auto Tiering overview]({{<relref "/rs/databases/auto-tiering">}})
+
+- [Auto Tiering quick start]({{<relref "/rs/databases/auto-tiering/quickstart">}})
+
+#### Updated Redis Enterprise license format
+
+Redis Enterprise Software version 7.2 includes updates to its license format, which add separate shard limits for RAM and flash shards used for Auto Tiering.
 
 #### Redis ACL selectors and key-based permissions
 
