@@ -108,7 +108,7 @@ For Redis Enterprise Software version 7.2, `default_redis_version` is 7.2 for bo
 
 #### Auto Tiering - Redis on Flash evolution doubling performance
 
-Redis Enterprise version 7.2 introduces Auto Tiering as an enhanced successor to Redis on Flash.
+Redis Enterprise version 7.2 introduces Auto Tiering as an enhanced successor to Redis on Flash, which allows you to provision larger databases at a lower cost by using NVMe drives in addition to RAM.
 
 Redis Enterprise Auto Tiering uses [Speedb](https://www.speedb.io/) as its storage engine, doubling the throughput achieved. For example, a 1 TB database with 50K ops/sec can now serve 100K ops/sec based on the same infrastructure.
 
