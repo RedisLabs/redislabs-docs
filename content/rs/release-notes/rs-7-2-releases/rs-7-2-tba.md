@@ -106,7 +106,7 @@ The default Redis database version, which is used when you upgrade an existing d
 
 For Redis Enterprise Software version 7.2, `default_redis_version` is 7.2 for both `major` and `latest` upgrade policies.
 
-#### Auto Tiering - Redis on Flash evolution doubling performance
+#### Auto Tiering - Redis on Flash evolution doubling performance {#auto-tiering}
 
 Redis Enterprise version 7.2 introduces Auto Tiering as an enhanced successor to Redis on Flash, which allows you to provision larger databases at a lower cost by using NVMe drives in addition to RAM.
 
