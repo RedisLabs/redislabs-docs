@@ -412,9 +412,21 @@ See the [RedisGraph end-of-life announcement](https://redis.com/blog/redisgraph-
 
 The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2, Ubuntu 16.04 is no longer supported.
 
-#### RC4 cipher suites
+#### RC4 encryption cipher
 
 The RC4 encryption cipher is considered deprecated in favor of stronger ciphers. Support for RC4 by the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) will be removed in a future release.
+
+#### 3DES encryption cipher
+
+The 3DES encryption cipher is considered deprecated in favor of stronger ciphers like AES.
+Please verify that all clients, apps, and connections support the AES cipher. Support for 3DES will be removed in a future release.
+Certain operating systems, such as RHEL 8, have already removed support for 3DES. Redis Enterprise Software cannot support cipher suites that are not supported by the underlying operating system.
+
+#### TLS 1.0 and TLS 1.1
+
+TLS 1.0 and TLS 1.1 connections are considered deprecated in favor of TLS 1.2 or later.
+Please verify that all clients, apps, and connections support TLS 1.2. Support for the earlier protocols will be removed in a future release.
+Certain operating systems, such as RHEL 8, have already removed support for the earlier protocols. Redis Enterprise Software cannot support connection protocols that are not supported by the underlying operating system.
 
 ## Resolved issues
 

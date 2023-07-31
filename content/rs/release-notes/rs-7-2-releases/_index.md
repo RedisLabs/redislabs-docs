@@ -69,25 +69,42 @@ See the [RedisGraph end-of-life announcement](https://redis.com/blog/redisgraph-
 
 The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2, Ubuntu 16.04 is no longer supported.
 
-#### RC4 cipher suites
+#### RC4 encryption cipher
 
 The RC4 encryption cipher is considered deprecated in favor of stronger ciphers. Support for RC4 by the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) will be removed in a future release.
 
+#### 3DES encryption cipher
+
+The 3DES encryption cipher is considered deprecated in favor of stronger ciphers like AES.
+Please verify that all clients, apps, and connections support the AES cipher. Support for 3DES will be removed in a future release.
+Certain operating systems, such as RHEL 8, have already removed support for 3DES. Redis Enterprise Software cannot support cipher suites that are not supported by the underlying operating system.
+
+#### TLS 1.0 and TLS 1.1
+
+TLS 1.0 and TLS 1.1 connections are considered deprecated in favor of TLS 1.2 or later.
+Please verify that all clients, apps, and connections support TLS 1.2. Support for the earlier protocols will be removed in a future release.
+Certain operating systems, such as RHEL 8, have already removed support for the earlier protocols. Redis Enterprise Software cannot support connection protocols that are not supported by the underlying operating system.
+
 ## Known limitations
+
 
 ### Feature limitations
 
-#### Redis 7.2 limitations
+#### Command limitations
 
-{{<embed-md "r7.2-known-limitations.md">}}
+- [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) might not run correctly in the following cases:
 
-#### New UI preview license limitations
+    - The Redis database version is earlier than 7.2.0.
 
-The preview of the new Cluster Manager UI (admin console) has the following limitations for the updated license structure:
+    - The `CLIENT NO-TOUCH` command is forbidden by ACL rules.
 
-- Only shows the total shards limit (combined RAM and flash shards) and does not display separate RAM and flash shards limits.
+    Before sending this command, clients should verify the database version is 7.2.0 or later and that using this command is allowed. 
 
-- Does not return informative errors when loading an invalid license.
+- You cannot use [`SUNSUBSCRIBE`](https://redis.io/commands/sunsubscribe/) to unsubscribe from a shard channel if the regex changed while subscribed.
+
+- Using [`XREADGROUP BLOCK`](https://redis.io/commands/xreadgroup/) with `>` to return all new streams will cause the Redis database to freeze until the shard is restarted. ([#12031](https://github.com/redis/redis/pull/12301))
+
+- Because a rejected command does not record the duration for command stats, an error will appear after it is reprocessed that will cause the Redis database to freeze until the shard is restarted. ([#12247](https://github.com/redis/redis/pull/12247))
 
 #### Pub/sub channel ACL limitations
 
