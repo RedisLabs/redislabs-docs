@@ -92,7 +92,7 @@ Redis Enterprise Software version 6.x includes two Redis database versions: 6.0 
 
 To view available Redis database versions:
 
-- In the admin console, see **Redis database versions** on the **Cluster > Configuration** screen.
+- In the Cluster Manager UI, see **Redis database versions** on the **Cluster > Configuration** screen.
 
 - Send a [`GET /nodes` REST API request]({{<relref "/rs/references/rest-api/requests/nodes">}}) and see `supported_database_versions` in the response.
 
@@ -192,7 +192,7 @@ To try out the new UI:
 
     1. Select **Sign in the new interface**.
 
-- Sign in directly from the new UI's sign-in screen at <nobr>`https://<hostname or IP address>:8443/new#`</nobr>
+- Sign in directly from the new UI's sign-in screen at <nobr>`https://<hostname or IP address>:8443/new`</nobr>
 
 - If you are currently signed in to the legacy UI:
 
