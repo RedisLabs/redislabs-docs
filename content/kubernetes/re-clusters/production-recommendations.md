@@ -33,7 +33,22 @@ description: "This priority class should be used for Redis Enterprise pods only.
 
 ## Dedicated resources
 
-dedicated node pools
+Redis Enterprise clusters should run have dedicated resources. If Redis Enterprise is sharing resources with other applications, this can lead to performance issues. Most Kubernetes environments use labels on nodes, but it can vary depending on your provider and environment. Google Kubernetes Engine (GKE) uses node pools to manage this. 
+
+The example below uses the `nodeSelector` field in the RedisEnterpriseCluster to run only on nodes with a specific GKE node pool label.
+
+```yaml
+apiVersion: app.redislabs.com/v1
+kind: RedisEnterpriseCluster
+metadata:
+  name: example-redisenterprisecluster
+  labels:
+    app: redis-enterprise
+spec:
+  nodes: 3
+  nodeSelector:
+    cloud.google.com/gke-nodepool: pool1
+```
 
 ## Monitor resources
 
