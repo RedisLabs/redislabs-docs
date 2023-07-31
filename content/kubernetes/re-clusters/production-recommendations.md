@@ -1,15 +1,15 @@
 ---
-Title: Recommendations for production environment configuration
-linkTitle: Configuration recommendations
-description: 
-weight: 
+Title: Recommended settings for production environments
+linkTitle: Recommended settings
+description: Recommended Kubernetes settings affecting the performance and reliability of your Redis Enterprise for Kubernetes 
+weight: 99
 alwaysopen: false
 categories: ["Platforms"]
-aliases: [
+aliases: [ /kubernetes/re-clusters/production-recommendations/,
 ]  
 ---
 
-There are some best practices we recommend using for production environments of Redis Enterprise for Kubernetes. These settings are not unique to the Redis Enterprise operator but affect the performance and reliability of your deployment. More information about these Kubernetes settings is available at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/).
+We recommend the following best practices for production environments of Redis Enterprise for Kubernetes. These settings are not unique to the Redis Enterprise operator but affect the performance and reliability of your deployment. More information about these Kubernetes settings is available at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/).
 
 ## Quality of service
 
