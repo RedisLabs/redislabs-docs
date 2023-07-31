@@ -430,14 +430,6 @@ The RC4 encryption cipher is considered deprecated in favor of stronger ciphers.
 
 {{<embed-md "r7.2-known-limitations.md">}}
 
-#### New UI preview license limitations
-
-The preview of the new Cluster Manager UI (admin console) has the following limitations for the updated license structure:
-
-- Only shows the total shards limit (combined RAM and flash shards) and does not display separate RAM and flash shards limits.
-
-- Does not return informative errors when loading an invalid license.
-
 #### Pub/sub channel ACL limitations
 
 In Redis Enterprise Software version 6.4.2, you could use `&channel` syntax in Redis ACL rules to allow access to specific pub/sub channels even when default pub/sub permissions were permissive (`&allchannels` or `&*`), allowing all channels by default. However, `&allchannels &channel` is not valid syntax.
