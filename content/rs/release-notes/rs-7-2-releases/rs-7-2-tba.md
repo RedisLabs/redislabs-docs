@@ -382,6 +382,16 @@ To secure pub/sub channels and prepare your cluster for future Redis Enterprise 
 
 1. If any issues occur, you can temporarily change the default pub/sub setting back to permissive. Resolve any problematic ACLs before making pub/sub permissions restrictive again.
 
+#### Upcoming command request and reponse changes
+
+Open source Redis version 7.2 changes the request and response policies for several commands. Because the GA release of Redis Enterprise version 7.2 does not include these policy changes, commands might behave differently from open source Redis. However, these changes will be included in a future Redis Enterprise maintenance release:
+
+- [`RANDOMKEY`](https://redis.io/commands/randomkey/) and [`SCAN`](https://redis.io/commands/scan/) will change from no response policy to a `SPECIAL` response policy.
+
+- [`MSETNX`](https://redis.io/commands/msetnx/) currently has a `MULTI_SHARD` request policy and `AGG_MIN` response policy. Both will change to no policy.
+
+For more information about request and response policies, see [Redis command tips](https://redis.io/docs/reference/command-tips/).
+
 ### Deprecations
 
 #### Command deprecations
