@@ -302,11 +302,15 @@ The [`INFO`](https://redis.io/commands/info/) command includes new fields:
 
 #### Triggers and Functions preview
 
-TBA
+A preview of Triggers and Functions, which allow JavaScript functions to run inside Redis on-demand or when certain events occur, is available in Redis Enterprise version 7.2.
+
+The preview version of Triggers and Functions is not intended for production use since the API might change in the future and potentially cause application issues when upgrading to a later version. During preview, Triggers and Functions is not supported for databases with Auto Tiering enabled (previously known as Redis on Flash).
+
+For the full terms, see the [Redis Enterprise Software Agreement](https://redis.com/software-subscription-agreement/).
 
 #### Redis modules 
 
-Redis Enterprise Software v7.2 includes the new features delivered in the latest [Redis Stack release (TBA)](https://redis.com/blog/introducing-redis-stack-6-2-6-and-7-0-6/):
+Redis Enterprise Software v7.2 includes the new features delivered in the latest [Redis Stack release 7.2](https://redis.com/blog/introducing-redis-stack-6-2-6-and-7-0-6/):
 
 - TBA
 
