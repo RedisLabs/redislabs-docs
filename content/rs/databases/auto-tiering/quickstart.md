@@ -19,8 +19,7 @@ aliases: /rs/getting-started/creating-database/redis-flash/
          
 
 ---
-This page guides you through a quick setup of a [Redis on
-Flash]({{< relref "/rs/databases/auto-tiering/" >}}) cluster with a single node for testing and demo purposes. 
+This page guides you through a quick setup of [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}) with a single node for testing and demo purposes. 
 
 For production environments, you can find more detailed installation instructions in the [install and setup]({{< relref "/rs/installing-upgrading/_index.md" >}}) section.
 
@@ -29,8 +28,7 @@ with a single node are:
 
 1. Install Redis Enterprise Software or run it in a Docker
     container.
-1. Set up a Redis Enterprise Software cluster with Redis on
-    Flash.
+1. Set up a Redis Enterprise Software cluster with Auto Tiering.
 1. Create a new database with Auto Tiering enabled.
 1. Connect to your new database.
 
@@ -46,15 +44,15 @@ To install on bare metal, a virtual machine, or an instance:
 
 1. Extract the image:
 
-```sh
-tar -vxf <downloaded tar file name>
-```
+    ```sh
+    tar -vxf <downloaded tar file name>
+    ```
 
 1. After the `tar` command completes, you can find a new `install.sh` script in the current directory:
 
-```sh
-sudo ./install.sh -y
-```
+    ```sh
+    sudo ./install.sh -y
+    ```
 
 ### Docker-based installation {#dockerbased-installation}
 
@@ -67,44 +65,44 @@ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redis
 
 ## Set up a cluster and enable Auto Tiering
 
-1. Direct your browser to `https://localhost:8443/` on the host machine to
-see the Redis Enterprise Software admin console. Select the
-**Setup** button to get started.
+1. Direct your browser to `https://localhost:8443/new` on the host machine to
+see the Redis Enterprise Software Cluster Manager UI.
 
-{{< note >}}
+    {{<note>}}
 Depending on your browser, you may see a certificate error.
-Choose "continue to the website" to get to the setup screen.
-{{< /note >}}
+Choose "continue to the website" to go to the setup screen.
+    {{</note>}}
 
-2. On the **node configuration** page, select the **Enable flash storage
-support** checkbox and provide a cluster FQDN: **mycluster.local**.
-Then select the **Next** button.
+1. Select **Create new cluster**.
 
-![Enable Redis
-Flash](/images/rs/enable_redis_flash.png)
+1. Set up account credentials for a cluster administrator, then select **Next** to proceed to cluster setup.
 
-3. If you don't have a license key yet, select the **Next** button to try
-the trial version of the product.
+1. Enter your cluster license key if you have one. Otherwise, the cluster uses the trial version.
 
-4. On the next screen, set up account credentials for a cluster administrator.
+1. Provide a cluster FQDN such as `mycluster.local`, then select **Next**.
 
-5. Select **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
+1. In the **Storage configuration** section, turn on the **Enable flash storage** toggle.
+
+1. Select **Create cluster**.
+
+1. Select **OK** to confirm that you are aware of the replacement of the HTTPS TLS
 certificate on the node, and proceed through the browser warning.
 
 ## Create a database
 
-Select the "new redis db flash" option.
+On the **Databases** screen:
 
-![redis-on-flash](/images/rs/redis-on-flash.png)
+1. Select **Quick database**.
 
-On the **create database** page:
-1. Enter **myredisflashdb** for a database name.
-2. Enter **12000** for the endpoint port number.
-3. Select **show advanced options** to see the various alerts available.
-4. Select **Activate** to create your database.
+1. Verify **Flash** is selected for **Runs on**.
 
-![new redis flash
-db](/images/rs/newredisflashdb.png)
+    {{<image filename="images/rs/screenshots/databases/quick-db-flash.png" alt="Create a quick database with Runs on Flash selected." >}}{{</image>}}
+
+1. Enter `12000` for the endpoint **Port** number.
+
+1. _(Optional)_ Select **Full options** to see available alerts.
+
+1. Select **Create**.
 
 You now have a  database with Auto Tiering enabled!
 
