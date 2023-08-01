@@ -8,9 +8,10 @@ categories: ["RS"]
 aliases: ["/rs/security/access-control/create-roles/"]
 ---
 
-From **access control** > **roles**, you can configure user roles with:
+From **Access Control** > **Roles**, you can create custom user roles that determine cluster management permissions, data access permissions, or a combination of both.
 
 - [**Management roles**](#default-management-roles) - Management roles define user access to the cluster's admin console and API.
+
 - **Data access controls** - Data access controls define the permissions each role has for each database in the cluster.
 
 ## Default management roles
@@ -32,27 +33,23 @@ To create a role that grants database access to users but blocks access to the R
 
 To define a role for database access:
 
-1. From **access control** > **roles**, you can either:
+1. From **Access Control** > **Roles**, you can:
 
-    - Point to a role and select ![Edit](/images/rc/icon_edit.png#no-click "Edit") to edit an existing role.
+    - Point to a role and select <img src="/images/rs/buttons/edit-button.png#no-click" alt="The Edit button" width="25px"> to edit an existing role.
 
-    - Select ![Add](/images/rs/icon_add.png#no-click "Add") to create a new role.
+    - Select **+ Add role** to create a new role.
 
 1. Enter a descriptive name for the role. This will be used to reference the role when configuring users.
 
-1. Select a **Cluster management role**. The default is **None**.
+1. Choose a **Cluster management role**. The default is **None**.
 
-1. Select **Add** under **Redis ACLs** ![Add](/images/rs/icon_add.png#no-click "Add").
+1. Select **+ Add ACL**.
 
-1. Select the databases the role applies to.
+1. Choose a Redis ACL and databases to associate with the role.
 
-1. Select the Redis ACL to apply to the role.
-
-1. Select the save icon.
+1. Select the check mark to confirm.
 
 1. Select **Save**.
-
-{{< video "/images/rs/new-redis-role.mp4" "Create a new Redis Role" >}}
 
 ## Next steps
 
