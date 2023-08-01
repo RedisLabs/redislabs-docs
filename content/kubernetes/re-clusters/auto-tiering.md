@@ -32,7 +32,6 @@ Before creating your Redis clusters or databases, these SSDs must be:
 
 For more information on node storage, see [Node persistent and ephemeral storage]({{<relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage">}}).
 
-
 ## Create a Redis Enterprise cluster
 
 To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to specify the following in the `redisOnFlashSpec` section of your [REC custom resource]({{<relref "/kubernetes/reference/cluster-options.md">}}):
@@ -42,6 +41,8 @@ To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to sp
   - `rocksdb` or `speedb`(default)
 - storage class name (`storageClassName`)
 - minimal flash disk size (`flashDiskSize`)
+
+{{<warning>}}Switching between storage engines requires guidance by Redis Support or your Account Manager.{{</warning>}}
 
 Here is an example of an REC custom resource with these attributes:
 
@@ -85,5 +86,3 @@ spec:
 {{< note >}}
 This example defines both `memorySize` and `rofRamSize`. When using Auto Tiering, `memorySize` refers to the total combined memory size (RAM + flash) allocated for the database. `rofRamSize` specifies only the RAM capacity for the database. `rofRamSize` must be at least 10% of `memorySize`.
 {{< /note >}}
-
-
