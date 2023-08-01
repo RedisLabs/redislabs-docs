@@ -33,7 +33,7 @@ Redis Enterprise Auto Tiering supports two storage engines:
       rladmin cluster config bigstore_driver {speedb | rocksdb}
       ```
 
-1. Restart the each database on the cluster one by one.
+2. Restart the each database on the cluster one by one.
 
      ```sh
      rladmin restart db { db:<id> | <name> }
