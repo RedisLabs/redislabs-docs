@@ -456,9 +456,13 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 ## Resolved issues
 
-- RED-54131 - `+OK` reply not received on TLS-enabled database
+- RS54131 - `+OK` reply not received on TLS-enabled database
 
-- RED-101525 - Cluster provides wrong number of database connections on Grafana
+- RS101525 - Cluster provides wrong number of database connections on Grafana
+
+- RS104028 - Fix the self-signed certificate script: error generating certificates with multiple FQDNs
+
+- RS87920 - Proxy log is full of the warning message “Failed to check status of running child syncer process 0 : No child processes“
 
 ## Known limitations
 
