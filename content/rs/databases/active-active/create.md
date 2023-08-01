@@ -41,7 +41,13 @@ Every instance of an Active-Active database can receive write operations, and al
 1. To create service accounts, on each participating cluster:
 
     1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the Active-Active database.
+
         By default, the address is: `https://<RS_address>:8443`
+
+        If you are using the new Cluster Manager UI, switch to the legacy admin console.
+
+        {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
+
     1. Go to **access control > users** and select ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the name, email, and password for the user, select the **Admin** role, and select ![Save](/images/rs/icon_save.png#no-click "Save").
 

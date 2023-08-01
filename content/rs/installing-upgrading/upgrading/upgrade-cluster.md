@@ -15,9 +15,9 @@ The following upgrade paths are supported:
 
 | Current<br/>cluster version | Upgrade to<br/>cluster version |
 |:-----:|:-----:|
-| 6.2.x | 6.4.2 |
-| 6.0.x | 6.4.2<br />6.2.x |
-| 5.6   | 6.0.x |
+| 6.4.x | 7.2 |
+| 6.2.x | 7.2<br />6.4.x |
+| 6.0.x | 7.2<br />6.4.x<br />6.2.x |
 
 ## Upgrade prerequisites
 
@@ -25,7 +25,9 @@ Before upgrading a cluster:
 
 - Verify that you meet the upgrade path requirements for your desired cluster version and review the relevant [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for any preparation instructions.
 
-- Upgrade the cluster's master node first. To identify the master node, use one of the following methods:
+- Upgrade the cluster's primary (master) node first. To identify the primary node, use one of the following methods:
+
+    - **Nodes** screen in the new admin console (only available for Redis Enterprise versions 7.2 and later)
 
     - [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-nodes">}}) command
     
@@ -33,7 +35,7 @@ Before upgrading a cluster:
 
 ## Upgrade cluster
 
-Starting with the master node, follow these steps for every node in the cluster. To ensure cluster availability, upgrade each node separately.
+Starting with the primary (master) node, follow these steps for every node in the cluster. To ensure cluster availability, upgrade each node separately.
 
 1.  Verify node operation with the following commands:
 
@@ -75,7 +77,7 @@ You cannot change the installation path or the user during the upgrade.
 
     If the admin console was open in a web browser during the upgrade, refresh the browser to reload the console.
 
-After all nodes are upgraded, the cluster is fully upgraded.
+After all nodes are upgraded, the cluster is fully upgraded. Certain features introduced in the new version of Redis Enterprise Software only become available after upgrading the entire cluster.
 
 After upgrading from version 6.0.x to 6.2.x, restart `cnm_exec` on each cluster node to enable more advanced state machine handling capabilities:
 
