@@ -21,10 +21,6 @@ To enable and configure LDAP, sign into the Redis Enterprise admin console and t
 
 {{<image filename="images/rs/screenshots/cluster/security-ldap.png" alt="The LDAP configuration screen in the Redis Software admin console" >}}{{</image>}}
 
-{{<warning>}}
-If LDAP is already enabled, you may already be using the cluster-based LDAP integration.  If so, follow the [migration process]({{<relref "/rs/security/access-control/ldap/migrate-to-role-based-ldap">}}) to enable role-based LDAP. You have to delete external users from the admin console before you enable role-based LDAP.
-{{</warning>}}
-
 When LDAP is enabled, use the info you gathered to populate the following settings.
 
 ### LDAP server settings
