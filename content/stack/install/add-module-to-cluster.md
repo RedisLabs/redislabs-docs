@@ -10,13 +10,9 @@ aliases:
     - /modules/install/add-module-to-cluster/
 ---
 
-[Redis Enterprise]({{<relref "/rs">}}) comes packaged with several modules. You can view the installed modules and their versions from **settings > redis modules** in the Redis Enterprise admin console.
+[Redis Enterprise]({{<relref "/rs">}}) comes packaged with several modules. You can view the installed modules and their versions from **Cluster > Modules** in the Redis Enterprise admin console.
 
 To use other modules or upgrade an existing module to a more recent version, you need to install the new module package on your cluster.
-
-{{<note>}}
-Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
-{{</note>}}
 
 ## Get packaged modules
 
@@ -58,24 +54,11 @@ To add a module to the cluster using the REST API:
 
 To add a module to the cluster using the admin console:
 
-1. In the Redis Enterprise admin console, select **settings**.
-1. From **redis modules**, select the **Add module** button:
+1. Go to **Cluster > Modules**.
 
-    {{<image filename="images/rs/button-add-module.png" alt="The Add module button">}}{{</image>}}
+1. Select **Upload module**.
 
-1. Use the file browser to select the packaged module.
-1. Verify **Selected module** shows the correct filename and select the **Upload** button:
-
-    {{<image filename="images/rs/button-upload-module.png" alt="The Upload module button">}}{{</image>}}
-
-1. The new module version should appear in the list of Redis modules:
-
-
-    {{<image filename="images/rs/settings-modules-list.png" width="300px" alt="The Redis modules list">}}{{</image>}}
-
-    {{<note>}}
-If you don't see the updated module version, refresh the page.
-    {{</note>}}
+1. Use the file browser to add the packaged module.
 
 ## Next steps
 
