@@ -38,7 +38,7 @@ TLSv1.2 is generally recommended as the minimum TLS version for encrypted commun
 
 To set the minimum TLS protocol for the control plane:
 
-- Default TLS Protocols: TLSv1.0
+- Default minimum TLS protocol: TLSv1.2
 - Syntax: `rladmin cluster config min_control_TLS_version <TLS_Version>`
 - TLS versions available:
   - For TLSv1 - 1
@@ -55,7 +55,7 @@ rladmin cluster config min_control_TLS_version 1.2
 
 To set the minimum TLS protocol for the data path:
 
-- Default TLS Protocols: TLSv1.0
+- Default minimum TLS protocol: TLSv1.2
 - Syntax: `rladmin cluster config min_data_TLS_version <TLS_Version>`
 - TLS versions available:
   - For TLSv1 - 1
@@ -82,7 +82,7 @@ To enable TLS for the discovery service:
 
 To set the minimum TLS protocol for the discovery service:
 
-- Default TLS Protocols: TLSv1.0
+- Default minimum TLS protocol: TLSv1.2
 - Syntax: `rladmin cluster config min_sentinel_TLS_version <TLS_Version>`
 - TLS versions available:
   - For TLSv1 - 1

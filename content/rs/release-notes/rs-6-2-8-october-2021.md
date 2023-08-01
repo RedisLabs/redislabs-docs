@@ -96,6 +96,16 @@ To learn more, see [Upgrade the module for a database]({{<relref "/stack/install
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) from v6.2.4 have been fixed. 
 
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
+
 ## Known issues 
 
 - A new command was added as part of Redis 6.2: [`XAUTOCLAIM`](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
