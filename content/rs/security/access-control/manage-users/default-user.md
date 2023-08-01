@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-When you [create a database]({{<relref "/rs/databases/create">}}), default user database access is enabled by default (**Unauthenticated access** is selected). This enables compatibility with versions of Redis before Redis 6.
+When you [create a database]({{<relref "/rs/databases/create">}}), default user database access is enabled by default (**Unauthenticated access** is selected). This gives the default user full access to the database and enables compatibility with versions of Redis before Redis 6.
 
 Select **Password-only authentication**, then enter and confirm a default database password to require authentication for connections to the database.
 
