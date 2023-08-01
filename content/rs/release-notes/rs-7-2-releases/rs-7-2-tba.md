@@ -300,6 +300,8 @@ The [`INFO`](https://redis.io/commands/info/) command includes new fields:
 
     - `maxmemory_policy` - The value of the `maxmemory-policy` configuration directive
 
+The `INFO` command can now accept multiple section arguments (requires Redis database version 7 or later).
+
 #### Triggers and Functions preview
 
 A preview of Triggers and Functions, which allow JavaScript functions to run inside Redis on-demand or when certain events occur, is available in Redis Enterprise version 7.2.
