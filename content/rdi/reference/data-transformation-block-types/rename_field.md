@@ -5,7 +5,7 @@ description: Rename fields. All other fields remain unchanged.
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 Rename fields. All other fields remain unchanged.
@@ -47,7 +47,7 @@ Rename one field
 | **from_field** | `string` | From field<br/> | yes      |
 | **to_field**   | `string` | To field<br/>   | yes      |
 
-**Additional Properties:** not allowed  
+**Additional Properties:** not allowed
 
 **Example**
 
@@ -78,7 +78,7 @@ Fields
 | **from_field** | `string` | From field<br/> | yes      |
 | **to_field**   | `string` | To field<br/>   | yes      |
 
-**Item Additional Properties:** not allowed  
+**Item Additional Properties:** not allowed
 
 **Example**
 

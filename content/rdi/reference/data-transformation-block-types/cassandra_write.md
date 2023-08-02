@@ -5,7 +5,7 @@ description: Write into a Cassandra data store
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 Write into a Cassandra data store

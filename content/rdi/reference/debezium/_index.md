@@ -5,12 +5,12 @@ description: Application properties settings used to configure Debezim Server fo
 weight: 50
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 The `application.properties` file configures Debezium Server configuration to support source databases. It contains sections that define the sink connector (Redis) configuration and the source connector configuration.
 
-This file needs to be saved in the host running Debezium Server.  For details, see [Debezium Server deployment]({{<relref "/rdi/installation/debezium-server-deployment">}}).
+This file needs to be saved in the host running Debezium Server. For details, see [Debezium Server deployment]({{<relref "/rdi/installation/debezium-server-deployment">}}).
 
 The following topics describe `application.properties` for specific database servers:
 
