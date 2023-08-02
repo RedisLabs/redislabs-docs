@@ -1,6 +1,8 @@
 1. In the web browser on the host machine, go to [https://localhost:8443/new](https://localhost:8443/new) to see
 the new Redis Enterprise Software Cluster Manager UI.
 
+    To use the legacy UI for this quickstart instead, see the [6.4 version of the quickstarts](https://docs.redis.com/6.4/rs/installing-upgrading/quickstarts/).
+
     {{< note >}}
 - If your browser displays a certificate error, you can safely proceed.
 - If the server does not show the login screen, try again after a few minutes.
