@@ -1,5 +1,5 @@
 ---
-Title: redis-di set-secret
+Title: redis-di set-secret # YOSSI
 linkTitle: redis-di set-secret
 description: Writes a secret to Redis secret store
 weight: 10

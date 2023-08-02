@@ -1,5 +1,5 @@
 ---
-Title: redis-di deploy
+Title: redis-di deploy # YOSSI
 linkTitle: redis-di deploy
 description: Deploys the RDI configurations including target
 weight: 10

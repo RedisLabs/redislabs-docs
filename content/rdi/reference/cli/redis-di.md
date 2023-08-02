@@ -1,5 +1,5 @@
 ---
-Title: redis-di
+Title: redis-di # YOSSI
 linkTitle: redis-di
 description: A command line tool to manage & configure Redis Data Integration
 weight: 10

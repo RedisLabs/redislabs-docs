@@ -1,5 +1,5 @@
 ---
-Title: redis-di configure
+Title: redis-di configure # YOSSI
 linkTitle: redis-di configure
 description: Configures the RDI Database so it is ready to process data
 weight: 10

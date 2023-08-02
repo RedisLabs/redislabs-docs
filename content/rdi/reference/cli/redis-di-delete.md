@@ -1,5 +1,5 @@
 ---
-Title: redis-di delete
+Title: redis-di delete # YOSSI
 linkTitle: redis-di delete
 description: Deletes RDI database permanently
 weight: 10

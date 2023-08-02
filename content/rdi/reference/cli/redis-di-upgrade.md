@@ -1,5 +1,5 @@
 ---
-Title: redis-di upgrade
+Title: redis-di upgrade # YOSSI
 linkTitle: redis-di upgrade
 description: Upgrades RDI Engine without losing data or downtime
 weight: 10

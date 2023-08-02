@@ -1,5 +1,5 @@
 ---
-Title: redis-di scaffold
+Title: redis-di scaffold # YOSSI
 linkTitle: redis-di scaffold
 description: Generates configuration files for RDI and Debezium (when ingesting data to Redis)
 weight: 10

@@ -1,5 +1,5 @@
 ---
-Title: redis-di trace
+Title: redis-di trace # YOSSI
 linkTitle: redis-di trace
 description: Starts a trace session for troubleshooting data transformation
 weight: 10
