@@ -87,6 +87,6 @@ If you create a [ResourceQuota](https://kubernetes.io/docs/concepts/policy/resou
 
 ## Pod security
 
-[PodSecurityPolicy](https://kubernetes.io/docs/concepts/security/pod-security-policy/) has been deprecated for Kubernetes versions 1.21 and after and is invalid for versions 1.25 and after. Please migrate to using the [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/).
+[PodSecurityPolicy](https://kubernetes.io/docs/concepts/security/pod-security-policy/) has been deprecated for Kubernetes versions 1.21 and after, and is invalid for versions 1.25 and after. Please migrate to using the [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/).
 
-There are three Pod Security Admission levels: `restricted`, `baseline`, and `privileged`. Redis Enterprise pods require the `privileged` level.
+There are three Pod Security Admission levels: `restricted`, `baseline`, and `privileged`. Redis Enterprise pods require the `privileged` level. If Pod Security Admission is enabled, we recommended running the REC in a dedicated namespace without other workloads.
