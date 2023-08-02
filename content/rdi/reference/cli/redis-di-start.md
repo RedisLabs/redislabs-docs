@@ -1,5 +1,5 @@
 ---
-Title: redis-di start # YOSSI
+Title: redis-di start
 linkTitle: redis-di start
 description: Starts the pipeline
 weight: 10

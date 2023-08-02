@@ -1,5 +1,5 @@
 ---
-Title: redis-di list-contexts # YOSSI
+Title: redis-di list-contexts
 linkTitle: redis-di list-contexts
 description: Lists all saved contexts
 weight: 10
