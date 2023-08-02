@@ -70,7 +70,7 @@ Best practice for production Redis Enterprise deployments:
 
 There are two [node conditions](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#node-conditions) that are `True` if your [eviction threshold](https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-thresholds) has been met and a pod eviction is likely:  `MemoryPressure` and `DiskPressure`.
 
-Use the `kubectl get nodes` command to monitor these conditions.
+Use the `kubectl get nodes` command to view these conditions.
 
 ```yaml
 > kubectl get nodes -o jsonpath='{range .items[*]}name:{.metadata.name}{"\t"}MemoryPressure:{.status.conditions[?(@.type == "MemoryPressure")].status}{"\t"}DiskPressure:{.status.conditions[?(@.type == "DiskPressure")].status}{"\n"}{end}'
