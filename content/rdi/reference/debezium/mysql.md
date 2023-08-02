@@ -1,5 +1,5 @@
 ---
-Title: RDI configuration for mysql
+Title: RDI configuration for mysql #MYTEST
 linkTitle: mysql
 description: Describes the `application.properties` settings that configure Debezium Server for mysql
 weight:

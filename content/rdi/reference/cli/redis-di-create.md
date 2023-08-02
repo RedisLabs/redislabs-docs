@@ -1,5 +1,5 @@
 ---
-Title: redis-di create # YOSSI
+Title: redis-di create
 linkTitle: redis-di create
 description: Creates the RDI Database instance
 weight: 10

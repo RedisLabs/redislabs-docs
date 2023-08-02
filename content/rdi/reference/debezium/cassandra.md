@@ -1,5 +1,5 @@
 ---
-Title: RDI configuration for cassandra
+Title: RDI configuration for cassandra #MYTEST
 linkTitle: cassandra
 description: Describes the `application.properties` settings that configure Debezium Server for cassandra
 weight:

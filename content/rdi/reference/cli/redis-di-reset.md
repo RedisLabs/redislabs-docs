@@ -1,5 +1,5 @@
 ---
-Title: redis-di reset # YOSSI
+Title: redis-di reset
 linkTitle: redis-di reset
 description: Resets the pipeline into initial full sync mode
 weight: 10

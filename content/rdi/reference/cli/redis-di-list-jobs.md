@@ -1,5 +1,5 @@
 ---
-Title: redis-di list-jobs # YOSSI
+Title: redis-di list-jobs
 linkTitle: redis-di list-jobs
 description: Lists transformation engine's jobs
 weight: 10

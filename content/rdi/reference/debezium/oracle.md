@@ -1,5 +1,5 @@
 ---
-Title: RDI configuration for oracle
+Title: RDI configuration for oracle #MYTEST
 linkTitle: oracle
 description: Describes the `application.properties` settings that configure Debezium Server for oracle
 weight:
