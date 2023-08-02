@@ -5,7 +5,7 @@ description: JMESPath custom function reference
 weight: 40
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 | Function             | Description                                                                                                                         | Example                                                                                                                                           | Comments                                                                                                                                                         |
