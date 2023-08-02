@@ -5,7 +5,7 @@ description: Add fields to a record
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 Add fields to a record
@@ -19,7 +19,7 @@ Add multiple fields
 | ---------------------------- | ---------- | ----------- | -------- |
 | [**fields**](#option1fields) | `object[]` | Fields<br/> | yes      |
 
-**Additional Properties:** not allowed  
+**Additional Properties:** not allowed
 
 **Example**
 
@@ -51,7 +51,7 @@ Add one field
 | **expression** | `string` | Expression<br/>                               | yes      |
 | **language**   | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
-**Additional Properties:** not allowed  
+**Additional Properties:** not allowed
 
 **Example**
 
@@ -84,7 +84,7 @@ Fields
 | **expression** | `string` | Expression<br/>                               | yes      |
 | **language**   | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
-**Item Additional Properties:** not allowed  
+**Item Additional Properties:** not allowed
 
 **Example**
 
