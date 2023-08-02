@@ -1,14 +1,14 @@
 ---
-Title: redis-di delete-all-contexts
+Title: redis-di delete-all-contexts # YOSSI
 linkTitle: redis-di delete-all-contexts
-description: Delete all contexts
+description: Deletes all contexts
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
-Delete all contexts
+Deletes all contexts
 
 ## Usage
 
@@ -17,34 +17,32 @@ Usage: redis-di delete-all-contexts [OPTIONS]
 ```
 
 ## Options
-* `loglevel`: 
-  * Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL']) 
-  * Default: `info`
-  * Usage: `--loglevel
+
+- `loglevel`:
+
+  - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
+  - Default: `info`
+  - Usage: `--loglevel
 -log-level`
 
-  
+- `force`:
 
-
-* `force`: 
-  * Type: BOOL 
-  * Default: `false`
-  * Usage: `--force
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--force
 -f`
 
   Force operation. skips verification prompts
 
+- `help`:
 
-* `help`: 
-  * Type: BOOL 
-  * Default: `false`
-  * Usage: `--help`
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--help`
 
   Show this message and exit.
 
-
-
-## CLI Help
+## CLI help
 
 ```
 Usage: redis-di delete-all-contexts [OPTIONS]
@@ -57,4 +55,3 @@ Options:
   -f, --force                     Force operation. skips verification prompts
   --help                          Show this message and exit.
 ```
-
