@@ -1,5 +1,5 @@
 ---
-Title: redis-di stop # YOSSI
+Title: redis-di stop
 linkTitle: redis-di stop
 description: Stops the pipeline
 weight: 10

@@ -1,5 +1,5 @@
 ---
-Title: redis-di delete-context # YOSSI
+Title: redis-di delete-context
 linkTitle: redis-di delete-context
 description: Deletes a context
 weight: 10
