@@ -1,13 +1,14 @@
 ---
-Title: RDI configuration for MongoDB
-linkTitle: MongoDB
-description: Describes the `application.properties` settings that configure Debezium Server for MongoDB
-weight: $weight
+Title: RDI configuration for mongodb
+linkTitle: mongodb
+description: Describes the `application.properties` settings that configure Debezium Server for mongodb
+weight:
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
-# application.properties
+
+## application.properties
 
 ```properties
 debezium.sink.type=redis
@@ -45,12 +46,13 @@ debezium.source.offset.flush.interval.ms=1000
 debezium.source.tombstones.on.delete=false
 debezium.source.schema.history.internal=io.debezium.storage.redis.history.RedisSchemaHistory
 
-# Important: Do NOT use include and exclude table lists at the same time, use either include or exclude.
+# Important: Do NOT use `include` and `exclude` database lists at the same time, use either `include` or `exclude`.
 # An optional, comma-separated list of regular expressions that match database names to be monitored.
 # By default, all databases are monitored.
 #debezium.source.database.include.list=<DB_NAME1>,<DB_NAME2>...
 # An optional, comma-separated list of regular expressions that match database names for which you do not want to capture changes.
 #debezium.source.database.exclude.list=<DB_NAME1>,<DB_NAME2>...
+# Important: Do NOT use `include` and `exclude` collection lists at the same time, use either `include` or `exclude`.
 # An optional, comma-separated list of regular expressions that match collection names to be monitored.
 #debezium.source.collection.include.list=<DB_NAME.COLLECTION_NAME1>,<DB_NAME.COLLECTION_NAME2>...
 # An optional, comma-separated list of regular expressions that match collection names for which you do not want to capture changes.

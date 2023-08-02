@@ -5,7 +5,7 @@ description: Remove fields
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 Remove fields
@@ -19,7 +19,7 @@ Remove multiple fields
 | ---------------------------- | ---------- | ----------- | -------- |
 | [**fields**](#option1fields) | `object[]` | Fields<br/> | yes      |
 
-**Additional Properties:** not allowed  
+**Additional Properties:** not allowed
 
 **Example**
 
@@ -73,7 +73,7 @@ Fields
 | --------- | -------- | ----------- | -------- |
 | **field** | `string` | Field<br/>  | yes      |
 
-**Item Additional Properties:** not allowed  
+**Item Additional Properties:** not allowed
 
 **Example**
 

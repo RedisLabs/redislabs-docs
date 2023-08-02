@@ -1,20 +1,20 @@
 ---
-Title: RDI configuration for Oracle
-linkTitle: Oracle
-description: Describes the `application.properties` settings that configure Debezium Server for Oracle
-weight: $weight
+Title: RDI configuration for oracle
+linkTitle: oracle
+description: Describes the `application.properties` settings that configure Debezium Server for oracle
+weight:
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
-# application.properties
+## application.properties
 
 ```properties
 debezium.sink.type=redis
 debezium.sink.redis.message.format=extended
 debezium.sink.redis.address=<RDI_HOST>:<RDI_PORT>
-# Comment the following line if not using a password for Redis Data Integration
+# Comment the following line if not using a password for Redis Data Integration.
 debezium.sink.redis.password=<RDI_PASSWORD>
 debezium.sink.redis.memory.limit.mb=80
 # Redis SSL/TLS
@@ -36,6 +36,9 @@ debezium.sink.redis.memory.limit.mb=80
 
 debezium.source.connector.class=io.debezium.connector.oracle.OracleConnector
 debezium.source.log.mining.strategy=online_catalog
+debezium.source.log.mining.transaction.retention.ms=180000
+# This mode creates a JDBC query that filters not only operation types at the database level, but also schema, table, and username include/exclude lists.
+debezium.source.log.mining.query.filter.mode=in
 # The name of the Oracle Pluggable Database that the connector captures changes from.
 # For non-CDB installation, do not specify this property.
 #debezium.source.database.pdb.name=ORCLPDB1
@@ -52,12 +55,13 @@ debezium.source.database.port=<SOURCE_DB_PORT>
 debezium.source.database.user=<SOURCE_DB_USER>
 debezium.source.database.password=<SOURCE_DB_PASSWORD>
 debezium.source.include.schema.changes=false
+# Determines whether the connector should omit publishing change events when there are no modifications in the included columns.
+debezium.source.skip.messages.without.change=true
 debezium.source.offset.flush.interval.ms=1000
 debezium.source.tombstones.on.delete=false
 debezium.source.schema.history.internal=io.debezium.storage.redis.history.RedisSchemaHistory
 
-# Important: Do NOT use include and exclude table lists at the same time, use either include or exclude.
-# Important: Do NOT use include and exclude table lists at the same time, use either include or exclude.
+# Important: Do NOT use `include` and `exclude` table lists at the same time, use either `include` or `exclude`.
 # An optional, comma-separated list of regular expressions that match fully-qualified table identifiers of tables whose changes you want to capture.
 #debezium.source.table.include.list=<SCHEMA_NAME.TABLE_NAME1>,<SCHEMA_NAME.TABLE_NAME2>...
 # An optional, comma-separated list of regular expressions that match fully-qualified table identifiers for tables whose changes you do not want to capture.
