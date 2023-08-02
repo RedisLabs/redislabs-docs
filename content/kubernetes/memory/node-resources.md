@@ -17,22 +17,20 @@ aliases: [
 ]
 ---
  
+The following are best practices for managing node resources on production environments of Redis Enterprise for Kubernetes. These settings are not unique to the Redis Enterprise operator but affect the performance and reliability of your deployment. More information about these Kubernetes settings is available at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/).
 
-
-We recommend the following best practices for production environments of Redis Enterprise for Kubernetes. These settings are not unique to the Redis Enterprise operator but affect the performance and reliability of your deployment. More information about these Kubernetes settings is available at [https://kubernetes.io/docs/home/](https://kubernetes.io/docs/home/).
 
 ## Quality of service
 
 There are three [Quality of Service classes](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/) you can assign to a pod when it's created: `Guaranteed`, `Burstable`, and `BestEffort`. The Quality of Service class determines which pods are evicted when node resources run out. Best practice for Redis Enterprise is to use the `Guaranteed` class.
 
-Guaranteed Quality of Service requires:
+Pods are automatically classified as Guaranteed if the following criteria is met:
 
 * every container has the same memory limit or memory requests
 * every container has the same CPU limit and CPU requests
 
-These settings are required to keep the Guaranteed Quality of Service and are set by default.
-
-If you make changes to the resources for Redis Enterprise, the services rigger, or the bootstrapper, make sure these requirements are still met. This also applies to side containers running alongside Redis Enterprise.
+The Redis Enterprise pods created by the operator always follow this criteria by default.
+However, if you customize resource requests and limits for any of the Redis Enterprise, services rigger or bootstrapper containers, or if sidecar containers are added to these pods, ensure that this criteria are still met.
 
 To check the Quality of Service class of any running Redis Enterprise pod, run:
 
@@ -44,7 +42,7 @@ kubectl get pod rec-0 --o jsonpath="{.status.qosClass}"
 
 Pods managed by the operator should have a high [priority class](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/). This gives Redis Enterprise priority in scheduling if lower priority workloads are deployed on the same cluster.  
 
-Reference the name of your PriorityClass resource in the `priorityClassName` field in your REC `spec`.
+Reference the name of your PriorityClass in the `spec.priorityClassName` field in the REC resource.
 
 You can use an existing PriorityClass resource or create a new one like the example below. 
 
@@ -56,25 +54,6 @@ metadata:
 value: 1000000000
 globalDefault: false
 description: "This priority class should be used for Redis Enterprise pods only."
-```
-
-## Dedicated resources
-
-Redis Enterprise clusters should run have dedicated resources. If Redis Enterprise is sharing resources with other applications, this can lead to performance issues. Most Kubernetes environments use labels on nodes, but it can vary depending on your provider and environment. Google Kubernetes Engine (GKE) uses node pools to manage this.
-
-The example below uses the `nodeSelector` field in the RedisEnterpriseCluster to run only on nodes with a specific GKE node pool label.
-
-```yaml
-apiVersion: app.redislabs.com/v1
-kind: RedisEnterpriseCluster
-metadata:
-  name: example-redisenterprisecluster
-  labels:
-    app: redis-enterprise
-spec:
-  nodes: 3
-  nodeSelector:
-    cloud.google.com/gke-nodepool: pool1
 ```
 
 ## Eviction thresholds
