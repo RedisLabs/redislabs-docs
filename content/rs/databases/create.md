@@ -23,7 +23,9 @@ To create a new database:
 
 1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the database.
 
-    The default URL is: `https://<hostname>:8443`
+    - For the new Cluster Manager UI, go to `https://<hostname>:8443/new`
+
+    - For the legacy UI, go to `https://<hostname>:8443`
 
 1. Use one of the following methods to create a new database:
 
@@ -38,7 +40,7 @@ To create a new database:
 
 {{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
-see [Create an Active-Active database]({{< relref "/rs/databases/active-active/create.md" >}}).
+see [Create an Active-Active database]({{< relref "/rs/databases/active-active/create.md" >}}). To create and manage Active-Active databases, use the legacy UI.
 {{< /note >}}
 
 ## Quick database
@@ -67,7 +69,7 @@ To quickly create a database and skip additional configuration options during in
 
 To create a new database and configure additional settings:
 
-1. On the **Databases** screen, select **Create database**.
+1. Either click the **+** button next to **Databases** in the navigation menu, or go to the **Databases** screen and select **Create database**.
 
 1. Enter a **Database name**.
 
@@ -77,7 +79,7 @@ To create a new database and configure additional settings:
 
     - Must start and end with a letter or digit
 
-    - Not case-sensitive
+    - Case-sensitive
 
 1. To configure additional database settings, expand each relevant section to make changes.
 

@@ -73,7 +73,7 @@ To enable alerts for a database:
 1. Select the **Alerts** section to open it.
 1. Select the alerts that you want to show for the database and click **Save**.
 
-## Sending alerts by email
+## Send alerts by email
 
 To send cluster and database alerts by email:
 
