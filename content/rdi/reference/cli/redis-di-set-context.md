@@ -1,14 +1,14 @@
 ---
 Title: redis-di set-context
 linkTitle: redis-di set-context
-description: Set context to active
+description: Sets a context to be the active one
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
-Set context to active
+Sets a context to be the active one
 
 ## Usage
 
@@ -17,33 +17,29 @@ Usage: redis-di set-context [OPTIONS] CONTEXT_NAME
 ```
 
 ## Options
-* `loglevel`: 
-  * Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL']) 
-  * Default: `info`
-  * Usage: `--loglevel
+
+- `loglevel`:
+
+  - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
+  - Default: `info`
+  - Usage: `--loglevel
 -log-level`
 
-  
+- `context_name` (REQUIRED):
 
+  - Type: STRING
+  - Default: `none`
+  - Usage: `context-name`
 
-* `context_name` (REQUIRED): 
-  * Type: STRING 
-  * Default: `none`
-  * Usage: `context-name`
+- `help`:
 
-  
-
-
-* `help`: 
-  * Type: BOOL 
-  * Default: `false`
-  * Usage: `--help`
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--help`
 
   Show this message and exit.
 
-
-
-## CLI Help
+## CLI help
 
 ```
 Usage: redis-di set-context [OPTIONS] CONTEXT_NAME
@@ -55,4 +51,3 @@ Options:
                                   [default: INFO]
   --help                          Show this message and exit.
 ```
-
