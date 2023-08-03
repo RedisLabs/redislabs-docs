@@ -1,19 +1,19 @@
 ---
-Title: redis-di status
-linkTitle: redis-di status
-description: Displays the status of the pipeline end to end
+Title: redis-di monitor
+linkTitle: redis-di monitor
+description: Monitor RDI by collecting metrics and exporting to Prometheus
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Displays the status of the pipeline end to end
+Monitor RDI by collecting metrics and exporting to Prometheus
 
 ## Usage
 
 ```
-Usage: redis-di status [OPTIONS]
+Usage: redis-di monitor [OPTIONS]
 ```
 
 ## Options
@@ -81,41 +81,21 @@ Usage: redis-di status [OPTIONS]
 
   Password for unlocking an encrypted private key
 
-- `live`:
+- `exporter_port`:
 
-  - Type: BOOL
-  - Default: `false`
-  - Usage: `--live
--l`
+  - Type: <IntRange 1000<=x<=65535>
+  - Default: `9121`
+  - Usage: `--exporter-port`
 
-  Live data flow monitoring
+  HTTP port to start the exporter on
 
-- `page_number`:
+- `collect_interval`:
 
-  - Type: <IntRange x>=1>
-  - Default: `none`
-  - Usage: `--page-number
--p`
+  - Type: <IntRange 1<=x<=60>
+  - Default: `5`
+  - Usage: `--collect-interval`
 
-  Set the page number (live mode only)
-
-- `page_size`:
-
-  - Type: <IntRange x>=1>
-  - Default: `none`
-  - Usage: `--page-size
--s`
-
-  Set the page size (live mode only)
-
-- `ingested_only`:
-
-  - Type: BOOL
-  - Default: `false`
-  - Usage: `--ingested-only
--i`
-
-  Display ingested data streams (live mode only)
+  Metrics collection interval (seconds)
 
 - `help`:
 
@@ -128,9 +108,9 @@ Usage: redis-di status [OPTIONS]
 ## CLI help
 
 ```
-Usage: redis-di status [OPTIONS]
+Usage: redis-di monitor [OPTIONS]
 
-  Displays the status of the pipeline end to end
+  Monitor RDI by collecting metrics and exporting to Prometheus
 
 Options:
   -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
@@ -143,11 +123,10 @@ Options:
   --rdi-cacert TEXT               CA certificate file to verify with
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
-  -l, --live                      Live data flow monitoring
-  -p, --page-number INTEGER RANGE
-                                  Set the page number (live mode only)  [x>=1]
-  -s, --page-size INTEGER RANGE   Set the page size (live mode only)  [x>=1]
-  -i, --ingested-only             Display ingested data streams (live mode
-                                  only)
+  --exporter-port INTEGER RANGE   HTTP port to start the exporter on
+                                  [1000<=x<=65535]
+  --collect-interval INTEGER RANGE
+                                  Metrics collection interval (seconds)
+                                  [1<=x<=60]
   --help                          Show this message and exit.
 ```
