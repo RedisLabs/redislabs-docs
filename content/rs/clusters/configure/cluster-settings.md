@@ -48,6 +48,10 @@ entries are shown in your preferred time zone.
 
 ## Alert settings tab
 
+The **Alert Settings** tab lets you configure alerts that are relevant to the entire cluster, such as alerts for cluster utilization, nodes, node utilization, security, and database utilization.
+
+You can also configure email server settings and [send alerts by email]({{<relref "/rs/clusters/monitoring#send-alerts-by-email">}}) to relevant users.
+
 ### Configure email server settings
 
 To enable email alerts:
