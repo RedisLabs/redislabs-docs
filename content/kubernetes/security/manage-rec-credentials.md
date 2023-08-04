@@ -32,16 +32,16 @@ The credentials can be used to access the Redis Enterprise admin console or the 
     The command outputs the encoded password and username, similar to the example below.
 
       ```sh
-      map[password:MVUyTjd1Mm0= username:ZGVtb0ByZWRpc2xhYnMuY29t]
+      map[password:MTIzNDU2NzgK username:ZGVtb0BleGFtcGxlLmNvbQo=]
       ```
 
 1. Decode the password and username with the `echo` command and the password from the previous step.
 
     ```bash
-    echo MVUyTjd1Mm0= | base64 --decodexc
+    echo MTIzNDU2NzgK | base64 --decodexc
     ```
 
-    This outputs the password and username in plain text. In this example, the plain text password is `12345678` and the username is `demo@redis.com`.
+    This outputs the password and username in plain text. In this example, the plain text password is `12345678` and the username is `demo@example.com`.
 
 ## Change the Redis Enterprise cluster (REC) credentials
 

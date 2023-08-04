@@ -52,3 +52,12 @@ To specify directories during [installation]({{<relref "/rs/installing-upgrading
 sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ```
  
+## Limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use custom installation directories.
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
