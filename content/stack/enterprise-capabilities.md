@@ -22,6 +22,7 @@ The following table shows which Redis Stack features are supported by Redis Ente
 | [Graph]({{<relref "/stack/deprecated-features/graph">}}) | &#x26A0;&#xFE0F; Deprecated | &#x26A0;&#xFE0F; Deprecated |
 | [Time Series]({{<relref "/stack/timeseries">}}) | &#x2705; Supported | &#x2705; Supported |
 | [Probabilistic]({{<relref "/stack/bloom">}}) | &#x2705; Supported | &#x2705; Supported |
+| [Triggers and Functions]({{<relref "/stack/triggers-functions">}})<br />(preview) | &#x2705; Supported | &#x2705; Supported |
 | [Gears]({{<relref "/stack/gears-v1">}}) | &#x2705; Supported | &#x274c; Not supported |
 
 ## Feature compatibility
