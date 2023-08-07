@@ -432,9 +432,21 @@ For more information about request and response policies, see [Redis command tip
 
 #### RedisGraph
 
-Redis has announced the end of life of RedisGraph. Redis will continue to support all RedisGraph customers, including releasing patch versions until January 31, 2025.
+Redis has announced the end of life for RedisGraph. Redis will continue to support all RedisGraph customers, including releasing patch versions until January 31, 2025.
 
 See the [RedisGraph end-of-life announcement](https://redis.com/blog/redisgraph-eol/) for more details.
+
+#### RHEL and CentOS 7.0-7.9
+
+Support for RHEL and CentOS 7.0-7.9 is considered deprecated and will be removed in a future release.
+
+#### Oracle Linux 7
+
+Oracle Linux 7 support is considered deprecated and will be removed in a future release.
+
+#### Amazon Linux 1
+
+Amazon Linux 1 support is considered deprecated and will be removed in a future release.
 
 #### Ubuntu 16.04
 
