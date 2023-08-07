@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2
 linkTitle: 7.2 releases
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Triggers and Functions preview.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Triggers and functions preview.
 compatibleOSSVersion: Redis 7.2
 weight: 71
 alwaysopen: false
@@ -30,7 +30,7 @@ This version offers:
 
 - New INFO fields
 
-- Triggers and Functions preview
+- Triggers and functions preview
 
 ## Detailed release notes
 

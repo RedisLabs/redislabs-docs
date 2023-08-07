@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (August 2023)
 linkTitle: 7.2-TBA (August 2023)
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Triggers and Functions preview.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Triggers and functions preview.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -29,7 +29,7 @@ This version offers:
 
 - New INFO fields
 
-- Triggers and Functions preview
+- Triggers and functions preview
 
 The following table shows the MD5 checksums for the available packages:
 
@@ -302,11 +302,11 @@ The [`INFO`](https://redis.io/commands/info/) command includes new fields:
 
 The `INFO` command can now accept multiple section arguments (requires Redis database version 7 or later).
 
-#### Triggers and Functions preview
+#### Triggers and functions preview
 
-A preview of Triggers and Functions, which allow JavaScript functions to run inside Redis on-demand or when certain events occur, is available in Redis Enterprise version 7.2.
+A preview of triggers and functions, which allow JavaScript functions to run inside Redis on-demand or when certain events occur, is available in Redis Enterprise version 7.2.
 
-The preview version of Triggers and Functions is not intended for production use since the API might change in the future and potentially cause application issues when upgrading to a later version. During preview, Triggers and Functions is not supported for databases with Auto Tiering enabled (previously known as Redis on Flash).
+The preview version of triggers and functions is not intended for production use since the API might change in the future and potentially cause application issues when upgrading to a later version. During preview, triggers and functions is not supported for databases with Auto Tiering enabled (previously known as Redis on Flash).
 
 For the full terms, see the [Redis Enterprise Software Agreement](https://redis.com/software-subscription-agreement/).
 
