@@ -1,7 +1,7 @@
 ---
-Title: Search and Query Active-Active databases
+Title: Search and query Active-Active databases
 linkTitle: Search Active-Active databases
-description: Search and Query Active-Active databases.
+description: Search and query Active-Active databases.
 weight: 30
 alwaysopen: false
 categories: ["Modules"]

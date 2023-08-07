@@ -79,7 +79,7 @@ With this information, you can connect to your database with the [`redis-cli`]({
 
 To try out Redis Stack features, follow the examples provided by the corresponding guides:
 
-- [Search and Query quick start](https://redis.io/docs/stack/search/quick_start/)
+- [Search and query quick start](https://redis.io/docs/stack/search/quick_start/)
 - [JSON quick start](https://redis.io/docs/stack/json/#use-redisjson)
-- [Time Series quick start](https://redis.io/docs/stack/timeseries/quickstart/)
+- [Time series quick start](https://redis.io/docs/stack/timeseries/quickstart/)
 - [Probabilistic data structures quick start](https://redis.io/docs/stack/bloom/quick_start/)
