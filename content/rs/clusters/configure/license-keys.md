@@ -28,25 +28,19 @@ during the trial period.
 
 To view the cluster license key, use:
 
-- Admin console
+- Cluster Manager UI
 
     1. Go to **Cluster > Configuration > General > License** to see the cluster license details.
 
     1. Select **Change** to view the cluster license key.
 
-- REST API - GET `https://localhost:9443/v1/license`
+- REST API - [`GET /v1/license`]({{<relref "/rs/references/rest-api/requests/license#get-license">}})
 
-    The REST API response includes:
-    - license - The cluster name (FQDN) in the key string
-    - expired - If the cluster key is expired (True or False)
-    - activation_date - The date of the cluster key activation
-    - expiration_date - The date of the cluster key expiration
-    - shards_limit - The total number of shards allowed by the cluster key
-    - ram_shards_limit - The number of RAM shards allowed by the cluster key (starting v7.2)
-    - flash_shards_limit - The number of Flash shards (Auto Tiering) allowed by the cluster key (starting v7.2)
+    For a list of returned fields, see the [response section]({{<relref "/rs/references/rest-api/requests/license#get-response">}}).
 
-Starting v7.2, Redis Enteprise will enforce the shard limits by their types (RAM, Flash) rather than total number of shards.
-
+{{<note>}}
+As of version 7.2, Redis Enteprise will enforce the shards limits by their types (RAM, flash) rather than total number of shards. The flash shards limit only appears in the UI if Auto Tiering is enabled.
+{{</note>}}
 
 ## Update cluster license
 
@@ -74,6 +68,7 @@ Redis Enterprise checks the validay of it in terms of:
 - activation and expiration dates
 - shard usage and limits
 - features
+
 If saving a new cluster key fails, the operation returns an error including failure reason.
 In this case, the existing key stays in effect.
 
@@ -83,21 +78,27 @@ When the license is expired:
 
 - You cannot do these actions:
 
-    - Change database settings including security and configuration options
-    - Add/remove a database
-    - Upgrade a database to a new version
-    - Add/remove a node
+    - Change database settings including security and configuration options.
+
+    - Add or remove a database.
+
+    - Upgrade a database to a new version.
+
+    - Add or remove a node.
 
 - You can do these actions:
 
-    - Login to the admin console and view settings and metrics at all resolutions
-        for the cluster, nodes and databases
-    - Change cluster settings including license key, security for administrators, and cluster alerts
-    - Failover when a node fails and explicitly migrate shard between nodes
-    - Upgrade node to a new version of Redis Enterprise Software
+    - Sign in to the admin console and view settings and metrics at all resolutions for the cluster, nodes, and databases.
+
+    - Change cluster settings including license key, security for administrators, and cluster alerts.
+
+    - Failover when a node fails and explicitly migrate shards between nodes.
+
+    - Upgrade a node to a new version of Redis Enterprise Software.
  
 ## Monitor cluster license
-Starting v7.2, Redis Enterprise exposes the license quotas and the shards consumption metrics via the [Prometheus integration]({{< relref "/rs/clusters/monitoring/prometheus-integration.md" >}}).
+
+As of version 7.2, Redis Enterprise exposes the license quotas and the shards consumption metrics in the Cluster Manager UI or via the [Prometheus integration]({{< relref "/rs/clusters/monitoring/prometheus-integration.md" >}}).
 
 The 'cluster_shards_limit' metric displays the total shard limit by the license by shard type (ram / flash).
 Examples:

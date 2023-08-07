@@ -71,12 +71,12 @@
         var pa = window.location.pathname.split('/');
         var pv = pa[1]; // 6.x, 5.x
 
-        if (pv == '6.0' || pv == 'latest') {
+        if (pv == '7.2' || pv == 'latest') {
+            v = '7.2';
+            d = 'v7.2 (latest)';
+        } else if (pv == '6.4') {
             v = '6.x';
-            d = 'v6.x (latest)';
-        } else if (pv == '5.6') {
-            v = '5.x';
-            d = 'v5.x';
+            d = 'v6.x';
         }
         _setVersion(v, d);
         _setSelectedVersion(v);
