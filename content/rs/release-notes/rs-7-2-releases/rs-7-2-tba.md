@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (August 2023)
 linkTitle: 7.2-TBA (August 2023)
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Triggers and functions preview.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -28,6 +28,8 @@ This version offers:
 - A preview of the redesigned Cluster Manager UI (admin console)
 
 - New INFO fields
+
+- Log rotation enhancements
 
 - Triggers and functions preview
 
@@ -301,6 +303,20 @@ The [`INFO`](https://redis.io/commands/info/) command includes new fields:
     - `maxmemory_policy` - The value of the `maxmemory-policy` configuration directive
 
 The `INFO` command can now accept multiple section arguments (requires Redis database version 7 or later).
+
+#### Log rotation enhancements
+
+- The `logrotate` tool rotates logs that exceed 200MB.
+
+- `logrotate` runs every five minutes instead of once a day.
+
+- The job scheduler runs `logrotate` instead of the OS.
+
+- Every cluster upgrade overwrites the log rotation configuration.
+
+- You can edit the log rotation configuration at `$pkgconfdir/logrotate.conf` (`pkgconfdir` is `/opt/redislabs/config` by default, but can be changed in a custom installation). Note that the configuration file moved since last version.
+
+- You can change how often the `logrotate` tool runs using the job scheduler REST API request <nobr>`PUT /v1/job_scheduler`</nobr>.
 
 #### Triggers and functions preview
 
