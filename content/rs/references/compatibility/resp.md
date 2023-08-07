@@ -17,7 +17,7 @@ RESP (Redis Serialization Protocol) is the protocol that clients use to communic
 
 - RESP3 is supported by Redis Enterprise 7.2 and later.
 
-## Enable RESP3 for a database
+## Enable RESP3 for a database {#enable-resp3}
 
 To use RESP3 with a Redis Enterprise Software database:
 
@@ -44,7 +44,7 @@ To use RESP3 with a Redis Enterprise Software database:
         { "resp3": true }
         ```
 
- ## Deactivate RESP3 for a database
+ ## Deactivate RESP3 for a database {#deactivate-resp3}
 
  To deactivate RESP3 support for a database:
 
