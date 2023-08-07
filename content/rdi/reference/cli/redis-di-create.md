@@ -51,7 +51,7 @@ Usage: redis-di create [OPTIONS]
 
 - `cluster_api_port` (REQUIRED):
 
-  - Type: INT
+  - Type: <IntRange 1000<=x<=65535>
   - Default: `9443`
   - Usage: `--cluster-api-port`
 
@@ -153,8 +153,9 @@ Options:
                                   Database
   --cluster-host TEXT             Host/IP of Redis Enterprise Cluster (service
                                   name in case of k8s)  [required]
-  --cluster-api-port INTEGER      API Port of Redis Enterprise Cluster
-                                  [default: 9443; required]
+  --cluster-api-port INTEGER RANGE
+                                  API Port of Redis Enterprise Cluster
+                                  [default: 9443; 1000<=x<=65535; required]
   --cluster-user TEXT             Redis Enterprise Cluster username with
                                   either DB Member, Cluster Member or Cluster
                                   Admin roles  [required]

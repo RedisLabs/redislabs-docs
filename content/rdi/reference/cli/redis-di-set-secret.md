@@ -35,7 +35,7 @@ Usage: redis-di set-secret [OPTIONS]
 
 - `cluster_api_port` (REQUIRED):
 
-  - Type: INT
+  - Type: <IntRange 1000<=x<=65535>
   - Default: `9443`
   - Usage: `--cluster-api-port`
 
@@ -67,7 +67,7 @@ Usage: redis-di set-secret [OPTIONS]
 
 - `rdi_port` (REQUIRED):
 
-  - Type: INT
+  - Type: <IntRange 1000<=x<=65535>
   - Default: `none`
   - Usage: `--rdi-port`
 
@@ -149,14 +149,16 @@ Options:
                                   [default: INFO]
   --cluster-host TEXT             Host/IP of Redis Enterprise Cluster (service
                                   name in case of k8s)  [required]
-  --cluster-api-port INTEGER      API Port of Redis Enterprise Cluster
-                                  [default: 9443; required]
+  --cluster-api-port INTEGER RANGE
+                                  API Port of Redis Enterprise Cluster
+                                  [default: 9443; 1000<=x<=65535; required]
   --cluster-user TEXT             Redis Enterprise Cluster username with
                                   either DB Member, Cluster Member or Cluster
                                   Admin roles  [required]
   --cluster-password TEXT         Redis Enterprise Cluster Password
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
-  --rdi-port INTEGER              Port of RDI Database  [required]
+  --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
+                                  required]
   --rdi-password TEXT             RDI Database Password
   --rdi-key TEXT                  Private key file to authenticate with
   --rdi-cert TEXT                 Client certificate file to authenticate with

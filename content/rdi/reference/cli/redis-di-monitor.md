@@ -1,14 +1,14 @@
 ---
 Title: redis-di monitor
 linkTitle: redis-di monitor
-description: Monitor RDI by collecting metrics and exporting to Prometheus
+description: Monitors RDI by collecting metrics and exporting to Prometheus
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Monitor RDI by collecting metrics and exporting to Prometheus
+Monitors RDI by collecting metrics and exporting to Prometheus
 
 ## Usage
 
@@ -35,7 +35,7 @@ Usage: redis-di monitor [OPTIONS]
 
 - `rdi_port` (REQUIRED):
 
-  - Type: INT
+  - Type: <IntRange 1000<=x<=65535>
   - Default: `none`
   - Usage: `--rdi-port`
 
@@ -110,13 +110,14 @@ Usage: redis-di monitor [OPTIONS]
 ```
 Usage: redis-di monitor [OPTIONS]
 
-  Monitor RDI by collecting metrics and exporting to Prometheus
+  Monitors RDI by collecting metrics and exporting to Prometheus
 
 Options:
   -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
-  --rdi-port INTEGER              Port of RDI Database  [required]
+  --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
+                                  required]
   --rdi-password TEXT             RDI Database Password
   --rdi-key TEXT                  Private key file to authenticate with
   --rdi-cert TEXT                 Client certificate file to authenticate with
