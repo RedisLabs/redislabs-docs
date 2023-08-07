@@ -1,6 +1,6 @@
 ---
-Title: Triggers and Functions
-linkTitle: Triggers and Functions
+Title: Triggers and functions
+linkTitle: Triggers and functions
 description: Redis Stack adds JavaScript support for triggers and functions to Redis databases.
 weight: 60
 alwaysopen: false
@@ -59,8 +59,6 @@ After you load a function into your database, you can run them manually or use t
 
 ## More info
 
-- Triggers and functions quick start
+- [Triggers and functions quick start](https://redis.io/docs/interact/programmability/triggers-and-functions/quick_start/)
 
-- Triggers and functions documentation
-
-- [RedisGears source](https://github.com/RedisGears/RedisGears)
+- [Triggers and functions documentation](https://redis.io/docs/interact/programmability/triggers-and-functions/)
