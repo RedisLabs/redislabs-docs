@@ -1,6 +1,6 @@
 # Writing to a Redis JSON document
 
-> Note: RedisJSON module must be installed in the target Redis database to be able to utilize this feature
+> Note: RedisJSON module must be enabled in the target Redis database to be able to utilize this feature
 
 In the example below, the data is captured from the source table named `invoice` and is written to the Redis database as a JSON document. The connection is an optional parameter that must refer to the corresponding connection name defined in `config.yaml`. When the `data_type` parameter is specified for the job, it overrides the system-wide setting `target_data_type` (defined in `config.yaml`). 
 
