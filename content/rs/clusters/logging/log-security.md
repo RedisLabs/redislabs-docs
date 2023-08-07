@@ -62,7 +62,7 @@ The following log rotation policy is enabled by default in Redis Enterprise Soft
 }
 ```
 
-- `/var/opt/redislabs/log/*.log` - When logrotate runs it checks the files under directory `/var/opt/redislabs/log/` and rotates any files that end with the extension `.log`.
+- `/var/opt/redislabs/log/*.log` - `logrotate` checks the files under directory `/var/opt/redislabs/log/` and rotates any files that end with the extension `.log`.
 
 - `size 200M` - Rotate log files that exceed 200 MB.
 
