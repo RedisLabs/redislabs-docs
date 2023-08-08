@@ -308,7 +308,7 @@ The `INFO` command can now accept multiple section arguments (requires Redis dat
 
 #### Log rotation enhancements
 
-- The `logrotate` tool rotates logs that exceed 200MB.
+- The `logrotate` tool rotates logs that exceed 200 MB.
 
 - `logrotate` runs every five minutes instead of once a day.
 
