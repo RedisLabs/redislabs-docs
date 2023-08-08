@@ -163,6 +163,7 @@ An API object that represents a managed database in the cluster.
 | shards_count | integer, <nobr>(range: 1-512)</nobr> (default:&nbsp;1) | Number of database server-side shards |
 | shards_placement | **'dense'** <br />'sparse' | Control the density of shards <br /> **'dense'**: Shards reside on as few nodes as possible <br /> **'sparse'**: Shards reside on as many nodes as possible |
 | skip_import_analyze | 'enabled'<br />'disabled' | Enable/disable skipping the analysis stage when importing an RDB file |
+| slave_buffer | 'auto'<br />value in MB<br />hard:soft:time | Redis replica output buffer limits |
 | slave_ha | boolean | Enable replica high availability mechanism for this database (default takes the cluster setting) |
 | slave_ha_priority | integer | Priority of the BDB in replica high availability mechanism |
 | snapshot_policy | array of [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) objects | Policy for snapshot-based data persistence. A dataset snapshot will be taken every N secs if there are at least M writes changes in the dataset |
