@@ -75,7 +75,7 @@ Usage: redis-di create [OPTIONS]
 
 - `rdi_port`:
 
-  - Type: INT
+  - Type: <IntRange 1000<=x<=65535>
   - Default: `none`
   - Usage: `--rdi-port`
 
@@ -160,7 +160,8 @@ Options:
                                   either DB Member, Cluster Member or Cluster
                                   Admin roles  [required]
   --cluster-password TEXT         Redis Enterprise Cluster Password
-  --rdi-port INTEGER              Port for the new RDI Database
+  --rdi-port INTEGER RANGE        Port for the new RDI Database
+                                  [1000<=x<=65535]
   --rdi-password TEXT             Password for the new RDI Database
                                   (alphanumeric characters with zero or more
                                   of the following: ! & # $ ^ < > -)
