@@ -17,9 +17,9 @@ RESP (Redis Serialization Protocol) is the protocol that clients use to communic
 
 - RESP3 is supported by Redis Enterprise 7.2 and later.
 
-## Enable RESP3
+## Enable RESP3 for a database {#enable-resp3}
 
-To use RESP3 with Redis Enterprise:
+To use RESP3 with a Redis Enterprise Software database:
 
 1. Upgrade Redis servers to version 7.2 or later.
 
@@ -31,23 +31,60 @@ To use RESP3 with Redis Enterprise:
 
 1. Enable RESP3 support for your database (`enabled` by default):
 
-    ```sh
-    rladmin tune db db:<ID> resp3 enabled
-    ```
+    - [`rladmin tune db`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-db">}}):
 
- ## Deactivate RESP3
+        ```sh
+        rladmin tune db db:<ID> resp3 enabled
+        ```
+
+    - [Update database configuration]({{<relref "/rs/references/rest-api/requests/bdbs#put-bdbs">}}) REST API request:
+
+        ```sh
+        PUT /v1/bdbs/<database_id> 
+        { "resp3": true }
+        ```
+
+ ## Deactivate RESP3 for a database {#deactivate-resp3}
 
  To deactivate RESP3 support for a database:
 
- ```sh
- rladmin tune db db:<ID> resp3 disabled
- ```
+- [`rladmin tune db`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-db">}}):
+
+     ```sh
+    rladmin tune db db:<ID> resp3 disabled
+    ```
+
+- [Update database configuration]({{<relref "/rs/references/rest-api/requests/bdbs#put-bdbs">}}) REST API request:
+
+    ```sh
+    PUT /v1/bdbs/<database_id> 
+    { "resp3": false }
+    ```
 
  When RESP3 is deactivated, connected clients that use RESP3 are disconnected from the database.
 
 {{<note>}}
 You cannot use sharded pub/sub if you deactivate RESP3 support.
 {{</note>}}
+
+## Change default RESP3 option
+
+The cluster-wide option `resp3_default` determines the default value of the `resp3` option, which enables or deactivates RESP3 for a database, upon upgrading a database to version 7.2. `resp3_default` is set to `enabled` by default.
+
+To change `resp3_default` to `disabled`, use one of the following methods:
+
+- [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}})
+
+    ```sh
+    rladmin tune cluster resp3_default disabled
+    ```
+
+- [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
+
+    ```sh
+    PUT /v1/cluster/policy 
+    { "resp3_default": false }
+    ```
 
 ## Client prerequisites for Redis 7.2 upgrade
 

@@ -38,6 +38,7 @@ Cluster resources management policy
 | redis_provision_node_threshold | integer | Minimum free memory (excluding reserved memory) allowed on a node before new shards can no longer be added to it |
 | redis_provision_node_threshold_p | integer | Minimum free memory (excluding reserved memory) allowed on a node before new shards can no longer be added to it |
 | redis_upgrade_policy | **`major`** <br />`latest` | Create/upgrade Redis Enterprise software on databases in the cluster by compatibility with major versions or latest versions of OSS Redis |
+| resp3_default | boolean (default:&nbsp;true) | Determines the default value of the `resp3` option upon upgrading a database to version 7.2 |
 | shards_overbooking | boolean | If true, all databases' memory_size is ignored during shards placement |
 | show_internals | boolean | Show internal databases (and their shards and endpoints) REST APIs |
 | slave_ha | boolean | Enable the replica high-availability mechanism |

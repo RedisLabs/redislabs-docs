@@ -141,6 +141,7 @@ An API object that represents a managed database in the cluster.
 | [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | Enable, disable, or pause syncing from specified replica_sources |
 | replica_sync_dist | boolean | Enable/disable distributed syncer in replica-of |
 | replication | boolean (default:&nbsp;false) | In-memory database replication mode |
+| resp3 | boolean (default:&nbsp;true) | Enables or deactivates RESP3 support |
 | roles_permissions | {{<code>}}
 [{
   "role_uid": integer,
