@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2
 linkTitle: 7.2 releases
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Large module support.
 compatibleOSSVersion: Redis 7.2
 weight: 71
 alwaysopen: false
@@ -33,6 +33,8 @@ This version offers:
 - Log rotation enhancements
 
 - Triggers and functions preview
+
+- Large module support
 
 ## Detailed release notes
 
@@ -101,7 +103,6 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 ## Known limitations
 
-
 ### Feature limitations
 
 #### Command limitations
@@ -137,14 +138,6 @@ To prevent this issue:
     - Add the `resetchannels` prefix to restrict access to all channels by default.
     
     - Delete the rule if not needed.
-
-### Upgrade limitations
-
-TBA
-
-### Operating system limitations
-
-TBA
 
 ## Supported platforms
 

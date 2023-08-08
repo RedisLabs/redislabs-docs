@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (August 2023)
 linkTitle: 7.2-TBA (August 2023)
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Large module support.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -32,6 +32,8 @@ This version offers:
 - Log rotation enhancements
 
 - Triggers and functions preview
+
+- Large module support
 
 The following table shows the MD5 checksums for the available packages:
 
@@ -326,6 +328,10 @@ The preview version of triggers and functions is not intended for production use
 
 For the full terms, see the [Redis Enterprise Software Agreement](https://redis.com/software-subscription-agreement/).
 
+#### Large module support
+
+Starting from Redis Enterprise version 7.2, all future 7.2.x upgrades are supported for clusters containing databases with modules in combination with with Operating System (OS) upgrades.
+
 #### Redis modules 
 
 Redis Enterprise Software v7.2 includes the new features delivered in the latest [Redis Stack release 7.2](https://redis.com/blog/introducing-redis-stack-6-2-6-and-7-0-6/):
@@ -531,14 +537,6 @@ To prevent this issue:
     - Add the `resetchannels` prefix to restrict access to all channels by default.
     
     - Delete the rule if not needed.
-
-### Upgrade limitations
-
-TBA
-
-### Operating system limitations
-
-TBA
 
 ## Security
 
