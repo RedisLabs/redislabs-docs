@@ -35,7 +35,7 @@ Usage: redis-di list-jobs [OPTIONS]
 
 - `rdi_port` (REQUIRED):
 
-  - Type: INT
+  - Type: <IntRange 1000<=x<=65535>
   - Default: `none`
   - Usage: `--rdi-port`
 
@@ -100,7 +100,8 @@ Options:
   -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
-  --rdi-port INTEGER              Port of RDI Database  [required]
+  --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
+                                  required]
   --rdi-password TEXT             RDI Database Password
   --rdi-key TEXT                  Private key file to authenticate with
   --rdi-cert TEXT                 Client certificate file to authenticate with
