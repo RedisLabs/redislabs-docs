@@ -38,4 +38,4 @@ Redis can perform urgent maintenance at any time, even if you have set a manual 
 
 ### Major upgrades
 
-For major upgrades or upgrades that might include breaking changes, users will receive an advanced notification before the upgrade.
+For major upgrades or upgrades that might include breaking changes, users will receive an advance notification before the upgrade.
