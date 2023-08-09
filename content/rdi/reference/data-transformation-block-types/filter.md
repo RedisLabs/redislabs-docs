@@ -5,7 +5,7 @@ description: Filter records
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 Filter records
@@ -17,7 +17,7 @@ Filter records
 | **expression** | `string` | Expression<br/>                               | yes      |
 | **language**   | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
-**Additional Properties:** not allowed  
+**Additional Properties:** not allowed
 
 **Example**
 

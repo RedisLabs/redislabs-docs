@@ -1,14 +1,14 @@
 ---
 Title: redis-di
 linkTitle: redis-di
-description: A command line tool to manage and configure Redis Data Integration
+description: A command line tool to manage & configure Redis Data Integration
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
-A command line tool to manage and configure Redis Data Integration
+A command line tool to manage & configure Redis Data Integration
 
 ## Usage
 
@@ -17,24 +17,24 @@ Usage: redis-di [OPTIONS] COMMAND [ARGS]...
 ```
 
 ## Options
-* `version`: 
-  * Type: BOOL 
-  * Default: `false`
-  * Usage: `--version`
+
+- `version`:
+
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--version`
 
   Show the version and exit.
 
+- `help`:
 
-* `help`: 
-  * Type: BOOL 
-  * Default: `false`
-  * Usage: `--help`
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--help`
 
   Show this message and exit.
 
-
-
-## CLI Help
+## CLI help
 
 ```
 Usage: redis-di [OPTIONS] COMMAND [ARGS]...
@@ -58,6 +58,7 @@ Commands:
   get-rejected          Returns all the stored rejected entries
   list-contexts         Lists all saved contexts
   list-jobs             Lists transformation engine's jobs
+  monitor               Monitors RDI by collecting metrics and exporting...
   reset                 Resets the pipeline into initial full sync mode
   scaffold              Generates configuration files for RDI and...
   set-context           Sets a context to be the active one
@@ -68,4 +69,3 @@ Commands:
   trace                 Starts a trace session for troubleshooting data...
   upgrade               Upgrades RDI Engine without losing data or downtime
 ```
-
