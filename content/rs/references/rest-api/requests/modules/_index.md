@@ -18,9 +18,9 @@ aliases: /rs/references/rest-api/modules
 |--------|------|-------------|
 | [GET](#list-modules) | `/v1/modules` | List available modules |
 | [GET](#get-module) | `/v1/modules/{uid}` | Get a specific module |
-| [POST](#post-module) | `/v1/modules` | Upload a new module |
+| [POST](#post-module) | `/v1/modules` | Upload a new module (deprecated) |
 | [POST](#post-module-v2) | `/v2/modules` | Upload a new module and its dependencies |
-| [DELETE](#delete-module) | `/v1/modules/{uid}` | Delete a module without dependencies |
+| [DELETE](#delete-module) | `/v1/modules/{uid}` | Delete a module without dependencies (deprecated) |
 | [DELETE](#delete-module-v2) | `/v2/modules/{uid}` | Delete a module with dependencies |
 
 ## List modules {#list-modules}
@@ -113,6 +113,10 @@ Returns a [module object]({{<relref "/rs/references/rest-api/objects/module">}})
 ```sh
 POST /v1/modules
 ```
+
+{{<note>}}
+`POST /v1/modules` is deprecated. Use [`POST /v2/modules`](#post-module-v2) instead.
+{{</note>}}
 
 Uploads a new module to the cluster.
 
@@ -311,9 +315,11 @@ Possible `error_code` values include [`/v1/modules` error codes](#post-error-cod
 DELETE /v1/modules/{string: uid}
 ```
 
-Delete a module.
+{{<note>}}
+`DELETE /v1/modules` is deprecated. Use [`DELETE /v2/modules`](#delete-module-v2) instead.
+{{</note>}}
 
-If the module has dependencies, use the [`v2` request](#delete-module-v2) instead.
+Delete a module.
 
 #### Permissions
 

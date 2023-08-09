@@ -25,7 +25,7 @@ To install or upgrade a module on a [Redis Enterprise]({{<relref "/rs">}}) clust
 
 Use one of the following methods to add a module to a Redis Enterprise cluster:
 
-- REST API [`POST` request to the `/v1/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module">}}) endpoint
+- REST API [`POST` request to the `/v2/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}) endpoint
 
 - Redis Enterprise admin console
 
@@ -39,10 +39,10 @@ To add a module to the cluster using the REST API:
 
 1. Copy the package to a node in the cluster.
 
-1. Add the module to the cluster with a [`POST` request to the `/v1/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module">}}) endpoint:
+1. Add the module to the cluster with a [`POST` request to the `/v2/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}) endpoint:
 
     ```sh
-    POST https://[host][:port]/v1/modules
+    POST https://[host][:port]/v2/modules
     {"module=@/tmp/redisearch.Linux-ubuntu16.04-x86_64.2.2.6.zip"}
     ```
 
