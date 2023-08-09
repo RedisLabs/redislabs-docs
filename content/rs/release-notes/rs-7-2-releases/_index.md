@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2
 linkTitle: 7.2 releases
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Large module support.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Multi-OS upgrade support for clusters with modules.
 compatibleOSSVersion: Redis 7.2
 weight: 71
 alwaysopen: false
@@ -34,7 +34,7 @@ This version offers:
 
 - Triggers and functions preview
 
-- Large module support
+- Multi-OS upgrade support for clusters with modules
 
 ## Detailed release notes
 
@@ -46,12 +46,63 @@ For more detailed release notes, select a build version from the following table
 
 #### Command deprecations
 
-
 - [`CLUSTER SLOTS`](https://redis.io/commands/cluster-slots) is deprecated as of Redis 7.0
 
 - [`JSON.RESP`](https://redis.io/commands/json.resp/) is deprecated as of Redis Stack 7.2.
 
 - [`QUIT`](https://redis.io/commands/quit/) is deprecated as of Redis 7.2
+
+#### API deprecations
+
+Deprecated fields:
+
+- `smtp_use_tls` (replaced with `smtp_tls_mode`)
+
+- `dns_address_master`
+
+- `endpoint_node`
+
+- `endpoint_ip`
+
+- `public_addr` (replaced with `external_addr`)
+
+- `default_shards_overbooking` (replaced with `shards_overbooking`)
+
+- `bdb_high_syncer_lag` (replaced with `replica_src_high_syncer_lag` and `crdt_src_high_syncer_lag`)
+
+- `bdb_syncer_connection_error`
+
+- `bdb_syncer_general_error`
+
+- `sync_sources` (replaced with `replica_sources` and `crdt_sources`)
+
+- `sync` (replaced with `replica_sync` and `crdt_sync`)
+
+- `ssl` (replaced with `tls_mode`)
+
+- `node.bigstore_driver` (replaced with `cluster.bigstore_driver`)
+
+- `auth_method`
+
+- `use_ipv6` (replaced with `use_external_ipv6`)
+
+- `redis_cleanup_job_settings` (replaced with `persistence_cleanup_scan_interval`)
+
+- `import/rdb_url`
+
+- `authentication_redis_pass` (replaced with multiple passwords feature in version 6.0.X)
+
+- `logrotate_dir` (to be replaced with `logrotate_config` or removed)
+
+Deprecated CLI commands:
+
+- `rlutil change_master` (replaced with `rladmin change_master`)
+
+- `rlutil reserved_ports` (replaced with `rladmin cluster config reserved_ports`)
+
+Deprecated REST API requests:
+
+- `POST /v1/modules` (replaced with `POST /v2/modules`)
 
 #### Access control deprecations
 

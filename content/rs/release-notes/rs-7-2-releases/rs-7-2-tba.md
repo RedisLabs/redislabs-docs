@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (August 2023)
 linkTitle: 7.2-TBA (August 2023)
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Large module support.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced Redis on Flash with Speedb) and license updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Multi-OS upgrade support for clusters with modules.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -33,13 +33,12 @@ This version offers:
 
 - Triggers and functions preview
 
-- Large module support
+- Multi-OS upgrade support for clusters with modules
 
 The following table shows the MD5 checksums for the available packages:
 
 | Package | MD5 checksum (7.2-TBA July release) |
 |---------|---------------------------------------|
-| Ubuntu 16 |  |
 | Ubuntu 18 |  |
 | Ubuntu 20 |  |
 | RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
@@ -69,8 +68,6 @@ The following Redis 7.2 features are now supported:
 - Various performance improvements
 
 - `CONFIG SET` for locale
-
-- Module API improvements
 
 - Connection layer modularization
 
@@ -116,6 +113,12 @@ Redis Enterprise version 7.2 introduces Auto Tiering as an enhanced successor to
 
 Redis Enterprise Auto Tiering uses [Speedb](https://www.speedb.io/) as its storage engine, doubling the throughput achieved. For example, a 1 TB database with 50K ops/sec can now serve 100K ops/sec based on the same infrastructure.
 
+To switch existing databases to use Speedb for Auto Tiering and improve performance:
+
+1. Upgrade the cluster to Redis Enterprise Software version 7.2.
+
+1. Upgrade each database with Auto Tiering enabled to Redis database version 7.2.
+
 For more information about Auto Tiering, see:
 
 - [Auto Tiering overview]({{<relref "/rs/databases/auto-tiering">}})
@@ -125,6 +128,8 @@ For more information about Auto Tiering, see:
 #### Updated Redis Enterprise license format
 
 Redis Enterprise Software version 7.2 includes updates to its license format, which add separate shard limits for RAM and flash shards used for Auto Tiering.
+
+For more information, see [Cluster license keys]({{<relref "/rs/clusters/configure/license-keys">}}).
 
 #### Redis ACL selectors and key-based permissions
 
@@ -322,13 +327,13 @@ The `INFO` command can now accept multiple section arguments (requires Redis dat
 
 #### Triggers and functions preview
 
-A preview of triggers and functions, which allow JavaScript functions to run inside Redis on-demand or when certain events occur, is available in Redis Enterprise version 7.2.
+A preview of triggers and functions is available in Redis Enterprise version 7.2. The triggers and functions feature provides for running JavaScript functions inside the Redis Process. These functions can be executed on-demand, by an event-driven trigger, or by a stream processing trigger.
 
 The preview version of triggers and functions is not intended for production use since the API might change in the future and potentially cause application issues when upgrading to a later version. During preview, triggers and functions is not supported for databases with Auto Tiering enabled (previously known as Redis on Flash).
 
 For the full terms, see the [Redis Enterprise Software Agreement](https://redis.com/software-subscription-agreement/).
 
-#### Large module support
+#### Multi-OS upgrade support for clusters with modules {#os-upgrades-with-modules}
 
 Starting from Redis Enterprise version 7.2, all future 7.2.x upgrades are supported for clusters containing databases with modules in combination with with Operating System (OS) upgrades.
 
@@ -441,6 +446,58 @@ For more information about request and response policies, see [Redis command tip
 - [`JSON.RESP`](https://redis.io/commands/json.resp/) is deprecated as of Redis Stack 7.2.
 
 - [`QUIT`](https://redis.io/commands/quit/) is deprecated as of Redis 7.2
+
+#### API deprecations
+
+Deprecated fields:
+
+- `smtp_use_tls` (replaced with `smtp_tls_mode`)
+
+- `dns_address_master`
+
+- `endpoint_node`
+
+- `endpoint_ip`
+
+- `public_addr` (replaced with `external_addr`)
+
+- `default_shards_overbooking` (replaced with `shards_overbooking`)
+
+- `bdb_high_syncer_lag` (replaced with `replica_src_high_syncer_lag` and `crdt_src_high_syncer_lag`)
+
+- `bdb_syncer_connection_error`
+
+- `bdb_syncer_general_error`
+
+- `sync_sources` (replaced with `replica_sources` and `crdt_sources`)
+
+- `sync` (replaced with `replica_sync` and `crdt_sync`)
+
+- `ssl` (replaced with `tls_mode`)
+
+- `node.bigstore_driver` (replaced with `cluster.bigstore_driver`)
+
+- `auth_method`
+
+- `use_ipv6` (replaced with `use_external_ipv6`)
+
+- `redis_cleanup_job_settings` (replaced with `persistence_cleanup_scan_interval`)
+
+- `import/rdb_url`
+
+- `authentication_redis_pass` (replaced with multiple passwords feature in version 6.0.X)
+
+- `logrotate_dir` (to be replaced with `logrotate_config` or removed)
+
+Deprecated CLI commands:
+
+- `rlutil change_master` (replaced with `rladmin change_master`)
+
+- `rlutil reserved_ports` (replaced with `rladmin cluster config reserved_ports`)
+
+Deprecated REST API requests:
+
+- `POST /v1/modules` (replaced with `POST /v2/modules`)
 
 #### Access control deprecations
 
