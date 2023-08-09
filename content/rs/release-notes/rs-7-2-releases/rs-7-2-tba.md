@@ -526,6 +526,8 @@ Deprecated REST API requests:
 
 - `POST /v1/modules` (replaced with `POST /v2/modules`)
 
+- `DELETE /v1/modules` (replaced with `DELETE /v2/modules`)
+
 #### Access control deprecations
 
 - The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
