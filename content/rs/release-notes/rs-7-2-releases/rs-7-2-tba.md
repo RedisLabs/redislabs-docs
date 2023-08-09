@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (August 2023)
 linkTitle: 7.2-TBA (August 2023)
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced successor to Redis on Flash). License file structure updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Multi-OS upgrade support for clusters with modules.
+description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced successor to Redis on Flash). License file structure updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Multi-OS upgrade support for clusters with modules. Redis Stack 7.2 features.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -36,6 +36,8 @@ This version offers:
 - Triggers and functions preview
 
 - Multi-OS upgrade support for clusters with modules
+
+- Redis Stack 7.2 features
 
 The following table shows the MD5 checksums for the available packages:
 
@@ -339,11 +341,34 @@ For the full terms, see the [Redis Enterprise Software Agreement](https://redis.
 
 Starting from Redis Enterprise version 7.2, all future 7.2.x upgrades are supported for clusters containing databases with modules in combination with with Operating System (OS) upgrades.
 
-#### Redis modules 
+#### Redis Stack 7.2 features 
 
-Redis Enterprise Software v7.2 includes the new features delivered in the latest [Redis Stack release 7.2](https://redis.com/blog/introducing-redis-stack-6-2-6-and-7-0-6/):
+Redis Enterprise Software version 7.2 includes the new features delivered in the latest Redis Stack release (7.2):
 
-- TBA
+- Search and query introduces the frequently requested Geo polygons queries for basic shapes and improved performance on sorting in different scenarios. 
+
+- New JSON commands:
+
+    - [`JSON.MERGE`](https://redis.io/commands/json.merge/) – new ways to update existing JSON documents
+    
+    - [`JSON.MSET`](https://redis.io/commands/json.mset/) – write to multiple keys atomically
+
+- New option to use the [RESP3](https://github.com/redis/redis-specifications/blob/master/protocol/RESP3.md) protocol, which improves the response format for all commands.
+
+- Preview for the triggers and functions feature that allows developers to run JavaScript functions inside the Redis Process.
+
+Module versions:
+
+- [RediSearch 2.8.4](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.4)
+
+- [RedisJSON 2.6.6](https://github.com/RedisJSON/RedisJSON/releases/tag/v2.6.6)
+
+- [RedisTimeSeries 1.10.4](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.10.4)
+
+- [RedisBloom 2.6.3](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.3)
+
+- [RedisGears 2.0.11](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.11-m12)
+
 
 See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module/) to learn how to upgrade a module for a database.
 
