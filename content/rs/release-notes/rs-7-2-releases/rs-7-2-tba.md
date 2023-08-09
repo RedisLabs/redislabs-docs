@@ -17,7 +17,9 @@ This version offers:
 
 - Three Redis database versions: 7.2, 6.2, 6.0
 
-- Auto Tiering (enhanced Redis on Flash with Speedb) and license updates
+- Auto Tiering (enhanced successor to Redis on Flash)
+
+- License file structure updates
 
 - Redis ACL selectors and enhanced key-based permissions
 
@@ -107,11 +109,11 @@ The default Redis database version, which is used when you upgrade an existing d
 
 For Redis Enterprise Software version 7.2, `default_redis_version` is 7.2 for both `major` and `latest` upgrade policies.
 
-#### Auto Tiering - Redis on Flash evolution doubling performance {#auto-tiering}
+#### Auto Tiering - Redis on Flash evolution doubling throughput while cutting latencies in half {#auto-tiering}
 
-Redis Enterprise version 7.2 introduces Auto Tiering as an enhanced successor to Redis on Flash, which allows you to provision larger databases at a lower cost by using NVMe drives in addition to RAM.
+Redis Enterprise version 7.2 introduces Auto Tiering as an enhanced successor to Redis on Flash, which allows you to provision larger databases at a lower cost by extending the RAM with flash drives.
 
-Redis Enterprise Auto Tiering uses [Speedb](https://www.speedb.io/) as its storage engine, doubling the throughput achieved. For example, a 1 TB database with 50K ops/sec can now serve 100K ops/sec based on the same infrastructure.
+Redis Enterprise Auto Tiering replaces RocksDB with [Speedb](https://www.speedb.io/) as its storage engine, doubling the throughput and cutting latencies, achieved using the same infrastructure resources. For example, a 1 TB database with 50K ops/sec can now serve 100K ops/sec based on the same infrastructure.
 
 To switch existing databases to use Speedb for Auto Tiering and improve performance:
 
@@ -255,7 +257,7 @@ To try out the new UI:
 
 - The cluster name, user, and user role are shown in the upper right for quickly identifying the cluster from any screen. You can also **Change user password** from the dropdown menu.
 
-- Auto Tiering licensing and an emergency switch for the flash engine (available only in the new UI).
+- Auto Tiering licensing and a toggle for the storage engine used in Auto Tiering enabled databases (available only in the new UI).
 
 - Input validations.
 

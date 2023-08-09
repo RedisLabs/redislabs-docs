@@ -18,7 +18,9 @@ This version offers:
 
 - Three Redis database versions: 7.2, 6.2, 6.0
 
-- Auto Tiering (enhanced Redis on Flash with Speedb) and license updates
+- Auto Tiering (enhanced successor to Redis on Flash)
+
+- License file structure updates
 
 - Redis ACL selectors and enhanced key-based permissions
 
