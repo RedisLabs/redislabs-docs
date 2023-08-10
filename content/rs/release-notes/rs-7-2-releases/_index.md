@@ -58,7 +58,7 @@ For more detailed release notes, select a build version from the following table
 
 #### API deprecations
 
-Deprecated fields:
+Fields deprecated as of Redis Enterprise v4.3.3:
 
 - `smtp_use_tls` (replaced with `smtp_tls_mode`)
 
@@ -70,7 +70,17 @@ Deprecated fields:
 
 - `public_addr` (replaced with `external_addr`)
 
+Fields deprecated as of Redis Enterprise v4.4.2:
+
 - `default_shards_overbooking` (replaced with `shards_overbooking`)
+
+Fields deprecated as of Redis Enterprise v6.4.2:
+
+- `use_ipv6` (replaced with `use_external_ipv6`)
+
+- `redis_cleanup_job_settings` (replaced with `persistence_cleanup_scan_interval`)
+
+Fields deprecated as of Redis Enterprise v5.0.1:
 
 - `bdb_high_syncer_lag` (replaced with `replica_src_high_syncer_lag` and `crdt_src_high_syncer_lag`)
 
@@ -84,29 +94,31 @@ Deprecated fields:
 
 - `ssl` (replaced with `tls_mode`)
 
+Fields deprecated as of Redis Enterprise v7.2:
+
 - `node.bigstore_driver` (replaced with `cluster.bigstore_driver`)
 
 - `auth_method`
 
-- `use_ipv6` (replaced with `use_external_ipv6`)
-
-- `redis_cleanup_job_settings` (replaced with `persistence_cleanup_scan_interval`)
-
-- `import/rdb_url`
-
 - `authentication_redis_pass` (replaced with multiple passwords feature in version 6.0.X)
+
+Other deprecated fields:
+
+- `import/rdb_url` (deprecated as of Redis Enterprise v4.X)
 
 - `logrotate_dir` (to be replaced with `logrotate_config` or removed)
 
 Deprecated CLI commands:
 
-- `rlutil change_master` (replaced with `rladmin change_master`)
+- `rlutil change_master` (deprecated as of Redis Enterprise v6.2.18, replaced with `rladmin change_master`)
 
-- `rlutil reserved_ports` (replaced with `rladmin cluster config reserved_ports`)
+- `rlutil reserved_ports` (deprecated as of Redis Enterprise v7.2, replaced with `rladmin cluster config reserved_ports`)
 
-Deprecated REST API requests:
+REST API requests deprecated as of Redis Enterprise v7.2:
 
 - `POST /v1/modules` (replaced with `POST /v2/modules`)
+
+- `DELETE /v1/modules` (replaced with `DELETE /v2/modules`)
 
 #### Access control deprecations
 
