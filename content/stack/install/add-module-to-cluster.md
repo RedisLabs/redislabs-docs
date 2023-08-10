@@ -14,6 +14,12 @@ aliases:
 
 To use other modules or upgrade an existing module to a more recent version, you need to install the new module package on your cluster.
 
+{{<warning>}}
+- Some module versions are not supported or recommended for use with Redis Enterprise.
+
+- We recommend consulting [Redis support](https://redis.com/company/support/) before you upgrade a module on the cluster, especially if the cluster is used in production.
+{{</warning>}}
+
 ## Get packaged modules
 
 To install or upgrade a module on a [Redis Enterprise]({{<relref "/rs">}}) cluster, you need a module package.
