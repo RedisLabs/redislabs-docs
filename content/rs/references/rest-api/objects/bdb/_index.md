@@ -16,7 +16,7 @@ An API object that represents a managed database in the cluster.
 | action_uid | string | Currently running action's UID (read-only) |
 | aof_policy | **'appendfsync-every-sec'** <br />'appendfsync-always' | Policy for Append-Only File data persistence |
 | authentication_admin_pass | string | Password for administrative access to the BDB (used for SYNC from the BDB) |
-| authentication_redis_pass | string | Redis AUTH password authentication.  <br/>Use for Redis databases only.  Ignored for memcached databases. (deprecated, replaced with multiple passwords feature in version 6.0.X) |
+| authentication_redis_pass | string | Redis AUTH password authentication.  <br/>Use for Redis databases only.  Ignored for memcached databases. (deprecated as of Redis Enterprise v7.2, replaced with multiple passwords feature in version 6.0.X) |
 | authentication_sasl_pass | string | Binary memcache SASL password |
 | authentication_sasl_uname | string | Binary memcache SASL username (pattern does not allow special characters &,\<,>,") |
 | authentication_ssl_client_certs | {{<code>}}	
@@ -87,11 +87,11 @@ An API object that represents a managed database in the cluster.
 | db_conns_auditing | boolean | Enables/deactivates [database connection auditing]({{<relref "/rs/security/audit-events">}}) |
 | default_user | boolean (default:&nbsp;true) | Allow/disallow a default user to connect |
 | disabled_commands | string (default: ) | Redis commands which are disabled in db |
-| dns_address_master | string | Database private address endpoint FQDN (read-only) (deprecated) |
+| dns_address_master | string | Database private address endpoint FQDN (read-only) (deprecated as of Redis Enterprise v4.3.3) |
 | email_alerts | boolean (default:&nbsp;false) | Send email alerts for this DB |
 | endpoint | string | Latest bound endpoint. Used when reconfiguring an endpoint via update |
-| endpoint_ip | complex object | External IP addresses of node hosting the BDB's endpoint. `GET`&nbsp;`/jsonschema` to retrieve the object's structure. (read-only) (deprecated) |
-| endpoint_node | integer | Node UID hosting the BDB's endpoint (read-only) (deprecated) |
+| endpoint_ip | complex object | External IP addresses of node hosting the BDB's endpoint. `GET`&nbsp;`/jsonschema` to retrieve the object's structure. (read-only) (deprecated as of Redis Enterprise v4.3.3) |
+| endpoint_node | integer | Node UID hosting the BDB's endpoint (read-only) (deprecated as of Redis Enterprise v4.3.3) |
 | endpoints | array | List of database access endpoints (read-only) |
 | enforce_client_authentication | **'enabled'** <br />'disabled' | Require authentication of client certificates for SSL connections to the database. If set to 'enabled', a certificate should be provided in either authentication_ssl_client_certs or authentication_ssl_crdt_certs |
 | eviction_policy | 'volatile-lru'<br />'volatile-ttl'<br />'volatile-random'<br />'allkeys-lru'<br />'allkeys-random'<br />'noeviction'<br />'volatile-lfu'<br />'allkeys-lfu' | Database eviction policy (Redis style).<br />**Redis DB default**:&nbsp;'volatile-lru'<br />**memcached DB default**:&nbsp;'allkeys-lru' |
@@ -167,9 +167,9 @@ An API object that represents a managed database in the cluster.
 | slave_ha | boolean | Enable replica high availability mechanism for this database (default takes the cluster setting) |
 | slave_ha_priority | integer | Priority of the BDB in replica high availability mechanism |
 | snapshot_policy | array of [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) objects | Policy for snapshot-based data persistence. A dataset snapshot will be taken every N secs if there are at least M writes changes in the dataset |
-| ssl | boolean (default:&nbsp;false) | Require SSL authenticated and encrypted connections to the database (deprecated) |
+| ssl | boolean (default:&nbsp;false) | Require SSL authenticated and encrypted connections to the database (deprecated as of Redis Enterprise v5.0.1) |
 | [status]({{<relref "/rs/references/rest-api/objects/bdb/status">}}) | 'pending'<br />'active'<br />'active-change-pending'<br />'delete-pending'<br />'import-pending'<br />'creation-failed'<br />'recovery' | Database lifecycle status (read-only) |
-| sync | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | (deprecated, use [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) or crdt_sync instead) Enable, disable, or pause syncing from specified sync_sources |
+| sync | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | (deprecated as of Redis Enterprise v5.0.1, use [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) or crdt_sync instead) Enable, disable, or pause syncing from specified sync_sources |
 | sync_sources | {{<code>}}
 [{
   "uid": integer,
@@ -182,7 +182,7 @@ An API object that represents a managed database in the cluster.
   "lag": integer,
   "last_error": string
 }, ...]
-{{</code>}} | (deprecated, instead use replica_sources or crdt_sources) Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section<br />**uid**: Numeric unique identification of this source<br />**uri**: Source Redis URI<br />**compression**: Compression level for the replication link<br />**status**: Sync status of this source<br />**rdb_transferred**: Number of bytes transferred from the source's RDB during the syncing phase<br />**rdb_size**: The source's RDB size to be transferred during the syncing phase<br />**last_update**: Time last update was received from the source<br />**lag**: Lag in millisec between source and destination (while synced)<br />**last_error**: Last error encountered when syncing from the source |
+{{</code>}} | (deprecated as of Redis Enterprise v5.0.1, instead use replica_sources or crdt_sources) Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section<br />**uid**: Numeric unique identification of this source<br />**uri**: Source Redis URI<br />**compression**: Compression level for the replication link<br />**status**: Sync status of this source<br />**rdb_transferred**: Number of bytes transferred from the source's RDB during the syncing phase<br />**rdb_size**: The source's RDB size to be transferred during the syncing phase<br />**last_update**: Time last update was received from the source<br />**lag**: Lag in millisec between source and destination (while synced)<br />**last_error**: Last error encountered when syncing from the source |
 | syncer_mode | 'distributed'<br />'centralized' | The syncer for replication between database instances is either on a single node (centralized) or on each node that has a proxy according to the proxy policy (distributed). (read-only) |
 | tags | {{<code>}}	
 [{
