@@ -634,6 +634,18 @@ To prevent this issue:
     
     - Delete the rule if not needed.
 
+### Operating system limitations
+
+#### Modules cannot load in Oracle Linux 7 & 8
+
+Databases hosted on Oracle Linux 7 & 8 cannot load modules.
+
+As a temporary workaround, you can change the node's `os_name` in the Cluster Configuration Store (CCS):
+
+```sh
+ccs-cli hset node:<ID> os_name rhel7
+```
+
 ## Security
 
 #### Open source Redis security fixes compatibility

@@ -68,6 +68,16 @@ Due to binary differences in modules between the two operating systems, you cann
 
 A database with modules cannot reside on an Amazon Linux 2 (release candidate) node. This limitation affects Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}) but was fixed in version [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
 
+### Modules cannot load in Oracle Linux 7 & 8
+
+Databases hosted on Oracle Linux 7 & 8 cannot load modules.
+
+As a temporary workaround, you can change the node's `os_name` in the Cluster Configuration Store (CCS):
+
+```sh
+ccs-cli hset node:<ID> os_name rhel7
+```
+
 ## VMware
 
 Redis Enterprise is compatible with VMware, but make sure that you:
