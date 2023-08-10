@@ -36,7 +36,7 @@ Details:
 
   - [#3628](https://github.com/RediSearch/RediSearch/pull/3628) Background indexing scanning performance (MOD-5259)
   - [#3259](https://github.com/RediSearch/RediSearch/pull/3259) Allow alias name beginning with `as`
-  - [#3641](https://github.com/RediSearch/RediSearch/pull/3641) Indexing sanitizing trigger in heavily data updates scenario
+  - [#3641](https://github.com/RediSearch/RediSearch/pull/3641) Indexing sanitizing trigger in heavy data updates scenario
 
 ## v2.6.9 (April 2023)
 
