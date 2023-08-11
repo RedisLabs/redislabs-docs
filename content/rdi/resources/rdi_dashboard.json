@@ -148,7 +148,7 @@
           },
           "editorMode": "builder",
           "exemplar": false,
-          "expr": "sum(rdi_engine_status)",
+          "expr": "sum(rdi_engine_state)",
           "format": "time_series",
           "instant": false,
           "interval": "",
