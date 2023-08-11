@@ -161,7 +161,7 @@ For details on this platform, see the [Rancher documentation](https://rancherman
 
 ## VMware Tanzu Kubernetes Grid (TKG)
 
-For details on this platform, see the [documentation](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/index.html).
+For details on this platform, see the [TKG documentation](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/index.html).
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
