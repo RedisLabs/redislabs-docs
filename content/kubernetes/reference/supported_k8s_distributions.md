@@ -41,6 +41,8 @@ Any distribution not listed below is not supported for production workloads.
 
 ## Community Kubernetes
 
+For details on this platform, see the Kubernetes [documentation](https://kubernetes.io/docs/home/supported-doc-versions/).
+
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -58,7 +60,9 @@ Any distribution not listed below is not supported for production workloads.
 | **1.16** |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
 {{</table-scrollable>}}
 
-## OpenShift
+## OpenShift Container Platform
+
+For details on this platform, see the [documentation](https://docs.openshift.com/container-platform/4.13/welcome/index.html).
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
@@ -74,8 +78,9 @@ Any distribution not listed below is not supported for production workloads.
 | **3.11** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
 {{</table-scrollable>}}
 
+## Amazon Elastic Kubernetes Service (EKS)
 
-## Amazon EKS
+For details on this platform, see the [EKS documentation](https://docs.aws.amazon.com/eks/?icmpid=docs_homepage_containers).
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
@@ -111,7 +116,9 @@ For details on this platform, see the [AKS documentation](https://learn.microsof
 
 {{</table-scrollable>}}
 
-## Google GKE
+## Google Kubernetes Engine (GKE)
+
+For details on this platform, see the [GKE documentation](https://cloud.google.com/kubernetes-engine/docs).
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
@@ -129,6 +136,8 @@ For details on this platform, see the [AKS documentation](https://learn.microsof
 {{</table-scrollable>}}
 
 ## Rancher
+
+For details on this platform, see the [Rancher documentation](https://ranchermanager.docs.rancher.com/).
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
@@ -150,7 +159,9 @@ For details on this platform, see the [AKS documentation](https://learn.microsof
 
 {{</table-scrollable>}}
 
-## VMware TKG
+## VMware Tanzu Kubernetes Grid (TKG)
+
+For details on this platform, see the [documentation](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/index.html).
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
@@ -159,7 +170,9 @@ For details on this platform, see the [AKS documentation](https://learn.microsof
 |  **1.6-1.22** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |
 {{</table-scrollable>}}
 
-## VMware TKGI
+## VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)
+
+For details on this platform, see the [TKGI documentation](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid-Integrated-Edition/index.html).
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
