@@ -188,6 +188,12 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 - Because a rejected command does not record the duration for command stats, an error will appear after it is reprocessed that will cause the Redis database to freeze until the shard is restarted. ([#12247](https://github.com/redis/redis/pull/12247))
 
+#### Legacy UI known issues
+
+When using the legacy UI, you cannot update and save your changes on the **settings > preferences** tab even though these settings are visible. This issue will be fixed in the next maintenance release.
+
+As a workaround, use the new Cluster Manager UI to update these settings from the **Cluster > Security > Preferences** tab.
+
 #### Pub/sub channel ACL limitations
 
 In Redis Enterprise Software version 6.4.2, you could use `&channel` syntax in Redis ACL rules to allow access to specific pub/sub channels even when default pub/sub permissions were permissive (`&allchannels` or `&*`), allowing all channels by default. However, `&allchannels &channel` is not valid syntax.
