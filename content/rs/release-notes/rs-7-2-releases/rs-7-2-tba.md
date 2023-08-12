@@ -295,6 +295,10 @@ To open the legacy admin console when signed in to the new UI, select your usern
 
 - And more
 
+{{<note>}}
+With the release of the new Cluster Manager UI, the legacy UI is considered deprecated and will eventually be phased out. New functionality will only be implemented in the new Cluster Manager UI, and the old UI will no longer be maintained except for critical bug fixes.
+{{</note>}}
+
 #### New INFO fields
 
 The [`INFO`](https://redis.io/commands/info/) command includes new fields:
@@ -547,6 +551,10 @@ REST API requests deprecated as of Redis Enterprise v7.2:
     - Redis ACLs: Not Dangerous and Read Only.
 
 - A deprecation notice for SASL-based LDAP was included in [previous Redis Enterprise Software release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/#deprecation-notices). When you upgrade to Redis Enterprise Software version 7.2, all existing "external" users (previously used to support SASL-based LDAP) will be removed.
+
+#### Legacy UI
+
+With the release of the new Cluster Manager UI, the legacy UI is considered deprecated and will eventually be phased out. New functionality will only be implemented in the new Cluster Manager UI, and the old UI will no longer be maintained except for critical bug fixes.
 
 #### RedisGraph
 
