@@ -10,7 +10,165 @@ categories: ["RS"]
 
 If your client or application cannot connect to your database, verify the following.
 
-## Database endpoint resolution
+## Identify Redis host issues
+
+### Check resource usage
+
+Used disk space should be less than `90%`. To check the host machine's disk usage, run the [`df`](https://man7.org/linux/man-pages/man1/df.1.html) command:
+
+```sh
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          59G   23G   33G  41% /
+/dev/vda1        59G   23G   33G  41% /etc/hosts
+```
+
+Check if the capacity of the log directory did not increase using the [`du`](https://man7.org/linux/man-pages/man1/du.1.html) command:
+
+```sh
+$ du -sh $logdir                
+49M	/var/opt/redislabs/log
+```
+
+RAM and CPU utilization should be less than `80%`, and host resources must be available exclusively for Redis Enterprise Software. You should also make sure that swap memory is not being used or is not configured.
+
+Run the [`free`](https://man7.org/linux/man-pages/man1/free.1.html) command to check memory usage:
+
+```sh
+$ free
+              total        used        free      shared  buff/cache   available
+Mem:        6087028     1954664      993756      409196     3138608     3440856
+Swap:       1048572           0     1048572
+```
+
+Used CPU should be less than `80%`. To check CPU usage, use `top` or `vmstat`.
+
+Run [`top`](https://man7.org/linux/man-pages/man1/top.1.html):
+
+```sh
+$ top
+Tasks:  54 total,   1 running,  53 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  1.4 sy,  0.0 ni, 96.8 id,  0.0 wa,  0.0 hi,  0.1 si,  0.0 st
+KiB Mem :  6087028 total,   988672 free,  1958060 used,  3140296 buff/cache
+KiB Swap:  1048572 total,  1048572 free,        0 used.  3437460 avail Mem 
+```
+
+Run [`vmstat`](https://man7.org/linux/man-pages/man8/vmstat.8.html):
+
+```sh
+$ vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 2  0      0 988868 177588 2962876    0    0     0     6    7   12  1  1 99  0  0
+```
+
+### Sync clock with time server
+
+It is recommended to sync the host clock with a time server.
+
+Verify that time is synchronized with the time server using one of the following commands:
+
+- `ntpq -p`
+
+- `chronyc sources`
+
+- [`timedatectl`](https://man7.org/linux/man-pages/man1/timedatectl.1.html)
+
+### Remove https_proxy and http_proxy variables
+
+Run [`printenv`](https://man7.org/linux/man-pages/man1/printenv.1.html) and check if `https_proxy` and `http_proxy` are configured as environment variables:
+
+```sh
+printenv | grep -i proxy
+```
+
+If `https_proxy` or `http_proxy` exist, remove them:
+
+```sh
+unset https_proxy
+```
+```sh
+unset http_proxy
+```
+
+### Review system logs
+
+Review system logs including the syslog or journal for any error messages, warnings, or critical events. See [Logging]({{<relref "/rs/clusters/logging">}}) for more information.
+
+## Identify issues caused by security hardening
+
+Temporarily deactivate any security hardening tools (such as selinux, cylance, McAfee, or dynatrace), and check if the problem is resolved. 
+
+The user `redislabs` must have read and write access to `/tmp` directory. Run the following commands to verify:
+
+```sh
+$ su - redislabs -s /bin/bash -c 'touch /tmp/test'
+```
+```sh
+$ ls -l /tmp/test
+-rw-rw-r-- 1 redislabs redislabs 0 Aug 12 02:06 /tmp/test
+```
+
+Using a non-permissive file mode creation mask (`umask`) can cause issues. Check the output of `umask`:
+
+```sh
+$ umask
+0022
+```
+
+If `umask`'s output differs from the default value `0022`, it might prevent normal operation. Consult your system administrator and revert to the default `umask` setting.
+
+## Identify cluster issues
+
+Use `supervisorctl status` to verify all processes are in a `RUNNING` state:
+
+```sh
+supervisorctl status
+```
+
+Run `rlcheck` and verify no errors appear:
+
+```sh
+rlcheck
+```
+
+Run [`rladmin status issues_only`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) and verify that no issues appear:
+
+```sh
+$ rladmin status issues_only
+CLUSTER NODES:
+NODE:ID ROLE ADDRESS EXTERNAL_ADDRESS HOSTNAME SHARDS CORES FREE_RAM PROVISIONAL_RAM VERSION STATUS
+
+DATABASES:
+DB:ID  NAME        TYPE  STATUS  SHARDS  PLACEMENT   REPLICATION    PERSISTENCE    ENDPOINT  
+
+ENDPOINTS:
+DB:ID               NAME             ID          NODE             ROLE             SSL       
+
+SHARDS:
+DB:ID      NAME     ID        NODE     ROLE     SLOTS      USED_MEMORY            STATUS     
+
+```
+
+Run [`rladmin status shards`]({{<relref "/rs/references/cli-utilities/rladmin/status#status-shards">}}). For each shard, `USED_MEMORY` should be less than 25 GB.
+
+```sh
+$ rladmin status shards
+SHARDS:
+DB:ID    NAME         ID          NODE      ROLE      SLOTS       USED_MEMORY       STATUS   
+db:1     db1          redis:1     node:1    master    0-16383     2.13MB            OK  
+```
+
+Run [`rladmin cluster running_actions`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/running_actions">}}) and confirm that no tasks are currently running (active):
+
+```sh
+$ rladmin cluster running_actions
+No active tasks
+```
+
+## Troubleshoot connectivity
+
+### Database endpoint resolution
 
 On the client machine, check if the database endpoint can be resolved:
 
@@ -24,17 +182,11 @@ If endpoint resolution fails on the client machine, check one of the cluster nod
 dig @localhost <endpoint>
 ```
 
-If endpoint resolution succeeds on the cluster node but fails on the client machine, the problem is with the organizational DNS.
+If endpoint resolution succeeds on the cluster node but fails on the client machine, review the DNS configuration and fix any errors.
 
-{{<note>}}
-Can you elaborate on what is meant by organizational DNS problems? Does this just mean DNS isn't set up properly, so the user should review their DNS configuration?
-{{</note>}}
+If the endpoint can’t be resolved on the cluster node, [contact support](https://redis.com/company/support/).
 
-{{<note>}}
-What if the endpoint can't be resolved on the cluster node either? What does this mean and what should they do next?
-{{</note>}}
-
-## Client application issues
+### Client application issues
 
 To identify possible client application issues, test connectivity from the client machine to the database using [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}):
 
@@ -58,11 +210,9 @@ redis-cli -p <port> PING
 
  If the cluster node is also unable to connect to the database, the issue is with the network. Contact your system administrator for help.
 
- {{<note>}}
- What if the client fails to the connect but the cluster node succeeds? What should the user do in that situation?
- {{</note>}}
+If the client fails to connect, but the cluster node succeeds, perform health checks on the client and network.
 
-## Firewall access
+### Firewall access
 
 Run one of the following commands to verify that database access is not blocked by a firewall on the client machine or cluster:
 
@@ -83,3 +233,54 @@ To resolve firewall issues:
 - If a firewall is configured for your database, add the client IP address to the firewall rules.
 
 - Configure third-party firewalls and external proxies to allow the cluster FQDN, database endpoint IP address, and database ports.
+
+## Troubleshoot latency
+
+### Server-side latency
+
+Make sure the database's used memory does not reach the configured database max memory limit. For more details, see [Database memory limits]({{<relref "/rs/databases/memory-performance/memory-limit">}}).
+
+Try to correlate the time of the latency with any surge in the following metrics:
+
+- Number of connections
+
+- Used memory
+
+- Evicted keys
+
+- Expired keys 
+
+
+Run [`SLOWLOG GET`](https://redis.io/commands/slowlog-get/) using [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) to identify slow commands such as [`KEYS`](https://redis.io/commands/keys/) or [`HGETALL`](https://redis.io/commands/hgetall/):
+
+```sh
+redis-cli -p <port> SLOWLOG GET <number of entries>
+```
+
+Consider using alternative commands such as [`SCAN`](https://redis.io/commands/scan/), [`SSCAN`](https://redis.io/commands/sscan/), [`HSCAN`](https://redis.io/commands/hscan/), and [`ZSCAN`](https://redis.io/commands/zscan/).
+
+Keys with large memory footprints can cause latency. To identify such keys, compare the keys returned by [`SLOWLOG GET`](https://redis.io/commands/slowlog-get/) with the output of the following commands:
+
+```sh
+redis-cli -p <port> --memkeys
+```
+
+```sh
+redis-cli -p <port> --bigkeys
+```
+
+For additional diagnostics, see:
+
+- [Diagnosing latency issues](https://redis.io/docs/management/optimization/latency/)
+
+- [View Redis slow log]({{<relref "/rs/clusters/logging/redis-slow-log">}})
+
+### Client-side latency
+
+Verify the following:
+
+- There is no memory or CPU pressure on the client host.
+
+- The client uses a connection pool instead of frequently opening and closing connections.
+
+- The client does not erroneously open multiple connections that can pressure the client or server.
