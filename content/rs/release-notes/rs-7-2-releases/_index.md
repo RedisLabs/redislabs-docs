@@ -49,7 +49,13 @@ For more detailed release notes, select a build version from the following table
 
 ### Breaking changes
 
-TBA
+For a list of potentially breaking changes introduced in version 7.2, see:
+
+- [Breaking changes]({{<relref "/rs/release-notes/rs-7-2-releases/rs-7-2-tba#breaking-changes">}})
+
+- [Redis 7.2 breaking changes]({{<relref "/rs/release-notes/rs-7-2-releases/rs-7-2-tba#redis-72-breaking-changes">}})
+
+To prevent potential application issues due to RESP3 breaking changes, see [Client prerequisites for Redis 7.2 upgrade]({{<relref "/rs/release-notes/rs-7-2-releases/rs-7-2-tba#client-prerequisites-for-redis-72-upgrade">}}).
 
 ### Deprecations
 
