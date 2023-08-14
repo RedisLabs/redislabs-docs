@@ -344,7 +344,7 @@ JSON introduces two new commands: [JSON.MERGE](https://redis.io/commands/json.me
 Preview of triggers and functions that allows developers to run JavaScript functions inside the Redis process.
 
 #### Search and Query:
-This new major version introduces the frequently asked Geo Polygon Search. Adding the `GEOSHAPE` field type that supports polygon shapes using the [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). In addition to the existing `GEO` for geo range queries, now an alias for `GEOPOINT`, we add `GEOSHAPE` with the support for `POLYGON` and `POINT` as new shapes formats and polygons operations.
+This new major version introduces the frequently asked [Geo Polygon](https://redis.io/commands/ft.search/#examples) Search. Adding the [GEOSHAPE](https://redis.io/commands/ft.create/) field type that supports polygon shapes using the [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). In addition to the existing `GEO` for geo range queries, now an alias for `GEOPOINT`, we add `GEOSHAPE` with the support for `POLYGON` and `POINT` as new shapes formats and polygons operations.
 
 In addition, 7.2 brings improvements in performance for `SORT BY` operations using [`FT.SEARCH`](https://redis.io/commands/ft.search/#optional-arguments) and [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate/#optional-arguments), and the new `FORMAT` for better readability and future support for better error handling responses on `FT.SEARCH` and `FT.AGGREGATE` in RESP3 only.
 
