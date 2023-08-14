@@ -38,11 +38,10 @@ To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to sp
 
 - enable Auto Tiering (`enabled: true`)
 - flash storage driver (`flashStorageEngine`)
-  - `rocksdb` or `speedb`(default)
+  - `rocksdb` (default)
 - storage class name (`storageClassName`)
 - minimal flash disk size (`flashDiskSize`)
 
-{{<warning>}}Switching between storage engines requires guidance by Redis Support or your Account Manager.{{</warning>}}
 
 Here is an example of an REC custom resource with these attributes:
 

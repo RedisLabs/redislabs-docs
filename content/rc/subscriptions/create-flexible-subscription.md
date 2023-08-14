@@ -65,6 +65,14 @@ The following settings are defined in the **General settings** of the **Setup** 
 | **Active-Active Redis** | Hosts your datasets in multiple read-write locations to support distributed applications and disaster recovery. See [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active" >}}) |
 | **Auto Tiering**| Determines if your databases are stored only in memory (RAM) or are split between memory and Flash storage (RAM+Flash).  See [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}})|
 
+### Version
+
+{{<image filename="images/rc/subscription-new-flexible-version-section.png" width="75%" alt="The General settings of the Setup tab." >}}{{< /image >}}
+
+The **Version** section lets you choose the Redis version of your database. Choose **Redis 7.2** if you want to use the latest advanced features of Redis.
+
+Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
+
 ### Advanced options {#advanced-options}
 
 {{<image filename="images/rc/subscription-new-flexible-setup-advanced.png" width="75%" alt="The Advanced settings of the Setup tab." >}}{{< /image >}}
@@ -78,6 +86,7 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 | **VPC configuration** | Select _In a new VPC_ to deploy to a new [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC).<br/><br/>To deploy this subscription to an existing virtual private cloud, select _In existing VPC_ and then set VPC ID to the appropriate ID value.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
 | **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range of IP addresses for your deployment. Because Redis creates a new [subnet](https://en.wikipedia.org/wiki/Subnetwork) for the _Deployment CIDR_ in your [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC), it cannot overlap with the CIDR ranges of other subnets used by your subscription.<br/><br/>For deployments in an existing VPC, the _Deployment CIDR_ must be within your VPC's **primary** CIDR range (secondary CIDRs are not supported). |
 | **Allowed Availability Zones** | The availability zones for your selected region.<br/><br/>If you choose *Manual selection*, you must select at least one zone ID from the **Zone IDs** list.  For more information, see [Availability zones](#availability-zones). |
+| **Maintenance windows** | Determines when Redis can perform [maintenance]({{<relref "/rc/subscriptions/maintenance">}}) on your databases. Select **Manual** if you want to set [manual maintenance windows]({{<relref "/rc/subscriptions/maintenance">}}).  |
 
 When finished, choose **Continue** to determine your subscription size requirements.
 
