@@ -227,7 +227,7 @@ With the release of the new Cluster Manager UI, the legacy UI is considered depr
 
 Redis Enterprise Software version 7.2 supports features included in Redis Stack version 7.2.
 
-The following sections include a few highlights. For more details, see the [Redis Stack 7.2.0-0 release notes](https://github.com/redis-stack/redis-stack/releases/tag/v7.2.0-v0).
+The following sections include a few highlights. For more details, see the [Redis Stack 7.2 release notes](https://github.com/redis-stack/redis-stack/releases/tag/v7.2.0-v0).
 
 ##### Search and query
 
