@@ -24,7 +24,6 @@ This includes, but is not limited to:
 - Cluster optimization
 - Replacing a cluster node
 - Adding more memory to a node
-- Restarting the cluster proxy
 - Applying security patches
 
 Redis will notify users by email when maintenance starts and ends. If Redis needs an action from a user to start maintenance, Redis will notify users with a reasonable amount of time before planned maintenance. 
@@ -37,3 +36,6 @@ Urgent maintenance refers to any activity that could affect service and cannot w
 
 Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily skipped maintenance. Redis will notify users by email when urgent maintenance starts and ends.
 
+### Major upgrades
+
+For major upgrades or upgrades that might include breaking changes, users will receive an advance notification with sufficient time to prepare before the upgrade.
