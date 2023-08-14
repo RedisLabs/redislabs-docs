@@ -1,28 +1,23 @@
 ---
 Title: Redis Enterprise Software release notes 7.2
 linkTitle: 7.2 releases
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced successor to Redis on Flash). License file structure updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Multi-OS upgrade support for clusters with modules. Redis Stack 7.2 features.
+description: Redis 7.0 and 7.2 features. Auto Tiering (enhanced successor to Redis on Flash). RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. Redis Stack 7.2 features. Three Redis database versions. License file structure updates. Redis ACL selectors and enhanced key-based permissions. New INFO fields. Log rotation enhancements. Multi-OS upgrade support for clusters with modules.
 compatibleOSSVersion: Redis 7.2
 weight: 71
 alwaysopen: false
 toc: "true"
-headerRange: "[1-2]"
 categories: ["RS"]
 ---
 
 ​[​Redis Enterprise Software version 7.2](https://redis.com/redis-enterprise-software/download-center/software/) is now available!
 
+## Highlights
+
 This version offers:
  
 - Redis 7.0 and 7.2 features
 
-- Three Redis database versions: 7.2, 6.2, 6.0
-
 - Auto Tiering (enhanced successor to Redis on Flash)
-
-- License file structure updates
-
-- Redis ACL selectors and enhanced key-based permissions
 
 - RESP3 support
 
@@ -30,15 +25,19 @@ This version offers:
 
 - A preview of the redesigned Cluster Manager UI (admin console)
 
+- Redis Stack 7.2 features
+
+- Three Redis database versions: 7.2, 6.2, 6.0
+
+- License file structure updates
+
+- Redis ACL selectors and enhanced key-based permissions
+
 - New INFO fields
 
 - Log rotation enhancements
 
-- Triggers and functions preview
-
 - Multi-OS upgrade support for clusters with modules
-
-- Redis Stack 7.2 features
 
 ## Detailed release notes
 
@@ -46,7 +45,13 @@ For more detailed release notes, select a build version from the following table
 
 {{<table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes,OSS&nbsp;Redis compatibility" columnSources="LinkTitle,Description,compatibleOSSVersion" enableLinks="LinkTitle">}}
 
-## Deprecations
+## Version changes
+
+### Breaking changes
+
+TBA
+
+### Deprecations
 
 #### Command deprecations
 
@@ -172,63 +177,7 @@ TLS 1.0 and TLS 1.1 connections are considered deprecated in favor of TLS 1.2 or
 Please verify that all clients, apps, and connections support TLS 1.2. Support for the earlier protocols will be removed in a future release.
 Certain operating systems, such as RHEL 8, have already removed support for the earlier protocols. Redis Enterprise Software cannot support connection protocols that are not supported by the underlying operating system.
 
-## Known limitations
-
-### Feature limitations
-
-#### Command limitations
-
-- [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) might not run correctly in the following cases:
-
-    - The Redis database version is earlier than 7.2.0.
-
-    - The `CLIENT NO-TOUCH` command is forbidden by ACL rules.
-
-    Before sending this command, clients should verify the database version is 7.2.0 or later and that using this command is allowed. 
-
-- You cannot use [`SUNSUBSCRIBE`](https://redis.io/commands/sunsubscribe/) to unsubscribe from a shard channel if the regex changed while subscribed.
-
-- Using [`XREADGROUP BLOCK`](https://redis.io/commands/xreadgroup/) with `>` to return all new streams will cause the Redis database to freeze until the shard is restarted. ([#12031](https://github.com/redis/redis/pull/12301))
-
-- Because a rejected command does not record the duration for command stats, an error will appear after it is reprocessed that will cause the Redis database to freeze until the shard is restarted. ([#12247](https://github.com/redis/redis/pull/12247))
-
-#### Legacy UI known issues
-
-When using the legacy UI, you cannot update and save your changes on the **settings > preferences** tab even though these settings are visible. This issue will be fixed in the next maintenance release.
-
-As a workaround, use the new Cluster Manager UI to update these settings from the **Cluster > Security > Preferences** tab.
-
-#### Pub/sub channel ACL limitations
-
-In Redis Enterprise Software version 6.4.2, you could use `&channel` syntax in Redis ACL rules to allow access to specific pub/sub channels even when default pub/sub permissions were permissive (`&allchannels` or `&*`), allowing all channels by default. However, `&allchannels &channel` is not valid syntax.
-
-As of Redis Enterprise Software version 7.2, you cannot create Redis ACLs with this combination of rules. You can only use `&channel` to allow access to specific channels if the default pub/sub permissions are restrictive (`resetchannels`).
-
-Associating an ACL that contains the invalid syntax <nobr>`&allchannels &channel`</nobr> (created before version 7.2) with a user and database might leave the database in a pending state, unable to function.
-
-To prevent this issue:
-
-1. Review all existing ACL rules.
-
-1. For each rule containing `&channel`, either:
-
-    - Add the `resetchannels` prefix to restrict access to all channels by default.
-    
-    - Delete the rule if not needed.
-
-### Operating system limitations
-
-#### Modules cannot load in Oracle Linux 7 & 8
-
-Databases hosted on Oracle Linux 7 & 8 cannot load modules.
-
-As a temporary workaround, you can change the node's `os_name` in the Cluster Configuration Store (CCS):
-
-```sh
-ccs-cli hset node:<ID> os_name rhel7
-```
-
-## Supported platforms
+### Supported platforms
 
 <span title="Check mark icon">&#x2705;</span> Supported – The platform is supported for this version of Redis Enterprise Software.
 
@@ -273,3 +222,31 @@ ccs-cli hset node:<ID> os_name rhel7
 6. <a name="table-note-6" style="display: block; height: 80px; margin-top: -80px;"></a>Ubuntu 20.04 support was added in Redis Enterprise Software [6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}).
 
 7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}). Official support for Amazon Linux 2 was added in Redis Enterprise Software [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
+
+## Known limitations
+
+#### Command limitations
+
+- [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) might not run correctly in the following cases:
+
+    - The Redis database version is earlier than 7.2.0.
+
+    - The `CLIENT NO-TOUCH` command is forbidden by ACL rules.
+
+    Before sending this command, clients should verify the database version is 7.2.0 or later and that using this command is allowed. 
+
+- You cannot use [`SUNSUBSCRIBE`](https://redis.io/commands/sunsubscribe/) to unsubscribe from a shard channel if the regex changed while subscribed.
+
+- Using [`XREADGROUP BLOCK`](https://redis.io/commands/xreadgroup/) with `>` to return all new streams will cause the Redis database to freeze until the shard is restarted. ([#12031](https://github.com/redis/redis/pull/12301))
+
+- Because a rejected command does not record the duration for command stats, an error will appear after it is reprocessed that will cause the Redis database to freeze until the shard is restarted. ([#12247](https://github.com/redis/redis/pull/12247))
+
+#### Modules cannot load in Oracle Linux 7 & 8
+
+Databases hosted on Oracle Linux 7 & 8 cannot load modules.
+
+As a temporary workaround, you can change the node's `os_name` in the Cluster Configuration Store (CCS):
+
+```sh
+ccs-cli hset node:<ID> os_name rhel7
+```

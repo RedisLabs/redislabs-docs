@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (August 2023)
 linkTitle: 7.2-TBA (August 2023)
-description: Redis 7.0 and 7.2 features. Three Redis database versions. Auto Tiering (enhanced successor to Redis on Flash). License file structure updates. Redis ACL selectors and enhanced key-based permissions. RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. New INFO fields. Log rotation enhancements. Triggers and functions preview. Multi-OS upgrade support for clusters with modules. Redis Stack 7.2 features.
+description: Redis 7.0 and 7.2 features. Auto Tiering (enhanced successor to Redis on Flash). RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. Redis Stack 7.2 features. Three Redis database versions. License file structure updates. Redis ACL selectors and enhanced key-based permissions. New INFO fields. Log rotation enhancements. Multi-OS upgrade support for clusters with modules.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -11,17 +11,13 @@ aliases:
 
 ​[​Redis Enterprise Software version 7.2](https://redis.com/redis-enterprise-software/download-center/software/) is now available!
 
+## Highlights
+
 This version offers:
 
 - Redis 7.0 and 7.2 features
 
-- Three Redis database versions: 7.2, 6.2, 6.0
-
 - Auto Tiering (enhanced successor to Redis on Flash)
-
-- License file structure updates
-
-- Redis ACL selectors and enhanced key-based permissions
 
 - RESP3 support
 
@@ -29,25 +25,23 @@ This version offers:
 
 - A preview of the redesigned Cluster Manager UI (admin console)
 
+- Redis Stack 7.2 features
+
+- Three Redis database versions: 7.2, 6.2, 6.0
+
+- License file structure updates
+
+- Redis ACL selectors and enhanced key-based permissions
+
 - New INFO fields
 
 - Log rotation enhancements
 
 - Multi-OS upgrade support for clusters with modules
 
-- Redis Stack 7.2 features
+## New in this release
 
-The following table shows the MD5 checksums for the available packages:
-
-| Package | MD5 checksum (7.2-TBA July release) |
-|---------|---------------------------------------|
-| Ubuntu 18 |  |
-| Ubuntu 20 |  |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
-| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
-| Amazon Linux 2 |  |
-
-## New features and enhancements
+### New features
 
 #### Redis 7.0 features
 
@@ -63,7 +57,7 @@ The following Redis 7.0 features are now supported:
 
 - Sharded `PUBSUB` (see [Sharded pub/sub](#sharded-pubsub) for details)
 
-### Redis 7.2 features
+#### Redis 7.2 features
 
 The following Redis 7.2 features are now supported:
 
@@ -89,26 +83,6 @@ The following Redis 7.2 features are now supported:
 
 - `WAIT AOF`
 
-#### Three Redis database versions
-
-Redis Enterprise Software version 6.x includes two Redis database versions: 6.0 and 6.2. As of version 7.2, Redis Enterprise Software includes three Redis database versions: 6.0, 6.2, and 7.2.
-
-To view available Redis database versions:
-
-- In the Cluster Manager UI, see **Redis database versions** on the **Cluster > Configuration** screen.
-
-- Send a [`GET /nodes` REST API request]({{<relref "/rs/references/rest-api/requests/nodes">}}) and see `supported_database_versions` in the response.
-
-The default Redis database version, which is used when you upgrade an existing database or create a new one, differs between Redis Enterprise releases as follows:
-
-| Redis<br />Enterprise | Bundled Redis<br />DB versions | Default DB version<br />(upgraded/new databases) |
-|-------|----------|-----|
-| 7.2 | 6.0, 6.2, 7.2 | 7.2 |
-| 6.4.2 | 6.0, 6.2 | 6.2 |
-| 6.2.x | 6.0, 6.2 | 6.0 |
-
-For Redis Enterprise Software version 7.2, `default_redis_version` is 7.2 for both `major` and `latest` upgrade policies.
-
 #### Auto Tiering - Redis on Flash evolution doubling throughput while cutting latencies in half {#auto-tiering}
 
 Redis Enterprise version 7.2 introduces Auto Tiering as an enhanced successor to Redis on Flash, which allows you to provision larger databases at a lower cost by extending the RAM with flash drives.
@@ -126,54 +100,6 @@ For more information about Auto Tiering, see:
 - [Auto Tiering overview]({{<relref "/rs/databases/auto-tiering">}})
 
 - [Auto Tiering quick start]({{<relref "/rs/databases/auto-tiering/quickstart">}})
-
-#### Updated Redis Enterprise license format
-
-Redis Enterprise Software version 7.2 includes updates to its license format, which add separate shard limits for RAM and flash shards used for Auto Tiering.
-
-For more information, see [Cluster license keys]({{<relref "/rs/clusters/configure/license-keys">}}).
-
-#### Redis ACL selectors and key-based permissions
-
-Redis ACLs in Redis Enterprise version 7.2 support key permissions and selectors.
-
-Key permissions:
-
-- `%R~<pattern>`: Grants read access to keys that match the given pattern.
-
-- `%W~<pattern>`: Grants write access to keys that match the given pattern.
-
-- `%RW~<pattern>`: Alias for `~<pattern>`. Grants read and write access to keys that match the given pattern.
-
-    See [key permissions](https://redis.io/docs/management/security/acl/#key-permissions) for more information.
-
-Selectors let you define multiple sets of rules in a single Redis ACL (only supported for databases with Redis version 7.2 or later). A command is allowed if it matches the base rule or any selector in the Redis ACL. See [selectors](https://redis.io/docs/management/security/acl/#selectors) for more information.
-
-- `(<rule list>)`: Creates a new selector.
-
-- `clearselectors`: Deletes all existing selectors for a user. This action does not delete the base ACL rule.
-
-Redis ACLs have the following differences in Redis Enterprise Software:
-
-- Nested selectors are not supported.
-
-    For example, the following selectors are not valid in Redis Enterprise: <nobr>`+GET ~key1 (+SET (+SET ~key2) ~key3)`</nobr>
-
-- Key and pub/sub patterns do not allow the following characters: `'(', ')'`
-
-- The following password configuration syntax is not supported: `'>', '<', '#!', 'resetpass'`
-
-    To configure passwords in Redis Enterprise Software, use one of the following methods:
-
-    - [`rladmin cluster reset_password`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/reset_password">}}):
-    
-        ```sh
-        rladmin cluster reset_password <user email>
-        ```
-
-    - REST API [`PUT /v1/users`]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) request and provide `password`
-
-- The **ACL builder** does not support selectors and key permissions. Use **Free text command** to manually define them instead.
 
 #### RESP3 support
 
@@ -297,6 +223,121 @@ To open the legacy admin console when signed in to the new UI, select your usern
 With the release of the new Cluster Manager UI, the legacy UI is considered deprecated and will eventually be phased out. New functionality will only be implemented in the new Cluster Manager UI, and the old UI will no longer be maintained except for critical bug fixes.
 {{</note>}}
 
+#### Redis Stack 7.2 features 
+
+Search and Query brings the frequently asked Geo polygons queries for basic shapes and improved query performance on sorting in different scenarios. 
+
+JSON introduces two new commands: [JSON.MERGE](https://redis.io/commands/json.merge/) and [JSON.MSET](https://redis.io/commands/json.mset/) for more efficient data manipulation.
+
+Preview of triggers and functions that allows developers to run JavaScript functions inside the Redis process.
+
+##### Search and Query:
+This new major version introduces the frequently asked [Geo Polygon](https://redis.io/commands/ft.search/#examples) Search. Adding the [GEOSHAPE](https://redis.io/commands/ft.create/) field type that supports polygon shapes using the [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). In addition to the existing `GEO` for geo range queries, now an alias for `GEOPOINT`, we add `GEOSHAPE` with the support for `POLYGON` and `POINT` as new shapes formats and polygons operations.
+
+In addition, 7.2 brings improvements in performance for `SORT BY` operations using [`FT.SEARCH`](https://redis.io/commands/ft.search/#optional-arguments) and [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate/#optional-arguments), and the new `FORMAT` for better readability and future support for better error handling responses on `FT.SEARCH` and `FT.AGGREGATE` in RESP3 only.
+
+Find more details about features and optimizations introduced with [Search and Query](https://github.com/RediSearch/RediSearch/releases/).
+
+##### JSON:
+JSON introduces two new commands:
+ - [JSON.MERGE](https://redis.io/commands/json.merge/) merges a given JSON value into matching paths so that the JSON values at the matching paths are updated, deleted, or expanded.
+ - [JSON.MSET](https://redis.io/commands/json.mset/) sets or updates one or more JSON values according to specified key-path-value triplets.
+
+Find more details about features and optimizations introduced with [JSON](https://github.com/RedisJSON/RedisJSON/releases).
+
+##### Triggers and functions preview:
+Triggers and functions is part of Redis Stack 7.2 as public preview, any feedback is highly appreciated.
+
+Triggers and functions provides support for running JavaScript functions inside the Redis process. These functions can be executed on-demand, by an event-driven trigger, or by a stream processing trigger. Triggers and functions empowers developers to build and maintain real-time applications by moving logic closer to the data, ensuring a lower latency whilst delivering the best developer experience.
+
+Try it out with the [triggers and functions quick start](https://redis.io/docs/interact/programmability/triggers-and-functions/quick_start/).
+
+
+##### Module versions:
+
+- [RediSearch 2.8.4](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.4)
+
+- [RedisJSON 2.6.6](https://github.com/RedisJSON/RedisJSON/releases/tag/v2.6.6)
+
+- [RedisTimeSeries 1.10.4](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.10.4)
+
+- [RedisBloom 2.6.3](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.3)
+
+- [RedisGears 2.0.11](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.11-m12)
+
+
+See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module/) to learn how to upgrade a module for a database.
+
+### Enhancements
+
+#### Three Redis database versions
+
+Redis Enterprise Software version 6.x includes two Redis database versions: 6.0 and 6.2. As of version 7.2, Redis Enterprise Software includes three Redis database versions: 6.0, 6.2, and 7.2.
+
+To view available Redis database versions:
+
+- In the Cluster Manager UI, see **Redis database versions** on the **Cluster > Configuration** screen.
+
+- Send a [`GET /nodes` REST API request]({{<relref "/rs/references/rest-api/requests/nodes">}}) and see `supported_database_versions` in the response.
+
+The default Redis database version, which is used when you upgrade an existing database or create a new one, differs between Redis Enterprise releases as follows:
+
+| Redis<br />Enterprise | Bundled Redis<br />DB versions | Default DB version<br />(upgraded/new databases) |
+|-------|----------|-----|
+| 7.2 | 6.0, 6.2, 7.2 | 7.2 |
+| 6.4.2 | 6.0, 6.2 | 6.2 |
+| 6.2.x | 6.0, 6.2 | 6.0 |
+
+For Redis Enterprise Software version 7.2, `default_redis_version` is 7.2 for both `major` and `latest` upgrade policies.
+
+#### Updated Redis Enterprise license format
+
+Redis Enterprise Software version 7.2 includes updates to its license format, which add separate shard limits for RAM and flash shards used for Auto Tiering.
+
+For more information, see [Cluster license keys]({{<relref "/rs/clusters/configure/license-keys">}}).
+
+#### Redis ACL selectors and key-based permissions
+
+Redis ACLs in Redis Enterprise version 7.2 support key permissions and selectors.
+
+Key permissions:
+
+- `%R~<pattern>`: Grants read access to keys that match the given pattern.
+
+- `%W~<pattern>`: Grants write access to keys that match the given pattern.
+
+- `%RW~<pattern>`: Alias for `~<pattern>`. Grants read and write access to keys that match the given pattern.
+
+    See [key permissions](https://redis.io/docs/management/security/acl/#key-permissions) for more information.
+
+Selectors let you define multiple sets of rules in a single Redis ACL (only supported for databases with Redis version 7.2 or later). A command is allowed if it matches the base rule or any selector in the Redis ACL. See [selectors](https://redis.io/docs/management/security/acl/#selectors) for more information.
+
+- `(<rule list>)`: Creates a new selector.
+
+- `clearselectors`: Deletes all existing selectors for a user. This action does not delete the base ACL rule.
+
+Redis ACLs have the following differences in Redis Enterprise Software:
+
+- Nested selectors are not supported.
+
+    For example, the following selectors are not valid in Redis Enterprise: <nobr>`+GET ~key1 (+SET (+SET ~key2) ~key3)`</nobr>
+
+- Key and pub/sub patterns do not allow the following characters: `'(', ')'`
+
+- The following password configuration syntax is not supported: `'>', '<', '#!', 'resetpass'`
+
+    To configure passwords in Redis Enterprise Software, use one of the following methods:
+
+    - [`rladmin cluster reset_password`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/reset_password">}}):
+    
+        ```sh
+        rladmin cluster reset_password <user email>
+        ```
+
+    - REST API [`PUT /v1/users`]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) request and provide `password`
+
+- The **ACL builder** does not support selectors and key permissions. Use **Free text command** to manually define them instead.
+
 #### New INFO fields
 
 The [`INFO`](https://redis.io/commands/info/) command includes new fields:
@@ -335,50 +376,15 @@ The `INFO` command can now accept multiple section arguments (requires Redis dat
 
 Starting from Redis Enterprise version 7.2, all future 7.2.x upgrades are supported for clusters containing databases with modules in combination with with Operating System (OS) upgrades.
 
-### Redis Stack 7.2 features 
+### Resolved issues
 
-Search and Query brings the frequently asked Geo polygons queries for basic shapes and improved query performance on sorting in different scenarios. 
+- RS54131 - `+OK` reply not received on TLS-enabled database
 
-JSON introduces two new commands: [JSON.MERGE](https://redis.io/commands/json.merge/) and [JSON.MSET](https://redis.io/commands/json.mset/) for more efficient data manipulation.
+- RS101525 - Cluster provides wrong number of database connections on Grafana
 
-Preview of triggers and functions that allows developers to run JavaScript functions inside the Redis process.
+- RS104028 - Fix the self-signed certificate script: error generating certificates with multiple FQDNs
 
-#### Search and Query:
-This new major version introduces the frequently asked [Geo Polygon](https://redis.io/commands/ft.search/#examples) Search. Adding the [GEOSHAPE](https://redis.io/commands/ft.create/) field type that supports polygon shapes using the [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). In addition to the existing `GEO` for geo range queries, now an alias for `GEOPOINT`, we add `GEOSHAPE` with the support for `POLYGON` and `POINT` as new shapes formats and polygons operations.
-
-In addition, 7.2 brings improvements in performance for `SORT BY` operations using [`FT.SEARCH`](https://redis.io/commands/ft.search/#optional-arguments) and [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate/#optional-arguments), and the new `FORMAT` for better readability and future support for better error handling responses on `FT.SEARCH` and `FT.AGGREGATE` in RESP3 only.
-
-Find more details about features and optimizations introduced with [Search and Query](https://github.com/RediSearch/RediSearch/releases/).
-
-#### JSON:
-JSON introduces two new commands:
- - [JSON.MERGE](https://redis.io/commands/json.merge/) merges a given JSON value into matching paths so that the JSON values at the matching paths are updated, deleted, or expanded.
- - [JSON.MSET](https://redis.io/commands/json.mset/) sets or updates one or more JSON values according to specified key-path-value triplets.
-
-Find more details about features and optimizations introduced with [JSON](https://github.com/RedisJSON/RedisJSON/releases).
-
-#### Triggers and functions preview:
-Triggers and functions is part of Redis Stack 7.2 as public preview, any feedback is highly appreciated.
-
-Triggers and functions provides support for running JavaScript functions inside the Redis process. These functions can be executed on-demand, by an event-driven trigger, or by a stream processing trigger. Triggers and functions empowers developers to build and maintain real-time applications by moving logic closer to the data, ensuring a lower latency whilst delivering the best developer experience.
-
-Try it out with the [triggers and functions quick start](https://redis.io/docs/interact/programmability/triggers-and-functions/quick_start/).
-
-
-#### Module versions:
-
-- [RediSearch 2.8.4](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.4)
-
-- [RedisJSON 2.6.6](https://github.com/RedisJSON/RedisJSON/releases/tag/v2.6.6)
-
-- [RedisTimeSeries 1.10.4](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.10.4)
-
-- [RedisBloom 2.6.3](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.3)
-
-- [RedisGears 2.0.11](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.11-m12)
-
-
-See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module/) to learn how to upgrade a module for a database.
+- RS87920 - Proxy log is full of the warning message “Failed to check status of running child syncer process 0 : No child processes“
 
 ## Version changes 
 
@@ -394,7 +400,7 @@ See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module
 
 {{<embed-md "r7.2-combined-breaking-changes.md">}}
 
-### Client prerequisites for Redis 7.2 upgrade
+#### Client prerequisites for Redis 7.2 upgrade
 
 The Redis clients [Go-Redis](https://redis.uptrace.dev/) version 9 and [Lettuce](https://lettuce.io/) versions 6 and later use RESP3 by default. If you use either client to run Redis Stack commands, you should set the client's protocol version to RESP2 before upgrading your database to Redis version 7.2 to prevent potential application issues due to RESP3 breaking changes.
 
@@ -423,54 +429,6 @@ client.setOptions(ClientOptions.builder()
 ```
 
 If you are using [LettuceMod](https://github.com/redis-developer/lettucemod/), you need to upgrade to [v3.6.0](https://github.com/redis-developer/lettucemod/releases/tag/v3.6.0).
-
-### Upcoming changes
-
-#### Prepare for restrictive pub/sub permissions
-
-Redis database version 6.2 introduced pub/sub ACL rules that determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
-
-The configuration option `acl-pubsub-default`, added in Redis Enterprise Software version 6.4.2, determines the cluster-wide default level of access for all pub/sub channels. Redis Enterprise Software uses the following pub/sub permissions by default:
-
-- For versions 6.4.2 and 7.2, `acl-pubsub-default` is permissive (`allchannels` or `&*`) by default to accommodate earlier Redis versions.
-
-- In future versions, `acl-pubsub-default` will change to restrictive (`resetchannels`). Restrictive permissions block all pub/sub channels by default, unless explicitly permitted by an ACL rule.
-
-If you use ACLs and pub/sub channels, you should review your databases and ACL settings and plan to transition your cluster to restrictive pub/sub permissions in preparation for future Redis Enterprise Software releases.
-
-When you change the cluster's default pub/sub permissions to restrictive, `&*` is added to the **Full Access** ACL. Before you make this change, consider the following:
-
-- Because pub/sub ACL syntax was added in Redis 6.2, you can't associate the **Full Access** ACL with database versions 6.0 or lower after this change.
-
-- The **Full Access** ACL is not reverted if you change `acl-pubsub-default` to permissive again.
-
-- Every database with the default user enabled uses the **Full Access** ACL.
-
-To secure pub/sub channels and prepare your cluster for future Redis Enterprise Software releases that default to restrictive pub/sub permissions:
-
-1. Upgrade Redis databases:
-
-    - For Redis Enterprise Software version 6.4.2, upgrade all databases in the cluster to Redis DB version 6.2.
-
-    - For Redis Enterprise Software version 7.2, upgrade all databases in the cluster to Redis DB version 7.2 or 6.2.
-
-1. Create or update ACLs with permissions for specific channels using the `resetchannels &channel` format.
-
-1. Associate the ACLs with relevant databases.
-
-1. Set default pub/sub permissions (`acl-pubsub-default`) to restrictive. See [Change default pub/sub permissions](#change-default-pubsub-permissions) for details.
-
-1. If any issues occur, you can temporarily change the default pub/sub setting back to permissive. Resolve any problematic ACLs before making pub/sub permissions restrictive again.
-
-#### Upcoming command request and reponse changes
-
-Open source Redis version 7.2 changes the request and response policies for several commands. Because the GA release of Redis Enterprise version 7.2 does not include these policy changes, commands might behave differently from open source Redis. However, these changes will be included in a future Redis Enterprise maintenance release:
-
-- [`RANDOMKEY`](https://redis.io/commands/randomkey/) and [`SCAN`](https://redis.io/commands/scan/) will change from no response policy to a `SPECIAL` response policy.
-
-- [`MSETNX`](https://redis.io/commands/msetnx/) currently has a `MULTI_SHARD` request policy and `AGG_MIN` response policy. Both will change to no policy.
-
-For more information about request and response policies, see [Redis command tips](https://redis.io/docs/reference/command-tips/).
 
 ### Deprecations
 
@@ -598,35 +556,113 @@ TLS 1.0 and TLS 1.1 connections are considered deprecated in favor of TLS 1.2 or
 Please verify that all clients, apps, and connections support TLS 1.2. Support for the earlier protocols will be removed in a future release.
 Certain operating systems, such as RHEL 8, have already removed support for the earlier protocols. Redis Enterprise Software cannot support connection protocols that are not supported by the underlying operating system.
 
-## Resolved issues
+### Upcoming changes
 
-- RS54131 - `+OK` reply not received on TLS-enabled database
+#### Prepare for restrictive pub/sub permissions
 
-- RS101525 - Cluster provides wrong number of database connections on Grafana
+Redis database version 6.2 introduced pub/sub ACL rules that determine which [pub/sub channels](https://redis.io/docs/manual/pubsub/) a user can access.
 
-- RS104028 - Fix the self-signed certificate script: error generating certificates with multiple FQDNs
+The configuration option `acl-pubsub-default`, added in Redis Enterprise Software version 6.4.2, determines the cluster-wide default level of access for all pub/sub channels. Redis Enterprise Software uses the following pub/sub permissions by default:
 
-- RS87920 - Proxy log is full of the warning message “Failed to check status of running child syncer process 0 : No child processes“
+- For versions 6.4.2 and 7.2, `acl-pubsub-default` is permissive (`allchannels` or `&*`) by default to accommodate earlier Redis versions.
 
-## Known limitations
+- In future versions, `acl-pubsub-default` will change to restrictive (`resetchannels`). Restrictive permissions block all pub/sub channels by default, unless explicitly permitted by an ACL rule.
 
-### Feature limitations
+If you use ACLs and pub/sub channels, you should review your databases and ACL settings and plan to transition your cluster to restrictive pub/sub permissions in preparation for future Redis Enterprise Software releases.
 
-#### Command limitations
+When you change the cluster's default pub/sub permissions to restrictive, `&*` is added to the **Full Access** ACL. Before you make this change, consider the following:
 
-- [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) might not run correctly in the following cases:
+- Because pub/sub ACL syntax was added in Redis 6.2, you can't associate the **Full Access** ACL with database versions 6.0 or lower after this change.
 
-    - The Redis database version is earlier than 7.2.0.
+- The **Full Access** ACL is not reverted if you change `acl-pubsub-default` to permissive again.
 
-    - The `CLIENT NO-TOUCH` command is forbidden by ACL rules.
+- Every database with the default user enabled uses the **Full Access** ACL.
 
-    Before sending this command, clients should verify the database version is 7.2.0 or later and that using this command is allowed. 
+To secure pub/sub channels and prepare your cluster for future Redis Enterprise Software releases that default to restrictive pub/sub permissions:
 
-- You cannot use [`SUNSUBSCRIBE`](https://redis.io/commands/sunsubscribe/) to unsubscribe from a shard channel if the regex changed while subscribed.
+1. Upgrade Redis databases:
 
-- Using [`XREADGROUP BLOCK`](https://redis.io/commands/xreadgroup/) with `>` to return all new streams will cause the Redis database to freeze until the shard is restarted. ([#12031](https://github.com/redis/redis/pull/12301))
+    - For Redis Enterprise Software version 6.4.2, upgrade all databases in the cluster to Redis DB version 6.2.
 
-- Because a rejected command does not record the duration for command stats, an error will appear after it is reprocessed that will cause the Redis database to freeze until the shard is restarted. ([#12247](https://github.com/redis/redis/pull/12247))
+    - For Redis Enterprise Software version 7.2, upgrade all databases in the cluster to Redis DB version 7.2 or 6.2.
+
+1. Create or update ACLs with permissions for specific channels using the `resetchannels &channel` format.
+
+1. Associate the ACLs with relevant databases.
+
+1. Set default pub/sub permissions (`acl-pubsub-default`) to restrictive. See [Change default pub/sub permissions](#change-default-pubsub-permissions) for details.
+
+1. If any issues occur, you can temporarily change the default pub/sub setting back to permissive. Resolve any problematic ACLs before making pub/sub permissions restrictive again.
+
+#### Upcoming command request and reponse changes
+
+Open source Redis version 7.2 changes the request and response policies for several commands. Because the GA release of Redis Enterprise version 7.2 does not include these policy changes, commands might behave differently from open source Redis. However, these changes will be included in a future Redis Enterprise maintenance release:
+
+- [`RANDOMKEY`](https://redis.io/commands/randomkey/) and [`SCAN`](https://redis.io/commands/scan/) will change from no response policy to a `SPECIAL` response policy.
+
+- [`MSETNX`](https://redis.io/commands/msetnx/) currently has a `MULTI_SHARD` request policy and `AGG_MIN` response policy. Both will change to no policy.
+
+For more information about request and response policies, see [Redis command tips](https://redis.io/docs/reference/command-tips/).
+
+### Supported platforms
+
+<span title="Check mark icon">&#x2705;</span> Supported – The platform is supported for this version of Redis Enterprise Software.
+
+<span title="Warning icon">&#x26A0;&#xFE0F;</span> Deprecated – The platform is still supported for this version of Redis Enterprise Software, but support will be removed in a future release.
+
+<span title="X icon">&#x274c;</span> End of life – Platform support ended in this version of Redis Enterprise Software.
+
+| Redis Enterprise | 7.2.0 | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
+|------------------|-------|-------|--------|--------|--------|--------|-------|
+| **Ubuntu**<sup>[1](#table-note-1)</sup> |
+| 20.04 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span><sup>[6](#table-note-6)</sup> | – | – | – | – | – |
+| 18.04 | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported"><span title="Supported">&#x2705;</span></span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| 16.04 | <span title="End of life">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **RHEL & CentOS**<sup>[2](#table-note-2)</sup>
+| 8.8 | <span title="Supported">&#x2705;</span> | – | – | – | – | – | – |
+| 8.7 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – | – | – | – |
+| 8.5-8.6 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – |
+| 8.0-8.4 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – |
+| 7.0-7.9 | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Oracle Linux**<sup>[3](#table-note-3)</sup> |
+| 8 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – |
+| 7 | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Rocky Linux**<sup>[3](#table-note-3)</sup> |
+| 8 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – | – | – |
+| **Amazon Linux** |
+| 2 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span><sup>[7](#table-note-7)</sup> | – | – | – | – | – |
+| 1 | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Docker**<sup>[4](#table-note-4)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Kubernetes**<sup>[5](#table-note-5)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+
+1. <a name="table-note-1" style="display: block; height: 80px; margin-top: -80px;"></a>The server version of Ubuntu is recommended for production installations. The desktop version is only recommended for development deployments.
+
+2. <a name="table-note-2" style="display: block; height: 80px; margin-top: -80px;"></a>RHEL and CentOS deployments require OpenSSL 1.0.2 and [firewall configuration]({{<relref "/rs/installing-upgrading/configuring/centos-rhel-firewall">}}).
+
+3. <a name="table-note-3" style="display: block; height: 80px; margin-top: -80px;"></a>Based on the corresponding RHEL version.
+
+4. <a name="table-note-4" style="display: block; height: 80px; margin-top: -80px;"></a>
+[Docker images]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}}) of Redis Enterprise Software are certified for development and testing only.
+
+5. <a name="table-note-5" style="display: block; height: 80px; margin-top: -80px;"></a>See the [Redis Enterprise for Kubernetes documentation]({{<relref "/kubernetes">}}).
+
+6. <a name="table-note-6" style="display: block; height: 80px; margin-top: -80px;"></a>Ubuntu 20.04 support was added in Redis Enterprise Software [6.4.2-43]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-43">}}).
+
+7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}). Official support for Amazon Linux 2 was added in Redis Enterprise Software [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
+
+## Downloads
+
+The following table shows the MD5 checksums for the available packages:
+
+| Package | MD5 checksum (7.2-TBA July release) |
+|---------|---------------------------------------|
+| Ubuntu 18 |  |
+| Ubuntu 20 |  |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
+| Amazon Linux 2 |  |
+
+## Known issues
 
 #### Legacy UI known issues
 
@@ -652,7 +688,23 @@ To prevent this issue:
     
     - Delete the rule if not needed.
 
-### Operating system limitations
+## Known limitations
+
+#### Command limitations
+
+- [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) might not run correctly in the following cases:
+
+    - The Redis database version is earlier than 7.2.0.
+
+    - The `CLIENT NO-TOUCH` command is forbidden by ACL rules.
+
+    Before sending this command, clients should verify the database version is 7.2.0 or later and that using this command is allowed. 
+
+- You cannot use [`SUNSUBSCRIBE`](https://redis.io/commands/sunsubscribe/) to unsubscribe from a shard channel if the regex changed while subscribed.
+
+- Using [`XREADGROUP BLOCK`](https://redis.io/commands/xreadgroup/) with `>` to return all new streams will cause the Redis database to freeze until the shard is restarted. ([#12031](https://github.com/redis/redis/pull/12301))
+
+- Because a rejected command does not record the duration for command stats, an error will appear after it is reprocessed that will cause the Redis database to freeze until the shard is restarted. ([#12247](https://github.com/redis/redis/pull/12247))
 
 #### Modules cannot load in Oracle Linux 7 & 8
 
