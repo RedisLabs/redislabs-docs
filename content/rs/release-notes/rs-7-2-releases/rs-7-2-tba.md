@@ -330,9 +330,11 @@ Redis ACLs have the following differences in Redis Enterprise Software:
 
 - Key and pub/sub patterns do not allow the following characters: `'(', ')'`
 
-- The following password configuration syntax is not supported: `'>', '<', '#!', 'resetpass'`
+- The following password syntax is not supported: `'>', '<', '#!', 'resetpass'`
 
-    To configure passwords in Redis Enterprise Software, use one of the following methods:
+    To change passwords in Redis Enterprise Software, use one of the following methods:
+
+    - Cluster Manager UI (admin console)
 
     - [`rladmin cluster reset_password`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/reset_password">}}):
     
