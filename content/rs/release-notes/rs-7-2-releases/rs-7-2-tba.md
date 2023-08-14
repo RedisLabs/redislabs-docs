@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2-TBA (August 2023)
 linkTitle: 7.2-TBA (August 2023)
-description: Redis 7.0 and 7.2 features. Auto Tiering (enhanced successor to Redis on Flash). RESP3 support. Sharded pub/sub. Preview of the redesigned Cluster Manager UI. Redis Stack 7.2 features. Three Redis database versions. License file structure updates. Redis ACL selectors and enhanced key-based permissions. New INFO fields. Log rotation enhancements. Multi-OS upgrade support for clusters with modules.
+description: Redis 7.0 and 7.2 features. Auto Tiering (enhanced successor to Redis on Flash). RESP3 support. Sharded pub/sub. Preview of the new Cluster Manager UI. Redis Stack 7.2 features. Three Redis database versions. License file structure updates. Redis ACL selectors and enhanced key-based permissions. New INFO fields. Log rotation enhancements. Multi-OS upgrade support for clusters with modules.
 compatibleOSSVersion: Redis 7.2
 weight: 72
 alwaysopen: false
@@ -23,7 +23,7 @@ This version offers:
 
 - Sharded pub/sub
 
-- A preview of the redesigned Cluster Manager UI (admin console)
+- A preview of the new Cluster Manager UI (admin console)
 
 - Redis Stack 7.2 features
 
@@ -131,7 +131,7 @@ You cannot use sharded pub/sub if you [deactivate RESP3 support]({{<relref "/rs/
 
 #### New Cluster Manager UI preview
 
-A preview of the redesigned Cluster Manager UI (admin console) is available in Redis Enterprise Software version 7.2.
+A preview of the new Cluster Manager UI (admin console) is available in Redis Enterprise Software version 7.2.
 
 To try out the new UI:
 
