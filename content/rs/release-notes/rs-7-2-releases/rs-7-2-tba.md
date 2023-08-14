@@ -223,37 +223,43 @@ To open the legacy admin console when signed in to the new UI, select your usern
 With the release of the new Cluster Manager UI, the legacy UI is considered deprecated and will eventually be phased out. New functionality will only be implemented in the new Cluster Manager UI, and the old UI will no longer be maintained except for critical bug fixes.
 {{</note>}}
 
-#### Redis Stack 7.2 features 
+#### Redis Stack 7.2 features
 
-Search and Query brings the frequently asked Geo polygons queries for basic shapes and improved query performance on sorting in different scenarios. 
+Redis Enterprise Software version 7.2 supports features included in Redis Stack version 7.2.
 
-JSON introduces two new commands: [JSON.MERGE](https://redis.io/commands/json.merge/) and [JSON.MSET](https://redis.io/commands/json.mset/) for more efficient data manipulation.
+The following sections include a few highlights. For more details, see the [Redis Stack 7.2.0-0 release notes](https://github.com/redis-stack/redis-stack/releases/tag/v7.2.0-v0).
 
-Preview of triggers and functions that allows developers to run JavaScript functions inside the Redis process.
+##### Search and query
 
-##### Search and Query:
-This new major version introduces the frequently asked [Geo Polygon](https://redis.io/commands/ft.search/#examples) Search. Adding the [GEOSHAPE](https://redis.io/commands/ft.create/) field type that supports polygon shapes using the [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). In addition to the existing `GEO` for geo range queries, now an alias for `GEOPOINT`, we add `GEOSHAPE` with the support for `POLYGON` and `POINT` as new shapes formats and polygons operations.
+- Introduces [Geo Polygon](https://redis.io/commands/ft.search/#examples) Search. Geo range queries now accept the [`GEOSHAPE`](https://redis.io/commands/ft.create/#required-arguments) field type, which supports polygon shapes using [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). `GEOSHAPE` supports `POLYGON` and `POINT` as shape formats and polygon operations.
 
-In addition, 7.2 brings improvements in performance for `SORT BY` operations using [`FT.SEARCH`](https://redis.io/commands/ft.search/#optional-arguments) and [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate/#optional-arguments), and the new `FORMAT` for better readability and future support for better error handling responses on `FT.SEARCH` and `FT.AGGREGATE` in RESP3 only.
+- Performance improvements for `SORT BY` operations using [`FT.SEARCH`](https://redis.io/commands/ft.search/#optional-arguments) and [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate/#optional-arguments).
 
-Find more details about features and optimizations introduced with [Search and Query](https://github.com/RediSearch/RediSearch/releases/).
+- New `FORMAT` for improved readability and future support for better error handling responses on `FT.SEARCH` and `FT.AGGREGATE` in RESP3 only.
 
-##### JSON:
+##### JSON
+
 JSON introduces two new commands:
- - [JSON.MERGE](https://redis.io/commands/json.merge/) merges a given JSON value into matching paths so that the JSON values at the matching paths are updated, deleted, or expanded.
+
+ - [JSON.MERGE](https://redis.io/commands/json.merge/) merges a given JSON value into matching paths to update, delete, or expand the JSON values at the matching paths.
+
  - [JSON.MSET](https://redis.io/commands/json.mset/) sets or updates one or more JSON values according to specified key-path-value triplets.
 
-Find more details about features and optimizations introduced with [JSON](https://github.com/RedisJSON/RedisJSON/releases).
+##### Triggers and functions preview
 
-##### Triggers and functions preview:
-Triggers and functions is part of Redis Stack 7.2 as public preview, any feedback is highly appreciated.
+A preview of triggers and functions is available.
 
-Triggers and functions provides support for running JavaScript functions inside the Redis process. These functions can be executed on-demand, by an event-driven trigger, or by a stream processing trigger. Triggers and functions empowers developers to build and maintain real-time applications by moving logic closer to the data, ensuring a lower latency whilst delivering the best developer experience.
+Triggers and functions provide support for running JavaScript functions inside the Redis process. These functions can be executed on-demand, by an event-driven trigger, or by a stream processing trigger.
 
 Try it out with the [triggers and functions quick start](https://redis.io/docs/interact/programmability/triggers-and-functions/quick_start/).
 
+{{<note>}}
+- The preview version of triggers and functions is not intended for production use since the API might change in the future and potentially cause application issues when upgrading to a later version.
 
-##### Module versions:
+- During preview, triggers and functions are not supported for databases with Auto Tiering enabled (previously known as Redis on Flash).
+{{</note>}}
+
+##### Module versions
 
 - [RediSearch 2.8.4](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.4)
 
