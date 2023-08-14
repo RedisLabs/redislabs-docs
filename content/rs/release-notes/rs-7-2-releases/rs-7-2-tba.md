@@ -386,6 +386,10 @@ Starting from Redis Enterprise version 7.2, all future 7.2.x upgrades are suppor
 
 - RS87920 - Proxy log is full of the warning message “Failed to check status of running child syncer process 0 : No child processes“
 
+- RS99916 - Fixed the UI log to include the names of LDAP users at login
+
+- RS84273 - When an LDAP user with a Redis `admin` role viewed the log in the UI, they received `db_viewer` permissions instead of `admin`, which limited log visibility
+
 ## Version changes 
 
 ### Breaking changes
