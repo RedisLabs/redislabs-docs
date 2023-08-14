@@ -33,8 +33,6 @@ This version offers:
 
 - Log rotation enhancements
 
-- Triggers and functions preview
-
 - Multi-OS upgrade support for clusters with modules
 
 - Redis Stack 7.2 features
@@ -65,7 +63,7 @@ The following Redis 7.0 features are now supported:
 
 - Sharded `PUBSUB` (see [Sharded pub/sub](#sharded-pubsub) for details)
 
-#### Redis 7.2 features
+### Redis 7.2 features
 
 The following Redis 7.2 features are now supported:
 
@@ -333,35 +331,41 @@ The `INFO` command can now accept multiple section arguments (requires Redis dat
 
 - You can change how often the `logrotate` tool runs using the job scheduler REST API request <nobr>`PUT /v1/job_scheduler`</nobr>.
 
-#### Triggers and functions preview
-
-A preview of triggers and functions is available in Redis Enterprise version 7.2. The triggers and functions feature provides for running JavaScript functions inside the Redis Process. These functions can be executed on-demand, by an event-driven trigger, or by a stream processing trigger.
-
-The preview version of triggers and functions is not intended for production use since the API might change in the future and potentially cause application issues when upgrading to a later version. During preview, triggers and functions is not supported for databases with Auto Tiering enabled (previously known as Redis on Flash).
-
-For the full terms, see the [Redis Enterprise Software Agreement](https://redis.com/software-subscription-agreement/).
-
 #### Multi-OS upgrade support for clusters with modules {#os-upgrades-with-modules}
 
 Starting from Redis Enterprise version 7.2, all future 7.2.x upgrades are supported for clusters containing databases with modules in combination with with Operating System (OS) upgrades.
 
-#### Redis Stack 7.2 features 
+### Redis Stack 7.2 features 
 
-Redis Enterprise Software version 7.2 includes the new features delivered in the latest Redis Stack release (7.2):
+Search and Query brings the frequently asked Geo polygons queries for basic shapes and improved query performance on sorting in different scenarios. 
 
-- Search and query introduces the frequently requested Geo polygons queries for basic shapes and improved performance on sorting in different scenarios. 
+JSON introduces two new commands: [JSON.MERGE](https://redis.io/commands/json.merge/) and [JSON.MSET](https://redis.io/commands/json.mset/) for more efficient data manipulation.
 
-- New JSON commands:
+Preview of triggers and functions that allows developers to run JavaScript functions inside the Redis process.
 
-    - [`JSON.MERGE`](https://redis.io/commands/json.merge/) – new ways to update existing JSON documents
-    
-    - [`JSON.MSET`](https://redis.io/commands/json.mset/) – write to multiple keys atomically
+#### Search and Query:
+This new major version introduces the frequently asked Geo Polygon Search. Adding the `GEOSHAPE` field type that supports polygon shapes using the [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). In addition to the existing `GEO` for geo range queries, now an alias for `GEOPOINT`, we add `GEOSHAPE` with the support for `POLYGON` and `POINT` as new shapes formats and polygons operations.
 
-- New option to use the [RESP3](https://github.com/redis/redis-specifications/blob/master/protocol/RESP3.md) protocol, which improves the response format for all commands.
+In addition, 7.2 brings improvements in performance for `SORT BY` operations using [`FT.SEARCH`](https://redis.io/commands/ft.search/#optional-arguments) and [`FT.AGGREGATE`](https://redis.io/commands/ft.aggregate/#optional-arguments), and the new `FORMAT` for better readability and future support for better error handling responses on `FT.SEARCH` and `FT.AGGREGATE` in RESP3 only.
 
-- Preview for the triggers and functions feature that allows developers to run JavaScript functions inside the Redis Process.
+Find more details about features and optimizations introduced with [Search and Query](https://github.com/RediSearch/RediSearch/releases/).
 
-Module versions:
+#### JSON:
+JSON introduces two new commands:
+ - [JSON.MERGE](https://redis.io/commands/json.merge/) merges a given JSON value into matching paths so that the JSON values at the matching paths are updated, deleted, or expanded.
+ - [JSON.MSET](https://redis.io/commands/json.mset/) sets or updates one or more JSON values according to specified key-path-value triplets.
+
+Find more details about features and optimizations introduced with [JSON](https://github.com/RedisJSON/RedisJSON/releases).
+
+#### Triggers and functions preview:
+Triggers and functions is part of Redis Stack 7.2 as public preview, any feedback is highly appreciated.
+
+Triggers and functions provides support for running JavaScript functions inside the Redis process. These functions can be executed on-demand, by an event-driven trigger, or by a stream processing trigger. Triggers and functions empowers developers to build and maintain real-time applications by moving logic closer to the data, ensuring a lower latency whilst delivering the best developer experience.
+
+Try it out with the [triggers and functions quick start](https://redis.io/docs/interact/programmability/triggers-and-functions/quick_start/).
+
+
+#### Module versions:
 
 - [RediSearch 2.8.4](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.4)
 
