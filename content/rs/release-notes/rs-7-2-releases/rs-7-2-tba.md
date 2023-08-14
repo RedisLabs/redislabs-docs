@@ -1,15 +1,15 @@
 ---
-Title: Redis Enterprise Software release notes 7.2-TBA (August 2023)
-linkTitle: 7.2-TBA (August 2023)
+Title: Redis Enterprise Software release notes 7.2.4-52 (August 2023)
+linkTitle: 7.2.4-52 (August 2023)
 description: Redis 7.0 and 7.2 features. Auto Tiering (enhanced successor to Redis on Flash). RESP3 support. Sharded pub/sub. Preview of the new Cluster Manager UI. Redis Stack 7.2 features. Three Redis database versions. License file structure updates. Redis ACL selectors and enhanced key-based permissions. New INFO fields. Log rotation enhancements. Multi-OS upgrade support for clusters with modules.
-compatibleOSSVersion: Redis 7.2
+compatibleOSSVersion: Redis 7.2.0
 weight: 72
 alwaysopen: false
 categories: ["RS"]
 aliases: 
 ---
 
-​[​Redis Enterprise Software version 7.2](https://redis.com/redis-enterprise-software/download-center/software/) is now available!
+​[​Redis Enterprise Software version 7.2.4](https://redis.com/redis-enterprise-software/download-center/software/) is now available!
 
 ## Highlights
 
@@ -91,7 +91,7 @@ Redis Enterprise Auto Tiering replaces RocksDB with [Speedb](https://www.speedb.
 
 To switch existing databases to use Speedb for Auto Tiering and improve performance:
 
-1. Upgrade the cluster to Redis Enterprise Software version 7.2.
+1. Upgrade the cluster to Redis Enterprise Software version 7.2.4.
 
 1. Upgrade each database with Auto Tiering enabled to Redis database version 7.2.
 
@@ -131,7 +131,7 @@ You cannot use sharded pub/sub if you [deactivate RESP3 support]({{<relref "/rs/
 
 #### New Cluster Manager UI preview
 
-A preview of the new Cluster Manager UI (admin console) is available in Redis Enterprise Software version 7.2.
+A preview of the new Cluster Manager UI (admin console) is available in Redis Enterprise Software version 7.2.4.
 
 To try out the new UI:
 
@@ -225,7 +225,7 @@ With the release of the new Cluster Manager UI, the legacy UI is considered depr
 
 #### Redis Stack 7.2 features
 
-Redis Enterprise Software version 7.2 supports features included in Redis Stack version 7.2.
+Redis Enterprise Software version 7.2.4 supports features included in Redis Stack version 7.2.
 
 The following sections include a few highlights. For more details, see the [Redis Stack 7.2 release notes](https://github.com/redis-stack/redis-stack/releases/tag/v7.2.0-v0).
 
@@ -294,11 +294,11 @@ The default Redis database version, which is used when you upgrade an existing d
 | 6.4.2 | 6.0, 6.2 | 6.2 |
 | 6.2.x | 6.0, 6.2 | 6.0 |
 
-For Redis Enterprise Software version 7.2, `default_redis_version` is 7.2 for both `major` and `latest` upgrade policies.
+For Redis Enterprise Software version 7.2.4, `default_redis_version` is 7.2 for both `major` and `latest` upgrade policies.
 
 #### Updated Redis Enterprise license format
 
-Redis Enterprise Software version 7.2 includes updates to its license format, which add separate shard limits for RAM and flash shards used for Auto Tiering.
+Redis Enterprise Software version 7.2.4 includes updates to its license format, which add separate shard limits for RAM and flash shards used for Auto Tiering.
 
 For more information, see [Cluster license keys]({{<relref "/rs/clusters/configure/license-keys">}}).
 
@@ -518,13 +518,13 @@ REST API requests deprecated as of Redis Enterprise v7.2:
 
 #### Access control deprecations
 
-- The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
+- The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2.4 if they are not associated with any users or databases in the cluster:
 
     - Custom roles (not management roles): Cluster Member, Cluster Viewer, DB Member, DB Viewer, None.
 
     - Redis ACLs: Not Dangerous and Read Only.
 
-- A deprecation notice for SASL-based LDAP was included in [previous Redis Enterprise Software release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/#deprecation-notices). When you upgrade to Redis Enterprise Software version 7.2, all existing "external" users (previously used to support SASL-based LDAP) will be removed.
+- A deprecation notice for SASL-based LDAP was included in [previous Redis Enterprise Software release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/#deprecation-notices). When you upgrade to Redis Enterprise Software version 7.2.4, all existing "external" users (previously used to support SASL-based LDAP) will be removed.
 
 #### Legacy UI
 
@@ -550,7 +550,7 @@ Amazon Linux 1 support is considered deprecated and will be removed in a future 
 
 #### Ubuntu 16.04
 
-The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2, Ubuntu 16.04 is no longer supported.
+The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2.4, Ubuntu 16.04 is no longer supported.
 
 #### RC4 encryption cipher
 
@@ -596,7 +596,7 @@ To secure pub/sub channels and prepare your cluster for future Redis Enterprise 
 
     - For Redis Enterprise Software version 6.4.2, upgrade all databases in the cluster to Redis DB version 6.2.
 
-    - For Redis Enterprise Software version 7.2, upgrade all databases in the cluster to Redis DB version 7.2 or 6.2.
+    - For Redis Enterprise Software version 7.2.4, upgrade all databases in the cluster to Redis DB version 7.2 or 6.2.
 
 1. Create or update ACLs with permissions for specific channels using the `resetchannels &channel` format.
 
@@ -624,7 +624,7 @@ For more information about request and response policies, see [Redis command tip
 
 <span title="X icon">&#x274c;</span> End of life – Platform support ended in this version of Redis Enterprise Software.
 
-| Redis Enterprise | 7.2.0 | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
+| Redis Enterprise | 7.2.4 | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
 |------------------|-------|-------|--------|--------|--------|--------|-------|
 | **Ubuntu**<sup>[1](#table-note-1)</sup> |
 | 20.04 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span><sup>[6](#table-note-6)</sup> | – | – | – | – | – |
@@ -666,13 +666,13 @@ For more information about request and response policies, see [Redis command tip
 
 The following table shows the MD5 checksums for the available packages:
 
-| Package | MD5 checksum (7.2-TBA July release) |
+| Package | MD5 checksum (7.2.4-52 August release) |
 |---------|---------------------------------------|
-| Ubuntu 18 |  |
-| Ubuntu 20 |  |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
-| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
-| Amazon Linux 2 |  |
+| Ubuntu 18 | 7c7e465c8e129a03ee9f585137b2a1d9 |
+| Ubuntu 20 | 631f27311b19806955fde012953ff9c9 |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 | ae76798b1b7243313b4f4cba6ede88d7 |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux | 48936b25aefa2921d38aea84ad06134d |
+| Amazon Linux 2 | 3e8180d7a9ebc3784ab6080234edefd5 |
 
 ## Known issues
 
@@ -686,7 +686,7 @@ As a workaround, use the new Cluster Manager UI to update these settings from th
 
 In Redis Enterprise Software version 6.4.2, you could use `&channel` syntax in Redis ACL rules to allow access to specific pub/sub channels even when default pub/sub permissions were permissive (`&allchannels` or `&*`), allowing all channels by default. However, `&allchannels &channel` is not valid syntax.
 
-As of Redis Enterprise Software version 7.2, you cannot create Redis ACLs with this combination of rules. You can only use `&channel` to allow access to specific channels if the default pub/sub permissions are restrictive (`resetchannels`).
+As of Redis Enterprise Software version 7.2.4, you cannot create Redis ACLs with this combination of rules. You can only use `&channel` to allow access to specific channels if the default pub/sub permissions are restrictive (`resetchannels`).
 
 Associating an ACL that contains the invalid syntax <nobr>`&allchannels &channel`</nobr> (created before version 7.2) with a user and database might leave the database in a pending state, unable to function.
 

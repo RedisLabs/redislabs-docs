@@ -1,15 +1,15 @@
 ---
-Title: Redis Enterprise Software release notes 7.2
-linkTitle: 7.2 releases
+Title: Redis Enterprise Software release notes 7.2.4
+linkTitle: 7.2.4 releases
 description: Redis 7.0 and 7.2 features. Auto Tiering (enhanced successor to Redis on Flash). RESP3 support. Sharded pub/sub. Preview of the new Cluster Manager UI. Redis Stack 7.2 features. Three Redis database versions. License file structure updates. Redis ACL selectors and enhanced key-based permissions. New INFO fields. Log rotation enhancements. Multi-OS upgrade support for clusters with modules.
-compatibleOSSVersion: Redis 7.2
+compatibleOSSVersion: Redis 7.2.0
 weight: 71
 alwaysopen: false
 toc: "true"
 categories: ["RS"]
 ---
 
-​[​Redis Enterprise Software version 7.2](https://redis.com/redis-enterprise-software/download-center/software/) is now available!
+​[​Redis Enterprise Software version 7.2.4](https://redis.com/redis-enterprise-software/download-center/software/) is now available!
 
 ## Highlights
 
@@ -133,13 +133,13 @@ REST API requests deprecated as of Redis Enterprise v7.2:
 
 #### Access control deprecations
 
-- The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2 if they are not associated with any users or databases in the cluster:
+- The following predefined roles and Redis ACLs are not available after upgrading to Redis Enterprise Software version 7.2.4 if they are not associated with any users or databases in the cluster:
 
     - Custom roles (not management roles): Cluster Member, Cluster Viewer, DB Member, DB Viewer, None.
 
     - Redis ACLs: Not Dangerous and Read Only.
 
-- A deprecation notice for SASL-based LDAP was included in [previous Redis Enterprise Software release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/#deprecation-notices). When you upgrade to Redis Enterprise Software version 7.2, all existing "external" users (previously used to support SASL-based LDAP) will be removed.
+- A deprecation notice for SASL-based LDAP was included in [previous Redis Enterprise Software release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/#deprecation-notices). When you upgrade to Redis Enterprise Software version 7.2.4, all existing "external" users (previously used to support SASL-based LDAP) will be removed.
 
 #### Legacy UI
 
@@ -165,7 +165,7 @@ Amazon Linux 1 support is considered deprecated and will be removed in a future 
 
 #### Ubuntu 16.04
 
-The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2, Ubuntu 16.04 is no longer supported.
+The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2.4, Ubuntu 16.04 is no longer supported.
 
 #### RC4 encryption cipher
 
@@ -191,7 +191,7 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 <span title="X icon">&#x274c;</span> End of life – Platform support ended in this version of Redis Enterprise Software.
 
-| Redis Enterprise | 7.2.0 | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
+| Redis Enterprise | 7.2.4 | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
 |------------------|-------|-------|--------|--------|--------|--------|-------|
 | **Ubuntu**<sup>[1](#table-note-1)</sup> |
 | 20.04 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span><sup>[6](#table-note-6)</sup> | – | – | – | – | – |
