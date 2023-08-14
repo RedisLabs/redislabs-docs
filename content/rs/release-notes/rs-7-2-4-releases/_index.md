@@ -51,11 +51,11 @@ For more detailed release notes, select a build version from the following table
 
 For a list of potentially breaking changes introduced in version 7.2, see:
 
-- [Breaking changes]({{<relref "/rs/release-notes/rs-7-2-releases/rs-7-2-tba#breaking-changes">}})
+- [Breaking changes]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#breaking-changes">}})
 
-- [Redis 7.2 breaking changes]({{<relref "/rs/release-notes/rs-7-2-releases/rs-7-2-tba#redis-72-breaking-changes">}})
+- [Redis 7.2 breaking changes]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#redis-72-breaking-changes">}})
 
-To prevent potential application issues due to RESP3 breaking changes, see [Client prerequisites for Redis 7.2 upgrade]({{<relref "/rs/release-notes/rs-7-2-releases/rs-7-2-tba#client-prerequisites-for-redis-72-upgrade">}}).
+To prevent potential application issues due to RESP3 breaking changes, see [Client prerequisites for Redis 7.2 upgrade]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#client-prerequisites-for-redis-72-upgrade">}}).
 
 ### Deprecations
 
@@ -105,7 +105,7 @@ Fields deprecated as of Redis Enterprise v5.0.1:
 
 - `ssl` (replaced with `tls_mode`)
 
-Fields deprecated as of Redis Enterprise v7.2:
+Fields deprecated as of Redis Enterprise v7.2.4:
 
 - `node.bigstore_driver` (replaced with `cluster.bigstore_driver`)
 
@@ -123,9 +123,9 @@ Deprecated CLI commands:
 
 - `rlutil change_master` (deprecated as of Redis Enterprise v6.2.18, replaced with `rladmin change_master`)
 
-- `rlutil reserved_ports` (deprecated as of Redis Enterprise v7.2, replaced with `rladmin cluster config reserved_ports`)
+- `rlutil reserved_ports` (deprecated as of Redis Enterprise v7.2.4, replaced with `rladmin cluster config reserved_ports`)
 
-REST API requests deprecated as of Redis Enterprise v7.2:
+REST API requests deprecated as of Redis Enterprise v7.2.4:
 
 - `POST /v1/modules` (replaced with `POST /v2/modules`)
 
