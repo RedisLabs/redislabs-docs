@@ -21,7 +21,7 @@ Factors to consider when sizing your database.
 
 - **Dataset size** – Your limit should be greater than your dataset size to leave room for overhead.
 - **Database throughput** – High throughput needs more shards, leading to a higher memory limit.
-- [**Modules**]({{<relref "/modules">}}) – Using modules with your database consumes more memory.
+- [**Modules**]({{<relref "/stack">}}) – Using modules with your database consumes more memory.
 - [**Database clustering**]({{<relref "/rs/databases/durability-ha/clustering">}}) – Allows you to spread your data into shards across multiple nodes.
 - [**Database replication**]({{<relref "/rs/databases/durability-ha/replication">}}) – Enabling replication doubles memory consumption.
 
@@ -37,9 +37,9 @@ Additional factors for sizing Active-Active databases:
 Active-Active databases have a lower threshold for activating the eviction policy, because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit.
 {{</note>}}
 
-### Redis on Flash database sizing {#redis-on-flash-sizing}
+### Sizing databases with Auto Tiering enabled  {#redis-on-flash-sizing}
 
-Additional factors for sizing Redis on Flash databases:
+Additional factors for sizing  databases with Auto Tiering enabled:
 
-- [**Database persistence**]({{<relref "/rs/databases/configure/database-persistence#redis-on-flash-data-persistence">}}) – Redis on Flash uses dual database persistence where both the primary and replica shards persist to disk. This may add some processor and network overhead, especially in cloud configurations with network-attached storage.
+- [**Database persistence**]({{<relref "/rs/databases/configure/database-persistence#redis-on-flash-data-persistence">}}) – Auto Tiering uses dual database persistence where both the primary and replica shards persist to disk. This may add some processor and network overhead, especially in cloud configurations with network-attached storage.
 

@@ -14,7 +14,7 @@ aliases: {
 }
 ---
 
-{{<note>}}This feature is only available for versions 6.2.4 or later.{{</note>}}
+{{<note>}}This feature is supported for general availability in releases 6.4.2-6 and later. Some of these features were available as a preview in 6.4.2-4 and 6.4.2-5. Please upgrade to 6.4.2-6 for the full set of general availability features and bug fixes.{{</note>}}
 
 ## Prerequisites
 
@@ -53,8 +53,8 @@ For a list of example values used throughout this article, see the [Example valu
     spec:
       recName: rec-chicago
       recNamespace: ns-illinois
-      apiFqdnUrl: api-rec-chicago-ns-illinois.redis.com
-      dbFqdnSuffix: -db-rec-chicago-ns-illinois.redis.com
+      apiFqdnUrl: api-rec-chicago-ns-illinois.example.com
+      dbFqdnSuffix: -db-rec-chicago-ns-illinois.example.com
       secretName: redis-enterprise-rerc-ohare
     ```
 
@@ -68,8 +68,8 @@ For a list of example values used throughout this article, see the [Example valu
     spec:
       recName: rec-arlington
       recNamespace: ns-virginia
-      apiFqdnUrl: test-example-api-rec-arlington-ns-virginia.redis.com
-      dbFqdnSuffix: -example-cluster-rec-arlington-ns-virginia.redis.com
+      apiFqdnUrl: test-example-api-rec-arlington-ns-virginia.example.com
+      dbFqdnSuffix: -example-cluster-rec-arlington-ns-virginia.example.com
       secretName: redis-enterprise-rerc-reagan
     ```
 
@@ -144,9 +144,10 @@ For a list of example values used throughout this article, see the [Example valu
     ```sh
     kubectl get reaadb reaadb-boeing
 
-    NAME             STATUS   SPEC STATUS   GLOBAL CONFIGURATIONS REDB   LINKED REDBS
-    reaadb-boeing   active   Valid             
+    NAME              STATUS   SPEC STATUS   LINKED REDBS   REPLICATION STATUS
+    reaadb-boeing     active   Valid                        up             
     ```
+
   
     In case of errors, review the REAADB custom resource events and the Redis Enterprise operator logs.
 
@@ -160,8 +161,8 @@ This article uses the following example values:
 * REC namespace: `ns-illinois`
 * RERC name: `rerc-ohare`
 * RERC secret name: `redis-enterprise-rerc-ohare`
-* API FQDN: `api-rec-chicago-ns-illinois.redis.com`
-* DB FQDN suffix: `-db-rec-chicago-ns-illinois.redis.com`
+* API FQDN: `api-rec-chicago-ns-illinois.example.com`
+* DB FQDN suffix: `-db-rec-chicago-ns-illinois.example.com`
 
 #### Example cluster 2
 
@@ -169,6 +170,6 @@ This article uses the following example values:
 * REC namespace: `ns-virginia`
 * RERC name: `rerc-raegan`
 * RERC secret name: `redis-enterprise-rerc-reagan`
-* API FQDN: `api-rec-arlington-ns-virginia.redis.com`
-* DB FQDN suffix: `-db-rec-arlington-ns-virginia.redis.com`
+* API FQDN: `api-rec-arlington-ns-virginia.example.com`
+* DB FQDN suffix: `-db-rec-arlington-ns-virginia.example.com`
 

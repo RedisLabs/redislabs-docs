@@ -15,7 +15,7 @@ aliases: [
 The Redis Enterprise Software product lifecycle fully reflects the [subscription agreement](https://redis.com/software-subscription-agreement).
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
-Redis Enterprise modules follow the [modules lifecycle]({{< relref "/modules/modules-lifecycle.md" >}}).
+Redis Enterprise modules follow the [modules lifecycle]({{<relref "/stack/modules-lifecycle">}}).
 
 ## Release numbers
 
@@ -42,7 +42,8 @@ This update to the EOL policy ensures customers have a lead time of at least 18 
 
 | Version - Release date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 6.4 – February 2023						| -
+| 7.2 – August 2023				            | - |
+| 6.4 – February 2023						| February 28, 2025 |
 | 6.2 – August 2021                         | August 31, 2024  |
 | 6.0 – May 2020                            | May 31, 2022  |
 | 5.6 – April 2020                          | October 31, 2021  |

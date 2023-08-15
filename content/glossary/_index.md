@@ -312,10 +312,10 @@ The on-premises version of Redis Enterprise.
 Single-threaded Redis OSS database.
 {{%/definition%}}
 
-{{%definition "Redis on Flash (RoF)"%}}
-Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Redis on Flash manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
+{{%definition "Auto Tiering "%}}
+Previously known as Redis on Flash. Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Auto Tiering manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
 
-More info: [Redis on Flash]({{<relref "/rs/databases/redis-on-flash/">}}), [Redis on Flash (RoF) quick start]({{<relref "/rs/databases/redis-on-flash/rof-quickstart.md">}})
+More info: [Auto Tiering]({{<relref "/rs/databases/auto-tiering/">}}), [Auto Tiering  quick start]({{<relref "/rs/databases/auto-tiering/quickstart.md">}})
 {{%/definition%}}
 
 {{%definition "replica high availability (replicaHA)"%}}

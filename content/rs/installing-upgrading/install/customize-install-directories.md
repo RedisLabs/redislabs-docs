@@ -17,7 +17,7 @@ The files are installed in the `redislabs` directory located in the path that yo
 - When you install with custom directories, the installation does not run as an RPM file.
 - If a `redislabs` directory already exists in the path that you specify, the installation fails.
 - All nodes in a cluster must be installed with the same file locations.
-- Custom installation directories are not supported for databases using Redis on Flash.
+- Custom installation directories are not supported for databases using Auto Tiering.
 {{< /note >}}
 
 You can specify these file locations:
@@ -52,3 +52,12 @@ To specify directories during [installation]({{<relref "/rs/installing-upgrading
 sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ```
  
+## Limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use custom installation directories.
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.

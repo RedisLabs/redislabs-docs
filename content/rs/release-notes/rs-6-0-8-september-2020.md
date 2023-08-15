@@ -36,19 +36,19 @@ For more information about Redis 6.0.5, check out the [release notes](https://ra
 
 The [`rladmin` CLI]({{<relref "/rs/references/cli-utilities/rladmin">}}) introduces several updates to the commands for upgrading modules.
 It is now easier to upgrade your modules to the latest module version.
-Find out more [here]({{<relref "/modules/install/upgrade-module">}}).
+Find out more [here]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Redis modules
 
 The following GA releases of Redis Modules are bundled in RS 6.0:
 
-- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/modules/redisearch/release-notes/_index.md" >}}) (updated)
-- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md" >}})
-- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/modules/redisgraph/release-notes/redisgraph-2.0-release-notes.md" >}}) (updated)
-- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}) (updated)
-- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md" >}}) (updated)
+- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/stack/release-notes/redisearch" >}}) (updated)
+- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md" >}})
+- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/stack/release-notes/redisgraph/redisgraph-2.0-release-notes.md" >}}) (updated)
+- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/stack/release-notes/redistimeseries/redistimeseries-1.2-release-notes.md" >}}) (updated)
+- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md" >}}) (updated)
 
-To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/install/upgrade-module">}}).
+To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Additional capabilities
 
@@ -69,11 +69,21 @@ With build 6.0.8-32:
 
 ## Known limitations
 
--RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+-RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 ### Active-Active databases
 - RS44656 - A bug causing TLS mode for clients connections to toggle between ‘all communication’ to ‘for crdb communication only’ when performing a global configuration change. ***TBD***
 - RS51359 - Active-Active databases, using replication and Append Only File (AOF) for [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}), are suffering from memory leaks on replica shards, causing them to grow bigger than the master shards. Customers are advised to upgrade to RS 6.0.12 ***TBD***. Meanwhile you can use snapshots for database persistence or restart the replica shards ***TBD***.
+
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
 
 ### Upgrade
 

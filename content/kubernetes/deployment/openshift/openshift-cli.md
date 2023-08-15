@@ -146,46 +146,7 @@ Each Redis Enterprise cluster requires at least 3 nodes. Single-node RECs are no
 
 ## Configure the admission controller
 
-1. Verify the Kubernetes secret.
-   
-   The operator creates a Kubernetes secret for the admission controller during deployment.
-
-      ```sh
-      oc get secret admission-tls
-      ```
-
-    The response will be similar to this:
-
-    ```bash
-    NAME            TYPE     DATA   AGE
-    admission-tls   Opaque   2      2m43s
-    ```
-
-1. Save the automatically generated certificate to a local environment variable.
-
-    ```bash
-    CERT=`oc get secret admission-tls -o jsonpath='{.data.cert}'`
-    ```
-
-1. Create a patch file for the Kubernetes webhook using your own values for the namespace and webhook name.
-
-    ```sh
-    sed '<your_namespace>' admission/webhook.yaml | oc create -f -
-    cat > modified-webhook.yaml <<EOF
-    webhooks:
-      - name: <your.admission.webhook>
-        clientConfig:
-          caBundle: $CERT
-      admissionReviewVersions: ["v1beta1"]
-    EOF
-    ```
-
-1. Patch the validating webhook with the certificate.
-
-    ```sh
-    oc patch ValidatingWebhookConfiguration \
-      redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
-    ```
+{{< embed-md "k8s-admission-webhook-cert.md"  >}}
 
 ### Limit the webhook to relevant namespaces
 

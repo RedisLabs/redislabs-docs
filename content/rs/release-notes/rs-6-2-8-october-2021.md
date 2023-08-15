@@ -43,19 +43,19 @@ As of 31 October 2021, Redis Enterprise Software v5.6.0 is end of life (EOF).
 
 To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
-Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
+Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/stack/modules-lifecycle.md">}}).
 
 ### Redis modules
 
 Redis Enterprise Software v6.2.8 includes the following Redis modules:
 
-- [RediSearch v2.0.11]({{<relref "/modules/redisearch/release-notes/redisearch-2.0-release-notes.md">}})
-- [RedisJSON v1.0.8]({{<relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md">}})
-- [RedisBloom v2.2.6]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}}) 
-- [RedisGraph v2.4.7]({{<relref "/modules/redisgraph/release-notes/redisgraph-2.4-release-notes.md">}})
-- [RedisTimeSeries v1.4.10]({{<relref "/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes.md">}})
+- [RediSearch v2.0.11]({{<relref "/stack/release-notes/redisearch/redisearch-2.0-release-notes.md">}})
+- [RedisJSON v1.0.8]({{<relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md">}})
+- [RedisBloom v2.2.6]({{<relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md">}}) 
+- [RedisGraph v2.4.7]({{<relref "/stack/release-notes/redisgraph/redisgraph-2.4-release-notes.md">}})
+- [RedisTimeSeries v1.4.10]({{<relref "/stack/release-notes/redistimeseries/redistimeseries-1.4-release-notes.md">}})
 
-To learn more, see [Upgrade the module for a database]({{<relref "/modules/install/upgrade-module">}}).
+To learn more, see [Upgrade the module for a database]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Resolved issues
 
@@ -84,7 +84,7 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/insta
 
 ## Known limitations
 
--RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+-RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 - RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
 
@@ -95,6 +95,16 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/insta
     Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) from v6.2.4 have been fixed. 
+
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
 
 ## Known issues 
 
