@@ -31,41 +31,31 @@ You can only add modules to a database when you first create it. You cannot add 
 
 In the Redis Enterprise admin console, follow these steps to add modules to a database:
 
-1. From the **databases** page, select the **Add** button to create a new database:
+1. From the **Databases** screen, select **Quick database** or **Create database**.
 
-    {{<image filename="images/rs/icon_add.png" width="30px" alt="The Add icon">}}{{</image>}}
+1. In the **Modules** section, select which modules to add to your database.
 
-1. Confirm that you want to create a new Redis database with the **Next** button.
+    {{<image filename="images/rs/screenshots/databases/quick-db-modules.png" width="75%" alt="Select which modules to add to your database.">}}{{</image>}}
 
-1. Configure the database settings.
-
-1. For **Redis Modules**:
-
-    1. Select the **Add** button:
-
-        {{<image filename="images/rs/icon_add.png" width="30px" alt="The Add icon">}}{{</image>}}
-    
-    1. Select the module from the **Module** dropdown list.
-
-    1. To use custom configuration with a module, select **Add configuration** and enter the [configuration options](#module-configuration-options).
-
-    1. Select the **OK** button to confirm that you want to enable the module:
-
-        {{<image filename="images/rs/icon_save.png" width="30px" alt="The Save icon">}}{{</image>}}
-
-    1. Repeat these steps to add additional modules to the database.
-
-        {{<note>}}
+    {{<note>}}
 You cannot use RediSearch 1.x and RediSearch 2.x in the same database.
-        {{</note>}}
+    {{</note>}}
 
-1. Select **Show advanced options** and enter a port number for the database, such as **12543**.
+1. To use custom configuration with a module:
+
+    1. Select **Modules parameters**.
+    
+    1. Enter the [configuration options](#module-configuration-options).
+    
+    1. Select **Done**.
+
+1. Configure additional database settings.
 
     {{<note>}}
 Depending on the [features supported by an enabled module]({{<relref "/stack/enterprise-capabilities#module-feature-support">}}), certain database configuration fields may not be available.
     {{</note>}}
 
-1. Select the **Activate** button.
+1. Select **Create**.
 
 ## Module configuration options
 

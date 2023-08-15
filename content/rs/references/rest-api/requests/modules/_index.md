@@ -18,10 +18,10 @@ aliases: /rs/references/rest-api/modules
 |--------|------|-------------|
 | [GET](#list-modules) | `/v1/modules` | List available modules |
 | [GET](#get-module) | `/v1/modules/{uid}` | Get a specific module |
-| [POST](#post-module) | `/v1/modules` | Upload a new module |
-| [POST](#post-module-v2) | `/v2/modules` | Upload a new module and its dependencies |
-| [DELETE](#delete-module) | `/v1/modules/{uid}` | Delete a module without dependencies |
-| [DELETE](#delete-module-v2) | `/v2/modules/{uid}` | Delete a module with dependencies |
+| [POST](#post-module) | `/v1/modules` | Upload a new module (deprecated) |
+| [POST](#post-module-v2) | `/v2/modules` | Upload a new module |
+| [DELETE](#delete-module) | `/v1/modules/{uid}` | Delete a module (deprecated) |
+| [DELETE](#delete-module-v2) | `/v2/modules/{uid}` | Delete a module |
 
 ## List modules {#list-modules}
 
@@ -113,6 +113,10 @@ Returns a [module object]({{<relref "/rs/references/rest-api/objects/module">}})
 ```sh
 POST /v1/modules
 ```
+
+{{<note>}}
+`POST /v1/modules` is deprecated as of Redis Enterprise Software version 7.2. Use [`POST /v2/modules`](#post-module-v2) instead.
+{{</note>}}
 
 Uploads a new module to the cluster.
 
@@ -207,9 +211,9 @@ print(response.text)
 POST /v2/modules
 ```
 
-Asynchronously uploads a new module and its dependencies to the cluster.
+Asynchronously uploads a new module to the cluster.
 
-The request must contain a Redis module bundled using [RedisModule Packer](https://github.com/RedisLabs/RAMP). If the module's metadata includes a `dependencies` section, a `/v2/modules` request automatically uploads the dependencies.
+The request must contain a Redis module bundled using [RedisModule Packer](https://github.com/RedisLabs/RAMP).
 
 For modules in Redis Stack, download the module from the [Download Center](https://redis.com/redis-enterprise-software/download-center/modules/). See [Install a module on a cluster]({{<relref "/stack/install/add-module-to-cluster#rest-api-method">}}) for more information.
 
@@ -311,9 +315,11 @@ Possible `error_code` values include [`/v1/modules` error codes](#post-error-cod
 DELETE /v1/modules/{string: uid}
 ```
 
-Delete a module.
+{{<note>}}
+`DELETE /v1/modules` is deprecated as of Redis Enterprise Software version 7.2. Use [`DELETE /v2/modules`](#delete-module-v2) instead.
+{{</note>}}
 
-If the module has dependencies, use the [`v2` request](#delete-module-v2) instead.
+Delete a module.
 
 #### Permissions
 
@@ -366,7 +372,7 @@ Returns a status code to indicate module deletion success or failure.
 DELETE /v2/modules/{string: uid}
 ```
 
-Delete a module with dependencies.
+Delete a module.
 
 #### Permissions
 

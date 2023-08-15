@@ -10,17 +10,19 @@ aliases:
 
 To add a user to the cluster:
 
-1. From the **access control** tab in the admin console, select ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Enter the name, email, and password of the new user and select a role to assign to the user.
-1. Select **internal** for **Authentication**.
-1. For **Email Alerts**, select **Edit** and then choose the alerts that the user should receive. You can select:
+1. From the **Access Control > Users** tab in the admin console, select **+ Add user**.
 
-    - **Receive alerts for databases** - The alerts that are enabled for the selected databases will be sent to the user. You can either select **All databases**, or you can select **Customize** and select the individual databases to send alerts for.
+1. Enter the name, email, and password of the new user.
+
+1. Assign a **Role** to the user to grant permissions for cluster management and data access.
+
+1. Select the **Alerts** the user should receive by email:
+
+    - **Receive alerts for databases** - The alerts that are enabled for the selected databases will be sent to the user. Choose **All databases** or **Customize** to select the individual databases to send alerts for.
     
-    - **Receive cluster alerts** - The alerts that are enabled for the cluster in **settings > alerts** are sent to the user.
+    - **Receive cluster alerts** - The alerts that are enabled for the cluster in **Cluster > Alerts Settings** are sent to the user.
 
-1. Select the save icon.
-{{< video "/images/rs/new-user-add.mp4" "Create a new user" >}}
+1. Select **Save**.
 
 ## More info
 
