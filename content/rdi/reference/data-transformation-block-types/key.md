@@ -5,7 +5,7 @@ description: Set the Redis key for this data entry
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 Set the Redis key for this data entry
@@ -17,7 +17,7 @@ Set the Redis key for this data entry
 | **expression** | `string` | Expression<br/>                               | yes      |
 | **language**   | `string` | Language<br/>Enum: `"jmespath"`, `"sql"`<br/> | yes      |
 
-**Additional Properties:** not allowed  
+**Additional Properties:** not allowed
 
 **Example**
 
