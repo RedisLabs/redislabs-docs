@@ -2,7 +2,7 @@
 Title: Redis Enterprise Software release notes 6.4.2
 linkTitle: 6.4.2 releases
 description: Pub/sub ACLs & default permissions. Validate client certificates by subject attributes. Ubuntu 20.04 support.
-compatibleOSSVersion: Redis 6.2.6
+compatibleOSSVersion: Redis 6.2.10
 weight: 72
 alwaysopen: false
 toc: "true"
@@ -20,7 +20,7 @@ This version offers:
 
 - Enhanced TLS performance when Redis returns large arrays in responses
 
-- Compatibility with [open source Redis 6.2.6](https://github.com/redis/redis)
+- Compatibility with [open source Redis](https://github.com/redis/redis) 6.2.7 and 6.2.10.
 
 - Additional enhancements and bug fixes
 

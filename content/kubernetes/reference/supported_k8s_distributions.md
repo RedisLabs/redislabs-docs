@@ -1,5 +1,5 @@
 ---
-Title: Supported distributions
+Title: Supported Kubernetes distributions
 linkTitle: Supported distributions
 description: Support matrix for the current Redis Enterprise K8s operator
 weight: 30
@@ -29,28 +29,164 @@ aliases: [
 ]
 ---
 
-Each release of Redis Enterprise for Kubernetes is thoroughly tested against a set of Kubernetes distributions. The table below lists the current release's support status for each distribution.
+Each release of Redis Enterprise for Kubernetes is thoroughly tested against a set of Kubernetes distributions. The table below lists Redis Enterprise for Kubernetes versions and the Kubernetes distributions they support.
 
-- "supported" indicates this distribution is supported for this release.
-- "deprecated" indicates this distribution is supported for this release, but will be dropped in a future release.
-- Any distribution not listed below is not supported for production workloads.
+<span title="Check mark icon">&#x2705;</span> Supported – This distribution is supported for this version of Redis Enterprise Software for Kubernetes.
 
-| **Kubernetes version**  | 1.22       | 1.23       | 1.24       | 1.25       | 1.26       | 1.27       |
-|:------------------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Community Kubernetes    |            | deprecated | supported  | supported  | supported  | supported* |
-| Amazon EKS              | deprecated | deprecated | supported  | supported* |            |            |
-| Azure AKS               |            | deprecated | supported  | supported  | supported* |
-| Google GKE              | deprecated | deprecated | supported  | supported  | supported* |            |
-| Rancher 2.6             | deprecated | deprecated | supported  |            |            |            |
-| Rancher 2.7             |            | deprecated | supported  |            |            |            |
-| VMware TKG 1.6          | deprecated | deprecated |            |            |            |            |
-| **OpenShift version**   | **4.9**    | **4.10**   | **4.11**   | **4.12**   |            |            |
-|                         |            | deprecated | supported  | supported  |            |            |
-| **VMware TKGI version** | **1.13**   | **1.14**   | **1.15**   |            |            |            |
-|                         | deprecated | deprecated | supported  |            |            |            |
+<span title="Warning icon">&#x26A0;&#xFE0F;</span> Deprecated – This distribution is still supported for this version of Redis Enterprise Software for Kubernetes, but support will be removed in a future release.
 
-\* Support added in latest release
+<span title="X icon">&#x274c;</span> End of life – Support for this distribution ended.
 
-### Supported upgrade paths**
+Any distribution not listed below is not supported for production workloads.
+
+## Community Kubernetes
+
+For details on this platform, see the Kubernetes [documentation](https://kubernetes.io/docs/home/supported-doc-versions/).
+
+{{<table-scrollable>}}
+|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1.27** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
+| **1.26** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |
+| **1.25** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |
+| **1.22** | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.21** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.20** |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.19** |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.18** |  |  |  |  |  |  |  | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.17** |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
+| **1.16** |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
+{{</table-scrollable>}}
+
+## OpenShift Container Platform
+
+For details on this platform, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.13/welcome/index.html).
+
+{{<table-scrollable>}}
+|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **4.12** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |
+| **4.11** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **4.10** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |
+| **4.9** | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **4.8** |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **4.7** |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **4.6** |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **4.5** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **3.11** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
+{{</table-scrollable>}}
+
+## Amazon Elastic Kubernetes Service (EKS)
+
+For details on this platform, see the [EKS documentation](https://docs.aws.amazon.com/eks/?icmpid=docs_homepage_containers).
+
+{{<table-scrollable>}}
+|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1.26** |  |  |  |  |  |  |  |  |  |  |  |
+| **1.25** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |
+| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **1.22** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.21** |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.20** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.19** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.18** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+
+{{</table-scrollable>}}
+
+## Azure Kubernetes Service (AKS)
+
+For details on this platform, see the [AKS documentation](https://learn.microsoft.com/en-us/azure/aks/). 
+
+{{<table-scrollable>}}
+|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1.26** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
+| **1.25** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |
+| **1.22** |  | <span title="X icon">&#x274c;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.21** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |
+| **1.20** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.19** |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.18** |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Supported">&#x2705;</span> |
+
+{{</table-scrollable>}}
+
+## Google Kubernetes Engine (GKE)
+
+For details on this platform, see the [GKE documentation](https://cloud.google.com/kubernetes-engine/docs).
+
+{{<table-scrollable>}}
+|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1.26** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
+| **1.25** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.22** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.21** |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.20** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.19** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.18** |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Supported">&#x2705;</span> |
+
+{{</table-scrollable>}}
+
+## Rancher
+
+For details on this platform, see the [Rancher documentation](https://ranchermanager.docs.rancher.com/).
+
+{{<table-scrollable>}}
+|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1.26** |  |  |  |  |  |  |  |  |  |  |  |
+| **1.25** |  |  |  |  |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |
+| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
+| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **1.22** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |
+| **1.21** | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |
+| **1.20** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.19** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.18** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.17** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.18** |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> |
+| **1.17** |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> |
+
+{{</table-scrollable>}}
+
+## VMware Tanzu Kubernetes Grid (TKG)
+
+For details on this platform, see the [TKG documentation](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/index.html).
+
+{{<table-scrollable>}}
+|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|  **1.6-1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |
+|  **1.6-1.22** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |
+{{</table-scrollable>}}
+
+## VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)
+
+For details on this platform, see the [TKGI documentation](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid-Integrated-Edition/index.html).
+
+{{<table-scrollable>}}
+|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1.15** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
+| **1.14** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **1.13** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.12** |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |
+| **1.11** |  |  |  |  | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |
+| **1.10** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+
+{{</table-scrollable>}}
+
+
+## Supported upgrade paths
 
    If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
