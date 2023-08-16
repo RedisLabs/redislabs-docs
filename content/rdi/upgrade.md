@@ -11,7 +11,7 @@ aliases:
 ## Upgrade RDI CLI
 
 ```bash
-pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/redis_di_cli-latest-py3-none-any.whl --upgrade
+pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/redis_di_cli-{{<param rdi_cli_preview>}}-py3-none-any.whl --upgrade
 ```
 
 ## Upgrade RDI Engine

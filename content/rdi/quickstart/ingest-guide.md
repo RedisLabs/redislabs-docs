@@ -166,34 +166,7 @@ For information about a distributed installation (multi VM/Multi pod), see [Dist
 - Install RDI CLI:
 
   ```bash
-  pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis_di_cli-latest-py3-none-any.whl
-  ```
-
-## Installing from source
-
-- Set up a new virtual env for Python:
-
-  ```bash
-  python3.8 -m venv venv
-  ```
-
-- Activate virtual env:
-
-  ```bash
-  source venv/bin/activate
-  ```
-
-- Install [Poetry](https://python-poetry.org/) builder:
-
-  ```bash
-  pip install poetry
-  ```
-
-- Build cli:
-
-  ```bash
-  cd cli
-  poetry install
+  pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis_di_cli-{{<param rdi_cli_preview>}}-py3-none-any.whl
   ```
 
 ## Upgrading

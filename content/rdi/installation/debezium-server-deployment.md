@@ -5,7 +5,7 @@ description: Learn how to deploy Debezium Server
 weight: 60
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 ## Containerized deployment
@@ -27,7 +27,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
   ```bash
   docker logs debezium --follow
   ```
-  
+
 ### Custom timezone
 
 The UTC timezone is used in the Debezium Server container by default. In order to use another timezone, specify it by setting the `TZ` environment variable when running the container, for example:
@@ -58,6 +58,7 @@ If you are using `Oracle` as your source DB, please note that Debezium Server do
 As result, it will fail with an error. You should follow these steps to add the JDBC driver and restart Debezium Server:
 
 - Download the driver:
+
   ```bash
   wget -P oracle https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar
   ```
@@ -78,7 +79,7 @@ We recommend running Docker as a non-root user. To allow this, follow these step
   sudo groupadd docker
   ```
 
-- Add the current user to group `docker`: 
+- Add the current user to group `docker`:
 
   ```
   sudo usermod -aG docker $USER
@@ -95,7 +96,7 @@ We recommend running Docker as a non-root user. To allow this, follow these step
 - Unpack Debezium Server:
 
   ```bash
-  tar xvfz debezium-server-dist-{{ <param rdi_debezium_server_version> }}.tar.gz
+  tar xvfz debezium-server-dist-{{<param rdi_debezium_server_version>}}.tar.gz
   ```
 
 - Copy the scaffolded `application.properties` file (created by the [scaffold command]({{<relref "/rdi/quickstart/ingest-guide#scaffold-configuration-files">}}) to the extracted `debezium-server/conf` directory. Verify that you've configured this file based on these [instructions]({{<relref "/rdi/quickstart/ingest-guide#install-the-debezium-server">}}).
@@ -107,21 +108,21 @@ We recommend running Docker as a non-root user. To allow this, follow these step
   wget https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar
   ```
 
- - Uncomment the following lines in the `application.properties` file and set the value for the property `quarkus.log.file.path`:
+- Uncomment the following lines in the `application.properties` file and set the value for the property `quarkus.log.file.path`:
 
-  ```properties
-  quarkus.log.file.enable=true
-  # The full path to the Debezium Server log files.
-  quarkus.log.file.path=<LOG_FILE_PATH>
-  # The maximum file size of the log file after which a rotation is executed.
-  quarkus.log.file.rotation.max-file-size=100M
-  # Indicates whether to rotate log files on server initialization.
-  quarkus.log.file.rotation.rotate-on-boot=true
-  # File handler rotation file suffix. When used, the file will be rotated based on its suffix.
-  quarkus.log.file.rotation.file-suffix=.yyyy-MM-dd.gz
-  # The maximum number of backups to keep.
-  quarkus.log.file.rotation.max-backup-index=3
-  ```
+```properties
+quarkus.log.file.enable=true
+# The full path to the Debezium Server log files.
+quarkus.log.file.path=<LOG_FILE_PATH>
+# The maximum file size of the log file after which a rotation is executed.
+quarkus.log.file.rotation.max-file-size=100M
+# Indicates whether to rotate log files on server initialization.
+quarkus.log.file.rotation.rotate-on-boot=true
+# File handler rotation file suffix. When used, the file will be rotated based on its suffix.
+quarkus.log.file.rotation.file-suffix=.yyyy-MM-dd.gz
+# The maximum number of backups to keep.
+quarkus.log.file.rotation.max-backup-index=3
+```
 
 - Start Debezium Server from `debezium-server` directory:
   ```bash
