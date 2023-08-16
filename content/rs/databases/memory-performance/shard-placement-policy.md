@@ -53,7 +53,7 @@ For example, for a database with two master and two replica shards on a cluster 
 - Node 3 hosts the second master shard
 - Node 1 hosts for the replica shard for master shard 2
 
-For Redis on RAM databases with OSS cluster API enabled and for Redis on Flash databases, use the sparse policy to optimize performance.
+For Redis on RAM databases with OSS cluster API enabled and for databases with Auto Tiering enabled, use the sparse policy to optimize performance.
 
 ![sparse_placement](/images/rs/sparse_placement.png)
 

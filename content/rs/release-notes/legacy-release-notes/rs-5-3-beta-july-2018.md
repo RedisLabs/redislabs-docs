@@ -22,4 +22,4 @@ As a preview version, we do not support upgrading to RS 5.3 from any previous ve
 
 ## Known limitations
 
-The RS 5.3 preview version does not support Enterprise Modules (- RediSearch, ReJSON and ReBloom), Redis on Flash (RoF) or active-active Redis (CRDB).
+The RS 5.3 preview version does not support Enterprise Modules (- RediSearch, ReJSON and ReBloom), Auto Tiering or active-active Redis (CRDB).

@@ -13,8 +13,8 @@ An object that represents the database configuration.
 |------|------------|-------------|
 | aof_policy | string | Policy for Append-Only File data persistence |
 | authentication_admin_pass | string | Administrative databases access token |
-| authentication_redis_pass | string | Redis AUTH password |
-| bigstore | boolean | Database driver is Redis on Flash |
+| authentication_redis_pass | string | Redis AUTH password (deprecated as of Redis Enterprise v7.2, replaced with multiple passwords feature in version 6.0.X) |
+| bigstore | boolean | Database driver is Auto Tiering |
 | bigstore_ram_size | integer | Memory size of RAM size |
 | data_persistence | string | Database on-disk persistence |
 | enforce_client_authentication | **'enabled'** <br />'disabled' | Require authentication of client certificates for SSL connections to the database. If enabled, a certificate should be provided in either `authentication_ssl_client_certs` or `authentication_ssl_crdt_certs` |

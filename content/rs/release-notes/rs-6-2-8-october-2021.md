@@ -84,7 +84,7 @@ To learn more, see [Upgrade the module for a database]({{<relref "/stack/install
 
 ## Known limitations
 
--RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+-RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 - RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
 
@@ -95,6 +95,16 @@ To learn more, see [Upgrade the module for a database]({{<relref "/stack/install
     Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) from v6.2.4 have been fixed. 
+
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
 
 ## Known issues 
 

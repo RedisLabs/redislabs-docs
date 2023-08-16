@@ -40,6 +40,7 @@ rladmin tune cluster
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
         [ acl_pubsub_default { resetchannels | allchannels } ]
+        [ resp3_default { enabled | disabled } ]
 ```
 
 ### Parameters
@@ -65,6 +66,7 @@ rladmin tune cluster
 | redis_provision_node_threshold_percent | percentage                | Memory (in percentage) needed to provision a new database                                                                    |
 | redis_upgrade_policy                   | `latest`<br />`major`           | When you upgrade or create a new Redis database, this policy determines which version of Redis database compatibility is used.<br /><br />Supported values are:<ul><li><p>`latest`, which applies the most recent Redis compatibility update \(_effective default prior to v6.2.4_)<p></li><li>`major`, which applies the most recent major release compatibility update (_default as of v6.2.4_).</li></ul>                                                                                                                 |
 | repl_diskless                          | `enabled`<br />`disabled`       | Activates or deactivates diskless replication (can be overwritten per database)                                              |
+| resp3_default | `enabled` <br /> `disabled` | Determines the default value of the `resp3` option upon upgrading a database to version 7.2 (defaults to `enabled`) |
 | show_internals                         | `enabled`<br />`disabled`       | Controls the visibility of internal databases that are only used for the cluster's management                                |
 | slave_ha                               | `enabled` <br /> `disabled`   | Activates or deactivates replica high availability                                                                           |
 | slave_ha_bdb_cooldown_period           | time in seconds                   | Time (in seconds) after shard relocation during which databases can't be relocated to another node                           |
@@ -127,6 +129,7 @@ rladmin tune db { db:<id> | <name> }
         [ mtls_allow_outdated_cert { enabled | disabled } ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
+        [ resp3 { enabled | disabled } ]
 ```
 
 ### Parameters
@@ -163,6 +166,7 @@ rladmin tune db { db:<id> | <name> }
 | repl_backlog                         | size in MB<br /> `auto`          | Size of the replication buffer                                                                                        |
 | repl_diskless                        | `enabled`<br /> `disabled`<br /> `default`   | Activates or deactivates diskless replication (defaults to the cluster setting)                                          |
 | repl_timeout                         | time in seconds                  | Replication timeout (in seconds)                                                                                                      |
+| resp3 | `enabled`<br /> `disabled` | Enables or deactivates RESP3 support (defaults to `enabled`) |
 | schedpolicy                          | `cmp`<br /> `mru`<br /> `spread`<br /> `mnp` | Controls how server-side connections are used when forwarding traffic to shards                                           |
 | skip_import_analyze                  | `enabled`<br /> `disabled`       | Skips the analyzing step when importing a database                                                                                    |
 | slave_buffer                         | value in MB<br /> hard:soft:time | Redis replica output buffer limits                                                                                                    |

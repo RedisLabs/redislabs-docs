@@ -19,26 +19,26 @@ This version includes the following new features and improvements:
 
 And other functional and stability improvements.
 
-### Version information
+## Version information
 
-#### Upgrade instructions
+### Upgrade instructions
 
 - Follow [these instructions]({{<relref "/rs/installing-upgrading/upgrading">}}) for upgrading to RS 6.0.12 from RS 5.4.0 and above.
 - For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{<relref "/rs/installing-upgrading/upgrading/upgrade-active-active">}}).
 
-#### Product lifecycle information
+### Product lifecycle information
 
 - End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}).
 - EOL for Redis modules can be found [here]({{<relref "/stack/modules-lifecycle#modules-endoflife-schedule">}}).
 
-#### Deprecation Notice
+### Deprecation Notice
 
 - Support for RS 5.4.X ended on December 31, 2020.
 - Support for Red Hat Enterprise Linux 6 and Oracle Linux 6 and Ubuntu 14.04 (Trusty) operating systems platforms ended on November 30, 2020.
 - This is the last RS version that supports direct upgrades from versions below 5.6.0.
 - This is the last RS version that supports Active-Active protocol version below 1 and featureset version below 1.
 
-### New Features
+## New Features
 
 #### Distributed Syncer
 
@@ -102,7 +102,7 @@ To enable the syncer automatic recovery, do these steps on each participating cl
 
 The syncer process restarts to with automatic recovery on.
 
-### Redis modules
+## Redis modules
 
 The following GA releases of Redis modules are bundled with RS 6.0.12:
 
@@ -114,14 +114,14 @@ The following GA releases of Redis modules are bundled with RS 6.0.12:
 
 To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/stack/install/upgrade-module">}}).
 
-### Additional capabilities
+## Additional capabilities
 
 - RS 6.0.12 includes open source Redis 6.0.6. For more information about Redis 6.0.6, check out the [release notes](https://raw.githubusercontent.com/redis/redis/6.0.6/00-RELEASENOTES).
 - The bundled Nginx version was updated from version 1.16.0 to 1.18.0.
 - The crdb-cli syntax to remove an instance is changed from
 `remove-instance [--ordered|--unordered]` to `remove-instance [--force|--no-force]`.
 
-### Important fixes
+## Important fixes
 
 - RS45627, RS47382 - Fixed bugs causing clients to disconnect when using XREAD and XREADGROUP commands in blocking mode on other clients’ connections.
 - RS44656 - Fixed a bug causing TLS mode for clients connections to toggle between ‘all communication’ to ‘for crdb communication only’ when performing a global configuration change.
@@ -136,9 +136,19 @@ with 6.0.12-58:
 - RS51359 - Fixed a memory leak on replica shards in Active-Active databases with replication and AOF for persistence.
 - RS52363 - Updated PUB/SUB max message value size from 64KB to 512MB 
 
-### Known limitations
+## Known limitations
 
--RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+-RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
 
 #### Upgrade
 

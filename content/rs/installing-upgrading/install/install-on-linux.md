@@ -94,6 +94,16 @@ To learn more about customization and find answers to related questions, see:
 - [File locations]({{<relref "rs/installing-upgrading/install/plan-deployment/file-locations.md">}})
 - [Supported platforms]({{<relref "rs/installing-upgrading/install/plan-deployment/supported-platforms.md">}})
 
+## Limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
+
 ## Next steps
 
 1. [Create]({{< relref "/rs/clusters/new-cluster-setup.md" >}})

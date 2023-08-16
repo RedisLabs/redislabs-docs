@@ -109,32 +109,15 @@ with `-p <host_port>:<container_port>` or use the `--network host` option to ope
 
 ## Set up a cluster
 
-{{< embed-md "cluster-setup.md" >}}
+{{<embed-md "cluster-setup.md">}}
 
 ## Create a database
 
-1. Select **redis database** and the **Single Region** deployment, then select **Next**.
-
-    ![Redis Enterprise Software create database](/images/rs/getstarted-newdatabase.png)
-
-1. Enter a database name such as `database1`.
-
-    ![Redis Enterprise Software configure new database
-screen](/images/rs/getstarted-createdatabase.png)
-
-1. Select **Show advanced options** and enter `12000` for the **Endpoint port number**.
-
-    If port 12000 is not available, enter any available port number between 10000 to 19999. You will use this port number to connect to the database.
-
-1. Select **Activate** to create your database.
+{{<embed-md "quick-db-setup.md">}}
 
 {{< note >}}
 {{< embed-md "docker-memory-limitation.md" >}}
 {{< /note >}}
-
-When you see a green check mark appear on the database configuration screen, the database is activated and ready for you to use.
-
-You now have a Redis database!
 
 ## Connect to your database
 

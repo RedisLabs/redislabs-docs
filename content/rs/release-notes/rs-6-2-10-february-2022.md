@@ -140,7 +140,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 ## Known limitations
 
-- RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+- RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
 - RS78364 - When using `rladmin tune db` to change the replica buffer size, the command appears to succeed, but the change does not take effect. This issue was introduced in build 100; it will be fixed in a future build of Redis Enterprise Software v6.2.10 and in the next release (v6.2.12).
 
@@ -153,6 +153,16 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
     Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) listed in the v6.2.4 release notes have been addressed.
+
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
 
 ## Known issues
 
