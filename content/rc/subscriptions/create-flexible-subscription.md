@@ -121,7 +121,7 @@ By default, you're shown basic settings, which include:
 | Database&nbsp;setting | Description |
 |:---------|:-----------|
 | **Name** | A custom name for your database (_required_) |
-| **Advanced Capabilities** | Modules used by the database. Choose from [RedisSearch]({{< relref "/modules/redisearch/_index.md" >}}), [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}}), [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}). |
+| **Advanced Capabilities** | Modules used by the database. Choose from [RedisSearch]({{< relref "/stack/search" >}}), [RedisJSON]({{< relref "/stack/json" >}}), [RedisTimeSeries]({{< relref "/stack/timeseries" >}}), [RedisBloom]({{< relref "/stack/bloom" >}}), or [RedisGraph]({{< relref "/stack/deprecated-features/graph" >}}). |
 | **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**). |
 | **Memory Limit (GB)** | The size limit for the database. Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).|
 | **High Availability** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |
@@ -173,6 +173,6 @@ The shard types associated with your subscription depend on your database memory
 | High-throughput | 2.5GB / 25K ops/sec |
 | Small | 12.5GB / 12.5K ops/sec |
 | Large | 25GB  / 25K ops/sec |
-| Very large | 50GB / 50K ops/sec |
+| Very large | 50GB / 5K ops/sec |
 
 Prices vary according to the cloud provider and region.  Minimum prices apply.  To learn more, see [Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/).

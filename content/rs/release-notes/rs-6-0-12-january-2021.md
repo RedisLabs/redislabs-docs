@@ -13,7 +13,7 @@ This version includes the following new features and improvements:
 - [Synchronization](https://docs.redis.com/latest/rs/databases/active-active#syncer-process) can now be [distributed across the nodes]({{<relref "/rs/databases/active-active/synchronization-mode.md">}}) of Active-Active or Active-Passive databases
 - You can [disable several internal RS services]({{<relref "/rs/clusters/optimize/turn-off-services.md">}}) to free up more memory
 - User accounts can have multiple passwords to allow for [password rotation]({{<relref "/rs/security/access-control/manage-passwords/rotate-passwords">}})
-- [Dependencies are automatically installed]({{<relref "/modules/install/add-module-to-cluster#rest-api-method">}}) when you add modules to a cluster
+- [Dependencies are automatically installed]({{<relref "/stack/install/add-module-to-cluster#rest-api-method">}}) when you add modules to a cluster
 - [Envoy replaces NGINX]({{<relref "/rs/networking/port-configurations.md">}}) for internal cluster administration
 - Automatic recovery of the [syncer process](https://docs.redis.com/latest/rs/databases/active-active#syncer-process)s from out-of-memory (preview mode)
 
@@ -23,13 +23,13 @@ And other functional and stability improvements.
 
 #### Upgrade instructions
 
-- Follow [these instructions]({{<relref "/rs/installing-upgrading/upgrading.md">}}) for upgrading to RS 6.0.12 from RS 5.4.0 and above.
-- For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{<relref "/rs/installing-upgrading/upgrading#upgrade-activeactive-databases">}}).
+- Follow [these instructions]({{<relref "/rs/installing-upgrading/upgrading">}}) for upgrading to RS 6.0.12 from RS 5.4.0 and above.
+- For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{<relref "/rs/installing-upgrading/upgrading/upgrade-active-active">}}).
 
 #### Product lifecycle information
 
 - End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}).
-- EOL for Redis modules can be found [here]({{<relref "/modules/modules-lifecycle#modules-endoflife-schedule">}}).
+- EOL for Redis modules can be found [here]({{<relref "/stack/modules-lifecycle#modules-endoflife-schedule">}}).
 
 #### Deprecation Notice
 
@@ -93,7 +93,7 @@ This is a configurable option and currently under preview mode. This behavior wi
 
 To enable the syncer automatic recovery, do these steps on each participating cluster:
 
-1. [Upgrade the featureset version]({{< relref "/rs/installing-upgrading/upgrading#upgrade-activeactive-databases" >}}) to `3`.
+1. [Upgrade the featureset version]({{< relref "/rs/installing-upgrading/upgrading/upgrade-active-active" >}}) to `3`.
 1. Enable the syncer automatic recovery using the REST API:
 
     ```sh
@@ -106,13 +106,13 @@ The syncer process restarts to with automatic recovery on.
 
 The following GA releases of Redis modules are bundled with RS 6.0.12:
 
-- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0.6]({{<relref "/modules/redisearch/release-notes/redisearch-2.0-release-notes.md">}})
-- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{<relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md">}})
-- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.2.11]({{<relref "/modules/redisgraph/release-notes/_index.md">}})
-- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.4.7]({{<relref "/modules/redistimeseries/release-notes/_index.md">}})
-- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}})
+- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0.6]({{<relref "/stack/release-notes/redisearch/redisearch-2.0-release-notes.md">}})
+- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{<relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md">}})
+- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.2.11]({{<relref "/stack/release-notes/redisgraph">}})
+- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.4.7]({{<relref "/stack/release-notes/redistimeseries">}})
+- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{<relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md">}})
 
-To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/install/upgrade-module">}}).
+To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/stack/install/upgrade-module">}}).
 
 ### Additional capabilities
 

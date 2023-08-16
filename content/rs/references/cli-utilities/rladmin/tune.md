@@ -23,7 +23,7 @@ rladmin tune cluster
         [ redis_migrate_node_threshold <size> ]
         [ redis_provision_node_threshold_percent <percent> ]
         [ redis_migrate_node_threshold_percent <percent> ]
-        [ max_simultaneous_backups <size> ]
+        [ max_simultaneous_backups <number> ]
         [ failure_detection_sensitivity { high | low } ]
         [ watchdog_profile { cloud | local-network } ]
         [ slave_ha { enabled | disabled } ]
@@ -57,7 +57,7 @@ rladmin tune cluster
 | login_lockout_duration                 | time in seconds                   | Time a locked account remains locked ( "0" means only an admin can unlock the account)                                   |
 | login_lockout_threshold                | integer                           | Number of failed sign-in attempts to trigger locking a user account ("0" means never lock the account)                   |
 | max_saved_events_per_type              | integer                           | Maximum number of events each type saved in CCS per object type                                                              |
-| max_simultaneous_backups               | integer                           | Number of database backups allowed to run at the same time. Combines with `max_redis_forks` (set by [`tune node`](#tune-node)) to determine the number of shard backups allowed to run simultaneously.                                                                                  |
+| max_simultaneous_backups               | integer <nobr>(default: 4)</nobr>                      | Number of database backups allowed to run at the same time. Combines with `max_redis_forks` (set by [`tune node`](#tune-node)) to determine the number of shard backups allowed to run simultaneously.                                                                                  |
 | parallel_shards_upgrade                | integer<br />`all`              | Number of shards upgraded in parallel during DB upgrade (positive integer or "all")                                          |
 | redis_migrate_node_threshold           | size in MB                        | Memory (in MBs by default or can be specified) needed to migrate a database between nodes                                   |
 | redis_migrate_node_threshold_percent   | percentage                | Memory (in percentage) needed to migrate a database between nodes                                                            |
@@ -155,7 +155,7 @@ rladmin tune db { db:<id> | <name> }
 | metrics_export_all                   | `enabled`<br /> `disabled`       | Activates the exporter to expose all shard metrics                                                                                    |
 | mkms                                 | `enabled`<br /> `disabled`       | Activates multi-key multi-slot commands                                                                                               |
 | module_config_params | string | Configures module arguments at runtime. Enclose `module_config_params` within quotation marks. |
-| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf` | The module to configure with `module_config_params` |
+| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf`<br />`rg` | The module to configure with `module_config_params` |
 | mtls_allow_outdated_cert             | `enabled`<br /> `disabled`       | Activates outdated certificates in mTLS connections                                   |
 | mtls_allow_weak_hashing              | `enabled`<br /> `disabled`       | Activates weak hashing (less than 2048 bits) in mTLS connections                       |
 | oss_cluster                          | `enabled`<br /> `disabled`       | Activates OSS cluster API                                                                                                             |

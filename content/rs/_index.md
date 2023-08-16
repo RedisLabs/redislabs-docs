@@ -30,8 +30,8 @@ You can run Redis Enterprise Software in an on-premises data center or on your p
 
 ## Get started
 Build a small-scale cluster with the Redis Enterprise Software container image.
-- [Get started]({{<relref "/rs/installing-upgrading/get-started-redis-enterprise-software" >}})
-- [Docker]({{<relref "/rs/installing-upgrading/get-started-docker">}})
+- [Linux quickstart]({{<relref "/rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart" >}})
+- [Docker quickstart]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}})
 - [Get started with Active-Active]({{<relref "/rs/databases/active-active/get-started">}})
 
 ## Install & setup
@@ -63,6 +63,6 @@ Use command-line utilities and the REST API to manage the cluster and databases.
 ## Related info
 - [Redis Enterprise Cloud]({{<relref "/rc">}})
 - [Open source Redis](https://redis.io/) (redis.io)
-- [Redis Stack]({{<relref "/modules">}})
+- [Redis Stack]({{<relref "/stack">}})
 - [Glossary]({{<relref "/glossary">}})
 

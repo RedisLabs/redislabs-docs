@@ -11,7 +11,7 @@ aliases:
 ## Upgrade RDI CLI
 
 ```bash
-pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/redis_di_cli-{{<param rdi_cli_preview>}}-py3-none-any.whl --upgrade
+pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/redis_di_cli-{{<param rdi_cli_latest>}}-py3-none-any.whl --upgrade
 ```
 
 ## Upgrade RDI Engine
@@ -85,7 +85,7 @@ To upgrade the RedisGears module once a new release is available, follow these s
 
   Notes:
 
-  - Replace the rg version with your version (can be taken from the json available in the zip file of the module, see [instructions]({{<relref "/modules/install/upgrade-module">}}).
+  - Replace the rg version with your version (can be taken from the json available in the zip file of the module, see [instructions]({{<relref "/stack/install/upgrade-module">}}).
   - It's important to specify the `keep_args` argument so the configuration won’t be reset.
   - Warning - After you upgrade the module for a database, the database shards restart. This causes a short interruption in the availability of this database across the cluster.
 

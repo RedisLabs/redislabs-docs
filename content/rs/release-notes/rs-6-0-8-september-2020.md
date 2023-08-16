@@ -14,16 +14,16 @@ This version includes the new RediSearch 2.0 module, open source Redis 6.0.5, ch
 
 ### Upgrade instructions
 
-Follow [these instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}}) for upgrading to RS 6.0.8 from RS 5.4.0 and above.
-For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{< relref "/rs/installing-upgrading/upgrading#upgrade-activeactive-databases" >}}).
+Follow [these instructions]({{< relref "/rs/installing-upgrading/upgrading" >}}) for upgrading to RS 6.0.8 from RS 5.4.0 and above.
+For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{< relref "/rs/installing-upgrading/upgrading/upgrade-active-active" >}}).
 
 ### End of life
 
 End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}).
 EOL for Redis Modules can be found [here]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}).
 
-- Support for Red Hat Enterprise Linux 6 and Oracle Linux 6 [operating systems platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) will end on November 30, 2020.
-- Support for Ubuntu 14.04 (Trusty Tahr) [operating systems platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) will end on November 30, 2020.
+- Support for Red Hat Enterprise Linux 6 and Oracle Linux 6 [operating systems platforms]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms.md" >}}) will end on November 30, 2020.
+- Support for Ubuntu 14.04 (Trusty Tahr) [operating systems platforms]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms.md" >}}) will end on November 30, 2020.
 
 ## New features
 
@@ -36,19 +36,19 @@ For more information about Redis 6.0.5, check out the [release notes](https://ra
 
 The [`rladmin` CLI]({{<relref "/rs/references/cli-utilities/rladmin">}}) introduces several updates to the commands for upgrading modules.
 It is now easier to upgrade your modules to the latest module version.
-Find out more [here]({{<relref "/modules/install/upgrade-module">}}).
+Find out more [here]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Redis modules
 
 The following GA releases of Redis Modules are bundled in RS 6.0:
 
-- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/modules/redisearch/release-notes/_index.md" >}}) (updated)
-- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md" >}})
-- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/modules/redisgraph/release-notes/redisgraph-2.0-release-notes.md" >}}) (updated)
-- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}) (updated)
-- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md" >}}) (updated)
+- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/stack/release-notes/redisearch" >}}) (updated)
+- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md" >}})
+- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/stack/release-notes/redisgraph/redisgraph-2.0-release-notes.md" >}}) (updated)
+- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/stack/release-notes/redistimeseries/redistimeseries-1.2-release-notes.md" >}}) (updated)
+- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md" >}}) (updated)
 
-To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/install/upgrade-module">}}).
+To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Additional capabilities
 

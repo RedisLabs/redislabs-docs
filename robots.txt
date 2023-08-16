@@ -5,6 +5,8 @@ Disallow: /0.91/
 Disallow: /0.96/
 Disallow: /preview-rdi/
 Disallow: /0.93/
+Disallow: /0.96/
+Disallow: /rdi-preview/
 Disallow: /5.2/
 Disallow: /5.4/
 Disallow: /5.6/
