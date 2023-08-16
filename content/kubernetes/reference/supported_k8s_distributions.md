@@ -44,25 +44,29 @@ Any distribution not listed below is not supported for production workloads.
 For details on this platform, see the Kubernetes [documentation](https://kubernetes.io/docs/home/supported-doc-versions/).
 
 {{<table-scrollable>}}
-|  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| **1.27** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
-| **1.26** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |
-| **1.25** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
-| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
-| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |
-| **1.22** | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
-| **1.21** |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
-| **1.20** |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
-| **1.19** |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
-| **1.18** |  |  |  |  |  |  |  | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
-| **1.17** |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
-| **1.16** |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
+|  | <nobr>**7.2.4-2**</nobr> | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1.27** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
+| **1.26** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |
+| **1.25** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.23** | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |
+| **1.22** |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
+| **1.21** |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.20** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.19** |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.18** |  |  |  |  |  |  |  |  | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.17** |  |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
+| **1.16** |  |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |
 {{</table-scrollable>}}
 
 ## OpenShift Container Platform
 
 For details on this platform, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.13/welcome/index.html).
+
+{{<table-scrollable>}}
+
+{{</table-scrollable>}}
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
@@ -83,6 +87,10 @@ For details on this platform, see the [OpenShift documentation](https://docs.ope
 For details on this platform, see the [EKS documentation](https://docs.aws.amazon.com/eks/?icmpid=docs_homepage_containers).
 
 {{<table-scrollable>}}
+
+{{</table-scrollable>}}
+
+{{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | **1.26** |  |  |  |  |  |  |  |  |  |  |  |
@@ -99,7 +107,11 @@ For details on this platform, see the [EKS documentation](https://docs.aws.amazo
 
 ## Azure Kubernetes Service (AKS)
 
-For details on this platform, see the [AKS documentation](https://learn.microsoft.com/en-us/azure/aks/). 
+For details on this platform, see the [AKS documentation](https://learn.microsoft.com/en-us/azure/aks/).
+
+{{<table-scrollable>}}
+
+{{</table-scrollable>}}
 
 {{<table-scrollable>}}
 |  | <nobr>**6.4.2-6**</nobr> | <nobr>**6.4.2-5**</nobr> | <nobr>**6.2.18-41**</nobr> | <nobr>**6.2.18-3**</nobr> | <nobr>**6.2.12-1**</nobr> | <nobr>**6.2.10-45**</nobr> | <nobr>**6.2.10-34**</nobr> | <nobr>**6.2.10-4**</nobr> | <nobr>**6.2.8-15**</nobr> | <nobr>**6.2.8-2**</nobr> | <nobr>**6.2.4-1**</nobr> |
