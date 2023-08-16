@@ -9,7 +9,7 @@ Redis Enterprise Software is supported on several operating systems, cloud envi
 
 <span title="X icon">&#x274c;</span> End of life – Platform support ended in this version of Redis Enterprise Software.
 
-| Redis Enterprise | 7.2.0 | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
+| Redis Enterprise | 7.2.4 | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
 |------------------|-------|-------|--------|--------|--------|--------|-------|
 | **Ubuntu**<sup>[1](#table-note-1)</sup> |
 | 20.04 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span><sup>[6](#table-note-6)</sup> | – | – | – | – | – |
