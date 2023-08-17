@@ -58,7 +58,7 @@ scrape_configs:
 > Note: Make sure the `targets` value above points to the host and port you configured to run the RDI metrics exporter.
 > Note: The `scrape_interval` setting in Prometheus should be the same or more than the `collect_interval` setting for the exporter. For example, if the `collect_interval` is set to 5 seconds, the `scrape_interval` should also be set to 5 seconds or more. If the `scrape_interval` is set to less than the `collect_interval`, Prometheus will scrape the exporter before it has a chance to collect and refresh metrics, and you will see the same values duplicated in Prometheus.
 
-### Test Prometheus scraper
+## Test Prometheus scraper
 
 After the scraper config is added to the Prometheus configuration, you should now be able to navigate to `http://<HOSTNAME>:9090/graph` (replace `<HOSTNAME>` with a valid Prometheus hostname or IP address).
 
