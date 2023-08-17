@@ -55,8 +55,10 @@ scrape_configs:
       - targets: ["redis-exporter:9121"]
 ```
 
-> Note: Make sure the `targets` value above points to the host and port you configured to run the RDI metrics exporter.
-> Note: The `scrape_interval` setting in Prometheus should be the same or more than the `collect_interval` setting for the exporter. For example, if the `collect_interval` is set to 5 seconds, the `scrape_interval` should also be set to 5 seconds or more. If the `scrape_interval` is set to less than the `collect_interval`, Prometheus will scrape the exporter before it has a chance to collect and refresh metrics, and you will see the same values duplicated in Prometheus.
+> Notes:
+
+- Make sure the `targets` value above points to the host and port you configured to run the RDI metrics exporter.
+- The `scrape_interval` setting in Prometheus should be the same or more than the `collect_interval` setting for the exporter. For example, if the `collect_interval` is set to 5 seconds, the `scrape_interval` should also be set to 5 seconds or more. If the `scrape_interval` is set to less than the `collect_interval`, Prometheus will scrape the exporter before it has a chance to collect and refresh metrics, and you will see the same values duplicated in Prometheus.
 
 ## Test Prometheus scraper
 
@@ -80,7 +82,7 @@ Optionally, you may deploy the sample Grafana dashboard to monitor the status of
 
 1. Log into Grafana and navigate to the list of dashboards, then choose **New -> Import**:
 
-![New dashboard creation](/images/rdi/monitoring-grafana-new-dash.png.png)
+![New dashboard creation](/images/rdi/monitoring-grafana-new-dash.png)
 
 1. On the next screen, select **Upload JSON file** and upload the file you downloaded in step 1. Make sure you select the data source that is connected to the RDI metrics exporter:
 
