@@ -68,6 +68,8 @@ Edit the `config.yaml` configuration file. This file holds the connection detail
 
 Update the `connection/target` details to match the target database settings. See [configuration reference for all available settings]({{<relref "/rdi/reference/config-yaml-reference">}}).
 
+> Note: More than one Redis target can be defined in the configuration file and used later in RDI jobs to write data to different Redis databases at the same time.
+
 ## Preventing data loss at Redis target DB
 
 In order to prevent Redis Target DB from losing data, configure RDI to [wait](https://redis.io/commands/wait/) for replica shard write acknowledgment. This can be done by adding the following lines in the `applier` section of `config.yaml`:
@@ -164,7 +166,7 @@ For information about a distributed installation (multi VM/Multi pod), see [Dist
 - Install RDI CLI:
 
   ```bash
-  pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis_di_cli-latest-py3-none-any.whl
+  pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis_di_cli-{{<param rdi_cli_latest>}}-py3-none-any.whl
   ```
 
 ## Upgrading

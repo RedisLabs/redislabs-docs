@@ -35,7 +35,7 @@ The following ports must be enabled for Pacemaker and Debezium Server:
 
 For further details on Pacemaker, please refer to [Enabling ports for the High Availability Add-On](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_creating-high-availability-cluster-configuring-and-managing-high-availability-clusters#proc_enabling-ports-for-high-availability-creating-high-availability-cluster) (Red Hat).
 
-## Installing and Running Pacemaker
+## Installing and running Pacemaker
 
 - [CentOS 7/RHEL 7](#centos-7rhel-7)
 - [CentOS Stream 8/RHEL 8/Rocky 8](#centos-stream-8rhel-8rocky-8)
@@ -46,7 +46,7 @@ For further details on Pacemaker, please refer to [Enabling ports for the High A
 
 Repeat the following steps on each of the VMs that will run the Debezium Server:
 
-#### Configure the Repository in RHEL 7
+#### Configure the repository in RHEL 7
 
 > Note: This step is not needed for CentOS 7
 
@@ -68,7 +68,7 @@ EOF'
 sudo yum install -y pacemaker pcs resource-agents
 ```
 
-#### Start the Pacemaker Service
+#### Start the Pacemaker service
 
 ```bash
 sudo systemctl start pcsd.service
@@ -116,7 +116,7 @@ sudo dnf config-manager --set-enabled ha
 sudo dnf -y install pcs pacemaker
 ```
 
-#### Start the Pacemaker Service
+#### Start the Pacemaker service
 
 ```bash
 sudo systemctl start pcsd.service
@@ -155,7 +155,7 @@ sudo apt update
 sudo apt install -y pacemaker pcs
 ```
 
-#### Start the Pacemaker Service
+#### Start the Pacemaker service
 
 ```bash
 sudo systemctl start pcsd.service
@@ -194,14 +194,14 @@ sudo apt update
 sudo apt install -y pcs pacemaker
 ```
 
-#### Start the Pacemaker Service
+#### Start the Pacemaker service
 
 ```bash
 sudo systemctl start pcsd.service
 sudo systemctl enable pcsd.service
 ```
 
-#### Set a password for the cluster
+#### Set a Password for the cluster
 
 Replace `<PASSWORD>` with a password of your choice.
 
@@ -255,7 +255,7 @@ The VM cluster is now ready to run Debezium Servers.
 There are two methods for launching Debezium Server with Pacemaker:
 
 - [Running Debezium Server as a container](#running-debezium-server-as-a-container) using the Heartbeat resource agent for [Podman](https://podman.io/) or [Docker](https://www.docker.com/)
-- [Running Debezium Server as a standalone Java Process](#running-debezium-server-as-a-standalone-java-process) using the systemd resource agent
+- [Running Debezium Server as a standalone Java process](#running-debezium-server-as-a-standalone-java-process) using the systemd resource agent
 
 ### Running Debezium Server as a container
 
@@ -279,8 +279,15 @@ mv application.properties conf
 To launch the Debezium Server container use the podman service of Pacemaker (Podman needs to be installed as a pre-requisite):
 
 ```bash
-sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes run_opts="-v $PWD/conf:/debezium/conf"
+sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf"
 ```
+
+If you are using the Docker resource agent, you should also specify some logging options:
+
+```bash
+sudo pcs resource create dbz_server ocf:heartbeat:docker image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking"
+```
+You can find details for all available logging options in the [Docker documentation](https://docs.docker.com/config/containers/logging/configure/).
 
 > Note the `run_opts` parameter that accepts any option you would normally provide to the Debezium Server container, most importantly the mapping of the `application.properties` configuration file. See [Containerized Deployment]({{<relref "/rdi/installation/debezium-server-deployment.md#containerized-deployment">}}) for details on other options you may need to provide.
 
@@ -297,7 +304,7 @@ If you are using Oracle as your source DB, please note that Debezium Server does
 - Adjust the pcs resource creation command:
 
   ```bash
-  sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes run_opts="-v $PWD/conf:/debezium/conf -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar"
+  sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar"
   ```
 
 #### Verify status
@@ -440,7 +447,7 @@ sudo wget -O /opt/debezium-server/lib/ojdbc10-19.17.0.0.jar \
 https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc10/19.17.0.0/ojdbc10-19.17.0.0.jar
 ```
 
-#### Set Up Pacemaker to launch and control Debezium
+#### Set up Pacemaker to launch and control Debezium
 
 To launch Debezium Server use the systemd resource agent of Pacemaker:
 
