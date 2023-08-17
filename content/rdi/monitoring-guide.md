@@ -19,7 +19,7 @@ RDI can display its operating metrics in the console using the [`redis-di status
 
 ## Prometheus integration
 
-RDI allows collecting and exporting its metrics to [Prometheus](https://prometheus.io/) and visualizing them in [Grafana](https://grafana.com/). Operator can start the built-in exporter using the [`redis-di monitor`]({{<relref "/rdi/reference/cli/redis-di-monitor">}}) command. The diagram below describes this flow and components involved.
+RDI allows collecting and exporting its metrics to [Prometheus](https://prometheus.io/) and visualizing them in [Grafana](https://grafana.com/). Operator can start the built-in exporter using the [`redis-di monitor`]({{<relref "/rdi/reference/cli/redis-di-monitor">}}) command. The diagram describes this flow and components involved:
 
 ![Metrics architecture](/images/rdi/monitoring-diagram.png)
 
@@ -56,11 +56,12 @@ scrape_configs:
 ```
 
 > Note: Make sure the `targets` value above points to the host and port you configured to run the RDI metrics exporter.
-> Note: The scrape_interval setting in Prometheus should be the same or more than the collect_interval setting for the exporter. For example, if the collect_interval is set to 5 seconds, the scrape_interval should also be set to 5 seconds or more. If the scrape_interval is set to less than the collect_interval, Prometheus will scrape the exporter before it has a chance to collect and refresh metrics, and you will see the same values duplicated in Prometheus.
+> Note: The `scrape_interval` setting in Prometheus should be the same or more than the `collect_interval` setting for the exporter. For example, if the `collect_interval` is set to 5 seconds, the `scrape_interval` should also be set to 5 seconds or more. If the `scrape_interval` is set to less than the `collect_interval`, Prometheus will scrape the exporter before it has a chance to collect and refresh metrics, and you will see the same values duplicated in Prometheus.
 
 ### Test Prometheus scraper
 
 After the scraper config is added to the Prometheus configuration, you should now be able to navigate to `http://<HOSTNAME>:9090/graph` (replace `<HOSTNAME>` with a valid Prometheus hostname or IP address).
+
 Explore RDI metrics using the [expression browser](https://prometheus.io/docs/visualization/browser/).
 
 In the expression box, type in a metric name (for example, `rdi_engine_state`) and select `Enter` or the `Execute` button to see the following result:
@@ -95,6 +96,6 @@ This list shows exported RDI metrics along with their descriptions:
 
 | Metric Name                 | Labels                                                                                                     | Values               | Description                                                                                                                                                                                                        |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| rdi_engine_state            | {status=RUNNING \| STOPPED, sync_mode=SNAPSHOT \| STREAMING \| UNKNOWN}                                    | 0, 1                 | Status of RDI Engine. 0 - RDI Engine is stopped, 1 - RDI Engine is running.                                                                                                                                        |
+| rdi_engine_state            | {status=RUNNING \| STOPPED, sync_mode=SNAPSHOT \| STREAMING \| UNKNOWN}                                    | 0, 1                 | Status of RDI Engine. 0 - RDI Engine is stopped, 1 - RDI Engine is running. Sync mode label indicates the last reported ingest synchronization mode.                                                               |
 | rdi_incoming_entries        | {data_source=`<stream name>`, operation=pending \| inserted \| updated \| deleted \| filtered \| rejected} | `<count of records>` | Counters, indicating the number of operations performed for each stream.                                                                                                                                           |
 | rdi_stream_event_latency_ms | {data_source=`<stream name>`}                                                                              | 0 - &infin;          | Latency calculated for each stream. Indicates the time in milliseconds the first available record has spent in the stream waiting to be processed by RDI Engine. If no records pending it will always return zero. |
