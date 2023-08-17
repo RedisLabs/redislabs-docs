@@ -166,7 +166,7 @@ For information about a distributed installation (multi VM/Multi pod), see [Dist
 - Install RDI CLI:
 
   ```bash
-  pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis_di_cli-latest-py3-none-any.whl
+  pip3 install https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis_di_cli-{{<param rdi_cli_latest>}}-py3-none-any.whl
   ```
 
 ## Upgrading

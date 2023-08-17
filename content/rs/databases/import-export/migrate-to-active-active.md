@@ -32,7 +32,11 @@ During the migration, make sure that any applications that connect to the Active
 to make sure the dataset is identical to the source database during the migration process. You may continue to write to the source database during the migration process.
 {{< /note >}}
 
-To migrate an RS database to Active-Active:
+To migrate a Redis Enterprise Software database to Active-Active:
+
+1. If you are using the new Cluster Manager UI, switch to the legacy admin console.
+
+    {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
 
 1. Create a new [Active-Active database]({{< relref "/rs/databases/active-active/create.md" >}}).
 

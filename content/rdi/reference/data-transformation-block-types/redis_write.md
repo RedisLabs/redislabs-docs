@@ -12,18 +12,31 @@ Write to a Redis Enterprise database
 
 **Properties**
 
-| Name                    | Type      | Description                                                                                                                                                          | Required |
-| ----------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| **connection**          | `string`  | Name of Redis connection specified in `config.yaml`.<br/>Defaults to connection named `target`.                                                                      | no       |
-| **data_type**<br/>      | `string`  | Type of Redis target data structure.<br/>Enum: `hash`(default), `json`, `set`, `sorted_set`, `stream`.<br/>Takes precedence over system property `target_data_type`. | no       |
-| [**nest**](#nest)       | `object`  | Nest (embed) object within a different key.<br/>If nesting is specified, all other parameters are ignored.                                                           | no       |
-| **key**                 | `object`  | Definition of the target Redis key.<br/>                                                                                                                             | yes      |
-| &#x221F; **expression** | `string`  | Expression used to calculate the target key.                                                                                                                         | yes      |
-| &#x221F; **language**   | `string`  | Language used to define the expression.<br/>Enum: `jmespath`, `sql`.                                                                                                 | yes      |
-| [**args**](#args)       | `object`  | Arguments for modifying the target key.<br/>Specific to the data type.                                                                                               | no       |
-| **mapping**             | `array`   | Array of fields (or `field: alias` pairs) to be written to the stream.<br/>Supported for `data_type: stream` only.                                                   | no       |
-| **on_update**           | `string`  | Target key update strategy<br/>Enum: `merge`, `replace` (default).                                                                                                   | no       |
-| **expire**              | `integer` | TTL in seconds for the modified key to expire.<br/>If not specified (or `expire: 0`), the target key will never expire.                                              | no       |
+| Name                    | Type      | Description                                                                                                                                                                    | Required |
+| ----------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| **connection**          | `string`  | Name of Redis connection specified in `config.yaml`.<br/>Defaults to connection named `target`.                                                                                | no       |
+| **data_type**<br/>      | `string`  | Type of Redis target data structure.<br/>Enum: `hash`(default), `json`, `set`, `sorted_set`, `stream`, `string`.<br/>Takes precedence over system property `target_data_type`. | no       |
+| [**nest**](#nest)       | `object`  | Nest (embed) object within a different key.<br/>If nesting is specified, the following parameters are ignored: `key`, `args` and `on_update`.                                  | no       |
+| **key**                 | `object`  | Definition of the target Redis key.<br/>                                                                                                                                       | yes      |
+| &#x221F; **expression** | `string`  | Expression used to calculate the target key.                                                                                                                                   | yes      |
+| &#x221F; **language**   | `string`  | Language used to define the expression.<br/>Enum: `jmespath`, `sql`.                                                                                                           | yes      |
+| [**args**](#args)       | `object`  | Arguments for modifying the target key.<br/>Specific to the data type.                                                                                                         | no       |
+| **mapping**             | `array`   | Array of fields (or `field: alias` pairs) to be written to a Redis key.<br/>Supported for hashes, json documents and streams only.                                             | no       |
+| **on_update**           | `string`  | Target key update strategy<br/>Enum: `merge`, `replace` (default).                                                                                                             | no       |
+| **expire**              | `integer` | TTL in seconds for the modified key to expire.<br/>If not specified (or `expire: 0`), the target key will never expire.                                                        | no       |
+
+> Notes:
+
+- Job parameters always override system properties. In particular, `data_type` will override `target_data_type` and `on_update` will override `json_update_strategy` properties respectively.
+- Mapping for **JSON documents** supports nested paths (e.g. `path.to.field`) which results in creating a nested element in Redis key. When a dot is used in a field name, it must be escaped with a backslash (e.g. `path\.to\.field`). Nested paths are not supported for hashes and streams.
+- For **strings** RDI will automatically assume `on_update: replace` regardless of what was declared in the job file. Appends and increments are not currently supported.
+- For **streams** RDI will ignore `on_update` property since they are append only.
+
+
+> Notes:
+
+- Job parameters always override system properties. In particular, `data_type` will override `target_data_type` and `on_update` will override `json_update_strategy` properties respectively.
+- Mapping for JSON documents supports nested paths (e.g. `path.to.field`) which results in creating a nested element in Redis key. When a dot is used in a field name, it must be escaped with a backslash (e.g. `path\.to\.field`). Nested paths are not supported for hashes and streams.
 
 **Example**
 
@@ -41,6 +54,14 @@ output:
       key:
         expression: concat(['invoice_id:', InvoiceId])
         language: jmespath
+      mapping: # only the fields listed below will be written to a JSON document
+        - InvoiceId: id # this will create an element with a different name
+        - InvoiceDate: date
+        - BillingAddress: address.primary.street # this will create a nested element in the JSON document
+        - BillingCity: "address.primary.city name" # this will create a nested element with a space in the name
+        - BillingState: address.primary.state
+        - BillingPostalCode: "address.primary.zip\\.code" # this will create a nested element with a dot in the name
+        - Total # this will create an element with the same name as the original field
       on_update: merge
   # this block will use the explicitly specified connection: target1 - it must be defined in config.yaml
   # the data will be written to the corresponding Redis set, based on a value of the key expression
@@ -69,7 +90,7 @@ output:
   # the data will be written to a Redis stream named invoice:events as specified in the key expression
   - uses: redis.write
     with:
-      connection: target
+      connection: target2
       data_type: stream
       key:
         expression: "`invoice:events`"
@@ -78,6 +99,17 @@ output:
         - InvoiceId: message_id
         - BillingCountry: country
         - Total
+  # this block will use the default connection: target - since no explicit connection is specified,
+  # the data will be written to a Redis string as the data_type: string is specified for the block
+  - uses: redis.write
+    with:
+      data_type: string
+      key:
+        expression: concat(['Invoice:', InvoiceId])
+        language: jmespath
+      args:
+        value: Total # only the Total field will be written to a string
+      expire: 100 # the key will expire in 100 seconds
 ```
 
 <a name="args"></a>
@@ -92,6 +124,7 @@ Arguments for modifying the target key
 | ---------- | -------- | ---------------------------------------------------------------------------------------------- | -------- |
 | **score**  | `string` | Field name used as a score for sorted sets.<br/>Valid for sorted sets only.                    | yes      |
 | **member** | `string` | Field name used as a member for sets and sorted sets.<br/>Valid for sets and sorted sets only. | yes      |
+| **value**  | `string` | Field name used as a value for strings.<br/>Valid for strings only.                            | yes      |
 
 <a name="nest"></a>
 
@@ -113,9 +146,11 @@ Nest (embed) object within a different key
 | **path**                 | `string` | Path, where the nested object should reside in a parent document.<br/>Must start with the root (e.g. `$.<children-elements-here>`)                                                                             | yes      |
 | **structure**            | `string` | Data structure used to represent the object in a parent document (`map` is the only supported value).                                                                                                          | no       |
 
-> Note: When `nest` object is defined, RDI will automatically assume `data_type: json` and `on_update: merge` regardless of what was declared in the job file.
+> Notes:
 
-> Note: Nesting job cannot be used together with any of the these properties: `key`, `args`, `mapping` or `expire`.
+- When `nest` object is defined, RDI will automatically assume `data_type: json` and `on_update: merge` regardless of what was declared in the job file.
+- Nesting job cannot be used together with any of the these properties: `key`, `args`. The key is automatically calculated based on the following template: `<parent_table>:<parent_key>:<parent_key.value | child_key.value>`.
+- When `expire` is specified, it will be applied to the **parent** key. Therefore all nested objects will expire together with the parent key.
 
 **Example**
 

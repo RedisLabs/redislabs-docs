@@ -1,4 +1,12 @@
-# Writing to a Redis stream
+---
+Title: Write to a Redis stream
+linkTitle: Write to a Redis stream
+description:
+weight: 30
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
+---
 
 In the example below, the data is captured from the source table named `invoice` and is written to a Redis stream. The connection is an optional parameter that must refer to the corresponding connection name defined in `config.yaml`. 
 When the `data_type` parameter is specified for the job, it overrides the system-wide setting `target_data_type` (defined in `config.yaml`). 

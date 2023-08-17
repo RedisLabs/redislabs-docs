@@ -279,13 +279,13 @@ mv application.properties conf
 To launch the Debezium Server container use the podman service of Pacemaker (Podman needs to be installed as a pre-requisite):
 
 ```bash
-sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes run_opts="-v $PWD/conf:/debezium/conf"
+sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf"
 ```
 
 If you are using the Docker resource agent, you should also specify some logging options:
 
 ```bash
-sudo pcs resource create dbz_server ocf:heartbeat:docker image=docker.io/debezium/server allow_pull=yes run_opts="-v $PWD/conf:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking"
+sudo pcs resource create dbz_server ocf:heartbeat:docker image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking"
 ```
 You can find details for all available logging options in the [Docker documentation](https://docs.docker.com/config/containers/logging/configure/).
 
@@ -304,7 +304,7 @@ If you are using Oracle as your source DB, please note that Debezium Server does
 - Adjust the pcs resource creation command:
 
   ```bash
-  sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes run_opts="-v $PWD/conf:/debezium/conf -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar"
+  sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar"
   ```
 
 #### Verify status

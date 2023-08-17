@@ -54,6 +54,7 @@ rdi_redis_gears_current_semantic_version = "1.2.6"
 rdi_redis_gears_current_version = "10206"
 rdi_debezium_server_version = "2.1.1.Final"
 rdi_db_types = "cassandra|mysql|oracle|postgresql|sqlserver"
+rdi_cli_latest = "0.108.0"
 
 siteURL = "http://127.0.0.1:8001"
 

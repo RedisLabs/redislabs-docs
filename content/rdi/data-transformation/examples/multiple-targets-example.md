@@ -1,6 +1,14 @@
-# Multiple Redis targets
+---
+Title: Multiple Redis targets
+linkTitle: Multiple Redis targets
+description:
+weight: 30
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
+---
 
-The `output` section of a job supports multiple `redis.write` blocks. This enables writing the same record to different Redis databases and/or writing it to multiple Redis keys utilizing different data types. For example, we can write the captured `invoice` object to a JSON document, then also update the set holding the list of `invoices` grouped by countries and finally send an update to a Redis stream named `invoice:events` to notify other applications about the change. 
+The `output` section of a job supports multiple `redis.write` blocks. This enables writing the same record to different Redis databases and/or writing it to multiple Redis keys utilizing different data types. For example, RDI can write the captured `invoice` object to a JSON document, then also update the set holding the list of `invoices` grouped by countries and finally send an update to a Redis stream named `invoice:events` to notify other applications about the change. 
 
 
 ```yaml
@@ -29,18 +37,6 @@ output:
         language: jmespath
       args:
         member: InvoiceId
-  # this block will use the explicitly specified connection: target1 - it must be defined in config.yaml
-  # the data will be written to the Redis sorted set named invoices:sorted as specified in the key expression
-  - uses: redis.write
-    with:
-      connection: target1
-      data_type: sorted_set
-      key:
-        expression: "`invoices:sorted`"
-        language: jmespath
-      args:
-        score: Total
-        member: InvoiceId        
   # this block will use the specified connection: target2 - this, again, has to be defined in config.yaml
   # the data will be written to a Redis stream named invoice:events as specified in the key expression
   - uses: redis.write

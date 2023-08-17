@@ -21,7 +21,7 @@ When a cluster fails or a database is corrupted, you must:
 
 To restore the data that was in the databases to databases in the new cluster
 you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
-These files are stored in the [persistence storage location]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}).
+These files are stored in the [persistence storage location]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}}).
 
 The database recovery process includes:
 

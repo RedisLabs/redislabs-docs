@@ -37,9 +37,7 @@ You need to:
 
 To enable internode encryption for a database (also called _data plane encryption_), you need to enable the appropriate setting for each database you wish to encrypt.  To do so, you can:
 
-- Use the admin console to enable the **Internode encryption** setting from the database configuration screen:
-
-    {{<image filename="images/rs/database-configuration-internode-encryption-edit.png" alt="The Internode encryption setting can be found on the Configuration tab of the Database settings." >}}{{< /image >}}
+- Use the admin console to enable the **Internode Encryption** setting from the database **Security** screen.
 
 -  Use the `rladmin` command-line utility to set the [data_internode_encryption]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-db">}}) setting for the database:
 
@@ -84,5 +82,5 @@ All certificates signed by the internal CA expire after ninety (90) days and aut
 You can use the Redis Enterprise Software REST API to rotate certificates manually:
 
 ``` rest
-put /v1/cluster/certificates/rotate
+POST /v1/cluster/certificates/rotate
 ```
