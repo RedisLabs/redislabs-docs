@@ -1,4 +1,12 @@
-# Multiple Redis targets
+---
+Title: Multiple Redis targets
+linkTitle: Multiple Redis targets
+description:
+weight: 30
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
+---
 
 The `output` section of a job supports multiple `redis.write` blocks. This enables writing the same record to different Redis databases and/or writing it to multiple Redis keys utilizing different data types. For example, RDI can write the captured `invoice` object to a JSON document, then also update the set holding the list of `invoices` grouped by countries and finally send an update to a Redis stream named `invoice:events` to notify other applications about the change. 
 

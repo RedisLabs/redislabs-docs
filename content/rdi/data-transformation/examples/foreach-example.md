@@ -1,6 +1,6 @@
 ---
 Title: Write-behind foreach example
-linkTitle: Write-behind foreach example
+linkTitle: Write-behind foreach
 description:
 weight: 30
 alwaysopen: false

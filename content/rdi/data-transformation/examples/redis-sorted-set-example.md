@@ -1,4 +1,12 @@
-# Writing to a Redis sorted set
+---
+Title: Write to a Redis sorted set
+linkTitle: Write to a Redis sorted set
+description:
+weight: 30
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
+---
 
 In the example below, the data is captured from the source table named `invoice` and is written to a Redis sorted set. The connection is an optional parameter that must refer to the corresponding connection name defined in `config.yaml`. When the `data_type` parameter is specified for the job, it overrides the system-wide setting `target_data_type` (defined in `config.yaml`). 
 When writing to sorted sets, two additional arguments `member` and `score` must be provided,  specifying the field names that will be used as a member and score to add an element to a sorted set. In this case, the results will be a Redis sorted set named `invoices:sorted` based on the key expression and the expiration will be set to 100 seconds for each key. If no `expire` parameter is given, the keys will never expire.
