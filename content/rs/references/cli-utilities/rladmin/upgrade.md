@@ -43,7 +43,7 @@ As of v6.2.4, the default behavior for `upgrade db` has changed.  It is now cont
 | force                      |                          | Forces upgrade and skips warnings and confirmations                                                                    |
 | force_discard              |                          | Forces `discard_data` if replication or persistence is enabled                                                   |
 | keep_crdt_protocol_version |                          | Keeps the current CRDT protocol version                                                                                |
-| keep_current_version       |                          | Upgrades to a new patch release, not to the latest major.minor version                                                 |
+| keep_redis_version       |                          | Upgrades to a new patch release, not to the latest major.minor version                                                 |
 | latest_with_modules        |                          | Upgrades the Redis Enterprise Software version and all modules in the database                                                             |
 | parallel_shards_upgrade    | integer <br />'all'        | Maximum number of shards to upgrade all at once                                                                        |
 | preserve_roles             |                          | Performs an additional failover to guarantee the shards' roles are preserved                                             |
@@ -72,7 +72,7 @@ Done
 
 Upgrades Redis modules in use by a specific database.
 
-For more information, see [Upgrade modules]({{< relref "/modules/install/upgrade-module" >}}).
+For more information, see [Upgrade modules]({{<relref "/stack/install/upgrade-module">}}).
 
 ```sh
 rladmin upgrade module
@@ -87,11 +87,11 @@ rladmin upgrade module
 | Parameters                 | Type/Value               | Description                                                                                                            |
 |----------------------------|--------------------------|------------------------------------------------------------------------------------------------------------------------|
 | db_name                    | db:\<id\> <br />name     | Upgrade a module for the specified database                                                                                     |
-| module_name                | 'ReJSON'<br />'graph'<br />'search'<br />'bf'<br />'timeseries' | Redis module to upgrade                                       |
+| module_name                | 'ReJSON'<br />'graph'<br />'search'<br />'bf'<br />'rg'<br />'timeseries' | Redis module to upgrade                                       |
 | version                    | module version number    | Upgrades the module to the specified version                                                                               |
 | module_args                | 'keep_args'<br />string    | Module configuration options                                                                                                       |
 
-For more information about module configuration options, see [Module configuration options]({{< relref "/modules/install/add-module-to-database#module-configuration-options" >}}).
+For more information about module configuration options, see [Module configuration options]({{<relref "/stack/install/add-module-to-database#module-configuration-options">}}).
 
 ### Returns
 

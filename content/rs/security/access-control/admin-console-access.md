@@ -14,7 +14,7 @@ To grant a user access to a Redis Enterprise cluster's admin console and [REST A
 
 1. [Create a new user]({{<relref "/rs/security/access-control/manage-users/add-users">}}) or edit an existing one.
 
-2. [Assign a role to the user]({{<relref "/rs/security/access-control/rbac/assign-user-role">}}), either a [default role](#default-management-roles) or a [custom role]({{<relref "/rs/security/access-control/rbac/create-roles">}}) that has the appropriate cluster management role as a base.
+2. [Assign the user a role]({{<relref "/rs/security/access-control/rbac/assign-user-role">}}) associated with the appropriate [cluster management role](#default-management-roles).
 
 ## Default management roles
 

@@ -37,11 +37,11 @@ Enabling replication has implications for the total database size,
 as explained in [Database memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}}).
 {{< /warning >}}
 
-## Redis on Flash replication considerations
+## Auto Tiering replication considerations
 
 We recommend that you set the sequential replication feature using
 `rladmin`. This is due to the potential for relatively slow replication
-times that can occur with Redis on Flash enabled databases. In some
+times that can occur with Auto Tiering enabled databases. In some
 cases, if sequential replication is not set up, you may run out of memory. 
 
 While it does not cause data loss on the
