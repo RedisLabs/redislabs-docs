@@ -1,15 +1,25 @@
-# Write-behind foreach example
+---
+Title: Write-behind foreach example
+linkTitle: Write-behind foreach example
+description:
+weight: 30
+alwaysopen: false
+categories: ["redis-di"]
+aliases: 
+---
+
 
 The `foreach` section is used in order to explode a list of objects or arrays to rows in a selected target.
 The `foreach` expression is structured as <field_name>:<JMESPath expression>`.
 The following example uses the `add_field` transformation to prepare the input JSON to the desired structure. Then, it applies `foreach` to write each `order` object as a relational database record using `keys` and `mapping`.
 In this example, the `JMESPath` function `to_string` is used to flatten an array of objects `specs` to a string.
 
-
 ```yaml
 source:
-  keyspace:
-          pattern: orderdetail:*
+  redis:
+    key_pattern: orderdetail:*
+    trigger: write-behind
+    exclude_commands: ["json.del"]
 transform:
   - uses: add_field
     with:

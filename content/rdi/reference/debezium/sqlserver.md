@@ -39,7 +39,6 @@ debezium.source.database.names=<SOURCE_DB_NAME>
 debezium.source.database.encrypt=false
 debezium.source.offset.storage=io.debezium.storage.redis.offset.RedisOffsetBackingStore
 debezium.source.topic.prefix=<SOURCE_LOGICAL_SERVER_NAME>
-
 debezium.source.database.hostname=<SOURCE_DB_HOST>
 debezium.source.database.port=<SOURCE_DB_PORT>
 debezium.source.database.user=<SOURCE_DB_USER>

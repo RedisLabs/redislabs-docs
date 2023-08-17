@@ -23,7 +23,7 @@ Use these steps to set up a Redis Enterprise Software cluster with OpenShift.
 
 ## Prerequisites
 
-- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) with at least 3 nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}))
+- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) with at least 3 nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements" >}}))
 - [OpenShift CLI](https://docs.openshift.com/container-platform/latest/cli_reference/openshift_cli/getting-started-cli.html)
 
 ## Deploy the operator
@@ -87,19 +87,21 @@ The Redis Enterprise pods must run in OpenShift with privileges set in a [Securi
     You should receive the following response:
 
     ```sh
-    securitycontextconstraints.security.openshift.io "redis-enterprise-scc" configured
+    securitycontextconstraints.security.openshift.io "redis-enterprise-scc-v2" configured
     ```
+
+    Releases before 6.4.2-6 use the earlier version of the SCC, named `redis-enterprise-scc`.
 
 1. Provide the operator permissions for the pods.
 
     ```sh
-    oc adm policy add-scc-to-user redis-enterprise-scc \
+    oc adm policy add-scc-to-user redis-enterprise-scc-v2 \
       system:serviceaccount:<my-project>:<rec>
     ```
 
   {{<note>}} If you are using version 6.2.18-41 or earlier, add additional permissions for your cluster.
 
-    oc adm policy add-scc-to-user redis-enterprise-scc \
+    oc adm policy add-scc-to-user redis-enterprise-scc-v2 \
     system:serviceaccount:<my-project>:redis-enterprise-operator
 
   {{</note>}}
@@ -144,46 +146,7 @@ Each Redis Enterprise cluster requires at least 3 nodes. Single-node RECs are no
 
 ## Configure the admission controller
 
-1. Verify the Kubernetes secret.
-   
-   The operator creates a Kubernetes secret for the admission controller during deployment.
-
-      ```sh
-      oc get secret admission-tls
-      ```
-
-    The response will be similar to this:
-
-    ```bash
-    NAME            TYPE     DATA   AGE
-    admission-tls   Opaque   2      2m43s
-    ```
-
-1. Save the automatically generated certificate to a local environment variable.
-
-    ```bash
-    CERT=`oc get secret admission-tls -o jsonpath='{.data.cert}'`
-    ```
-
-1. Create a patch file for the Kubernetes webhook using your own values for the namespace and webhook name.
-
-    ```sh
-    sed '<your_namespace>' admission/webhook.yaml | oc create -f -
-    cat > modified-webhook.yaml <<EOF
-    webhooks:
-      - name: <your.admission.webhook>
-        clientConfig:
-          caBundle: $CERT
-      admissionReviewVersions: ["v1beta1"]
-    EOF
-    ```
-
-1. Patch the validating webhook with the certificate.
-
-    ```sh
-    oc patch ValidatingWebhookConfiguration \
-      redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
-    ```
+{{< embed-md "k8s-admission-webhook-cert.md"  >}}
 
 ### Limit the webhook to relevant namespaces
 

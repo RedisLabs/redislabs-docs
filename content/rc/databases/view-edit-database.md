@@ -47,11 +47,11 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Private endpoint** | Private endpoint URI available to approved clients; use CIDR allow list and VPC peering to enabled access (_Flexible or Annual subscriptions only_)|
 | **Type** | Either 'redis' or 'memcached' based on the value selected when the database was created |
 | **Redis version** | Redis version used to create the database |
-| **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
+| **Auto Tiering** | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_) |
 | **Activated on** | Date and time the database was created |
 | **Active-Active Redis** | Checked when the database is part of an Active-Active relationship (_coming soon; Flexible or Annual subscriptions only_) |
 | **Last changed** | Date and time of last update |
-| **Advanced capabilites** | This setting appears when when an advanced capability, also know as a [module]({{< relref "modules/" >}}), is enabled for a database  |
+| **Advanced capabilites** | This setting appears when when an advanced capability, also know as a [module]({{< relref "/stack" >}}), is enabled for a database  |
 
 ### Scalability section
 

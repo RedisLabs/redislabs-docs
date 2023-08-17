@@ -8,7 +8,7 @@ categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions](/rs/installing-upgrading/upgrading.md" >}})
+instructions](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/)
 before running through the upgrade process.
 
 You can upgrade to this version from any 4.2 version. If you have a
@@ -20,7 +20,7 @@ upgrade to this version.
 - Various improvements to internal performance and stability were
     implemented.
 - RLEC Flash functionality added. For additional details, refer to
-    [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
+    [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}})
     and contact <support@redislabs.com> if you are interested in this
     functionality.
 - Support for Redis version 3.0 added. When you install or upgrade the
@@ -28,7 +28,7 @@ upgrade to this version.
     when you upgrade the databases they will be updated to this version.
     If you would like to change the default version to Redis 2.8 refer
     to the instruction in the [Upgrading
-    databases]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
+    databases](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/)
     section. If you would like to upgrade existing databases to the
     latest 2.8 minor version, refer to the Known Issues section below.
 - Complete cluster failure recovery instructions added. For additional

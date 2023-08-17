@@ -12,7 +12,6 @@ hidden: false
 
 This guide takes you through the creation of a write-behind pipeline.
 
-> Note: write-behind is currently in Preview.
 
 ## Concepts
 
@@ -48,7 +47,6 @@ For more information, see [Redis Gears installation]({{<relref "/rdi/installatio
 
 - Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli">}}) on a Linux host that has connectivity to your Redis Enterprise Cluster.
 - Run the [`configure`]({{<relref "/rdi/reference/cli/redis-di-configure">}}) command to install the RDI Engine on your Redis database, if you have not used this Redis database with RDI write-behind before.
-
 - Run the [`scaffold`]({{<relref "/rdi/reference/cli/redis-di-scaffold">}}) command with the type of data store you want to use, for example:
 
   ```bash

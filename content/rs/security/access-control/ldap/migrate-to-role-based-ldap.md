@@ -43,7 +43,7 @@ This checklist covers the basic process:
 
     Here, a blank file replaces the earlier configuration.
 
-1.  Use **Settings > LDAP** to enable role-based LDAP.
+1.  Use **Cluster > Security > LDAP** to enable role-based LDAP.
 
 1.  Map your LDAP groups to access control roles.
 

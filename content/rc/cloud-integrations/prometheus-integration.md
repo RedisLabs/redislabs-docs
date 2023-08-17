@@ -66,12 +66,12 @@ To get started with custom monitoring with Prometheus on Docker:
         external_labels:
             monitor: "prometheus-stack-monitor"
 
-        # Load and evaluate rules in this file every 'evaluation_interval' seconds.
-        #rule_files:
-        # - "first.rules"
-        # - "second.rules"
+    # Load and evaluate rules in this file every 'evaluation_interval' seconds.
+    #rule_files:
+    # - "first.rules"
+    # - "second.rules"
 
-        scrape_configs:
+    scrape_configs:
         # scrape Prometheus itself
         - job_name: prometheus
             scrape_interval: 10s
