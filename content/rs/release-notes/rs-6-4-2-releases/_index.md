@@ -2,7 +2,7 @@
 Title: Redis Enterprise Software release notes 6.4.2
 linkTitle: 6.4.2 releases
 description: Pub/sub ACLs & default permissions. Validate client certificates by subject attributes. Ubuntu 20.04 support.
-compatibleOSSVersion: Redis 6.2.10
+compatibleOSSVersion: Redis 6.2.6
 weight: 72
 alwaysopen: false
 toc: "true"
@@ -20,7 +20,7 @@ This version offers:
 
 - Enhanced TLS performance when Redis returns large arrays in responses
 
-- Compatibility with [open source Redis](https://github.com/redis/redis) 6.2.7 and 6.2.10.
+- Compatibility with [open source Redis 6.2.6](https://github.com/redis/redis)
 
 - Additional enhancements and bug fixes
 
@@ -63,14 +63,6 @@ Certain operating systems, such as RHEL 8, have already removed support for 3DES
 
 ### Feature limitations
 
-- RS97971 - [Resharding fails for rack-aware databases with no replication](#resharding-fails-for-rack-aware-databases-with-no-replication) (fixed and resolved as part of [v6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}})).
-
-- RS101204 - High memory consumption caused by the `persistence_mgr` service when AOF persistence is configured for every second (fixed and resolved as part of [v6.4.2-81]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-81">}})).
-
-- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
-
-- RS51144, RS102128 - Active-Active: To start successfully, the syncer (`crdt-syncer`) must connect to all sources. In multi-cluster configurations (more than 2 A-A clusters participating), in some cases, if one or more of the clusters is not available, A-A replication will be down.
-
 #### Resharding fails for rack-aware databases with no replication
 
 When a database is configured as [rack-aware]({{<relref "/rs/clusters/configure/rack-zone-awareness">}}) and replication is turned off, the resharding operation fails.
@@ -90,16 +82,6 @@ After the resharding process is complete, you can re-enable rack awareness:
 ```sh
 curl -k -u "<user>:<password>" -H "Content-type: application/json" -d '{"rack_aware": true}' -X PUT "https://localhost:9443/v1/bdbs/<bdb_uid>"
 ```
-
-### Installation limitations
-
-Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
-
-As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
-
-1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
-
-1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
 
 ### Upgrade limitations
 

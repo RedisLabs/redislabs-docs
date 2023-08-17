@@ -13,11 +13,17 @@ To grant LDAP users access to a database, assign the mapped access role to the a
 
 1.  From the admin console menu, select **Databases** and then select the database from the list.
 
-1.  From the **Security** tab, select the **Edit** button.
+1.  Select the **Configuration** tab to display the database details.
 
-1.  In the **Access Control List** section, select **+ Add ACL**.
+    {{<image filename="images/rs/rs-database-config-tabs.png" width="75%" alt="The Database | Configuration screen in the Redis Software admin console" >}}{{< /image >}}
 
-    {{<image filename="images/rs/screenshots/databases/security-access-control-acl-only.png" alt="Updating a database access control list (ACL)" >}}{{</image>}}
+1.  Select the **Edit** button.
+
+    {{<image filename="images/rs/rs-database-config-buttons.png" width="75%" alt="The Database | Configuration screen in the Redis Software admin console" >}}{{< /image >}}
+
+1.  Locate the **Access Control List** setting and select its **Add** button.
+
+    {{<image filename="images/rs/rs-database-config-acl-edit.png" width="75%" alt="Updating a database access control list (ACL)" >}}{{< /image >}}
 
 1.  Select the appropriate roles and then save your changes.
 

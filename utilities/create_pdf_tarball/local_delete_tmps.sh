@@ -9,8 +9,8 @@ rm -r ../../content/pdf-gen-rs-docs
 rm -r ../../layouts/pdf-gen-ri-docs
 rm -r ../../content/pdf-gen-ri-docs
 
-rm -r ../../layouts/pdf-gen-stack-docs
-rm -r ../../content/pdf-gen-stack-docs
+rm -r ../../layouts/pdf-gen-modules-docs
+rm -r ../../content/pdf-gen-modules-docs
 
 rm -r ../../layouts/pdf-gen-kubernetes-docs
 rm -r ../../content/pdf-gen-kubernetes-docs

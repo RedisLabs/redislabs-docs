@@ -30,17 +30,16 @@ To learn more see [Architecture]({{<relref "/rdi/architecture">}}) for more deta
 
 Redis Data Integration supports the following database sources using [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) connectors:
 
-| Database           | Versions               |Comments|
-| ------------------ | ---------------------- |--------|
-| Oracle             | 12c, 19c, 21c          ||
-| MariaDB            | >= 10.5                ||
-| MongoDB            | 4.2, 4.4, 5.0, 6.0     | Driver: 4.7  |
-| MySQL              | 5.7, 8.0.x             ||
-| Percona XtraDB     | 5.7, 8.0.x             ||
-| Postgres           | 10, 11, 12, 13, 14, 15 ||
-| SQL Server         | 2017, 2019             ||
-| Cassandra          | >= 3.0                 ||
-| Datastax Cassandra | >= 6.8.0               ||
+| Database           | Versions               |
+| ------------------ | ---------------------- |
+| Oracle             | 12c, 19c, 21c          |
+| MariaDB            | >= 10.5                |
+| MySQL              | 5.7, 8.0.x             |
+| Percona XtraDB     | 5.7, 8.0.x             |
+| Postgres           | 10, 11, 12, 13, 14, 15 |
+| SQL Server         | 2017, 2019             |
+| Cassandra          | >= 3.0                 |
+| Datastax Cassandra | >= 6.8.0               |
 
 ## Supported targets (write-behind)
 

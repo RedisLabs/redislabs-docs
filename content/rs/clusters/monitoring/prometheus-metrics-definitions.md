@@ -27,7 +27,6 @@ Here are the metrics available to Prometheus:
 | bdb_avg_read_latency_max | Highest value of average latency of read operations (seconds); returned only when there is traffic |
 | bdb_avg_write_latency | Average latency of write operations (seconds); returned only when there is traffic |
 | bdb_avg_write_latency_max | Highest value of average latency of write operations (seconds); returned only when there is traffic |
-| bdb_bigstore_shard_count | Shard count by database and by storage engine (driver - rocksdb / speedb); Only for databases with Auto Tiering enabled |
 | bdb_conns | Number of client connections to DB |
 | bdb_egress_bytes | Rate of outgoing network traffic from the DB (bytes/sec) |
 | bdb_egress_bytes_max | Highest value of rate of outgoing network traffic from the DB (bytes/sec) |
@@ -71,7 +70,6 @@ Here are the metrics available to Prometheus:
 | bdb_shard_cpu_system_max | Highest value of % cores utilization in system mode for all redis shard processes of this database |
 | bdb_shard_cpu_user | % cores utilization in user mode for the redis shard process |
 | bdb_shard_cpu_user_max | Highest value of % cores utilization in user mode for the redis shard process |
-| bdb_shards_used | Used shard count by database and by shard type (ram / flash) |
 | bdb_total_connections_received | Rate of new client connections to DB (connections/sec) |
 | bdb_total_connections_received_max | Highest value of rate of new client connections to DB (connections/sec) |
 | bdb_total_req | Rate of all requests on DB (ops/sec) |
@@ -136,13 +134,6 @@ Here are the metrics available to Prometheus:
 | node_provisional_memory_no_overbooking | Amount of RAM that is available for provisioning to databases out of the total RAM allocated for databases, without taking into account overbooking |
 | node_total_req | Request rate handled by endpoints on node (ops/sec) |
 | node_up | Node is part of the cluster and is connected |
-
-## Cluster metrics
-
-| Metric | Description |
-| ------ | :------ |
-| cluster_shards_limit | Total shard limit by the license by shard type (ram / flash) |
-
 
 ## Proxy metrics
 

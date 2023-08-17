@@ -62,13 +62,13 @@ Enterprise is known for.
 Redis has developed and certified the following modules for use with 
 Redis Enterprise Pack:
 
-- [RediSearch](https://docs.redis.com/latest/modules/redisearch/)
+- [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
     - This module turns RS into a supercharged distributed in-memory
       full-text indexing and search beast.
-- [ReJSON](https://docs.redis.com/latest/modules/redisjson/)
+- [ReJSON]({{< relref "/modules/redisjson/_index.md" >}})
     - Now you have the convenience JSON as a built-in data type and
       easily able to address nested data via a path.
-- [RedisBloom](https://docs.redis.com/latest/modules/redisbloom/)
+- [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
       filters are probabilistic data structures that
       quickly determine if values are in a set.
@@ -88,7 +88,7 @@ easily and quickly test several containers to build the scalable
 and highly available cluster Redis Enterprise Software is famous for.
 
 For more information, go to [quick start with Redis Enterprise on
-Docker.](https://docs.redis.com/latest/rs/installing-upgrading/get-started-docker)
+Docker.]({{< relref "/rs/installing-upgrading/get-started-docker.md" >}})
 
 ## LDAP Integration
 

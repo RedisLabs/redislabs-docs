@@ -16,7 +16,7 @@ An API object that represents a node in the cluster.
 | addr | string | Internal IP address of node |
 | architecture | string | Hardware architecture (read-only) |
 | bigredis_storage_path | string | Flash storage path (read-only) |
-| bigstore_driver | 'ibm-capi-ga1'<br />'ibm-capi-ga2'<br />'ibm-capi-ga4'<br />'speedb'<br />'rocksdb' | Bigstore driver name or none (deprecated as of Redis Enterprise v7.2, use the [cluster object]({{<relref "/rs/references/rest-api/objects/cluster">}})'s bigstore_driver instead) |
+| bigstore_driver | 'ibm-capi-ga1'<br />'ibm-capi-ga2'<br />'ibm-capi-ga4'<br />'rocksdb' | Bigstore driver name or none |
 | bigstore_size | integer | Storage size of bigstore storage (read-only) |
 | cores | integer | Total number of CPU cores (read-only) |
 | ephemeral_storage_path | string | Ephemeral storage path (read-only) |
@@ -29,7 +29,7 @@ An API object that represents a node in the cluster.
 | os_version | string | Installed OS version (human-readable) (read-only) |
 | persistent_storage_path | string | Persistent storage path (read-only) |
 | persistent_storage_size | number | Persistent storage size (bytes) (read- only) |
-| public_addr | string | Public IP address of node (deprecated as of Redis Enterprise v4.3.3, use external_addr instead) |
+| public_addr | string | Public IP address of node |
 | rack_id | string | Rack ID where node is installed |
 | recovery_path | string | Recovery files path |
 | shard_count | integer | Number of shards on the node (read-only) |

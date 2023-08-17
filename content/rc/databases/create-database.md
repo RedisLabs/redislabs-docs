@@ -42,11 +42,11 @@ The available settings vary according to your subscription plan:
 |:-----------|:----------|
 | **Subscription** | Read-only description of your subscription plan, including cloud provider and region |
 | **Active-Active Redis** | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_) |
-| **Auto Tiering** | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_) |
+| **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
 | **Database name** | A name for your database (_required_) |
 | **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
 | **Type**  | Controls optional capabilities, such as modules or protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
-| **Advanced capabilities** | Extend core Redis functionality using [modules]({{<relref "/stack">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "/stack/enterprise-capabilities#redis-enterprise-module-support">}}) |
+| **Advanced capabilities** | Extend core Redis functionality using [modules]({{<relref "modules/">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "modules/enterprise-capabilities#redis-enterprise-module-support">}}) |
 
 ### Database port
 
@@ -73,7 +73,7 @@ When the database **Type** is set to _Redis Stack_, the Advanced capabilities se
 
 {{<image filename="images/rc/database-details-modules-stack-free.png" alt="For Fixed and Free subscriptions, the Database details page lists the capabilities and versions added by Redis Stack." width="75%">}}{{< /image >}}
 
-Redis Enterprise Cloud is updated on a regular basis, which includes the advanced capabilities supported by the service.  Module versions displayed by the admin console may vary from those shown above.  For the latest details of any module, see [Redis modules]({{<relref "/stack">}}). 
+Redis Enterprise Cloud is updated on a regular basis, which includes the advanced capabilities supported by the service.  Module versions displayed by the admin console may vary from those shown above.  For the latest details of any module, see [Redis modules]({{<relref "modules/">}}). 
 
 Redis Stack is available only for Fixed and Free subscriptions.
 
@@ -102,7 +102,7 @@ You don't have to combine modules.  To remove a selected module, either clear th
 
 <nobr>{{<image filename="images/rc/icon-checkbox-clear.png" alt="To remove a selected module, clear the checkbox in the menu." width="30px">}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-module-delete.png" alt="You can also use the delete icon to remove a module." width="30px">}}{{< /image >}}</nobr>
 
-To learn more, see [Redis Stack](https://redis.io/docs/stack/) and [Redis modules]({{<relref "/stack">}}).
+To learn more, see [Redis Stack](https://redis.io/docs/stack/) and [Redis modules]({{<relref "modules/">}}).
 
 ## Scalability section
 
@@ -131,7 +131,7 @@ Here are some general guidelines:
 
 - Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory size when replication is enabled.
 
-- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}) is enabled.)
+- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) is enabled.)
 
 - Modules also consume memory.
 

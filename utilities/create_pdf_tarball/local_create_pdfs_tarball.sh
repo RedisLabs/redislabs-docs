@@ -23,8 +23,8 @@ wkhtmltopdf http://$location/pdf-gen-rs-docs/ ../../static/pdfs/archive/tmp/$tar
 echo "Generating ri-docs.pdf"
 wkhtmltopdf http://$location/pdf-gen-ri-docs/ ../../static/pdfs/archive/tmp/$tarball_name/ri-docs.pdf
 
-echo "Generating stack-docs.pdf"
-wkhtmltopdf http://$location/pdf-gen-stack-docs/ ../../static/pdfs/archive/tmp/$tarball_name/stack-docs.pdf
+echo "Generating modules-docs.pdf"
+wkhtmltopdf http://$location/pdf-gen-modules-docs/ ../../static/pdfs/archive/tmp/$tarball_name/modules-docs.pdf
 
 echo "Generating kubernetes-docs.pdf"
 wkhtmltopdf http://$location/pdf-gen-kubernetes-docs/ ../../static/pdfs/archive/tmp/$tarball_name/kubernetes-docs.pdf

@@ -35,7 +35,7 @@ Factors to consider when sizing your database:
 
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
 - **database throughput**: high throughput needs more shards, leading to a higher memory limit.
-- [**modules**]({{<relref "/stack">}}): using modules with your database can consume more memory.
+- [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database can consume more memory.
 - [**database clustering**]({{<relref "/rs/databases/durability-ha/clustering.md">}}): enables you to spread your data into shards across multiple nodes (scale out).
 - [**database replication**]({{<relref "/rs/databases/durability-ha/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/databases/active-active/_index.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to two times (2x) the original data size per instance.
@@ -69,7 +69,7 @@ See [Synchronizing cluster node clocks]({{<relref "/rs/clusters/configure/sync-c
 
 ## Redis modules {#redis-modules}
 
-Several Redis modules are compatible with Active-Active databases. Find the list of [compatible Redis modules]({{<relref "/stack/enterprise-capabilities">}}).
+Several Redis modules are compatible with Active-Active databases. Find the list of [compatible Redis modules]({{< relref "/modules/enterprise-capabilities.md" >}}).
 {{< note >}}
 Starting with v6.2.18, you can index, query, and perform full-text searches of nested JSON documents in Active-Active databases by combining RedisJSON and RediSearch.
 {{< /note >}}

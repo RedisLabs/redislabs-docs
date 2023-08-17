@@ -32,7 +32,7 @@ the custom resource with default values to create a full specification. It then 
 database on the specified Redis Enterprise cluster (REC).
 
 Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
-If the database [custom resource is deleted]({{<relref "/kubernetes/delete_custom_resources.md">}}), the database and its services are deleted from the cluster.
+If the database [custom resource is deleted]({{<relref "/kubernetes/re-clusters/delete_custom_resources.md">}}), the database and its services are deleted from the cluster.
 
 ### Create a database
 
@@ -118,7 +118,7 @@ Connection information for the database is stored in a Kubernetes [secret](https
 The name of that secret is stored in the database custom resource.
 
 {{<note>}}
-Use these steps to connect to your database from within your K8s cluster. To access your database from outside the K8s cluster, set up the [Ingress]({{<relref "/kubernetes/networking/ingress.md">}}) controller or use OpenShift routes.
+Use these steps to connect to your database from within your K8s cluster. To access your database from outside the K8s cluster, set up the [ingress]({{<relref "/kubernetes/networking/set-up-ingress-controller.md">}}) controller or use OpenShift routes.
 {{</note>}}
 
 1. Retrieve the secret name.

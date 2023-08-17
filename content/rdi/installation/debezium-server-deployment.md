@@ -27,6 +27,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
   ```bash
   docker logs debezium --follow
   ```
+
 ### Custom timezone
 
 The UTC timezone is used in the Debezium Server container by default. In order to use another timezone, specify it by setting the `TZ` environment variable when running the container, for example:
@@ -57,6 +58,7 @@ If you are using `Oracle` as your source DB, please note that Debezium Server do
 As result, it will fail with an error. You should follow these steps to add the JDBC driver and restart Debezium Server:
 
 - Download the driver:
+
   ```bash
   wget -P oracle https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar
   ```

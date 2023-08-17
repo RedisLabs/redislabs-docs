@@ -41,13 +41,7 @@ Every instance of an Active-Active database can receive write operations, and al
 1. To create service accounts, on each participating cluster:
 
     1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the Active-Active database.
-
         By default, the address is: `https://<RS_address>:8443`
-
-        If you are using the new Cluster Manager UI, switch to the legacy admin console.
-
-        {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
-
     1. Go to **access control > users** and select ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the name, email, and password for the user, select the **Admin** role, and select ![Save](/images/rs/icon_save.png#no-click "Save").
 
@@ -69,7 +63,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create an Active-Active database on RAM.
 
-    If your cluster supports [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}),
+    If your cluster supports [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
     for the best performance during the initial Active-Active database sync of a new replica.
 
@@ -125,7 +119,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
     - [**OSS Cluster API**]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-    - **Eviction policy** - The default eviction policy for Active-Active databases is `noeviction`. Redis Enterprise version 6.0.20 and later support all eviction policies for Active-Active databases, unless [Auto Tiering]({{<relref "/rs/databases/auto-tiering">}}) is enabled.
+    - **Eviction policy** - The default eviction policy for Active-Active databases is `noeviction`. Redis Enterprise version 6.0.20 and later support all eviction policies for Active-Active databases, unless [Redis on Flash]({{<relref "/rs/databases/redis-on-flash">}}) is enabled.
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host instances of an Active-Active database and the admin user account to connect to each cluster.

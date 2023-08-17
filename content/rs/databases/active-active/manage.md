@@ -22,10 +22,6 @@ To change the global configuration of the Active-Active database, use the [`crdb
 
 If you need to apply changes locally to one database instance, you use the admin console or the `rladmin` CLI.
 
-If you are using the new Cluster Manager UI, switch to the legacy admin console to manage Active-Active databases.
-
-{{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
-
 ## Database settings
 
 The following table shows a list of database settings, tools you can use to change those settings, and links to more information.
@@ -82,8 +78,8 @@ crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_b
 
 ## Data persistence
 
-Active-Active supports AOF (Append-Only File) data persistence only.  Snapshot persistence is _not_ supported for Active-Active databases and should not be used.
-
+Active-Active supports AOF (Append-Only File) data persistence only.  Snapshot persistence is _not_ supported and should not be used.
+The snapshot option for data persistence on Active-Active databases is not supported and should not be used (Althought possible to be configured).
 If an Active-Active database is currently using snapshot data persistence, use `crdb-cli` to switch to AOF persistence:
 ```text
  crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config '{"data_persistence": "aof", "aof_policy":"appendfsync-every-sec"}'

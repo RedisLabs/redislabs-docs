@@ -4,7 +4,7 @@
      kubectl get secret admission-tls
     ```
   
-    The output should look similar to
+    The output will look similar to
   
     ```
      NAME            TYPE     DATA   AGE
@@ -17,10 +17,10 @@
     CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
     ```
 
-1. Create a patch file for the Kubernetes validating webhook, replacing `<namespace>` with the namespace where the REC was installed.
+1. Create a patch file for the Kubernetes validating webhook.
 
     ```sh
-    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/<namespace>/g' webhook.yaml | kubectl create -f -
+    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
 
     cat > modified-webhook.yaml <<EOF
     webhooks:

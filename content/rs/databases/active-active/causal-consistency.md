@@ -21,7 +21,7 @@ This way, any causal relationship between operations on the same key is also obs
 
 ### Enable causal consistency
 
-When you create an Active-Active database, causal consistency is set as follows in the legacy admin console:
+When you create an Active-Active database, causal consistency is set as:
 
 ![create_db_causal](/images/rs/create_db_causal.png)
 

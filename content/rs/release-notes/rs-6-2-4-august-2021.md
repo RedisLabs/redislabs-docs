@@ -23,7 +23,7 @@ This version offers:
 
 ### Prerequisites and notes
 
-You can [upgrade to v6.2.4]({{<relref "/rs/installing-upgrading/upgrading">}}) from Redis Enterprise Software v6.0 and later. 
+You can [upgrade to v6.2.4]({{<relref "/rs/installing-upgrading/upgrading.md">}}) from Redis Enterprise Software v6.0 and later. 
 
 Keep the following in mind:
 
@@ -50,11 +50,11 @@ The Redis Enterprise Software 6.2.4 package includes compatibility with the most
 By default, compatibility with v6.0 will be installed.  To change this, use `rladmin` to set the upgrade policy and the default Redis version:
 
 ``` shell
-$ rladmin tune cluster redis_upgrade_policy latest
-$ rladmin tune cluster default_redis_version 6.2
+tune cluster redis_upgrade_policy latest
+tune cluster default_redis_version 6.2
 ```
 
-To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgrading/upgrading">}}).
+To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgrading/upgrading.md">}}).
 
 ### Product lifecycle updates
 
@@ -62,7 +62,7 @@ Redis Enterprise Software v5.6.0 will reach end of life (EOF) on October 31, 202
 
 To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
-Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/stack/modules-lifecycle.md">}}).
+Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
 
 ### Deprecation notices
 
@@ -120,17 +120,17 @@ To learn more, see Redis Enterprise Software [compatibility with open source]({{
 
 Redis Enterprise Software v6.2.4 includes the following Redis modules:
 
-- [RediSearch v2.0.11]({{<relref "/stack/release-notes/redisearch/redisearch-2.0-release-notes.md">}})
-- [RedisJSON v1.0.8]({{<relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md">}})
-- [RedisBloom v2.2.6]({{<relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md">}}) 
-- [RedisGraph v2.4.7]({{<relref "/stack/release-notes/redisgraph/redisgraph-2.4-release-notes.md">}})
-- [RedisTimeSeries v1.4.10]({{<relref "/stack/release-notes/redistimeseries/redistimeseries-1.4-release-notes.md">}})
+- [RediSearch v2.0.11]({{<relref "/modules/redisearch/release-notes/redisearch-2.0-release-notes.md">}})
+- [RedisJSON v1.0.8]({{<relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md">}})
+- [RedisBloom v2.2.6]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}}) 
+- [RedisGraph v2.4.7]({{<relref "/modules/redisgraph/release-notes/redisgraph-2.4-release-notes.md">}})
+- [RedisTimeSeries v1.4.10]({{<relref "/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes.md">}})
 
 ### Internode encryption for modules 
          
 To utilize data plane encryption for existing databases with modules, update the module to the latest version prior to enabling data plane encryption. 
 
-For help, see [Upgrade the module for a database]({{<relref "/stack/install/upgrade-module">}}).
+For help, see [Upgrade the module for a database]({{<relref "/modules/install/upgrade-module">}}).
 
 ### Module-related enhancements
 
@@ -147,7 +147,7 @@ To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/r
 
 - RS54732 - Fixed incorrect reporting of number database connections, which caused the number of connections to be reported as a 20 digit number
 
-- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. [Upgrade the featureset]({{<relref "/rs/installing-upgrading/upgrading/upgrade-active-active">}}) version to the latest.
+- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. We recommend [upgrading the featureset]({{<relref "/rs/installing-upgrading/upgrading.md#upgrading-activeactive-databases">}}) version to the latest
 
 - RS56122 - Fixed a bug that was causing AOF files to grow when the replicas of two Active-Active databases became disconnected during full synchronization
 
@@ -155,27 +155,14 @@ To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/r
 
 - RS48988 - Add the username description in the log upon an unauthorized REST API request
 
-## Known limitations
-
-### Installation limitations
-
-Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
-
-As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
-
-1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
-
-1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
-
 ## Known issues 
 
 - A new command was added as part of Redis 6.2: [`XAUTOCLAIM`](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
 
 - The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
 
-- RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+- RS81463 - A shard may crash when resharding an Active-Active database with Redis on Flash (RoF). Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
 
-- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
 
 ## Security
 

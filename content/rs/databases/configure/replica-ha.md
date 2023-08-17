@@ -21,7 +21,7 @@ Redis Enterprise Software copies your data to a replica node to make your data h
 If the replica node fails or if the primary (master) node fails and the replica is promoted to primary,
 the remaining primary node is a single point of failure.<!--more-->
 
-You can configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.  This process is known as _replica high availability_ or _replica\_ha_.
+You can configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.  This process is known as _replica high availability_ or _replica\_ha_ (also known as _slave\_ha_ or Slave HA in the UI).
 
 An available node:
 

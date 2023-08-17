@@ -18,7 +18,7 @@ When you install Redis Enterprise Software on CentOS or RHEL, it automatically c
 - A service named **redislabs-clients**, which includes the ports and protocols needed for external communication (outside of the cluster).
 
 These services are defined but not allowed through the firewall by default.
-During Redis Enterprise Software installation, the [installer prompts]({{<relref "/rs/installing-upgrading/install/manage-installation-questions">}}) you to confirm auto-configuration of a default (public) zone
+During Redis Enterprise Software installation, the [installer prompts]({{<relref "/rs/installing-upgrading/manage-installation-questions">}}) you to confirm auto-configuration of a default (public) zone
 to allow the **redislabs** service.
 
 Although automatic firewall configuration simplifies installation, your deployment might not be secure if you did not use other methods to secure the host machine's network, such as external firewall rules or security groups.

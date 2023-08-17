@@ -28,7 +28,7 @@ The database must:
 In addition, the database must _not_:
 
 - Use node `include` or `exclude` in the proxy policy.
-- Use [RediSearch]({{<relref "/stack/search">}}), [RedisTimeSeries]({{<relref "/stack/timeseries">}}), or [RedisGears]({{<relref "/stack/gears-v1">}}) modules.
+- Use [RediSearch]({{<relref "/modules/redisearch">}}), [RedisTimeSeries]({{<relref "/modules/redistimeseries">}}), or [RedisGears]({{<relref "/modules/redisgears">}}) modules.
 
 The OSS Cluster API setting applies to individual databases, as opposed to the overall cluster.
 
@@ -40,17 +40,24 @@ You can use the admin console or the `rladmin` utility to enable OSS Cluster API
 
 To enable the OSS Cluster API from the admin console for an existing database:
 
-1. From the database's **Configuration** tab, select **Edit**.
+1.  Sign in to the admin console and then select the target database.
 
-1. Expand the **Clustering** section.
+1.  When the database details appear, select the **Configuration** tab.
 
-1. Turn on the **OSS Cluster API** toggle.
+1.  The **OSS Cluster API support** setting shows the current setting.
 
-    {{<image filename="images/rs/screenshots/databases/config-clustering-oss-cluster-api.png" alt="Use the *OSS Cluster API* setting to enable the API for the selected database.">}}{{</image>}}
+    {{<image filename="images/rs/oss-cluster-api-database-configuration.png" alt="The *OSS Cluster API* setting indicates whether the API is enabled for a database." >}}{{< /image >}}
 
-1. Select **Save**.
+1.  Select the **Edit** button.
 
-You can also use the admin console to enable the setting when creating a new database.
+1.  Place a checkmark in the **OSS Cluster API support** setting and then select **Update**.
+
+    {{<image filename="images/rs/oss-cluster-api-database-create.png" alt="Use the *OSS Cluster API* setting to enable the API for the selected database." >}}{{< /image >}}
+
+
+You can also use the admin console to enable the setting when creating a new database.  
+
+To do so, select **Advanced options** while creating the database in order to display the **OSS Cluster API support** setting.  Place a checkmark in the setting to enable the API when the database is created.
 
 ### Command line (`rladmin`)
 
@@ -118,7 +125,7 @@ The Redis OSS Cluster API setting applies to all of the instances of the Active-
 
 To deactivate OSS Cluster API support for a database, either:
 
-- Use the admin console to turn off the **OSS Cluster API** toggle from the database **Configuration** settings.
+- Use the admin console to remove the checkmark from the database configuration settings.
 
 - Use the appropriate utility to deactivate the OSS cluster setting.
 

@@ -78,14 +78,10 @@ The [DNS records]({{< relref "/rs/networking/cluster-dns/_index.md" >}}) must be
 
 To remove a node using the admin console:
 
-1. If you are using the new admin console, switch to the legacy admin console.
-
-    {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
-
 1. Click **Remove** at the top of the **Node** page for the node to be
     removed.
 1. Approve the action.
-1. Redis Enterprise Software examines the node and the cluster and takes the actions required
+1. RS examines the node and the cluster and takes the actions required
     to remove the node.
 1. At any point, you can click the **Abort** button to stop the
     process. When aborted, the current internal action is completed, and

@@ -16,7 +16,7 @@ For very large databases, Redis Enterprise Cloud distributes database data to di
 
 - When data grows beyond the the RAM resources of a single server.
 
-    Multiple shards should be used when data grows to 25 GB (50 GB for Auto Tiering) to create multiple shards.
+    Multiple shards should be used when data grows to 25 GB (50 GB for Redis on Flash) to create multiple shards.
 
 - The operations performed against the database are CPU intensive enough to degrade performance.
 

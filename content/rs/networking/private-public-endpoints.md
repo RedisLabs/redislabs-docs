@@ -17,29 +17,23 @@ This is common for environments such as cloud platforms and enterprises.
 
 When doing so, the cluster creates an additional FQDN, e.g. internal.cluster.com for private network (e.g. VPC or an internal network), while the cluster.com FQDN can be used by a public network (e.g. the internet).
 
-You can enable public and private endpoints during cluster creation only.
-However, you can still add an additional FQDN in a different domain (cluster.io, for example) after cluster creation.
+This configuration can be enabled at cluster creation only.
+Once the cluster is created, it is possible to add an additional FQDN in a differnet domain only, e.g. cluster.io.
 
-To enable private and public endpoints:
+Follow these steps to enable private and public endpoints:
 
-1. Verify the IP addresses are bound to the server or instance.
+- Verify that the IP addresses are bound to the server/instance.
 
-1. During cluster setup, turn on **Enable public endpoints support** in the **Cluster** screen's **Configuration** section.
+- When setting up the cluster via the UI, select the **Enable private and public endpoint support** setting. It appears in the **Cluster configuration** section of the **Node configuration** screen.
 
-    {{<image filename="images/rs/screenshots/cluster/setup/enable-public-endpoints.png" width="75%" alt="The endpoint support setting appears in the **Configuration section** of the **Cluster** setup screen." >}}{{</image>}}
+    {{<image filename="images/rs/node-configuration-endpoint-support.png" alt="The endpoint support setting appears in the **Cluster configuration section** of the **Node configuration** screen." >}}{{< /image >}}
 
     If this setting is not enabled when the cluster is created, databases on the cluster support only a single endpoint.
 
-1. Select **Next** to proceed to **Node** configuration.
+- Configure the public IP of the machine to be used for external traffic in the node configuration.
 
-1. In the **Network configuration** section:
+- Configure private IP to be used for both internal and external traffic in the node configuration so it can be used for private database endpoints.
 
-    1. Configure the machine's public IP address for external traffic.
+When you finish, both sets of endpoints are available for databases in the cluster.
 
-    1. Configure the private IP address for both internal and external traffic so it can be used for private database endpoints.
-
-After cluster creation, both sets of endpoints are available for databases in the cluster.
-
-To view and copy public and private endpoints for a database in the cluster, see the database's **Configuration > General** section.
-
-{{<image filename="images/rs/screenshots/databases/config-general-endpoints.png" width="75%" alt="View public and private endpoints from the General section of the database's Configuration screen." >}}{{</image>}}
+Use the **Configuration** tab of a database on the cluster to verify availability of private and public endpoints.

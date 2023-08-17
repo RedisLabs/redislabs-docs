@@ -9,11 +9,11 @@ categories: ["RS"]
 aliases: 
 ---
 
-When you [create a database]({{<relref "/rs/databases/create">}}), default user database access is enabled by default (**Unauthenticated access** is selected). This gives the default user full access to the database and enables compatibility with versions of Redis before Redis 6.
+When you [create a database]({{<relref "/rs/databases/create">}}), default user database access is enabled by default (**Default database password** check box is selected). This enables compatibility with versions of Redis before Redis 6.
 
-Select **Password-only authentication**, then enter and confirm a default database password to require authentication for connections to the database.
+{{<image filename="images/rs/database-config-default-user-enabled.png" alt="" >}}{{< /image >}}
 
-{{<image filename="images/rs/screenshots/databases/security-access-control-password-only.png" alt="Select Password-only authentication to require a password to access the database." >}}{{< /image >}}
+Enter and confirm a **Default database password** to require authentication for connections to the database.
 
 ## Authenticate as default user
 
@@ -27,13 +27,13 @@ AUTH <default-database-password>
 
 To change the default user's password:
 
-1. From the database's **Security** tab, select **Edit**.
+1. From the database's **configuration** tab, select **Edit**.
 
-1. In the **Access Control** section, select **Password-only authentication** as the **Access method**.
+1. For **Default database password**, enter the new password in **Password** and **Confirm password**.
 
-1. Enter and re-enter the new password.
+    {{<image filename="images/rs/database-config-default-user-enabled.png" alt="" >}}{{< /image >}}
 
-1. Select **Save**.
+1. Select **Update**.
 
 ## Deactivate default user
 
@@ -45,12 +45,10 @@ Before you deactivate default user access, make sure the role associated with th
 
 To deactivate the default user:
 
-1. From the database's **Security** tab, select **Edit**.
+1. From the database's **configuration** tab, select **Edit**.
 
-1. In the **Access Control** section, select **Using ACL only** as the **Access method**.
+1. Clear the **Default database password** checkbox.
 
-    {{<image filename="images/rs/screenshots/databases/security-access-control-acl-only.png" alt="Select Using ACL only to deactivate default user access to the database." >}}{{< /image >}}
+    {{<image filename="images/rs/database-config-default-user-deactivated.png" alt="" >}}{{< /image >}}
 
-1. Choose at least one role and Redis ACL to access the database.
-
-1. Select **Save**.
+1. Select **Update**.

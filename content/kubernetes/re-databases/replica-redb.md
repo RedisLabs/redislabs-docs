@@ -21,7 +21,7 @@ the `replicaSources` section of the [Redis Enterprise database specification](ht
 `replicaSourceType` must be 'SECRET'; `replicaSourceName`
 must be the name of a secret that contains the replica source url.
 
-A secret must be created using a `stringData` section containing the replica source URI as follows:
+A secret must be created using a `stringData` section containing the replica source URL as follows:
 
 ```yaml
 apiVersion: v1
@@ -29,7 +29,7 @@ kind: Secret
 metadata:
    name: my-replica-source
 stringData:
-   uri: replica-source-uri-goes-here
+   url: replica-source-url-goes-here
 ```
 
 The replica source URL can be retrieved by going to "UI > database > configuration > Press the button Get Replica of source URL"

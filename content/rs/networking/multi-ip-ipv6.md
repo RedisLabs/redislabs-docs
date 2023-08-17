@@ -53,19 +53,10 @@ addresses that are not bound to an active interface, but are otherwise
 mapped or configured to route traffic to the node (AWS Elastic IPs, a
 load balancer VIP and so on).
 
-`rladmin` node address commands syntax:
-
-```sh
-rladmin node addr set
-```
-
-```sh
-rladmin node external_addr set
-```
-
-```sh
-rladmin node external_addr [ add | remove ]
-```
+rladmin node address commands syntax:
+node addr set
+node external_addr set
+node external_addr \[ add \| remove \]
 
 Where:
 

@@ -17,25 +17,25 @@ Redis Data Integration installation is done via the RDI CLI. The CLI should have
 #### Ubuntu 20.04
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-ubuntu20.04-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-ubuntu20.04-{{<param rdi_cli_preview>}}.tar.gz -O /tmp/redis-di.tar.gz
 ```
 
 #### Ubuntu 18.04
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-ubuntu18.04-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-ubuntu18.04-{{<param rdi_cli_preview>}}.tar.gz -O /tmp/redis-di.tar.gz
 ```
 
 #### RHEL 8
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-rhel8-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-rhel8-{{<param rdi_cli_preview>}}.tar.gz -O /tmp/redis-di.tar.gz
 ```
 
 #### RHEL 7
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-rhel7-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-rhel7-{{<param rdi_cli_preview>}}.tar.gz -O /tmp/redis-di.tar.gz
 ```
 
 ## Install RDI CLI
@@ -47,3 +47,4 @@ sudo tar xvf /tmp/redis-di.tar.gz -C /usr/local/bin/
 ```
 
 > Note: Non-root users should unpack to a directory with write permission and run `redis-di` directly from it.
+

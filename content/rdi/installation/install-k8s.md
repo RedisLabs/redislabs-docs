@@ -44,6 +44,7 @@ curl -k -s -u "user:pwd" -F "module=@/tmp/redis-gears.zip" https://localhost:944
 curl -k -v -u "user:pwd" https://localhost:9443/v1/modules | jq '.[] | {module_name,uid,semantic_version}'
 ```
 
+
 ## Install RDI CLI
 
 There are two options for installing the RDI CLI in an Kubernetes environment:

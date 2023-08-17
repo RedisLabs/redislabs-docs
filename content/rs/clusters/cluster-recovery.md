@@ -28,7 +28,7 @@ To recover a cluster and re-create it as it was before the failure
 you must restore the cluster configuration (ccs-redis.rdb) to the cluster nodes.
 To restore the data that was in the databases to databases in the new cluster
 you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
-These files are stored in the [persistent storage location]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}}).
+These files are stored in the [persistent storage location]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}}).
 
 The cluster recovery process includes:
 
@@ -82,7 +82,7 @@ of the configuration and persistence files on each of the nodes.
     from the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command-line interface (CLI):
 
     ```sh
-    rladmin cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
+    cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
     ```
 
     {{% expand "Command syntax" %}}
@@ -91,10 +91,10 @@ The cluster configuration file is `/css/ccs-redis.rdb`.
 
 `<node_uid>` - The id of the node, in this case `1`.
 
-`<persistent_path>` (optional) - The location of the [persistent storage ]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}})
+`<persistent_path>` (optional) - The location of the [persistent storage ]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`<ephemeral_path>` (optional) - The location of the [ephemeral storage]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}})
+`<ephemeral_path>` (optional) - The location of the [ephemeral storage]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}})
 in the new node.
 
 `<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}})
@@ -112,10 +112,10 @@ Otherwise, the node gets the same rack ID as the original node.
     When the recovery command succeeds,
     this node is configured as the node from the old cluster that has ID 1.
 
-1. To join the remaining servers to the new cluster, run `rladmin cluster join` from each new node:
+1. To join the remaining servers to the new cluster, from the rladmin CLI of each new node run:
 
     ```sh
-    rladmin cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
+    cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
     ```
 
     {{% expand "Command syntax" %}}
@@ -130,10 +130,10 @@ of the cluster this node is joining.
 
 `replace_node` - The ID of the node that this node replaces from the old cluster.
 
-`persistent_path` (optional) - The location of the [persistent storage]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}})
+`persistent_path` (optional) - The location of the [persistent storage]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`ephemeral_path` (optional) - The location of the [ephemeral storage]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}})
+`ephemeral_path` (optional) - The location of the [ephemeral storage]({{< relref "/rs/installing-upgrading/persistent-ephemeral-storage.md" >}})
 in the new node.
 
 `rack_id` (optional) - If [rack-zone awareness]({{< relref "/rs/clusters/configure/rack-zone-awareness.md" >}}) was enabled in the cluster,
