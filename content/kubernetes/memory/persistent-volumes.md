@@ -16,15 +16,6 @@ aliases: [
     /kubernetes/memory/persistent-volumes/
 ]
 ---
-## Storage types
-
-Redis Enterprise for Kubernetes can only use storage classes supported by block storage. Block storage is mounted at the Kubernetes node level and utilizes EXT4 or XFS file systems. It can be sourced from enterprise-grade SANs or cloud environments such as EBS, Azure Managed Disks, or GCP persistent disks.
-
-{{<warning>}}
-NFS, NFS-like, and multi-read-write/shared storage options are not supported. These types of storage are often slow and can cause locking behaviors that are incompatible with the requirements of database storage.
-{{</warning>}}
-
-## REC `persistentSpec` field 
 To deploy a Redis Enterprise cluster with Redis Enterprise operator the
 spec should include a *persistentSpec* section, in the
 *redis-enterprise-cluster.yaml* file:
@@ -50,7 +41,7 @@ The REC deployment files in the [Kubernetes documentation](https://github.com/Re
 omitted, operator allocates five times (5x) the amount of memory (RAM)
 defined for nodes (see example below), which is the recommended
 persistent storage size as described in the [Hardware
-requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}}) article.
+requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}) article.
 
 To explicitly specify the persistent storage size, use the *volumeSize*
 property as described in the example above.

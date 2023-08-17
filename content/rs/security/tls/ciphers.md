@@ -49,12 +49,8 @@ rladmin cluster config cipher_suites <BoringSSL cipher list>
 See the example below to configure cipher suites for the control plane:
 
 ```sh
-rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:!3DES
+rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305
 ```
-{{<note>}}
-- The phrase '!3DES' disables all 3DES cipher suites.
-{{</note>}}
-
 
 ### Data plane
 
@@ -69,11 +65,8 @@ rladmin cluster config  data_cipher_list <OpenSSL cipher list>
 See the example below to configure cipher suites for the data plane:
 
 ```sh
-rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA:!3DES
+rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA
 ```
-{{<note>}}
-- The phrase '!3DES' disables all 3DES cipher suites.
-{{</note>}}
 
 ### Discovery service
 

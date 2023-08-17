@@ -67,7 +67,6 @@ Cluster configuration:
     cm_port: 8443
     cnm_http_port: 8080
     cnm_https_port: 9443
-    bigstore_driver: speedb
 ```
 
 ## `info db`

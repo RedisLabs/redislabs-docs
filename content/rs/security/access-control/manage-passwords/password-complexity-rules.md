@@ -32,11 +32,15 @@ You can use the admin console or the REST API to enable password complexity rule
 
 To enable password complexity rules using the admin console:
 
-1. Go to **Cluster > Security > Preferences**, then select **Edit**.
+1. Sign in to the Redis Enterprise Software admin console using an administrator account
 
-1. In the **Password** section, turn on **Complexity rules**.
+1. From the main menu, select **Settings** | **Preferences**
 
-1. Select **Save**.
+    {{<image filename="images/rs/cluster-settings-preferences.png" alt="Preference settings in the Redis Software admin console." width="75%">}}{{< /image >}}
+
+1. Place a checkmark next to **Enable password complexity rules**
+
+1. Save your changes
 
 ## Enable using the REST API
 
@@ -51,12 +55,6 @@ PUT https://[host][:port]/v1/cluster
 
 To deactivate password complexity rules:
 
-- Use the admin console:
-
-    1. Go to **Cluster > Security > Preferences**, then select **Edit**.
-
-    1. In the **Password** section, turn off **Complexity rules**.
-
-    1. Select **Save**.
+- Remove the checkmark from the **Enable password complexity rules** setting in the admin console
 
 - Use the `cluster` REST API endpoint to set `password_complexity` to `false`

@@ -12,12 +12,12 @@ aliases: [
 ]
 ---
 
-When you delete a database, both the database configuration and data are removed.
+When you delete a database, the database configuration and data are deleted.
 
-To delete a database from the admin console:
+Use the admin console to delete a database:
 
-1. From the **Databases** list, select the database, then select **Configuration**.
-
-1. Select <img src="/images/rs/icons/delete-icon.png#no-click" alt="Delete button" width="22px"> **Delete**.
-
-1. In the **Delete database** dialog, confirm deletion.
+1. Click the relevant database row in the **Databases** page. The
+    selected database page appears.
+1. Select the **Configuration** tab.
+1. Click **Delete** at the bottom of the page.
+1. Confirm the deletion.

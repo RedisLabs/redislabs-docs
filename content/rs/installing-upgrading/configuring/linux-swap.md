@@ -1,32 +1,35 @@
 ---
-Title: Configure swap for Linux
+Title: Configure Swap for Linux
 linkTitle: Linux swap configuration
-description: Turn off Linux swap space.
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/linux-swap/
 ---
-Linux operating systems use swap space, which is enabled by default, to help manage memory (pages) by
-copying pages from RAM to disk. Due to the way Redis Enterprise Software
-utilizes and manages memory, it is best to prevent OS swapping. For more details, see [memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}}). The
-recommendation is to turn off Linux swap completely in the OS.
+Swap space is used by the Linux OS to help manage memory (pages) by
+copying pages from RAM to disk and the OS is configured by default to be
+fairly aggressive. For Redis Enterprise Software (RS) with the way it
+utilizes and manages memory, it is best to eliminate the likelihood of
+the OS swapping. If you would like to understand why, please read more
+on [memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}})
+for best functionality and performance. The formal
+recommendation is to disable Linux swap completely in the OS.
 
-When you install or build the OS on the machine intended to host your Redis Enterprise Software cluster, avoid configuring swap partitions if possible.
+## Disabling swap
 
-## Turn off swap
+To disable the swap in the OS of an existing server/VM/instance, you
+must have sudo access or be root to run the following command:
 
-To turn off swap in the OS of an existing server, VM, or instance, you
-must have `sudo` access or be a root user to run the following commands:
+```sh
+$ sudo swapoff -a
+$ sudo sed -i.bak '/ swap / s/^(.*)$/#1/g' /etc/fstab
+```
 
-1. Turn off swap:
+The first command turns swap off immediately and the second command
+comments out the swap partitions configured in the OS so swap being
+off survives a reboot.
 
-    ```sh
-    sudo swapoff -a
-    ```
-
-1. Comment out the swap partitions configured in the OS so swap remains off even after a reboot:
-
-    ```sh
-    sudo sed -i.bak '/ swap / s/^(.*)$/#1/g' /etc/fstab
-    ```
+If you are able to, it is best when you install/build the OS on the
+server/VM/instance to be used in your RS cluster, to simply not
+configure swap partitions at all.

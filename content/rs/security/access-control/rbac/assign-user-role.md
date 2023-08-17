@@ -10,15 +10,11 @@ aliases:
 
 Assign a role, associated with specific databases and access control lists (ACLs), to a user to grant database access:
 
-1. From the **Access Control > Users** tab in the admin console, you can:
-
-    - Point to an existing user and select <img src="/images/rs/buttons/edit-button.png#no-click" alt="The Edit button" width="25px"> to edit the user.
-    
-    - Select **+ Add user** to [create a new user]({{<relref "/rs/security/access-control/manage-users/add-users">}}).
+1. From the **access control > users** tab in the admin console, select an existing user from the list or select ![Add](/images/rs/icon_add.png#no-click "Add") to [create a new user]({{<relref "/rs/security/access-control/manage-users/add-users">}}).
 
 1. Select a role to assign to the user.
 
-1. Select **Save**.
+1. Select the **Save** icon.
 
 ## Next steps
 

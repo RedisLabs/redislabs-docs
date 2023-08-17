@@ -59,7 +59,7 @@ Before you enable LDAP in Redis Enterprise, you need:
 
 To enable LDAP:
 
-1.  From **Cluster > Security > LDAP** in the admin console, [enable LDAP access]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
+1.  From **Settings > LDAP** in the admin console, [enable LDAP access]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
 
 1.  Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}}).
 

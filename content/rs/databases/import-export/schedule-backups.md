@@ -17,7 +17,7 @@ aliases: [
 
 Periodic backups provide a way to restore data with minimal data loss.  With Redis Enterprise Software, you can schedule periodic backups to occur once a day (every 24 hours), twice a day (every twelve hours), every four hours, or every hour.
 
-As of v6.2.8, you can specify the start time for 24-hour or 12-hour backups.
+As of v6.2.8, you can specify the start time for twenty-four or twelve hour backups.
 
 To make an on-demand backup, [export your data]({{< relref "/rs/databases/import-export/export-data.md" >}}).
 
@@ -40,7 +40,7 @@ Redis Enterprise Software creates a backup file for each shard in the configurat
 - Make sure that you have enough space available in your storage location.
     If there is not enough space in the backup location, the backup fails.
 - The backup configuration only applies to the database it is configured on.
-- To limit the parallel backup for shards, set both [`tune cluster max_simultaneous_backups`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}) and [`tune node max_redis_forks`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-node">}}). `max_simultaneous_backups` is set to 4 by default.
+- To limit the parallel backup for shards, set both [`tune cluster max_simultaneous_backups`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}) and [`tune node max_redis_forks`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-node">}}). 
 
 {{< /note >}}
 
@@ -48,36 +48,30 @@ Redis Enterprise Software creates a backup file for each shard in the configurat
 
 Before scheduling periodic backups, verify that your storage location exists and is available to the user running Redis Enterprise Software (`redislabs` by default).  You should verify that:
 
-- Permissions are set correctly.
-- The user running Redis Enterprise Software is authorized to access the storage location.
-- The authorization credentials work.
+- Permissions are set correctly
+- The user running Redis Enterprise Software is authorized to access the storage location
+- The authorization credentials work
 
 Storage location access is verified before periodic backups are scheduled.
 
 To schedule periodic backups for a database:
 
-1. Sign in to the Redis Enterprise Software admin console using admin credentials.
+1.  Sign in to the Redis Enterprise Software admin console using admin credentials.
+2.  From the admin console, choose **Databases** and then select your database.
+3.  Select the **Edit** button.
+4.  Locate and enable the **Periodic backup** checkbox.
 
-1. From the **Databases** list, select the database, then select **Configuration**.
+    {{<image filename="images/rs/database-configuration-periodic-backup.png" alt="In the admin console, the Periodic backup settings can be found on the Configuration details tab of the database." >}}{{< /image >}}
 
-1. Select the **Edit** button.
-
-1. Expand the **Scheduled backup** section.
-
-1. Select **Add backup path** to open the **Path configuration** dialog.
-
-1. Select the tab that corresponds to your storage location type, enter the location details, and select **Done**. 
-
-    See [Supported storage locations](#supported-storage-locations) for more information about each storage location type.
-
-1. Set the backup **Interval** and **Starting time**.
+6.  Use the following table to help specify the details:
 
     | Setting | Description |
     |--------------|-------------|
     | **Interval** | Specifies the frequency of the backup; that is, the time between each backup snapshot.<br/><br/>Supported values include _Every 24 hours_, _Every 12 hours_, _Every 4 hours_, and _Every hour_. |
-    | **Starting time** | _v6.2.8 or later:&nbsp;_ Specifies the start time for the backup; available when **Interval** is set to _Every 24 hours_ or _Every 12 hours_.<br/><br/>If not specified, defaults to a time selected by Redis Enterprise Software. |
+    | **Set starting time** | _v6.2.8 or later:&nbsp;_ Specifies the start time for the backup; available when **Interval** is set to _Every 24 hours_ or _Every 12 hours_.<br/><br/>If not specified, defaults to a time selected by Redis Enterprise Software. |
+    | **Choose storage type** | Specifies the storage type for the backup.  Supported options vary and might require additional details.  To learn more, see [Supported storage locations](#supported-storage-locations).
 
-7. Select **Save**.
+7.  Select **Update** to apply your changes.
 
 Access to the storage location is verified when you apply your updates.  This means the location, credentials, and other details must exist and function before you can enable periodic backups.
 
@@ -108,7 +102,7 @@ For help with specific backup issues, [contact support](https://redis.com/compan
 
 Database backups can be saved to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage.
 
-When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/install/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
+When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
 
 Redis Enterprise Software needs the ability to view permissions and update objects in the storage location. Implementation details vary according to the provider and your configuration. To learn more, consult the provider's documentation.
 
@@ -146,15 +140,9 @@ Before enabling backups to an SFTP server, make sure that:
 - The user specified in the SFTP server location has read and write privileges.
 - The SSH private keys are specified correctly.  You can use the key generated by the cluster or specify a custom key.
 
-    To use the cluster auto generated key:
-    
-    1. Go to **Cluster > Security > Certificates**.
+    When using the cluster auto generated key, copy the **Cluster SSH Public Key** to the appropriate location on the SFTP server.  This is available from the **General** tab of the **Settings** menu in the admin console.
 
-    1. Expand **Cluster SSH Public Key**.
-    
-    1. Download or copy the cluster SSH public key to the appropriate location on the SFTP server.
-
-        Use the server documentation to determine the appropriate location for the SSH public key.
+    Use the server documentation to determine the appropriate location for the SSH Public Key.
 
 To backup to an SFTP server, enter the SFTP server location in the format:
 
@@ -206,19 +194,19 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
 
 1. In the Redis Enterprise Software admin console, when you enter the backup location details:
 
-    - Select the **AWS S3** tab on the **Path configuration** dialog.
+    - Select "AWS S3" from the **Choose storage type** drop-down.
 
     - In the **Path** field, enter the path of your bucket.
 
-    - In the **Access Key ID** field, enter the access key ID.
+    - In the **Access key ID** field, enter the access key ID.
 
-    - In the **Secret Access Key** field, enter the secret access key.
+    - In the **Secret access key** field, enter the secret access key.
 
 ### Google Cloud Storage
 
 For [Google Cloud](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
 
-1. Sign in to the Google Cloud Platform console.
+1. Sign in to Google Cloud Platform console.
 
 1. [Create a JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating) if you do not already have one.
 
@@ -232,18 +220,18 @@ For [Google Cloud](https://developers.google.com/console/) subscriptions, store 
 
 1. In the Redis Enterprise Software admin console, when you enter the backup location details:
 
-    - Select the **Google Cloud Storage** tab on the **Path configuration** dialog.
+    - Select "Google Cloud Storage" from the **Choose storage type** drop-down.
 
     - In the **Path** field, enter the path of your bucket.
 
-    - In the **Client ID** field, enter the `client_id` from the service account key.
+    - In the **Client id** field, enter the `client_id` from the service account key.
 
-    - In the **Client Email** field, enter the `client_email` from the service account key.
+    - In the **Client email** field, enter the `client_email` from the service account key.
 
-    - In the **Private Key ID** field, enter the `private_key_id` from the service account key.
+    - In the **Private key id** field, enter the `private_key_id` from the service account key.
 
-    - In the **Private Key** field, enter the `private_key` from the service account key.
-      Replace `\n` with new lines.
+    - In the **Private key** field, enter the `private_key` from the service account key.
+      Replace `\n` with new lines, and then select the **Save** icon.
 
 ### Azure Blob Storage
 
@@ -259,12 +247,12 @@ To export to Microsoft Azure Blob Storage, sign in to the Azure portal and then:
 
 1. In the Redis Enterprise Software admin console, when you enter the backup location details:
 
-    - Select the **Azure Blob Storage** tab on the **Path configuration** dialog.
+    - Select "Azure Blob Storage" from the **Choose storage type** drop-down.
 
     - In the **Path** field, enter the path of your bucket.
 
-    - In the **Azure Account Name** field, enter your storage account name.
+    - In the **Account name** field, enter your storage account name.
 
-    - In the **Azure Account Key** field, enter the storage account key.
+    - In the **Account key** field, enter the storage account key.
 
 To learn more, see [Authorizing access to data in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth).

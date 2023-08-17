@@ -176,17 +176,17 @@ To change XADD's ID generation mode, use the `rladmin` command-line utility:
 
 Set _strict_ mode:
 ```sh
-rladmin tune db crdb crdt_xadd_id_uniqueness_mode strict
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode strict
 ```
 
 Set _semi-strict_ mode:
 ```sh
-rladmin tune db crdb crdt_xadd_id_uniqueness_mode semi-strict
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode semi-strict
 ```
 
 Set _liberal_ mode:
 ```sh
-rladmin tune db crdb crdt_xadd_id_uniqueness_mode liberal
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode liberal
 ```
 
 ### Iterating a stream with XREAD

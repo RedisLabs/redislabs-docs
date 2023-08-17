@@ -1,6 +1,6 @@
 ---
 Title: RedisInsight v2.24.0, April 2023
-linkTitle: v2.24.0 (Apr 2023)
+linkTitle: v2.24.0 (Mar 2024)
 date: 2023-04-27 00:00:00 +0000
 description: RedisInsight v2.24
 weight: 1

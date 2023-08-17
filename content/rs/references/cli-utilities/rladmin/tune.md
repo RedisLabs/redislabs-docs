@@ -23,7 +23,7 @@ rladmin tune cluster
         [ redis_migrate_node_threshold <size> ]
         [ redis_provision_node_threshold_percent <percent> ]
         [ redis_migrate_node_threshold_percent <percent> ]
-        [ max_simultaneous_backups <number> ]
+        [ max_simultaneous_backups <size> ]
         [ failure_detection_sensitivity { high | low } ]
         [ watchdog_profile { cloud | local-network } ]
         [ slave_ha { enabled | disabled } ]
@@ -40,7 +40,6 @@ rladmin tune cluster
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
         [ acl_pubsub_default { resetchannels | allchannels } ]
-        [ resp3_default { enabled | disabled } ]
 ```
 
 ### Parameters
@@ -58,7 +57,7 @@ rladmin tune cluster
 | login_lockout_duration                 | time in seconds                   | Time a locked account remains locked ( "0" means only an admin can unlock the account)                                   |
 | login_lockout_threshold                | integer                           | Number of failed sign-in attempts to trigger locking a user account ("0" means never lock the account)                   |
 | max_saved_events_per_type              | integer                           | Maximum number of events each type saved in CCS per object type                                                              |
-| max_simultaneous_backups               | integer <nobr>(default: 4)</nobr>                      | Number of database backups allowed to run at the same time. Combines with `max_redis_forks` (set by [`tune node`](#tune-node)) to determine the number of shard backups allowed to run simultaneously.                                                                                  |
+| max_simultaneous_backups               | integer                           | Number of database backups allowed to run at the same time. Combines with `max_redis_forks` (set by [`tune node`](#tune-node)) to determine the number of shard backups allowed to run simultaneously.                                                                                  |
 | parallel_shards_upgrade                | integer<br />`all`              | Number of shards upgraded in parallel during DB upgrade (positive integer or "all")                                          |
 | redis_migrate_node_threshold           | size in MB                        | Memory (in MBs by default or can be specified) needed to migrate a database between nodes                                   |
 | redis_migrate_node_threshold_percent   | percentage                | Memory (in percentage) needed to migrate a database between nodes                                                            |
@@ -66,7 +65,6 @@ rladmin tune cluster
 | redis_provision_node_threshold_percent | percentage                | Memory (in percentage) needed to provision a new database                                                                    |
 | redis_upgrade_policy                   | `latest`<br />`major`           | When you upgrade or create a new Redis database, this policy determines which version of Redis database compatibility is used.<br /><br />Supported values are:<ul><li><p>`latest`, which applies the most recent Redis compatibility update \(_effective default prior to v6.2.4_)<p></li><li>`major`, which applies the most recent major release compatibility update (_default as of v6.2.4_).</li></ul>                                                                                                                 |
 | repl_diskless                          | `enabled`<br />`disabled`       | Activates or deactivates diskless replication (can be overwritten per database)                                              |
-| resp3_default | `enabled` <br /> `disabled` | Determines the default value of the `resp3` option upon upgrading a database to version 7.2 (defaults to `enabled`) |
 | show_internals                         | `enabled`<br />`disabled`       | Controls the visibility of internal databases that are only used for the cluster's management                                |
 | slave_ha                               | `enabled` <br /> `disabled`   | Activates or deactivates replica high availability                                                                           |
 | slave_ha_bdb_cooldown_period           | time in seconds                   | Time (in seconds) after shard relocation during which databases can't be relocated to another node                           |
@@ -129,7 +127,6 @@ rladmin tune db { db:<id> | <name> }
         [ mtls_allow_outdated_cert { enabled | disabled } ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
-        [ resp3 { enabled | disabled } ]
 ```
 
 ### Parameters
@@ -158,7 +155,7 @@ rladmin tune db { db:<id> | <name> }
 | metrics_export_all                   | `enabled`<br /> `disabled`       | Activates the exporter to expose all shard metrics                                                                                    |
 | mkms                                 | `enabled`<br /> `disabled`       | Activates multi-key multi-slot commands                                                                                               |
 | module_config_params | string | Configures module arguments at runtime. Enclose `module_config_params` within quotation marks. |
-| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf`<br />`rg` | The module to configure with `module_config_params` |
+| module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf` | The module to configure with `module_config_params` |
 | mtls_allow_outdated_cert             | `enabled`<br /> `disabled`       | Activates outdated certificates in mTLS connections                                   |
 | mtls_allow_weak_hashing              | `enabled`<br /> `disabled`       | Activates weak hashing (less than 2048 bits) in mTLS connections                       |
 | oss_cluster                          | `enabled`<br /> `disabled`       | Activates OSS cluster API                                                                                                             |
@@ -166,7 +163,6 @@ rladmin tune db { db:<id> | <name> }
 | repl_backlog                         | size in MB<br /> `auto`          | Size of the replication buffer                                                                                        |
 | repl_diskless                        | `enabled`<br /> `disabled`<br /> `default`   | Activates or deactivates diskless replication (defaults to the cluster setting)                                          |
 | repl_timeout                         | time in seconds                  | Replication timeout (in seconds)                                                                                                      |
-| resp3 | `enabled`<br /> `disabled` | Enables or deactivates RESP3 support (defaults to `enabled`) |
 | schedpolicy                          | `cmp`<br /> `mru`<br /> `spread`<br /> `mnp` | Controls how server-side connections are used when forwarding traffic to shards                                           |
 | skip_import_analyze                  | `enabled`<br /> `disabled`       | Skips the analyzing step when importing a database                                                                                    |
 | slave_buffer                         | value in MB<br /> hard:soft:time | Redis replica output buffer limits                                                                                                    |

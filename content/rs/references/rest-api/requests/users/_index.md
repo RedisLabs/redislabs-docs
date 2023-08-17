@@ -76,7 +76,7 @@ Returns a JSON array of [user objects]({{<relref "/rs/references/rest-api/object
         "name": "Jane Poe",
         "email_alerts": true,
         "role": "db_viewer",
-        "auth_method": "regular"
+        "auth_method": "external"
     }
 ]
 ```

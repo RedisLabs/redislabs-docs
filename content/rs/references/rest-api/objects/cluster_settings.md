@@ -30,16 +30,14 @@ Cluster resources management policy
 | login_lockout_duration | integer | Duration (in secs) of account lockout. If set to 0, the account lockout will persist until released by an admin. |
 | login_lockout_threshold | integer | Number of failed sign in attempts allowed before locking a user account |
 | max_saved_events_per_type | integer | Maximum saved events per event type |
-| max_simultaneous_backups | integer <nobr>(default: 4)</nobr> | Maximum number of backup processes allowed at the same time |
+| max_simultaneous_backups | integer | Maximum number of backup processes allowed at the same time |
 | parallel_shards_upgrade | integer | Maximum number of shards to upgrade in parallel |
-| persistence_cleanup_scan_interval | string | [CRON expression](https://en.wikipedia.org/wiki/Cron#CRON_expression) that defines the Redis cleanup schedule |
 | rack_aware | boolean | Cluster operates in a rack-aware mode |
 | redis_migrate_node_threshold | integer | Minimum free memory (excluding reserved memory) allowed on a node before automatic migration of shards from it to free more memory |
 | redis_migrate_node_threshold_p | integer | Minimum free memory (excluding reserved memory) allowed on a node before automatic migration of shards from it to free more memory |
 | redis_provision_node_threshold | integer | Minimum free memory (excluding reserved memory) allowed on a node before new shards can no longer be added to it |
 | redis_provision_node_threshold_p | integer | Minimum free memory (excluding reserved memory) allowed on a node before new shards can no longer be added to it |
 | redis_upgrade_policy | **`major`** <br />`latest` | Create/upgrade Redis Enterprise software on databases in the cluster by compatibility with major versions or latest versions of OSS Redis |
-| resp3_default | boolean (default:&nbsp;true) | Determines the default value of the `resp3` option upon upgrading a database to version 7.2 |
 | shards_overbooking | boolean | If true, all databases' memory_size is ignored during shards placement |
 | show_internals | boolean | Show internal databases (and their shards and endpoints) REST APIs |
 | slave_ha | boolean | Enable the replica high-availability mechanism |
