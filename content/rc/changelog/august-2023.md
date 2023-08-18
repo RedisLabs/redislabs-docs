@@ -15,7 +15,7 @@ This changelog lists new features, enhancements, and other changes added to Redi
 
 ### Triggers and functions preview
 
-A preview of [Triggers and functions]({{<relref "/stack/triggers-functions">}}) (previously known as RedisGears) is now available in the following regions:
+A preview of [triggers and functions]({{<relref "/stack/triggers-functions">}}) (previously known as RedisGears) is now available in the following regions:
 
 - AWS Asia Pacific - Singapore (`ap-southeast-1`)
 - GCP Asia Pacific - Tokyo (`asia-northeast1`)
