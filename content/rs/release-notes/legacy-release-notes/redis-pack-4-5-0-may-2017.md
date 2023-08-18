@@ -33,13 +33,13 @@ side by side in a given cluster where some clients can use Discovery
 Service based connection while others can use DNS name resolution when
 connecting to databases.
 
-### Building large databases with RAM and Flash memory in Redis on Flash v2.0
+### Building large databases with RAM and Flash memory in Auto Tiering v2.0
 
-With Redis Enterprise Pack 4.5, Redis on Flash v2 is production
+With Redis Enterprise Pack 4.5, Auto Tiering v2 is production
 ready. RFv2 brings performance, reliability, and stability enhancements
 as well as many features customers have been waiting for.
 
-Redis on Flash (RoF) offers users of Redis Enterprise Pack and
+Auto Tiering offers users of Redis Enterprise Pack and
 Redis Enterprise Cloud Private the unique ability to operate a Redis
 database that spans both RAM and flash memory (SSD), but remains
 separate from Redis Enterprise Pack's persistence mechanisms. Whilst
@@ -67,7 +67,7 @@ Support has been added RHEL 7.3 with this version.
 - RP10465 - failover times can be higher under certain scenarios in
     local watchdog profile
 - RP10633 - Improve install.sh and answers file
-- RP11880 - Improved slave sync and add node robustness
+- RP11880 - Improved replica sync and add node robustness
 - RP8689 - Minimized impact when changing RAM-Flash limit on Redis
     Enterprise Flash
 - RP12063 - Improved Redis Flash data import/population performance
@@ -79,7 +79,7 @@ Support has been added RHEL 7.3 with this version.
 - RP12438 - Email alerts with Amazon SES may fail under certain
     conditions.
 - RP12538 - Redis failover was initiated by node_wd during sync to
-    new slave
+    new replica
 - RP10264 - Improved debuginfo package for better supportability
 
 Important fixes in RP 4.5.0-22
@@ -111,12 +111,12 @@ Important fixes in RP 4.5.0-43
 - RP14692 - rladmin status command may crash during backup
 - RP14541 - In rare cases, DMC log grew quickly and caused stability
     issues
-- RP15107 - When using Redis on Flash, it may cause DMC proxy
+- RP15107 - When using Auto Tiering, it may cause DMC proxy
     crashes
 
 Important fixes in RP 4.5.0-47
 
-- Multiple important Redis on Flash updates.
+- Multiple important Auto Tiering updates.
 
 Important fixes in RP 4.5.0-51
 

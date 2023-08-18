@@ -21,7 +21,9 @@ aliases: /rs/references/rest-api/nodes/stats/last
 
 ## Get latest stats for all nodes {#get-all-nodes-stats-last}
 
-	GET /v1/nodes/stats/last
+```sh
+GET /v1/nodes/stats/last
+```
 
 Get latest statistics for all nodes.
 
@@ -31,11 +33,13 @@ Get latest statistics for all nodes.
 |-----------------|
 | [view_all_nodes_stats]({{<relref "/rs/references/rest-api/permissions#view_all_nodes_stats">}}) |
 
-### Request {#get-all-request} 
+### Request {#get-all-request}
 
 #### Example HTTP request
 
-	GET /nodes/stats/last?interval=1sec&stime=2015-10-14T06:29:43Z 
+```sh
+GET /nodes/stats/last?interval=1sec&stime=2015-10-14T06:29:43Z
+```
 
 
 #### Request headers
@@ -54,7 +58,7 @@ Get latest statistics for all nodes.
 | stime | ISO_8601 | Start time from which we want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
-### Response {#get-all-response} 
+### Response {#get-all-response}
 
 Returns most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all nodes.
 
@@ -88,7 +92,7 @@ Returns most recent [statistics]({{<relref "/rs/references/rest-api/objects/stat
 }
 ```
 
-### Status codes {#get-all-status-codes} 
+### Status codes {#get-all-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -97,7 +101,9 @@ Returns most recent [statistics]({{<relref "/rs/references/rest-api/objects/stat
 
 ## Get latest node stats {#get-node-stats-last}
 
-	GET /v1/nodes/stats/last/{int: uid}
+```sh
+GET /v1/nodes/stats/last/{int: uid}
+```
 
 Get the latest statistics of a node.
 
@@ -107,11 +113,13 @@ Get the latest statistics of a node.
 |-----------------|
 | [view_node_stats]({{<relref "/rs/references/rest-api/permissions#view_node_stats">}}) |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /nodes/stats/last/1?interval=1sec&stime=2015-10-13T09:01:54Z 
+```sh
+GET /nodes/stats/last/1?interval=1sec&stime=2015-10-13T09:01:54Z
+```
 
 
 #### Request headers
@@ -137,7 +145,7 @@ Get the latest statistics of a node.
 | stime | ISO_8601 | Start time from which we want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)format (optional) |
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)format (optional) |
 
-### Response {#get-response} 
+### Response {#get-response}
 
 Returns the most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the specified node.
 
@@ -166,7 +174,7 @@ Returns the most recent [statistics]({{<relref "/rs/references/rest-api/objects/
 }
 ```
 
-### Error codes {#get-error-codes} 
+### Error codes {#get-error-codes}
 
 | Code | Description |
 |------|-------------|

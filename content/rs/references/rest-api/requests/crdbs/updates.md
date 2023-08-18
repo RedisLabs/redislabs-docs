@@ -55,7 +55,7 @@ When you update db_config, it changes the configuration of the database that you
 
 #### Request body
 
-Include a [CRDB modify_request object]({{<relref "/rs/references/rest-api/objects/crdb">}}) with updated fields in the request body.
+Include a [CRDB modify_request object]({{<relref "/rs/references/rest-api/objects/crdb/modify_request">}}) with updated fields in the request body.
 
 ### Response {#post-response} 
 

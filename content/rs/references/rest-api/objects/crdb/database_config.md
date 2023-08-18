@@ -13,10 +13,11 @@ An object that represents the database configuration.
 |------|------------|-------------|
 | aof_policy | string | Policy for Append-Only File data persistence |
 | authentication_admin_pass | string | Administrative databases access token |
-| authentication_redis_pass | string | Redis AUTH password |
-| bigstore | boolean | Database driver is Redis on Flash |
+| authentication_redis_pass | string | Redis AUTH password (deprecated as of Redis Enterprise v7.2, replaced with multiple passwords feature in version 6.0.X) |
+| bigstore | boolean | Database driver is Auto Tiering |
 | bigstore_ram_size | integer | Memory size of RAM size |
 | data_persistence | string | Database on-disk persistence |
+| enforce_client_authentication | **'enabled'** <br />'disabled' | Require authentication of client certificates for SSL connections to the database. If enabled, a certificate should be provided in either `authentication_ssl_client_certs` or `authentication_ssl_crdt_certs` |
 | max_aof_file_size | integer | Hint for maximum AOF file size |
 | max_aof_load_time | integer | Hint for maximum AOF reload time |
 | memory_size | integer | Database memory size limit, in bytes |
@@ -27,6 +28,7 @@ An object that represents the database configuration.
 | proxy_policy | string | The policy used for proxy binding to the endpoint |
 | rack_aware | boolean | Require the database to be always replicated across multiple racks |
 | replication | boolean | Database replication |
+| sharding | boolean (default:&nbsp;false) | Cluster mode (server-side sharding). When true, shard hashing rules must be provided by either `oss_sharding` or `shard_key_regex` |
 | shard_key_regex | {{<code>}}
 [{
   "regex": string
@@ -35,7 +37,7 @@ An object that represents the database configuration.
 [
   { “regex”: “.*\\{(?< tag >.*)\\}.*” }, 
   { “regex”: “(?< tag >.*)” }
-] {{</code>}} | Custom keyname-based sharding rules (required)  |
+] {{</code>}} | Custom keyname-based sharding rules (required if sharding is enabled)  |
 | shards_count | integer | Number of database shards |
 | shards_placement | string | Control the density of shards: should they reside on as few or as many nodes as possible |
 | snapshot_policy | array of [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) objects | Policy for snapshot-based data persistence (required) |

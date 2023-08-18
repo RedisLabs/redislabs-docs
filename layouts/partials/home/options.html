@@ -6,7 +6,7 @@
                     <img src="./theme-flex/img/RedisLabs_Homepage_Getstarted_Cloud.svg" alt="Cloud Icon" style="width:70px;transform: translateY(-2px); margin-top:13px; margin-bottom:24px;">
                 </div>
                 <h5>Cloud</h5>
-                <p>Hosted and serverless DBaaS. The fastest way to deploy Redis Enterprise.</p>
+                <p>Hosted and serverless database-as-a-service (DBaaS). The fastest way to deploy Redis Enterprise via Amazon AWS, Google Cloud Platform, or Microsoft Azure.</p>
             </a>
             </div>
             <hr>
@@ -30,24 +30,100 @@
                     <img src="./theme-flex/img/RedisLabs_Homepage_Getstarted_Software.svg" alt="Software Icon" style="width: 70px; margin-top:13px; margin-bottom:14px;">
                 </div>
                 <h5>Software</h5>
-                <p>Software you can install on any cloud or private data center as software, containers, Pivotal CF, OpenShift, or AWS AMI.</p>
+                <p>A self-managed data platform that unlocks the full potential of Redis at enterprise scale. </p>
             </a>
             </div>
             <hr>
             <ul>
                 <section>
                     <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs">Overview</a></li>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs/concepts">Architecture</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs/clusters">Clusters</a></li>
                 </section>
                 <section>
                     <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs/getting-started">Get
                             started</a></li>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs/administering">Administration</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs/databases">Databases</a></li>
                 </section>
             </ul>
         </div>
 
-        <div class="home-options__option" style="transform: translateY(-5px);">
+        <div class="home-options__option" style="transform: translateY(10px);">
+            <div class="tile-opener">
+            <a href="/platforms">
+                <div class="home-options__option__icon">
+                    <img src="./theme-flex/img/ico-platforms.svg" alt="Platforms Icon" class="platforms-icon">
+                </div>
+                <h5>Kubernetes</h5>
+                <p>Redis Enterprise deployed on containerized software platforms and integrated with our partners.</p>
+            </a>
+            </div>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/kubernetes/architecture">Architecture</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/kubernetes/rec/">Clusters</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/kubernetes/deployment/">Deployments</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/kubernetes/redb/">Databases</a></li>
+                </section>
+            </ul>
+        </div>
+
+        <div class="home-options__option" style="transform: translateY(-3px);">
+            <div class="tile-opener">
+            <a href="/stack">
+                <div class="home-options__option__icon">
+                    <img src="./theme-flex/img/stack-icon.svg" alt="Stack Icon" style="height: 70%; margin-top: 20px">
+                </div>
+                <h5>Redis Stack</h5>
+                <p>Redis Enterprise supports Redis Stack features (formerly modules), which extend the core Redis feature set.</p>
+            </a>
+            </div>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                        href="/stack/search/">Search and query</a></li>
+
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/stack/json/">JSON</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/stack/timeseries/">Time series</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/stack/bloom/">Probabilistic</a></li>
+                </section>
+            </ul>
+        </div>
+
+        <div class="home-options__option" style="min-height:394px;min-width:328px">
+            <div class="tile-opener">
+            <a href="/rdi">
+                <div class="home-options__option__icon">
+                    <img src="./theme-flex/img/ico-connect.svg" alt="Redis Data Integration Icon" style="height: 70%; margin-top:20px;">
+                </div>
+                <h5>Redis Data Integration</h5>
+                <p>Redis Data Integration keeps Redis in sync with the primary database in near real time.</p>
+            </a>
+            </div>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rdi/quickstart">Quick start</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rdi/architecture">Architecture</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rdi/reference">Reference</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rdi/installation/">Install</a></li>
+                </section>
+            </ul>
+        </div>
+
+        <div class="home-options__option">
             <div class="tile-opener">
             <a href="/ri">
                 <div class="home-options__option__icon">
@@ -73,58 +149,4 @@
             </ul>
         </div>
 
-        <div class="home-options__option">
-            <div class="tile-opener">
-            <a href="/modules">
-                <div class="home-options__option__icon">
-                    <img src="./theme-flex/img/ico-modules.svg" alt="Modules Icon" class="modules-icon">
-                </div>
-                <h5>Modules</h5>
-                <p>Redis Modules are add-ons that extend Redis to cover most of the popular use cases in many
-                industries.
-                </p>
-            </a>
-            </div>
-            <hr>
-            <ul>
-                <section>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="/modules">Overview</a></li>
-
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="/modules/redisjson/">RedisJSON</a></li>
-                </section>
-                <section>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="/modules/redisearch/">RediSearch</a></li>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="/modules/redisgraph/">RedisGraph</a></li>
-                </section>
-            </ul>
-        </div>
-
-        <div class="home-options__option" style="transform: translateY(-4.5px);">
-            <div class="tile-opener">
-            <a href="/platforms">
-                <div class="home-options__option__icon">
-                    <img src="./theme-flex/img/ico-platforms.svg" alt="Platforms Icon" class="platforms-icon">
-                </div>
-                <h5>Kubernetes</h5>
-                <p>Redis Enterprise deployed on containerized software platforms and integrated with our partners.</p>
-            </a>
-            </div>
-            <hr>
-            <ul>
-                <section>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="/kubernetes/architecture">Architecture</a></li>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="/kubernetes/rec/">Clusters</a></li>
-                </section>
-                <section>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/kubernetes/deployment/">Deployments</a></li>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/kubernetes/redb/">Databases</a></li>
-                </section>
-            </ul>
-        </div>
 </section>

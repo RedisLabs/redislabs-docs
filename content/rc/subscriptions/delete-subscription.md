@@ -5,15 +5,16 @@ weight: 50
 alwaysopen: false
 categories: ["RC"]
 linktitle: Delete subscription
-aliases: 
+aliases:
 ---
 
-To delete a subscription, cancel it:
+To delete a subscription:
 
-1.  Delete all databases from the subscription.
+1.  [Delete all databases]({{< relref "rc/databases/delete-database.md" >}}) from the subscription.
 
-    The number of databases for the subscription is shown in the subscription list; that needs to be zero before you can delete the subscription. 
-    {{<image filename="images/rc/subscription-list-free-no-databases.png" alt="The number of databases is shown in the bottom, left of the subscription in the subscrption list." >}}{{< /image >}}
+    The number of databases for the subscription is shown in the subscription list. You can not delete a subscription until there are zero databases in the subscription.
+
+    {{<image filename="images/rc/subscription-list-free-no-databases.png" width="75%" alt="The number of databases is shown in the bottom, left of the subscription in the subscription list." >}}{{< /image >}}
 
 2.  View the subscription details.  
 
@@ -25,11 +26,11 @@ To delete a subscription, cancel it:
 
 4.  Locate and then select the **Cancel subscription** button near the bottom, right corner of the Overview details.
 
-    {{<image filename="images/rc/subscription-cancel-confirm-dialog.png" alt="Select the Submit button to confirm the subscription cancellation." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-cancel-confirm-dialog.png" alt="Select the Yes, cancel button to confirm the subscription cancellation." >}}{{< /image >}}
 
 
-5.  Select the **Submit** button to confirm your choice.
+5.  Select the **Yes, cancel** button to confirm your choice.
 
 Once a subscription is deleted, it cannot be recovered.
 
-We recommend backing up your data before removing databases or subscriptions.
+We recommend [backing up your data]({{< relref "rc/databases/back-up-data.md" >}}) before removing databases or subscriptions.

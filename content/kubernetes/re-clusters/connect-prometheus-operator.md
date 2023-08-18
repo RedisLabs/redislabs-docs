@@ -1,7 +1,7 @@
 ---
-Title: Connect the Prometheus operator to Redis Enterprise Software on Kubernetes
+Title: Connect the Prometheus operator to Redis Enterprise for Kubernetes
 linkTitle: Export metrics to Prometheus
-description: This article describes how to configure a Prometheus operator custom resource to allow it to export metrics from Redis Enterprise Software on Kubernetes.
+description: This article describes how to configure a Prometheus operator custom resource to allow it to export metrics from Redis Enterprise for Kubernetes.
 weight: 92
 alwaysopen: false
 categories: ["Platforms"]
@@ -11,13 +11,13 @@ aliases: [
 ]  
 ---
 
-To collect  metrics data from your databases and Redis Enterprise cluster (REC), you can connect your [Prometheus](https://prometheus.io/) server to an endpoint exposed on your REC. The Redis Enterprise operator creates a dedicated service to expose the `prometheus` port (8070) for data collection. A custom resource called `ServiceMonitor` allows the [Prometheus operator](https://github.com/prometheus-operator/prometheus-operator/tree/main/Documentation) to connect to this port and collect data from Redis Enterprise.
+To collect  metrics data from your databases and Redis Enterprise cluster (REC), you can connect your [Prometheus](https://prometheus.io/) server to an endpoint exposed on your REC. Redis Enterprise for Kubernetes creates a dedicated service to expose the `prometheus` port (8070) for data collection. A custom resource called `ServiceMonitor` allows the [Prometheus operator](https://github.com/prometheus-operator/prometheus-operator/tree/main/Documentation) to connect to this port and collect data from Redis Enterprise.
 
 ## Prerequisites
 
 Before connecting Redis Enterprise to Prometheus on your Kubernetes cluster, make sure you've done the following:
 
-- [Deploy the Redis Enterprise operator]({{<relref "/kubernetes/deployment/quick-start.md">}}) (version 6.2.10-4 or newer)
+- [Deploy Redis Enterprise for Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) (version 6.2.10-4 or newer)
 - [Deploy the Prometheus operator](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md) (version 0.19.0 or newer)
 - [Create a Redis Enterprise cluster]({{<relref "/kubernetes/deployment/quick-start#create-a-redis-enterprise-cluster-rec">}})
 
@@ -67,5 +67,5 @@ For more info about configuring the `ServiceMonitor` resource, see the [`Service
   - [Related resources](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md#related-resources)
   - [Troubleshooting ServiceMonitor changes](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/custom-metrics-elements.png)
 - docs.redis.com
-  - [Metrics in Prometheus]({{<relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions.md">}})
-  - [Monitoring and metrics]({{<relref "/rs/administering/monitoring-metrics/_index.md">}})
+  - [Metrics in Prometheus]({{<relref "/rs/clusters/monitoring/prometheus-metrics-definitions.md">}})
+  - [Monitoring and metrics]({{<relref "/rs/clusters/monitoring/_index.md">}})

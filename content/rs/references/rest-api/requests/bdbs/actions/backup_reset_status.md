@@ -20,23 +20,27 @@ aliases: /rs/references/rest-api/bdbs/actions/backup_reset_status
 
 ## Reset database backup status {#put-bdbs-actions-backup-reset-status}
 
-	PUT /v1/bdbs/{int: uid}/actions/backup_reset_status
+```sh
+PUT /v1/bdbs/{int: uid}/actions/backup_reset_status
+```
 
 Resets the database's `backup_status` to idle if a backup is not in progress and clears the value of the `backup_failure_reason` field.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [reset_bdb_current_backup_status]({{<relref "/rs/references/rest-api/permissions#reset_bdb_current_backup_status">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [reset_bdb_current_backup_status]({{<relref "/rs/references/rest-api/permissions#reset_bdb_current_backup_status">}}) | admin<br />cluster_member<br />db_member |
 
-### Request {#put-request} 
+### Request {#put-request}
 
 #### Example HTTP request
 
-	PUT /bdbs/1/actions/backup_reset_status 
+```sh
+PUT /bdbs/1/actions/backup_reset_status
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -50,11 +54,11 @@ Resets the database's `backup_status` to idle if a backup is not in progress and
 |-------|------|-------------|
 | uid | integer | The unique ID of the database |
 
-### Response {#put-response} 
+### Response {#put-response}
 
 Returns a status code.
 
-### Status codes {#put-status-codes} 
+#### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|

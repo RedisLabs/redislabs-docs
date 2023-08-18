@@ -14,7 +14,7 @@ aliases: /rv/api/how-to/create-and-manage-databases/
 
 You can use the Redis Enterprise Cloud REST API to create databases.
 
-These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api.md#using-the-curl-http-client" >}}); you can use any REST client to work with the Redis Cloud REST API.
+These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api#use-the-curl-http-client" >}}). You can use any REST client to work with the Redis Cloud REST API. The examples in this article refer to databases that are part of Flexible subscriptions. 
 
 ## Create a database
 
@@ -28,28 +28,15 @@ You can add databases to the subscription; you can also update or delete existin
 
 Creating a database is an [asynchronous operation]({{< relref "/rc/api/get-started/process-lifecycle.md#asynchronous-operations" >}}).
 
-The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a cloud account ID.  When the cloud account ID is received, the processing phase is complete and the provisioning phase starts.
-
-### Prerequisites
-
-- These example require `jq`, [a JSON parser](https://stedolan.github.io/jq/).  
-
-    Use your package manager to install it  (Example: `sudo apt install jq`)
-
-- Define the expected variables needed to use the API:
+The following API call creates a database.
 
 ```shell
-{{% embed-code "rv/api/06-set-variables-with-subscription-id.sh" %}}
-```
-
-### Database JSON body
-
-The created database is defined by a JSON document that is sent as the body of the API request.
-
-In the example below, that JSON document is stored in the `create-database-basic.json` file:
-
-```shell
-{{% embed-code "rv/api/create-database-basic.json" %}}
+POST "https://[host]/v1/subscriptions/$SUBSCRIPTION_ID/databases"
+{
+  "name": "Database-example-basic",
+  "memoryLimitInGb": 10,
+  "password": "P@ssw0rd"
+}
 ```
 
 The JSON body contains only the most basic, required parameters in order to create a database:
@@ -57,16 +44,6 @@ The JSON body contains only the most basic, required parameters in order to crea
 - Database name - A unique name per subscription that can contain only alphanumeric characters and hyphens
 - Maximum database size in GB
 - Database password
-
-### Database creation script
-
-You can run the **create database** script from the command line with: `bash path/script-name.sh`
-
-Below is the sample script that you can use as a reference to call the API operation to create a database.
-
-```shell
-{{% embed-code "rv/api/11-create-database.sh" %}}
-```
 
 ### Additional database parameters
 

@@ -20,23 +20,54 @@ aliases: /rs/references/rest-api/bdbs/actions/import
 
 ## Initiate manual dataset import {#post-bdbs-actions-import}
 
-	POST /v1/bdbs/{int: uid}/actions/import
+```sh
+POST /v1/bdbs/{int: uid}/actions/import
+```
 
 Initiate a manual import process.
 
-#### Required permissions
+### Permissions
 
-| Permission name |
-|-----------------|
-| [start_bdb_import]({{<relref "/rs/references/rest-api/permissions#start_bdb_import">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [start_bdb_import]({{<relref "/rs/references/rest-api/permissions#start_bdb_import">}}) | admin<br />cluster_member<br />db_member |
 
-### Request {#post-request} 
+### Request {#post-request}
 
 #### Example HTTP request
 
-	POST /bdbs/1/actions/import 
+```sh
+POST /bdbs/1/actions/import
+```
 
-#### Example JSON body
+#### Headers
+
+| Key | Value | Description |
+|-----|-------|-------------|
+| Host | cnm.cluster.fqdn | Domain name |
+| Accept | application/json | Accepted media type |
+| Content-Length | 0 | Length of the request body in octets |
+
+#### URL parameters
+
+| Field | Type | Description |
+|-------|------|-------------|
+| uid | integer | The unique ID of the database |
+
+#### Body
+
+The request _may_ contain a subset of the [BDB JSON object]({{<relref "/rs/references/rest-api/objects/bdb">}}), which includes the following import-related attributes:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| dataset_import_sources | array of [dataset_import_sources]({{<relref "/rs/references/rest-api/objects/bdb/dataset_import_sources">}}) objects | Details for the import sources. Call [`GET /jsonschema`]({{<relref "/rs/references/rest-api/requests/jsonschema#get-jsonschema">}}) on the bdb object and review the `dataset_import_sources` field to retrieve the object's structure.  |
+| email_notification | boolean | Enable/disable an email notification on import failure/ completion. (optional) |
+
+{{<note>}}
+Other attributes are not allowed and will cause the request to fail.
+{{</note>}}
+
+##### Example JSON Body
 
 ```json
 {
@@ -56,38 +87,11 @@ Initiate a manual import process.
 
 This request initiates an import process using `dataset_import_sources` values that were previously configured for the database.
 
-#### Request headers
-
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
-| Content-Length | 0 | Length of the request body in octets |
-
-#### URL parameters
-
-| Field | Type | Description |
-|-------|------|-------------|
-| uid | integer | The unique ID of the database |
-
-#### Request body
-
-The request _may_ contain a subset of the [BDB JSON object]({{<relref "/rs/references/rest-api/objects/bdb">}}), which includes the following import-related attributes: 
-
-| Field | Type | Description |
-|-------|------|-------------|
-| dataset_import_sources | array of [dataset_import_sources]({{<relref "/rs/references/rest-api/objects/bdb/dataset_import_sources">}}) objects | Details for the import sources. Call [`GET /jsonschema`]({{<relref "/rs/references/rest-api/requests/jsonschema#get-jsonschema">}}) on the bdb object and review the `dataset_import_sources` field to retrieve the object's structure.  |
-| email_notification | boolean | Enable/disable an email notification on import failure/ completion. (optional) |
-
-{{<note>}}
-Other attributes are not allowed and will cause the request to fail.
-{{</note>}}
-
-### Response {#post-response} 
+### Response {#post-response}
 
 Returns a status code.
 
-### Status codes {#post-status-codes} 
+### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|

@@ -8,12 +8,102 @@
     "RoutingRules": [
         {
             "Condition": {
-                "KeyPrefixEquals": "6.2/"
+                "KeyPrefixEquals": "7.2/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.4/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.4/ri/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.4/rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.4/modules/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.2/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.2/kubernetes/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/kubernetes/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.2/ri/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.2/rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.2/modules/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/"
             }
         },
         {
@@ -24,6 +114,46 @@
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/kubernetes/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/kubernetes/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/ri/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/modules/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/"
             }
         },
         {
@@ -48,12 +178,102 @@
         },
         {
             "Condition": {
+                "KeyPrefixEquals": "6.2/platforms/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/platforms/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/platforms/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/platforms/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "rdi-preview/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "rdi-preview/rs/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rs/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "rdi-preview/kubernetes/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/kubernetes/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "rdi-preview/modules/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "rdi-preview/ri/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
                 "KeyPrefixEquals": "5.4/platforms/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "5.6/platforms/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "5.6/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "5.4/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/"
             }
         },
         {
@@ -143,7 +363,7 @@
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/modules/redisai"
+                "ReplaceKeyPrefixWith": "latest/modules"
             }
         },
         {

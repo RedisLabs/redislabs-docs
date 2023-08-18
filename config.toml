@@ -41,14 +41,20 @@ highlightClientSide = false # set true to use highlight.pack.js instead of the d
 menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
 googleAnalytics = "UA-92003007-1"
 googleTagManager = "GTM-KNWQXKB"
-bannerText = "RedisDays registration is open! Don’t miss our big announcements. [Register now]."
-bannerLink = "https://redis.com/redisdays/"
 
 mac_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-mac.dmg"
 linux_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-linux64"
 windows_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-win.msi"
 docker_command = "docker run -v redisinsight:/db -p 8001:8001 redislabs/redisinsight:latest"
 docker_db_volume_permission = "chown -R 1001 redisinsight"
+
+rdi_redis_gears_min_semantic_version = "1.2.5"
+rdi_redis_gears_min_version = "10205"
+rdi_redis_gears_current_semantic_version = "1.2.6"
+rdi_redis_gears_current_version = "10206"
+rdi_debezium_server_version = "2.1.1.Final"
+rdi_db_types = "cassandra|mysql|oracle|postgresql|sqlserver"
+rdi_cli_latest = "0.108.0"
 
 siteURL = "http://127.0.0.1:8001"
 

@@ -1,5 +1,5 @@
 ---
-Title: Configuring RedisInsight
+Title: Configure RedisInsight
 date: 2019-12-13 03:49:29 +0530
 weight: 60
 categories: ["RI"]
@@ -64,6 +64,64 @@ The following environment variables can be set to configure RedisInsight:
 **Type:**        String
 
 **Default:**     `"WARNING"`
+
+
+### RITRUSTEDORIGINS
+
+**Description:** Configures the trusted origins of the application.
+
+**Type:**        String
+
+**Default:**     `""`
+
+**Examples:**     `"https://my-website.com,https://my-another-website.com,http://my-third-website.com"`
+ 
+### RIPROXYENABLE
+
+**Description:** Enables Subpath Proxy for the application.
+
+**Type:**        Bool
+
+**Default:**    `False`
+
+
+### RIPROXYPATH
+
+**Description:** Configures Subpath Proxy path for the application. 
+
+**Type:**        String
+
+**Default:**     `""`
+
+**Examples:**     `"/redisinsight"`, `"/myapp"`
+
+### RIPROXYPREFIX
+
+**Description:** Sets the Subpath proxy prefix HTTP header field name for the application. The application uses the value from this HTTP header key as proxy subpath. 
+
+**Type:**        String
+
+**Default:**     `"X-Forwarded-Prefix"`
+
+**Examples:**     `"X-Forwarded-Prefix"`, `"X-Forwarded-Path"` 
+
+### RIAUTHPROMPT
+
+**Description:** Enables authentication prompt that asks for authentication before opening an instance or when the user is idle.
+
+**Type:** Bool
+
+**Default:** `false`
+
+
+### RIAUTHTIMER
+
+**Description:** Idle timer value for authentication prompt, in minutes.
+
+**Type:** Bool
+
+**Default:** `30`
+
 
 ### REDISINSIGHT_PORT (DEPRECATED)
 

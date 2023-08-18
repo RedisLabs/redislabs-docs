@@ -23,7 +23,7 @@ This version offers:
 
 ### Prerequisites and notes
 
-You can [upgrade to v6.2.4]({{<relref "/rs/installing-upgrading/upgrading.md">}}) from Redis Enterprise Software v6.0 and later. 
+You can [upgrade to v6.2.4]({{<relref "/rs/installing-upgrading/upgrading">}}) from Redis Enterprise Software v6.0 and later. 
 
 Keep the following in mind:
 
@@ -50,25 +50,25 @@ The Redis Enterprise Software 6.2.4 package includes compatibility with the most
 By default, compatibility with v6.0 will be installed.  To change this, use `rladmin` to set the upgrade policy and the default Redis version:
 
 ``` shell
-tune cluster redis_upgrade_policy latest
-tune cluster default_redis_version 6.2
+$ rladmin tune cluster redis_upgrade_policy latest
+$ rladmin tune cluster default_redis_version 6.2
 ```
 
-To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgrading/upgrading.md">}}).
+To learn more, see the [upgrade instructions]({{<relref "/rs/installing-upgrading/upgrading">}}).
 
 ### Product lifecycle updates
 
 Redis Enterprise Software v5.6.0 will reach end of life (EOF) on October 31, 2021.
 
-To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/administering/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
+To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
-Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
+Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/stack/modules-lifecycle.md">}}).
 
 ### Deprecation notices
 
-- [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), the SASL-based LDAP mechanism was deprecated in favor of a new [RBAC-based approach]({{<relref "/rs/security/ldap/">}}).  As of v.6.2.4, support for the older mechanism has been removed.
+- [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), the SASL-based LDAP mechanism was deprecated in favor of a new [RBAC-based approach]({{<relref "/rs/security/access-control/ldap">}}).  As of v6.2.12, support for the older mechanism has been removed.
 
-    For help migrating to the LDAP-based mechanism, see [Migrate to role-based LDAP]({{<relref "/rs/security/ldap/migrate-to-role-based-ldap.md">}}).
+    For help migrating to the LDAP-based mechanism, see [Migrate to role-based LDAP]({{<relref "/rs/security/access-control/ldap/migrate-to-role-based-ldap">}}).
     
 - [OpenStack Object Storage](https://wiki.openstack.org/wiki/Swift) ("Swift") has reached end-of-life.  Consequently, you can no longer use ObjectStack Swift as a target for database backup or export operations.  
 
@@ -114,46 +114,68 @@ The leaf certificates expire regularly; they're automatically rotated before exp
 
 Redis Enterprise Software supports all new commands, except [RESET](https://redis.io/commands/reset) and [FAILOVER](https://redis.io/commands/failover).  (Redis Enterprise takes a different approach to connectivity; it also separates control plane operations from data plane operations.)
 
-To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/concepts/compatibility.md">}}).
+To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/references/compatibility">}}).
 
 ### Redis modules
 
 Redis Enterprise Software v6.2.4 includes the following Redis modules:
 
-- [RediSearch v2.0.11]({{<relref "/modules/redisearch/release-notes/redisearch-2.0-release-notes.md">}})
-- [RedisJSON v1.0.8]({{<relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md">}})
-- [RedisBloom v2.2.6]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}}) 
-- [RedisGraph v2.4.7]({{<relref "/modules/redisgraph/release-notes/redisgraph-2.4-release-notes.md">}})
-- [RedisTimeSeries v1.4.10]({{<relref "/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes.md">}})
+- [RediSearch v2.0.11]({{<relref "/stack/release-notes/redisearch/redisearch-2.0-release-notes.md">}})
+- [RedisJSON v1.0.8]({{<relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md">}})
+- [RedisBloom v2.2.6]({{<relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md">}}) 
+- [RedisGraph v2.4.7]({{<relref "/stack/release-notes/redisgraph/redisgraph-2.4-release-notes.md">}})
+- [RedisTimeSeries v1.4.10]({{<relref "/stack/release-notes/redistimeseries/redistimeseries-1.4-release-notes.md">}})
 
 ### Internode encryption for modules 
          
 To utilize data plane encryption for existing databases with modules, update the module to the latest version prior to enabling data plane encryption. 
 
-For help, see [Upgrade the module for a database]({{<relref "/modules/install/upgrade-module">}}).
+For help, see [Upgrade the module for a database]({{<relref "/stack/install/upgrade-module">}}).
 
 ### Module-related enhancements
 
 Added the capability to update current module arguments for an existing database. 
 In earlier versions, you could do this only when upgrading a module.
-To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrade">}}).
+To learn more, see [`rladmin upgrade`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}).
 
 ## Resolved issues
 
 - RS39954 - Changed the UI status indication for the 
-[default user]({{<relref "/rs/references/rladmin#upgrade">}}) from `Active/Inactive` to `Enabled/Disabled` 
+[default user]({{<relref "/rs/references/cli-utilities/rladmin/upgrade">}}) from `Active/Inactive` to `Enabled/Disabled` 
 
 - RS42626 - Increased the max length for modules commands from 23 characters to 64 characters
 
 - RS54732 - Fixed incorrect reporting of number database connections, which caused the number of connections to be reported as a 20 digit number
 
-- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. We recommend [upgrading the featureset]({{<relref "/rs/installing-upgrading/upgrading.md#upgrading-activeactive-databases">}}) version to the latest
+- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. [Upgrade the featureset]({{<relref "/rs/installing-upgrading/upgrading/upgrade-active-active">}}) version to the latest.
 
 - RS56122 - Fixed a bug that was causing AOF files to grow when the replicas of two Active-Active databases became disconnected during full synchronization
 
 - RS58184 - Fixed a bug when trying to create an Active-Active database with expired syncer certificates; participating clusters were creating replicas even though the create operation failed.
 
 - RS48988 - Add the username description in the log upon an unauthorized REST API request
+
+## Known limitations
+
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
+
+## Known issues 
+
+- A new command was added as part of Redis 6.2: [`XAUTOCLAIM`](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+
+- The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
+
+- RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
+- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
 
 ## Security
 

@@ -31,7 +31,7 @@ on. The result is that for all but the initial call to get the cluster
 topology or reacquire the location of the master shard, the client will
 connect to the RS endpoint proxy where the master shard is located.
 [Learn more about the Cluster API
-implementation]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}).
+implementation]({{< relref "/rs/clusters/optimize/oss-cluster-api.md" >}}).
 
 ### Geo-distributed Active-Active conflict-free replicated databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-databases-crdb}
 
@@ -62,13 +62,13 @@ Enterprise is known for.
 Redis has developed and certified the following modules for use with 
 Redis Enterprise Pack:
 
-- [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
+- [RediSearch](https://docs.redis.com/latest/modules/redisearch/)
     - This module turns RS into a supercharged distributed in-memory
       full-text indexing and search beast.
-- [ReJSON]({{< relref "/modules/redisjson/_index.md" >}})
+- [ReJSON](https://docs.redis.com/latest/modules/redisjson/)
     - Now you have the convenience JSON as a built-in data type and
       easily able to address nested data via a path.
-- [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
+- [RedisBloom](https://docs.redis.com/latest/modules/redisbloom/)
     - Enables RS to have a scalable bloom filter as a data type. Bloom
       filters are probabilistic data structures that
       quickly determine if values are in a set.
@@ -87,8 +87,8 @@ available to pull from Docker hub. With the official image, you can
 easily and quickly test several containers to build the scalable
 and highly available cluster Redis Enterprise Software is famous for.
 
-For more information, go to [quick start with Redis Enterprise Pack on
-Docker.]({{< relref "/rs/getting-started/docker/_index.md" >}})
+For more information, go to [quick start with Redis Enterprise on
+Docker.](https://docs.redis.com/latest/rs/installing-upgrading/get-started-docker)
 
 ## LDAP Integration
 
@@ -99,7 +99,7 @@ accounts can be used for administering resources on the cluster via
 command line, Rest API, or admin console.
 
 For more information see [LDAP
-Integration]({{< relref "/rs/security/passwords-users-roles.md#setting-up-ldap" >}}).
+Integration](https://docs.redis.com/latest/rs/security/ldap/).
 
 ## Additional capabilities
 

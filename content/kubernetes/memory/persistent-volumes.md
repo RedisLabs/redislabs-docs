@@ -16,6 +16,15 @@ aliases: [
     /kubernetes/memory/persistent-volumes/
 ]
 ---
+## Storage types
+
+Redis Enterprise for Kubernetes can only use storage classes supported by block storage. Block storage is mounted at the Kubernetes node level and utilizes EXT4 or XFS file systems. It can be sourced from enterprise-grade SANs or cloud environments such as EBS, Azure Managed Disks, or GCP persistent disks.
+
+{{<warning>}}
+NFS, NFS-like, and multi-read-write/shared storage options are not supported. These types of storage are often slow and can cause locking behaviors that are incompatible with the requirements of database storage.
+{{</warning>}}
+
+## REC `persistentSpec` field 
 To deploy a Redis Enterprise cluster with Redis Enterprise operator the
 spec should include a *persistentSpec* section, in the
 *redis-enterprise-cluster.yaml* file:
@@ -27,7 +36,7 @@ spec should include a *persistentSpec* section, in the
        storageClassName: "standard"
        volumeSize: "23Gi” #optional
 
-Persistence storage is a requirement for this deployment type.
+Persistence storage is a requirement for production deployments.
 
 {{< note >}}
 For **production deployments** of Redis Enterprise Cluster on Kubenetes,
@@ -38,10 +47,10 @@ The REC deployment files in the [Kubernetes documentation](https://github.com/Re
 ## Volume size
 
 *volumeSize* is an optional definition. By default, if the definition is
-omitted, Operator allocates five times (5x) the amount of memory (RAM)
+omitted, operator allocates five times (5x) the amount of memory (RAM)
 defined for nodes (see example below), which is the recommended
 persistent storage size as described in the [Hardware
-requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) article.
+requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}}) article.
 
 To explicitly specify the persistent storage size, use the *volumeSize*
 property as described in the example above.
@@ -90,6 +99,10 @@ Below is an example of a response to the command.
 {{< note >}}
 storageClassName must be specified for this deployment type.
 {{< /note >}}
+
+{{< warning >}}
+The storage class cannot be changed after deployment. Trying to change this value after deployment could result in unexpected and potentially damaging behavior.
+{{< /warning >}}
 
 Example of the redisEnterpriseNodeResources definition:
 

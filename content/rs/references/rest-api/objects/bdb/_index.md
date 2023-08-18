@@ -16,7 +16,7 @@ An API object that represents a managed database in the cluster.
 | action_uid | string | Currently running action's UID (read-only) |
 | aof_policy | **'appendfsync-every-sec'** <br />'appendfsync-always' | Policy for Append-Only File data persistence |
 | authentication_admin_pass | string | Password for administrative access to the BDB (used for SYNC from the BDB) |
-| authentication_redis_pass | string | Redis AUTH password authentication |
+| authentication_redis_pass | string | Redis AUTH password authentication.  <br/>Use for Redis databases only.  Ignored for memcached databases. (deprecated as of Redis Enterprise v7.2, replaced with multiple passwords feature in version 6.0.X) |
 | authentication_sasl_pass | string | Binary memcache SASL password |
 | authentication_sasl_uname | string | Binary memcache SASL username (pattern does not allow special characters &,\<,>,") |
 | authentication_ssl_client_certs | {{<code>}}	
@@ -29,7 +29,17 @@ An API object that represents a managed database in the cluster.
   "client_cert": string
 }, ...]
 {{</code>}} | List of authorized CRDT certificates<br />**client_cert**: X.509 PEM (base64) encoded certificate |
-| authorized_names | array of strings | Additional certified names |
+| authorized_names | array of strings | Additional certified names (deprecated as of Redis Enterprise v6.4.2; use authorized_subjects instead) |
+| authorized_subjects | {{<code>}}
+[{
+  "CN": string,
+  "O": string,
+  "OU": [array of strings],
+  "L": string,
+  "ST": string,
+  "C": string
+}, ...]
+{{</code>}} | A list of valid subjects used for additional certificate validations during TLS client authentication. All subject attributes are case-sensitive.<br />**Required subject fields**:<br />"CN" for Common Name<br />**Optional subject fields:**<br />"O" for Organization<br />"OU" for Organizational Unit (array of strings)<br />"L" for Locality (city)<br />"ST" for State/Province<br />"C" for 2-letter country code  |
 | avoid_nodes | array of strings | Cluster node UIDs to avoid when placing the database's shards and binding its endpoints |
 | background_op | {{<code>}}
 [{
@@ -55,6 +65,7 @@ An API object that represents a managed database in the cluster.
   "weight": number
 }, ...]
 {{</code>}} | List of shard UIDs and their bigstore RAM weights;<br /> **shard_uid**: Shard UID;<br /> **weight**: Relative weight of RAM distribution |
+| client_cert_subject_validation_type | **disabled**<br />san_cn<br />full_subject | Enables additional certificate validations that further limit connections to clients with valid certificates during TLS client authentication.<br />**disabled**: Authenticates clients with valid certificates. No additional validations are enforced.<br />**san_cn**: A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other Subject attributes.<br />**full_subject**: A client certificate is valid only if its Subject attributes match an entry in the list of valid subjects. |
 | crdt | boolean (default:&nbsp;false) | Use CRDT-based data types for multi-master replication |
 | crdt_causal_consistency | boolean (default:&nbsp;false) | Causal consistent CRDB. |
 | crdt_config_version | integer | Replica-set configuration version, for internal use only. |
@@ -73,13 +84,14 @@ An API object that represents a managed database in the cluster.
 | data_internode_encryption | boolean | Should the data plane internode communication for this database be encrypted |
 | data_persistence | **'disabled'** <br />'snapshot'<br />'aof' | Database on-disk persistence policy. For snapshot persistence, a [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) must be provided |
 | dataset_import_sources | [complex object]({{<relref "/rs/references/rest-api/objects/bdb/dataset_import_sources">}}) | Array of source file location description objects to import from when performing an import action. This is write-only and cannot be read after set. <br />Call GET /jsonschema to retrieve the object's structure. |
+| db_conns_auditing | boolean | Enables/deactivates [database connection auditing]({{<relref "/rs/security/audit-events">}}) |
 | default_user | boolean (default:&nbsp;true) | Allow/disallow a default user to connect |
 | disabled_commands | string (default: ) | Redis commands which are disabled in db |
-| dns_address_master | string | Database private address endpoint FQDN (read-only) (deprecated) |
+| dns_address_master | string | Database private address endpoint FQDN (read-only) (deprecated as of Redis Enterprise v4.3.3) |
 | email_alerts | boolean (default:&nbsp;false) | Send email alerts for this DB |
 | endpoint | string | Latest bound endpoint. Used when reconfiguring an endpoint via update |
-| endpoint_ip | complex object | External IP addresses of node hosting the BDB's endpoint. `GET`&nbsp;`/jsonschema` to retrieve the object's structure. (read-only) (deprecated) |
-| endpoint_node | integer | Node UID hosting the BDB's endpoint (read-only) (deprecated) |
+| endpoint_ip | complex object | External IP addresses of node hosting the BDB's endpoint. `GET`&nbsp;`/jsonschema` to retrieve the object's structure. (read-only) (deprecated as of Redis Enterprise v4.3.3) |
+| endpoint_node | integer | Node UID hosting the BDB's endpoint (read-only) (deprecated as of Redis Enterprise v4.3.3) |
 | endpoints | array | List of database access endpoints (read-only) |
 | enforce_client_authentication | **'enabled'** <br />'disabled' | Require authentication of client certificates for SSL connections to the database. If set to 'enabled', a certificate should be provided in either authentication_ssl_client_certs or authentication_ssl_crdt_certs |
 | eviction_policy | 'volatile-lru'<br />'volatile-ttl'<br />'volatile-random'<br />'allkeys-lru'<br />'allkeys-random'<br />'noeviction'<br />'volatile-lfu'<br />'allkeys-lfu' | Database eviction policy (Redis style).<br />**Redis DB default**:&nbsp;'volatile-lru'<br />**memcached DB default**:&nbsp;'allkeys-lru' |
@@ -129,6 +141,7 @@ An API object that represents a managed database in the cluster.
 | [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | Enable, disable, or pause syncing from specified replica_sources |
 | replica_sync_dist | boolean | Enable/disable distributed syncer in replica-of |
 | replication | boolean (default:&nbsp;false) | In-memory database replication mode |
+| resp3 | boolean (default:&nbsp;true) | Enables or deactivates RESP3 support |
 | roles_permissions | {{<code>}}
 [{
   "role_uid": integer,
@@ -154,9 +167,9 @@ An API object that represents a managed database in the cluster.
 | slave_ha | boolean | Enable replica high availability mechanism for this database (default takes the cluster setting) |
 | slave_ha_priority | integer | Priority of the BDB in replica high availability mechanism |
 | snapshot_policy | array of [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) objects | Policy for snapshot-based data persistence. A dataset snapshot will be taken every N secs if there are at least M writes changes in the dataset |
-| ssl | boolean (default:&nbsp;false) | Require SSL authenticated and encrypted connections to the database (deprecated) |
+| ssl | boolean (default:&nbsp;false) | Require SSL authenticated and encrypted connections to the database (deprecated as of Redis Enterprise v5.0.1) |
 | [status]({{<relref "/rs/references/rest-api/objects/bdb/status">}}) | 'pending'<br />'active'<br />'active-change-pending'<br />'delete-pending'<br />'import-pending'<br />'creation-failed'<br />'recovery' | Database lifecycle status (read-only) |
-| sync | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | (deprecated, use [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) or crdt_sync instead) Enable, disable, or pause syncing from specified sync_sources |
+| sync | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | (deprecated as of Redis Enterprise v5.0.1, use [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) or crdt_sync instead) Enable, disable, or pause syncing from specified sync_sources |
 | sync_sources | {{<code>}}
 [{
   "uid": integer,
@@ -169,7 +182,7 @@ An API object that represents a managed database in the cluster.
   "lag": integer,
   "last_error": string
 }, ...]
-{{</code>}} | (deprecated, instead use replica_sources or crdt_sources) Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section<br />**uid**: Numeric unique identification of this source<br />**uri**: Source Redis URI<br />**compression**: Compression level for the replication link<br />**status**: Sync status of this source<br />**rdb_transferred**: Number of bytes transferred from the source's RDB during the syncing phase<br />**rdb_size**: The source's RDB size to be transferred during the syncing phase<br />**last_update**: Time last update was received from the source<br />**lag**: Lag in millisec between source and destination (while synced)<br />**last_error**: Last error encountered when syncing from the source |
+{{</code>}} | (deprecated as of Redis Enterprise v5.0.1, instead use replica_sources or crdt_sources) Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section<br />**uid**: Numeric unique identification of this source<br />**uri**: Source Redis URI<br />**compression**: Compression level for the replication link<br />**status**: Sync status of this source<br />**rdb_transferred**: Number of bytes transferred from the source's RDB during the syncing phase<br />**rdb_size**: The source's RDB size to be transferred during the syncing phase<br />**last_update**: Time last update was received from the source<br />**lag**: Lag in millisec between source and destination (while synced)<br />**last_error**: Last error encountered when syncing from the source |
 | syncer_mode | 'distributed'<br />'centralized' | The syncer for replication between database instances is either on a single node (centralized) or on each node that has a proxy according to the proxy policy (distributed). (read-only) |
 | tags | {{<code>}}	
 [{
@@ -180,7 +193,7 @@ An API object that represents a managed database in the cluster.
 | tls_mode | 'enabled'<br /> **'disabled'** <br />'replica_ssl' | Require TLS-authenticated and encrypted connections to the database |
 | type | **'redis'** <br />'memcached' | Type of database |
 | use_nodes | array of strings | Cluster node UIDs to use for database shards and bound endpoints |
-| version | string | Database compatibility version: full Redis/memcached version number, e.g. 6.0.6 |
+| version | string | Database compatibility version: full Redis/memcached version number, such as 6.0.6. This value can only change during database creation and database upgrades.|
 | wait_command | boolean (default:&nbsp;true) | Supports Redis wait command (read-only) |
 
 

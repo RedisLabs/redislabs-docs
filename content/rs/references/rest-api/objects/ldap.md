@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents the cluster's [LDAP]({{<relref "/rs/security/ldap">}}) configuration.
+An API object that represents the cluster's [LDAP]({{<relref "/rs/security/access-control/ldap">}}) configuration.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

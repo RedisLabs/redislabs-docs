@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Software on Kubernetes operator-based architecture
+Title: Redis Enterprise for Kubernetes operator-based architecture
 linkTitle: What is an operator?
-description: This section provides a description of the design of the Redis Enterprise operator for Kubernetes.
+description: This section provides a description of the design of Redis Enterprise for Kubernetes.
 weight: 30
 alwaysopen: false
 categories: ["Platforms"]
@@ -14,7 +14,7 @@ aliases: {
     /kubernetes/architecture/operator/,
 }
 ---
-The Redis Enterprise operator is the fastest, most efficient way to
+Redis Enterprise is the fastest, most efficient way to
 deploy and maintain a Redis Enterprise cluster in Kubernetes.
 
 ## What is an operator?
@@ -37,11 +37,11 @@ software that can reliably manage an application in an extensible,
 modular way and do not hinder the basic primitives that comprise the K8s
 architecture.
 
-Redis created an Operator that deploys and manages the lifecycle of a Redis Enterprise Cluster.
+Redis created an operator that deploys and manages the lifecycle of a Redis Enterprise Cluster.
 
 The Redis Enterprise operator acts as a custom controller for the custom
 resource RedisEnterpriseCluster, or ‘rec’, which is defined through K8s
-CRD ([customer resource definition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-resources))
+CRD ([custom resource definition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-resources))
 and deployed with a yaml file.
 
 The operator functions include:

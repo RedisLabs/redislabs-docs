@@ -19,9 +19,11 @@ aliases: /rs/references/rest-api/bootstrap
 | [GET](#get-bootstrap) | `/v1/boostrap` | Get the local node's bootstrap status |
 | [POST](#post-bootstrap) | `/v1/bootstrap/{action}` | Initiate bootstrapping |
 
-## Get boostrap status {#get-bootstrap}
+## Get bootstrap status {#get-bootstrap}
 
-	GET /v1/bootstrap
+```sh
+GET /v1/bootstrap
+```
 
 Get the local node's bootstrap status.
 
@@ -29,25 +31,26 @@ This request is accepted as soon the cluster software is installed and before th
 
 Once the node is part of an active cluster, authentication is required.
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /bootstrap 
+```sh
+GET /bootstrap
+```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Accept | application/json | Accepted media type |
 
-### Response {#get-response} 
+### Response {#get-response}
 
-The JSON response object contains two other objects:
-- `bootstrap_status` which is described below
-- `local_node_info` which is a subset of a [node object]({{<relref "/rs/references/rest-api/objects/node">}}) that provides information about the node configuration
+The JSON response object contains a `bootstrap_status` object and a `local_node_info` object.
 
-`bootstrap_status` object: 
+The `bootstrap_status` object contains the following information:
+
 | Field | Description |
 |-------|-------------|
 | state | Current bootstrap state.<br></br>`idle`: No bootstrapping started.<br></br>`initiated`: Bootstrap request received.<br></br>`creating_cluster`: In the process of creating a new cluster.<br></br>`joining_cluster`: In the process of joining an existing cluster.<br></br>`error`: The last bootstrap action failed.<br></br>`completed`: The last bootstrap action completed successfully.|
@@ -55,6 +58,8 @@ The JSON response object contains two other objects:
 | end_time | Bootstrap process end time |
 | error_code | If state is `error`, this error code describes the type of error encountered. |
 | error_details | An error-specific object that may contain additional information about the error. A common field in use is `message` which provides a more verbose error message.
+
+The `local_node_info` object is a subset of a [node object]({{<relref "/rs/references/rest-api/objects/node">}}) that provides information about the node configuration.
 
 #### Example JSON body
 
@@ -122,7 +127,7 @@ The JSON response object contains two other objects:
 | path_error | A needed path does not exist or is not accessable. |        
 | internal_error | A different, unspecified internal error was encountered. |
 
-### Status codes {#get-status-codes} 
+### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -130,7 +135,9 @@ The JSON response object contains two other objects:
 
 ## Start bootstrapping {#post-bootstrap}
 
-	POST /v1/bootstrap/{action}
+```sh
+POST /v1/bootstrap/{action}
+```
 
 Initiate bootstrapping.
 
@@ -145,11 +152,13 @@ This request is asynchronous - once the request has been accepted,
 the caller is expected to poll bootstrap status while waiting for it to
 complete.
 
-### Request {#post-request} 
+### Request {#post-request}
 
 #### Example HTTP request
 
-	POST /bootstrap/create_cluster 
+```sh
+POST /bootstrap/create_cluster
+```
 
 #### Example JSON body
 
@@ -163,12 +172,12 @@ complete.
     "node": {
        "paths": {
           "persistent_path": "/path/to/persistent/storage",
-          "ephemeral_path": "/path/to/ephemeral/storage"
+          "ephemeral_path": "/path/to/ephemeral/storage",
           "bigstore_path": "/path/to/bigstore/storage"
        },
-       "bigstore_driver": "rocksdb"
+       "bigstore_driver": "speedb",
        "identity": {
-          "addr":"1.2.3.4"
+          "addr":"1.2.3.4",
           "external_addr":["2001:0db8:85a3:0000:0000:8a2e:0370:7334", "3.4.5.6"]
        }
     },
@@ -190,11 +199,11 @@ complete.
     "node": {
        "paths": {
           "persistent_path": "/path/to/persistent/storage",
-          "ephemeral_path": "/path/to/ephemeral/storage"
+          "ephemeral_path": "/path/to/ephemeral/storage",
           "bigstore_path": "/path/to/bigredis/storage"
        },
        "identity": {
-          "addr":"1.2.3.4"
+          "addr":"1.2.3.4",
           "external_addr":["2001:0db8:85a3:0000:0000:8a2e:0370:7334", "3.4.5.6"]
        },
        "bigstore_driver": "rocksdb"
@@ -207,7 +216,7 @@ complete.
 }
 ```
 
-#### Request headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
@@ -220,10 +229,9 @@ complete.
 
 Include a [bootstrap object]({{<relref "/rs/references/rest-api/objects/bootstrap">}}) in the request body.
 
-### Response {#post-response} 
+### Response {#post-response}
 
-
-### Status codes {#post-status-codes} 
+#### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|

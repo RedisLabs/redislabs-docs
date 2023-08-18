@@ -17,7 +17,7 @@ aliases: /rs/release-notes/rs-6-2-8-october-2021/
 This version features:
 
 - Support for Red Hat Linux Edition (RHEL) 8
-- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/administering/import-export/database-backup.md">}}) 
+- You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/databases/import-export/schedule-backups.md">}}) 
 - Compatibility with version of [open source Redis 6.2.3](https://github.com/redis/redis/releases/tag/6.2.3) (starting with [Redis Enterprise Software v6.2.4]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}))
 - Compatibility with the security fixes of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6)
 - Enhancements and bug fixes
@@ -26,7 +26,7 @@ This version features:
 
 ### Prerequisites and notes
 
-- You can [upgrade to v6.2.8]({{<relref "/rs/installing-upgrading/upgrading.md">}}) from Redis Enterprise Software v6.0 and later. 
+- You can [upgrade to v6.2.8]({{<relref "/rs/installing-upgrading/upgrading">}}) from Redis Enterprise Software v6.0 and later. 
 
 - Refer to the [v6.2.4 release notes]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}) for important notes regarding the upgrade process.
 
@@ -41,21 +41,21 @@ This version features:
 
 As of 31 October 2021, Redis Enterprise Software v5.6.0 is end of life (EOF).
 
-To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/administering/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
+To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/installing-upgrading/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
-Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
+Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/stack/modules-lifecycle.md">}}).
 
 ### Redis modules
 
 Redis Enterprise Software v6.2.8 includes the following Redis modules:
 
-- [RediSearch v2.0.11]({{<relref "/modules/redisearch/release-notes/redisearch-2.0-release-notes.md">}})
-- [RedisJSON v1.0.8]({{<relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md">}})
-- [RedisBloom v2.2.6]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}}) 
-- [RedisGraph v2.4.7]({{<relref "/modules/redisgraph/release-notes/redisgraph-2.4-release-notes.md">}})
-- [RedisTimeSeries v1.4.10]({{<relref "/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes.md">}})
+- [RediSearch v2.0.11]({{<relref "/stack/release-notes/redisearch/redisearch-2.0-release-notes.md">}})
+- [RedisJSON v1.0.8]({{<relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md">}})
+- [RedisBloom v2.2.6]({{<relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md">}}) 
+- [RedisGraph v2.4.7]({{<relref "/stack/release-notes/redisgraph/redisgraph-2.4-release-notes.md">}})
+- [RedisTimeSeries v1.4.10]({{<relref "/stack/release-notes/redistimeseries/redistimeseries-1.4-release-notes.md">}})
 
-To learn more, see [Upgrade the module for a database]({{<relref "/modules/install/upgrade-module">}}).
+To learn more, see [Upgrade the module for a database]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Resolved issues
 
@@ -84,6 +84,8 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/insta
 
 ## Known limitations
 
+-RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
 - RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
 
     FIPS changes system-generated keys, which can limit secure access to the cluster or the admin console via port 8443.
@@ -93,6 +95,24 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/insta
     Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) from v6.2.4 have been fixed. 
+
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
+
+## Known issues 
+
+- A new command was added as part of Redis 6.2: [`XAUTOCLAIM`](https://redis.io/commands/xautoclaim/). When used in an Active-Active configuration, this command may cause Redis shards to crash, potentially resulting in data loss. The issue is fixed in Redis Enterprise Software version 6.2.12. Additionally, we recommend enabling AOF persistence for all Active-Active configurations.
+
+- The `ZRANGESTORE` command, with a special `zset-max-ziplist-entries` configuration can crash Redis 6.2. See [Redis repository 10767](https://github.com/redis/redis/pull/10767) for more details.
+
+- RS40641 - API requests are redirected to an internal IP in case the request arrives from a node which is not the master. To avoid this issue, use [`rladmin cluster config`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) to configure `handle_redirects` or `handle_metrics_redirects`.
 
 ## Security
 

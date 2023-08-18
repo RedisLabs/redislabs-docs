@@ -21,7 +21,7 @@ aliases: [
 
 Many Kubernetes cluster deployments have different kinds of nodes that have
 different CPU and memory resources available for scheduling cluster workloads.
-The Redis Enterprise operator has various abilities to control the scheduling
+Redis Enterprise for Kubernetes has various abilities to control the scheduling
 Redis Enterprise cluster node pods through properties specified in the
 Redis Enterprise cluster custom resource definition (CRD).
 
@@ -191,8 +191,11 @@ In this case, any pods that are deployed with the label `local/role: database` c
 You can configure Redis Enterprise with rack-zone awareness to increase availability
 during partitions or other rack (or region) related failures.
 
+{{%note%}}When creating your rack-zone ID, there are some constraints to consider; see [rack-zone awareness]({{<relref "/rs/clusters/configure/rack-zone-awareness#cluster-and-node-configuration">}}) for more info. {{%/note%}}
+
+
 Rack-zone awareness is a single property in the Redis Enterprise cluster CRD named `rackAwarenessNodeLabel`.
-This value for this label is commonly `failure-domain.beta.kubernetes.io/zone` as documented in
+This value for this label is commonly `topology.kubernetes.io/zone` as documented in
 ['Running in multiple zones'](https://kubernetes.io/docs/setup/best-practices/multiple-zones/#nodes-are-labeled).
 
 You can check the value for this label in your nodes with the command:
@@ -267,7 +270,7 @@ metadata:
   name: example-redisenterprisecluster
 spec:
   nodes: 3
-  rackAwarenessNodeLabel: failure-domain.beta.kubernetes.io/zone
+  rackAwarenessNodeLabel: topology.kubernetes.io/zone
 ```
 
 {{< note >}}

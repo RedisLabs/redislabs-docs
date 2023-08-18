@@ -21,23 +21,45 @@ aliases: /rs/references/rest-api/bdbs/actions/optimize_shards_placement
 
 ## Get optimized shards placement {#get-bdbs-actions-optimize-shards-placement}
 
-	GET /v1/bdbs/{int: uid}/actions/optimize_shards_placement
+```sh
+GET /v1/bdbs/{int: uid}/actions/optimize_shards_placement
+```
 
 Get optimized shards placement for the given database.
 
 #### Required permissions
 
-| Permission name |
-|-----------------|
-| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) |
+| Permission name | Roles |
+|-----------------|-------|
+| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 
-### Request {#get-request} 
+### Request {#get-request}
 
 #### Example HTTP request
 
-	GET /bdbs/1/actions/optimize_shards_placement
+```sh
+GET /bdbs/1/actions/optimize_shards_placement
+```
 
-### Response {#get-response} 
+#### Query parameters
+
+Include query parameters in a `GET` request to generate an optimized shard placement blueprint for a database, using settings that are different from the database's current configuration.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| avoid_nodes | list of integers | Comma-separated list of cluster node IDs to avoid when placing the database’s shards and binding its endpoints (for example, `avoid_nodes=1,2`) |
+| memory_size | integer (default:&nbsp;0) | Database memory limit (0 is unlimited), expressed in bytes |
+| shards_count | integer, <nobr>(range: 1-512)</nobr> (default:&nbsp;1) | Number of database server-side shards |
+| shards_placement | `dense` <br />`sparse` | Control the density of shards <br /> `dense`: Shards reside on as few nodes as possible <br /> `sparse`: Shards reside on as many nodes as possible |
+| bigstore_ram_size | integer (default:&nbsp;0) | Memory size of bigstore RAM part, expressed in bytes |
+
+The following example request includes `shards_count` and `memory_size` as query parameters:
+
+```sh
+GET /bdbs/1/actions/optimize_shards_placement?shards_count=10&memory_size=10000
+```
+
+### Response {#get-response}
 
 To rearrange the database shards, you can submit the blueprint returned in this response body as the `shards_blueprint` field in the [`PUT`&nbsp;`/bdbs/{uid}`](#put-bdbs-rearrange-shards) request.
 
@@ -87,14 +109,14 @@ To rearrange the database shards, you can submit the blueprint returned in this 
 ]
 ```
 
-#### Response headers
+#### Headers
 
 | Key | Value | Description |
 |-----|-------|-------------|
 | Content-Length | 352 | Length of the request body in octets |
 | cluster-state-id | 30 | Cluster state ID |
 
-### Status codes {#get-status-codes} 
+#### Status codes {#get-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -114,7 +136,17 @@ The cluster will reject the update if its state was changed since the optimal sh
 
 #### Example HTTP request
 
-    PUT /bdbs/1
+```sh
+PUT /bdbs/1
+```
+
+#### Headers
+
+| Key | Value | Description |
+|-----|-------|-------------|
+| Host | cnm.cluster.fqdn | Domain name |
+| Accept | application/json | Accepted media type |
+| cluster-state-id | 30 | Cluster state ID |
 
 #### Example JSON body
 
@@ -135,14 +167,6 @@ The cluster will reject the update if its state was changed since the optimal sh
 }
 ```
 
-{{<warning>}} 
+{{<warning>}}
 If you submit such an optimized blueprint, it may cause strain on the cluster and its resources. Use with caution.
-{{</warning>}} 
-
-#### Request headers
-
-| Key | Value | Description |
-|-----|-------|-------------|
-| Host | cnm.cluster.fqdn | Domain name |
-| Accept | application/json | Accepted media type |
-| cluster-state-id | 30 | Cluster state ID |
+{{</warning>}}

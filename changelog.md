@@ -14,7 +14,7 @@ The docs are updated regularly; here are some recent highlights:
 
 - Redis Enterprise Software updates
 
-   - [Get started](https://docs.redis.com/latest/rs/getting-started/) was updated to reflect the current UX ([PR #1766](https://github.com/RedisLabs/redislabs-docs/pull/1766)) 
+   - [Get started](https://docs.redis.com/latest/rs/installing-upgrading/get-started-redis-enterprise-software) was updated to reflect the current UX ([PR #1766](https://github.com/RedisLabs/redislabs-docs/pull/1766)) 
 
    - [Install and setup](https://docs.redis.com/latest/rs/installing-upgrading/) now includes the [command-line options](https://docs.redis.com/latest/rs/installing-upgrading/#install-command-line-options) for the install script ([PR #1765](https://github.com/RedisLabs/redislabs-docs/pull/1765))
 
@@ -23,8 +23,8 @@ The docs are updated regularly; here are some recent highlights:
     - Docs were added to support the v6.2.8 release ([PR #1733](https://github.com/RedisLabs/redislabs-docs/pull/1733)), including:
 
         - Updates to the [OpenShift CLI deployment](https://docs.redis.com/staging/release-k8s-intrepid/kubernetes/deployment/openshift/openshift-cli/) doc 
-        - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) using K8s deployments 
-        - How to configure Istio for [external routing](https://docs.redis.com/latest/kubernetes/re-databases/ingress_routing_with_istio/)
+        - Learn how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/active-active/create-aa-database/) using K8s deployments 
+        - Learn how to configure Istio for [external routing](https://docs.redis.com/latest/kubernetes/networking/istio-ingress/)
         - [v6.2.8 release notes](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-15-2022-01/) ([PR #1738](https://github.com/RedisLabs/redislabs-docs/pull/1738))
 
     - Earlier Redis Enterprise for Kubernetes [release notes](https://docs.redis.com/latest/kubernetes/release-notes/) were updated to reflect similar changes in other parts of the portfolio ([PR #1732](https://github.com/RedisLabs/redislabs-docs/pull/1732))
@@ -106,13 +106,13 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
     - The [Redis client](https://docs.redis.com/latest/rs/references/client_references/) reference docs have been updated ([PR #1630](https://github.com/RedisLabs/redislabs-docs/pull/1630))
 
-    - The cluster [maintenance mode](https://docs.redis.com/latest/rs/administering/cluster-operations/maintenance-mode/) article has been updated ([PR #1647](https://github.com/RedisLabs/redislabs-docs/pull/1647))
+    - The cluster [maintenance mode](https://docs.redis.com/latest/rs/clusters/maintenance-mode/) article has been updated ([PR #1647](https://github.com/RedisLabs/redislabs-docs/pull/1647))
 
     - [System log docs](https://docs.redis.com/latest/rs/administering/logging/rsyslog-logging/) have been updated and expanded, including details describing alerts and events for databases, clusters, and nodes ([PR #1631](https://github.com/RedisLabs/redislabs-docs/pull/1631))
 
 - Kubernetes doc updates:
 
-    - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) on Kubernetes ([PR #1555](https://github.com/RedisLabs/redislabs-docs/pull/1555))
+    - Learn how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/active-active/create-aa-database/) for Kubernetes ([PR #1555](https://github.com/RedisLabs/redislabs-docs/pull/1555))
 
     - Docs have been updated to support Redis Enterprise for [Kubernetes v6.2.8-2](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-2-2021-11/) ([PR #1648](https://github.com/RedisLabs/redislabs-docs/pull/1648))
 
@@ -198,7 +198,7 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
     - Updated docs to support the K8s [6.2.4-1 release](https://docs.redis.com/latest/platforms/release-notes/k8s-6-2-4-1-2021-09/). ([PR #1527](https://github.com/RedisLabs/redislabs-docs/pull/1527)) 
 
-    - [Manage Redis Enterprise databases on Kubernetes](https://docs.redis.com/latest/platforms/kubernetes/redb/db-controller/) has been updated. ([PR #1524](https://github.com/RedisLabs/redislabs-docs/pull/1524)) 
+    - [Manage Redis Enterprise databases for Kubernetes](https://docs.redis.com/latest/platforms/kubernetes/redb/db-controller/) has been updated. ([PR #1524](https://github.com/RedisLabs/redislabs-docs/pull/1524)) 
 
     - A new article shows how to [connect to the admin console](https://docs.redis.com/latest/platforms/kubernetes/rec/connect-to-admin-console/) to manage the Redis Enterprise cluster in your Kubernetes deployment.  ([PR #1529](https://github.com/RedisLabs/redislabs-docs/pull/1529))
 
@@ -337,7 +337,7 @@ To learn more, review the [merged pull requests](https://github.com/RedisLabs/re
 
 - Redis Enterprise Software doc updates:
 
-    - Added article describing compatibility with [open source Redis](https://docs.redislabs.com/latest/rs/concepts/compatibility/) ([PR #1345](https://github.com/RedisLabs/redislabs-docs/pull/1345))
+    - Added article describing compatibility with [open source Redis](https://docs.redislabs.com/latest/rs/references/compatibility/) ([PR #1345](https://github.com/RedisLabs/redislabs-docs/pull/1345))
 
     - Simplified [install and update](https://docs.redislabs.com/latest/rs/installing-upgrading/) article and resolved navigation issues ([PR #1376](https://github.com/RedisLabs/redislabs-docs/pull/1376))
 

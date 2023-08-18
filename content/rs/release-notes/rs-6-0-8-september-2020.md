@@ -14,16 +14,16 @@ This version includes the new RediSearch 2.0 module, open source Redis 6.0.5, ch
 
 ### Upgrade instructions
 
-Follow [these instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}}) for upgrading to RS 6.0.8 from RS 5.4.0 and above.
-For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{< relref "/rs/installing-upgrading/upgrading#upgrade-activeactive-databases" >}}).
+Follow [these instructions]({{< relref "/rs/installing-upgrading/upgrading" >}}) for upgrading to RS 6.0.8 from RS 5.4.0 and above.
+For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{< relref "/rs/installing-upgrading/upgrading/upgrade-active-active" >}}).
 
 ### End of life
 
-End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{< relref "/rs/administering/product-lifecycle.md" >}}).
-EOL for Redis Modules can be found [here]({{< relref "/rs/administering/product-lifecycle.md" >}}).
+End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}).
+EOL for Redis Modules can be found [here]({{< relref "/rs/installing-upgrading/product-lifecycle.md" >}}).
 
-- Support for Red Hat Enterprise Linux 6 and Oracle Linux 6 [operating systems platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) will end on November 30, 2020.
-- Support for Ubuntu 14.04 (Trusty Tahr) [operating systems platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) will end on November 30, 2020.
+- Support for Red Hat Enterprise Linux 6 and Oracle Linux 6 [operating systems platforms]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms.md" >}}) will end on November 30, 2020.
+- Support for Ubuntu 14.04 (Trusty Tahr) [operating systems platforms]({{< relref "/rs/installing-upgrading/install/plan-deployment/supported-platforms.md" >}}) will end on November 30, 2020.
 
 ## New features
 
@@ -34,29 +34,29 @@ For more information about Redis 6.0.5, check out the [release notes](https://ra
 
 ### Upgrading Redis modules via rladmin
 
-The [rladmin CLI]({{<relref "/rs/references/rladmin.md">}}) introduces several updates to the commands for upgrading modules.
+The [`rladmin` CLI]({{<relref "/rs/references/cli-utilities/rladmin">}}) introduces several updates to the commands for upgrading modules.
 It is now easier to upgrade your modules to the latest module version.
-Find out more [here]({{<relref "/modules/install/upgrade-module">}}).
+Find out more [here]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Redis modules
 
 The following GA releases of Redis Modules are bundled in RS 6.0:
 
-- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/modules/redisearch/release-notes/_index.md" >}}) (updated)
-- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md" >}})
-- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/modules/redisgraph/release-notes/redisgraph-2.0-release-notes.md" >}}) (updated)
-- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}) (updated)
-- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md" >}}) (updated)
+- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/stack/release-notes/redisearch" >}}) (updated)
+- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/stack/release-notes/redisjson/redisjson-1.0-release-notes.md" >}})
+- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/stack/release-notes/redisgraph/redisgraph-2.0-release-notes.md" >}}) (updated)
+- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/stack/release-notes/redistimeseries/redistimeseries-1.2-release-notes.md" >}}) (updated)
+- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/stack/release-notes/redisbloom/redisbloom-2.2-release-notes.md" >}}) (updated)
 
-To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/install/upgrade-module">}}).
+To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/stack/install/upgrade-module">}}).
 
 ## Additional capabilities
 
-- [Shard level metrics]({{< relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions#shard-metrics" >}}) have been added to the metrics_exporter and are now available from Prometheus. You can find all of the metrics [here]({{< relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions" >}}).
+- [Shard level metrics]({{< relref "/rs/clusters/monitoring/prometheus-metrics-definitions#shard-metrics" >}}) have been added to the metrics_exporter and are now available from Prometheus. You can find all of the metrics [here]({{< relref "/rs/clusters/monitoring/prometheus-metrics-definitions" >}}).
 
 - RS DEB packages (for Ubuntu) and RPM packages (for RHEL) are now signed with a GPG key so customers can verify that the package is authentic and has not been tampered with. You can access the GPG on the [installaion page]({{<relref "/rs/installing-upgrading#installing-rs-on-linux">}}).
 
-- The [crdb-cli]({{<relref "/rs/references/crdb-cli-reference.md">}}) history log is now being added to support packages.
+- The [`crdb-cli`]({{<relref "/rs/references/cli-utilities/crdb-cli">}}) history log is now being added to support packages.
 
 ## Important fixes
 
@@ -69,17 +69,29 @@ With build 6.0.8-32:
 
 ## Known limitations
 
+-RS81463 - A shard may crash when resharding an Active-Active database with Auto Tiering . Specifically, the shard will crash when volatile keys or Active-Active tombstone keys reside in Flash memory.
+
 ### Active-Active databases
 - RS44656 - A bug causing TLS mode for clients connections to toggle between ‘all communication’ to ‘for crdb communication only’ when performing a global configuration change. ***TBD***
-- RS51359 - Active-Active databases, using replication and Append Only File (AOF) for [Database persistence]({{< relref "/rs/concepts/memory-performance/persistence.md" >}}), are suffering from memory leaks on replica shards, causing them to grow bigger than the master shards. Customers are advised to upgrade to RS 6.0.12 ***TBD***. Meanwhile you can use snapshots for Database Persistence or restart the replica shards ***TBD***.
+- RS51359 - Active-Active databases, using replication and Append Only File (AOF) for [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}), are suffering from memory leaks on replica shards, causing them to grow bigger than the master shards. Customers are advised to upgrade to RS 6.0.12 ***TBD***. Meanwhile you can use snapshots for database persistence or restart the replica shards ***TBD***.
+
+### Installation limitations
+
+Several Redis Enterprise Software installation reference files are installed to the directory `/etc/opt/redislabs/` even if you use [custom installation directories]({{<relref "/rs/installing-upgrading/install/customize-install-directories">}}).
+
+As a workaround to install Redis Enterprise Software without using any root directories, do the following before installing Redis Enterprise Software:
+
+1. Create all custom, non-root directories you want to use with Redis Enterprise Software.
+
+1. Mount `/etc/opt/redislabs` to one of the custom, non-root directories.
 
 ### Upgrade
 
 - [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md" >}}) introduced new Active-Active Redis Database capabilities that improve its compatibility with open source Redis. Now the string data-type in Active-Active Redis Database is implicitly and dynamically typed, just like open source Redis. To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower, you must [upgrade the Active-Active Redis Database protocol]({{< relref "/rs/installing-upgrading/upgrading#upgrading-crdbs" >}}).
 - When you upgrade an Active-Active Redis with active AOF from version [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md" >}}) or lower to version [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-4-june-2019.md" >}}) or higher:
-    - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
+    - If replication is enabled, you must run the BGREWRITEAOF command on all replica shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
-- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of [updating them through the API]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of [updating them through the API]({{<relref "/rs/security/certificates/updating-certificates">}}).
     For assistance with this issue, contact [Support](https://redislabs.com/support).
 - Starting from [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md" >}}), to preserve the current Redis major.minor version during database upgrade you must use the keep_redis_version option instead of keep_current_version.
 

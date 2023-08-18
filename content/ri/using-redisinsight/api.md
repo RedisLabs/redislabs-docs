@@ -75,7 +75,8 @@ The following additional parameters are required for Redis Cluster databases.
 | Parameter  | Type   | Description                                                        |
 |------------|--------|--------------------------------------------------------------------|
 | seedNodes  | array  | An array of objects describing the nodes of the cluster. At least one node should be specified. The objects must contain properties `host` (string) and `port` (integer) |
-| password   | string | (optional) The password for your Redis datanase.                                  |
+| username   | string | (optional) The username for your Redis database.                                  |
+| password   | string | (optional) The password for your Redis database.                                  |
 | tls        | object | (optional) [TLS parameters for the database](#tls-parameters)      |
 
 
@@ -85,6 +86,8 @@ The following additional parameters are required for Redis Cluster databases.
 {
     "name": "QA Redis Cluster DB",
     "connectionType": "CLUSTER",
+    "username": "USERNAME",
+    "password": "PASSWORD",
     "seedNodes": [
         {
             "host": "redis-cluster-node-1.acme.com",
