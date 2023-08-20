@@ -37,7 +37,7 @@ Versions 6.4.2-4 and later include a new `ValidatingWebhookConfiguration` resour
 
 #### OpenShift SCC
 
-Versions 6.4.2-6 and later include a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [upgrade a Redis Enterprise cluster (REC)]({{<relref "/kubernetes/re-clusters/upgrade-redis-cluster#before-upgrading">}}) for expand.
+Versions 6.4.2-6 and later include a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [upgrade a Redis Enterprise cluster (REC)]({{<relref "/kubernetes/re-clusters/upgrade-redis-cluster#before-upgrading">}}) for instructions.
 
 ### Deprecations
 
@@ -59,7 +59,7 @@ Any distribution not listed below is not supported for production workloads.
 | **Kubernetes version** | **1.22** | **1.23** | **1.24** | **1.25** | **1.26** | **1.27** |
 |---|---|---|---|---|---|---|
 | Community Kubernetes | <span title="X icon">&#x274c;</span> | <span title="X icon">&#x274c;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> |
-| Amazon EKS | <span title="X icon">&#x274c;</span> | <span title="Warning icon">&#x26A0;&#xFE0F;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> |
+| Amazon EKS | <span title="End of life">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
 | Azure AKS |  | <span title="X icon">&#x274c;</span> | <span title="X icon">&#x274c;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> |
 | Google GKE | <span title="X icon">&#x274c;</span> | <span title="Warning icon">&#x26A0;&#xFE0F;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> |
 | Rancher 2.6 | <span title="X icon">&#x274c;</span> | <span title="X icon">&#x274c;</span> | <span title="Warning icon">&#x26A0;&#xFE0F;</span> |  |  |  |
@@ -86,7 +86,7 @@ The limitations below are specific to the Redis Enterprise for Kubernetes produc
 
 - **Installing the operator bundle produces warning: `Warning: would violate PodSecurity "restricted: v1.24"` (RED-97381)** Ignore the warning. This issue is documented as benign on official Red Hat documentation.
 
-- **RERC resources must have a unique name (RED-96302)** The string "rec-name"/"rec-namespace" must be different from all other participating clusters in teh Active-Active database.
+- **RERC resources must have a unique name (RED-96302)** The string "rec-name"/"rec-namespace" must be different from all other participating clusters in the Active-Active database.
 
 - **Admission is not blocking REAADB with `shardCount` which exceeds license quota (RED-96301)** Fix the problems with the REAADB and reapply.
 
@@ -114,11 +114,11 @@ The limitations below are specific to the Redis Enterprise for Kubernetes produc
 
 - **Internal DNS and Kubernetes DNS may have conflicts (RED-37462)** DNS conflicts are possible between the cluster `mdns_server` and the K8s DNS. This only impacts DNS resolution from within cluster nodes for Kubernetes DNS names.
 
-- **K8s-based 5.4.10 clusters seem to negatively effect existing 5.4.6 clusters (RED-37233)** Upgrade clusters to latest version.
+- **K8s-based 5.4.10 clusters seem to negatively affect existing 5.4.6 clusters (RED-37233)** Upgrade clusters to latest version.
 
 - **Node CPU usage is reported instead of pod CPU usage (RED-36884)** In Kubernetes, the reported node CPU usage is the usage of the Kubernetes worker node hosting the REC pod.
 
-- **An unreachable cluster has status running (RED-32805)** When a cluster is in unreachable state, the state remains `running` instead of triggering an error.
+- **An unreachable cluster has status running (RED-32805)** When a cluster is in an unreachable state, the state remains `running` instead of triggering an error.
 
 - **Long cluster names cause routes to be rejected  (RED-25871)** A cluster name longer than 20 characters will result in a rejected route configuration because the host part of the domain name exceeds 63 characters. The workaround is to limit the cluster name to 20 characters or fewer.
 
