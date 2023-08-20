@@ -29,7 +29,7 @@ This version offers:
 
 ### Breaking changes
 
-The following changes included in this release affect the upgrade process. Please read carefully before upgrading to 7.24-2.
+The following changes included in this release affect the upgrade process. Please read carefully before upgrading to 7.2.4-2.
 
 #### ValidatingWebhookConfiguration
 
