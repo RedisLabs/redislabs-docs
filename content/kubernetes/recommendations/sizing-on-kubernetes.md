@@ -14,6 +14,7 @@ aliases: [
     /platforms/kubernetes/memory/sizing-on-kubernetes/,
     /kubernetes/memory/sizing-on-kubernetes.md,
     /kubernetes/memory/sizing-on-kubernetes/,
+    /kubernetes/recommendations/sizing-on-kubernetes/,
 ] 
 ---
 The following article reviews the mechanism and methods available for sizing

@@ -13,7 +13,8 @@ aliases: [
     /platforms/kubernetes/memory/persistent-volumes/, 
     /platforms/kubernetes/memory/persistent-volumes.md,
     /kubernetes/memory/persistent-volumes.md,
-    /kubernetes/memory/persistent-volumes/
+    /kubernetes/memory/persistent-volumes/,
+    /kubernetes/recommendations/persistent-volumes/,
 ]
 ---
 ## Storage types
