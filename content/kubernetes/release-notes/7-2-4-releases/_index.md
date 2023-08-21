@@ -76,6 +76,8 @@ Any distribution not listed below is not supported for production workloads.
 
 The limitations below are specific to the Redis Enterprise for Kubernetes product. To view limitations for the supported Redis Enterprise Software version, see the [7.2.4 release notes]({{<relref "/rs/release-notes/rs-7-2-4-releases#known-limitations">}}).
 
+- **Cannot upgrade or recover clusters if there are databases with modules that aren't built in (RED-107711 RED-106872)** Contact support to upload your modules manually.
+
 - **REAADB changes might fail with "gateway timeout" errors, mostly on OpenShift (RED-103048)** Retry the operation.
 
 - **Misleading error appears when a service creation has failed due to service already existing "`provided IP is already allocated`" (RED-100669)** Delete the service manually.
