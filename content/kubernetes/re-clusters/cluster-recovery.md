@@ -32,7 +32,7 @@ The Redis Enterprise for Kubernetes automates these recovery steps:
 
 ## Prerequisites
 
-- For cluster recovery, the cluster must be [deployed with persistence]({{< relref "/kubernetes/memory/persistent-volumes.md" >}}).
+- For cluster recovery, the cluster must be [deployed with persistence]({{< relref "/kubernetes/recommendations/persistent-volumes.md" >}}).
 
 ## Recover a cluster
 
