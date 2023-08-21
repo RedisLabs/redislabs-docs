@@ -6,10 +6,10 @@ weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
-    /platforms/kubernetes/reference/supported_k8s_distributions/,
+    /platforms/kubernetes/reference/supported_k8s_distributions,
     /platforms/kubernetes/reference/supported_k8s_distributions.md,
     /kubernetes/reference/supported_k8s_distributions.md,
-    /kubernetes/reference/supported_k8s_distributions/,
+    /kubernetes/reference/supported_k8s_distributions,
     /rs/getting-started/pcf/,
     /platforms/pcf/using-pcf/,
     /platforms/pcf/using-pcf.md,

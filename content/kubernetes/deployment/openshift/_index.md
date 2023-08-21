@@ -55,4 +55,4 @@ To [create a database on an OpenShift cluster via the CLI]({{< relref "openshift
 
 ## Version compatibility
 
-To see which version of Redis Enterprise for Kubernetes supports your OpenShift version, see [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions/">}}).
+To see which version of Redis Enterprise for Kubernetes supports your OpenShift version, see [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}).

@@ -29,7 +29,7 @@ Review the following warnings before starting your upgrade.
 
 ### Compatibility
 
-Before upgrading, check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions/">}}) to make sure your Kubernetes distribution is supported.
+Before upgrading, check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to make sure your Kubernetes distribution is supported.
 
 ### Supported upgrade paths
 
