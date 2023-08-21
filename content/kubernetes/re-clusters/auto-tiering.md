@@ -34,14 +34,15 @@ For more information on node storage, see [Node persistent and ephemeral storage
 
 ## Create a Redis Enterprise cluster
 
-To deploy a Redis Enterprise cluster (REC) with flash storage, you'll need to specify the following in the `redisOnFlashSpec` section of your [REC custom resource]({{<relref "/kubernetes/reference/cluster-options.md">}}):
+To deploy a Redis Enterprise cluster (REC) with Auto Tiering, you'll need to specify the following in the `redisOnFlashSpec` section of your [REC custom resource]({{<relref "/kubernetes/reference/cluster-options.md">}}):
 
 - enable Auto Tiering (`enabled: true`)
-- flash storage driver (`flashStorageEngine`)
-  - `rocksdb` (default)
+- flash storage driver (`bigStoreDriver`)
+  - `rocksdb` or `speedb`(default)
 - storage class name (`storageClassName`)
 - minimal flash disk size (`flashDiskSize`)
 
+{{ <note> Clusters upgraded to version 7.2.4-2 from an earlier version will change the `bigStoreDriver` (previously called `flashStorageEngine`) to the new default `speedb`, regardless of previous configuration. </note>}}
 
 Here is an example of an REC custom resource with these attributes:
 
@@ -55,7 +56,7 @@ spec:
   nodes: 3
   redisOnFlashSpec:
     enabled: true
-    flashStorageEngine: speedb
+    bigStoreDriver: speedb
     storageClassName: local-scsi
     flashDiskSize: 100G
 ```
