@@ -1,6 +1,6 @@
 ---
-Title: Data transformation Examples
-linkTitle: Data transformation Examples
+Title: Data transformation examples
+linkTitle: Data transformation examples
 description:
 weight: 30
 alwaysopen: false

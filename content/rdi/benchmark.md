@@ -46,25 +46,25 @@ Redis Data Integration Benchmark requires connectivity to the following endpoint
 ### Ubuntu 20.04
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-benchmark-ubuntu20.04-latest.tar.gz -O /tmp/redis-di-benchmark.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-benchmark-ubuntu20.04-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-benchmark.tar.gz
 ```
 
 ### Ubuntu 18.04
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-benchmark-ubuntu18.04-latest.tar.gz -O /tmp/redis-di-benchmark.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-benchmark-ubuntu18.04-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-benchmark.tar.gz
 ```
 
 ### RHEL 8
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-benchmark-rhel8-latest.tar.gz -O /tmp/redis-di-benchmark.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-benchmark-rhel8-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-benchmark.tar.gz
 ```
 
 ### RHEL 7
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-benchmark-rhel7-latest.tar.gz -O /tmp/redis-di-benchmark.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-benchmark-rhel7-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-benchmark.tar.gz
 ```
 
 ## Install Redis Data Integration Benchmark Tool

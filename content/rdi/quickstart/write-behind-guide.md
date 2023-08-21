@@ -12,13 +12,10 @@ hidden: false
 
 This guide takes you through the creation of a write-behind pipeline.
 
-{{<banner-article bannerColor="#fff8dc">}}
- **Note:** Write Behind is currently in Preview.
-{{</banner-article>}}
 
 ## Concepts
 
-**Write-behind**: An RDI policy and pipeline to synchronize the data in a Redis DB with some downstream data store.
+**Write-behind**: RDI pipeline to synchronize the data in a Redis DB with some downstream data store.
 You can think about it as a pipeline that starts with change data capture (CDC) events for a Redis database and then filters, transforms, and maps the data to the target data store data structure.
 
 **Target**: The data store to which the write-behind pipeline connects and writes data.
@@ -38,6 +35,7 @@ RDI write-behind currently supports these target data stores:
 | MySQL      |
 | Oracle     |
 | PostgreSQL |
+| Redis Enterprise     |
 | SQL Server |
 
 ## Prerequisites
@@ -113,9 +111,10 @@ Job definition has the following structure:
 
 ```yaml
 source:
-  keyspace:
-    pattern: emp:*
-    exclude-commands: ["json.del"]
+  redis:
+    key_pattern: emp:*
+    trigger: write-behind
+    exclude_commands: ["json.del"]
 transform:
   - uses: rename_field
     with:
@@ -139,21 +138,25 @@ output:
 
 ### Source section
 
-The `source` section describes the source of data change events in Redis:
+The `source` section describes the source of data in the pipeline.
 
-- The `pattern` attribute specifies the pattern of Redis keys to listen on. The pattern has to correspond to keys that are of Hash or JSON value.
+The `redis` section is common for every pipeline initiated by an event in Redis, such as applying changes to data. In the case of write-behind, it has the information required to activate a pipeline dealing with changes to data. It includes the following attributes:
 
-- The `exclude-commands` attribute specifies which commands not to act on. For example, if you listen on key pattern that has Hash values, you can exclude the `HDEL` command so no deletions of data will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
+- The `key_pattern` attribute specifies the pattern of Redis keys to listen on. The pattern has to correspond to keys that are of Hash or JSON value.
 
-- The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for Write Behind events the `before` value of the key is never provided.
+- The `exclude_commands` attribute specifies which commands not to act on. For example, if you listen on a key pattern with Hash values, you can exclude the `HDEL` command so no data deletions will propagate to the downstream database. If you don't specify this attribute, RDI write-behind acts on all relevant commands.
+- The `trigger` attribute is mandatory and must be set to `write-behind`.
+
+- The `row_format` attribute can be used with the `full` value in order to receive both the `before` and `after` sections of the payload. Note that for write-behind events the `before` value of the key is never provided.
 
  > Note: RDI write-behind does not support the [`Expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
+> Notes: The `redis` attribute is a breaking change replacing the `keyspace` attrribute. The key_pattern attribute replaces the `pattern` attribute. THe `exclude_commands` attributes replaces the `exclude-commands` attribute. If you upgrade to version 0.105 and beyond, you must edit your existing jobs and redeploy them.
 
 ### Output section
 
 The `output` section is critical. It specifies a reference to a connection from the `config.yaml` `connections` section:
 
-- The `uses` attribute specifies the type of **writer** RDI Write Behind will use to prepare and write the data to the target.
+- The `uses` attribute specifies the type of **writer** RDI write-behind will use to prepare and write the data to the target.
   In this example, it is `relational.write`, a writer that translates the data into a SQL statement with the specific dialect of the downstream relational database.
   For a full list of supported writers, look [Data transformation block types]({{<relref "/rdi/reference/data-transformation-block-types">}}).
 
@@ -163,11 +166,13 @@ The `output` section is critical. It specifies a reference to a connection from 
 
 - The `keys` section specifies the field(s) in the table that are the unique constraints in that table.
 
-- The `mapping` section is optional and used to map a subset of the fields in the Redis hash or JSON document to the columns that will be written to the target table.
+- The `mapping` section is used to map database columns to redis fields with different names or to expressions. The mapping can be of all redis data fields or a subset of them.
+
+> Note: The columns used in `keys` will be automatically included and no need to repeat them in the `mapping` section.
 
 ### Apply filters and transformations to write-behind
 
-The RDI Write Behind jobs can apply filters and transformations to the data before it is written to the target. Specify the filters and transformations under the `transform` section.
+The RDI write-behind jobs can apply filters and transformations to the data before it is written to the target. Specify the filters and transformations under the `transform` section.
 
 #### Filters
 

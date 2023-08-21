@@ -15,25 +15,25 @@ aliases:
 #### Ubuntu20.04
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-ubuntu20.04-latest.tar.gz -O /tmp/redis-di-offline.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-offline-ubuntu20.04-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-offline.tar.gz
 ```
 
 #### Ubuntu18.04
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-ubuntu18.04-latest.tar.gz -O /tmp/redis-di-offline.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-offline-ubuntu18.04-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-offline.tar.gz
 ```
 
 #### RHEL8
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-rhel8-latest.tar.gz -O /tmp/redis-di-offline.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-offline-rhel8-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-offline.tar.gz
 ```
 
 #### RHEL7
 
 ```bash
-wget https://qa-onprem.s3.amazonaws.com/redis-di/latest/redis-di-offline-rhel7-latest.tar.gz -O /tmp/redis-di-offline.tar.gz
+wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-offline-rhel7-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-offline.tar.gz
 ```
 
 ### Debezium Container Image
