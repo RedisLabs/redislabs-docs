@@ -168,26 +168,6 @@ For details on this platform, see the [Rancher documentation](https://rancherman
 
 For details on this platform, see the [TKG documentation](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/index.html).
 
-#### TKG 1.22
-
-{{<table-scrollable>}}
-|  | **<nobr>**7.2.4**</nobr>** | **<nobr>**6.4.2-6**</nobr>** | **<nobr>**6.4.2-5**</nobr>** | **<nobr>**6.2.18-41**</nobr>** |
-|---|---|---|---|---|
-| **1.24** | <span title="Supported">&#x2705;</span> |  |  |  |
-|**1.23** | <span title="Supported">&#x2705;</span> |  |  |  |
-| **1.22** | <span title="Supported">&#x2705;</span> |  |  |  |
-{{</table-scrollable>}}
-
-#### TKG 1.21
-
-{{<table-scrollable>}}
-|  | **<nobr>**7.2.4**</nobr>** | **<nobr>**6.4.2-6**</nobr>** | **<nobr>**6.4.2-5**</nobr>** | **<nobr>**6.2.18-41**</nobr>** |
-|---|---|---|---|---|
-| **1.24** | <span title="Supported">&#x2705;</span> |  |  |  |
-|**1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |  |  |  |
-| **1.22** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |  |  |  |
-{{</table-scrollable>}}
-
 #### TKG 1.6
 
 {{<table-scrollable>}}
