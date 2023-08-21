@@ -21,13 +21,19 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
   1. [Upgrade the Redis Enterprise operator](#upgrade-the-operator)
   2. [Upgrade the Redis Enterprise cluster (REC)](#upgrade-the-redis-enterprise-cluster-rec)
 
+
+
 ## Before upgrading
 
 Review the following warnings before starting your upgrade.
 
-### Supported upgrade paths**
+### Compatibility
 
-   If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
+Before upgrading, check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions/">}}) to make sure your Kubernetes distribution is supported.
+
+### Supported upgrade paths
+
+If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
 
 ### OpenShift clusters running 6.2.12 or earlier
 
