@@ -13,13 +13,15 @@ aliases: [
 
 ## Highlights
 
-This version offers:
+The primary purpose this release is supporting [Redis Enterprise 7.2.4]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52">}}), which is a major Redis Enterprise Software update. As such, we reduced the scope of changes to support the underlying change of RS 7.2 and a few significant fixes.
 
-- Support for [Redis Enterprise 7.2.4]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52">}}).
+The following are the notable changes:
 
-- New default engine, Speedb, for Auto Tiering (formerly Redis on Flash).
+- Support for [Redis Enterprise 7.2.4]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52">}})
 
-- Bug fixes and platform support changes.
+- New default engine, Speedb, for Auto Tiering (formerly Redis on Flash)
+
+- Changes to [supported Kubernetes distributions]({{< relref "#supported-distributions" >}})
 
 ## Detailed release notes
 
