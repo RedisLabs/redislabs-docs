@@ -42,7 +42,9 @@ To deploy a Redis Enterprise cluster (REC) with Auto Tiering, you'll need to spe
 - storage class name (`storageClassName`)
 - minimal flash disk size (`flashDiskSize`)
 
-{{ <note> Clusters upgraded to version 7.2.4-2 from an earlier version will change the `bigStoreDriver` (previously called `flashStorageEngine`) to the new default `speedb`, regardless of previous configuration. </note>}}
+{{<note>}} Clusters upgraded to version 7.2.4-2 from an earlier version will change the `bigStoreDriver` (previously called `flashStorageEngine`) to the new default `speedb`, regardless of previous configuration. {{</note>}}
+
+{{<warning>}}Switching between storage engines (`speedb` and `rocksdb`) requires guidance by Redis Support or your Account Manager.{{</warning>}}
 
 Here is an example of an REC custom resource with these attributes:
 
