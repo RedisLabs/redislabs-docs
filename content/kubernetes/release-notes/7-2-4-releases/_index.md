@@ -78,6 +78,8 @@ The limitations below are specific to the Redis Enterprise for Kubernetes produc
 
 - **Cannot upgrade or recover clusters if there are databases with modules that aren't built in (RED-107711 RED-106872)** Contact support to upload your modules manually.
 
+- **When modifying the database suffix for an Active-Active database, while the service-rigger is in a terminating state, the services-rigger will detele and create the ingress or route resources in a loop (RED-107687)** Wait until the services- rigger pod has finished to terminate it.
+
 - **REAADB changes might fail with "gateway timeout" errors, mostly on OpenShift (RED-103048)** Retry the operation.
 
 - **Misleading error appears when a service creation has failed due to service already existing "`provided IP is already allocated`" (RED-100669)** Delete the service manually.
