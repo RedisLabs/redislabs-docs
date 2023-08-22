@@ -10,17 +10,16 @@ aliases:
 
 # RedisGears Installation
 
-> Note: If your Redis Enterprise Cluster version is 6.2.18 or higher, you can use the `redis-di create` command in RDI CLI to install RedisGears.
-
 Redis Data Integration requires [RedisGears](https://redis.com/modules/redis-gears) module with [Python plugin](https://docs.redis.com/latest/modules/redisgears/python/) to be installed on the Redis Enterprise cluster.
 
 The Python plugin can be installed explicitly or alongside with the [JVM plugin](https://docs.redis.com/latest/modules/redisgears/jvm/) if the latter is needed on the cluster for other purposes.
 
+Use the [`redis-di create`]({{<relref "/rdi/reference/cli/redis-di-create.md">}}) command in RDI CLI to install RedisGears.
+
 ## Download RedisGears
 
-Download RedisGears based on the Linux distribution of where Redis Enterprise is installed. As mentioned, Redis Data Integration only requires the Python plugin, so download only it unless the JVM plugin is also needed.
+Download RedisGears based on the Linux distribution of where Redis Enterprise is installed. 
 
-> Note: If your Redis Enterprise Cluster is version 6.2.18 or higher, please download the RedisGears bundle that includes the Python plugin.
 
 ### Ubuntu 20.04
 
