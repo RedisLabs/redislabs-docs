@@ -9,7 +9,7 @@ aliases:
 
 ---
 
-This guide will take you through the creation of a write-behind pipeline.
+This guide will take you through the creation of a ingest pipeline.
 
 
 ## Prerequisites
@@ -48,6 +48,7 @@ The following files will be created in the provided directory:
 │   └── application.properties
 ├── jobs
 │   └── README.md
+│   └── default.yaml
 └── config.yaml
 
 ```
