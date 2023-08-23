@@ -9,18 +9,18 @@ headerRange: "[2]"
 aliases: 
 ---
 
-Redis Data Integration (RDI) is a product that helps Redis Enterprise users ingest and export data in near real time
+Redis Data Integration (RDI) is a product that helps Redis Enterprise users ingest and export data in near real time. RDI provides the following:
 
 - End to end solution - No need for additional tools and integrations
 - Capture Data Change (CDC) included
-- Covers most popular databases as sources & targets
+- Covers most popular databases as sources and targets
 - Declarative data mapping and transformations - no custom code needed
 - Data delivery guaranteed (at least once)
-- Zero downtime day 2 operations (Reconfigure & Upgrade)
+- Zero downtime day 2 operations (reconfigure & upgrade)
 
-Redis Data Integration currently supports 2 use cases:
+Redis Data Integration currently supports two use cases:
 
-- Ingest (Cache prefetch).
+- Ingest (cache prefetch).
 - Write Behind.
 
 ## Ingest functionality and architecture
@@ -31,7 +31,7 @@ You can think of RDI Ingest as a streaming ELT process:
 - Data is then **L**oaded into Redis Data Integration, a Redis database instance that keeps the data in [Redis streams](https://redis.io/docs/manual/data-types/streams/) alongside required metadata.
 - Data is then **T**ransformed using provided [RedisGears recipes](https://developer.redis.com/howtos/redisgears/) and written to the target Redis DB.
 
-Redis Data Integration using Debezium Server works in 2 modes:
+Redis Data Integration using Debezium Server works in two modes:
 
 1. Initial sync - Where a snapshot of the entire database or a subset of selected tables is used as a baseline. The entire dataset is streamed to Redis Data Integration and then transformed and written into the target Redis database.
 2. Live updates - Where Debezium captures changes to the data that happen after the baseline snapshot and streams them to Redis Data Integration where they are transformed and written to the target.
@@ -48,16 +48,16 @@ RDI supports conversion of a database record into the following Redis types:
 - Set
 - Sorted Set
 - Stream
-- Json
+- JSON
 - String
 
 Each column in the record is automatically formatted as a number or string. See the [data types list]({{<relref "/rdi/reference/data-types-conversion">}}) for the exact mappings.
 
 #### Additional transformations
 
-RDI supports declarative transformations to further manipulate the data, including denormalization of data from few records into a single Json key in Redis.
+RDI supports declarative transformations to further manipulate the data, including denormalization of data from several records into a single JSON key in Redis.
 
-Red the data transformation section of these docs to learn more.
+Read the data transformation section of these docs to learn more.
 
 ### Architecture and components
 
@@ -65,8 +65,8 @@ Red the data transformation section of these docs to learn more.
 
 #### Feeders
 
-Debezium Server has a Redis sink that writes data & state to RDI streams.
-In addition RDI works with [Arcion](arcion.io) commercial CDC that provides additional set of sources.
+Debezium Server has a Redis sink that writes data and state to RDI streams.
+In addition RDI works with [Arcion](arcion.io), a commercial CDC that provides additional set of sources.
 
 #### Redis data integration data plane
 
@@ -131,24 +131,24 @@ Debezium Server should run in warm High Availability topology in one of the foll
 ## Write behind functionality and architecture
 
 RDI write behind allows integration between Redis Enterprise (as the source of changes to data) to downstream databases or datastores.
-RDI captures the changes to a selected set of key-patterns in Redis keyspace and asynchronsly writes them in small batches to the downstream database, so the application doesn't need to take care of remodeling the data or managing the connection with the downstream database.
+RDI captures the changes to a selected set of key-patterns in a Redis keyspace and asynchronously writes them in small batches to the downstream database, so the application doesn't need to take care of remodeling the data or managing the connection with the downstream database.
 
 RDI write behind can normalize a key in Redis to several records in one or more tables at the target.
 To learn more about write behind declarative jobs and renormalization read the [write behind quick start guide]({{<relref="/rdi/quickstart/write-behind-guide.md">}})
 
 ### Write behind topology
 
-RDI CLI and engine comes in one edition that can run both ingest and write behind. However, the topology for write behind is different.
-RDI engine is installed on Redis database containing the application data and not on a separate staging Redis database. RDI streams and control plain adds a small footprint of few hundreds of MBs to the Redis database. In the write behind topology, RDI process in parallel on each shard and establishes a single connection from each shard to the downstream database.
+RDI CLI and engine come in one edition that can run both ingest and write behind. However, the topology for write behind is different.
+RDI engine is installed on a Redis database containing the application data and not on a separate staging Redis database. RDI streams and control plain adds a small footprint of few hundreds of MBs to the Redis database. In the write behind topology, RDI process in parallel on each shard and establishes a single connection from each shard to the downstream database.
 
 ### model translation
 
 RDI write behind can track changes to the following Redis types:
 
 - Hash
-- Json
+- JSON
 - Set
 - Sorted Set
 
 Unlike the ingest scenario, write behind has no default behavior for model translation. It is up to the user to create a declarative job, specifying the mapping between Redis key and target database record.
-The job `keys` and `mapping` sections help making this an easy task.
+The job `keys` and `mapping` sections help make this an easy task.
