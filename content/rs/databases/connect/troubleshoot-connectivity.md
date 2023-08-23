@@ -23,13 +23,6 @@ overlay          59G   23G   33G  41% /
 /dev/vda1        59G   23G   33G  41% /etc/hosts
 ```
 
-Check if the capacity of the log directory did not increase using the [`du`](https://man7.org/linux/man-pages/man1/du.1.html) command:
-
-```sh
-$ du -sh $logdir                
-49M	/var/opt/redislabs/log
-```
-
 RAM and CPU utilization should be less than `80%`, and host resources must be available exclusively for Redis Enterprise Software. You should also make sure that swap memory is not being used or is not configured.
 
 Run the [`free`](https://man7.org/linux/man-pages/man1/free.1.html) command to check memory usage:
@@ -61,6 +54,8 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
  r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
  2  0      0 988868 177588 2962876    0    0     0     6    7   12  1  1 99  0  0
 ```
+
+If CPU or RAM usage is greater than 80%, ask your system administrator which process is the culprit. If the process is not related to Redis, terminate it.
 
 ### Sync clock with time server
 
@@ -176,7 +171,7 @@ On the client machine, check if the database endpoint can be resolved:
 dig <endpoint>
 ```
 
-If endpoint resolution fails on the client machine, check one of the cluster nodes:
+If endpoint resolution fails on the client machine, check on one of the cluster nodes:
 
 ```sh
 dig @localhost <endpoint>
@@ -205,10 +200,10 @@ To identify possible client application issues, test connectivity from the clien
  If the client machine cannot connect, try to connect to the database from one of the cluster nodes:
 
 ```sh
-redis-cli -p <port> PING
+redis-cli -h <node IP or hostname> -p <port> PING
 ```
 
- If the cluster node is also unable to connect to the database, the issue is with the network. Contact your system administrator for help.
+If the cluster node is also unable to connect to the database, [contact Redis support](https://redis.com/company/support/).
 
 If the client fails to connect, but the cluster node succeeds, perform health checks on the client and network.
 
@@ -262,11 +257,11 @@ Consider using alternative commands such as [`SCAN`](https://redis.io/commands/s
 Keys with large memory footprints can cause latency. To identify such keys, compare the keys returned by [`SLOWLOG GET`](https://redis.io/commands/slowlog-get/) with the output of the following commands:
 
 ```sh
-redis-cli -p <port> --memkeys
+redis-cli -h <endpoint> -p <port> --memkeys
 ```
 
 ```sh
-redis-cli -p <port> --bigkeys
+redis-cli -h <endpoint> -p <port> --bigkeys
 ```
 
 For additional diagnostics, see:
