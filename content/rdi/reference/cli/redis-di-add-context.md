@@ -55,6 +55,14 @@ Usage: redis-di add-context [OPTIONS] CONTEXT_NAME
 
   Redis Enterprise Cluster username with either DB Member, Cluster Member or Cluster Admin roles
 
+- `rdi_user`:
+
+  - Type: STRING
+  - Default: ``
+  - Usage: `--rdi-user`
+
+  User for the RDI Database
+
 - `rdi_host` (REQUIRED):
 
   - Type: STRING
@@ -121,6 +129,7 @@ Options:
   --cluster-user TEXT             Redis Enterprise Cluster username with
                                   either DB Member, Cluster Member or Cluster
                                   Admin roles  [required]
+  --rdi-user TEXT                 User for the RDI Database
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
   --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
                                   required]
