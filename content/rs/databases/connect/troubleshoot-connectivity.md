@@ -1,7 +1,7 @@
 ---
-Title: Troubleshoot database connectivity
+Title: Troubleshooting pocket guide for Redis Enterprise Software
 linktitle: Troubleshoot
-description: Troubleshoot connectivity issues between the database and clients or applications.
+description: Troubleshoot issues with Redis Enterprise Software, including connectivity issues between the database and clients or applications.
 weight: 90
 alwaysopen: false
 toc: "true"
