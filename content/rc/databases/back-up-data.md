@@ -162,7 +162,7 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
 
 Once the bucket is available and the permissions are set, use the name of your bucket as the **Backup destination** for your database's Remote backup settings. For example, suppose your bucket is named *backups-bucket*.  In that case, set **Backup destination** to `s3://backups-bucket`.
 
-To learn more, see [Configuring ACLs for buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html) on the AWS docs.
+To learn more, see [Using bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) on the AWS docs.
 
 {{< note >}}
 An AWS S3 bucket can be used by only one Redis Cloud account. If you have more than one Redis Cloud account, repeat the setup steps for multiple buckets. 
