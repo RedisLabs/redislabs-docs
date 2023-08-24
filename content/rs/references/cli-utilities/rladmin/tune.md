@@ -110,6 +110,7 @@ rladmin tune db { db:<id> | <name> }
         [ max_client_pipeline <value> ]
         [ max_connections <value> ]
         [ max_aof_file_size <size> ]
+        [ max_aof_load_time <seconds> ]
         [ oss_cluster { enabled | disabled } ]
         [ oss_cluster_api_preferred_ip_type <value> ]
         [ slave_ha { enabled | disabled } ]
@@ -151,6 +152,7 @@ rladmin tune db { db:<id> | <name> }
 | gradual_sync_mode                    | `enabled`<br /> `disabled`<br /> `auto` | Activates, deactivates, or automatically determines gradual sync of source shards                                              |
 | master_persistence                   | `enabled`<br /> `disabled`       | Activates or deactivates persistence of the primary shard                                                                             |
 | max_aof_file_size                    | size in MB                       | Maximum size (in MB, if not specified) of [AoF]({{< relref "/glossary/_index.md#letter-a" >}}) file (minimum value is 10 GB)              |
+| max_aof_load_time | time in seconds | Time limit in seconds to load a shard from an append-only file (AOF). If exceeded, an AOF rewrite is initiated to decrease future load time.<br />Minimum: 2700 seconds (45 minutes) <br />Default: 3600 seconds (1 hour) |
 | max_client_pipeline                  | integer                          | Maximum commands in the proxy's pipeline per client connection (max value is 2047, default value is 200)                              |
 | max_connections                      | integer                          | Maximum client connections to the database's endpoint (default value is 0, which is unlimited)                                            |
 | max_shard_pipeline                   | integer                          | Maximum commands in the proxy's pipeline per shard connection (default value is 200)                                                  |
