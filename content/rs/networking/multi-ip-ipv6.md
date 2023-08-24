@@ -13,6 +13,8 @@ aliases: [
 Redis Enterprise Software (RS) supports server/instances/VMs with
 multiple IP addresses, as well as IPv6 addresses.
 
+## Traffic overview
+
 RS related traffic can be logically and physically divided into internal
 traffic and external traffic:
 
@@ -24,6 +26,8 @@ traffic and external traffic:
 
 When only one IP address exists on a machine that serves as an RS node,
 it is used for both internal and external traffic.
+
+## Multiple IP addresses
 
 When more than one IP address exists on an RS node:
 
@@ -39,14 +43,58 @@ If at a later stage you would like to update the IP address allocation,
 run the relevant commands in [`rladmin` command-line interface
 (CLI)]({{<relref "/rs/references/cli-utilities/rladmin">}}).
 
-If you need to update the internal IP address in the OS, you must remove
-that node from the RS cluster, make the IP change, and then add the node
-back into the cluster.
+## Change internal IP address
 
-When manually configuring an internal address for a node, make sure the
-address is valid and bound to an active interface on the node. Failure
-to do so prevents the node from coming back online and rejoining the
+When manually configuring an internal address for a node, make sure the address is valid and bound to an active interface on the node. Failure to do so prevents the node from coming back online and rejoining the
 cluster.
+
+To update a node's internal IP address:
+
+1. Turn the node into a replica using [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/node/enslave">}}):
+
+    ```sh
+    rladmin node <ID> enslave
+    ```
+
+    <!-- Do you need to use demote_node too? -->
+
+1. Disable the `rlec_supervisord` service on the node.
+
+    <!-- What is the recommended command and options? How do you disable this? Is it a config setting? Or do you kill the process? -->
+
+1. Restart the node.
+
+    <!-- Why is this necessary? To make sure previously running Redis Enterprise processes are stopped and/or cleaned up properly? Some other reason? -->
+
+1. Follow the operating system vendor's instructions to change the node's IP address.
+
+1. From a different cluster node, use [`rladmin node addr set`]({{<relref "/rs/references/cli-utilities/rladmin/node/addr">}}) to update the first node's IP address:
+
+    ```sh
+    rladmin node <ID> addr set <IP address>
+    ```
+
+1. Enable the `rlec_supervisord` service on the node:
+
+    <!-- Command to enable rlec_supervisord? Or is this the same thing as restarting rlec_supervisord in the next step? -->
+
+1. Restart `rlec_supervisord` or restart the node.
+
+    <!-- How do I resstart rlec_supervisord? -->
+
+1. Verify the node rejoined the cluster.
+
+    ```sh
+    rladmin status nodes
+    ```
+
+    <!-- Is this the recommended way to check that the node has rejoined the cluster? -->
+
+1. Repeat the same steps for the next node in the cluster.
+
+    <!-- Which steps is this referring to? The entire procedure or just starting from `rladmin node addr set` -->
+
+## Configure external IP addresses
 
 When configuring external addresses, it is possible to list external
 addresses that are not bound to an active interface, but are otherwise
@@ -56,22 +104,12 @@ load balancer VIP and so on).
 `rladmin` node address commands syntax:
 
 ```sh
-rladmin node addr set
-```
-
-```sh
 rladmin node external_addr set
 ```
 
 ```sh
 rladmin node external_addr [ add | remove ]
 ```
-
-Where:
-
-- addr - the internal address (can be used only when the node is
-    offline)
-- external_addr - external addresses
 
 {{< note >}}
 While [joining a new node to a
