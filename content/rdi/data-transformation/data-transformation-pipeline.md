@@ -17,14 +17,14 @@ Each job describes the transformation logic to perform on data from a single sou
 ![Data transformation pipeline, high level](/images/rdi/data-transformation-pipeline.png)
 
 ## Default Job
-In situations where there is a need to perform a default data transformation, the default job is used. The transformation associated with this job will be applied to all tables that lack their own explicitly defined jobs. The default job must have a table name of "*", and only one instance of this type of job is permitted.
+In situations where there is a need to perform a transformation on all ingested records without creating a specific job for specific tables, the default job is used. The transformation associated with this job will be applied to all tables that lack their own explicitly defined jobs. The default job must have a table name of "*", and only one instance of this type of job is permitted.
 
-For example, the default job can be used to implement common things like adding a prefix/postfix to all Redis keys or injecting a new field for each new hash or JSON written to the target without the need to define such transformations individually for each source table.
+For example, the default job can be used to implement common things like adding a prefix/postfix to all Redis keys, or injecting a new field for each new hash or JSON written to the target without the need to define such transformations individually for each source table.
 
-At this moment the default job is supported for 'ingest' pipelines only.
+Currently the default job is supported for ingest pipelines only.
 
 ### Example
-This example demonstrates the process of adding an app_code field with a value of 'rdi' using the `add_field`` block to all tables that lack explicitly defined jobs. Additionally, it appends an 'aws' prefix and a 'gcp' postfix to every generated hash key.
+This example demonstrates the process of adding an `app_code` field with a value of `foo` using the `add_field` block to all tables that lack explicitly defined jobs. Additionally, it appends an `aws` prefix and a `gcp` postfix to every generated hash key.
 
 default.yaml
 ```yaml
@@ -36,7 +36,7 @@ transform:
     with:
       fields:
         - field: after.app_code
-          expression: "`rdi`"
+          expression: "`foo`"
           language: jmespath
 output:
   - uses: redis.write
