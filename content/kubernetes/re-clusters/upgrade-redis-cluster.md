@@ -21,7 +21,7 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
   1. [Upgrade the Redis Enterprise operator](#upgrade-the-operator)
   2. [Upgrade the Redis Enterprise cluster (REC)](#upgrade-the-redis-enterprise-cluster-rec)
 
-
+{{<warning>}}Redis Enterprise for Kubernetes 7.2.4-2 introduces a new limitation. You cannot recover or upgrade your cluster if there are databases with manually uploaded modules. See the [Redis Enterprise Software 7.2.4 known limitations]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#cluster-recovery-with-manually-uploaded-modules">}}) for more details.{{</warning>}}
 
 ## Before upgrading
 
