@@ -41,6 +41,14 @@ Usage: redis-di get-rejected [OPTIONS]
 
   Port of RDI Database
 
+- `rdi_username`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-username`
+
+  User for the RDI Database
+
 - `rdi_password`:
 
   - Type: STRING
@@ -127,6 +135,7 @@ Options:
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
   --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
                                   required]
+  --rdi-username TEXT             User for the RDI Database
   --rdi-password TEXT             RDI Database Password
   --rdi-key TEXT                  Private key file to authenticate with
   --rdi-cert TEXT                 Client certificate file to authenticate with
