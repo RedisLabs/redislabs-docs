@@ -49,11 +49,6 @@ Verify your license is valid before upgrading your REC. Invalid licenses will ca
 
 Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 
-### Large clusters
-
-On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases.
-
-A fix is available in the 6.4.2-5 release. Upgrade your operator version to 6.4.2-5 or later before upgrading your Kubernetes cluster. 
 
 ## Upgrade the operator
 
