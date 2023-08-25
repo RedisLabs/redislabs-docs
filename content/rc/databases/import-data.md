@@ -69,17 +69,84 @@ To use the Redis Cloud admin console to import your data, you must first share t
 
 To share and import an RDB file that is stored in an AWS Simple Storage Service (S3) bucket:
 
-1. In the AWS management console, configure the file’s Access Control List to give read-only access to Redis Enterprise Cloud:
-    1. Go to the bucket in the AWS S3 console. In the location where the file is stored, select the RDB file.
-    1. Select **Permissions**.
-    1. Select **Edit**.
-    1. Select **Add grantee**.
-    1. In the Grantee field, enter:
-    `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-    1. In the Read column, select Yes.
-    1. Select Save.
+1. In the [AWS Management Console](https://console.aws.amazon.com/), configure the bucket's [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) to give access to Redis Cloud:
+    1. Use the **Services** menu to locate and select **Storage** > **S3**.  This takes you to the Amazon S3 admin panel.
 
-    For more info, see [Configuring ACLs for objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html).
+    1.  Use the Buckets list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Bucket policy** section, and then click **Edit**.
+
+        -  If there is no existing bucket policy, add the following JSON bucket policy. Replace `UNIQUE-BUCKET-NAME` with the name of your bucket.
+
+        {{% expand "CompetePolicy.json" %}}
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Id": "MyBucketPolicy",
+        "Statement": [
+            {
+                "Sid": "RedisCloudBackupsAccess",
+                "Effect": "Allow",
+                "Principal": {
+                    "AWS": "arn:aws:iam::168085023892:root"
+                },
+                "Action": [
+                    "s3:PutObject",
+                    "s3:getObject",
+                    "s3:DeleteObject"
+                ],
+                "Resource": "arn:aws:s3:::UNIQUE-BUCKET-NAME/*"
+            }
+        ]
+    }
+    ```
+        {{% /expand %}}
+
+        - If a bucket policy already exists, add the following JSON policy statement to the list of statements. Replace `UNIQUE-BUCKET-NAME` with the name of your bucket.
+
+        {{% expand "Statement.json" %}}
+    ```json
+    {
+        "Sid": "RedisCloudBackupsAccess",
+        "Effect": "Allow",
+        "Principal": {
+            "AWS": "arn:aws:iam::168085023892:root"
+        },
+        "Action": [
+            "s3:PutObject",
+            "s3:getObject",
+            "s3:DeleteObject"
+        ],
+        "Resource": "arn:aws:s3:::UNIQUE-BUCKET-NAME/*"
+    }
+    ```
+        {{% /expand %}}
+
+    1. Save your changes.
+
+    1. If the bucket is encrypted using [SSE-KMS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html), add the following statement to your [key policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying.html). If you do not have a key policy, see [Creating a key policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-overview.html). Replace `UNIQUE-BUCKET-NAME` with the name of your bucket and `CUSTOM-KEY-ARN` with your key's [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html).
+
+    {{% expand "Statement.json" %}}
+```json
+{
+    "Sid": "Allow use of the key",
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": "arn:aws:iam::168085023892:root"
+    },
+    "Action": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:DescribeKey"
+    ],
+    "Resource": [
+        "arn:aws:s3:::UNIQUE-BUCKET-NAME/*",
+        "CUSTOM-KEY-ARN"
+    ]
+}
+```
+    {{% /expand %}}
+
 
 1. In the [Redis Cloud admin console](https://app.redislabs.com/), select the target database from the database list.
 1. In the **Danger Zone**, select **Import**.
