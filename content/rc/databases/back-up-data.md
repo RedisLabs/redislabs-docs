@@ -85,7 +85,7 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
 
 1. In the [AWS Management Console](https://console.aws.amazon.com/), use the **Services** menu to locate and select **Storage** > **S3**.  This takes you to the Amazon S3 admin panel.
 
-1.  Use the Buckets list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Bucket policy** section, and then click **Edit**.
+1.  Use the **Buckets** list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Bucket policy** section, and then click **Edit**.
 
     -  If there is no existing bucket policy, add the following JSON bucket policy. Replace `UNIQUE-BUCKET-NAME` with the name of your bucket.
 

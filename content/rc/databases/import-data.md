@@ -72,7 +72,7 @@ To share and import an RDB file that is stored in an AWS Simple Storage Service 
 1. In the [AWS Management Console](https://console.aws.amazon.com/), configure the bucket's [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) to give access to Redis Cloud:
     1. Use the **Services** menu to locate and select **Storage** > **S3**.  This takes you to the Amazon S3 admin panel.
 
-    1.  Use the Buckets list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Bucket policy** section, and then click **Edit**.
+    1.  Use the **Buckets** list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Bucket policy** section, and then click **Edit**.
 
         -  If there is no existing bucket policy, add the following JSON bucket policy. Replace `UNIQUE-BUCKET-NAME` with the name of your bucket.
 
