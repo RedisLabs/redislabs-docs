@@ -231,8 +231,9 @@ If all of your clusters have been upgraded to operator version 6.4.2-6 or later,
    oc adm policy remove-scc-from-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec-name>
    ```
 
-
 ### Upgrade databases
+
+{{<warning>}}In version 7.2.4, old module versions and manually uploaded modules are not persisted. If databases are not upgraded after cluster upgrade, and require cluster recovery afterwards, you'll need to contact Redis support. This issue will be fixed in the next maintenance release by moving the stored location of the modules.{{</warning>}}
 
 After the cluster is upgraded, you can upgrade your databases. The process for upgrading databases is the same for both Kubernetes and non-Kubernetes deployments. For more details on how to [upgrade a database]({{<relref "/rs/installing-upgrading/upgrading/upgrade-database">}}), see the [Upgrade an existing Redis Enterprise Software deployment]({{<relref "/rs/installing-upgrading/upgrading">}}) documentation.
 
