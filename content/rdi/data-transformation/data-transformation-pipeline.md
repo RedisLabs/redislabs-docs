@@ -21,7 +21,7 @@ In situations where there is a need to perform a transformation on all ingested 
 
 For example, the default job can be used to implement common things like adding a prefix/postfix to all Redis keys, or injecting a new field for each new hash or JSON written to the target without the need to define such transformations individually for each source table.
 
-Currently the default job is supported for ingest pipelines only.
+Currently, the default job is supported for ingest pipelines only.
 
 ### Example
 This example demonstrates the process of adding an `app_code` field with a value of `foo` using the `add_field` block to all tables that lack explicitly defined jobs. Additionally, it appends an `aws` prefix and a `gcp` postfix to every generated hash key.
