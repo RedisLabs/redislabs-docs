@@ -77,47 +77,47 @@ To share and import an RDB file that is stored in an AWS Simple Storage Service 
         -  If there is no existing bucket policy, add the following JSON bucket policy. Replace `UNIQUE-BUCKET-NAME` with the name of your bucket.
 
         {{% expand "CompetePolicy.json" %}}
-    ```json
-    {
-        "Version": "2012-10-17",
-        "Id": "MyBucketPolicy",
-        "Statement": [
-            {
-                "Sid": "RedisCloudBackupsAccess",
-                "Effect": "Allow",
-                "Principal": {
-                    "AWS": "arn:aws:iam::168085023892:root"
-                },
-                "Action": [
-                    "s3:PutObject",
-                    "s3:getObject",
-                    "s3:DeleteObject"
-                ],
-                "Resource": "arn:aws:s3:::UNIQUE-BUCKET-NAME/*"
-            }
-        ]
-    }
-    ```
+```json
+{
+    "Version": "2012-10-17",
+    "Id": "MyBucketPolicy",
+    "Statement": [
+        {
+            "Sid": "RedisCloudBackupsAccess",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::168085023892:root"
+            },
+            "Action": [
+                "s3:PutObject",
+                "s3:getObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::UNIQUE-BUCKET-NAME/*"
+        }
+    ]
+}
+```
         {{% /expand %}}
 
         - If a bucket policy already exists, add the following JSON policy statement to the list of statements. Replace `UNIQUE-BUCKET-NAME` with the name of your bucket.
 
         {{% expand "Statement.json" %}}
-    ```json
-    {
-        "Sid": "RedisCloudBackupsAccess",
-        "Effect": "Allow",
-        "Principal": {
-            "AWS": "arn:aws:iam::168085023892:root"
-        },
-        "Action": [
-            "s3:PutObject",
-            "s3:getObject",
-            "s3:DeleteObject"
-        ],
-        "Resource": "arn:aws:s3:::UNIQUE-BUCKET-NAME/*"
-    }
-    ```
+```json
+{
+    "Sid": "RedisCloudBackupsAccess",
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": "arn:aws:iam::168085023892:root"
+    },
+    "Action": [
+        "s3:PutObject",
+        "s3:getObject",
+        "s3:DeleteObject"
+    ],
+    "Resource": "arn:aws:s3:::UNIQUE-BUCKET-NAME/*"
+}
+```
         {{% /expand %}}
 
     1. Save your changes.
