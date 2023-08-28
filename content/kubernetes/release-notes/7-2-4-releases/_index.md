@@ -68,8 +68,6 @@ Any distribution not listed below is not supported for production workloads.
 | Rancher 2.6 | <span title="X icon">&#x274c;</span> | <span title="X icon">&#x274c;</span> | <span title="Warning icon">&#x26A0;&#xFE0F;</span> |  |  |  |
 | Rancher 2.7 |  | <span title="Warning icon">&#x26A0;&#xFE0F;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> |  |  |
 | VMware TKG 1.6 | <span title="Warning icon">&#x26A0;&#xFE0F;</span> | <span title="Warning icon">&#x26A0;&#xFE0F;</span> |  |  |  |  |
-| VMware TKG 2.1 | <span title="Warning icon">&#x26A0;&#xFE0F;</span> | <span title="Warning icon">&#x26A0;&#xFE0F;</span> | <span title="Check mark icon">&#x2705;</span> |  |  |  |
-| VMware TKG 2.2 |  | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> |  |  |
 | **OpenShift version** | **4.9** | **4.10** | **4.11** | **4.12** | **4.13** |  |
 |  | <span title="X icon">&#x274c;</span> | <span title="Warning icon">&#x26A0;&#xFE0F;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> | <span title="Check mark icon">&#x2705;</span> |  |
 | **VMware TKGI version** | **1.13** | **1.14** | **1.15** | **1.16** |  |  |
