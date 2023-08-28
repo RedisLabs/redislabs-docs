@@ -176,7 +176,7 @@ Patch the `operator-environment-config` in the REC namespace with a new environm
 kubectl patch ConfigMap/operator-environment-config \ 
 -n <rec-namespace> \
 --type merge \
--p `{"data":{"REDB_NAMESPACES": "<comma,separated,list,of,namespaces,to,watch"}}`
+-p '{"data":{"REDB_NAMESPACES": "<comma,separated,list,of,namespaces,to,watch"}}'
 ```
 
 {{<warning>}}
