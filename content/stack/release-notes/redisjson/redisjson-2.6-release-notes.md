@@ -12,10 +12,20 @@ aliases:
 ---
 ## Requirements
 
-RedisJSON v2.6.4 requires:
+RedisJSON v2.6.6 requires:
 
 - Minimum Redis compatibility version (database): 7.1
 - Minimum Redis Enterprise Software version (cluster): 7.2
+
+## v2.6.6 (August 2023)
+
+This is a maintenance release for RedisJSON 2.6.
+
+Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
+
+Details:
+
+This is just a version number alignment with RedisJSON for Redis Enterprise (with Active-Active support).
 
 ## v2.6 GA (v2.6.4) (July 2023)
 
