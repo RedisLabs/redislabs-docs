@@ -34,8 +34,8 @@ RDI will need the following to run the ingest use case:
 - A target Redis database to which RDI will write data.
 - The RDI CLI can run on any host that can access the RDI Redis database using a RESP connection.
 
-**Does RDI requires its own Redis database in the ingest scenario?**
-RDI provisions a one or two shard Redis database. This Redis database is used as a staging database where RDI receives data from Debezium Server, process it and writes it to the target Redis database. The RDI database is typically very small, up to 1GB of RAM in size (see the sizing section).
+**Does RDI require its own Redis database in the ingest scenario?**
+RDI provisions a one or two shard Redis database. This Redis database is used as a staging database where RDI receives data from Debezium Server, processes it, and writes it to the target Redis database. The RDI database is typically very small, up to 1GB of RAM in size (see the sizing section).
 **Does RDI need access to the Redis Enterprise cluster REST API?**
 RDI uses the cluster API only for the creation and removal of the RDI Redis database. If you don't want RDI to access the cluster API, you can create the RDI database via the Redis Enterprise GUI or you can start the RDI installation using the `redis-di configure` command. RDI doesn't require the cluster API for any other command.
 **Is RDI suitable for synchronization with an active database?**
