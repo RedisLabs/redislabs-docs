@@ -44,7 +44,7 @@ RDI is designed for synchronization with a live database (where data is being up
 RDI can process around 20,000 records per second end to end. This is typically much faster than the speed of changes introduced to the source database.
 **How does RDI translate the data from source to Redis?**
 RDI has several levels of data translation and transformation. RDI will translate each value in the database record to a string or number based on the reported Debezium type. For more information look at {{<relref "/rdi/data-transformation/data-type-handling.md">}}.
-In addition to these simple conversions, the user can choose the Redis data type to use at the target (Hash, JSON, String, Set, Sorted Set, Stream). (field names, Redis key) and the data (add fields, remove fields, calculater fields) using declarative transformations. Finally the user can denormalize data from several source records into a composite JSON document at the target.
+In addition to these simple conversions, the user can choose the Redis data type to use at the target (Hash, JSON, String, Set, Sorted Set, Stream). (field names and Redis key) and the data (add fields, remove fields, calculate fields) using declarative transformations. Finally the user can denormalize data from several source records into a composite JSON document at the target.
 **Can one source record create more than one target key?**
 RDI is capable of mapping a source record to several different keys (of any type) at the target. In addition, RDI allows for more than one Redis database target (each one can reside in a different cluster).
 
