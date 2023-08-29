@@ -2,8 +2,8 @@
 Title: RedisJSON 2.6 release notes
 linkTitle: v2.6 (July 2023)
 description: RESP3 support. New commands JSON.MERGE and JSON.MSET.
-min-version-db: "7.1"
-min-version-rs: "7.2"
+min-version-db: "7.2"
+min-version-rs: "7.2.4"
 weight: 96
 alwaysopen: false
 toc: "true"
@@ -14,8 +14,8 @@ aliases:
 
 RedisJSON v2.6.6 requires:
 
-- Minimum Redis compatibility version (database): 7.1
-- Minimum Redis Enterprise Software version (cluster): 7.2
+- Minimum Redis compatibility version (database): 7.2
+- Minimum Redis Enterprise Software version (cluster): 7.2.4
 
 ## v2.6.6 (August 2023)
 
