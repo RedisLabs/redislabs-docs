@@ -1,7 +1,7 @@
 ---
 Title: RediSearch 2.8 release notes
 linkTitle: v2.8 (July 2023)
-description: RESP3 support.
+description: RESP3 support. Geo Polygon Search. Performance improvements.
 min-version-db: "7.2"
 min-version-rs: "7.2.4"
 weight: 91
