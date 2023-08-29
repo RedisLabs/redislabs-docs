@@ -55,6 +55,6 @@ To skip maintenance temporarily for a subscription:
 
 You will only be allowed to skip maintenance twice in one month. 
 
-Redis will still perform [urgent maintenance]({{<relref "/rc/subscriptions/maintenance#urgent-maintenance">}}) on your subscription during the skipped maintenance period.
+During the skipped maintenance period, Redis will not perform any minor or major upgrades. Redis may perform [urgent maintenance]({{<relref "/rc/subscriptions/maintenance#urgent-maintenance">}}) on your subscription, but only if it is absolutely necessary.
 
 
