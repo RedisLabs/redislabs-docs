@@ -53,18 +53,16 @@ To update a node's internal IP address:
 1. Turn the node into a replica using [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/node/enslave">}}):
 
     ```sh
-    rladmin node <ID> enslave
+    rladmin node <ID> enslave demote_node
     ```
 
-    <!-- Do you need to use demote_node too? -->
+1. Deactivate the `rlec_supervisord` service on the node:
 
-1. Disable the `rlec_supervisord` service on the node.
-
-    <!-- What is the recommended command and options? How do you disable this? Is it a config setting? Or do you kill the process? -->
+    ```sh
+    systemctl disable rlec_supervisord 
+    ```
 
 1. Restart the node.
-
-    <!-- Why is this necessary? To make sure previously running Redis Enterprise processes are stopped and/or cleaned up properly? Some other reason? -->
 
 1. Follow the operating system vendor's instructions to change the node's IP address.
 
@@ -76,39 +74,48 @@ To update a node's internal IP address:
 
 1. Enable the `rlec_supervisord` service on the node:
 
-    <!-- Command to enable rlec_supervisord? Or is this the same thing as restarting rlec_supervisord in the next step? -->
+    ```sh
+    systemctl enable rlec_supervisord 
+    ```
 
 1. Restart `rlec_supervisord` or restart the node.
 
-    <!-- How do I resstart rlec_supervisord? -->
 
-1. Verify the node rejoined the cluster.
+    ```sh
+    systemctl start rlec_supervisord
+    ```
+
+1. Verify the node rejoined the cluster:
 
     ```sh
     rladmin status nodes
     ```
 
-    <!-- Is this the recommended way to check that the node has rejoined the cluster? -->
-
-1. Repeat the same steps for the next node in the cluster.
-
-    <!-- Which steps is this referring to? The entire procedure or just starting from `rladmin node addr set` -->
+Repeat this procedure for other cluster nodes to change their internal IP addresses.
 
 ## Configure external IP addresses
 
-When configuring external addresses, it is possible to list external
-addresses that are not bound to an active interface, but are otherwise
-mapped or configured to route traffic to the node (AWS Elastic IPs, a
-load balancer VIP and so on).
+You can configure external addresses that are not bound to an active interface, but are otherwise mapped or configured to route traffic to the node (such as AWS Elastic IPs or a load balancer VIP).
 
-`rladmin` node address commands syntax:
+You can use [rladmin node external_addr]({{<relref "/rs/references/cli-utilities/rladmin/node/external-addr">}}) to change a node's external IP addresses.
+
+Add an external IP address:
 
 ```sh
-rladmin node external_addr set
+rladmin node <ID> external_addr add <IP address>
 ```
 
+Set one or more external IP addresses:
+
 ```sh
-rladmin node external_addr [ add | remove ]
+rladmin node <ID> external_addr set <IP address 1> <IP address N>
+```
+
+
+Remove an external IP address:
+
+```sh
+rladmin node <ID> external_addr remove <IP address>
 ```
 
 {{< note >}}
