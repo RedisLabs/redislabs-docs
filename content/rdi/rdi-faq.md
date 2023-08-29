@@ -37,7 +37,7 @@ RDI will need the following to run the ingest use case:
 **Does RDI require its own Redis database in the ingest scenario?**
 RDI provisions a one or two shard Redis database. This Redis database is used as a staging database where RDI receives data from Debezium Server, processes it, and writes it to the target Redis database. The RDI database is typically very small, up to 1GB of RAM in size (see the sizing section).
 **Does RDI need access to the Redis Enterprise cluster REST API?**
-RDI uses the cluster API only for the creation and removal of the RDI Redis database. If you don't want RDI to access the cluster API, you can create the RDI database via the Redis Enterprise GUI or you can start the RDI installation using the `redis-di configure` command. RDI doesn't require the cluster API for any other command.
+RDI uses the cluster API only for the creation and removal of the RDI Redis database. If you don't want RDI to access the cluster API, you can create the RDI database via the Redis Enterprise GUI or RLAdmin CLI. Then you can start the RDI installation using the `redis-di configure` command. RDI doesn't require the cluster API for any other command.
 **Is RDI suitable for synchronization with an active database?**
 RDI is designed for synchronization with a live database (where data is being updated). RDI uses Debezium Server to get all the required existing data from the database and to track changes to data in near real-time. This is why Debezium Server is called a Change Data Capture (CDC) server. CDC products use the database binlog directly or via APIs to track committed changes to the data.
 **What pace of changes can RDI deal with?**
