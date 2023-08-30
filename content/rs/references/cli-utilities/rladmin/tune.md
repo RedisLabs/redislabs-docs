@@ -40,6 +40,7 @@ rladmin tune cluster
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
         [ acl_pubsub_default { resetchannels | allchannels } ]
+        [ resp3_default { enabled | disabled } ]
 ```
 
 ### Parameters
@@ -64,12 +65,13 @@ rladmin tune cluster
 | redis_provision_node_threshold         | size in MB                        | Memory (in MBs by default or can be specified) needed to provision a new database                                           |
 | redis_provision_node_threshold_percent | percentage                | Memory (in percentage) needed to provision a new database                                                                    |
 | redis_upgrade_policy                   | `latest`<br />`major`           | When you upgrade or create a new Redis database, this policy determines which version of Redis database compatibility is used.<br /><br />Supported values are:<ul><li><p>`latest`, which applies the most recent Redis compatibility update \(_effective default prior to v6.2.4_)<p></li><li>`major`, which applies the most recent major release compatibility update (_default as of v6.2.4_).</li></ul>                                                                                                                 |
-| repl_diskless                          | `enabled`<br />`disabled`       | Activates or deactivates diskless replication (can be overwritten per database)                                              |
+| repl_diskless                          | `enabled`<br />`disabled`       | Activates or deactivates diskless replication (can be overridden per database)                                              |
+| resp3_default | `enabled` <br /> `disabled` | Determines the default value of the `resp3` option upon upgrading a database to version 7.2 (defaults to `enabled`) |
 | show_internals                         | `enabled`<br />`disabled`       | Controls the visibility of internal databases that are only used for the cluster's management                                |
-| slave_ha                               | `enabled` <br /> `disabled`   | Activates or deactivates replica high availability                                                                           |
-| slave_ha_bdb_cooldown_period           | time in seconds                   | Time (in seconds) after shard relocation during which databases can't be relocated to another node                           |
-| slave_ha_cooldown_period               | time in seconds                   | Time (in seconds) after shard relocation during which the replica high-availability mechanism can't relocate to another node |
-| slave_ha_grace_period                  | time in seconds                   | Time (in seconds) between when a node fails and when replica high availability starts relocating shards to another node      |
+| slave_ha                               | `enabled` <br /> `disabled`   | Activates or deactivates [replica high availability]({{<relref "/rs/databases/configure/replica-ha">}}) in the cluster<br />(enabled by default; use [`rladmin tune db`](#tune-db) to change `slave_ha` for a specific database) |
+| slave_ha_bdb_cooldown_period           | time in seconds (default:&nbsp;7200) | Time (in seconds) a database must wait after its shards are relocated by [replica high availability]({{<relref "/rs/databases/configure/replica-ha">}}) before it can go through another shard migration if another node fails (default is 2 hours) |
+| slave_ha_cooldown_period               | time in seconds (default:&nbsp;3600) | Time (in seconds) [replica high availability]({{<relref "/rs/databases/configure/replica-ha">}}) must wait after relocating shards due to node failure before performing another shard migration for any database in the cluster (default is 1 hour) |
+| slave_ha_grace_period                  | time in seconds (default:&nbsp;600) | Time (in seconds) between when a node fails and when [replica high availability]({{<relref "/rs/databases/configure/replica-ha">}}) starts relocating shards to another node      |
 | watchdog_profile                       | `cloud` <br /> `local-network` | Watchdog profiles with preconfigured thresholds and timeouts (deprecated as of Redis Enterprise Software v6.4.2-69; use `failure_detection_sensitivity` instead)<br />• `cloud` is suitable for common cloud environments and has a higher tolerance for latency variance (also called network jitter).<br />• `local-network` is suitable for dedicated LANs and has better failure detection and failover times. |
 
 ### Returns
@@ -108,6 +110,7 @@ rladmin tune db { db:<id> | <name> }
         [ max_client_pipeline <value> ]
         [ max_connections <value> ]
         [ max_aof_file_size <size> ]
+        [ max_aof_load_time <seconds> ]
         [ oss_cluster { enabled | disabled } ]
         [ oss_cluster_api_preferred_ip_type <value> ]
         [ slave_ha { enabled | disabled } ]
@@ -127,6 +130,7 @@ rladmin tune db { db:<id> | <name> }
         [ mtls_allow_outdated_cert { enabled | disabled } ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
+        [ resp3 { enabled | disabled } ]
 ```
 
 ### Parameters
@@ -148,6 +152,7 @@ rladmin tune db { db:<id> | <name> }
 | gradual_sync_mode                    | `enabled`<br /> `disabled`<br /> `auto` | Activates, deactivates, or automatically determines gradual sync of source shards                                              |
 | master_persistence                   | `enabled`<br /> `disabled`       | Activates or deactivates persistence of the primary shard                                                                             |
 | max_aof_file_size                    | size in MB                       | Maximum size (in MB, if not specified) of [AoF]({{< relref "/glossary/_index.md#letter-a" >}}) file (minimum value is 10 GB)              |
+| max_aof_load_time | time in seconds | Time limit in seconds to load a shard from an append-only file (AOF). If exceeded, an AOF rewrite is initiated to decrease future load time.<br />Minimum: 2700 seconds (45 minutes) <br />Default: 3600 seconds (1 hour) |
 | max_client_pipeline                  | integer                          | Maximum commands in the proxy's pipeline per client connection (max value is 2047, default value is 200)                              |
 | max_connections                      | integer                          | Maximum client connections to the database's endpoint (default value is 0, which is unlimited)                                            |
 | max_shard_pipeline                   | integer                          | Maximum commands in the proxy's pipeline per shard connection (default value is 200)                                                  |
@@ -163,6 +168,7 @@ rladmin tune db { db:<id> | <name> }
 | repl_backlog                         | size in MB<br /> `auto`          | Size of the replication buffer                                                                                        |
 | repl_diskless                        | `enabled`<br /> `disabled`<br /> `default`   | Activates or deactivates diskless replication (defaults to the cluster setting)                                          |
 | repl_timeout                         | time in seconds                  | Replication timeout (in seconds)                                                                                                      |
+| resp3 | `enabled`<br /> `disabled` | Enables or deactivates RESP3 support (defaults to `enabled`) |
 | schedpolicy                          | `cmp`<br /> `mru`<br /> `spread`<br /> `mnp` | Controls how server-side connections are used when forwarding traffic to shards                                           |
 | skip_import_analyze                  | `enabled`<br /> `disabled`       | Skips the analyzing step when importing a database                                                                                    |
 | slave_buffer                         | value in MB<br /> hard:soft:time | Redis replica output buffer limits                                                                                                    |

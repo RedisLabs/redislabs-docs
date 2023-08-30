@@ -26,10 +26,7 @@ Before you upgrade a module enabled in a database, [install the new version of t
 
 ## Upgrade a module for a database
 
-After you install an updated module on the cluster, go to the configuration of the databases that use the module.
-The database configuration shows that a new version of the module is available.
-
-![update_available-1](/images/rs/update_available.png?width=1346&height=1600)
+After you install an updated module on the cluster, you can upgrade databases to use the new module version.
 
 {{<warning>}}
 After you upgrade the module for a database, the database shards restart. This causes a short interruption in the availability of this database across the cluster.

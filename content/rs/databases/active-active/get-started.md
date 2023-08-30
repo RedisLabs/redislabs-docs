@@ -16,7 +16,7 @@ aliases: [
 categories: ["RS"]
 ---
 
-To get you started, this article will help you set up a Active-Active database, formerly known as CRDB (conflict-free replicated database) spanning across two Redis Enterprise Software
+To get you started, this article will help you set up an Active-Active database, formerly known as CRDB (conflict-free replicated database) spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
 - Step 1: Run two Redis Enterprise Software (RS) Docker containers
@@ -33,7 +33,7 @@ To set up an Active-Active database in a production environment, use the instruc
 [creating an Active-Active database]({{< relref "/rs/databases/active-active/create.md" >}}).
 {{< /note >}}
 
-## Step 1: Run two containers
+## Run two containers
 
 To spin up two RS containers, run these commands:
 
@@ -49,15 +49,20 @@ The **-p** options map the admin console port (8443), REST API port (9443), and
 database access port differently for each container to make sure that all
 containers can be accessed from the host OS that is running the containers.
 
-## Step 2: Setup two clusters
+## Set up two clusters
 
 1. For cluster 1, direct your browser to **https://localhost:8443** on the
-host machine to see the Redis Enterprise Software web console. Simply
-click the **Setup** button on the page to get started.
+host machine to see the Redis Enterprise Software web console.
 
-    {{< note >}}
+    {{<note>}}
 Depending on your browser, you may see a certificate error. Continue to the website.
-    {{< /note >}}
+    {{</note>}}
+
+    If you are using the new Cluster Manager UI, switch to the legacy admin console.
+
+    {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
+
+1. Click the **Setup** button.
 
     ![getstarted-setup](/images/rs/getstarted-setup.png)
 
@@ -87,11 +92,11 @@ Repeat the same operations for cluster 2 with these differences:
 Now we have two Redis Enterprise Software clusters with FQDNs
 **cluster1.local** and **cluster2.local**.
 
-    {{< note >}}
+{{<note>}}
 Each Active-Active instance must have a unique fully-qualified domain name (FQDN).
-    {{< /note >}}
+{{</note>}}
 
-## Step 3: Create a Redis Active-Active database
+## Create an Active-Active database
 
 1. After you login to cluster1.local, select the Redis database and deployment type
 **Geo-Distributed**. Then click **Next**.
@@ -137,7 +142,7 @@ You cannot enable or disable database clustering after the Active-Active databas
     local clusters running on the same host.
 
 <!-- Also in getting-started-crdbs.md -->
-## Step 4: Test the connection to your member Redis Active-Active databases
+## Test connection
 
 With the Redis database created, you are ready to connect to your
 database. See [Connect to Active-Active databases]({{<relref "/rs/databases/active-active/connect.md">}}) for tutorials and examples of multiple connection methods.

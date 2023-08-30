@@ -45,7 +45,7 @@ certain level of disk performance. There are two features in Redis Enterprise So
 this feature could be critical to use:
 
 1. When using [Redis on
-    Flash]({{< relref "/rs/databases/redis-on-flash/" >}})
+    Flash]({{< relref "/rs/databases/auto-tiering/" >}})
 1. When using AOF on every write and there is a high write load. In
     this case, the provisioned IOPS should be on the nodes used as
     replicas in the cluster.

@@ -78,7 +78,7 @@ The **Overview** summarizes the options use to created the subscription.
     |:---------|:--------------|
     | **Cloud vendor** | Your subscription cloud vendor |
     | **Plan description** | Brief summary of subscription, including the plan type, cloud provider, and region |
-    | **Redis on Flash** | Checked when Redis on Flash is enabled |
+    | **Auto Tiering** | Checked when Auto Tiering is enabled |
     | **Multi-AZ** | Checked when multiple availability zones are enabled |
     | **Active-Active Redis** | Checked when Active-Active Redis is enabled for your subscription |
     | **Region** | Describes the region your subscription is deployed to |

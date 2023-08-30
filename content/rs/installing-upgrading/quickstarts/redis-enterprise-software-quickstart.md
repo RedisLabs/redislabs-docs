@@ -68,19 +68,7 @@ To set up your machine as a Redis Enterprise Software cluster:
 
 ## Create a database
 
-1. Select **redis database** and the **Single Region** deployment, then select **Next**.
-
-    ![Redis Enterprise Software create database](/images/rs/getstarted-newdatabase.png)
-
-1. Enter a database name such as `database1` and then select **Show advanced options**.
-
-    ![Redis Enterprise Software configure new database screen](/images/rs/getstarted-createdatabase.png)
-
-1. For the **Endpoint port number**, enter `12000`.
-
-1. Select **Activate** to create your database.
-
-You now have a Redis database!
+{{<embed-md "quick-db-setup.md">}}
 
 ## Connect to your database
 

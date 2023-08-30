@@ -42,7 +42,7 @@ The available settings vary according to your subscription plan:
 |:-----------|:----------|
 | **Subscription** | Read-only description of your subscription plan, including cloud provider and region |
 | **Active-Active Redis** | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_) |
-| **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
+| **Auto Tiering** | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_) |
 | **Database name** | A name for your database (_required_) |
 | **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
 | **Type**  | Controls optional capabilities, such as modules or protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
@@ -131,7 +131,7 @@ Here are some general guidelines:
 
 - Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory size when replication is enabled.
 
-- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Redis on Flash]({{< relref "/rs/databases/redis-on-flash/" >}}) is enabled.)
+- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}) is enabled.)
 
 - Modules also consume memory.
 

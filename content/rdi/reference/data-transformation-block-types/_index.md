@@ -5,8 +5,7 @@ description: Data transformation block type reference
 weight: 30
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 {{<allchildren style="h2" description="true"/>}}
-

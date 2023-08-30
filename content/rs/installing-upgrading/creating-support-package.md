@@ -26,10 +26,15 @@ The process of creating the support package can take several minutes and generat
 
 To create a support package:
 
-1. Select **Support** at the top right of the admin console.
+1. In the navigation menu, select **Support**.
 
-1. Select **Create support package** and confirm the action.
-    The package is created and downloaded by your browser.
+    {{<image filename="images/rs/screenshots/create-support-package.png"  width="60%" alt="Select Support and create a support package.">}}{{</image>}}
+
+1. Select **Proceed**.
+
+1. In the **Create support package** dialog, select **Run process**.
+
+1. The package is created and downloaded by your browser.
 
 ## Command-line method
 

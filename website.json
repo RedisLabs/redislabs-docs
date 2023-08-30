@@ -8,12 +8,52 @@
     "RoutingRules": [
         {
             "Condition": {
-                "KeyPrefixEquals": "6.4/"
+                "KeyPrefixEquals": "7.2/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.4/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.4/ri/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.4/rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.4/modules/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/"
             }
         },
         {
@@ -274,6 +314,16 @@
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
             }
         },
         {

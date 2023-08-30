@@ -18,7 +18,7 @@ Throughout the document, the snippets make use of the Kubernetes `kubectl` tool.
 - [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
 - A target Redis DB (can be added after installation).
 
-> Note: The RedisGears binaries to install must match the base OS of Redis Enterprise containers. In case of [Rancher](https://www.rancher.com/), the Redis Enterprise container base OS is Ubuntu 18.04. Use the following command to install RedisGears:
+> Note: The RedisGears binaries to install must match the base OS of Redis Enterprise containers. In case of [Rancher](https://www.rancher.com/), Redis Enterprise container base OS is Ubuntu 18.04. Use the following command to install RedisGears:
 
 ```bash
 curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
@@ -84,7 +84,7 @@ There are two options for installing the RDI CLI in an Kubernetes environment:
 
   You should get a message - "Successfully configured redis-di instance on port <REDIS_DI_PORT>"
 
-The `create` command will create a database named `redis-di-1` in your cluster. You must use a privileged Redis Enterprise user with the necessary permissions to create a database and register RedisGears recipes to run it.
+The `create` command will create a BDB named `redis-di-1` in your cluster. You will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register Gears recipes, to run it.
 
 ## Create configuration file for Redis Data Integration
 
