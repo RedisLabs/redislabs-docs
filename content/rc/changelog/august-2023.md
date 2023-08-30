@@ -24,7 +24,7 @@ A preview of [triggers and functions]({{<relref "/stack/triggers-functions">}}) 
 - AWS Asia Pacific - Singapore (`ap-southeast-1`)
 - GCP Asia Pacific - Tokyo (`asia-northeast1`)
 
-To use it, [create a fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription">}}) with [Redis 7.2]({{<relref "/rc/changelog/june-2023##redis-72-opt-in">}}). Then, [create your database]({{<relref "/rc/databases/create-database">}}) and set the database Type to Redis and select Triggers and Functions in the drop-down. Or, set the database Type to Redis Stack to get all of our advanced capabilities.
+To use it, [create a fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription">}}) in one of these regions. Then, [create your database]({{<relref "/rc/databases/create-database">}}) and set the database Type to Redis and select Triggers and Functions in the drop-down. Or, set the database Type to Redis Stack to get all of our advanced capabilities.
 
 If you'd like to use triggers and functions with a [Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}), contact [support](https://redis.com/company/support/).
 
