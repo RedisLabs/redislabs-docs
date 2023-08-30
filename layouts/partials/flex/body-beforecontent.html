@@ -55,7 +55,7 @@
 
             {{if eq (index .Params.categories 0) "Platforms"}}
             <!-- Remove style="display: none;" to enable Kubernetes version selector -->
-            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()" style="display: none;">
+            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()" style="transform: translateY(28px);">
                 <button class="menu__version-selector-btn version-selector-control">
                     <span id="versionSelectorValue" class="version-selector-control"></span>
                     <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>

@@ -21,13 +21,19 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
   1. [Upgrade the Redis Enterprise operator](#upgrade-the-operator)
   2. [Upgrade the Redis Enterprise cluster (REC)](#upgrade-the-redis-enterprise-cluster-rec)
 
+{{<warning>}}Redis Enterprise for Kubernetes 7.2.4-2 introduces a new limitation. You cannot recover or upgrade your cluster if there are databases with manually uploaded modules. See the [Redis Enterprise Software 7.2.4 known limitations]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#cluster-recovery-with-manually-uploaded-modules">}}) for more details.{{</warning>}}
+
 ## Before upgrading
 
 Review the following warnings before starting your upgrade.
 
-### Supported upgrade paths**
+### Compatibility
 
-   If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
+Before upgrading, check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to make sure your Kubernetes distribution is supported.
+
+### Supported upgrade paths
+
+If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
 
 ### OpenShift clusters running 6.2.12 or earlier
 
@@ -43,11 +49,6 @@ Verify your license is valid before upgrading your REC. Invalid licenses will ca
 
 Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 
-### Large clusters
-
-On clusters with more than 9 REC nodes, running versions 6.2.18-3 through 6.2.4-4, a Kubernetes upgrade can render the Redis cluster unresponsive in some cases.
-
-A fix is available in the 6.4.2-5 release. Upgrade your operator version to 6.4.2-5 or later before upgrading your Kubernetes cluster. 
 
 ## Upgrade the operator
 
@@ -203,7 +204,7 @@ kubectl rollout status sts <REC_name>
 
 ### After upgrading
 
-For OpenShift users, operator version 6.4.2-6 introduces a new SCC (`redis-enterprise-scc-v2`). If any of your OpenShift RedisEnterpriseClusters are running versions earlier than 6.2.4-6, you need to keep both the new and old versions of the SCC.
+For OpenShift users, operator version 6.4.2-6 introduced a new SCC (`redis-enterprise-scc-v2`). If any of your OpenShift RedisEnterpriseClusters are running versions earlier than 6.2.4-6, you need to keep both the new and old versions of the SCC.
 
 If all of your clusters have been upgraded to operator version 6.4.2-6 or later, you can delete the old version of the SCC (`redis-enterprise-scc`) and remove the binding to your service account.
 
@@ -225,8 +226,9 @@ If all of your clusters have been upgraded to operator version 6.4.2-6 or later,
    oc adm policy remove-scc-from-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec-name>
    ```
 
-
 ### Upgrade databases
+
+{{<warning>}}In version 7.2.4, old module versions and manually uploaded modules are not persisted. If databases are not upgraded after cluster upgrade, and require cluster recovery afterwards, you'll need to contact Redis support. This issue will be fixed in the next maintenance release by moving the stored location of the modules.{{</warning>}}
 
 After the cluster is upgraded, you can upgrade your databases. The process for upgrading databases is the same for both Kubernetes and non-Kubernetes deployments. For more details on how to [upgrade a database]({{<relref "/rs/installing-upgrading/upgrading/upgrade-database">}}), see the [Upgrade an existing Redis Enterprise Software deployment]({{<relref "/rs/installing-upgrading/upgrading">}}) documentation.
 

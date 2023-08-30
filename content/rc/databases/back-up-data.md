@@ -85,19 +85,84 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
 
 1. In the [AWS Management Console](https://console.aws.amazon.com/), use the **Services** menu to locate and select **Storage** > **S3**.  This takes you to the Amazon S3 admin panel.
 
-1.  Use the Buckets list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Access control list (ACL)** section, and then select the **Edit** button.
+1.  Use the **Buckets** list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Bucket policy** section, and then click **Edit**.
 
-1.  When the **Edit access control list (ACL)** screen appears, configure the bucket's Access Control List to give access to Redis Enterprise Cloud.
-    1. Select **Add grantee**.
-    1. In the **Grantee** field, enter:
-    `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-    1. In the **Objects** list, select **Write**.
-    1. In the **Bucket ACL** list, select **Read** and **Write**.
-    1. Select **Save**.
+    -  If there is no existing bucket policy, add the following JSON bucket policy. Replace `UNIQUE-BUCKET-NAME` with the name of your bucket.
+
+    {{% expand "CompetePolicy.json" %}}
+```json
+{
+    "Version": "2012-10-17",
+    "Id": "MyBucketPolicy",
+    "Statement": [
+        {
+            "Sid": "RedisCloudBackupsAccess",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::168085023892:root"
+            },
+            "Action": [
+                "s3:PutObject",
+                "s3:getObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::UNIQUE-BUCKET-NAME/*"
+        }
+    ]
+}
+```
+    {{% /expand %}}
+
+    - If a bucket policy already exists, add the following JSON policy statement to the list of statements. Replace `UNIQUE-BUCKET-NAME` with the name of your bucket.
+
+    {{% expand "Statement.json" %}}
+```json
+{
+    "Sid": "RedisCloudBackupsAccess",
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": "arn:aws:iam::168085023892:root"
+    },
+    "Action": [
+        "s3:PutObject",
+        "s3:getObject",
+        "s3:DeleteObject"
+    ],
+    "Resource": "arn:aws:s3:::UNIQUE-BUCKET-NAME/*"
+}
+```
+    {{% /expand %}}
+
+1. Save your changes.
+
+1. If the bucket is encrypted using [SSE-KMS](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html), add the following statement to your [key policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying.html). If you do not have a key policy, see [Creating a key policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-overview.html). Replace `UNIQUE-BUCKET-NAME` with the name of your bucket and `CUSTOM-KEY-ARN` with your key's [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html).
+
+    {{% expand "Statement.json" %}}
+```json
+{
+    "Sid": "Allow use of the key",
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": "arn:aws:iam::168085023892:root"
+    },
+    "Action": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:DescribeKey"
+    ],
+    "Resource": [
+        "arn:aws:s3:::UNIQUE-BUCKET-NAME/*",
+        "CUSTOM-KEY-ARN"
+    ]
+}
+```
+    {{% /expand %}}
 
 Once the bucket is available and the permissions are set, use the name of your bucket as the **Backup destination** for your database's Remote backup settings. For example, suppose your bucket is named *backups-bucket*.  In that case, set **Backup destination** to `s3://backups-bucket`.
 
-To learn more, see [Configuring ACLs for buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/managing-acls.html) on the AWS docs.
+To learn more, see [Using bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html) on the AWS docs.
 
 {{< note >}}
 An AWS S3 bucket can be used by only one Redis Cloud account. If you have more than one Redis Cloud account, repeat the setup steps for multiple buckets. 
