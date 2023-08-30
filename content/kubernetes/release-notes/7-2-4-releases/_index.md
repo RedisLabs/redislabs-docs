@@ -81,7 +81,7 @@ The limitations below are specific to the Redis Enterprise for Kubernetes produc
 
 - **Cannot upgrade or recover clusters if there are databases with manually uploaded modules (RED-107711 RED-106872)** Contact support.
 
-- **REDBs created with version 6.2.10-4 or before will automatically upgrade modules when the cluster is upgraded (RED-106834)**
+- **REDBs created with versions before 6.2.10-4 will automatically upgrade modules when the cluster is upgraded (RED-106834)**
 
 - **When modifying the database suffix for an Active-Active database, while the service-rigger is in a terminating state, the services-rigger will detele and create the ingress or route resources in a loop (RED-107687)** Wait until the services- rigger pod has finished to terminate it.
 
