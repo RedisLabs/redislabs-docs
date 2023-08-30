@@ -26,17 +26,17 @@ RediSearch 2.8 introduces support for RESP3, new features, performance improveme
 
 ### What's new in 2.8.4
 
-This new major version introduces new and frequently asked Geo Polygon Search. Adding the `GEOSHAPE` field type that supports polygons shapes using [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). Besides the current `GEO` (alias for `GEOPOINT`) used already geo range queries, we add the support for `POLYGON` and `POINT` as new geo shapes formats (new `GEOSHAPE`). In addition, 2.8 brings improvements on performance for `SORT BY` operations using `FT.SEARCH` and `FT.AGGREGATE`, and new `FORMAT` for enhanced responses on `FT.SEARCH` and `FT.AGGREGATE` in RESP3 only.
+This new major version introduces new and frequently asked for Geo Polygon Search, adding the `GEOSHAPE` field type that supports polygon shapes using [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). Besides the current `GEO` (alias for `GEOPOINT`) used in geo range queries, we add support for `POLYGON` and `POINT` as new geo shape formats (new `GEOSHAPE`). In addition, 2.8 brings performance improvements for `SORT BY` operations using `FT.SEARCH` and `FT.AGGREGATE`, and new `FORMAT` for enhanced responses on `FT.SEARCH` and `FT.AGGREGATE` in RESP3 only.
 
 Features:
 
-- Introduce support for Geo-polygon shapes and queries:
+- Introduce support for geo polygon shapes and queries:
 
   - Adding `GEOSHAPE` [field type](https://redis.io/commands/ft.create/) to map polygons in the `SCHEMA` on `FT.CREATE` (MOD-4798)
 
   - Support for polygons `POLYGON` and `POINT` using [WKT notation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry), for example `POLYGON((lon1 lat1, lon2 lat2, ...))`
 
-  - #Adjust the [query syntax](https://redis.io/commands/ft.search/#examples) on `FT.SEARCH` for Polygons using the predicate `@geom:[OPERATOR $poly]` and defining polygon in WKT format as `PARAMS 2 poly "POLYGON((10 20, ...))"` using `DIALECT 3`
+  - Adjust the [query syntax](https://redis.io/commands/ft.search/#examples) on `FT.SEARCH` for polygons using the predicate `@geom:[OPERATOR $poly]` and defining polygon in WKT format as `PARAMS 2 poly "POLYGON((10 20, ...))"` using `DIALECT 3`
 
   - Initially `WITHIN` and `CONTAINS` operators with `GEOSHAPES` for now
 
@@ -48,7 +48,7 @@ Features:
 
   - Skip Sorter - applied when there is no sort of any kind. The query can return once it reaches the `LIMIT` requested results.
 
-  - Partial Range - applied when there is a `SORTBY` a numeric field, with no filter or filter by the same numeric field, the query iterate on a range large enough to satisfy the `LIMIT` requested results.
+  - Partial Range - applied when there is a `SORTBY` a numeric field, with no filter or filter by the same numeric field, the query iterates on a range large enough to satisfy the `LIMIT` requested results.
 
   - Hybrid - applied when there is a `SORTBY` a numeric field in addition to another non-numeric filter. Some results will get filtered, and the initial range may not be large enough. The iterator then is rewinded with the following ranges, and an additional iteration takes place to collect `LIMIT` requested results.
 
@@ -60,7 +60,7 @@ Features:
 
 Improvements (since 2.8.3):
 
-- [#3717](https://github.com/RediSearch/RediSearch/pull/3717) - Polygons shapes validation and orientation correction when clockwise (MOD-5575)
+- [#3717](https://github.com/RediSearch/RediSearch/pull/3717) - Polygon shapes validation and orientation correction when clockwise (MOD-5575)
 
 - [#3534](https://github.com/RediSearch/RediSearch/pull/3534) - Vector Similarity \[[0.7.0](https://github.com/RedisAI/VectorSimilarity/releases/tag/v0.7.0)\]
 
@@ -68,14 +68,14 @@ Improvements (since 2.8.3):
 
 - [#3701](https://github.com/RediSearch/RediSearch/pull/3701) - HNSW is now using data blocks to store vectors and metadata instead of array
 
-Changed Behavior:
+Changed behavior:
 
-- [#3355](https://github.com/RediSearch/RediSearch/pull/3355), [#3635](https://github.com/RediSearch/RediSearch/pull/3635) Expired keys deleted from slave's index, returning an empty array instead of `nil` (MOD-4739)
+- [#3355](https://github.com/RediSearch/RediSearch/pull/3355), [#3635](https://github.com/RediSearch/RediSearch/pull/3635) Expired keys deleted from replica's index, returning an empty array instead of `nil` (MOD-4739)
 
 {{<note>}}
 - The version inside Redis will be 2.8.4 in semantic versioning. Since the version of a module in Redis is numeric, we could not add a GA flag.
 
 - Minimal Redis version: 7.2
 
-- If indexing and querying RedisJSON data structures, this version is best combined with RedisJSON 2.6 (v2.6.0 onwards)
+- If indexing and querying RedisJSON data structures, this version is best combined with RedisJSON 2.6 (v2.6.0 onwards).
 {{</note>}}
