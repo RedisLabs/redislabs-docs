@@ -79,7 +79,7 @@ Usage: redis-di upgrade [OPTIONS]
   - Default: `none`
   - Usage: `--rdi-username`
 
-  User for the RDI Database
+  RDI Database Username
 
 - `rdi_password`:
 
@@ -160,7 +160,7 @@ Options:
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
   --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
                                   required]
-  --rdi-username TEXT             User for the RDI Database
+  --rdi-username TEXT             RDI Database Username
   --rdi-password TEXT             RDI Database Password
   --rdi-key TEXT                  Private key file to authenticate with
   --rdi-cert TEXT                 Client certificate file to authenticate with
