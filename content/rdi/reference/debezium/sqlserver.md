@@ -12,6 +12,8 @@ aliases:
 
 ```properties
 debezium.sink.type=redis
+#debezium.sink.redis.user=<USER>
+#debezium.sink.redis.password=<PASSWORD>
 debezium.sink.redis.message.format=extended
 debezium.sink.redis.address=<RDI_HOST>:<RDI_PORT>
 # Comment the following line if not using a password for Redis Data Integration.
