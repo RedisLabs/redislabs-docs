@@ -12,11 +12,12 @@ aliases:
 
 ```properties
 debezium.sink.type=redis
-#debezium.sink.redis.user=<USER>
-#debezium.sink.redis.password=<PASSWORD>
 debezium.sink.redis.message.format=extended
 debezium.sink.redis.address=<RDI_HOST>:<RDI_PORT>
 # Comment the following line if not using a password for Redis Data Integration.
+#debezium.sink.redis.user=<RDI_USER>
+# If you authenticate vs the RDI database using the default password, please configure this password.
+# If you want to use a different user, please add the password for that user and make sure you have the right username configured
 debezium.sink.redis.password=<RDI_PASSWORD>
 debezium.sink.redis.memory.limit.mb=80
 # Redis SSL/TLS
