@@ -82,31 +82,6 @@ If your Redis Enterprise Cluster version is 6.2.18 or higher, you can install Re
 
   The RDI CLI will ask for your cluster host, port, user and password, and will attempt to install RedisGears before continuing with the creation of the RDI database.
 
-### Manual Installation
-
-- Copy the downloaded `redis-di-offline.tar.gz` into the master node of Redis under `/tmp` directory.
-
-- Unpack into `/tmp` directory:
-
-  ```bash
-  cd /tmp
-  tar xvf redis-di-offline.tar.gz
-  ```
-
-- Switch user to the user that the cluster was created with (usually `redislabs`).
-
-- Install the [RedisGears](https://redis.com/modules/redis-gears/) module and dependencies:
-
-  ```bash
-  # substitute <OS_VERSION> to ubuntu18.04 | ubuntu20.04 | rhel7 | rhel8
-  mkdir -p $modulesdatadir/rg/{{<param rdi_redis_gears_current_semantic_version>}}/deps/
-  cp /tmp/redis-di-offline/redis-gears/redisgears-python.Linux-<OS_VERSION>-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}.tgz $modulesdatadir/rg/{{<param rdi_redis_gears_current_version>}}/deps/
-  curl -v -k -u "<CLUSTER_USERNAME>:<CLUSTER_PASSWORD>" -F "module=@/tmp/redis-di-offline/redis-gears/redisgears_python.Linux-<OS_VERSION>-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}.zip" https://localhost:9443/v2/modules
-  ```
-
-> Note: Make sure that the folder `$modulesdatadir/rg/{{<param rdi_redis_gears_current_version>}}/deps` is accessible for the OS user running Redis Enterprise. Typically, this is user `redislabs`.
-
-
 ## Install RDI CLI
 
 On the workstation where the RDI CLI is to be installed, follow these steps:
