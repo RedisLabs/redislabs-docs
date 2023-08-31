@@ -54,15 +54,7 @@ See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module
 
 ## Version changes 
 
-### Breaking changes
-
-- TBA?
-
 ### Deprecations
-
-- TBA?
-
-### Upcoming changes
 
 - TBA?
 
