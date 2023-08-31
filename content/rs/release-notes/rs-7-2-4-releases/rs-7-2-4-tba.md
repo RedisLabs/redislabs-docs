@@ -50,7 +50,11 @@ See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module
 
 ### Resolved issues
 
-- TBA
+- RS107986 - Allow ports lower than 1024 when configuring audits using `rladmin`
+
+- RS105335 - Add error handling to [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) to return an error if the Redis database version is earlier than 7.2.0 or the command is [restricted by ACL rules](https://docs.redis.com/latest/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52/#command-limitations)
+
+- RS105137 - Fix audit reconnect issue: sometimes the proxy failed to reconnect to a restarted audit listener
 
 ## Version changes 
 
