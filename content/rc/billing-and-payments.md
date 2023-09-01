@@ -153,7 +153,7 @@ Coupons apply credits to your Redis Enterprise Cloud account.  To redeem a coupo
 For help, contact [Support](https://support.redislabs.com).
 
 {{< note >}}
-Charges are generally non-refundable, but if you delete your subscription we’ll stop charging you for it immediately. You only pay for what you use. 
+Generally, charges are non-refundable.
 
 For any special circumstances that may warrant a refund, please contact [Support](https://support.redislabs.com) and be sure to provide detail about the reasons for the refund request.
 {{< /note >}}
