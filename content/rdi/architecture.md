@@ -72,7 +72,7 @@ In addition RDI works with [Arcion](arcion.io), a commercial CDC that provides a
 
 #### Redis data integration data plane
 
-##### RDI data streams
+#### RDI data streams
 
 Redis Data Integration receives data using [Redis streams](https://redis.io/docs/manual/data-types/streams/). Records with data from a specific database table are written to a stream with a key reflecting the table name. This allows a simple interface into Redis Data Integration and keeping the order of changes as served by Debezium.
 
