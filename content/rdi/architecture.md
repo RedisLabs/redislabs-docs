@@ -148,10 +148,10 @@ RDI engine is installed on a Redis database containing the application data and 
 
 RDI write behind can track changes to the following Redis types:
 
-- Hash
-- JSON
-- Set
-- Sorted Set
+- [Hash](https://redis.io/docs/data-types/hashes/)
+- [JSON](https://redis.io/docs/data-types/json/)
+- [Set](https://redis.io/docs/data-types/sets/)
+- [Sorted Set](https://redis.io/docs/data-types/sorted-sets/)
 
 Unlike the ingest scenario, write behind has no default behavior for model translation. It is up to the user to create a declarative job, specifying the mapping between Redis key and target database record.
 The job's `keys` and `mapping` sections help make this an easy task.
