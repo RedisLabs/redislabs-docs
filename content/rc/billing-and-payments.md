@@ -15,9 +15,7 @@ aliases: /rc/billing-and-payments/
          /rc/administration/payment-methods.md
 ---
 
-{{< note >}}
-Redis doesn't offer refunds or tax exemptions for Redis Enterprise Cloud Fixed or Flexible plans. If you want to dispute a charge, contact [Support](https://support.redislabs.com).
-{{< /note >}}
+
 
 The **Billing & Payments** screen:
 
@@ -154,3 +152,8 @@ Coupons apply credits to your Redis Enterprise Cloud account.  To redeem a coupo
 
 For help, contact [Support](https://support.redislabs.com).
 
+{{< note >}}
+Generally, charges are non-refundable.
+
+For any special circumstances that may warrant a refund, please contact [Support](https://support.redislabs.com) and be sure to provide detail about the reasons for the refund request.
+{{< /note >}}
