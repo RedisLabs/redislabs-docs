@@ -172,6 +172,11 @@ Redis publishes two preconfigured dashboards for Redis Cloud and Grafana:
 * The [subscription status dashboard](https://grafana.com/grafana/dashboards/18406-subscription-status-dashboard/) provides an overview of your Redis Cloud subscriptions.
 * The [database status dashboard](https://grafana.com/grafana/dashboards/18408-database-status-dashboard/) displays specific database metrics, including latency, memory usage, ops/second, and key count.
 
+In addition to these dashboards, we recommend the cluster node and shard dashboards:
+
+* [Redis Software Cluster Node Dashboard](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards/blob/main/dashboards/software/basic/redis-software-node-dashboard.json)
+* [Redis Software Shard Dashboard](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards/blob/main/dashboards/software/basic/redis-software-shard-dashboard.json)
+
 These dashboards are open source. For additional dashboard options, or to file an issue, see the [Redis Enterprise Grafana Dashboards Github repository](https://github.com/redis-field-engineering/redis-enterprise-grafana-dashboards).
 
 For more information about configuring Grafana dashboards, see the [Grafana documentation](https://grafana.com/docs/).
