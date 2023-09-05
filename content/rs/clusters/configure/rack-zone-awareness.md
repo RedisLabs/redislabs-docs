@@ -55,13 +55,15 @@ cluster, nodes, and [databases](#enable-database-rack-zone-awareness).
 
 You can set up rack-zone awareness for the cluster and its nodes during [cluster creation]({{<relref "/rs/clusters/new-cluster-setup">}}):
 
-1. In **node configuration > Cluster configuration**, select **Enable rack-zone awareness**.
+1. In the **Cluster** screen's **Configuration** section, enable **Rack zone awareness**.
+
+1. Select **Next** to continue to the **Node** configuration screen.
 
 1. Enter a **Rack-zone ID** for the current node.
 
 1. Finish [cluster setup]({{<relref "/rs/clusters/new-cluster-setup">}}).
 
-1. For every [node you add to the cluster]({{<relref "/rs/clusters/add-node">}}), assign a different **Rack-zone ID** when prompted.
+1. For every [node you add to the cluster]({{<relref "/rs/clusters/add-node">}}), assign a different **Rack-zone ID**.
 
 ### Existing cluster
 
@@ -86,6 +88,10 @@ If you did not configure rack-zone awareness during cluster creation, you can co
 Before you can enable rack-zone awareness for a database, you must configure rack-zone awareness for the cluster and its nodes. For more information, see [set up rack-zone awareness](#set-up-rack-zone-awareness).
 
 To enable rack-zone awareness for a database using the admin console:
+
+1. If you are using the new Cluster Manager UI, switch to the legacy admin console.
+
+    {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
 
 1. From **databases**, [create a new database]({{<relref "/rs/databases/create">}}) or edit an existing database's **configuration**.
 
