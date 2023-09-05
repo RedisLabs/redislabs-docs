@@ -48,9 +48,8 @@ windows_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsi
 docker_command = "docker run -v redisinsight:/db -p 8001:8001 redislabs/redisinsight:latest"
 docker_db_volume_permission = "chown -R 1001 redisinsight"
 
-
-rdi_redis_gears_current_semantic_version = "1.2.6"
-
+rdi_rlec_min_version = "6.2.18"
+rdi_redis_gears_version = "1.2.6"
 rdi_debezium_server_version = "2.3.0.Final"
 rdi_db_types = "cassandra|mysql|oracle|postgresql|sqlserver"
 rdi_cli_latest = "0.108.0"

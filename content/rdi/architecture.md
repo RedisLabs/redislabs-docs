@@ -6,10 +6,11 @@ weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 headerRange: "[2]"
-aliases: 
+aliases:
 ---
 
 Redis Data Integration (RDI) is a product that helps Redis Enterprise users ingest and export data in near real time.
+
 RDI provides the following:
 
 - End-to-end solution: No additional tools or integrations required
@@ -35,9 +36,9 @@ You can think of RDI Ingest as a streaming ELT process:
 RDI using Debezium Server works in two modes:
 
 1. Initial sync - A snapshot of the entire database or a chosen subset of tables is taken as a baseline. This complete dataset is then streamed to RDI, where it undergoes transformation before being written to the target Redis database.
-2. Live updates - Debezium captures post-baseline snapshot data changes, streams them to Redis Data Integration, where they undergo transformation and are subsequently written to the target.
+2. Live updates - Debezium captures post-baseline snapshot data changes, streams them to RDI, where they undergo transformation and are subsequently written to the target.
 
-![High-level Redis Data Integration architecture](/images/rdi/redis-di-simplified.png)
+![High-level RDI architecture](/images/rdi/redis-di-simplified.png)
 
 ### Supported data transformations
 
@@ -142,9 +143,10 @@ To learn more about write behind declarative jobs and renormalization read the [
 ### Write behind topology
 
 RDI CLI and engine come in one edition that can run both ingest and write behind. However, the topology for write behind is different.
+
 RDI engine is installed on a Redis database containing the application data and not on a separate staging Redis database. RDI streams and control plain adds a small footprint of few hundreds of MBs to the Redis database. In the write behind topology, RDI processes in parallel on each shard and establishes a single connection from each shard to the downstream database.
 
-### model translation
+### Model translation
 
 RDI write behind can track changes to the following Redis types:
 
