@@ -62,9 +62,9 @@ Connect to the UI by pointing your browser to `https://localhost:8443`
 
 ## How should I size Redis Enterprise cluster nodes?
 
-For nodes hosting the Redis Enterprise cluster [statefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [pods](https://kubernetes.io/docs/concepts/workloads/pods/), follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/installing-upgrading/hardware-requirements.md" >}}).
+For nodes hosting the Redis Enterprise cluster [statefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [pods](https://kubernetes.io/docs/concepts/workloads/pods/), follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}}).
 
-For additional information please also refer to [Kubernetes operator deployment – persistent volumes]({{< relref "/kubernetes/memory/persistent-volumes.md" >}}).
+For additional information please also refer to [Kubernetes operator deployment – persistent volumes]({{< relref "/kubernetes/recommendations/persistent-volumes.md" >}}).
 
 ## How to retrieve the username/password for a Redis Enterprise Cluster?
 

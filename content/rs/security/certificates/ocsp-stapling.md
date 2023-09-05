@@ -36,26 +36,22 @@ While OCSP is enabled, the server always staples the cached OCSP status when a c
 
 To set up OCSP stapling with the Redis Enterprise admin console:
 
-1. Use [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster/update-cert">}}) to [replace the proxy certificate]({{<relref "/rs/security/certificates/updating-certificates">}}) with a certificate signed by your third-party CA.
+1. Go to **Cluster > Security > OCSP**.
 
-1. Sign in to the Redis Enterprise admin console.
+1. In the **Responder URI** section, select **Replace Certificate** to update the proxy certificate.
 
-1. Go to **settings > OCSP**.
+1. Provide the key and certificate signed by your third-party CA, then select **Save**.
 
-1. Select the **OCSP** checkbox.
-
-1. Select the **Test certificate** button to verify the certificate is valid. This queries the OCSP responder and caches the result.
-
-1. Configure the following settings if you don't want to use their default values:
+1. Configure query settings if you don't want to use their default values:
 
     | Name | Default value | Description |
     |------|---------------|-------------|
-    | **Query frequency** | 3600 | The time interval in seconds between OCSP queries to the responder URI. |
-    | **Response timeout** | 1 | The time interval in seconds to wait for a response before timing out. |
-    | **Recovery frequency** | 60 | The time interval in seconds between retries after a failed query. |
+    | **Query frequency** | 1 hour | The time interval between OCSP queries to the responder URI. |
+    | **Response timeout** | 1 second | The time interval in seconds to wait for a response before timing out. |
+    | **Recovery frequency** | 1 minute | The time interval between retries after a failed query. |
     | **Recovery maximum tries** | 5 | The number of retries before the validation query fails and invalidates the certificate. |
 
-1. Select **Save**.
+1. Select **Enable** to turn on OCSP stapling.
 
 ### REST API method
 

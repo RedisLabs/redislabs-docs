@@ -36,6 +36,10 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
 
 > Note: Any reference to `server_name`, `db`, `schema` and `table` properties will be treated by default as case insensitive. This can be changed by setting `case_insensitive` to `false`.
 
+> Cassandra only: In Cassandra, a `keyspace` is roughly the equivalent to a `schema` in other databases. RDI uses the `schema` property declared in a job file to match with the `keyspace` attribute of the incoming change record.
+
+> MongoDB only: In MongoDB, a `replica set` is a cluster of shards with data and can be regarded as  roughly equivalent to a `schema` in a relational database. MongoDB `collection` is similar to a `table`, as compared to other databases. RDI uses the `schema` and `table` properties declared in a job file to match with the `replica set` and `collection` attributes of the incoming change record, respectively.
+
 - `transform`:
 
   This section includes a series of blocks that the data should go through.
@@ -55,12 +59,14 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
       - `mapping`: Array of mapping columns
       - `opcode_field`: Name of the field in the payload that holds the operation (c - create, d - delete, u - update) for this record in the DB
   - Redis:
-    - `uses`: `redis.write`: Write to a Redis data structure
+    - `uses`: `redis.write`: Write to a Redis data structure; multiple blocks of this type are allowed in the same job
     - `with`:
-      - `connection`: Connection name
+      - `connection`: Connection name as defined in `config.yaml` (by default, the connection named 'target' is used)
+      - `data_type`: Target data structure when writing data to Redis (hash, json, set and stream are supported values)
       - `key`: This allows to override the key of the record by applying a custom logic:
         - `expression`: Expression to execute
-        - `langauge`: Expression language, JMESPath or SQL
+        - `language`: Expression language, JMESPath or SQL
+      - `expire`: Positive integer value indicating a number of seconds for the key to expire (if not set, the key will never expire)
   - SQL:
     - `uses`: `relational.write`: Write into a SQL-compatible data store
     - `with`:
@@ -75,6 +81,21 @@ Each job will be in a separate YAML file. All of these files will be uploaded to
 
 - `source` is required.
 - Either `transform` and `key` (or both) should be specified.
+
+#### Using key in transformations
+
+In order to access the Redis key (for example in a Write Behind job) you will need to take the following steps:
+
+- Set `row_format: full` to allow access to the key which is part of the full data entry.
+- Use the expression `key.key` to get the Redis key as a string.
+
+#### Before and after values
+
+Update events typically report `before` and `after` sections providing access to the data state before and after the update. 
+To access the "before" values explicitly, you will need to:
+
+- Set `row_format: full` to allow access to the key which is part of the full data entry.
+- Use the `before.<FIELD_NAME>` pattern.
 
 ### Example
 

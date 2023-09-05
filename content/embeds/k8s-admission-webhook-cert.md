@@ -1,10 +1,10 @@
-1. Verify the `admission-tls` secret exists .
+1. Verify the `admission-tls` secret exists.
 
     ```sh
      kubectl get secret admission-tls
     ```
   
-    The output will look similar to
+    The output should look similar to
   
     ```
      NAME            TYPE     DATA   AGE
@@ -17,10 +17,10 @@
     CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
     ```
 
-1. Create a patch file for the Kubernetes validating webhook.
+1. Create a patch file for the Kubernetes validating webhook, replacing `<namespace>` with the namespace where the REC was installed.
 
     ```sh
-    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
+    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/<namespace>/g' webhook.yaml | kubectl create -f -
 
     cat > modified-webhook.yaml <<EOF
     webhooks:
@@ -37,12 +37,3 @@
     kubectl patch ValidatingWebhookConfiguration \
       redis-enterprise-admission --patch "$(cat modified-webhook.yaml)"
     ```
-
-  If installing or upgrading to a release before 6.4.2-4, use this command instead:
-
-  ```sh
-    kubectl patch ValidatingWebhookConfiguration \
-      redb-admission --patch "$(cat modified-webhook.yaml)"
-  ```
-
-  Releases prior to [6.4.2]({{<relref "/kubernetes/release-notes/6-4-2-releases/6-4-2-5.md">}}) use the ValidatingWebhookConfiguration named `redb-admission`.

@@ -14,9 +14,35 @@ Throughout the document, the snippets make use of the Kubernetes `kubectl` tool.
 
 ## Prerequisites
 
-- An existing Redis Enterprise cluster version >= 6.2.
-- [RedisGears](https://redis.com/modules/redis-gears/) >= 1.2.5 installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
+- An existing Redis Enterprise cluster version >= 6.2.18
+- [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
 - A target Redis DB (can be added after installation).
+
+> Note: The RedisGears binaries to install must match the base OS of Redis Enterprise containers. In case of [Rancher](https://www.rancher.com/), Redis Enterprise container base OS is Ubuntu 18.04. Use the following command to install RedisGears:
+
+```bash
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
+```
+
+In case the wrong RedisGears binaries had been installed, use the following commands to fix it:
+
+```bash
+# Start port forwarding to the Redis Enterprise Cluster API
+kubectl port-forward service/rec 9443:9443
+
+# Find the uid of the RedisGears module
+# Note: skip piping to the jq if it is not installed
+curl -k -v -u "user:pwd" https://localhost:9443/v1/modules | jq '.[] | {module_name,uid,semantic_version}'
+
+# Put the RedisGears module uid instead of <uid>
+curl -k -s -u "user:pwd" -X DELETE https://localhost:9443/v2/modules/<uid>
+
+# Install the correct version of the RedisGears module
+curl -k -s -u "user:pwd" -F "module=@/tmp/redis-gears.zip" https://localhost:9443/v2/modules
+
+# Check the version of the newly installed module
+curl -k -v -u "user:pwd" https://localhost:9443/v1/modules | jq '.[] | {module_name,uid,semantic_version}'
+```
 
 ## Install RDI CLI
 

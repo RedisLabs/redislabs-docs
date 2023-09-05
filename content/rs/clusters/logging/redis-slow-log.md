@@ -14,8 +14,8 @@ aliases: [
     /rs/clusters/logging/redis-slow-log/,
 ]
 ---
-On the **Database** \> **Slow Log** page, you can view Slow Log details
-for Redis Enterprise Software (RS) databases.
+On the **Databases** \> **Slowlog** page, you can view Slow Log details
+for Redis Enterprise Software databases.
 
 [Redis Slow Log](http://redis.io/commands/slowlog) is one of the best
 tools for debugging and tracing your Redis database, especially if you
@@ -39,10 +39,10 @@ This is especially useful with complex commands such as
 [ZINTERSTORE](http://redis.io/commands/zinterstore) and
 [ZRANGEBYSCORE](http://redis.io/commands/zrangebyscore).
 
-The enhanced RS Slow Log adds the **Complexity Info** field to the
+The enhanced Redis Enterprise Software Slow Log adds the **Complexity info** field to the
 output data.
 
-View the Complexity Info data by its respective Command in the table
+View the complexity info data by its respective command in the table
 below:
 
 | Command | Value of interest | Complexity |

@@ -13,6 +13,12 @@ aliases: [
   /platforms/kubernetes/deployment/_index.md,
   /kubernetes/deployment/_index.md,
   /kubernetes/deployment/_index/,
+  /platforms/kubernetes/tasks/using-kustomize/, 
+  /platforms/kubernetes/tasks/using-kustomize.md,
+  /platforms/kubernetes/deployment/using-kustomize/, 
+  /platforms/kubernetes/deployment/using-kustomize.md,
+  /kubernetes/deployment/using-kustomize.md,
+  /kubernetes/deployment/using-kustomize/,
   
 
 ]
@@ -36,5 +42,9 @@ When the operator is installed, the following resources are created:
 * the operator itself (a deployment)
 
 The operator currently runs within a single namespace and is scoped to operate only on the Redis Enterprise cluster in that namespace.
+
+## Compatibility
+
+Before installing, check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to see which Redis Enterprise operator version supports your Kubernetes distribution.
 
 {{< allchildren style="h2" description="true" />}}

@@ -18,11 +18,11 @@ cat ./list_template_recursive.html | sed 's/parent_filepath/"ri\/_index.md"/g' >
 mkdir ../../content/pdf-gen-ri-docs
 touch ../../content/pdf-gen-ri-docs/_index.md
 
-echo "Preparing modules docs html"
-mkdir ../../layouts/pdf-gen-modules-docs
-cat ./list_template_recursive.html | sed 's/parent_filepath/"modules\/_index.md"/g' > ../../layouts/pdf-gen-modules-docs/list.html
-mkdir ../../content/pdf-gen-modules-docs
-touch ../../content/pdf-gen-modules-docs/_index.md
+echo "Preparing stack (modules) docs html"
+mkdir ../../layouts/pdf-gen-stack-docs
+cat ./list_template_recursive.html | sed 's/parent_filepath/"stack\/_index.md"/g' > ../../layouts/pdf-gen-stack-docs/list.html
+mkdir ../../content/pdf-gen-stack-docs
+touch ../../content/pdf-gen-stack-docs/_index.md
 
 echo "Preparing kubernetes docs html"
 mkdir ../../layouts/pdf-gen-kubernetes-docs

@@ -17,6 +17,7 @@ Updates the cluster configuration.
  rladmin cluster config 
         [ auditing db_conns audit_protocol { TCP | local } 
            audit_address <audit_address> audit_port <audit_port> ]
+        [bigstore_driver {speedb | rocksdb} ]
         [ cipher_suites <BoringSSL cipher list> ]
         [ cm_port <number> ]
         [ cm_session_timeout <minutes> ]

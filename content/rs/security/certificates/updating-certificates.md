@@ -77,7 +77,7 @@ This section describes how to update certificates for Replica Of (also known as 
 To update the proxy certificate on clusters running Replica Of (Active-Passive) databases:
 
 - **Step 1:**  Use `rladmin` or the REST API to update the proxy certificate on the source database cluster.
-- **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "/rs/databases/import-export/replica-of/create#configure-tls-on-replica-database">}}).
+- **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "/rs/databases/import-export/replica-of/create#encrypt-replica-database-traffic">}}).
 
 {{<note>}}
 - Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established.

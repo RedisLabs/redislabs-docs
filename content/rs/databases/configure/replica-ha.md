@@ -21,7 +21,7 @@ Redis Enterprise Software copies your data to a replica node to make your data h
 If the replica node fails or if the primary (master) node fails and the replica is promoted to primary,
 the remaining primary node is a single point of failure.<!--more-->
 
-You can configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.  This process is known as _replica high availability_ or _replica\_ha_ (also known as _slave\_ha_ or Slave HA in the UI).
+You can configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.  This process is known as _replica high availability_ or _replica\_ha_.
 
 An available node:
 
@@ -115,13 +115,14 @@ Replica shard migration is based on priority.  When memory resources are limited
 ### Cooldown periods
 
 Both the cluster and the database have cooldown periods.
-After node failure, the cluster cooldown period prevents another replica migration due to another node failure for any
-database in the cluster until the cooldown period ends (default: one hour).
+
+After node failure, the cluster cooldown period (`slave_ha_cooldown_period`) prevents another replica migration due to another node failure for any
+database in the cluster until the cooldown period ends. The default is one hour.
 
 After a database is migrated with replica HA,
-it cannot go through another migration due to another node failure until the cooldown period for the database ends (Default: two hours).
+it cannot go through another migration due to another node failure until the cooldown period for the database (`slave_ha_bdb_cooldown_period`) ends. The default is two hours.
 
-To configure this grace period from `rladmin`, run:
+To configure cooldown periods, use [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}):
 
 - For the cluster:
 

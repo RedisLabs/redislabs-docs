@@ -5,11 +5,30 @@ description: Redis client libraries allow you to connect to Redis instances from
 weight: 80
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/references/client_references/client_csharp/
+         /rs/references/client_references/client_ioredis/
+         /rs/references/client_references/client_php/
+         /rs/references/client_references/client_drupal/
+         /rs/references/client_references/client_c/
+         /rs/references/client_references/client_ruby/
+         /rs/references/client_references/client_nodejs/
+         /rs/references/client_references/client_python/
+         /rs/references/client_references/client_java/
 ---
 To connect to Redis instances from within your application, use a Redis client library that matches your application's language.
 
-The [Redis Clients page](https://redis.io/clients) contains a list of available Redis client libraries for a variety of popular programming and scripting languages.
+## Official clients
 
-The following links discuss a few recommended clients in more detail, including installation instructions and usage examples.
+| Language | Client name |
+|----------|-------------|
+| .Net | [NRedisStack](https://redis.io/docs/clients/dotnet/) |
+| Go | [go-redis](https://redis.io/docs/clients/go/) |
+| Java | [Jedis](https://redis.io/docs/clients/java/) |
+| Node.js | [node-redis](https://redis.io/docs/clients/nodejs/) |
+| Python | [redis-py](https://redis.io/docs/clients/python/) |
 
-{{< table-children columnNames="Language,Client description" columnSources="LinkTitle,Description" enableLinks="LinkTitle" >}}
+Select a client name to see its quick start.
+
+## Other clients
+
+For a list of community-driven Redis clients, which are available for more programming languages, see [Other Clients](https://redis.io/resources/clients/#other-clients).
