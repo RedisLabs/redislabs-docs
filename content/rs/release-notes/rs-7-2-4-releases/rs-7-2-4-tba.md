@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2.4-TBA (September 2023)
 linkTitle: 7.2.4-TBA (September 2023)
-description: Maintenance release summary TBA
+description: Improved cluster recovery with manually uploaded modules. Support package contains supervisorctl status.
 compatibleOSSVersion: Redis 7.2.0
 weight: 71
 alwaysopen: false
@@ -15,7 +15,9 @@ This is a maintenance release for ​[​Redis Enterprise Software version 7.2.4
 
 This version offers:
 
-- TBA
+- Improved cluster recovery with manually uploaded modules
+
+- Support package enhancements
 
 ## New in this release
 
@@ -23,13 +25,17 @@ This version offers:
 
 - TBA
 
-#### Redis Stack 7.2
+### Enhancements
 
-Redis Enterprise Software version 7.2.4 supports features included in Redis Stack version 7.2.
+- Cluster recovery with manually uploaded modules 
 
-##### Module versions
+    For clusters containing databases with manually uploaded modules, [cluster recovery]({{<relref "/rs/clusters/cluster-recovery">}}) is now seamlessly integrated
 
-Redis Enterprise Software version 7.2.4 includes the following Redis Stack modules:
+- Support package now contains `supervisorctl` status when created by the [`rladmin` command]({{<relref "/rs/installing-upgrading/creating-support-package#command-line-method">}}) (RS107879)
+
+#### Redis modules
+
+Redis Enterprise Software version 7.2.4-TBA includes the following Redis Stack modules (no changes since [Redis Enterprise Software version 7.2.4-52]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52">}}):
 
 - [RediSearch 2.8.4](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.4)
 
@@ -40,13 +46,6 @@ Redis Enterprise Software version 7.2.4 includes the following Redis Stack modul
 - [RedisBloom 2.6.3](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.3)
 
 - [RedisGears 2.0.11](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.11-m12)
-
-
-See [Upgrade modules](https://docs.redis.com/latest/stack/install/upgrade-module/) to learn how to upgrade a module for a database.
-
-### Enhancements
-
-- TBA
 
 ### Resolved issues
 
