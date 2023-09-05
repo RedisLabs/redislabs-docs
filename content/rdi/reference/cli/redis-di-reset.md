@@ -41,6 +41,14 @@ Usage: redis-di reset [OPTIONS]
 
   Port of RDI Database
 
+- `rdi_user`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-user`
+
+  RDI Database Username
+
 - `rdi_password`:
 
   - Type: STRING
@@ -111,6 +119,7 @@ Options:
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
   --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
                                   required]
+  --rdi-user TEXT                 RDI Database Username
   --rdi-password TEXT             RDI Database Password
   --rdi-key TEXT                  Private key file to authenticate with
   --rdi-cert TEXT                 Client certificate file to authenticate with
