@@ -55,6 +55,18 @@ Redis Enterprise Software version 7.2.4-TBA includes the following Redis Stack m
 
 - RS105137 - Fix audit reconnect issue: sometimes the proxy failed to reconnect to a restarted audit listener
 
+- RS108394 - Invalid `replicaSources` property in REDB manifest causes repeated `dmcproxy` crashes
+
+- RS108233 - Empty saslauthd configuration file causes upgrade checks to fail
+
+- RS107730 - Include client IP address in `failed_authentication_attempt` errors
+
+- RS107727 - `/etc/cron.d/redislabs` file is owned by `redislabs` user instead of `root`
+
+- RS108230 - Remove test key and certificate files in Python dist installed in Redis Enterprise Software
+
+- RS107718 - Disabling `cm_server` leaves port TCP/8443 in `LISTEN` state
+
 ## Version changes 
 
 ### Deprecations
