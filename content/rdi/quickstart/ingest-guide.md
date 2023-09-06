@@ -47,8 +47,13 @@ The following files will be created in the provided directory:
 ├── debezium
 │   └── application.properties
 ├── jobs
-│   └── README.md
-│   └── default.yaml
+│   └── default.yaml.example
+│   └── ingest-multiple-targets.yaml.example
+│   └── ingest-nested.yaml.example
+│   └── ingest.yaml.example
+│   └── README.md
+│   └── read-through.yaml.example
+│   └── write-behind.yaml.example
 └── config.yaml
 
 ```
