@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2.4-TBA (September 2023)
 linkTitle: 7.2.4-TBA (September 2023)
-description: Improved cluster recovery with manually uploaded modules. Support package contains supervisorctl status.
+description: Improved cluster recovery with manually uploaded modules. Support package contains supervisorctl status. Configure port range using rladmin and REST API. License API returns the number of used shards (RAM & flash).
 compatibleOSSVersion: Redis 7.2.0
 weight: 71
 alwaysopen: false
@@ -19,15 +19,25 @@ This version offers:
 
 - Support package enhancements
 
+- Configurable port range
+
+- License API enhancements
+
 ## New in this release
 
 ### Enhancements
 
 - Cluster recovery with manually uploaded modules 
 
-    For clusters containing databases with manually uploaded modules, [cluster recovery]({{<relref "/rs/clusters/cluster-recovery">}}) is now seamlessly integrated
+    - For clusters containing databases with manually uploaded modules, [cluster recovery]({{<relref "/rs/clusters/cluster-recovery">}}) is now seamlessly integrated
 
 - Support package now contains `supervisorctl` status when created by the [`rladmin` command]({{<relref "/rs/installing-upgrading/creating-support-package#command-line-method">}}) (RS107879)
+
+- Port range (`reserved_ports`) is now configurable using [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster">}})
+
+    - Removed `rlutil reserved_ports`, which was deprecated in Redis Enterprise Software [version 7.2.4-52]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#api-deprecations">}})
+
+- [License REST API requests]({{<relref "/rs/references/rest-api/requests/license">}}) return the number of used shards (RAM & flash)
 
 #### Redis modules
 
