@@ -21,10 +21,6 @@ This version offers:
 
 ## New in this release
 
-### New features
-
-- TBA
-
 ### Enhancements
 
 - Cluster recovery with manually uploaded modules 
@@ -68,10 +64,6 @@ Redis Enterprise Software version 7.2.4-TBA includes the following Redis Stack m
 - RS107718 - Disabling `cm_server` leaves port TCP/8443 in `LISTEN` state
 
 ## Version changes 
-
-### Deprecations
-
-- TBA?
 
 ### Supported platforms
 
@@ -130,14 +122,6 @@ The following table shows the MD5 checksums for the available packages:
 | RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
 | RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
 | Amazon Linux 2 |  |
-
-## Known issues
-
-- TBA
-
-## Known limitations
-
-- TBA
 
 ## Security
 
