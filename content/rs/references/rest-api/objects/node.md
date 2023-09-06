@@ -12,7 +12,7 @@ An API object that represents a node in the cluster.
 | Name | Type/Value | Description |
 |------|------------|-------------|
 | uid | integer | Cluster unique ID of node (read-only) |
-| accept_servers | boolean (default:&nbsp;true) | If true, no shards will be created on the node |
+| accept_servers | boolean (default:&nbsp;true) | The node only accepts new shards if `accept_servers` is `true` |
 | addr | string | Internal IP address of node |
 | architecture | string | Hardware architecture (read-only) |
 | bigredis_storage_path | string | Flash storage path (read-only) |

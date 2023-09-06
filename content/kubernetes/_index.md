@@ -18,7 +18,7 @@ aliases: [
     /rs/getting-started/getting-started-kubernetes/,
     /rs/administering/kubernetes/,
     /kubernetes/_index.md,
-
+    /platforms/kubernetes/kubernetes-with-operator/
 ]
 ---
 

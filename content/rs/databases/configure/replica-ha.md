@@ -115,13 +115,14 @@ Replica shard migration is based on priority.  When memory resources are limited
 ### Cooldown periods
 
 Both the cluster and the database have cooldown periods.
-After node failure, the cluster cooldown period prevents another replica migration due to another node failure for any
-database in the cluster until the cooldown period ends (default: one hour).
+
+After node failure, the cluster cooldown period (`slave_ha_cooldown_period`) prevents another replica migration due to another node failure for any
+database in the cluster until the cooldown period ends. The default is one hour.
 
 After a database is migrated with replica HA,
-it cannot go through another migration due to another node failure until the cooldown period for the database ends (Default: two hours).
+it cannot go through another migration due to another node failure until the cooldown period for the database (`slave_ha_bdb_cooldown_period`) ends. The default is two hours.
 
-To configure this grace period from `rladmin`, run:
+To configure cooldown periods, use [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}):
 
 - For the cluster:
 

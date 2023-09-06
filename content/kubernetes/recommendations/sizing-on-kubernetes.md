@@ -14,6 +14,7 @@ aliases: [
     /platforms/kubernetes/memory/sizing-on-kubernetes/,
     /kubernetes/memory/sizing-on-kubernetes.md,
     /kubernetes/memory/sizing-on-kubernetes/,
+    /kubernetes/recommendations/sizing-on-kubernetes/,
 ] 
 ---
 The following article reviews the mechanism and methods available for sizing
@@ -121,6 +122,6 @@ Then, apply the file by running:
     kubectl apply -f redis-enterprise-cluster.yaml
 
 {{< warning >}}
-Be aware that [persistent volume size]({{< relref "/kubernetes/memory/persistent-volumes.md" >}} cannot be changed after deployment. When adjusting compute resources, make sure the ratio of persistent volume size and the new memory size are in accordance to the [Hardware
+Be aware that [persistent volume size]({{< relref "/kubernetes/recommendations/persistent-volumes.md" >}}) cannot be changed after deployment. When adjusting compute resources, make sure the ratio of persistent volume size and the new memory size are in accordance to the [Hardware
 requirements]({{< relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements.md" >}}).
 {{< /warning >}}
