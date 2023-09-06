@@ -52,7 +52,7 @@ rdi_rlec_min_version = "6.2.18"
 rdi_redis_gears_version = "1.2.6"
 rdi_debezium_server_version = "2.3.0.Final"
 rdi_db_types = "cassandra|mysql|oracle|postgresql|sqlserver"
-rdi_cli_latest = "0.108.0"
+rdi_cli_latest = "latest"
 
 siteURL = "http://127.0.0.1:8001"
 

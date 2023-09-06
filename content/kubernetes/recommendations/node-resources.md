@@ -7,6 +7,7 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: [
     /kubernetes/memory/node-resources/
+    /kubernetes/recommendations/node-resources/
 ]
 ---
  
