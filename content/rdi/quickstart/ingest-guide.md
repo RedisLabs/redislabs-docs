@@ -9,7 +9,7 @@ aliases:
 
 ---
 
-This guide will take you through the creation of a write-behind pipeline.
+This guide will take you through the creation of an ingest pipeline.
 
 
 ## Prerequisites
@@ -47,7 +47,13 @@ The following files will be created in the provided directory:
 ├── debezium
 │   └── application.properties
 ├── jobs
-│   └── README.md
+│   └── default.yaml.example
+│   └── ingest-multiple-targets.yaml.example
+│   └── ingest-nested.yaml.example
+│   └── ingest.yaml.example
+│   └── README.md
+│   └── read-through.yaml.example
+│   └── write-behind.yaml.example
 └── config.yaml
 
 ```
