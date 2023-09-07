@@ -29,15 +29,15 @@ This version offers:
 
 - Cluster recovery with manually uploaded modules 
 
-    - For clusters containing databases with manually uploaded modules, [cluster recovery]({{<relref "/rs/clusters/cluster-recovery">}}) is now seamlessly integrated
+    - For clusters containing databases with manually uploaded modules, [cluster recovery]({{<relref "/rs/clusters/cluster-recovery">}}) is now seamlessly integrated.
 
-- Support package now contains `supervisorctl` status when created by the [`rladmin` command]({{<relref "/rs/installing-upgrading/creating-support-package#command-line-method">}}) (RS107879)
+- Support package now contains `supervisorctl` status when created by the [`rladmin` command]({{<relref "/rs/installing-upgrading/creating-support-package#command-line-method">}}) (RS107879).
 
-- Port range (`reserved_ports`) is now configurable using [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster">}})
+- Port range (`reserved_ports`) is now configurable using [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster">}}).
 
-    - Removed `rlutil reserved_ports`, which was deprecated in Redis Enterprise Software [version 7.2.4-52]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#api-deprecations">}})
+    - Removed `rlutil reserved_ports`, which was deprecated in Redis Enterprise Software [version 7.2.4-52]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#api-deprecations">}}).
 
-- [License REST API requests]({{<relref "/rs/references/rest-api/requests/license">}}) return the number of used shards (RAM & flash)
+- [License REST API requests]({{<relref "/rs/references/rest-api/requests/license">}}) return the number of used shards (RAM & flash).
 
 #### Redis modules
 
@@ -55,23 +55,23 @@ Redis Enterprise Software version 7.2.4-TBA includes the following Redis Stack m
 
 ### Resolved issues
 
-- RS107986 - Allow ports lower than 1024 when configuring [auditing]({{<relref "/rs/security/audit-events">}}) using `rladmin`
+- RS107986 - Allow ports lower than 1024 when configuring [auditing]({{<relref "/rs/security/audit-events">}}) using `rladmin`.
 
-- RS105335 - Add error handling to [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) to return an error if the Redis database version is earlier than 7.2.0 or the command is restricted by ACL rules (handles `CLIENT NO-TOUCH` [command limitations](https://docs.redis.com/latest/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52/#command-limitations))
+- RS105335 - Added error handling to [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) to return an error if the Redis database version is earlier than 7.2.0 or the command is restricted by ACL rules (handles `CLIENT NO-TOUCH` [command limitations](https://docs.redis.com/latest/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52/#command-limitations)).
 
-- RS105137 - Fix audit reconnect issue: sometimes the proxy failed to reconnect to a restarted audit listener
+- RS105137 - Fixed audit reconnect issue: sometimes the proxy failed to reconnect to a restarted audit listener.
 
-- RS108394 - Invalid `replicaSources` property in REDB manifest causes repeated `dmcproxy` crashes
+- RS108394 - Added API validation to prevent configuring Replica Of with TLS without providing a server certificate.
 
-- RS108233 - Empty saslauthd configuration file causes upgrade checks to fail
+- RS108233 - Proceed with the upgrade even if an empty `saslauthd` configuration exists.
 
-- RS107730 - Include client IP address in `failed_authentication_attempt` errors
+- RS107730 - Fixed a bug where the `failed_authentication_attempt` event log always contained 127.0.0.1 instead of the real client IP address.
 
-- RS107727 - `/etc/cron.d/redislabs` file is owned by `redislabs` user instead of `root`
+- RS107727 - Fixed permission issue for `/etc/cron.d/redislabs` file in Red Hat.
 
-- RS108230 - Remove test key and certificate files in Python dist installed in Redis Enterprise Software
+- RS108230 - Removed unused test certificate and key files from the `redis-enterprise` package.
 
-- RS107718 - Disabling `cm_server` leaves port TCP/8443 in `LISTEN` state
+- RS107718 - When `cm_server` is disabled through `optional_services`, envoy (the cluster’s reverse proxy) now stops listening on the `cm_server` port.
 
 ## Version changes 
 
