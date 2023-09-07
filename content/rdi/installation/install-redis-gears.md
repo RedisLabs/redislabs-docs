@@ -5,7 +5,7 @@ description: Install and set up RedisGears for a Redis Data Integration deployme
 weight: 70
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 # RedisGears Installation
@@ -18,30 +18,28 @@ Use the [`redis-di create`]({{<relref "/rdi/reference/cli/redis-di-create.md">}}
 
 ## Download RedisGears
 
-Download RedisGears based on the Linux distribution of where Redis Enterprise is installed. 
-
+Download RedisGears based on the Linux distribution of where Redis Enterprise is installed.
 
 ### Ubuntu 20.04
 
 ```bash
-curl -s --tlsv1.3 https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s --tlsv1.3 https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
 ### Ubuntu 18.04
 
 ```bash
-curl -s --tlsv1.3 https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s --tlsv1.3 https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
 ### RHEL8
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
 ```
-
 
 ### RHEL7
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
 ```
