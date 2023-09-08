@@ -31,6 +31,12 @@ rladmin recover all
 
 Returns `Completed successfully` if the database was recovered. Otherwise, returns an error.
 
+### Example
+
+```sh
+rladmin recover all
+```
+
 ## `recover db`
 
 Recovers a specific database in recovery mode.
@@ -50,6 +56,12 @@ rladmin recover db { db:<id> | <name> }
 ### Returns
 
 Returns `Completed successfully` if the database was recovered. Otherwise, returns an error.
+
+### Example
+
+```sh
+rladmin recover db db:1
+```
 
 ## `recover list`
 
@@ -87,7 +99,7 @@ $ rladmin recover s3_import
                   [ s3_prefix <prefix> ]
                   s3_access_key_id <access key>
                   s3_secret_access_key <secret access key>
-                  local_path <path>
+                  import_path <path>
 ```
 
 ### Parameters
@@ -98,8 +110,14 @@ $ rladmin recover s3_import
 | s3_prefix            | string     | S3 object prefix                                                 |
 | s3_access_key_id     | string     | S3 access key ID                                                 |
 | s3_secret_access_key | string     | S3 secret access key                                             |
-| local_path           | filepath   | Local import path where all database snapshots will be imported  |
+| import_path           | filepath   | Local import path where all database snapshots will be imported  |
 
 ### Returns
 
 Returns `Completed successfully` if the database files were imported. Otherwise, returns an error.
+
+### Example
+
+```sh
+rladmin recover s3_import s3_bucket <bucket-name> s3_prefix <s3-prefix>/ s3_access_key_id <access-key> s3_secret_access_key <secret-access-key> import_path /tmp
+```
