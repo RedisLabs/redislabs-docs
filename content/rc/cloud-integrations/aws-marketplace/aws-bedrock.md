@@ -18,6 +18,7 @@ You need to set up your Redis Cloud database before you can set it as the vector
 
 - [Create a subscription and database in Redis Cloud](#create-a-subscription-and-database)
 - [Enable Transport Layer Security (TLS) for the database and save the certificates](#get-tls-certificates)
+- [Store database credentials in an Amazon secret](#store-database-credentials-in-an-amazon-secret)
 - [Create a vector field in your database](#create-a-vector-field-in-your-database) for Bedrock to use
 
 ### Create a subscription and database
