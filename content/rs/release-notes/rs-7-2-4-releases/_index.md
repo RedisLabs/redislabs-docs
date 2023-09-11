@@ -263,4 +263,4 @@ For clusters containing databases with manually uploaded modules, [cluster recov
 
 After installing Redis Enterprise Software on the cluster nodes, upload compatible modules to `modulesdir` (`/opt/redislabs/lib/modules`) before continuing the recovery process.
 
-This limitation was fixed in [Redis Enterprise Software version 7.2.4-TBA]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-tba">}}).
+This limitation was fixed in [Redis Enterprise Software version 7.2.4-64]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-64">}}).
