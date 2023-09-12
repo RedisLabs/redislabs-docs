@@ -26,8 +26,8 @@ rladmin cluster join
         [ replace_node <node UID> ]
         [ flash_enabled ]
         [ flash_path <path> ]
-        [ addr <IP address> ]
-        [ external_addr <IP address> ]
+        [ addr <IP.address> ]
+        [ external_addr <IP.address.1> [<IP.address.2> ... <IP.address.N>] ]
         [ override_repair ]
         [ accept_servers { enabled | disabled } ]
         [ cmn_http_port <port> ]
@@ -42,7 +42,7 @@ rladmin cluster join
 | ccs_persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to the CCS snapshot location (the default is the same as persistent_path) (optional) |
 | cmn_http_port | integer | Joins a cluster that has a non-default cnm_http_port (optional) |
 | ephemeral_path | filepath | Path to the ephemeral storage location (optional) |
-| external_addr | IP address | Sets a node's external IP address. If not provided, the node sets the address automatically. (optional) |
+| external_addr | list of IP addresses | Sets a node's external IP addresses (space-delimited list). If not provided, the node sets the address automatically. (optional) |
 | flash_enabled |  | Enables flash capabilities for a database (optional) |
 | flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to the flash storage location in case the node does not support CAPI (required if flash_enabled) |
 | nodes | IP address | Internal IP address of an existing node in the cluster |

@@ -28,8 +28,8 @@ cluster create
         [ register_dns_suffix ]
         [ flash_enabled ]
         [ flash_path <path> ]
-        [ addr <IP address> ]
-        [ external_addr <IP address> ]
+        [ addr <IP.address> ]
+        [ external_addr <IP.address.1> [<IP.address.2> ... <IP.address.N>] ]
 ```
 
 ### Parameters
@@ -39,7 +39,7 @@ cluster create
 | addr | IP address | The node's internal IP address (optional) |
 | ccs_persistent_path | filepath (default:&nbsp;/var/opt/redislabs/persist) | Path to the location of CCS snapshots (optional) |
 | ephemeral_path | filepath (default:&nbsp;/var/opt/redislabs) | Path to the ephemeral storage location (optional) |
-| external_addr | IP address | The node's external IP address (optional) |
+| external_addr | list of IP addresses | A space-delimited list of the node's external IP addresses (optional) |
 | flash_enabled | | Enables flash storage (optional) |
 | flash_path | filepath (default:&nbsp;/var/opt/redislabs/flash) | Path to the flash storage location (optional) |
 | license_file | filepath | Path to the RLEC license file (optional) |
