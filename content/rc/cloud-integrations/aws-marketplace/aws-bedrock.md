@@ -18,10 +18,10 @@ For more information about the Redis integration with Amazon Bedrock, see the [A
 
 You need to set up your Redis Cloud database before you can set it as the vector database in Amazon Bedrock. To do this, you need to:
 
-- [Create a subscription and database in Redis Cloud](#create-subscription)
-- [Enable Transport Layer Security (TLS) for the database and save the certificates](#get-certs)
-- [Store database credentials in AWS secrets manager](#store-secret)
-- [Create a vector index in your database](#create-vector-index) for Bedrock to use
+1. [Create a subscription and database in Redis Cloud](#create-subscription)
+1. [Enable Transport Layer Security (TLS) for the database and save the certificates](#get-certs)
+1. [Store database credentials in AWS secrets manager](#store-secret)
+1. [Create a vector index in your database](#create-vector-index) for Bedrock to use
 
 Once you have set up the database, you can use the information
 
