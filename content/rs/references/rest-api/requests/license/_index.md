@@ -62,7 +62,9 @@ Returns a JSON object that contains the license details:
 | owner | string | License owner |
 | shards_limit | integer | The total number of shards allowed by the cluster key |
 | ram_shards_limit | integer | The number of RAM shards allowed by the cluster key (as of v7.2) |
-| flash_shards_limit | integer | The number of Flash shards (Auto Tiering) allowed by the cluster key (as of v7.2) |
+| ram_shards_in_use | integer | The number of RAM shards in use |
+| flash_shards_limit | integer | The number of flash shards (Auto Tiering) allowed by the cluster key (as of v7.2) |
+| flash_shards_in_use | integer | The number of flash shards in use |
 
 #### Example JSON body
 
@@ -72,7 +74,9 @@ Returns a JSON object that contains the license details:
     "expired": true,
     "activation_date":"2018-12-31T00:00:00Z",
     "expiration_date":"2019-12-31T00:00:00Z",
+    "ram_shards_in_use": 0,
     "ram_shards_limit": 300,
+    "flash_shards_in_use": 0,
     "flash_shards_limit": 100,
     "shards_limit": 400,
     "features": ["bigstore"],
