@@ -10,7 +10,7 @@ aliases:
 
 [Amazon Bedrock](https://aws.amazon.com/bedrock/) is a service that allows you to securely customize foundational models (FMs) with your own data, and to use these models without having to build complex infrastructure management. With Amazon Bedrock, users can access FMs from a variety of vendors through a single API, streamlining the process of creating generative artificial intelligence (AI).
 
-Amazon Bedrock allows you to choose Redis Cloud as the [vector database](https://redis.com/solutions/use-cases/vector-database/) for your models. Once your database is set up and connected to Amazon Bedrock, it will import text data from an Amazon Simple Storage Service (S3) bucket into Redis Cloud and use it to extract relevant information when prompted.
+Amazon Bedrock allows you to choose Redis Cloud as the [vector database](https://redis.com/solutions/use-cases/vector-database/) for your models. After your database is set up and connected to Amazon Bedrock, it will import text data from an Amazon Simple Storage Service (S3) bucket into Redis Cloud and use it to extract relevant information when prompted.
 
 For more information about the Redis integration with Amazon Bedrock, see the [Amazon Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/).
 
@@ -23,7 +23,7 @@ You need to set up your Redis Cloud database before you can set it as the vector
 1. [Store database credentials in AWS secrets manager](#store-secret)
 1. [Create a vector index in your database](#create-vector-index) for Bedrock to use
 
-Once you have set up the database, you can use the information
+After you set up the database, you can use the information
 
 ### Create a subscription and database {#create-subscription}
 
@@ -47,7 +47,7 @@ To set up a Redis Cloud instance for Bedrock:
 
 ### Get TLS certificates {#get-certs}
 
-1. Enable [Transport Layer Security (TLS)]({{<relref "/rc/security/database-security/tls-ssl#enable-tls">}}) for your database. Make sure to check **TLS client authentication** to require client authentication. Download the client certificates before saving your changes.
+1. Enable [Transport Layer Security (TLS)]({{<relref "/rc/security/database-security/tls-ssl#enable-tls">}}) for your database. Select **TLS client authentication** to require client authentication. Download the client certificates before saving your changes.
 
 1. If you do not have the Redis Cloud server certificates, [download them]({{<relref "/rc/security/database-security/tls-ssl#download-certificates">}}) from the admin console.
 
@@ -61,11 +61,11 @@ In the [AWS Management Console](https://console.aws.amazon.com/), use the **Serv
 - `clientCertificate`: Contents of the client certificate (`redis_user.crt`)
 - `clientPrivateKey`: Contents of the client private key (`redis_user_private.key`)
 
-Once you store this secret, you can view and copy the [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your secret on the secret details page. 
+After you store this secret, you can view and copy the [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your secret on the secret details page. 
 
 ### Create a vector index in your database {#create-vector-index}
 
-Once your database is set up, you need to create an index with a vector field as your knowledge base for Amazon Bedrock.
+After your database is set up, create an index with a vector field as your knowledge base for Amazon Bedrock.
 
 #### [RedisInsight](https://redis.io/docs/ui/insight/)
 
@@ -75,7 +75,7 @@ Follow the steps in [this dedicated guide](https://github.com/RedisVentures/aws-
 
 #### [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}})
 
-The `redis-cli` command-line utility lets you connect and run Redis commands directly from the command line. To gain access to `redis-cli`, you can [install Redis](https://redis.io/docs/getting-started/).
+The `redis-cli` command-line utility lets you connect and run Redis commands directly from the command line. To use `redis-cli`, you can [install Redis](https://redis.io/docs/getting-started/).
 
 Follow the instructions to [connect to your database with TLS certificates]({{<relref "/rc/security/database-security/tls-ssl#connect-with-the-redis-cli">}}).
 
