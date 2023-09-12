@@ -8,20 +8,24 @@ categories: ["RC"]
 aliases: 
 ---
 
-Paragraph 1: What is Bedrock?
+[Amazon Bedrock](https://aws.amazon.com/bedrock/) is a service that allows you to securely customize foundational models (FMs) with your own data, and to use these models without having to build complex infrastructure management. With Amazon Bedrock, users can access FMs from a variety of vendors through a single API, streamlining the process of creating generative artificial intelligence (AI).
 
-Paragraph 2: What does the Redis Bedrock integration let you do?
+Amazon Bedrock allows you to choose Redis Cloud as the [vector database](https://redis.com/solutions/use-cases/vector-database/) for your models. Once your database is set up and connected to Amazon Bedrock, it will import text data from an Amazon Simple Storage Service (S3) bucket into Redis Cloud and use it to extract relevant information when prompted.
+
+For more information about the Redis integration with Amazon Bedrock, see the [Amazon Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/).
 
 ## Set up Redis for Bedrock
 
 You need to set up your Redis Cloud database before you can set it as the vector database in Amazon Bedrock. To do this, you need to:
 
-- [Create a subscription and database in Redis Cloud](#create-a-subscription-and-database)
-- [Enable Transport Layer Security (TLS) for the database and save the certificates](#get-tls-certificates)
-- [Store database credentials in an Amazon secret](#store-database-credentials-in-an-amazon-secret)
-- [Create a vector field in your database](#create-a-vector-field-in-your-database) for Bedrock to use
+- [Create a subscription and database in Redis Cloud](#create-subscription)
+- [Enable Transport Layer Security (TLS) for the database and save the certificates](#get-certs)
+- [Store database credentials in AWS secrets manager](#store-secret)
+- [Create a vector index in your database](#create-vector-index) for Bedrock to use
 
-### Create a subscription and database
+Once you have set up the database, you can use the information
+
+### Create a subscription and database {#create-subscription}
 
 To set up a Redis Cloud instance for Bedrock:
 
@@ -34,18 +38,20 @@ To set up a Redis Cloud instance for Bedrock:
 
     | Total Size of Documents in S3 | Database size without replication | Database size with replication |
     |-------------------------------|-----------------------------------|--------------------------------|
-    | 10,000 kb                     | 60 Mb                             | 120 Mb                         |
-    | 100,000 kb                    | 600 Mb                            | 1.2 Gb                         |
-    | 1,000,000 kb                  | 6 Gb                              | 12 Gb                          |
-    | 10,000,000 kb                 | 60 Gb                             | 120 Gb                         |
+    | 10,000 kb                     | 135 Mb                             | 270 Mb                         |
+    | 100,000 kb                    | 1.35 Gb                            | 2.7 Gb                         |
+    | 1,000,000 kb                  | 13.5 Gb                              | 27 Gb                          |
+    | 10,000,000 kb                 | 135 Gb                             | 270 Gb                         |
 
-### Get TLS certificates
+    For more information on sizing, see the [Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise#right-size-your-database-for-amazon-bedrock).
+
+### Get TLS certificates {#get-certs}
 
 1. Enable [Transport Layer Security (TLS)]({{<relref "/rc/security/database-security/tls-ssl#enable-tls">}}) for your database. Make sure to check **TLS client authentication** to require client authentication. Download the client certificates before saving your changes.
 
 1. If you do not have the Redis Cloud server certificates, [download them]({{<relref "/rc/security/database-security/tls-ssl#download-certificates">}}) from the admin console.
 
-### Store database credentials in an Amazon secret
+### Store database credentials in AWS secrets manager {#store-secret}
 
 In the [AWS Management Console](https://console.aws.amazon.com/), use the **Services** menu to locate and select **Security, Identity, and Compliance** > **Secrets Manager**. [Create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) with the following fields:
 
@@ -57,32 +63,45 @@ In the [AWS Management Console](https://console.aws.amazon.com/), use the **Serv
 
 Once you store this secret, you can view and copy the [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your secret on the secret details page. 
 
-### Create a vector field in your database
+### Create a vector index in your database {#create-vector-index}
 
-Once your database is set up, [connect to your database]({{<relref "/rc/security/database-security/tls-ssl#connect-with-the-redis-cli">}}) and create a vector index using [FT.CREATE](https://redis.io/commands/ft.create/). Replace <index_name> with the name of your index.
+Once your database is set up, you need to create an index with a vector field as your knowledge base for Amazon Bedrock.
+
+#### [RedisInsight](https://redis.io/docs/ui/insight/)
+
+RedisInsight is a free Redis GUI that allows you to visualize and optimize your data in Redis. 
+
+Follow the steps in [this dedicated guide](https://github.com/RedisVentures/aws-redis-bedrock-stack/blob/main/docs/vector-index-creation.md) to create your vector index with RedisInsight.
+
+#### [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}})
+
+The `redis-cli` command-line utility lets you connect and run Redis commands directly from the command line. To gain access to `redis-cli`, you can [install Redis](https://redis.io/docs/getting-started/).
+
+Follow the instructions to [connect to your database with TLS certificates]({{<relref "/rc/security/database-security/tls-ssl#connect-with-the-redis-cli">}}).
 
 ```text
 FT.CREATE <index_name>                   // Index name
     ON HASH                               // Indicates the type of data to index
     SCHEMA
-        "vector"  VECTOR FLAT             // For "vector" field create a FLAT index 
+        "<field_name>"  VECTOR FLAT       // Vector field name and index type
             6                             // 6 index parameters follow
             "TYPE" "FLOAT32"              // only FLOAT32 is currently supported by Bedrock
             "DIM" 1536                    // Each vector will have 1536 dimensions
             "DISTANCE_METRIC" "COSINE"    // Other values could be "IP" "L2"
 ```
 
-## Set Bedrock vector database
+## Set Bedrock vector database {#set-bedrock-database}
 
-On the [AWS Bedrock console](https://aws.amazon.com/bedrock/), follow the steps to create your models.
+On the [Amazon Bedrock console](https://aws.amazon.com/bedrock/), follow the steps to create your models.
 
 When you reach the **Vector database** section, select **Redis Enterprise Cloud**, and fill in the fields with the following information:
 
 - **Endpoint URL**: Public endpoint of your database. This can be found in the Redis Cloud [admin console](https://app.redislabs.com/) from the database list or from the **General** section of the **Configuration** tab for the source database.
 - **Credentials Secret ARN**: [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your [database credentials secret](#store-database-credentials-in-an-amazon-secret).
-- **Vector field**: Name of the [vector field](#create-a-vector-field-in-your-database) stored in your database.
+- **Vector Index name**: Name of the [vector index](#create-vector-index) 
+- **Vector field**: Name of the [vector field](#create-vector-index) stored in your database.
 
 ## More info
 
-- [Amazon Bedrock integration](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/) blog post
+- [Amazon Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/)
 - [Detailed steps](https://github.com/RedisVentures/aws-redis-bedrock-stack/blob/main/README.md)
