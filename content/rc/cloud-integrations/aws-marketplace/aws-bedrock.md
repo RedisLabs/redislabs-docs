@@ -65,7 +65,7 @@ After you store this secret, you can view and copy the [Amazon Resource Name (AR
 
 ### Create a vector index in your database {#create-vector-index}
 
-After your database is set up, create an index with a vector field as your knowledge base for Amazon Bedrock.
+After your database is set up, create an index with a vector field using [FT.CREATE](https://redis.io/commands/ft.create/) as your knowledge base for Amazon Bedrock.
 
 #### [RedisInsight](https://redis.io/docs/ui/insight/)
 
@@ -77,7 +77,7 @@ Follow the steps in [this dedicated guide](https://github.com/RedisVentures/aws-
 
 The `redis-cli` command-line utility lets you connect and run Redis commands directly from the command line. To use `redis-cli`, you can [install Redis](https://redis.io/docs/getting-started/).
 
-Follow the instructions to [connect to your database with TLS certificates]({{<relref "/rc/security/database-security/tls-ssl#connect-with-the-redis-cli">}}).
+Follow the instructions to [connect to your database with TLS certificates]({{<relref "/rc/security/database-security/tls-ssl#connect-with-the-redis-cli">}}) and create an index using [FT.CREATE](https://redis.io/commands/ft.create/). Replace <index_name> with the name of your index and <field_name> with the vector field name.
 
 ```text
 FT.CREATE <index_name>                   // Index name
