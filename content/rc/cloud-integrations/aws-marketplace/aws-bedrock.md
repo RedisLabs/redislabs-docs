@@ -23,7 +23,7 @@ You need to set up your Redis Cloud database before you can set it as the vector
 1. [Store database credentials in AWS secrets manager](#store-secret)
 1. [Create a vector index in your database](#create-vector-index) for Bedrock to use
 
-After you set up the database, you can use the information
+After you set up the database, you can use the database information to [set it as your Bedrock database](#set-bedrock-database).
 
 ### Create a subscription and database {#create-subscription}
 
