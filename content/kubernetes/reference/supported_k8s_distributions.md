@@ -187,13 +187,21 @@ For details on this platform, see the [Rancher documentation](https://rancherman
 For details on this platform, see the [TKG documentation](https://docs.vmware.com/en/VMware-Tanzu-Kubernetes-Grid/index.html).
 
 {{<table-scrollable>}}
-| **Redis operator** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|  | August 2023 | July 2023 | June 2023 | April 2023 | March 2023 | January 2022 |
-| **VMware TKG 1.6** |  |  |  |  |  |  |
-| **1.24** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |  |  |  |  |  |
-| **1.23** | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
-| **1.22** | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Redis operator** | **<nobr>7.2.4-tbd</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** |
+|---|---|---|---|---|---|---|---|
+| **** | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 |
+| **VMware TKG 1.6** |  |  |  |  |  |  |  |
+| **1.24** |  | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |  |  |  |  |  |
+| **1.23** |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.22** |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **VMware TKG 2.1** |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |  |  |  |  |  |  |
+| **1.22** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |  |  |  |  |  |  |
+| **VMware TKG 2.2** |  |  |  |  |  |  |  |
+| **1.25** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |
+| **1.23** | <span title="Supported">&#x2705;</span> |
 
 {{</table-scrollable>}}
 
