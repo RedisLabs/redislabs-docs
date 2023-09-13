@@ -23,32 +23,13 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
 
 {{<warning>}}Redis Enterprise for Kubernetes 7.2.4-2 introduces a new limitation. You cannot recover or upgrade your cluster if there are databases with manually uploaded modules. See the [Redis Enterprise Software 7.2.4 known limitations]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#cluster-recovery-with-manually-uploaded-modules">}}) for more details.{{</warning>}}
 
-## Before upgrading
+## Prerequisites
 
-Review the following warnings before starting your upgrade.
+1. Check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to make sure your Kubernetes distribution is supported.
 
-### Compatibility
+2. Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 
-Before upgrading, check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to make sure your Kubernetes distribution is supported.
-
-### Supported upgrade paths
-
-If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
-
-### OpenShift clusters running 6.2.12 or earlier
-
-Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
-
-### RHEL7-based images
-
-When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info.
-
-### Invalid license
-
-Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
-
-Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
-
+3. Verify you are upgrading from Redis Enterprise operator version 6.2.10-45 or later. If you are not, you must upgrade to 6.2.10-45 before upgrading to versions 6.2.18 or later.
 
 ## Upgrade the operator
 
@@ -115,19 +96,7 @@ If you have the admission controller enabled, you need to manually reapply the `
 
 {{< embed-md "k8s-admission-webhook-cert.md"  >}}
 
-### Reapply the SCC
 
-If you are using OpenShift, you will also need to manually reapply the [security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})) and bind it to your service account.
-
-```sh
-oc apply -f openshift/scc.yaml
-```
-
-```sh
-oc adm policy add-scc-to-user redis-enterprise-scc-v2 \ system:serviceaccount:<my-project>:<rec-name>
-```
-
-If you are upgrading from operator version 6.4.2-6 or before, see the ["after upgrading"](#after-upgrading) section to delete the old SCC and role binding after all clusters are running 6.4.2-6 or later.
 
 ### Verify the operator is running
 
