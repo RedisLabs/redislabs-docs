@@ -95,4 +95,15 @@ quarkus.log.level=INFO
 quarkus.log.console.json=false
 # The port on which Debezium exposes Microprofile Health endpoint and other exposed status information.
 quarkus.http.port=8088
+
+# Optional properties.
+# Each table name must match the name defined in the particular database metadata.
+# List all the tables to be synchronized.
+# debezium.source.table.include.list=schema.table1,schema.table2
+# List all the columns to be synchronized.
+# debezium.source.column.include.list=schema.table1.column1,schema.table2.column1
+# List all the tables requiring filtering.
+# debezium.source.snapshot.select.statement.overrides=schema.table1:schema.table2:schema.table3
+# For each table, provide a valid query to override the default snapshot query.
+# debezium.source.snapshot.select.statement.overrides.schema.table=select * from schema.table
 ```
