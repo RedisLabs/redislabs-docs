@@ -34,10 +34,10 @@ The following Debezium logical types are currently handled:
 - org.apache.kafka.connect.data.Decimal
 - org.apache.kafka.connect.data.Time
 
-These types are currently **NOT** supported and will return "Unsupported Error":
+These types are currently **not** supported and will return "Unsupported Error":
 
 - io.debezium.time.interval
 
-All other values be treated as plain String.
+All other values will be treated as plain String.
 
-For more information, see a full [list of source database values conversion]({{<relref "/rdi/reference/data-types-conversion">}}).
+For more information, see [a full list of source database values conversion]({{<relref "/rdi/reference/data-types-conversion">}}).
