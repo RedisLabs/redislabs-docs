@@ -91,15 +91,15 @@ You will also need to remove [the `namespaceSelector` section from the validatin
 
 1. On one of the existing participating clusters, delete the RERC (substituting `<rerc-name>` with your database name).
 
-    ```sh
+  ```sh
   kubectl delete rerc <rerc-name>
-    ```
+  ```
 
 1. Verify the RERC no longer exists.
 
-    ```sh
+  ```sh
   kubectl get rerc -o=jsonpath='{range .items[*]}{.metadata.name}'
-    ```
+  ```
 
 ## Troubleshoot REDB deletion
 
