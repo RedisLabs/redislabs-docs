@@ -1,7 +1,7 @@
 ---
 Title: Offline install
 linkTitle: Offline install
-description: Shows how to install Redis Data Integration without an active Internet connection
+description: How to install Redis Data Integration without an active Internet connection
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
@@ -10,7 +10,7 @@ aliases:
 
 ## Download
 
-### Redis Data Integration offline package
+### RDI offline package
 
 #### Ubuntu20.04
 
@@ -80,19 +80,19 @@ If your Redis Enterprise Cluster version is {{<param rdi_rlec_min_version>}} or 
 
   The RDI CLI will prompt you to specify the location of the RedisGears zip file, which is located at `/tmp/redis-gears.zip` unless you modified the curl command above.
 
-  The RDI CLI will ask for your cluster host, port, user and password, and will attempt to install RedisGears before continuing with the creation of the RDI database.
+  The RDI CLI will ask for your cluster host, port, user name, and password, and it will attempt to install RedisGears before continuing with the creation of the RDI database.
 
 ## Install RDI CLI
 
 On the workstation where the RDI CLI is to be installed, follow these steps:
 
-- Unpack the downloaded `redis-di-offline.tar.gz` into `/tmp` directory:
+- Unpack the downloaded `redis-di-offline.tar.gz` into the `/tmp` directory:
 
   ```bash
   tar xvf /tmp/redis-di-offline.tar.gz
   ```
 
-- Unpack `redis-di.tar.gz` into `/usr/local/bin/` directory:
+- Unpack `redis-di.tar.gz` into the `/usr/local/bin/` directory:
 
   ```bash
   sudo tar xvf /tmp/redis-di-offline/redis-di-cli/redis-di.tar.gz -C /usr/local/bin/
@@ -100,7 +100,7 @@ On the workstation where the RDI CLI is to be installed, follow these steps:
 
   > Note: Non-root users should unpack to a directory with write permission and run `redis-di` directly from it.
 
-## Create Redis Data Integration BDB
+## Create RDI BDB
 
 ```bash
 redis-di create --silent --cluster-host <CLUSTER_HOST> --cluster-user <CLUSTER_USER> --cluster-password <CLUSTER_PASSWORD> --rdi-port <RDI_PORT> --rdi-password <RDI_PASSWORD>
@@ -108,14 +108,14 @@ redis-di create --silent --cluster-host <CLUSTER_HOST> --cluster-user <CLUSTER_U
 
 Note: You can omit the `--rdi-port` argument and the BDB will be created on the next available port (starting with 12001).
 
-## Load Debezium image
+## Load the Debezium image
 
 - Copy the downloaded `debezium_server_{{<param rdi_debezium_server_version>}}_offline.tar.gz` into `/tmp`.
-- Load image:
+- Load the image:
   ```bash
   docker load < /tmp/debezium_server_{{<param rdi_debezium_server_version>}}_offline.tar.gz
   ```
-- Tag as latest:
+- Tag the image as `latest`:
   ```bash
   docker tag debezium/server:{{<param rdi_debezium_server_version>}}_offline debezium/server:{{<param rdi_debezium_server_version>}}
   docker tag debezium/server:{{<param rdi_debezium_server_version>}}_offline debezium/server:latest
