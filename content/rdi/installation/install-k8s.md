@@ -8,17 +8,17 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-When running Redis Data Integration in a [Kubernetes](https://kubernetes.io/) environment, we recommend creating a [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) and adding the RDI CLI as a pod in the cluster.
+When running Redis Data Integration (RDI) in a [Kubernetes](https://kubernetes.io/) environment, we recommend creating a [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) and adding the RDI CLI as a pod in the cluster.
 
-Throughout the document, the snippets make use of the Kubernetes `kubectl` tool. All examples can be replaced with `oc` when working in an OpenShift environment.
+Throughout this document, the snippets make use of the Kubernetes `kubectl` tool. All examples can be replaced with `oc` when working in an OpenShift environment.
 
 ## Prerequisites
 
 - An existing Redis Enterprise cluster version >= 6.2.18
-- [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) to install.
-- A target Redis DB (can be added after installation).
+- [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) for instructions.
+- A target Redis database (can be added after installation).
 
-> Note: The RedisGears binaries to install must match the base OS of Redis Enterprise containers. In case of [Rancher](https://www.rancher.com/), Redis Enterprise container base OS is Ubuntu 18.04. Use the following command to install RedisGears:
+> Note: The version of RedisGears you will install must match the base OS of the Redis Enterprise containers. In case of [Rancher](https://www.rancher.com/), the Redis Enterprise container base OS is Ubuntu 18.04. Use the following command to install RedisGears:
 
 ```bash
 curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.1.2.6-withdeps.zip -o /tmp/redis-gears.zip
@@ -62,34 +62,34 @@ There are two options for installing the RDI CLI in an Kubernetes environment:
 
   \*If the Redis Enterprise Cluster service is not named `rec` (the default), make sure to forward to the correct service name.
 
-- Run `create` command to set up a new Redis Data Integration database instance within an existing Redis Enterprise Cluster:
+- Run the `create` command to set up a new RDI database instance within an existing Redis Enterprise Cluster:
 
   ```bash
   redis-di create --cluster-host localhost --no-configure
   ```
 
-- Next we need to run the command `port-forward` command to be able to connect to Redis Data Integration inside the Kubernetes cluster:
+- Next, run the `port-forward` command to be able to connect to RDI from inside the Kubernetes cluster:
 
   ```bash
   kubectl port-forward service/<REDIS_DI_SERVICE_NAME> <REDIS_DI_PORT>:<REDIS_DI_PORT>
   ```
 
-  Replace the values for the port-forward with the service name and port of the Redis Data Integration BDB that was created using the `create` command.
+  Replace the values for the port-forward with the service name and port of the RDI BDB that was created using the `create` command.
 
-- Configure Redis Data Integration:
+- Configure RDI:
 
   ```bash
   redis-di configure
   ```
 
-  You should get a message - "Successfully configured redis-di instance on port <REDIS_DI_PORT>"
+  If successful, you should get the message "Successfully configured redis-di instance on port <REDIS_DI_PORT>".
 
-The `create` command will create a BDB named `redis-di-1` in your cluster. You will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register Gears recipes, to run it.
+The `create` command will create a BDB named `redis-di-1` in your cluster. To run the `create` command, you will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register RedisGears recipes.
 
-## Create configuration file for Redis Data Integration
+## Create the configuration file for RDI
 
 Run `redis-di scaffold --db-type <{{param  rdi_db_types}}> --dir <PATH_TO_DIR>`.
-Edit the file `config.yaml` which is located under the directory <NAME> to point to the correct Redis Target database settings:
+Edit the file `config.yaml` that is located under the directory <NAME> to point to the correct Redis Target database settings:
 
 ```yaml
 connections:
@@ -103,15 +103,15 @@ connections:
     #password: ${env:redis-target-password}
 ```
 
-Run `redis-di deploy` command to deploy the configuration in the `config.yaml` file to the remote RDI database.
+Run the `redis-di deploy` command to deploy the configuration in the `config.yaml` file to the remote RDI database.
 
-For more information, see [`config.yaml` reference]({{<relref "/rdi/reference/config-yaml-reference">}}).
+For more information, see the [`config.yaml` reference]({{<relref "/rdi/reference/config-yaml-reference">}}).
 
-### Validate the deploy
+### Validate the installation
 
 Run `redis-di status` to check the status of the installation.
 
-## Install RDI CLI on Kubernetes Cluster
+## Install the RDI CLI on the Kubernetes Cluster
 
 ### Add CLI pod
 
@@ -151,9 +151,9 @@ To run the CLI commands, use:
 kubectl exec -it pod/redis-di-cli -- redis-di
 ```
 
-### Create configuration file for Redis Data Integration
+### Create the configuration file for RDI
 
-- Run the following command to create the configuration file for Redis Data Integration:
+- Run the following command to create the configuration file for RDI:
 
   ```bash
   kubectl exec -it pod/redis-di-cli -- redis-di scaffold --db-type <{{param  rdi_db_types}}> --preview config.yaml > config.yaml
@@ -161,29 +161,29 @@ kubectl exec -it pod/redis-di-cli -- redis-di
 
 - Edit the file `config.yaml` to point to the correct Redis Target database settings.
 
-> For config.yaml reference [see complete settings](../reference/config-yaml-reference.md).
+> For config.yaml settings, see [this reference](../reference/config-yaml-reference.md).
 
-### Create ConfigMap for Redis Data Integration
+### Create ConfigMap for RDI
 
-Run the following command to create the ConfigMap for Redis Data Integration:
+Run the following command to create the ConfigMap for RDI:
 
 ```bash
 kubectl create configmap redis-di-config --from-file=config.yaml
 ```
 
-### Create new RDI database
+### Create a new RDI database
 
-Run `create` command to set up a new Redis Data Integration database instance within an existing Redis Enterprise Cluster:
+Run `create` command to set up a new RDI database instance within an existing Redis Enterprise Cluster:
 
 ```bash
 kubectl exec -it pod/redis-di-cli -- redis-di create
 ```
 
-The `create` command will create a BDB named `redis-di-1` in your cluster. You will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register Gears recipes, to run it.
+The `create` command will create a BDB named `redis-di-1` in your cluster. To run the `create` command, you will need to use a privileged Redis Enterprise user that has the permissions to create a BDB and to register RedisGears recipes.
 
 ### Deploy configuration
 
-Run `deploy` command to deploy the configuration in the ConfigMap to the remote redis-di instance:
+Run the `deploy` command to deploy the configuration in the ConfigMap to the remote redis-di instance:
 
 ```bash
 kubectl exec -it pod/redis-di-cli -- redis-di deploy
@@ -195,11 +195,11 @@ kubectl exec -it pod/redis-di-cli -- redis-di deploy
 
 Run `kubectl exec -it pod/redis-di-cli -- redis-di status` to check the status of the installation.
 
-> Note that it is OK to see the warning of "No streams found" since we have not yet set up a Debezium source connector. We will do this in the next step.
+> Note that it is okay to see the warning "No streams found" since we have not yet set up a Debezium source connector. We will do this in the next step.
 
 ## Install the Debezium Server
 
-### Create configuration file for Redis Data Integration
+### Create the configuration file for RDI
 
 - Run the following command to create the configuration file for Debezium Server:
 
@@ -207,10 +207,10 @@ Run `kubectl exec -it pod/redis-di-cli -- redis-di status` to check the status o
   kubectl exec -it pod/redis-di-cli -- redis-di scaffold --db-type <{{param  rdi_db_types}}> --preview debezium/application.properties > application.properties
   ```
 
-- Edit the file `application.properties` and replace the values for the debezium.sink with the service name and credentials of the Redis Data Integration BDB that was created using the `create` command.
+- Edit the file `application.properties` and replace the values for the debezium.sink with the service name and credentials of the RDI BDB that was created using the `create` command.
   > Note: make sure to reference the Service name that was created by the service rigger.
 
-> For a full list of configuration options and classname of each connector see the [Debezium documentation](https://debezium.io/documentation/reference/stable/connectors/)
+> For a full list of configuration options and the class name of each connector see the [Debezium documentation](https://debezium.io/documentation/reference/stable/connectors/)
 
 ### Create a ConfigMap for Debezium Server
 
@@ -220,7 +220,7 @@ Run the following command to create the ConfigMap for Debezium Server:
 kubectl create configmap debezium-config --from-file=application.properties
 ```
 
-### Create the Debezium Server Pod
+### Create the Debezium Server pod
 
 ```bash
 cat << EOF > /tmp/debezium-server-pod.yml
@@ -253,9 +253,9 @@ EOF
 kubectl apply -f /tmp/debezium-server-pod.yml
 ```
 
-### Optional: Set up an example database
+### Optional: set up an example database
 
-The Debezium project has created preconfigured example databases for many relational database.
+The Debezium project has preconfigured example databases for many relational databases.
 
 To set up a Postgres example database:
 
