@@ -21,7 +21,7 @@ When creating your subscription, you'll need to know which tier to choose.
 
 Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated February 2021):
 
-| Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections | Security<br/> Groups | Max IP<br/> Auth rules |
+| Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections<br/>per Database | Security<br/> Groups | Max IP<br/> Auth rules |
 |------------:|:---------:|:-----------:|:---------------:|:-------------:|
 | (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | N/A | N/A |
 | 100 MB &nbsp;&nbsp;&nbsp;&nbsp; | 4 | 256 | 1 | 4 |
