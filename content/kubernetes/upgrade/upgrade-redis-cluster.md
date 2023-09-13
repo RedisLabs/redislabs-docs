@@ -21,7 +21,6 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
   1. [Upgrade the Redis Enterprise operator](#upgrade-the-operator)
   2. [Upgrade the Redis Enterprise cluster (REC)](#upgrade-the-redis-enterprise-cluster-rec)
 
-
 ## Prerequisites
 
 1. Check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to make sure your Kubernetes distribution is supported.
@@ -94,7 +93,6 @@ If you have the admission controller enabled, you need to manually reapply the `
 {{</note>}}
 
 {{< embed-md "k8s-admission-webhook-cert.md"  >}}
-
 
 
 ### Verify the operator is running
@@ -170,29 +168,7 @@ To see the status of the current rolling upgrade, run:
 kubectl rollout status sts <REC_name>
 ```
 
-### After upgrading
 
-For OpenShift users, operator version 6.4.2-6 introduced a new SCC (`redis-enterprise-scc-v2`). If any of your OpenShift RedisEnterpriseClusters are running versions earlier than 6.2.4-6, you need to keep both the new and old versions of the SCC.
-
-If all of your clusters have been upgraded to operator version 6.4.2-6 or later, you can delete the old version of the SCC (`redis-enterprise-scc`) and remove the binding to your service account.
-
-1. Delete the old version of the SCC
-
-   ```sh
-   oc delete scc redis-enterprise-scc
-   ```
-
-   The output should look similar to the following:
-
-   ```sh
-   securitycontextconstraints.security.openshift.io "redis-enterprise-scc" deleted
-   ```
-
-1. Remove the binding to your service account.
-
-   ```sh
-   oc adm policy remove-scc-from-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec-name>
-   ```
 
 ### Upgrade databases
 
