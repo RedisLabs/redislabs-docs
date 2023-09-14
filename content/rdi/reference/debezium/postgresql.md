@@ -60,10 +60,13 @@ debezium.source.schema.history.internal=io.debezium.storage.redis.history.RedisS
 #debezium.source.table.include.list=<SCHEMA_NAME.TABLE_NAME1>,<SCHEMA_NAME.TABLE_NAME2>...
 # An optional, comma-separated list of regular expressions that match fully-qualified table identifiers for tables whose changes you do not want to capture.
 #debezium.source.table.exclude.list=<SCHEMA_NAME.TABLE_NAME1>,<SCHEMA_NAME.TABLE_NAME2>...
-
 # Important: Do NOT use include and exclude column lists at the same time, use either include or exclude.
 # An optional, comma-separated list of regular expressions that match the fully-qualified names of columns to include in change event record values.
 #debezium.source.column.include.list=<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME1>,<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME2>...
+# An optional, list of tables requiring filtering.
+#debezium.source.snapshot.select.statement.overrides=schema.TABLE11,schema.TABLE2,schema.TABLE3
+# An optional, query. Provide a valid query to override the default snapshot query.
+#debezium.source.snapshot.select.statement.overrides.<schema>.<TABLE>=select * from <schema>.<table>
 # An optional, comma-separated list of regular expressions that match the fully-qualified names of columns to exclude from change event record values.
 #debezium.source.column.exclude.list=<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME1>,<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME2>...
 
@@ -96,15 +99,4 @@ quarkus.log.level=INFO
 quarkus.log.console.json=false
 # The port on which Debezium exposes Microprofile Health endpoint and other exposed status information.
 quarkus.http.port=8088
-
-# Optional properties.
-# Each table name must match the name defined in the particular database metadata.
-# List all the tables to be synchronized.
-# debezium.source.table.include.list=schema.table1,schema.table2
-# List all the columns to be synchronized.
-# debezium.source.column.include.list=schema.table1.column1,schema.table2.column1
-# List all the tables requiring filtering.
-# debezium.source.snapshot.select.statement.overrides=schema.table1:schema.table2:schema.table3
-# For each table, provide a valid query to override the default snapshot query.
-# debezium.source.snapshot.select.statement.overrides.schema.table=select * from schema.table
 ```
