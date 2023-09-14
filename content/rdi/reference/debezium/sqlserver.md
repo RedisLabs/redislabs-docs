@@ -62,7 +62,7 @@ debezium.source.schema.history.internal=io.debezium.storage.redis.history.RedisS
 # Important: Do NOT use include and exclude column lists at the same time, use either include or exclude.
 # An optional, comma-separated list of regular expressions that match the fully-qualified names of columns to include in change event record values.
 #debezium.source.column.include.list=<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME1>,<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME2>...
-# An optional, list of tables requiring filtering.
+# Data filtering during snapshot.
 #debezium.source.snapshot.select.statement.overrides=schema.TABLE11,schema.TABLE2,schema.TABLE3
 # An optional, query. Provide a valid query to override the default snapshot query.
 #debezium.source.snapshot.select.statement.overrides.<schema>.<TABLE>=select * from <schema>.<table>
