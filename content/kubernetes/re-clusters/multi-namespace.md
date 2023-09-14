@@ -85,11 +85,11 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-Apply the files:
+Apply the files, replacing `<managed-namespace>` with your own values:
 
 ```sh
-kubectl apply -f role.yaml -n <managed namespace>
-kubectl apply -f role_binding.yaml -n <managed namespace>
+kubectl apply -f role.yaml -n <managed-namespace>
+kubectl apply -f role_binding.yaml -n <managed-namespace>
 ```
 
 {{<note>}}
