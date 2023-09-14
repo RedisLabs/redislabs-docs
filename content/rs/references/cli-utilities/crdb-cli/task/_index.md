@@ -5,7 +5,7 @@ description: Manage Active-Active tasks.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases:
+aliases: /rs/references/cli-utilities/crdb-cli/task/cancel/
 ---
 
 The `crdb-cli task` commands help investigate Active-Active database performance issues.  They should not be used except as directed by Support.
