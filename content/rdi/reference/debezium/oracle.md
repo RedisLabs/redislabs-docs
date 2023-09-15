@@ -69,17 +69,19 @@ debezium.source.schema.history.internal=io.debezium.storage.redis.history.RedisS
 #debezium.source.table.include.list=<SCHEMA_NAME.TABLE_NAME1>,<SCHEMA_NAME.TABLE_NAME2>...
 # An optional, comma-separated list of regular expressions that match fully-qualified table identifiers for tables whose changes you do not want to capture.
 #debezium.source.table.exclude.list=<SCHEMA_NAME.TABLE_NAME1>,<SCHEMA_NAME.TABLE_NAME2>...
-# Important: Do NOT use include and exclude column lists at the same time, use either include or exclude.
+
+# Important: Do NOT use `include` and `exclude` column lists at the same time, use either `include` or `exclude`.
 # An optional, comma-separated list of regular expressions that match the fully-qualified names of columns to include in change event record values.
 #debezium.source.column.include.list=<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME1>,<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME2>...
-# Data filtering during snapshot.
-# Table name must be in uppercase unless you have created a case sensitive table name.
-#debezium.source.snapshot.select.statement.overrides=schema.TABLE11,schema.TABLE2,schema.TABLE3
-# An optional, query. Provide a valid query to override the default snapshot query.
-# Table name must be in uppercase unless you have created a case sensitive table name.
-#debezium.source.snapshot.select.statement.overrides.<schema>.<TABLE>=select * from <schema>.<table>
 # An optional, comma-separated list of regular expressions that match the fully-qualified names of columns to exclude from change event record values.
 #debezium.source.column.exclude.list=<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME1>,<SCHEMA_NAME.TABLE_NAME.COLUMN_NAME2>...
+
+# Data filtering during snapshot.
+# Table names must be in uppercase unless you have created a case-sensitive table name.
+#debezium.source.snapshot.select.statement.overrides=schema.TABLE11,schema.TABLE2,schema.TABLE3
+# An optional query. Provide a valid query to override the default snapshot query.
+# Table names must be in uppercase unless you have created a case-sensitive table name.
+#debezium.source.snapshot.select.statement.overrides.<schema>.<TABLE>=select * from <schema>.<table>
 
 # Records only DDL statements that are relevant to tables whose changes are being captured by Debezium.
 # In case of changing the captured tables, run `redis-di reset`.
