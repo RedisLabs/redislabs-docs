@@ -17,3 +17,9 @@ To filter the data, you can:
 * Select a database from the **Database** list to view the daily memory usage of a specific database.
 
 You can also hold the pointer over each bar in the graph to view the precise memory usage on that day.
+
+## Download Cost Report
+
+{{< embed-md "cost-report-csv.md" >}}
+
+If you filter the data in the usage report, the Cost Report will only show shard costs for the month, subscription, and database you selected.
