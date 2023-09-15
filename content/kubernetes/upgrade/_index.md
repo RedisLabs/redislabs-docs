@@ -5,8 +5,9 @@ description: Information about upgrading your Redis Enterprise cluster on Kubern
 weight: 15
 alwaysopen: false
 categories: ["Platforms"]
-aliases: []
+aliases: [/kubernetes/upgrade/]
 ---
+
 Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process includes updating three components:
 
   1. Upgrade the Redis Enterprise operator
@@ -15,7 +16,7 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
 
 To use OpenShift container platform CLI to upgrade your Redis Enterprise, see [Upgrade Redis Enterprise with OpenShift CLI]({{<relref "/kubernetes/upgrade/openshift-cli.md">}}).
 
-For all other Kubernetes distrobutions, see [Upgrade Redis Enterprise for Kubernetes]({{relref "/kubernetes/upgrade/upgrade-redis-cluster.md"}}).
+For all other Kubernetes distributions, see [Upgrade Redis Enterprise for Kubernetes]({{<relref "/kubernetes/upgrade/upgrade-redis-cluster.md">}}).
 
 ## How does the REC upgrade work?
 

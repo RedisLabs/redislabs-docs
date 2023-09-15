@@ -1,6 +1,6 @@
 ---
-Title: Upgrade a Redis Enterprise cluster (REC)
-linkTitle: Upgrade a Redis cluster
+Title: Upgrade Redis Enterprise for Kubernetes
+linkTitle: Kubernetes
 description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
 weight: 10
 alwaysopen: false
@@ -17,6 +17,7 @@ aliases: [
     /kubernetes/upgrade/upgrade-redis-cluster/,
 ]
 ---
+
 Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process includes updating three components:
 
   1. [Upgrade the Redis Enterprise operator](#upgrade-the-operator)
@@ -83,7 +84,6 @@ If you have the admission controller enabled, you need to manually reapply the `
 {{</note>}}
 
 {{< embed-md "k8s-admission-webhook-cert.md"  >}}
-
 
 ### Verify the operator is running
 
