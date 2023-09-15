@@ -16,10 +16,11 @@ aliases: [
     /kubernetes/re-clusters/upgrade-redis-cluster/,
 ]
 ---
-Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps:
+Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process includes updating three components:
 
   1. [Upgrade the Redis Enterprise operator](#upgrade-the-operator)
   2. [Upgrade the Redis Enterprise cluster (REC)](#upgrade-the-redis-enterprise-cluster-rec)
+  3. [Upgrade Redis Enterprise databases (REDB)](#upgrade-databases)
 
 ## Prerequisites
 
@@ -44,12 +45,6 @@ VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k
 curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
 
-For OpenShift environments, the name of the bundle is `openshift.bundle.yaml`, and so the `curl` command to run is:
-
-```sh
-curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/openshift.bundle.yaml
-```
-
 If you need a different release, replace `VERSION` in the above with a specific release tag.
 
 ### Apply the bundle
@@ -65,12 +60,6 @@ Upgrade the bundle and operator with a single command, passing in the bundle YAM
 
 ```sh
 kubectl apply -f bundle.yaml
-```
-
-If you are using OpenShift, run this instead:
-
-```sh
-kubectl apply -f openshift.bundle.yaml
 ```
 
 After running this command, you should see a result similar to this:
@@ -148,6 +137,10 @@ After the operator upgrade is complete, you can upgrade Redis Enterprise cluster
 
 1. Save the changes to apply.
 
+### Reapply roles and role bindings
+
+If your operator is monitoring multiple namespaces, you'll need to [reapply your role and role bindings]({{<relref "content/kubernetes/re-clusters/multi-namespace#create-role-and-role-binding-for-managed-namespaces">}}) for each managed namespace. See [Manage databases in multiple namespaces]({{<relref "/kubernetes/re-clusters/multi-namespace">}}) for more details.
+
 ### Monitor the upgrade
 
 You can view the state of the REC with `kubectl get rec`.
@@ -168,8 +161,6 @@ To see the status of the current rolling upgrade, run:
 kubectl rollout status sts <REC_name>
 ```
 
-
-
 ### Upgrade databases
 
 {{<warning>}}In version 7.2.4, old module versions and manually uploaded modules are not persisted. If databases are not upgraded after cluster upgrade, and require cluster recovery afterwards, you'll need to contact Redis support. This issue will be fixed in the next maintenance release by moving the stored location of the modules.{{</warning>}}
@@ -178,12 +169,3 @@ After the cluster is upgraded, you can upgrade your databases. The process for u
 
 Note that if your cluster [`redisUpgradePolicy`]({{<relref "/kubernetes/reference/cluster-options#redisupgradepolicy">}}) or your database [`redisVersion`]({{<relref "/kubernetes/reference/db-options#redisversion">}}) are set to `major`, you won't be able to upgrade those databases to minor versions. See [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy">}}) for more details.
 
-## How does the REC upgrade work?
-
-The Redis Enterprise cluster (REC) uses a rolling upgrade, meaning it upgrades pods one by one. Each pod is updated after the last one completes successfully. This helps keep your cluster available for use.
-
-To upgrade, the cluster terminates each pod and deploys a new pod based on the new image.
-  Before each pod goes down, the operator checks if the pod is a primary (master) for the cluster, and if it hosts any primary (master) shards. If so, a replica on a different pod is promoted to primary. Then when the pod is terminated, the API remains available through the newly promoted primary pod.
-
-After a pod is updated, the next pod is terminated and updated.
-After all of the pods are updated, the upgrade process is complete.
