@@ -140,7 +140,7 @@ After the operator upgrade is complete, you can upgrade Redis Enterprise cluster
 
 ### Reapply roles and role bindings
 
-If your operator is monitoring multiple namespaces, you'll need to [reapply your role and role bindings]({{<relref "content/kubernetes/re-clusters/multi-namespace#create-role-and-role-binding-for-managed-namespaces">}}) for each managed namespace. See [Manage databases in multiple namespaces]({{<relref "/kubernetes/re-clusters/multi-namespace">}}) for more details.
+If your operator is monitoring multiple namespaces, you'll need to [reapply your role and role bindings]({{<relref "/kubernetes/re-clusters/multi-namespace#create-role-and-role-binding-for-managed-namespaces">}}) for each managed namespace. See [Manage databases in multiple namespaces]({{<relref "/kubernetes/re-clusters/multi-namespace">}}) for more details.
 
 ### Monitor the upgrade
 
