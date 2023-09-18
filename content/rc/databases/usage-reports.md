@@ -21,5 +21,3 @@ You can also hold the pointer over each bar in the graph to view the precise mem
 ## Download Cost Report
 
 {{< embed-md "cost-report-csv.md" >}}
-
-If you filter the data in the usage report, the Cost Report will only show shard costs for the month, subscription, and database you selected.
