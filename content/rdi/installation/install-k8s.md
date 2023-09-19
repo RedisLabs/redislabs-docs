@@ -153,6 +153,7 @@ kubectl apply -f /tmp/redis-di-cli-deployment.yml
 ```
 
 After creation of the deployment, the RDI CLI will be available as a pod in the cluster.
+
 It can be scaled down to 0 replicas when not in use or during maintenance. Use the following commands to scale down/up the deployment:
 
 ```bash
