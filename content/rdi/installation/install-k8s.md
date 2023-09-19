@@ -111,7 +111,7 @@ For more information, see [`config.yaml` reference]({{<relref "/rdi/reference/co
 
 Run `redis-di status` to check the status of the installation.
 
-## Install RDI CLI on Kubernetes Cluster
+## Install RDI CLI on Kubernetes cluster
 
 ### Add CLI deployment
 
@@ -152,7 +152,8 @@ EOF
 kubectl apply -f /tmp/redis-di-cli-deployment.yml           
 ```
 
-After creation of the deployment, the RDI CLI will be available as a pod in the cluster. It can be scaled down to 0 replicas when not in use or during maintenance. Use the following commands to scale down/up the deployment:
+After creation of the deployment, the RDI CLI will be available as a pod in the cluster.
+It can be scaled down to 0 replicas when not in use or during maintenance. Use the following commands to scale down/up the deployment:
 
 ```bash
 kubectl scale deployment.apps/redis-di-cli --replicas=0
@@ -224,7 +225,7 @@ kubectl exec -it pod/redis-di-cli-<id> -- redis-di deploy
 
 Run `kubectl exec -it pod/redis-di-cli-<id> -- redis-di status` to check the status of the installation.
 
-> Note that it is OK to see the warning of "No streams found" since we have not yet set up a Debezium source connector. We will do this in the next step.
+> Note: It is OK to see the warning of "No streams found" since we have not yet set up a Debezium source connector. We will do this in the next step.
 
 ## Install the Debezium Server
 
