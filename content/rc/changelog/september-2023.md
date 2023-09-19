@@ -15,8 +15,3 @@ aliases: []
 
 For all databases using Redis 7.2, you can now choose between the RESP2 and RESP3 protocols when you [create a database]({{<relref "/rc/databases/create-database">}}). For more information about the different RESP versions, see the [Redis serialization protocol specification](https://redis.io/docs/reference/protocol-spec/#resp-versions).
 
-### Cost report CSV download
-
-You can now download shard cost reports in CSV format from the [**Billing and Payments**]({{<relref "/rc/billing-and-payments">}}) and [**Usage Reports**]({{<relref "/rc/databases/usage-reports">}}) pages.
-
-{{< embed-md "cost-report-csv.md" >}}
