@@ -83,7 +83,7 @@ RDI engine is built on top of RedisGears. It has two main logical functions:
 
 #### RDI CLI
 
-RDI comes with a Python-based CLI that is intuitive, self explanatory, and validating, to ease the entire lifecycle of RDI setup and management.
+RDI comes with a CLI that is intuitive, self explanatory, and validating, to ease the entire lifecycle of RDI setup and management.
 
 #### RDI configuration
 
