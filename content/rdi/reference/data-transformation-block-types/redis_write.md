@@ -32,7 +32,6 @@ Write to a Redis Enterprise database
 - For **strings** RDI will automatically assume `on_update: replace` regardless of what was declared in the job file. Appends and increments are not currently supported.
 - For **streams** RDI will ignore `on_update` property since they are append only.
 
-
 > Notes:
 
 - Job parameters always override system properties. In particular, `data_type` will override `target_data_type` and `on_update` will override `json_update_strategy` properties respectively.

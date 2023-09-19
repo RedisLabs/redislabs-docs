@@ -1,7 +1,7 @@
 ---
 Title: rladmin node snapshot
 linkTitle: snapshot
-description: Manages snapshots of the state of a node's resources.
+description: Manages snapshots of the configuration of a node's shards and endpoints.
 weight: $weight
 alwaysopen: false
 toc: "true"
@@ -10,11 +10,13 @@ categories: ["RS"]
 aliases:
 ---
 
-Manages [snapshots]({{<relref "/rs/databases/configure/database-persistence#append-only-file-aof-vs-snapshot-rdb">}}) of the state of a node's shards and endpoints.
+Manages snapshots of the configuration of a node's shards and endpoints.
+
+You can create node snapshots and use them to restore the node's shards and endpoints to a configuration from a previous point in time. If you restore a node from a snapshot (for example, after an event such as failover or maintenance), the node's shards have the same placement and roles as when the snapshot was created.
 
 ## `node snapshot create`
 
-Creates a snapshot of a node's current state.
+Creates a snapshot of a node's current configuration, including the placement of shards and endpoints on the node and the shards' roles.
 
 ```sh
 rladmin node <ID> snapshot create <name>
@@ -94,7 +96,7 @@ snap2                                              2       2022-05-12T19:27:51Z
 
 ## `node snapshot restore`
 
-Restores a node as close to the stored snapshot as possible.
+Restores a node's shards and endpoints as close to the stored snapshot as possible.
 
 ```sh
 rladmin node <ID> snapshot restore <name>

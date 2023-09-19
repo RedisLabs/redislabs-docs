@@ -46,7 +46,8 @@ The available settings vary according to your subscription plan:
 | **Database name** | A name for your database (_required_) |
 | **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
 | **Type**  | Controls optional capabilities, such as modules or protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
-| **Advanced capabilities** | Extend core Redis functionality using [modules]({{<relref "/stack">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "/stack/enterprise-capabilities#redis-enterprise-module-support">}}) |
+| **Advanced capabilities** | Extend core Redis functionality using [advanced capabilities]({{<relref "/stack">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "/stack/enterprise-capabilities#redis-enterprise-module-support">}}) |
+| **Supported Protocol(s)** | Choose between RESP2 and RESP3 _(Redis 7.2 only)_. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
 
 ### Database port
 
@@ -65,7 +66,7 @@ Available options depend on your subscription and your database **Type**.
 
 #### Fixed (and Free) advanced capability options {#fixed-and-free-module-options}
 
-Fixed and Free subscriptions support [Redis Stack](https://redis.io/docs/stack/), which enables the most frequently used modules.
+Fixed and Free subscriptions support [Redis Stack](https://redis.io/docs/stack/), which enables the most frequently used capabilities.
 
 {{<image filename="images/rc/new-database-general-type-free-stack.png" alt="For Fixed and Free subscriptions, the Type setting in the General section includes an option for Redis Stack." width="75%">}}{{< /image >}}
 
@@ -73,7 +74,7 @@ When the database **Type** is set to _Redis Stack_, the Advanced capabilities se
 
 {{<image filename="images/rc/database-details-modules-stack-free.png" alt="For Fixed and Free subscriptions, the Database details page lists the capabilities and versions added by Redis Stack." width="75%">}}{{< /image >}}
 
-Redis Enterprise Cloud is updated on a regular basis, which includes the advanced capabilities supported by the service.  Module versions displayed by the admin console may vary from those shown above.  For the latest details of any module, see [Redis modules]({{<relref "/stack">}}). 
+Redis Enterprise Cloud is updated on a regular basis, which includes the advanced capabilities supported by the service. Versions displayed by the admin console may vary from those shown above.  For the latest details of any capability, see [Redis Stack and Redis Enterprise]({{<relref "/stack">}}). 
 
 Redis Stack is available only for Fixed and Free subscriptions.
 
@@ -92,17 +93,17 @@ You can select more than one advanced capability for a database, though there ar
     - RedisTimeSeries
     - RedisBloom
 
-- RedisGraph cannot be combined with other modules.
+- RedisGraph cannot be combined with other capabilities.
 
-- When you select RedisJSON, RediSearch is automatically added because the modules complement each other.  
+- When you select RedisJSON, RediSearch is automatically added because the capabilities complement each other.  
 
     You can remove RediSearch if you prefer.
 
-You don't have to combine modules.  To remove a selected module, either clear the checkbox in the menu or select the module's **Delete** icon.  
+You don't have to combine capabilities.  To remove a selected capability, either clear the checkbox in the menu or select its **Delete** icon.  
 
-<nobr>{{<image filename="images/rc/icon-checkbox-clear.png" alt="To remove a selected module, clear the checkbox in the menu." width="30px">}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-module-delete.png" alt="You can also use the delete icon to remove a module." width="30px">}}{{< /image >}}</nobr>
+<nobr>{{<image filename="images/rc/icon-checkbox-clear.png" alt="To remove a selected capability, clear the checkbox in the menu." width="30px">}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-module-delete.png" alt="You can also use the delete icon to remove a capability." width="30px">}}{{< /image >}}</nobr>
 
-To learn more, see [Redis Stack](https://redis.io/docs/stack/) and [Redis modules]({{<relref "/stack">}}).
+To learn more, see [Redis Stack](https://redis.io/docs/stack/) and [Redis Stack and Redis Enterprise]({{<relref "/stack">}}).
 
 ## Scalability section
 

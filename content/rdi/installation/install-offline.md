@@ -5,7 +5,7 @@ description: Shows how to install Redis Data Integration without an active Inter
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 ## Download
@@ -44,32 +44,32 @@ wget https://qa-onprem.s3.amazonaws.com/redis-di/debezium/debezium_server_{{<par
 
 ## Install RedisGears and its dependencies
 
-If your Redis Enterprise Cluster version is 6.2.18 or higher, you can install RedisGears using the RDI CLI:
+If your Redis Enterprise Cluster version is {{<param rdi_rlec_min_version>}} or higher, you can install RedisGears using the RDI CLI:
 
 - Download RedisGears bundled with Python plugin:
 
   #### Ubuntu 20.04
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s --tlsv1.3 https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu20.04-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
   #### Ubuntu 18.04
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s --tlsv1.3 https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
   #### RHEL 8
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel8-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
   #### RHEL 7
 
   ```bash
-  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+  curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-rhel7-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
   ```
 
 - Run the `create` command in interactive mode:
@@ -81,31 +81,6 @@ If your Redis Enterprise Cluster version is 6.2.18 or higher, you can install Re
   The RDI CLI will prompt you to specify the location of the RedisGears zip file, which is located at `/tmp/redis-gears.zip` unless you modified the curl command above.
 
   The RDI CLI will ask for your cluster host, port, user and password, and will attempt to install RedisGears before continuing with the creation of the RDI database.
-
-### Manual Installation
-
-- Copy the downloaded `redis-di-offline.tar.gz` into the master node of Redis under `/tmp` directory.
-
-- Unpack into `/tmp` directory:
-
-  ```bash
-  cd /tmp
-  tar xvf redis-di-offline.tar.gz
-  ```
-
-- Switch user to the user that the cluster was created with (usually `redislabs`).
-
-- Install the [RedisGears](https://redis.com/modules/redis-gears/) module and dependencies:
-
-  ```bash
-  # substitute <OS_VERSION> to ubuntu18.04 | ubuntu20.04 | rhel7 | rhel8
-  mkdir -p $modulesdatadir/rg/{{<param rdi_redis_gears_current_semantic_version>}}/deps/
-  cp /tmp/redis-di-offline/redis-gears/redisgears-python.Linux-<OS_VERSION>-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}.tgz $modulesdatadir/rg/{{<param rdi_redis_gears_current_version>}}/deps/
-  curl -v -k -u "<CLUSTER_USERNAME>:<CLUSTER_PASSWORD>" -F "module=@/tmp/redis-di-offline/redis-gears/redisgears_python.Linux-<OS_VERSION>-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}.zip" https://localhost:9443/v2/modules
-  ```
-
-> Note: Make sure that the folder `$modulesdatadir/rg/{{<param rdi_redis_gears_current_version>}}/deps` is accessible for the OS user running Redis Enterprise. Typically, this is user `redislabs`.
-
 
 ## Install RDI CLI
 
