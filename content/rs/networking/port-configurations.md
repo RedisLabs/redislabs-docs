@@ -28,21 +28,21 @@ Redis Enterprise Software's port usage falls into three general categories:
 - External: For traffic from client applications or external monitoring resources
 - Active-Active: For traffic to and from clusters hosting Active-Active databases
 
-| Protocol | Port | Connection Source | Description |
+| Protocol | Port | Configurable | Connection Source | Description |
 |------------|-----------------|-----------------|-----------------|
-| TCP | 8001 | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) |
-| TCP | 8000, 8070, 8071, 9090 | Internal, External | Metrics exported and managed by the web proxy |
-| TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
-| TCP | 9081 | Internal | Active-Active management (internal) |
-| TCP | 9443 (Recommended), 8080 | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
-| TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
-| UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
-| ICMP | * | Internal | Connectivity checking between nodes |
-| TCP | 1968 | Internal | Proxy traffic |
-| TCP | 3333-3341, 3342-3344, 36379, 36380 | Internal | Internode communication |
-| TCP | 20000-29999 | Internal | Database shard traffic |
-| TCP | 8002, 8004, 8006 | Internal | Default system health monitoring (envoy admin, envoy management server, gossip envoy admin)|
-| TCP | 8444, 9080 | Internal | Traffic between web proxy and cnm_http/cm |
+| TCP | 8001 | No | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) |
+| TCP | 8000, 8070, 8071, 9090 | No | Internal, External | Metrics exported and managed by the web proxy |
+| TCP | 8443 | Yes | Internal, External | Secure (HTTPS) access to the management web UI |
+| TCP | 9081 | No | Internal | Active-Active management (internal) |
+| TCP | 9443 (Recommended), 8080 | Yes | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
+| TCP | 10000-19999 | Yes | Internal, External, Active-Active | Database traffic |
+| UDP | 53, 5353 | No | Internal, External | DNS/mDNS traffic |
+| ICMP | * | No | Internal | Connectivity checking between nodes |
+| TCP | 1968 | No | Internal | Proxy traffic |
+| TCP | 3333-3344, 36379, 36380 | No | Internal | Internode communication |
+| TCP | 20000-29999 | No | Internal | Database shard traffic |
+| TCP | 8002, 8004, 8006 | Yes | Internal | Default system health monitoring (envoy admin, envoy management server, gossip envoy admin)|
+| TCP | 8444, 9080 | No | Internal | Traffic between web proxy and cnm_http/cm |
 
 ## Change the admin console port
 
