@@ -106,7 +106,8 @@ oc apply -f openshift/scc.yaml
 ```
 
 ```sh
-oc adm policy add-scc-to-user redis-enterprise-scc-v2 \ system:serviceaccount:<my-project>:<rec-name>
+oc adm policy add-scc-to-user redis-enterprise-scc-v2 \
+  system:serviceaccount:<my-project>:<rec-name>
 ```
 
 If you are upgrading from operator version 6.4.2-6 or before, see the ["after upgrading"](#after-upgrading) section to delete the old SCC and role binding after all clusters are running 6.4.2-6 or later.
