@@ -28,21 +28,21 @@ Redis Enterprise Software's port usage falls into three general categories:
 - External: For traffic from client applications or external monitoring resources
 - Active-Active: For traffic to and from clusters hosting Active-Active databases
 
-| Protocol | Port | Configurable | Connection Source | Description |
-|------------|-----------------|-----------------|-----------------|
-| TCP | 8001 | No | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) |
-| TCP | 8000, 8070, 8071, 9090 | No | Internal, External | Metrics exported and managed by the web proxy |
-| TCP | 8443 | Yes | Internal, External | Secure (HTTPS) access to the management web UI |
-| TCP | 9081 | No | Internal | Active-Active management (internal) |
-| TCP | 9443 (Recommended), 8080 | Yes | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
-| TCP | 10000-19999 | Yes | Internal, External, Active-Active | Database traffic |
-| UDP | 53, 5353 | No | Internal, External | DNS/mDNS traffic |
-| ICMP | * | No | Internal | Connectivity checking between nodes |
-| TCP | 1968 | No | Internal | Proxy traffic |
-| TCP | 3333-3344, 36379, 36380 | No | Internal | Internode communication |
-| TCP | 20000-29999 | No | Internal | Database shard traffic |
-| TCP | 8002, 8004, 8006 | Yes | Internal | Default system health monitoring (envoy admin, envoy management server, gossip envoy admin)|
-| TCP | 8444, 9080 | No | Internal | Traffic between web proxy and cnm_http/cm |
+| Protocol | Port | Configurable | Connection source | Description |
+|----------|------|--------------|-------------------|-------------|
+| TCP | 8001 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) |
+| TCP | 8000, 8070, 8071, 9090 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Metrics exported and managed by the web proxy |
+| TCP | 8443 | <span title="Configurable">&#x2705; Yes</span> | Internal, External | Secure (HTTPS) access to the management web UI |
+| TCP | 9081 | <span title="Not configurable">&#x274c; No</span> | Internal | Active-Active management (internal) |
+| TCP | 9443 (Recommended), 8080 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
+| TCP | 10000-19999 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | Database traffic |
+| UDP | 53, 5353 | <span title="Not configurable">&#x274c; No</span> | Internal, External | DNS/mDNS traffic |
+| ICMP | * | <span title="Not configurable">&#x274c; No</span> | Internal | Connectivity checking between nodes |
+| TCP | 1968 | <span title="Not configurable">&#x274c; No</span> | Internal | Proxy traffic |
+| TCP | 3333-3344, 36379, 36380 | <span title="Not configurable">&#x274c; No</span> | Internal | Internode communication |
+| TCP | 20000-29999 | <span title="Not configurable">&#x274c; No</span> | Internal | Database shard traffic |
+| TCP | 8002, 8004, 8006 | <span title="Configurable">&#x2705; Yes</span> | Internal | Default system health monitoring (envoy admin, envoy management server, gossip envoy admin)|
+| TCP | 8444, 9080 | <span title="Not configurable">&#x274c; No</span> | Internal | Traffic between web proxy and cnm_http/cm |
 
 ## Change the admin console port
 
