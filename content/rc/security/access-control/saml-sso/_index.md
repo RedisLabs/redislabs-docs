@@ -239,19 +239,19 @@ To link other accounts to an existing SAML SSO configuration:
 
 1. Sign in to the account that you want to link to the SAML configuration. Go to **Access Management > Single Sign-On** and then enter the copied token into the **Join an existing SAML configuration** text box. Select the arrow to confirm.
 
-    Once you do this, the owner of the original account will receive a request to link the new account to the SAML configuration.
+    After you do this, the owner of the original account will receive a request to link the new account to the SAML configuration.
 
 1. Sign in with the original account and select **Access Management > Single Sign-On**. You should see the new account in the **Unlinked accounts** list.
 
     {{<note>}}
-In order to see and interact with the Redis Cloud account in the **Unlinked accounts** list, you must be an owner of the account. If you are not an owner, the account will not be displayed in the section.
+To see and interact with the Redis Cloud account in the **Unlinked accounts** list, you must be an owner of the account. If you are not an owner, the account will not be displayed in the section.
     {{</note>}}
 
 1. Select **Link account**.
 
     {{<image filename="images/rc/saml/button-saml-link-account.png" alt="The Link Account button">}}{{</image>}}
 
-    In the popup that appears, select **Confirm conversion** to finish linking the accounts.
+1. In the **Convert existing users** dialog, select **Confirm conversion** to finish linking the accounts.
 
     {{<image filename="images/rc/saml/popup-saml-convert-users.png" alt="The Convert users popup">}}{{</image>}}
 

@@ -9,8 +9,8 @@ categories: ["RC"]
 aliases: []
 ---
 
-## New Features
+## New features
 
-### SAML Account linking tokens
+### SAML account linking tokens
 
 The process for [linking new Redis accounts]({{<relref "/rc/security/access-control/saml-sso#link-other-accounts">}}) to your [SAML single sign-on]({{<relref "/rc/security/access-control/saml-sso">}}) configuration has changed to enhance security. Now, both accounts must use a token to ensure that the connection is legitimate.
