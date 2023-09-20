@@ -33,7 +33,7 @@ To set up a Redis Cloud instance for Bedrock:
 
 1. [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}). In the **Sizing** tab, when creating your first database, make sure to have the following settings:
 
-    - Add the **RediSearch** and **RedisJSON** advanced capabilities to your database.
+    - Add the **Search and Query** and **JSON** advanced capabilities to your database.
     - Set the size of the database based on the amount of data that will be pulled from your Simple Storage Service (S3) [bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html). See [Find out the size of your S3 buckets](https://aws.amazon.com/blogs/storage/find-out-the-size-of-your-amazon-s3-buckets/) to find out how much training data is stored in your S3 bucket and pick the closest size from the table below. 
 
     | Total Size of Documents in S3 | Database size without replication | Database size with replication |

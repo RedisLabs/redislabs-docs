@@ -88,16 +88,12 @@ You can select more than one advanced capability for a database, though there ar
 
 - The following advanced capabilities can be combined in Flexible and Annual subscriptions:
 
-    - RediSearch
-    - RedisJSON
-    - RedisTimeSeries
-    - RedisBloom
+    - Search and Query
+    - JSON
+    - Time Series
+    - Probabilistic
 
-- RedisGraph cannot be combined with other capabilities.
-
-- When you select RedisJSON, RediSearch is automatically added because the capabilities complement each other.  
-
-    You can remove RediSearch if you prefer.
+- Graph cannot be combined with other capabilities.
 
 You don't have to combine capabilities.  To remove a selected capability, either clear the checkbox in the menu or select its **Delete** icon.  
 
@@ -116,7 +112,7 @@ The **Scalability** section is available only for Flexible and Annual plans.
 |Setting name|Description|
 |:-----------|:----------|
 | **Memory size** | Maximum size (in GB) for your database |
-| **Throughput** | Defines throughput in terms of maximum operations per second for the database <br/><br/>RediSearch databases use the number of shards to determine throughput. To determine how many shards you need for your RediSearch database, use the [RediSearch sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). |
+| **Throughput** | Defines throughput in terms of maximum operations per second for the database <br/><br/>Search and query databases use the number of shards to determine throughput. To determine how many shards you need for your Search and query database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). |
 | **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/durability-ha/clustering.md#changing-the-hashing-policy" >}}) |
 | **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 
