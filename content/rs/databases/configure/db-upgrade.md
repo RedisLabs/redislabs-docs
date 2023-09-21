@@ -1,7 +1,7 @@
 ---
 Title: Change database upgrade configuration
 linkTitle: Upgrade configuration
-description: 
+description: Configure cluster-wide policies that affect default database upgrades.
 weight: 15
 alwaysopen: false
 toc: "true"
