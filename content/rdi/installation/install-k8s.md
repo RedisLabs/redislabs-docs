@@ -152,22 +152,22 @@ EOF
 kubectl apply -f /tmp/redis-di-cli-deployment.yml           
 ```
 
-After creation of the deployment, the RDI CLI will be available as a pod in the cluster.
+After deployment, the RDI CLI will be available as a pod in the cluster.
 
-It can be scaled down to 0 replicas when not in use or during maintenance. Use the following commands to scale down/up the deployment:
+It can be scaled down to zero replicas when not in use or during maintenance. Use the following commands to scale down/up the deployment:
 
 ```bash
 kubectl scale deployment.apps/redis-di-cli --replicas=0
 kubectl scale deployment.apps/redis-di-cli --replicas=1
 ```
 
-> Note: Before scaling down the deployment it is recommended to save the redis-di context for future use. To do this, run the following command:
+> Note: Before scaling down the deployment, it is recommended that you save the redis-di context for future use. To do this, run the following command:
 >
 > ```bash
 > cat /root/.redis-di
 > ```
 >
-> Copy the output of the command and save it in a local file. To use the context in the future, simply create the file `/root/.redis-di` and paste the content saved before. This is useful when the RDI CLI deployment is scaled up or upgraded to a new image.
+> Copy the output of the command and save it in a local file. To use the context in the future, simply create the file `/root/.redis-di` and paste the previously saved content. This is useful when the RDI CLI deployment is scaled up or upgraded to a new image.
 
 To run the CLI commands, first look up the pod name:
 
@@ -226,7 +226,7 @@ kubectl exec -it pod/redis-di-cli-<id> -- redis-di deploy
 
 Run `kubectl exec -it pod/redis-di-cli-<id> -- redis-di status` to check the status of the installation.
 
-> Note: It is OK to see the warning of "No streams found" since we have not yet set up a Debezium source connector. We will do this in the next step.
+> Note: It is okay to see the warning "No streams found" since the Debezium source connector has not yet been set up. This will be done in the next step.
 
 ## Install the Debezium Server
 
