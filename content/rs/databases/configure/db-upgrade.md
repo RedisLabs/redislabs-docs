@@ -56,5 +56,5 @@ If **RESP3 support** is enabled, databases upgrading to v7.2 will support the RE
 
     ```sh
     PUT /v1/cluster/policy 
-    { "resp3_default": false }
+    { "resp3_default": <boolean> }
     ```
