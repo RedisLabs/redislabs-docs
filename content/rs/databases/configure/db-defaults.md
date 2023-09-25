@@ -27,7 +27,11 @@ To edit default database configuration using the Cluster Manager UI:
 
 ### Replica high availability
 
-**Replica High Availability** determines if [replica high availability]({{<relref "/rs/databases/configure/replica-ha">}}) is enabled by default for new databases.
+If [replica high availability]({{<relref "/rs/databases/configure/replica-ha">}}) is enabled, the cluster automatically migrates replica shards to an available node if a replica node fails or is promoted after a primary (master) node fails.
+
+To enable or turn off replica high availability by default, use one of the following methods:
+
+- Cluster Manager UI – Edit **Replica High Availability** in [**Database defaults**](#edit-database-defaults)
 
 - [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
     
@@ -46,6 +50,11 @@ To edit default database configuration using the Cluster Manager UI:
 
 When you upgrade an existing database or create a new one, it uses the default Redis version (**Database version**) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}) or [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}).
 
+To configure the Redis database version, use one of the following methods:
+
+- Cluster Manager UI – Edit **Database version** in [**Database defaults**](#edit-database-defaults)
+
+
 - [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
     
     ```sh
@@ -61,7 +70,11 @@ When you upgrade an existing database or create a new one, it uses the default R
 
 ### S3 URL
 
-**S3 URL** is the default S3 host for [importing and exporting data]({{<relref "/rs/databases/import-export">}}).
+The S3 URL is the default S3 host for [importing and exporting data]({{<relref "/rs/databases/import-export">}}).
+
+To configure the default S3 URL, use one of the following methods:
+
+- Cluster Manager UI – Edit **S3 URL** in [**Database defaults**](#edit-database-defaults)
 
 - [rladmin cluster config]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}): 
     
@@ -78,7 +91,11 @@ When you upgrade an existing database or create a new one, it uses the default R
 
 ### Internode encryption
 
-Enable [**Internode Encryption**]({{<relref "/rs/security/internode-encryption">}}) to encrypt data in transit between nodes for new databases by default.
+Enable [internode encryption]({{<relref "/rs/security/internode-encryption">}}) to encrypt data in transit between nodes for new databases by default.
+
+To enable or turn off internode encryption by default, use one of the following methods:
+
+- Cluster Manager UI – Edit **Internode Encryption** in [**Database defaults**](#edit-database-defaults)
 
 - [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
     
