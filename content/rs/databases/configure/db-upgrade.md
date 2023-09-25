@@ -27,7 +27,9 @@ To edit database upgrade configuration using the Cluster Manager UI:
 
 ### Database shard parallel upgrade
 
-**Database shard parallel upgrade** determines the number of shards upgraded in parallel during database upgrades.
+To change the number of shards upgraded in parallel during database upgrades, use one of the following methods:
+
+- Cluster Manager UI – Edit **Database shard parallel upgrade** in [**Upgrade configuration**](#edit-upgrade-configuration)
 
 - [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
     
@@ -44,7 +46,11 @@ To edit database upgrade configuration using the Cluster Manager UI:
 
 ### RESP3 support
 
-If **RESP3 support** is enabled, databases upgrading to v7.2 will support the RESP3 protocol in addition to RESP2.
+If RESP3 support is enabled, databases upgrading to v7.2 will support the RESP3 protocol in addition to RESP2.
+
+To enable or turn off RESP3 support for databases by default, use one of the following methods:
+
+- Cluster Manager UI – Edit **RESP3 support** in [**Upgrade configuration**](#edit-upgrade-configuration)
 
 - [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
     
