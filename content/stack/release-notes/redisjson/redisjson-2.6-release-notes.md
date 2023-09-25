@@ -53,7 +53,7 @@ RedisJSON 2.6 introduces support for RESP3 and new commands.
 
 - `JSON.RESP` is now regarded as deprecated
 
-- Legacy paths (paths that don't start with either `$.` or `$[` or equal to `$`) except those starting with `.` are now regarded as deprecated
+- Legacy paths (paths that don't start with either `$.` or `$[` or equal to `$`), except those starting with `.`, are now deprecated
 
 {{<note>}}
 - The version inside Redis will be 2.6.4 in semantic versioning. Since the version of a module in Redis is numeric, we could not add a GA flag.
