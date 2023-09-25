@@ -65,6 +65,7 @@ An API object that represents a managed database in the cluster.
   "weight": number
 }, ...]
 {{</code>}} | List of shard UIDs and their bigstore RAM weights;<br /> **shard_uid**: Shard UID;<br /> **weight**: Relative weight of RAM distribution |
+| cluster_preferred_endpoint_type | `ip`<br />`hostname` | The preferred endpoint type returned by `CLUSTER SLOTS`, `CLUSTER SHARDS`, and `CLUSTER NODES` (defaults to `ip`) |
 | client_cert_subject_validation_type | **disabled**<br />san_cn<br />full_subject | Enables additional certificate validations that further limit connections to clients with valid certificates during TLS client authentication.<br />**disabled**: Authenticates clients with valid certificates. No additional validations are enforced.<br />**san_cn**: A client certificate is valid only if its Common Name (CN) matches an entry in the list of valid subjects. Ignores other Subject attributes.<br />**full_subject**: A client certificate is valid only if its Subject attributes match an entry in the list of valid subjects. |
 | crdt | boolean (default:&nbsp;false) | Use CRDT-based data types for multi-master replication |
 | crdt_causal_consistency | boolean (default:&nbsp;false) | Causal consistent CRDB. |
