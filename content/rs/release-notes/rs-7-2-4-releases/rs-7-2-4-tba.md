@@ -1,12 +1,12 @@
 ---
-Title: Redis Enterprise Software release notes 7.2.4-64 (September 2023)
-linkTitle: 7.2.4-64 (September 2023)
-description: Improved cluster recovery with manually uploaded modules. Support package contains supervisorctl status. Configure port range using rladmin and REST API. License API returns the number of used shards (RAM & flash).
+Title: Redis Enterprise Software release notes 7.2.4-TBA (October 2023)
+linkTitle: 7.2.4-TBA (October 2023)
+description: New Cluster Manager UI enhancements - database upgrade configuration, database defaults, and user lockout parameters.
 compatibleOSSVersion: Redis 7.2.0
-weight: 71
+weight: 70
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: /rs/release-notes/rs-7-2-4-releases/rs-7-2-4-tba/
 ---
 
 This is a maintenance release for ​[​Redis Enterprise Software version 7.2.4](https://redis.com/redis-enterprise-software/download-center/software/).
@@ -15,33 +15,23 @@ This is a maintenance release for ​[​Redis Enterprise Software version 7.2.4
 
 This version offers:
 
-- Improved cluster recovery with manually uploaded modules
-
-- Support package enhancements
-
-- Configurable port range
-
-- License API enhancements
+- New Cluster Manager UI enhancements
 
 ## New in this release
 
 ### Enhancements
 
-- Cluster recovery with manually uploaded modules 
+- New Cluster Manager UI enhancements:
 
-    - For clusters containing databases with manually uploaded modules, [cluster recovery]({{<relref "/rs/clusters/cluster-recovery">}}) is now seamlessly integrated.
+    - Database upgrade configuration
 
-- Support package now contains `supervisorctl` status when created by the [`rladmin` command]({{<relref "/rs/installing-upgrading/creating-support-package#command-line-method">}}) (RS107879).
+    - Database defaults
 
-- Port range (`reserved_ports`) is now configurable using [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}) or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster">}}).
-
-    - Removed `rlutil reserved_ports`, which was deprecated in Redis Enterprise Software [version 7.2.4-52]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#api-deprecations">}}).
-
-- [License REST API requests]({{<relref "/rs/references/rest-api/requests/license">}}) return the number of used shards (RAM & flash).
+    - User lockout parameters
 
 #### Redis modules
 
-Redis Enterprise Software version 7.2.4-64 includes the following Redis Stack modules (no changes since [Redis Enterprise Software version 7.2.4-52]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52">}}):
+Redis Enterprise Software version 7.2.4-TBA includes the following Redis Stack modules (no changes since [Redis Enterprise Software version 7.2.4-52]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52">}}):
 
 - [RediSearch 2.8.4](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.4)
 
@@ -55,25 +45,7 @@ Redis Enterprise Software version 7.2.4-64 includes the following Redis Stack mo
 
 ### Resolved issues
 
-- RS107986 - Allow ports lower than 1024 when configuring [auditing]({{<relref "/rs/security/audit-events">}}) using `rladmin`.
-
-- RS105335 - Added error handling to [`CLIENT NO-TOUCH`](https://redis.io/commands/client-no-touch/) to return an error if the Redis database version is earlier than 7.2.0 or the command is restricted by ACL rules (handles `CLIENT NO-TOUCH` [command limitations](https://docs.redis.com/latest/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52/#command-limitations)).
-
-- RS105137 - Fixed audit reconnect issue: sometimes the proxy failed to reconnect to a restarted audit listener.
-
-- RS108394 - Added API validation to prevent configuring Replica Of with TLS without providing a server certificate.
-
-- RS108233 - Proceed with the upgrade even if an empty `saslauthd` configuration exists.
-
-- RS107730 - Fixed a bug where the `failed_authentication_attempt` event log always contained 127.0.0.1 instead of the real client IP address.
-
-- RS107727 - Fixed permission issue for `/etc/cron.d/redislabs` file in Red Hat.
-
-- RS108230 - Removed unused test certificate and key files from the `redis-enterprise` package.
-
-- RS107718 - When `cm_server` is disabled through `optional_services`, envoy (the cluster’s reverse proxy) now stops listening on the `cm_server` port.
-
-- RS107909 - Added `os_family`, which groups operating systems into categories, to node properties and upgrade logic. Fixed the [known limitation]({{<relref "/rs/release-notes/rs-7-2-4-releases#modules-cannot-load-in-oracle-linux-7--8">}}) for upgrades and module uploads for the following operating systems: Rocky Linux, Oracle Linux 7, Oracle Linux 8, CentOS 7, and CentOS 8.
+- TBA
 
 ## Version changes 
 
@@ -87,6 +59,8 @@ Redis Enterprise Software version 7.2.4-64 includes the following Redis Stack mo
 
 | Redis Enterprise | 7.2.4 | 6.4.2 | 6.2.18 | 6.2.12 | 6.2.10 | 6.2.8 | 6.2.4 |
 |------------------|-------|-------|--------|--------|--------|--------|-------|
+| **Release date** | Aug<br />2023 | Feb<br />2023 | Sept<br />2022 | Aug<br />2022 | Feb<br />2022 | Oct<br />2021 | Aug<br />2021 |
+| [**End-of-life date**]({{<relref "/rs/installing-upgrading/product-lifecycle#endoflife-schedule">}}) | – | Feb<br />2025 | Aug<br />2024 | Aug<br />2024 | Aug<br />2024 | Aug<br />2024 | Aug<br />2024 |
 | **Ubuntu**<sup>[1](#table-note-1)</sup> |
 | 20.04 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span><sup>[6](#table-note-6)</sup> | – | – | – | – | – |
 | 18.04 | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported"><span title="Supported">&#x2705;</span></span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
@@ -127,13 +101,13 @@ Redis Enterprise Software version 7.2.4-64 includes the following Redis Stack mo
 
 The following table shows the MD5 checksums for the available packages:
 
-| Package | MD5 checksum (7.2.4-64 September release) |
+| Package | MD5 checksum (7.2.4-TBA October release) |
 |---------|---------------------------------------|
-| Ubuntu 18 | eed1a8ba22a9eb2ae6e23d557961e9a7 |
-| Ubuntu 20 | 49b29512123fcd9dd402b53b380e8c78 |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 | d90a75b56fe1bc628d2ac27bc137af41 |
-| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux | d9d98b0859b2d6fe8a7802cb6f44f132 |
-| Amazon Linux 2 | b9f1c99b39bb8084583b10d1546f80e1 |
+| Ubuntu 18 |  |
+| Ubuntu 20 |  |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
+| Amazon Linux 2 |  |
 
 ## Security
 
