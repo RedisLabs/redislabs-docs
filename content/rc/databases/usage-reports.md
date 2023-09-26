@@ -18,6 +18,6 @@ To filter the data, you can:
 
 You can also hold the pointer over each bar in the graph to view the precise memory usage on that day.
 
-## Download Cost Report
+## Download cost report
 
 {{< embed-md "cost-report-csv.md" >}}
