@@ -1,4 +1,4 @@
-Select the **Cost Report** button to download a report of all shard costs in CSV format.
+Select the **Cost report** button to download a report of all shard costs in CSV format.
 
 {{<image filename="images/rc/button-cost-report-download.png" width=150px alt="The cost report download button." >}}{{< /image >}}
 

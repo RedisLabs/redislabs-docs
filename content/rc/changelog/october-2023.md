@@ -2,14 +2,14 @@
 Title: Redis Enterprise Cloud changelog (October 2023)
 linktitle: October 2023
 description: New features, enhancements, and other changes added to Redis Enterprise Cloud during October 2023.
-highlights: 
+highlights: Cost report CSV download
 weight: 76
 alwaysopen: false
 categories: ["RC"]
 aliases: []
 ---
 
-## New Features
+## New features
 
 ### Cost report CSV download
 
