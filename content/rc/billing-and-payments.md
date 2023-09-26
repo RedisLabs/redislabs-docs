@@ -160,4 +160,4 @@ For any special circumstances that may warrant a refund, please contact [Support
 
 ## Download cost report
 
-{{< embed-md "cost-report-csv.md" >}}
+{{< embed-md "rc-cost-report-csv.md" >}}

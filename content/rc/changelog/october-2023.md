@@ -15,4 +15,4 @@ aliases: []
 
 You can now download shard cost reports in CSV format from the [**Billing and Payments**]({{<relref "/rc/billing-and-payments">}}) and [**Usage Reports**]({{<relref "/rc/databases/usage-reports">}}) pages.
 
-{{< embed-md "cost-report-csv.md" >}}
+{{< embed-md "rc-cost-report-csv.md" >}}

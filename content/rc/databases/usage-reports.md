@@ -20,4 +20,4 @@ You can also hold the pointer over each bar in the graph to view the precise mem
 
 ## Download cost report
 
-{{< embed-md "cost-report-csv.md" >}}
+{{< embed-md "rc-cost-report-csv.md" >}}
