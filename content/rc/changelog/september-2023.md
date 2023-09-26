@@ -17,5 +17,5 @@ For all databases using Redis 7.2, you can now choose between the RESP2 and RESP
 
 ### Opt-in to Redis 7.2
 
-{{< embed-md "opt-in-to-72.md" >}}
+{{< embed-md "rc-opt-in-to-72.md" >}}
 

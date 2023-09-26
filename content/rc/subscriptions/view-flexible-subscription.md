@@ -29,7 +29,7 @@ From here, you can:
 
     {{<image filename="images/rc/icon-database-status-active.png" alt="When a subscription is active, the status icon displays a green circle with a checkmark." >}}{{< /image >}} &nbsp; {{<image filename="images/rc/icon-subscription-status-pending.png" alt="When a subscription is pending, the status icon displays a gre, animated circle." >}}{{< /image >}}
 
-- {{< embed-md "opt-in-to-72.md" >}}
+- {{< embed-md "rc-opt-in-to-72.md" >}}
 
 Because subscriptions represent active deployments, there aren't many details you can change.  If your needs change, create a new subscription and then migrate the existing data to the new databases.
 
