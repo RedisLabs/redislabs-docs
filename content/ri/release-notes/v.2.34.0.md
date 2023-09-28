@@ -11,17 +11,17 @@ aliases: /ri/release-notes/v2.34.0/
 This is the General Availability (GA) release of RedisInsight 2.34.
 
 ### Highlights
-- UX improvements to provision a free [Redis Enterprise Cloud](https://redis.com/comparisons/oss-vs-enterprise/?utm_source=redisinsight&utm_medium=rel_notes&utm_campaign=2_34) database using in-app social signup (Google or GitHub) - create a free database with [Redis Stack’s capabilities](https://redis.io/docs/about/about-stack/?utm_source=redisinsight&utm_medium=rel_notes&utm_campaign=2_34) in your existing Redis Enterprise Cloud subscription or automatically add an existing free Redis Enterprise Cloud database to RedisInsight
-- Ability to update the list of [Search and query](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=main) indexes displayed in Browser
-- Set the color theme to follow the system preferences
- 
+- UX improvements to simplify the in-app provisioning and usage of a free [Redis Enterprise Cloud](https://redis.com/comparisons/oss-vs-enterprise/?utm_source=redisinsight&utm_medium=rel_notes&utm_campaign=2_34) database with RedisInsight interactive tutorials to learn among other things how to leverage Vector Similarity Search for your AI use cases or discover the power of the native JSON data structure supporting structured querying and full-text search
+- Ability to refresh the list of [search indexes](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=main) displayed in Browser
+- Set the color theme to follow the local system preferences
+
 ### Details
- 
+
 **Features and improvements** 
-- [#2585](https://github.com/RedisInsight/RedisInsight/pull/2585) UX improvements to provision a free [Redis Enterprise Cloud](https://redis.com/comparisons/oss-vs-enterprise/?utm_source=redisinsight&utm_medium=rel_notes&utm_campaign=2_34) database using in-app social signup (Google or GitHub) - create a free database with [Redis Stack’s capabilities](https://redis.io/docs/about/about-stack/?utm_source=redisinsight&utm_medium=rel_notes&utm_campaign=2_34) in your existing Redis Enterprise Cloud subscription or automatically add an existing free Redis Enterprise Cloud database to RedisInsight. To do so, click the "Try Redis Cloud" banner in the list of database connections page and follow the steps
-- [#2606](https://github.com/RedisInsight/RedisInsight/pull/2606) Ability to update the list of [Search and query](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=main) indexes displayed in Browser
-- [#2593](https://github.com/RedisInsight/RedisInsight/pull/2593) UX optimizations to improve the navigation from your Redis or Redis Stack instance to the list of databases, and navigation enhancements in Browser for small resolutions
-- [#2599](https://github.com/RedisInsight/RedisInsight/pull/2599) Added an option to set the color theme to follow the system preferences
+- [#2585](https://github.com/RedisInsight/RedisInsight/pull/2585) UX improvements to simplify the in-app provisioning and usage of a free [Redis Enterprise Cloud](https://redis.com/comparisons/oss-vs-enterprise/?utm_source=redisinsight&utm_medium=rel_notes&utm_campaign=2_34) database with RedisInsight interactive tutorials. To provision a new database, click the "Try Redis Cloud" banner in the list of database connections page and follow the steps.
+- [#2606](https://github.com/RedisInsight/RedisInsight/pull/2606) Ability to refresh the list of [search indexes](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=main) displayed in Browser
+- [#2593](https://github.com/RedisInsight/RedisInsight/pull/2593) UX optimizations to improve the back navigation to the list of databases, including for small resolutions
+- [#2599](https://github.com/RedisInsight/RedisInsight/pull/2599) Added an option to set the color theme to follow the local system preferences
 - [#2563](https://github.com/RedisInsight/RedisInsight/pull/2563) Load a new library from the Functions tab within the [Triggers and Functions](https://redis.com/blog/introducing-triggers-and-functions/?utm_source=redisinsight&utm_medium=main&utm_campaign=main) tool
 - [#2496](https://github.com/RedisInsight/RedisInsight/pull/2496) Set milliseconds as a default unit in Slow Log
 
