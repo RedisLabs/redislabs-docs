@@ -11,7 +11,7 @@ aliases: /ri/release-notes/v2.34.0/
 This is the General Availability (GA) release of RedisInsight 2.34.
 
 ### Highlights
-- UX improvements to simplify the in-app provisioning and usage of a free [Redis Enterprise Cloud](https://redis.com/comparisons/oss-vs-enterprise/?utm_source=redisinsight&utm_medium=rel_notes&utm_campaign=2_34) database with RedisInsight interactive tutorials to learn among other things how to leverage Vector Similarity Search for your AI use cases or discover the power of the native JSON data structure supporting structured querying and full-text search
+- UX improvements to simplify the in-app provisioning and usage of a free [Redis Enterprise Cloud](https://redis.com/comparisons/oss-vs-enterprise/?utm_source=redisinsight&utm_medium=rel_notes&utm_campaign=2_34) database with RedisInsight interactive tutorials. This will allow you to learn easily, among other things, how to leverage the native JSON data structure supporting structured querying and full-text search, including vector similarity search for your AI use cases.
 - Ability to refresh the list of [search indexes](https://redis.io/docs/interact/search-and-query/?utm_source=redisinsight&utm_medium=main&utm_campaign=main) displayed in Browser
 - Set the color theme to follow the local system preferences
 
