@@ -35,7 +35,7 @@ Usage: redis-di scaffold [OPTIONS]
 
 - `strategy`:
 
-  - Type: Choice([<Strategy.INGEST: 'ingest'>, <Strategy.WRITE_BEHIND: 'write_behind'>])
+  - Type: Choice([<Strategy.INGEST: 'ingest'>, <Strategy.WRITE_BEHIND: 'write_behind'>, <Strategy.NOT_INGEST: 'not_ingest'>])
   - Default: `ingest`
   - Usage: `--strategy`
 
@@ -80,7 +80,7 @@ Options:
                                   [default: INFO]
   --db-type [cassandra|mongodb|mysql|oracle|postgresql|redis|sqlserver]
                                   DB type  [required]
-  --strategy [ingest|write_behind]
+  --strategy [ingest|write_behind|not_ingest]
                                   Strategy  [default: ingest]
   Output formats: [mutually_exclusive, required]
                                   Output to directory or stdout
