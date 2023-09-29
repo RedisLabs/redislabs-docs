@@ -12,10 +12,22 @@ aliases:
 ---
 ## Requirements
 
-RedisTimeSeries v1.10.4 requires:
+RedisTimeSeries v1.10.6 requires:
 
 - Minimum Redis compatibility version (database): 7.2
 - Minimum Redis Enterprise Software version (cluster): 7.2.4
+
+## v1.10.6 (September 2023)
+
+This is a maintenance release for RedisTimeSeries 1.10
+
+Update urgency: `SECURITY`: There are security fixes in the release.
+
+Details:
+
+- Security and privacy:
+
+  - [#1506](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/1506) Don’t expose internal commands (MOD-5643)
 
 ## v1.10 GA (v1.10.4) (July 2023)
 
