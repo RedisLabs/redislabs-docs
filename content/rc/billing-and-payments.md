@@ -157,3 +157,7 @@ Generally, charges are non-refundable.
 
 For any special circumstances that may warrant a refund, please contact [Support](https://support.redislabs.com) and be sure to provide detail about the reasons for the refund request.
 {{< /note >}}
+
+## Download cost report
+
+{{< embed-md "rc-cost-report-csv.md" >}}
