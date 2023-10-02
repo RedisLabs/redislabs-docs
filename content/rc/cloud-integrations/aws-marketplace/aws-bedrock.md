@@ -22,6 +22,10 @@ Before you begin this guide, you will need:
 
 - Two [AWS IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html): One with permissions for the Bedrock knowledge base, and one with permissions for create a Bedrock agent.
 
+{{< note >}}
+Make sure that the S3 bucket and the IAM roles are located in the region where you will create your Amazon Bedrock knowledge base.
+{{< /note >}}
+
 ## Set up Redis for Bedrock
 
 You need to set up your Redis Cloud database before you can set it as the vector database in Amazon Bedrock. To do this, you need to:
@@ -52,15 +56,15 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
 1.  Sign in to the Redis Cloud [admin console](https://app.redislabs.com).
 
-1.  Use the AWS Marketplace dialog to select the Redis account to be mapped to your AWS Marketplace account.
+1.  Select the Redis account to be mapped to your AWS Marketplace account and confirm that your payment method will change and that the connection cannot be undone.
 
-    {{<image filename="images/rc/aws-marketplace-map-account-dialog.png" alt="Use the AWS Marketplace dialog to map your Redis Cloud account to your AWS Marketplace account." width="350px">}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-map-account-dialog.png" alt="Use the AWS Marketplace dialog to map your Redis Cloud account to your AWS Marketplace account." width="80%">}}{{< /image >}}
 
 1.  Use the **Map account** button to confirm your choice.
 
 1.  Once your Redis account is mapped to your AWS Marketplace account, a message appears in the upper, left corner of the account panel.
 
-    {{<image filename="images/rc/aws-marketplace-billing-badge.png" alt="The AWS Marketplace badge appears when your Redi Cloud accunt is mapped to an AWS Marketplace account." width="350px">}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-billing-badge.png" alt="The AWS Marketplace badge appears when your Redis Cloud account is mapped to an AWS Marketplace account." width="150px">}}{{< /image >}}
 
     In addition, AWS Marketplace is reported as the selected payment method.
 
