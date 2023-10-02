@@ -20,7 +20,7 @@ Before you begin this guide, you will need:
 
 - An [AWS S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html) with text data that you want to use to train your models.
 
-- Two [AWS IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html): One with the permissions to create and use a Bedrock knowledge base, and one with the permissions to create an Bedrock agent.
+- Two [AWS IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html): One with permissions for the Bedrock knowledge base, and one with permissions for create a Bedrock agent.
 
 ## Set up Redis for Bedrock
 
@@ -31,7 +31,7 @@ You need to set up your Redis Cloud database before you can set it as the vector
 1. [Store database credentials in AWS secrets manager](#store-secret)
 1. [Create a vector index in your database](#create-vector-index) for Bedrock to use
 
-After you set up the database, you can use the database information to [set it as your knowledge base database](#set-bedrock-database).
+After you set up the database, you can use the database information to set it as your knowledge base database when you [create a knowledge base](#create-a-knowledge-base).
 
 ### Sign up and create a database  {#sign-up-create-subscription}
 
@@ -187,7 +187,55 @@ RedisInsight is a free Redis GUI that allows you to visualize and optimize your 
 
 To create your vector index in RedisInsight:
 
-1. On the 
+1. [Download and install RedisInsight](https://redis.com/redis-enterprise/redis-insight/) if you don't have it already.
+
+1. In the Redis Cloud [admin console](https://app.redislabs.com/), in your subscription's **Databases** tab, select the **Connect** button next to your database to open the connection wizard.
+
+    ![Connect button](/images/rc/connection-wizard-button.png#no-click "Connect button.")
+
+1. In the connection wizard, under **RedisInsight Desktop**, select **Public Endpoint**. Select **Copy** to copy the public endpoint's connection information.
+
+1. Open RedisInsight and select **Add Redis Database** or **Add connection details manually**. Enter the copied connection information into the **Host** field. RedisInsight automatically populates the rest of the fields needed to connect to the database as the default user.
+
+1. Select **Use TLS**. In the **CA Certificate** section, select **Add new CA certificate**. Give the certificate a name in the **Name** field, and enter the contents of `redis_ca.pem` into the **Certificate** field.
+
+    {{<image filename="images/rc/ri-bedrock-add-ca-cert.png" width=80% alt="The RedisInsight Add CA Certificate section." >}}{{< /image >}}
+
+1. Select **Requires TLS Client Authentication**. In the **Client Certificate** section, select **Add new certificate**. Give the certificate a name in the **Name** field. Enter the contents of `redis_user.crt` into the **Certificate** field, and the contents of `redis_user_private.key` into the **Private Key** field.
+
+    {{<image filename="images/rc/ri-bedrock-add-client-cert.png" width=80% alt="The RedisInsight Add Client Certificate section." >}}{{< /image >}}
+
+1. Select **Add Redis Database** to connect to the database.
+
+1. Select your database alias to connect to your database. Select the **Workbench** icon to go to the workbench.
+
+    {{<image filename="images/rc/ri-bedrock-workbench.png" width=50px alt="The RedisInsight workbench icon." >}}{{< /image >}}
+
+1. Enter the [FT.CREATE](https://redis.io/commands/ft.create/) command to create an index. 
+
+    ```text
+    FT.CREATE <index_name>                    
+        ON HASH                
+        SCHEMA
+            "<text_field>" TEXT
+            "<metadata_field>" TEXT                   
+            "<vector_field>"  VECTOR FLAT     
+                6                          
+                "TYPE" "FLOAT32"            
+                "DIM" 1536                   
+                "DISTANCE_METRIC" "COSINE"  
+    ```
+
+    Replace the following fields:
+
+    - `<index_name>` with the vector index name
+    - `<text_field>` with the text field name
+    - `<metadata_field>` with the metadata field name
+    - `<vector_field>` with the vector field name
+
+1. Select **Run** to create the index.
+
+    {{<image filename="images/rc/ri-bedrock-run-button.png" width=50px alt="The RedisInsight run button." >}}{{< /image >}}
 
 #### [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}})
 
@@ -223,16 +271,34 @@ Replace the following fields:
 
 ## Create a knowledge base
 
-On the [Amazon Bedrock console](https://aws.amazon.com/bedrock/), follow the steps to create your models.
+To use your Redis database to create a knowledge base on Amazon Bedrock:
 
-When you reach the **Vector database** section, select **Redis Enterprise Cloud**, and fill in the fields with the following information:
+1.  Sign in to the [AWS console](https://console.aws.amazon.com/). 
 
-- **Endpoint URL**: Public endpoint of your database. This can be found in the Redis Cloud [admin console](https://app.redislabs.com/) from the database list or from the **General** section of the **Configuration** tab for the source database.
-- **Credentials Secret ARN**: [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your [database credentials secret](#store-database-credentials-in-an-amazon-secret).
-- **Vector Index name**: Name of the [vector index](#create-vector-index) 
-- **Vector field**: Name of the [vector field](#create-vector-index) stored in your database.
+1. Use the **Services** menu to locate and select **Machine Learning** > **Amazon Bedrock**.  This takes you to the Amazon Bedrock admin panel.
 
-## Create an agent
+1. Select **Knowledge base** > **Create knowledge base** to create your knowledge base.
+
+1. In the **Knowledge base details** section, enter a name and description for your knowledge base. 
+
+1. Select the IAM role for the Bedrock knowledge base in the **IAM Permissions** section. Select **Next** to add the data source.
+
+1. Enter a name for the data source and connect your S3 bucket in the **Data source** section.
+
+1. In the **Vector database** section, select **Redis Enterprise Cloud**, and fill in the fields with the following information:
+
+    - **Endpoint URL**: Public endpoint of your database. This can be found in the Redis Cloud [admin console](https://app.redislabs.com/) from the database list or from the **General** section of the **Configuration** tab for the source database.
+    - **Credentials Secret ARN**: [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your [database credentials secret](#store-database-credentials-in-an-amazon-secret).
+    - **Vector Index name**: Name of the [vector index](#create-vector-index) 
+    - **Vector field**: Name of the [vector field](#create-vector-index) of the vector index
+    - **Text field**: Name of the [text field](#create-vector-index) of the vector index
+    - **Metadata field**: Name of the [metadata field](#create-vector-index) of the vector index
+
+    Select **Next** to review your settings.
+
+1. Select **Create knowledge base** to create your knowledge base.
+
+Amazon Bedrock will sync the data from the S3 bucket and load it into your Redis database. This will take some time.
 
 ## More info
 
