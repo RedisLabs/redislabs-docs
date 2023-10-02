@@ -10,46 +10,160 @@ aliases:
 
 [Amazon Bedrock](https://aws.amazon.com/bedrock/) is a service that allows you to securely customize foundational models (FMs) with your own data, and to use these models without having to build complex infrastructure management. With Amazon Bedrock, users can access FMs from a variety of vendors through a single API, streamlining the process of creating generative artificial intelligence (AI).
 
-Amazon Bedrock allows you to choose Redis Cloud as the [vector database](https://redis.com/solutions/use-cases/vector-database/) for your models. After your database is set up and connected to Amazon Bedrock, it will import text data from an Amazon Simple Storage Service (S3) bucket into Redis Cloud and use it to extract relevant information when prompted.
+Amazon Bedrock allows you to choose Redis Cloud as the [vector database](https://redis.com/solutions/use-cases/vector-database/) for your knowledge base. After your database is set up and connected to Amazon Bedrock, it will import text data from an Amazon Simple Storage Service (S3) bucket into Redis Cloud and use it to extract relevant information when prompted.
 
 For more information about the Redis integration with Amazon Bedrock, see the [Amazon Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/).
+
+## Prerequisites
+
+Before you begin this guide, you will need:
+
+- An [AWS S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html) with text data that you want to use to train your models.
+
+- Two [AWS IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html): One with the permissions to create and use a Bedrock knowledge base, and one with the permissions to create an Bedrock agent.
 
 ## Set up Redis for Bedrock
 
 You need to set up your Redis Cloud database before you can set it as the vector database in Amazon Bedrock. To do this, you need to:
 
-1. [Create a subscription and database in Redis Cloud](#create-subscription)
+1. [Sign up for Redis Cloud and create a database](#sign-up-create-subscription)
 1. [Enable Transport Layer Security (TLS) for the database and save the certificates](#get-certs)
 1. [Store database credentials in AWS secrets manager](#store-secret)
 1. [Create a vector index in your database](#create-vector-index) for Bedrock to use
 
-After you set up the database, you can use the database information to [set it as your Bedrock database](#set-bedrock-database).
+After you set up the database, you can use the database information to [set it as your knowledge base database](#set-bedrock-database).
 
-### Create a subscription and database {#create-subscription}
+### Sign up and create a database  {#sign-up-create-subscription}
 
-To set up a Redis Cloud instance for Bedrock:
+To set up a Redis Cloud instance for Bedrock, you need to:
 
-1. If you're new to Redis Cloud, sign up for Redis Cloud using the [AWS Marketplace integration]({{<relref "/rc/cloud-integrations/aws-marketplace/">}}). 
+1. [Sign up for Redis Cloud](#sign-up) if you do not already have an account.
+1. [Create a subscription and database](#create-sub) to use for your Bedrock knowledge base.
 
-1. [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}). In the **Sizing** tab, when creating your first database, make sure to have the following settings:
+#### Sign up for Redis Cloud using AWS Marketplace {#sign-up}
 
-    - Add the **RediSearch** and **RedisJSON** advanced capabilities to your database.
-    - Set the size of the database based on the amount of data that will be pulled from your Simple Storage Service (S3) [bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html). See [Find out the size of your S3 buckets](https://aws.amazon.com/blogs/storage/find-out-the-size-of-your-amazon-s3-buckets/) to find out how much training data is stored in your S3 bucket and pick the closest size from the table below. 
+1.  Select the [Redis Enterprise Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Enterprise Cloud - Flexible plan listing.
+
+    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Enterprise Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
+
+1.  Subscribe to Redis Enterprise Cloud - Flexible plan, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
+
+    {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Enterprise Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
+
+1.  Sign in to the Redis Cloud [admin console](https://app.redislabs.com).
+
+1.  Use the AWS Marketplace dialog to select the Redis account to be mapped to your AWS Marketplace account.
+
+    {{<image filename="images/rc/aws-marketplace-map-account-dialog.png" alt="Use the AWS Marketplace dialog to map your Redis Cloud account to your AWS Marketplace account." width="350px">}}{{< /image >}}
+
+1.  Use the **Map account** button to confirm your choice.
+
+1.  Once your Redis account is mapped to your AWS Marketplace account, a message appears in the upper, left corner of the account panel.
+
+    {{<image filename="images/rc/aws-marketplace-billing-badge.png" alt="The AWS Marketplace badge appears when your Redi Cloud accunt is mapped to an AWS Marketplace account." width="350px">}}{{< /image >}}
+
+    In addition, AWS Marketplace is reported as the selected payment method.
+
+#### [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}) {#create-sub} 
+
+1. In the [admin console](https://app.redislabs.com/), select **Add new subscription**. 
+
+    {{<image filename="images/rc/button-subscription-new.png" width="50%" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
+
+1. When the **New subscription** page appears, select **Flexible plans**.
+
+    {{<image filename="images/rc/new-subscription-plans-flexible.png" alt="Available subscription plans; Flexible plan is selected." >}}{{< /image >}}
+
+1. Select **Amazon Web Services** as the cloud vendor, select a region, and enter a name for your subscription.
+
+    {{<image filename="images/rc/subscription-new-flexible-setup-general.png" width="75%" alt="The General settings of the Setup tab." >}}{{< /image >}}
+
+1. In the **Version** section, select **Redis 7.2**.
+
+    {{<image filename="images/rc/subscription-new-flexible-version-section.png"  alt="Version selection between Redis 6.2 and 7.2" >}}{{< /image >}}
+
+1. In the **Advanced options** section, select Multi-AZ to ensure [high-availability]({{<relref "rc/databases/configuration/high-availability.md">}}). 
+
+    {{<image filename="images/rc/subscription-new-flexible-advanced-multi-az.png" width="75%" alt="The Multi-AZ toggle set to on." >}}{{< /image >}}
+
+1. Enter a [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range of IP addresses for your deployment in the **Deployment CIDR** field.
+
+    {{<image filename="images/rc/subscription-new-flexible-advanced-cidr.png" width="75%" alt="The Deployment CIDR field." >}}{{< /image >}}
+
+1. When finished, select **Continue**.
+
+    {{<image filename="images/rc/button-subscription-continue.png" width="100px" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+
+1. The **Sizing** tab helps you specify the database requirements for your subscription.
+
+    {{<image filename="images/rc/subscription-new-flexible-sizing-tab.png" width="75%" alt="The Sizing tab when creating a new Flexible subscription." >}}{{< /image >}}
+
+    Select the **Add** button to create a database.
+
+    {{<image filename="images/rc/icon-add-database.png" width="30px" alt="Use the Add button to define a new database for your subscription." >}}{{< /image >}}
+
+1. In the **New Database** dialog, name your database and select **RediSearch**. 
+
+    {{<image filename="images/rc/flexible-add-database-basic.png" width="75%" alt="The New Database dialog with basic settings." >}}{{< /image >}}
+
+1. Set the Memory limit of your database based on the amount of data that will be pulled from your Simple Storage Service (S3) [bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html). See [Find out the size of your S3 buckets](https://aws.amazon.com/blogs/storage/find-out-the-size-of-your-amazon-s3-buckets/) to find out how much training data is stored in your S3 bucket and pick the closest size from the table below. 
 
     | Total Size of Documents in S3 | Database size without replication | Database size with replication |
-    |-------------------------------|-----------------------------------|--------------------------------|
-    | 10,000 kb                     | 135 Mb                             | 270 Mb                         |
-    | 100,000 kb                    | 1.35 Gb                            | 2.7 Gb                         |
-    | 1,000,000 kb                  | 13.5 Gb                              | 27 Gb                          |
-    | 10,000,000 kb                 | 135 Gb                             | 270 Gb                         |
+|-------------------------------|-----------------------------------|--------------------------------|
+| 10,000 kb                     | 135 Mb                             | 270 Mb                         |
+| 100,000 kb                    | 1.35 Gb                            | 2.7 Gb                         |
+| 1,000,000 kb                  | 13.5 Gb                              | 27 Gb                          |
+| 10,000,000 kb                 | 135 Gb                             | 270 Gb                         |
 
     For more information on sizing, see the [Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise#right-size-your-database-for-amazon-bedrock).
 
-### Get TLS certificates {#get-certs}
+1. When finished, select **Save database** to create your database.
 
-1. Enable [Transport Layer Security (TLS)]({{<relref "/rc/security/database-security/tls-ssl#enable-tls">}}) for your database. Select **TLS client authentication** to require client authentication. Download the client certificates before saving your changes.
+    {{<image filename="images/rc/button-database-save.png" width="140px" alt="Select the Save Database button to define your new database." >}}{{< /image >}}
 
-1. If you do not have the Redis Cloud server certificates, [download them]({{<relref "/rc/security/database-security/tls-ssl#download-certificates">}}) from the admin console.
+1. Select **Continue** to move to the **Review and Create** tab.
+
+1. Review your subscription. You will not need to enter a payment method, as it's automatically assigned to your AWS Marketplace account. 
+
+1. Select **Create subscription** to create your new flexible subscription.
+
+    {{<image filename="images/rc/button-subscription-create.png" width="140px" alt="Select Create subscription to create your new subscription." >}}{{< /image >}}
+
+    Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed to make changes.  (The process generally takes 10-15 minutes.)
+
+    Use the **Subscriptions list** to check the status of your subscription.  You will also receive an email when your subscription is ready to use.
+
+### Enable TLS and get certificates {#get-certs}
+
+For your database to be fully secure, you must enable [Transport Layer Security (TLS)]({{<relref "/rc/security/database-security/tls-ssl#enable-tls">}}) for your database with client authentication.
+
+1. Select **Databases** from the [admin console](https://app.redislabs.com/) menu and then select your database from the list.
+
+1. From the database's **Configuration** screen, select the **Edit database** button:
+
+    {{<image filename="images/rc/button-database-edit.png" width="140px" alt="The Edit database button lets you change selected database properties." >}}{{< /image >}}
+
+1. In the **Security** section, use the **Transport layer security (TLS)** toggle to enable TLS:
+
+    {{<image filename="images/rc/database-details-configuration-tab-security-tls-toggle.png" width="200px" alt="Use the Transport Layer Security toggle to enable TLS." >}}{{< /image >}}
+
+1. Select **Download server certificate** to download the Redis Cloud certificate bundle `redis_ca.pem`:
+
+    {{<image filename="images/rc/button-database-config-security-server-ca-download.png" width="250px" alt="Use the Download server certificate button to download the Redis Cloud CA certificates." >}}{{< /image >}}
+
+1. Either provide an [X.509 certificate](https://en.wikipedia.org/wiki/X.509) that contains a public key for your client or select **Generate certificate** to create one:
+
+    {{<image filename="images/rc/database-details-configuration-tab-security-tls-client-auth-certificate.png" width="300px" alt="Provide or generate a certificate for TLS client authentication." >}}{{< /image >}}
+
+    If you generate your certificate from the admin console, a ZIP file download will start. The download contains:
+
+    - `redis_user.crt` – the certificate's public key.
+
+    - `redis_user_private.key` – the certificate's private key.
+
+1. To apply your changes and enable TLS, select the **Save database** button:
+
+    {{<image filename="images/rc/button-database-save.png" width="140px" alt="Use the Save database button to save database changes." >}}{{< /image >}}
 
 ### Store database credentials in AWS secrets manager {#store-secret}
 
@@ -71,26 +185,43 @@ After your database is set up, create an index with a vector field using [FT.CRE
 
 RedisInsight is a free Redis GUI that allows you to visualize and optimize your data in Redis. 
 
-Follow the steps in [this dedicated guide](https://github.com/RedisVentures/aws-redis-bedrock-stack/blob/main/docs/vector-index-creation.md) to create your vector index with RedisInsight.
+To create your vector index in RedisInsight:
+
+1. On the 
 
 #### [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}})
 
 The `redis-cli` command-line utility lets you connect and run Redis commands directly from the command line. To use `redis-cli`, you can [install Redis](https://redis.io/docs/getting-started/).
 
-Follow the instructions to [connect to your database with TLS certificates]({{<relref "/rc/security/database-security/tls-ssl#connect-with-the-redis-cli">}}) and create an index using [FT.CREATE](https://redis.io/commands/ft.create/). Replace <index_name> with the name of your index and <field_name> with the vector field name.
+Public endpoint and port details are available from the **Databases** list or the database's **Configuration** screen. Select **Connect** to view how to connect to your database with `redis-cli`.
 
-```text
-FT.CREATE <index_name>                   // Index name
-    ON HASH                               // Indicates the type of data to index
-    SCHEMA
-        "<field_name>"  VECTOR FLAT       // Vector field name and index type
-            6                             // 6 index parameters follow
-            "TYPE" "FLOAT32"              // only FLOAT32 is currently supported by Bedrock
-            "DIM" 1536                    // Each vector will have 1536 dimensions
-            "DISTANCE_METRIC" "COSINE"    // Other values could be "IP" "L2"
+```sh
+redis-cli -h <endpoint> -p <port> --tls --cacert redis_ca.pem \
+    --cert redis_user.crt --key redis_user_private.key
 ```
 
-## Set Bedrock vector database {#set-bedrock-database}
+Once you are connected with `redis-cli`, create an index using [FT.CREATE](https://redis.io/commands/ft.create/). 
+
+```text
+FT.CREATE <index_name>                    
+    ON HASH                
+    SCHEMA
+        "<text_field>" TEXT
+        "<metadata_field>" TEXT                   
+        "<vector_field>"  VECTOR FLAT     
+            6                          
+            "TYPE" "FLOAT32"            
+            "DIM" 1536                   
+            "DISTANCE_METRIC" "COSINE"  
+```
+
+Replace the following fields:
+- `<index_name>` with the vector index name
+- `<text_field>` with the text field name
+- `<metadata_field>` with the metadata field name
+- `<vector_field>` with the vector field name
+
+## Create a knowledge base
 
 On the [Amazon Bedrock console](https://aws.amazon.com/bedrock/), follow the steps to create your models.
 
@@ -100,6 +231,8 @@ When you reach the **Vector database** section, select **Redis Enterprise Cloud*
 - **Credentials Secret ARN**: [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your [database credentials secret](#store-database-credentials-in-an-amazon-secret).
 - **Vector Index name**: Name of the [vector index](#create-vector-index) 
 - **Vector field**: Name of the [vector field](#create-vector-index) stored in your database.
+
+## Create an agent
 
 ## More info
 
