@@ -304,6 +304,10 @@ To use your Redis database to create a knowledge base on Amazon Bedrock:
 
 Amazon Bedrock will sync the data from the S3 bucket and load it into your Redis database. This will take some time.
 
+## Create an agent
+
+
+
 ## More info
 
 - [Amazon Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/)
