@@ -54,11 +54,36 @@ To enable internode encryption for a database (also called _data plane encryptio
 
 When you change the data internode encryption setting for a database, all active remote client connections are disconnected.  This restarts the internal (DMC) proxy and disconnects all client connections.
 
-To enable data plane encryption by default for new databases, use `rladmin` to tune the cluster:
+## Change cluster policy
 
-``` shell
-rladmin tune cluster data_internode_encryption enable
-```
+To enable internode encryption for new databases by default, use one of the following methods:
+
+- Cluster Manager UI
+
+    1. On the **Databases** screen, select <img src="/images/rs/buttons/button-toggle-actions-vertical.png#no-click" alt="Toggle actions button" width="22px"> to open a list of additional actions.
+
+    1. Select **Database defaults**.
+
+    1. Go to **Internode Encryption** and click **Change**.
+
+    1. Select **Enabled** to enable internode encryption for new databases by default.
+
+    1. Click **Change**.
+
+    1. Select **Save**.
+
+- [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
+    
+    ```sh
+    rladmin tune cluster data_internode_encryption enabled
+    ```
+
+- [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
+
+    ```sh
+    PUT /v1/cluster/policy 
+    { "data_internode_encryption": true }
+    ```
 
 ## Encryption ciphers and settings
 
