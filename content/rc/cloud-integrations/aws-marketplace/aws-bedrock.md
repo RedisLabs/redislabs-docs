@@ -277,11 +277,13 @@ Replace the following fields:
 
 To use your Redis database to create a knowledge base on Amazon Bedrock:
 
-1.  Sign in to the [AWS console](https://console.aws.amazon.com/). 
+1. Sign in to the [AWS console](https://console.aws.amazon.com/). 
 
 1. Use the **Services** menu to locate and select **Machine Learning** > **Amazon Bedrock**.  This takes you to the Amazon Bedrock admin panel.
 
 1. Select **Knowledge base** > **Create knowledge base** to create your knowledge base.
+
+    {{<image filename="images/rc/bedrock-aws-button-create-knowledge-base.png" width="200px" alt="The Create knowledge base button." >}}{{< /image >}}
 
 1. In the **Knowledge base details** section, enter a name and description for your knowledge base. 
 
@@ -289,7 +291,11 @@ To use your Redis database to create a knowledge base on Amazon Bedrock:
 
 1. Enter a name for the data source and connect your S3 bucket in the **Data source** section.
 
-1. In the **Vector database** section, select **Redis Enterprise Cloud**, and fill in the fields with the following information:
+1. In the **Vector database** section, select **Redis Enterprise Cloud** and select the checkbox to agree with the legal disclaimer.
+
+    {{<image filename="images/rc/bedrock-aws-select-redis-vector-db.png" width="500px" alt="The Redis Enterprise Cloud selection for your vector database." >}}{{< /image >}}
+
+    Fill in the fields with the following information:
 
     - **Endpoint URL**: Public endpoint of your database. This can be found in the Redis Cloud [admin console](https://app.redislabs.com/) from the database list or from the **General** section of the **Configuration** tab for the source database.
     - **Credentials Secret ARN**: [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your [database credentials secret](#store-database-credentials-in-an-amazon-secret).
@@ -300,13 +306,61 @@ To use your Redis database to create a knowledge base on Amazon Bedrock:
 
     Select **Next** to review your settings.
 
-1. Select **Create knowledge base** to create your knowledge base.
+1. Review your knowledge base before you create it. Select **Create knowledge base** to finish creation.
+
+    {{<image filename="images/rc/bedrock-aws-button-create-knowledge-base.png" width="200px" alt="The Create knowledge base button." >}}{{< /image >}}
 
 Amazon Bedrock will sync the data from the S3 bucket and load it into your Redis database. This will take some time.
 
+Your knowledge base will have a status of **Ready** when it is ready to be connected to an Agent.
+
+{{<image filename="images/rc/bedrock-aws-status-knowledge-base-ready.png" width="500px" alt="A Bedrock knowledge base with a Ready status." >}}{{< /image >}}
+
+Select the name of your knowledge base to view the syncing status of your data sources. The data source will have a status of **Ready** when it is synced to the vector database.
+
+{{<image filename="images/rc/bedrock-aws-status-data-source-ready.png" width="600px" alt="A Bedrock data source with a Ready status." >}}{{< /image >}}
+
 ## Create an agent
 
+Once you have [created a knowledge base](#create-a-knowledge-base), you can use it to create an agent on Amazon Bedrock.
 
+1. Sign in to the [AWS console](https://console.aws.amazon.com/). 
+
+1. Use the **Services** menu to locate and select **Machine Learning** > **Amazon Bedrock**.  This takes you to the Amazon Bedrock admin panel.
+
+1. Select **Agents** > **Create Agent** to create your knowledge base.
+
+    {{<image filename="images/rc/bedrock-aws-button-create-agent.png" width="150px" alt="The Create Agent button." >}}{{< /image >}}
+
+1. In the **Agent name** section, enter a name and description for your agent.
+
+1. Select whether or not you want the agent to be able to ask for additional information in the **User input** section.
+
+1. Select the IAM role for the Bedrock agent in the **IAM Permissions** section. 
+
+1. Choose how long you want your idle session timeout to be in the **Idle session timeout** section. Select **Next** to continue.
+
+1. In the **Model details** section, choose which model you want to use and enter the instructions for your agent. Select **Next** to continue.
+
+1. In the **Action groups** section, you may specify any tasks you would like the agent to perform. Select **Next** to continue.
+
+1. Select the [knowledge base](#create-a-knowledge-base) you created and summarize the information in the knowledge base in the **Knowledge base instructions for Agent** form. Select **Add another knowledge base** if you would like to add multiple knowledge bases. 
+
+     {{<image filename="images/rc/bedrock-aws-button-add-knowledge-base.png" width="400px" alt="The Add another knowledge base button." >}}{{< /image >}}
+
+    Select **Next** to continue.
+
+1. Review your agent before you create it. Select **Create Agent** to finish creation.
+
+    {{<image filename="images/rc/bedrock-aws-button-create-agent.png" width="150px" alt="The Create Agent button." >}}{{< /image >}}
+
+Amazon Bedrock will create your agent and link it to your knowledge base. This will take some time. 
+
+Your agent will have a status of **Ready** when it is ready to be tested. 
+
+{{<image filename="images/rc/bedrock-aws-status-agent-ready.png" width="75%" alt="A Bedrock agent with a Ready status." >}}{{< /image >}}
+
+Select the name of your agent to view the versions and draft aliases of your agent. You can also test your agent by entering prompts in the **Enter your message here** field. 
 
 ## More info
 
