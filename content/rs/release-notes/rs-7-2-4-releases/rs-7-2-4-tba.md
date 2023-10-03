@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.2.4-TBA (October 2023)
 linkTitle: 7.2.4-TBA (October 2023)
-description: New Cluster Manager UI enhancements - database upgrade configuration, database defaults, and user lockout parameters.
+description: New Cluster Manager UI enhancements - database upgrade configuration, database defaults, user lockout parameters, and TLS configuration improvements.
 compatibleOSSVersion: Redis 7.2.0
 weight: 70
 alwaysopen: false
@@ -28,6 +28,8 @@ This version offers:
     - Database defaults
 
     - User lockout parameters
+
+    - TLS configuration improvements
 
 #### Redis modules
 
