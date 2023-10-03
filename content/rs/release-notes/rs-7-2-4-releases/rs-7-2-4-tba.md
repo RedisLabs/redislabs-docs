@@ -109,6 +109,12 @@ The following table shows the MD5 checksums for the available packages:
 | RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
 | Amazon Linux 2 |  |
 
+## Known issues
+
+- RS110481 - Importing a database mid-upgrade fails when the master node has the new version.
+    
+    As a workaround, either finish the upgrade before retrying the import, or move the master node to an old node, then perform the upgrade.
+
 ## Security
 
 #### Open source Redis security fixes compatibility
