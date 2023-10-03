@@ -23,13 +23,13 @@ This version offers:
 
 - New Cluster Manager UI enhancements:
 
-    - Database upgrade configuration
+    - [Database upgrade configuration]({{<relref "/rs/databases/configure/db-upgrade">}}) - cluster-wide policies that affect default database upgrades
 
-    - Database defaults
+    - [Database defaults]({{<relref "/rs/databases/configure/db-defaults">}}) - cluster-wide policies that determine default settings when creating new databases
 
-    - User lockout parameters
+    - [User lockout parameters]({{<relref "/rs/security/access-control/manage-users/login-lockout">}}) - locks user accounts after excessive failed login attempts
 
-    - TLS configuration improvements
+    - [TLS configuration]({{<relref "/rs/security/tls/enable-tls">}}) improvements
 
 #### Redis modules
 
@@ -47,7 +47,11 @@ Redis Enterprise Software version 7.2.4-TBA includes the following Redis Stack m
 
 ### Resolved issues
 
-- TBA
+- RS109690 - Fixed "user with that email already exists" error for API requests that create a user with `email` set to an empty string.
+
+- RS109922 - Added missing information for `sys_info` files in 7.2.4 cluster support packages.
+
+- RS108382 - Fixed an issue in the new Cluster Manager UI that prevented creating a second database with high availability enabled even with free shards still available (only an issue for clusters without a license).
 
 ## Version changes 
 
