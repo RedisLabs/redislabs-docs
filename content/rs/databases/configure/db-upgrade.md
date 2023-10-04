@@ -46,9 +46,9 @@ To change the number of shards upgraded in parallel during database upgrades, us
 
 ### RESP3 support
 
-If RESP3 support is enabled, databases upgrading to v7.2 will support the RESP3 protocol in addition to RESP2.
+The cluster-wide option `resp3_default` determines the default value of the `resp3` option, which enables or deactivates RESP3 for a database, upon upgrading a database to version 7.2 or later. `resp3_default` is set to `enabled` by default.
 
-To enable or turn off RESP3 support for databases by default, use one of the following methods:
+To change `resp3_default` to `disabled`, use one of the following methods:
 
 - Cluster Manager UI – Edit **RESP3 support** in [**Upgrade configuration**](#edit-upgrade-configuration)
 
