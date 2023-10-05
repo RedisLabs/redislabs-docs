@@ -54,7 +54,7 @@ The most common mistake when setting up Active-Active databases is incorrect or 
 You'll need the following information for each participating Redis Enterprise cluster (REC):
 
 {{<note>}}
-You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address for the ingress controller’s LoadBalancer (or routes in Openshift) for each database. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as *.ijk.redisdemo.com).
+You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address for the ingress controller’s LoadBalancer (or routes in Openshift) for each database. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as *.ijk.example.com).
 {{</note>}}
 
 - **REC hostname** `<rec-hostname>`:
@@ -68,15 +68,15 @@ You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<i
 - **API hostname** `<api-hostname>`:
   - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster
   - Format: string
-  - Example value: `api.ijk.redisdemo.com`
+  - Example value: `api.ijk.example.com`
 - **Ingress suffix** `<ingress-suffix>`:
   - Description: Combined with database name to create the Active-Active database hostname
   - Format: string
-  - Example value: `-cluster.ijk.redisdemo.com`
+  - Example value: `-cluster.ijk.example.com`
 - [**REC admin credentials**]({{<relref "/kubernetes/security/manage-rec-credentials.md" >}}) `<username> <password>`:
   - Description: Admin username and password for the REC stored in a secret
   - Format: string
-  - Example value: username: `user@redisdemo.com`, password: `something`
+  - Example value: username: `user@example.com`, password: `something`
   - How to get them:
     ```sh
     kubectl get secret <rec-name> \
@@ -87,12 +87,12 @@ You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<i
 - **Replication hostname** `<replication-hostname>`:
   - Description: Hostname used inside the ingress for the database
   - Format: `<db-name><ingress-suffix>`
-  - Example value: `myaadb-cluster.ijk.redisdemo.com`
+  - Example value: `myaadb-cluster.ijk.example.com`
   - How to get it: Combine `<db-name>` and `<ingress-suffix`> values you documented above.
 - **Replication endpoint** `<replication-endpoint>`:
   - Description: Endpoint used externally to contact the database
   - Format: `<db-name><ingress-suffix>:443`
-  - Example value: `myaadb-cluster.ijk.redisdemo.com:443`
+  - Example value: `myaadb-cluster.ijk.example.com:443`
   - How to get it:`<replication-hostname>:443`
 
 ## Add `activeActive` section to the REC resource file
@@ -135,7 +135,7 @@ HAproxy:
     ```sh
     $ kubectl get ingress
     NAME   HOSTS                            ADDRESS                                 PORTS   AGE
-    rec01  api.abc.cde.redisdemo.com  225161f845b278-111450635.us.cloud.com   80      24h
+    rec01  api.abc.cde.example.com  225161f845b278-111450635.us.cloud.com   80      24h
     ```
 
 3. Verify you can access the API from outside the K8s cluster.
@@ -146,7 +146,7 @@ HAproxy:
 
     If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
 
-4. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address of the ingress controller’s LoadBalancer. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
+4. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address of the ingress controller’s LoadBalancer. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.example.com`).
 
 #### If using Istio Gateway and VirtualService
 
@@ -175,7 +175,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
 
     Releases before 6.4.2-6 use the earlier version of the SCC, named `redis-enterprise-scc`.
 
-1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the route IP address. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
+1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the route IP address. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.example.com`).
 
 1. If your cluster uses [OpenShift routes]({{<relref "/kubernetes/networking/routes.md">}}), add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
 
@@ -186,14 +186,14 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
         method: openShiftRoute
       ```
 
-1. Make sure you have a DNS aliases that resolve to the routes IP for both the API hostname (`<api-hostname>`) and the replication hostname (`<replication-hostname>`) for each database. To avoid entering each database individually, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
+1. Make sure you have a DNS aliases that resolve to the routes IP for both the API hostname (`<api-hostname>`) and the replication hostname (`<replication-hostname>`) for each database. To avoid entering each database individually, you can use a wildcard in your alias (such as `*.ijk.example.com`).
 
 1. After the changes are saved and applied, you can see that a new route was created for the API.
 
     ```sh
     $ oc get route
     NAME    HOST/PORT                       PATH    SERVICES  PORT  TERMINATION   WILDCARD
-    rec01   api-openshift.apps.abc.redisdemo.com rec01   api             passthrough   None
+    rec01   api-openshift.apps.abc.example.com rec01   api             passthrough   None
     ```
 
 ## Create an Active-Active database with `crdb-cli`

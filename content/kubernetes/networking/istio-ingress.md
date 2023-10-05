@@ -37,19 +37,19 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 1. Create a DNS entry that resolves your chosen database hostname (or a wildcard `*` followed by your domain) to the Istio `EXTERNAL-IP`. Use this hostname to access your database from outside the cluster.
 
-    In this example, any hostname that ends with `.istio.k8s.my.redisdemo.com` will resolve to the Istio LoadBalancer's external IP of `10.145.78.91`. Substitute your own values accordingly.
+    In this example, any hostname that ends with `.istio.k8s.my.example.com` will resolve to the Istio LoadBalancer's external IP of `10.145.78.91`. Substitute your own values accordingly.
 
 1. Verify the record was created successfully.
 
     ```sh
-    dig api.istio.k8s.my.redisdemo.com
+    dig api.istio.k8s.my.example.com
     ```
 
     Look in the `ANSWER SECTION` for the record you just created.
 
     ```sh
     ;; ANSWER SECTION:
-    api.istio.k8s.my.redisdemo.com. 0 IN    A       10.145.78.91
+    api.istio.k8s.my.example.com. 0 IN    A       10.145.78.91
     ```
 
 ## Create custom resources
@@ -68,7 +68,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
         istio: ingressgateway 
       servers:
       - hosts:
-        - '*.istio.k8s.my.redisdemo.com'
+        - '*.istio.k8s.my.example.com'
         port:
           name: https
           number: 443
@@ -77,7 +77,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
           mode: PASSTHROUGH
     ```
 
-    - Replace `.istio.k8s.my.redisdemo.com` with the domain that matches your DNS record.
+    - Replace `.istio.k8s.my.example.com` with the domain that matches your DNS record.
     - TLS passthrough mode is required to allow secure access to the database.
 
 1. Apply `gateway.yaml` to create the Ingress gateway.
@@ -108,12 +108,12 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
       gateways:
       - redis-gateway
       hosts:
-      - "*.istio.k8s.my.redisdemo.com"
+      - "*.istio.k8s.my.example.com"
       tls:
       - match:
         - port: 443
           sniHosts:
-          - api.istio.k8s.my.redisdemo.com
+          - api.istio.k8s.my.example.com
         route:
         - destination:
             host: rec1
@@ -122,7 +122,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
       - match:
         - port: 443
           sniHosts:
-          - db1.istio.k8s..my.redisdemo.com
+          - db1.istio.k8s..my.example.com
         route:
         - destination:
             host: db1
@@ -130,7 +130,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
     This creates both a route to contact the API server on the REC (`rec1`) and a route to contact one of the databases (`db1`).
 
-    - Replace `.istio.k8s.my.redisdemo.com` with the domain that matches your DNS record.
+    - Replace `.istio.k8s.my.example.com` with the domain that matches your DNS record.
     - The gateway's metadata name must be similar to the gateway's spec name (`redis-gateway` in this example).
     - When creating an Active-Active database with the `crdb-cli` command,  
 
@@ -146,7 +146,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
     kubectl get vs
 
     NAME       GATEWAYS            HOSTS                              AGE
-    redis-vs   ["redis-gateway"]   ["*.istio.k8s.my.redisdemo.com"]   3h33m
+    redis-vs   ["redis-gateway"]   ["*.istio.k8s.my.example.com"]   3h33m
     ```
 
 1. [Deploy the operator]({{<relref "/kubernetes/deployment/quick-start.md">}}), Redis Enterprise Cluster (REC), and Redis Enterprise Database (REDB) on the same namespace as the gateway and virtual service.
