@@ -154,7 +154,7 @@ Redis Cloud includes three predefined permissions:
 
 - Read-Only (`+@read ~*`) - Only the `read` command category is allowed for all keys.
 
-### Module command permissions
+### Advanced capability command permissions
 
-Note that you can define permissions for the Redis module commands of any modules that are part of your subscription;
-however, these permissions can only be used for databases that support those modules.
+Note that you can define permissions for the Redis commands of any advanced capabilities that are part of your subscription;
+however, these permissions can only be used for databases that support those capabilities.
