@@ -1,32 +1,12 @@
 ---
-Title: Use Redis Cloud with Amazon Bedrock
-LinkTitle: Amazon Bedrock 
-description: Shows how to use your Redis database with Amazon Bedrock to customize foundational models.
-weight: $weight
+Title: Set up Redis for Bedrock
+LinkTitle: Set up Redis
+description: Shows how to set up your Redis database for Amazon Bedrock.
+weight: 1
 alwaysopen: false
 categories: ["RC"]
 aliases: 
 ---
-
-[Amazon Bedrock](https://aws.amazon.com/bedrock/) is a service that allows you to securely customize foundational models (FMs) with your own data, and to use these models without having to build complex infrastructure management. With Amazon Bedrock, users can access FMs from a variety of vendors through a single API, streamlining the process of creating generative artificial intelligence (AI).
-
-Amazon Bedrock allows you to choose Redis Cloud as the [vector database](https://redis.com/solutions/use-cases/vector-database/) for your knowledge base. After your database is set up and connected to Amazon Bedrock, it will import text data from an Amazon Simple Storage Service (S3) bucket into Redis Cloud and use it to extract relevant information when prompted.
-
-For more information about the Redis integration with Amazon Bedrock, see the [Amazon Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/).
-
-## Prerequisites
-
-Before you begin this guide, you will need:
-
-- An [AWS S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html) with text data that you want to use to train your models.
-
-- Two [AWS IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html): One with permissions for the Bedrock knowledge base, and one with permissions for create a Bedrock agent.
-
-{{< note >}}
-Make sure that the S3 bucket and the IAM roles are located in the region where you will create your Amazon Bedrock knowledge base.
-{{< /note >}}
-
-## Set up Redis for Bedrock
 
 You need to set up your Redis Cloud database before you can set it as the vector database in Amazon Bedrock. To do this, you need to:
 
@@ -35,16 +15,16 @@ You need to set up your Redis Cloud database before you can set it as the vector
 1. [Store database credentials in AWS secrets manager](#store-secret)
 1. [Create a vector index in your database](#create-vector-index) for Bedrock to use
 
-After you set up the database, you can use the database information to set it as your knowledge base database when you [create a knowledge base](#create-a-knowledge-base).
+After you set up the database, you can use the database information to set it as your knowledge base database when you [create a knowledge base]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/create-knowledge-base" >}}).
 
-### Sign up and create a database  {#sign-up-create-subscription}
+## Sign up and create a database  {#sign-up-create-subscription}
 
 To set up a Redis Cloud instance for Bedrock, you need to:
 
 1. [Sign up for Redis Cloud](#sign-up) if you do not already have an account.
 1. [Create a subscription and database](#create-sub) to use for your Bedrock knowledge base.
 
-#### Sign up for Redis Cloud using AWS Marketplace {#sign-up}
+### Sign up for Redis Cloud using AWS Marketplace {#sign-up}
 
 1.  Select the [Redis Enterprise Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Enterprise Cloud - Flexible plan listing.
 
@@ -68,7 +48,7 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     In addition, AWS Marketplace is reported as the selected payment method.
 
-#### [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}) {#create-sub} 
+### [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}) {#create-sub} 
 
 1. In the [admin console](https://app.redislabs.com/), select **Add new subscription**. 
 
@@ -137,7 +117,7 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     Use the **Subscriptions list** to check the status of your subscription.  You will also receive an email when your subscription is ready to use.
 
-### Enable TLS and get certificates {#get-certs}
+## Enable TLS and get certificates {#get-certs}
 
 For your database to be fully secure, you must enable [Transport Layer Security (TLS)]({{<relref "/rc/security/database-security/tls-ssl#enable-tls">}}) for your database with client authentication.
 
@@ -169,7 +149,7 @@ For your database to be fully secure, you must enable [Transport Layer Security 
 
     {{<image filename="images/rc/button-database-save.png" width="140px" alt="Use the Save database button to save database changes." >}}{{< /image >}}
 
-### Store database credentials in AWS secrets manager {#store-secret}
+## Store database credentials in AWS secrets manager {#store-secret}
 
 In the [AWS Management Console](https://console.aws.amazon.com/), use the **Services** menu to locate and select **Security, Identity, and Compliance** > **Secrets Manager**. [Create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) with the following fields:
 
@@ -181,11 +161,11 @@ In the [AWS Management Console](https://console.aws.amazon.com/), use the **Serv
 
 After you store this secret, you can view and copy the [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your secret on the secret details page. 
 
-### Create a vector index in your database {#create-vector-index}
+## Create a vector index in your database {#create-vector-index}
 
 After your database is set up, create an index with a vector field using [FT.CREATE](https://redis.io/commands/ft.create/) as your knowledge base for Amazon Bedrock.
 
-#### [RedisInsight](https://redis.io/docs/ui/insight/)
+### [RedisInsight](https://redis.io/docs/ui/insight/)
 
 RedisInsight is a free Redis GUI that allows you to visualize and optimize your data in Redis. 
 
@@ -241,7 +221,7 @@ To create your vector index in RedisInsight:
 
     {{<image filename="images/rc/ri-bedrock-run-button.png" width=50px alt="The RedisInsight run button." >}}{{< /image >}}
 
-#### [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}})
+### [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}})
 
 The `redis-cli` command-line utility lets you connect and run Redis commands directly from the command line. To use `redis-cli`, you can [install Redis](https://redis.io/docs/getting-started/).
 
@@ -252,7 +232,7 @@ redis-cli -h <endpoint> -p <port> --tls --cacert redis_ca.pem \
     --cert redis_user.crt --key redis_user_private.key
 ```
 
-Once you are connected with `redis-cli`, create an index using [FT.CREATE](https://redis.io/commands/ft.create/). 
+After you are connected with `redis-cli`, create an index using [FT.CREATE](https://redis.io/commands/ft.create/). 
 
 ```text
 FT.CREATE <index_name>                    
@@ -272,97 +252,3 @@ Replace the following fields:
 - `<text_field>` with the text field name
 - `<metadata_field>` with the metadata field name
 - `<vector_field>` with the vector field name
-
-## Create a knowledge base
-
-To use your Redis database to create a knowledge base on Amazon Bedrock:
-
-1. Sign in to the [AWS console](https://console.aws.amazon.com/). 
-
-1. Use the **Services** menu to locate and select **Machine Learning** > **Amazon Bedrock**.  This takes you to the Amazon Bedrock admin panel.
-
-1. Select **Knowledge base** > **Create knowledge base** to create your knowledge base.
-
-    {{<image filename="images/rc/bedrock-aws-button-create-knowledge-base.png" width="200px" alt="The Create knowledge base button." >}}{{< /image >}}
-
-1. In the **Knowledge base details** section, enter a name and description for your knowledge base. 
-
-1. Select the IAM role for the Bedrock knowledge base in the **IAM Permissions** section. Select **Next** to add the data source.
-
-1. Enter a name for the data source and connect your S3 bucket in the **Data source** section.
-
-1. In the **Vector database** section, select **Redis Enterprise Cloud** and select the checkbox to agree with the legal disclaimer.
-
-    {{<image filename="images/rc/bedrock-aws-select-redis-vector-db.png" width="500px" alt="The Redis Enterprise Cloud selection for your vector database." >}}{{< /image >}}
-
-    Fill in the fields with the following information:
-
-    - **Endpoint URL**: Public endpoint of your database. This can be found in the Redis Cloud [admin console](https://app.redislabs.com/) from the database list or from the **General** section of the **Configuration** tab for the source database.
-    - **Credentials Secret ARN**: [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your [database credentials secret](#store-database-credentials-in-an-amazon-secret).
-    - **Vector Index name**: Name of the [vector index](#create-vector-index) 
-    - **Vector field**: Name of the [vector field](#create-vector-index) of the vector index
-    - **Text field**: Name of the [text field](#create-vector-index) of the vector index
-    - **Metadata field**: Name of the [metadata field](#create-vector-index) of the vector index
-
-    Select **Next** to review your settings.
-
-1. Review your knowledge base before you create it. Select **Create knowledge base** to finish creation.
-
-    {{<image filename="images/rc/bedrock-aws-button-create-knowledge-base.png" width="200px" alt="The Create knowledge base button." >}}{{< /image >}}
-
-Amazon Bedrock will sync the data from the S3 bucket and load it into your Redis database. This will take some time.
-
-Your knowledge base will have a status of **Ready** when it is ready to be connected to an Agent.
-
-{{<image filename="images/rc/bedrock-aws-status-knowledge-base-ready.png" width="500px" alt="A Bedrock knowledge base with a Ready status." >}}{{< /image >}}
-
-Select the name of your knowledge base to view the syncing status of your data sources. The data source will have a status of **Ready** when it is synced to the vector database.
-
-{{<image filename="images/rc/bedrock-aws-status-data-source-ready.png" width="600px" alt="A Bedrock data source with a Ready status." >}}{{< /image >}}
-
-## Create an agent
-
-Once you have [created a knowledge base](#create-a-knowledge-base), you can use it to create an agent on Amazon Bedrock.
-
-1. Sign in to the [AWS console](https://console.aws.amazon.com/). 
-
-1. Use the **Services** menu to locate and select **Machine Learning** > **Amazon Bedrock**.  This takes you to the Amazon Bedrock admin panel.
-
-1. Select **Agents** > **Create Agent** to create your knowledge base.
-
-    {{<image filename="images/rc/bedrock-aws-button-create-agent.png" width="150px" alt="The Create Agent button." >}}{{< /image >}}
-
-1. In the **Agent name** section, enter a name and description for your agent.
-
-1. Select whether or not you want the agent to be able to ask for additional information in the **User input** section.
-
-1. Select the IAM role for the Bedrock agent in the **IAM Permissions** section. 
-
-1. Choose how long you want your idle session timeout to be in the **Idle session timeout** section. Select **Next** to continue.
-
-1. In the **Model details** section, choose which model you want to use and enter the instructions for your agent. Select **Next** to continue.
-
-1. In the **Action groups** section, you may specify any tasks you would like the agent to perform. Select **Next** to continue.
-
-1. Select the [knowledge base](#create-a-knowledge-base) you created and summarize the information in the knowledge base in the **Knowledge base instructions for Agent** form. Select **Add another knowledge base** if you would like to add multiple knowledge bases. 
-
-     {{<image filename="images/rc/bedrock-aws-button-add-knowledge-base.png" width="400px" alt="The Add another knowledge base button." >}}{{< /image >}}
-
-    Select **Next** to continue.
-
-1. Review your agent before you create it. Select **Create Agent** to finish creation.
-
-    {{<image filename="images/rc/bedrock-aws-button-create-agent.png" width="150px" alt="The Create Agent button." >}}{{< /image >}}
-
-Amazon Bedrock will create your agent and link it to your knowledge base. This will take some time. 
-
-Your agent will have a status of **Ready** when it is ready to be tested. 
-
-{{<image filename="images/rc/bedrock-aws-status-agent-ready.png" width="75%" alt="A Bedrock agent with a Ready status." >}}{{< /image >}}
-
-Select the name of your agent to view the versions and draft aliases of your agent. You can also test your agent by entering prompts in the **Enter your message here** field. 
-
-## More info
-
-- [Amazon Bedrock integration blog post](https://redis.com/blog/amazon-bedrock-integration-with-redis-enterprise/)
-- [Detailed steps](https://github.com/RedisVentures/aws-redis-bedrock-stack/blob/main/README.md)
