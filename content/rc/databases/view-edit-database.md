@@ -52,7 +52,7 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Active-Active Redis** | Checked when the database is part of an Active-Active relationship (_coming soon; Flexible or Annual subscriptions only_) |
 | **Last changed** | Date and time of last update |
 | **Supported Protocol(s)** | Shows which version of RESP the database uses. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
-| **Advanced capabilites** | This setting appears when when an advanced capability, also know as a [module]({{< relref "/stack" >}}), is enabled for a database  |
+| **Advanced capabilites** | This setting appears when when an [advanced capability]({{< relref "/stack" >}}) is enabled for a database  |
 
 ### Scalability section
 
