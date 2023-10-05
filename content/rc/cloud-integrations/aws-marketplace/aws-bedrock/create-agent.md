@@ -14,7 +14,7 @@ Before you begin this guide, you will need:
 
 - An [AWS IAM Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) with permissions for the Bedrock agent.
 
-- A [Bedrock knowledge base]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/create-knowledge-base" >}}) connected to a [Redis Cloud vector database](({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/set-up-redis" >}}).
+- A [Bedrock knowledge base]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/create-knowledge-base" >}}) connected to a [Redis Cloud vector database]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/set-up-redis" >}}).
 
 ## Create an agent
 
