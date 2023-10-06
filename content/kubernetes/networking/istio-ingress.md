@@ -42,7 +42,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 1. Verify the record was created successfully.
 
     ```sh
-    dig api.<istio.k8s.my.example.com>
+    dig api.istio.k8s.my.example.com
     ```
 
     Look in the `ANSWER SECTION` for the record you just created.
@@ -56,19 +56,23 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 ### `Gateway` custom resource
 
-1. On a different namespace from `istio-system`, create a `Gateway` custom resource file (`<gateway-name>.yaml`), replacing `<placeholders>` with your own values.
+1. On a different namespace from `istio-system`, create a `Gateway` custom resource file (`redis-gateway.yaml` in this example).
+
+    - Replace `.istio.k8s.my.example.com` with the domain that matches your DNS record.
+    - Replace `<selector-label>` with the label set on your Istio ingress gateway pod (most common is `istio: ingress`).
+    - TLS passthrough mode is required to allow secure access to the database.
 
     ```yaml
     apiVersion: networking.istio.io/v1beta1
     kind: Gateway
     metadata:
-      name: <gateway-name>
+      name: redis-gateway
     spec:
       selector:
         istio: <selector-label>
       servers:
       - hosts:
-        - '*.<istio.k8s.my.example.com>'
+        - '*.istio.k8s.my.example.com'
         port:
           name: https
           number: 443
@@ -77,14 +81,12 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
           mode: PASSTHROUGH
     ```
 
-    - Replace `<.istio.k8s.my.example.com>` with the domain that matches your DNS record.
-    - Replace `<selector-label>` with the label set on your Istio ingress gateway pod (most common is `istio: ingress`).
-    - TLS passthrough mode is required to allow secure access to the database.
 
-1. Apply `<gateway>.yaml` to create the Ingress gateway.
+
+1. Apply the `Gateway` custom resource file to create the Ingress gateway.
 
     ```sh
-    kubectl apply -f <gateway>.yaml
+    kubectl apply -f redis-gateway.yaml
     ```
 
 1. Verify the gateway was created successfully.
@@ -93,51 +95,51 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
       kubectl get gateway
 
       NAME            AGE
-      gateway-name   3h33m
+      redis-gateway   3h33m
       ```
 
 ### `VirtualService` custom resource
 
-1. On a different namespace than `istio-system`, create the `VirtualService` custom resource file (`<vs-name>.yaml`), replacing `<placeholders>` with your own values.
+1. On a different namespace than `istio-system`, create the `VirtualService` custom resource file (`redis-vs.yaml` in this example).
 
     ```yaml
     apiVersion: networking.istio.io/v1beta1
     kind: VirtualService
     metadata:
-      name: <vs-name>
+      name: redis-vs
     spec:
       gateways:
-      - <gateway-name>
+      - redis-gateway
       hosts:
-      - "*.<istio.k8s.my.example.com>"
+      - "*.istio.k8s.my.example.com"
       tls:
       - match:
         - port: 443
           sniHosts:
-          - api.<istio.k8s.my.example.com>
+          - api.istio.k8s.my.example.com
         route:
         - destination:
-            host: <rec1>
+            host: rec1
             port:
               number: 9443
       - match:
         - port: 443
           sniHosts:
-          - <db1.istio.k8s.my.example.com>
+          - db1.istio.k8s.my.example.com
         route:
         - destination:
-            host: <db1>
+            host: db1
     ```
 
-    This creates both a route to contact the API server on the REC (`<rec1>`) and a route to contact one of the databases (`<db1>`).
+    This creates both a route to contact the API server on the REC (`rec1`) and a route to contact one of the databases (`db1`).
 
-    - Replace `<.istio.k8s.my.example.com>` with the domain that matches your DNS record.
-    - The gateway's metadata name must be similar to the gateway's spec name (`<gateway-name>` in this example).
+    - Replace `.istio.k8s.my.example.com` with the domain that matches your DNS record.
+    - The gateway's metadata name must be similar to the gateway's spec name (`redis-gateway` in this example).
    
-1. Apply `<vs-name>.yaml` to create the virtual service.
+1. Apply `VirtualService` custom resource file to create the virtual service.
 
     ```sh
-    kubectl apply -f <vs-name>.yaml
+    kubectl apply -f redis-vs.yaml
     ```
 
 1. Verify the virtual service was created successfully.
@@ -146,7 +148,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
     kubectl get vs
 
     NAME       GATEWAYS            HOSTS                              AGE
-    vs-name   ["gateway-name"]   ["*.istio.k8s.my.example.com"]   3h33m
+    redis-vs   ["redis-gateway"]   ["*.istio.k8s.my.example.com"]   3h33m
     ```
 
 1. [Deploy the operator]({{<relref "/kubernetes/deployment/quick-start.md">}}), Redis Enterprise Cluster (REC), and Redis Enterprise Database (REDB) on the same namespace as the gateway and virtual service.
