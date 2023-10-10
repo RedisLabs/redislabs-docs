@@ -24,6 +24,6 @@ To enable TLS for Replica Of cluster connections:
 
     Repeat this process, adding the syncer certificate for each cluster hosting a replica of this database.
 
-1. _(Optional)_ If you also want to require TLS for client connections, change **Apply TLS for** to **Clients and databases + Between databases** and add client certificates.
+1. _(Optional)_ To require TLS for client connections, change **Apply TLS for** to **Clients and databases + Between databases** and add client certificates.
 
 1. Select **Save**.
