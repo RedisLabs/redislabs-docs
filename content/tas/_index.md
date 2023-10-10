@@ -7,6 +7,18 @@ hidden: true
 aliases: 
 ---
 
+## Overview
+
+Redis Enterprise clusters are enterprise-grade, highly available, and scalable Redis clusters with substantially lower operational overhead than any other Redis deployment method.
+
+Redis Enterprise extends open source Redis and delivers tangible benefits of stable high performance, zero-downtime linear scaling, and hassle-free, true high availability, with significant operational savings.
+
+This documentation describes Redis Enterprise for VMware Tanzu. Redis Enterprise for VMware Tanzu exposes its service plans on the Marketplace. Developers can provision highly available and scalable Redis databases by creating instances of the service plans using Apps Manager or the Cloud Foundry Command Line Interface (cf CLI).
+
+## Requirements
+
+Redis Enterprise for VMware Tanzu requires a valid license from Redis for the Redis Enterprise cluster.
+Otherwise, you receive a thirty-day trial license by default.
 
 ## Additonal documentation
 - [Installing and Configuring for VMware Tanzu]({{<relref "">}})
@@ -14,7 +26,15 @@ aliases:
 - [Redis Enterprise Modules on VMware Tanzu]({{<relref "">}})
 - [Backing Up and Restoring for VMware Tanzu]({{<relref "">}})
 
-## 6.2.1865000003
+## Release notes
+
+Redis Enterprise is an enterprise-grade cluster that acts as a container for managing and running multiple Redis databases in a highly available and scalable manner.
+
+By default, a three-node Redis Enterprise cluster is deployed for you.
+
+For specific information about Redis Enterprise, and to get started, see the [Redis Enterprise documentation](https://docs.redis.com/latest/rs/).
+
+### 6.2.1865000003
 
 **Release Date:** January 19, 2023
 
@@ -39,7 +59,7 @@ This release supersedes 6.2.1012900001 to include new features and bug fixes
 - Tile restore operations might fail. A workaround is to run the join command manually (RED-76006)
 - Delete crdb (active/active) from AppManager fails. Workaround - delete the instance manually using Redis Enterprise UI and then delete from the AppManager.
 
-## 6.2.1012900001
+### 6.2.1012900001
 
 **Release Date:** August 25, 2022
 
@@ -64,7 +84,7 @@ This release supersedes v6.2.109600003 to include new features and bug fixes
   - '"' (double quotes)
 - Tile restore operations might fail. A workaround is to run the join command manually (RED-76006)
 
-## 6.2.109600003
+### 6.2.109600003
 
 **Release Date:** April 14, 2022
 
@@ -91,7 +111,7 @@ This release supersedes v6.2.84100001 to include new features and bug fixes
   - "'" (single quote)
   - '"' (double quotes)
 
-## 6.2.84100001
+### 6.2.84100001
 
 **Release Date:** Dec 23, 2021
 
@@ -114,7 +134,7 @@ This release supersedes v6.0.209700002 to include new features
   - "'" (single quote)
   - '"' (double quotes)
 
-## 6.0.209700002
+### 6.0.209700002
 
 **Release Date:** Aug 24, 2021
 
@@ -139,7 +159,7 @@ This release supersedes v6.0.206900001 to include new features
   - "'" (single quote)
   - '"' (double quotes)
 
-## 6.0.206900001
+### 6.0.206900001
 
 **Release Date:** May 14, 2021
 
@@ -158,7 +178,7 @@ This release supersedes v6.0.82800002 to include new features
   - "'" (single quote)
   - '"' (double quotes)
 
-## 6.0.82800002
+### 6.0.82800002
 
 **Release Date:** Jan 12, 2020
 
@@ -175,7 +195,7 @@ This release supersedes v6.0.82800001 to include new features and bug fixes.
   - "'" (single quote)
   - '"' (double quotes)
 
-## 6.0.82800001
+### 6.0.82800001
 
 **Release Date:** Dec 18, 2020
 
@@ -194,7 +214,7 @@ This release supersedes v6.0.63900002 to include new features and bug fixes.
   - "'" (single quote)
   - '"' (double quotes)
 
-## 6.0.63900002
+### 6.0.63900002
 
 **Release Date:** Aug 3, 2020
 
@@ -215,7 +235,7 @@ This release supersedes v5.4.102200010 to include new features and bug fixes.
   - "'" (single quote)
   - '"' (double quotes)
 
-## 5.4.102200010
+### 5.4.102200010
 
 **Release Date:** Feb 25, 2020
 
@@ -243,7 +263,7 @@ This release supersedes v5.4.102200007 to include new features and bug fixes.
 - Updated outdated logos
 - Provide input validation, upon saving, on Administrative Password fields, to avoid installation failures as a result of using invalid characters within passwords
 
-## 5.4.102200007
+### 5.4.102200007
 
 **Release Date:** Dec 14, 2019
 
@@ -278,7 +298,7 @@ This release supersedes v5.4.40700169 to include new features and bug fixes.
   - "'" (single quote)
   - '"' (double quotes)
 
-## 5.4.40700169
+### 5.4.40700169
 
 **Release Date:** Jul 17, 2019
 
@@ -296,7 +316,7 @@ This release supersedes v5.4.22700167 to include new features and bug fixes.
 - Smoke Test Errand fails, applying changes in Ops Manager after deploying tile in Recovery mode.
   - Workaround: Disable the Smoke Test Errand before applying changes to the tile in Recovery Mode. After the last recovery step (unchecking the Recovery checkbox), apply changes with Smoke Test Errand, which will now run.
 
-## 5.4.22700167
+### 5.4.22700167
 
 **Release Date:** Jul 17, 2019
 
@@ -312,7 +332,7 @@ This release supersedes v5.4.22000164 to include new features and bug fixes.
 - Redis tile drain script does not complete during BOSH deploy
 - TCP Router port limits are applied when TCP Router is disabled
 
-## 5.4.22000164
+### 5.4.22000164
 
 **Release Date:** May 16, 2019
 
@@ -329,7 +349,7 @@ This release supersedes v5.4.22000155 to include new features and bug fixes.
 
 - Loggregator prevents nginx from starting after node restart
 
-## 5.4.2600155
+### 5.4.2600155
 
 **Release Date:** March 12, 2019
 
@@ -343,7 +363,7 @@ This release supersedes 5.4.2400147 to include new features bug fixes.
 
 - Failed to disable client authentication after upgrade
 
-## 5.4.2400147
+### 5.4.2400147
 
 **Release Date:** February 11, 2019
 
@@ -353,7 +373,7 @@ This release supersedes 5.4.2400142 to include bug fixes.
 
 - Required binaries are now included in BOSH tile, for air-gapped deployments
 
-## 5.4.2400142
+### 5.4.2400142
 
 **Release Date:** January 30, 2019
 
@@ -365,7 +385,7 @@ This release supersedes 5.4.2400142 to include bug fixes.
 - Tile based on Redis-Enterprise v5.4.0
 - For more information, see [Redis Enterprise Release Notes](https://docs.redislabs.com/latest/rs/release-notes/rs-5-4-december-2018/).
 
-## 5.2.21800135
+### 5.2.21800135
 
 **Release Date:** August 31, 2018
 
@@ -380,7 +400,7 @@ This release supersedes 5.4.2400142 to include bug fixes.
 - Added the ability to configure both the API Certificate and Proxy Certificate information using the Ops Manager config panel.
 - Both console and API fields in Ops Manager are set by default to non-FQDN values.
 
-## 5.2.1400130
+### 5.2.1400130
 
 **Release Date:** June 21, 2018
 
@@ -391,7 +411,7 @@ This release supersedes 5.4.2400142 to include bug fixes.
 - Tile based on Redis-Enterprise v5.2
 - For more information, see [Redis Enterprise Release Notes](https://redislabs.com/redis-enterprise-documentation/release-notes/).
 
-## 5.0.13000036
+### 5.0.13000036
 
 **Release Date:** April 30, 2018
 
@@ -424,7 +444,7 @@ This release supersedes 5.4.2400142 to include bug fixes.
 - Offline install capability
 - Issue related to default Syslog integration option
 
-## 5.0.1180018 (BETA)
+### 5.0.1180018 (BETA)
 
 **Release Date:** February 5, 2018
 
@@ -435,7 +455,7 @@ This release supersedes 5.4.2400142 to include bug fixes.
 - Upgrade support in Redis Enterprise tile
 - Syslog integration
 
-## 5.0.1100012 (BETA)
+### 5.0.1100012 (BETA)
 
 **Release Date:** January 21, 2018
 
@@ -450,7 +470,7 @@ Developing globally distributed applications can be challenging. Developers have
 
 For information, see [Developing with CRDBs](https://www.redislabs.com/redis-enterprise-documentation/developing/crdbs/").
 
-## v5.0.0 (BETA)
+### 5.0.0 (BETA)
 
 **Release Date:** December 6, 2017
 
@@ -490,13 +510,13 @@ Support for additional Redis commands and features:
 
 * In the node bootstrap API, the structure of the JSON has changed for adding an external IP during the bootstrap process.
 
-## v0.0.84
+### v0.0.84
 
 **Release Date:** December 1, 2017
 
 Beta version of this tile with Support for Redis v4.0.2.
 
-## v0.0.81
+### v0.0.81
 
 **Release Date:** June 15, 2017
 
