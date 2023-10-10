@@ -73,6 +73,16 @@ The cluster-wide option `resp3_default` determines the default value of the `res
 
 To change `resp3_default` to `disabled`, use one of the following methods:
 
+- Cluster Manager UI:
+
+    1. On the **Databases** screen, select <img src="/images/rs/buttons/button-toggle-actions-vertical.png#no-click" alt="Toggle actions button" width="22px"> to open a list of additional actions.
+
+    1. Select **Upgrade configuration**.
+
+    1. For **RESP3 support**, select **Disable**.
+
+    1. Click **Save**.
+
 - [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}})
 
     ```sh
