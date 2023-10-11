@@ -42,7 +42,7 @@ The information below will help you track and configure where your deployments p
 
 {{< note >}}
 **IMPORTANT**
-* Each version of the Redis Enterprise operator is mapped to a specific version of Redis Enterprise Software. The semantic versions always match (e.g 7.2.4), although the specific release numbers may be different (e.g. 7.2.4-7is the operator version for Redis Enterprise Software 7.2.4-64).
+* Each version of the Redis Enterprise operator is mapped to a specific version of Redis Enterprise Software. The semantic versions always match (for example, 7.2.4), although the specific release numbers may be different (for example, 7.2.4-7 is the operator version for Redis Enterprise Software 7.2.4-64).
 * A specific operator version only supports a specific Redis Enterprise version. Other combinations of operator and Redis Enterprise versions are **not supported**.
 {{< /note >}}
 
