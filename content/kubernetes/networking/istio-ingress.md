@@ -14,7 +14,7 @@ aliases: [
 ]
 ---
 
-Redis Enterprise for Kubernetes version `6.2.8-11` introduces the ability to use an Istio Ingress gateway as an alternative to NGINX or HaProxy Ingress controllers.
+Redis Enterprise for Kubernetes has the ability to use an Istio Ingress gateway as an alternative to NGINX or HaProxy Ingress controllers.
 
 Istio can also understand Ingress resources, but using that mechanism takes away the advantages and options that the native Istio resources provide. Istio offers its own configuration methods using custom resources.
 
@@ -37,26 +37,30 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 1. Create a DNS entry that resolves your chosen database hostname (or a wildcard `*` followed by your domain) to the Istio `EXTERNAL-IP`. Use this hostname to access your database from outside the cluster.
 
-    In this example, any hostname that ends with `.istio.k8s.my.redisdemo.com` will resolve to the Istio LoadBalancer's external IP of `10.145.78.91`. Substitute your own values accordingly.
+    In this example, any hostname that ends with `.istio.k8s.my.example.com` will resolve to the Istio LoadBalancer's external IP of `10.145.78.91`. Substitute your own values accordingly.
 
 1. Verify the record was created successfully.
 
     ```sh
-    dig api.istio.k8s.my.redisdemo.com
+    dig api.istio.k8s.my.example.com
     ```
 
     Look in the `ANSWER SECTION` for the record you just created.
 
     ```sh
     ;; ANSWER SECTION:
-    api.istio.k8s.my.redisdemo.com. 0 IN    A       10.145.78.91
+    api.istio.k8s.my.example.com 0 IN    A       10.145.78.91
     ```
 
 ## Create custom resources
 
 ### `Gateway` custom resource
 
-1. On a different namespace from `istio-system`, create a `Gateway` custom resource file (`redis-gateway.yaml`).
+1. On a different namespace from `istio-system`, create a `Gateway` custom resource file (`redis-gateway.yaml` in this example).
+
+    - Replace `.istio.k8s.my.example.com` with the domain that matches your DNS record.
+    - Replace `<selector-label>` with the label set on your Istio ingress gateway pod (most common is `istio: ingress`).
+    - TLS passthrough mode is required to allow secure access to the database.
 
     ```yaml
     apiVersion: networking.istio.io/v1beta1
@@ -65,10 +69,10 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
       name: redis-gateway
     spec:
       selector:
-        istio: ingressgateway 
+        istio: <selector-label>
       servers:
       - hosts:
-        - '*.istio.k8s.my.redisdemo.com'
+        - '*.istio.k8s.my.example.com'
         port:
           name: https
           number: 443
@@ -77,13 +81,12 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
           mode: PASSTHROUGH
     ```
 
-    - Replace `.istio.k8s.my.redisdemo.com` with the domain that matches your DNS record.
-    - TLS passthrough mode is required to allow secure access to the database.
 
-1. Apply `gateway.yaml` to create the Ingress gateway.
+
+1. Apply the `Gateway` custom resource file to create the Ingress gateway.
 
     ```sh
-    kubectl apply -f gateway.yaml
+    kubectl apply -f redis-gateway.yaml
     ```
 
 1. Verify the gateway was created successfully.
@@ -97,7 +100,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 ### `VirtualService` custom resource
 
-1. On a different namespace than `istio-system`, create the `VirtualService` custom resource file (`redis-vs.yaml`).
+1. On a different namespace than `istio-system`, create the `VirtualService` custom resource file (`redis-vs.yaml` in this example).
 
     ```yaml
     apiVersion: networking.istio.io/v1beta1
@@ -108,12 +111,12 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
       gateways:
       - redis-gateway
       hosts:
-      - "*.istio.k8s.my.redisdemo.com"
+      - "*.istio.k8s.my.example.com"
       tls:
       - match:
         - port: 443
           sniHosts:
-          - api.istio.k8s.my.redisdemo.com
+          - api.istio.k8s.my.example.com
         route:
         - destination:
             host: rec1
@@ -122,7 +125,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
       - match:
         - port: 443
           sniHosts:
-          - db1.istio.k8s..my.redisdemo.com
+          - db1.istio.k8s.my.example.com
         route:
         - destination:
             host: db1
@@ -130,11 +133,10 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
     This creates both a route to contact the API server on the REC (`rec1`) and a route to contact one of the databases (`db1`).
 
-    - Replace `.istio.k8s.my.redisdemo.com` with the domain that matches your DNS record.
+    - Replace `.istio.k8s.my.example.com` with the domain that matches your DNS record.
     - The gateway's metadata name must be similar to the gateway's spec name (`redis-gateway` in this example).
-    - When creating an Active-Active database with the `crdb-cli` command,  
-
-1. Apply `redis-vs.yaml` to create the virtual service.
+   
+1. Apply `VirtualService` custom resource file to create the virtual service.
 
     ```sh
     kubectl apply -f redis-vs.yaml
@@ -146,7 +148,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
     kubectl get vs
 
     NAME       GATEWAYS            HOSTS                              AGE
-    redis-vs   ["redis-gateway"]   ["*.istio.k8s.my.redisdemo.com"]   3h33m
+    redis-vs   ["redis-gateway"]   ["*.istio.k8s.my.example.com"]   3h33m
     ```
 
 1. [Deploy the operator]({{<relref "/kubernetes/deployment/quick-start.md">}}), Redis Enterprise Cluster (REC), and Redis Enterprise Database (REDB) on the same namespace as the gateway and virtual service.
@@ -156,4 +158,3 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 To [test your external access]({{<relref "/kubernetes/networking/ingress.md">}}) to the database, you need a client that supports [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication).
 
 See [Test your access with Openssl]({{<relref "/kubernetes/networking/ingress#test-your-access-with-openssl">}}) or [Test your access with Python]({{<relref "/kubernetes/networking/ingress#test-your-access-with-python">}}) for more info.
-
