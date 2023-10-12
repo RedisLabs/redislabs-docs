@@ -186,7 +186,7 @@ For each cluster, verify the VirtualService resource has two `- match:` blocks i
         method: openShiftRoute
       ```
 
-1. Make sure you have a DNS aliases that resolve to the routes IP for both the API hostname (`<api-hostname>`) and the replication hostname (`<replication-hostname>`) for each database. To avoid entering each database individually, you can use a wildcard in your alias (such as `*.ijk.example.com`).
+1. Make sure you have DNS aliases that resolve to the routes IP for both the API hostname (`<api-hostname>`) and the replication hostname (`<replication-hostname>`) for each database. To avoid entering each database individually, you can use a wildcard in your alias (such as `*.ijk.example.com`).
 
 1. After the changes are saved and applied, you can see that a new route was created for the API.
 
