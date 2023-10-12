@@ -54,7 +54,7 @@ The most common mistake when setting up Active-Active databases is incorrect or 
 You'll need the following information for each participating Redis Enterprise cluster (REC):
 
 {{<note>}}
-You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address for the ingress controller’s LoadBalancer (or routes in Openshift) for each database. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as *.ijk.example.com).
+You'll need to create DNS aliases to resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address for the ingress controller’s LoadBalancer (or routes in Openshift) for each database. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as *.ijk.example.com).
 {{</note>}}
 
 - **REC hostname** `<rec-hostname>`:
