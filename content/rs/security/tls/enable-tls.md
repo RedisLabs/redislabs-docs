@@ -21,11 +21,13 @@ To enable TLS for client connections:
 
 1. From your database's **Security** tab, select **Edit**.
 
-1. In the **Secure connections (via TLS - Transport Layer Security)** section, select **Mutual TLS authentication**.
+1. In the **TLS - Transport Layer Security for secure connections** section, make sure the checkbox is selected.
+
+1. In the **Apply TLS for** section, select **Clients and databases + Between databases**.
+
+1. Select **Mutual TLS (Client authentication)**.
 
     {{<image filename="images/rs/screenshots/databases/security-mtls-clients.png"  alt="Mutual TLS authentication configuration.">}}{{</image>}}
-
-1. For **Communication scope**, select **Replica Of source database and clients**.
 
 1. For each client certificate, select **+ Add certificate**, paste or upload the client certificate, then select **Done**.
 
@@ -54,7 +56,9 @@ To enable TLS for client connections:
         | _State / Province (ST)_ | The organization's state or province |
         | _Country (C)_ | 2-letter code that represents the organization's country |
 
-        You can only enter a single value for each field, except for the _Organizational Unit (OU)_ field. If your client certificate has a `Subject` with multiple  _Organizational Unit (OU)_ values, enter a comma-separated list of values with each value enclosed in quotation marks (for example `"unit1","unit2"`).
+        You can only enter a single value for each field, except for the _Organizational Unit (OU)_ field. If your client certificate has a `Subject` with multiple  _Organizational Unit (OU)_ values, press the `Enter` or `Return` key after entering each value to add multiple Organizational Units.
+
+        {{<image filename="images/rs/screenshots/databases/security-mtls-add-cert-validation-multi-ou.png" width="350px" alt="An example that shows adding a certificate validation with multiple organizational units.">}}{{</image>}}
 
         **Breaking change:** If you use the [REST API]({{<relref "/rs/references/rest-api">}}) instead of the admin console to configure additional certificate validations, note that `authorized_names` is deprecated as of Redis Enterprise v6.4.2. Use `authorized_subjects` instead. See the [BDB object reference]({{<relref "/rs/references/rest-api/objects/bdb">}}) for more details.
 

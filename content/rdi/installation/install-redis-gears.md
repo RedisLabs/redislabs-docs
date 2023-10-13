@@ -1,16 +1,16 @@
 ---
 Title: Install RedisGears for Redis Data Integration
 linkTitle: Install RedisGears
-description: Install and set up RedisGears for a Redis Data Integration deployment.
+description: Install and set up RedisGears for a Redis Data Integration deployment
 weight: 70
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-# RedisGears Installation
+# RedisGears installation
 
-Redis Data Integration requires [RedisGears](https://redis.com/modules/redis-gears) module with [Python plugin](https://docs.redis.com/latest/modules/redisgears/python/) to be installed on the Redis Enterprise cluster.
+RDI requires that [RedisGears](https://redis.com/modules/redis-gears) module with the [Python plugin](https://docs.redis.com/latest/modules/redisgears/python/) is installed on the Redis Enterprise cluster.
 
 The Python plugin can be installed explicitly or alongside with the [JVM plugin](https://docs.redis.com/latest/modules/redisgears/jvm/) if the latter is needed on the cluster for other purposes.
 
