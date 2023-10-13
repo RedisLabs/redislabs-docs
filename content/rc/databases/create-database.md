@@ -45,7 +45,7 @@ The available settings vary according to your subscription plan:
 | **Auto Tiering** | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_) |
 | **Database name** | A name for your database (_required_) |
 | **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
-| **Type**  | Controls optional capabilities, such as capabilities or protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
+| **Type**  | Controls advanced database capabilities and protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
 | **Advanced capabilities** | Extend core Redis functionality using [advanced capabilities]({{<relref "/stack">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "/stack/enterprise-capabilities#redis-enterprise-module-support">}}) |
 | **Supported Protocol(s)** | Choose between RESP2 and RESP3 _(Redis 7.2 only)_. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
 
