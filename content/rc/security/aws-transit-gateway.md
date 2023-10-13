@@ -100,9 +100,9 @@ After you've associated the Redis AWS account with your resource share, you must
 
     {{<image filename="images/rc/tgw-create-attachment-button.png" width="250px" alt="The Create attachment button." >}}{{< /image >}}
 
-    This will request an peering attachment representing Redis's AWS account to the Transit Gateway. After the attachment is created, it is in **Pending acceptance** status.
+    This will request an peering attachment representing Redis's AWS account to the Transit Gateway. 
 
-1. Follow the guide to [Accept a peering attachment request](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html#tgw-peering-accept-reject) from the [AWS VPC console](https://console.aws.amazon.com/vpc/). 
+1. If your transit gateway does not automatically accept peering attachment requests, the attachment will be in **Pending acceptance** status. Follow the guide to [Accept a peering attachment request](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html#tgw-peering-accept-reject) from the [AWS VPC console](https://console.aws.amazon.com/vpc/). 
 
 ### Add consumer CIDRs 
 
