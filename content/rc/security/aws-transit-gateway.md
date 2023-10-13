@@ -58,7 +58,7 @@ To use the AWS console to set up the resource share:
 
 1. In the **Share Transit Gateway** section, select **Copy** under **AWS console** to copy the Redis AWS Account number.
 
-{{<image filename="images/rc/tgw-share-transit-gateway.png" width="80%" alt="The Share Transit Gateway section." >}}{{< /image >}}
+    {{<image filename="images/rc/tgw-share-transit-gateway.png" width="80%" alt="The Share Transit Gateway section." >}}{{< /image >}}
 
 1. Follow the guide to [Update a resource share](https://docs.aws.amazon.com/ram/latest/userguide/working-with-sharing-update.html) in the [AWS resource access manager](https://console.aws.amazon.com/ram/). 
 
@@ -78,7 +78,7 @@ To use the AWS CLI to set up the resource share:
 
 1. In the **Share Transit Gateway** section, select **Copy** under **AWS CLI Command** to copy the Redis AWS Account number.
 
-{{<image filename="images/rc/tgw-share-transit-gateway.png" width="80%" alt="The Share Transit Gateway section." >}}{{< /image >}}
+    {{<image filename="images/rc/tgw-share-transit-gateway.png" width="80%" alt="The Share Transit Gateway section." >}}{{< /image >}}
 
 1. Enter the copied CLI command into a terminal shell. Replace `<TGW ARN>` with the Amazon resource name of your transit gateway.
 
@@ -88,11 +88,11 @@ After you've associated the Redis AWS account with your resource share, you must
 
 1. In your Redis Cloud subscription's Transit Gateway settings, you should now see that a **Resource Share** is available. Select **Resource Shares** to view the resource share you initiated.
 
-{{<image filename="images/rc/tgw-resource-shares-button.png" width="250px" alt="The Share Transit Gateway section." >}}{{< /image >}}
+    {{<image filename="images/rc/tgw-resource-shares-button.png" width="250px" alt="The Share Transit Gateway section." >}}{{< /image >}}
 
 1. Select **Accept** to associate the **Resource Share** with your admin console account.
 
-{{<image filename="images/rc/tgw-accept-resource-shares.png" width="80%" alt="The Accept resource shares section." >}}{{< /image >}}
+    {{<image filename="images/rc/tgw-accept-resource-shares.png" width="80%" alt="The Accept resource shares section." >}}{{< /image >}}
 
 1. Select **Close** to close the **Accept resource shares** section.
 
@@ -118,7 +118,7 @@ After you've associated the Redis AWS account with your resource share, you must
 
     Select **Save** to save your changes.
 
-### Update AWS route tables with producer deployment CIDRs {#update-route-tables}
+### Update AWS route tables {#update-route-tables}
 
 To finish Transit gateway setup, [update your route tables for the peering connection](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html) with the following details:
 
@@ -126,9 +126,9 @@ To finish Transit gateway setup, [update your route tables for the peering conne
 
     You can find the producer deployment CIDRs on the Redis Cloud console in the Transit Gateway settings by selecting **More actions > View Attachment** in the **Transit Gateway** section.
 
-    {{<image filename="images/rc/tgw-attachment-more-actions-menu.png" width="400px" alt="The More actions menu." >}}{{< /image >}}
+    {{<image filename="images/rc/tgw-attachment-more-actions-menu.png" width="300px" alt="The More actions menu." >}}{{< /image >}}
 
-    {{<image filename="images/rc/tgw-producer-cidr-copy.png" width="80%" alt="The Producer deployment CIDRs in the Attachment settings. " >}}{{< /image >}}
+    {{<image filename="images/rc/tgw-producer-cidr-copy.png" width="100%" alt="The Producer deployment CIDRs in the Attachment settings. " >}}{{< /image >}}
 
 1. In the **Target** field, select **Transit Gateway** and select the relevant **Transit gateway ID**.
 
