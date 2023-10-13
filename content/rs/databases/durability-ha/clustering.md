@@ -65,24 +65,24 @@ is 3, you can increase the number of shards to 6, 9, or 12.
 
 ### Standard hashing policy
 
-When using the standard hashing policy, a clustered database behaves
-just like a standard open source Redis cluster:
+When using the standard hashing policy, a clustered Redis Enterprise database behaves similarly to a standard [open source Redis cluster](https://redis.io/docs/reference/cluster-spec/#hash-tags), except when using multiple hash tags in a key's name. We recommend using only a single hash tag in a key name for hashing in Redis Enterprise.
 
 - **Keys with a hash tag**: a key's hash tag is any substring between
-    '{' and '}' in the key's name. That means that when a key's name
-    includes the pattern '{...}', the hash tag is used as input for the
-    hashing function. For example, the following key names have the same
-    hash tag and would, therefore, be mapped to the same slot: foo{bar},
-    {bar}baz, foo{bar}baz.
-- **Keys without a hash tag**: when a key does not contain the '{...}'
+    `{` and `}` in the key's name. When a key's name
+    includes the pattern `{...}`, the hash tag is used as input for the
+    hashing function.
+    
+    For example, the following key names have the same
+    hash tag and map to the same hash slot: `foo{bar}`,
+    `{bar}baz`, and `foo{bar}baz`.
+
+- **Keys without a hash tag**: when a key does not contain the `{...}`
     pattern, the entire key's name is used for hashing.
 
-You can use the '{...}' pattern to direct related keys to the same hash
-slot so that multi-key operations can be executed on these keys. On the
-other hand, not using a hash tag in the key's name results in a
-(statistically) even distribution of keys across the keyspace's shards.
+You can use a hash tag to store related keys in the same hash
+slot so multi-key operations can run on these keys. If you do not use a hash tag in the key's name, the keys are distributed evenly across the keyspace's shards.
 If your application does not perform multi-key operations, you do not
-need to construct key names with hash tags.
+need to use hash tags.
 
 ### Custom hashing policy
 
@@ -124,7 +124,7 @@ their order to suit your application's requirements.
     PCRE_ANCHORED: the pattern is constrained to match only at the
     start of the string being searched.
 
-## Changing the hashing policy
+## Change the hashing policy
 
 The hashing policy of a clustered database can be changed. However,
 most hashing policy changes trigger the deletion (FLUSHDB) of the
