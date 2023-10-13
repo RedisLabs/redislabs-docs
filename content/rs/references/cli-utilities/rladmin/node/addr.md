@@ -10,7 +10,7 @@ categories: ["RS"]
 aliases:
 ---
 
-Sets the internal IP address of a node. You can only set the internal IP address when the node is down.
+Sets the internal IP address of a node. You can only set the internal IP address when the node is down. See [Change internal IP address]({{<relref "/rs/networking/multi-ip-ipv6#change-internal-ip-address">}}) for detailed instructions.
 
 ```sh
 rladmin node <ID> addr set <IP address>

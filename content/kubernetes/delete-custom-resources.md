@@ -9,6 +9,7 @@ aliases: [
     /kubernetes/re-clusters/delete_custom_resources.md,
     /kubernetes/re-clusters/delete_custom_resources/,
     /kubernetes/delete_custom_resources/,
+    /kubernetes/delete-custom-resources/,
 ]
 ---
 
@@ -24,7 +25,7 @@ To delete a Redis Enterprise cluster managed by the operator:
 
 1. Delete all the databases in your cluster.
 
-1. Run `kubectl delete rec <your-rec-name>` from your K8s cluster.
+2. Run `kubectl delete rec <your-rec-name>` from your K8s cluster.
 
 When you delete your cluster, your databases and the REC custom resource are also deleted. However, persistent volume claims (PVCs) for your cluster are not deleted in the process. If you want to delete your PVCs, you'll have to delete them manually.
 
@@ -67,15 +68,13 @@ You will also need to remove [the `namespaceSelector` section from the validatin
 
 ## Delete an Active-Active database (REAADB)
 
-{{<note>}}The Redis Enterprise Active-Active database (REAADB) custom resource is currently in public preview. View [Preview REAADB]({{<relref "/kubernetes/active-active/">}}) for more details.{{</note>}}
-
 1. On one of the existing participating clusters, delete the REEADB (substituting `<reaadb-name>` with your database name).
 
   ```sh
   kubectl delete reaadb <reaadb-name>
   ```
 
-1. Verify the REAADB no longer exists. 
+2. Verify the REAADB no longer exists. 
 
   ```sh
   kubectl get reaadb -o=jsonpath='{range .items[*]}{.metadata.name}'
@@ -83,23 +82,21 @@ You will also need to remove [the `namespaceSelector` section from the validatin
 
 ## Delete a remote cluster (RERC)
 
-{{<note>}}The Redis Enterprise Active-Active database (REAADB) custom resource is currently in public preview. View [Preview REAADB]({{<relref "/kubernetes/active-active/">}}) for more details.{{</note>}}
-
 1. Verify the RERC you want to delete isn't listed as a participating cluster in any REAADB resources.
 
     If an RERC is still listed as a participating cluster in any database, the deletion will be blocked.
 
-1. On one of the existing participating clusters, delete the RERC (substituting `<rerc-name>` with your database name).
+2. On one of the existing participating clusters, delete the RERC (substituting `<rerc-name>` with your database name).
 
-    ```sh
+  ```sh
   kubectl delete rerc <rerc-name>
-    ```
+  ```
 
-1. Verify the RERC no longer exists.
+3. Verify the RERC no longer exists.
 
-    ```sh
+  ```sh
   kubectl get rerc -o=jsonpath='{range .items[*]}{.metadata.name}'
-    ```
+  ```
 
 ## Troubleshoot REDB deletion
 

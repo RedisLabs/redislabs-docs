@@ -254,5 +254,15 @@ Databases hosted on Oracle Linux 7 & 8 cannot load modules.
 As a temporary workaround, you can change the node's `os_name` in the Cluster Configuration Store (CCS):
 
 ```sh
-ccs-cli hset node:<ID> os_name rhel7
+ccs-cli hset node:<ID> os_name rhel
 ```
+
+This limitation was fixed in [Redis Enterprise Software version 7.2.4-64]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-64">}}).
+
+#### Cluster recovery with manually uploaded modules
+
+For clusters containing databases with manually uploaded modules, [cluster recovery]({{<relref "/rs/clusters/cluster-recovery">}}) requires an extra step.
+
+After installing Redis Enterprise Software on the cluster nodes, upload compatible modules to `modulesdir` (`/opt/redislabs/lib/modules`) before continuing the recovery process.
+
+This limitation was fixed in [Redis Enterprise Software version 7.2.4-64]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-64">}}).

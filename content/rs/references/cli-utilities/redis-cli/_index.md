@@ -56,13 +56,15 @@ To connect to a Redis Enterprise Software or Redis Enterprise Cloud database ove
 
     - For Redis Enterprise Software, copy the proxy certificate from the admin console (**Cluster > Security > Certificates > Server authentication**) or from a cluster node (`/etc/opt/redislabs/proxy_cert.pem`).
 
+1. Copy the certificate to each client machine.
+
 1. If your database doesn't require client authentication, provide the Redis Enterprise server certificate (`redis_ca.pem` for Cloud or `proxy_cert.pem` for Software) when you connect:
 
     ```sh
     redis-cli -h <endpoint> -p <port> --tls --cacert <redis_cert>.pem
     ```
 
-1. If your database requires client authentication, then you also need to provide your client's private and public keys:
+1. If your database requires client authentication, provide your client's private and public keys along with the Redis Enterprise server certificate (`redis_ca.pem` for Cloud or `proxy_cert.pem` for Software) when you connect:
 
     ```sh
     redis-cli -h <endpoint> -p <port> --tls --cacert <redis_cert>.pem \

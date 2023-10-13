@@ -14,6 +14,7 @@ aliases: [
     /platforms/kubernetes/memory/node-selection/,
     /kubernetes/memory/node-selection.md,
     /kubernetes/memory/node-selection/,
+    /kubernetes/recommendations/node-selection/,
 
 ]
 
