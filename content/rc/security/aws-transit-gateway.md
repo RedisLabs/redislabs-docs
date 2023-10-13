@@ -104,7 +104,7 @@ After you've associated the Redis AWS account with your resource share, you must
 
 1. Follow the guide to [Accept a peering attachment request](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html#tgw-peering-accept-reject) from the [AWS VPC console](https://console.aws.amazon.com/vpc/). 
 
-### Add Consumer CIDRs 
+### Add consumer CIDRs 
 
 1. In your Redis Cloud subscription's Transit Gateway settings, in the **Transit Gateways** section, select **Add CIDRs** under **Consumer CIDRs**.
 
