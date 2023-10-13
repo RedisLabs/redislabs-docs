@@ -47,7 +47,6 @@ Options:
 
 Commands:
   add-context           Adds a new context
-  configure             Configures the RDI Database so it is ready to...
   create                Creates the RDI Database instance
   delete                Deletes RDI database permanently
   delete-all-contexts   Deletes all contexts
