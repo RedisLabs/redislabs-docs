@@ -15,7 +15,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
 > This guide uses Docker to illustrate the required commands. If you are using Podman, simply replace `docker` with `podman` below.
 
 - Change directory to your `Redis Data Integration` configuration folder created by the [scaffold command]({{<relref "/rdi/quickstart/ingest-guide#scaffold-configuration-files">}}).
-- Verify that you've configured `debezium/application.properties` file based on these [instructions]({{<relref "/rdi/quickstart/ingest-guide#install-the-debezium-server">}}).
+- Verify that you've configured a `debezium/application.properties` file based on these [instructions]({{<relref "/rdi/quickstart/ingest-guide#install-the-debezium-server">}}).
 - Run:
 
   ```bash
@@ -29,7 +29,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
   ```
 ### Custom timezone
 
-The UTC timezone is used in the Debezium Server container by default. In order to use another timezone, specify it by setting the `TZ` environment variable when running the container, for example:
+The UTC timezone is used in the Debezium Server container by default. To use another timezone, specify it by setting the `TZ` environment variable when running the container. For example:
 
 ```bash
 docker run -d --name debezium -e TZ=Europe/London --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:2.1.1.Final
@@ -45,7 +45,7 @@ If your Linux machine has SELinux enabled in `enforced` mode (default for Red Ha
 
 ### Network configuration
 
-The examples in this document assume that the default Docker bridge network is used. Depending on your network topology, you may need to add the `--network` option, either for a user-defined bridge or for the host network, for example:
+The examples in this document assume that the default Docker bridge network is used. Depending on your network topology, you may need to add the `--network` option, either for a user-defined bridge or for the host network. For example:
 
 ```bash
 --network=host
@@ -53,7 +53,7 @@ The examples in this document assume that the default Docker bridge network is u
 
 ### Oracle
 
-If you are using `Oracle` as your source DB, please note that Debezium Server does **not** include the Oracle JDBC driver.
+If you are using `Oracle` as your source database, note that Debezium Server does **not** include the Oracle JDBC driver.
 As result, it will fail with an error. You should follow these steps to add the JDBC driver and restart Debezium Server:
 
 - Download the driver:
@@ -99,14 +99,14 @@ We recommend running Docker as a non-root user. To allow this, follow these step
 
 - Copy the scaffolded `application.properties` file (created by the [scaffold command]({{<relref "/rdi/quickstart/ingest-guide#scaffold-configuration-files">}}) to the extracted `debezium-server/conf` directory. Verify that you've configured this file based on these [instructions]({{<relref "/rdi/quickstart/ingest-guide#install-the-debezium-server">}}).
 
-- If you are using `Oracle` as your source DB, please note that Debezium Server does **not** include the Oracle JDBC driver. You should download it and locate under `debezium-server/lib` directory:
+- If you are using `Oracle` as your source database, please note that Debezium Server does **not** include the Oracle JDBC driver. You should download it and locate under `debezium-server/lib` directory:
 
   ```bash
   cd debezium-server/lib
   wget https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar
   ```
 
-- Uncomment the following lines in the `application.properties` file and set the value for the property `quarkus.log.file.path`:
+- Uncomment the following lines in the `application.properties` file and set the value for the `quarkus.log.file.path` property:
 
 ```properties
 quarkus.log.file.enable=true
@@ -122,7 +122,7 @@ quarkus.log.file.rotation.file-suffix=.yyyy-MM-dd.gz
 quarkus.log.file.rotation.max-backup-index=3
 ```
 
-- Start Debezium Server from `debezium-server` directory:
+- Start Debezium Server from the `debezium-server` directory:
   ```bash
   ./run.sh
   ```

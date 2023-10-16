@@ -9,7 +9,7 @@ headerRange: "[2]"
 aliases:
 ---
 
-The goal of Redis Data Integration Benchmark Tool is to produce `INSERT` statements on the source database and calculates the lag between the time the key is inserted into the source DB and the time at which the key is stored in the target Redis DB.
+The goal of Redis Data Integration (RDI) Benchmark Tool is to produce `INSERT` statements on the source database and calculate the lag between the time a key is inserted into the source database and the time at which the same key is stored in the target Redis database.
 
 ![Change record calculated latency](/images/rdi/monitoring-grafana-dash-running.png)
 
@@ -22,22 +22,22 @@ The databases that are supported by this tool are:
 
 ## Prerequisites
 
-- An existing Redis Enterprise cluster version >= {{<param rdi_rlec_min_version>}}.
-- [RedisGears](https://redis.com/modules/redis-gears/) >= {{<param rdi_redis_gears_version>}} installed on the cluster.
-- A Source DB Server with `Bin Log` enabled.
-  The DBs that are supported by this tool are : `MySQL`, `Oracle`, `PostgreSQL` and `SQLServer`
-- A target Redis DB.
-- A Redis Data Integration DB which is connected to the target Redis DB.
-- [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) up and running and connected to the source DB and to the Redis Data Integration DB.
-- [Oracle Instant Client](https://www.oracle.com/il-en/database/technologies/instant-client.html) installed and configured for `Oracle` source DB.
-  In case it's missing, follow this [guide](#installation-of-oracle-instant-client) to install.
+- An existing Redis Enterprise cluster version >= 6.2.
+- [RedisGears](https://redis.com/modules/redis-gears/) >= 1.2.5 installed on the cluster. Note: RedisGears versions 2.0+ are not supported.
+- A Source database server with `Bin Log` enabled.
+  The database servers that are supported by this tool are : `MySQL`, `Oracle`, `PostgreSQL`, and `SQLServer`.
+- A target Redis database.
+- A RDI database that is connected to the target Redis database.
+- [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) up and running and connected to the source database and to the RDI database.
+- [Oracle Instant Client](https://www.oracle.com/il-en/database/technologies/instant-client.html) installed and configured for `Oracle` source databases.
+  In case it's missing, follow this [guide](#installation-of-oracle-instant-client) to install it.
 
-Redis Data Integration Benchmark requires connectivity to the following endpoints:
+RDI Benchmark requires connectivity to the following endpoints:
 
 - Redis Enterprise cluster admin API (port 9443).
-- Redis Data Integration DB (default port 12001).
-- The target Redis DB (to where Redis Data Integration is writing).
-- The source DB to which data will be written.
+- RDI database (default port 12001).
+- The target Redis database (to which RDI is writing).
+- The source database to which data will be written.
 
 ## Installation
 
@@ -67,7 +67,7 @@ wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redi
 wget https://qa-onprem.s3.amazonaws.com/redis-di/{{<param rdi_cli_latest>}}/redis-di-benchmark-rhel7-{{<param rdi_cli_latest>}}.tar.gz -O /tmp/redis-di-benchmark.tar.gz
 ```
 
-## Install Redis Data Integration Benchmark Tool
+## Install the RDI benchmark tool
 
 Unpack the downloaded `redis-di-benchmark.tar.gz` into `/tmp` directory:
 
@@ -76,7 +76,7 @@ cd /tmp
 sudo tar xvf /tmp/redis-di-benchmark.tar.gz -C /usr/local/bin/
 ```
 
-> Note: Non-root users should unpack to a directory with write permission and run `redis-di-benchmark` directly from it.
+> Note: Non-root users should unpack to a directory with write permissions and run `redis-di-benchmark` directly from it.
 
 ### Validate the install
 
@@ -92,10 +92,9 @@ Options:
 
 Commands:
 bench
-
 ```
 
-## Running Redis Data Integration Benchmark Tool
+## Running the RDI benchmark tool
 
 ### Arguments
 
@@ -128,7 +127,7 @@ redis_di_benchmark.py bench --help
 | no-bulk            | Single `INSERT` into the source DB in each transaction                    | True                |
 | stream-name-prefix | The prefix with which the name of the stream(s) will be created           | data:`<serverName>` | The value of `<serverName>` should be taken from the property `debezium.source.database.server.name` from Debezium's `application.properties` file |
 
-### Run `redis-di-benchmark` Tool
+### Run the `redis-di-benchmark` tool
 
 From your current directory, run:
 
@@ -140,8 +139,8 @@ redis-di-benchmark bench
 
 ### Output
 
-For each key, Redis Data Integration Benchmark Tool calculates the difference between the arrival time of the key to Redis target DB and the time it was inserted to the source database.
-When all the keys arrive to Redis target database, it displays the following statistics:
+For each key, RDI benchmark tool calculates the difference between the arrival time of the key to Redis target database and the time it was inserted to the source database.
+When all the keys arrive to the Redis target database, the tool displays the following statistics:
 
 Statistics with input argument `no-bulk = True`
 
@@ -152,7 +151,6 @@ End-to-end latency:
 	Mean latency: 3.822s
 	Median latency:  3.809s
 	Standard deviation:  1.046s
-
 ```
 
 Statistics with input argument `no-bulk = False`:
