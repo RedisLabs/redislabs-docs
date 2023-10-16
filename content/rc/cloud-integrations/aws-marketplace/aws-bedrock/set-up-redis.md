@@ -252,3 +252,7 @@ Replace the following fields:
 - `<text_field>` with the text field name
 - `<metadata_field>` with the metadata field name
 - `<vector_field>` with the vector field name
+
+## Next steps
+
+After your Redis subscription and database is set up, you can use it to [create a knowledge base]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/create-knowledge-base" >}}) in Amazon Bedrock.
