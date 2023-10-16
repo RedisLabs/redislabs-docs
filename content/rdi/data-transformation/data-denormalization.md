@@ -10,12 +10,12 @@ aliases:
 
 The data in the source database is often _normalized_, meaning that column values are scalar and entity relationships are expressed as mappings of primary keys to foreign keys between different tables.
 Normalized data models are useful when you're inserting, updating, and deleting data at the cost of slower reads.
-Redis as a cache, on the other hand, is focused on speeding up read queries. To that end, RDI provides denormalization of data.
+Redis as a cache, on the other hand, is focused on speeding up read queries. To that end, RDI provides _denormalization_ of data.
 
 ## Nest strategy
 
 Nest is the only currently supported denormalization strategy.
-This strategy denormalizes _many-to-one_ relationships in the source database to JSON documents, where the parent entity is the root of the document and the children entities are nested inside a JSON `map` attribute.
+This strategy denormalizes many-to-one relationships in the source database to JSON documents, where the parent entity is the root of the document and the children entities are nested inside a JSON `map` attribute.
 
 ![nest denormalization flow](/images/rdi/nest-flow.png)
 
@@ -44,10 +44,10 @@ output:
 The job has a `with` section under `output` that includes the `nest` block.
 The job has to include these attributes in the `nest` block:
 
-- `parent`: Specifies the RDI data stream for the parent entities. Typically, the parent table name is sufficient, unless you nest children under parent that comes from a different source database. In that case, you have to specify `server_name` and `schema`.
-- `nesting-key`: The field of the child entity that stores the unique id (primary key) of the child entity.
-- `parent-key`: The field in the parent entity that stores the unique id (foreign key) of the parent entity.
-- `child_key`: The field in the child entity that stores the unique id (foreign key) of the parent entity. It is optional and only required when the name of the child's foreign key field differs from the parent's.
+- `parent`: Specifies the RDI data stream for the parent entities. Typically, the parent table name is sufficient, unless you nest children under a parent that comes from a different source database. In that case, you have to specify `server_name` and `schema`.
+- `nesting-key`: The field of the child entity that stores the unique ID (primary key) of the child entity.
+- `parent-key`: The field in the parent entity that stores the unique ID (foreign key) of the parent entity.
+- `child_key`: The field in the child entity that stores the unique ID (foreign key) of the parent entity. It is optional and only required when the name of the child's foreign key field differs from the parent's.
 - `path`: The JSON path for the JSON map of children entities. This has to start with `$` which is the notation for the document root.
 - `structure`: The optional type of JSON structure used for nesting the children entities. Currently, only JSON map is supported so the value must be `map`, if provided.
 

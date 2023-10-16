@@ -16,19 +16,19 @@ Redis Data Integration (RDI) is a product that helps [Redis Enterprise](https://
 
 RDI currently supports these scenarios:
 
-* [Ingest scenario]({{<relref "/rdi/quickstart/ingest-guide">}}). RDI mirrors the application's primary database to Redis using a Capture Data Change (CDC) tool. RDI transforms the database model and types to Redis model and types. This scenario is useful when the application database is not performant and scalable enough to serve the read queries. RDI helps to offload all read queries to Redis.
+* [Ingest scenario]({{<relref "/rdi/quickstart/ingest-guide">}}). RDI mirrors the application's primary database to Redis using a Capture Data Change (CDC) tool. RDI transforms the database model and types to a Redis model and types. This scenario is useful when the application database is not performant and scalable enough to serve the read queries. RDI helps to offload all read queries to Redis.
 
   ![Ingest flow](/images/rdi/ingest.png)
   
-* [Write-behind scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}). RDI applies data changes in Redis to one or more downstream data stores. RDI can map and transform the Redis types and models to the downstream types and models. This scenario is useful when the application needs fast writes and reads for some of the queries but has to provide data to other downstream services that need them in different models for other uses.
+* [Write-behind scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}). RDI applies data changes in Redis to one or more downstream data stores. RDI can map and transform Redis types and models to downstream types and models. This scenario is useful when the application needs fast writes and reads for some of the queries, but has to provide data to other downstream services that need them in different models for other uses.
 
   ![Write-behind flow](/images/rdi/write-behind.png)  
 
-To learn more see [Architecture]({{<relref "/rdi/architecture">}}) for more details and architecture.
+To learn more, see [Architecture]({{<relref "/rdi/architecture">}}).
 
 ## Supported sources (ingest)
 
-Redis Data Integration supports the following database sources using [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) connectors:
+RDI supports the following database sources using [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) connectors:
 
 | Database           | Versions               |Comments|
 | ------------------ | ---------------------- |--------|
@@ -55,29 +55,29 @@ Redis Data Integration supports the following database sources using [Debezium S
 
 ## Features
 
-RDI is an enterprise-grade product with an extensive set of features:
+RDI is an enterprise-grade product with an extensive set of features.
 
 ### Performance and scalability
 
-- Up to 2 seconds from source to target
+- Up to two seconds from source to target
 - Multi-shard support (each shard supports 28K ops/sec)
 
 ### Resiliency, high availability, and data delivery guarantees
 
 - At least once guarantee, end to end
 - Data in transit is replicated to replica a shard
-- Data persistence ([Redis AOF](https://redis.io/docs/management/persistence/))
-- Back-pressure mechanism preventing cascading failure
+- Data persistence (see [Redis AOF](https://redis.io/docs/management/persistence/))
+- A back-pressure mechanism that prevents cascading failures
 - Reconnect on failure and write retries
 
 ### Developer tools and data transformation
 
-- Declarative data filtering, mapping and transformations
+- Declarative data filtering, mapping, and transformations
 - Support for SQL and [JMESPath](https://jmespath.org/) expressions in transformations
-- Additional JMESPath custom functions simplifying transformation expressions
+- Additional JMESPath custom functions, simplifying transformation expressions
 - Transformation jobs validation
 - Zero downtime pipeline reconfiguration
-- Hard failures routing to _dead-letter queue_ stream for troubleshooting
+- Hard failures routing to dead-letter queue stream for troubleshooting
 - Trace tool
 
 ### Operator tools and lifecycle management

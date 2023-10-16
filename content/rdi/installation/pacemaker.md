@@ -8,7 +8,7 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-This document will guide you through the steps required to deploy a 3-node active/passive cluster of Debezium Server VMs using [Pacemaker](https://wiki.clusterlabs.org/wiki/Pacemaker).
+This document will guide you through the steps required to deploy a three-node, active/passive cluster of Debezium Server VMs using [Pacemaker](https://wiki.clusterlabs.org/wiki/Pacemaker).
 
 This guide covers:
 
@@ -33,7 +33,7 @@ The following ports must be enabled for Pacemaker and Debezium Server:
 | UDP      | 5404-5412      | Required on [corosync](http://corosync.github.io/corosync/) nodes to facilitate communication between nodes        |
 | TCP      | 8088           | Query Debezium Server status                                                                                       |
 
-For further details on Pacemaker, please refer to [Enabling ports for the High Availability Add-On](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_creating-high-availability-cluster-configuring-and-managing-high-availability-clusters#proc_enabling-ports-for-high-availability-creating-high-availability-cluster) (Red Hat).
+For further details about Pacemaker, see [Enabling ports for the High Availability Add-On](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_creating-high-availability-cluster-configuring-and-managing-high-availability-clusters#proc_enabling-ports-for-high-availability-creating-high-availability-cluster) (Red Hat).
 
 ## Installing and running Pacemaker
 
@@ -85,7 +85,7 @@ sudo bash -c 'echo <PASSWORD> | passwd --stdin hacluster'
 
 #### Run the Pacemaker cluster
 
-Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>` and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
+Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>`, and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
 
 ```bash
 sudo pcs cluster auth <HOST1> <HOST2> <HOST3> -u hacluster -p <PASSWORD>
@@ -94,7 +94,7 @@ sudo pcs cluster start --all
 sudo pcs property set stonith-enabled=false
 ```
 
-See [Validating the installation](#validating-the-installation) how to check that the cluster is running correctly.
+See [validating the installation](#validating-the-installation) to verify the cluster is running correctly.
 
 ### CentOS Stream 8/RHEL 8/Rocky 8
 
@@ -133,7 +133,7 @@ sudo bash -c 'echo <PASSWORD> | passwd --stdin hacluster'
 
 #### Run the Pacemaker cluster
 
-Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>` and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
+Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>`, and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
 
 ```bash
 sudo pcs host auth <HOST1> <HOST2> <HOST3>
@@ -142,7 +142,7 @@ sudo pcs cluster start --all
 sudo pcs property set stonith-enabled=false
 ```
 
-See [Validating the installation](#validating-the-installation) to check that the cluster is running correctly.
+See [Validating the installation](#validating-the-installation) to verify the cluster is running correctly.
 
 ### Ubuntu 18.04
 
@@ -172,7 +172,7 @@ sudo bash -c 'echo "hacluster:<PASSWORD>" | chpasswd'
 
 #### Run the Pacemaker cluster
 
-Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>` and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
+Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>`, and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
 
 ```bash
 sudo pcs cluster auth <HOST1> <HOST2> <HOST3> -u hacluster -p <PASSWORD>
@@ -181,7 +181,7 @@ sudo pcs cluster start --all
 sudo pcs property set stonith-enabled=false
 ```
 
-See [here](#validating-the-installation) how to check that the cluster is running correctly.
+See [Validating the installation](#validating-the-installation) to verify the cluster is running correctly.
 
 ### Ubuntu 20.04
 
@@ -211,7 +211,7 @@ sudo bash -c 'echo "hacluster:<PASSWORD>" | chpasswd'
 
 #### Run the Pacemaker cluster
 
-Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>` and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
+Replace `<PASSWORD>` with the value from the previous step and `<HOST1>`, `<HOST2>`, and `<HOST3>` with the hostnames/IP addresses of the respective VMs forming the cluster.
 
 ```bash
 sudo pcs cluster destroy
@@ -221,7 +221,7 @@ sudo pcs cluster start --all
 sudo pcs property set stonith-enabled=false
 ```
 
-See [Validating the installation](#validating-the-installation) how to check that the cluster is running correctly.
+See [Validating the installation](#validating-the-installation) to verify the cluster is running correctly.
 
 ### Validating the installation
 
@@ -254,16 +254,16 @@ The VM cluster is now ready to run Debezium Servers.
 
 There are two methods for launching Debezium Server with Pacemaker:
 
-- [Running Debezium Server as a container](#running-debezium-server-as-a-container) using the Heartbeat resource agent for [Podman](https://podman.io/) or [Docker](https://www.docker.com/)
-- [Running Debezium Server as a standalone Java process](#running-debezium-server-as-a-standalone-java-process) using the systemd resource agent
+- [Run Debezium Server as a container](#running-debezium-server-as-a-container) using the Heartbeat resource agent for [Podman](https://podman.io/) or [Docker](https://www.docker.com/)
+- [Run Debezium Server as a standalone Java process](#running-debezium-server-as-a-standalone-java-process) using the systemd resource agent
 
-### Running Debezium Server as a container
+### Run Debezium Server as a container
 
 Repeat the following steps on each of the Pacemaker cluster nodes.
 
 #### Provide the Debezium configuration file
 
-Debezium Server expects to find file _application.properties_ in a specified directory. Use the file created through command `redis-di scaffold` (edited for your source database) and upload it to the home directory of each VM:
+Debezium Server expects to find file `application.properties` in a specified directory. Use the file created through command `redis-di scaffold` (edited for your source database) and upload it to the home directory of each VM:
 
 ```bash
 mkdir conf
@@ -274,9 +274,9 @@ mv application.properties conf
 
 > This guide uses Podman to illustrate the required commands. If you are using the Docker resource agent, simply replace `podman` with `docker` below.
 
-> The Podman resource agent is not available for CentOS 7/RHEL 7/Ubuntu 18.04 - use the Docker resource agent, instead.
+> The Podman resource agent is not available for CentOS 7/RHEL 7/Ubuntu 18.04. Use the Docker resource agent instead.
 
-To launch the Debezium Server container use the podman service of Pacemaker (Podman needs to be installed as a pre-requisite):
+To launch the Debezium Server container use the podman service of Pacemaker (Podman needs to be installed as a prerequisite):
 
 ```bash
 sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf"
@@ -289,11 +289,11 @@ sudo pcs resource create dbz_server ocf:heartbeat:docker image=docker.io/debeziu
 ```
 You can find details for all available logging options in the [Docker documentation](https://docs.docker.com/config/containers/logging/configure/).
 
-> Note the `run_opts` parameter that accepts any option you would normally provide to the Debezium Server container, most importantly the mapping of the `application.properties` configuration file. See [Containerized Deployment]({{<relref "/rdi/installation/debezium-server-deployment.md#containerized-deployment">}}) for details on other options you may need to provide.
+> Take note of the `run_opts` parameter, which allows you to pass various options to the Debezium Server container. One key option is the mapping of the `application.properties` configuration file. For more details on additional options you might need to specify, see the [Containerized Deployment]({{<relref "/rdi/installation/debezium-server-deployment.md#containerized-deployment">}}) section.
 
 #### Oracle
 
-If you are using Oracle as your source DB, please note that Debezium Server does not include the Oracle JDBC driver. As a result, it will fail with an error. You should follow these steps to add the JDBC driver:
+If you are using Oracle as your source database, note that Debezium Server does not include the Oracle JDBC driver. As a result, it will fail with an error. You should follow these steps to add the JDBC driver:
 
 - Download the driver:
 
@@ -301,7 +301,7 @@ If you are using Oracle as your source DB, please note that Debezium Server does
   wget -P oracle https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar
   ```
 
-- Adjust the pcs resource creation command:
+- Adjust the `pcs resource creation` command:
 
   ```bash
   sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar"
@@ -313,7 +313,7 @@ If you are using Oracle as your source DB, please note that Debezium Server does
 sudo pcs status
 ```
 
-This should result in output similar to this:
+This should result in output similar to the following:
 
 ```shell
 Cluster name: cluster_dbz
@@ -339,7 +339,7 @@ Daemon Status:
 
 #### Troubleshooting
 
-Check the container is running with `sudo podman ps -a`. This should result in output similar to this:
+Verify the container is running with `sudo podman ps -a`. This should result in output similar to the following:
 
 ```shell
 CONTAINER ID   IMAGE             COMMAND              CREATED          STATUS          PORTS     NAMES
@@ -352,7 +352,7 @@ If the Debezium Server fails to start or doesn’t behave as expected, you can c
 sudo podman logs dbz_server
 ```
 
-A healthy log ends like this:
+A healthy log file ends like this:
 
 ```shell
 2022-12-08 16:02:57,284 INFO  [io.deb.con.mys.MySqlStreamingChangeEventSource] (blc-gvb-mysql:3306) Connected to MySQL binlog at gvb-mysql:3306, starting at MySqlOffsetContext [sourceInfoSchema=Schema{io.debezium.connector.mysql.Source:STRUCT}, sourceInfo=SourceInfo [currentGtid=null, currentBinlogFilename=mysql-bin.000006, currentBinlogPosition=154, currentRowNumber=0, serverId=0, sourceTime=null, threadId=-1, currentQuery=null, tableIds=[], databaseName=null], snapshotCompleted=false, transactionContext=TransactionContext [currentTransactionId=null, perTableEventCount={}, totalEventCount=0], restartGtidSet=null, currentGtidSet=null, restartBinlogFilename=mysql-bin.000006, restartBinlogPosition=154, restartRowsToSkip=0, restartEventsToSkip=0, currentEventLengthInBytes=0, inTransaction=false, transactionId=null, incrementalSnapshotContext =IncrementalSnapshotContext [windowOpened=false, chunkEndPosition=null, dataCollectionsToSnapshot=[], lastEventKeySent=null, maximumKey=null]]
@@ -363,7 +363,7 @@ A healthy log ends like this:
 
 #### Testing
 
-The following tests can be manually performed to verify the expected behavior:
+The following tests can be performed to verify the expected behavior:
 
 - Kill the container:
 
@@ -400,11 +400,11 @@ wget https://repo1.maven.org/maven2/io/debezium/debezium-server-dist/{{<param rd
 sudo tar xvfz debezium-server-dist-{{<param rdi_debezium_server_version>}}.Final.tar.gz -C /opt
 ```
 
-This will install Debezium Server in the directory _/opt/debezium-server_.
+This will install Debezium Server in the directory `/opt/debezium-server`.
 
 #### Provide the Debezium configuration file
 
-Debezium expects to find file _application.properties_ in a specified directory. Use the file created through command `redis-di scaffold` (edited for your source database) and upload it to the home directory of each VM, then move it to the Debezium Server conf directory:
+Debezium expects to find the `application.properties` file in a specific directory. Use the file created through command `redis-di scaffold` (edited for your source database) and upload it to the home directory of each VM, then move it to the Debezium Server `conf` directory:
 
 ```bash
 sudo mv application.properties /opt/debezium-server/conf
@@ -412,7 +412,7 @@ sudo mv application.properties /opt/debezium-server/conf
 
 #### Create a systemd unit file for Debezium Server
 
-- Create file _debezium.service_ with the following content:
+- Create a `debezium.service` file with the following content:
 
 ```ini
 [Unit]
@@ -422,13 +422,13 @@ Description=systemd service unit file for Debezium Server
 ExecStart=/bin/bash -c 'cd /opt/debezium-server && ./run.sh'
 ```
 
-- Copy to _/usr/lib/systemd/system_:
+- Copy to `/usr/lib/systemd/system`:
 
 ```bash
 sudo cp debezium.service /usr/lib/systemd/system
 ```
 
-> Note: For Ubuntu, the target directory is _/lib/systemd/system_
+> Note: For Ubuntu, the target directory is `/lib/systemd/system`.
 
 - Reload the systemd daemon:
 
@@ -436,11 +436,11 @@ sudo cp debezium.service /usr/lib/systemd/system
 sudo systemctl daemon-reload
 ```
 
-> Important: Make sure that the Debezium systemd service to be controlled by the cluster is **_not_** enabled to start at boot.
+> Important: make sure that the Debezium systemd service to be controlled by the cluster is **_not_** enabled to start at boot time.
 
 #### Oracle
 
-If you are using Oracle as your source DB, please note that Debezium Server does not include the Oracle JDBC driver. As a result, it will fail with an error. You should download the JDBC driver to _/opt/debezium-server/lib_ before creating the Pacemaker resource:
+If you are using Oracle as your source database, note that Debezium Server does not include the Oracle JDBC driver. As a result, it will fail with an error. You should download the JDBC driver to `/opt/debezium-server/lib` before creating the Pacemaker resource:
 
 ```bash
 sudo wget -O /opt/debezium-server/lib/ojdbc10-19.17.0.0.jar \
@@ -461,7 +461,7 @@ sudo pcs resource create dbz_server systemd:debezium
 sudo pcs status
 ```
 
-This should result in output similar to this:
+This should result in output similar to the following:
 
 ```shell
 Cluster name: cluster_dbz
@@ -516,7 +516,7 @@ A healthy status looks like this:
 
 #### Testing
 
-The following tests can be manually performed to verify the expected behavior:
+The following tests can be manually performed to verify the expected behavior.
 
 - Kill the Debezium Server process:
 

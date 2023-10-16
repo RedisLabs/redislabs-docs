@@ -17,7 +17,7 @@ aliases: /rs/references/rest-api/bdbs/stats/last
 | Method | Path | Description |
 |--------|------|-------------|
 | [GET](#get-all-bdbs-stats-last) | `/v1/bdbs/stats/last` | Get most recent stats for all databases |
-| [GET](#get-bdbs-stats-last) | `/v1/bdbs/{uid}` | Get most recent stats for a specific database |
+| [GET](#get-bdbs-stats-last) | `/v1/bdbs/stats/last/{uid}` | Get most recent stats for a specific database |
 
 ## Get latest stats for all databases {#get-all-bdbs-stats-last}
 
