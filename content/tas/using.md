@@ -100,3 +100,11 @@ To connect to Redis Database, do the following:
 
    "123"
   ```
+
+## Related info
+
+- [Overview and release notes]({{<relref "/tas/">}})
+- [Installing and Configuring for VMware Tanzu]({{<relref "/tas/installing">}})
+- [Redis Enterprise Modules on VMware Tanzu]({{<relref "/tas/modules">}})
+- [Backing Up and Restoring for VMware Tanzu]({{<relref "/tas/backup">}})
+- [Release notes 2017-2021]({{<relref "/tas/release-notes">}})
