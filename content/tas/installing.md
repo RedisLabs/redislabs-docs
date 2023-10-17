@@ -69,26 +69,25 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
 
 1. Optionally, Navigate to the **Service Plans** section on the left navigation bar. You can optionally add, remove or edit plans or choose to keep pre-configured plans. Save your changes by clicking **Save**.
 
-   ![alt-text=""](./images/pcf_service_plans.png)
+   ![service plans](/images/pcf_service_plans.png)
 
 2. Optionally, Navigate to the **Loggregator** section on the left navigation bar. You can check the box to *enable exposing cluster metric* if you would like to enable Loggregator functionality. You can also set the **Metrics scrape interval** in seconds. The default is 15 seconds.
    To save your changes, click **Save**.
 
-   ![alt-text=""](./images/pcf_rc_loggregator.png)
+   ![loggregator](/images/pcf_rc_loggregator.png)
 
 3. Navigate to the **Resource Config** section on the left navigation bar. Ensure there are resources assigned to the required resources for Redis Enterprise. If you chose to enable metric export to **Loggregator**  in the previous step, you must ensure that exactly one loggregator-agent instance is configured.
 
-   ![alt-text=""](./images/pcf_resource_config.png)<br /><br />
+   ![resource config](/images/pcf_resource_config.png)
 
-    <p class="note"><strong>Note:</strong> Redis Enterprise for VMware Tanzu enforces minimum hardware specification requirements for Redis Enterprise. For more information, see <a href="https://docs.redis.com/latest/rs/administering/designing-production/hardware-requirements/"> the minimum hardware specifications</a> in the Redis Enterprise documentation.</p>
+    {{<note>}}Redis Enterprise for VMware Tanzu enforces minimum hardware specification requirements for Redis Enterprise. For more information, see [the minimum hardware specifications]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements">}}) in the Redis Enterprise documentation.{{</note>}}
 
-4.  Click **Save**.
+4. Click **Save**.
 
-5.  Return to the Ops Manager Installation Dashboard and click **Apply Changes** to deploy Redis Enterprise for VMware Tanzu tile.
+5. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to deploy Redis Enterprise for VMware Tanzu tile.
 
    ![post install dashboard](/images/post-install-dashboard.png)
 
-6.  Optionally, select the tile, and then click the **Status** tab to view the state of the cluster nodes under the jobs named **redis-enterprise-node**, **redislabs-service-broker** and **redis-registrar**.
-
+6. Optionally, select the tile, and then click the **Status** tab to view the state of the cluster nodes under the jobs named **redis-enterprise-node**, **redislabs-service-broker** and **redis-registrar**.
 
 For more information about Redis Enterprise, see the [Redis Enterprise documentation]({{<relref "/rs/">}}).
