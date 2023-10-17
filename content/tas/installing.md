@@ -29,9 +29,9 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
 
 2. Navigate to the **Assign AZs and Network** section on the right navigation bar. Ensure you have regions selected in each section and a network selected for the cluster to use. Click **Save**. A banner appears at the top of the page indicating changes have been successfully applied.
 
-   ![alt-text=""](./images/pcf_rp_config_full_screen.png)
+   ![rp config full screen](/images/pcf_rp_config_full_screen.png)
 
-   ![alt-text=""](./images/pcf_config-success_tile.png)
+   ![config success tile](/images/pcf_config-success_tile.png)
 
 3. Navigate to the **Cluster Configuration** section on the left navigation bar. Enter the following details:
 
@@ -39,10 +39,10 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
    * **Admin Email**: Provide an email for the account that will have full administrative privileges to the new Redis Enterprise cluster.
    * **Admin account password**: Provide the password for the administrative account.
    * Optionally, for production clusters, you can also provide a static IP address of a set of static IP addresses (comma separated) to use for cluster nodes. You can also enabled Multiple Availability Zone (Rack) awareness.
-   * **Slave HA**: Leave the default Enabled with 1800 second grace period (this is the default for TAS) or configure according to [High Availability for Slave Shards documentation](https://docs.redis.com/latest/rs/administering/database-operations/slave-ha/).
+   * **Slave HA**: Leave the default Enabled with 1800 second grace period (this is the default for TAS) or configure according to [Replica high availability]({{<relref "/rs/databases/configure/replica-ha.md">}}).
    * Click **Save**.
 
-      ![alt-text=""](./images/pcf_rp_config_full_screen2.png)
+      ![cluster configuration](/images/pcf_rp_config_full_screen2.png)
 
 4. Navigate to the **Routing Configuration** section on the left navigation bar.
    * If you would like to enable TCP Routing, configure the fields in this section.
