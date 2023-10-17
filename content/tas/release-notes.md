@@ -11,8 +11,6 @@ Below are the release notes for Redis Enterprise for VMWare Tanzu (TAS) versions
 
 ### 6.2.84100001
 
-
-
 **Release Date:** Dec 23, 2021
 
 This release supersedes v6.0.209700002 to include new features
