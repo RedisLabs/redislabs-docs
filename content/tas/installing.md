@@ -15,23 +15,23 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
-   ![import product](/images/pcf_import-product_tile.png)
+   ![import product](/images/tas/pcf_import-product_tile.png)
 
 1. Under the **Import a Product** button, click **+** next to the version number of Redis Enterprise for VMware Tanzu. This adds the tile to your staging area.
 
-   ![add tile](/images/pcf_add-to-dash_tile.png)
+   ![add tile](/images/tas/pcf_add-to-dash_tile.png)
 
 ## Configure and Deploy Redis Enterprise for VMware Tanzu
 
 1. Click the newly imported tile.
 
-   ![pre-install tile](/images/pcf_pre-install_tile.png)
+   ![pre-install tile](/images/tas/pcf_pre-install_tile.png)
 
 2. Navigate to the **Assign AZs and Network** section on the right navigation bar. Ensure you have regions selected in each section and a network selected for the cluster to use. Click **Save**. A banner appears at the top of the page indicating changes have been successfully applied.
 
-   ![rp config full screen](/images/pcf_rp_config_full_screen.png)
+   ![rp config full screen](/images/tas/pcf_rp_config_full_screen.png)
 
-   ![config success tile](/images/pcf_config-success_tile.png)
+   ![config success tile](/images/tas/pcf_config-success_tile.png)
 
 3. Navigate to the **Cluster Configuration** section on the left navigation bar. Enter the following details:
 
@@ -42,14 +42,14 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
    * **Slave HA**: Leave the default Enabled with 1800 second grace period (this is the default for TAS) or configure according to [Replica high availability]({{<relref "/rs/databases/configure/replica-ha.md">}}).
    * Click **Save**.
 
-      ![cluster configuration](/images/pcf_rp_config_full_screen2.png)
+      ![cluster configuration](/images/tas/pcf_rp_config_full_screen2.png)
 
 4. Navigate to the **Routing Configuration** section on the left navigation bar.
    * If you would like to enable TCP Routing, configure the fields in this section.
    * Otherwise, select **Disable**.
    * Click **Save**.
 
-      ![routing config](/images/pcf_rp_config_routing.png)
+      ![routing config](/images/tas/pcf_rp_config_routing.png)
 
 5. Navigate to the **Cluster Certificates** section on the left navigation bar.
 
@@ -59,26 +59,26 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
 
    See the following example for generating a self-signed certificate. To save your changes, click **Save**.
 
-      ![API cert](/images/pcf_rp_config_cert1.png)
+      ![API cert](/images/tas/pcf_rp_config_cert1.png)
 
-      ![RSA cert](/images/pcf_rp_config_cert2.png)
+      ![RSA cert](/images/tas/pcf_rp_config_cert2.png)
 
-      ![proxy cert](/images/pcf_rp_config_cert3.png)
+      ![proxy cert](/images/tas/pcf_rp_config_cert3.png)
 
-      ![cluster cert](/images/pcf_rp_config_cert4.png)
+      ![cluster cert](/images/tas/pcf_rp_config_cert4.png)
 
 1. Optionally, Navigate to the **Service Plans** section on the left navigation bar. You can optionally add, remove or edit plans or choose to keep pre-configured plans. Save your changes by clicking **Save**.
 
-   ![service plans](/images/pcf_service_plans.png)
+   ![service plans](/images/tas/pcf_service_plans.png)
 
 2. Optionally, Navigate to the **Loggregator** section on the left navigation bar. You can check the box to *enable exposing cluster metric* if you would like to enable Loggregator functionality. You can also set the **Metrics scrape interval** in seconds. The default is 15 seconds.
    To save your changes, click **Save**.
 
-   ![loggregator](/images/pcf_rc_loggregator.png)
+   ![loggregator](/images/tas/pcf_rc_loggregator.png)
 
 3. Navigate to the **Resource Config** section on the left navigation bar. Ensure there are resources assigned to the required resources for Redis Enterprise. If you chose to enable metric export to **Loggregator**  in the previous step, you must ensure that exactly one loggregator-agent instance is configured.
 
-   ![resource config](/images/pcf_resource_config.png)
+   ![resource config](/images/tas/pcf_resource_config.png)
 
     {{<note>}}Redis Enterprise for VMware Tanzu enforces minimum hardware specification requirements for Redis Enterprise. For more information, see [the minimum hardware specifications]({{<relref "/rs/installing-upgrading/install/plan-deployment/hardware-requirements">}}) in the Redis Enterprise documentation.{{</note>}}
 
@@ -86,7 +86,7 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
 
 5. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to deploy Redis Enterprise for VMware Tanzu tile.
 
-   ![post install dashboard](/images/post-install-dashboard.png)
+   ![post install dashboard](/images/tas/post-install-dashboard.png)
 
 6. Optionally, select the tile, and then click the **Status** tab to view the state of the cluster nodes under the jobs named **redis-enterprise-node**, **redislabs-service-broker** and **redis-registrar**.
 
