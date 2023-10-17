@@ -1,7 +1,7 @@
 ---
 Title: Backing Up and Restoring for Redis Enterprise for VMware Tanzu
 description:
-weight: 13
+weight: 14
 alwaysopen: false
 hidden: true
 aliases: 
