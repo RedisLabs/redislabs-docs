@@ -371,5 +371,12 @@ Available service plans are listed in response to ``cf services`` or listed in e
     }
 ]
 ```
+## Related info
 
 For more information about Redis Enterprise modules for VMware Tanzu, see the [Redis Enterprise documentation]({{<relref "/stack/">}}).
+
+- [Installing and Configuring for VMware Tanzu]({{<relref "/tas/installing">}})
+- [Using Redis Enterprise for VMware Tanzu]({{<relref "/tas/using">}})
+- [Backing Up and Restoring for VMware Tanzu]({{<relref "/tas/backup">}})
+- [Release notes 2017-2021]({{<relref "/tas/release-notes">}})
+- [Overview and release notes]({{<relref "/tas/">}})

@@ -90,4 +90,12 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
 
 6. Optionally, select the tile, and then click the **Status** tab to view the state of the cluster nodes under the jobs named **redis-enterprise-node**, **redislabs-service-broker** and **redis-registrar**.
 
+## Related info
+
 For more information about Redis Enterprise, see the [Redis Enterprise documentation]({{<relref "/rs/">}}).
+
+- [Overview and release notes]({{<relref "/tas/">}})
+- [Using Redis Enterprise for VMware Tanzu]({{<relref "/tas/using">}})
+- [Redis Enterprise Modules on VMware Tanzu]({{<relref "/tas/modules">}})
+- [Backing Up and Restoring for VMware Tanzu]({{<relref "/tas/backup">}})
+- [Release notes 2017-2021]({{<relref "/tas/release-notes">}})

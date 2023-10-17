@@ -122,3 +122,11 @@ To restore a Redis Enterprise for VMware Tanzu deployment:
     ```
 
 10. In Ops Manager, disable the **Recovery Mode** checkbox and click **Apply changes**.
+
+## Related info
+
+- [Installing and Configuring for VMware Tanzu]({{<relref "/tas/installing">}})
+- [Using Redis Enterprise for VMware Tanzu]({{<relref "/tas/using">}})
+- [Redis Enterprise Modules on VMware Tanzu]({{<relref "/tas/modules">}})
+- [Release notes 2017-2021]({{<relref "/tas/release-notes">}})
+- [Overview and release notes]({{<relref "/tas/">}})

@@ -419,3 +419,11 @@ Beta version of this tile with Support for Redis v4.0.2.
 **Release Date:** June 15, 2017
 
 Initial release of this tile.
+
+## Related info
+
+- [Installing and Configuring for VMware Tanzu]({{<relref "/tas/installing">}})
+- [Using Redis Enterprise for VMware Tanzu]({{<relref "/tas/using">}})
+- [Redis Enterprise Modules on VMware Tanzu]({{<relref "/tas/modules">}})
+- [Backing Up and Restoring for VMware Tanzu]({{<relref "/tas/backup">}})
+- [Release notes 2022-2023]({{<relref "/tas/">}})
