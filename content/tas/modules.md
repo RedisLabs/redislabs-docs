@@ -61,27 +61,27 @@ OK
 
 Available service plans are listed in response to ``cf services`` or listed in either the tile's Ops Manager configuration, under **Settings** > **Service Plans** or in the Apps Manager > **Marketplace** screen:
 
-![Service plans shown in tile configuration](./images/pcf_ops_service_plan.png)
+![Service plans shown in tile configuration](/images/tas/pcf_ops_service_plan.png)
 
-![Service plans shown in Apps Manager](./images/pcf_apps_service_plans.png)
+![Service plans shown in Apps Manager](/images/tas/pcf_apps_service_plans.png)
 
 ## <a id='modules-topic-3'></a> Creating a Redis Enterprise Module Enabled Database instance via VMware Tanzu Apps Manager UI
 
 1. From VMware Tanzu Apps Manager go to Marketplace and select Redis Enterprise on VMware Tanzu.
 
-  ![Marketplace in Apps Manager](./images/pcf_apps_marketplace.png)
+  ![Marketplace in Apps Manager](/images/tas/pcf_apps_marketplace.png)
 
 2. Select a plan from the available plans listed and click **Select This Plan**.
 
-  ![Selecting a plan](./images/pcf_apps_service_plan.png)
+  ![Selecting a plan](/images/tas/pcf_apps_service_plan.png)
 
 3. Select **Add Parameter** and turn on the **Enter as JSON** option. Enter the module list information in the same way as with the CLI option.
 
 4. Write an instance name and optionally choose to bind to a deployed app then click **Create**.
 
-  ![Creating an instance](./images/pcf_apps_config_create_bf.png)
+  ![Creating an instance](/images/tas/pcf_apps_config_create_bf.png)
 
-  ![Instance created](./images/pcf_ops_service_plan_created_bf.png)
+  ![Instance created](/images/tas/pcf_ops_service_plan_created_bf.png)
 
 {{<note>}} We are constantly working to improve the modules. Redis Enterprise allows adding new, or upgrading, modules to the cluster. For more information on how to perform these actions, see [the add a module to a cluster article]({{<relref "/stack/install/add-module-to-cluster">}}) in the Redis Enterprise documentation.{{</note>}}
 
