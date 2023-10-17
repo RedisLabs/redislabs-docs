@@ -15,13 +15,13 @@ Throughout this document, the snippets make use of the Kubernetes `kubectl` tool
 ## Prerequisites
 
 - An existing Redis Enterprise cluster version >= 6.2.18
-- [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_current_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) for instructions.
+- [RedisGears](https://redis.com/modules/redis-gears/) {{<param rdi_redis_gears_version>}} installed on the cluster. In case it's missing, see [Install RedisGears for Redis Data Integration]({{<relref "/rdi/installation/install-redis-gears.md">}}) for instructions.
 - A target Redis database (can be added after installation).
 
 > Note: The version of RedisGears you will install must match the base OS of the Redis Enterprise containers. In case of [Rancher](https://www.rancher.com/), the Redis Enterprise container base OS is Ubuntu 18.04. Use the following command to install RedisGears:
 
 ```bash
-curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_current_semantic_version>}}-withdeps.zip -o /tmp/redis-gears.zip
+curl -s https://redismodules.s3.amazonaws.com/redisgears/redisgears.Linux-ubuntu18.04-x86_64.{{<param rdi_redis_gears_version>}}-withdeps.zip -o /tmp/redis-gears.zip
 ```
 
 In case the wrong RedisGears binaries had been installed, use the following commands to fix it:
