@@ -40,7 +40,7 @@ RDI write-behind currently supports these target data stores:
 
 ## Prerequisites
 
-The only prerequisite for running RDI write-behind is [Redis Gears Python](https://redis.com/modules/redis-gears/) >= 1.2.6 installed on the Redis Enterprise Cluster and enabled for the database you want to mirror to the downstream data store.
+The only prerequisite for running RDI write-behind is [Redis Gears Python](https://redis.com/modules/redis-gears/) >= {{<param rdi_redis_gears_version>}} installed on the Redis Enterprise Cluster and enabled for the database you want to mirror to the downstream data store.
 For more information, see [RedisGears installation]({{<relref "/rdi/installation/install-redis-gears">}}).
 
 ## Preparing the write-behind pipeline

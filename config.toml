@@ -49,10 +49,10 @@ docker_command = "docker run -v redisinsight:/db -p 8001:8001 redislabs/redisins
 docker_db_volume_permission = "chown -R 1001 redisinsight"
 
 rdi_rlec_min_version = "6.2.18"
-rdi_redis_gears_version = "1.2.6"
+rdi_redis_gears_version = "1.2.7"
 rdi_debezium_server_version = "2.3.0.Final"
 rdi_db_types = "cassandra|mysql|oracle|postgresql|sqlserver"
-rdi_cli_latest = "0.109.0"
+rdi_cli_latest = "0.113.0"
 
 siteURL = "http://127.0.0.1:8001"
 
