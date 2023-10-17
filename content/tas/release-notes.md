@@ -1,13 +1,13 @@
 ---
 Title: Redis Enterprise for VMWare Tanzu (TAS) release notes
 description: Release notes prior to 2022
-weight: 10
+weight: 90
 alwaysopen: false
 hidden: true
 aliases: 
 ---
 
-Below are the release notes for Redis Enterprise for VMWare Tanzu (TAS) versions released between 2017 and 2022. For more recent release notes, see the [TAS page]({{<relref "/tas/">}})
+Below are the release notes for Redis Enterprise for VMWare Tanzu (TAS) versions released between 2017 and 2021. For more recent release notes, see the [TAS page]({{<relref "/tas/">}})
 
 ### 6.2.84100001
 

@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise for VMWare Tanzu (TAS)
 description:
-weight: 10
+weight: 99
 alwaysopen: false
 hidden: true
 aliases: 
