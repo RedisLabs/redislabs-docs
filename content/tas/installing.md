@@ -49,7 +49,7 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
    * Otherwise, select **Disable**.
    * Click **Save**.
 
-      ![alt-text=""](./images/pcf_rp_config_routing.png)
+      ![routing config](/images/pcf_rp_config_routing.png)
 
 5. Navigate to the **Cluster Certificates** section on the left navigation bar.
 
@@ -59,13 +59,13 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
 
    See the following example for generating a self-signed certificate. To save your changes, click **Save**.
 
-      ![alt-text=""](./images/pcf_rp_config_cert1.png)
+      ![API cert](/images/pcf_rp_config_cert1.png)
 
-      ![alt-text=""](./images/pcf_rp_config_cert2.png)
+      ![RSA cert](/images/pcf_rp_config_cert2.png)
 
-      ![alt-text=""](./images/pcf_rp_config_cert3.png)
+      ![proxy cert](/images/pcf_rp_config_cert3.png)
 
-      ![alt-text=""](./images/pcf_rp_config_cert4.png)
+      ![cluster cert](/images/pcf_rp_config_cert4.png)
 
 1. Optionally, Navigate to the **Service Plans** section on the left navigation bar. You can optionally add, remove or edit plans or choose to keep pre-configured plans. Save your changes by clicking **Save**.
 
