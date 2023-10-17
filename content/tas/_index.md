@@ -23,9 +23,9 @@ Otherwise, you receive a thirty-day trial license by default.
 ## Additional documentation
 
 - [Installing and Configuring for VMware Tanzu]({{<relref "/tas/installing">}})
-- [Using Redis Enterprise for VMware Tanzu]({{<relref "">}})
-- [Redis Enterprise Modules on VMware Tanzu]({{<relref "">}})
-- [Backing Up and Restoring for VMware Tanzu]({{<relref "">}})
+- [Using Redis Enterprise for VMware Tanzu]({{<relref "/tas/using">}})
+- [Redis Enterprise Modules on VMware Tanzu]({{<relref "/tas/modules">}})
+- [Backing Up and Restoring for VMware Tanzu]({{<relref "/tas/backup">}})
 - [Release notes 2022-2023](#release-notes)
 - [Release notes 2017-2021]({{<relref "/tas/release-notes">}})
 
