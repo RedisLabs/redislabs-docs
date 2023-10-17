@@ -11,10 +11,28 @@ aliases: /modules/redisgraph/release-notes/redisgraph-2.10-release-notes/
 ---
 ## Requirements
 
-RedisGraph v2.10.12 requires:
+RedisGraph v2.10.15 requires:
 
 - Minimum Redis compatibility version (database): 6.2.0
 - Minimum Redis Enterprise Software version (cluster): 6.2.8
+
+## v2.10.15 (September 2023)
+
+This is a maintenance release for RedisGraph 2.10.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+  - [#3172](https://github.com/RedisGraph/RedisGraph/pull/3172) Crash on certain write queries (MOD-5645)
+  - [#3179](https://github.com/RedisGraph/RedisGraph/pull/3179) High CPU on idle
+
+- Improvements:
+
+  - [#3184](https://github.com/RedisGraph/RedisGraph/pull/3184) Revert breaking change introduced in 2.10: `toString` supports list argument again
+  - [#3185](https://github.com/RedisGraph/RedisGraph/pull/3185) Don’t write AUX field in the RDB file when there are no graphs in the keyspace
 
 ## v2.10.12 (July 2023)
 

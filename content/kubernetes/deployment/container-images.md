@@ -42,8 +42,7 @@ The information below will help you track and configure where your deployments p
 
 {{< note >}}
 **IMPORTANT**
-
-* Each version of the Redis Enterprise operator is mapped to a specific version of Redis Enterprise Software. The semantic versions always match (e.g., 6.0.8), although the specific release numbers may be different (e.g., 6.0.8-1 is the operator version for RS 6.0.8-28).
+* Each version of the Redis Enterprise operator is mapped to a specific version of Redis Enterprise Software. The semantic versions always match (for example, 7.2.4), although the specific release numbers may be different (for example, 7.2.4-7 is the operator version for Redis Enterprise Software 7.2.4-64).
 * A specific operator version only supports a specific Redis Enterprise version. Other combinations of operator and Redis Enterprise versions are **not supported**.
 {{< /note >}}
 
@@ -101,8 +100,8 @@ The example below shows the commands for pushing the images for Redis Enterprise
 
 ```sh
 PRIVATE_REPO=...your repo...
-RS_VERSION=6.0.8-28
-OPERATOR_VERSION=6.0.8-1
+RS_VERSION=7.2.4-64
+OPERATOR_VERSION=7.2.4-7
 docker pull redislabs/redis:${RS_VERSION}
 docker pull redislabs/operator:${OPERATOR_VERSION}
 docker pull redislabs/k8s-controller:${OPERATOR_VERSION}
@@ -136,7 +135,7 @@ In the operator deployment file, 'containers:image' should point to the same rep
 ${PRIVATE_REPO}/redislabs/operator:${OPERATOR_VERSION}
 ```
 
-The example below specifies a 6.0.8-1 operator image in a Google Container Registry:
+The example below specifies a 7.2.4-7 operator image in a Google Container Registry:
 
 ```YAML
 apiVersion: apps/v1
@@ -156,7 +155,7 @@ spec:
       serviceAccountName: redis-enterprise-operator
       containers:
         - name: redis-enterprise-operator
-          image: gcr.io/yourproject/redislabs/operator:6.0.8-1
+          image: gcr.io/yourproject/redislabs/operator:7.2.4-7
 ...
 ```
 
@@ -205,15 +204,15 @@ spec:
   redisEnterpriseImageSpec:
     imagePullPolicy: IfNotPresent
     repository: gcr.io/yourproject/redislabs/redis
-    versionTag: 6.0.8-28
+    versionTag: 7.2.4-64
   bootstrapperImageSpec:
     imagePullPolicy: IfNotPresent
     repository: gcr.io/yourproject/redislabs/operator
-    versionTag: 6.0.8-1
+    versionTag: 7.2.4-7
   redisEnterpriseServicesRiggerImageSpec:
     imagePullPolicy: IfNotPresent
     repository: gcr.io/yourproject/redislabs/k8s-controller
-    versionTag: 6.0.8-1
+    versionTag: 7.2.4-7
 ```
 
 If your private container registry requires pull secrets, you must add `pullSecrets`
@@ -231,15 +230,15 @@ spec:
   redisEnterpriseImageSpec:
     imagePullPolicy: IfNotPresent
     repository: gcr.io/yourproject/redislabs/redis
-    versionTag: 6.0.8-28
+    versionTag: 7.2.4-64
   bootstrapperImageSpec:
     imagePullPolicy: IfNotPresent
     repository: gcr.io/yourproject/redislabs/operator
-    versionTag: 6.0.8-1
+    versionTag: 7.2.4-7
   redisEnterpriseServicesRiggerImageSpec:
     imagePullPolicy: IfNotPresent
     repository: gcr.io/yourproject/redislabs/k8s-controller
-    versionTag: 6.0.8-1
+    versionTag: 7.2.4-7
 ```
 
 ## Rate limiting with DockerHub

@@ -5,7 +5,7 @@ description: Learn about running RDI on Kubernetes
 weight: 30
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 When running Redis Data Integration (RDI) in a [Kubernetes](https://kubernetes.io/) environment, we recommend creating a [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) and adding the RDI CLI as a pod in the cluster.

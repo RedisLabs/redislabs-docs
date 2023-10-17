@@ -47,10 +47,9 @@ For example:
 - Replica HA migrates as many shards as possible based on available DRAM in the target node. When no DRAM is available, replica HA stops migrating replica shards to that node.
 {{< /note >}}
 
-## Configuring high availability for replica shards
+## Configure high availability for replica shards
 
-Using `rladmin` or the REST API, replica HA is controlled on the database level and on the cluster level.
-You can enable or disable replica HA for a database or for the entire cluster.
+You can enable or turn off replica high availability for a database or for the entire cluster using the Cluster Manager UI, `rladmin`, or the REST API.
 
 When replica HA is enabled for both the cluster and a database,
 replica shards for that database are automatically migrated to another node in the event of a master or replica shard failure.
@@ -58,18 +57,41 @@ If replica HA is disabled at the cluster level,
 replica HA will not migrate replica shards even if replica HA is enabled for a database.
 
 {{< note >}}
-By default, replica HA is enabled for the cluster and disabled for each database.
+By default, replica HA is enabled for the cluster but not enabled for each database.
 {{< /note >}}
 
 {{< note >}}
 For Active-Active databases, replica HA is enabled for the database by default to make sure that replica shards are available for Active-Active replication.
 {{< /note >}}
 
-To enable replica HA for a cluster using `rladmin`, run:
+### Configure cluster policy for replica HA
 
-``` text
-rladmin tune cluster slave_ha enabled
-```
+To enable or turn off replica high availability by default for the entire cluster, use one of the following methods:
+
+- Cluster Manager UI:
+
+    1. On the **Databases** screen, select <img src="/images/rs/buttons/button-toggle-actions-vertical.png#no-click" alt="Toggle actions button" width="22px"> to open a list of additional actions.
+
+    1. Select **Database defaults**.
+
+    1. Enable or turn off **Replica High Availability**.
+
+    1. Select **Save**.
+
+- [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
+    
+    ```sh
+    rladmin tune cluster slave_ha { enabled | disabled }
+    ```
+
+- [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
+
+    ```sh
+    PUT /v1/cluster/policy 
+    { "slave_ha": <boolean> }
+    ```
+
+### Turn off replica HA for a database
 
 To disable replica HA for a specific database using `rladmin`, run:
 
@@ -115,13 +137,14 @@ Replica shard migration is based on priority.  When memory resources are limited
 ### Cooldown periods
 
 Both the cluster and the database have cooldown periods.
-After node failure, the cluster cooldown period prevents another replica migration due to another node failure for any
-database in the cluster until the cooldown period ends (default: one hour).
+
+After node failure, the cluster cooldown period (`slave_ha_cooldown_period`) prevents another replica migration due to another node failure for any
+database in the cluster until the cooldown period ends. The default is one hour.
 
 After a database is migrated with replica HA,
-it cannot go through another migration due to another node failure until the cooldown period for the database ends (Default: two hours).
+it cannot go through another migration due to another node failure until the cooldown period for the database (`slave_ha_bdb_cooldown_period`) ends. The default is two hours.
 
-To configure this grace period from `rladmin`, run:
+To configure cooldown periods, use [`rladmin tune cluster`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}):
 
 - For the cluster:
 

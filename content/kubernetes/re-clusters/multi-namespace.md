@@ -22,7 +22,7 @@ Before configuring a multi-namespace deployment, you must have a running [Redis 
 
 ## Create role and role binding for managed namespaces
 
-Both the operator and the RedisEnterpriseCluster (REC) resource need access to each namespace the REC will manage. For each managed namespace, create a `role.yaml` and `role_binding.yaml` file within the managed namespace, as shown in the examples below.
+Both the operator and the RedisEnterpriseCluster (REC) resource need access to each namespace the REC will manage. For each **managed** namespace, create a `role.yaml` and `role_binding.yaml` file within the managed namespace, as shown in the examples below.
 
 Replace `<rec-namespace>` with the namespace the REC resides in.
 Replace `<service-account-name>` with your own value (defaults to the REC name).
@@ -40,7 +40,11 @@ rules:
   - apiGroups:
       - app.redislabs.com
     resources: ["redisenterpriseclusters", "redisenterpriseclusters/status", "redisenterpriseclusters/finalizers",
-                "redisenterprisedatabases", "redisenterprisedatabases/status", "redisenterprisedatabases/finalizers"]
+                "redisenterprisedatabases", "redisenterprisedatabases/status", "redisenterprisedatabases/finalizers",
+                "redisenterpriseremoteclusters", "redisenterpriseremoteclusters/status",
+                "redisenterpriseremoteclusters/finalizers",
+                "redisenterpriseactiveactivedatabases", "redisenterpriseactiveactivedatabases/status",
+                "redisenterpriseactiveactivedatabases/finalizers"]
     verbs: ["delete", "deletecollection", "get", "list", "patch", "create", "update", "watch"]
   - apiGroups: [""]
     resources: ["secrets"]
@@ -79,11 +83,11 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-Apply the files:
+Apply the files, replacing `<managed-namespace>` with your own values:
 
 ```sh
-kubectl apply -f role.yaml
-kubectl apply -f role_binding.yaml
+kubectl apply -f role.yaml -n <managed-namespace>
+kubectl apply -f role_binding.yaml -n <managed-namespace>
 ```
 
 {{<note>}}
@@ -170,7 +174,7 @@ Patch the `operator-environment-config` in the REC namespace with a new environm
 kubectl patch ConfigMap/operator-environment-config \ 
 -n <rec-namespace> \
 --type merge \
--p `{"data":{"REDB_NAMESPACES": "<comma,separated,list,of,namespaces,to,watch"}}`
+-p '{"data":{"REDB_NAMESPACES": "<comma,separated,list,of,namespaces,to,watch"}}'
 ```
 
 {{<warning>}}

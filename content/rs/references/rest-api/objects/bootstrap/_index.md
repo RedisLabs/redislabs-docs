@@ -24,6 +24,9 @@ A bootstrap configuration object.
   "slaves": array
 }, ...]
 {{</code>}} | Explicit configuration of DNS suffixes<br />**name**: DNS suffix name<br />**cluster_default**: Should this suffix be the default cluster suffix<br />**use_aaaa_ns**: Should AAAA records be published for NS records<br />**use_internal_addr**: Should internal cluster IPs be published for databases<br />**slaves**: List of replica servers that should be published as NS and notified |
+| envoy_admin_port | integer, (range:&nbsp;1024-65535) | Envoy admin port. Changing this port during runtime might result in an empty response because envoy serves as the cluster gateway.|
+| envoy_mgmt_server_port | integer, (range:&nbsp;1024-65535) | Envoy management server port|
+| gossip_envoy_admin_port | integer, (range:&nbsp;1024-65535) | Gossip envoy admin port|
 | license | string | License string |
 | max_retries | integer | Max number of retries in case of recoverable errors |
 | node | [node_identity]({{<relref "/rs/references/rest-api/objects/bootstrap/node_identity">}}) object | Node description |
