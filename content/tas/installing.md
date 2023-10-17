@@ -19,14 +19,13 @@ This page describes how to install and configure Redis Enterprise for VMware Tan
 
 1. Under the **Import a Product** button, click **+** next to the version number of Redis Enterprise for VMware Tanzu. This adds the tile to your staging area.
 
-   ![add tile](./images/pcf_add-to-dash_tile.png)
-
+   ![add tile](/images/pcf_add-to-dash_tile.png)
 
 ## Configure and Deploy Redis Enterprise for VMware Tanzu
 
 1. Click the newly imported tile.
 
-   ![pre-install tile](./images/pcf_pre-install_tile.png)
+   ![pre-install tile](/images/pcf_pre-install_tile.png)
 
 2. Navigate to the **Assign AZs and Network** section on the right navigation bar. Ensure you have regions selected in each section and a network selected for the cluster to use. Click **Save**. A banner appears at the top of the page indicating changes have been successfully applied.
 
