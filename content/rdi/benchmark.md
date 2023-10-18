@@ -6,7 +6,7 @@ weight: 80
 alwaysopen: false
 categories: ["redis-di"]
 headerRange: "[2]"
-aliases: 
+aliases:
 ---
 
 The goal of Redis Data Integration (RDI) Benchmark Tool is to produce `INSERT` statements on the source database and calculate the lag between the time a key is inserted into the source database and the time at which the same key is stored in the target Redis database.

@@ -12,7 +12,7 @@ An API object that represents a node in the cluster.
 | Name | Type/Value | Description |
 |------|------------|-------------|
 | uid | integer | Cluster unique ID of node (read-only) |
-| accept_servers | boolean (default:&nbsp;true) | If true, no shards will be created on the node |
+| accept_servers | boolean (default:&nbsp;true) | The node only accepts new shards if `accept_servers` is `true` |
 | addr | string | Internal IP address of node |
 | architecture | string | Hardware architecture (read-only) |
 | bigredis_storage_path | string | Flash storage path (read-only) |
@@ -24,7 +24,8 @@ An API object that represents a node in the cluster.
 | external_addr | complex object | External IP addresses of node. `GET`&nbsp;`/jsonschema` to retrieve the object's structure. |
 | max_listeners | integer | Maximum number of listeners on the node |
 | max_redis_servers | integer | Maximum number of shards on the node |
-| os_name | string | OS name (read-only) |
+| os_family | 'rhel'<br />'ubuntu'<br />'amzn' | Operating system family (read-only) |
+| os_name | string | Operating system name (read-only) |
 | os_semantic_version | string | Full version number (read-only) |
 | os_version | string | Installed OS version (human-readable) (read-only) |
 | persistent_storage_path | string | Persistent storage path (read-only) |

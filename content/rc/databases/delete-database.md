@@ -47,5 +47,9 @@ This command requires the account owner role.
 
     {{<image filename="images/rc/database-delete-last-dialog.png" alt="A different delete database confirmation dialog asks you to consider deleting the subscription as well.">}}{{< /image >}}
 
+    {{< note >}}
+You will continue to be charged for your subscription until you delete it, even if there are no databases in your subscription.
+    {{< /note >}}
+
 
 When the operation completes, the database and its data are deleted.

@@ -6,10 +6,10 @@ weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 headerRange: "[2]"
-aliases: 
+aliases:
 ---
 
-Redis Data Integration (RDI) is a product that helps Redis Enterprise users ingest and export data in near real time. RDI provides the following:
+Redis Data Integration (RDI) is a product that helps Redis Enterprise users ingest and export data in near real time.
 
 - End to end solution; no need for additional tools and integrations
 - Capture Data Change (CDC) included
@@ -44,12 +44,12 @@ RDI using Debezium Server works in two modes:
 
 RDI supports conversion of a database record into the following Redis types:
 
-- Hash
-- Set
-- Sorted Set
-- Stream
-- JSON
-- String
+- [Hash](https://redis.io/docs/data-types/hashes/)
+- [JSON](https://redis.io/docs/data-types/json/)
+- [Set](https://redis.io/docs/data-types/sets/)
+- [Sorted Set](https://redis.io/docs/data-types/sorted-sets/)
+- [Stream](https://redis.io/docs/data-types/streams/)
+- [String](https://redis.io/docs/data-types/strings/)
 
 Each column in the record is automatically formatted as a number or string. See the [data types list]({{<relref "/rdi/reference/data-types-conversion">}}) for the exact mappings.
 
@@ -68,7 +68,7 @@ RDI also works with [Arcion](arcion.io), a commercial CDC that provides an addit
 
 #### Redis data integration data plane
 
-##### RDI data streams
+#### RDI data streams
 
 RDI receives data using [Redis streams](https://redis.io/docs/manual/data-types/streams/). Records with data from a specific database table are written to a stream with a key reflecting the table name. This allows a simple interface to RDI, and it keeps the order of changes as served by Debezium.
 
@@ -143,10 +143,10 @@ RDI engine is installed on a Redis database containing the application data and 
 
 RDI write-behind can track changes to the following Redis types:
 
-- Hash
-- JSON
-- Set
-- Sorted Set
+- [Hash](https://redis.io/docs/data-types/hashes/)
+- [JSON](https://redis.io/docs/data-types/json/)
+- [Set](https://redis.io/docs/data-types/sets/)
+- [Sorted Set](https://redis.io/docs/data-types/sorted-sets/)
 
 Unlike the ingest scenario, write-behind has no default behavior for model translation. It is up to the user to create a declarative job, specifying the mapping between Redis keys and target database records.
 The job `keys` and `mapping` sections help make this an easy task.

@@ -44,6 +44,7 @@ An API object that represents the cluster.
 | proxy_certificate | string | Cluster's proxy certificate |
 | proxy_max_ccs_disconnection_time | integer | Cluster-wide proxy timeout policy between proxy and CCS |
 | rack_aware | boolean | Cluster operates in a rack-aware mode (read-only) |
+| reserved_ports | array of strings | List of reserved ports and/or port ranges to avoid using for database endpoints (for example <nobr>`"reserved_ports": ["11000", "13000-13010"]`</nobr>) |
 | s3_url | string | Specifies the URL for S3 export and import |
 | saslauthd_ldap_conf | string | saslauthd LDAP configuration |
 | sentinel_cipher_suites | array | Specifies the list of enabled ciphers for the sentinel service. The supported ciphers are ones that were implemented by the [cipher_suits.go](<https://golang.org/src/crypto/tls/cipher_suites.go>) package. |
