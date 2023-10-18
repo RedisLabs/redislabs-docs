@@ -8,8 +8,6 @@ categories: ["redis-di"]
 aliases:
 ---
 
-# Redis Data Integration Configuration File
-
 **Properties**
 
 | Name                                                                                       | Type             | Description | Required |
