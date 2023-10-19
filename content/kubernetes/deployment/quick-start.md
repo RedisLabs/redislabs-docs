@@ -219,7 +219,7 @@ The operator bundle includes a webhook file. The webhook will intercept requests
     apiVersion: v1
     kind: Namespace
     metadata:
-       labels:
+      labels:
         namespace-name: example-ns
     name: example-ns
     ```
@@ -232,7 +232,7 @@ The operator bundle includes a webhook file. The webhook will intercept requests
     - name: redisenterprise.admission.redislabs
       namespaceSelector:
         matchLabels:
-          namespace-name: staging
+          namespace-name: example-ns
     EOF
     ```
 
