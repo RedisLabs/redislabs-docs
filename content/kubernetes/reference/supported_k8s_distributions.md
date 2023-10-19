@@ -154,29 +154,30 @@ For details on this platform, see the [GKE documentation](https://cloud.google.c
 For details on this platform, see the [Rancher documentation](https://ranchermanager.docs.rancher.com/).
 
 {{<table-scrollable>}}
-Redis operator	<nobr>7.2.4-7</nobr>	<nobr>7.2.4-2</nobr>	<nobr>6.4.2-8</nobr>	<nobr>6.4.2-6</nobr>	<nobr>6.4.2-5</nobr>	<nobr>6.4.2-4</nobr>	<nobr>6.2.18-41</nobr>	<nobr>6.2.18-3</nobr>	<nobr>6.2.12-1</nobr>	<nobr><nobr>6.2.10-4</nobr>5</nobr>	<nobr>6.2.10-34</nobr>	<nobr>6.2.10-4</nobr>	<nobr>6.2.8-15</nobr>	<nobr>6.2.8-11</nobr>	<nobr>6.2.8-2</nobr>	<nobr>6.2.4-1</nobr>
-	Sept 2023	Aug 2023	July 2023	June 2023	April 2023	March 2023	Jan 2022	Nov 2022	Sept 2022	July 2022	May 2022	March 2022	Jan 2022	Jan 2022	Nov 2021	Sept 2021
-Rancher 2.7																
-1.26																
-1.25	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>														
-1.24	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>										
-1.23	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>										
-Rancher 2.6																
-1.24	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>								
-1.23		<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>							
-1.22		<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>					
-1.21				<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>					
-1.20									<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>					
-1.19									<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>					
-1.18											<span title="Deprecated">&#x26A0;&#xFE0F;</span>					
-Rancher 2.5																
-1.20											<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>
-1.19											<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>
-1.18											<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>
-1.17											<span title="X icon">&#x274c;</span>	<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>	<span title="Supported">&#x2705;</span>
-Rancher 2.4																
-1.18															<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>
-1.17															<span title="Deprecated">&#x26A0;&#xFE0F;</span>	<span title="Supported">&#x2705;</span>
+| **Redis operator** | **<nobr>7.2.4-tbd</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** | **<nobr>6.2.18-3</nobr>** | **<nobr>6.2.12-1</nobr>** | **<nobr><nobr>6.2.10-4</nobr>5</nobr>** | **<nobr>6.2.10-34</nobr>** | **<nobr>6.2.10-4</nobr>** | **<nobr>6.2.8-15</nobr>** | **<nobr>6.2.8-11</nobr>** | **<nobr>6.2.8-2</nobr>** | **<nobr>6.2.4-1</nobr>** |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **** | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
+| **Rancher 2.7** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **1.26** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **1.25** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **1.24** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
+| **1.23** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
+| **Rancher 2.6** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **1.24** | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |
+| **1.23** |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
+| **1.22** |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.21** |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.20** |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.19** |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |
+| **1.18** |  |  |  |  |  |  |  |  |  |  | <span title="Deprecated">&#x26A0;&#xFE0F;</span> |  |  |  |  |  |
+| **Rancher 2.5** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **1.20** |  |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.19** |  |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.18** |  |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **1.17** |  |  |  |  |  |  |  |  |  |  | <span title="X icon">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| **Rancher 2.4** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| **1.18** |  |  |  |  |  |  |  |  |  |  |  |  |  |  | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> |
+| **1.17** |  |  |  |  |  |  |  |  |  |  |  |  |  |  | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> |
 {{</table-scrollable>}}
 
 ## VMware Tanzu Kubernetes Grid (TKG)
