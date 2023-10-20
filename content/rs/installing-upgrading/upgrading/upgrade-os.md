@@ -9,17 +9,21 @@ categories: ["RS"]
 aliases: 
 ---
 
-## Upgrade prerequisites
+## Prerequisites
 
-- [Upgrade all nodes in the cluster]({{<relref "/rs/installing-upgrading/upgrading/upgrade-cluster">}}) to the minimum Redis Enterprise Software version that supports the later operating system version.
+Before you upgrade a cluster to a later operating system version, do the following:
 
-<!-- potentially confusing, clarify that you are still using the RHEL7 version of the package, not RHEL8 yet -->
+1. [Upgrade all nodes in the cluster]({{<relref "/rs/installing-upgrading/upgrading/upgrade-cluster">}}) to a Redis Enterprise Software version that supports the later operating system version. To learn which versions of Redis Enterprise Software support the operating system version you want to upgrade to, see [Supported platforms]({{<relref "/rs/references/supported-platforms#supported-platforms">}}).
+
+    <!-- potentially confusing, clarify that you are still using the RHEL7 version of the package, not RHEL8 yet -->
+
+1. If any existing databases use custom or manually uploaded modules, upload the module package compiled for the new operating system version to each node.
 
 ## Perform rolling upgrade
 
-- Add extra nodes method (n + 1)
+- [Add extra nodes method (n + 1)](#upgrade-n-plus-1)
 
-- Remove then replace nodes method (n - 1)
+- [Remove then replace nodes method (n - 1)](#upgrade-n-minus-1)
 
 <!--
 Questions: 
@@ -31,7 +35,7 @@ Questions:
 1. The main reason to use n - 1 instead is if you don't have access to additional resources to perform the recommended n + 1 method
 -->
 
-### (n + 1) Add new node before removing old node
+### (n + 1) Add new node before removing old node {#upgrade-n-plus-1}
 
 1. Create a node with the new operating system version.
 
@@ -43,7 +47,7 @@ Questions:
 
 1. Repeat the previous steps until all the nodes running on the earlier operating system version are removed from the cluster.
 
-### (n - 1) Remove then replace each node to upgrade
+### (n - 1) Remove then replace each node to upgrade {#upgrade-n-minus-1}
 
 One node at a time, upgrade the operating system for each node in the cluster:
 
@@ -62,7 +66,7 @@ One node at a time, upgrade the operating system for each node in the cluster:
 1. Join the cluster with `replace_node` flag.
 
     ```sh
-    rladmin cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
+    rladmin cluster join nodes <cluster_member_ip_address> username <username> password <password> replace_node <node_id>
     ```
 
 1. Verify node health:
@@ -78,13 +82,3 @@ One node at a time, upgrade the operating system for each node in the cluster:
         ```sh
         rladmin status extra all
         ```
-
-## Upgrade from RHEL7 to RHEL8
-
-<!-- To be edited and possibly incorporated into rolling upgrade methods -->
-
-1. Upgrade RHEL7 nodes to Redis Enterprise 7.2.
-
-1. Upload any custom modules compiled for RHEL8 to each node.
-
-1. Perform a rolling upgrade to RHEL8.
