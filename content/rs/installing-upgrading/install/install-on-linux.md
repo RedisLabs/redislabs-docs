@@ -18,7 +18,7 @@ To install Redis Enterprise Software using the command line:
 
 1. Copy the installation package to the node.
 
-    _(Optional)_ Use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
+    _(Optional)_ Use the {{< download "GPG key file" "../GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
 
     - For Ubuntu:
         1. Import the key:  
