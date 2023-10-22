@@ -45,7 +45,7 @@ debezium.source.log.mining.transaction.retention.ms=1800000
 # Examples:
 #   - rac.nodes="SCAN Virtual IPs","SCAN Virtual IPs"
 #     database.port=1521
-#   - rac.nodes="SCAN Virtual IPs"."SCAN Virtual IPs":1522
+#   - rac.nodes="SCAN Virtual IPs","SCAN Virtual IPs":1522
 #     database.port=1521
 #     Overrides the default port for the second entry in the list.
 # If you supply a JDBC URL for the database by using the `database.url` property, instead of defining a value for `database.port`, each RAC node entry must explicitly specify a port value.
