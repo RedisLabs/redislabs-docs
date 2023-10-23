@@ -40,6 +40,9 @@ debezium.sink.redis.memory.limit.mb=80
 debezium.source.connector.class=io.debezium.connector.oracle.OracleConnector
 debezium.source.log.mining.strategy=online_catalog
 debezium.source.log.mining.transaction.retention.ms=1800000
+# Specifies a comma-separated list of Oracle Real Application Clusters (RAC) SCAN VIP names.
+# To obtain the list of configured SCAN VIP names, use the command: `srvctl config scan`.
+#debezium.source.rac.nodes=<SCAN_VIP1>,<SCAN_VIP2>...
 # This mode creates a JDBC query that filters not only operation types at the database level, but also schema, table, and username include/exclude lists.
 debezium.source.log.mining.query.filter.mode=in
 # The name of the Oracle Pluggable Database that the connector captures changes from.
