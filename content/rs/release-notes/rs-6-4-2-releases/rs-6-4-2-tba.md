@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 6.4.2-tba (October 2023)
 linkTitle: 6.4.2-tba (October 2023)
-description: TBA
+description: RHEL 8.8 support. RediSearch v2.6.12. Log when CCS schema changes. Bug fixes.
 compatibleOSSVersion: Redis 6.2.10
 weight: 66
 alwaysopen: false
@@ -15,13 +15,21 @@ This is a maintenance release for ​[​Redis Enterprise Software version 6.4.2
 
 This version offers:
 
-- TBA
+- RHEL 8.8 support
+
+- RediSearch v2.6.12
+
+- Log when CCS schema changes
+
+- Bug fixes
 
 ## New in this release
 
 ### Enhancements
 
-- TBA
+- RHEL 8.8 support
+
+- Log when CCS schema changes due to schema upgrade
 
 #### Redis modules
 
@@ -39,7 +47,9 @@ Redis Enterprise Software version 6.4.2-tba includes the following Redis Stack m
 
 ### Resolved issues
 
-- TBA
+- RS109744 - Fixed an issue where node removal sometimes got stuck in a `starting` state when `wait_for_persistence` was enabled.
+
+- RS76441 - For databases created before Redis Enterprise Software v6.0.20, `crdt_syncer_auto_oom_unlatch` was `EMPTY` and `disabled` by default. `crdt_syncer_auto_oom_unlatch` is now enabled by default for new databases.
 
 ## Version changes 
 
