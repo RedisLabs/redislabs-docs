@@ -1,14 +1,12 @@
 ---
 Title: Encrypt REST API requests
-linkTitle: Encrypt API requests
+linkTitle: Encrypt requests
 description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: /rs/security/admin-console-security/encryption/
 ---
-
-This section details how you can configure encryption for Redis Enterprise Software.
 
 ## Require HTTPS for API endpoints
 

@@ -8,15 +8,13 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-Sometimes you would like to add a new table to a pipeline that is already in streaming (CDC) mode, without resetting Debezium Server and executing a new full snapshot. In Debezium this is called incremental snapshot and it is performed using a table on the source database as the interface with the Debezium connector. In this guide we will explain how to setup and use Debezium in order to add additional tables to an existing pipeline.
+If you want to add a new table to a pipeline that is already in streaming (CDC) mode, you can do so without resetting Debezium Server and executing a new full snapshot. In Debezium, this is called incremental snapshot and it is performed using a table on the source database as the interface with the Debezium connector.
 
 ## Prepare the source database for Debezium incremental snapshots
 
 In this section we describe the one time preparation you need to introduce to your source database in order to allow for incremental snapshot.
 
-Incremental snapshot is needed when adding a new table to the pipeline while it's already in streaming (CDC mode).
-
-For more formation, please refer to [Debezium documentation](https://debezium.io/documentation/reference/stable/configuration/signalling).
+Incremental snapshot is needed when adding a new table to the pipeline while it's already in streaming (CDC mode). To enable incremenal snapshot, you will need to make a change to your source database. For more formation, see [Debezium's documentation](https://debezium.io/documentation/reference/stable/configuration/signalling).
 
 ### Create the signaling table
 
@@ -31,7 +29,7 @@ CREATE TABLE <signalingTableName>
 );
 ```
 
-For more information about the required structure of the signaling table, please refer to [structure of a signaling data collection](https://debezium.io/documentation/reference/stable/configuration/signalling.html#debezium-signaling-data-collection-structure).
+For more information about the required structure of the signaling table, see [the structure of a signaling data collection](https://debezium.io/documentation/reference/stable/configuration/signalling.html#debezium-signaling-data-collection-structure).
 
 ### SQL Server - Enable CDC for the signaling table
 
@@ -50,14 +48,14 @@ EXEC sys.sp_cdc_enable_table
 GO
 ```
 
-For more information, see [stored procedure argumentsre](#sql-server-sp_cdc_enable_table-stored-procedure-arguments).
+For more information, see [stored procedure arguments](#sql-server-sp_cdc_enable_table-stored-procedure-arguments).
 
 ### Configure Debezium Server's `application.properties`
 
 - Add the property `debezium.source.signal.data.collection` and set its value to the fully-qualified name of the signaling table that you created.
 
   The format for the fully-qualified name of the signaling table depends on the source database type.
-  The following example shows the naming formats to use for each supported database:
+  The following examples show the naming formats to use for each supported database:
 
   - MySQL: `<databaseName>.<tableName>`
 
@@ -69,9 +67,7 @@ For more information, see [stored procedure argumentsre](#sql-server-sp_cdc_enab
 
 ## Snapshotting an additional table (incremental snapshot)
 
-This section describes the needed steps in order to snapshot an additional table using Debezium signaling table mechanism.
-
-For more information, please refer to [Debezium documentation](https://debezium.io/documentation/reference/1.6/configuration/signalling.html).
+This section describes the steps to snapshot an additional table using Debezium signaling table mechanism. For more information, see [Debezium documentation](https://debezium.io/documentation/reference/1.6/configuration/signalling.html).
 
 ### Prerequisites
 
@@ -98,9 +94,9 @@ EXEC sys.sp_cdc_enable_table
 GO
 ```
 
-For more details on the stored procedure arguments, please see [here](#sql-server-sp_cdc_enable_table-stored-procedure-arguments).
+For more details on the stored procedure arguments, see [here](#sql-server-sp_cdc_enable_table-stored-procedure-arguments).
 
-### Signal Debezium to Execute Incremental Snapshot
+### Signal Debezium to execute an incremental snapshot
 
 The following `INSERT` statement will trigger a snapshot signal to the signaling table on the source database. After Debezium detects the change in the signaling table, it reads the signal and runs the requested snapshot operation.
 
@@ -120,7 +116,7 @@ The data-collections array lists tables by their fully-qualified names, using th
 
 | Column | Description                                                                       |
 | ------ | --------------------------------------------------------------------------------- |
-| id     | An arbitrary string that is assigned as the id identifier for the signal request. |
+| id     | An arbitrary string that is assigned as the identifier for the signal request.    |
 | type   | The type of signal to send.                                                       |
 | data   | An array of table names to include in the snapshot.                               |
 
