@@ -40,14 +40,9 @@ debezium.sink.redis.memory.limit.mb=80
 debezium.source.connector.class=io.debezium.connector.oracle.OracleConnector
 debezium.source.log.mining.strategy=online_catalog
 debezium.source.log.mining.transaction.retention.ms=1800000
-# A comma-separated list of Oracle Real Application Clusters (RAC) node host names or addresses.
-#debezium.source.rac.nodes=<NODE1_ADDRESS>,<NODE2_ADDRESS>...
-# Examples:
-#   - rac.nodes="SCAN Virtual IPs","SCAN Virtual IPs"
-#     database.port=1521
-#   - rac.nodes="SCAN Virtual IPs","SCAN Virtual IPs":1522
-#     database.port=1521
-#     Overrides the default port for the second entry in the list.
+# Specifies a comma-separated list of Oracle Real Application Clusters (RAC) SCAN VIP names.
+# To obtain the list of configured SCAN VIP names, use the command: `srvctl config scan`.
+# debezium.source.rac.nodes=<SCAN_VIP1>,<SCAN_VIP2>...
 # If you supply a JDBC URL for the database by using the `database.url` property, instead of defining a value for `database.port`, each RAC node entry must explicitly specify a port value.
 # This mode creates a JDBC query that filters not only operation types at the database level, but also schema, table, and username include/exclude lists.
 debezium.source.log.mining.query.filter.mode=in
