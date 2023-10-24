@@ -4,7 +4,7 @@ description:
 weight: 35
 alwaysopen: false
 categories: ["RC"]
-linktitle: Back up data
+linktitle: Back up database
 aliases: [ "/rv/administration/configure/backups/",
            "/rc/administration/configure/backups/",
            "/rv/administration/configuration/backups/",
@@ -15,19 +15,19 @@ aliases: [ "/rv/administration/configure/backups/",
 
 The backup options for Redis Enterprise Cloud databases depend on your plan:
 
-- Flexible and Annual subscriptions can perform backups on-demand and schedule daily backups that occur during a set hour.
+- Flexible and Annual subscriptions can back up a database on-demand and schedule daily backups that occur during a set hour.
 
-- Paid Fixed plans can perform backups on-demand and schedule backups that occur every 24 hours.  
+- Paid Fixed plans can back up a database on-demand and schedule backups that occur every 24 hours.  
 
-- Free plans cannot perform backups through the Redis Cloud console.
+- Free plans cannot back up a database through the Redis Cloud console.
 
 {{<note>}}
-The number of database backups that can run simultaneously on a cluster is limited to 4 by default.
+The number of database backups that can run simultaneously on a subscription is limited to 4 by default.
 {{</note>}}
 
-Backups are saved to predefined storage locations available to your subscription.
+Backups are saved to predefined storage locations available to your subscription. Backup locations need to be available before you turn on database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations).
 
-Backup locations need to be available before you turn on database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations).
+Backups are saved in RDB format. If the database is comprised of multiple shards, an RDB file will be created for each shard of the database. For more information on restoring data from a backup, see [Restore from an RDB file]({{<relref "/rc/databases/import-data#restore-from-an-rdb-file">}}).
 
 Here, you'll learn how to store backups using different cloud providers.
 

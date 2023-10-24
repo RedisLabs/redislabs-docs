@@ -258,11 +258,11 @@ rladmin tune proxy { <id> | all }
 |-----------------|----------------------------|-------------------------------------------------------------------------------------|
 | id              | integer                    | ID of the specified proxy                                                           |
 | all             |                            | Configures settings for all proxies                                                 |
-| max_threads     | integer                    | Maximum number of threads allowed                                                   |
+| max_threads     | integer, (range:&nbsp;1-255) | Maximum number of threads allowed                                                   |
 | mode            | `static`<br /> `dynamic` | Determines if the proxy automatically adjusts the number of threads based on load size  |
-| scale_duration  | time in seconds            | Time of scale_threshold CPU utilization before the automatic proxy automatically scales |
-| scale_threshold | percentage                 | CPU utilization threshold that triggers spawning new threads                        |
-| threads         | integer                    | Initial number of threads created at startup                                        |
+| scale_duration  | time in seconds, (range:&nbsp;10-300) | Time of scale_threshold CPU utilization before the automatic proxy automatically scales |
+| scale_threshold | percentage, (range:&nbsp;50-99) | CPU utilization threshold that triggers spawning new threads                        |
+| threads         | integer, (range:&nbsp;1-255) | Initial number of threads created at startup                                        |
 
 ### Returns
 
