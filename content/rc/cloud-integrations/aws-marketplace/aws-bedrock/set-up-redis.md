@@ -86,7 +86,7 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     {{<image filename="images/rc/icon-add-database.png" width="30px" alt="Use the Add button to define a new database for your subscription." >}}{{< /image >}}
 
-1. In the **New Database** dialog, name your database and select **RediSearch**. 
+1. In the **New Database** dialog, name your database and select **Search and query**. 
 
     {{<image filename="images/rc/flexible-add-database-basic.png" width="75%" alt="The New Database dialog with basic settings." >}}{{< /image >}}
 

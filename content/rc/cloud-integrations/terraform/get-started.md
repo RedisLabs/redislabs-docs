@@ -78,7 +78,6 @@ The steps in this section show you how to plan and create a flexible subscriptio
                     replication = true
                     throughput_measurement_by = "operations-per-second"
                     throughput_measurement_value = 20000
-                    modules = ["RedisJSON"]
             }
     }
     ```
@@ -95,12 +94,6 @@ The steps in this section show you how to plan and create a flexible subscriptio
         throughput_measurement_by = "operations-per-second"
         throughput_measurement_value = 20000
         replication = true
-
-        modules = [
-            {
-                name = "RedisJSON"
-            }
-        ]
 
         alert {
         name = "dataset-size"
