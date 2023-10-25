@@ -48,7 +48,11 @@ To do this, specify the target database as an Active-Passive replica of the the 
 You need the public endpoint details for the source database.  These are available from the database list and the **General** section of the **Configuration** tab for the source database.
 
 {{< note >}}
-If the source database has [Transport Layer Security (TLS)]({{< relref  "/rc/security/database-security/tls-ssl" >}}) enabled, an error will appear when attempting to sync the two databases. [Contact support](https://redis.com/company/support/) if you would like to migrate a TLS-enabled database using Active-Passive.
+An error will appear when syncing the two databases if the source database has [Transport Layer Security (TLS)]({{< relref  "/rc/security/database-security/tls-ssl" >}}) enabled. [Contact support](https://redis.com/company/support/) if you want to migrate a TLS-enabled database using Active-Passive.
+{{< /note >}}
+
+{{< note >}}
+An error will appear when syncing the two databases if the source and target databases are hosted on different Redis Cloud accounts. [Contact support](https://redis.com/company/support/) if you want to migrate a database between accounts using Active-Passive.
 {{< /note >}}
 
 Here's how this works for databases hosted on the same account:
