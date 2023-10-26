@@ -23,24 +23,66 @@ RDI currently supports two use cases:
 - Ingest (cache prefetch)
 - Write-behind
 
+## Architecture overview
+
+![RDI components](/images/rdi/rdi-components.png)
+
+RDI has several components, all of them deployed outside of the Redis Enterprise cluster. In addition RDI uses a small Redis database inside the cluster for staging data and storing state.
+
+RDI can be deployed as a K8s deployment or on two VMs.
+
+### RDI operator
+
+RDI operator is the main control plane component. It is in charge of spinning, configuring and watching RDI data plane components.
+
+### RDI collectors
+
+For the ingest scenario RDI operator will create and configure a collector. RDI collector is in charge of fetching a baseline snapshot of the source data and then tracking the data changes at the source.
+Currently, RDI comes with one type of collector, the `RDI Debezium Collector`. This collector is an orchestrated [Debezium Server](https://debezium.io/).
+
+### RDI stream processor
+
+In all use cases, the RDI stream processor is the main processor of data:
+
+- Reading collector supplied data from Redis streams.
+- Applying transformations in order to translate the data from other models to Redis model (ingest) or vice versa from Redis to another model (write-behind).
+- Connect to the target database / datastore and apply the data changes.
+
+For more information about RDI jobs and transformations, read the data transformation section of these docs.
+For a list of targets see the specific ingest and write behind sections below.
+
+### RDI metrics exporter
+
+The RDI metrics exporter is a prometheus exporter that allows [prometheus](https://prometheus.io/) to scrape metrics measuring data processing and performance.
+
+### RDI API server
+
+The RDI API server exposes REST endpoints of RDI API. 
+
+### RDI CLI
+
+The RDI CLI provides a user interface to manage RDI.
+
+
 ## Ingest functionality and architecture
 
 You can think of RDI Ingest as a streaming ELT process, where
 
-- Data is **E**xtracted from the source database using [Debezium Server](https://debezium.io/) connectors
-- Data is then **L**oaded into RDI, a Redis database instance that keeps the data in [Redis streams](https://redis.io/docs/manual/data-types/streams/) alongside required metadata.
-- Data is then **T**ransformed using provided [RedisGears recipes](https://developer.redis.com/howtos/redisgears/) and written to the target Redis database.
+- Data is **E**xtracted from the source database using RDI Debezium Collector - an orchestrated [Debezium Server](https://debezium.io/)
+- Data is then **L**oaded into RDI DB, a Redis database instance that keeps the data in [Redis streams](https://redis.io/docs/manual/data-types/streams/) alongside required metadata.
+- Data is then **T**ransformed using RDI Stream Processor and written to the target Redis database.
 
 RDI using Debezium Server works in two modes:
 
 1. Initial sync - where a snapshot of the entire database or a subset of selected tables is used as a baseline. The entire dataset is streamed to RDI and then transformed and written into the target Redis database.
 2. Live updates - where Debezium captures changes to the data that happen after the baseline snapshot and streams them to RDI where they are transformed and written to the target.
 
-![High-level RDI architecture](/images/rdi/redis-di-simplified.png)
+![RDI data flow diagram](/images/rdi/rdi-new-data-flow.png)
+
 
 ### Supported data transformations
 
-#### Mode mapping
+#### Model mapping
 
 RDI supports conversion of a database record into the following Redis types:
 
@@ -57,74 +99,31 @@ Each column in the record is automatically formatted as a number or string. See 
 
 RDI supports declarative transformations to further manipulate the data, including denormalization of data from several records into a single JSON key in Redis. To learn more, see the [data transformation]({{<relref "/rdi/data-transformation/">}}) section.
 
-### Architecture and components
 
-![Detailed RDI architecture](/images/rdi/redis-di.png)
+### Secrets handling
 
-#### Feeders
+RDI components requires access to secrets in order to access the source database (collector), the rdi database (collector, stream processor, operator, metrics exporter and API server) and the target database (stream processor).
 
-Debezium Server has a Redis sink that writes data and state to RDI streams.
-RDI also works with [Arcion](arcion.io), a commercial CDC that provides an additional set of sources.
+RDI never keeps secrets in configuration files, instead secrets can be injected or pulled in the following ways:
 
-#### Redis data integration data plane
-
-#### RDI data streams
-
-RDI receives data using [Redis streams](https://redis.io/docs/manual/data-types/streams/). Records with data from a specific database table are written to a stream with a key reflecting the table name. This allows a simple interface to RDI, and it keeps the order of changes as served by Debezium.
-
-##### RDI engine
-
-RDI engine is built on top of RedisGears. It has two main logical functions:
-
-- Transformation of data. In the current version, RDI only supports Debezium type conversion to Redis types, but future versions will support [Apache Avro](https://avro.apache.org/docs/current/). In addition, there is a plan to provide data mapping between a denormalized relational model and denormalized Redis JSON documents.
-- Writing data. This is the part where RDI writes the data to the target, ensuring order and guaranteeing at least once to prevent data loss. In addition, the writer can be configured to ignore, abort, or keep rejected data entries.
-
-#### RDI control plane
-
-#### RDI CLI
-
-RDI comes with a CLI that is intuitive, self explanatory, and validating, to ease the entire lifecycle of RDI setup and management.
-
-#### RDI configuration
-
-RDI configuration is persisted at the cluster level. The configuration is written by the CLI `deploy` command, reflecting the configuration file. This mechanism allows for automatic configuration of new shards when needed, and can survive shard and node failure.
-
-#### Secrets handling
-
-RDI requires the following secrets:
-
-- The RDI engine requires credentials and a certificate to connect and write encrypted data to the target Redis database.
-- The Debezium Redis Sink Connector requires credentials and a certificate to connect and write data into the RDI database.
-- The Debezium Source Connector requires the source database secrets.
-- The RDI CLI requires a certificate to connect to the Redis Enterprise cluster. For the `create` command, it requires the credentials of a privileged user but it does not cache or store these credentials.
-
-Credentials and certificates can be served in one of the following ways:
-
-- Entered manually as parameters to a CLI command (where applicable).
-- Stored in environment variables.
-- Injected to the temp file system by a secret store agent such as [HashiCorp Vault](https://www.vaultproject.io/).
 
 ### Scalability and high availability
 
 RDI is highly available:
 
-- At the feeder level: Debezium Server is deployed using [Kubernetes](https://kubernetes.io/) or [Pacemaker](https://clusterlabs.org/pacemaker/) for failover between stateless instances, while the state is secured in Redis.
-- At the Data and Control Plane: Using Redis Enterprise mechanisms for high availability (shard replica, cluster level configurations, and so on).
+When deployed on Kuberentes, RDI components are all stateless pods managed by Kubernetes and the RDI operator.
+When deployed on VMs, RDI use one VM as a failover (active-passive topology) with identical set of stateless components on each VM and an operator using a `Redlock` mechanism to ensure he owns the active set of RDI components.
 
-RDI is horizontally scalable:
+All RDI state is stored in highly available manner using Redis database high availability and Kubernetes etcd.
 
-- Table level data streams can be split across multiple shards, where they can be transformed and written to the target in parallel, all while keeping table level order of updates.
+RDI is scalable:
+
+- Data is distributed to streams based on number of tables or even based on primary key.
+- During initial load (ingesting the baseline snapshot) RDI stream processor can span multiple processes each one processing some of the data streams.
 
 ### Tested topologies
 
-RDI runs on Redis Enterprise. It works on any installation of Redis Enterprise, regardless of the runtime environment (bare metal, VMs, or containers).
-RDI can be collocated with the target Redis database or it can be run on a different Redis Enterprise cluster.
 
-Debezium Server should run in a warm, high availability topology, like one of the following:
-
-- Running on two VMs in an active/passive setup. The failover orchestration can be done by tools such as [Pacemaker](https://clusterlabs.org/pacemaker/doc/).
-- Running as a Kubernetes pod where Kubernetes watches the pod's liveliness and readiness, and acts to recover a nonfunctional pod.
-  It is important to note that RDI does not keep any state on Debezium. All state is kept in RDI.
 
 ## Write-behind functionality and architecture
 
