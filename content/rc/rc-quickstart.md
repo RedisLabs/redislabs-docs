@@ -28,7 +28,9 @@ To create a new account with a free subscription and database:
 
 1. Navigate to the [Sign up](https://redis.com/try-free/) page.
 
-1. Enter your information in the form and select **Get Started**, or sign up with Google or Github.
+1. There are two options available to get started with Redis Cloud:
+   * Enter your information in the form and select **Get Started**
+   * Sign up with **Google** or **Github**
 
 1. In the activation email, select **Activate account** to go to the Redis Cloud [admin console](https://app.redislabs.com/#/login).
 
