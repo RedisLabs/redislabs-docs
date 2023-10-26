@@ -32,9 +32,16 @@ To create a new account with a free subscription and database:
    * Enter your information in the form and select **Get Started**
    * Sign up with **Google** or **Github**
 
-1. In the activation email, select **Activate account** to go to the Redis Cloud [admin console](https://app.redislabs.com/#/login).
+1. Once you have completed step 2, you should receive an activation email from Redis. In the activation email, select **Activate account**. You will be forwarded to the **Get Started** page.
 
-    {{<image filename="images/rc/quickstart-quick-dialog.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
+    {{<image filename="images/rc/quickstart-get-started.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
+
+   * Choose your role
+   * Choose who you work for
+   * Choose your use case
+   * Choose your client
+
+    Click **Create Free Database**. You also have the option to **Create a custom database** if necessary.
 
 1. Select your preferred cloud vendor and region.
 
