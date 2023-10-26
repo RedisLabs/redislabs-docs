@@ -26,7 +26,7 @@ If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/s
 
 To create a new account with a free subscription and database:
 
-1. On the Redis Cloud [admin console](https://app.redislabs.com/#/login), select [Sign up](https://redis.com/try-free/).
+1. Navigate to the [Sign up](https://redis.com/try-free/) page.
 
 1. Enter your information in the form and select **Get Started**, or sign up with Google or Github.
 
