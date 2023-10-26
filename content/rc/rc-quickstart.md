@@ -45,10 +45,12 @@ To create a new account with a free subscription and database:
 
 1. Select your preferred cloud vendor and region.
 
+   {{<image filename="images/rc/quickstart-create-free-database.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
+
 1. Select **Let's start free** to create your subscription and database.
 
     {{< note >}}
-If you would rather customize your subscription and database, select **Create a custom database** to go to the **Add subscription** page. From there, you can [create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) or [create a flexible subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}).
+If you would rather customize your subscription and database, select **Create a custom database** to go to the **New subscription** page. From there, you can [create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) or [create a flexible subscription]({{< relref "/rc/subscriptions/create-flexible-subscription" >}}).
     {{< /note >}}
 
     You're taken to the **Overview tab** for your new subscription.
