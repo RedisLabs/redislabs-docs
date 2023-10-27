@@ -12,7 +12,7 @@ aliases: [
 ---
 
 Active-Active databases store data across multiple regions and availability zones.  This improves scalability, performance, and availability, especially when compared to standalone databases.
-To create Active-Active databases, you need a Flexible (or Annual) [Redis Enterprise Cloud]({{<relref "/rc/subscriptions/">}}) subscription that enables Active-Active Redis and defines the regions for each copy of your databases.  This is defined when you [create a new subscription]({{<relref "rc/subscriptions/create-flexible-subscription">}}).
+To create Active-Active databases, you need a Flexible (or Annual) [Redis Enterprise Cloud]({{<relref "/rc/subscriptions/create-active-active-subscription">}}) subscription that enables Active-Active Redis and defines the regions for each copy of your databases.  This is defined when you [create a new subscription]({{<relref "rc/subscriptions/create-flexible-subscription">}}).
 
 Active-Active databases are distributed across multiple regions (geo-distribution).  This improves performance by reducing latency for nearby users and improves availability by protecting against data loss in case of network or resource failure.
 
@@ -34,6 +34,8 @@ Active-Active databases use a multi-primary architecture, which lets you read an
 
 Active-Active databases use special data types called conflict-free data types (CRDT). These automatically resolve conflicts that occur when writes are made to different clusters at the same time.
 
-### Automatic failover
+### Failover handling
 
-After a failure at any level (process, node, or zone), Active-Active databases automatically promote replica shards to replace failed primaries, copy data to new replica shards, and migrate shards to new nodes as needed. This reduces downtime and makes the most of your computing resources, even in the event of a failure.  
+After a failure at the process, node, or zone level, Active-Active databases automatically promote replica shards to replace failed primaries, copy data to new replica shards, and migrate shards to new nodes as needed. This reduces downtime and makes the most of your computing resources, even in the event of a failure.  
+
+Active Active also provides a failover opportunity in the event an entire cluster fails.  Applications that are connected to the cluster in a state of failure can be programmed to redirect traffic to a non-failed state Active Active connected cluster.  When the original cluster recovers, the application can direct traffic back to the original cluster.  Redirecting the application traffic to alternate clusters is not handled automatically by Active Active.  However, data will automatically sync to the recovered clusters when it returns to a healthy state.
