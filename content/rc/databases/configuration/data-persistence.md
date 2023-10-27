@@ -27,7 +27,7 @@ AOF files provide greater protection (durability) than snapshots at the cost of 
 AOF requires more resources to store individual operations and recovery takes longer as the database is reconstructed from the record nearly to the point of failure. 
 Snapshot recovery is faster, however, there's a greater risk of data loss depending on the time between failure and the most recent snapshot.
 
-Data persistance can be also disabled.  In such cases, data is lost when the database goes down.
+Data persistence can be also disabled.  In such cases, data is lost when the database goes down.
 
 ## Configure data persistence 
 
