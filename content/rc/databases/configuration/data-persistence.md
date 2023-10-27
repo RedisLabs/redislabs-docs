@@ -18,23 +18,22 @@ Data can be persisted in one of two ways:
 
 - An _Append-Only File_ (AOF) maintains a record (sometimes called a _redo log_ or _journal_) of write operations.  This allows the data to be restored by using the record to reconstruct the database up to the point of failure.
 
-    The AOF file records write operations made to the database; it can be updated every second or on every write (_Flexible or Annual plans only_).  
+    The AOF file records write operations made to the database; it can be updated every second or on every write (_Flexible or Annual plans only_).
 
-    AOF files allow recovery nearly to the point of failure; however, recovery takes longer as the database is reconstructed from the record.
+- Snapshots are copies of the in-memory database, taken at periodic intervals (one, six, or twelve hours).  This allows the data to be restored to the point-in-time of the snapshot.
 
-- Snapshots are copies of the in-memory database, taken at periodic intervals (one, six, or twelve hours).  
 
-    Snapshot recovery is faster, however, there's a greater risk of data loss depending on the time between failure and the most recent snapshot.
-    
-AOF files require more resources than snapshots; they provide greater protection (durability) at the cost of resources and recovery time.  Snapshots provide faster recovery while risking greater data loss.
+AOF files provide greater protection (durability) than snapshots at the cost of resources and recovery time. 
+AOF requires more resources to store individual operations and recovery takes longer as the database is reconstructed from the record nearly to the point of failure. 
+Snapshot recovery is faster, however, there's a greater risk of data loss depending on the time between failure and the most recent snapshot.
 
 Data persistance can be also disabled.  In such cases, data is lost when the database goes down.
 
 ## Configure data persistence 
 
-In Redis Enterprise Cloud, data persistence is a database configuration setting that can be changed by editing your database settings.
+In Redis Enterprise Cloud, data persistence is a database configuration setting that can be changed by [editing your database]({{< relref "/rc/databases/view-edit-database.md" >}}) settings.
 
-The availability of the setting depends on your [subscription]({{<relref "/rc/subscriptions/_index.md">}}):
+The availability of the setting depends on your subscription:
 
 - Free subscriptions do not support data persistence; the setting is disabled entirely.
 
