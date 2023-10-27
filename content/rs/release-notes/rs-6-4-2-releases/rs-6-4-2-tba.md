@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 6.4.2-tba (October 2023)
 linkTitle: 6.4.2-tba (October 2023)
-description: RHEL 8.8 support. RediSearch v2.6.12. Log when CCS schema changes. Bug fixes.
+description: RHEL 8.8 support. RediSearch v2.6.12. RedisGraph v2.10.12. RedisTimeSeries v1.8.11 Log when CCS schema changes. Bug fixes.
 compatibleOSSVersion: Redis 6.2.10
 weight: 66
 alwaysopen: false
@@ -17,7 +17,7 @@ This version offers:
 
 - RHEL 8.8 support
 
-- RediSearch v2.6.12
+- RediSearch v2.6.12, RedisGraph v2.10.12, and RedisTimeSeries v1.8.11
 
 - Log when CCS schema changes
 
