@@ -41,9 +41,9 @@ Redis Enterprise Software version 6.4.2-tba includes the following Redis Stack m
 
 - [RedisBloom v2.4.5](https://docs.redis.com/latest/stack/release-notes/redisbloom/redisbloom-2.4-release-notes/)
 
-- [RedisGraph v2.10.10](https://docs.redis.com/latest/stack/release-notes/redisgraph/redisgraph-2.10-release-notes/)
+- [RedisGraph v2.10.12](https://docs.redis.com/latest/stack/release-notes/redisgraph/redisgraph-2.10-release-notes/)
 
-- [RedisTimeSeries v1.8.10](https://docs.redis.com/latest/stack/release-notes/redistimeseries/redistimeseries-1.8-release-notes/)
+- [RedisTimeSeries v1.8.11](https://docs.redis.com/latest/stack/release-notes/redistimeseries/redistimeseries-1.8-release-notes/)
 
 ### Resolved issues
 
