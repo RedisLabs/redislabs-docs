@@ -172,5 +172,5 @@ You can require [**TLS**]({{<relref "/rs/security/tls/">}}) encryption and authe
 
 ### Internode encryption
 
-Enable **Internode encryption** to encrypt data in transit between nodes for this database. See [Internode encryption]({{<relref "/rs/security/internode-encryption">}}) for more information.
+Enable **Internode encryption** to encrypt data in transit between nodes for this database. See [Internode encryption]({{<relref "/rs/security/encryption/internode-encryption">}}) for more information.
 
