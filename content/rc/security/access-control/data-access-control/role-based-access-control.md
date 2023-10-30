@@ -16,13 +16,6 @@ to provide appropriate levels of access.
 RBAC effectively lets you implement the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For example, you can provide
 read-only access to an application whose only job is to display Redis data. Similarly, you can prevent new developers from running dangerous administrative commands.
 
-## Prerequisites
-
-To use role-based access control, your Redis Cloud database needs to support Redis version 6.0.0 or later.
-
-The **Redis version** of a database is displayed in the **General** section of the **Configuration** tab of the [database detail]({{<relref "rc/databases/view-edit-database">}}) screen.
-
-{{<image filename="images/rc/database-fixed-configuration-general.png" alt="The Redis version appears in the General section of the Configuration tab on the database details screen." >}}{{< /image >}}
 
 ## Set up RBAC
 
