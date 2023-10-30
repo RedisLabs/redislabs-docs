@@ -64,9 +64,7 @@ For more detailed analysis, consider using [RedisInsight]({{< relref "/ri/" >}})
 
 Depending on your subscription plan, you can enable alerts for several metrics for a given database.
 
-To do so, go to the **Configuration** tab of the database and then locate the **Alerts** section.
-
-For details, including a breakdown of alerts available for each subscription type, see [Alerts section]({{< relref "/rc/databases/view-edit-database#alerts-section" >}}).
+To do so, go to the **Configuration** tab of the database and then locate the **Alerts** section. For details, including a breakdown of alerts available for each subscription type, see [Alerts section]({{< relref "/rc/databases/view-edit-database#alerts-section" >}}).
 
 Alert settings are specific to a given database.  To receive alerts for multiple databases, make sure each is configured accordingly.
 
