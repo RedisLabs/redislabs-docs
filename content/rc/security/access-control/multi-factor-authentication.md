@@ -27,7 +27,10 @@ The default MFA configuration sends an authentication code by text message that 
 To configure MFA for your user account:
 
 1. Sign in to your account.
-2. From the Redis Enterprise Cloud menu, select your name to enter the **User Profile** view.
+2. From the Redis Cloud console menu, select your name and then **User Profile** from the drop down menu.
+
+    {{<image filename="images/rc/multi-factor-authentication-user-dropdown.png" alt="Use the user drop down menu to get to the User Profile section." >}}{{< /image >}}
+
 3. Under your user profile, locate **Multi-factor authentication**.
 
     {{<image filename="images/rc/multi-factor-authentication-user-profile.png" alt="Multi-factor authentication is located on the user profile page." >}}{{< /image >}}
@@ -50,9 +53,9 @@ If your mobile phone is lost or stolen, make sure that you update the MFA config
 
 To change the mobile phone number used for MFA:
 
-1. Navigate to the **Multi-Factor Authentication** view.
-1. Select **Change number**.
-1. Enter the new mobile phone number, and complete the verification process as described above.
+1. Navigate to the Multi-Factor authentication section in the **User Profile** view.
+2. Select **Change number**.
+3. Enter the new mobile phone number, and complete the verification process as described above.
 
 
 ### Configure MFA for an authenticator app {#app}
@@ -88,8 +91,10 @@ Redis Cloud does not enforce MFA for [SAML SSO]({{<relref "rc/security/access-co
 To enable MFA enforcement for all user accounts:
 
 1. Sign in as an account owner.
-1. Go to **Settings > Account**.
-1. Under **MFA enforcement**, select the toggle.
+2. Go to **Account Settings**.
+3. Under **Security**, switch the **MFA environment** toggle to *On*.
+
+    {{<image filename="images/rc/multi-factor-authentication-force-all-users-on.png" alt="Multi-factor authentication toggle for all users on." >}}{{< /image >}}
 
 - When you enable MFA enforcement, users cannot disable MFA for their account.
 - When you disable MFA enforcement, users can disable MFA for their account.
