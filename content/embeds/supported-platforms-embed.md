@@ -49,7 +49,7 @@ Redis Enterprise Software is supported on several operating systems, cloud envi
 
 7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}). Official support for Amazon Linux 2 was added in Redis Enterprise Software [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
 
-8. <a name="table-note-8" style="display: block; height: 80px; margin-top: -80px;"></a>Redis Enterprise Software [6.4.2-tba]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-tba">}}) and later supports RHEL 8.8.
+8. <a name="table-note-8" style="display: block; height: 80px; margin-top: -80px;"></a>Redis Enterprise Software [6.4.2-103]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-103">}}) and later supports RHEL 8.8.
 
 ## Operating system limitations
 
