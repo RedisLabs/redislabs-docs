@@ -277,4 +277,4 @@ To deactivate SAML SSO for a specific account:
 
 When a user is removed from your identity provider their access to Redis Cloud should also be removed.  To deprovision SAML users upon deletion, the identity provider admin can set up a webhook to automatically make the appropriate Cloud API requests. For more information about how to manage users with API requests, see [Users](https://api.redislabs.com/v1/swagger-ui.html#/Users) in the Redis Cloud API documentation.
 
-When you have revoked user’s access to Redis Cloud, they cannot access the Redis Cloud admin console, but their API keys remain active. You can [delete an API key]({{<relref "/rc/api/get-started/manage-api-keys/#delete-a-user-key">}}) to remove access.
+When you have revoked user’s access to Redis Cloud, they cannot access the Redis Cloud admin console, but their API keys remain active. You can [delete an API key]({{<relref "/rc/api/get-started/manage-api-keys#delete-a-user-key">}}) to remove access.
