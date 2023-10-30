@@ -10,9 +10,11 @@ aliases: /rv/administration/setup_and_editing/create-databases/
          /rc/administration/setup_and_editing/create-databases/
          /rc/administration/setup-and-editing/creating-databases/
 ---
+Before creating a Redis Cloud database, you need to [create an account]({{< relref "rc/rc-quickstart/" >}}) and [create a subscription]({{< relref "rc/subscriptions#common-tasks" >}}).
+
 To create a database in your Redis Enterprise Cloud [subscription]({{< relref "rc/subscriptions/" >}}):
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
+1. Sign in to the [Redis Cloud console](https://app.redislabs.com).
 
 2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
@@ -38,16 +40,16 @@ The **General** section defines basic properties about your database.
 
 The available settings vary according to your subscription plan:
 
-|Setting name|Description|
-|:-----------|:----------|
-| **Subscription** | Read-only description of your subscription plan, including cloud provider and region |
-| **Active-Active Redis** | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_) |
-| **Auto Tiering** | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_) |
-| **Database name** | A name for your database (_required_) |
-| **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
-| **Type**  | Controls advanced database capabilities and protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
-| **Advanced capabilities** | Extend core Redis functionality using [advanced capabilities]({{<relref "/stack">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "/stack/enterprise-capabilities#redis-enterprise-module-support">}}) |
-| **Supported Protocol(s)** | Choose between RESP2 and RESP3 _(Redis 7.2 only)_. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
+| Setting name              | Description                                                                                                                                                                                                                                                                                                       |
+|:--------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Subscription**          | Read-only description of your subscription plan, including cloud provider and region                                                                                                                                                                                                                              |
+| **Active Active Redis**   | Checked when the subscription supports Active Active databases (_coming soon; Flexible or Annual subscriptions only_)                                                                                                                                                                                             |
+| **Auto Tiering**          | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_)                                                                                                                                                                                                                     |
+| **Database name**         | A name for your database (_required_)                                                                                                                                                                                                                                                                             |
+| **Database port**         | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_)                                                                                                                                                                                                  |
+| **Type**                  | Controls advanced database capabilities and protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_                                                                       |
+| **Advanced capabilities** | Extend core Redis functionality using [advanced capabilities]({{<relref "/stack">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise and Redis Stack feature compatibility]({{<relref "/stack/enterprise-capabilities#redis-enterprise-module-support">}})   |
+| **Supported Protocol(s)** | Choose between RESP2 and RESP3 _(Redis 7.2 only)_. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details                                                                                                                                                   |
 
 ### Database port
 
@@ -111,24 +113,24 @@ The **Scalability** section is available only for Flexible and Annual plans.
 
 | Setting name        | Description                                                                                                                                                                                                                                                                                                                                  |
 |:--------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Memory size**     | Maximum size (in GB) for your database                                                                                                                                                                                                                                                                                                       |
+| **Memory limit**    | Maximum size (in GB) for your database                                                                                                                                                                                                                                                                                                       |
 | **Throughput**      | Defines throughput in terms of maximum operations per second for the database <br/><br/>Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/).|
 | **Hashing policy**  | Defines the [hashing policy]({{< relref "/rs/databases/durability-ha/clustering.md#supported-hashing-policies" >}})                                                                                                                                                                                                                          |
 | **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy                                                                                                                                                    |
 
 To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
 
-### Memory size
+### Memory limit
 
-Memory size represents the maximum amount of memory for the database, which includes data values, keys, module data, and overhead for specific features.  High availability features, such as replication and Active-Active, dramatically increase memory consumption.  
+Memory limit represents the maximum amount of memory for the database, which includes data values, keys, module data, and overhead for specific features.  High availability features, such as replication and Active Active, dramatically increase memory consumption.  
 
 Here are some general guidelines:
 
-- Memory size represents an upper limit.  You cannot store more data than the memory size.  Depending on your other selections, available memory for data may be much less than expected.
+- Memory limit represents an upper limit.  You cannot store more data than the memory limit.  Depending on your other selections, available memory for data may be much less than expected.
 
-- Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory size when replication is enabled.
+- Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory limit when replication is enabled.
 
-- Active-Active also doubles memory consumption and the effect is cumulative with replication's impact. Since Active Active requires replication to be turned on, the memory size impact can be as large as four times (4x) the original data size.
+- Active Active also doubles memory consumption and the effect is cumulative with replication's impact. Since Active Active requires replication to be turned on, the memory limit impact can be as large as four times (4x) the original data size.
 
 - Advanced capabilities also consume memory.
 
@@ -145,7 +147,7 @@ The **Durability** section helps you keep your database (and your data) availabl
 |:-------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **High availability**    | Replicates your data across multiple nodes, as allowed by your subscription plan                                                                                           |
 | **Data persistence**     | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type            |
-| **Data eviction policy** | Configures which [policy]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) is applied when your database reaches its memory size limit              |
+| **Data eviction policy** | Configures which [policy]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) is applied when your database reaches its memory limit              |
 | **Remote backup**        | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}) |
 | **Active-Passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database                                                                           |
 
@@ -172,13 +174,13 @@ The **Alerts** section defines notification emails sent to your account and the 
 
 The available alerts vary according to the subscription type.
 
-|Setting name|Description|
-|:-----------|:----------|
-| **Dataset size has reached** | When enabled, sends an an email when the database reaches the defined memory size _(Free, Flexible, or Annual plans only_)|
-| **Latency is higher than** | When enabled, sends an an email when the latency exceeds the defined memory size _(paid Fixed plans only_)|
-| **Number of connections** | When enabled, sends an email when the connections exceeds the defined limit.  _(Free and Fixed plans only)_|
-| **Replica Of - database unable to sync with source** | When enabled, sends email when the replica database cannot sync with the primary (source) database _(Flexible or Annual plans only_) |
-| **Replica Of - sync lag is higher than** | When enabled, sends email when the sync lag exceeds the defined threshold _(Flexible or Annual plans only_) |
-| **Throughput is higher than** | When enabled, sends an email when the operations per second exceed the defined threshold _(paid Fixed, Flexible, or Annual plans only_)|
-| **Throughput is lower than** | When enabled, sends an email when the operations per second falls below the defined threshold _(paid Fixed, Flexible, or Annual plans only_)|
-| **Total size of datasets under this plan reached** | When enabled, sends an an email when the database reaches the defined memory size _(paid Fixed plans only_)|
+|Setting name| Description                                                                                                                                  |
+|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------|
+| **Dataset size has reached** | When enabled, sends an an email when the database reaches the defined memory limit _(Free, Flexible, or Annual plans only_)                  |
+| **Latency is higher than** | When enabled, sends an an email when the latency exceeds the defined limit _(paid Fixed plans only_)                                  |
+| **Number of connections** | When enabled, sends an email when the connections exceeds the defined limit.  _(Free and Fixed plans only)_                                  |
+| **Replica Of - database unable to sync with source** | When enabled, sends email when the replica database cannot sync with the primary (source) database _(Flexible or Annual plans only_)         |
+| **Replica Of - sync lag is higher than** | When enabled, sends email when the sync lag exceeds the defined threshold _(Flexible or Annual plans only_)                                  |
+| **Throughput is higher than** | When enabled, sends an email when the operations per second exceed the defined threshold _(paid Fixed, Flexible, or Annual plans only_)      |
+| **Throughput is lower than** | When enabled, sends an email when the operations per second falls below the defined threshold _(paid Fixed, Flexible, or Annual plans only_) |
+| **Total size of datasets under this plan reached** | When enabled, sends an an email when the database reaches the defined memory limit _(paid Fixed plans only_)                                 |
