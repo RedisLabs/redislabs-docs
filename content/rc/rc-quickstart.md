@@ -87,55 +87,32 @@ Once you have the username and password, select **Connect** to open the connecti
 
 The connection wizard provides the following database connection methods:
 
+- [RedisInsight](https://redis.com/redis-enterprise/redis-insight/)
+
 - [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility
 
 - [Redis client](https://redis.io/clients) for your preferred programming language
 
-- [RedisInsight](https://redis.com/redis-enterprise/redis-insight/)
 
 {{<image filename="images/rc/connection-wizard.png" alt="The connection wizard." >}}{{< /image >}}
 
-### redis-cli (via Docker){#using-rediscli}
+### RedisInsight{#using-redisinsight}
 
-The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands/).
+RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux.
 
-[Docker](https://www.docker.com/) provides a convenient way to run `redis-cli` without the full installation experience.
+1. In the connection wizard, under **RedisInsight**, select your operating system from the **Download RedisInsight** menu.
 
-Run the following commands to create a `redis` Docker container and connect to your database with `redis-cli`:
+1. Select **Download** to download RedisInsight.
 
-1.  Download the `redis` Docker image:
+1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
 
-    ``` sh
-    $ docker pull redis
-    ```
-1.  Start a container created from the image:
+1. Once installed, select **Open with RedisInsight**
 
-    ``` sh
-    $ docker run -d --name redis1 redis
-    ```
+1. A popuup appears asking you if you wish to open the link with the RedisInsight application. Select **Open RedisInsight**
 
-1.  Connect to a bash prompt running in the container:
+1. You are automatically connected to your database
 
-    ``` sh
-    $ docker exec -it redis1 bash
-    ```
-
-1. In the connection wizard, under **Redis CLI**, select the **Copy** button to copy the `redis-cli` command.
-
-1. Enter the copied `redis-cli` command in the terminal and replace `<username>` and `<password>` with your username and password.
-
-1. After you connect to your database, try these basic Redis commands:
-
-    ``` sh
-    xxx:yyy> ping
-    PONG
-    xxx:yyy> set hello world
-    OK
-    xxx:yyy> get hello
-    "world"
-    ```
-
-    To try other Redis commands, see the [commands reference](https://redis.io/commands/) for help.
+See the [RedisInsight documentation]({{< relref "/ri/_index.md" >}}) for more information.
 
 ### Redis client{#using-redis-client}
 
@@ -186,25 +163,47 @@ To connect to your database using the [redis-py](https://github.com/redis/redis-
     world
     ```
 
-### RedisInsight{#using-redisinsight}
+### redis-cli (via Docker){#using-rediscli}
 
-RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux.
+The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands/).
 
-1. In the connection wizard, under **Redis Client**, select your operating system from the **Download RedisInsight** menu.
+[Docker](https://www.docker.com/) provides a convenient way to run `redis-cli` without the full installation experience.
 
-1. Select **Download** to download RedisInsight.
+Run the following commands to create a `redis` Docker container and connect to your database with `redis-cli`:
 
-1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
+1.  Download the `redis` Docker image:
 
-1. Open RedisInsight and select **Add Redis Database**.
+    ``` sh
+    $ docker pull redis
+    ```
+1.  Start a container created from the image:
 
-1. In the connection wizard, under **RedisInsight Desktop**, select **Copy** to copy the connection information.
+    ``` sh
+    $ docker run -d --name redis1 redis
+    ```
 
-1. In RedisInsight, enter the copied connection information into the **Host** field. RedisInsight automatically populates the rest of the fields needed to connect to the database as the default user.
+1.  Connect to a bash prompt running in the container:
 
-1. Select **Add Redis Database** to connect to the database.
+    ``` sh
+    $ docker exec -it redis1 bash
+    ```
 
-See the [RedisInsight documentation]({{< relref "/ri/_index.md" >}}) for more information.
+1. In the connection wizard, under **Redis CLI**, select the **Copy** button to copy the `redis-cli` command.
+
+1. Enter the copied `redis-cli` command in the terminal and replace `<username>` and `<password>` with your username and password.
+
+1. After you connect to your database, try these basic Redis commands:
+
+    ``` sh
+    xxx:yyy> ping
+    PONG
+    xxx:yyy> set hello world
+    OK
+    xxx:yyy> get hello
+    "world"
+    ```
+
+   To try other Redis commands, see the [commands reference](https://redis.io/commands/) for help.
 
 ## More info
 
