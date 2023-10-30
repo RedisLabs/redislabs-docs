@@ -17,7 +17,7 @@ This command requires the account owner role.
 
 ## Step-by-step
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).
+1. Sign in to the [Redis Cloud console](https://app.redislabs.com/).
 
 1. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
