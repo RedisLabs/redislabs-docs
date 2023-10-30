@@ -75,11 +75,9 @@ If you would rather customize your subscription and database, select **Create a 
 
 ## Connect to a database
 
-At this point, you're viewing the **Configuration** details for your new database.  
+At this point, you're viewing the **Configuration** details for your new database. Scroll to the **Security** section of the page.
 
-To connect to your database, you need your username and password. For the default user, the username is `default`.
-
-The **Security** section contains your **Default user password**.  By default, this is masked.  Select the eye icon to show or hide the password.    
+To connect to your database, you need your username and password. Each database is protected by a **Default user** called `default` and a masked **Default user password**. Select the eye icon to show or hide the password.    
 
 {{<image filename="images/rc/database-fixed-configuration-security.png" width="75%" alt="The Security section of the Configuration tab of the database details page." >}}{{< /image >}}
 
@@ -89,7 +87,7 @@ Once you have the username and password, select **Connect** to open the connecti
 
 The connection wizard provides the following database connection methods:
 
-- `redis-cli` utility
+- [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility
 
 - [Redis client](https://redis.io/clients) for your preferred programming language
 
