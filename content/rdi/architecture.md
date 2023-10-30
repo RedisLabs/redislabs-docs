@@ -77,7 +77,7 @@ RDI using Debezium Server works in two modes:
 1. Initial sync - where a snapshot of the entire database or a subset of selected tables is used as a baseline. The entire dataset is streamed to RDI and then transformed and written into the target Redis database.
 2. Live updates - where Debezium captures changes to the data that happen after the baseline snapshot and streams them to RDI where they are transformed and written to the target.
 
-![RDI data flow diagram](/images/rdi/rdi-new-data-flow.png)
+![RDI data flow diagram](/images/rdi/rdi-ingest-data-flow.png)
 
 
 ### Supported data transformations
