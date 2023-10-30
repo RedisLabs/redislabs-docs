@@ -14,6 +14,10 @@ The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) [allow 
 
 You can configure your database's CIDR allow list to restrict client connections to a specific range of IP addresses.
 
+## Prerequisites
+
+To use the CDIR allow list, you must be on either Redis Cloud Fixed, Flexible, or Annual plans.  This feature is not supported on Redis Cloud Free.
+
 ### Define CIDR allow list
 
 To define the CIDR allow list for a database:
