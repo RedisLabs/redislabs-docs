@@ -5,7 +5,10 @@ description: VPC peering uses private IP addresses to route traffic between a Re
 weight: 80
 alwaysopen: false
 categories: ["RC"]
-aliases:
+aliases: [
+    /rc/security/vpc-peering,
+    /rc/security/vpc-peering.md
+]
 ---
 
 VPC peering uses private IP addresses to allow network connections between two [virtual private clouds](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPCs).

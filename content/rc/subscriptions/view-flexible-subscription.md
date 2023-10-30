@@ -109,7 +109,7 @@ The **Connectivity** tabs helps secure your subscription.
 
 Here, you can:
 
-- Set up a [VPC peering]({{<relref "/rc/security/vpc-peering.md">}}) relationship between the virtual PC (VPC) hosting your subscription and another virtual PC.
+- Set up a [VPC peering]({{<relref "/rc/subscriptions/connectivity/vpc-peering.md">}}) relationship between the virtual PC (VPC) hosting your subscription and another virtual PC.
 
 - Set up an [access allow list]({{<relref "/rc/security/cidr-whitelist.md">}}) containing IP addresses or security groups (_AWS only_) permitted to access your subscription.
 

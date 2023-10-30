@@ -6,7 +6,10 @@ weight: 50
 alwaysopen: false
 toc: "true"
 categories: ["RC"]
-aliases:
+aliases: [
+    /rc/security/private-service-connect,
+    /rc/security/private-service-connect.md
+]
 ---
 
 [Private Service Connect](https://cloud.google.com/vpc/docs/private-service-connect) (PSC) creates a private endpoint that allows secure connections to Redis Cloud databases without exposing your application's [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC). 
@@ -15,7 +18,7 @@ This feature is only available for Flexible and Annual subscriptions hosted on G
 
 ## Considerations
 
-You can use Private Service Connect as an alternative to [VPC peering]({{<relref "/rc/security/vpc-peering">}}), or you can enable both for your subscription.
+You can use Private Service Connect as an alternative to [VPC peering]({{<relref "/rc/subscriptions/connectivity/vpc-peering">}}), or you can enable both for your subscription.
 
 Compared to VPC peering, Private Service Connect:
 
