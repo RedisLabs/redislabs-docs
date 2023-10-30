@@ -63,13 +63,17 @@ To enable TLS for a Redis Cloud database:
 
     {{<image filename="images/rc/database-details-configuration-tab-security-tls-client-auth-certificate.png" width="300px" alt="Provide or generate a certificate for TLS client authentication." >}}{{< /image >}}
 
-    If you generate your certificate from the admin console, a ZIP file download will start. The download contains:
+    If you generate your certificate from the admin console, a download button will appear once completed. The download contains:
 
     - `redis_user.crt` – the certificate's public key.
 
     - `redis_user_private.key` – the certificate's private key.
 
-1. To apply your changes and enable TLS, select the **Save database** button:
+    {{<note>}}
+You must download the certificate using this button at this point.  After the changes have been applied in the following steps the full bundle of public and private key will no longer be available for download.
+    {{</note>}}
+
+2. To apply your changes and enable TLS, select the **Save database** button:
 
     {{<image filename="images/rc/button-database-save.png" width="140px" alt="Use the Save database button to save database changes." >}}{{< /image >}}
 
@@ -85,7 +89,7 @@ To connect to a Redis Cloud database over TLS, you need:
 * A Redis client that supports TLS
 * Redis Cloud CA certificates
 
-### Download certificates
+### Download CA certificates
 
 If you don't have the Redis Cloud CA certificates, you can download them from the admin console:
 
