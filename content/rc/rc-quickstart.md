@@ -207,6 +207,8 @@ Run the following commands to create a `redis` Docker container and connect to y
 
 ## More info
 
+- [Connect your application](https://redis.io/docs/connect/clients/)
+- [Import data]({{< relref "/rc/databases/import-data/" >}})
 - [Manage databases]({{< relref "/rc/databases/_index.md" >}})
 - [Data persistence]({{< relref "/rc/databases/configuration/data-persistence.md" >}})
 - [Secure your Redis Enterprise Cloud database]({{< relref "/rc/security/" >}})
