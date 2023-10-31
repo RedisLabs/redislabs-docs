@@ -138,8 +138,12 @@ To learn more about write-behind declarative jobs and normalization, see the [wr
 
 ### Write-behind topology
 
-RDI's CLI and engine come in one edition that can run both ingest and write-behind. However, the topology for write-behind is different.
-RDI engine is installed on a Redis database containing the application data and not on a separate staging Redis database. RDI streams data and control plane adds a small footprint of few hundreds of MBs to the Redis database. In the write-behind topology, RDI processes in parallel on each shard and establishes a single connection from each shard to the downstream database.
+RDI's CLI and components come in one edition that can run both ingest and write-behind. However, the topology for write-behind is different.
+
+- RDI Redis collector - This component run on RedisGears inside the application Redis database. It captures data change events and writes them into Redis streams.
+- RDI stream processor - reads and process the data in the streams the same way it does for ingest data, however there are 2 main differences:
+  - RDI needs a job to be deployed in order to know how to map the data to a target table(s)
+  - RDI will use a specific writer (In most cases `relational.write`) in order to connect and apply the changes to the target.
 
 ### Model translation
 
