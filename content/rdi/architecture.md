@@ -145,6 +145,8 @@ RDI's CLI and components come in one edition that can run both ingest and write-
   - RDI needs a job to be deployed in order to know how to map the data to a target table(s)
   - RDI will use a specific writer (In most cases `relational.write`) in order to connect and apply the changes to the target.
 
+![write behind components](/images/rdi/rdi-write-behind.png)
+
 ### Model translation
 
 RDI write-behind can track changes to the following Redis types:
