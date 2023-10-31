@@ -57,11 +57,11 @@ The RDI metrics exporter is a prometheus exporter that allows [prometheus](https
 
 ### RDI API server
 
-The RDI API server exposes REST endpoints of RDI API. 
+The RDI API server exposes REST endpoints of RDI API.
 
 ### RDI CLI
 
-The RDI CLI provides a user interface to manage RDI.
+The RDI CLI provides a user interface to manage RDI. It uses the RDI API.
 
 
 ## Ingest functionality and architecture
@@ -110,8 +110,7 @@ RDI never keeps secrets in configuration files, instead secrets can be injected 
 ### Scalability and high availability
 
 RDI is highly available:
-
-When deployed on Kuberentes, RDI components are all stateless pods managed by Kubernetes and the RDI operator.
+When deployed on Kubernetes, RDI components are all stateless pods managed by Kubernetes and the RDI operator.
 When deployed on VMs, RDI use one VM as a failover (active-passive topology) with identical set of stateless components on each VM and an operator using a `Redlock` mechanism to ensure he owns the active set of RDI components.
 
 All RDI state is stored in highly available manner using Redis database high availability and Kubernetes etcd.
@@ -121,9 +120,13 @@ RDI is scalable:
 - Data is distributed to streams based on number of tables or even based on primary key.
 - During initial load (ingesting the baseline snapshot) RDI stream processor can span multiple processes each one processing some of the data streams.
 
-### Tested topologies
+### Deployment
 
+RDI can be deployed on Kubernetes or on VMs:
 
+- On Kubernetes, RDI works as a Kubernetes deployment managed by RDI operator. RDI operator is a pod watched by the cluster and responsible for orchestrating the other RDI components.
+- On VMs, RDI is deployed on two VMs. Each VM has an RDI operator that can orchestrate the other RDI components. At any given time a single RDI orchestrator is the primary and hence this VM is the active part of the deployment. On the other VM the orchestrator stops the RDI components and they do not run.
+![rdi active passive](/images/rdi/rdi-active-passive.png)
 
 ## Write-behind functionality and architecture
 
