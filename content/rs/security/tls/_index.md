@@ -22,9 +22,3 @@ You can [use TLS authentication]({{<relref "/rs/security/tls/enable-tls">}}) for
 TLS protocols and ciphers define the overall suite of algorithms that clients are able to connect to the servers with.
 
 You can change the [TLS protocols]({{<relref "/rs/security/tls/tls-protocols">}}) and [ciphers]({{<relref "/rs/security/tls/ciphers">}}) to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
-
-## Client-side encryption
-
-Client-side encryption may be used to help encrypt data through its lifecycle. This comes with some limitations. Operations that must operate on the data, such as increments, comparisons, and searches will not function properly. Client-side encryption is used to help protect data in use.
-
-You can write client-side encryption logic directly in your own application or use functions built into clients such as the Java Lettuce cipher codec.
