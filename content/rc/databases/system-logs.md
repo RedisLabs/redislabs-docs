@@ -14,7 +14,7 @@ The **Logs** page contains events, alerts, and logs from the activities, databas
 
 You can:
 
-* Sort the list by a specific field in descending or ascending order. Supported fields include *Time*, *Originator*, *Database name*, and *Activity*.
+* Sort the list by a specific field in descending or ascending order. Supported fields include *Time*, *Originator*, *Database name*, *API key name*, and *Activity*.
 
     {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." width="30px">}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." width="30px">}}{{< /image >}}    
     
