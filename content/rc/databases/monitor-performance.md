@@ -23,6 +23,8 @@ Performance data provides insight into how your database is being used and how w
 
 The interval scrollbar controls the time period displayed in the graphs.  
 
+{{<image filename="images/rc/database-metrics-interval-scrollbar.png" width="75%" alt="The Metrics tab of the View Database screen." >}}{{< /image >}}
+
 ## Promote metric graphs
 
 The **Metrics** screen shows two primary graphs and a collection of smaller ones.  You can promote any smaller graph to a primary position.
