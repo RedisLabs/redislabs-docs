@@ -151,17 +151,20 @@ The **Databases** list summarizes the status of all databases from the subscript
 You can:
 
 - Search by typing into the search box located above the database list.
-- Filter by selecting a filter type and then selection the checkbox next to the options you want to include from the dropdown.  Select the Filter toggle, located on the right of the search bar, if the filter types are hidden.
 
-    {{<image filename="images/rc/icon-database-list-filter-normal.png" alt="Use the filter icon in the list header to filter the list." >}}{{< /image >}}
+    {{<image filename="images/rc/database-list-search.png" alt="Use the search bar to filter the list." >}}{{< /image >}}
+
+- Filter by selecting a filter type and then selecting the checkbox next to the options you want to include from the dropdown.  Select the Filter toggle, located on the right of the search bar, if the filter types are hidden.
+
+    {{<image filename="images/rc/database-list-filter.png" alt="Use the filter toggle to display filter options." >}}{{< /image >}}
 
     You can filter the list on **Status**, **Subscription**, **Capabilities**, and **Options**.  String matches are _not_ case-sensitive.  You can specify more than one filter expression at a time.  
 
     A list of selected filters appears below the filter types.
 
-    To remove a filter click the x to the right of the name of that filter.
+    To remove a filter click the **x** to the right of the name of that filter.  To remove all filters, select **Clear all**.
 
-    {{<image filename="images/rc/icon-database-list-filter-active.png" alt="Active filters display a circle in the icon." >}}{{< /image >}}
+    {{<image filename="images/rc/database-list-filter-selected.png" alt="Use the filter toggle to display filter options." >}}{{< /image >}}
 
 - Sort the list in descending or ascending order using the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Name**, **Database ID**, and **Memory**.
 
