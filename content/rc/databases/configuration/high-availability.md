@@ -33,7 +33,7 @@ Your replication options depend on your [subscription plan]({{<relref "/rc/subsc
 - _Fixed_ plans let you choose between no replication, single-zone replication, or multi-zone replication when creating a subscription.  
 - _Flexible_ and _Annual_ plans allow multi-zone or single-zone subscriptions by default.  You can also disable replication.
 
-Replication may be turned on or off after database creation.  However, [zone setting configuration]({{<relref "/rc/databases/high-availability.md#zone-setting-maintenance">}}) is restricted to database creation.  
+Replication may be turned on or off after database creation.  However, [zone setting configuration]({{<relref "/rc/databases/configuration/high-availability.md#zone-setting-maintenance">}}) is restricted to database creation.  
 
 ## Performance and cost impact 
 

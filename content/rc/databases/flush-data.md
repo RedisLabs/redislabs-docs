@@ -48,7 +48,7 @@ redis-cli -h redis-12345.server.cloud.redislabs.example.com -p 12345 -a xyz flus
 
 ### RedisInsight CLI
 
-If you've installed [RedisInsight]({{<relref "/ri/">}}) and [added your database]({{<relref "rc/rc-quickstart/#using-redisinsight">}}), you can use the RedisInsight command-line interface (CLI) to issue commands:
+If you've installed [RedisInsight]({{<relref "/ri/">}}) and [added your database]({{<relref "rc/rc-quickstart.md#using-redisinsight">}}), you can use the RedisInsight command-line interface (CLI) to issue commands:
 
 1.  Start RedisInsight and connect to your database.
 
