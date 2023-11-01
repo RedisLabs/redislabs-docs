@@ -145,24 +145,22 @@ To connect to your database using the [redis-py](https://github.com/redis/redis-
 
 4. Create a python file ```vi example_redis.py```
 
-5. Add the copied code to your Python program. 
+5. Add the copied code to your Python program.
 
     ```
-    import { createClient } from 'redis';
+    import redis
 
-    const client = createClient({
-         password: '<YOUR_PASSWORD>',
-         socket: {
-            host: '<YOUR_HOST>',
-            port: <YOUR_PORT>
-         }
-    });
-
+    r = redis.Redis(
+    host='<HOST>',
+    port=<PORT>,
+    password='<PASSWORD>')
+    ```
+   
 6. Add the following code to your Python program.
 
     ```
-    client.set('hello', 'world')
-    print(client.get('hello'))
+    r.set('hello', 'world')
+    print(r.get('hello'))
     ```
 
 7. Run the program.
