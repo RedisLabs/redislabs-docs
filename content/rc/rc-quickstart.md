@@ -116,14 +116,16 @@ See the [RedisInsight documentation]({{< relref "/ri/_index.md" >}}) for more in
 
 ### Redis client{#using-redis-client}
 
-Different programming languages use different connection clients to interact with Redis databases, and each client has its own syntax and installation process. For help with a specific client, see the client's documentation.
+A Redis client is a software library or tool that enables applications to interact with a Redis server. Each client has its own syntax and installation process. For help with a specific client, see the client's documentation.
 
 The connection wizard provides code snippets to connect to your database with the following programming languages:
 
-- node.js using [node-redis](https://github.com/redis/node-redis#installation)
+- node.js using [node-redis](https://github.com/redis/node-redis/blob/master/README.md)
 - .NET using [StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/)
 - Python using [redis-py](https://github.com/redis/redis-py#redis-py)
 - Java using [Jedis](https://github.com/redis/jedis#jedis)
+
+{{<image filename="images/rc/connection-wizard-clients.png" alt="The connection wizard clients." >}}{{< /image >}}
 
 See the [client list](https://redis.io/docs/clients/) to view all Redis clients by language.
 
@@ -131,36 +133,43 @@ See the [client list](https://redis.io/docs/clients/) to view all Redis clients 
 
 To connect to your database using the [redis-py](https://github.com/redis/redis-py#redis-py) library for Python:
 
-1.  Install the Redis client if it is not already installed.
+1. Install the Redis client if it is not already installed.
 
     ```sh
     $ sudo pip install redis
     ```
 
-2.  In the connection wizard, under **Redis Client**, select Python from the **Select your client** menu.
+2. In the connection wizard, under **Redis Client**, select Python from the **Select your client** menu.
 
 3. Select **Copy** to copy the connection code for your database.
 
-4. Add the copied code to your program and replace `<username>` and `<password>` with your username and password.
+4. Create a python file ```vi example_redis.py```
 
-    ```python
-    import redis
+5. Add the copied code to your Python program. 
 
-    r = redis.Redis(
-      host='<host>',
-      port=<port>,
-      password='<password>')
+    ```
+    import { createClient } from 'redis';
 
-    # Redis commands
-    r.set('hello', 'world')
-    print(r.get('hello'))
+    const client = createClient({
+         password: '<YOUR_PASSWORD>',
+         socket: {
+            host: '<YOUR_HOST>',
+            port: <YOUR_PORT>
+         }
+    });
+
+6. Add the following code to your Python program.
+
+    ```
+    client.set('hello', 'world')
+    print(client.get('hello'))
     ```
 
-5. Run the program.
+7. Run the program.
 
     ```sh
     $ python example_redis.py
-    world
+    b'world'
     ```
 
 ### redis-cli (via Docker){#using-rediscli}
