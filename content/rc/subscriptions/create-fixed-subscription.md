@@ -21,16 +21,16 @@ When creating your subscription, you'll need to know which tier to choose.
 
 Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated February 2021):
 
-| Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections<br/>per Database | Security<br/> Groups | Max IP<br/> Auth rules |
-|------------:|:---------:|:-----------:|:---------------:|:-------------:|
-| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | N/A | N/A |
-| 100 MB &nbsp;&nbsp;&nbsp;&nbsp; | 4 | 256 | 1 | 4 |
-| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 | 4 |
-| 500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 | 4 |
-| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 2 | 8 |
-| 2&half; GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 | 8 |
-| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | 5000 | 4 | 16 |
-| 10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | 10000 | 4 | 32 |
+|                    Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections<br/>per Database | Security<br/> Groups | CIDR<br/> Allow rules |
+|--------------------------------------:|:---------:|:-----------:|:---------------:|:---------------------:|
+| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | N/A |          N/A          |
+|       100 MB &nbsp;&nbsp;&nbsp;&nbsp; | 4 | 256 | 1 |           4           |
+|       250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 |           4           |
+|       500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 |           4           |
+|         1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 2 |           8           |
+|      2.5; GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 |           8           |
+|         5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | 5000 | 4 |          16           |
+|        10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | 10000 | 4 |          32           |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
@@ -40,13 +40,13 @@ If you need additional resources, you can update your subscription at any time.
 
 ## Create a Fixed subscription
 
-To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-plans" >}}):
+To create a Fixed subscription:
 
-1.  From the admin console menu, select the **New Subscription** button.  
+1.  From the Redis Cloud subscriptions pane, select the **Add new subscription** button.  
 
     {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
-2. When the **New subscription** page appears, select **Fixed plans** and then scroll to the cloud vendor options.
+2. When the **New subscription** page appears, select **Fixed plan** and then scroll to the cloud vendor options.
 
     {{<image filename="images/rc/subscription-new-plan-options.png" alt="Available subscription plan options." >}}{{< /image >}}
 
@@ -74,7 +74,7 @@ To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-pla
 
 6.  Enter a subscription name and payment details.
 
-7.  Locate and then select the **Create Subscription** button, which is located below the **Credit card** details.
+7.  Locate and then select the **Create Subscription** button.
 
     {{<image filename="images/rc/button-subscription-create.png" alt="The Create Subscription button." >}}{{< /image >}}
 
