@@ -28,4 +28,4 @@ You can:
 
     {{<image filename="images/rc/system-logs-refresh.png" alt="Use the refresh button in the top right to refresh the system logs" width="40px">}}{{< /image >}}
 
-* Use the search bar to search for specific entries. Supported fields include *Originator*, *Database name*, *Activity*, and *Description*.
+* Use the search bar to search for specific entries. Supported fields include *Originator*, *Database name*, *API key name*, *Activity*, and *Description*.
