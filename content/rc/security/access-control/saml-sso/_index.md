@@ -35,13 +35,13 @@ After you activate SAML SSO for a Redis Cloud account, all existing local users 
 
 ### IdP-initiated SSO
 
-With IdP-initiated single sign-on, you can select the Redis Cloud application after you sign in to your [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider). This redirects you to the Redis Cloud [admin console](https://app.redislabs.com/#/login) and signs you in to your SAML user account.
+With IdP-initiated single sign-on, you can select the Redis Cloud application after you sign in to your [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider). This redirects you to the [Redis Cloud console](https://app.redislabs.com/#/login) and signs you in to your SAML user account.
 
 ### SP-initiated SSO
 
-You can also initiate single sign-on from the Redis Cloud [admin console](https://app.redislabs.com/#/login). This process is known as [service provider (SP)](https://en.wikipedia.org/wiki/Service_provider)-initiated single sign-on.
+You can also initiate single sign-on from the [Redis Cloud console](https://app.redislabs.com/#/login). This process is known as [service provider (SP)](https://en.wikipedia.org/wiki/Service_provider)-initiated single sign-on.
 
-1. From the Redis Cloud admin console's [sign-in screen](https://app.redislabs.com/#/login), select **SSO**.
+1. From the Redis Cloud console's [sign-in screen](https://app.redislabs.com/#/login), select **SSO**.
 
     {{<image filename="images/rc/button-sign-in-sso.png" width="150px" alt="Sign in with SSO button">}}{{</image>}}
 
@@ -51,7 +51,7 @@ You can also initiate single sign-on from the Redis Cloud [admin console](https:
 
     - If you already have an active SSO session with your identity provider, this signs you in to your SAML user account.
 
-    - Otherwise, the SSO flow redirects you to your identity provider's sign in screen. Enter your IdP user credentials to sign in. This redirects you back to the Redis Cloud admin console and automatically signs in to your SAML user account.
+    - Otherwise, the SSO flow redirects you to your identity provider's sign in screen. Enter your IdP user credentials to sign in. This redirects you back to the Redis Cloud console and automatically signs in to your SAML user account.
 
 ### Multi-factor authentication
 
@@ -127,7 +127,7 @@ After you set up the SAML integration app and create a SAML user in your identit
 
 1. Sign in to [Redis Cloud](https://app.redislabs.com/#/login) with the email address associated with the SAML user you set up with your identity provider.
 
-1. Select **Access Management** from the [admin console](https://app.redislabs.com) menu.
+1. Select **Access Management** from the [Redis Cloud console](https://app.redislabs.com) menu.
 
 1. Select **Single Sign-On**.
 
@@ -146,9 +146,9 @@ After you set up the SAML integration app and create a SAML user in your identit
 
     To find these metadata values, see your identity provider's documentation.
 
-1. From the **SAML** screen of the Redis Cloud [admin console](https://app.redislabs.com), configure the **Identity Provider metadata** settings. 
+1. From the **SAML** screen of the [Redis Cloud console](https://app.redislabs.com), configure the **Identity Provider metadata** settings. 
 
-    **Email domain binding** should match the email domain that SAML users will use to sign in from the Redis Cloud admin console (SP-initiated SSO).
+    **Email domain binding** should match the email domain that SAML users will use to sign in from the Redis Cloud console (SP-initiated SSO).
 
     {{<image filename="images/rc/access-management-saml-config.png"  alt="SAML Single Sign-On configuration screen.">}}{{</image>}}
 
@@ -227,7 +227,7 @@ After you set up SAML SSO for one account, you can link other accounts you own t
 
 To link other accounts to an existing SAML SSO configuration:
 
-1. Sign in to the Redis Cloud [admin console](https://app.redislabs.com) with the account that has an existing SAML configuration.
+1. Sign in to the [Redis Cloud console](https://app.redislabs.com) with the account that has an existing SAML configuration.
 
 1. Go to **Access Management > Single Sign-On**. 
 
@@ -263,7 +263,7 @@ Deactivating SAML SSO for an account also removes any existing SAML-type users a
 
 To deactivate SAML SSO for a specific account:
 
-1. In the Redis Cloud [admin console](https://app.redislabs.com), select your name to display your available accounts.
+1. In the [Redis Cloud console](https://app.redislabs.com), select your name to display your available accounts.
 
 1. If the relevant account is not already selected, select it from the **Switch account** list.
 
@@ -277,4 +277,4 @@ To deactivate SAML SSO for a specific account:
 
 When a user is removed from your identity provider their access to Redis Cloud should also be removed.  To deprovision SAML users upon deletion, the identity provider admin can set up a webhook to automatically make the appropriate Cloud API requests. For more information about how to manage users with API requests, see [Users](https://api.redislabs.com/v1/swagger-ui.html#/Users) in the Redis Cloud API documentation.
 
-When you have revoked user’s access to Redis Cloud, they cannot access the Redis Cloud admin console, but their API keys remain active. You can [delete an API key]({{<relref "/rc/api/get-started/manage-api-keys#delete-a-user-key">}}) to remove access.
+When you have revoked user’s access to Redis Cloud, they cannot access the Redis Cloud console, but their API keys remain active. You can [delete an API key]({{<relref "/rc/api/get-started/manage-api-keys#delete-a-user-key">}}) to remove access.

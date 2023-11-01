@@ -22,7 +22,7 @@ To use the CDIR allow list, you must be on either Redis Cloud Fixed, Flexible, o
 
 To define the CIDR allow list for a database:
 
-1. Select **Databases** from the [admin console](https://app.redislabs.com/) menu and then select your database from the list.
+1. Select **Databases** from the [Redis Cloud console](https://app.redislabs.com/) menu and then select your database from the list.
 
 1. From the database's **Configuration** screen, select the **Edit database** button:
 
@@ -53,7 +53,7 @@ The subscription CIDR allow list defines a range of IP addresses and [AWS securi
 
 To add IP addresses or [AWS security groups](https://docs.aws.amazon.com/managedservices/latest/userguide/about-security-groups.html) to a subscription's allow list:
 
-1. From the [admin console](https://app.redislabs.com/) menu, select **Subscriptions** and then select your subscription from the list.
+1. From the [Redis Cloud console](https://app.redislabs.com/) menu, select **Subscriptions** and then select your subscription from the list.
 
 1. Select **Connectivity > Allow List**.
 

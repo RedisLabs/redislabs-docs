@@ -1,7 +1,7 @@
 ---
 Title: Access control
 LinkTitle: Access control
-description: Control who can access the admin console and databases.
+description: Control who can access the Redis Cloud console and databases.
 weight: 5
 alwaysopen: false
 toc: "true"
@@ -13,7 +13,7 @@ Redis Cloud offers you a few different ways to control who can access and make c
 
 ## [Access Management]({{<relref "/rc/security/access-control/access-management">}})
 
-Control who can make changes to your databases using the Redis Cloud [admin console](https://app.redislabs.com/).
+Control who can make changes to your databases using the [Redis Cloud console](https://app.redislabs.com/).
 
 ## [SAML SSO]({{<relref "/rc/security/access-control/saml-sso">}})
 
@@ -31,7 +31,7 @@ You can use any identity provider to integrate with Redis Enterprise Cloud as lo
 
 ## [Multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}})
 
-Redis Cloud supports multi-factor authentication to reduce the risk of unauthorized admin console access. 
+Redis Cloud supports multi-factor authentication to reduce the risk of unauthorized Redis Cloud console access. 
 
 ## [Data Access control]({{<relref "/rc/security/access-control/data-access-control">}})
 
