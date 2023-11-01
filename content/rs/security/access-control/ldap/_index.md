@@ -12,9 +12,9 @@ aliases: /rs/administering/designing-production/security/ldap-integration/,
          /rs/security/access-control/ldap/cluster-based-ldap-authentication/
 ---
 
-Redis Enterprise Software supports [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization through its [role-based access controls]({{<relref "rs/security/access-control">}}) (RBAC).  You can use LDAP to authorize access to the admin console and to control database access.
+Redis Enterprise Software supports [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization through its [role-based access controls]({{<relref "rs/security/access-control">}}) (RBAC).  You can use LDAP to authorize access to the Cluster Manager UI and to control database access.
 
-You can configure LDAP roles using the Redis Enterprise admin console or REST API.
+You can configure LDAP roles using the Redis Enterprise Cluster Manager UI or REST API.
 
 ## How it works
 
@@ -34,7 +34,7 @@ Here's how role-based LDAP integration works:
 
 1.  Determine if one of the user's groups is authorized to access the target resource.  If so, the user is granted the level of access authorized to the role.  
 
-To access the admin console, the user needs to belong to an LDAP group mapped to an administrative role.  
+To access the Cluster Manager UI, the user needs to belong to an LDAP group mapped to an administrative role.  
 
 For database access, the user needs to belong to an LDAP group mapped to a role listed in the database’s access control list (ACL).  The rights granted to the group determine the user's level of access. 
 
@@ -59,7 +59,7 @@ Before you enable LDAP in Redis Enterprise, you need:
 
 To enable LDAP:
 
-1.  From **Cluster > Security > LDAP** in the admin console, [enable LDAP access]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
+1.  From **Access Control > LDAP > Configuration** in the Cluster Manager UI, [enable LDAP access]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
 
 1.  Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}}).
 

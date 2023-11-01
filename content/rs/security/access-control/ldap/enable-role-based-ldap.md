@@ -17,7 +17,7 @@ Role-based LDAP lets you authorize admin console admins (previously known as _ex
 
 ## Set up LDAP connection
 
-To enable and configure LDAP, sign into the Redis Enterprise admin console and then select **Cluster > Security > LDAP**.
+To enable and configure LDAP, sign into the Redis Enterprise admin console and then select **Access Control > LDAP > Configuration**.
 
 {{<image filename="images/rs/screenshots/cluster/security-ldap.png" alt="The LDAP configuration screen in the Redis Software admin console" >}}{{</image>}}
 
@@ -25,11 +25,11 @@ When LDAP is enabled, use the info you gathered to populate the following settin
 
 ### LDAP server settings
 
-The **LDAP Server** settings define the communication settings used for LDAP authentication and authorization. These include:
+The **LDAP server** settings define the communication settings used for LDAP authentication and authorization. These include:
 
 | _Setting_ | _Description_ | 
 |:----------|:--------------|
-| **Protocol** | Underlying communication protocol; must be _LDAP_, _LDAPS_, or _STARTTLS_ |
+| **Protocol type** | Underlying communication protocol; must be _LDAP_, _LDAPS_, or _STARTTLS_ |
 | **Host** | URL of the LDAP server |
 | **Port** | LDAP server port number |
 | **Trusted CA certificate** |  _(LDAPS or STARTTLS protocols only)_ Certificate for the trusted certificate authority (CA) |
@@ -78,7 +78,7 @@ In this example, `%D` is replaced by the Distinguished Name of the user attempti
 
 ### Save settings
 
-When finished, select the **Save & enable** button to save your changes.
+When finished, select the **Save & Enable** button to save your changes.
 
 ## More info
 
