@@ -176,7 +176,7 @@ The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utilit
 
 [Docker](https://www.docker.com/) provides a convenient way to run `redis-cli` without the full installation experience.
 
-Run the following commands to create a `redis` Docker container and connect to your database with `redis-cli`:
+Run the following commands to create a Redis Docker container and connect to your database with `redis-cli`:
 
 1.  Download the `redis` Docker image:
 
@@ -197,7 +197,7 @@ Run the following commands to create a `redis` Docker container and connect to y
 
 1. In the connection wizard, under **Redis CLI**, select the **Copy** button to copy the `redis-cli` command.
 
-1. Enter the copied `redis-cli` command in the terminal and replace `<username>` and `<password>` with your username and password.
+1. Enter the copied `redis-cli` command in the terminal.
 
 1. After you connect to your database, try these basic Redis commands:
 
