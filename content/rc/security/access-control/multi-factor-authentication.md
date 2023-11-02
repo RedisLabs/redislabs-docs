@@ -29,7 +29,7 @@ To configure MFA for your user account:
 1. Sign in to your account.
 2. From the Redis Cloud console menu, select your name and then **User Profile** from the drop down menu.
 
-    {{<image filename="images/rc/multi-factor-authentication-user-dropdown.png"  width="100px" alt="Use the user drop down menu to get to the User Profile section." >}}{{< /image >}}
+    {{<image filename="images/rc/multi-factor-authentication-user-dropdown.png"  width="300px" alt="Use the user drop down menu to get to the User Profile section." >}}{{< /image >}}
 
 3. Under your user profile, locate **Multi-factor authentication**.
 
