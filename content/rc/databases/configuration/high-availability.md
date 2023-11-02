@@ -30,8 +30,7 @@ Redis Enterprise Cloud supports three levels of replication:
 Your replication options depend on your [subscription plan]({{<relref "/rc/subscriptions/_index.md">}}):
 
 - _Free_ plans do not support replication.
-- _Fixed_ plans let you choose between no replication, single-zone replication, or multi-zone replication when creating a subscription.  
-- _Flexible_ and _Annual_ plans allow multi-zone or single-zone subscriptions by default.  You can also disable replication.
+- _Fixed_, _Flexible_ and _Annual_plans paid plans let you choose between allow multi-zone or single-zone subscriptions on creation. You may also disable replication.
 
 Replication may be turned on or off after database creation.  However, [zone setting configuration]({{<relref "/rc/databases/configuration/high-availability.md#zone-setting-maintenance">}}) is restricted to database creation.  
 
