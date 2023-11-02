@@ -52,9 +52,9 @@ If you've installed [RedisInsight]({{<relref "/ri/">}}) and [added your database
 
 1.  Start RedisInsight and connect to your database.
 
-2.  From the RedisInsight menu, select **CLI** and wait for the client to connect to your database.
+2.  From the RedisInsight menu, select **Workbench** and wait for the client to connect to your database.
 
-3.  In the command area, enter `flushall` and then press _Enter_.
+3.  In the command area, enter `flushall` and then select the green **run** arrow.
 
     {{<image filename="images/rc/redisinsight-cli-flushall-example.png" alt="You can use RedisInsight to issue commands to a database." >}}{{< /image >}}
 
