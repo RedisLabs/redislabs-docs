@@ -5,7 +5,7 @@ description: Shows how to configure cipher suites.
 weight: 60
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: /rs/security/tls/ciphers/
 ---
 
 Ciphers are algorithms that help secure connections between clients and servers. You can change the ciphers to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.

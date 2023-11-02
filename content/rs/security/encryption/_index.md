@@ -13,7 +13,7 @@ Redis Enterprise Software uses encryption to secure communications between clust
 
 ## Encrypt data in transit
 
-### [TLS]({{<relref "/rs/security/tls">}})
+### [TLS]({{<relref "/rs/security/encryption/tls">}})
 
 Redis Enterprise Software uses Transport Layer Security (TLS) to encrypt communications for the following:
 
@@ -25,7 +25,7 @@ Redis Enterprise Software uses Transport Layer Security (TLS) to encrypt communi
 
 - Internode communication
 
-You can also [enable TLS authentication]({{<relref "/rs/security/tls/enable-tls">}}) for the following:
+You can also [enable TLS authentication]({{<relref "/rs/security/encryption/tls/enable-tls">}}) for the following:
 
 - Communication from clients or applications to your database
 

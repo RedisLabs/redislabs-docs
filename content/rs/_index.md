@@ -52,7 +52,7 @@ Create and manage a [Redis database]({{<relref "/rs/databases">}}) on a cluster.
 - [Access control]({{<relref "/rs/security/access-control">}})
 - [Users]({{<relref "/rs/security/access-control/manage-users">}}) & [roles]({{<relref "/rs/security/access-control/rbac/create-roles">}})
 - [Certificates]({{<relref "/rs/security/certificates">}})
-- [TLS]({{<relref "/rs/security/tls">}}) & [Encryption]({{<relref "/rs/security/encryption">}})
+- [TLS]({{<relref "/rs/security/encryption/tls">}}) & [Encryption]({{<relref "/rs/security/encryption">}})
 
 ## Reference
 Use command-line utilities and the REST API to manage the cluster and databases.

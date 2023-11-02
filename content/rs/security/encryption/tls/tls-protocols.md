@@ -5,7 +5,7 @@ description:
 weight: 50
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: /rs/security/tls/tls-protocols/
 ---
 
 You can change TLS protocols to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
