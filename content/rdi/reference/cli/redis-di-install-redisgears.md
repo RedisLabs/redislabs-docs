@@ -1,19 +1,19 @@
 ---
-Title: redis-di install-gears
-linkTitle: redis-di install-gears
-description: Install RedisGears module on Redis cluster
+Title: redis-di install-redisgears
+linkTitle: redis-di install-redisgears
+description: Installs RedisGears module on Redis cluster
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Install RedisGears module on Redis cluster
+Installs RedisGears module on Redis cluster
 
 ## Usage
 
 ```
-Usage: redis-di install-gears [OPTIONS]
+Usage: redis-di install-redisgears [OPTIONS]
 ```
 
 ## Options
@@ -57,10 +57,10 @@ Usage: redis-di install-gears [OPTIONS]
 
   Redis Enterprise Cluster Password
 
-- `redisgears_module`:
+- `redisgears_module` (REQUIRED):
 
   - Type: STRING
-  - Default: ``
+  - Default: `none`
   - Usage: `--redisgears-module`
 
   RedisGears module file
@@ -76,9 +76,9 @@ Usage: redis-di install-gears [OPTIONS]
 ## CLI help
 
 ```
-Usage: redis-di install-gears [OPTIONS]
+Usage: redis-di install-redisgears [OPTIONS]
 
-  Install RedisGears module on Redis cluster
+  Installs RedisGears module on Redis cluster
 
 Options:
   -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
@@ -92,6 +92,6 @@ Options:
                                   either DB Member, Cluster Member or Cluster
                                   Admin roles  [required]
   --cluster-password TEXT         Redis Enterprise Cluster Password
-  --redisgears-module TEXT        RedisGears module file
+  --redisgears-module TEXT        RedisGears module file  [required]
   --help                          Show this message and exit.
 ```
