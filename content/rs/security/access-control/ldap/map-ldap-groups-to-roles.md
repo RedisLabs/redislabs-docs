@@ -1,6 +1,6 @@
 ---
 Title: Map LDAP groups to roles
-description: Describes how to map LDAP authorization groups to Redis Enterprise roles using the admin console.
+description: Describes how to map LDAP authorization groups to Redis Enterprise roles using the Cluster Manager UI.
 weight: 35
 alwaysopen: false
 categories: ["RS"]
@@ -15,9 +15,9 @@ Once LDAP is enabled, you need to map LDAP groups to Redis Enterprise access con
 
 ## Map LDAP groups to roles
 
-To map LDAP groups to access control roles:
+To map LDAP groups to access control roles in the Cluster Manager UI:
 
-1. From the admin console menu, select **Access Control > LDAP > Mapping**.
+1. Select **Access Control > LDAP > Mapping**.
 
     {{<note>}}
 You can map LDAP roles when LDAP configuration is not enabled, but they won't have any effect until you [configure and enable LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
@@ -39,7 +39,7 @@ Create a mapping for each LDAP group used to authenticate and/or authorize acces
 
 The scope of the authorization depends on the access control role:
 
-- If the role authorizes admin management, LDAP users are authorized as admin console administrators.
+- If the role authorizes admin management, LDAP users are authorized as cluster management administrators.
 
 - If the role authorizes database access, LDAP users are authorized to use the database to the limits specified in the role.
 

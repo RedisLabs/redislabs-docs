@@ -59,7 +59,7 @@ To test your LDAP integration, you can:
 
 - Connect with `redis-cli` and use the [`AUTH` command](https://redis.io/commands/auth/) to test LDAP username/password credentials.
 
-- Sign in to the admin console using LDAP credentials authorized for admin access.
+- Sign in to the Cluster Manager UI using LDAP credentials authorized for admin access.
 
 - Use [RedisInsight]({{<relref "/ri">}}) to access a database using authorized LDAP credentials.
 
