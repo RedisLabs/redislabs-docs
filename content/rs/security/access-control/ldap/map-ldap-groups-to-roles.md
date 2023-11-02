@@ -19,9 +19,9 @@ To map LDAP groups to access control roles:
 
 1. From the admin console menu, select **Access Control > LDAP > Mapping**.
 
-   If you see an "LDAP configuration is off or disabled" message, go to **Access Control > LDAP > Configuration** to [enable role-based LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
-
-   You can map LDAP roles when LDAP configuration is not enabled, but they won't have any effect until you configure and enable LDAP.
+    {{<note>}}
+You can map LDAP roles when LDAP configuration is not enabled, but they won't have any effect until you [configure and enable LDAP]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
+    {{</note>}}
 
 1.  Select the **+ Add LDAP Mapping** button to create a new mapping and then enter the following details:
 

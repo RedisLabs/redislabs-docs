@@ -1,6 +1,6 @@
 ---
 Title: Enable role-based LDAP
-description: Describes how to enable role-based LDAP authentication and authorization using the Redis Enterprise admin console.
+description: Describes how to enable role-based LDAP authentication and authorization using the Cluster Manager UI.
 weight: 25
 alwaysopen: false
 categories: ["RS"]
@@ -13,15 +13,21 @@ Redis Enterprise Software uses a role-based mechanism to enable LDAP authenticat
 
 When a user attempts to access Redis Enterprise resources using LDAP credentials, the credentials are passed to the LDAP server in a bind request. If the request succeeds, the user’s groups are searched for a group that authorizes access to the original resource.
 
-Role-based LDAP lets you authorize admin console admins (previously known as _external users_) as well as database users.  As with any access control role, you can define the level of access authorized by the role.
+Role-based LDAP lets you authorize cluster management users (previously known as _external users_) and database users. As with any access control role, you can define the level of access authorized by the role.
 
 ## Set up LDAP connection
 
-To enable and configure LDAP, sign into the Redis Enterprise admin console and then select **Access Control > LDAP > Configuration**.
+To configure and enable LDAP from the Cluster Manager UI:
 
-{{<image filename="images/rs/screenshots/cluster/security-ldap.png" alt="The LDAP configuration screen in the Redis Software admin console" >}}{{</image>}}
+1. Go to **Access Control > LDAP > Configuration**.
 
-When LDAP is enabled, use the info you gathered to populate the following settings.
+1. Select **+ Create**.
+
+1. In **Set LDAP**, configure [LDAP server settings](#ldap-server-settings), [bind credentials](#bind-credentials), [authentication query](#authentication-query), and [authorization query](#authorization-query).
+
+   {{<image filename="images/rs/screenshots/access-control/ldap-config.png" alt="The LDAP configuration screen in the Cluster Manager UI" >}}{{</image>}}
+
+1. Select **Save & Enable**.
 
 ### LDAP server settings
 
@@ -75,10 +81,6 @@ These settings define the group authorization query:
 | **Scope**  | _(query search)_ Must be _baseObject_, _singleLevel_, or _wholeSubtree_ |
 
 In this example, `%D` is replaced by the Distinguished Name of the user attempting to access the Redis Enterprise resource.
-
-### Save settings
-
-When finished, select the **Save & Enable** button to save your changes.
 
 ## More info
 
