@@ -119,7 +119,7 @@ You can use the '{...}' pattern to direct related keys to the same hash
 slot, so that multi-key operations are supported on them. On the other
 hand, not using a hashtag in the key's name results in a
 (statistically) even distribution of keys across the keyspace's shards 
-which results in better resource utilization.  
+which results in better resource utilization. 
 If your application does not perform multi-key operations, you don't
 need to construct key names with hashtags.
 
