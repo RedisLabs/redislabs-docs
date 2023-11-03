@@ -51,7 +51,7 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Redis version**         | Redis version used to create the database                                                                                                                   |
 | **Auto Tiering**          | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_)                                                               |
 | **Creation time**         | Date and time the database was created                                                                                                                      |
-| **Active-Active Redis**   | Checked when the database is part of an Active-Active relationship (_coming soon; Flexible or Annual subscriptions only_)                                   |
+| **Active Active Redis**   | Checked when the database is part of an Active Active relationship                                                                                          |
 | **Last changed**          | Date and time of last update                                                                                                                                |
 | **Supported Protocol(s)** | Shows which version of RESP the database uses. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
 | **Advanced Capabilites**  | This setting appears when when an [advanced capability]({{< relref "/stack" >}}) is enabled for a database                                                  |
@@ -80,13 +80,13 @@ The Durability section helps protect your data when problems occur.  These setti
 
 {{<image filename="images/rc/database-details-configuration-tab-durability-flexible.png" alt="Use the Durability  section to protect your data from unexpected problems." >}}{{< /image >}}
 
-|Setting name|Description|
-|:-----------|:----------|
-| **High availability** | Replicates your data across multiple nodes, as allowed by your subscription plan |
-| **Data persistence** | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type |
+| Setting name             |Description|
+|:-------------------------|:----------|
+| **High availability**    | Replicates your data across multiple nodes, as allowed by your subscription plan |
+| **Data persistence**     | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type |
 | **Data eviction policy** | Configures which [policy]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) is applied when your database reaches its memory limit |
-| **Remote backup** | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}). |
-| **Active-passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
+| **Remote backup**        | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}). |
+| **Active Passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
 
 ### Security section
 
@@ -194,21 +194,21 @@ Because databases exist within the context of a deployment, certain fields canno
 
 Here's what you can change:
 
-| Section | Setting | Comments |
-|:-----------|:----------|:---------|
-| General | Database name ||
-| Scalability | Memory limit | _Flexible and Annual subscriptions only)_ |
-| | Throughput | _Flexible and Annual subscriptions only)_ |
-| | Hashing policy | _Flexible and Annual subscriptions only)_ |
-| | Cluster OSS | _Flexible and Annual subscriptions only)_ |
-| Durability | High-availability | _paid Fixed, Flexible, and Annual subscriptions only)_ |
-| | Data persistence | _paid Fixed, Flexible, and Annual subscriptions only)_ |
-| | Data eviction policy | |
-| | Remote backup | _paid Fixed, Flexible,  Annual subscriptions only)_ |
-| | Active-passive Redis | _Flexible and Annual subscriptions only)_ |
-| Security | Default user |
-| | Default user password |
-| | CIDR allow list | _paid Fixed, Flexible, and Annual subscriptions only)_ |
+| Section | Setting                        | Comments |
+|:-----------|:-------------------------------|:---------|
+| General | Database name                  ||
+| Scalability | Memory limit                   | _Flexible and Annual subscriptions only)_ |
+| | Throughput                     | _Flexible and Annual subscriptions only)_ |
+| | Hashing policy                 | _Flexible and Annual subscriptions only)_ |
+| | Cluster OSS                    | _Flexible and Annual subscriptions only)_ |
+| Durability | High-availability              | _paid Fixed, Flexible, and Annual subscriptions only)_ |
+| | Data persistence               | _paid Fixed, Flexible, and Annual subscriptions only)_ |
+| | Data eviction policy           | |
+| | Remote backup                  | _paid Fixed, Flexible,  Annual subscriptions only)_ |
+| | Active Passive Redis           | _Flexible and Annual subscriptions only)_ |
+| Security | Default user                   |
+| | Default user password          |
+| | CIDR allow list                | _paid Fixed, Flexible, and Annual subscriptions only)_ |
 | | Transport layer security (TLS) | _Flexible and Annual subscriptions only)_ |
 | Alerts | all available for subscription |
 
