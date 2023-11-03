@@ -52,7 +52,7 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Active-Active Redis** | Checked when the database is part of an Active-Active relationship (_coming soon; Flexible or Annual subscriptions only_) |
 | **Last changed** | Date and time of last update |
 | **Supported Protocol(s)** | Shows which version of RESP the database uses. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
-| **Advanced capabilites** | This setting appears when when an advanced capability, also know as a [module]({{< relref "/stack" >}}), is enabled for a database  |
+| **Advanced capabilites** | This setting appears when when an [advanced capability]({{< relref "/stack" >}}) is enabled for a database  |
 
 ### Scalability section
 
@@ -66,7 +66,7 @@ The **Scalability** section is primarily for Flexible and Annual plans. Free and
 |:-----------|:----------|
 | **Memory limit** | Maximum size (in GB) for your database |
 | **Memory used** | Memory currently used for your database  |
-| **Throughput** | Defines throughput in terms of maximum operations per second for the database <br/><br/>RediSearch databases use the number of shards to determine throughput. To determine how many shards you need for your RediSearch database, use the [RediSearch sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). | |
+| **Throughput** | Defines throughput in terms of maximum operations per second for the database <br/><br/>Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). | |
 | **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/durability-ha/clustering.md#changing-the-hashing-policy" >}}) |
 | **Cluster OSS** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 

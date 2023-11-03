@@ -58,7 +58,7 @@ The following details are provided:
 | **Endpoint** | Use the **Copy** button to copy the endpoint URI to the Clipboard |
 | **Memory** | Memory size of the database, showing the current size and the maximum size |
 | **Throughput** | Maximum operations per second supported for the database |
-| **Modules** | Identifies modules attached to the database |
+| **Capabilities** | Identifies advanced capabilities attached to the database |
 | **Options** | Icons showing options associated with the database |
 
 To view full details of a database, click its name in the list.

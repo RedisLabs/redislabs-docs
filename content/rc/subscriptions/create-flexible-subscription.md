@@ -18,9 +18,9 @@ When you create a Flexible subscription, a cost estimate is provided to help you
 
 To create a [Flexible subscription]({{< relref "/rc/subscriptions/#subscription-plans" >}}):
 
-1.  From the admin console menu, select the **New Subscription** button.  
+1.  From the admin console menu, select **Add new subscription**.  
 
-    {{<image filename="images/rc/button-subscription-new.png" width="20%" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
+    {{<image filename="images/rc/button-subscription-new.png" width="50%" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
 2. When the **New subscription** page appears, select **Flexible plans** and then scroll to the cloud vendor options.
 
@@ -67,7 +67,7 @@ The following settings are defined in the **General settings** of the **Setup** 
 
 ### Version
 
-{{<image filename="images/rc/subscription-new-flexible-version-section.png" width="75%" alt="The General settings of the Setup tab." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-new-flexible-version-section.png" width="75%" alt="Version selection between Redis 6.2 and 7.2" >}}{{< /image >}}
 
 The **Version** section lets you choose the Redis version of your database. Choose **Redis 7.2** if you want to use the latest advanced features of Redis.
 
@@ -130,7 +130,7 @@ By default, you're shown basic settings, which include:
 | Database&nbsp;setting | Description |
 |:---------|:-----------|
 | **Name** | A custom name for your database (_required_) |
-| **Advanced Capabilities** | Modules used by the database. Choose from [RedisSearch]({{< relref "/stack/search" >}}), [RedisJSON]({{< relref "/stack/json" >}}), [RedisTimeSeries]({{< relref "/stack/timeseries" >}}), [RedisBloom]({{< relref "/stack/bloom" >}}), or [RedisGraph]({{< relref "/stack/deprecated-features/graph" >}}). |
+| **Advanced Capabilities** | Advanced data types used by the database. Choose from [Search and query]({{< relref "/stack/search" >}}), [JSON]({{< relref "/stack/json" >}}), [Time series]({{< relref "/stack/timeseries" >}}), [Probabilistic]({{< relref "/stack/bloom" >}}), or [Graph (EOL)]({{< relref "/stack/deprecated-features/graph" >}}). |
 | **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**). |
 | **Memory Limit (GB)** | The size limit for the database. Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).|
 | **High Availability** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |

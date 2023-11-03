@@ -142,12 +142,12 @@ But, if the strings are more than 1 million and the memory consumption is high, 
 
 ### Convert a hash table to ziplist for hashes
 
-Hashes have two types of encoding: a hash table and ziplist. The decision of storing in which of the data structures in done based on the two configurations Redis provides - `hash-max-ziplist-entries` and `hash-max-ziplist-values`.
+Hashes have two types of encoding: a hash table and ziplist. The decision of storing in which of the data structures in done based on the two configurations Redis provides - `hash-max-ziplist-entries` and `hash-max-ziplist-value`.
 
 By default the redis configuration parameters have these settings as:
 
 - hash-max-ziplist-entries = 512
-- hash-max-ziplist-values = 64
+- hash-max-ziplist-value = 64
 
 So if any value for a key exceeds the two configurations it is stored automatically as a hash table instead of a ziplist. A hash table consumes almost double the memory compared to a ziplist. To save your memory, you can increase the two configurations and convert your hash tables to ziplists.
 

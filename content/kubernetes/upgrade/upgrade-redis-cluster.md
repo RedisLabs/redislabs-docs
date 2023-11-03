@@ -1,8 +1,8 @@
 ---
-Title: Upgrade a Redis Enterprise cluster (REC)
-linkTitle: Upgrade a Redis cluster
+Title: Upgrade Redis Enterprise for Kubernetes
+linkTitle: Kubernetes
 description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
-weight: 19
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
@@ -14,41 +14,23 @@ aliases: [
     /platforms/kubernetes/rec/upgrade-redis-cluster/,
     /kubernetes/re-clusters/upgrade-redis-cluster.md,
     /kubernetes/re-clusters/upgrade-redis-cluster/,
+    /kubernetes/upgrade/upgrade-redis-cluster/,
 ]
 ---
-Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps:
+
+Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process includes updating three components:
 
   1. [Upgrade the Redis Enterprise operator](#upgrade-the-operator)
   2. [Upgrade the Redis Enterprise cluster (REC)](#upgrade-the-redis-enterprise-cluster-rec)
+  3. [Upgrade Redis Enterprise databases (REDB)](#upgrade-databases)
 
-{{<warning>}}Redis Enterprise for Kubernetes 7.2.4-2 introduces a new limitation. You cannot recover or upgrade your cluster if there are databases with manually uploaded modules. See the [Redis Enterprise Software 7.2.4 known limitations]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#cluster-recovery-with-manually-uploaded-modules">}}) for more details.{{</warning>}}
+## Prerequisites
 
-## Before upgrading
+1. Check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to make sure your Kubernetes distribution is supported.
 
-Review the following warnings before starting your upgrade.
+2. Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
 
-### Compatibility
-
-Before upgrading, check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to make sure your Kubernetes distribution is supported.
-
-### Supported upgrade paths
-
-If you are using a version earlier than 6.2.10-45, you must upgrade to 6.2.10-45 before you can upgrade to versions 6.2.18 or later.
-
-### OpenShift clusters running 6.2.12 or earlier
-
-Version 6.4.2-6 includes a new SCC (`redis-enterprise-scc-v2`) that you need to bind to your service account before upgrading. OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later might get stuck if you skip this step. See [reapply SCC](#reapply-the-scc) for details.
-
-### RHEL7-based images
-
-When upgrading existing Redis Enterprise clusters running on RHEL7-based images, make sure to select a RHEL7-based image for the new version. See [release notes]({{<relref "/kubernetes/release-notes/">}}) for more info.
-
-### Invalid license
-
-Verify your license is valid before upgrading your REC. Invalid licenses will cause the upgrade to fail.
-
-Use `kubectl get rec` and verify the `LICENSE STATE` is valid on your REC before you start the upgrade process.
-
+3. Verify you are upgrading from Redis Enterprise operator version 6.2.10-45 or later. If you are not, you must upgrade to 6.2.10-45 before upgrading to versions 6.2.18 or later.
 
 ## Upgrade the operator
 
@@ -63,12 +45,6 @@ You can download the bundle for the latest release with the following `curl` com
 ```sh
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
 curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
-```
-
-For OpenShift environments, the name of the bundle is `openshift.bundle.yaml`, and so the `curl` command to run is:
-
-```sh
-curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/openshift.bundle.yaml
 ```
 
 If you need a different release, replace `VERSION` in the above with a specific release tag.
@@ -86,12 +62,6 @@ Upgrade the bundle and operator with a single command, passing in the bundle YAM
 
 ```sh
 kubectl apply -f bundle.yaml
-```
-
-If you are using OpenShift, run this instead:
-
-```sh
-kubectl apply -f openshift.bundle.yaml
 ```
 
 After running this command, you should see a result similar to this:
@@ -114,21 +84,6 @@ If you have the admission controller enabled, you need to manually reapply the `
 {{</note>}}
 
 {{< embed-md "k8s-admission-webhook-cert.md"  >}}
-
-### Reapply the SCC
-
-If you are using OpenShift, you will also need to manually reapply the [security context constraints](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html) file ([`scc.yaml`]({{<relref "/kubernetes/deployment/openshift/openshift-cli#deploy-the-operator" >}})) and bind it to your service account.
-
-```sh
-oc apply -f openshift/scc.yaml
-```
-
-```sh
-oc adm policy add-scc-to-user redis-enterprise-scc-v2 \
-  system:serviceaccount:<my-project>:<rec-name>
-```
-
-If you are upgrading from operator version 6.4.2-6 or before, see the ["after upgrading"](#after-upgrading) section to delete the old SCC and role binding after all clusters are running 6.4.2-6 or later.
 
 ### Verify the operator is running
 
@@ -183,6 +138,10 @@ After the operator upgrade is complete, you can upgrade Redis Enterprise cluster
 
 1. Save the changes to apply.
 
+### Reapply roles and role bindings
+
+If your operator is monitoring multiple namespaces, you'll need to [reapply your role and role bindings]({{<relref "/kubernetes/re-clusters/multi-namespace#create-role-and-role-binding-for-managed-namespaces">}}) for each managed namespace. See [Manage databases in multiple namespaces]({{<relref "/kubernetes/re-clusters/multi-namespace">}}) for more details.
+
 ### Monitor the upgrade
 
 You can view the state of the REC with `kubectl get rec`.
@@ -203,30 +162,6 @@ To see the status of the current rolling upgrade, run:
 kubectl rollout status sts <REC_name>
 ```
 
-### After upgrading
-
-For OpenShift users, operator version 6.4.2-6 introduced a new SCC (`redis-enterprise-scc-v2`). If any of your OpenShift RedisEnterpriseClusters are running versions earlier than 6.2.4-6, you need to keep both the new and old versions of the SCC.
-
-If all of your clusters have been upgraded to operator version 6.4.2-6 or later, you can delete the old version of the SCC (`redis-enterprise-scc`) and remove the binding to your service account.
-
-1. Delete the old version of the SCC
-
-   ```sh
-   oc delete scc redis-enterprise-scc
-   ```
-
-   The output should look similar to the following:
-
-   ```sh
-   securitycontextconstraints.security.openshift.io "redis-enterprise-scc" deleted
-   ```
-
-1. Remove the binding to your service account.
-
-   ```sh
-   oc adm policy remove-scc-from-user redis-enterprise-scc system:serviceaccount:<my-project>:<rec-name>
-   ```
-
 ### Upgrade databases
 
 {{<warning>}}In version 7.2.4, old module versions and manually uploaded modules are not persisted. If databases are not upgraded after cluster upgrade, and require cluster recovery afterwards, you'll need to contact Redis support. This issue will be fixed in the next maintenance release by moving the stored location of the modules.{{</warning>}}
@@ -235,12 +170,3 @@ After the cluster is upgraded, you can upgrade your databases. The process for u
 
 Note that if your cluster [`redisUpgradePolicy`]({{<relref "/kubernetes/reference/cluster-options#redisupgradepolicy">}}) or your database [`redisVersion`]({{<relref "/kubernetes/reference/db-options#redisversion">}}) are set to `major`, you won't be able to upgrade those databases to minor versions. See [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading#redis-upgrade-policy">}}) for more details.
 
-## How does the REC upgrade work?
-
-The Redis Enterprise cluster (REC) uses a rolling upgrade, meaning it upgrades pods one by one. Each pod is updated after the last one completes successfully. This helps keep your cluster available for use.
-
-To upgrade, the cluster terminates each pod and deploys a new pod based on the new image.
-  Before each pod goes down, the operator checks if the pod is a primary (master) for the cluster, and if it hosts any primary (master) shards. If so, a replica on a different pod is promoted to primary. Then when the pod is terminated, the API remains available through the newly promoted primary pod.
-
-After a pod is updated, the next pod is terminated and updated.
-After all of the pods are updated, the upgrade process is complete.
