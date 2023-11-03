@@ -51,6 +51,7 @@ Cluster configuration:
     slave_ha_bdb_cooldown_period: 7200
     parallel_shards_upgrade: 0
     show_internals: disabled
+    cluster_preferred_endpoint_type_default: ip
     expose_hostnames_for_all_suffixes: disabled
     login_lockout_threshold: 5
     login_lockout_duration: 1800
@@ -118,6 +119,7 @@ db:1 [database1]:
     max_connections: 0
     oss_cluster: disabled
     oss_cluster_api_preferred_ip_type: internal
+    cluster_preferred_endpoint_type: ip
     gradual_src_mode: disabled
     gradual_src_max_sources: 1
     gradual_sync_mode: auto
