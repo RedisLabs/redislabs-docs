@@ -17,3 +17,7 @@ To filter the data, you can:
 * Select a database from the **Database** list to view the daily memory usage of a specific database.
 
 You can also hold the pointer over each bar in the graph to view the precise memory usage on that day.
+
+## Download cost report
+
+{{< embed-md "rc-cost-report-csv.md" >}}

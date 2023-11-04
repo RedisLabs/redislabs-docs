@@ -35,9 +35,9 @@ To import a dataset from any publicly available Redis server:
     - Password - Enter the password, if required by the Redis database.
 1. Select **Import**.
 
-## Import from an RDB file
+## Restore from an RDB file
 
-If you have an RDB or a compressed RDB file from a Redis database, you can import data from that file into your Redis Enterprise Cloud database.
+If you have an RDB or a compressed RDB file from a previous backup, you can restore data from that file into your Redis Enterprise Cloud database.
 
 ### Via FTP or HTTP
 

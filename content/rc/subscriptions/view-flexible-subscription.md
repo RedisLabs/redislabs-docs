@@ -29,6 +29,8 @@ From here, you can:
 
     {{<image filename="images/rc/icon-database-status-active.png" alt="When a subscription is active, the status icon displays a green circle with a checkmark." >}}{{< /image >}} &nbsp; {{<image filename="images/rc/icon-subscription-status-pending.png" alt="When a subscription is pending, the status icon displays a gre, animated circle." >}}{{< /image >}}
 
+- {{< embed-md "rc-opt-in-to-72.md" >}}
+
 Because subscriptions represent active deployments, there aren't many details you can change.  If your needs change, create a new subscription and then migrate the existing data to the new databases.
 
 In addition, three tabs are available:
@@ -56,7 +58,7 @@ The following details are provided:
 | **Endpoint** | Use the **Copy** button to copy the endpoint URI to the Clipboard |
 | **Memory** | Memory size of the database, showing the current size and the maximum size |
 | **Throughput** | Maximum operations per second supported for the database |
-| **Modules** | Identifies modules attached to the database |
+| **Capabilities** | Identifies advanced capabilities attached to the database |
 | **Options** | Icons showing options associated with the database |
 
 To view full details of a database, click its name in the list.

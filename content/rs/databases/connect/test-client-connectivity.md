@@ -20,99 +20,95 @@ database.
 
 To test client connectivity:
 
-1. [Create a Redis database]({{< relref "/rs/administering/creating-databases/_index.md" >}}) and get the database endpoint, which
+1. [Create a Redis database]({{<relref "/rs/databases/create">}}) and get the database endpoint, which
     contains the cluster name (FQDN).
 1. Try to connect to the database endpoint from your client of choice,
-    and execute commands against the database.
+    and run database commands.
 1. If the database does not respond, try to connect to the database
-    endpoint by using the IP address rather than the FQDN; if you
-    succeed, it means that the DNS is not properly configured. For
-    additional details, refer to
-    [DNS]({{< relref "/rs/networking/cluster-dns/_index.md" >}}).
+    endpoint using the IP address rather than the FQDN. If you
+    succeed, then DNS is not properly configured. For
+    additional details, see
+    [Configure cluster DNS]({{<relref "/rs/networking/cluster-dns">}}).
 
-If any issues are encountered during the connectivity test, contact our
-support at <support@redislabs.com>.
+If any issues occur when testing database connections, [contact
+support](https://redis.com/company/support/).
 
-## Test connecting to your database
+## Test database connections
 
-With the Redis database created, you are ready to connect to your
-database to store data. You can use one of the following ways to test
-connectivity to your database:
+After you create a Redis database, you can connect to your
+database and store data using one of the following methods:
 
-- Connecting with redis-cli, the built-in command-line tool
-- Connecting with a _Hello World_ application using Python.
+- [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}), the built-in command-line tool
 
-### Connecting using redis-cli
+- An application using a [Redis client library](https://redis.io/resources/clients/), such as [`redis-py`](https://github.com/redis/redis-py) for Python
 
-Run redis-cli, located in the /opt/redislabs/bin directory, to connect
-to port 12000 and store and retrieve a key in database1
+### Connect with redis-cli
+
+Connect to your database with `redis-cli` (located in the `/opt/redislabs/bin` directory), then store and retrieve a key:
 
 ```sh
-# sudo /opt/redislabs/bin/redis-cli -p 12000
+$ redis-cli -h <endpoint> -p <port>
 127.0.0.1:16653> set key1 123
 OK
 127.0.0.1:16653> get key1
 "123"
 ```
 
-### Connect with a simple Python app
+For more `redis-cli` connection examples, see the [`redis-cli` reference]({{<relref "/rs/references/cli-utilities/redis-cli">}}).
 
-A simple python application running on the host machine can also connect
-to the database1.
+### Connect with Python
 
-{{< note >}}
-The following section assumes you already have python and redis-py
-(python library for connecting to Redis) configured on the host machine running the container.
-You can find the instructions to configure redis-py on the
-[github page for redis-py](https://github.com/andymccurdy/redis-py).
-{{< /note >}}
+Python applications can connect
+to the database using the `redis-py` client library. For installation instructions, see the
+[`redis-py` README](https://github.com/redis/redis-py#readme) on GitHub.
 
-In the command-line Terminal, create a new file called
-**redis_test.py**
+1. From the command line, create a new file called
+`redis_test.py`:
 
-```sh
-vi redis_test.py
-```
+    ```sh
+    vi redis_test.py
+    ```
 
-Paste the following into a file named **redis_test.py**.
+1. Paste the following code in `redis_test.py`, and replace `<host>` and `<port>` with your database's endpoint details:
 
-```sh
-import redis
+    ```python
+    import redis
 
-r = redis.StrictRedis(host='localhost', port=12000, db=0)
-print ("set key1 123")
-print (r.set('key1', '123'))
-print ("get key1")
-print(r.get('key1'))
-```
+    # Connect to the database
+    r = redis.Redis(host='<host>', port=<port>)
 
-Run "redis_test.py" application to connect to the database and store
-and retrieve a key using the command-line.
+    # Store a key
+    print ("set key1 123")
+    print (r.set('key1', '123'))
 
-```sh
-python redis_test.py
-```
+    # Retrieve the key
+    print ("get key1")
+    print(r.get('key1'))
+    ```
 
-The output should look like the following screen if the connection is
-successful.
+1. Run the application:
 
-```sh
-set key1 123
-True
-get key1
-123
-```
-### Test database connectivity with a simple application
+    ```sh
+    python redis_test.py
+    ```
 
-You can also use a simple application to test connectivity to your database.
-Here is a simple python app that connects to the database by IP address.
-The app uses the discovery service that is compliant with Redis Sentinel API.
+1. If the application successfully connects to your database, it outputs: 
+
+    ```sh
+    set key1 123
+    True
+    get key1
+    123
+    ```
+### Connect with discovery service
+
+You can also connect a Python application to the database using the discovery service, which complies with the Redis Sentinel API.
 
 In the IP-based connection method, you only need the database name, not the port number.
-Here we simply use the discovery service that listens on port 8001 on all nodes of the cluster
+The following example uses the discovery service that listens on port 8001 on all nodes of the cluster
 to discover the endpoint for the database named "db1".
 
-```sh
+```python
 from redis.sentinel import Sentinel
 
 # with IP based connections, a list of known node IP addresses is constructed
@@ -135,21 +131,4 @@ print r.set('foo', 'bar')
 print r.get('foo')
 ```
 
-In the URL-based connection method, you need to specify the endpoint
-and the port number for your database.
-
-```sh
-import redis
-
-# the URL provided to redis. Redis method comes from the database configuration
-# property called "Endpoint". The endpoint URL generated by the database is a
-# combination of the cluster name (FQDN) and database port number.
-r = redis.Redis(
-host='redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com',
-port=19836)
-
-# set key "foo" to value “bar”
-print(r.set('foo', 'bar'))
-# set value for key "foo"
-print(r.get('foo'))
-```
+For more `redis-py` connection examples, see the [`redis-py` developer documentation](https://redis-py.readthedocs.io/en/stable/examples/connection_examples.html).

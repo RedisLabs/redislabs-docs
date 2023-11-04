@@ -38,9 +38,9 @@ The database recovery process includes:
 
 - We recommend that you allocate new persistent storage drives for the new cluster nodes.
     If you use the original storage drives,
-    make sure that you backup all files on the old persistent storage drives to another location.
+    make sure to back up all files on the old persistent storage drives to another location.
 
-## Recovering the databases
+## Recover databases
 
 After you prepare the cluster that hosts the database,
 you can run the recovery process from the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}})
@@ -72,16 +72,38 @@ of the configuration and persistence files on each of the nodes.
     - No permission to read the files - Change the file permissions so that redislabs:redislabs has 640 permissions.
     - Files are corrupted - Locate copies of the files that are not corrupted.
 
-    If you cannot resolve the issues, contact [Redis support](mailto:support@redislabs.com).
+    If you cannot resolve the issues, contact [Redis support](https://redis.com/company/support/).
 
-1. Recover the database, either:
+1. Recover the database using one of the following [`rladmin recover`]({{<relref "/rs/references/cli-utilities/rladmin/recover">}}) commands:
 
-    - Recover the databases all at once from the persistence files located in the persistent storage drives: `rladmin recover all`
-    - Recover a single database from the persistence files located in the persistent storage drives: `rladmin recover db <database_id|name>`
-    - Recover only the database configuration for a single database (without the data): `recover db only_configuration <db_name>`
+    - Recover all databases from the persistence files located in the persistent storage drives:
+    
+        ```sh
+        rladmin recover all
+        ```
+
+    - Recover a single database from the persistence files located in the persistent storage drives:
+    
+        - By database ID:
+
+            ```sh
+            rladmin recover db db:<id>
+            ```
+
+        - By database name:
+        
+            ```sh
+            rladmin recover db <name>
+            ```
+
+    - Recover only the database configuration for a single database (without the data):
+    
+        ```sh
+        rladmin recover db <name> only_configuration
+        ```
 
     {{< note >}}
-- If persistence was not configure for the database, the database is restored empty.
+- If persistence was not configured for the database, the database is restored empty.
 - For Active-Active databases that still have live instances, we recommend that you recover the configuration for the failed instances and let the  data update from the other instances.
 - For Active-Active databases that all instances need to be recovered, we recommend that you recover one instance with the data and only recover the configuration for the other instances.
    The empty instances then update from the recovered data.
@@ -91,6 +113,10 @@ of the configuration and persistence files on each of the nodes.
    The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, usually under `/var/opt/redislabs/persist/redis`.
     {{< /note >}}  
 
-1. To verify that the recovered databases are now active, run: `rladmin status`
+1. To verify that the recovered databases are now active, run: 
 
-After the databases are recovered, make sure that your redis clients can successfully connect to the databases.
+    ```sh
+    rladmin status
+    ```
+
+After the databases are recovered, make sure your Redis clients can successfully connect to the databases.

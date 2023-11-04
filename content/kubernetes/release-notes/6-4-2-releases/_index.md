@@ -23,7 +23,7 @@ If you are using operator version 6.2.8-15 or earlier, you cannot upgrade direct
 
 Due to a change in the SCC, on OpenShift clusters running version 6.2.12 or earlier upgrading to version 6.2.18 or later, where `node:1` is <b>not</b> the master node, the upgrade might get stuck.
 
-For more info and steps to prevent this issue, see [upgrade a Redis Enterprise cluster (REC)]({{<relref "/kubernetes/re-clusters/upgrade-redis-cluster#before-upgrading">}}).
+For more info and steps to prevent this issue, see [upgrade a Redis Enterprise cluster (REC)]({{<relref "/kubernetes/upgrade/upgrade-redis-cluster#before-upgrading">}}).
 
 Operator version 6.4.2-6 includes a fix for this issue.
 

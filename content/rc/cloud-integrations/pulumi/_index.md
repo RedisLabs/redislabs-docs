@@ -58,7 +58,7 @@ The "bring your own AWS account" option for Redis Cloud has been deprecated. The
 
 * [`GetDataPersistence`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getdatapersistence/): Get the type of database persistence.
 * [`GetDatabase`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getdatabase/): Get the information related to a specific database.
-* [`GetDatabaseModules`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getdatabasemodules/): Get the modules for a specific database.
+* [`GetDatabaseModules`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getdatabasemodules/): Get the capabilities for a specific database.
 * [`GetPaymentMethod`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getpaymentmethod/): Get the payment method related to the Redis Cloud account.
 * [`GetRegions`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getregions/): Get the regions related to an active-active subscription
 * [`GetSubscription`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getsubscription/): Get the information related to a specific subscription.

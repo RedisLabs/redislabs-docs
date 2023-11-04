@@ -35,7 +35,7 @@ curl -u "demo@redislabs.com:password" \
     https://localhost:9443/v1/bdbs
 ```
 
-For more examples, see the [Redis Enterprise Software REST API quick start]({{<relref "/rs/references/rest-api/quick-start" >}})
+For more examples, see the [Redis Enterprise Software REST API quick start]({{<relref "/rs/references/rest-api/quick-start" >}}).
 
 ### Permissions
 
@@ -45,7 +45,7 @@ If a user attempts to access an endpoint that is not allowed in their role, the 
 
 ### Certificates
 
-The Redis Enterprise Software REST API uses [Self-signed certificates]({{<relref "/rs/security/certificates">}}) to ensure the product is secure. When you use the default self-signed certificates, the HTTPS requests will fail with `SSL certificate problem: self signed certificate` unless you turn off SSL certificate verification. The examples in this tutorial turn off SSL certificate verification.
+The Redis Enterprise Software REST API uses [Self-signed certificates]({{<relref "/rs/security/certificates">}}) to ensure the product is secure. When you use the default self-signed certificates, the HTTPS requests will fail with `SSL certificate problem: self signed certificate` unless you turn off SSL certificate verification.
 
 ## Ports
 

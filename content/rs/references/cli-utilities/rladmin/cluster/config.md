@@ -36,6 +36,7 @@ Updates the cluster configuration.
         [ min_control_TLS_version <control_tls_version> ]
         [ min_data_TLS_version <data_tls_version> ]
         [ min_sentinel_TLS_version <sentinel_tls_version> ]
+        [ reserved_ports <list of ports/port ranges> ]
         [ s3_url <URL> ]
         [ saslauthd_ldap_conf </tmp/ldap.conf> ]
         [ sentinel_ssl_policy { allowed | required | disabled } ]
@@ -71,6 +72,7 @@ Updates the cluster configuration.
 | min_control_TLS_version | TLS protocol version | The minimum TLS protocol version that is supported for the control path |
 | min_data_TLS_version | TLS protocol version | The minimum TLS protocol version that is supported for the data path |
 | min_sentinel_TLS_version | TLS protocol version | The minimum TLS protocol version that is supported for the discovery service |
+| reserved_ports | list of ports/port ranges | List of reserved ports and/or port ranges to avoid using for database endpoints (for example `reserved_ports 11000 13000-13010`) |
 | s3_url | string | The URL of S3 export and import |
 | saslauthd_ldap_conf | filepath | Updates LDAP authentication configuration for the cluster |
 | sentinel_cipher_suites | list of ciphers | Cipher suites used by the discovery service (supported ciphers are implemented by the [golang.org cipher suites package](https://golang.org/src/crypto/tls/cipher_suites.go)) |
