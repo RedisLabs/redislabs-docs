@@ -7,7 +7,8 @@ alwaysopen: false
 toc: "true"
 headerRange: "[1-3]"
 categories: []
-aliases: 
+aliases: /rc/subscriptions/maintenance/set-maintenance-windows
+         /rc/subscriptions/maintenance/set-maintenance-windows.md
 ---
 
 By default, Redis will maintain your Redis Cloud subscriptions and databases as needed. During maintenance, you may notice some latency when connecting to your databases. For more information about the types of maintenance and how Redis maintains your subscriptions, see [Maintenance]({{<relref "/rc/subscriptions/maintenance">}}).
