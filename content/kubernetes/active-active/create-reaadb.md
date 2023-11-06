@@ -125,6 +125,8 @@ For a list of example values used throughout this article, see the [Example valu
            - name: rerc-reagan
      ```
 
+     {{<note>}}Sharding is disabled on Active-Active databases created with a `shardCount` of 1. Sharding cannot be enabled after database creation. {{</note>}}
+
     For more details on RERC fields, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
 1. Create a Redis Enterprise Active-Active database from the REAADB custom resource file.
