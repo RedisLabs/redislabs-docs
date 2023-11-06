@@ -8,10 +8,11 @@ categories: ["RC"]
 aliases: /rc/subscriptions/create-active-active-subscription/
 ---
 
-To deploy Active-Active databases in Redis Enterprise Cloud, you need to create a Flexible or Annual subscription with Active-Active enabled.
+To deploy Active-Active databases in Redis Cloud, you need to create a Flexible or Annual subscription with Active-Active enabled.
 
-Overall, the process is similar to [creating a traditional subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some differences; you need to:
+Overall, the process is similar to [creating a traditional flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some differences; you need to:
 
+- Enabling Active-Active Redis
 - [Define the regions](#define-regions) for each database instance
 - Define unique [CIDR addresses](#define-cidr-addresses) for each instance
 - [Define throughput](#define-throughput) (read and write operations) for each region
@@ -30,7 +31,7 @@ When you create a new Flexible subscription, the Active-Active Redis option appe
 {{<image filename="images/rc/create-flexible-sub-active-active-on.png" width="75%" alt="When you enable Active-Actve, you need to specify the regions for each database instance." >}}{{< /image >}}
 
 
-When you enable Active-Active Redis, the region control changes to a default showing two regions.  Select the drop-down arrow to display a list of provider regions that support Active-Active databases.
+When you enable Active-Active Redis, two regions are selected by default.  Select the drop-down arrow to display a list of provider regions that support Active-Active databases.
 
 {{<image filename="images/rc/create-sub-active-active-regions.png" width="50%" alt="Use the Region drop-down to select the regions for your Active-Active database." >}}{{< /image >}}
 
