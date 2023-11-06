@@ -8,6 +8,10 @@ linktitle: Delete subscription
 aliases:
 ---
 
+{{<note>}}
+Once a subscription is deleted, it cannot be recovered. We recommend [backing up your data]({{< relref "rc/databases/back-up-data.md" >}}) before removing databases or subscriptions.
+{{</note>}}
+
 To delete a subscription:
 
 1.  [Delete all databases]({{< relref "rc/databases/delete-database.md" >}}) from the subscription.
@@ -30,7 +34,3 @@ To delete a subscription:
 
 
 5.  Select the **Yes, delete** button to confirm your choice.
-
-Once a subscription is deleted, it cannot be recovered.
-
-We recommend [backing up your data]({{< relref "rc/databases/back-up-data.md" >}}) before removing databases or subscriptions.
