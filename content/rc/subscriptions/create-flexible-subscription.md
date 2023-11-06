@@ -10,15 +10,15 @@ aliases: /rc/administration/customize-pro/
          /rc/administration/setup/customize-pro.md
          /rc/administration/setup/customize-flexible-plan/
 ---
-Flexible subscriptions support any dataset size or throughput.  Pricing is based on your [workload requirements](https://redis.com/redis-enterprise-cloud/pricing/) (database size and throughput.)  
+Flexible subscriptions support any dataset size or throughput.  [Pricing](https://redis.com/redis-enterprise-cloud/pricing/) is based on your workload requirements (database size and throughput.)  
 
 When you create a Flexible subscription, a cost estimate is provided to help you understand the impact of your requirements.  
 
 ## Create a Flexible subscription
 
-To create a [Flexible subscription]({{< relref "/rc/subscriptions/#subscription-plans" >}}):
+To create a Flexible subscription:
 
-1.  From the admin console menu, select **Add new subscription**.  
+1.  From the Redis Cloud console menu, select **Add new subscription**.  
 
     {{<image filename="images/rc/button-subscription-new.png" width="50%" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
@@ -43,9 +43,10 @@ The **Setup** tab specifies general settings for the deployment of your subscrip
 
 {{<image filename="images/rc/subscription-new-flexible-tabs-setup.png" width="75%" alt="The Setup tab of the new Fixed subscription process." >}}{{< /image >}}
 
-The two sections to this tab:
+The three sections to this tab:
 
 - [General settings](#general-settings) include the cloud provider details, the subscription name, and specific configuration options.
+- [Version](#version) lets you choose the Redis version of your database.
 - [Advanced options](#advanced-options) define settings for high availability and security. Configurable settings vary according to cloud provider.
 
 To continue to the Sizing tag, locate and select the **Continue** button, which appears below the **Advanced options** section
@@ -65,13 +66,13 @@ The following settings are defined in the **General settings** of the **Setup** 
 | **Active-Active Redis** | Hosts your datasets in multiple read-write locations to support distributed applications and disaster recovery. See [Active-Active geo-distributed Redis]({{< relref "/rs/databases/active-active" >}}) |
 | **Auto Tiering**| Determines if your databases are stored only in memory (RAM) or are split between memory and Flash storage (RAM+Flash).  See [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}})|
 
-### Version
+### Version {#version}
 
 {{<image filename="images/rc/subscription-new-flexible-version-section.png" width="75%" alt="Version selection between Redis 6.2 and 7.2" >}}{{< /image >}}
 
 The **Version** section lets you choose the Redis version of your database. Choose **Redis 7.2** if you want to use the latest advanced features of Redis.
 
-Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
+[Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
 
 ### Advanced options {#advanced-options}
 
@@ -79,14 +80,14 @@ Redis 7.2 introduces several changes to existing Redis commands; see the list of
 
 The following settings are defined in the **Advanced options** of the **Setup** tab:
 
-| _Advanced option_ | _Description_ |
-|:---------|:-----------|
-| **Multi-AZ** | Determines if replication spans multiple Availability Zones, which provides automatic failover when problems occur. |
-| **Cloud account** | To deploy this subscription to an existing cloud account, select it here.  Use the Add button to add a new cloud account.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
-| **VPC configuration** | Select _In a new VPC_ to deploy to a new [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC).<br/><br/>To deploy this subscription to an existing virtual private cloud, select _In existing VPC_ and then set VPC ID to the appropriate ID value.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
+| _Advanced option_ | _Description_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Multi-AZ** | Determines if replication spans multiple Availability Zones, which provides automatic failover when problems occur.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Cloud account** | To deploy this subscription to an existing cloud account, select it here.  Use the Add button to add a new cloud account.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled)                                                                                                                                                                                                                                                                                                    |
+| **VPC configuration** | Select _In a new VPC_ to deploy to a new [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC).<br/><br/>To deploy this subscription to an existing virtual private cloud, select _In existing VPC_ and then set VPC ID to the appropriate ID value.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled)                                                                                                                                            |
 | **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range of IP addresses for your deployment. Because Redis creates a new [subnet](https://en.wikipedia.org/wiki/Subnetwork) for the _Deployment CIDR_ in your [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC), it cannot overlap with the CIDR ranges of other subnets used by your subscription.<br/><br/>For deployments in an existing VPC, the _Deployment CIDR_ must be within your VPC's **primary** CIDR range (secondary CIDRs are not supported). |
-| **Allowed Availability Zones** | The availability zones for your selected region.<br/><br/>If you choose *Manual selection*, you must select at least one zone ID from the **Zone IDs** list.  For more information, see [Availability zones](#availability-zones). |
-| **Maintenance windows** | Determines when Redis can perform [maintenance]({{<relref "/rc/subscriptions/maintenance">}}) on your databases. Select **Manual** if you want to set [manual maintenance windows]({{<relref "/rc/subscriptions/maintenance">}}).  |
+| **Allowed Availability Zones** | The availability zones for your selected region.<br/><br/>If you choose *Manual selection*, you must select at least one zone ID from the **Zone IDs** list.  For more information, see [Availability zones](#availability-zones).                                                                                                                                                                                                                                                                                                                                   |
+| **Maintenance windows** | Determines when Redis can perform [maintenance]({{<relref "/rc/subscriptions/maintenance">}}) on your databases. Select **Manual** if you want to set [manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows/">}}).                                                                                                                                                                                                                                                                                                                                   |
 
 When finished, choose **Continue** to determine your subscription size requirements.
 
@@ -134,7 +135,7 @@ By default, you're shown basic settings, which include:
 | **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**). |
 | **Memory Limit (GB)** | The size limit for the database. Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).|
 | **High Availability** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |
-| **Quantity** | Identifies the number of databases to create with the selected settings. |
+| **Data Persistence** | Defines the data persistence policy, if any. See [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}) |
 
 Select **More options** to specify values for the following settings.
 
@@ -144,7 +145,6 @@ Select **More options** to specify values for the following settings.
 |:---------|:-----------|
 | **OSS Cluster API** | Enable to use the open-source Redis Cluster API. |
 | **Type** | Set to _Memcached_ database to support the legacy database; otherwise leave as _Redis_ |
-| **Data Persistence** | Defines the data persistence policy, if any. See [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}) |
 | **Supported Protocol(s)** | Choose between RESP2 and RESP3 _(Redis 7.2 only)_. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
 | **Quantity** | Number of databases to create with these settings. |
 
