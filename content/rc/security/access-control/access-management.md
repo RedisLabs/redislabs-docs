@@ -57,8 +57,8 @@ Use the dialog to specify these values.
 
 | Setting | Description |
 |---------|-------------|
-| **First name** | First name of the user displayed in the admin console and in email messages |
-| **Last name** | Last name of the user displayed in the admin console and in email messages |
+| **First name** | First name of the user displayed in the Redis Cloud console and in email messages |
+| **Last name** | Last name of the user displayed in the Redis Cloud console and in email messages |
 | **Role** | The role identifies their subscription and account privileges.  For details, see [Team management roles](#team-management-roles). |
 | **Email** | The address used for alerts and other email messages regarding the account | 
 | **Alert emails** | Enable to be notified when subscription databases cross certain thresholds, such as exceeding memory limits or latency requirements |
@@ -91,7 +91,7 @@ Select **Delete user** to confirm removal. This is a permanent action that canno
 
 ## Team management roles
 
-Each team member is assigned a role that identifies their privileges and limits their activities in the admin console.
+Each team member is assigned a role that identifies their privileges and limits their activities in the Redis Cloud console.
 
 Roles and responsibilities are:
 
@@ -111,7 +111,7 @@ Roles and responsibilities are:
 
 - **Viewer** can view all databases and their configurations, including database secrets.
 
-This table shows each role's ability to perform common tasks using the admin console.
+This table shows each role's ability to perform common tasks using the Redis Cloud console.
 
 | Task | Owner | Manager | Member | Viewer |
 |------|:-----:|:-------:|:------:|:------:|

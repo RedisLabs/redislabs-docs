@@ -29,7 +29,7 @@ Amazon, Microsoft, and Google public clouds embrace a wide range of security bes
 
 ## Customer responsibility
 
-Customers are responsible for the security configurations in their Redis databases and the Redis Enterprise Cloud admin console. Customers must understand and implement the Redis Enterprise Cloud security features and best practices.
+Customers are responsible for the security configurations in their Redis databases and the Redis Cloud console. Customers must understand and implement the Redis Enterprise Cloud security features and best practices.
 
 Customers are also responsible for the applications built on Redis and the data they store in Redis. Customers determine the cloud provider, region, and availability zone of their deployments.
 

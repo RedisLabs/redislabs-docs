@@ -18,17 +18,17 @@ Redis Enterprise Cloud provides a number of ways to secure subscriptions and dat
 
 As a Redis Cloud user, consider these security domains:
 
-- The [admin console](#admin-console-security)
+- The [Redis Cloud console](#admin-console-security)
 - [Your databases]({{<relref "/rc/security/database-security/_index.md">}})
 - The [Redis Cloud API]({{<relref "/rc/api/get-started/enable-the-api.md">}})
 
 First, you might want to review our [shared responsibility model]({{<relref "/rc/security/shared-responsibility-model.md">}}) for security.
 
-## Admin console security
+## Redis Cloud console security {#admin-console-security}
 
-The admin console is the web application you use to manage your Redis Cloud deployments. 
+The Redis Cloud console is the web application you use to manage your Redis Cloud deployments. 
 
-Secure access to the admin console by:
+Secure access to the Redis Cloud console by:
 
 - Assigning appropriate roles to [team members with access]({{<relref "/rc/security/access-control/access-management#team-management-roles">}}).
 
