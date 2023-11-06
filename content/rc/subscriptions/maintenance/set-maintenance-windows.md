@@ -21,7 +21,7 @@ After you set a maintenance window, you can change it at any time. However, chan
 
 To set manual maintenance windows for a single flexible subscription:
 
-1. From the [admin console](https://app.redislabs.com/), select the **Subscriptions** menu and then select your subscription from the list.
+1. From the [Redis Cloud console](https://app.redislabs.com/), select the **Subscriptions** menu and then select your subscription from the list.
 
 1. Select the **Overview** tab.
 
