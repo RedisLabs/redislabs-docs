@@ -70,7 +70,7 @@ To enable TLS for a Redis Cloud database:
     - `redis_user_private.key` – the certificate's private key.
 
     {{<note>}}
-You must download the certificate using this button at this point.  After the changes have been applied in the following steps the full bundle of public and private key will no longer be available for download.
+You must download the certificate using the button at this point.  After your changes have been applied, the full bundle of public and private keys will no longer be available for download.
     {{</note>}}
 
 2. To apply your changes and enable TLS, select the **Save database** button:
