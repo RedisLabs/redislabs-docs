@@ -49,8 +49,6 @@ The three sections to this tab:
 - [Version](#version) lets you choose the Redis version of your database.
 - [Advanced options](#advanced-options) define settings for high availability and security. Configurable settings vary according to cloud provider.
 
-To continue to the Sizing tag, locate and select the **Continue** button, which appears below the **Advanced options** section
-
 
 ### General settings {#general-settings}
 
@@ -89,9 +87,6 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 | **Allowed Availability Zones** | The availability zones for your selected region.<br/><br/>If you choose *Manual selection*, you must select at least one zone ID from the **Zone IDs** list.  For more information, see [Availability zones](#availability-zones).                                                                                                                                                                                                                                                                                                                                   |
 | **Maintenance windows** | Determines when Redis can perform [maintenance]({{<relref "/rc/subscriptions/maintenance">}}) on your databases. Select **Manual** if you want to set [manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows.md">}}).                                                                                                                                                                                                                                                                                                         |
 
-When finished, choose **Continue** to determine your subscription size requirements.
-
-{{<image filename="images/rc/button-subscription-continue.png" width="100px" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
 
 #### Availability zones
 
@@ -112,6 +107,11 @@ If **Multi-AZ** is enabled, you must select three availability zones from the li
 {{<image filename="images/rc/availability-zones-multi-az.png" width="80%" alt="Select Manual selection to select three availability zones when Multi-AZ is enabled." >}}{{< /image >}}
 
 For more information on availability zones, see the [Google Cloud docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+
+When finished, choose **Continue** to determine your subscription size requirements.
+
+{{<image filename="images/rc/button-subscription-continue.png" width="100px" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+
 ## Sizing tab
 
 The **Sizing** tab helps you specify the database, memory, and throughput requirements for your subscription.
@@ -141,12 +141,12 @@ Select **More options** to specify values for the following settings.
 
 {{<image filename="images/rc/flexible-add-database-advanced.png" width="75%" alt="The New Database dialog with advanced settings." >}}{{< /image >}}
 
-| Database&nbsp;option | Description |
-|:---------|:-----------|
-| **OSS Cluster API** | Enable to use the open-source Redis Cluster API. |
-| **Type** | Set to _Memcached_ database to support the legacy database; otherwise leave as _Redis_ |
+| Database&nbsp;option | Description                                                                                                                                                     |
+|:---------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **OSS Cluster API** | Enable to use the open-source Redis Cluster API.                                                                                                                |
+| **Type** | Set to _Redis_, otherwise _Memcached_ database for legacy database support.                                                                                     |
 | **Supported Protocol(s)** | Choose between RESP2 and RESP3 _(Redis 7.2 only)_. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
-| **Quantity** | Number of databases to create with these settings. |
+| **Quantity** | Number of databases to create with these settings.                                                                                                              |
 
 When finished, select **Save database** to create your database.
 
@@ -154,7 +154,7 @@ When finished, select **Save database** to create your database.
 
 Use the **Add database** button to define additional databases or select the **Continue button** to display the **Review and create** tab.
 
-Use the **Edit** icon to change a database or the **Delete** icon to remove a database from the list.
+You can use the **Edit** icon to change a database or the **Delete** icon to remove a database from the list by hovering over it.
 
 {{<image filename="images/rc/icon-database-edit.png" width="30px" alt="Use the Edit button to change database settings." >}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-database-delete.png" width="30px" alt="Use the Delete button to remove a database." >}}{{< /image >}}
 
