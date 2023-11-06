@@ -24,7 +24,7 @@ As a Redis Cloud user, consider these security domains:
 
 First, you might want to review our [shared responsibility model]({{<relref "/rc/security/shared-responsibility-model.md">}}) for security.
 
-## Redis Cloud console security
+## Redis Cloud console security {#admin-console-security}
 
 The Redis Cloud console is the web application you use to manage your Redis Cloud deployments. 
 
