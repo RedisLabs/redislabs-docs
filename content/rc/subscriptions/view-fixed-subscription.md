@@ -19,7 +19,7 @@ aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
 ---
 To view the details of a Fixed subscription:
 
-1.  Sign in to the [admin console](https://app.redislabs.com/).
+1.  Sign in to the [Redis Cloud console](https://app.redislabs.com/).
 
 1.  If you have more than one subscription, select the target subscription from the subscription list.
 
@@ -31,9 +31,9 @@ To view the details of a Fixed subscription:
 
 From here, you can:
 
-- Select the **Change Plan** button to update the subscription plan tier, high availability settings, or payment method.
+- Select the **Upgrade Plan** button to update the subscription plan tier, high availability settings, or payment method.
 
-    {{<image filename="images/rc/button-subscription-change-plan.png" alt="Select the Change plan button to update your subscription settings." >}}{{< /image >}}
+    {{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Select the Upgrade plan button to update your subscription settings." >}}{{< /image >}}
 
 - Select the **New Database** button to [create a new database]({{<relref "rc/databases/create-database">}}) for your subscription.
 
@@ -43,15 +43,15 @@ From here, you can:
 
 The following sections provide more details.
 
-## Change subscription plan
+## Upgrade subscription plan
 
-Use the **Change plan** button to update your Fixed subscription tier, your high availability settings, or your payment method.
+Use the **Upgrade plan** button to update your Fixed subscription tier, your high availability settings, or your payment method.
 
-{{<image filename="images/rc/button-subscription-change-plan.png" alt="Use the Change plan button to change selected Fixed subscription detils." >}}{{< /image >}}
+{{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Use the Upgrade plan button to change selected Fixed subscription detils." >}}{{< /image >}}
 
 ### Change subscription tier
 
-To change your subscription tier, select the desired tier from the list:
+To change your subscription tier, select the desired tier from the list and select the **Upgrade plan** button:
 
 {{<image filename="images/rc/subscription-change-fixed-tiers.png" width="75%" alt="Select the desired subscription tier from the ones shown.." >}}{{< /image >}}
 
@@ -87,9 +87,9 @@ To verify your role, select **Access Management** from the admin menu and then l
 
 ### Save changes
 
-Use the **Change plan** button to save changes.
+Use the **Upgrade plan** button to save changes.
 
-{{<image filename="images/rc/button-subscription-change-plan.png" alt="Use the Change plan button to save your subscription plan changes." >}}{{< /image >}}
+{{<image filename="images/rc/button-subscription-upgrade-plan-blue.png" alt="Use the Upgrade plan button to save your subscription plan changes." >}}{{< /image >}}
 
 ## Subscription overview
 
@@ -118,6 +118,6 @@ Select the **Edit** button to change the subscription name.
 
 {{<image filename="images/rc/icon-edit-subscription-name.png" alt="Use the **Edit** button to change the subscription name." >}}{{< /image >}}
 
-The **Cancel subscription** button appears below the **Overview** details; it lets you  [delete your subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}})
+The **Delete subscription** button appears below the **Overview** details; it lets you  [delete your subscription]({{<relref "rc/subscriptions/delete-subscription">}})
 
-{{<image filename="images/rc/button-subscription-cancel.png" alt="Use the Cancel subscription button to delete your subscription plan." >}}{{< /image >}}
+{{<image filename="images/rc/button-subscription-delete.png" alt="Use the Delete subscription button to delete your subscription plan." >}}{{< /image >}}
