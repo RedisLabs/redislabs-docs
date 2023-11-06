@@ -53,7 +53,7 @@ If your mobile phone is lost or stolen, make sure that you update the MFA config
 
 To change the mobile phone number used for MFA:
 
-1. Navigate to the Multi-Factor authentication section in the **User Profile** view.
+1. Navigate to the Multi-Factor authentication section in the **User Profile**.
 2. Select **Change number**.
 3. Enter the new mobile phone number, and complete the verification process as described above.
 
