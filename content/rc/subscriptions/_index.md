@@ -27,7 +27,7 @@ As of February 2021, Redis Enterprise Cloud supports the following subscription 
 - [Flexible plans](#flexible-plans)
 - [Annual plans](#annual-plans)
 
-Here's a quick comparison between each plan:
+Here's a quick comparison of each plan:
 
 | Feature | Free plan | Fixed plan | Flexible/<br/>Annual plan |
 |:-----|:-------:|:----:|:-----:|
@@ -49,10 +49,10 @@ Free plans are a tier of Fixed plans designed for training purposes and prototyp
 Fixed plans are cost-efficient and designed for low-throughput scenarios. They support a range of availability, persistence, and backup options.  Pricing supports low throughput workloads.
 
 ### Flexible plans
-Flexible plans support more databases (and larger sizes) than lower plans, unlimited connections, and greater throughput. Hosted in dedicated VPCs, they feature high-availability in a single or multi-AZ, active-active geo distribution, Auto-Tiering, clustering, data persistence, and configurable backups.  Pricing is "pay as you go" to support any dataset size or throughput.
+Flexible plans support more databases, larger databases, greater throughput, and unlimited connections compared to Fixed plans. Hosted in dedicated VPCs, they feature high-availability in a single or multi-AZ, Active-Active, Auto-Tiering, clustering, data persistence, and configurable backups.  Pricing is "pay as you go" to support any dataset size or throughput.
 
 ### Annual plans
-Annual plans support the same features as Flexible plans, but at significant savings.  Annual plans also provide Premium support. Further, the underlying commitment applies to all workloads across multiple providers and regions.
+Annual plans support the same features as Flexible plans but at significant savings.  Annual plans also provide Premium support. The underlying commitment applies to all workloads across multiple providers and regions.
 
 ## Common tasks
 
