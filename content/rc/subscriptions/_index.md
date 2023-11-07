@@ -22,15 +22,12 @@ This page helps you manage your Redis Cloud subscriptions; it briefly compares a
 
 As of February 2021, Redis Cloud supports the following subscription plans:
 
-- _Free plans_ are designed for training purposes and prototyping.  They can be seamlessly upgraded to Fixed plans with no data loss.  (Free plans are a tier of Fixed plans.)
+- [Free plans](#free-plans)
+- [Fixed plans](#fixed-plans)
+- [Flexible plans](#flexible-plans)
+- [Annual plans](#annual-plans)
 
-- _Fixed plans_ are cost-efficient and designed for low-throughput scenarios.  They support a range of availability, persistence, and backup options.  Pricing supports low throughput workloads.
-
-- _Flexible plans_ support more databases (and larger sizes), unlimited connections, and greater throughput.  Hosted in dedicated VPCs, they feature high-availability in a single or multi-AZ, active-active geo distribution, Auto Tiering, clustering, data persistence, and configurable backups.  Pricing is "pay as you go" to support any dataset size or throughput.
-
-- _Annual plans_ support the same features as Flexible plans, but at significant savings.  Annual plans also provide Premium support.  Further, the underlying commitment applies to all workloads across multiple providers and regions.
-
-Here's a quick comparison:
+Here's a quick comparison of each plan:
 
 | Feature | Free plan | Fixed plan | Flexible/<br/>Annual plan |
 |:-----|:-------:|:----:|:-----:|
@@ -44,23 +41,36 @@ Here's a quick comparison:
 
 To learn more, see [Redis Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
 
+### Free plans
+
+Free plans are a tier of Fixed plans designed for training purposes and prototyping. They can be seamlessly upgraded to Fixed plans with no data loss.
+
+### Fixed plans
+Fixed plans are cost-efficient and designed for low-throughput scenarios. They support a range of availability, persistence, and backup options.  Pricing supports low throughput workloads.
+
+### Flexible plans
+Flexible plans support more databases, larger databases, greater throughput, and unlimited connections compared to Fixed plans. Hosted in dedicated VPCs, they feature high-availability in a single or multi-AZ, Active-Active, Auto-Tiering, clustering, data persistence, and configurable backups.  Pricing is "pay as you go" to support any dataset size or throughput.
+
+### Annual plans
+Annual plans support the same features as Flexible plans but at significant savings.  Annual plans also provide Premium support. The underlying commitment applies to all workloads across multiple providers and regions.
+
 ## Common tasks
 
 Create a new subscription:
 
-- The Redis Cloud [quick start]({{<relref "rc/rc-quickstart.md">}}) helps you create a free subscription and your first database.  (Start here if you're new.)
+- The [Redis Cloud quick start]({{<relref "rc/rc-quickstart.md">}}) helps you create a free subscription and your first database.  (Start here if you're new.)
 
 - [Create a Fixed subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md">}})
 
 - [Create a Flexible subscription]({{<relref "rc/subscriptions/create-flexible-subscription.md">}})
 
-- To create an Annual subscription, contact support.
+- To create an Annual subscription, contact [support](https://redis.com/company/support).
 
 View subscription details:
 
-- View or update a [Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription.md">}})
+- [View or edit a Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription.md">}})
 
-- View [Flexible subscription]({{<relref "/rc/subscriptions/view-flexible-subscription.md">}})
+- [View Flexible subscription details]({{<relref "/rc/subscriptions/view-flexible-subscription.md">}})
 
 - [Delete a subscription]({{<relref "/rc/subscriptions/delete-subscription.md">}})
 
