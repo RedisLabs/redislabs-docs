@@ -10,7 +10,7 @@ aliases: /ri/
          /redis-insight/
          /redis_insight/
 bannerText: Notice - this document is deprecated. See [redis.io] for RedisInsight documentation.
-bannerLink: https://redis.io/docs/ui/insight/
+bannerLink: https://redis.io/docs/connect/insight/
 bannerChildren: true
 ---
 RedisInsight is a free GUI for Redis that is available on all platforms (Windows, Mac, Linux, and Docker) and works with all variants of Redis. RedisInsight allows you to:

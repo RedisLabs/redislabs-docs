@@ -165,7 +165,7 @@ After you store this secret, you can view and copy the [Amazon Resource Name (AR
 
 After your database is set up, create an index with a vector field using [FT.CREATE](https://redis.io/commands/ft.create/) as your knowledge base for Amazon Bedrock.
 
-### [RedisInsight](https://redis.io/docs/ui/insight/)
+### [RedisInsight](https://redis.io/docs/connect/insight/)
 
 RedisInsight is a free Redis GUI that allows you to visualize and optimize your data in Redis. 
 
