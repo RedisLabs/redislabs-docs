@@ -9,7 +9,7 @@ aliases:
 ---
 To view the details of a Flexible subscription:
 
-1.  Sign in to the [admin console](https://app.redislabs.com/#).
+1.  Sign in to the [Redis Cloud console](https://app.redislabs.com/#).
 
 1.  If you have more than one subscription, select the target subscription from the subscription list.
 
@@ -51,7 +51,7 @@ The **Databases** tab summarizes the databases in your subscription.
 
 The following details are provided:
 
-| _Detail_ | _Description_ |
+| Detail | Description |
 |:---------|:--------------|
 | **Status** | An icon indicating whether the database is active (a green circle) or pending (yellow circle)<br/>{{<image filename="images/rc/icon-database-detail-status-active.png" alt="Active status is indicated by a teal circle." >}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-database-detail-status-pending.png" alt="Pending status is indicated by a yellow circle." >}}{{< /image >}} |
 | **Name** | The database name |
@@ -76,7 +76,7 @@ The **Overview** summarizes the options use to created the subscription.
     {{<image filename="images/rc/icon-edit-subscription-name.png" alt="Use the **Edit** button to change the subscription name." >}}{{< /image >}}
 
 
-    | _Setting_ | _Description_ |
+    | Setting | Description |
     |:---------|:--------------|
     | **Cloud vendor** | Your subscription cloud vendor |
     | **Plan description** | Brief summary of subscription, including the plan type, cloud provider, and region |
@@ -91,15 +91,15 @@ The **Overview** summarizes the options use to created the subscription.
 
     Select the ![**Change Payment Method**](/images/rc/icon-subscription-detail-change-payment-flexible.png) button to change the credit card associated with this subscription.
 
-- The **Provisioned cloud resources** panel shows the storage resources used by your subscription.  
-
-    If your subscription is attached to a cloud account, the details appear in the panel header.
-
 - The **Redis price** panel breaks down your subscription price.
 
 - The **Maintenance Window** panel shows your current [maintenance window settings]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
 
     See [Maintenance]({{<relref "/rc/subscriptions/maintenance">}}) for more information about subscription maintenance on Redis Cloud.
+
+- The **Provisioned cloud resources** panel shows the storage resources used by your subscription.
+
+  If your subscription is attached to a cloud account, the details appear in the panel header.
 
 ## **Connectivity** tab
 
@@ -111,6 +111,6 @@ Here, you can:
 
 - Set up a [VPC peering]({{<relref "/rc/security/vpc-peering.md">}}) relationship between the virtual PC (VPC) hosting your subscription and another virtual PC.
 
-- Set up an [access allow list]({{<relref "/rc/security/cidr-whitelist.md">}}) containing IP addresses or security groups (_AWS only_) permitted to access your subscription.
+- Set up a [CIDR allow list]({{<relref "/rc/security/cidr-whitelist.md">}}) containing IP addresses or security groups (_AWS only_) permitted to access your subscription.
 
 See the individual links to learn more.
