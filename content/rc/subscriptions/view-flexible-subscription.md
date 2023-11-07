@@ -51,7 +51,7 @@ The **Databases** tab summarizes the databases in your subscription.
 
 The following details are provided:
 
-| _Detail_ | _Description_ |
+| Detail | Description |
 |:---------|:--------------|
 | **Status** | An icon indicating whether the database is active (a green circle) or pending (yellow circle)<br/>{{<image filename="images/rc/icon-database-detail-status-active.png" alt="Active status is indicated by a teal circle." >}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-database-detail-status-pending.png" alt="Pending status is indicated by a yellow circle." >}}{{< /image >}} |
 | **Name** | The database name |
@@ -76,7 +76,7 @@ The **Overview** summarizes the options use to created the subscription.
     {{<image filename="images/rc/icon-edit-subscription-name.png" alt="Use the **Edit** button to change the subscription name." >}}{{< /image >}}
 
 
-    | _Setting_ | _Description_ |
+    | Setting | Description |
     |:---------|:--------------|
     | **Cloud vendor** | Your subscription cloud vendor |
     | **Plan description** | Brief summary of subscription, including the plan type, cloud provider, and region |

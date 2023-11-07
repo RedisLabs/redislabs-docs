@@ -99,7 +99,7 @@ The **Overview** tab summarizes your Fixed subscription details using a series o
 
 The following details are displayed:
 
-| _Detail_ | _Description_ |
+| Detail | Description |
 |:---------|:--------------|
 | **Cloud vendor** | Your subscription cloud vendor |
 | **Plan description** | Brief summary of subscription, including the plan type, cloud provider, region, and data size limit |

@@ -62,9 +62,9 @@ To create a Fixed subscription:
 
 4.  In the **Availability Settings** panel, select your replication settings.  
 
-    - _No-replication_ means that you will have a single copy of your database.
-    - _Single-zone replication_ means that your database will have a primary and a replica located in the same cloud region.  If anything happens to the primary, the replica takes over and becomes the new primary.
-    - _Multi-zone replication_ means that the primary and the replicas are stored in different region zones, which provides additional protection by distributing the replicas.
+    - **No-replication** means that you will have a single copy of your database.
+    - **Single-zone replication** means that your database will have a primary and a replica located in the same cloud region.  If anything happens to the primary, the replica takes over and becomes the new primary.
+    - **Multi-zone replication** means that the primary and the replicas are stored in different region zones, which provides additional protection by distributing the replicas.
 
 5.  Select the desired plan size.   
 
