@@ -26,7 +26,12 @@ Before you upgrade a cluster's operating system:
     1. Check the status of modules using [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}):
 
         ```sh
-        $ rladmin status modules
+        rladmin status modules
+        ```
+
+        The output lists the module versions installed on the cluster and the module versions used by existing databases:
+
+        ```sh
         CLUSTER MODULES:
         MODULE                                                                      VERSION                            
         RedisBloom                                                                  2.6.3                              
@@ -102,10 +107,36 @@ To upgrade the cluster's operating system, use one of the following rolling upgr
         rlcheck
         ```
 
+        The output lists the result of each verification test:
+
+        ```sh
+        ##### Welcome to Redis Enterprise Cluster settings verification utility ####
+        Running test: verify_bootstrap_status
+		                PASS
+        ...
+        Running test: verify_encrypted_gossip
+		                PASS
+        Summary:
+        -------
+        ALL TESTS PASSED.
+        ```
+
+        For healthy nodes, the expected output is `ALL TESTS PASSED`.
+
     1. Run [`rladmin status`]({{<relref "/rs/references/cli-utilities/rladmin/status">}}) on the new node:
 
         ```sh
         rladmin status extra all
+        ```
+
+        The expected output is the `OK` status for the cluster, nodes, endpoints, and shards:
+
+        ```sh
+        CLUSTER:
+        OK. Cluster master: 2 (<IP.address>)
+        Cluster health: OK, [0, 0.0, 0.0]
+        failures/minute - avg1 0.00, avg15 0.00, avg60 0.00.
+        ...
         ```
 
 1. Repeat the previous steps until all nodes with the earlier OS version are replaced.
