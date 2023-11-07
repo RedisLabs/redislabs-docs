@@ -118,6 +118,6 @@ Select the **Edit** button to change the subscription name.
 
 {{<image filename="images/rc/icon-edit-subscription-name.png" alt="Use the **Edit** button to change the subscription name." >}}{{< /image >}}
 
-The **Delete subscription** button appears below the **Overview** details; it lets you  [delete your subscription]({{<relref "rc/subscriptions/delete-subscription">}})
+The **Delete subscription** button lets you [delete your subscription]({{<relref "rc/subscriptions/delete-subscription">}}).
 
 {{<image filename="images/rc/button-subscription-delete.png" alt="Use the Delete subscription button to delete your subscription plan." >}}{{< /image >}}

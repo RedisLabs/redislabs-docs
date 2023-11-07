@@ -28,7 +28,7 @@ To delete a subscription:
 
     {{<image filename="images/rc/subscription-free-delete-subscription.png" alt="Open the Overview tab to locate the Delete subscription button." >}}{{< /image >}}
 
-4.  Locate and then select the **Delete subscription** button near the bottom, right corner of the Overview details.
+4.  Select the **Delete subscription** button.
 
     {{<image filename="images/rc/subscription-delete-confirm-dialog.png" alt="Select the Yes, cancel button to confirm the subscription cancellation." >}}{{< /image >}}
 

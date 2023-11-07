@@ -46,7 +46,7 @@ The **Setup** tab specifies general settings for the deployment of your subscrip
 The three sections to this tab:
 
 - [General settings](#general-settings) include the cloud provider details, the subscription name, and specific configuration options.
-- [Version](#version) lets you choose the Redis version of your database.
+- [Version](#version) lets you choose the Redis version of your databases.
 - [Advanced options](#advanced-options) define settings for high availability and security. Configurable settings vary according to cloud provider.
 
 
@@ -154,7 +154,7 @@ When finished, select **Save database** to create your database.
 
 Use the **Add database** button to define additional databases or select the **Continue button** to display the **Review and create** tab.
 
-You can use the **Edit** icon to change a database or the **Delete** icon to remove a database from the list by hovering over it.
+Hover over a database to see the **Edit** and **Delete** icons. You can use the **Edit** icon to change a database or the **Delete** icon to remove a database from the list.
 
 {{<image filename="images/rc/icon-database-edit.png" width="30px" alt="Use the Edit button to change database settings." >}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-database-delete.png" width="30px" alt="Use the Delete button to remove a database." >}}{{< /image >}}
 

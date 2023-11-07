@@ -28,7 +28,7 @@ Fixed plan pricing scales according to the memory size of all databases defined 
 |       250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 |           4           |
 |       500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 |           4           |
 |         1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 2 |           8           |
-|      2.5; GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 |           8           |
+|      2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 |           8           |
 |         5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | 5000 | 4 |          16           |
 |        10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | 10000 | 4 |          32           |
 
@@ -42,7 +42,7 @@ If you need additional resources, you can update your subscription at any time.
 
 To create a Fixed subscription:
 
-1.  From the Redis Cloud subscriptions pane, select the **Add new subscription** button.  
+1.  From the Redis Cloud subscriptions list, select the **Add new subscription** button.  
 
     {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
@@ -74,7 +74,7 @@ To create a Fixed subscription:
 
 6.  Enter a subscription name and payment details.
 
-7.  Locate and then select the **Create Subscription** button.
+7.  Select the **Create Subscription** button.
 
     {{<image filename="images/rc/button-subscription-create.png" alt="The Create Subscription button." >}}{{< /image >}}
 

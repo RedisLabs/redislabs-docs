@@ -52,7 +52,7 @@ To learn more, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-
 
 Create a new subscription:
 
-- [The Redis Cloud quick start]({{<relref "rc/rc-quickstart.md">}}) helps you create a free subscription and your first database.  (Start here if you're new.)
+- The [Redis Cloud quick start]({{<relref "rc/rc-quickstart.md">}}) helps you create a free subscription and your first database.  (Start here if you're new.)
 
 - [Create a Fixed subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md">}})
 
@@ -62,7 +62,7 @@ Create a new subscription:
 
 View subscription details:
 
-- [View or change a Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription.md">}})
+- [View or edit a Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription.md">}})
 
 - [View Flexible subscription details]({{<relref "/rc/subscriptions/view-flexible-subscription.md">}})
 

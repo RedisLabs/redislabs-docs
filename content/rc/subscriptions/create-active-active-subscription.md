@@ -12,7 +12,7 @@ To deploy Active-Active databases in Redis Cloud, you need to create a Flexible 
 
 Overall, the process is similar to [creating a traditional flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some differences; you need to:
 
-- Enabling Active-Active Redis
+- Enable Active-Active Redis
 - [Define the regions](#define-regions) for each database instance
 - Define unique [CIDR addresses](#define-cidr-addresses) for each instance
 - [Define throughput](#define-throughput) (read and write operations) for each region
