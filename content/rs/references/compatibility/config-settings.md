@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-Redis Enterprise Software and [Redis Enterprise Cloud]({{<relref "/rc">}}) only support a subset of [open source Redis configuration settings](https://redis.io/docs/manual/config/). Using [`CONFIG GET`](https://redis.io/commands/config-get/) or [`CONFIG SET`](https://redis.io/commands/config-set/) with unsupported configuration settings returns an error.
+Redis Enterprise Software and [Redis Cloud]({{<relref "/rc">}}) only support a subset of [open source Redis configuration settings](https://redis.io/docs/manual/config/). Using [`CONFIG GET`](https://redis.io/commands/config-get/) or [`CONFIG SET`](https://redis.io/commands/config-set/) with unsupported configuration settings returns an error.
 
 | Setting | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|

@@ -36,9 +36,9 @@ To use your Redis database to create a knowledge base on Amazon Bedrock:
 
 1. Enter a name for the data source and connect your S3 bucket in the **Data source** section.
 
-1. In the **Vector database** section, select **Redis Enterprise Cloud** and select the checkbox to agree with the legal disclaimer.
+1. In the **Vector database** section, select **Redis Cloud** and select the checkbox to agree with the legal disclaimer.
 
-    {{<image filename="images/rc/bedrock-aws-select-redis-vector-db.png" width="500px" alt="The Redis Enterprise Cloud selection for your vector database." >}}{{< /image >}}
+    {{<image filename="images/rc/bedrock-aws-select-redis-vector-db.png" width="500px" alt="The Redis Cloud selection for your vector database." >}}{{< /image >}}
 
     Fill in the fields with the following information:
 

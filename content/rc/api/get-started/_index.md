@@ -12,7 +12,7 @@ aliases: /rv/api/concepts/authentication-and-authorization/
          /rc/api/get-started/_index.md
 ---
 
-To use the Redis Enterprise Cloud REST API, you need to:
+To use the Redis Cloud REST API, you need to:
 
 - Enable the API
 - Create an account key

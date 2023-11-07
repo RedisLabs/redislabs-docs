@@ -26,13 +26,13 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
 ### Sign up for Redis Cloud using AWS Marketplace {#sign-up}
 
-1.  Select the [Redis Enterprise Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Enterprise Cloud - Flexible plan listing.
+1.  Select the [Redis Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Cloud - Flexible plan listing.
 
-    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Enterprise Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
 
-1.  Subscribe to Redis Enterprise Cloud - Flexible plan, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
+1.  Subscribe to Redis Cloud - Flexible plan, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
 
-    {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Enterprise Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
 
 1.  Sign in to the Redis Cloud [admin console](https://app.redislabs.com).
 

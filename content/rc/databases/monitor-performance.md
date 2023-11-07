@@ -11,7 +11,7 @@ aliases: /rv/administration/configuration/monitoring-performance/
          /rc/databases/monitor-performance/
 ---
 
-Redis Enterprise Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance crosses defined threshholds.
+Redis Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance crosses defined threshholds.
 
 ## View database metrics
 
@@ -78,4 +78,4 @@ To update alert settings for one or more team members, select **Access Managemen
 
 For details, see [Access management]({{< relref "/rc/security/access-control/access-management" >}}).
 
-If you subscribe to Redis Enterprise Cloud through a Platform-as-a-Service (PaaS) provider (such as Heroku), you will need to review your provider's documentation for help managing your team.
+If you subscribe to Redis Cloud through a Platform-as-a-Service (PaaS) provider (such as Heroku), you will need to review your provider's documentation for help managing your team.

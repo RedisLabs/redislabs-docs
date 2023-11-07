@@ -20,7 +20,7 @@ This page helps you manage your Redis Cloud subscriptions; it briefly compares a
 
 ## Subscription plans
 
-As of February 2021, Redis Enterprise Cloud supports the following subscription plans:
+As of February 2021, Redis Cloud supports the following subscription plans:
 
 - _Free plans_ are designed for training purposes and prototyping.  They can be seamlessly upgraded to Fixed plans with no data loss.  (Free plans are a tier of Fixed plans.)
 
@@ -42,7 +42,7 @@ Here's a quick comparison:
 | Support | Best effort | Basic | Flexible: Standard<br/>Annual: Premium |
 | Selected additional features<br/> <br/> <br/>|| Replication<br/>Auto-failover<br /> | Dedicated accounts<br>Auto Tiering<br/>Active/Active<br/> |   
 
-To learn more, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
+To learn more, see [Redis Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
 
 ## Common tasks
 

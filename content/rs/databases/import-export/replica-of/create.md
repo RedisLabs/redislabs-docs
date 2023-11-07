@@ -23,7 +23,7 @@ Sources databases can be:
 
 - Located in the same Redis Enterprise Software cluster
 - Located in a different Redis Enterprise cluster
-- Hosted by a different deployment, e.g. Redis Enterprise Cloud
+- Hosted by a different deployment, e.g. Redis Cloud
 - Open source Redis (OSS) databases
 
 Your apps can connect to the source database to read and write data; they can also use any replica for read-only access.

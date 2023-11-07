@@ -10,7 +10,7 @@ aliases: /rc/security/database-security/network-security/
 
 ---
 
-Redis Enterprise Cloud supports two types of network security: database-level CIDR allow lists and [VPC](#virtual-private-clouds)-wide CIDR allow lists.
+Redis Cloud supports two types of network security: database-level CIDR allow lists and [VPC](#virtual-private-clouds)-wide CIDR allow lists.
 
 These features are available in most Redis Cloud configurations, as shown here:
 

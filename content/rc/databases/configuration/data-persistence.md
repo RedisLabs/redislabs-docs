@@ -10,7 +10,7 @@ aliases: /rv/concepts/data-persistence/
          /rc/concepts/data-persistence/         
          /rc/concepts/data-persistence.md        
 ---
-Redis Enterprise Cloud can persist data to enable recovery in the event of memory loss or other catastrophic failure.  When you enable data persistence, in-memory data is copied to persistent storage attached to the underlying cloud instance.
+Redis Cloud can persist data to enable recovery in the event of memory loss or other catastrophic failure.  When you enable data persistence, in-memory data is copied to persistent storage attached to the underlying cloud instance.
 
 ## Persistence options
 
@@ -32,7 +32,7 @@ Data persistance can be also disabled.  In such cases, data is lost when the dat
 
 ## Configure data persistence 
 
-In Redis Enterprise Cloud, data persistence is a database configuration setting that can be changed by editing your database settings.
+In Redis Cloud, data persistence is a database configuration setting that can be changed by editing your database settings.
 
 The availability of the setting depends on your [subscription]({{<relref "/rc/subscriptions/_index.md">}}):
 

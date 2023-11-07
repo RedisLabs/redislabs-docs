@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Cloud changelog (November 2023)
+Title: Redis Cloud changelog (November 2023)
 linktitle: November 2023
-description: New features, enhancements, and other changes added to Redis Enterprise Cloud during November 2023.
+description: New features, enhancements, and other changes added to Redis Cloud during November 2023.
 highlights: Heroku add-on free database limit
 weight: 74
 alwaysopen: false

@@ -14,7 +14,7 @@ aliases: /rv/api/how-to/enable-your-account-to-use-api/
 
 ---
 
-If you have a Flexible (or Annual) Redis Enterprise Cloud subscription, you can use a REST API to manage your subscription programmatically.
+If you have a Flexible (or Annual) Redis Cloud subscription, you can use a REST API to manage your subscription programmatically.
 
 For security reasons, the Redis Cloud API is disabled by default.
 

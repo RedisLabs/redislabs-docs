@@ -10,7 +10,7 @@ aliases: /rv/administration/setup_and_editing/create-databases/
          /rc/administration/setup_and_editing/create-databases/
          /rc/administration/setup-and-editing/creating-databases/
 ---
-To create a database in your Redis Enterprise Cloud [subscription]({{< relref "rc/subscriptions/" >}}):
+To create a database in your Redis Cloud [subscription]({{< relref "rc/subscriptions/" >}}):
 
 1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
@@ -46,7 +46,7 @@ The available settings vary according to your subscription plan:
 | **Database name** | A name for your database (_required_) |
 | **Database port** | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_) |
 | **Type**  | Controls advanced database capabilities and protocol.  Supported values include _[Redis Stack](https://redis.io/docs/stack/)_ (available only for Fixed and Free), _Redis_ (default for Flexible and Annual subscriptions), and _Memcached_ |
-| **Advanced capabilities** | Extend core Redis functionality using [advanced capabilities]({{<relref "/stack">}}).  Redis Enterprise Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "/stack/enterprise-capabilities#redis-enterprise-module-support">}}) |
+| **Advanced capabilities** | Extend core Redis functionality using [advanced capabilities]({{<relref "/stack">}}).  Redis Cloud supports selected advanced capabilities; for details, see [Redis Enterprise module support]({{<relref "/stack/enterprise-capabilities#redis-enterprise-module-support">}}) |
 | **Supported Protocol(s)** | Choose between RESP2 and RESP3 _(Redis 7.2 only)_. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
 
 ### Database port
@@ -74,7 +74,7 @@ When the database **Type** is set to _Redis Stack_, the Advanced capabilities se
 
 {{<image filename="images/rc/database-details-modules-stack-free.png" alt="For Fixed and Free subscriptions, the Database details page lists the capabilities and versions added by Redis Stack." width="75%">}}{{< /image >}}
 
-Redis Enterprise Cloud is updated on a regular basis, which includes the advanced capabilities supported by the service. Versions displayed by the admin console may vary from those shown above.  For the latest details of any capability, see [Redis Stack and Redis Enterprise]({{<relref "/stack">}}). 
+Redis Cloud is updated on a regular basis, which includes the advanced capabilities supported by the service. Versions displayed by the admin console may vary from those shown above.  For the latest details of any capability, see [Redis Stack and Redis Enterprise]({{<relref "/stack">}}). 
 
 Redis Stack is available only for Fixed and Free subscriptions.
 
@@ -132,7 +132,7 @@ Here are some general guidelines:
 
 - Advanced capabilities also consume memory.
 
-Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}})
+Memory limits in Redis Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}})
 
 ## Durability section
 

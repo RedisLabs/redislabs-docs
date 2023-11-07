@@ -37,7 +37,7 @@ To import a dataset from any publicly available Redis server:
 
 ## Restore from an RDB file
 
-If you have an RDB or a compressed RDB file from a previous backup, you can restore data from that file into your Redis Enterprise Cloud database.
+If you have an RDB or a compressed RDB file from a previous backup, you can restore data from that file into your Redis Cloud database.
 
 ### Via FTP or HTTP
 
@@ -170,7 +170,7 @@ To use the Redis Cloud admin console to import your data, you must first share t
 
 To share and import an RDB file that is stored in a Google Cloud Storage bucket:
 
-1. In the Google Cloud Storage bucket, edit the file's Access Control List to give read access to Redis Enterprise Cloud:
+1. In the Google Cloud Storage bucket, edit the file's Access Control List to give read access to Redis Cloud:
     1. Select **Edit access** in the RDB file menu.
     1. Select **Add item**.
     1. Enter the user details and access:

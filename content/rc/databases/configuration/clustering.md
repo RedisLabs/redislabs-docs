@@ -1,7 +1,7 @@
 ---
 Title: Clustering Redis Databases
 linkTitle: Clustering 
-description: Redis Enterprise Cloud uses clustering to manage very large databases (25 GB and larger).  Here, you'll learn how to manage clustering and how to use hashing policies to control how data is managed.
+description: Redis Cloud uses clustering to manage very large databases (25 GB and larger).  Here, you'll learn how to manage clustering and how to use hashing policies to control how data is managed.
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
@@ -12,7 +12,7 @@ aliases: /rc/concepts/clustering-redis-cloud/
          /rc/databases/configuration/clustering/
          /rc/databases/configuration/clustering.md
 ---
-For very large databases, Redis Enterprise Cloud distributes database data to different cloud instances.  For example:
+For very large databases, Redis Cloud distributes database data to different cloud instances.  For example:
 
 - When data grows beyond the the RAM resources of a single server.
 
@@ -47,7 +47,7 @@ complexity of a cluster-aware Redis client. This allows applications to
 benefit from using the cluster without performing any code changes, even
 if they were not designed to use it beforehand.
 
-When creating or editing a Redis database on Redis Enterprise Cloud, the
+When creating or editing a Redis database on Redis Cloud, the
 system automatically calculates the number of shards needed based on
 the database memory limit and required throughput.
 

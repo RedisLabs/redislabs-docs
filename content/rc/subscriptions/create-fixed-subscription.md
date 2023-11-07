@@ -14,7 +14,7 @@ Fixed Size subscription plans support low throughput workflows.  Several tiers a
 
 When creating your subscription, you'll need to know which tier to choose.
 
-(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.)
+(If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.)
 
 
 ## Fixed plan subscription tiers

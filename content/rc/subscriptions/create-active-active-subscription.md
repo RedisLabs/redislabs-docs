@@ -8,7 +8,7 @@ categories: ["RC"]
 aliases: /rc/subscriptions/create-active-active-subscription/
 ---
 
-To deploy Active-Active databases in Redis Enterprise Cloud, you need to create a Flexible or Annual subscription with Active-Active enabled.
+To deploy Active-Active databases in Redis Cloud, you need to create a Flexible or Annual subscription with Active-Active enabled.
 
 Overall, the process is similar to [creating a traditional subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some differences; you need to:
 
@@ -88,5 +88,5 @@ Throughput requirements grow dramatically as regions increase.  As a result, con
 
 - [Create a Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}})
 - Database [memory size]({{<relref "/rc/databases/create-database#memory-size">}})
-- Redis Enterprise Cloud [subscription plans]({{<relref "/rc/subscriptions/">}})
-- [Redis Enterprise Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/)
+- Redis Cloud [subscription plans]({{<relref "/rc/subscriptions/">}})
+- [Redis Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/)

@@ -210,7 +210,7 @@ More info: [multicast DNS wikipedia](https://en.wikipedia.org/wiki/Multicast_DNS
 {{%/definition%}}
 
 {{%definition "multi-factor authentication (MFA)"%}}
-Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Enterprise Cloud, users must enter their username, password, and an authentication code when logging in.
+Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Cloud, users must enter their username, password, and an authentication code when logging in.
 
 More info: [Multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication.md">}})
 {{%/definition%}}
@@ -288,7 +288,7 @@ Distributing keys and their values among new shards.
 Moving shards to nodes where more resources are available.
 {{%/definition%}}
 
-{{%definition "Redis Enterprise Cloud"%}}
+{{%definition "Redis Cloud"%}}
 The cloud version of Redis Enterprise.
 {{%/definition%}}
 
