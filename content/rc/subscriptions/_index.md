@@ -22,21 +22,14 @@ This page helps you manage your Redis Cloud subscriptions; it briefly compares a
 
 As of February 2021, Redis Enterprise Cloud supports the following subscription plans:
 
-### Free plans
-Designed for training purposes and prototyping. They can be seamlessly upgraded to Fixed plans with no data loss.  (Free plans are a tier of Fixed plans.)
-
-### Fixed plans
-Cost-efficient and designed for low-throughput scenarios. They support a range of availability, persistence, and backup options.  Pricing supports low throughput workloads.
-
-### Flexible plans
-Support more databases (and larger sizes) than lower plans, unlimited connections, and greater throughput. Hosted in dedicated VPCs, they feature high-availability in a single or multi-AZ, active-active geo distribution, Auto-Tiering, clustering, data persistence, and configurable backups.  Pricing is "pay as you go" to support any dataset size or throughput.
-
-### Annual plans
-Support the same features as Flexible plans, but at significant savings.  Annual plans also provide Premium support. Further, the underlying commitment applies to all workloads across multiple providers and regions.
+    - [Free plans](#free-plans)
+    - [Fixed plans](#fixed-plans)
+    - [Flexible plans](#flexible-plans)
+    - [Annual plans](#annual-plans)
 
 Here's a quick comparison:
 
-| Feature | Free plan | Fixed plan | Flexible/<br/>Annual plan |
+| Feature | [Free plan](#free-plans) | [Fixed plan](#fixed-plans) | [Flexible](#flexible-plans)/<br/>[Annual](#annual-plans) plan |
 |:-----|:-------:|:----:|:-----:|
 | Number of databases | 1 | 4-64 | Unlimited |
 | Memory size | 30 MB | 100 MB-10 GB | 50 TB |
@@ -47,6 +40,19 @@ Here's a quick comparison:
 | Selected additional features<br/> <br/> <br/>|| Replication<br/>Auto-failover<br /> | Dedicated accounts<br>Auto Tiering<br/>Active/Active<br/> |   
 
 To learn more, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
+
+### Free plans
+
+Free plans are a tier of Fixed plans designed for training purposes and prototyping. They can be seamlessly upgraded to Fixed plans with no data loss.
+
+### Fixed plans
+Fixed plans are cost-efficient and designed for low-throughput scenarios. They support a range of availability, persistence, and backup options.  Pricing supports low throughput workloads.
+
+### Flexible plans
+Support more databases (and larger sizes) than lower plans, unlimited connections, and greater throughput. Hosted in dedicated VPCs, they feature high-availability in a single or multi-AZ, active-active geo distribution, Auto-Tiering, clustering, data persistence, and configurable backups.  Pricing is "pay as you go" to support any dataset size or throughput.
+
+### Annual plans
+Support the same features as Flexible plans, but at significant savings.  Annual plans also provide Premium support. Further, the underlying commitment applies to all workloads across multiple providers and regions.
 
 ## Common tasks
 
