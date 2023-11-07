@@ -22,12 +22,12 @@ This page helps you manage your Redis Cloud subscriptions; it briefly compares a
 
 As of February 2021, Redis Enterprise Cloud supports the following subscription plans:
 
-    - [Free plans](#free-plans)
-    - [Fixed plans](#fixed-plans)
-    - [Flexible plans](#flexible-plans)
-    - [Annual plans](#annual-plans)
+- [Free plans](#free-plans)
+- [Fixed plans](#fixed-plans)
+- [Flexible plans](#flexible-plans)
+- [Annual plans](#annual-plans)
 
-Here's a quick comparison:
+Here's a quick comparison between each plan:
 
 | Feature | [Free plan](#free-plans) | [Fixed plan](#fixed-plans) | [Flexible](#flexible-plans)/<br/>[Annual](#annual-plans) plan |
 |:-----|:-------:|:----:|:-----:|
