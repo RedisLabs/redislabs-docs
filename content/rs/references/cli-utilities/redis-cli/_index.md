@@ -140,7 +140,7 @@ Scan the database for big keys:
 redis-cli -h <endpoint> -p <port> --bigkeys
 ```
 
-See [Scanning for big keys](https://redis.io/docs/ui/cli/#scanning-for-big-keys) for more information.
+See [Scanning for big keys](https://redis.io/docs/connect/cli/#scanning-for-big-keys) for more information.
 
 ## More info
 
