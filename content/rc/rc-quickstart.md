@@ -61,9 +61,7 @@ If you would rather customize your subscription and database, select **Create a 
 
     {{<image filename="images/rc/quickstart-database-overview.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
 
-1.  
-    
-    In the upper corner, an icon shows the current status of the database.  If the icon shows an orange clock, this means your database is still being created and its status is _pending_.
+1.  In the upper corner, an icon shows the current status of the database.  If the icon shows an orange clock, this means your database is still being created and its status is _pending_.
 
        ![Pending status icon](/images/rc/icon-database-update-status-pending.png#no-click "Pending database status") &nbsp; ![Active status icon](/images/rc/icon-database-update-status-active.png#no-click "Active database status")
 
