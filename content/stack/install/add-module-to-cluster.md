@@ -24,7 +24,10 @@ To use other modules or upgrade an existing module to a more recent version, you
 
 To install or upgrade a module on a [Redis Enterprise]({{<relref "/rs">}}) cluster, you need a module package.
 
-- For Redis Enterprise modules, download packages from the [Redis download center](https://redislabs.com/download-center/modules/).
+- For the latest Redis Enterprise modules, download packages from the [Redis download center](https://redislabs.com/download-center/modules/).
+
+- For earlier versions of Redis Enterprise modules that are no longer available from the Redis download center, [contact support](https://redis.com/company/support/).
+
 - For custom-packaged modules, either download a [custom-packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{<relref "/stack/install/packaging-modules">}}).
 
 ## Add a module to a cluster
@@ -41,15 +44,13 @@ Use one of the following methods to add a module to a Redis Enterprise cluster:
 
 To add a module to the cluster using the REST API:
 
-1. Download the module package from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
-
-1. Copy the package to a node in the cluster.
+1. Copy the module package to a node in the cluster.
 
 1. Add the module to the cluster with a [`POST` request to the `/v2/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}) endpoint:
 
     ```sh
     POST https://[host][:port]/v2/modules
-    {"module=@/tmp/redisearch.Linux-ubuntu16.04-x86_64.2.2.6.zip"}
+    "module=@/tmp/redisearch.Linux-ubuntu16.04-x86_64.2.2.6.zip"
     ```
 
     Here, the *module* parameter specifies the full path of the module package and must be submitted as form-data. In addition, the package must be available and accessible to the server processing the request.

@@ -82,14 +82,19 @@ To remove a node using the admin console:
 
     {{<image filename="images/rs/screenshots/switch-to-legacy-ui.png"  width="300px" alt="Select switch to legacy admin console from the dropdown.">}}{{</image>}}
 
-1. Click **Remove** at the top of the **Node** page for the node to be
-    removed.
-1. Approve the action.
+1. On the **nodes** page, select the node you want to remove.
+
+1. Click **Remove** at the top of the **node** page.
+
+1. Confirm you want to **Remove** the node when prompted.
+
 1. Redis Enterprise Software examines the node and the cluster and takes the actions required
     to remove the node.
+
 1. At any point, you can click the **Abort** button to stop the
     process. When aborted, the current internal action is completed, and
     then the process stops.
+    
 1. Once the process finishes, the node is no longer shown in
     the UI.
 
