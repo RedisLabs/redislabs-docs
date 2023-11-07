@@ -26,22 +26,22 @@ If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/s
 
 To create a new account with a free subscription and database:
 
-1. Navigate to the [Sign up](https://redis.com/try-free/) page.
+1. Go to the [Sign up](https://redis.com/try-free/) page.
 
 1. There are two options available to get started with Redis Cloud:
-   * Enter your information in the form and select **Get Started**
-   * Sign up with **Google** or **Github**
+   * Enter your information in the form and select **Get Started**.
+   * Sign up with **Google** or **Github**.
 
-1. Once you have completed step 2, you should receive an activation email from Redis. In the activation email, select **Activate account**. You will be forwarded to the **Get Started** page.
+1. After you enter your information, you should receive an activation email from Redis. Select **Activate account** to go to the **Get Started** page in the [Redis Cloud console](https://app.redislabs.com).
 
     {{<image filename="images/rc/quickstart-get-started.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
 
-   * Choose your role
-   * Choose who you work for
-   * Choose your use case
-   * Choose your client
+    1. Choose your role from the **Role** drop-down.
+    1. Choose your company size from the **myself/company** drop-down. If you are working on a personal project, select **myself**.
+    1. Select your Redis use case from the **use case** drop-down.
+     1. Choose your client language from the **client** drop-down.
 
-    Click **Create Free Database**. You also have the option to **Create a custom database** if necessary.
+    Click **Create Free Database** to move on.
 
 1. Select your preferred cloud vendor and region.
 
@@ -61,7 +61,7 @@ If you would rather customize your subscription and database, select **Create a 
 
     {{<image filename="images/rc/quickstart-database-overview.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
 
-1.  Confirm your database is active  
+1.  
     
     In the upper corner, an icon shows the current status of the database.  If the icon shows an orange clock, this means your database is still being created and its status is _pending_.
 
@@ -75,7 +75,7 @@ If you would rather customize your subscription and database, select **Create a 
 
 ## Connect to a database
 
-At this point, you're viewing the **Configuration** details for your new database. Scroll to the **Security** section of the page.
+At this point, you're viewing the **Configuration** details for your new database. Go to the **Security** section of the page.
 
 To connect to your database, you need your username and password. Each database is protected by a **Default user** called `default` and a masked **Default user password**. Select the eye icon to show or hide the password.    
 
@@ -104,15 +104,14 @@ RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux
 
 1. Select **Download** to download RedisInsight.
 
-1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
+1. [Install RedisInsight](https://redis.io/docs/connect/insight/).
 
-1. Once installed, select **Open with RedisInsight**
+1. Once installed, select **Open with RedisInsight**.
 
-1. A popuup appears asking you if you wish to open the link with the RedisInsight application. Select **Open RedisInsight**
+1. A pop-up asks if you wish to open the link with RedisInsight. Select **Open RedisInsight** to connect to your database with RedisInsight.
 
-1. You are automatically connected to your database
 
-See the [RedisInsight documentation]({{< relref "/ri/_index.md" >}}) for more information.
+See the [RedisInsight documentation](https://redis.io/docs/connect/insight/) for more information.
 
 ### Redis client{#using-redis-client}
 
@@ -189,7 +188,7 @@ Run the following commands to create a Redis Docker container and connect to you
     $ docker run -d --name redis1 redis
     ```
 
-1.  Connect to a bash prompt running in the container:
+1.  Connect to a shell prompt running in the container:
 
     ``` sh
     $ docker exec -it redis1 bash
