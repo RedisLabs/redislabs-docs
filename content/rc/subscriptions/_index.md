@@ -29,7 +29,7 @@ As of February 2021, Redis Enterprise Cloud supports the following subscription 
 
 Here's a quick comparison between each plan:
 
-| Feature | [Free plan](#free-plans) | [Fixed plan](#fixed-plans) | [Flexible](#flexible-plans)/<br/>[Annual](#annual-plans) plan |
+| Feature | Free plan | Fixed plan | Flexible/<br/>Annual plan |
 |:-----|:-------:|:----:|:-----:|
 | Number of databases | 1 | 4-64 | Unlimited |
 | Memory size | 30 MB | 100 MB-10 GB | 50 TB |
