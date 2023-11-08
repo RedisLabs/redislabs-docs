@@ -5,13 +5,12 @@ description: Get started creating a write-behind pipeline
 weight: 40
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
-draft: 
+aliases:
+draft:
 hidden: false
 ---
 
 This guide takes you through the creation of a write-behind pipeline.
-
 
 ## Concepts
 
@@ -28,15 +27,15 @@ The write-behind pipeline is composed of one or more **jobs**. Each job is respo
 
 RDI write-behind currently supports these target data stores:
 
-| Data Store |
-| ---------- |
-| Cassandra  |
-| MariaDB    |
-| MySQL      |
-| Oracle     |
-| PostgreSQL |
-| Redis Enterprise     |
-| SQL Server |
+| Data Store       |
+| ---------------- |
+| Cassandra        |
+| MariaDB          |
+| MySQL            |
+| Oracle           |
+| PostgreSQL       |
+| Redis Enterprise |
+| SQL Server       |
 
 ## Prerequisites
 
@@ -46,7 +45,7 @@ For more information, see [RedisGears installation]({{<relref "/rdi/installation
 ## Preparing the write-behind pipeline
 
 - Install [RDI CLI]({{<relref "/rdi/installation/install-rdi-cli">}}) on a Linux host that has connectivity to your Redis Enterprise Cluster.
-- Run the [`configure`]({{<relref "/rdi/reference/cli/redis-di-configure">}}) command to install the RDI Engine on your Redis database, if you have not used this Redis database with RDI write-behind before.
+- Run the [`install-collector`]({{<relref "/rdi/reference/cli/redis-di-install-collector">}}) command to install the RDI Collector on your Redis database, if you have not used this Redis database with RDI write-behind before.
 - Run the [`scaffold`]({{<relref "/rdi/reference/cli/redis-di-scaffold">}}) command with the type of data store you want to use, for example:
 
   ```bash
@@ -149,7 +148,7 @@ The `redis` section is common for every pipeline initiated by an event in Redis,
 
 - The `row_format` attribute can be used with the value `full` to receive both the `before` and `after` sections of the payload. Note that for write-behind events the `before` value of the key is never provided.
 
- > Note: RDI write-behind does not support the [`expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
+> Note: RDI write-behind does not support the [`expired`](https://redis.io/docs/manual/keyspace-notifications/#events-generated-by-different-commands) event. Therefore, keys that are expired in Redis will not be deleted from the target database automatically.
 > Notes: The `redis` attribute is a breaking change replacing the `keyspace` attribute. The `key_pattern` attribute replaces the `pattern` attribute. The `exclude_commands` attributes replaces the `exclude-commands` attribute. If you upgrade to version 0.105 and beyond, you must edit your existing jobs and redeploy them.
 
 ### Output section
