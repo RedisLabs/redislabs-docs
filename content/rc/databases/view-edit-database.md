@@ -51,7 +51,7 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Redis version**         | Redis version used to create the database                                                                                                                   |
 | **Auto Tiering**          | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_)                                                               |
 | **Creation time**         | Date and time the database was created                                                                                                                      |
-| **Active Active Redis**   | Checked when the database is part of an Active Active relationship                                                                                          |
+| **Active-Active Redis**   | Checked when the database is part of an Active-Active relationship                                                                                          |
 | **Last changed**          | Date and time of last update                                                                                                                                |
 | **Supported Protocol(s)** | Shows which version of RESP the database uses. See [Redis serialization protocol](https://redis.io/docs/reference/protocol-spec/#resp-versions) for details |
 | **Advanced Capabilites**  | This setting appears when when an [advanced capability]({{< relref "/stack" >}}) is enabled for a database                                                  |

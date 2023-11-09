@@ -43,7 +43,7 @@ The available settings vary according to your subscription plan:
 | Setting name              | Description                                                                                                                                                                                                                                                                                                       |
 |:--------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Subscription**          | Read-only description of your subscription plan, including cloud provider and region                                                                                                                                                                                                                              |
-| **Active Active Redis**   | Checked when the subscription supports Active Active databases (_coming soon; Flexible or Annual subscriptions only_)                                                                                                                                                                                             |
+| **Active-Active Redis**   | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_)                                                                                                                                                                                             |
 | **Auto Tiering**          | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_)                                                                                                                                                                                                                     |
 | **Database name**         | A name for your database (_required_)                                                                                                                                                                                                                                                                             |
 | **Database port**         | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_)                                                                                                                                                                                                  |
@@ -122,7 +122,7 @@ To learn more about these settings and when to use them, see [Database clusterin
 
 ### Memory limit
 
-Memory limit represents the maximum amount of memory for the database, which includes data values, keys, module data, and overhead for specific features.  High availability features, such as replication and Active Active, dramatically increase memory consumption.  
+Memory limit represents the maximum amount of memory for the database, which includes data values, keys, module data, and overhead for specific features.  High availability features, such as replication and Active-Active, dramatically increase memory consumption.  
 
 Here are some general guidelines:
 
@@ -130,7 +130,7 @@ Here are some general guidelines:
 
 - Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory limit when replication is enabled.
 
-- Active Active also doubles memory consumption and the effect is cumulative with replication's impact. Since Active Active requires replication to be turned on, the memory limit impact can be as large as four times (4x) the original data size.
+- Active-Active also doubles memory consumption and the effect is cumulative with replication's impact. Since Active-Active requires replication to be turned on, the memory limit impact can be as large as four times (4x) the original data size.
 
 - Advanced capabilities also consume memory.
 
