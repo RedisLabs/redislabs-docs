@@ -124,90 +124,15 @@ The connection wizard provides code snippets to connect to your database with th
 
 {{<image filename="images/rc/connection-wizard-clients.png" alt="The connection wizard clients." >}}{{< /image >}}
 
-See the [client list](https://redis.io/docs/clients/) to view all Redis clients by language.
+See [Clients](https://redis.io/docs/connect/clients/) to learn how to connect with the official Redis clients, or see the [Client list](https://redis.io/resources/clients/) to view all community-run clients by language.
 
-#### Code example (Python)
-
-To connect to your database using the [redis-py](https://github.com/redis/redis-py#redis-py) library for Python:
-
-1. Install the Redis client if it is not already installed.
-
-    ```sh
-    $ sudo pip install redis
-    ```
-
-2. In the connection wizard, under **Redis Client**, select Python from the **Select your client** menu.
-
-3. Select **Copy** to copy the connection code for your database.
-
-4. Create a python file ```vi example_redis.py```
-
-5. Add the copied code to your Python program.
-
-    ```
-    import redis
-
-    r = redis.Redis(
-    host='<HOST>',
-    port=<PORT>,
-    password='<PASSWORD>')
-    ```
-   
-6. Add the following code to your Python program.
-
-    ```
-    r.set('hello', 'world')
-    print(r.get('hello'))
-    ```
-
-7. Run the program.
-
-    ```sh
-    $ python example_redis.py
-    b'world'
-    ```
-
-### redis-cli (via Docker){#using-rediscli}
+### redis-cli {#using-rediscli}
 
 The [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli/">}}) utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands/).
 
-[Docker](https://www.docker.com/) provides a convenient way to run `redis-cli` without the full installation experience.
+To run `redis-cli`, [install Redis Stack](https://redis.io/docs/install/install-stack/) on your machine.
 
-Run the following commands to create a Redis Docker container and connect to your database with `redis-cli`:
-
-1.  Download the `redis` Docker image:
-
-    ``` sh
-    $ docker pull redis
-    ```
-1.  Start a container created from the image:
-
-    ``` sh
-    $ docker run -d --name redis1 redis
-    ```
-
-1.  Connect to a shell prompt running in the container:
-
-    ``` sh
-    $ docker exec -it redis1 bash
-    ```
-
-1. In the connection wizard, under **Redis CLI**, select the **Copy** button to copy the `redis-cli` command.
-
-1. Enter the copied `redis-cli` command in the terminal.
-
-1. After you connect to your database, try these basic Redis commands:
-
-    ``` sh
-    xxx:yyy> ping
-    PONG
-    xxx:yyy> set hello world
-    OK
-    xxx:yyy> get hello
-    "world"
-    ```
-
-   To try other Redis commands, see the [commands reference](https://redis.io/commands/) for help.
+See [Redis CLI](https://redis.io/docs/connect/cli/) to learn how to use `redis-cli`.
 
 ## More info
 
