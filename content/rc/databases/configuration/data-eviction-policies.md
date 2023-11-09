@@ -29,7 +29,7 @@ For each database, you can choose from these data eviction policies:
 | volatile-ttl | Removes keys with expire field set to true and the shortest remaining time-to-live (TTL) value |
 | no eviction | New values aren't saved when memory limit is reached<br/><br/>When a database uses replication, this applies to the primary database |
 
-## Preventing Data Eviction
+## Prevent data eviction
 
 Redis Cloud supports [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}) 
 to prevent data eviction but maintain high performance.

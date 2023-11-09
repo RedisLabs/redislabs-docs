@@ -87,7 +87,7 @@ are supported, with the following limitations:
 
 ## Managing the hashing policy
 
-Redis defaults to the [Standard hashing policy]({{< relref "/rs/databases/durability-ha/clustering#standard-hashing-policy" >}}). 
+Redis defaults to the [standard hashing policy]({{< relref "/rs/databases/durability-ha/clustering#standard-hashing-policy" >}}). 
 The clustering configuration of a Redis Cloud instance can be changed. 
 However, hashing policy changes delete existing data 
 (FLUSHDB) before they're applied. 
@@ -118,8 +118,8 @@ performed as follows:
 You can use the '{...}' pattern to direct related keys to the same hash
 slot, so that multi-key operations are supported on them. On the other
 hand, not using a hashtag in the key's name results in a
-(statistically) even distribution of keys across the keyspace's shards 
-which results in better resource utilization. 
+(statistically) even distribution of keys across the keyspace's shards, 
+which improves resource utilization. 
 If your application does not perform multi-key operations, you don't
 need to construct key names with hashtags.
 

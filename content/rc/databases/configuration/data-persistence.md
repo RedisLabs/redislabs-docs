@@ -20,14 +20,15 @@ Data can be persisted in one of two ways:
 
     The AOF file records write operations made to the database; it can be updated every second or on every write (_Flexible or Annual plans only_).
 
-- Snapshots are copies of the in-memory database, taken at periodic intervals (one, six, or twelve hours).  This allows the data to be restored to the point-in-time of the snapshot.
+- Snapshots are copies of the in-memory database, taken at periodic intervals (one, six, or twelve hours). You can restore data to the snapshot's point in time.
 
 
 AOF files provide greater protection (durability) than snapshots at the cost of resources and recovery time. 
-AOF requires more resources to store individual operations and recovery takes longer as the database is reconstructed from the record nearly to the point of failure. 
-Snapshot recovery is faster, however, there's a greater risk of data loss depending on the time between failure and the most recent snapshot.
+Although snapshot recovery is faster, the risk of data loss is higher, depending on the time between failure and the most recent snapshot.
 
-Data persistence can be also disabled.  In such cases, data is lost when the database goes down.
+{{<warning>}}
+If you turn off data persistence, data is lost when the database goes down.
+{{</warning>}}
 
 ## Configure data persistence 
 

@@ -27,12 +27,12 @@ There are several ways to do this, depending on your circumstances and environme
 
 The following sections provide some options:
 
-- [The Redis-CLI utility]({{<relref "rc/databases/flush-data#the-redis-cli-utility">}})
+- [`redis-cli`]({{<relref "rc/databases/flush-data#the-redis-cli-utility">}})
 - [RedisInsight CLI]({{<relref "rc/databases/flush-data#redisinsight-cli">}})
-- [The netcat utility]({{<relref "rc/databases/flush-data#the-netcat-utility">}})
+- [`netcat`]({{<relref "rc/databases/flush-data#the-netcat-utility">}})
 - [SASL connection]({{<relref "rc/databases/flush-data#sasl-connection">}})
 
-### The Redis-CLI utility
+### redis-cli
 
 To use the `redis-cli` utility:
 
@@ -46,7 +46,7 @@ Example:
 redis-cli -h redis-12345.server.cloud.redislabs.example.com -p 12345 -a xyz flushall
 ```
 
-### RedisInsight CLI
+### RedisInsight
 
 If you've installed [RedisInsight]({{<relref "/ri/">}}) and [added your database]({{<relref "rc/rc-quickstart.md#using-redisinsight">}}), you can use the RedisInsight command-line interface (CLI) to issue commands:
 
@@ -60,9 +60,9 @@ If you've installed [RedisInsight]({{<relref "/ri/">}}) and [added your database
 
     The 'OK' response indicates that the command executed properly.
 
-### The netcat utility 
+### netcat 
 
-If you have shell access to the server hosting your database, you can use the [netcat](https://en.wikipedia.org/wiki/Netcat) (`nc`) to send the `flush_all` command to your database:
+If you have shell access to your database's host server, you can use [netcat](https://en.wikipedia.org/wiki/Netcat) (`nc`) to send the `flush_all` command to your database:
 
 ```sh
 echo "flush_all" | nc redis-12345.server.cloud.redislabs.example.com 12345

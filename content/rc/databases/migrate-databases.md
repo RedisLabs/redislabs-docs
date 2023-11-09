@@ -19,7 +19,7 @@ The most common way to transfer data to a new database is to import a copy of th
 
 Here's how it works:
 
-1.  [Select an export storage destination]({{<relref "rc/databases/back-up-data.md#set-up-backup-storage-locations">}}) and verify that it's ready for use and has sufficient space.
+1.  [Select an export storage destination]({{<relref "rc/databases/back-up-data#set-up-backup-storage-locations">}}) and verify that it's ready for use and has sufficient space.
 
 1.  [Export]({{<relref "rc/databases/back-up-data.md">}}) the data from the original database to the storage location.
 
@@ -37,13 +37,13 @@ If your target database is hosted on a Flexible (or Annual) subscription, you ca
 
 The source database remains active while the data migrates.
 
-Two processes for syncing are outlined as examples in the next sections.
+The following sections describe Active-Passive syncing processes.
 
-### General process for Active Passive syncing 
+### General Active-Passive syncing process
 
-To do this, specify the target database as an Active-Passive replica of the source database.  The general process is:
+To migrate data using Active-Passive syncing, specify the target database as an Active-Passive replica of the source database:
 
-1.  Get the public endpoint of the source database. These are available from the database list and the **General** section of the **Configuration** tab for the source database.
+1.  Get the source database's public endpoint from the **General** section of the database's **Configuration** tab.
 2.  Enable the target database as an Active-Passive replica for the source.
 3.  Wait for the data to sync.
 4.  Switch apps and other connections to the target database.
@@ -57,9 +57,9 @@ An error will appear when syncing the two databases if the source database has [
 An error will appear when syncing the two databases if the source and target databases are hosted on different Redis Cloud accounts. [Contact support](https://redis.com/company/support/) if you want to migrate a database between accounts using Active-Passive.
 {{< /note >}}
 
-### Detailed process for Active Passive syncing: databases on same account
+### Detailed Active-Passive syncing process
 
-Here's how this works for databases hosted on the same Redis Cloud account:
+If the databases belong to the same Redis Cloud account, follow these detailed steps to migrate data using Active-Passive syncing:
 
 1.  Select **Databases** from the [Redis Cloud console](https://app.redislabs.com/) menu and select the source database in the list.
 
@@ -77,7 +77,7 @@ Here's how this works for databases hosted on the same Redis Cloud account:
 
     {{<image filename="images/rc/migrate-data-target-edit.png" alt="Use the **Edit Database** button to change the configuration of the target database." >}}{{< /image >}}
 
-5.  In the **Durability** section, enable **Active Passive Redis** and then select **Add URI**.
+5.  In the **Durability** section, enable **Active-Passive Redis** and then select **Add URI**.
 
     {{<image filename="images/rc/migrate-data-active-passive-enable.png" alt="Active-Passive settings are located in the **Durability** section of the database **Configuration** tab." >}}{{< /image >}}
 
