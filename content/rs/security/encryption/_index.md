@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-Redis Enterprise Software uses encryption to secure communications between clusters, nodes, databases, and clients and protect [data in transit](https://en.wikipedia.org/wiki/Data_in_transit), [at rest](https://en.wikipedia.org/wiki/Data_at_rest), and [in use](https://en.wikipedia.org/wiki/Data_in_use).
+Redis Enterprise Software uses encryption to secure communications between clusters, nodes, databases, and clients and to protect [data in transit](https://en.wikipedia.org/wiki/Data_in_transit), [at rest](https://en.wikipedia.org/wiki/Data_at_rest), and [in use](https://en.wikipedia.org/wiki/Data_in_use).
 
 ## Encrypt data in transit
 
