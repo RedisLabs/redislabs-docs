@@ -85,7 +85,7 @@ are supported, with the following limitations:
     and pipelining are supported with Redis Cloud cluster
     like if it were a non-cluster DB.
 
-## Managing the hashing policy
+## Manage the hashing policy
 
 Redis defaults to the [standard hashing policy]({{< relref "/rs/databases/durability-ha/clustering#standard-hashing-policy" >}}). 
 The clustering configuration of a Redis Cloud instance can be changed. 
