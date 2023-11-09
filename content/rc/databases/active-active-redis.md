@@ -12,7 +12,7 @@ aliases: [
 ---
 
 Active Active databases store data across multiple regions and availability zones.  This improves scalability, performance, and availability, especially when compared to standalone databases.
-To create Active Active databases, you need a Flexible (or Annual) [Redis Enterprise Cloud]({{<relref "/rc/subscriptions/create-active-active-subscription">}}) subscription that enables Active-Active Redis and defines the regions for each copy of your databases.  This is defined when you [create a new subscription]({{<relref "rc/subscriptions/create-flexible-subscription">}}).
+To create Active-Active databases, you need a Flexible or Annual Redis Enterprise Cloud subscription that enables Active-Active Redis and defines the regions for each copy of your databases. See [Create an Active-Active subscription]({{<relref "/rc/subscriptions/create-active-active-subscription">}}) for instructions.
 
 Active Active databases are distributed across multiple regions (geo-distribution).  This improves performance by reducing latency for nearby users and improves availability by protecting against data loss in case of network or resource failure.
 
@@ -26,7 +26,7 @@ Geo-distributed replication maintains copies of both primary and replica shards 
 
 ### Local latency with unique endpoints
 
-Applications can specify which copy of the database to connect to allowing for local latency.  This is done by specifying the desired database's unique endpoint in your application configuration.  Each database is a full copy of the data with read and write permissions and will sync data to all database copies in the participating Active Active clusters. 
+Applications can connect to a specific copy of an Active-Active database using its unique endpoint. For local latency, configure your application to use a database endpoint in the closest region.
 
 ### Conflict resolution
 
