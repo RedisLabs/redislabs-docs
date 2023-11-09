@@ -17,12 +17,14 @@ aliases: /rv/how-to/importing-dataset-redis-cloud/
 ---
 You can import an existing dataset into your Redis Cloud instance from an existing Redis server or an RDB file.
 
-In preparation, make certain the Redis version of the source database is compatible with the database where the data will be imported.
-
 {{< note >}}
 Expired keys are not imported.
 As a result, the number of keys in the source and destination databases can be different after the import is complete.
 {{< /note >}}
+
+## Prerequisites
+
+In preparation, make certain the Redis version of the source database is compatible with the database where the data will be imported.
 
 ## Import from a Redis OSS server
 
