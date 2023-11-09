@@ -1,5 +1,5 @@
 ---
-Title: Using Prometheus and Grafana with Redis Cloud
+Title: Use Prometheus and Grafana with Redis Cloud
 linkTitle: Prometheus and Grafana
 description: Use Prometheus and Grafana to collect and visualize Redis Cloud metrics.
 weight: $weight
