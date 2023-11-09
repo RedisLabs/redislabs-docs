@@ -80,13 +80,13 @@ The Durability section helps protect your data when problems occur.  These setti
 
 {{<image filename="images/rc/database-details-configuration-tab-durability-flexible.png" alt="Use the Durability  section to protect your data from unexpected problems." >}}{{< /image >}}
 
-| Setting name             |Description|
-|:-------------------------|:----------|
-| **High availability**    | Replicates your data across multiple nodes, as allowed by your subscription plan |
+| Setting name             | Description                                                                                                                                                     |
+|:-------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **High availability**    | Replicates your data across multiple nodes, as allowed by your subscription plan                                                                                |
 | **Data persistence**     | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type |
-| **Data eviction policy** | Configures which [policy]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) is applied when your database reaches its memory limit |
-| **Remote backup**        | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}). |
-| **Active-Passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
+| **Data eviction policy** | Configures which [policy]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) is applied when your database reaches its memory limit        |
+| **Remote backup**        | When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}). (_paid subscriptions only_)                |
+| **Active-Passive Redis** | When enabled, identifies a path to the linked database. (_Flexible or Annual subscriptions only_)                                                               |
 
 ### Security section
 
@@ -95,12 +95,12 @@ The **Security** section helps you control access to your database.
 {{<image filename="images/rc/database-details-configuration-tab-security-flexible.png" alt="Use the Security settings to control access to your database." >}}{{< /image >}}
 
 
-|Setting name| Description                                                                                                                                                                           |
-|:-----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Default user** | When enabled, permits access using a simple password                                                                                                                                  |
-| **Default user password** | Password for default user. A default password is assigned to the database on creation and may be updated.                                                                             |  
-| **CIDR allow list** | (_paid Fixed, Flexible, or Annual subscriptions only_) [Allow list]({{< relref "/rc/security/cidr-whitelist.md" >}}) of IP addresses/security groups permitted to access the database |
-| **Transport layer security (TLS)** | (_Flexible or Annual subscriptions only_) Enables [transport security layer]({{< relref "/rc/security/database-security/tls-ssl.md" >}})(TLS) encryption for database access.         |
+|Setting name| Description                                                                                                                                                                    |
+|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Default user** | When enabled, permits access using a simple password                                                                                                                           |
+| **Default user password** | Password for default user. A default password is assigned to the database on creation and may be updated.                                                                      |
+| **CIDR allow list** | [Allow list]({{< relref "/rc/security/cidr-whitelist.md" >}}) of IP addresses/security groups permitted to access the database. (_paid subscriptions only_)                    |
+| **Transport layer security (TLS)** | Enables [transport security layer]({{< relref "/rc/security/database-security/tls-ssl.md" >}})(TLS) encryption for database access. (_Flexible or Annual subscriptions only_)  |
 
 ### Alerts section
 
