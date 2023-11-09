@@ -1,55 +1,53 @@
 ---
-Title: Redis Enterprise Software release notes 6.4.2-103 (October 2023)
-linkTitle: 6.4.2-103 (October 2023)
-description: RHEL 8.8 support. RediSearch v2.6.12. RedisGraph v2.10.12. RedisTimeSeries v1.8.11 Log when CCS schema changes. Bug fixes.
-compatibleOSSVersion: Redis 6.2.10
-weight: 66
+Title: Redis Enterprise Software release notes 7.2.4-tba (November 2023)
+linkTitle: 7.2.4-tba (November 2023)
+description: New Cluster Manager UI enhancements - LDAP configuration improvements and rack-zone awareness database configuration. New `capability_name` field added to module REST API object.
+compatibleOSSVersion: Redis 7.2.0
+weight: 69
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: /rs/release-notes/rs-7-2-4-releases/rs-7-2-4-tba/
 ---
 
-This is a maintenance release for ​[​Redis Enterprise Software version 6.4.2](https://redis.com/redis-enterprise-software/download-center/software/).
+This is a maintenance release for ​[​Redis Enterprise Software version 7.2.4](https://redis.com/redis-enterprise-software/download-center/software/).
 
 ## Highlights
 
 This version offers:
 
-- RHEL 8.8 support
+- New Cluster Manager UI enhancements
 
-- RediSearch v2.6.12, RedisGraph v2.10.12, and RedisTimeSeries v1.8.11
-
-- Log when CCS schema changes
-
-- Bug fixes
+- New `capability_name` field in module REST API object 
 
 ## New in this release
 
 ### Enhancements
 
-- RHEL 8.8 support
+- New Cluster Manager UI enhancements:
 
-- Log when CCS schema changes due to schema upgrade
+    - LDAP configuration improvements
+
+    - Rack-zone awareness database configuration
+
+- New `capability_name` field added to module REST API object 
 
 #### Redis modules
 
-Redis Enterprise Software version 6.4.2-103 includes the following Redis Stack modules:
+Redis Enterprise Software version 7.2.4-tba includes the following Redis Stack modules:
 
-- [RediSearch v2.6.12](https://docs.redis.com/latest/stack/release-notes/redisearch/redisearch-2.6-release-notes/)
+- [RediSearch 2.8.4](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.4)
 
-- [RedisJSON v2.4.7](https://docs.redis.com/latest/stack/release-notes/redisjson/redisjson-2.4-release-notes/)
+- [RedisJSON 2.6.6](https://github.com/RedisJSON/RedisJSON/releases/tag/v2.6.6)
 
-- [RedisBloom v2.4.5](https://docs.redis.com/latest/stack/release-notes/redisbloom/redisbloom-2.4-release-notes/)
+- [RedisTimeSeries 1.10.6](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.10.6)
 
-- [RedisGraph v2.10.12](https://docs.redis.com/latest/stack/release-notes/redisgraph/redisgraph-2.10-release-notes/)
+- [RedisBloom 2.6.3](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.3)
 
-- [RedisTimeSeries v1.8.11](https://docs.redis.com/latest/stack/release-notes/redistimeseries/redistimeseries-1.8-release-notes/)
+- [RedisGears 2.0.12](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.12-m13)
 
 ### Resolved issues
 
-- RS109744 - Fixed an issue where node removal sometimes got stuck in a `starting` state when `wait_for_persistence` was enabled.
-
-- RS76441 - For databases created before Redis Enterprise Software v6.0.20, `crdt_syncer_auto_oom_unlatch` was `EMPTY` and `disabled` by default. `crdt_syncer_auto_oom_unlatch` is now enabled by default for new databases.
+- TBA
 
 ## Version changes 
 
@@ -107,13 +105,17 @@ Redis Enterprise Software version 6.4.2-103 includes the following Redis Stack m
 
 The following table shows the MD5 checksums for the available packages:
 
-| Package | MD5 checksum (6.4.2-103 October release) |
+| Package | MD5 checksum (7.2.4-tba November release) |
 |---------|---------------------------------------|
-| Ubuntu 18 | 6544fd5d1625ab9da7b0d99f195fe4f1 |
-| Ubuntu 20 | d623c8458a28f09a1e6ae0c0a8650023 |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 | 06cc49ddbf560c516c52ae721c2806cd |
-| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux | 2d799af5ee03c0a94660a60cd99ea361 |
-| Amazon Linux 2 | f2c5c2b5e879b8fd6792336f757593e2 |
+| Ubuntu 18 |  |
+| Ubuntu 20 |  |
+| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
+| Amazon Linux 2 |  |
+
+## Known issues
+
+- TBA
 
 ## Security
 
@@ -123,8 +125,39 @@ As part of Redis's commitment to security, Redis Enterprise Software implements 
 
 Some CVEs announced for open source Redis do not affect Redis Enterprise due to different or additional functionality available in Redis Enterprise that is not available in open source Redis.
 
+Redis Enterprise 7.2.4-tba supports open source Redis 7.2, 6.2, and 6.0. Below is the list of open source Redis CVEs fixed by version.
 
-Redis Enterprise 6.4.2-103 supports open source Redis 6.2 and 6.0. Below is the list of open source Redis CVEs fixed by version.
+Redis 7.2.x:
+
+- (CVE-2023-41053) Redis does not correctly identify keys accessed by `SORT_RO` and, as a result, may grant users executing this command access to keys that are not explicitly authorized by the ACL configuration. (Redis 7.2.1)
+
+Redis 7.0.x:
+
+- (CVE-2023-41053) Redis does not correctly identify keys accessed by `SORT_RO` and, as a result, may grant users executing this command access to keys that are not explicitly authorized by the ACL configuration. (Redis 7.0.13)
+
+- (CVE-2023-36824) Extracting key names from a command and a list of arguments may, in some cases, trigger a heap overflow and result in reading random heap memory, heap corruption, and potentially remote code execution. Specifically: using `COMMAND GETKEYS*` and validation of key names in ACL rules. (Redis 7.0.12)
+
+- (CVE-2023-28856) Authenticated users can use the `HINCRBYFLOAT` command to create an invalid hash field that will crash Redis on access. (Redis 7.0.11)
+
+- (CVE-2023-28425) Specially crafted `MSETNX` command can lead to assertion and denial-of-service. (Redis 7.0.10)
+
+- (CVE-2023-25155) Specially crafted `SRANDMEMBER`, `ZRANDMEMBER`, and `HRANDFIELD` commands can trigger an integer overflow, resulting in a runtime assertion and termination of the Redis server process. (Redis 7.0.9)
+
+- (CVE-2023-22458) Integer overflow in the Redis `HRANDFIELD` and `ZRANDMEMBER` commands can lead to denial-of-service. (Redis 7.0.8)
+
+- (CVE-2022-36021) String matching commands (like `SCAN` or `KEYS`) with a specially crafted pattern to trigger a denial-of-service attack on Redis, causing it to hang and consume 100% CPU time. (Redis 7.0.9)
+
+- (CVE-2022-35977) Integer overflow in the Redis `SETRANGE` and `SORT`/`SORT_RO` commands can drive Redis to OOM panic. (Redis 7.0.8)
+
+- (CVE-2022-35951) Executing an `XAUTOCLAIM` command on a stream key in a specific state, with a specially crafted `COUNT` argument, may cause an integer overflow, a subsequent heap overflow, and potentially lead to remote code execution. The problem affects Redis versions 7.0.0 or newer. (Redis 7.0.5)
+
+- (CVE-2022-31144) A specially crafted `XAUTOCLAIM` command on a stream key in a specific state may result in heap overflow and potentially remote code execution. The problem affects Redis versions 7.0.0 or newer. (Redis 7.0.4)
+
+- (CVE-2022-24834) A specially crafted Lua script executing in Redis can trigger a heap overflow in the cjson and cmsgpack libraries, and result in heap corruption and potentially remote code execution. The problem exists in all versions of Redis with Lua scripting support, starting from 2.6, and affects only authenticated and authorized users. (Redis 7.0.12)
+
+- (CVE-2022-24736) An attacker attempting to load a specially crafted Lua script can cause NULL pointer dereference which will result in a crash of the `redis-server` process. This issue affects all versions of Redis. (Redis 7.0.0)
+
+- (CVE-2022-24735) By exploiting weaknesses in the Lua script execution environment, an attacker with access to Redis can inject Lua code that will execute with the (potentially higher) privileges of another Redis user. (Redis 7.0.0)
 
 Redis 6.2.x:
 
