@@ -31,13 +31,13 @@ with each process managing a subset of the database keyspace.
 Clustering uses multiple cores and resources of multiple instances to overcome scaling challenges.
 
 In a Redis Cloud cluster, the keyspace is partitioned into hash
-slots. At any given time a slot resides on and is managed by a single
+slots. At any given time a hash slot resides on and is managed by a single
 Redis server. 
 
-An instance that belongs to a cluster can manage multiple
+An instance that belongs to a cluster can manage multiple hash
 slots. This division of the key space, known as _sharding_, is achieved by
 hashing the key names, or parts of these (key hash tags), in order to
-obtain the slot in which a key should reside.
+obtain the hash slot in which a key should reside.
 
 Even when using multiple Redis processes, the use of a Redis
 Enterprise Cloud cluster is nearly transparent to the application that
@@ -66,7 +66,7 @@ are supported, with the following limitations:
 
 1. **Multi-key commands:** Redis offers several commands that accept
     multiple keys as arguments. In a sharded setup, you can run multi-key commands
-    only if all of the affected keys reside in the same slot (and on the same shard).
+    only if all the affected keys reside in the same slot (thus on the same shard).
     This restriction applies to all mulit-key commands, including BITOP, BLPOP, BRPOP, BRPOPLPUSH, MSETNX,
     RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE, SORT,
     SUNION, XREAD, ZINTER, ZINTERSTORE, ZUNION, ZUNIONSTORE, ZDIFF, ZDIFFSTORE
@@ -85,11 +85,14 @@ are supported, with the following limitations:
     and pipelining are supported with Redis Cloud cluster
     like if it were a non-cluster DB.
 
-## Changing the hashing policy
+## Manage the hashing policy
 
-The clustering configuration of a Redis Cloud instance can be
-changed. However, hashing policy changes delete existing data 
-(FLUSHDB) before they're applied. These changes include:
+Redis defaults to the [standard hashing policy]({{< relref "/rs/databases/durability-ha/clustering#standard-hashing-policy" >}}). 
+The clustering configuration of a Redis Cloud instance can be changed. 
+However, hashing policy changes delete existing data 
+(FLUSHDB) before they're applied. 
+
+These changes include:
 
 1. Changing the hashing policy, either from standard to custom or vice versa.
 1. Changing the order of custom hashing policy rules.
@@ -115,7 +118,8 @@ performed as follows:
 You can use the '{...}' pattern to direct related keys to the same hash
 slot, so that multi-key operations are supported on them. On the other
 hand, not using a hashtag in the key's name results in a
-(statistically) even distribution of keys across the keyspace's shards.
+(statistically) even distribution of keys across the keyspace's shards, 
+which improves resource utilization. 
 If your application does not perform multi-key operations, you don't
 need to construct key names with hashtags.
 

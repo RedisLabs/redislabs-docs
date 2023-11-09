@@ -19,11 +19,11 @@ The most common way to transfer data to a new database is to import a copy of th
 
 Here's how it works:
 
-1.  Select an export storage destination and verify that it's ready for use and has sufficient space.
+1.  [Select an export storage destination]({{<relref "rc/databases/back-up-data#set-up-backup-storage-locations">}}) and verify that it's ready for use and has sufficient space.
 
-1.  Export the data from the original database to the storage location.
+1.  [Export]({{<relref "rc/databases/back-up-data.md">}}) the data from the original database to the storage location.
 
-1.  Import the exported data into the target database, the one hosted by the new subscription.
+1.  [Import]({{<relref "rc/databases/import-data.md">}}) the exported data into the target database, the one hosted by the new subscription.
 
 The migrated data reflects the state of the data at the time it was originally exported.  
 
@@ -37,15 +37,17 @@ If your target database is hosted on a Flexible (or Annual) subscription, you ca
 
 The source database remains active while the data migrates.
 
-To do this, specify the target database as an Active-Passive replica of the the source database.  The general process is:
+The following sections describe Active-Passive syncing processes.
 
-1.  Get the public endpoint of the source database.
+### General Active-Passive syncing process
+
+To migrate data using Active-Passive syncing, specify the target database as an Active-Passive replica of the source database:
+
+1.  Get the source database's public endpoint from the **General** section of the database's **Configuration** tab.
 2.  Enable the target database as an Active-Passive replica for the source.
 3.  Wait for the data to sync.
 4.  Switch apps and other connections to the target database.
 5.  Disable Active-Passive for the target database.
-
-You need the public endpoint details for the source database.  These are available from the database list and the **General** section of the **Configuration** tab for the source database.
 
 {{< note >}}
 An error will appear when syncing the two databases if the source database has [Transport Layer Security (TLS)]({{< relref  "/rc/security/database-security/tls-ssl" >}}) enabled. [Contact support](https://redis.com/company/support/) if you want to migrate a TLS-enabled database using Active-Passive.
@@ -55,9 +57,11 @@ An error will appear when syncing the two databases if the source database has [
 An error will appear when syncing the two databases if the source and target databases are hosted on different Redis Cloud accounts. [Contact support](https://redis.com/company/support/) if you want to migrate a database between accounts using Active-Passive.
 {{< /note >}}
 
-Here's how this works for databases hosted on the same account:
+### Detailed Active-Passive syncing process
 
-1.  Select **Databases** from the [admin menu](http://app.redis.com/) and select the source database in the list.
+If the databases belong to the same Redis Cloud account, follow these detailed steps to migrate data using Active-Passive syncing:
+
+1.  Select **Databases** from the [Redis Cloud console](https://app.redislabs.com/) menu and select the source database in the list.
 
     {{<image filename="images/rc/migrate-database-select-source.png" alt="Select the source database from the database list." >}}{{< /image >}}
 
