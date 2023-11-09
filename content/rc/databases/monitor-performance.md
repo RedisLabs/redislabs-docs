@@ -23,6 +23,8 @@ Performance data provides insight into how your database is being used and how w
 
 The interval scrollbar controls the time period displayed in the graphs.  
 
+{{<image filename="images/rc/database-metrics-interval-scrollbar.png" width="75%" alt="The Metrics tab of the View Database screen." >}}{{< /image >}}
+
 ## Promote metric graphs
 
 The **Metrics** screen shows two primary graphs and a collection of smaller ones.  You can promote any smaller graph to a primary position.
@@ -64,9 +66,7 @@ For more detailed analysis, consider using [RedisInsight]({{< relref "/ri/" >}})
 
 Depending on your subscription plan, you can enable alerts for several metrics for a given database.
 
-To do so, go to the **Configuration** tab of the database and then locate the **Alerts** section.
-
-For details, including a breakdown of alerts available for each subscription type, see [Alerts section]({{< relref "/rc/databases/view-edit-database#alerts-section" >}}).
+To do so, go to the **Configuration** tab of the database and then locate the **Alerts** section. For details, including a breakdown of alerts available for each subscription type, see [Alerts section]({{< relref "/rc/databases/view-edit-database#alerts-section" >}}).
 
 Alert settings are specific to a given database.  To receive alerts for multiple databases, make sure each is configured accordingly.
 
@@ -74,8 +74,6 @@ Alert settings are specific to a given database.  To receive alerts for multiple
 
 Any member of the account team can receive alert emails.
 
-To update alert settings for one or more team members, select **Access Management** from the admin console menu and then select the **Team** tab.
-
-For details, see [Access management]({{< relref "/rc/security/access-control/access-management" >}}).
+To update alert settings for one or more team members, select **Access Management** from the admin console menu and then select the **Team** tab. For details, see [Access management]({{< relref "/rc/security/access-control/access-management" >}}).
 
 If you subscribe to Redis Cloud through a Platform-as-a-Service (PaaS) provider (such as Heroku), you will need to review your provider's documentation for help managing your team.

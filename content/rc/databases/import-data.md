@@ -22,7 +22,11 @@ Expired keys are not imported.
 As a result, the number of keys in the source and destination databases can be different after the import is complete.
 {{< /note >}}
 
-## Import from a Redis server
+## Prerequisites
+
+In preparation, make certain the Redis version of the source database is compatible with the database where the data will be imported.
+
+## Import from a Redis OSS server
 
 To import a dataset from any publicly available Redis server:
 
@@ -32,7 +36,7 @@ To import a dataset from any publicly available Redis server:
     - Source type - Select **Redis**.
     - Redis Hostname/IP Address - Enter the hostname or the public IP address of the source Redis server.
     - Redis port - Enter the port of the source Redis server if it is not the default value of `6379`.
-    - Password - Enter the password, if required by the Redis database.
+    - Password - Enter the password, if required by the source Redis database.
 1. Select **Import**.
 
 ## Restore from an RDB file

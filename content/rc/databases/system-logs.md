@@ -10,11 +10,11 @@ aliases: [ "/rv/administration/system-logs/",
 ---
 The **Logs** page contains events, alerts, and logs from the activities, databases, and subscriptions associated with your account.
 
-{{<image filename="images/rc/system-logs.png" alt="Choose the Logs command from the Redis Cloud admin console menu to view your subscription system log." width="75%">}}{{< /image >}} 
+{{<image filename="images/rc/system-logs.png" alt="Choose the Logs command from the Redis Cloud admin console menu to view your subscription system log." width="100%">}}{{< /image >}} 
 
 You can:
 
-* Sort the list by a specific field in descending or ascending order. Supported fields include *Time*, *Originator*, *Database name*, and *Activity*.
+* Sort the list by a specific field in descending or ascending order. Supported fields include *Time*, *Originator*, *Database name*, *API key name*, and *Activity*.
 
     {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." width="30px">}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." width="30px">}}{{< /image >}}    
     
@@ -28,4 +28,4 @@ You can:
 
     {{<image filename="images/rc/system-logs-refresh.png" alt="Use the refresh button in the top right to refresh the system logs" width="40px">}}{{< /image >}}
 
-* Use the search bar to search for specific entries. Supported fields include *Originator*, *Database name*, *Activity*, and *Description*.
+* Use the search bar to search for specific entries. Supported fields include *Originator*, *Database name*, *API key name*, *Activity*, and *Description*.
