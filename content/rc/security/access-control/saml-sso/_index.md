@@ -131,7 +131,7 @@ After you set up the SAML integration app and create a SAML user in your identit
 
 1. Select **Single Sign-On**.
 
-1. Select the **Setup SSO** button:
+1. Select the **Setup SAML SSO** button:
 
     {{<image filename="images/rc/button-access-management-sso-setup.png" width="120px" alt="Setup SSO button">}}{{</image>}}
 
