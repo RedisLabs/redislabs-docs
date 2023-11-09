@@ -11,7 +11,7 @@ aliases: [
    "/rc/administration/multiple-accounts.md",
 ]
 ---
-When you sign in to the Redis Cloud [admin console](https://app.redislabs.com/), you use a profile associated with one or more Redis Cloud accounts.  
+When you sign in to the [Redis Cloud console](https://app.redislabs.com/), you use a profile associated with one or more Redis Cloud accounts.  
 
 This account has a profile with settings that you can manage using the Profile control located near the top, right corner of the admin console:
 
