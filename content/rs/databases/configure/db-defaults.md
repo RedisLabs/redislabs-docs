@@ -91,7 +91,7 @@ To configure the default S3 URL, use one of the following methods:
 
 ### Internode encryption
 
-Enable [internode encryption]({{<relref "/rs/security/internode-encryption">}}) to encrypt data in transit between nodes for new databases by default.
+Enable [internode encryption]({{<relref "/rs/security/encryption/internode-encryption">}}) to encrypt data in transit between nodes for new databases by default.
 
 To enable or turn off internode encryption by default, use one of the following methods:
 

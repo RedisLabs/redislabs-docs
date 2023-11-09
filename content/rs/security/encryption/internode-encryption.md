@@ -1,7 +1,7 @@
 ---
 title: Internode encryption
 linkTitle: Internode encryption
-description: Describes internode which improves the security of data in transit. 
+description: Describes internode encryption which improves the security of data in transit. 
 weight: 15
 alwaysopen: false
 categories: ["RS"]

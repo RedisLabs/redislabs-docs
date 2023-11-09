@@ -395,7 +395,7 @@ A key that is logically deleted but stays in memory until it is collected by the
 {{%definition "Transport Layer Security (TLS)"%}}
 Protocols that provide communications security over a computer network.
 
-More info: [TLS wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security), [Cloud database TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}}), [Redis Enterprise TLS]({{<relref "/rs/security/tls">}})
+More info: [TLS wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security), [Cloud database TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}}), [Redis Enterprise TLS]({{<relref "/rs/security/encryption/tls">}})
 {{%/definition%}}
 
 {{%definition "VPC peering"%}}

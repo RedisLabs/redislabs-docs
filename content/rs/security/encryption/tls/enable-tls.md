@@ -6,7 +6,8 @@ weight: 40
 alwaysopen: false
 categories: ["RS"]
 aliases: ["/rs/administering/designing-production/security/tls-configuration", 
-"/rs/administering/designing-production/security/client-connections"]
+"/rs/administering/designing-production/security/client-connections",
+"/rs/security/tls/enable-tls/"]
 ---
 
 You can use TLS authentication for one or more of the following types of communication:
