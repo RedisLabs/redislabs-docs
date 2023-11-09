@@ -120,6 +120,12 @@ To edit the Redis Cloud account billing address:
 
     {{<image filename="images/rc/account-settings-change-billing-address.png" alt="The Edit account billing address screen." width="80%">}}{{< /image >}}
 
+    Select the checkbox to confirm that your previous payment methods will be removed.
+
+    {{<image filename="images/rc/account-settings-confirm-billing-address.png" alt="The Edit account billing address screen." width="80%">}}{{< /image >}}
+
+    Select **Continue** to save your new address.
+
     {{< note >}}
 Changing the billing address for your account will remove any payment methods associated with the old billing address. See [Add payment method](#add-payment-method) to learn how to add a payment method back to your account.
     {{< /note >}}
