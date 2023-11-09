@@ -19,7 +19,7 @@ Control who can make changes to your databases using the [Redis Cloud console](h
 
 Redis Cloud supports both IdP-initiated and SP-initiated [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
 
-You can use any identity provider to integrate with Redis Enterprise Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers:
+You can use any identity provider to integrate with Redis Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers:
 
   - [Auth0 SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-auth0">}})
   - [AWS IAM Identity Center SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-aws-identity-center">}})

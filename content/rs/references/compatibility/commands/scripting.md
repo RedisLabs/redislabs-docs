@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-The following table shows which open source Redis [scripting and function commands](https://redis.io/commands/?group=scripting) are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Enterprise Cloud.
+The following table shows which open source Redis [scripting and function commands](https://redis.io/commands/?group=scripting) are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Cloud.
 
 ## Function commands
 

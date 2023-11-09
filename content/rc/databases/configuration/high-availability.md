@@ -1,7 +1,7 @@
 ---
 Title: High availability and replication
 linkTitle: High availability
-description: Describes database replication and high availability as it affects Redis Enterprise Cloud.   
+description: Describes database replication and high availability as it affects Redis Cloud.   
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
@@ -19,7 +19,7 @@ Replication allows for automatic failover and greater fault tolerance.  It can p
 
 ## Options and plan support
 
-Redis Enterprise Cloud supports three levels of replication:
+Redis Cloud supports three levels of replication:
 
 - _No replication_ means that you will have a single copy of your database.
 

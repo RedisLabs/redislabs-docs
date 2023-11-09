@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Cloud changelog (October 2023)
+Title: Redis Cloud changelog (October 2023)
 linktitle: October 2023
-description: New features, enhancements, and other changes added to Redis Enterprise Cloud during October 2023.
+description: New features, enhancements, and other changes added to Redis Cloud during October 2023.
 highlights: Cost report CSV download, SAML Account linking tokens
 weight: 76
 alwaysopen: false

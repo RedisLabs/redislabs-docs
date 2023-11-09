@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Cloud
+Title: Redis Cloud
 description:
 weight: 10
 alwaysopen: false

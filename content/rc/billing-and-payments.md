@@ -1,7 +1,7 @@
 ---
 Title: Billing & payments
 linkTitle: Billing & payments
-description: Describes how to view billing transactions and manage payment methods for Redis Enterprise Cloud subscriptions.   
+description: Describes how to view billing transactions and manage payment methods for Redis Cloud subscriptions.   
 weight: 39
 alwaysopen: false
 categories: ["RC"]
@@ -146,7 +146,7 @@ To edit the mailing address associated with a payment method:
 
 ## Apply coupon
 
-Coupons apply credits to your Redis Enterprise Cloud account.  To redeem a coupon:
+Coupons apply credits to your Redis Cloud account.  To redeem a coupon:
 
 1. In the Redis Cloud [admin console](https://app.redislabs.com/), select **Billing & Payments** and then select the **Credits** tab.
 

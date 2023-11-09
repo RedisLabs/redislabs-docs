@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Cloud changelog (August 2023)
+Title: Redis Cloud changelog (August 2023)
 linktitle: August 2023
-description: New features, enhancements, and other changes added to Redis Enterprise Cloud during August 2023.
+description: New features, enhancements, and other changes added to Redis Cloud during August 2023.
 highlights: Redis 7.2 Opt-in for Flexible subscriptions, Triggers and functions preview
 weight: 80
 alwaysopen: false
@@ -9,7 +9,7 @@ categories: ["RC"]
 aliases: []
 ---
 
-This changelog lists new features, enhancements, and other changes added to Redis Enterprise Cloud during August 2023.
+This changelog lists new features, enhancements, and other changes added to Redis Cloud during August 2023.
 
 ## New features
 

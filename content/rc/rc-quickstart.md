@@ -10,7 +10,7 @@ aliases: /rv/quick-setup/
          /rc/quick-setup/
 ---
 
-If you're new to Redis Enterprise Cloud, this quick start helps you get up and running.  
+If you're new to Redis Cloud, this quick start helps you get up and running.  
 
 You'll learn how to:
 
@@ -140,6 +140,6 @@ See [Redis CLI](https://redis.io/docs/connect/cli/) to learn how to use `redis-c
 - [Import data]({{< relref "/rc/databases/import-data.md" >}})
 - [Manage databases]({{< relref "/rc/databases/_index.md" >}})
 - [Data persistence]({{< relref "/rc/databases/configuration/data-persistence.md" >}})
-- [Secure your Redis Enterprise Cloud database]({{< relref "/rc/security/" >}})
+- [Secure your Redis Cloud database]({{< relref "/rc/security/" >}})
 - [Back-up Flexible databases]({{< relref "/rc/databases/back-up-data.md" >}})
-- [Monitor Redis Enterprise Cloud performance]({{< relref "/rc/databases/monitor-performance.md" >}}).
+- [Monitor Redis Cloud performance]({{< relref "/rc/databases/monitor-performance.md" >}}).

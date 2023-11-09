@@ -61,7 +61,7 @@ Use command-line utilities and the REST API to manage the cluster and databases.
 - [Redis commands](https://redis.io/commands/) (redis.io)
 
 ## Related info
-- [Redis Enterprise Cloud]({{<relref "/rc">}})
+- [Redis Cloud]({{<relref "/rc">}})
 - [Open source Redis](https://redis.io/) (redis.io)
 - [Redis Stack]({{<relref "/stack">}})
 - [Glossary]({{<relref "/glossary">}})
