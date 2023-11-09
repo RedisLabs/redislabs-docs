@@ -36,9 +36,7 @@ This command requires the account owner role.
     {{<image filename="images/rc/button-danger-zone-delete.png" alt="The Delete button is located in the Danger zone section of the database Configuration tab." >}}{{< /image >}}
 
 1. The **Delete database** confirmation dialog appears. If this database is the only one in the subscription, you can also delete the subscription at this time.
-
-    {{<image filename="images/rc/database-delete-last-dialog.png" alt="A different delete database confirmation dialog asks you to consider deleting the subscription as well.">}}{{< /image >}}
-
+    
     - Select **Delete my subscription as well** to delete both the database and the subscription.
     
     - Clear **Delete my subscription as well** to delete the database but keep the subscription.
@@ -46,6 +44,8 @@ This command requires the account owner role.
     {{< note >}}
 You will continue to be charged for your subscription until you delete it, even if there are no databases in your subscription.
     {{< /note >}}
+
+    {{<image filename="images/rc/database-delete-last-dialog.png" alt="A different delete database confirmation dialog asks you to consider deleting the subscription as well.">}}{{< /image >}}
 
 1. To confirm your choice, use the **Delete database** button or the **Delete both** button if the delete subscription checkbox is selected.
 
