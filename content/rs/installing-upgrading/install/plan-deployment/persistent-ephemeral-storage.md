@@ -40,8 +40,7 @@ for the persistent volume.
 
 ## Ephemeral storage
 
-Ephemeral storage is optional. If configured, the cluster stores temporary information
-that does not need to persist in the ephemeral storage.
+Ephemeral storage is optional. If configured, the cluster stores in the ephemeral storage any temporary information that does not need to be persisted.
 This improves performance and helps reduce the load on the persistent storage.
 
 Ephemeral storage must be a locally attached volume on each node.
