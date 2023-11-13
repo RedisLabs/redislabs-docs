@@ -35,6 +35,16 @@ Here, you'll learn how to use the [Redis Cloud Terraform Provider]({{<relref "/r
 
 1. Select **Use Provider** and copy the Terraform code located there. Paste the code into `main.tf` and save the file.
 
+   ```text
+   provider "rediscloud" {
+   }
+
+   # Example resource configuration
+   resource "rediscloud_subscription" "example" {
+      # ...
+   }
+   ```
+   
 1. Run `terraform init`.
 
 ## Create a Redis Cloud subscription with Terraform
@@ -132,7 +142,22 @@ The steps in this section show you how to plan and create a flexible subscriptio
 
 3. Run `terraform apply` to apply the changes and enter `yes` to confirm when prompted.
 
-    This will take some time. You will be able to see your subscription being created through the [admin console](https://app.redislabs.com/).
+    This will take some time. You will see messages like this while the subscription and database are being created.
+
+   ```text
+   rediscloud_subscription.subscription-resource: Creating...
+   rediscloud_subscription.subscription-resource: Still creating... [10s elapsed]
+   rediscloud_subscription.subscription-resource: Still creating... [20s elapsed]
+   rediscloud_subscription.subscription-resource: Still creating... [30s elapsed]
+   ```
+
+   When complete you should see something like this:   
+
+   ```text
+   Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+   ```
+
+If you want to verify your subscription and database creation you can view that through the Redis Cloud [admin console](https://app.redislabs.com/).
 
 4. If you want to remove these sample resources, run `terraform destroy`.
 
