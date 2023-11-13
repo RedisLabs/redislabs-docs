@@ -21,7 +21,7 @@ You cannot use [SCIM (System for Cross-domain Identity Management)](https://en.w
 
 When SAML SSO is enabled, the [identity provider (IdP)](https://en.wikipedia.org/wiki/Identity_provider) admin handles SAML user management instead of the Redis Cloud account owner.
 
-You can use any identity provider to integrate with Redis Enterprise Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers:
+You can use any identity provider to integrate with Redis Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers:
 
   - [Auth0 SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-auth0">}})
   - [AWS IAM Identity Center SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-aws-identity-center">}})
@@ -131,7 +131,7 @@ After you set up the SAML integration app and create a SAML user in your identit
 
 1. Select **Single Sign-On**.
 
-1. Select the **Setup SSO** button:
+1. Select the **Setup SAML SSO** button:
 
     {{<image filename="images/rc/button-access-management-sso-setup.png" width="120px" alt="Setup SSO button">}}{{</image>}}
 

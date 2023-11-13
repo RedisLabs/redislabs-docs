@@ -13,7 +13,7 @@ aliases: [ "/rv/administration/configure/backups/",
            "/rc/databases/backups/" ]
 ---
 
-The backup options for Redis Enterprise Cloud databases depend on your plan:
+The backup options for Redis Cloud databases depend on your plan:
 
 - Flexible and Annual subscriptions can back up a database on-demand and schedule daily backups that occur during a set hour.
 

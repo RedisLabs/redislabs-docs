@@ -9,19 +9,19 @@ aliases: /rc/cloud-integrations/aws-marketplace/
          /rc/cloud-integrations/aws-marketplace.md
 ---
 
-You can use AWS Marketplace to subscribe to Redis Enterprise Cloud through AWS Marketplace.  This lets you provision according to your needs and pay using your AWS account.
+You can use AWS Marketplace to subscribe to Redis Cloud through AWS Marketplace.  This lets you provision according to your needs and pay using your AWS account.
 
 Here's how to create a new Flexible subscription as part of your AWS Marketplace commitment.
 
 1.  Sign in to the [AWS console](https://console.aws.amazon.com/).
 
-1.  Search AWS Marketplace for [Redis Enterprise Cloud - Flexible plan](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq).
+1.  Search AWS Marketplace for [Redis Cloud - Flexible plan](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq).
 
-    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Enterprise Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
 
-1.  Subscribe to Redis Enterprise Cloud - Flexible plan, locate the **Set Up Your Account button**, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
+1.  Subscribe to Redis Cloud - Flexible plan, locate the **Set Up Your Account button**, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
 
-    {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Enterprise Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
 
 1.  Sign in to the Redis Cloud [admin console](https://app.redislabs.com). If you do not yet have an account, you will need to create one.
 

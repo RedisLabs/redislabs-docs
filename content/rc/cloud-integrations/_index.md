@@ -1,7 +1,7 @@
 ---
 Title: Manage cloud integrations
 LinkTitle: Cloud integrations
-description: Describes how to integrate Redis Enterprise Cloud subscriptions into existing cloud provider services, whether existing subscriptions or through vendor marketplaces.
+description: Describes how to integrate Redis Cloud subscriptions into existing cloud provider services, whether existing subscriptions or through vendor marketplaces.
 weight: 40
 alwaysopen: false
 categories: ["RC"]

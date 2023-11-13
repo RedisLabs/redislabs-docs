@@ -89,5 +89,5 @@ Throughput requirements grow dramatically as regions increase.  As a result, con
 
 - [Create a Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}})
 - Database [memory size]({{<relref "/rc/databases/create-database#memory-size">}})
-- Redis Enterprise Cloud [subscription plans]({{<relref "/rc/subscriptions/">}})
-- [Redis Enterprise Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/)
+- Redis Cloud [subscription plans]({{<relref "/rc/subscriptions/">}})
+- [Redis Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/)

@@ -14,7 +14,7 @@ aliases: /rc/administration/security
          /rc/security/database-security.md
 ---
 
-Redis Enterprise Cloud provides a number of ways to secure subscriptions and databases.
+Redis Cloud provides a number of ways to secure subscriptions and databases.
 
 As a Redis Cloud user, consider these security domains:
 
@@ -49,4 +49,4 @@ You have several options when it comes to securing your Redis Cloud databases. F
 
 ## API security
 
-The Redis Enterprise Cloud API allows you to programmatically administer your subscriptions and database deployments. This API is disabled by default. When you [enable the API]({{<relref "/rc/api/get-started/enable-the-api.md">}}), you can then [manage the API keys]({{<relref "/rc/api/get-started/manage-api-keys.md">}}) for all owners of your Redis Cloud account. For an overview of the security features of the API, see the [API authentication documentation]({{<relref "/rc/api/get-started/_index.md">}}).
+The Redis Cloud API allows you to programmatically administer your subscriptions and database deployments. This API is disabled by default. When you [enable the API]({{<relref "/rc/api/get-started/enable-the-api.md">}}), you can then [manage the API keys]({{<relref "/rc/api/get-started/manage-api-keys.md">}}) for all owners of your Redis Cloud account. For an overview of the security features of the API, see the [API authentication documentation]({{<relref "/rc/api/get-started/_index.md">}}).

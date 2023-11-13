@@ -9,7 +9,7 @@ aliases: /rc/security/admin-console-security/multi-factor-authentication/
          /rc/security/admin-console-security/multi-factor-authentication.md
 ---
 
-To reduce the chances of unauthorized access, Redis Enterprise Cloud allows users to enable multi-factor authentication (MFA).
+To reduce the chances of unauthorized access, Redis Cloud allows users to enable multi-factor authentication (MFA).
 
 When MFA is enabled, users must enter their username, password, and an authentication code when signing in. MFA requires a mobile device that can receive these authentication codes over text messaging. In addition, you may [use an authenticator app](#app) such as [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) as one of your factors.
 

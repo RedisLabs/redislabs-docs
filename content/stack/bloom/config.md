@@ -11,7 +11,7 @@ aliases: /modules/redisbloom/config/
 
 [Redis Enterprise Software]({{<relref "/rs">}}) lets you manually change any [RedisBloom configuration setting](https://redis.io/docs/stack/bloom/configuration/#redisbloom-configuration-parameters).
 
-[Redis Enterprise Cloud]({{<relref "/rc">}}) does not let you configure RedisBloom manually. However, if you have a Flexible or Annual [subscription]({{<relref "/rc/subscriptions">}}), you can contact [support](https://redis.com/company/support/) to request a configuration change. You cannot change RedisBloom configuration for Free or Fixed subscriptions.
+[Redis Cloud]({{<relref "/rc">}}) does not let you configure RedisBloom manually. However, if you have a Flexible or Annual [subscription]({{<relref "/rc/subscriptions">}}), you can contact [support](https://redis.com/company/support/) to request a configuration change. You cannot change RedisBloom configuration for Free or Fixed subscriptions.
 
 | Setting | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|
