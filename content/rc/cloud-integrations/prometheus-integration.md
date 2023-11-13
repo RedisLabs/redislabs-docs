@@ -1,13 +1,13 @@
 ---
-Title: Prometheus integration with Redis Cloud
-linkTitle: Prometheus integration
+Title: Use Prometheus and Grafana with Redis Cloud
+linkTitle: Prometheus and Grafana
 description: Use Prometheus and Grafana to collect and visualize Redis Cloud metrics.
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 ---
 
-You can use Prometheus and Grafana to collect and visualize your Redis Enterprise Cloud metrics.
+You can use Prometheus and Grafana to collect and visualize your Redis Cloud metrics.
 
 - [Prometheus](https://prometheus.io/) is an open source systems monitoring and alerting toolkit that can scrape metrics from different sources.
 - [Grafana](https://grafana.com/) is an open source metrics visualization tool that can process Prometheus data.

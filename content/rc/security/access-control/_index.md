@@ -1,7 +1,7 @@
 ---
 Title: Access control
 LinkTitle: Access control
-description: Control who can access the admin console and databases.
+description: Control who can access the Redis Cloud console and databases.
 weight: 5
 alwaysopen: false
 toc: "true"
@@ -13,13 +13,13 @@ Redis Cloud offers you a few different ways to control who can access and make c
 
 ## [Access Management]({{<relref "/rc/security/access-control/access-management">}})
 
-Control who can make changes to your databases using the Redis Cloud [admin console](https://app.redislabs.com/).
+Control who can make changes to your databases using the [Redis Cloud console](https://app.redislabs.com/).
 
 ## [SAML SSO]({{<relref "/rc/security/access-control/saml-sso">}})
 
 Redis Cloud supports both IdP-initiated and SP-initiated [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on) with [SAML (Security Assertion Markup Language)](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language).
 
-You can use any identity provider to integrate with Redis Enterprise Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers:
+You can use any identity provider to integrate with Redis Cloud as long as it supports the SAML protocol. You can also refer to these integration guides for several popular identity providers:
 
   - [Auth0 SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-auth0">}})
   - [AWS IAM Identity Center SAML integration]({{<relref "/rc/security/access-control/saml-sso/saml-integration-aws-identity-center">}})
@@ -31,7 +31,7 @@ You can use any identity provider to integrate with Redis Enterprise Cloud as lo
 
 ## [Multi-factor authentication]({{<relref "/rc/security/access-control/multi-factor-authentication">}})
 
-Redis Cloud supports multi-factor authentication to reduce the risk of unauthorized admin console access. 
+Redis Cloud supports multi-factor authentication to reduce the risk of unauthorized Redis Cloud console access. 
 
 ## [Data Access control]({{<relref "/rc/security/access-control/data-access-control">}})
 

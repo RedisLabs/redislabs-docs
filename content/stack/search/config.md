@@ -9,7 +9,7 @@ categories: ["Modules"]
 aliases: /modules/redisearch/config/
 ---
 
-You cannot use [`FT.CONFIG SET`](https://redis.io/commands/ft.config-set) to configure RediSearch in [Redis Enterprise Software]({{<relref "/rs">}}) or [Redis Enterprise Cloud]({{<relref "/rc">}}). Instead, use one of the following methods.
+You cannot use [`FT.CONFIG SET`](https://redis.io/commands/ft.config-set) to configure RediSearch in [Redis Enterprise Software]({{<relref "/rs">}}) or [Redis Cloud]({{<relref "/rc">}}). Instead, use one of the following methods.
 
 For Redis Cloud:
 

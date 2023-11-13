@@ -47,6 +47,7 @@ The "bring your own AWS account" option for Redis Cloud has been deprecated. The
 * [`ActiveActiveSubscriptionDatabase`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/activeactivesubscriptiondatabase/): Represents a Redis database which belongs to a specific Redis Cloud active-active subscription.
 * [`ActiveActiveSubscriptionRegions`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/activeactivesubscriptionregions/): The different regions where the active-active subscription will be deployed.
 * [`ActiveActiveSubscriptionPeering`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/activeactivesubscriptionpeering/): A VPC peering connection (AWS or GCP) to a specific Redis Cloud active-active subscription.
+* [`AclRule`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/aclrule/), [`AclRole`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/aclrole/), and [`AclUser`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/acluser/): Rules, Roles, and Users for [Role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}}).
 
 It also allows for the following functions:
 
@@ -63,6 +64,7 @@ The "bring your own AWS account" option for Redis Cloud has been deprecated. The
 * [`GetRegions`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getregions/): Get the regions related to an active-active subscription
 * [`GetSubscription`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getsubscription/): Get the information related to a specific subscription.
 * [`GetSubscriptionPeerings`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getsubscriptionpeerings/): Get the VPC peerings (AWS or GCP) related to a specific subscription.
+* [`GetAclRule`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getaclrule/), [`GetAclRole`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getaclrole/), and [`GetAclUser`](https://www.pulumi.com/registry/packages/rediscloud/api-docs/getacluser/): Get the Rules, Roles, and Users for [Role-based access control]({{<relref "/rc/security/access-control/data-access-control/role-based-access-control.md">}}).
 
 ## More info
 

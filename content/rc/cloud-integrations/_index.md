@@ -1,7 +1,7 @@
 ---
 Title: Manage cloud integrations
 LinkTitle: Cloud integrations
-description: Describes how to integrate Redis Enterprise Cloud subscriptions into existing cloud provider services, whether existing subscriptions or through vendor marketplaces.
+description: Describes how to integrate Redis Cloud subscriptions into existing cloud provider services, whether existing subscriptions or through vendor marketplaces.
 weight: 40
 alwaysopen: false
 categories: ["RC"]
@@ -14,19 +14,19 @@ aliases: /rv/how-to/view-edit-cloud-account/
          /rc/cloud-accounts.md
 ---
 
-By default, Redis Enterprise Cloud subscriptions are hosted in cloud vendor accounts owned and managed by Redis, Inc.
+By default, Redis Cloud subscriptions are hosted in cloud vendor accounts owned and managed by Redis, Inc.
 
-To integrate Redis Enterprise Cloud into an existing cloud vendor account, you can:
+To integrate Redis Cloud into an existing cloud vendor account, you can:
 
-- Subscribe to Redis Enterprise Cloud through [AWS Marketplace]({{<relref "/rc/cloud-integrations/aws-marketplace/">}}).
+- Subscribe to Redis Cloud through [AWS Marketplace]({{<relref "/rc/cloud-integrations/aws-marketplace/">}}).
 
-- Subscribe to Redis Enterprise Cloud through [Google Cloud Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}).
+- Subscribe to Redis Cloud through [Google Cloud Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}).
 
-When you subscribe to Redis Enterprise Cloud through a cloud vendor marketplace, billing is handled through the marketplace.
+When you subscribe to Redis Cloud through a cloud vendor marketplace, billing is handled through the marketplace.
 
 ## Marketplace billing considerations
 
-Cloud vendor marketplaces provide a convenient way to handle multiple subscription fees.  However, this also means that billing issues impact multiple subscriptions, including Redis Enterprise Cloud.
+Cloud vendor marketplaces provide a convenient way to handle multiple subscription fees.  However, this also means that billing issues impact multiple subscriptions, including Redis Cloud.
 
 When billing details change, you should verify that each service is operating normally and reflects the updated billing details.  Otherwise, you might experience unexpected consequences, such as data loss or subscription removal.
 

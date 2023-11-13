@@ -45,7 +45,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     * **redisAccountMapping**: `{accountID}={role}`
      
-    **accountID** is the account ID from [account settings]({{<relref "rc/accounts/account-settings">}}) and **role** represents the role that the user will be assigned in admin console (owner, member, manager, or viewer):
+    **accountID** is the account ID from [account settings]({{<relref "rc/accounts/account-settings">}}) and **role** represents the role that the user will be assigned in Redis Cloud console (owner, member, manager, or viewer):
 
     {{<image filename="images/rc/saml/ping_identity_saml_6.png" alt="" >}}{{</image>}}
 
@@ -75,9 +75,9 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
     * Single Logout Service
     * Single Signon Service
 
-    This information will be needed once we configure SAML in the Redis Cloud admin console.
+    This information will be needed once we configure SAML in the Redis Cloud console.
 
-    * Select **Download Metadata**. An XML file will be downloaded. Open it and copy the certificate, which is required for the configuration in admin console.
+    * Select **Download Metadata**. An XML file will be downloaded. Open it and copy the certificate, which is required for the configuration in Redis Cloud console.
 
     {{<image filename="images/rc/saml/ping_identity_saml_10.png" alt="" >}}{{</image>}}
 
@@ -95,9 +95,9 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
 Now that we have our Ping Identity IdP server ready, we need to configure support for SAML in Redis Cloud.
 
-### Sign in to admin console
+### Sign in to Redis Cloud console
 
-Log in to [admin console](https://app.redislabs.com/#/login)
+Log in to [Redis Cloud console](https://app.redislabs.com/#/login)
 
 ### Activate SAML in access management
 
@@ -152,9 +152,9 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ping_identity_saml_14.png" alt="" >}}{{</image>}}
 
-## Step 4: Return to admin console
+## Step 4: Return to Redis Cloud console
 
-1. Return to the Redis Cloud admin console and select **Activate**.
+1. Return to the Redis Cloud console and select **Activate**.
 
     {{<image filename="images/rc/saml/ping_identity_saml_19.png" alt="" >}}{{</image>}}
 
@@ -166,7 +166,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ping_identity_saml_20.png" alt="" >}}{{</image>}}
 
-1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. To log in to admin console going forward, select the **Sign in with SSO** button.
+1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. To log in to Redis Cloud console going forward, select the **Sign in with SSO** button.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
@@ -194,5 +194,5 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ping_identity_saml_17.png" alt="" >}}{{</image>}}
 
-   You are redirected to the Redis Cloud admin console.
+   You are redirected to the Redis Cloud console.
 

@@ -12,7 +12,7 @@ aliases: [
     /rs/references/compatibility/,
 ]
 ---
-Both Redis Enterprise Software and [Redis Enterprise Cloud]({{<relref "/rc">}}) are compatible with open source
+Both Redis Enterprise Software and [Redis Cloud]({{<relref "/rc">}}) are compatible with open source
 Redis (OSS Redis). Redis contributes extensively to the open source Redis
 project and uses it inside of Redis Enterprise. As a rule, we adhere to
 the open source project's specifications and update

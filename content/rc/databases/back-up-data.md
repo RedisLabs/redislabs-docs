@@ -13,7 +13,7 @@ aliases: [ "/rv/administration/configure/backups/",
            "/rc/databases/backups/" ]
 ---
 
-The backup options for Redis Enterprise Cloud databases depend on your plan:
+The backup options for Redis Cloud databases depend on your plan:
 
 - Flexible and Annual subscriptions can back up a database on-demand and schedule daily backups that occur during a set hour.
 
@@ -35,7 +35,7 @@ Here, you'll learn how to store backups using different cloud providers.
 
 To turn on database backups:
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
+1. Sign in to the [Redis Cloud console](https://app.redislabs.com/).  (Create an account if you don't already have one.)
 
 2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
@@ -77,7 +77,7 @@ When stored to a cloud provider, backup locations need to be available on the sa
 
 Your subscription needs the ability to view permissions and update objects in the storage location.  Specific details vary according to the provider.  To learn more, consult the provider's documentation.
 
-The following sections help set things up; however, provider features change frequently.  For best results, use your provider's documentation for the latest info.
+The following sections describe specific backup options. Be aware that provider features change frequently.  For best results, use your provider's documentation for the latest info.
 
 ### AWS S3
 

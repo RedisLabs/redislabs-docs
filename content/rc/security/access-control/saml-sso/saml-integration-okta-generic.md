@@ -202,7 +202,7 @@ Now that you have a test IdP server ready as well as your user group, configure 
 
 ### Sign in to your Redis Cloud account
 
-Sign in to your [admin console](https://app.redislabs.com/#/login).
+Sign in to your [Redis Cloud console](https://app.redislabs.com/#/login).
 
 ### Activate SAML in Access Management
 
@@ -246,9 +246,9 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
    Select **Next**, then select **Finish**.
 
-### Return to admin consol
+### Return to Redis Cloud console
 
-1. Return to admin console and select **Activate**.
+1. Return to Redis Cloud console and select **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
@@ -260,7 +260,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_14.png" alt="" >}}{{</image>}}
 
-1. If the test succeeds, your local account is now considered a SAML account. To log in to admin console going forward, select **Sign in with SSO**.
+1. If the test succeeds, your local account is now considered a SAML account. To log in to Redis Cloud console going forward, select **Sign in with SSO**.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 
@@ -268,7 +268,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/okta_saml_app_int_15.png" alt="" >}}{{</image>}}
 
-1. If only one user is defined in admin console, you get a popup window where you select **Confirm** to convert the local user to a SAML user. 
+1. If only one user is defined in Redis Cloud console, you get a popup window where you select **Confirm** to convert the local user to a SAML user. 
 
     > Consider setting up one more local user other than a SAML user.
 

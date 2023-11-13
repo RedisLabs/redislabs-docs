@@ -22,7 +22,11 @@ Expired keys are not imported.
 As a result, the number of keys in the source and destination databases can be different after the import is complete.
 {{< /note >}}
 
-## Import from a Redis server
+## Prerequisites
+
+In preparation, make certain the Redis version of the source database is compatible with the database where the data will be imported.
+
+## Import from a Redis OSS server
 
 To import a dataset from any publicly available Redis server:
 
@@ -32,12 +36,12 @@ To import a dataset from any publicly available Redis server:
     - Source type - Select **Redis**.
     - Redis Hostname/IP Address - Enter the hostname or the public IP address of the source Redis server.
     - Redis port - Enter the port of the source Redis server if it is not the default value of `6379`.
-    - Password - Enter the password, if required by the Redis database.
+    - Password - Enter the password, if required by the source Redis database.
 1. Select **Import**.
 
 ## Restore from an RDB file
 
-If you have an RDB or a compressed RDB file from a previous backup, you can restore data from that file into your Redis Enterprise Cloud database.
+If you have an RDB or a compressed RDB file from a previous backup, you can restore data from that file into your Redis Cloud database.
 
 ### Via FTP or HTTP
 
@@ -170,7 +174,7 @@ To use the Redis Cloud admin console to import your data, you must first share t
 
 To share and import an RDB file that is stored in a Google Cloud Storage bucket:
 
-1. In the Google Cloud Storage bucket, edit the file's Access Control List to give read access to Redis Enterprise Cloud:
+1. In the Google Cloud Storage bucket, edit the file's Access Control List to give read access to Redis Cloud:
     1. Select **Edit access** in the RDB file menu.
     1. Select **Add item**.
     1. Enter the user details and access:
