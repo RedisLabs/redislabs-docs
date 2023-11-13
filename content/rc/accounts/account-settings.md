@@ -14,7 +14,7 @@ aliases: [
 ]
 ---
 
-To review or manage the settings associated with your Redis Cloud account, sign in to the [admin console](https://app.redislabs.com/) and then select **Account Settings** from the menu.
+To review or manage the settings associated with your Redis Cloud account, sign in to the [Redis Cloud console](https://app.redislabs.com/) and then select **Account Settings** from the menu.
 
 This displays the **Account Settings** screen:
 
@@ -30,22 +30,18 @@ The available tabs depend on your subscription type and may include:
 
 The **Account Info** section provides basic details about your account, including:
 
-| Setting | Description |
-|---------|-------------|
-| _Owner name_ | Person associated with the Redis Cloud account |
-| _Account name_ | Organization associated with the Redis Cloud account | 
-| _Date created_ | Date the user's Redis Cloud account was created, which may differ from the organization account creation date |
-| <nobr>_Owner email address_</nobr> | Email address used to create the owner's account |
+| Setting          | Description |
+|------------------|-------------|
+| _Account name_   | Organization associated with the Redis Cloud account | 
 | _Account number_ | Internal ID of the owner's account |
-| _Last updated_ | Date of the last administrative change to the owner's account, typically reflects access changes or other administrative updates | 
+| _Date created_   | Date the user's Redis Cloud account was created, which may differ from the organization account creation date |
+| _Last updated_   | Date of the last administrative change to the owner's account, typically reflects access changes or other administrative updates | 
 
 You cannot change the email address associated with a Redis Cloud account.  Instead, create a new account with the updated email address, assign it as an administrator to the organization account, and then use the new account to delete the account with the invalid email address.
 
 ## Account address settings
 
 The **Account address** section shows the billing address associated with the current Redis Cloud account and the current time zone. 
-
-To update the time zone, select the desired time zone from the **Time zone** drop-down.
 
 In addition, this section may include fields unique to your location.  For example, certain regions require tax IDs or other regulatory details.
 
@@ -58,6 +54,10 @@ Select **Edit** to change the account's billing address. You must re-enter your 
 {{< note >}}
 Changing the billing address for your account will remove any payment methods associated with the old billing address. See [Add payment method]({{<relref "/rc/billing-and-payments#add-payment-method">}}) to learn how to add a payment method back to your account.
 {{< /note >}}
+
+## Time zone settings
+
+To update the time zone, select the desired time zone from the **Time zone** drop-down.
 
 ## Security settings
 
