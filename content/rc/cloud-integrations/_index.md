@@ -41,7 +41,7 @@ For best results, we recommend:
 ## Update marketplace billing details
 
 
-### AWS
+### AWS Marketplace
 To change billing details for an AWS marketplace subscription, we recommend creating a second subscription using the updated billing details and then migrating your existing data to the new subscription. 
 
 ### Google Cloud

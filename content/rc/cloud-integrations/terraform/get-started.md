@@ -63,7 +63,7 @@ The steps in this section show you how to plan and create a flexible subscriptio
     }
     ```
    
-   Example
+   Example:
 
    ```text
    data "rediscloud_payment_method" "card" {
@@ -101,7 +101,7 @@ The steps in this section show you how to plan and create a flexible subscriptio
     }
     ```
 
-   Example
+   Example:
 
    ```text
    resource "rediscloud_subscription" "subscription-resource" {
@@ -150,7 +150,7 @@ The steps in this section show you how to plan and create a flexible subscriptio
     }
     ```
    
-   Example
+   Example:
 
    ```text
    resource "rediscloud_subscription_database" "database-resource" {
@@ -205,7 +205,7 @@ The steps in this section show you how to plan and create a flexible subscriptio
 
 3. Run `terraform apply` to apply the changes and enter `yes` to confirm when prompted.
 
-    This will take some time. You will see messages like this while the subscription and database are being created.
+    This will take some time. You will see messages in your terminal while the subscription and database are being created:
 
    ```text
    rediscloud_subscription.subscription-resource: Creating...
@@ -214,13 +214,13 @@ The steps in this section show you how to plan and create a flexible subscriptio
    rediscloud_subscription.subscription-resource: Still creating... [30s elapsed]
    ```
 
-   When complete you should see something like this:   
+   When provisioning is complete, you will see a message in your terminal:   
 
    ```text
    Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
    ```
 
-   If you want to verify your subscription and database creation you can view that through the Redis Cloud [admin console](https://app.redislabs.com/).
+   View the [Redis Cloud console](https://app.redislabs.com/) to verify your subscription and database creation.
 
 4. If you want to remove these sample resources, run `terraform destroy`.
 

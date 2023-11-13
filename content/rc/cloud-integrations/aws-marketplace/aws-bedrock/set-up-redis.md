@@ -139,7 +139,7 @@ For your database to be fully secure, you must enable [Transport Layer Security 
 
     {{<image filename="images/rc/database-details-configuration-tab-security-tls-client-auth-certificate.png" width="300px" alt="Provide or generate a certificate for TLS client authentication." >}}{{< /image >}}
 
-    If you generate your certificate from the admin console, select **Download client certificate** and a ZIP file download will start. The download contains:
+    If you generate your certificate from the admin console, select **Download client certificate**. The download contains:
 
     - `redis_user.crt` – the certificate's public key.
 
@@ -163,7 +163,7 @@ After you store this secret, you can view and copy the [Amazon Resource Name (AR
 
 ## Create a vector index in your database {#create-vector-index}
 
-After your database is set up, create an index with a vector field using [FT.CREATE](https://redis.io/commands/ft.create/) as your knowledge base for Amazon Bedrock. You can accomplish this through the use of **RedisInsight** or the `redis-cli`.
+After your database is set up, create an index with a vector field using [FT.CREATE](https://redis.io/commands/ft.create/) as your knowledge base for Amazon Bedrock. You can accomplish this using **RedisInsight** or `redis-cli`.
 
 ### [RedisInsight](https://redis.io/docs/connect/insight/)
 
@@ -177,7 +177,7 @@ To create your vector index in RedisInsight:
 
     ![Connect button](/images/rc/connection-wizard-button.png#no-click "Connect button.")
 
-1. In the connection wizard, under **RedisInsight Desktop**, select **Public Endpoint**. Select **Open with RedisInsight**. The database will be automatically configured for you in the tool.
+1. In the connection wizard, under **RedisInsight Desktop**, select **Public Endpoint**. Select **Open with RedisInsight** to connect to the database with RedisInsight.
 
 1. Select **Use TLS**. In the **CA Certificate** section, select **Add new CA certificate**. Give the certificate a name in the **Name** field, and enter the contents of `redis_ca.pem` into the **Certificate** field.
 
