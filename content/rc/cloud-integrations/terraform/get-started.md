@@ -62,7 +62,16 @@ The steps in this section show you how to plan and create a flexible subscriptio
         last_four_numbers = "<Last four numbers on the card>"
     }
     ```
+   
+   Example
 
+   ```text
+   data "rediscloud_payment_method" "card" {
+      card_type = "Visa"
+      last_four_numbers = "5625"
+   }
+   ```
+   
 1. Define a [`rediscloud_subscription`](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/resources/rediscloud_subscription) resource to create the subscription.
 
     ```text
@@ -92,6 +101,33 @@ The steps in this section show you how to plan and create a flexible subscriptio
     }
     ```
 
+   Example
+
+   ```text
+   resource "rediscloud_subscription" "subscription-resource" {
+        name = "redis-docs-sub"
+        payment_method_id = data.rediscloud_payment_method.card.id
+        memory_storage = "ram"
+
+        cloud_provider {
+                provider = "GCP"
+                region {
+                        region = "us-west1"
+                        networking_deployment_cidr = "192.168.0.0/24"
+                }
+        }
+
+        creation_plan {
+                memory_limit_in_gb = 2
+                quantity = 1
+                replication = true
+                throughput_measurement_by = "operations-per-second"
+                throughput_measurement_value = 20000
+                modules = ["RedisJSON"]
+        }
+   }
+   ```
+
 1. Define a [`rediscloud_subscription_database`](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/resources/rediscloud_subscription_database) resource to create a database.
 
     ```text
@@ -112,6 +148,33 @@ The steps in this section show you how to plan and create a flexible subscriptio
         depends_on = [rediscloud_subscription.subscription-resource]
 
     }
+    ```
+   
+   Example
+
+   ```text
+   resource "rediscloud_subscription_database" "database-resource" {
+       subscription_id = rediscloud_subscription.subscription-resource.id
+       name = "redis-docs-db"
+       memory_limit_in_gb = 2
+       data_persistence = "aof-every-write"
+       throughput_measurement_by = "operations-per-second"
+       throughput_measurement_value = 20000
+       replication = true
+
+       modules = [
+       {
+            name = "RedisJSON"
+       }
+       ]
+
+       alert {
+       name = "dataset-size"
+       value = 40
+       }
+      depends_on = [rediscloud_subscription.subscription-resource]
+
+   }
     ```
 
 2. Run `terraform plan` to check for any syntax errors.
@@ -157,7 +220,7 @@ The steps in this section show you how to plan and create a flexible subscriptio
    Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
    ```
 
-If you want to verify your subscription and database creation you can view that through the Redis Cloud [admin console](https://app.redislabs.com/).
+   If you want to verify your subscription and database creation you can view that through the Redis Cloud [admin console](https://app.redislabs.com/).
 
 4. If you want to remove these sample resources, run `terraform destroy`.
 
