@@ -41,6 +41,6 @@ At this point, you can create a new Flexible subscription using the [standard wo
 
 To confirm this, review the payment method associated with your subscription.
 
-{{<image filename="images/rc/aws-marketplace-billing-confirm.png" alt="The AWS Marketplace billing confirmation." width="350px">}}{{< /image >}}
+{{<image filename="images/rc/aws-marketplace-billing-confirm.png" alt="The AWS Marketplace billing confirmation." width="450px">}}{{< /image >}}
 
 If, for whatever reason, your AWS Marketplace account is disabled or otherwise unavailable, you won't be able to use your Flexible subscription until the billing method is updated.  For help, [contact support](https://redis.com/company/support/).
