@@ -47,7 +47,11 @@ Redis Enterprise Software version 7.2.4-tba includes the following Redis Stack m
 
 ### Resolved issues
 
-- TBA
+- RS109744 - Fixed an issue where node removal sometimes got stuck in a `starting` state when `wait_for_persistence` was enabled.
+
+- RS110481 - Fixed an issue where importing a database mid-upgrade fails when the master node has the new version.
+
+- RS111363 - Fixed an issue in the legacy UI, where you cannot update and save your changes on the **settings > preferences** tab even though these settings are visible.
 
 ## Version changes 
 
