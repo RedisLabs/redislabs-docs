@@ -32,13 +32,13 @@ To configure a Redis ACL that you can assign to a data access role:
 
 1. Either select `+` to create a new Redis ACL or point to an existing ACL and select the pencil icon to edit it.
 
-    {{<image filename="images/rc/data-access-control-redis-acls-add-or-update.png" alt="Add or Update Redis ACL." >}}{{< /image >}}
+    {{<image filename="images/rc/data-access-control-redis-acls-add-or-update.png" width="300px" alt="Add or Update Redis ACL." >}}{{< /image >}}
 
     {{< note >}}Some of the built-in Redis ACLs are not editable.{{< /note >}}
 
 1. Provide a descriptive name and create the ACL rule [using ACL syntax](#define-permissions-with-acl-syntax).
 
-    {{<image filename="images/rc/data-access-control-redis-acl-add.png" alt="Add Redis ACL." >}}{{< /image >}}
+    {{<image filename="images/rc/data-access-control-redis-acl-add.png" width="300px" alt="Add Redis ACL." >}}{{< /image >}}
 
 1. Select the check mark to save your changes.  Your new Redis ACL should appear in the list.
 
