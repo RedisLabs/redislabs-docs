@@ -8,7 +8,7 @@ categories: ["RC"]
 aliases: 
 ---
 
-Fixed subscription plans support low throughput workflows. They support a range of availability, persistence, and backup options, and can be great for testing and prototyping. However, if you notice that your databases need higher throughput, or you're missing features that are not available with fixed plans, you may want to upgrade your fixed plan to a flexible plan.
+Fixed subscription plans support low throughput workflows. They support a range of availability, persistence, and backup options, and can be great for testing and prototyping. However, if your databases need higher throughput, or you're missing features that are not available with fixed plans, you may want to upgrade your fixed plan to a flexible plan.
 
 For more information about the different subscription plans, see [Subscription plans]({{<relref "/rc/subscriptions#subscription-plans">}}).
 
@@ -40,7 +40,7 @@ To upgrade your fixed subscription to a flexible subscription:
 You can migrate the databases in your fixed subscription to your new flexible subscription using any method in the [Migrate databases]({{<relref "/rc/databases/migrate-databases">}}) guide. This guide uses [Active-Passive]({{<relref "/rc/databases/migrate-databases#sync-using-active-passive">}}) to migrate databases between subscriptions in the same account.
 
 {{< note >}}
-If one or more of the databases in your fixed subscription has [Transport Layer Security (TLS)]({{< relref  "/rc/security/database-security/tls-ssl" >}}) enabled, you will not be able to migrate your databases between subscriptions using this guide. Use the [Transfer via import]({{<relref "/rc/databases/migrate-databases#transfer-via-import">}}) method or [Contact support](https://redis.com/company/support/) if you want to migrate a TLS-enabled database using Active-Passive.
+If one or more of the databases in your fixed subscription has [Transport Layer Security (TLS)]({{< relref  "/rc/security/database-security/tls-ssl" >}}) enabled, you won't be able to migrate your databases between subscriptions using this guide. Use the [Transfer via import]({{<relref "/rc/databases/migrate-databases#transfer-via-import">}}) method or [Contact support](https://redis.com/company/support/) if you want to migrate a TLS-enabled database using Active-Passive.
 {{< /note >}}
 
 {{< note >}}
