@@ -47,11 +47,17 @@ Redis Enterprise Software version 7.2.4-tba includes the following Redis Stack m
 
 ### Resolved issues
 
-- RS109744 - Fixed an issue where node removal sometimes got stuck in a `starting` state when `wait_for_persistence` was enabled.
+- RS109744 - Node removal sometimes got stuck in a `starting` state when `wait_for_persistence` was enabled.
 
-- RS110481 - Fixed an issue where importing a database mid-upgrade fails when the master node has the new version.
+- RS110481 - Importing a database mid-upgrade failed when the master node had the new version.
 
-- RS111363 - Fixed an issue in the legacy UI, where you cannot update and save your changes on the **settings > preferences** tab even though these settings are visible.
+- RS111363 - Fixed an issue in the legacy UI, where you could not update and save your changes on the **settings > preferences** tab even though these settings were visible.
+
+- RS39744 - The `/opt/redislabs` directory was not created with `redislabs` user and group.
+
+- RS111648 - In `cnm_exec.log`, replaced "root" with the module utils log name.
+
+- RS112517 - Fixed an issue in the `prepare_flash` script that reduced Auto Tiering performance on Ubuntu 20.
 
 ## Version changes 
 
