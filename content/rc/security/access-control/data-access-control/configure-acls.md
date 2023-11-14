@@ -22,13 +22,27 @@ ACLs that are not marked with the Redis logo are user-defined ACL rules.
 
 To configure a Redis ACL that you can assign to a data access role:
 
-1. Go to **Data Access Control > ACLs** and either select `+` to create a new Redis ACL or point to an existing ACL and select the pencil icon to edit it.
+1. Go to **Data Access Control**
 
-1. Provide a descriptive name for the Redis ACL.
+    {{<image filename="images/rc/data-access-control-menu.png" alt="Menu for database access control." >}}{{< /image >}}
 
-1. Create the ACL rule. Enter the rule [using ACL syntax](#define-permissions-with-acl-syntax).
+1. Select the **Redis ACLs** tab
 
-1. Select the check mark to save your changes.
+    {{<image filename="images/rc/data-access-control-redis-acls.png" alt="Redis ACLs area." >}}{{< /image >}}
+
+1. Either select `+` to create a new Redis ACL or point to an existing ACL and select the pencil icon to edit it.
+
+    {{<image filename="images/rc/data-access-control-redis-acls-add-or-update.png" alt="Add or Update Redis ACL." >}}{{< /image >}}
+
+    {{< note >}}Some of the built-in Redis ACLs are not editable.{{< /note >}}
+
+1. Provide a descriptive name and create the ACL rule [using ACL syntax](#define-permissions-with-acl-syntax).
+
+    {{<image filename="images/rc/data-access-control-redis-acl-add.png" alt="Add Redis ACL." >}}{{< /image >}}
+
+1. Select the check mark to save your changes.  Your new Redis ACL should appear in the list.
+
+    {{<image filename="images/rc/data-access-control-redis-acl-saved.png" alt="Saved Redis ACL." >}}{{< /image >}}
 
 After you create a Redis ACL, you can assign it to a role. Redis ACLs are not fully verified until they are assigned to a role. For more information, see [Create roles]({{<relref "rc/security/access-control/data-access-control/create-roles">}}) or [Active-Active access roles]({{<relref "rc/security/access-control/data-access-control/active-active-roles">}}) for an [Active-Active subscription]({{<relref "rc/databases/active-active-redis">}}).
 
