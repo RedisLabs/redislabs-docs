@@ -24,11 +24,11 @@ Fixed plan pricing scales according to the memory size of all databases defined 
 | **Max DB Size &nbsp;** | **Number of<br/>Databases** | **Concurrent<br/>Connections<br/>per Database** | **CIDR<br/> Allow rules** |
 |---|---|---|---|
 | (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | 1 |
-| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | No replication: 4<br/> Single-zone replication: 4<br/>Multi-zone replication: 8 |
-| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | No replication: 4<br/>Single-zone replication: 8<br/>Multi-zone replication: 8 |
-| 2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | Unlimited | No replication: 4<br/>Single-zone replication: 8<br/>Multi-zone replication: 8 |
-| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | Unlimited | No replication: 4<br/>Single-zone replication: 16<br/>Multi-zone replication: 16 |
-| 12 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | Unlimited | No replication: 4<br/>Single-zone replication: 32<br/>Multi-zone replication: 32 |
+| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 4-8 |
+| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 4-8 |
+| 2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | Unlimited | 4-8 |
+| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | Unlimited | 4-16 |
+| 12 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | Unlimited | 4-32 |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
