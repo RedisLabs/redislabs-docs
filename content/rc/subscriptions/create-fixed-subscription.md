@@ -19,22 +19,20 @@ When creating your subscription, you'll need to know which tier to choose.
 
 ## Fixed plan subscription tiers
 
-Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated February 2021):
+Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated November 2022):
 
-|                    Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections<br/>per Database | Security<br/> Groups | CIDR<br/> Allow rules |
-|--------------------------------------:|:---------:|:-----------:|:---------------:|:---------------------:|
-| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | N/A |          N/A          |
-|       100 MB &nbsp;&nbsp;&nbsp;&nbsp; | 4 | 256 | 1 |           4           |
-|       250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 |           4           |
-|       500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 |           4           |
-|         1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 2 |           8           |
-|      2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 |           8           |
-|         5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | 5000 | 4 |          16           |
-|        10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | 10000 | 4 |          32           |
+| **Max DB Size &nbsp;** | **Number of<br/>Databases** | **Concurrent<br/>Connections<br/>per Database** | **CIDR<br/> Allow rules** |
+|---|---|---|---|
+| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | 1 |
+| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | No replication: 4<br/> Single-zone replication: 4<br/>Multi-zone replication: 8 |
+| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | No replication: 4<br/>Single-zone replication: 8<br/>Multi-zone replication: 8 |
+| 2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | Unlimited | No replication: 4<br/>Single-zone replication: 8<br/>Multi-zone replication: 8 |
+| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | Unlimited | No replication: 4<br/>Single-zone replication: 16<br/>Multi-zone replication: 16 |
+| 12 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | Unlimited | No replication: 4<br/>Single-zone replication: 32<br/>Multi-zone replication: 32 |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
-All paid (100 MB and above) fixed plans support replication and backups (daily and instant).
+All paid (250 MB and above) fixed plans support replication and backups (daily and instant).
 
 If you need additional resources, you can update your subscription at any time.
 
