@@ -32,17 +32,17 @@ Here's how to create a new Flexible subscription as part of your Google Cloud Ma
 
 1. Under **Purchase Details**, select the Google Cloud Billing account that will subscribe to Redis Cloud. Review the subscription details, accept the terms, and select **Subscribe**.
 
-1. When you subscribe for the first time, select **Register with Redis**. This will redirect you to the Redis Cloud [admin console](https://app.redislabs.com).
+1. When you subscribe for the first time, select **Sign Up with Redis**. This will redirect you to the Redis Cloud [admin console](https://app.redislabs.com).
 
 1. Create a Redis Cloud admin account or sign in to an existing account.
 
-1.  Use the **GCP Marketplace** dialog to select the Redis account you want to map to your Google Cloud Marketplace account. You need to do this only once.
+1.  Select the Redis account to be mapped to your GCP Marketplace account and confirm that your payment method will change and that the connection cannot be undone.
 
     {{<image filename="images/rc/gcp-marketplace-map-account-dialog.png" alt="Use the GCP Marketplace dialog to map your Redis Cloud account to your Google Cloud Marketplace account." width="75%">}}{{< /image >}}
 
-1.  Select **Map account** to confirm your choice.
+1.  Select **Connect account** to confirm your choice.
 
-1.  After you map your Redis account to your Google Cloud Marketplace account, a message appears in the upper left corner of the account panel.
+1.  After you connect your Redis account to your Google Cloud Marketplace account, a message appears in the upper left corner of the account panel.
 
     {{<image filename="images/rc/gcp-marketplace-billing-badge.png" alt="The Google Cloud Marketplace badge appears when your Redis Cloud account is mapped to a Google Cloud Marketplace account.">}}{{< /image >}}
 

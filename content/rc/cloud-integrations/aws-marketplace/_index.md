@@ -23,13 +23,13 @@ Here's how to create a new Flexible subscription as part of your AWS Marketplace
 
     {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
 
-1.  Sign in to the Redis Cloud [admin console](https://app.redislabs.com).
+1.  Sign in to the Redis Cloud [admin console](https://app.redislabs.com). If you do not yet have an account, you will need to create one.
 
 1.  Select the Redis account to be mapped to your AWS Marketplace account and confirm that your payment method will change and that the connection cannot be undone.
 
     {{<image filename="images/rc/aws-marketplace-map-account-dialog.png" alt="Use the AWS Marketplace dialog to map your Redis Cloud account to your AWS Marketplace account." width="80%">}}{{< /image >}}
 
-1.  Use the **Map account** button to confirm your choice.
+1.  Use the **Connect account** button to confirm your choice.
 
 1.  Once your Redis account is mapped to your AWS Marketplace account, a message appears in the upper, left corner of the account panel.
 
@@ -40,5 +40,7 @@ Here's how to create a new Flexible subscription as part of your AWS Marketplace
 At this point, you can create a new Flexible subscription using the [standard workflow]({{<relref "/rc/subscriptions/create-flexible-subscription">}}), with one important change. You don't need to enter a payment method, as it's automatically assigned to your AWS Marketplace account.
 
 To confirm this, review the payment method associated with your subscription.
+
+{{<image filename="images/rc/aws-marketplace-billing-confirm.png" alt="The AWS Marketplace billing confirmation." width="80%">}}{{< /image >}}
 
 If, for whatever reason, your AWS Marketplace account is disabled or otherwise unavailable, you won't be able to use your Flexible subscription until the billing method is updated.  For help, [contact support](https://redis.com/company/support/).
