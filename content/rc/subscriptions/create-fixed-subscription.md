@@ -14,7 +14,7 @@ Fixed Size subscription plans support low throughput workflows.  Several tiers a
 
 When creating your subscription, you'll need to know which tier to choose.
 
-(If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.)
+If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.
 
 
 ## Fixed plan subscription tiers
@@ -50,13 +50,13 @@ To create a Fixed subscription:
 
 3.  Choose a **Cloud Provider** and a **Region**.
 
-    {{<image filename="images/rc/subscription-new-cloud-vendor-options-redis-7-preview.png" alt="Available cloud vendor options and Redis 7.2 preview." >}}{{</image>}}
+    {{<image filename="images/rc/subscription-new-cloud-vendor-options-redis-7-preview.png" alt="Available cloud vendor options and Redis 7.2 regions." >}}{{</image>}}
 
-    A [preview of Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) subscriptions is available for selected regions in AWS and GCP. Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
+    [Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) is available for selected regions in AWS and GCP. Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
     
-    If you want to try out Redis 7.2, turn on the **Redis 7.2 preview** toggle:
+    If you want to try out Redis 7.2, turn on the **Redis 7.2 regions** toggle to show the regions where it is available:
 
-    {{<image filename="images/rc/subscription-new-redis-7-preview-toggle.png" width="200px" alt="Turn on the Redis 7.2 preview toggle." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-new-redis-7-preview-toggle.png" width="200px" alt="Turn on the Redis 7.2 regions toggle." >}}{{< /image >}}
 
 4.  In the **Availability Settings** panel, select your replication settings.  
 
