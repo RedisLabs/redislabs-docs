@@ -12,7 +12,7 @@ aliases: /rv/administration/setup_and_editing/create-databases/
 ---
 Before creating a Redis Cloud database, you need to [create an account]({{< relref "rc/rc-quickstart.md" >}}) and [create a subscription]({{< relref "rc/subscriptions#common-tasks" >}}).
 
-To create a database in your Redis Enterprise Cloud [subscription]({{< relref "rc/subscriptions/" >}}):
+To create a database in your Redis Cloud [subscription]({{< relref "rc/subscriptions/" >}}):
 
 1. Sign in to the [Redis Cloud console](https://app.redislabs.com).
 
