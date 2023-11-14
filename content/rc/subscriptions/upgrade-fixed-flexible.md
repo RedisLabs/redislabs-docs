@@ -37,10 +37,14 @@ To upgrade your fixed subscription to a flexible subscription:
 
 ### Migrate databases
 
-You can migrate the databases in your fixed subscription to your new flexible subscription using any method in the [Migrate databases]({{<relref "/rc/databases/migrate-databases">}}) guide. The steps in this guide use [Active-Passive]({{<relref "/rc/databases/migrate-databases#sync-using-active-passive">}}) to migrate databases between subscriptions.
+You can migrate the databases in your fixed subscription to your new flexible subscription using any method in the [Migrate databases]({{<relref "/rc/databases/migrate-databases">}}) guide. This guide uses [Active-Passive]({{<relref "/rc/databases/migrate-databases#sync-using-active-passive">}}) to migrate databases between subscriptions in the same account.
 
 {{< note >}}
 If one or more of the databases in your fixed subscription has [Transport Layer Security (TLS)]({{< relref  "/rc/security/database-security/tls-ssl" >}}) enabled, you will not be able to migrate your databases between subscriptions using this guide. Use the [Transfer via import]({{<relref "/rc/databases/migrate-databases#transfer-via-import">}}) method or [Contact support](https://redis.com/company/support/) if you want to migrate a TLS-enabled database using Active-Passive.
+{{< /note >}}
+
+{{< note >}}
+This guide is for migrating databases between subscriptions in the same Redis Cloud console account. [Contact support](https://redis.com/company/support/) if you want to migrate a database between accounts using Active-Passive.
 {{< /note >}}
     
 1. In your flexible subscription, select the database you want to migrate your data to. This will be your target database.
