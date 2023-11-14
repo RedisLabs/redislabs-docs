@@ -34,7 +34,7 @@ Details:
 - Improvements:
 
   - [#3938](https://github.com/RediSearch/RediSearch/pull/3938) Propagating error messages in multiple shards database, instead of failing silently (MOD-5211)
-  - [#3903](https://github.com/RediSearch/RediSearch/pull/3903) Added support for Rocky Linux 9 (MOD-5759)
+  - [#3903](https://github.com/RediSearch/RediSearch/pull/3903) Added support for Rocky Linux 9 and RHEL9 (MOD-5759)
 
 ## v2.8.8 (September 2023)
 
