@@ -50,8 +50,8 @@ RDI supports the following database sources using [Debezium Server](https://debe
 | Cassandra  |
 | MariaDB    |
 | MySQL      |
+| Oracle    
 | Postgres   |
-| Oracle     |
 | SQL Server |
 
 
