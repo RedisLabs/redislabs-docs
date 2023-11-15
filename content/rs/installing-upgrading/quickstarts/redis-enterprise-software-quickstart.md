@@ -35,6 +35,14 @@ For production environments, see the [install and setup]({{< relref "/rs/install
 
 ## Ensure port availability
 
+{{<embed-md "port-availability.md">}}
+
+### Update `sysctl.conf` to avoid port collisions
+
+{{<embed-md "port-collision-avoidance.md">}}
+
+### Ubuntu conflicts with port 53
+
 {{<embed-md "port-53.md">}}
 
 ## Install Redis Enterprise Software
