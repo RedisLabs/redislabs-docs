@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 aliases: [
  "/rv/administration/usage-reports/",
- "/rc/databases/usage-reports/",
+ "/rc/databases/usage-reports",
 ]
 ---
 

@@ -7,7 +7,6 @@ categories: ["RC"]
 aliases: [ "/rv/administration/system-logs/",
            "/rc/administration/system-logs/",
            "/rc/administration/system-logs.md",
-           "/rc/databases/system-logs.md",
            "/rc/databases/system-logs",
            ]
 ---
