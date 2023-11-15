@@ -6,7 +6,9 @@ alwaysopen: false
 categories: ["RC"]
 aliases: [ "/rv/administration/system-logs/",
            "/rc/administration/system-logs/",
-           "/rc/administration/system-logs.md" ]
+           "/rc/administration/system-logs.md",
+           "/rc/databases/system-logs.md",
+           ]
 ---
 The **Logs** page contains events, alerts, and logs from the activities, databases, and subscriptions associated with your account.
 
