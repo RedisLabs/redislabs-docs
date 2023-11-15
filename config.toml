@@ -51,7 +51,7 @@ docker_db_volume_permission = "chown -R 1001 redisinsight"
 rdi_rlec_min_version = "6.2.18"
 rdi_redis_gears_version = "1.2.7"
 rdi_debezium_server_version = "2.3.0.Final"
-rdi_db_types = "cassandra|mysql|mongodb|oracle|postgresql|sqlserver"
+rdi_db_types = "cassandra|mongodb|mysql|oracle|postgresql|sqlserver"
 rdi_cli_latest = "0.118.0"
 
 siteURL = "http://127.0.0.1:8001"
