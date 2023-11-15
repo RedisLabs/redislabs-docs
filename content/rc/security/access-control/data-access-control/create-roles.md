@@ -12,15 +12,30 @@ aliases:
 
 To assign [Redis ACLs]({{<relref "rc/security/access-control/data-access-control/configure-acls">}}) to a data access role:
 
-1. Go to **Data Access Control > Roles** and either select `+` to create a new role or point to an existing role and select the pencil icon to edit it.
+1. Go to **Data Access Control**
 
-1. In the **Associations** section of the **Edit role** or **Create new role** screen, you can select `+` to create a new association or point to an existing association and select the pencil icon to edit it.
+    {{<image filename="images/rc/data-access-control-menu.png" width="300px" alt="Menu for database access control." >}}{{< /image >}}
 
-1. Select one or more databases from the **Databases** list.
+1. Select the **Roles** tab
 
-1. To set the role's level of access to the selected databases, pick a **Redis ACL** from the list.
+    {{<image filename="images/rc/data-access-control-roles.png" alt="Role configuration area." >}}{{< /image >}}
 
-1. Select the check mark to confirm the association.
+1. Select `+` to create a new role or point to an existing role and select the pencil icon to edit it.
+
+    {{<image filename="images/rc/data-access-control-roles-add-or-edit.png" width="300px" alt="Add or edit a role." >}}{{< /image >}}
+
+1. Enter a name for the role.
+
+    {{<image filename="images/rc/data-access-control-roles-add.png" width="400px" alt="Role add screen." >}}{{< /image >}}
+
+1. Select a **ACL rule** 
+
+    {{<image filename="images/rc/data-access-control-roles-select-acl.png" width="200px" alt="Select an ACL Rule." >}}{{< /image >}}
+
+1. Select one or more databases from the **Databases** list and click the check mark to confirm the association.
+
+    {{<image filename="images/rc/data-access-control-roles-select-databases.png" width="200px" alt="Select an databases." >}}{{< /image >}}
+
 
 1. Select **Save role**.
 
