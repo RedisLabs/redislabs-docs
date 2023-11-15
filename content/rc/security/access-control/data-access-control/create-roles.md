@@ -34,7 +34,7 @@ To assign [Redis ACLs]({{<relref "rc/security/access-control/data-access-control
 
 1. Select one or more databases from the **Databases** list and click the check mark to confirm the association.
 
-    {{<image filename="images/rc/data-access-control-roles-select-databases.png" width="300px" alt="Select an databases." >}}{{< /image >}}
+    {{<image filename="images/rc/data-access-control-roles-select-databases.png" width="400px" alt="Select an databases." >}}{{< /image >}}
 
 
 1. Select **Save role**.
