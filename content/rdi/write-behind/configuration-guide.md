@@ -21,7 +21,7 @@ The connections must be configured in the `config.yaml` before deploying any job
 ```yaml
 connections:
     my-sql-datastore:
-        type: <db-type>     # mysql | oracle | postgresql | sqlserver
+        type: <db-type>     # db2 | mysql | oracle | postgresql | sqlserver
         host: <db-host>     # IP address or FQDN of a database host and instance
         port: <db-port>     # database port
         database: <db-name> # name of the database

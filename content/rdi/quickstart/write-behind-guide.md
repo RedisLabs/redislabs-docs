@@ -31,6 +31,7 @@ RDI write-behind currently supports these target data stores:
 | Data Store |
 | ---------- |
 | Cassandra  |
+| Db2        |
 | MariaDB    |
 | MySQL      |
 | Oracle     |

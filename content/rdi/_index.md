@@ -46,12 +46,14 @@ RDI supports the following database sources using [Debezium Server](https://debe
 
 | Database   |
 | ---------- |
-| Oracle     |
+| Cassandra  |
+| Db2        |
 | MariaDB    |
 | MySQL      |
+| Oracle     |
 | Postgres   |
 | SQL Server |
-| Cassandra  |
+
 
 ## Features
 
