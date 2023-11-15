@@ -8,6 +8,7 @@ aliases: [ "/rv/administration/system-logs/",
            "/rc/administration/system-logs/",
            "/rc/administration/system-logs.md",
            "/rc/databases/system-logs.md",
+           "/rc/databases/system-logs",
            ]
 ---
 The **Logs** page contains events, alerts, and logs from the activities, databases, and subscriptions associated with your account.
