@@ -45,6 +45,23 @@ For production environments, see the [install and setup]({{< relref "/rs/install
 
 {{<embed-md "port-53.md">}}
 
+
+### Configuration for AWS and GCP
+
+In completing this configuration, follow the documentation provided by your cloud provider of choice.
+
+1. Create a VPC that you can use with regional subnets.
+
+1. Within this VPC, create firewall rules that allow for external and internal access for RS.
+
+
+| Ingress/Egress   | Source                                             | Protocol  | Ports                                    | Other Protocols  |
+|------------------|----------------------------------------------------|-----------|------------------------------------------|------------------|
+| Ingress          | 0.0.0.0/0                                          | tcp       | 21,22,53,8001,8443,9443,8070,10000-19999 | icmp             |
+| Ingress          | 0.0.0.0/0                                          | udp       | 53,5353                                  |                  |
+| Ingress          | 10.0.0.0/8  (assuming your subnets use 10. ranges) | all       | all                                      |                  | 
+
+
 ## Install Redis Enterprise Software
 
 To install Redis Enterprise Software:
