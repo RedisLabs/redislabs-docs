@@ -4,6 +4,7 @@ linkTitle: Create support package
 description: Create a support package that gathers essential information to help debug issues.
 weight: $weight
 alwaysopen: false
+toc: "true"
 categories: ["RS"]
 aliases: [
     /rs/administering/troubleshooting/creating-support-package.md,
@@ -14,7 +15,7 @@ aliases: [
 ]
 ---
 If you encounter any issues that you are not able to resolve yourself
-and need to [contact Redis support](https://redislabs.com/company/support/) for assistance, you can create a
+and need to [contact Redis support](https://redis.com/company/support/) for assistance, you can create a
 support package that gathers all essential information to help debug
 your issues.
 
@@ -22,9 +23,9 @@ your issues.
 The process of creating the support package can take several minutes and generates load on the system.
 {{< /note >}}
 
-## Admin console method
+## Cluster Manager UI method
 
-To create a support package:
+To create a support package from the Cluster Manager UI:
 
 1. In the navigation menu, select **Support**.
 
@@ -66,4 +67,20 @@ If package creation fails with `internal error` or if you cannot access the UI, 
     /opt/redislabs/bin/debuginfo
     ```
 
-Upload the tar archive to [Redis support](https://support.redislabs.com). The path to the archive is shown in the command output.
+Upload the tar file to [Redis support](https://redis.com/company/support/). The path to the archive is shown in the command output.
+
+## REST API method
+
+You can also use [`debuginfo` REST API requests]({{<relref "/rs/references/rest-api/requests/debuginfo">}}) to create and download support packages.
+
+To download debug info for all nodes:
+
+```sh
+GET /v1/debuginfo/all
+```
+
+To download debug info from all nodes that relates to a specific database, replace `<bdb_uid>` in the following request with the database ID:
+
+```sh
+GET /v1/debuginfo/all/bdb/<bdb_uid>
+```
