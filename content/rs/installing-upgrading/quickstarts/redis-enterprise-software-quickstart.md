@@ -35,7 +35,7 @@ For production environments, see the [install and setup]({{< relref "/rs/install
 
 ## Ensure port availability
 
-{{<embed-md "port-availability.md">}}
+{{<embed-md "port-availability-embed.md">}}
 
 ### Update `sysctl.conf` to avoid port collisions
 

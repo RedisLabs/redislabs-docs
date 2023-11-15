@@ -10,7 +10,7 @@ aliases:
 
 Before [installing Redis Enterprise Software]({{<relref "/rs/installing-upgrading/install">}}), make sure all required ports are available.
 
-{{<embed-md "port-availability.md">}}
+{{<embed-md "port-availability-embed.md">}}
 
 ## Update `sysctl.conf` to avoid port collisions
 
