@@ -2,7 +2,7 @@
 Title: Redis Cloud changelog (November 2023)
 linktitle: November 2023
 description: New features, enhancements, and other changes added to Redis Cloud during November 2023.
-highlights: Low-cost Fixed plans, Redis 7.2 Fixed region support
+highlights: New Fixed plans, Redis 7.2 Fixed region support
 weight: 74
 alwaysopen: false
 categories: ["RC"]
@@ -11,9 +11,9 @@ aliases: []
 
 ## New features
 
-### Low-cost Fixed plans
+### New Fixed plans
 
-Redis is introducing new low-cost [fixed subscriptions]({{<relref "/rc/subscriptions/create-fixed-subscription">}}) on Redis Cloud. These plans increase the capacity and lower the price compared to our previous fixed plans.
+Redis is updating our [fixed subscriptions]({{<relref "/rc/subscriptions/create-fixed-subscription">}}) on Redis Cloud. These plans offer increased capacity at lower prices compared to legacy plans.
 
 See [Fixed plan subscription tiers]({{<relref "/rc/subscriptions/create-fixed-subscription#fixed-plan-subscription-tiers">}}) to see an updated list of all Fixed plans.
 
