@@ -123,10 +123,6 @@ The following table shows the MD5 checksums for the available packages:
 | RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
 | Amazon Linux 2 |  |
 
-## Known issues
-
-- TBA
-
 ## Security
 
 #### Open source Redis security fixes compatibility
