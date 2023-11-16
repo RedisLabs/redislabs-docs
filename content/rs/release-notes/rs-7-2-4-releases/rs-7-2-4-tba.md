@@ -25,7 +25,7 @@ This version offers:
 
 - New Cluster Manager UI enhancements:
 
-    - LDAP configuration improvements
+    - Improved LDAP configuration and moved it from **Cluster > Security > LDAP** to **Access Control > LDAP > Configuration**
 
     - Rack-zone awareness database configuration
 
