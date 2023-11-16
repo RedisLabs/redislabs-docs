@@ -25,11 +25,11 @@ This version offers:
 
 - New Cluster Manager UI enhancements:
 
-    - Improved LDAP configuration and moved it from **Cluster > Security > LDAP** to **Access Control > LDAP > Configuration**
+    - Improved [LDAP configuration]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}) and moved it from **Cluster > Security > LDAP** to **Access Control > LDAP > Configuration**
 
-    - Rack-zone awareness database configuration
+    - [Rack-zone awareness database configuration]({{<relref "/rs/clusters/configure/rack-zone-awareness#enable-database-rack-zone-awareness">}})
 
-- New `capability_name` field added to module REST API object 
+- New `capability_name` field added to [module REST API object]({{<relref "/rs/references/rest-api/objects/module">}})
 
 #### Redis modules
 
