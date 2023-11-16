@@ -160,11 +160,11 @@ You can also connect to a storage service that uses the S3 protocol but is not h
 
 ### Google Cloud Storage
 
-Before you choose to import from a [Google Cloud](https://developers.google.com/console/) storage bucket, make sure that you have:
+Before you import data from a [Google Cloud](https://developers.google.com/console/) storage bucket, make sure you have:
 
 - Storage location path in the format: `/bucket_name/[path]/[filename].rdb`
 - A [JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating) for your account
-- A [principal](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-add) for your bucket with the `client_email` from the service account key and the permission to get files from the bucket
+- A [principal](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-add) for your bucket with the `client_email` from the service account key and a [role](https://cloud.google.com/storage/docs/access-control/iam-roles) with permissions to get files from the bucket (such as the **Storage Legacy Object Reader** role, which grants `storage.objects.get` permissions)
 
 In the Redis Enterprise Software admin console, when you enter the import location details:
 

@@ -37,6 +37,9 @@ rladmin tune cluster
         [ expose_hostnames_for_all_suffixes { enabled | disabled } ]
         [ redis_upgrade_policy { latest | major } ]
         [ default_redis_version <value> ]
+        [ default_non_sharded_proxy_policy { single | all-master-shards | all-nodes } ]
+        [ default_sharded_proxy_policy { single | all-master-shards | all-nodes } ]
+        [ default_shards_placement { dense | sparse } ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
         [ acl_pubsub_default { resetchannels | allchannels } ]
@@ -51,7 +54,10 @@ rladmin tune cluster
 | data_internode_encryption              | `enabled`<br />`disabled`       | Activates or deactivates [internode encryption]({{<relref "/rs/security/encryption/internode-encryption">}}) for new databases    |
 | db_conns_auditing                      | `enabled`<br /> `disabled`      | Activates or deactivates [connection auditing]({{<relref "/rs/security/audit-events">}}) by default for new databases of a cluster                                                                  |
 | default_concurrent_restore_actions     | integer<br />`all`              | Default number of concurrent actions when restoring a node from a snapshot (positive integer or "all")                         |
+| default_non_sharded_proxy_policy | `single`<br /><nobr>`all-master-shards`</nobr><br />`all-nodes` | Default [proxy policy]({{<relref "/rs/databases/configure/proxy-policy">}}) for newly created non-sharded databases' endpoints |
 | default_redis_version                  | version number                    | The default Redis database compatibility version used to create new databases.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.<br/><br/>You cannot set _default_redis_version_ to a value higher than that supported by the current _redis_upgrade_policy_ value. |
+| default_sharded_proxy_policy | `single`<br />`all-master-shards`<br />`all-nodes` | Default [proxy policy]({{<relref "/rs/databases/configure/proxy-policy">}}) for newly created sharded databases' endpoints |
+| default_shards_placement | `dense`<br />`sparse` | New databases place shards according to the default [shard placement policy]({{<relref "/rs/databases/memory-performance/shard-placement-policy">}}) |
 | expose_hostnames_for_all_suffixes      | `enabled`<br />`disabled`       | Exposes hostnames for all DNS suffixes                                                                                       |
 | failure_detection_sensitivity | `high`<br />`low` | Predefined thresholds and timeouts for failure detection (previously known as `watchdog_profile`)<br />• `high` (previously `local-network`) – high failure detection sensitivity, lower thresholds, faster failure detection and failover<br />• `low` (previously `cloud`) – low failure detection sensitivity, higher tolerance for latency variance (also called network jitter) |
 | login_lockout_counter_reset_after      | time in seconds                   | Time after failed login attempt before the counter resets to 0                                                                   |

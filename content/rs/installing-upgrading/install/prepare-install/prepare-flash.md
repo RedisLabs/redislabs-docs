@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-If you want to use Auto Tiering for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/databases/auto-tiering/" >}}) for RoF databases and prepare and format the flash memory.
+If you want to use Auto Tiering for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/databases/auto-tiering/" >}}) for Auto Tiering databases and prepare and format the flash memory.
 
 Use the `prepare_flash` script to prepare and format flash memory:
 
