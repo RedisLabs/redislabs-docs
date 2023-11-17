@@ -24,11 +24,11 @@ To create a user:
 
     {{<image filename="images/rc/data-access-control-users.png" alt="User configuration area." >}}{{< /image >}}
 
-1. Select `+` to create a new role or point to an existing user and select the pencil icon to edit it.
+2. Select `+` to create a new user
 
     {{<image filename="images/rc/data-access-control-users-add-or-edit.png" width="300px" alt="User add or edit." >}}{{< /image >}}
 
-2. Enter a username.
+3. Enter a username.
 
     {{<image filename="images/rc/data-access-control-users-add.png" width="300px" alt="User add username." >}}{{< /image >}}
 
@@ -49,10 +49,20 @@ An error occurs if a user tries to connect to a memcached database with the user
 
 To assign a data access role to an existing user:
 
-1. Go to **Data Access Control > Users**.
+1. Go to **Data Access Control**
+
+    {{<image filename="images/rc/data-access-control-menu.png" width="200px" alt="Menu for database access control." >}}{{< /image >}}
+
+1. Select the **Users** tab
+
+    {{<image filename="images/rc/data-access-control-users.png" alt="User configuration area." >}}{{< /image >}}
 
 1. Point to the user and select the pencil icon when it appears.
 
 1. Select a [**Role**]({{<relref "rc/security/access-control/data-access-control/create-roles">}}) from the list.
 
+    {{<image filename="images/rc/data-access-control-users-add-or-edit.png" width="300px" alt="User add or edit." >}}{{< /image >}}
+
 1. Select the check mark to assign the role to the user.
+
+    {{<image filename="images/rc/data-access-control-users-add-role.png" width="300px" alt="User select role." >}}{{< /image >}}
