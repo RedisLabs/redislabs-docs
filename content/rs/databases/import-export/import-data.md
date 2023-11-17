@@ -79,7 +79,10 @@ Select **Add path** to add another import file path.
 Before importing data from a local mount point, make sure that:
 
 - The node can connect to the server hosting the mount point.
+
 - The `redislabs:redislabs` user has permission to read files on the local mount point and on the destination server.
+
+- You must mount the storage in the same path on all cluster nodes. You can also use local storage, but you must copy the imported files manually to all nodes because the import source folders on the nodes are not synchronized.
 
 To import from a local mount point:
 
