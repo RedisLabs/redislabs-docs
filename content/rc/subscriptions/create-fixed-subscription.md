@@ -21,7 +21,7 @@ If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md"
 
 Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated November 2022):
 
-| **Max DB Size &nbsp;** | **Number of<br/>Databases** | **Concurrent<br/>Connections<br/>per Database** | **CIDR<br/> Allow rules** |
+| **Max DB size &nbsp;** | **Number of<br/>databases** | **Concurrent<br/>connections<br/>per database** | **CIDR<br/> allow rules** |
 |---|---|---|---|
 | (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | 1 |
 | 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 4-8 |
@@ -32,7 +32,7 @@ Fixed plan pricing scales according to the memory size of all databases defined 
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
-All paid (250 MB and above) fixed plans support replication and backups (daily and instant).
+All paid (250 MB and above) Fixed plans support replication and backups (daily and instant).
 
 If you need additional resources, you can update your subscription at any time.
 
