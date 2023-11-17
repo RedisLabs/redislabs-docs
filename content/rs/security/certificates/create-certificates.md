@@ -32,6 +32,10 @@ You will be prompted for a Country Name, State or Province Name, Locality Name, 
 
 3. Sign the private key using your certificate authority.
 
+    ```sh
+    openssl x509 -req -in <key-file-name>.csr -signkey <key-file-name>.pem -out <cert-file-name>.pem
+    ```
+
     How to obtain a CA signed certificate is different for each organization and CA vendor. Consult your security team or certificate authority for the appropriate way to sign a certificate.
 
 4. Upload the certificate to the cluster.
