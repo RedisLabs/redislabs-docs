@@ -30,7 +30,7 @@ To create a user:
 
 3. Enter a username.
 
-    {{<image filename="images/rc/data-access-control-users-add.png" width="300px" alt="User add username." >}}{{< /image >}}
+    {{<image filename="images/rc/data-access-control-users-add.png" alt="User add username." >}}{{< /image >}}
 
     {{<note>}}
 An error occurs if a user tries to connect to a memcached database with the username `admin`. Do not use `admin` for a username if the user will be connecting to a memcached database.
