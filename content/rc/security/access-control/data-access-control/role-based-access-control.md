@@ -35,9 +35,8 @@ Finally, in the **Users** tab, you [create users]({{<relref "rc/security/access-
 
 {{<image filename="images/rc/data-access-control-users.png" alt="Data access control screen." >}}{{< /image >}}
 
-    {{<note>}}
-Users created for data access are different from the account access users.
-    {{</note>}}
+{{<note>}}
+Users created for data access are different from the account access users.{{</note>}}
 
 
 ## OSS Redis ACLs vs. Redis Cloud RBAC
