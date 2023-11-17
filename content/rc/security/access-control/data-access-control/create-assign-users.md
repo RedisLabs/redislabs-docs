@@ -40,7 +40,7 @@ An error occurs if a user tries to connect to a memcached database with the user
 
     {{<image filename="images/rc/data-access-control-users-add-role.png" width="300px" alt="User select role." >}}{{< /image >}}
 
-2. Enter and confirm the user's password then select the check mark to save the user. 
+1. Enter and confirm the user's password then select the check mark to save the user. 
 
     {{<image filename="images/rc/data-access-control-users-password-and-finish.png" width="300px" alt="User add password and finish." >}}{{< /image >}}
 
@@ -66,3 +66,7 @@ To assign a data access role to an existing user:
 1. Select the check mark to assign the role to the user.
 
     {{<image filename="images/rc/data-access-control-users-add-role.png" width="300px" alt="User select role." >}}{{< /image >}}
+
+1. Select the check mark to save the user. 
+
+    {{<image filename="images/rc/data-access-control-users-password-and-finish.png" width="300px" alt="User add password and finish." >}}{{< /image >}}
