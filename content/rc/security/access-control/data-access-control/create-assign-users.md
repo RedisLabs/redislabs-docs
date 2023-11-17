@@ -55,7 +55,7 @@ To assign a data access role to an existing user:
 
 1. Select the **Users** tab
 
-    {{<image filename="images/rc/data-access-control-users.png" alt="User configuration area." >}}{{< /image >}}
+    {{<image filename="images/rc/data-access-control-users-with-user-in-list.png" alt="User configuration area." >}}{{< /image >}}
 
 1. Point to the user and select the pencil icon when it appears.
 
