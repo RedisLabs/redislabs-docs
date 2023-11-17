@@ -36,7 +36,6 @@ To assign [Redis ACLs]({{<relref "rc/security/access-control/data-access-control
 
     {{<image filename="images/rc/data-access-control-roles-select-databases.png" width="400px" alt="Select an databases." >}}{{< /image >}}
 
-
 1. Select **Save role**.
 
 When you assign a user-defined ACL rule to a role and associate it with one or more databases, Redis will verify that the ACL rule will work with the selected databases. 
