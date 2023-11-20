@@ -1,6 +1,6 @@
 ---
 Title: Redis Cloud logs and reports
-LinkTitle: Logs and Reports
+LinkTitle: Logs & Reports
 description:
 weight: 37
 alwaysopen: false
