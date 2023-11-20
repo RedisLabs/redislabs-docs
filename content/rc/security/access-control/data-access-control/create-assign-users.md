@@ -20,7 +20,7 @@ To create a user:
 
     {{<image filename="images/rc/data-access-control-menu.png" width="200px" alt="Menu for database access control." >}}{{< /image >}}
 
-1. Select the **Users** tab
+1. Select the **Users** tab.
 
     {{<image filename="images/rc/data-access-control-users-no-users.png" alt="User configuration area." >}}{{< /image >}}
 
