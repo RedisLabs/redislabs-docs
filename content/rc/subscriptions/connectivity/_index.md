@@ -9,7 +9,7 @@ categories: ["RC"]
 aliases: 
 ---
 
-Redis offers a few ways you can securely connect your application and your database without exposing your application's [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud).
+Redis offers a few ways to securely connect your application and your database without exposing your application's [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud).
 
 ## [VPC Peering]({{<relref "/rc/subscriptions/connectivity/vpc-peering">}})
 
