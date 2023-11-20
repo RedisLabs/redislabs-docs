@@ -78,11 +78,11 @@ to the database using the `redis-py` client library. For installation instructio
     r = redis.Redis(host='<host>', port=<port>)
 
     # Store a key
-    print ("set key1 123")
-    print (r.set('key1', '123'))
+    print("set key1 123")
+    print(r.set('key1', '123'))
 
     # Retrieve the key
-    print ("get key1")
+    print("get key1")
     print(r.get('key1'))
     ```
 
