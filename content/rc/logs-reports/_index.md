@@ -1,6 +1,6 @@
 ---
 Title: View logs and reports
-LinkTitle: Logs & Reports
+LinkTitle: Logs & reports
 description:
 weight: 37
 alwaysopen: false
