@@ -48,7 +48,7 @@ For production environments, see the [install and setup]({{< relref "/rs/install
 
 ### Configuration for AWS and GCP
 
-In completing this configuration, follow the documentation provided by your cloud provider of choice.
+For detailed configuration instructions, see your cloud provider's documentation.
 
 1. Create a VPC that you can use with regional subnets.
 
