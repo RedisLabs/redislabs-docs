@@ -44,7 +44,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 8002, 8004, 8006 | <span title="Configurable">&#x2705; Yes</span> | Internal | Default system health monitoring (envoy admin, envoy management server, gossip envoy admin)|
 | TCP | 8444, 9080 | <span title="Not configurable">&#x274c; No</span> | Internal | Traffic between web proxy and cnm_http/cm |
 
-## Changing port configuration
+## Change port configuration
 
 ### Change the admin console port
 
@@ -116,7 +116,7 @@ rladmin cluster config cnm_https_port <new-port>
 {{<embed-md "port-collision-avoidance.md">}}
 
 
-## Configuring for HTTPS
+## Configure HTTPS
 
 ### Require HTTPS for API endpoints
 
