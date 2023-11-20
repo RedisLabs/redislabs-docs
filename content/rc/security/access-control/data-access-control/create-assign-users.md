@@ -16,7 +16,7 @@ Before you create a database user, you must [create a data access role]({{<relre
 
 To create a user:
 
-1. Go to **Data Access Control**
+1. Go to **Data Access Control** from the [Redis Cloud console](https://app.redislabs.com/#/) menu.
 
     {{<image filename="images/rc/data-access-control-menu.png" width="200px" alt="Menu for database access control." >}}{{< /image >}}
 
