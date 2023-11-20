@@ -1,5 +1,6 @@
 ---
 Title: Monitor Redis Cloud
+LinkTitle: Monitor
 description:
 weight: 37
 alwaysopen: false
