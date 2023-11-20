@@ -2,7 +2,7 @@
 Title: Enable Private Service Connect
 linkTitle: Private Service Connect
 description: Private Service Connect creates a private endpoint that allows secure connections to Redis Cloud databases without exposing your application VPC.
-weight: 50
+weight: 40
 alwaysopen: false
 toc: "true"
 categories: ["RC"]
