@@ -34,7 +34,7 @@ To configure a Redis ACL that you can assign to a data access role:
 
     {{<image filename="images/rc/data-access-control-redis-acls-add-or-update.png" width="400px" alt="Add or Update Redis ACL." >}}{{< /image >}}
 
-    {{< note >}}Some of the built-in Redis ACLs are not editable.{{< /note >}}
+    {{< note >}}The built-in Redis ACLs can't be edited.{{< /note >}}
 
 1. Provide a descriptive name and create the ACL rule [using ACL syntax](#define-permissions-with-acl-syntax).
 
