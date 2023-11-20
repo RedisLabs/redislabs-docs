@@ -1,5 +1,5 @@
 ---
-Title: Redis Cloud logs and reports
+Title: View logs and reports
 LinkTitle: Logs & Reports
 description:
 weight: 37
