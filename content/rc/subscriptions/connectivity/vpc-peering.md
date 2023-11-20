@@ -2,7 +2,7 @@
 Title: Enable VPC peering
 linkTitle: VPC peering
 description: VPC peering uses private IP addresses to route traffic between a Redis Cloud VPC and an application VPC.
-weight: 80
+weight: 20
 alwaysopen: false
 categories: ["RC"]
 aliases: [
