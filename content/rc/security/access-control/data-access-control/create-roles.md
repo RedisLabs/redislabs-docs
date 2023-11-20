@@ -28,7 +28,7 @@ To assign [Redis ACLs]({{<relref "rc/security/access-control/data-access-control
 
     {{<image filename="images/rc/data-access-control-roles-add.png" width="400px" alt="Role add screen." >}}{{< /image >}}
 
-1. Select a **ACL rule** 
+1. Select an **ACL rule** to assign to the role.
 
     {{<image filename="images/rc/data-access-control-roles-select-acl.png" width="300px" alt="Select an ACL Rule." >}}{{< /image >}}
 
