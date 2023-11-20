@@ -26,7 +26,7 @@ To configure a Redis ACL that you can assign to a data access role:
 
     {{<image filename="images/rc/data-access-control-menu.png" width="200px" alt="Menu for database access control." >}}{{< /image >}}
 
-1. Select the **Redis ACLs** tab
+1. Select the **Redis ACLs** tab.
 
     {{<image filename="images/rc/data-access-control-redis-acls.png" alt="Redis ACLs area." >}}{{< /image >}}
 
