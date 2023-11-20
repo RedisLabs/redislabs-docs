@@ -19,9 +19,9 @@ aliases: [ "/rv/",
            "/rc/faqs/_index.md" ]
 
 ---
-[Redis Enterprise Cloud](https://redis.com/redis-enterprise-cloud/overview/) delivers a fully managed Redis database offering hosted on major public cloud services.
+[Redis Cloud](https://redis.com/redis-enterprise-cloud/overview/) delivers a fully managed Redis database offering hosted on major public cloud services.
 
-With Redis Enterprise Cloud, you get all of the features of Redis Enterprise, including:
+With Redis Cloud, you get all of the features of Redis Enterprise, including:
 - [Redis](https://redis.io/) and [Redis Stack]({{<relref "/stack">}}) support
 - Linear scalability
 - Instant failover, backups, and recovery

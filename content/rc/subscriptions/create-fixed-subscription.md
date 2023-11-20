@@ -14,27 +14,25 @@ Fixed Size subscription plans support low throughput workflows.  Several tiers a
 
 When creating your subscription, you'll need to know which tier to choose.
 
-(If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.)
+If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.
 
 
 ## Fixed plan subscription tiers
 
-Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated February 2021):
+Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated November 2022):
 
-|                    Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections<br/>per Database | Security<br/> Groups | CIDR<br/> Allow rules |
-|--------------------------------------:|:---------:|:-----------:|:---------------:|:---------------------:|
-| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | N/A |          N/A          |
-|       100 MB &nbsp;&nbsp;&nbsp;&nbsp; | 4 | 256 | 1 |           4           |
-|       250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 |           4           |
-|       500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 |           4           |
-|         1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 2 |           8           |
-|      2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 |           8           |
-|         5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | 5000 | 4 |          16           |
-|        10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | 10000 | 4 |          32           |
+| **Max DB size &nbsp;** | **Number of<br/>databases** | **Concurrent<br/>connections<br/>per database** | **CIDR<br/> allow rules** |
+|---|---|---|---|
+| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | 1 |
+| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 4-8 |
+| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 4-8 |
+| 2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | Unlimited | 4-8 |
+| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | Unlimited | 4-16 |
+| 12 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | Unlimited | 4-32 |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
-All paid (100 MB and above) fixed plans support replication and backups (daily and instant).
+All paid (250 MB and above) Fixed plans support replication and backups (daily and instant).
 
 If you need additional resources, you can update your subscription at any time.
 
@@ -52,13 +50,13 @@ To create a Fixed subscription:
 
 3.  Choose a **Cloud Provider** and a **Region**.
 
-    {{<image filename="images/rc/subscription-new-cloud-vendor-options-redis-7-preview.png" alt="Available cloud vendor options and Redis 7.2 preview." >}}{{</image>}}
+    {{<image filename="images/rc/subscription-new-cloud-vendor-options-redis-7-preview.png" alt="Available cloud vendor options and Redis 7.2 regions." >}}{{</image>}}
 
-    A [preview of Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) subscriptions is available for selected regions in AWS and GCP. Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
+    [Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) is available for selected regions in AWS and GCP. Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
     
-    If you want to try out Redis 7.2, turn on the **Redis 7.2 preview** toggle:
+    If you want to try out Redis 7.2, turn on the **Redis 7.2 regions** toggle to show the regions where it is available:
 
-    {{<image filename="images/rc/subscription-new-redis-7-preview-toggle.png" width="200px" alt="Turn on the Redis 7.2 preview toggle." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-new-redis-7-preview-toggle.png" width="200px" alt="Turn on the Redis 7.2 regions toggle." >}}{{< /image >}}
 
 4.  In the **Availability Settings** panel, select your replication settings.  
 
