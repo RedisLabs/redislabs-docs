@@ -2,13 +2,16 @@
 Title: Connect to Amazon Web Services Transit Gateway
 linkTitle: Transit Gateway
 description: 
-weight: 80
+weight: 60
 alwaysopen: false
 categories: ["RC"]
-aliases:
+aliases: [
+    /rc/security/aws-transit-gateway,
+    /rc/security/aws-transit-gateway.md
+]
 ---
 
-[Amazon Web Services (AWS) Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html) acts as a Regional virtual router for traffic flowing between your virtual private cloud(s) (VPCs) and on-premises networks. You can attach different resources to your Transit Gateway which include:
+[Amazon Web Services (AWS) Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html) acts as a regional virtual router for traffic flowing between your virtual private cloud(s) (VPCs) and on-premises networks. You can attach different resources to your Transit Gateway which include:
 
 - One or more VPCs
 - One or more virtual private network (VPN) connections

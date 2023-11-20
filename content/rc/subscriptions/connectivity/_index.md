@@ -24,3 +24,11 @@ VPC peering uses private IP addresses to allow network connections between two V
 You can connect your VPC in the Redis Cloud subscription to the VPC of your application. This lets your application connect securely to your Redis Cloud database using VPC peering to optimize the performance of your application.
 
 VPC Peering is only available for Flexible subscriptions.
+## [Transit Gateway]({{<relref "/rc/subscriptions/connectivity/aws-transit-gateway">}})
+
+[Amazon Web Services (AWS) Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html) acts as a regional virtual router for traffic flowing between your virtual private cloud(s) (VPCs) and on-premises networks. You can attach multiple different resources to a transit gateway, including your Redis Cloud and application VPCs.
+
+Transit Gateway supports complex network topologies and allows you to centrally control traffic between multiple VPCs. 
+
+Transit Gateway is only available for Flexible subscriptions hosted on Amazon Web Services.
+
