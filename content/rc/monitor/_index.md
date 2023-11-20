@@ -7,7 +7,7 @@ categories: ["RC"]
 aliases: 
 ---
 
-Here, you learn how to monitor Redis Cloud databases and subscriptions. 
+Here, you learn how to monitor Redis Cloud subscriptions. 
 
 ## [System Logs]({{<relref "rc/monitor/system-logs">}})
 
@@ -20,3 +20,5 @@ You can view usage reports to track the memory usage and shard usage of all your
 ## [Prometheus and Grafana]({{<relref "rc/monitor/usage-reports">}})
 
 You can use Prometheus and Grafana to collect and visualize metrics for Redis Cloud.
+
+For more information about database metrics, see [Monitor database performance]({{<relref "/rc/databases/monitor-performance">}}).

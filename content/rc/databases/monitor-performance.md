@@ -11,7 +11,7 @@ aliases: /rv/administration/configuration/monitoring-performance/
          /rc/databases/monitor-performance/
 ---
 
-Redis Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance crosses defined threshholds.
+Redis Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance crosses defined thresholds.
 
 ## View database metrics
 
@@ -60,7 +60,7 @@ Several metric graphs are available:
 | [Expired objects/sec]({{< relref "/rs/references/metrics/database-operations#expired-objectssec" >}}) | Number of expired objects per second. An expired object is an object with expired TTL that was deleted from the database. |
 | [Hit ratio]({{< relref "/rs/references/metrics/database-operations#hit-ratio" >}}) | Percent of operations on existing keys out of the total number database operations |
 
-For more detailed analysis, consider using [RedisInsight]({{< relref "/ri/" >}}) or [Prometheus and Grafana]({{< relref "/rc/cloud-integrations/prometheus-integration" >}}).
+For more detailed analysis, consider using [RedisInsight]({{< relref "/ri/" >}}) or [Prometheus and Grafana]({{< relref "/rc/monitor/prometheus-integration" >}}).
 
 ## Configure metric alerts
 
