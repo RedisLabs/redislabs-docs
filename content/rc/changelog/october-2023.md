@@ -13,7 +13,7 @@ aliases: []
 
 ### Cost report CSV download
 
-You can now download shard cost reports in CSV format from the [**Billing and Payments**]({{<relref "/rc/billing-and-payments">}}) and [**Usage Reports**]({{<relref "/rc/monitor/usage-reports">}}) pages.
+You can now download shard cost reports in CSV format from the [**Billing and Payments**]({{<relref "/rc/billing-and-payments">}}) and [**Usage Reports**]({{<relref "/rc/logs-reports/usage-reports">}}) pages.
 
 {{< embed-md "rc-cost-report-csv.md" >}}
 ### SAML account linking tokens

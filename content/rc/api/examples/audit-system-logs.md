@@ -16,7 +16,7 @@ To view the log, sign in to the Redis Cloud [admin console](https://app.redislab
 
 {{<image filename="images/rc/system-logs.png" alt="Choose the Logs command from the Redis Cloud admin console menu to view your subscription system log." width="75%">}}{{< /image >}} 
 
-To learn more, see [System logs]({{<relref "/rc/monitor/system-logs">}}).
+To learn more, see [System logs]({{<relref "/rc/logs-reports/system-logs">}}).
 
 
 ### System log REST API
