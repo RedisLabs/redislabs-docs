@@ -176,9 +176,9 @@ On the screen that appears, select the pencil icon of the user to modify the Red
 
 Now that you have a test IdP server and your user group ready, configure support for SAML in Redis Cloud.
 
-### Log in to your admin console
+### Log in to your Redis Cloud console
 
-Log in to your admin console at [https://app.redislabs.com/#/login](https://app.redislabs.com/#/login).
+Log in to your Redis Cloud console at [https://app.redislabs.com/#/login](https://app.redislabs.com/#/login).
 
 ### Activate SAML in access management
 
@@ -231,9 +231,9 @@ To use IdP-initiated SSO with identity providers, set the RelayState parameter t
 Replace `<ID>` so it matches the AssertionConsumerService Location URL ID (the content after the last forward slash "/"). To learn more about configuring service provider applications, see your identity provider's documentation.
 {{< /note >}}
 
-### Return to admin console
+### Return to Redis Cloud console
 
-1. Return to admin console and select **Activate**.
+1. Return to Redis Cloud console and select **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
@@ -245,7 +245,7 @@ Replace `<ID>` so it matches the AssertionConsumerService Location URL ID (the c
 
     {{<image filename="images/rc/saml/sm_saml_10.png" alt="" >}}{{</image>}}
 
-1. If the test succeeds, the next screen appears. Your local account is now considered a SAML account. Going forward, to log in to admin console, select **Sign in with SSO**.
+1. If the test succeeds, the next screen appears. Your local account is now considered a SAML account. Going forward, to log in to Redis Cloud console, select **Sign in with SSO**.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 

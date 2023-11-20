@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Cloud changelog (September 2023)
+Title: Redis Cloud changelog (September 2023)
 linktitle: September 2023
-description: New features, enhancements, and other changes added to Redis Enterprise Cloud during September 2023.
+description: New features, enhancements, and other changes added to Redis Cloud during September 2023.
 highlights: RESP protocol selection
 weight: 78
 alwaysopen: false

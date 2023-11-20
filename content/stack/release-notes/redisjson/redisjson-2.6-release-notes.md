@@ -12,10 +12,23 @@ aliases:
 ---
 ## Requirements
 
-RedisJSON v2.6.6 requires:
+RedisJSON v2.6.7 requires:
 
 - Minimum Redis compatibility version (database): 7.2
 - Minimum Redis Enterprise Software version (cluster): 7.2.4
+
+## v2.6.7 (October 2023)
+
+This is a maintenance release for RedisJSON 2.6.
+
+Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+  - [#1102](https://github.com/RedisJSON/RedisJSON/pull/1102) Added support for CBL-Mariner 2
+  - [#1099](https://github.com/RedisJSON/RedisJSON/pull/1099) Added support for RHEL9 and Rocky Linux 9
 
 ## v2.6.6 (August 2023)
 

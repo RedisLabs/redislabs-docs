@@ -148,9 +148,9 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ad_saml_16.png" alt="" >}}{{</image>}}
 
-## Step 4: Return to Redis Cloud admin console
+## Step 4: Return to Redis Cloud console
 
-1. Return to Redis Cloud admin console and select **Activate**.
+1. Return to Redis Cloud console and select **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
@@ -162,7 +162,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the *
 
     {{<image filename="images/rc/saml/ad_saml_19.png" alt="" >}}{{</image>}}
 
-1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. To log in to admin console going forward, select **Sign in with SSO**.
+1. If the test has succeeded, you will see the following screen. Your local account is now considered a SAML account. To log in to Redis Cloud console going forward, select **Sign in with SSO**.
 
     {{<image filename="images/rc/saml/sm_saml_11.png" alt="" >}}{{</image>}}
 

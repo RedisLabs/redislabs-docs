@@ -13,6 +13,10 @@ aliases: [
 ]
 ---
 
+## Multi-namespace management
+
+Before you can delete a namespace, you must remove the Redis custom resources ([REDB](#delete-a-database-redb), [REC](#delete-a-redis-enterprise-cluster-rec), and [operator](#delete-operator-from-one-namespace)) residing within a namespace before you can delete that namespace. Deleting namespace containing an REDB may cause errors or data loss.
+
 ## Delete a database (REDB)
 
 To delete a database managed by the Redis Enterprise Kubernetes operator, run `kubectl delete redb <your-db-name>` from your K8s cluster.

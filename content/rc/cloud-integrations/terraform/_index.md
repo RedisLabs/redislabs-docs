@@ -34,6 +34,8 @@ The Redis Cloud Terraform provider allows for the following data sources:
 - [Payment methods](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_payment_method)
 - [Supported cloud provider regions](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_regions)
 - [VPC peering connections](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_subscription_peerings)
+- ACL [roles](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_acl_role), [rules](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_acl_rule), and [users](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_acl_user)
+- [Cloud provider regions](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/data-sources/rediscloud_regions)
 
 It also allows you to create and manage the following resources:
 
@@ -45,6 +47,7 @@ It also allows you to create and manage the following resources:
 - [Active-Active databases](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/resources/rediscloud_active_active_subscription_database)
 - [Active-Active regions](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/resources/rediscloud_active_active_subscription_regions)
 - [Active-Active VPC peering connections](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/resources/rediscloud_active_active_subscription_peering)
+- ACL [rules](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/resources/rediscloud_acl_rule), [roles](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/resources/rediscloud_acl_role), and [users](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest/docs/resources/rediscloud_acl_user)
 
 
 ## More info

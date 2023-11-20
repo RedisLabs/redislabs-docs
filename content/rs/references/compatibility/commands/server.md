@@ -9,7 +9,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-The following tables show which open source Redis [server management commands](https://redis.io/commands/?group=server) are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Enterprise Cloud.
+The following tables show which open source Redis [server management commands](https://redis.io/commands/?group=server) are compatible with standard and Active-Active databases in Redis Enterprise Software and Redis Cloud.
 
 ## Access control commands
 

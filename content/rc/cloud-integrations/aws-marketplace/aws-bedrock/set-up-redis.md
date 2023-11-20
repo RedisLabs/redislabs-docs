@@ -26,13 +26,13 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
 ### Sign up for Redis Cloud using AWS Marketplace {#sign-up}
 
-1.  Select the [Redis Enterprise Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Enterprise Cloud - Flexible plan listing.
+1.  Select the [Redis Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Cloud - Flexible plan listing.
 
-    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Enterprise Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
 
-1.  Subscribe to Redis Enterprise Cloud - Flexible plan, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
+1.  Subscribe to Redis Cloud - Flexible plan, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
 
-    {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Enterprise Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
 
 1.  Sign in to the Redis Cloud [admin console](https://app.redislabs.com).
 
@@ -139,7 +139,7 @@ For your database to be fully secure, you must enable [Transport Layer Security 
 
     {{<image filename="images/rc/database-details-configuration-tab-security-tls-client-auth-certificate.png" width="300px" alt="Provide or generate a certificate for TLS client authentication." >}}{{< /image >}}
 
-    If you generate your certificate from the admin console, a ZIP file download will start. The download contains:
+    If you generate your certificate from the admin console, select **Download client certificate**. The download contains:
 
     - `redis_user.crt` – the certificate's public key.
 
@@ -151,7 +151,7 @@ For your database to be fully secure, you must enable [Transport Layer Security 
 
 ## Store database credentials in AWS secrets manager {#store-secret}
 
-In the [AWS Management Console](https://console.aws.amazon.com/), use the **Services** menu to locate and select **Security, Identity, and Compliance** > **Secrets Manager**. [Create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) with the following fields:
+In the [AWS Management Console](https://console.aws.amazon.com/), use the **Services** menu to locate and select **Security, Identity, and Compliance** > **Secrets Manager**. [Create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html) of type **Other type of secret** with the following key/value fields:
 
 - `username`: Database username
 - `password`: Database password
@@ -163,9 +163,9 @@ After you store this secret, you can view and copy the [Amazon Resource Name (AR
 
 ## Create a vector index in your database {#create-vector-index}
 
-After your database is set up, create an index with a vector field using [FT.CREATE](https://redis.io/commands/ft.create/) as your knowledge base for Amazon Bedrock.
+After your database is set up, create an index with a vector field using [FT.CREATE](https://redis.io/commands/ft.create/) as your knowledge base for Amazon Bedrock. You can accomplish this using **RedisInsight** or `redis-cli`.
 
-### [RedisInsight](https://redis.io/docs/ui/insight/)
+### [RedisInsight](https://redis.io/docs/connect/insight/)
 
 RedisInsight is a free Redis GUI that allows you to visualize and optimize your data in Redis. 
 
@@ -177,9 +177,7 @@ To create your vector index in RedisInsight:
 
     ![Connect button](/images/rc/connection-wizard-button.png#no-click "Connect button.")
 
-1. In the connection wizard, under **RedisInsight Desktop**, select **Public Endpoint**. Select **Copy** to copy the public endpoint's connection information.
-
-1. Open RedisInsight and select **Add Redis Database** or **Add connection details manually**. Enter the copied connection information into the **Host** field. RedisInsight automatically populates the rest of the fields needed to connect to the database as the default user.
+1. In the connection wizard, under **RedisInsight Desktop**, select **Public Endpoint**. Select **Open with RedisInsight** to connect to the database with RedisInsight.
 
 1. Select **Use TLS**. In the **CA Certificate** section, select **Add new CA certificate**. Give the certificate a name in the **Name** field, and enter the contents of `redis_ca.pem` into the **Certificate** field.
 

@@ -17,7 +17,7 @@ This command requires the account owner role.
 
 ## Step-by-step
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).
+1. Sign in to the [Redis Cloud console](https://app.redislabs.com/).
 
 1. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
@@ -35,21 +35,21 @@ This command requires the account owner role.
 
     {{<image filename="images/rc/button-danger-zone-delete.png" alt="The Delete button is located in the Danger zone section of the database Configuration tab." >}}{{< /image >}}
 
-1. When the **Delete database** dialog appears, use the **Delete database** button to confirm your choice.
-
-    {{<image filename="images/rc/button-database-delete.png" alt="The Delete button is located in the Danger zone section of the database Configuration tab." >}}{{< /image >}}
-
-     If you only have one database in your subscription, you can delete both the database and the subscription from the **Delete database** confirmation dialog:
-        
-    - **Delete both** deletes both the database and the subscription.
+1. The **Delete database** confirmation dialog appears. If this database is the only one in the subscription, you can also delete the subscription at this time.
     
-    - **Delete database** deletes the database but keeps the subscription.
-
-    {{<image filename="images/rc/database-delete-last-dialog.png" alt="A different delete database confirmation dialog asks you to consider deleting the subscription as well.">}}{{< /image >}}
+    - Select **Delete my subscription as well** to delete both the database and the subscription.
+    
+    - Clear **Delete my subscription as well** to delete the database but keep the subscription.
 
     {{< note >}}
 You will continue to be charged for your subscription until you delete it, even if there are no databases in your subscription.
     {{< /note >}}
+
+    {{<image filename="images/rc/database-delete-last-dialog.png" alt="A different delete database confirmation dialog asks you to consider deleting the subscription as well.">}}{{< /image >}}
+
+1. To confirm your choice, use the **Delete database** button or the **Delete both** button if the delete subscription checkbox is selected.
+
+    {{<image filename="images/rc/button-database-delete.png" alt="The Delete database button is located in the Danger zone section of the database Configuration tab." >}}{{< /image >}} {{<image filename="images/rc/button-both-delete.png" alt="The Delete both button is located in the Danger zone section of the database Configuration tab." >}}{{< /image >}}
 
 
 When the operation completes, the database and its data are deleted.

@@ -42,29 +42,29 @@ Consider using VPC peering and Private Service Connect in parallel for the follo
 
 To set up Private Service Connect, you need to:
 
-1. [Configure Private Service Connect](#configure-psc) in the Redis Cloud admin console.
+1. [Configure Private Service Connect](#configure-psc) in the Redis Cloud console.
 
 1. [Create Private Service Connect endpoints](#create-endpoints) in the application VPC.
 
-1. From the Redis Cloud admin console, review and [accept the Private Service Connect endpoint connection](#accept-psc).
+1. From the Redis Cloud console, review and [accept the Private Service Connect endpoint connection](#accept-psc).
 
 ### Configure PSC {#configure-psc}
 
 First, configure Private Service Connect in Redis Cloud:
 
-1. Select **Subscriptions** from the Redis Cloud [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
+1. Select **Subscriptions** from the [Redis Cloud console](https://app.redislabs.com/) menu and then select your subscription from the list.
 
-1. Select the **Connectivity** tab and then **Private Service Connect**.
+2. Select the **Connectivity** tab and then **Private Service Connect**.
 
-1. Select the **Create connection** button:
+3. Select the **Create connection** button:
 
     {{<image filename="images/rc/button-subscription-connectivity-psc-create-connection.png" width="140px" alt="Use the Create connection button to configure a new PSC endpoint." >}}{{< /image >}}
 
-1. Read the **Latency and cost impact** message and select **Accept and continue**:
+4. Read the **Latency and cost impact** message and select **Accept and continue**:
 
     {{<image filename="images/rc/button-subscription-connectivity-psc-accept-continue.png" width="140px" alt="Use the Accept and continue button to acknowledge PSC's impact on latency and cost." >}}{{< /image >}}
 
-1. For **Create connection**, enter the following **Endpoint details**:
+5. For **Create connection**, enter the following **Endpoint details**:
 
     | Setting&nbsp;name | Description |
     |-------------------|-------------|
@@ -73,15 +73,15 @@ First, configure Private Service Connect in Redis Cloud:
     | _Subnet name_ | Name of your VPC's subnet of IP address ranges |
     | _Endpoint name_ | Prefix used to create PSC endpoints in the consumer application VPC, so endpoint names appear in Google Cloud as _endpoint name prefix + endpoint number_ |
 
-1. Continue to the **Add connections** step:
+6. Continue to the **Add connections** step:
     
     {{<image filename="images/rc/button-subscription-connectivity-psc-continue.png" width="100px" alt="Use the Continue button to proceed to the Add connections step." >}}{{< /image >}}
 
-1. Select either **Bash Shell** or **PowerShell** and then download or copy the provided `gcloud` script for later:
+7. Select either **Bash Shell** or **PowerShell** and then download or copy the provided `gcloud` script for later:
 
     {{<image filename="images/rc/subscription-connectivity-psc-gcloud-script.png" width="350px" alt="Use the Download or Copy buttons to save the gcloud script for later use." >}}{{< /image >}}
 
-1. Select **Continue** to save this endpoint configuration:
+8. Select **Continue** to save this endpoint configuration:
 
     {{<image filename="images/rc/button-subscription-connectivity-psc-continue.png" width="100px" alt="Use the Continue button to save the PSC endpoint configuration." >}}{{< /image >}}
 
@@ -111,13 +111,13 @@ To ensure the `gcloud` script configures the endpoints correctly, do not make an
 
 The `gcloud` script creates 40 endpoints in the consumer application VPC. Each endpoint appears in Google Cloud as the configured endpoint name followed by the endpoint number.
 
-Redis Cloud displays this collection of endpoints as a single endpoint in the admin console.
+Redis Cloud displays this collection of endpoints as a single endpoint in the Redis Cloud console.
 
 ### Accept PSC connection {#accept-psc}
 
 After the `gcloud` script finishes creating the Private Service Connect endpoints, you need to accept the connection in Redis Cloud:
 
-1. In the Redis Cloud admin console, return to your subscription's **Connectivity > Private Service Connect** screen.
+1. In the Redis Cloud console, return to your subscription's **Connectivity > Private Service Connect** screen.
 
 1. Find your pending endpoint connection in the list and select **Accept**:
 
@@ -140,7 +140,7 @@ Once your Private Service Connect endpoint is active, you can connect your appli
 
 To deactivate Private Service Connect for your subscription:
 
-1. Select **Subscriptions** from the Redis Cloud [admin console](https://app.redislabs.com/) menu and then select your subscription from the list.
+1. Select **Subscriptions** from the [Redis Cloud console](https://app.redislabs.com/) menu and then select your subscription from the list.
 
 1. Select the **Connectivity** tab and then **Private Service Connect**.
 

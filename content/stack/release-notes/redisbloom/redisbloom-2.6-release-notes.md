@@ -12,10 +12,23 @@ aliases:
 ---
 ## Requirements
 
-RedisBloom v2.6.3 requires:
+RedisBloom v2.6.8 requires:
 
 - Minimum Redis compatibility version (database): 7.2
 - Minimum Redis Enterprise Software version (cluster): 7.2.4
+
+## v2.6.8 (October 2023)
+
+This is a maintenance release for RedisBloom 2.6.
+
+Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+  - [#684](https://github.com/RedisBloom/RedisBloom/pull/684), [#685](https://github.com/RedisBloom/RedisBloom/pull/685) Added support for CBL-Mariner 2
+  - [#677](https://github.com/RedisBloom/RedisBloom/pull/677), [#678](https://github.com/RedisBloom/RedisBloom/pull/678) Added support for Rocky Linux 9 and RHEL9
 
 ## v2.6 GA (v2.6.3) (July 2023)
 

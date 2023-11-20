@@ -167,9 +167,9 @@ To use IdP-initiated SSO with certain identity providers, you also need to set t
 Replace `ID` so it matches the `AssertionConsumerService` Location URL ID (the content after the last forward slash "/"). To learn more about how to configure service provider apps, see your identity provider’s documentation.
 {{</ note >}}
 
-## Step 4: Return to the Redis Cloud admin console
+## Step 4: Return to the Redis Cloud console
 
-1. Return to the Redis Cloud admin console and select **Activate**.
+1. Return to the Redis Cloud console and select **Activate**.
 
     {{<image filename="images/rc/saml/sm_saml_8.png" alt="" >}}{{</image>}}
 
@@ -181,7 +181,7 @@ Replace `ID` so it matches the `AssertionConsumerService` Location URL ID (the c
 
     {{<image filename="images/rc/saml/auth0_saml_12.png" alt="" >}}{{</image>}}
 
-1. If the test has succeeded, you will see the the admin console screen. Your local account is now considered a SAML account. To log in to the admin console from now on, click on **Sign in with SSO**.
+1. If the test has succeeded, you will see the the Redis Cloud console screen. Your local account is now considered a SAML account. To log in to the Redis Cloud console from now on, click on **Sign in with SSO**.
 
 1. Enter your SAML email and select **Login**. 
 

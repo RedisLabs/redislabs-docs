@@ -112,9 +112,9 @@ especially if they are directly connected on IP addresses that have changed.
 Redis Enterprise supports several topologies that allow inter cluster replication, these include [Active/Passive]({{<relref "/rs/databases/import-export/replica-of/">}}) and [Active/Active]({{<relref "/rs/databases/active-active/">}}) for deployment options.
 When your Redis Enterprise software clusters are located behind load balancers, you must allow some network services to be open and defined in the load balancers to allow the replication to work.
 
-### Active Passive
+### Active-Passive
 
-For Active Passive communication to work, you will need to expose database port(s) locally in each cluster (as defined above) but also allow these ports through firewalls that may be positioned between the clusters.
+For Active-Passive communication to work, you will need to expose database port(s) locally in each cluster (as defined above) but also allow these ports through firewalls that may be positioned between the clusters.
 
 ### Active-Active
 

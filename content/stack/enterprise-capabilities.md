@@ -13,7 +13,7 @@ This article describes compatibility between Redis Enterprise features and Redis
 
 ## Supported Redis Stack features
 
-The following table shows which Redis Stack features are supported by Redis Enterprise Software and Redis Enterprise Cloud.
+The following table shows which Redis Stack features are supported by Redis Enterprise Software and Redis Cloud.
 
 | Feature | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
 |:-------|:-------------------------|:-----------------------|

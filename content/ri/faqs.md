@@ -46,11 +46,11 @@ Currently, RedisInsight supports single node redis instances. Redis Cluster supp
 
 ### Do you support Redis Enterprise?
 
-Yes, RedisInsight is fully compatible with Redis Enterprise Software and Redis Enterprise Cloud.
+Yes, RedisInsight is fully compatible with Redis Enterprise Software and Redis Cloud.
 
 ### What cloud providers do you support?
 
-We support Redis Enterprise Cloud, AWS Elasticache, and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based Redis server. 
+We support Redis Cloud, AWS Elasticache, and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based Redis server. 
 
 Send us an [email](mailto:redisinsight@redislabs.com) if you would like to use RedisInsight on a cloud provider that we haven't listed.
 

@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-Learn which open source Redis commands are compatible with Redis Enterprise Software and [Redis Enterprise Cloud]({{<relref "/rc">}}).
+Learn which open source Redis commands are compatible with Redis Enterprise Software and [Redis Cloud]({{<relref "/rc">}}).
 
 Select a command group for more details about compatibility with standard and Active-Active Redis Enterprise.
 

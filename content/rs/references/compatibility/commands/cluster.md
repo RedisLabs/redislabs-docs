@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-[Clustering in Redis Enterprise Software]({{<relref "/rs/databases/durability-ha/clustering">}}) and [Redis Enterprise Cloud]({{<relref "/rc/databases/configuration/clustering">}}) differs from the [open source Redis cluster](https://redis.io/docs/manual/scaling/) and works with all standard Redis clients.
+[Clustering in Redis Enterprise Software]({{<relref "/rs/databases/durability-ha/clustering">}}) and [Redis Cloud]({{<relref "/rc/databases/configuration/clustering">}}) differs from the [open source Redis cluster](https://redis.io/docs/manual/scaling/) and works with all standard Redis clients.
 
 Redis Enterprise blocks most [cluster commands](https://redis.io/commands/?group=cluster). If you try to use a blocked cluster command, it returns an error.
 
