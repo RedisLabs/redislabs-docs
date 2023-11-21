@@ -18,12 +18,12 @@ From **Access Control** > **Roles**, you can create custom user roles that deter
 
 Redis Enterprise Software includes five predefined roles that determine a user's level of access to the admin console and [REST API]({{<relref "/rs/references/rest-api">}}).
 
-1. **None** - Cannot access the admin console or use the REST API
 1. **DB Viewer** - Read database settings
 1. **DB Member** - Administer databases
 1. **Cluster Viewer** - Read cluster settings
 1. **Cluster Member** - Administer the cluster
 1. **Admin** - Full cluster access
+2. **None** - For data access only - cannot access the admin console or use the REST API
 
 For more details about the privileges granted by each of these roles, see [admin console permissions]({{<relref "/rs/security/access-control/admin-console-access#admin-console-permissions">}}) or [REST API permissions]({{<relref "/rs/references/rest-api/permissions">}}).
 
