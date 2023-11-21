@@ -14,7 +14,7 @@ aliases: /rs/administering/designing-production/security/ldap-integration/,
 
 Redis Enterprise Software supports [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization through its [role-based access controls]({{<relref "rs/security/access-control">}}) (RBAC).  You can use LDAP to authorize access to the admin console and to control database access.
 
-You can configure LDAP roles using the Redis Enterprise admin console or REST API.
+You can configure LDAP roles using the Redis Enterprise admin console or [REST API]({{<relref "/rs/references/rest-api/requests/ldap_mappings/">}}).
 
 ## How it works
 
