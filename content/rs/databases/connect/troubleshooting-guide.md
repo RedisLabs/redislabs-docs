@@ -199,6 +199,12 @@ Review system logs including the syslog or journal for any error messages, warni
     [`PING`](https://redis.io/commands/ping/):
 
     ```sh
+    redis-cli -h <endpoint> -p <port> -a <password> PING
+    ```
+   
+    or if TLS is enabled:
+    
+    ```sh
     redis-cli -h <endpoint> -p <port> -a <password> --tls --insecure --cert --key PING
     ```
 
