@@ -68,7 +68,7 @@ The example command runs the Docker container with Redis Enterprise Software on 
 
 - Port 9443 for [REST API]({{<relref "/rs/references/rest-api">}}) connections
 
-- Port 12000 for Redis client connections
+- Port 12000 configured Redis database port allowing client connections
 
 You can publish other [ports]({{< relref "/rs/networking/port-configurations.md" >}})
 with `-p <host_port>:<container_port>` or use the `--network host` option to open all ports to the host network.
