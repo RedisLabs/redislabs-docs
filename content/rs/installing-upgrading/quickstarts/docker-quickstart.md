@@ -21,7 +21,7 @@ aliases: [
 
 ---
 {{< warning >}}
-Docker containers are currently only supported for development and test environments, not for production.
+Docker containers are currently only supported for development and test environments, not for production. Use [Redis Enterprise on Kubernetes](<relref "/rs-docker-bug-bash/kubernetes/">) for a supported containerized deployment.
 {{< /warning >}}
 
 For testing purposes, you can run Redis Enterprise Software on Docker containers on
@@ -33,47 +33,13 @@ To get started with a single Redis Enterprise Software container:
 
 1. [Install Docker](#install-docker) for your operating system
 
-1. [Run the Redis Enterprise Software Docker container](#run-the-container)
+2. [Run the Redis Enterprise Software Docker container](#run-the-container)
 
-1. [Set up a cluster](#set-up-a-cluster)
+3. [Set up a cluster](#set-up-a-cluster)
 
-1. [Create a new database](#create-a-database)
+4. [Create a new database](#create-a-database)
 
-1. [Connect to your database](#connect-to-your-database)
-
-## Deployment topologies
-
-When deploying Redis Enterprise Software using Docker, several common topologies are available, according to your requirements:
-
-- [Single-node cluster](#single-node) – For local development or functional testing
-
-- [Multi-node cluster on a single host](#multi-node-one-host) – For a small-scale deployment that is similar to production
-
-- [Multi-node cluster with multiple hosts](#multi-node-multi-host) – For more predictable performance or high availability compared to single-host deployments
-
-### Single node {#single-node}
-
-The simplest topology is to run a single-node Redis Enterprise Software cluster with a single container on a single host machine. You can use this topology for local development or functional testing.
-
-Single-node clusters have limited functionality. For example, Redis Enterprise Software can't use replication or protect against failures if the cluster has only one node.
-
-![0-2](/images/rs/RS-Docker-container.png)
-
-### Multiple nodes on one host {#multi-node-one-host}
-
-You can create a multi-node Redis Enterprise Software cluster by deploying multiple containers to a single host machine. The resulting cluster is scale minimized but similar to production deployments.
-
-However, if you need predictable performance or high availability, don't host multiple nodes in containers on the same physical host.
-
-![Docker Redis Enterprise Software Cluster](/images/rs/RS-Docker-cluster-single-host.png)
-
-### Multiple nodes and hosts {#multi-node-multi-host}
-
-You can also create a multi-node Redis Enterprise Software cluster with multiple containers by deploying each container to a different host machine.
-
-This topology minimizes interference between containers, so Redis Enterprise Software performs more predictably than if you host multiple nodes on a single machine.
-
-![0](/images/rs/RS-Docker-cluster-multi-host.png)
+5. [Connect to your database](#connect-to-your-database)
 
 ## Install Docker
 
@@ -93,7 +59,7 @@ On Windows, make sure Docker is configured to run Linux-based containers.
 {{< /note >}}
 
 ```sh
-docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
+docker run -d --cap-add sys_resource --name RE -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
 The example command runs the Docker container with Redis Enterprise Software on `localhost` and opens the following ports: 
@@ -144,9 +110,49 @@ OK
 The database you created uses port `12000` which was also mapped from the docker container back to the host environment.  This will allow you to use any method you have available locally to [connect to a Redis database]({{<relref "/rs/databases/connect/">}}).  Use `localhost` as the `host` and `12000` as the port.
 
 
+## Testing Different Topologies
+
+{{< warning >}}
+Docker containers are currently only supported for development and test environments, not for production. Use [Redis Enterprise on Kubernetes](<relref "/rs-docker-bug-bash/kubernetes/">) for a supported containerized deployment.
+{{< /warning >}}
+
+When deploying Redis Enterprise Software using Docker for testing, several common topologies are available, according to your requirements:
+
+- [Single-node cluster](#single-node) – For local development or functional testing
+
+- [Multi-node cluster on a single host](#multi-node-one-host) – For a small-scale deployment that is similar to production
+
+- [Multi-node cluster with multiple hosts](#multi-node-multi-host) – For more predictable performance or high availability compared to single-host deployments
+
+### Single node {#single-node}
+
+The simplest topology is to run a single-node Redis Enterprise Software cluster with a single container on a single host machine. You can use this topology for local development or functional testing.
+
+Single-node clusters have limited functionality. For example, Redis Enterprise Software can't use replication or protect against failures if the cluster has only one node.
+
+![0-2](/images/rs/RS-Docker-container.png)
+
+### Multiple nodes on one host {#multi-node-one-host}
+
+You can create a multi-node Redis Enterprise Software cluster by deploying multiple containers to a single host machine. The resulting cluster is scale minimized but similar to production deployments.
+
+However, this will also have several limitations.  For example, you cannot map the same port on multiple containers on the same host.
+
+![Docker Redis Enterprise Software Cluster](/images/rs/RS-Docker-cluster-single-host.png)
+
+### Multiple nodes and hosts {#multi-node-multi-host}
+
+You can also create a multi-node Redis Enterprise Software cluster with multiple containers by deploying each container to a different host machine.
+
+This topology minimizes interference between containers, allowing for the testing of more Redis Enterprise Software features.
+
+![0](/images/rs/RS-Docker-cluster-multi-host.png)
+
+
 ## Next steps
 
 - Connect to your Redis database with a [Redis client](https://redis.io/clients) and start adding data.
 
 - Use the [`memtier_benchmark` quickstart]({{< relref "/rs/clusters/optimize/memtier-benchmark.md" >}}) to check the cluster performance.
 
+- Redis Enterprise Support
