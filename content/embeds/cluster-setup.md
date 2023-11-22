@@ -28,6 +28,8 @@ the new Redis Enterprise Software Cluster Manager UI. The cluster generates self
 
 5. On the node setup screen, select **Create cluster** to accept the defaults.
 
-{{<image filename="images/rs/screenshots/cluster/setup/node-settings.png" alt="Configure the node specific settings." >}}{{</image>}}
+    {{<image filename="images/rs/screenshots/cluster/setup/node-settings.png" alt="Configure the node specific settings." >}}{{</image>}}
 
 6. Select **OK** to acknowledge the replacement of the HTTPS TLS certificate on the node.  If you receive a browser warning, you can proceed safely.
+
+    {{<image filename="images/rs/screenshots/cluster/setup/https-page-refresh-modal.png" alt="Modal shown when a page refresh is needed because the certificates have been updated." >}}{{</image>}}
