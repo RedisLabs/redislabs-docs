@@ -121,64 +121,28 @@ with `-p <host_port>:<container_port>` or use the `--network host` option to ope
 
 ## Connect to your database
 
-After you create the Redis database, you can start storing data.
+After you create the Redis database, you can connect to it begin storing data.
 
-You can test connecting to your database with:
 
-- [`redis-cli`](#connecting-using-rediscli)
-- [Python application](#python)
+### Using redis-cli Inside Docker {#connect-inside-docker}
 
-### redis-cli {#connecting-using-rediscli}
+Every installation of Redis Enterprise includes [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool to interact with your Redis database. You could leverage this for connecting to your database from within the same docker network.
 
-You can use the [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool to interact with your Redis database.
+Use [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec/) to start an interactive `redis-cli` session in the running Redis Enterprise Software container connecting to the specific host and port for your database:
 
-1. Use [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec/) to start an interactive shell session in the Redis Enterprise Software container:
+```sh
+docker exec -it redis-cli -h redis-12000.cluster.local -p 12000
 
-    ```sh
-    docker exec -it rp bash
-    ```
+127.0.0.1:12000> SET key1 123
+OK
+127.0.0.1:12000> GET key1
+"123"
+```
 
-1. Run `redis-cli` and provide the port number with `-p` to connect to the database. Then use [`SET`](https://redis.io/commands/set/) to store a key and [`GET`](https://redis.io/commands/get/) to retrieve it.
+### Connecting from the Host Environment {#connect-outside-docker}
 
-    ```sh
-    $ /opt/redislabs/bin/redis-cli -p 12000
-    127.0.0.1:12000> SET key1 123
-    OK
-    127.0.0.1:12000> GET key1
-    "123"
-    ```
+The database you created uses port `12000` which was also mapped from the docker container back to the host environment.  This will allow you to use any method you have available locally to [connect to a Redis database]({{<relref "/rs/databases/connect/">}}).  Use `localhost` as the `host` and `12000` as the port.
 
-### Python
-
-You can also run a Python application on the host machine to connect to your database.
-
-{{< note >}}
-The following section assumes you already have Python
-and the Redis Python client [`redis-py`](https://github.com/redis/redis-py) set up on the host machine running the container.
-For `redis-py` installation instructions, see the [Python client quickstart](https://redis.io/docs/clients/python/).
-{{< /note >}}
-
-1. Create a new file called `redis_test.py` and add the following code:
-
-    ```python
-    import redis
-
-    r = redis.StrictRedis(host='localhost', port=12000, db=0)
-    print ("set key1 123")
-    print (r.set('key1', '123'))
-    print ("get key1")
-    print(r.get('key1'))
-    ```
-
-1. Run `redis_test.py` to store a key in your database and then retrieve it:
-
-    ```sh
-    $ python redis_test.py
-    set key1 123
-    True
-    get key1
-    123
-    ```
 
 ## Next steps
 
