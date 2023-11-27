@@ -38,7 +38,7 @@ You can use the admin console or the `rladmin` utility to enable OSS Cluster API
 
 ### Admin console
 
-Using the Admin console UI with ensure that [prerequisites]({{<relref "/rs/databases/configure/oss-cluster-api#prerequisites">}}) are met.
+Using the Admin console UI to enable OSS Cluster API will automatically configure [prerequisites]({{<relref "/rs/databases/configure/oss-cluster-api#prerequisites">}}).
 
 To enable the OSS Cluster API from the admin console for an existing database:
 
