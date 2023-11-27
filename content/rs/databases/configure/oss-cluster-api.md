@@ -91,7 +91,7 @@ Here's the basic process:
     $ crdb-cli crdb create --name <name> \
        --memory-size 10g --port <port> \
        --sharding true --shards-count 2  \
-       --replication true --oss-cluster true \
+       --replication true --oss-cluster true --proxy-policy all-master-shards \
        --instance fqdn=<fqdn>,username=<user>,password=<pass> \
        --instance fqdn=<fqdn>,username=<user>,password=<pass> \
        --instance fqdn=<fqdn>,username=<user>,password=<pass>
