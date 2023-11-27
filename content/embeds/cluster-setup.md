@@ -27,6 +27,10 @@ the new Redis Enterprise Software Cluster Manager UI.
 
     {{<image filename="images/rs/screenshots/cluster/setup/config-cluster.png" alt="Configure the cluster FQDN." >}}{{</image>}}
 
+    {{< warning >}}
+If the FQDN is `cluster.local`, you cannot configure DNS. You cannot change the FQDN after cluster creation.
+    {{< /warning >}}
+
 1. On the node setup screen, select **Create cluster**.
 
 1. Select **OK** to acknowledge the replacement of the HTTPS TLS certificate on the node.  If you receive a browser warning, you can proceed safely.
