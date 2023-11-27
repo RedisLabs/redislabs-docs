@@ -116,7 +116,7 @@ from redis.sentinel import Sentinel
 sentinel_list = [
 ('10.0.0.44', 8001),
 ('10.0.0.45', 8001),
-('10.0.0.45', 8001)
+('10.0.0.46', 8001)
 ]
 
 # change this to the db name you want to connect
@@ -126,9 +126,9 @@ sentinel = Sentinel(sentinel_list, socket_timeout=0.1)
 r = sentinel.master_for(db_name, socket_timeout=0.1)
 
 # set key "foo" to value "bar"
-print r.set('foo', 'bar')
+print(r.set('foo', 'bar'))
 # set value for key "foo"
-print r.get('foo')
+print(r.get('foo'))
 ```
 
 For more `redis-py` connection examples, see the [`redis-py` developer documentation](https://redis-py.readthedocs.io/en/stable/examples/connection_examples.html).
