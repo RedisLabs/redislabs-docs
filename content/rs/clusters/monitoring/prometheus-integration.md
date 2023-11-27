@@ -138,7 +138,6 @@ We recommend running Prometheus in Docker only for development and testing.
 
         - Name: `redis-enterprise`
         - URL: `http://<your prometheus server name>:9090`
-        - Access: `Server`
 
         {{<image filename="images/rs/prometheus-connection.png" alt="The Prometheus connection form in Grafana.">}}{{< /image >}}
 
