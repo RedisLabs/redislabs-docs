@@ -183,9 +183,9 @@ ports unfiltered, you can test the configuration. Who are the
 nameservers in charge of the resolution in the cluster:
 
 ```sh
-dig ns demo.francois.demo-rlec.redislabs.com
+dig ns test.demo-rlec.redislabs.com
 
-; <<>> DiG 9.9.5-9+deb8u9-Debian <<>> ns demo.francois.demo-rlec.redislabs.com
+; <<>> DiG 9.9.5-9+deb8u9-Debian <<>> ns test.demo-rlec.redislabs.com
 ;; global options: +cmd
 ;; Got answer:
 ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25061
@@ -194,12 +194,12 @@ dig ns demo.francois.demo-rlec.redislabs.com
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 4096
 ;; QUESTION SECTION:
-;demo.francois.demo-rlec.redislabs.com. IN NS
+;test.demo-rlec.redislabs.com. IN NS
 
 ;; ANSWER SECTION:
-demo.francois.demo-rlec.redislabs.com. 3409 IN NS ns2.demo.francois.demo-rlec.redislabs.com.
-demo.francois.demo-rlec.redislabs.com. 3409 IN NS ns1.demo.francois.demo-rlec.redislabs.com.
-demo.francois.demo-rlec.redislabs.com. 3409 IN NS ns3.demo.francois.demo-rlec.redislabs.com.
+test.demo-rlec.redislabs.com. 3409 IN NS node2.test.demo-rlec.redislabs.com.
+test.demo-rlec.redislabs.com. 3409 IN NS node1.test.demo-rlec.redislabs.com.
+test.demo-rlec.redislabs.com. 3409 IN NS node3.test.demo-rlec.redislabs.com.
 
 ;; Query time: 31 msec
 ;; SERVER: 192.168.1.254#53(192.168.1.254)
