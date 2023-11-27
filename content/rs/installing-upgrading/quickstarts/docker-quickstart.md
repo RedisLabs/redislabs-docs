@@ -92,7 +92,7 @@ After you create the Redis database, you can connect to it begin storing data.
 
 ### Using redis-cli Inside Docker {#connect-inside-docker}
 
-Every installation of Redis Enterprise includes [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) command-line tool to interact with your Redis database. You could leverage this for connecting to your database from within the same docker network.
+Every installation of Redis Enterprise includes [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}) a command-line tool to interact with your Redis database. You can leverage this for connecting to your database from within the same docker network.
 
 Use [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec/) to start an interactive `redis-cli` session in the running Redis Enterprise Software container connecting to the specific host and port for your database:
 
