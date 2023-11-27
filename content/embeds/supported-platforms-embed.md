@@ -65,8 +65,7 @@ To avoid issues with SHA1 certificates, replace them with new certificates that 
 
 ### Upgrade RHEL when using modules
 
-RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules
-This is due to binary differences in modules between the two operating systems. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
+RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules, due to binary differences in modules between the two operating systems. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 This limitation is fixed for clusters using Redis Enterprise Software version 7.2.4 and later.
 
