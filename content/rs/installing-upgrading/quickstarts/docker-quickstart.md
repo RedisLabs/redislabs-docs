@@ -142,7 +142,7 @@ However, this will also have several limitations.  For example, you cannot map t
 
 ### Multiple nodes and hosts {#multi-node-multi-host}
 
-You can also create a multi-node Redis Enterprise Software cluster with multiple containers by deploying each container to a different host machine.
+You can create a multi-node Redis Enterprise Software cluster with multiple containers by deploying each container to a different host machine.
 
 This topology minimizes interference between containers, allowing for the testing of more Redis Enterprise Software features.
 
