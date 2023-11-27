@@ -13,9 +13,7 @@ aliases: [
         /rs/networking/configuring-aws-route53-dns-redis-enterprise/,
         ]
 ---
-Redis Enterprise Software requires DNS to be properly configured to
-achieve high availability and fail-over regardless of where it is
-installed.
+Redis Enterprise Software utilizes DNS to achieve high availability and fail-over regardless of where it is installed.
 
 Here, you learn how to configure AWS Route53 DNS resolution.
 
@@ -80,7 +78,7 @@ If you would like to watch a video on the process, here you go.
 
 The first step is to connect your browser to AWS and to login into the
 administration interface. Then, you have to go in the *Services* menu at
-the top of the page and click on the *Route53* menu item:
+the top of the page, select **All Services** and finally select the *Route53* menu item:
 
 ![01-ServicesRoute53-en](/images/rs/01-ServicesRoute53-en.png)
 
