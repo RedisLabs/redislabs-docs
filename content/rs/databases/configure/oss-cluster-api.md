@@ -14,7 +14,8 @@ aliases: [
     /rs/databases/configure/oss-cluster-api/,
 ]
 ---
-{{< embed-md "oss-cluster-api-intro.md"  >}}
+
+Review the [OSS Cluster API Architecture]({{<relref "/rs/clusters/optimize/oss-cluster-api">}}) to determine if this feature should be enabled for your database.
 
 ## Prerequisites
 
