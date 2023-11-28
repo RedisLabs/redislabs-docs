@@ -1,6 +1,6 @@
 ---
 Title: Update database ACLs
-description: Describes how to use the admin console to update database access control lists (ACLs) to authorize access to roles authorizing LDAP user access.
+description: Describes how to use the Cluster Manager UI to update database access control lists (ACLs) to authorize access to roles authorizing LDAP user access.
 weight: 45
 alwaysopen: false
 categories: ["RS"]
@@ -11,7 +11,7 @@ aliases: [
 
 To grant LDAP users access to a database, assign the mapped access role to the access control list (ACL) for the database.
 
-1.  From the admin console menu, select **Databases** and then select the database from the list.
+1.  In the Cluster Manager UI, go to **Databases**, then select the database from the list.
 
 1.  From the **Security** tab, select the **Edit** button.
 

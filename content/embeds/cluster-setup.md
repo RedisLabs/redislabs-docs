@@ -26,7 +26,11 @@ the new Redis Enterprise Software Cluster Manager UI. The cluster generates self
 
     {{<image filename="images/rs/screenshots/cluster/setup/config-cluster.png" alt="Configure the cluster FQDN." >}}{{</image>}}
 
-5. On the node setup screen, select **Create cluster** to accept the defaults.
+    {{< warning >}}
+If the FQDN is `cluster.local`, you cannot configure DNS. You cannot change the FQDN after cluster creation.
+    {{< /warning >}}
+
+1. On the node setup screen, select **Create cluster** to accept the defaults.
 
     {{<image filename="images/rs/screenshots/cluster/setup/node-settings.png" alt="Configure the node specific settings." >}}{{</image>}}
 

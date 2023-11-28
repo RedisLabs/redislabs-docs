@@ -79,9 +79,9 @@ You can find the instructions to configure redis-py on the [github page for redi
     import redis
 
     r = redis.StrictRedis(host='<host>', port=<port>)
-    print ("set key1 123")
-    print (r.set('key1', '123'))
-    print ("get key1")
+    print("set key1 123")
+    print(r.set('key1', '123'))
+    print("get key1")
     print(r.get('key1'))
     ```
 
