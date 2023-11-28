@@ -117,6 +117,8 @@ To configure this grace period from rladmin, run:
 rladmin tune cluster slave_ha_grace_period <time_in_seconds>
 ```
 
+{{<note>}}The default grace period is 30 minutes for containerized applications using [Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/">}}).{{</note>}}
+
 ### Shard priority
 
 Replica shard migration is based on priority.  When memory resources are limited, the most important replica shards are migrated first:
