@@ -18,6 +18,10 @@ These metrics are additional metrics for [Auto Tiering ]({{< relref "/rs/databas
 
 Percent of keys whose values are stored in RAM.
 
+A low percentage alert means most of the RAM is used for holding keys and not much RAM is available for values. This can be due to a high number of small keys or a few large keys. Inserting more keys might cause the database to run out of memory.
+
+If the percent of values in RAM is low for a subset of the database's shards, it might also indicate an unbalanced database.
+
 **Components measured**: Database and Shard
 
 #### Values in flash
