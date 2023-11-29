@@ -40,6 +40,20 @@ To set manual maintenance windows for a single flexible subscription:
 
 1. Click **Save**.
 
+## Skip maintenance temporarily
 
+To skip maintenance temporarily for a subscription:
+
+1. From the [admin console](https://app.redislabs.com/), select the **Subscriptions** menu and then select your subscription from the list.
+
+1. Select the **Overview** tab.
+
+1. In the **Maintenance Windows** panel, select **Skip the next 7 days**.
+
+1. Click **Continue** to confirm your selection.
+
+You will only be allowed to skip maintenance twice in one month. 
+
+During the skipped maintenance period, Redis will not perform any minor or major upgrades. Redis may perform [urgent maintenance]({{<relref "/rc/subscriptions/maintenance#urgent-maintenance">}}) on your subscription, but only if it is absolutely necessary.
 
 
