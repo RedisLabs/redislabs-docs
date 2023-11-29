@@ -238,7 +238,7 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
     As a workaround, start `dmcproxy` manually:
 
     ```sh
-    supervisorctl start dmcproxy
+    supervisorctl restart dmcproxy
     ```
 
 ## Known limitations
