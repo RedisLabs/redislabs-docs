@@ -86,7 +86,7 @@ If you want to reapply the policy after topology changes, such as node restarts,
 failovers and migrations, run this command to reset the policy:
 
 ```sh
-rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards|all-nodes>
+rladmin bind db Ï<db_name_or_db_id> endpoint <endpoint id> policy <all-master-shards|all-nodes>
 ```
 
 This is not required with single policies.

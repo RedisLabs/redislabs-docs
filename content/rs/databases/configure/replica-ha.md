@@ -96,7 +96,7 @@ To enable or turn off replica high availability by default for the entire cluste
 To disable replica HA for a specific database using `rladmin`, run:
 
 ``` text
-rladmin tune db <bdb_uid> slave_ha disabled
+rladmin tune db <db_name_or_db_id> slave_ha disabled
 ```
 
 ## Configuration options
@@ -127,7 +127,7 @@ Replica shard migration is based on priority.  When memory resources are limited
     To assign priority to a database, run:
 
     ``` text
-    rladmin tune db <bdb_uid> slave_ha_priority <positive integer>
+    rladmin tune db <db_name_or_db_id> slave_ha_priority <positive integer>
     ```
 
 1. Active-Active databases - Active-Active database synchronization uses replica shards to synchronize between the replicas.

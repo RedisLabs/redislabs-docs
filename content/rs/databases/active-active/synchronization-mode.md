@@ -44,19 +44,19 @@ To configure distributed synchronization:
     If the proxy policy (also known as a _role_) is `single`, configure the policy to `all-nodes` or `all-master-shards` according to your needs with the command:
 
     ```sh
-    rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards|all-nodes>
+    rladmin bind db <db_name_or_db_id> endpoint <endpoint id> policy <all-master-shards|all-nodes>
     ```
 
 1. To configure the database to use distributed synchronization, run:
 
     ```sh
-    rladmin tune db <db_name> syncer_mode distributed
+    rladmin tune db <db_name_or_db_id> syncer_mode distributed
     ```
 
     To change back to centralized synchronization, run:
 
     ```sh
-    rladmin tune db <db_name> syncer_mode centralized
+    rladmin tune db <db_name_or_db_id> syncer_mode centralized
     ```
 
 ## Verify database synchronization
@@ -64,14 +64,14 @@ To configure distributed synchronization:
 Use `rladmin` to verify a database synchronization role:
 
 ```sh
-rladmin info db <db_name>
+rladmin info db <db_name_or_db_id>
 ```
 
 The current database role is reported as the `syncer_mode` value:
 
 ```sh
-$ rladmin info db <db_name>     
-db:1 [<db_name>]:
+$ rladmin info db <db_name_or_db_id>     
+db:1 [<db_name_or_db_id>]:
   // (Other settings removed) 
   syncer_mode: centralized
 ```
