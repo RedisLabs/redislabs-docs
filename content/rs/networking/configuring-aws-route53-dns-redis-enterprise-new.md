@@ -53,7 +53,7 @@ You will need to create a new NS record which will point to the glue records cre
 
 {{<note>}}
 It is important to make sure that the **Record Name** of the NS record equals the FQDN (Fully Qualified Domain Name) of your Redis Enterprise cluster. If not, DNS resolution will not function correctly.
-{{<note>}}
+{{</note>}}
 
 ![07-NSRecord-en](/images/rs/07-NSRecord-en.png)
 
