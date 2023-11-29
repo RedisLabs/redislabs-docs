@@ -229,6 +229,18 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}). Official support for Amazon Linux 2 was added in Redis Enterprise Software [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
 
+## Known issues
+
+- RS114185 - During an upgrade to [Redis Enterprise Software version 7.2.4-86]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-86">}}), the proxy might not start due to a race condition. After five failed attempts to start the proxy, the supervisor stops retrying.
+
+    In certain scenarios, such as if the affected node has an endpoint, `node_wd` restarts the proxy after a few seconds.
+
+    As a workaround, start `dmcproxy` manually:
+
+    ```sh
+    supervisorctl start dmcproxy
+    ```
+
 ## Known limitations
 
 #### Command limitations
