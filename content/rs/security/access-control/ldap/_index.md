@@ -20,6 +20,8 @@ You can configure LDAP roles using the Redis Enterprise admin console or [REST A
 
 Here's how role-based LDAP integration works:
 
+{{<image filename="/images/rs/buttons/access-control-user-ldap-diagram.png" alt="LDAP overview" >}}{{</image>}}
+
 1.  A user signs in with their LDAP credentials.  
 
     Based on the LDAP configuration details, the username is mapped to an LDAP Distinguished Name.
@@ -42,10 +44,6 @@ For database access, the user needs to belong to an LDAP group mapped to a role 
 
 Before you enable LDAP in Redis Enterprise, you need:
 
-1. The LDAP groups that correspond to the levels of access you wish to authorize.  Each LDAP group will be mapped to a Redis Enterprise access control role.
-
-1. A Redis Enterprise access control role for each LDAP group. Before you enable LDAP, you need to set up [role-based access controls]({{<relref "rs/security/access-control">}}) (RBAC).
-
 1. The following LDAP details:
 
     - Server URI, including host, port, and protocol details.  
@@ -55,15 +53,21 @@ Before you enable LDAP in Redis Enterprise, you need:
     - Authorization query details, whether attribute or query.  
     - The Distinguished Names of LDAP groups you’ll use to authorize access to Redis Enterprise resources. 
 
+1. The LDAP groups that correspond to the levels of access you wish to authorize.  Each LDAP group will be mapped to a Redis Enterprise access control role.
+
+1. A Redis Enterprise access control role for each LDAP group. Before you enable LDAP, you need to set up [role-based access controls]({{<relref "rs/security/access-control">}}) (RBAC).
+
 ## Enable LDAP
 
 To enable LDAP:
 
-1.  From **Cluster > Security > LDAP** in the admin console, [enable LDAP access]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
+1.  From **Access Control  > LDAP** in the Cluster Manager UI, then select **Configuration** tab to [enable LDAP access]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap">}}).
 
-1.  Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}}).
+    {{<image filename="/images/rs/buttons/access-control-ldap-panel.png" alt="Enable LDAP Panel" >}}{{</image>}}
 
-1.  Update database access control lists (ACLs) to [authorize role access]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}).  
+2.  Map LDAP groups to [access control roles]({{<relref "/rs/security/access-control/ldap/map-ldap-groups-to-roles">}}).
+
+3.  Update database access control lists (ACLs) to [authorize role access]({{<relref "/rs/security/access-control/ldap/update-database-acls">}}).  
 
 If you already have appropriate roles, you can update them to include LDAP groups.
 
