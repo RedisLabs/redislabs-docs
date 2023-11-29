@@ -10,7 +10,7 @@ aliases: /rc/how-to/creating-iam-resources
 
 
 ---
-For most Redis Enterprise Cloud Flexible or Annual subscriptions deployed to Amazon Web Services (AWS), we manage the supporting infrastructure for you in dedicated AWS accounts.
+For most Redis Cloud Flexible or Annual subscriptions deployed to Amazon Web Services (AWS), we manage the supporting infrastructure for you in dedicated AWS accounts.
 
 You can manage this infrastructure with your own AWS accounts.  
 
@@ -23,7 +23,7 @@ In the new AWS account, you need to create:
 - A user with an **access key**
 - A role that grants **AWS console access**
 
-Save the access key in a secure location so that you can enter it when you [register the cloud account]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/">}}) with your the Redis Enterprise Cloud subscription.
+Save the access key in a secure location so that you can enter it when you [register the cloud account]({{<relref "/rc/cloud-integrations/aws-cloud-accounts/">}}) with your the Redis Cloud subscription.
 
 {{< warning >}}
 We use the provided credentials to configure your AWS environment and provision required resources.

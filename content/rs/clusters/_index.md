@@ -2,7 +2,7 @@
 Title: Manage clusters
 linktitle: Clusters
 description: Administrative tasks and information related to the Redis Enterprise cluster.
-weight: 38
+weight: 36
 alwaysopen: false
 categories: ["RS"]
 aliases: [

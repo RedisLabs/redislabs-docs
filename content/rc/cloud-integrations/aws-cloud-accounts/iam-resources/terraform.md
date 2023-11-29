@@ -10,7 +10,7 @@ aliases: /rc/how-to/creating-iam-resources/terraform/
          /rc/cloud-accounts/iam-resources/terraform.md
 
 ---
-You can use [HashiCorp Terraform](https://www.terraform.io/intro/index.html) to create identity and access management (IAM) resources to support AWS cloud account access to Redis Enterprise Cloud subscriptions.
+You can use [HashiCorp Terraform](https://www.terraform.io/intro/index.html) to create identity and access management (IAM) resources to support AWS cloud account access to Redis Cloud subscriptions.
 
 The following example uses the `terraform-aws-Redislabs-Cloud-Account-IAM-Resources` module, located in Amazon&nbsp;S3:
 

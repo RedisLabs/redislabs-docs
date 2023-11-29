@@ -52,11 +52,11 @@ Redis Enterprise offers several database security controls to help protect your 
 
 - **Deactivate default user access**: Redis Enterprise comes with a "default" user for backwards compatibility with applications designed with versions of Redis prior to Redis Enterprise 6. The default user is turned on by default. This allows you to access the database without specifying a username and only using a shared secret. For applications designed to use access control lists, we recommend that you [deactivate default user access]({{<relref "/rs/security/access-control/manage-users/default-user#deactivate-default-user">}}).
 
-- **Enable client certificate authentication**: To prevent unauthorized access to your data, Redis Enterprise databases support the [TLS protocol]({{<relref "/rs/security/tls#client-certificate-authentication">}}), which includes authentication and encryption. Client certificate authentication can be used to ensure only authorized hosts can access the database.
+- **Enable client certificate authentication**: To prevent unauthorized access to your data, Redis Enterprise databases support the [TLS protocol]({{<relref "/rs/security/encryption/tls#client-certificate-authentication">}}), which includes authentication and encryption. Client certificate authentication can be used to ensure only authorized hosts can access the database.
 
 - **Install trusted certificates**: Redis implements self-signed certificates for the database proxy and replication service, but many organizations prefer to [use their own certificates]({{< relref "/rs/security/certificates/create-certificates" >}}).
 
-- **Configure Transport Layer Security (TLS)**: Similar to the control plane, you can also [configure TLS protocols]({{<relref "/rs/security/tls/tls-protocols">}}) to help support your security and compliance needs.
+- **Configure Transport Layer Security (TLS)**: Similar to the control plane, you can also [configure TLS protocols]({{<relref "/rs/security/encryption/tls/tls-protocols">}}) to help support your security and compliance needs.
 
 - **Configure and verify database backups**: Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports [database backups to many destinations]({{< relref "/rs/databases/import-export/schedule-backups.md" >}}).
 

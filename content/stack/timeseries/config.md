@@ -11,7 +11,7 @@ aliases: /modules/redistimeseries/config/
 
 [Redis Enterprise Software]({{<relref "/rs">}}) lets you manually change any [RedisTimeSeries configuration setting](https://redis.io/docs/stack/timeseries/configuration/#redistimeseries-configuration-parameters).
 
-[Redis Enterprise Cloud]({{<relref "/rc">}}) does not let you configure RedisTimeSeries manually. However, if you have a Flexible or Annual [subscription]({{<relref "/rc/subscriptions">}}), you can contact [support](https://redis.com/company/support/) to request a configuration change. You cannot change RedisTimeSeries configuration for Free or Fixed subscriptions.
+[Redis Cloud]({{<relref "/rc">}}) does not let you configure RedisTimeSeries manually. However, if you have a Flexible or Annual [subscription]({{<relref "/rc/subscriptions">}}), you can contact [support](https://redis.com/company/support/) to request a configuration change. You cannot change RedisTimeSeries configuration for Free or Fixed subscriptions.
 
 | Setting | Redis<br />Enterprise | Redis<br />Cloud | Notes |
 |:--------|:----------------------|:-----------------|:------|

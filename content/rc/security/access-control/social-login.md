@@ -24,14 +24,14 @@ If your Google and GitHub accounts share an email address (such as Gmail), you c
 To set up Google login:
 
 1. Select **Google** from the [sign-in](https://app.redislabs.com/new/) screen.
-1. Choose your preferred account from the list.
+1. Sign in with the Google account you would like to use.
 1. Select **Confirm** on the **Sign in with Google** prompt.
 
 To set up GitHub login:
 
 1. Select **Github** from the [sign-in](https://app.redislabs.com/new/) screen.
-1. Select **Authorize** on the **Authorize Redis Okta Auth Github** prompt.
-1. Enter your GitHub password to **Confirm access**.
+2. Sign in with the Github account you would like to use.
+3. Select **Authorize** on the **Authorize Redis Okta Auth Github** prompt.
 
 {{<note>}}
 If the email address associated with your GitHub account is not public, you will see an error message that your sign in attempt failed. You need to [make your email address public](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences) on GitHub before you try again.

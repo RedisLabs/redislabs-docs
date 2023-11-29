@@ -40,7 +40,7 @@ ready. RFv2 brings performance, reliability, and stability enhancements
 as well as many features customers have been waiting for.
 
 Auto Tiering offers users of Redis Enterprise Pack and
-Redis Enterprise Cloud Private the unique ability to operate a Redis
+Redis Cloud Private the unique ability to operate a Redis
 database that spans both RAM and flash memory (SSD), but remains
 separate from Redis Enterprise Pack's persistence mechanisms. Whilst
 keys are always stored in RAM, RoF intelligently manages the location of

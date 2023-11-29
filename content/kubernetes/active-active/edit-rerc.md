@@ -16,6 +16,8 @@ aliases: {
 
 Before a RedisEnterpriseCluster (REC) can participate in an Active-Active database, it needs an accompanying RedisEnterpriseRemoteCluster (RERC) custom resource. The RERC contains details allowing the REC to link to the RedisEnterpriseActiveActiveDatabase (REAADB). The RERC resource is listed in the REAADB resource to become a participating cluster for the Active-Active database.
 
+The RERC controller periodically connects to the local REC endpoint via its external address, to ensure it’s setup correctly. For this to work, the external load balancer must support [NAT hairpinning](https://en.wikipedia.org/wiki/Network_address_translation#NAT_loopback). In some cloud environments, this may involve disabling IP preservation for the load balancer target groups.
+
 For more details, see the [RERC API reference](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_remote_cluster_api.md).
 
 ## Edit RERC

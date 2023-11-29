@@ -43,7 +43,7 @@ This checklist covers the basic process:
 
     Here, a blank file replaces the earlier configuration.
 
-1.  Use **Cluster > Security > LDAP** to enable role-based LDAP.
+1.  Use **Access Control > LDAP > Configuration** to enable role-based LDAP.
 
 1.  Map your LDAP groups to access control roles.
 
@@ -59,7 +59,7 @@ To test your LDAP integration, you can:
 
 - Connect with `redis-cli` and use the [`AUTH` command](https://redis.io/commands/auth/) to test LDAP username/password credentials.
 
-- Sign in to the admin console using LDAP credentials authorized for admin access.
+- Sign in to the Cluster Manager UI using LDAP credentials authorized for admin access.
 
 - Use [RedisInsight]({{<relref "/ri">}}) to access a database using authorized LDAP credentials.
 

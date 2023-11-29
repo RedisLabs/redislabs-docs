@@ -48,13 +48,15 @@ $ redis-cli -h <endpoint> -p <port>
 
 ### Connect over TLS
 
-To connect to a Redis Enterprise Software or Redis Enterprise Cloud database over TLS:
+To connect to a Redis Enterprise Software or Redis Cloud database over TLS:
 
 1. Download or copy the Redis Enterprise server (or proxy) certificates.
 
-    - For Redis Enterprise Cloud, see [Download certificates]({{<relref "/rc/security/database-security/tls-ssl#download-certificates">}}) for detailed instructions on how to download the server certificates (`redis_ca.pem`) from the [admin console](https://app.redislabs.com/).
+    - For Redis Cloud, see [Download certificates]({{<relref "/rc/security/database-security/tls-ssl#download-certificates">}}) for detailed instructions on how to download the server certificates (`redis_ca.pem`) from the [admin console](https://app.redislabs.com/).
 
     - For Redis Enterprise Software, copy the proxy certificate from the admin console (**Cluster > Security > Certificates > Server authentication**) or from a cluster node (`/etc/opt/redislabs/proxy_cert.pem`).
+
+1. Copy the certificate to each client machine.
 
 1. If your database doesn't require client authentication, provide the Redis Enterprise server certificate (`redis_ca.pem` for Cloud or `proxy_cert.pem` for Software) when you connect:
 
@@ -62,7 +64,7 @@ To connect to a Redis Enterprise Software or Redis Enterprise Cloud database ove
     redis-cli -h <endpoint> -p <port> --tls --cacert <redis_cert>.pem
     ```
 
-1. If your database requires client authentication, then you also need to provide your client's private and public keys:
+1. If your database requires client authentication, provide your client's private and public keys along with the Redis Enterprise server certificate (`redis_ca.pem` for Cloud or `proxy_cert.pem` for Software) when you connect:
 
     ```sh
     redis-cli -h <endpoint> -p <port> --tls --cacert <redis_cert>.pem \
@@ -138,7 +140,7 @@ Scan the database for big keys:
 redis-cli -h <endpoint> -p <port> --bigkeys
 ```
 
-See [Scanning for big keys](https://redis.io/docs/ui/cli/#scanning-for-big-keys) for more information.
+See [Scanning for big keys](https://redis.io/docs/connect/cli/#scanning-for-big-keys) for more information.
 
 ## More info
 

@@ -1,7 +1,7 @@
 ---
 Title: Manage AWS cloud accounts
 LinkTitle: AWS cloud accounts
-description: Describes how to provision your Redis Enterprise Cloud subscription to use existing cloud provider accounts.
+description: Describes how to provision your Redis Cloud subscription to use existing cloud provider accounts.
 weight: 40
 alwaysopen: false
 hidden: true
@@ -38,7 +38,7 @@ Once an AWS account has been configured as a cloud account, you must _not_:
 
 ## View cloud account settings
 
-To create or edit a cloud account in Redis Enterprise Cloud:
+To create or edit a cloud account in Redis Cloud:
 
 1. Sign in to the [admin console](https://app.redislabs.com/) and then select the target subscription.
 

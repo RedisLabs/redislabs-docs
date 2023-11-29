@@ -318,6 +318,16 @@
         },
         {
             "Condition": {
+                "KeyPrefixEquals": "rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
+            }
+        },
+        {
+            "Condition": {
                 "KeyPrefixEquals": "modules/"
             },
             "Redirect": {

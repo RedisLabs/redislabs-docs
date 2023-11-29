@@ -14,57 +14,55 @@ Fixed Size subscription plans support low throughput workflows.  Several tiers a
 
 When creating your subscription, you'll need to know which tier to choose.
 
-(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.)
+If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.
 
 
 ## Fixed plan subscription tiers
 
-Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated February 2021):
+Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated November 2022):
 
-| Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections | Security<br/> Groups | Max IP<br/> Auth rules |
-|------------:|:---------:|:-----------:|:---------------:|:-------------:|
-| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | N/A | N/A |
-| 100 MB &nbsp;&nbsp;&nbsp;&nbsp; | 4 | 256 | 1 | 4 |
-| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 | 4 |
-| 500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 | 4 |
-| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 2 | 8 |
-| 2&half; GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | 2500 | 2 | 8 |
-| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | 5000 | 4 | 16 |
-| 10 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | 10000 | 4 | 32 |
+| **Max DB size &nbsp;** | **Number of<br/>databases** | **Concurrent<br/>connections<br/>per database** | **CIDR<br/> allow rules** |
+|---|---|---|---|
+| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | 1 |
+| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 4-8 |
+| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 4-8 |
+| 2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | Unlimited | 4-8 |
+| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | Unlimited | 4-16 |
+| 12 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | Unlimited | 4-32 |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
-All paid (100 MB and above) fixed plans support replication and backups (daily and instant).
+All paid (250 MB and above) Fixed plans support replication and backups (daily and instant).
 
 If you need additional resources, you can update your subscription at any time.
 
 ## Create a Fixed subscription
 
-To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-plans" >}}):
+To create a Fixed subscription:
 
-1.  From the admin console menu, select the **New Subscription** button.  
+1.  From the Redis Cloud subscriptions list, select the **Add new subscription** button.  
 
     {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
-2. When the **New subscription** page appears, select **Fixed plans** and then scroll to the cloud vendor options.
+2. When the **New subscription** page appears, select **Fixed plan** and then scroll to the cloud vendor options.
 
     {{<image filename="images/rc/subscription-new-plan-options.png" alt="Available subscription plan options." >}}{{< /image >}}
 
 3.  Choose a **Cloud Provider** and a **Region**.
 
-    {{<image filename="images/rc/subscription-new-cloud-vendor-options-redis-7-preview.png" alt="Available cloud vendor options and Redis 7.2 preview." >}}{{</image>}}
+    {{<image filename="images/rc/subscription-new-cloud-vendor-options-redis-7-preview.png" alt="Available cloud vendor options and Redis 7.2 regions." >}}{{</image>}}
 
-    A [preview of Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) subscriptions is available for selected regions in AWS and GCP. Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
+    [Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) is available for selected regions in AWS and GCP. Redis 7.2 introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
     
-    If you want to try out Redis 7.2, turn on the **Redis 7.2 preview** toggle:
+    If you want to try out Redis 7.2, turn on the **Redis 7.2 regions** toggle to show the regions where it is available:
 
-    {{<image filename="images/rc/subscription-new-redis-7-preview-toggle.png" width="200px" alt="Turn on the Redis 7.2 preview toggle." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-new-redis-7-preview-toggle.png" width="200px" alt="Turn on the Redis 7.2 regions toggle." >}}{{< /image >}}
 
 4.  In the **Availability Settings** panel, select your replication settings.  
 
-    - _No-replication_ means that you will have a single copy of your database.
-    - _Single-zone replication_ means that your database will have a primary and a replica located in the same cloud region.  If anything happens to the primary, the replica takes over and becomes the new primary.
-    - _Multi-zone replication_ means that the primary and the replicas are stored in different region zones, which provides additional protection by distributing the replicas.
+    - **No-replication** means that you will have a single copy of your database.
+    - **Single-zone replication** means that your database will have a primary and a replica located in the same cloud region.  If anything happens to the primary, the replica takes over and becomes the new primary.
+    - **Multi-zone replication** means that the primary and the replicas are stored in different region zones, which provides additional protection by distributing the replicas.
 
 5.  Select the desired plan size.   
 
@@ -74,7 +72,7 @@ To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-pla
 
 6.  Enter a subscription name and payment details.
 
-7.  Locate and then select the **Create Subscription** button, which is located below the **Credit card** details.
+7.  Select the **Create Subscription** button.
 
     {{<image filename="images/rc/button-subscription-create.png" alt="The Create Subscription button." >}}{{< /image >}}
 

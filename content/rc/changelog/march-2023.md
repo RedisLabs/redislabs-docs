@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Cloud changelog (March 2023)
+Title: Redis Cloud changelog (March 2023)
 linktitle: March 2023
-description: New features, enhancements, and other changes added to Redis Enterprise Cloud during March 2023.
+description: New features, enhancements, and other changes added to Redis Cloud during March 2023.
 highlights: Redis 7.0 preview
 weight: 88
 alwaysopen: false
@@ -9,7 +9,7 @@ categories: ["RC"]
 aliases: ["/rs/references/compatibility/breaking-changes/"]
 ---
 
-This changelog lists new features, enhancements, and other changes added to Redis Enterprise Cloud during March 2023.
+This changelog lists new features, enhancements, and other changes added to Redis Cloud during March 2023.
 
 ## New features and enhancements
 

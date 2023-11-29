@@ -11,10 +11,6 @@ aliases: /rc/how-to/all-memcached-cloud/
 
 The [FLUSHALL](https://redis.io/commands/flushall) command provides a fast way to remove all data from a database.
 
-To use it, connect your database and then issue the command.  
-
-There are several ways to do this, depending on your circumstances and environment.
-
 {{< note >}}
 When you _flush_ a database, you remove all data.  This is a prerequisite to deleting a database.<br/><br/>
 
@@ -23,7 +19,20 @@ This _permanently_ removes all data from the database.  The data cannot be recov
 We _strongly_ recommend backing up databases before flushing them.
 {{</note>}}
 
-## The Redis-CLI utility
+## How to use FLUSHALL
+
+To use it, connect your database and then issue the command.  
+
+There are several ways to do this, depending on your circumstances and environment.
+
+The following sections provide some options:
+
+- [`redis-cli`]({{<relref "rc/databases/flush-data#the-redis-cli-utility">}})
+- [RedisInsight CLI]({{<relref "rc/databases/flush-data#redisinsight-cli">}})
+- [`netcat`]({{<relref "rc/databases/flush-data#the-netcat-utility">}})
+- [SASL connection]({{<relref "rc/databases/flush-data#sasl-connection">}})
+
+### redis-cli
 
 To use the `redis-cli` utility:
 
@@ -37,29 +46,29 @@ Example:
 redis-cli -h redis-12345.server.cloud.redislabs.example.com -p 12345 -a xyz flushall
 ```
 
-## The netcat utility 
+### RedisInsight
 
-If you have shell access to the server hosting your database, you can use the [netcat](https://en.wikipedia.org/wiki/Netcat) (`nc`) to send the `flush_all` command to your database:
-
-```sh
-echo "flush_all" | nc redis-12345.server.cloud.redislabs.example.com 12345
-```
-
-## RedisInsight CLI
-
-If you've installed [RedisInsight]({{<relref "/ri/">}}) and added your database, you can use the RedisInsight command-line interface (CLI) to issue commands:
+If you install [RedisInsight]({{<relref "/ri/">}}) and [add your database]({{<relref "rc/rc-quickstart#using-redisinsight">}}), you can use the RedisInsight workbench to run commands:
 
 1.  Start RedisInsight and connect to your database.
 
-2.  From the RedisInsight menu, select **CLI** and wait for the client to connect to your database.
+2.  From the RedisInsight menu, select **Workbench** and wait for the client to connect to your database.
 
-3.  In the command area, enter `flushall` and then press _Enter_.
+3.  In the command area, enter `flushall` and then select the green **run** arrow.
 
     {{<image filename="images/rc/redisinsight-cli-flushall-example.png" alt="You can use RedisInsight to issue commands to a database." >}}{{< /image >}}
 
     The 'OK' response indicates that the command executed properly.
 
-## SASL connection
+### netcat 
+
+If you have shell access to your database's host server, you can use [netcat](https://en.wikipedia.org/wiki/Netcat) (`nc`) to send the `flush_all` command to your database:
+
+```sh
+echo "flush_all" | nc redis-12345.server.cloud.redislabs.example.com 12345
+```
+
+### SASL connection
 
 If you do not have permission to access the command shell of the server hosting your database or are unable to use RedisInsight, but you have connection credentials and your database supports [Simple Authentication and Security Layer](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) connections, you can use an SASL-enabled command-line client.
 

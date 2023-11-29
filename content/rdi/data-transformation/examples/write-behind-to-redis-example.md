@@ -8,7 +8,7 @@ categories: ["redis-di"]
 aliases: 
 ---
 
-The `redis.write` block can be used in the `output` section of the write-behind job in order to enable writing data to the Redis Enterprise target database. Multiple blocks can be used at the same time to write data to different data types. The following example captures data modified in the `address:*` keyspace, then creates a new JSON-like string field named `json_addr` and, finally, writes the results to multiple keys in target Redis Enteprise:
+The `redis.write` block can be used in the `output` section of the write-behind job in order to enable writing data to the Redis Enterprise target database. Multiple blocks can be used at the same time to write data to different data types. The following example captures data modified in the `address:*` keyspace, then creates a new JSON-like string field named `json_addr`,  and, finally, writes the results to multiple keys in target Redis Enteprise database:
 
 ```yaml
 source:
@@ -72,7 +72,7 @@ Run the following command in the source Redis Enterprise database to test the jo
 127.0.0.1:12005> hset address:1 city Austin zip 78901 org_id 1 country USA
 ```
 
-As a result the following 5 keys will be created in the target Redis Enterprise database (hash, JSON, set, sorted set and stream):
+The result is five keys will be created in the target Redis Enterprise database (hash, JSON, set, sorted set, and stream):
 
 ```shell
 127.0.0.1:12000> keys *

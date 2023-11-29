@@ -16,7 +16,7 @@ Redis will attempt to perform maintenance during low-traffic hours when possible
 
 ## Maintenance activities
 
-During maintenance, Redis staff will do anything that ensures the stability of your subscriptions and databases. 
+During maintenance, Redis ensures the stability of your subscriptions and databases. 
 
 This includes, but is not limited to:
 
