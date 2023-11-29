@@ -23,6 +23,8 @@ To map LDAP groups to access control roles:
 
    You can map LDAP roles when LDAP configuration is not enabled, but they won't have any effect until you configure and enable LDAP.
 
+    {{<image filename="/images/rs/buttons/access-control-ldap-mappings-panel.png" alt="Enable LDAP mappings Panel" >}}{{</image>}}
+
 1.  Select the **+ Add LDAP Mapping** button to create a new mapping and then enter the following details:
 
     | _Setting_ | _Description_ | 
@@ -32,6 +34,8 @@ To map LDAP groups to access control roles:
 | **Role** | The Redis Software access control role defined for this group |
 | **Email** | _(Optional)_ An address to receive alerts|
 | **Alerts**  | Selections identifying the desired alerts. |
+
+    {{<image filename="/images/rs/buttons/access-control-ldap-mappings-add.png" alt="Enable LDAP mappings Panel" >}}{{</image>}}
 
 1.  When finished, select the **Save** button.
 
