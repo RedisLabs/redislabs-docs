@@ -68,6 +68,10 @@ Before upgrading a database:
 
     Use the admin console to display the **Configuration** tab for the cluster. The tab displays the cluster version information and the Redis database compatibility version.
 
+- Check client compatibility with the database version.
+
+    If you run Redis Stack commands with Go-Redis versions 9 and later or Lettuce versions 6 and later, set the client’s protocol version to RESP2 before upgrading your database to Redis version 7.2 to prevent potential application issues due to RESP3 breaking changes. See [Client prerequisites for Redis 7.2 upgrade]({{<relref "/rs/references/compatibility/resp#client-prerequisites-for-redis-72-upgrade">}}) for more details and examples.
+
 - To avoid data loss during the upgrade, [back up your data]({{<relref "/rs/databases/import-export/schedule-backups">}}).  
 
     You can [export the data]({{<relref "/rs/databases/import-export/export-data">}}) to an external location, [enable replication]({{<relref "/rs/databases/durability-ha/replication">}}), or [enable persistence]({{<relref "/rs/databases/configure/database-persistence">}}).
