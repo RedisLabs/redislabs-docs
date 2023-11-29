@@ -239,6 +239,8 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
     supervisorctl restart dmcproxy
     ```
 
+    This issue will be fixed in a future maintenance release.
+
 ## Known limitations
 
 #### Command limitations
