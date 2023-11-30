@@ -74,7 +74,7 @@ metadata:
     app: redis-enterprise
 subjects:
 - kind: ServiceAccount
-  name: redis-enterprise-operator
+  name: redis-enterprise-operator-consumer-ns
   namespace: <rec-namespace>
 - kind: ServiceAccount
   name: <service-account-name>
@@ -117,7 +117,7 @@ You can create this ConfigMap manually before deployment, or it will be created 
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
     metadata:
-      name: redis-enterprise-operator
+      name: redis-enterprise-operator-consumer-ns
     rules:
       - apiGroups: [""]
         resources: ["namespaces"]
@@ -130,14 +130,14 @@ You can create this ConfigMap manually before deployment, or it will be created 
     kind: ClusterRoleBinding
     apiVersion: rbac.authorization.k8s.io/v1
     metadata:
-      name: redis-enterprise-operator
+      name: redis-enterprise-operator-consumer-ns
     subjects:
     - kind: ServiceAccount
-      name: redis-enterprise-operator
+      name: redis-enterprise-operator-consumer-ns
       namespace: <rec-namespace>
     roleRef:
       kind: ClusterRole
-      name: redis-enterprise-operator
+      name: redis-enterprise-operator-consumer-ns
       apiGroup: rbac.authorization.k8s.io
   ```
 
