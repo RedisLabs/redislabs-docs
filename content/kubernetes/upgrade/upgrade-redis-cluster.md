@@ -24,7 +24,7 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
   2. [Upgrade the Redis Enterprise cluster (REC)](#upgrade-the-redis-enterprise-cluster-rec)
   3. [Upgrade Redis Enterprise databases (REDB)](#upgrade-databases)
 
-## Prerequisites
+## Prerequisite
 
 1. Check [Supported Kubernetes distributions]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) to make sure your Kubernetes distribution is supported.
 
@@ -32,7 +32,7 @@ Redis implements rolling updates for software upgrades in Kubernetes deployments
 
 3. Verify you are upgrading from Redis Enterprise operator version 6.2.10-45 or later. If you are not, you must upgrade to 6.2.10-45 before upgrading to versions 6.2.18 or later.
 
-{{<warning>}}**Upgrade cluster operating system** If your databases use modules, you need to update all notes in the cluster to Redis Enterprise 7.2.4 or later before upgrading your operating system. See [Upgrade a cluster's operating system]({{<relref "/rs/installing-upgrading/upgrading/upgrade-os/">}})in the Redis Enterprise Software documentation for more details.{{</warning>}}
+{{<warning>}}**Upgrade cluster operating system** If your databases use modules, you need to update all notes in the cluster to Redis Enterprise 7.2.4 or later before upgrading your operating system. See [Upgrade a cluster's operating system]({{<relref "/rs/installing-upgrading/upgrading/upgrade-os">}})in the Redis Enterprise Software documentation for more details.{{</warning>}}
 
 ## Upgrade the operator
 
