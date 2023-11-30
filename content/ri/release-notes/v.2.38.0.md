@@ -11,7 +11,7 @@ aliases: /ri/release-notes/v2.38.0/
 This is the General Availability (GA) release of RedisInsight 2.38.
 
 ### Highlights
-- Major UX improvements and space optimization for a cleaner and more organized Tree view and easier namespace navigation. Additionally, in Tree view, you can now sort your Redis key names alphabetically.
+- Major UX improvements and space optimization for a cleaner and more organized Tree view, ensuring easier namespace navigation and faster key browsing. Additionally, in Tree view, you can now sort your Redis key names alphabetically.
 - Renamed the application from RedisInsight v2 to simply RedisInsight
 
 ### Details
