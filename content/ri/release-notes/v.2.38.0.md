@@ -7,7 +7,7 @@ weight: 1
 aliases: /ri/release-notes/v2.38.0/
          /ri/release-notes/v2.38.0.md
 ---
-## 2.38 (Novermber 2023)
+## 2.38 (November 2023)
 This is the General Availability (GA) release of RedisInsight 2.38.
 
 ### Highlights
