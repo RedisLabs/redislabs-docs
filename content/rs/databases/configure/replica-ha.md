@@ -99,7 +99,7 @@ To disable replica HA for a specific database using `rladmin`, run:
 rladmin tune db db:<ID> slave_ha disabled
 ```
 
-You may use the database name in place of `db:<ID>` in the above command.
+You can use the database name in place of `db:<ID>` in the preceding command.
 
 
 ## Configuration options
@@ -133,7 +133,7 @@ Replica shard migration is based on priority.  When memory resources are limited
     rladmin tune db db:<ID> slave_ha_priority <positive integer>
     ```
     
-    You may use the database name in place of `db:<ID>` in the above command.
+    You can use the database name in place of `db:<ID>` in the preceding command.
 
 1. Active-Active databases - Active-Active database synchronization uses replica shards to synchronize between the replicas.
 1. Database size - It is easier and more efficient to move replica shards of smaller databases.
