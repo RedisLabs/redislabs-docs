@@ -180,6 +180,50 @@ db:2      database2        endpoint:2:1          node:2      single      No
 db:3      database3        endpoint:3:1          node:3      single      No
 ```
 
+## `status modules`
+
+Displays the current status of modules installed on the cluster and modules used by databases. This information is not included in the combined status report returned by [`rladmin status`](#status).
+
+``` sh
+rladmin status modules
+        [ db { db:<id1> | <name1> } ... { db:<idN> | <nameN> } ]
+        [ extra { all | min_redis_version | module_id } ]
+```
+
+### Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| db db:\<id\> | Provide a list of database IDs to show only modules used by the specified databases<br />(for example: `rladmin status modules db db:1 db:2`) |
+| db \<name\> | Provide a list of database names to show only modules used by the specified databases<br />(for example: `rladmin status modules db name1 name2`) |
+| extra all | Shows all extra information |
+| extra module_id | Shows module IDs |
+| extra&nbsp;min_redis_version | Shows the minimum compatible Redis database version for each module |
+
+### Returns
+
+Returns the status of modules installed on the cluster and modules used by databases.
+
+### Example
+
+```sh
+$ rladmin status modules extra all                
+CLUSTER MODULES:
+MODULE           VERSION   MIN_REDIS_VERSION  ID                                
+RedisBloom       2.6.3     7.1                34db7c796489202a0ae5dda292211c87  
+RediSearch 2     2.8.8     7.1                4812fb26eda4a7372ffbc18c04b268d5  
+RedisGears       2.0.15    7.1                18c83d024b8ee22e7caf030862026ca6  
+RedisGraph       2.10.12   6.0                5a1f2fdedb8f6ca18f81371ea8d28f68  
+RedisJSON        2.6.6     7.1                11e55072ef5216f721fcff3575e35d1a  
+RedisTimeSeries  1.10.6    7.1                95d5258cb1ad6cf2c25fa4852954eeb1  
+
+DATABASE MODULES:
+DB:ID      NAME             MODULE            VERSION  ARGS              STATUS 
+db:1       search-json-db   RediSearch 2      2.8.8    PARTITIONS AUTO   OK     
+db:1       search-json-db   RedisJSON         2.6.6                      OK     
+db:2       timeseries-db    RedisTimeSeries   1.10.6                     OK     
+```
+
 ## `status nodes`
 
 Displays the current status of all nodes on the cluster.
