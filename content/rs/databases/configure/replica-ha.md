@@ -16,12 +16,18 @@ aliases: [
          
 ]
 ---
-When you enable [database replication]({{< relref "/rs/databases/durability-ha/replication.md" >}}),
-Redis Enterprise Software copies your data to a replica node to make your data highly available.
-If the replica node fails or if the primary (master) node fails and the replica is promoted to primary,
-the remaining primary node is a single point of failure.<!--more-->
 
-You can configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.  This process is known as _replica high availability_ or _replica\_ha_.
+When you enable [database replication]({{< relref "/rs/databases/durability-ha/replication.md" >}}),
+Redis Enterprise Software creates a replica of each primary (master) shard.  The replica shard will always be 
+located on a different node than the primary shard to make your data highly available.  If the primary shard 
+fails or if the node hosting the primary shard fails, then the replica is promoted to primary.
+
+Without replica high availability (_replica\_ha_) enabled, the promoted primary shard becomes a single point of failure 
+as the promoted replica shard is the only copy of the data.
+
+Enabling _replica\_ha_ configures the cluster to automatically replace the promoted replica on an available node.  
+This returns the database to a state where there are two copies of the data: 
+the former replica shard which has been promoted to primary and a new replica shard.
 
 An available node:
 
