@@ -133,6 +133,7 @@ Displays the current status of all endpoints on the cluster.
 ``` sh
 rladmin status endpoints
         [ node <id> ]
+        [ db { db:<id> | <name> } ]
         [ extra <parameters> ]
         [ sort <column_titles> ]
         [ issues_only ]
@@ -143,6 +144,8 @@ rladmin status endpoints
 | Parameter | Description |
 |-----------|-------------|
 | node \<id\> | Only show endpoints for the specified node ID |
+| db db:\<id\> | Only show endpoints for the specified database ID |
+| db \<name\> | Only show endpoints for the specified database name |
 | extra \<parameter\> | Extra options that show more information |
 | sort \<column_titles\> | Sort results by specified column titles |
 | issues_only | Filters out all items that have an `OK` status  |
