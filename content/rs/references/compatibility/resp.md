@@ -37,10 +37,12 @@ To use RESP3 with a Redis Enterprise Software database:
         rladmin tune db db:<ID> resp3 enabled
         ```
 
+        You may use the database name in place of `db:<ID>` in the above command.
+
     - [Update database configuration]({{<relref "/rs/references/rest-api/requests/bdbs#put-bdbs">}}) REST API request:
 
         ```sh
-        PUT /v1/bdbs/<database_id> 
+        PUT /v1/bdbs/<db_name_or_db_id> 
         { "resp3": true }
         ```
 
@@ -54,10 +56,12 @@ To use RESP3 with a Redis Enterprise Software database:
     rladmin tune db db:<ID> resp3 disabled
     ```
 
+    You may use the database name in place of `db:<ID>` in the above command.
+
 - [Update database configuration]({{<relref "/rs/references/rest-api/requests/bdbs#put-bdbs">}}) REST API request:
 
     ```sh
-    PUT /v1/bdbs/<database_id> 
+    PUT /v1/bdbs/<db_name_or_db_id> 
     { "resp3": false }
     ```
 

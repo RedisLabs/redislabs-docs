@@ -67,11 +67,17 @@ cluster configuration:
 
 You can configure the proxy policy using the `bind` command in
 rladmin. The following command is an example that changes the bind
-policy for a database called "db1" with an endpoint id "1:1" to "All
+policy for a database named "db1" with an endpoint id "1:1" to "All
 Master Shards" proxy policy.
 
 ```sh
 rladmin bind db db1 endpoint 1:1 policy all-master-shards
+```
+
+The next command performs the same task using the database id in place of the name.  The id of this database is "1".
+
+```sh
+rladmin bind db db:1 endpoint 1:1 policy all-master-shards
 ```
 
 {{< note >}}
@@ -86,7 +92,7 @@ If you want to reapply the policy after topology changes, such as node restarts,
 failovers and migrations, run this command to reset the policy:
 
 ```sh
-rladmin bind db Ï<db_name_or_db_id> endpoint <endpoint id> policy <all-master-shards|all-nodes>
+rladmin bind db db:<ID> endpoint <endpoint id> policy <all-master-shards|all-nodes>
 ```
 
 This is not required with single policies.
