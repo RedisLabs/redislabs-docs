@@ -42,7 +42,7 @@ To use RESP3 with a Redis Enterprise Software database:
     - [Update database configuration]({{<relref "/rs/references/rest-api/requests/bdbs#put-bdbs">}}) REST API request:
 
         ```sh
-        PUT /v1/bdbs/<db_name_or_db_id> 
+        PUT /v1/bdbs/<uid> 
         { "resp3": true }
         ```
 
@@ -61,7 +61,7 @@ To use RESP3 with a Redis Enterprise Software database:
 - [Update database configuration]({{<relref "/rs/references/rest-api/requests/bdbs#put-bdbs">}}) REST API request:
 
     ```sh
-    PUT /v1/bdbs/<db_name_or_db_id> 
+    PUT /v1/bdbs/<uid> 
     { "resp3": false }
     ```
 
