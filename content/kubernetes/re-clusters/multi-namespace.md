@@ -111,29 +111,33 @@ You can create this ConfigMap manually before deployment, or it will be created 
 
 1. Create the `cluster_role_binding.yaml` and `cluster_role.yaml` files. Replace the `<rec-namespace>` with the namespace the Redis Enterprise cluster (REC) resides in.
 
-  `cluster_role.yaml` example:
+  `operator_cluster_role.yaml` example:
 
   ```yaml
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
     metadata:
       name: redis-enterprise-operator-consumer-ns
+      labels:
+        app: redis-enterprise
     rules:
       - apiGroups: [""]
         resources: ["namespaces"]
         verbs: ["list", "watch"]
   ```
 
-  `cluster_role_binding.yaml` example:
+  `operator_cluster_role_binding.yaml` example:
 
   ```yaml
     kind: ClusterRoleBinding
     apiVersion: rbac.authorization.k8s.io/v1
     metadata:
       name: redis-enterprise-operator-consumer-ns
+      labels:
+        app: redis-enterprise
     subjects:
     - kind: ServiceAccount
-      name: redis-enterprise-operator-consumer-ns
+      name: redis-enterprise-operator
       namespace: <rec-namespace>
     roleRef:
       kind: ClusterRole
