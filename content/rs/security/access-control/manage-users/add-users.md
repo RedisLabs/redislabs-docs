@@ -20,7 +20,7 @@ To add a user to the cluster:
 
 1. Assign a **Role** to the user to grant permissions for cluster management and data access.
 
-    {{<image filename="/images/rs/buttons/access-control-user-role-select.png" alt="Add role with name" >}}{{</image>}}
+    {{<image filename="images/rs/access-control-user-role-select.png" alt="Add role with name" >}}{{</image>}}
 
 1. Select the **Alerts** the user should receive by email:
 
