@@ -59,7 +59,7 @@ To define a role for database access:
 
 1. Select **Save**.
 
-{{<image filename="/images/rs/buttons/access-control-role-save.png" alt="Add databases to access" >}}{{</image>}}
+{{<image filename="images/rs/access-control-role-save.png" alt="Add databases to access" >}}{{</image>}}
 
 ## Next steps
 
