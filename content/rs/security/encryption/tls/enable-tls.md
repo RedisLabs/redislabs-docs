@@ -72,9 +72,9 @@ To enable mutual TLS for client connections:
     {{< note >}}
 By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to turn off this behavior.
 
-    ```sh
-    rladmin tune db < db:id | name > mtls_allow_outdated_certs enabled
-    ```
+```sh
+rladmin tune db < db:id | name > mtls_allow_outdated_certs enabled
+```
     
     {{< /note >}}
 
