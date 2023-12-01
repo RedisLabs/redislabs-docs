@@ -20,7 +20,7 @@ You can configure LDAP roles using the Redis Enterprise admin console or [REST A
 
 Here's how role-based LDAP integration works:
 
-{{<image filename="/images/rs/buttons/access-control-user-ldap-diagram.png" alt="LDAP overview" >}}{{</image>}}
+{{<image filename="images/rs/access-control-user-ldap-diagram.png" alt="LDAP overview" >}}{{</image>}}
 
 1.  A user signs in with their LDAP credentials.  
 
