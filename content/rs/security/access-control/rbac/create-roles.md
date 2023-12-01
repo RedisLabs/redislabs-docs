@@ -43,7 +43,7 @@ To define a role for database access:
 
 1. Enter a descriptive name for the role. This will be used to reference the role when configuring users.
 
-    {{<image filename="/images/rs/buttons/access-control-role-name.png" alt="Add role with name" >}}{{</image>}}
+    {{<image filename="images/rs/access-control-role-name.png" alt="Add role with name" >}}{{</image>}}
 
 1. Choose a **Cluster management role**. The default is **None**.
     
