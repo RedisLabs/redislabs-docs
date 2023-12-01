@@ -16,7 +16,7 @@ To add a user to the cluster:
 
 1. Enter the name, email, and password of the new user.
 
-    {{<image filename="/images/rs/buttons/access-control-user-add.png" alt="Add role with name" >}}{{</image>}}
+    {{<image filename="images/rs/access-control-user-add.png" alt="Add role with name" >}}{{</image>}}
 
 1. Assign a **Role** to the user to grant permissions for cluster management and data access.
 
