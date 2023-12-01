@@ -35,7 +35,7 @@ You can map LDAP roles when LDAP configuration is not enabled, but they won't ha
 | **Email** | _(Optional)_ An address to receive alerts|
 | **Alerts**  | Selections identifying the desired alerts. |
 
-    {{<image filename="/images/rs/buttons/access-control-ldap-mappings-add.png" alt="Enable LDAP mappings Panel" >}}{{</image>}}
+    {{<image filename="images/rs/access-control-ldap-mappings-add.png" alt="Enable LDAP mappings Panel" >}}{{</image>}}
 
 1.  When finished, select the **Save** button.
 
