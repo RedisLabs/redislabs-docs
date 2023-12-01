@@ -39,7 +39,7 @@ To define a role for database access:
 
     - Select **+ Add role** to create a new role.
 
-    {{<image filename="/images/rs/buttons/access-control-role-panel.png" alt="Add role with name" >}}{{</image>}}
+    {{<image filename="images/rs/access-control-role-panel.png" alt="Add role with name" >}}{{</image>}}
 
 1. Enter a descriptive name for the role. This will be used to reference the role when configuring users.
 
