@@ -28,7 +28,7 @@ To enable TLS for client connections:
 
 1. Select **Save**.
 
-To enable multual TLS for client connections:
+To enable mutual TLS for client connections:
 
 1. Select **Mutual TLS (Client authentication)**.
 
