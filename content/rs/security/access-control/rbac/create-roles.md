@@ -55,7 +55,7 @@ To define a role for database access:
 
     {{<image filename="images/rs/access-control-role-databases.png" alt="Add databases to access" >}}{{</image>}}
 
-1. Select the check <img src="/images/rs/buttons/checkmark-button.png#no-click" alt="The Check button" width="25px"> mark to confirm.
+1. Select the check mark <img src="/images/rs/buttons/checkmark-button.png#no-click" alt="The Check button" width="25px"> to confirm.
 
 1. Select **Save**.
 
