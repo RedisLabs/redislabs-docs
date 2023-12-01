@@ -26,6 +26,10 @@ To enable TLS for client connections:
 
 1. In the **Apply TLS for** section, select **Clients and databases + Between databases**.
 
+1. Select **Save**.
+
+To enable mutual TLS for client connections:
+
 1. Select **Mutual TLS (Client authentication)**.
 
     {{<image filename="images/rs/screenshots/databases/security-mtls-clients.png"  alt="Mutual TLS authentication configuration.">}}{{</image>}}
@@ -65,11 +69,14 @@ To enable TLS for client connections:
 
 1. Select **Save**.
 
-1. _(Optional)_ By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to turn off this behavior.
+    {{< note >}}
+By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to turn off this behavior.
 
-    ```sh
-    rladmin tune db < db:id | name > mtls_allow_outdated_certs enabled
-    ```
+```sh
+rladmin tune db < db:id | name > mtls_allow_outdated_certs enabled
+```
+    
+    {{< /note >}}
 
 ## Enable TLS for Active-Active cluster connections
 
