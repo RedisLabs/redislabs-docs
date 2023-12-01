@@ -49,7 +49,7 @@ To define a role for database access:
     
 1. Select **+ Add ACL**.
 
-    {{<image filename="/images/rs/buttons/access-control-role-acl.png" alt="Add role database acl" >}}{{</image>}}
+    {{<image filename="images/rs/access-control-role-acl.png" alt="Add role database acl" >}}{{</image>}}
 
 1.  Choose a Redis ACL and databases to associate with the role.
 
