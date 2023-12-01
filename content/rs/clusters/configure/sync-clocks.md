@@ -24,63 +24,65 @@ you must use the Network Time Protocol (NTP) regularly to make sure that all ser
 
 To synchronize the server clock, run the command that is appropriate for your operating system.
 
-Setting up NTP synchronization on each of the mentioned OS/version combinations by the default method. **Please replace the example of pool.ntp.org with the NTP server of your choice**.
+## Set up NTP synchronization
 
-**Ubuntu 18.04 & Ubuntu 20.04**
+To set up NTP synchronization, see the following sections for instructions for specific operating systems.
+
+### Ubuntu 18.04 and Ubuntu 20.04
 
 1. Install Chrony, a replacement for NTP: ```sudo apt install chrony```
 
 2. Edit the Chrony configuration file: ```sudo nano /etc/chrony/chrony.conf```
 
-3. Add server pool.ntp.org to the file and save.
+3. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
 
 4. Restart the Chrony service: ```sudo systemctl restart chrony```
 
 5. Check the Chrony service status: ```sudo systemctl status chrony```
 
-For more details, refer to the official Ubuntu 20.04 documentation: [About time synchronisation | Ubuntu](https://ubuntu.com/server/docs/network-ntp)
+For more details, refer to the official [Ubuntu 20.04 documentation](https://ubuntu.com/server/docs/network-ntp).
 
-**RHEL 7**
+### RHEL 7
 
 1. Install Chrony, a replacement for NTP: ```sudo yum install chrony```
 
 2. Edit the Chrony configuration file: ```sudo nano /etc/chrony.conf```
 
-3. Add server pool.ntp.org to the file and save.
+3. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
 
 4. Enable and start the Chrony service: ```sudo systemctl enable chronyd && sudo systemctl start chronyd```
 
-Check the Chrony service status: ```sudo systemctl status chronyd```
+5. Check the Chrony service status: ```sudo systemctl status chronyd```
 
-For more details, refer to the official [RHEL 7 documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-using_chrony)
+For more details, refer to the official [RHEL 7 documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-using_chrony).
 
-**RHEL 8 and RHEL 9**
+### RHEL 8 and RHEL 9
 
 1. Install Chrony, a replacement for NTP: ```sudo dnf install chrony```
 
 2. Edit the Chrony configuration file: ```sudo nano /etc/chrony.conf```
 
-3. Add server pool.ntp.org to the file and save.
+3. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
 
 4. Enable and start the Chrony service: ```sudo systemctl enable chronyd && sudo systemctl start chronyd```
 
 5. Check the Chrony service status: ```sudo systemctl status chronyd```
 
-For more details, refer to the official [RHEL 8 and 9 documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/using-chrony-to-configure-ntp)
+For more details, refer to the official [RHEL 8 and 9 documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/using-chrony-to-configure-ntp).
 
-**Amazon Linux 2**
+### Amazon Linux 2
 
 1. Install Chrony, a replacement for NTP: ```sudo yum install chrony```
 
 2. Edit the Chrony configuration file: ```sudo nano /etc/chrony.conf```
 
-3. Add server pool.ntp.org to the file and save.
+3. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
 
 4. Enable and start the Chrony service: ```sudo systemctl enable chronyd && sudo systemctl start chronyd```
 
 5. Check the Chrony service status: ```sudo systemctl status chronyd```
 
-For more details, refer to the official [Amazon Linux 2 documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html)
+For more details, refer to the official [Amazon Linux 2 documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html).
 
 If you are using Active-Active databases, you must use [Network Time Service (ntpd)]({{< relref "/rs/databases/active-active/_index.md#network-time-service-ntp-or-chrony" >}})
-to synchronize OS clocks consistent across clusters to handle conflict resolution according to the OS time.
+to synchronize OS clocks consistently across clusters to handle conflict resolution according to the OS time.
