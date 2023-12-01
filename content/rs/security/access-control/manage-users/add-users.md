@@ -12,7 +12,7 @@ To add a user to the cluster:
 
 1. From the **Access Control > Users** tab in the admin console, select **+ Add user**.
 
-    {{<image filename="/images/rs/buttons/access-control-user-panel.png" alt="Add role with name" >}}{{</image>}}
+    {{<image filename="images/rs/access-control-user-panel.png" alt="Add role with name" >}}{{</image>}}
 
 1. Enter the name, email, and password of the new user.
 
