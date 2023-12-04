@@ -32,17 +32,26 @@ To set up NTP synchronization, see the following sections for instructions for s
 
 1. Install Chrony, a replacement for NTP:
    ```sh
-   sudo apt install chrony`
+   sudo apt install chrony
    ```
    
-2. Edit the Chrony configuration file: `sudo nano /etc/chrony/chrony.conf`
+1. Edit the Chrony configuration file:
+   ```sh
+   sudo nano /etc/chrony/chrony.conf
+   ```
 
-3. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
+1. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
 
-4. Restart the Chrony service: ```sudo systemctl restart chrony```
+1. Restart the Chrony service: 
+   ```sh
+   sudo sudo systemctl restart chrony
+   ```
 
-5. Check the Chrony service status: ```sudo systemctl status chrony```
-
+1. Check the Chrony service status:
+   ```sh
+   sudo sudo systemctl status chrony
+   ```
+   
 For more details, refer to the official [Ubuntu 20.04 documentation](https://ubuntu.com/server/docs/network-ntp).
 
 ### RHEL 7
