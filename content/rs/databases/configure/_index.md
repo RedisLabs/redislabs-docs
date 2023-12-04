@@ -16,7 +16,7 @@ aliases: [
 ]
 ---
 
-You can manage your Redis Enterprise Software databases with several different tools:
+You can manage your Redis Enterprise Software databases with several tools:
 
 - [Admin console](#edit-database-settings) (the web-based user interface)
 
@@ -120,7 +120,7 @@ You can't add a module to an existing database.
 
 - [**OSS Cluster API**]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-    If you enable the OSS Cluster API, the shards placement policy and database proxy policy automatically change to _Sparse_ and _All primary shards_.
+    If you enable the OSS Cluster API, the shards placement policy and database proxy policy automatically change to _Sparse_ and _All master shards_.
 
 - [**Shards placement policy**]({{<relref "/rs/databases/memory-performance/shard-placement-policy">}}) - Determines how to distribute database shards across nodes in the cluster.
 
