@@ -7,7 +7,6 @@ alwaysopen: false
 categories: ["RS"]
 aliases: [
  "/rs/installing-upgrading/install/prepare-install/prepare-flash",
- "/rs/installing-upgrading/install/prepare-install/prepare-flash.md",
 ]
 ---
 
