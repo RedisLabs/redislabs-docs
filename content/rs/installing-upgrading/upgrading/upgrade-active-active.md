@@ -66,9 +66,13 @@ To upgrade an Active-Active database (CRDB) instance:
 
 1. To upgrade each Active-Active instance, including the Redis version and CRDB protocol version, run:
 
-    ```sh
-    rladmin upgrade db <database_name | database_ID>
-    ```
+    - To upgrade a database without modules:
+
+        ```sh
+        rladmin upgrade db <database_name | database_ID>
+        ```
+    
+    - If the database has modules enabled and new module versions are available in the cluster, run `rladmin upgrade db` with additional parameters to upgrade the module versions when you upgrade the database. See [Upgrade modules]({{<relref "/stack/install/upgrade-module">}}) for more details.
 
     If the protocol version is old, read the warning message carefully and confirm.
 
@@ -101,4 +105,38 @@ without upgrading the CRDB protocol version.
     CRDB-GUID                             NAME    REPL-ID  CLUSTER-FQDN
     700140c5-478e-49d7-ad3c-64d517ddc486  aatest  1        aatest1.example.com
     700140c5-478e-49d7-ad3c-64d517ddc486  aatest  2        aatest2.example.com
+    ```
+
+1. Update module information in the CRDB configuration using the following command syntax:
+
+    ```sh
+    crdb-cli crdb update --crdb-guid <guid> --default-db-config \
+    '{ "module_list": 
+      [
+        { 
+          "module_name": "<module1_name>",
+          "semantic_version": "<module1_version>" 
+        },
+        { 
+          "module_name": "<module2_name>",
+          "semantic_version": "<module2_version>" 
+        }
+      ]}'
+    ```
+
+    For example:
+
+    ```sh
+    crdb-cli crdb update --crdb-guid 82a80988-f5fe-4fa5-bca0-aef2a0fd60db --default-db-config \
+    '{ "module_list": 
+      [
+        {
+          "module_name": "search",
+          "semantic_version": "2.4.6"
+        },
+        {
+          "module_name": "ReJSON",
+          "semantic_version": "2.4.5"
+        }
+      ]}' 
     ```
