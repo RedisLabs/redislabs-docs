@@ -23,7 +23,7 @@ located on a different node than the primary shard to make your data highly avai
 fails or if the node hosting the primary shard fails, then the replica is promoted to primary.
 
 Without replica high availability (_replica\_ha_) enabled, the promoted primary shard becomes a single point of failure 
-as the promoted replica shard is the only copy of the data.
+as the only copy of the data.
 
 Enabling _replica\_ha_ configures the cluster to automatically replace the promoted replica on an available node. 
 This automatically returns the database to a state where there are two copies of the data: 
