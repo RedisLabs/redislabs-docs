@@ -80,6 +80,18 @@ To upgrade a database:
         rladmin upgrade db <database name | database ID>
         ```
 
+        Example of a successful upgrade:
+
+        ``` shell
+        rladmin> upgrade db demo
+        Monitoring d194c4a3-631c-4726-b799-331b399fc85c
+        active - SMUpgradeBDB init
+        active - SMUpgradeBDB wait_for_version
+        active - SMUpgradeBDB configure_shards
+        completed - SMUpgradeBDB
+        Done
+        ```
+
     - If the database has modules enabled and new module versions are available in the cluster, run `rladmin upgrade db` with additional parameters to upgrade the module versions when you upgrade the database. See [Upgrade modules]({{<relref "/stack/install/upgrade-module">}}) for more details.
 
     - To upgrade the database to a version other than the default version, use the `redis_version` parameter:
