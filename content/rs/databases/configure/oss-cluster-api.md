@@ -15,7 +15,7 @@ aliases: [
 ]
 ---
 
-Review the [OSS Cluster API Architecture]({{<relref "/rs/clusters/optimize/oss-cluster-api">}}) to determine if this feature should be enabled for your database.
+Review [Redis OSS Cluster API Architecture]({{<relref "/rs/clusters/optimize/oss-cluster-api">}}) to determine if you should enable this feature for your database.
 
 ## Prerequisites
 
