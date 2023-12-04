@@ -11,7 +11,7 @@ aliases: /rv/administration/configuration/monitoring-performance/
          /rc/databases/monitor-performance/
 ---
 
-Redis Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance crosses defined threshholds.
+Redis Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance crosses defined thresholds.
 
 ## View database metrics
 
