@@ -46,6 +46,36 @@ Redis Enterprise Software's port usage falls into three general categories:
 
 ## Change port configuration
 
+### Reserve ports
+
+Redis Enterprise Software reserves some ports by default (`system_reserved_ports`). To reserve other ports or port ranges and prevent the cluster from assigning them to database endpoints, configure `reserved_ports` using one of the following methods:
+
+- [rladmin cluster config]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}})
+
+    ```sh
+    rladmin cluster config reserved_ports <list of ports/port ranges>
+    ```
+
+    For example:
+
+    ```sh
+    rladmin cluster config reserved_ports 11000 13000-13010
+    ```
+
+- [Update cluster settings]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}) REST API request
+
+    ```sh
+    PUT /v1/cluster
+    { "reserved_ports": ["list of ports/port ranges"] }
+    ```
+
+    For example:
+
+    ```sh
+    PUT /v1/cluster
+    { "reserved_ports": ["11000", "13000-13010"] }
+    ```
+
 ### Change the admin console port
 
 The Redis Enterprise Software admin console uses port 8443, by default. You can change this to a custom port as long as the new port is not in use by another process.
