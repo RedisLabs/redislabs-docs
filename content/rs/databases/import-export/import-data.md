@@ -79,7 +79,10 @@ Select **Add path** to add another import file path.
 Before importing data from a local mount point, make sure that:
 
 - The node can connect to the server hosting the mount point.
+
 - The `redislabs:redislabs` user has permission to read files on the local mount point and on the destination server.
+
+- You must mount the storage in the same path on all cluster nodes. You can also use local storage, but you must copy the imported files manually to all nodes because the import source folders on the nodes are not synchronized.
 
 To import from a local mount point:
 
@@ -160,11 +163,11 @@ You can also connect to a storage service that uses the S3 protocol but is not h
 
 ### Google Cloud Storage
 
-Before you choose to import from a [Google Cloud](https://developers.google.com/console/) storage bucket, make sure that you have:
+Before you import data from a [Google Cloud](https://developers.google.com/console/) storage bucket, make sure you have:
 
 - Storage location path in the format: `/bucket_name/[path]/[filename].rdb`
 - A [JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating) for your account
-- A [principal](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-add) for your bucket with the `client_email` from the service account key and the permission to get files from the bucket
+- A [principal](https://cloud.google.com/storage/docs/access-control/using-iam-permissions#bucket-add) for your bucket with the `client_email` from the service account key and a [role](https://cloud.google.com/storage/docs/access-control/iam-roles) with permissions to get files from the bucket (such as the **Storage Legacy Object Reader** role, which grants `storage.objects.get` permissions)
 
 In the Redis Enterprise Software admin console, when you enter the import location details:
 

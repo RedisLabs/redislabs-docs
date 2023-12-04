@@ -20,7 +20,7 @@ This page helps you manage your Redis Cloud subscriptions; it briefly compares a
 
 ## Subscription plans
 
-As of February 2021, Redis Cloud supports the following subscription plans:
+As of November 2022, Redis Cloud supports the following subscription plans:
 
 - [Free plans](#free-plans)
 - [Fixed plans](#fixed-plans)
@@ -31,12 +31,12 @@ Here's a quick comparison of each plan:
 
 | Feature | Free plan | Fixed plan | Flexible/<br/>Annual plan |
 |:-----|:-------:|:----:|:-----:|
-| Number of databases | 1 | 4-64 | Unlimited |
-| Memory size | 30 MB | 100 MB-10 GB | 50 TB |
-| Concurrent connections | 30 | 256-10,000 | Unlimited |
+| Number of databases | 1 | 8-64 | Unlimited |
+| Memory size | 30 MB | 250 MB-12 GB | 50 TB |
+| Concurrent connections | 30 | 256-Unlimited | Unlimited |
 | Security | role-based auth<br/>password protection<br/>encryption in transit | role-based auth<br/>password protection<br/>SSL & SIP auth<br/>encryption in transit | role-based auth<br/>password protection<br/>SSL & SAIP auth<br/>encryption in transit<br/>encryption at rest |
 | Admin REST API | No | No | Yes |  
-| Support | Best effort | Basic | Flexible: Standard<br/>Annual: Premium |
+| Support | Basic | Standard | Flexible: Enhanced<br/>Annual: Premium |
 | Selected additional features<br/> <br/> <br/>|| Replication<br/>Auto-failover<br /> | Dedicated accounts<br>Auto Tiering<br/>Active/Active<br/> |   
 
 To learn more, see [Redis Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).

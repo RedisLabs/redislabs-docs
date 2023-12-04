@@ -35,7 +35,32 @@ For production environments, see the [install and setup]({{< relref "/rs/install
 
 ## Ensure port availability
 
+{{<embed-md "port-availability-embed.md">}}
+
+### Update `sysctl.conf` to avoid port collisions
+
+{{<embed-md "port-collision-avoidance.md">}}
+
+### Ubuntu conflicts with port 53
+
 {{<embed-md "port-53.md">}}
+
+
+### Configuration for AWS and GCP
+
+For detailed configuration instructions, see your cloud provider's documentation.
+
+1. Create a VPC that you can use with regional subnets.
+
+1. Within this VPC, create firewall rules that allow external and internal access for Redis Enterprise Software.
+
+
+| Ingress/Egress   | Source                                             | Protocol  | Ports                                    | Other protocols  |
+|------------------|----------------------------------------------------|-----------|------------------------------------------|------------------|
+| Ingress          | 0.0.0.0/0                                          | TCP       | 21, 22, 53, 8001, 8443, 9443, 8070, <nobr>10000-19999</nobr> | ICMP             |
+| Ingress          | 0.0.0.0/0                                          | UDP       | 53, 5353                                  |                  |
+| Ingress          | 10.0.0.0/8  (if subnets use 10. ranges) | all       | all                                      |                  | 
+
 
 ## Install Redis Enterprise Software
 
