@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-When you first install Redis Enterprise Software, self-signed certificates are created to encrypt internal traffic.  These certificates expire after a year (365 days) and must be renewed.
+When you first install Redis Enterprise Software, self-signed certificates are created to enable encryption for Redis Enterprise endpoints.  These certificates expire after a year (365 days) and must be renewed.
 
 You can renew these certificates by replacing them with new self-signed certificates or by replacing them with certificates signed by a [certificate authority](https://en.wikipedia.org/wiki/Certificate_authority) (CA).
 
@@ -212,6 +212,10 @@ However you choose to create the certificates, be sure to incorporate the guidel
 
 3.  Sign the private key using your certificate authority.
 
+    ```sh
+    $ openssl x509 -req -in <key-file-name>.csr -signkey <key-file-name>.pem -out <cert-name>.pem
+    ```
+
     The signing process varies for each organization and CA vendor.  Consult your security team and certificate authority for specific instructions describing how to sign a certificate.
 
 4.  Upload the certificate to your cluster.
@@ -219,11 +223,11 @@ However you choose to create the certificates, be sure to incorporate the guidel
     You can use [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/certificate">}}) to replace the existing certificates with new certificates:
 
     ``` console
-    $ rladmin cluster certificate set <CertName> certificate_file \
-       <CertFilename>.pem key_file <KeyFilename>.pem
+    $ rladmin cluster certificate set <cert-name> certificate_file \
+       <cert-name>.pem key_file <key-file-name>.pem
     ```
 
-    For a list of values supported by the _\<CertName>_ parameter, see the [earlier table](#replace-self-signed).
+    For a list of values supported by the `<cert-name>` parameter, see the [earlier table](#replace-self-signed).
 
     You can also use the REST API.  To learn more, see [Update certificates]({{<relref "/rs/security/certificates/updating-certificates#how-to-update-certificates">}}).
 

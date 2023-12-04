@@ -55,7 +55,7 @@ For information on how to upgrade to a Flexible subscription, see [upgrade subsc
 
 To change your subscription tier, select the desired tier from the list and select the **Upgrade plan** button:
 
-{{<image filename="images/rc/subscription-change-fixed-tiers.png" width="75%" alt="Select the desired subscription tier from the ones shown.." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-change-fixed-tiers.png" width="100%" alt="Select the desired subscription tier from the ones shown." >}}{{< /image >}}
 
 Each tier in a Fixed plan provides a variety of benefits, including increased memory, number of databases, connections, and so on.
 

@@ -15,6 +15,7 @@ Represents a [Redis module]({{<relref "/stack">}}).
 | architecture | string | Architecture used to compile the module |
 | author | string | Module creator |
 | capabilities | array of strings | List of capabilities supported by this module |
+| capability_name | string | Short description of module functionality |
 | command_line_args | string | Command line arguments passed to the module |
 | config_command | string | Name of command to configure module arguments at runtime |
 | dependencies | object dependencies | Module dependencies |
