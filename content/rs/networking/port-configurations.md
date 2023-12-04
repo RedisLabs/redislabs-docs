@@ -31,7 +31,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | Protocol | Port | Configurable | Connection source | Description |
 |----------|------|--------------|-------------------|-------------|
 | TCP | 8001 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) |
-| TCP | 8000, 8070, 8071, 9090 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Metrics exported and managed by the web proxy |
+| TCP | 8000, 8070, 8071, 9090, 9125 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Metrics exported and managed by the web proxy |
 | TCP | 8443 | <span title="Configurable">&#x2705; Yes</span> | Internal, External | Secure (HTTPS) access to the management web UI |
 | TCP | 9081 | <span title="Not configurable">&#x274c; No</span> | Internal | Active-Active management (internal) |
 | TCP | 9443 (Recommended), 8080 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
