@@ -24,7 +24,7 @@ Before you install Redis Enterprise Software:
 
 - If you require the `redislabs` UID (user ID) and GID (group ID) numbers to be the same on all the nodes, create the `redislabs` user and group with the required numbers on each node.
 
-- If you want to use Auto Tiering for your databases, see [Prepare Auto Tiering]({{<relref "rs/installing-upgrading/install/install-on-linux#prepare-flash">}}).
+- If you want to use Auto Tiering for your databases, see [Auto Tiering installation]({{<relref "rs/installing-upgrading/install/install-on-linux#auto-tiering-installation">}}).
 
 ## Next steps
 
