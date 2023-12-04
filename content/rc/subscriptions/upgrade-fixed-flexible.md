@@ -35,9 +35,9 @@ To upgrade your Fixed subscription to a Flexible subscription:
     - Set the memory limit to comply with [Active-Passive memory requirements]({{<relref "/rc/databases/migrate-databases#active-passive-memory-requirements">}}) if you want to migrate your database using [Active-Passive]({{<relref "/rc/databases/migrate-databases#sync-using-active-passive">}}).
     - Select any advanced capabilities that your Fixed database offers. You can find a list of enabled advanced capabilities in the [Configuration tab]({{< relref "/rc/databases/view-edit-database#configuration-details-tab" >}}) of your database.
 
-    {{< note >}}
+        {{< note >}}
 A preview of [Triggers and functions]({{<relref "/rc/changelog/june-2023#Triggers-and-functions-preview">}}) (previously known as RedisGears) is available for Fixed subscriptions in select regions. If you have a Fixed subscription in these regions and would like to continue to use Triggers and functions in your Flexible subscription, [contact support](https://redis.com/company/support/).
-    {{< /note >}}
+        {{< /note >}}
 
 ### Migrate databases
 
