@@ -46,7 +46,7 @@ Starting with the primary (master) node, follow these steps for every node in th
     $ rladmin status extra all
     ```
 
-2.  Download the Redis Enterprise Software installation package to the machine running the node from the [Download Center](https://app.redislabs.com) on https://app.redislabs.com.  
+2.  Download the Redis Enterprise Software installation package to the machine running the node from the Download Center on [https://app.redislabs.com](https://app.redislabs.com).  
 
 3.  Extract the installation package:
 
