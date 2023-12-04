@@ -12,7 +12,8 @@ aliases:
 
 When you upgrade an existing database or create a new one, it uses the default Redis version (`default_redis_version`) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}) or [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}).
 
-Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2. As of version 7.2, Redis Enterprise Software includes three Redis database versions.
+Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2.
+As of version 7.2, Redis Enterprise Software includes three Redis database versions.
 
 To view available Redis database versions:
 
@@ -28,21 +29,8 @@ The default Redis database version differs between Redis Enterprise releases as 
 | 6.4.2 | 6.0, 6.2 | 6.2 |
 | 6.2.x | 6.0, 6.2 | 6.0 |
 
-- v6.2.x: `default_redis_version` is 6.0.
 
-    Setting `redis_upgrade_policy` to `major` enforces this default. However, if you change `redis_upgrade_policy` to `latest`, this enforces 6.2 as the default.
-    
-    The upgrade policy is only relevant for Redis Enterprise Software versions 6.2.4 through 6.2.18. For more information about upgrade policies, see the [6.2 version of this document](https://docs.redis.com/6.2/rs/installing-upgrading/upgrading/#redis-upgrade-policy).
-
-- v6.4.2: `default_redis_version` is 6.2.
-
-    Both `major` and `latest` upgrade policies use this new default.
-
-    You can override the default version with [`rladmin tune cluster default_redis_version <version>`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}); however, this might limit future upgrade options.
-
-- v7.2: `default_redis_version` is 7.2.
-
-    Both `major` and `latest` upgrade policies use this new default.
+The upgrade policy is only relevant for Redis Enterprise Software versions 6.2.4 through 6.2.18. For more information about upgrade policies, see the [6.2 version of this document](https://docs.redis.com/6.2/rs/installing-upgrading/upgrading/#redis-upgrade-policy).
 
 ## Upgrade prerequisites
 
