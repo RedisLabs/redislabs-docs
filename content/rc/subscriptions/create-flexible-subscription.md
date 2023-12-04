@@ -183,6 +183,7 @@ The shard types associated with your subscription depend on your database memory
 | High-throughput | 2.5GB / 25K ops/sec |
 | Small | 12.5GB / 12.5K ops/sec |
 | Large | 25GB  / 25K ops/sec |
-| Very large | 50GB / 5K ops/sec |
+| Very large - used for databases with auto tiering (RoF) before Redis 7.2 | 50GB / 5K ops/sec |
+| XLarge - used for hosted databases with auto tiering (RoF) starting Redis 7.2 | 50GB / 10K ops/sec |
 
 Prices vary according to the cloud provider and region.  Minimum prices apply.  To learn more, see [Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/).
