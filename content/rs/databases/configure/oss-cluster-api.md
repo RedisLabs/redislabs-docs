@@ -38,6 +38,8 @@ You can use the admin console or the `rladmin` utility to enable OSS Cluster API
 
 ### Admin console
 
+Using the Admin console UI to enable OSS Cluster API will automatically configure the [prerequisites]({{<relref "/rs/databases/configure/oss-cluster-api#prerequisites">}}) for the OSS Cluster API.
+
 To enable the OSS Cluster API from the admin console for an existing database:
 
 1. From the database's **Configuration** tab, select **Edit**.
@@ -58,7 +60,7 @@ You can use the [`rladmin` utility]({{<relref "/rs/references/cli-utilities/rlad
 
 For Active-Active (CRDB) databases, [use the crdb-cli utility](#active-active-databases).
 
-To enable the OSS Cluster API for a Redis database from the command line:
+Ensure the [prerequisites]({{<relref "/rs/databases/configure/oss-cluster-api#prerequisites">}}) have been configured.  Then, enable the OSS Cluster API for a Redis database from the command line:
 
 ```sh
 $ rladmin tune db <database name or ID> oss_cluster enabled
@@ -75,7 +77,7 @@ The Redis OSS Cluster API setting applies to the specified database only; it doe
 
 ### Active-Active databases
 
-Use the `crdb-cli` utility to enable the OSS Cluster API for Active-Active databases:
+Ensure the [prerequisites]({{<relref "/rs/databases/configure/oss-cluster-api#prerequisites">}}) have been configured.  Then, use the `crdb-cli` utility to enable the OSS Cluster API for Active-Active databases:
 
 ```sh
 $ crdb-cli crdb update --crdb-guid <GUID> --oss-cluster true
@@ -91,7 +93,7 @@ Here's the basic process:
     $ crdb-cli crdb create --name <name> \
        --memory-size 10g --port <port> \
        --sharding true --shards-count 2  \
-       --replication true --oss-cluster true \
+       --replication true --oss-cluster true --proxy-policy all-master-shards \
        --instance fqdn=<fqdn>,username=<user>,password=<pass> \
        --instance fqdn=<fqdn>,username=<user>,password=<pass> \
        --instance fqdn=<fqdn>,username=<user>,password=<pass>
