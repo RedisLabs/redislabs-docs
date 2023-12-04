@@ -13,6 +13,6 @@ aliases: []
 
 ### Network data cost breakdowns
 
-Invoices for customers with Flexible and Annual subscriptions now include a breakdown of network data costs for the subscription.
+Invoices for customers with Flexible and Annual subscriptions now include a breakdown of network data costs for the subscription. To download an invoice, go to the [Billing and Payments]({{<relref "/rc/billing-and-payments#download-invoice">}}) page on the [Redis Cloud console](https://app.redislabs.com/).
 
-To download an invoice, go to the [Billing and Payments]({{<relref "/rc/billing-and-payments#download-invoice">}}) page on the [Redis Cloud console](https://app.redislabs.com/).
+Customers with annual subscriptions can also find a breakdown of network data costs in the consumption report.
