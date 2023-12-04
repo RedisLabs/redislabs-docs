@@ -23,6 +23,8 @@ The following upgrade paths are supported:
 
 Before upgrading a cluster:
 
+- Verify access to [rlcheck]({{< relref "/rs/references/cli-utilities/rlcheck/" >}}) and [rladmin]({{< relref "/rs/references/cli-utilities/rladmin/#use-the-rladmin-shell" >}}) commands
+
 - Verify that you meet the upgrade path requirements for your desired cluster version and review the relevant [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for any preparation instructions.
 
 - Upgrade the cluster's primary (master) node first. To identify the primary node, use one of the following methods:
