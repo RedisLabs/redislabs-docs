@@ -24,7 +24,11 @@ before installation.
     sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
     ```
 
-1. Restart the DNS service:
+    {{< note >}}
+    You may encounter a temporary name resolution error (`sudo: unable to resolve host {hostname}: Temporary failure in name resolution`) which should be fixed by restarting `systemd-resolved` in the next step.
+    {{< /note >}}
+
+2. Restart the DNS service:
 
     ```sh
     sudo service systemd-resolved restart
