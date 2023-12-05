@@ -15,8 +15,7 @@ aliases: [
 
 ]
 ---
-All data is stored and managed exclusively in either RAM or RAM + flash Memory ([Redis on
-Flash]({{< relref "/rs/databases/auto-tiering/" >}})) and therefore, is at risk of being lost upon a process or server
+All data is stored and managed exclusively in either RAM or RAM + flash Memory ([Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}})) and therefore, is at risk of being lost upon a process or server
 failure. As Redis Enterprise Software is not just a caching solution, but also a full-fledged database, [persistence](https://redis.com/redis-enterprise/technology/durable-redis/) to disk
 is critical. Therefore, Redis Enterprise Software supports persisting data to disk on a per-database basis and in multiple ways.
 
@@ -120,7 +119,7 @@ and network overhead, especially for cloud configurations
 with network-attached persistent storage, such as EBS-backed
 volumes in AWS.
 
-There may be times where performance is critical for your use case and
+There may be times when performance is critical for your use case and
 you don't want to risk data persistence adding latency. If that is the
 case, you can disable data-persistence on the master shards using the
 following `rladmin` command:

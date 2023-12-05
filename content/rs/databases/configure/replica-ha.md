@@ -16,12 +16,18 @@ aliases: [
          
 ]
 ---
-When you enable [database replication]({{< relref "/rs/databases/durability-ha/replication.md" >}}),
-Redis Enterprise Software copies your data to a replica node to make your data highly available.
-If the replica node fails or if the primary (master) node fails and the replica is promoted to primary,
-the remaining primary node is a single point of failure.<!--more-->
 
-You can configure high availability for replica shards so that the cluster automatically migrates the replica shards to an available node.  This process is known as _replica high availability_ or _replica\_ha_.
+When you enable [database replication]({{< relref "/rs/databases/durability-ha/replication.md" >}}),
+Redis Enterprise Software creates a replica of each primary (master) shard.  The replica shard will always be 
+located on a different node than the primary shard to make your data highly available.  If the primary shard 
+fails or if the node hosting the primary shard fails, then the replica is promoted to primary.
+
+Without replica high availability (_replica\_ha_) enabled, the promoted primary shard becomes a single point of failure 
+as the only copy of the data.
+
+Enabling _replica\_ha_ configures the cluster to automatically replace the promoted replica on an available node. 
+This automatically returns the database to a state where there are two copies of the data: 
+the former replica shard which has been promoted to primary and a new replica shard.
 
 An available node:
 
@@ -96,8 +102,11 @@ To enable or turn off replica high availability by default for the entire cluste
 To disable replica HA for a specific database using `rladmin`, run:
 
 ``` text
-rladmin tune db <bdb_uid> slave_ha disabled
+rladmin tune db db:<ID> slave_ha disabled
 ```
+
+You can use the database name in place of `db:<ID>` in the preceding command.
+
 
 ## Configuration options
 
@@ -111,11 +120,14 @@ rladmin info cluster
 
 By default, replica HA has a 10-minute grace period after node failure and before new replica shards are created.
 
+{{<note>}}The default grace period is 30 minutes for containerized applications using [Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/">}}).{{</note>}}
+
 To configure this grace period from rladmin, run:
 
 ``` text
 rladmin tune cluster slave_ha_grace_period <time_in_seconds>
 ```
+
 
 ### Shard priority
 
@@ -127,8 +139,10 @@ Replica shard migration is based on priority.  When memory resources are limited
     To assign priority to a database, run:
 
     ``` text
-    rladmin tune db <bdb_uid> slave_ha_priority <positive integer>
+    rladmin tune db db:<ID> slave_ha_priority <positive integer>
     ```
+    
+    You can use the database name in place of `db:<ID>` in the preceding command.
 
 1. Active-Active databases - Active-Active database synchronization uses replica shards to synchronize between the replicas.
 1. Database size - It is easier and more efficient to move replica shards of smaller databases.

@@ -31,7 +31,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | Protocol | Port | Configurable | Connection source | Description |
 |----------|------|--------------|-------------------|-------------|
 | TCP | 8001 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) |
-| TCP | 8000, 8070, 8071, 9090 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Metrics exported and managed by the web proxy |
+| TCP | 8000, 8070, 8071, 9090, 9125 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Metrics exported and managed by the web proxy |
 | TCP | 8443 | <span title="Configurable">&#x2705; Yes</span> | Internal, External | Secure (HTTPS) access to the management web UI |
 | TCP | 9081 | <span title="Not configurable">&#x274c; No</span> | Internal | Active-Active management (internal) |
 | TCP | 9443 (Recommended), 8080 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
@@ -44,7 +44,39 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 8002, 8004, 8006 | <span title="Configurable">&#x2705; Yes</span> | Internal | Default system health monitoring (envoy admin, envoy management server, gossip envoy admin)|
 | TCP | 8444, 9080 | <span title="Not configurable">&#x274c; No</span> | Internal | Traffic between web proxy and cnm_http/cm |
 
-## Change the admin console port
+## Change port configuration
+
+### Reserve ports
+
+Redis Enterprise Software reserves some ports by default (`system_reserved_ports`). To reserve other ports or port ranges and prevent the cluster from assigning them to database endpoints, configure `reserved_ports` using one of the following methods:
+
+- [rladmin cluster config]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}})
+
+    ```sh
+    rladmin cluster config reserved_ports <list of ports/port ranges>
+    ```
+
+    For example:
+
+    ```sh
+    rladmin cluster config reserved_ports 11000 13000-13010
+    ```
+
+- [Update cluster settings]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}) REST API request
+
+    ```sh
+    PUT /v1/cluster
+    { "reserved_ports": ["list of ports/port ranges"] }
+    ```
+
+    For example:
+
+    ```sh
+    PUT /v1/cluster
+    { "reserved_ports": ["11000", "13000-13010"] }
+    ```
+
+### Change the admin console port
 
 The Redis Enterprise Software admin console uses port 8443, by default. You can change this to a custom port as long as the new port is not in use by another process.
 
@@ -57,7 +89,7 @@ rladmin cluster config cm_port <new-port>
 After changing the Redis Enterprise Software web UI port, you must connect any new node added to the cluster to the UI with the custom port number:
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
 
-## Change the envoy  ports
+### Change the envoy  ports
 
 For system health monitoring, Redis uses the following ports by default:
 
@@ -90,7 +122,7 @@ $ rladmin cluster config gossip_envoy_admin_port <new-port>
 Cluster configured successfully
 ```
 
-## Change the REST API port
+### Change the REST API port
 
 For the REST API, Redis Enterprise Software uses port 9443 (secure) and port 8080 (not secure), by default. You can change this to a custom port as long as the new port is not in use by another process.
 
@@ -104,7 +136,19 @@ rladmin cluster config cnm_http_port <new-port>
 rladmin cluster config cnm_https_port <new-port>
 ```
 
-## Require HTTPS for API endpoints
+### Ubuntu conflicts with port 53
+
+{{<embed-md "port-53.md">}}
+
+
+### Update `sysctl.conf` to avoid port collisions
+
+{{<embed-md "port-collision-avoidance.md">}}
+
+
+## Configure HTTPS
+
+### Require HTTPS for API endpoints
 
 By default, the Redis Enterprise Software API supports communication over HTTP and HTTPS. However, you can turn off HTTP support to ensure that API requests are encrypted.
 
@@ -119,7 +163,7 @@ rladmin cluster config http_support disabled
 After you turn off HTTP support, traffic sent to the unencrypted API endpoint is blocked.
 
 
-## HTTP to HTTPS redirection
+### HTTP to HTTPS redirection
 Starting with version 6.0.12, you cannot use automatic HTTP to HTTPS redirection.
 To poll metrics from the `metrics_exporter` or to access the admin console, use HTTPS in your request. HTTP requests won't be automatically redirected to HTTPS for those services. 
 

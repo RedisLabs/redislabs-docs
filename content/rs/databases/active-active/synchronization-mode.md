@@ -29,6 +29,10 @@ you can configure the database synchronization to use distributed synchronizatio
 
 ## Configure distributed synchronization
 
+{{< note >}}
+You may use the database name in place of `db:<ID>` in the following `rladmin` commands.
+{{< /note >}}
+
 To configure distributed synchronization:
 
 1. To check the proxy policy for the database, run: `rladmin status`
@@ -44,19 +48,19 @@ To configure distributed synchronization:
     If the proxy policy (also known as a _role_) is `single`, configure the policy to `all-nodes` or `all-master-shards` according to your needs with the command:
 
     ```sh
-    rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards|all-nodes>
+    rladmin bind db db:<ID> endpoint <endpoint id> policy <all-master-shards|all-nodes>
     ```
 
 1. To configure the database to use distributed synchronization, run:
 
     ```sh
-    rladmin tune db <db_name> syncer_mode distributed
+    rladmin tune db db:<ID> syncer_mode distributed
     ```
 
     To change back to centralized synchronization, run:
 
     ```sh
-    rladmin tune db <db_name> syncer_mode centralized
+    rladmin tune db db:<ID> syncer_mode centralized
     ```
 
 ## Verify database synchronization
@@ -64,14 +68,14 @@ To configure distributed synchronization:
 Use `rladmin` to verify a database synchronization role:
 
 ```sh
-rladmin info db <db_name>
+rladmin info db db:<ID>
 ```
 
 The current database role is reported as the `syncer_mode` value:
 
 ```sh
-$ rladmin info db <db_name>     
-db:1 [<db_name>]:
+$ rladmin info db db:<ID>     
+db:<ID> [<db_name>]:
   // (Other settings removed) 
   syncer_mode: centralized
 ```
