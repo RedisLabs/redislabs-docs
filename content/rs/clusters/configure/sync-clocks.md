@@ -44,55 +44,91 @@ To set up NTP synchronization, see the following sections for instructions for s
 
 1. Restart the Chrony service: 
    ```sh
-   sudo sudo systemctl restart chrony
+   sudo systemctl restart chrony
    ```
 
 1. Check the Chrony service status:
    ```sh
-   sudo sudo systemctl status chrony
+   sudo systemctl status chrony
    ```
    
 For more details, refer to the official [Ubuntu 20.04 documentation](https://ubuntu.com/server/docs/network-ntp).
 
 ### RHEL 7
 
-1. Install Chrony, a replacement for NTP: ```sudo yum install chrony```
+1. Install Chrony, a replacement for NTP:
+   ```sh
+    sudo yum install chrony
+   ```
 
-2. Edit the Chrony configuration file: ```sudo nano /etc/chrony.conf```
+1. Edit the Chrony configuration file:
+   ```sh
+   sudo nano /etc/chrony.conf
+   ```
 
-3. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
+1. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
 
-4. Enable and start the Chrony service: ```sudo systemctl enable chronyd && sudo systemctl start chronyd```
+1. Enable and start the Chrony service:
+   ```sh 
+   sudo systemctl enable chronyd && sudo systemctl start chronyd
+   ```
 
-5. Check the Chrony service status: ```sudo systemctl status chronyd```
+1. Check the Chrony service status:
+   ```sh
+   sudo systemctl status chronyd
+   ```
 
 For more details, refer to the official [RHEL 7 documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-using_chrony).
 
 ### RHEL 8 and RHEL 9
 
-1. Install Chrony, a replacement for NTP: ```sudo dnf install chrony```
+1. Install Chrony, a replacement for NTP:
+   ```sh
+   sudo dnf install chrony
+   ```
 
-2. Edit the Chrony configuration file: ```sudo nano /etc/chrony.conf```
+1. Edit the Chrony configuration file:
+   ```sh
+   sudo nano /etc/chrony.conf
+   ```
 
-3. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
+1. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
 
-4. Enable and start the Chrony service: ```sudo systemctl enable chronyd && sudo systemctl start chronyd```
+1. Enable and start the Chrony service:
+   ```sh
+   sudo systemctl enable chronyd && sudo systemctl start chronyd
+   ```
 
-5. Check the Chrony service status: ```sudo systemctl status chronyd```
+1. Check the Chrony service status:
+   ```sh
+   sudo systemctl status chronyd
+   ```
 
 For more details, refer to the official [RHEL 8 and 9 documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/using-chrony-to-configure-ntp).
 
 ### Amazon Linux 2
 
-1. Install Chrony, a replacement for NTP: ```sudo yum install chrony```
+1. Install Chrony, a replacement for NTP:
+   ```sh
+   sudo yum install chrony
+   ```
 
-2. Edit the Chrony configuration file: ```sudo nano /etc/chrony.conf```
+1. Edit the Chrony configuration file:
+   ```sh
+    sudo nano /etc/chrony.conf
+   ```
 
-3. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
+1. Add `server pool.ntp.org` to the file, replace `pool.ntp.org` with your own NTP server, then save.
 
-4. Enable and start the Chrony service: ```sudo systemctl enable chronyd && sudo systemctl start chronyd```
+1. Enable and start the Chrony service:
+   ```sh
+   sudo systemctl enable chronyd && sudo systemctl start chronyd
+   ```
 
-5. Check the Chrony service status: ```sudo systemctl status chronyd```
+1. Check the Chrony service status:
+   ```sh
+   sudo systemctl status chronyd
+   ```
 
 For more details, refer to the official [Amazon Linux 2 documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html).
 
