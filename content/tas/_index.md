@@ -37,6 +37,34 @@ By default, a three-node Redis Enterprise cluster is deployed for you.
 
 For specific information about Redis Enterprise, and to get started, see the [Redis Enterprise documentation](https://docs.redis.com/latest/rs/).
 
+### 6.4.2103000001
+
+**Release Date:** December 5, 2023
+
+This release supersedes 6.2.1865000003 to include new features and bug fixes
+
+### New Features
+
+- Support for Redis Enterprise Cluster 6.4.2-103
+  - [Redis Enterprise 6.4.2-103 release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-4-2-releases)
+- Support for TAS tile 4.0
+- Support OpsMan 3.0
+
+**Bug fixes**
+
+- N/A
+
+**Known limitations**
+
+- Cluster password **may not contain** the following characters:
+  - ":" (colon)
+  - " " (space)
+  - "'" (single quote)
+  - '"' (double quotes)
+- Tile restore operations might fail. A workaround is to run the join command manually (RED-76006)
+- Delete CRDB (Active-Active database) from AppManager fails. 
+  - Workaround: delete the instance manually using Redis Enterprise UI and then delete from the AppManager.
+
 ### 6.2.1865000003
 
 **Release Date:** January 19, 2023

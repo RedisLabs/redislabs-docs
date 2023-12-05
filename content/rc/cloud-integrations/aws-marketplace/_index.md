@@ -15,11 +15,11 @@ Here's how to create a new Flexible subscription as part of your AWS Marketplace
 
 1.  Sign in to the [AWS console](https://console.aws.amazon.com/).
 
-1.  Search AWS Marketplace for [Redis Cloud - Flexible plan](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq).
+1.  Search AWS Marketplace for [Redis Cloud Flexible - Pay-As-You-Go with 14-day FREE TRIAL](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq).
 
     {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
 
-1.  Subscribe to Redis Cloud - Flexible plan, locate the **Set Up Your Account button**, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
+1.  Subscribe to the listing, locate the **Set Up Your Account button**, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
 
     {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
 

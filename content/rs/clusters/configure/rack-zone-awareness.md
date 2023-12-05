@@ -40,6 +40,8 @@ Rack-zone IDs are **case-insensitive** (uppercase and lowercase letter are treat
 
 ## Node layout guidelines
 
+Avoid placing the majority of nodes in one availability zone.
+
 If a Redis Enterprise Software cluster consists of three nodes (the recommended minimum), follow these guidelines:
 
 - For high availability, the three nodes must be distributed across three *distinct* racks or zones.

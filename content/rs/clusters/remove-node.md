@@ -103,7 +103,7 @@ To remove a node using the REST API, use [`POST /v1/nodes/<node_id>/actions/remo
 For example:
 
 ```sh
-POST https://[host][:port]/v1/nodes/<node_id>/actions/remove
+POST https://<hostname>:9443/v1/nodes/<node_id>/actions/remove
      "{}"
 ```
 
