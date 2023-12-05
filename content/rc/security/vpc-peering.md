@@ -73,7 +73,7 @@ After you set up and intitiate VPC peering, you need to approve the VPC peering 
 
 1. After you accept the peering request, select **Modify my route tables now**. This button can be found in the green header once the peering connection is **active**.
 
-{{<image filename="images/rc/modify_route_tables.png" width="800px" alt="Modify Route Table." >}}{{< /image >}}
+{{<image filename="images/rc/modify_route_tables_aws.png" width="800px" alt="Modify Route Table." >}}{{< /image >}}
 
 ### Update route tables {#update-route-tables}
 
