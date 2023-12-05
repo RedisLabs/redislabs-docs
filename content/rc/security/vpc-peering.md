@@ -69,9 +69,11 @@ The [Redis Cloud Terraform provider](https://registry.terraform.io/providers/Red
 
 After you set up and intitiate VPC peering, you need to approve the VPC peering request:
 
-1. Follow the AWS guide to [accept the VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html#accept-vpc-peering-connection).
+1. Follow the AWS guide to [accept the VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/accept-vpc-peering-connection.html).
 
-1. After you accept the peering request, select **Modify my route tables now**.
+1. After you accept the peering request, select **Modify my route tables now**. This button can be found in the green header once the peering connection is **active**.
+
+{{<image filename="images/rc/modify_route_tables.png" width="800px" alt="Modify Route Table." >}}{{< /image >}}
 
 ### Update route tables {#update-route-tables}
 
