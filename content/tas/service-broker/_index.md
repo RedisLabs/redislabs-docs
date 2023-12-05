@@ -9,6 +9,11 @@ aliases:
 
 This documentation describes the Redis Enterprise Service Broker for VMware Tanzu. The Redis Enterprise Service Broker registers a service broker on VMware Tanzu and exposes its service plans on the Marketplace. Developers can provision Redis databases by creating instances of the service plans using Apps Manager or the Cloud Foundry Command Line Interface (cf CLI).
 
+For related information see:
+
+- [Installing and configuring the Redis Enterprise Service Broker for VMware Tanzu]({{<relref "/tas/service-broker/installing">}})
+- [Redis Enterprise Service Broker for VMware Tanzu release notes]({{<relref "/tas/service-broker/release-notes">}})
+
 ## Overview
 
 Redis Enterprise is an enterprise-grade cluster that acts as a container for managing and running multiple Redis databases in a highly available and scalable manner.

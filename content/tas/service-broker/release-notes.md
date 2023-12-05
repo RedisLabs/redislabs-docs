@@ -9,6 +9,11 @@ aliases:
 
 These are release notes for Redis Enterprise Service Broker for VMware Tanzu.
 
+For related information see:
+
+- [Redis Enterprise Service Broker for VMware Tanzu]({{<relref "/tas/service-broker/">}})
+- [Installing and configuring the Redis Enterprise Service Broker for VMware Tanzu]({{<relref "/tas/service-broker/installing">}})
+
 ## 6.2.1865000003
 
 **Release Date:** January 19, 2023
@@ -214,3 +219,4 @@ Features included in this release:
 Features included in this release:
 
 - A service broker to connect Redis Enterprise, an enterprise-grade cluster that acts as a container for managing and running multiple Redis databases with VMware Tanzu.
+

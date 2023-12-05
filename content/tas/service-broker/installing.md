@@ -11,6 +11,11 @@ This page describes how to install and configure Redis Enterprise Service Broker
 
 For this release, the tile version has been updated to match the version number of Redis Enterprise.
 
+For related information see:
+
+- [Redis Enterprise Service Broker for VMware Tanzu]({{<relref "/tas/service-broker/">}})
+- [Redis Enterprise Service Broker for VMware Tanzu release notes]({{<relref "/tas/service-broker/release-notes">}})
+
 ## Install Redis Enterprise
 
 To use the Redis Enterprise Service Broker, you must have a Redis Enterprise cluster already deployed. Configuring the Redis Enterprise Service Broker requires a Redis Enterprise admin account username and password, as well as the URL of your RS cluster.
