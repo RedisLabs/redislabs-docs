@@ -25,7 +25,7 @@ before installation.
     ```
 
     {{< note >}}
-    You may encounter a name resolution failure error: *sudo: unable to resolve host {hostname}: Temporary failure in name resolution* which should be fixed by restarting `systemd-resolved` in the next step.
+    You may encounter this error: *sudo: unable to resolve host {hostname}: Temporary failure in name resolution*, which should be fixed in the next step.
     {{< /note >}}
 
 2. Restart the DNS service:
