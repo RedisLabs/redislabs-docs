@@ -120,11 +120,14 @@ rladmin info cluster
 
 By default, replica HA has a 10-minute grace period after node failure and before new replica shards are created.
 
+{{<note>}}The default grace period is 30 minutes for containerized applications using [Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/">}}).{{</note>}}
+
 To configure this grace period from rladmin, run:
 
 ``` text
 rladmin tune cluster slave_ha_grace_period <time_in_seconds>
 ```
+
 
 ### Shard priority
 
