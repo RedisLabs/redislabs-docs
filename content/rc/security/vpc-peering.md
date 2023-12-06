@@ -77,7 +77,7 @@ After you set up and intitiate VPC peering, you need to approve the VPC peering 
 
 ### Update route tables {#update-route-tables}
 
-To finish VPC peering setup, [update your route tables for the peering connection](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html) with the following details:
+To finish VPC peering setup, [update your route tables for the peering connection](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html). There may be many different route tables assigned to different VPCs. It is important to choose the route table assigned to the VPC you specified in the [Configure VPC Peering](#config-aws-vpc-peering) section with the following details:
 
 1. In the **Destination** field, enter the Requester VPC CIDRs shown when you accepted the peering request.
 
