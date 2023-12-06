@@ -231,7 +231,7 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 ## Known issues
 
-- RS114185 - During an upgrade to the initial release of [Redis Enterprise Software version 7.2.4-86]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-92">}}), the proxy might not start due to a `Failed to get default_suffix` error, which appears in `dmcproxy.log`.
+- RS114185 - During an upgrade to [Redis Enterprise Software version 7.2.4-86]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-92">}}), the proxy might not start due to a `Failed to get default_suffix` error, which appears in `dmcproxy.log`.
 
     As a workaround, start `dmcproxy` manually:
 
