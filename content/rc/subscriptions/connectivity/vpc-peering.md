@@ -2,10 +2,13 @@
 Title: Enable VPC peering
 linkTitle: VPC peering
 description: VPC peering uses private IP addresses to route traffic between a Redis Cloud VPC and an application VPC.
-weight: 80
+weight: 20
 alwaysopen: false
 categories: ["RC"]
-aliases:
+aliases: [
+    /rc/security/vpc-peering,
+    /rc/security/vpc-peering.md
+]
 ---
 
 VPC peering uses private IP addresses to allow network connections between two [virtual private clouds](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPCs).

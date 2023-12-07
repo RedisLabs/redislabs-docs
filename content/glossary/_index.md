@@ -401,7 +401,7 @@ More info: [TLS wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Securit
 {{%definition "VPC peering"%}}
 Networking connection between two VPCs that enables you to route traffic between them using private IP addresses. Instances in either VPC can communicate with each other as if they are within the same network.
 
-More info: [VPC wikipedia](https://en.wikipedia.org/wiki/Virtual_private_cloud), [Enable VPC peering]({{<relref "/rc/security/vpc-peering.md">}})
+More info: [VPC wikipedia](https://en.wikipedia.org/wiki/Virtual_private_cloud), [Enable VPC peering]({{<relref "/rc/subscriptions/connectivity/vpc-peering.md">}})
 {{%/definition%}}
 
 
