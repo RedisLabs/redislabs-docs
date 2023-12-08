@@ -149,6 +149,7 @@ This release supersedes v5.4.102200007 to include new features and bug fixes.
 
 **Known Limitations**
 
+- Tile installations on disconnected (air-gapped) environments might fail.
 - Enabling service instance sharing does not create unique credentials for each binding. Once shared, service instances cannot be unshared.
 - Cluster password **may not contain** the following characters:
   - ":" (colon)
