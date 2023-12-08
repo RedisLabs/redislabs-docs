@@ -10,7 +10,27 @@ aliases: /rs/security/tls/ciphers/
 
 Ciphers are algorithms that help secure connections between clients and servers. You can change the ciphers to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
-You can configure ciphers with the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) commands shown here or with the [REST API]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}).
+{{<image filename="images/rs/screenshots/cluster/security-tls-cipher-suites-view.png" alt="" >}}{{< /image >}}
+
+## TLS 1.2 cipher suites
+
+| Name | Configurable | Description |
+|------------|--------------|-------------|
+| control_cipher_suites | <span title="Yes">&#x2705; Yes</span> | Cipher list for control plane TLS communications for cluster administration. |
+| data_cipher_list | <span title="Yes">&#x2705; Yes</span> | Cipher list for data plane TLS communications between applications and databases. |
+| sentinel_cipher_suites | <span title="Yes">&#x2705; Yes</span> | Cipher list for [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) (Sentinel) TLS communications |
+
+## TLS 1.3 cipher suites
+
+| Name | Configurable | Description |
+|------------|--------------|-------------|
+| control_cipher_suites_tls_1_3 | <span title="No">&#x274c; No</span> | Cipher list for control plane TLS communications for cluster administration. |
+| data_cipher_suites_tls_1_3 | <span title="Yes">&#x2705; Yes</span> | Cipher list for data plane TLS communications between applications and databases. |
+| sentinel_cipher_suites_tls_1_3 | <span title="No">&#x274c; No</span> | Cipher list for [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) (Sentinel) TLS communications |
+
+## Configure cipher suites
+
+You can configure ciphers with the Cluster Manager UI, [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}), or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}).
 
 {{<warning>}}
 Configuring cipher suites overwrites existing ciphers rather than appending new ciphers to the list.
@@ -27,15 +47,17 @@ When you modify your cipher suites, make sure:
 - It does support Ephemeral Diffie–Hellman (`DHE` or `ECDHE`) key exchange ciphers on Red Hat Enterprise Linux (RHEL) 8 and Bionic OS.  
 {{</note>}}
 
-## Configure TLS 1.2 cipher suites
+To configure cipher suites using the Cluster Manager UI:
 
-TLS 1.2 cipher suites:
+1. Go to **Cluster > Security**, then select the **TLS** tab.
 
-| Name | Configurable | Description |
-|------------|--------------|-------------|
-| control_cipher_suites | <span title="Yes">&#x2705; Yes</span> | Cipher list for control plane TLS communications for cluster administration. |
-| data_cipher_list | <span title="Yes">&#x2705; Yes</span> | Cipher list for data plane TLS communications between applications and databases. |
-| sentinel_cipher_suites | <span title="Yes">&#x2705; Yes</span> | Cipher list for [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) (Sentinel) TLS communications |
+1. In the **Cipher suites lists** section, select **Configure**.
+
+1. Edit the TLS cipher suites in the text boxes:
+
+    {{<image filename="images/rs/screenshots/cluster/security-tls-cipher-suites-edit.png" alt="" >}}{{< /image >}}
+
+1. Select **Save**.
 
 ### Control plane cipher suites {#control-plane-ciphers-tls-1-2}
 
@@ -61,7 +83,9 @@ rladmin cluster config control_cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE
 
 Data plane cipher suites use the OpenSSL library format in Redis Enterprise Software version 6.0.20 or later. For a list of available OpenSSL configurations, see [Ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) (OpenSSL).
 
-To configure the cipher suites for communications between applications and databases, use the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command syntax:
+#### Configure TLS 1.2 data plane cipher suites
+
+To configure the TLS 1.2 cipher suites for communications between applications and databases, use the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command syntax:
 
 ```sh
 rladmin cluster config  data_cipher_list <OpenSSL cipher list>
@@ -75,6 +99,20 @@ rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA
 {{<note>}}
 - The deprecated 3DES and RC4 cipher suites are no longer supported.
 {{</note>}}
+
+#### Configure TLS 1.3 data plane cipher suites
+
+To configure the TLS 1.3 cipher suites for communications between applications and databases, use the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command syntax:
+
+```sh
+rladmin cluster config data_cipher_suites_tls_1_3 <OpenSSL cipher list>
+```
+
+See the example below to configure TLS 1.3 cipher suites for the data plane:
+
+```sh
+rladmin cluster config data_cipher_suites_tls_1_3 TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256
+```
 
 ### Discovery service cipher suites {#discovery-service-ciphers-tls-1-2}
 
@@ -90,30 +128,4 @@ See the example below to configure cipher suites for the sentinel service:
 
 ```sh
 rladmin cluster config sentinel_cipher_suites TLS_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-```
-
-## Configure TLS 1.3 cipher suites
-
-TLS 1.3 cipher suites:
-
-| Name | Configurable | Description |
-|------------|--------------|-------------|
-| control_cipher_suites_tls_1_3 | <span title="No">&#x274c; No</span> | Cipher list for control plane TLS communications for cluster administration. |
-| data_cipher_suites_tls_1_3 | <span title="Yes">&#x2705; Yes</span> | Cipher list for data plane TLS communications between applications and databases. |
-| sentinel_cipher_suites_tls_1_3 | <span title="No">&#x274c; No</span> | Cipher list for [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) (Sentinel) TLS communications |
-
-### Data plane cipher suites {#data-plane-ciphers-tls-1-3}
-
-Data plane cipher suites use the OpenSSL library format in Redis Enterprise Software version 6.0.20 or later. For a list of available OpenSSL configurations, see [Ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) (OpenSSL).
-
-To configure the TLS 1.3 cipher suites for communications between applications and databases, use the following [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) command syntax:
-
-```sh
-rladmin cluster config data_cipher_suites_tls_1_3 <OpenSSL cipher list>
-```
-
-See the example below to configure TLS 1.3 cipher suites for the data plane:
-
-```sh
-rladmin cluster config data_cipher_suites_tls_1_3 TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256
 ```
