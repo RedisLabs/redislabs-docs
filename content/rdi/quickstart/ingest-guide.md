@@ -8,7 +8,7 @@ categories: ["redis-di"]
 aliases:
 ---
 
-This guide will take you through the creation of a write-behind pipeline.
+This guide will take you through the creation of an ingest pipeline.
 
 ## Prerequisites
 
