@@ -46,7 +46,7 @@ For details on this platform, see the Kubernetes [documentation](https://kuberne
 {{<table-scrollable>}}
 | **Redis operator** | **<nobr>7.2.4-10</nobr>** | **<nobr>7.2.4-7</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** | **<nobr>6.2.18-3</nobr>** | **<nobr>6.2.12-1</nobr>** | **<nobr><nobr>6.2.10-4</nobr>5</nobr>** | **<nobr>6.2.10-34</nobr>** | **<nobr>6.2.10-4</nobr>** | **<nobr>6.2.8-15</nobr>** | **<nobr>6.2.8-11</nobr>** | **<nobr>6.2.8-2</nobr>** | **<nobr>6.2.4-1</nobr>** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **** | Nov 2023 | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
+| **** | Dec 2023 | Oct 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
 | **K8s** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.28** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.27** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -72,7 +72,7 @@ For details on this platform, see the [OpenShift documentation](https://docs.ope
 
 {{<table-scrollable>}}| **Redis operator** | **<nobr>7.2.4-10</nobr>** | **<nobr>7.2.4-7</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** | **<nobr>6.2.18-3</nobr>** | **<nobr>6.2.12-1</nobr>** | **<nobr><nobr>6.2.10-4</nobr>5</nobr>** | **<nobr>6.2.10-34</nobr>** | **<nobr>6.2.10-4</nobr>** | **<nobr>6.2.8-15</nobr>** | **<nobr>6.2.8-11</nobr>** | **<nobr>6.2.8-2</nobr>** | **<nobr>6.2.4-1</nobr>** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **** | Nov 2023 | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
+| **** | Dec 2023 | Oct 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
 | **OpenShift** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **4.14** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **4.13** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -95,7 +95,7 @@ For details on this platform, see the [EKS documentation](https://docs.aws.amazo
 
 {{<table-scrollable>}}| **Redis operator** | **<nobr>7.2.4-10</nobr>** | **<nobr>7.2.4-7</nobr>** | **<nobr>7.2.4-2</nobr>** | **6.4.2-8** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** | **<nobr>6.2.18-3</nobr>** | **<nobr>6.2.12-1</nobr>** | **<nobr><nobr>6.2.10-4</nobr>5</nobr>** | **<nobr>6.2.10-34</nobr>** | **<nobr>6.2.10-4</nobr>** | **<nobr>6.2.8-15</nobr>** | **<nobr>6.2.8-11</nobr>** | **<nobr>6.2.8-2</nobr>** | **<nobr>6.2.4-1</nobr>** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **** | Nov 2023 | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
+| **** | Dec 2023 | Oct 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
 | **Amazon EKS** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.27** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.26** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -117,7 +117,7 @@ For details on this platform, see the [AKS documentation](https://learn.microsof
 
 {{<table-scrollable>}}| **Redis operator** | **<nobr>7.2.4-10</nobr>** | **<nobr>7.2.4-7</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** | **<nobr>6.2.18-3</nobr>** | **<nobr>6.2.12-1</nobr>** | **<nobr><nobr>6.2.10-4</nobr>5</nobr>** | **<nobr>6.2.10-34</nobr>** | **<nobr>6.2.10-4</nobr>** | **<nobr>6.2.8-15</nobr>** | **<nobr>6.2.8-11</nobr>** | **<nobr>6.2.8-2</nobr>** | **<nobr>6.2.4-1</nobr>** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **** | Nov 2023 | Sept 2023 | Aug 2023 | Jul 2023 | Jun 2023 | Apr 2023 | Mar 2023 | Jan 2022 | Nov 2022 | Sept 2022 | Jul 2022 | May 2022 | Mar 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
+| **** | Dec 2023 | Oct 2023 | Aug 2023 | Jul 2023 | Jun 2023 | Apr 2023 | Mar 2023 | Jan 2022 | Nov 2022 | Sept 2022 | Jul 2022 | May 2022 | Mar 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
 | **Azure AKS** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.28** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.27** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -140,7 +140,7 @@ For details on this platform, see the [GKE documentation](https://cloud.google.c
 
 {{<table-scrollable>}}| **Redis operator** | **<nobr>7.2.4-10</nobr>** | **<nobr>7.2.4-7</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** | **<nobr>6.2.18-3</nobr>** | **<nobr>6.2.12-1</nobr>** | **<nobr><nobr>6.2.10-4</nobr>5</nobr>** | **<nobr>6.2.10-34</nobr>** | **<nobr>6.2.10-4</nobr>** | **<nobr>6.2.8-15</nobr>** | **<nobr>6.2.8-11</nobr>** | **<nobr>6.2.8-2</nobr>** | **<nobr>6.2.4-1</nobr>** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **** | Nov 2023 | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
+| **** | Dec 2023 | Oct 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
 | **Google GKE** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.28** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.27** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -163,7 +163,7 @@ For details on this platform, see the [Rancher documentation](https://rancherman
 
 {{<table-scrollable>}}| **Redis operator** | **<nobr>7.2.4-10</nobr>** | **<nobr>7.2.4-7</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** | **<nobr>6.2.18-3</nobr>** | **<nobr>6.2.12-1</nobr>** | **<nobr><nobr>6.2.10-4</nobr>5</nobr>** | **<nobr>6.2.10-34</nobr>** | **<nobr>6.2.10-4</nobr>** | **<nobr>6.2.8-15</nobr>** | **<nobr>6.2.8-11</nobr>** | **<nobr>6.2.8-2</nobr>** | **<nobr>6.2.4-1</nobr>** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **** | Nov 2023 | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
+| **** | Dec 2023 | Oct 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
 | **Rancher RKE2** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.26** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.25** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -195,7 +195,7 @@ For details on this platform, see the [TKG documentation](https://docs.vmware.co
 {{<table-scrollable>}}
 | **Redis operator** | **<nobr>7.2.4-10</nobr>** | **<nobr>7.2.4-7</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** |
 |---|---|---|---|---|---|---|---|---|
-| **** | Nov 2023 | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 |
+| **** | Dec 2023 | Oct 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 |
 | **VMware TKG 2.3** |  |  |  |  |  |  |  |  |
 | **1.26** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
 | **1.25** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |
@@ -222,7 +222,7 @@ For details on this platform, see the [TKGI documentation](https://docs.vmware.c
 
 {{<table-scrollable>}}| **Redis operator** | **<nobr>7.2.4-10</nobr>** | **<nobr>7.2.4-7</nobr>** | **<nobr>7.2.4-2</nobr>** | **<nobr>6.4.2-8</nobr>** | **<nobr>6.4.2-6</nobr>** | **<nobr>6.4.2-5</nobr>** | **<nobr>6.4.2-4</nobr>** | **<nobr>6.2.18-41</nobr>** | **<nobr>6.2.18-3</nobr>** | **<nobr>6.2.12-1</nobr>** | **<nobr><nobr>6.2.10-4</nobr>5</nobr>** | **<nobr>6.2.10-34</nobr>** | **<nobr>6.2.10-4</nobr>** | **<nobr>6.2.8-15</nobr>** | **<nobr>6.2.8-11</nobr>** | **<nobr>6.2.8-2</nobr>** | **<nobr>6.2.4-1</nobr>** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| **** | Nov 2023 | Sept 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
+| **** | Dec 2023 | Oct 2023 | Aug 2023 | July 2023 | June 2023 | April 2023 | March 2023 | Jan 2022 | Nov 2022 | Sept 2022 | July 2022 | May 2022 | March 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
 | **VMware TKGI** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.17** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.16** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
