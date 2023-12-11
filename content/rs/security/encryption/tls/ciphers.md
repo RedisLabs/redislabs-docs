@@ -10,27 +10,27 @@ aliases: /rs/security/tls/ciphers/
 
 Ciphers are algorithms that help secure connections between clients and servers. You can change the ciphers to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
-{{<image filename="images/rs/screenshots/cluster/security-tls-cipher-suites-view.png" alt="" >}}{{< /image >}}
+{{<image filename="images/rs/screenshots/cluster/security-tls-cipher-suites-view.png" alt="Cipher suites lists as shown in the Cluster Manager UI." >}}{{< /image >}}
 
 ## TLS 1.2 cipher suites
 
 | Name | Configurable | Description |
 |------------|--------------|-------------|
-| control_cipher_suites | <span title="Yes">&#x2705; Yes</span> | Cipher list for control plane TLS communications for cluster administration. |
-| data_cipher_list | <span title="Yes">&#x2705; Yes</span> | Cipher list for data plane TLS communications between applications and databases. |
+| control_cipher_suites | <span title="Yes">&#x2705; Yes</span> | Cipher list for control plane TLS communications for cluster administration |
+| data_cipher_list | <span title="Yes">&#x2705; Yes</span> | Cipher list for data plane TLS communications between applications and databases |
 | sentinel_cipher_suites | <span title="Yes">&#x2705; Yes</span> | Cipher list for [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) (Sentinel) TLS communications |
 
 ## TLS 1.3 cipher suites
 
 | Name | Configurable | Description |
 |------------|--------------|-------------|
-| control_cipher_suites_tls_1_3 | <span title="No">&#x274c; No</span> | Cipher list for control plane TLS communications for cluster administration. |
-| data_cipher_suites_tls_1_3 | <span title="Yes">&#x2705; Yes</span> | Cipher list for data plane TLS communications between applications and databases. |
+| control_cipher_suites_tls_1_3 | <span title="No">&#x274c; No</span> | Cipher list for control plane TLS communications for cluster administration |
+| data_cipher_suites_tls_1_3 | <span title="Yes">&#x2705; Yes</span> | Cipher list for data plane TLS communications between applications and databases |
 | sentinel_cipher_suites_tls_1_3 | <span title="No">&#x274c; No</span> | Cipher list for [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service">}}) (Sentinel) TLS communications |
 
 ## Configure cipher suites
 
-You can configure ciphers with the Cluster Manager UI, [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}), or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}).
+You can configure ciphers with the [Cluster Manager UI](#edit-ciphers-ui), [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}), or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}).
 
 {{<warning>}}
 Configuring cipher suites overwrites existing ciphers rather than appending new ciphers to the list.
@@ -47,17 +47,19 @@ When you modify your cipher suites, make sure:
 - It does support Ephemeral Diffie–Hellman (`DHE` or `ECDHE`) key exchange ciphers on Red Hat Enterprise Linux (RHEL) 8 and Bionic OS.  
 {{</note>}}
 
+### Edit cipher suites in the UI {#edit-ciphers-ui}
+
 To configure cipher suites using the Cluster Manager UI:
 
 1. Go to **Cluster > Security**, then select the **TLS** tab.
 
-1. In the **Cipher suites lists** section, select **Configure**.
+1. In the **Cipher suites lists** section, click **Configure**.
 
 1. Edit the TLS cipher suites in the text boxes:
 
-    {{<image filename="images/rs/screenshots/cluster/security-tls-cipher-suites-edit.png" alt="" >}}{{< /image >}}
+    {{<image filename="images/rs/screenshots/cluster/security-tls-cipher-suites-edit.png" alt="Edit cipher suites drawer in the Cluster Manager UI." >}}{{< /image >}}
 
-1. Select **Save**.
+1. Click **Save**.
 
 ### Control plane cipher suites {#control-plane-ciphers-tls-1-2}
 

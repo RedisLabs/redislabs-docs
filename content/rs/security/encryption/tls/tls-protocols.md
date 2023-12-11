@@ -10,6 +10,8 @@ aliases: /rs/security/tls/tls-protocols/
 
 You can change TLS protocols to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
+{{<image filename="images/rs/screenshots/cluster/security-tls-protocols-view.png" alt="TLS settings for the control plane, data plane, and discovery service as shown in the Cluster Manager UI" >}}{{< /image >}}
+
 ## Configure TLS protocol
 
 The communications for which you can modify TLS protocols are:
@@ -18,7 +20,7 @@ The communications for which you can modify TLS protocols are:
 - Data plane - The TLS configuration for the communication between applications and databases.
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service.md">}}).
 
-You can configure the TLS protocols with the `rladmin` commands shown here or with the REST API.
+You can configure TLS protocols with the [Cluster Manager UI](#edit-tls-ui), [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}), or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}).
 
 {{<warning>}}
 - After you set the minimum TLS version, Redis Enterprise Software does not accept communications with TLS versions older than the specified version.
@@ -34,7 +36,27 @@ If you have trouble enabling specific versions of TLS, verify that they're suppo
 TLSv1.2 is generally recommended as the minimum TLS version for encrypted communications. Check with your security team to confirm which TLS protocols meet your organization's policies.
 {{</note>}}
 
-### Control plane
+### Edit TLS settings in the UI {#edit-tls-ui}
+
+To configure cipher suites using the Cluster Manager UI:
+
+1. Go to **Cluster > Security**, then select the **TLS** tab.
+
+1. Click **Edit**.
+
+1. Select the minimum TLS version for cluster connections, database connections, and the discovery service:
+
+    {{<image filename="images/rs/screenshots/cluster/security-tls-protocols-edit.png" alt="Cluster > Security > TLS settings in edit mode in the Cluster Manager UI." >}}{{< /image >}}
+  
+1. Select the TLS mode for the discovery service:
+
+    - **Allowed** - Allows both TLS and non-TLS connections
+    - **Required** - Allows only TLS connections
+    - **Disabled** - Allows only non-TLS connections
+
+1. Click **Save**.
+
+### Control plane TLS
 
 To set the minimum TLS protocol for the control plane:
 
@@ -50,7 +72,7 @@ For example:
 rladmin cluster config min_control_TLS_version 1.2
 ```
 
-### Data plane
+### Data plane TLS
 
 To set the minimum TLS protocol for the data path:
 
@@ -67,7 +89,7 @@ rladmin cluster config min_data_TLS_version 1.2
 ```
 
 
-### Discovery service
+### Discovery service TLS
 
 To enable TLS for the discovery service:
 
