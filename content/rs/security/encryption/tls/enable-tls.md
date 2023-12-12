@@ -17,7 +17,7 @@ You can use TLS authentication for one or more of the following types of communi
 - Communication to and from your database to other clusters for synchronization using [Active-Active]({{<relref "/rs/databases/active-active/_index.md">}})
 
 {{<note>}}
-When you enable or turn off TLS, the change applies to new connections but does not affect existing ones. Clients must close existing connections and reconnect to apply the change.
+When you enable or turn off TLS, the change applies to new connections but does not affect existing connections. Clients must close existing connections and reconnect to apply the change.
 {{</note>}}
 
 ## Enable TLS for client connections {#client}
