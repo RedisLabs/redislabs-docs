@@ -10,8 +10,6 @@ aliases: /rs/security/tls/tls-protocols/
 
 You can change TLS protocols to improve the security of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
-{{<image filename="images/rs/screenshots/cluster/security-tls-protocols-view.png" alt="TLS settings for the control plane, data plane, and discovery service as shown in the Cluster Manager UI" >}}{{< /image >}}
-
 ## Configure TLS protocol
 
 The communications for which you can modify TLS protocols are:
@@ -20,12 +18,12 @@ The communications for which you can modify TLS protocols are:
 - Data plane - The TLS configuration for the communication between applications and databases.
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{<relref "/rs/databases/durability-ha/discovery-service.md">}}).
 
-You can configure TLS protocols with the [Cluster Manager UI](#edit-tls-ui), [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}), or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}).
+You can configure TLS protocols with the [Cluster Manager UI](#edit-tls-ui), [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}), or the [REST API]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}).
 
 {{<warning>}}
 - After you set the minimum TLS version, Redis Enterprise Software does not accept communications with TLS versions older than the specified version.
 
-- If you set TLS 1.3 as the minimum TLS version, clients must support TLS 1.3 or they won’t be able to connect to Redis Enterprise.
+- If you set TLS 1.3 as the minimum TLS version, clients must support TLS 1.3 to connect to Redis Enterprise.
 {{</warning>}}
 
 TLS support depends on the operating system. You cannot enable support for protocols or versions that aren't supported by the operating system running Redis Enterprise Software.  In addition, updates to the operating system or to Redis Enterprise Software can impact protocol and version support.  
@@ -58,7 +56,7 @@ To configure cipher suites using the Cluster Manager UI:
 
 ### Control plane TLS
 
-To set the minimum TLS protocol for the control plane:
+To set the minimum TLS protocol for the control plane using `rladmin`:
 
 - Default minimum TLS protocol: TLSv1.2
 - Syntax: `rladmin cluster config min_control_TLS_version <TLS_Version>`
@@ -74,7 +72,7 @@ rladmin cluster config min_control_TLS_version 1.2
 
 ### Data plane TLS
 
-To set the minimum TLS protocol for the data path:
+To set the minimum TLS protocol for the data path using `rladmin`:
 
 - Default minimum TLS protocol: TLSv1.2
 - Syntax: `rladmin cluster config min_data_TLS_version <TLS_Version>`
@@ -91,7 +89,7 @@ rladmin cluster config min_data_TLS_version 1.2
 
 ### Discovery service TLS
 
-To enable TLS for the discovery service:
+To enable TLS for the discovery service using `rladmin`:
 
 - Default: Allows both TLS and non-TLS connections
 - Syntax: `rladmin cluster config sentinel_tls_mode <ssl_policy>`
@@ -100,7 +98,7 @@ To enable TLS for the discovery service:
   - `required` - Allows only TLS connections
   - `disabled` - Allows only non-TLS connections
 
-To set the minimum TLS protocol for the discovery service:
+To set the minimum TLS protocol for the discovery service using `rladmin`:
 
 - Default minimum TLS protocol: TLSv1.2
 - Syntax: `rladmin cluster config min_sentinel_TLS_version <TLS_Version>`
