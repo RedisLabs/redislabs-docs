@@ -14,7 +14,7 @@ aliases: [
 ---
 
 {{<banner-article>}}
-The Redis Enterprise Software Nagios plugin has been retired.
+The Nagios plugin has been retired as of Redis Enterprise Software version 7.2.4.
 {{</banner-article>}}
 
 The Redis Enterprise Software (RS) Nagios plugin enables you to monitor the status of RS related
