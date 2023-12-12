@@ -10,7 +10,7 @@ aliases: /rc/subscriptions/create-active-active-subscription/
 
 To deploy Active-Active databases in Redis Cloud, create a Flexible or Annual subscription with Active-Active enabled.
 
-Overall, the process is similar to [creating a traditional flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some additional requirements listed below:
+Overall, the process is similar to [creating a traditional Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some additional requirements listed below:
 
 - Enable Active-Active Redis
 - [Define the regions](#define-regions) for each database instance
@@ -60,6 +60,13 @@ Red exclamation marks indicate error conditions; the tooltip provides additional
 
 {{<image filename="images/rc/icon-cidr-address-error.png" width="30px" alt="Red exclamation points indicate CIDR address problems." >}}{{< /image >}}
 
+## Select capabilities
+
+Active-Active databases support the [JSON]({{< relref "/stack/json" >}}) data type. 
+
+{{<image filename="images/rc/active-active-json-detail.png" width="75%" alt="When you create an Active-Active database, you can select the JSON advanced capability." >}}{{< /image >}}
+
+When you create an active-active database, select **JSON** to enable JSON support.
 
 ## Define throughput
 
