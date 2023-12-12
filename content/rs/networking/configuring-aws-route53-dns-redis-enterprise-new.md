@@ -1,5 +1,5 @@
 ---
-Title: AWS Route 53 DNS management
+Title: Configure AWS Route 53 DNS management
 linkTitle: AWS Route 53 DNS
 description: How to configure AWS Route 53 DNS 
 weight: $weight
@@ -7,19 +7,18 @@ alwaysopen: false
 categories: ["RS"]
 aliases: []
 ---
-Redis Enterprise Software utilizes DNS to achieve high availability and fail-over regardless of where it is installed.
+Redis Enterprise Software uses DNS to achieve high availability and fail-over regardless of where it is installed.
 
-Here, you learn how to configure AWS Route53 DNS resolution.
 
 ## What is AWS Route 53?
 
-Route 53 is a scalable DNS service by AWS. It routes user traffic to AWS resources and external sites, offering DNS health checks, traffic management, and failover capabilities. It's integral for high-availability architectures and also provides domain registration services.
+Route 53 is a scalable DNS service by Amazon Web Service (AWS). It routes user traffic to AWS resources and external sites, offering DNS health checks, traffic management, and failover capabilities. It's integral for high-availability architectures and also provides domain registration services.
 
 ## Create a hosted zone
 
 Creating a hosted zone in Amazon Route 53 is a foundational step in managing your domain's DNS settings. 
 
-A hosted zone functions as a container for the DNS records of a specific domain. To create one, you first need to :
+A hosted zone functions as a container for the DNS records of a specific domain. To create one, you first need to:
 
 1. Log into the AWS Management Console
 2. Navigate to the Route 53 dashboard
