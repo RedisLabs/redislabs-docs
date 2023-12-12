@@ -81,7 +81,7 @@ To enable TLS for a Redis Cloud database:
 You must download the certificate using the button at this point.  After your changes have been applied, the full bundle of public and private keys will no longer be available for download.
         {{</note>}}
     
-    - If you provide a client certificate, you will see the certificate details before you save your changes.
+    - If you provide a client certificate or a certificate chain, you will see the certificate details before you save your changes.
 
         {{<image filename="images/rc/mtls-certificate-details.png" alt="The Download certificate button." >}}{{< /image >}}
 
