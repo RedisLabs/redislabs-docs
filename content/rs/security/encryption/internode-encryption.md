@@ -87,10 +87,17 @@ To enable internode encryption for new databases by default, use one of the foll
 
 ## Encryption ciphers and settings
 
-To encrypt internode communications, Redis Enterprise Software uses TLS 1.2 and the following Cipher suites:
+To encrypt internode communications, Redis Enterprise Software uses TLS 1.2 and the following cipher suites:
 
 - ECDHE-RSA-AES256-GCM-SHA384
 - ECDHE-RSA-AES128-GCM-SHA256
+
+As of Redis Enterprise Software v7.4, internode encryption also supports TLS 1.3 with the following cipher suites:
+
+- TLS_AES_128_GCM_SHA256
+- TLS_AES_256_GCM_SHA384
+
+The TLS layer determines which TLS version to use.
 
 No configurable settings are exposed; internode encryption is used internally within a cluster and not exposed to any outside service.
 
