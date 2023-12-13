@@ -66,7 +66,7 @@ Active-Active databases support the [JSON]({{< relref "/stack/json" >}}) data ty
 
 {{<image filename="images/rc/active-active-json-detail.png" width="75%" alt="When you create an Active-Active database, you can select the JSON advanced capability." >}}{{< /image >}}
 
-When you create an active-active database, select **JSON** to enable JSON support.
+When you create an Active-Active database, JSON is already selected. Select it again to remove it.
 
 ## Define throughput
 
