@@ -85,8 +85,11 @@ You must download the certificate using the button at this point.  After your ch
 
         {{<image filename="images/rc/mtls-certificate-details.png" alt="The Download certificate button." >}}{{< /image >}}
 
+1. You can select **Add client certificate** again to add another certificate.
 
-2. To apply your changes and enable TLS, select the **Save database** button:
+    {{<image filename="images/rc/mtls-add-client-certificate.png" width="200px" alt="The Add client certificate button." >}}{{< /image >}}
+
+1. To apply your changes and enable TLS, select the **Save database** button:
 
     {{<image filename="images/rc/button-database-save.png" width="140px" alt="Use the Save database button to save database changes." >}}{{< /image >}}
 
