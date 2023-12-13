@@ -94,8 +94,9 @@ You must download the certificate using the button at this point.  After your ch
     {{<image filename="images/rc/button-database-save.png" width="140px" alt="Use the Save database button to save database changes." >}}{{< /image >}}
 
 {{<note>}}
-Once you've enabled TLS, all client connections to your database must use TLS. Unencrypted connections
-will no longer be permitted.
+- When you enable or turn off TLS, the change applies to new connections but does not affect existing connections. Clients must close existing connections and reconnect to apply the change.
+
+- Once you've enabled TLS, all client connections to your database must use TLS. Unencrypted connections will no longer be permitted.
 {{</note>}}
 
 ## Connect over TLS
