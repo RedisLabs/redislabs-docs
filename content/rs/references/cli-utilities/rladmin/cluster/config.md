@@ -19,7 +19,6 @@ Updates the cluster configuration.
            audit_address <audit_address> audit_port <audit_port> ]
         [bigstore_driver {speedb | rocksdb} ]
         [ control_cipher_suites <BoringSSL cipher list> ]
-        [ control_cipher_suites_tls_1_3 <BoringSSL cipher list> ]
         [ cm_port <number> ]
         [ cm_session_timeout <minutes> ]
         [ cnm_http_port <number> ]
@@ -43,7 +42,6 @@ Updates the cluster configuration.
         [ saslauthd_ldap_conf </tmp/ldap.conf> ]
         [ sentinel_tls_mode { allowed | required | disabled } ]
         [ sentinel_cipher_suites <golang cipher list> ]
-        [ sentinel_cipher_suites_tls_1_3 <golang cipher list> ]
         [ services { cm_server | crdb_coordinator | crdb_worker | 
                      mdns_server | pdns_server | saslauthd | 
                      stats_archiver } { enabled | disabled } ]
@@ -58,7 +56,6 @@ Updates the cluster configuration.
 | audit_port | string | Port where a listener can capture [audit event notifications]({{<relref "/rs/security/audit-events">}}) |
 | audit_protocol | `tcp`<br/>`local` | Protocol used for [audit event notifications]({{<relref "/rs/security/audit-events">}})<br/>For production systems, only `tcp` is supported. |
 | control_cipher_suites | list of ciphers | Cipher suites used for TLS connections to the admin console (specified in the format understood by the BoringSSL library)<br />(previously named `cipher_suites`) |
-| control_cipher_suites_tls_1_3 | list of ciphers |  Specifies the enabled TLS 1.3 ciphers for the control plane. The ciphers are specified in the format understood by the BoringSSL library. |
 | cm_port | integer | UI server listening port |
 | cm_session_timeout | integer | Timeout in minutes for the CM session
 | cmn_http_port | integer | HTTP REST API server listening port |
@@ -81,7 +78,6 @@ Updates the cluster configuration.
 | s3_url | string | The URL of S3 export and import |
 | saslauthd_ldap_conf | filepath | Updates LDAP authentication configuration for the cluster |
 | sentinel_cipher_suites | list of ciphers | Cipher suites used by the discovery service (supported ciphers are implemented by the [cipher_suites.go](<https://golang.org/src/crypto/tls/cipher_suites.go>) package) |
-| sentinel_cipher_suites_tls_1_3 | list of ciphers | Specifies the list of enabled TLS 1.3 ciphers for the discovery (sentinel) service. The supported ciphers are ones that were implemented by the [cipher_suites.go](<https://golang.org/src/crypto/tls/cipher_suites.go>) package. |
 | sentinel_tls_mode | `allowed`<br />`required`<br />`disabled` | Define the SSL policy for the discovery service<br />(previously named `sentinel_ssl_policy`) |
 | services | `cm_server`<br />`crdb_coordinator`<br />`crdb_worker`<br />`mdns_server`<br />`pdns_server`<br />`saslauthd`<br />`stats_archiver`<br /><br />`enabled`<br />`disabled` | Enable or turn off selected cluster services |
 | upgrade_mode | `enabled`<br />`disabled` | Enable or turn off upgrade mode on the cluster |

@@ -36,7 +36,7 @@ TLSv1.2 is generally recommended as the minimum TLS version for encrypted commun
 
 ### Edit TLS settings in the UI {#edit-tls-ui}
 
-To configure cipher suites using the Cluster Manager UI:
+To configure minimum TLS versions using the Cluster Manager UI:
 
 1. Go to **Cluster > Security**, then select the **TLS** tab.
 
