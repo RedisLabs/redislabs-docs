@@ -31,7 +31,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | Protocol | Port | Configurable | Connection source | Description |
 |----------|------|--------------|-------------------|-------------|
 | TCP | 8001 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) |
-| TCP | 8000, 8070, 8071, 9090 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Metrics exported and managed by the web proxy |
+| TCP | 8000, 8070, 8071, 9090, 9125 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Metrics exported and managed by the web proxy |
 | TCP | 8443 | <span title="Configurable">&#x2705; Yes</span> | Internal, External | Secure (HTTPS) access to the management web UI |
 | TCP | 9081 | <span title="Not configurable">&#x274c; No</span> | Internal | Active-Active management (internal) |
 | TCP | 9443 (Recommended), 8080 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
@@ -45,6 +45,36 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 8444, 9080 | <span title="Not configurable">&#x274c; No</span> | Internal | Traffic between web proxy and cnm_http/cm |
 
 ## Change port configuration
+
+### Reserve ports
+
+Redis Enterprise Software reserves some ports by default (`system_reserved_ports`). To reserve other ports or port ranges and prevent the cluster from assigning them to database endpoints, configure `reserved_ports` using one of the following methods:
+
+- [rladmin cluster config]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}})
+
+    ```sh
+    rladmin cluster config reserved_ports <list of ports/port ranges>
+    ```
+
+    For example:
+
+    ```sh
+    rladmin cluster config reserved_ports 11000 13000-13010
+    ```
+
+- [Update cluster settings]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}) REST API request
+
+    ```sh
+    PUT /v1/cluster
+    { "reserved_ports": ["list of ports/port ranges"] }
+    ```
+
+    For example:
+
+    ```sh
+    PUT /v1/cluster
+    { "reserved_ports": ["11000", "13000-13010"] }
+    ```
 
 ### Change the admin console port
 

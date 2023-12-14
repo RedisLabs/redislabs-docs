@@ -49,6 +49,8 @@ Use the **Upgrade plan** button to update your Fixed subscription tier, your hig
 
 {{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Use the Upgrade plan button to change selected Fixed subscription detils." >}}{{< /image >}}
 
+For information on how to upgrade to a Flexible subscription, see [upgrade subscription plan from Fixed to Flexible]({{<relref "/rc/subscriptions/upgrade-fixed-flexible">}}).
+
 ### Change subscription tier
 
 To change your subscription tier, select the desired tier from the list and select the **Upgrade plan** button:

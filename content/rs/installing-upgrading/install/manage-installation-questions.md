@@ -52,6 +52,10 @@ Several questions appear during installation:
     ```sh
     /opt/redislabs/bin/rlcheck
     ```
+
+- **User already exists** - `The user 'redislabs' already exists, which may lead to problems if it wasn't configured correctly. Would you like to proceed with the installation? (Y/N)?`
+
+- **Group already exists** - `The group 'redislabs' already exists, which may lead to problems if it wasn't configured correctly. Would you like to proceed with the installation? (Y/N)?`
  
 ## Answer install questions automatically
 
@@ -81,6 +85,7 @@ Use an answer file to manage your response:
     ntp=no
     firewall=no
     rlcheck=yes
+    ignore_existing_osuser_osgroup=no
     ```
 
     If you use `systune=yes`, the installation answers `yes` to all of the system tuning questions.
