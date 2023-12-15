@@ -49,6 +49,9 @@ The order of the multiple Replica Of sources has no material impact on replicati
 
 For best results when using the [Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS) (mDNS) protocol to resolve the fully-qualified domain name (FQDN) of the cluster, verify that your client connections meet the [client mDNS prerequisites]({{< relref "/rs/networking/mdns.md" >}}).
 
+{{< note >}}
+As long as Replica Of is enabled, data in the target database will not expire and will not be evicted regardless of the set [data eviction policy]({{< relref "/rs/databases/memory-performance/eviction-policy.md" >}}). We recommend that you turn off Replica Of after the databases are synced. 
+{{< /note >}}
 
 ### Same Redis Enterprise cluster {#same-cluster}
 
