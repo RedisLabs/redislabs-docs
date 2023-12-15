@@ -50,7 +50,7 @@ Before you follow this guide, be aware of the following limitations:
 
 - This guide is for migrating databases between subscriptions in the same Redis Cloud console account. [Contact support](https://redis.com/company/support/) if you want to migrate a database between accounts using Active-Passive.
 
-- As long as Active-Passive is enabled, data in the target database will not expire and will not be evicted regardless of the set [data eviction policy]({{<relref "rc/databases/configuration/data-eviction-policies.md">}}). We recommend that you turn off Active-Passive once the databases are synced. 
+- As long as Active-Passive is enabled, data in the target database will not expire and will not be evicted regardless of the set [data eviction policy]({{<relref "rc/databases/configuration/data-eviction-policies.md">}}). We recommend that you turn off Active-Passive after the databases are synced. 
 {{< /note >}}
 
 1. In your Flexible subscription, select the database you want to migrate your data to. This will be your target database.
