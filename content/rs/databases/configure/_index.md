@@ -148,7 +148,7 @@ You can also choose to [send alerts by email]({{<relref "/rs/clusters/monitoring
 
 You can require [**TLS**]({{<relref "/rs/security/encryption/tls/">}}) encryption and authentication for all communications, TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
-### Database access
+### Access control
 
 - **Unauthenticated access** - You can access the database as the default user without providing credentials.
 
