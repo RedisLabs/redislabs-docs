@@ -24,8 +24,9 @@ Before creating an Ingress, you'll need:
 
  - A RedisEnterpriseDatabase (REDB) with TLS enabled for client connections
  - A supported Ingress controller with `ssl-passthrough` enabled
-    - [NGINX Ingress Controller Installation Guide](https://kubernetes.github.io/ingress-nginx/deploy/)
-    - [HAProxy Ingress Getting Started](https://haproxy-ingress.github.io/docs/getting-started/)
+    - [Ingress-NGINX Controller](https://kubernetes.github.io/ingress-nginx/deploy/)
+        - Be sure to use the `kubernetes/ingress-nginx` controller and NOT the `nginxinc/kubernetes-ingress` controller.
+    - [HAProxy Ingress](https://haproxy-ingress.github.io/docs/getting-started/)
     - To use Istio for your Ingress resources, see [Configure Istio for external routing]({{<relref "/kubernetes/networking/istio-ingress.md">}})
 
 {{<note>}}Make sure your Ingress controller has `ssl-passthrough`enabled. This is enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{</note>}}
