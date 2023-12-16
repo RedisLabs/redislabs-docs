@@ -18,12 +18,12 @@ Usage: redis-di reset [OPTIONS]
 
 ## Options
 
-- `loglevel`:
+- `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
   - Default: `info`
-  - Usage: `--loglevel
--log-level`
+  - Usage: `--log-level
+-l`
 
 - `rdi_host` (REQUIRED):
 
@@ -98,6 +98,14 @@ Usage: redis-di reset [OPTIONS]
 
   Force operation. skips verification prompts
 
+- `external_collector`:
+
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--external-collector`
+
+  Don't handle collector
+
 - `help`:
 
   - Type: BOOL
@@ -114,7 +122,7 @@ Usage: redis-di reset [OPTIONS]
   Resets the pipeline into initial full sync mode
 
 Options:
-  -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
+  -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
   --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
@@ -127,5 +135,6 @@ Options:
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
   -f, --force                     Force operation. skips verification prompts
+  --external-collector            Don't handle collector
   --help                          Show this message and exit.
 ```
