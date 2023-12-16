@@ -48,7 +48,7 @@ To add a new participating cluster to an existing Active-Active configuration us
 
 1. In the **Participating clusters** section, go to **Other participating clusters** and click **+ Add cluster**.
 
-1. In the **Add cluster** configuration panel, enter the new cluster's URL, port number, and the username and password of a user with **DB Member** permissions in the new participating cluster:
+1. In the **Add cluster** configuration panel, enter the new cluster's URL, port number, and the admin username and password for the new participating cluster:
 
     {{<image filename="images/rs/screenshots/databases/active-active-databases/participating-clusters-add-cluster.png" alt="Add cluster panel.">}}{{</image>}}
 
