@@ -18,12 +18,12 @@ Usage: redis-di dump-support-package [OPTIONS]
 
 ## Options
 
-- `loglevel`:
+- `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
   - Default: `info`
-  - Usage: `--loglevel
--log-level`
+  - Usage: `--log-level
+-l`
 
 - `rdi_host` (REQUIRED):
 
@@ -119,7 +119,7 @@ Usage: redis-di dump-support-package [OPTIONS]
   - Default: `10`
   - Usage: `--max-change-records`
 
-  Maximum traced change records per shard
+  Maximum traced change records
 
 - `trace_only_rejected`:
 
@@ -145,7 +145,7 @@ Usage: redis-di dump-support-package [OPTIONS]
   Dumps RDI support package
 
 Options:
-  -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
+  -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
   --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
@@ -163,8 +163,7 @@ Options:
   --trace-timeout INTEGER RANGE   Stops the trace after exceeding this timeout
                                   (in seconds)  [1<=x<=600]
   --max-change-records INTEGER RANGE
-                                  Maximum traced change records per shard
-                                  [x>=1]
+                                  Maximum traced change records  [x>=1]
   --trace-only-rejected           Trace only rejected change records
   --help                          Show this message and exit.
 ```
