@@ -99,7 +99,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. To configure additional database settings, expand each relevant section to make changes.
 
-    See Configuration settings for more information about each setting.
+    See [Configuration settings](#configuration-settings) for more information about each setting.
 
 1. Select **Create**.
 
