@@ -89,8 +89,8 @@ Every instance of an Active-Active database can receive write operations, and al
 
     - [**Data persistence**]({{< relref "/rs/databases/configure/database-persistence.md" >}}) -
         To protect against loss of data stored in RAM,
-        you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
-        AOF provides the fastest and most reliable method for instance failure recovery.
+        you can enable data persistence to store a copy of the data on disk.
+        Active-Active databases support append-only file (AOF) persistence only. Snapshot persistence is not supported for Active-Active databases.
 
     - **Default database access** - When you configure a password for your database,
         all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
