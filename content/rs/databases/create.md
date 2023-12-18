@@ -59,7 +59,7 @@ To quickly create a database and skip additional configuration options during in
 
     - Endpoint port (set by the cluster if not set manually)
 
-    - Modules to enable
+    - Capabilities (previously modules) to enable
 
 1. Optionally select **Full options** to configure [additional settings]({{<relref "/rs/databases/configure#config-settings">}}).
 
