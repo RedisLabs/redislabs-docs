@@ -24,6 +24,8 @@ Before configuring a multi-namespace deployment, you must have a running [Redis 
 
 Both the operator and the RedisEnterpriseCluster (REC) resource need access to each namespace the REC will manage. For each **managed** namespace, create a `role.yaml` and `role_binding.yaml` file within the managed namespace, as shown in the examples below.
 
+{{<note>}}These will need to be reapplied each time you [upgrade]({{<relref "/kubernetes/upgrade/upgrade-redis-cluster.md">}}). {{</note>}}
+
 Replace `<rec-namespace>` with the namespace the REC resides in.
 Replace `<service-account-name>` with your own value (defaults to the REC name).
 
@@ -72,7 +74,7 @@ metadata:
     app: redis-enterprise
 subjects:
 - kind: ServiceAccount
-  name: redis-enterprise-operator
+  name: redis-enterprise-operator-consumer-ns
   namespace: <rec-namespace>
 - kind: ServiceAccount
   name: <service-account-name>
@@ -109,33 +111,37 @@ You can create this ConfigMap manually before deployment, or it will be created 
 
 1. Create the `cluster_role_binding.yaml` and `cluster_role.yaml` files. Replace the `<rec-namespace>` with the namespace the Redis Enterprise cluster (REC) resides in.
 
-  `cluster_role.yaml` example:
+  `operator_cluster_role.yaml` example:
 
   ```yaml
     apiVersion: rbac.authorization.k8s.io/v1
     kind: ClusterRole
     metadata:
-      name: redis-enterprise-operator
+      name: redis-enterprise-operator-consumer-ns
+      labels:
+        app: redis-enterprise
     rules:
       - apiGroups: [""]
         resources: ["namespaces"]
         verbs: ["list", "watch"]
   ```
 
-  `cluster_role_binding.yaml` example:
+  `operator_cluster_role_binding.yaml` example:
 
   ```yaml
     kind: ClusterRoleBinding
     apiVersion: rbac.authorization.k8s.io/v1
     metadata:
-      name: redis-enterprise-operator
+      name: redis-enterprise-operator-consumer-ns
+      labels:
+        app: redis-enterprise
     subjects:
     - kind: ServiceAccount
       name: redis-enterprise-operator
       namespace: <rec-namespace>
     roleRef:
       kind: ClusterRole
-      name: redis-enterprise-operator
+      name: redis-enterprise-operator-consumer-ns
       apiGroup: rbac.authorization.k8s.io
   ```
 

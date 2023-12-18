@@ -16,7 +16,7 @@ Redis will attempt to perform maintenance during low-traffic hours when possible
 
 ## Maintenance activities
 
-During maintenance, Redis staff will do anything that ensures the stability of your subscriptions and databases. 
+During maintenance, Redis ensures the stability of your subscriptions and databases. 
 
 This includes, but is not limited to:
 
@@ -26,7 +26,9 @@ This includes, but is not limited to:
 - Adding more memory to a node
 - Applying security patches
 
-Redis will notify users by email when maintenance starts and ends. If Redis needs an action from a user to start maintenance, Redis will notify users with a reasonable amount of time before planned maintenance. 
+Redis will notify users by email when maintenance starts and ends. If Redis needs an action from a user to start maintenance, Redis will notify users with a reasonable amount of time before planned maintenance.
+
+For major upgrades or upgrades that might include breaking changes, users will receive an advance notification with sufficient time to prepare before the upgrade.
 
 If you want to receive notifications by email, make sure **Operational emails** are activated in your user settings in [Access Management]({{<relref "/rc/security/access-control/access-management">}}). 
 
@@ -36,6 +38,3 @@ Urgent maintenance refers to any activity that could affect service and cannot w
 
 Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily skipped maintenance. Redis will notify users by email when urgent maintenance starts and ends.
 
-### Major upgrades
-
-For major upgrades or upgrades that might include breaking changes, users will receive an advance notification with sufficient time to prepare before the upgrade.

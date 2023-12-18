@@ -11,7 +11,7 @@ aliases: /rv/api/how-to/create-and-manage-cloud-accounts/
          /rc/api/examples/manage-cloud-accounts
          /rc/api/examples/manage-cloud-accounts.md
 ---
-You can use the Redis Enterprise Cloud REST API to create and manage cloud accounts.
+You can use the Redis Cloud REST API to create and manage cloud accounts.
 
 These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api.md#using-the-curl-http-client" >}}); you can use any REST client to work with the Redis Cloud REST API.
 

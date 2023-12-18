@@ -91,7 +91,7 @@ To configure the default S3 URL, use one of the following methods:
 
 ### Internode encryption
 
-Enable [internode encryption]({{<relref "/rs/security/internode-encryption">}}) to encrypt data in transit between nodes for new databases by default.
+Enable [internode encryption]({{<relref "/rs/security/encryption/internode-encryption">}}) to encrypt data in transit between nodes for new databases by default.
 
 To enable or turn off internode encryption by default, use one of the following methods:
 
@@ -108,4 +108,63 @@ To enable or turn off internode encryption by default, use one of the following 
     ```sh
     PUT /v1/cluster/policy 
     { "data_internode_encryption": <boolean> }
+    ```
+
+### Shard placement
+
+The default [shard placement policy]({{<relref "/rs/databases/memory-performance/shard-placement-policy">}}) determines the distribution of database shards across nodes in the cluster.
+
+To configure default shard placement, use one of the following methods:
+
+- [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
+    
+    ```sh
+    rladmin tune cluster default_shards_placement { dense | sparse }
+    ```
+
+- [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
+
+    ```sh
+    PUT /v1/cluster/policy 
+    { "default_shards_placement": "dense | sparse" }
+    ```
+
+### Proxy policies
+
+Redis Enterprise Software uses [proxies]({{<relref "/rs/references/terminology#proxy">}}) to manage and optimize access to database shards. Each node in the cluster runs a single proxy process, which can be active (receives incoming traffic) or passive (waits for failovers).
+
+Configure the following default [proxy policies]({{<relref "/rs/databases/configure/proxy-policy">}}) to determine which nodes' proxies are active and bound to new databases by default.
+
+#### Non-sharded proxy policy
+
+To configure the default proxy policy for non-sharded databases, use one of the following methods:
+
+- [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
+    
+    ```sh
+    rladmin tune cluster default_non_sharded_proxy_policy { single | all-master-shards | all-nodes }
+    ```
+
+- [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
+
+    ```sh
+    PUT /v1/cluster/policy 
+    { "default_non_sharded_proxy_policy": "single | all-master-shards | all-nodes" }
+    ```
+
+#### Sharded proxy policy
+
+To configure the default proxy policy for sharded databases, use one of the following methods:
+
+- [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
+    
+    ```sh
+    rladmin tune cluster default_sharded_proxy_policy { single | all-master-shards | all-nodes }
+    ```
+
+- [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
+
+    ```sh
+    PUT /v1/cluster/policy 
+    { "default_sharded_proxy_policy": "single | all-master-shards | all-nodes" }
     ```

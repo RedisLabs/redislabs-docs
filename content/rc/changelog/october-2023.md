@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Cloud changelog (October 2023)
+Title: Redis Cloud changelog (October 2023)
 linktitle: October 2023
-description: New features, enhancements, and other changes added to Redis Enterprise Cloud during October 2023.
+description: New features, enhancements, and other changes added to Redis Cloud during October 2023.
 highlights: Cost report CSV download, SAML Account linking tokens
 weight: 76
 alwaysopen: false
@@ -13,7 +13,7 @@ aliases: []
 
 ### Cost report CSV download
 
-You can now download shard cost reports in CSV format from the [**Billing and Payments**]({{<relref "/rc/billing-and-payments">}}) and [**Usage Reports**]({{<relref "/rc/databases/usage-reports">}}) pages.
+You can now download shard cost reports in CSV format from the [**Billing and Payments**]({{<relref "/rc/billing-and-payments">}}) and [**Usage Reports**]({{<relref "/rc/logs-reports/usage-reports">}}) pages.
 
 {{< embed-md "rc-cost-report-csv.md" >}}
 ### SAML account linking tokens

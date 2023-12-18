@@ -37,6 +37,9 @@ rladmin tune cluster
         [ expose_hostnames_for_all_suffixes { enabled | disabled } ]
         [ redis_upgrade_policy { latest | major } ]
         [ default_redis_version <value> ]
+        [ default_non_sharded_proxy_policy { single | all-master-shards | all-nodes } ]
+        [ default_sharded_proxy_policy { single | all-master-shards | all-nodes } ]
+        [ default_shards_placement { dense | sparse } ]
         [ data_internode_encryption { enabled | disabled } ]
         [ db_conns_auditing { enabled | disabled } ]
         [ acl_pubsub_default { resetchannels | allchannels } ]
@@ -48,10 +51,13 @@ rladmin tune cluster
 | Parameters                             | Type/Value                        | Description                                                                                                                  |
 |----------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 | acl_pubsub_default | `resetchannels`<br /> `allchannels` | Default pub/sub ACL rule for all databases in the cluster:<br />•`resetchannels` blocks access to all channels (restrictive)<br />•`allchannels` allows access to all channels (permissive) |
-| data_internode_encryption              | `enabled`<br />`disabled`       | Activates or deactivates [internode encryption]({{<relref "/rs/security/internode-encryption">}}) for new databases    |
+| data_internode_encryption              | `enabled`<br />`disabled`       | Activates or deactivates [internode encryption]({{<relref "/rs/security/encryption/internode-encryption">}}) for new databases    |
 | db_conns_auditing                      | `enabled`<br /> `disabled`      | Activates or deactivates [connection auditing]({{<relref "/rs/security/audit-events">}}) by default for new databases of a cluster                                                                  |
 | default_concurrent_restore_actions     | integer<br />`all`              | Default number of concurrent actions when restoring a node from a snapshot (positive integer or "all")                         |
+| default_non_sharded_proxy_policy | `single`<br /><nobr>`all-master-shards`</nobr><br />`all-nodes` | Default [proxy policy]({{<relref "/rs/databases/configure/proxy-policy">}}) for newly created non-sharded databases' endpoints |
 | default_redis_version                  | version number                    | The default Redis database compatibility version used to create new databases.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.<br/><br/>You cannot set _default_redis_version_ to a value higher than that supported by the current _redis_upgrade_policy_ value. |
+| default_sharded_proxy_policy | `single`<br />`all-master-shards`<br />`all-nodes` | Default [proxy policy]({{<relref "/rs/databases/configure/proxy-policy">}}) for newly created sharded databases' endpoints |
+| default_shards_placement | `dense`<br />`sparse` | New databases place shards according to the default [shard placement policy]({{<relref "/rs/databases/memory-performance/shard-placement-policy">}}) |
 | expose_hostnames_for_all_suffixes      | `enabled`<br />`disabled`       | Exposes hostnames for all DNS suffixes                                                                                       |
 | failure_detection_sensitivity | `high`<br />`low` | Predefined thresholds and timeouts for failure detection (previously known as `watchdog_profile`)<br />• `high` (previously `local-network`) – high failure detection sensitivity, lower thresholds, faster failure detection and failover<br />• `low` (previously `cloud`) – low failure detection sensitivity, higher tolerance for latency variance (also called network jitter) |
 | login_lockout_counter_reset_after      | time in seconds                   | Time after failed login attempt before the counter resets to 0                                                                   |
@@ -145,7 +151,7 @@ rladmin tune db { db:<id> | <name> }
 | continue_on_error                    |                                  | Flag that skips tuning shards that can't be reached                                                                                   |
 | crdt_repl_backlog                    | value in MB<br /> `auto`         | Size of the Active-Active replication buffer                                                                                          |
 | crdt_xadd_id_uniqueness_mode         | `liberal`<br /> `semi-strict`<br /> `strict` | XADD's behavior in an Active-Active database, defined as liberal, semi-strict, or strict (see descriptions below)         |
-| data_internode_encryption            | `enabled`<br /> `disabled`       | Activates or deactivates [internode encryption]({{<relref "/rs/security/internode-encryption">}}) for the database               |
+| data_internode_encryption            | `enabled`<br /> `disabled`       | Activates or deactivates [internode encryption]({{<relref "/rs/security/encryption/internode-encryption">}}) for the database               |
 | db_conns_auditing                    | `enabled`<br /> `disabled`       | Activates or deactivates database [connection auditing]({{<relref "/rs/security/audit-events">}}) for a database                                                                 |
 | gradual_src_mode                     | `enabled`<br /> `disabled`       | Activates or deactivates gradual sync of sources                                                                                      |
 | gradual_sync_max_shards_per_source   | integer                          | Number of shards per sync source that can be replicated in parallel (positive integer)                                                |
@@ -258,11 +264,11 @@ rladmin tune proxy { <id> | all }
 |-----------------|----------------------------|-------------------------------------------------------------------------------------|
 | id              | integer                    | ID of the specified proxy                                                           |
 | all             |                            | Configures settings for all proxies                                                 |
-| max_threads     | integer                    | Maximum number of threads allowed                                                   |
+| max_threads     | integer, (range:&nbsp;1-255) | Maximum number of threads allowed                                                   |
 | mode            | `static`<br /> `dynamic` | Determines if the proxy automatically adjusts the number of threads based on load size  |
-| scale_duration  | time in seconds            | Time of scale_threshold CPU utilization before the automatic proxy automatically scales |
-| scale_threshold | percentage                 | CPU utilization threshold that triggers spawning new threads                        |
-| threads         | integer                    | Initial number of threads created at startup                                        |
+| scale_duration  | time in seconds, (range:&nbsp;10-300) | Time of scale_threshold CPU utilization before the automatic proxy automatically scales |
+| scale_threshold | percentage, (range:&nbsp;50-99) | CPU utilization threshold that triggers spawning new threads                        |
+| threads         | integer, (range:&nbsp;1-255) | Initial number of threads created at startup                                        |
 
 ### Returns
 

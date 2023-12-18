@@ -20,6 +20,8 @@ When you create a Redis Cloud database, your database is given a randomly genera
 
 With role-based access control (RBAC), you create roles and assign users to those roles to grant different levels of access to the database.
 
+- [Enable RBAC]({{<relref "rc/security/access-control/data-access-control/role-based-access-control">}})
 - [Configure ACLs]({{<relref "rc/security/access-control/data-access-control/configure-acls">}})
 - [Create roles]({{<relref "rc/security/access-control/data-access-control/create-roles">}})
 - [Create and edit database users]({{<relref "rc/security/access-control/data-access-control/create-assign-users">}})
+- [Active-Active roles]({{<relref "rc/security/access-control/data-access-control/active-active-roles">}})

@@ -17,7 +17,7 @@ A failed node will appear as `Down` (![Node down indicator](/images/rs/icons/nod
 
 To replace a failed node: 
 
-1. Acquire a new node identical to the old one.
+1. Prepare a new node identical to the old one.
 
 1.  Install and
     configure Redis Enterprise Software on the node. See [Install and setup]({{< relref "/rs/installing-upgrading" >}}) for more information.

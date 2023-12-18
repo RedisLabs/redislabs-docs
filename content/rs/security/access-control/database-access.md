@@ -10,7 +10,7 @@ aliases:
 
 ## Default user
 
-When you create a database, [default user access]({{<relref "/rs/security/access-control/manage-users/default-user">}}) is enabled by default.
+When you create a database, [default user access]({{<relref "/rs/security/access-control/manage-users/default-user">}}) is enabled automatically.
 
 If you set up [role-based access controls]({{<relref "/rs/security/access-control/rbac">}}) for your database and don't require compatibility with versions earlier than Redis 6, you can [deactivate the default user]({{<relref "/rs/security/access-control/manage-users/default-user">}}).
 

@@ -12,7 +12,8 @@ aliases:
 
 When you upgrade an existing database or create a new one, it uses the default Redis version (`default_redis_version`) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}) or [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}).
 
-Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2. As of version 7.2, Redis Enterprise Software includes three Redis database versions.
+Redis Enterprise Software v6.x includes two Redis database versions: 6.0 and 6.2.
+As of version 7.2, Redis Enterprise Software includes three Redis database versions.
 
 To view available Redis database versions:
 
@@ -28,21 +29,8 @@ The default Redis database version differs between Redis Enterprise releases as 
 | 6.4.2 | 6.0, 6.2 | 6.2 |
 | 6.2.x | 6.0, 6.2 | 6.0 |
 
-- v6.2.x: `default_redis_version` is 6.0.
 
-    Setting `redis_upgrade_policy` to `major` enforces this default. However, if you change `redis_upgrade_policy` to `latest`, this enforces 6.2 as the default.
-    
-    The upgrade policy is only relevant for Redis Enterprise Software versions 6.2.4 through 6.2.18. For more information about upgrade policies, see the [6.2 version of this document](https://docs.redis.com/6.2/rs/installing-upgrading/upgrading/#redis-upgrade-policy).
-
-- v6.4.2: `default_redis_version` is 6.2.
-
-    Both `major` and `latest` upgrade policies use this new default.
-
-    You can override the default version with [`rladmin tune cluster default_redis_version <version>`]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}); however, this might limit future upgrade options.
-
-- v7.2: `default_redis_version` is 7.2.
-
-    Both `major` and `latest` upgrade policies use this new default.
+The upgrade policy is only relevant for Redis Enterprise Software versions 6.2.4 through 6.2.18. For more information about upgrade policies, see the [6.2 version of this document](https://docs.redis.com/6.2/rs/installing-upgrading/upgrading/#redis-upgrade-policy).
 
 ## Upgrade prerequisites
 
@@ -68,6 +56,10 @@ Before upgrading a database:
 
     Use the admin console to display the **Configuration** tab for the cluster. The tab displays the cluster version information and the Redis database compatibility version.
 
+- Check client compatibility with the database version.
+
+    If you run Redis Stack commands with Go-Redis versions 9 and later or Lettuce versions 6 and later, set the client’s protocol version to RESP2 before upgrading your database to Redis version 7.2 to prevent potential application issues due to RESP3 breaking changes. See [Client prerequisites for Redis 7.2 upgrade]({{<relref "/rs/references/compatibility/resp#client-prerequisites-for-redis-72-upgrade">}}) for more details and examples.
+
 - To avoid data loss during the upgrade, [back up your data]({{<relref "/rs/databases/import-export/schedule-backups">}}).  
 
     You can [export the data]({{<relref "/rs/databases/import-export/export-data">}}) to an external location, [enable replication]({{<relref "/rs/databases/durability-ha/replication">}}), or [enable persistence]({{<relref "/rs/databases/configure/database-persistence">}}).
@@ -90,6 +82,18 @@ To upgrade a database:
 
         ``` shell
         rladmin upgrade db <database name | database ID>
+        ```
+
+        Example of a successful upgrade:
+
+        ``` shell
+        rladmin> upgrade db demo
+        Monitoring d194c4a3-631c-4726-b799-331b399fc85c
+        active - SMUpgradeBDB init
+        active - SMUpgradeBDB wait_for_version
+        active - SMUpgradeBDB configure_shards
+        completed - SMUpgradeBDB
+        Done
         ```
 
     - If the database has modules enabled and new module versions are available in the cluster, run `rladmin upgrade db` with additional parameters to upgrade the module versions when you upgrade the database. See [Upgrade modules]({{<relref "/stack/install/upgrade-module">}}) for more details.

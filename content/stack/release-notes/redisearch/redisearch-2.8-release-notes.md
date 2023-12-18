@@ -11,10 +11,58 @@ aliases:
 ---
 ## Requirements
 
-RediSearch v2.8.4 requires:
+RediSearch v2.8.9 requires:
 
 - Minimum Redis compatibility version (database): 7.2
 - Minimum Redis Enterprise Software version (cluster): 7.2.4
+
+## v2.8.9 (October 2023)
+
+This is a maintenance release for RediSearch 2.8.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+
+  - [#3874](https://github.com/RediSearch/RediSearch/pull/3874) Heavy document updates causing memory growth once memory blocks weren't properly released (MOD-5181)
+  - [#3967](https://github.com/RediSearch/RediSearch/pull/3967) Resharding optimizations causing the process to get stuck (MOD-5874, MOD-5864)
+  - [#3892](https://github.com/RediSearch/RediSearch/pull/3892) After cleaning the index the GC could cause corruption on unique values (MOD-5815)
+  - [#3853](https://github.com/RediSearch/RediSearch/pull/3853) Queries with `WITHCURSOR` making memory growth since `CURSOR` wasn't invalidated in the shards (MOD-5580)
+
+- Improvements:
+
+  - [#3938](https://github.com/RediSearch/RediSearch/pull/3938) Propagating error messages in multiple shards database, instead of failing silently (MOD-5211)
+  - [#3903](https://github.com/RediSearch/RediSearch/pull/3903) Added support for Rocky Linux 9 and RHEL9 (MOD-5759)
+
+## v2.8.8 (September 2023)
+
+This is a maintenance release for RediSearch 2.8.
+
+Update urgency: `SECURITY`: There are security fixes in the release.
+
+Details:
+
+- Security and privacy:
+
+  - [#3788](https://github.com/RediSearch/RediSearch/pull/3788) Don’t expose internal cluster commands (MOD-5706)
+  - [#3844](https://github.com/RediSearch/RediSearch/pull/3844) Limits maximum phonetic length avoiding to be exploit (MOD 5767)
+
+- Bug fixes:
+
+  - [#3771](https://github.com/RediSearch/RediSearch/pull/3771) Broken `lower()` and `upper()` functions on `APPLY` stage in `FT.AGGREGATE` in `DIALECT 3` (MOD-5041)
+  - [#3752](https://github.com/RediSearch/RediSearch/pull/3752) Setting low `MAXIDLE` parameter value in `FT.AGGREGATE` cause a crash (MOD-5608)
+  - [#3780](https://github.com/RediSearch/RediSearch/pull/3780) Wrong document length calculation causing incorrect score values (MOD-5622)
+  - [#3808](https://github.com/RediSearch/RediSearch/pull/3808) `LOAD` step after a `FILTER` step could cause a crash on `FT.AGGREGATE` (MOD-5267)
+  - [#3823](https://github.com/RediSearch/RediSearch/pull/3823) `APPLY` or `FILTER` parser leak (MOD-5751)
+  - [#3837](https://github.com/RediSearch/RediSearch/pull/3837) Connection using TLS fail on Redis 7.2 (MOD-5768)
+  - [#3856](https://github.com/RediSearch/RediSearch/pull/3856) Adding new nodes to OSS cluster causing a crash (MOD-5778)
+  - [#3854](https://github.com/RediSearch/RediSearch/pull/3854) Vector range query could cause Out-of-Memory due to a memory corruption (MOD-5791)
+
+- Improvements:
+
+  - [#3534](https://github.com/RediSearch/RediSearch/pull/3534) Vector Similarity 0.7.1 (MOD-5624)
 
 ## v2.8 GA (v2.8.4) (July 2023)
 

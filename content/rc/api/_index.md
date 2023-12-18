@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Cloud REST API
+Title: Redis Cloud REST API
 linkTitle: REST API
 description: Describes the Redis Cloud REST API and links to additional info
 weight: 80
@@ -10,7 +10,7 @@ aliases: /rv/api/
          /rc/api/_index.md
 ---
 
-The [Redis Enterprise Cloud REST API](https://api.redislabs.com/v1/swagger-ui.html) helps you manage your Redis Cloud subscription programmatically.
+The [Redis Cloud REST API](https://api.redislabs.com/v1/swagger-ui.html) helps you manage your Redis Cloud subscription programmatically.
 
 You can use the API to:
  

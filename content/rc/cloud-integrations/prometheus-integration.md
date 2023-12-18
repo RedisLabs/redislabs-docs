@@ -1,13 +1,17 @@
 ---
-Title: Prometheus integration with Redis Cloud
-linkTitle: Prometheus integration
+Title: Use Prometheus and Grafana with Redis Cloud
+linkTitle: Prometheus and Grafana
 description: Use Prometheus and Grafana to collect and visualize Redis Cloud metrics.
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
+aliases: [
+ "/rc/cloud-integrations/prometheus-integration/",
+ "/rc/cloud-integrations/prometheus-grafana/",
+]
 ---
 
-You can use Prometheus and Grafana to collect and visualize your Redis Enterprise Cloud metrics.
+You can use Prometheus and Grafana to collect and visualize your Redis Cloud metrics.
 
 - [Prometheus](https://prometheus.io/) is an open source systems monitoring and alerting toolkit that can scrape metrics from different sources.
 - [Grafana](https://grafana.com/) is an open source metrics visualization tool that can process Prometheus data.
@@ -54,7 +58,7 @@ To get started with custom monitoring with Prometheus on Docker:
 
 1. Create a directory on the Prometheus instance called `prometheus` and create a `prometheus.yml` file in that directory.
 
-1. Add the following contents to `prometheus.yml`. Replace `<instance_ip>` with the IP address of the instance and replace `<prometheus_endpoint>` with the Prometheus endpoint.
+1. Add the following contents to `prometheus.yml`. Replace `<prometheus_endpoint>` with the Prometheus endpoint.
 
     ```yml 
     global:
@@ -74,19 +78,19 @@ To get started with custom monitoring with Prometheus on Docker:
     scrape_configs:
         # scrape Prometheus itself
         - job_name: prometheus
-            scrape_interval: 10s
-            scrape_timeout: 5s
-            static_configs:
-                - targets: ["<instance_ip>:9090"]
+        scrape_interval: 10s
+        scrape_timeout: 5s
+        static_configs:
+          - targets: ["localhost:9090"]
 
         # scrape Redis Cloud
         - job_name: redis-cloud
-            scrape_interval: 30s
-            scrape_timeout: 30s
-            metrics_path: /
-            scheme: https
-            static_configs:
-                - targets: ["<prometheus_endpoint>:8070"]
+        scrape_interval: 30s
+        scrape_timeout: 30s
+        metrics_path: /
+        scheme: https
+        static_configs:
+          - targets: ["<prometheus_endpoint>:8070"]
     ```
 
 1. Create a `docker-compose.yml` file with instructions to set up the Prometheus and Grafana Docker images.
@@ -118,7 +122,7 @@ To get started with custom monitoring with Prometheus on Docker:
     ```
 
 1. To check that all the containers are up, run: `docker ps`
-1. In your browser, sign in to Prometheus at `http://<instance_ip>:9090` to make sure the server is running.
+1. In your browser, sign in to Prometheus at `http://localhost:9090` to make sure the server is running.
 1. Select **Status** and then **Targets** to check that Prometheus is collecting data from the Redis Cloud cluster.
 
     {{<image filename="images/rs/prometheus-target.png" alt="The Redis Enterprise target showing that Prometheus is connected to the Redis Enterprise Cluster.">}}{{< /image >}}
@@ -131,7 +135,7 @@ See [Prometheus Metrics]({{< relref "/rs/clusters/monitoring/prometheus-metrics-
 
 Once the Prometheus and Grafana Docker containers are running, and Prometheus is connected to your Redis Cloud subscription, you can set up your Grafana dashboards.
 
-1. Sign in to Grafana. If you installed Grafana with Docker, go to `http://<instance_ip>:3000` and sign in with:
+1. Sign in to Grafana. If you installed Grafana with Docker, go to `http://localhost:3000` and sign in with:
 
     - Username: `admin`
     - Password: `secret`
@@ -147,10 +151,10 @@ Once the Prometheus and Grafana Docker containers are running, and Prometheus is
 1. Enter the Prometheus configuration information:
 
     - Name: `redis-cloud`
-    - URL: `http://<your prometheus address>:9090`
+    - URL: `http://prometheus-server:9090`
     - Access: `Server`
 
-    {{<image filename="images/rs/prometheus-connection.png" alt="The Prometheus connection form in Grafana.">}}{{< /image >}}
+    {{<image filename="images/rc/prometheus-connection.png" alt="The Prometheus connection form in Grafana.">}}{{< /image >}}
 
     {{< note >}}
 

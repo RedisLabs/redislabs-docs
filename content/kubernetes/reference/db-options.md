@@ -106,7 +106,7 @@ The number of [database shards]({{< relref "/rs/databases/durability-ha/clusteri
 
 ### [`tlsMode`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec)
 
-Controls SSL [authentication and encryption]({{<relref "/rs/security/tls">}}) for connections to the database.
+Controls SSL [authentication and encryption]({{<relref "/rs/security/encryption/tls">}}) for connections to the database.
 
 | Value | Description |
 | ----- | ----------- |

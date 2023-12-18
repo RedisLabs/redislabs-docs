@@ -20,7 +20,7 @@ To connect to your database, you need the database endpoint, which includes the 
 
 If you try to connect with the FQDN, and the database does not respond, try connecting with the IP address. If this succeeds, DNS is not properly configured. To set up DNS, see [Configure cluster DNS]({{<relref "/rs/networking/cluster-dns.md">}}).
 
-If you want to secure your connection, set up [TLS]({{< relref "/rs/security/tls/" >}}).
+If you want to secure your connection, set up [TLS]({{< relref "/rs/security/encryption/tls/" >}}).
 
 ## Connect to a database
 
@@ -79,9 +79,9 @@ You can find the instructions to configure redis-py on the [github page for redi
     import redis
 
     r = redis.StrictRedis(host='<host>', port=<port>)
-    print ("set key1 123")
-    print (r.set('key1', '123'))
-    print ("get key1")
+    print("set key1 123")
+    print(r.set('key1', '123'))
+    print("get key1")
     print(r.get('key1'))
     ```
 
@@ -112,7 +112,7 @@ RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux
 
 1. Enter the host and port in the **Host** and **Port** fields.
 
-1. Select **Use TLS** if [TLS]({{< relref "/rs/security/tls/" >}}) is set up.
+1. Select **Use TLS** if [TLS]({{< relref "/rs/security/encryption/tls" >}}) is set up.
 
 1. Select **Add Redis Database** to connect to the database.
 

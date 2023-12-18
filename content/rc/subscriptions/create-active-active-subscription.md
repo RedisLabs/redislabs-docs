@@ -8,10 +8,11 @@ categories: ["RC"]
 aliases: /rc/subscriptions/create-active-active-subscription/
 ---
 
-To deploy Active-Active databases in Redis Enterprise Cloud, you need to create a Flexible or Annual subscription with Active-Active enabled.
+To deploy Active-Active databases in Redis Cloud, create a Flexible or Annual subscription with Active-Active enabled.
 
-Overall, the process is similar to [creating a traditional subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some differences; you need to:
+Overall, the process is similar to [create a Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some additional requirements listed below:
 
+- Enable Active-Active Redis
 - [Define the regions](#define-regions) for each database instance
 - Define unique [CIDR addresses](#define-cidr-addresses) for each instance
 - [Define throughput](#define-throughput) (read and write operations) for each region
@@ -30,7 +31,7 @@ When you create a new Flexible subscription, the Active-Active Redis option appe
 {{<image filename="images/rc/create-flexible-sub-active-active-on.png" width="75%" alt="When you enable Active-Actve, you need to specify the regions for each database instance." >}}{{< /image >}}
 
 
-When you enable Active-Active Redis, the region control changes to a default showing two regions.  Select the drop-down arrow to display a list of provider regions that support Active-Active databases.
+When you enable Active-Active Redis, two regions are selected by default.  Select the drop-down arrow to display a list of provider regions that support Active-Active databases.
 
 {{<image filename="images/rc/create-sub-active-active-regions.png" width="50%" alt="Use the Region drop-down to select the regions for your Active-Active database." >}}{{< /image >}}
 
@@ -59,6 +60,13 @@ Red exclamation marks indicate error conditions; the tooltip provides additional
 
 {{<image filename="images/rc/icon-cidr-address-error.png" width="30px" alt="Red exclamation points indicate CIDR address problems." >}}{{< /image >}}
 
+## Select capabilities
+
+Active-Active databases support the [JSON]({{< relref "/stack/json" >}}) data type. 
+
+{{<image filename="images/rc/active-active-json-detail.png" width="75%" alt="When you create an Active-Active database, you can select the JSON advanced capability." >}}{{< /image >}}
+
+When you create an Active-Active database, JSON is already selected. Select it again to remove it.
 
 ## Define throughput
 
@@ -88,5 +96,5 @@ Throughput requirements grow dramatically as regions increase.  As a result, con
 
 - [Create a Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}})
 - Database [memory size]({{<relref "/rc/databases/create-database#memory-size">}})
-- Redis Enterprise Cloud [subscription plans]({{<relref "/rc/subscriptions/">}})
-- [Redis Enterprise Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/)
+- Redis Cloud [subscription plans]({{<relref "/rc/subscriptions/">}})
+- [Redis Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/)

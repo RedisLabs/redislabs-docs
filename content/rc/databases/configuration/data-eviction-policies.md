@@ -1,5 +1,5 @@
 ---
-Title: Data eviction policies
+Title: Data eviction
 linkTitle: Data eviction
 description: Data eviction policies control what happens when new data exceeds the memory limits of a database.  Here, you'll learn the available policies and how to change which one is used for a database.
 weight: $weight
@@ -12,7 +12,7 @@ aliases: /rv/concepts/data-eviction-policies/
 
 The data eviction policy of a database controls what happens when new data exceeds the memory size of a database.  Typically, such situations require _evicting_ (or deleting) data previously added to the database.  
 
-To control this behavior, [change the]({{< relref "/rc/databases/view-edit-database.md" >}}) **Data eviction policy** setting for a database.
+To control this behavior, [edit database details]({{< relref "/rc/databases/view-edit-database.md" >}}) to change the **Data eviction policy** setting at the database level.
 
 ## Available policies
 
@@ -29,7 +29,9 @@ For each database, you can choose from these data eviction policies:
 | volatile-ttl | Removes keys with expire field set to true and the shortest remaining time-to-live (TTL) value |
 | no eviction | New values aren't saved when memory limit is reached<br/><br/>When a database uses replication, this applies to the primary database |
 
-Redis Cloud supports [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}) (Auto Tiering)
+## Prevent data eviction
+
+Redis Cloud supports [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}}) 
 to prevent data eviction but maintain high performance.
 
 Auto Tiering can extend your database across RAM and Flash Memory and intelligently manage "hot" (active) data in RAM and "cold" (less active) data in Flash memory (SSD).

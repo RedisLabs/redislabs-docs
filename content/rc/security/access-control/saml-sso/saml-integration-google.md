@@ -45,7 +45,7 @@ Now that you have your Google Workspace IdP server information, configure suppor
 
 ### Log in to your Redis Cloud account
 
-Log in to your account at [Redis admin console](https://app.redislabs.com/#/login)
+Log in to your account at [Redis Cloud console](https://app.redislabs.com/#/login)
 
 ### Activate SAML in Access Management
 
@@ -163,7 +163,7 @@ A logout notification screen displays, letting you know that you are redirected 
 
    {{<image filename="images/rc/saml/google_workspace_saml_18.png" alt="" >}}{{</image>}}
 
-1. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** to log in to the Redis Cloud admin console.
+1. If everything is configured correctly, you should get a **SAML activation succeeded** message. From this point forward, users need to click **SSO** to log in to the Redis Cloud console.
 
    {{<image filename="images/rc/saml/google_workspace_saml_19.png" alt="" >}}{{</image>}}
 

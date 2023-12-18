@@ -18,7 +18,7 @@ Redis Enterprise Software is supported on several operating systems, cloud envi
 | 18.04 | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported"><span title="Supported">&#x2705;</span></span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
 | 16.04 | <span title="End of life">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
 | **RHEL & CentOS**<sup>[2](#table-note-2)</sup>
-| 8.8 | <span title="Supported">&#x2705;</span> | – | – | – | – | – | – |
+| 8.8 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span><sup>[8](#table-note-8)</sup> | – | – | – | – | – |
 | 8.7 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – | – | – | – |
 | 8.5-8.6 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – |
 | 8.0-8.4 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – |
@@ -49,6 +49,8 @@ Redis Enterprise Software is supported on several operating systems, cloud envi
 
 7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}). Official support for Amazon Linux 2 was added in Redis Enterprise Software [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
 
+8. <a name="table-note-8" style="display: block; height: 80px; margin-top: -80px;"></a>Redis Enterprise Software [6.4.2-103]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-103">}}) and later supports RHEL 8.8.
+
 ## Operating system limitations
 
 ### TLS 1.0 and TLS 1.1
@@ -63,8 +65,7 @@ To avoid issues with SHA1 certificates, replace them with new certificates that 
 
 ### Upgrade RHEL when using modules
 
-RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules.
-Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
+RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules, due to binary differences in modules between the two operating systems. Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
 
 This limitation is fixed for clusters using Redis Enterprise Software version 7.2.4 and later.
 

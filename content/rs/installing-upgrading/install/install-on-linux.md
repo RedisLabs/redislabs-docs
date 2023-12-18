@@ -5,7 +5,9 @@ description: Install Redis Enterprise Software on Linux.
 weight: 10
 alwaysopen: false
 categories: ["RS"]
-aliases: 
+aliases: [
+ "/rs/installing-upgrading/install/prepare-install/prepare-flash",
+]
 ---
 
 After you [download a Redis Enterprise Software installation package]({{<relref "/rs/installing-upgrading/install/prepare-install/download-install-package">}}), install it on one of the nodes in the cluster.
@@ -18,7 +20,7 @@ To install Redis Enterprise Software using the command line:
 
 1. Copy the installation package to the node.
 
-    _(Optional)_ Use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
+    _(Optional)_ Use the {{< download "GPG key file" "../GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
 
     - For Ubuntu:
         1. Import the key:  
@@ -81,6 +83,25 @@ To skip the installation questions, use one of the following methods:
     ```
 
 1. Repeat this process for each node in the cluster.
+
+
+## Auto Tiering installation
+
+If you want to use Auto Tiering for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/databases/auto-tiering/" >}}) for Auto Tiering databases and prepare and format the flash memory.
+
+After you [install on Linux](#install-on-linux), use the `prepare_flash` script to prepare and format flash memory:
+
+```sh
+sudo /opt/redislabs/sbin/prepare_flash.sh
+```
+
+This script finds unformatted disks and mounts them as RAID partitions in `/var/opt/redislabs/flash`.
+
+To verify the disk configuration, run:
+
+```sh
+sudo lsblk
+```
 
 ## More info and options
 
