@@ -119,7 +119,6 @@ For details on this platform, see the [AKS documentation](https://learn.microsof
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **** | Dec 2023 | Oct 2023 | Aug 2023 | Jul 2023 | Jun 2023 | Apr 2023 | Mar 2023 | Jan 2022 | Nov 2022 | Sept 2022 | Jul 2022 | May 2022 | Mar 2022 | Jan 2022 | Jan 2022 | Nov 2021 | Sept 2021 |
 | **Azure AKS** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| **1.28** | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.27** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.26** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |  |  |
 | **1.25** | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |  |  |  |  |  |  |  |  |
