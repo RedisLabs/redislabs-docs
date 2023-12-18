@@ -23,6 +23,8 @@ The following upgrade paths are supported:
 
 Before upgrading a cluster:
 
+- Verify access to [rlcheck]({{< relref "/rs/references/cli-utilities/rlcheck/" >}}) and [rladmin]({{< relref "/rs/references/cli-utilities/rladmin/#use-the-rladmin-shell" >}}) commands
+
 - Verify that you meet the upgrade path requirements for your desired cluster version and review the relevant [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for any preparation instructions.
 
 - Upgrade the cluster's primary (master) node first. To identify the primary node, use one of the following methods:
@@ -44,9 +46,9 @@ Starting with the primary (master) node, follow these steps for every node in th
     $ rladmin status extra all
     ```
 
-1.  [Download the Redis Enterprise Software installation package]({{< relref "/rs/installing-upgrading/install/prepare-install#download-the-installation-package" >}}) to the machine running the node.  
+2.  Download the Redis Enterprise Software installation package to the machine running the node from the Download Center on [https://app.redislabs.com](https://app.redislabs.com).  
 
-1.  Extract the installation package:
+3.  Extract the installation package:
 
     ```sh
     tar vxf <tarfile name>
@@ -66,14 +68,14 @@ You cannot change the installation path or the user during the upgrade.
 
     The upgrade replaces all node processes, which might briefly interrupt any active connections.
 
-1.  Verify the node was upgraded to the new version and is still operational:
+2.  Verify the node was upgraded to the new version and is still operational:
 
     ``` shell
     $ rlcheck
     $ rladmin status extra all
     ```
 
-1.  Visit the admin console.
+3.  Visit the admin console.
 
     If the admin console was open in a web browser during the upgrade, refresh the browser to reload the console.
 

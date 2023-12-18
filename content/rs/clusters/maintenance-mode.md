@@ -187,7 +187,7 @@ You can also turn maintenance mode on or off via [REST API requests]({{<relref "
 Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> to activate maintenance mode:
 
 ```
-POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_on
+POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on
      '{"keep_slave_shards":true}'
 ```
 
@@ -207,7 +207,7 @@ The `maintenance_on` request returns a JSON response body:
 Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> deactivate maintenance mode:
 
 ```
-POST https://[host][:port]/v1/nodes/<node_id>/actions/maintenance_off
+POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_off
      '{"skip_shards_restore":false}'
 ```
 

@@ -229,6 +229,18 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 7. <a name="table-note-7" style="display: block; height: 80px; margin-top: -80px;"></a>A release candidate for Amazon Linux 2 support was added in Redis Enterprise Software [6.4.2-61]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-61">}}). Official support for Amazon Linux 2 was added in Redis Enterprise Software [6.4.2-69]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-69">}}).
 
+## Known issues
+
+- RS114185 - During an upgrade to [Redis Enterprise Software version 7.2.4-86]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-92">}}), the proxy might not start due to a `Failed to get default_suffix` error, which appears in `dmcproxy.log`.
+
+    As a workaround, start `dmcproxy` manually:
+
+    ```sh
+    supervisorctl restart dmcproxy
+    ```
+
+    This issue was fixed in [Redis Enterprise Software version 7.2.4-92]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-92">}}).
+
 ## Known limitations
 
 #### Command limitations

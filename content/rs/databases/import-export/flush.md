@@ -36,8 +36,13 @@ redis-cli -h <hostname> -p <portnumber> -a <password> flushall
 Example:
 
 ```sh
-redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
+redis-cli -h redis-12345.cluster.local -p 9443 -a xyz flushall
 ```
+
+{{< note >}}
+Port 9443 is the default [port configuration]({{< relref "/rs/networking/port-configurations#https://docs.redis.com/latest/rs/networking/port-configurations#ports-and-port-ranges-used-by-redis-enterprise-software" >}}).
+{{< /note >}}
+
 
 ## Flush data from an Active-Active database
 

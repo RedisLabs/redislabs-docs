@@ -79,8 +79,8 @@ To download debug info for all nodes:
 GET /v1/debuginfo/all
 ```
 
-To download debug info from all nodes that relates to a specific database, replace `<bdb_uid>` in the following request with the database ID:
+To download debug info from all nodes that relates to a specific database, replace `<uid>` in the following request with the database ID:
 
 ```sh
-GET /v1/debuginfo/all/bdb/<bdb_uid>
+GET /v1/debuginfo/all/bdb/<uid>
 ```

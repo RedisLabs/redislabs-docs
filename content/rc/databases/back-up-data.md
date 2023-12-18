@@ -174,17 +174,17 @@ For [Google Cloud](https://developers.google.com/console/) subscriptions, store 
 
 1. Sign in to Google Cloud Platform console.
 
-1. In the admin console menu, locate the _Storage_ section than select **Cloud Storage&nbsp;>&nbsp;Browser**.
+1. In the admin console menu, locate the _Storage_ section than select **Cloud Storage&nbsp;>&nbsp;Buckets**.
 
 1. Create or select a bucket.
 
-1. Select the [overflow menu](https://material.io/components/app-bars-top#anatomy) (three dots, stacked) and then select the **Edit Bucket Permissions** command.
+1. Select the **Permissions** tab.
 
-1. Select the **Add members** button and then add:
+1. Select the **Grant Access** button and then add:
 
     `service@redislabs-prod-clusters.iam.gserviceaccount.com`
 
-1. Set **Role** to **Storage Legacy** | **Storage Legacy Bucket Writer**.
+1. Set **Role** to **Storage Legacy Bucket Writer**.
 
 1. Save your changes.
 
@@ -194,9 +194,9 @@ For [Google Cloud](https://developers.google.com/console/) subscriptions, store 
 
     1. View the details of your bucket.
 
-    1. Select the **Retention** tab.
+    1. Select the **Configuration** tab.
 
-    1. Verify that there is no retention policy.  
+    1. Verify **Protection** -> **Bucket retention policy** is set to **none**.  
 
     If a policy is defined and you cannot delete it, you need to use a different bucket.
 
