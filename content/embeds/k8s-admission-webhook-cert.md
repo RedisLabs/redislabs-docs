@@ -22,7 +22,7 @@
     The `webhook.yaml` template can be found in [redis-enterprise-k8s-docs/admission](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/admission)
 
     ```sh
-    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/<namespace>/g' webhook.yaml | kubectl create -f -
+    sed 's/OPERATOR_NAMESPACE/<namespace>/g' webhook.yaml | kubectl create -f -
     ```
 
 4. Create a patch file for the Kubernetes validating webhook.
