@@ -96,6 +96,7 @@ You can select more than one advanced capability for a database, though there ar
     - Probabilistic
 
 - Graph cannot be combined with other capabilities.
+- JSON is the only capability supported for [Active-Active subscriptions]({{<relref "rc/subscriptions/create-active-active-subscription">}}).
 
 You don't have to combine capabilities.  To remove a selected capability, either clear the checkbox in the menu or select its **Delete** icon.  
 
