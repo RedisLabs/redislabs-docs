@@ -22,23 +22,13 @@ Active-Active databases support JSON data structures.
 
 The design is based on [A Conflict-Free Replicated JSON Datatype](https://arxiv.org/abs/1608.03960) by Kleppmann and Beresford, but the implementation includes some changes. Several [conflict resolution rule](#conflict-resolution-rules) examples were adapted from this paper as well.
 
-## Create an Active-Active JSON database
+## Prerequisites
 
-To use JSON in an Active-Active database, you must enable JSON during database creation:
+To use JSON in an Active-Active database, you must enable JSON during database creation.
 
-1. See [Create an Active-Active geo-replicated database ]({{<relref "/rs/databases/active-active/create">}}) for prerequisites and detailed steps.
+Active-Active Redis Cloud databases add JSON by default. See [Create an Active-Active subscription]({{<relref "/rc/subscriptions/create-active-active-subscription#select-capabilities">}}) in the Redis Cloud documentation for details.
 
-1. In the **Capabilities** section of the **Create Active-Active database** screen, select **JSON**:
-
-    {{<image filename="images/rs/screenshots/databases/active-active-databases/create-a-a-db-json-search.png" alt="Select JSON from the Capabilities section.">}}{{</image>}}
-
-    {{<note>}}
-When you select **JSON**, **Search and Query** is also selected by default to allow you to index and query JSON documents. If you do not want to use these additional features, you can clear the **Search and Query** check box.
-    {{</note>}}
-
-1. Configure additional database settings.
-
-1. Select **Create**.
+In Redis Enterprise Software, JSON is not enabled by default for Active-Active databases. See [Create an Active-Active JSON database]({{<relref "/stack/json/active-active#create-an-active-active-json-database">}}) in the Redis Stack and Redis Enterprise documentation for instructions.
 
 {{<embed-md "json-active-active-command-differences.md">}}
 
