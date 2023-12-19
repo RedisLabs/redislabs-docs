@@ -30,30 +30,31 @@ To learn more, see [Architecture]({{<relref "/rdi/architecture">}}).
 
 RDI supports the following database sources using [Debezium Server](https://debezium.io/documentation/reference/stable/operations/debezium-server.html) connectors:
 
-| Database           | Versions               |Comments|
-| ------------------ | ---------------------- |--------|
-| Oracle             | 12c, 19c, 21c          ||
-| MariaDB            | >= 10.5                ||
-| MongoDB            | 4.2, 4.4, 5.0, 6.0     | Driver: 4.7  |
-| MySQL              | 5.7, 8.0.x             ||
-| Percona XtraDB     | 5.7, 8.0.x             ||
-| Postgres           | 10, 11, 12, 13, 14, 15 ||
-| SQL Server         | 2017, 2019             ||
-| Cassandra          | >= 3.0                 ||
-| Datastax Cassandra | >= 6.8.0               ||
+| Database                    | Versions               |Comments|
+| --------------------------- | ---------------------- |--------|
+| Oracle                      | 12c, 19c, 21c          ||
+| MariaDB                     | >= 10.5                ||
+| MongoDB                     | 4.2, 4.4, 5.0, 6.0     | Driver: 4.7  |
+| MySQL                       | 5.7, 8.0.x             ||
+| Percona XtraDB              | 5.7, 8.0.x             ||
+| Postgres                    | 10, 11, 12, 13, 14, 15 ||
+| SQL Server                  | 2017, 2019             ||
+| Cassandra                   | >= 3.0                 ||
+| Datastax Cassandra          | >= 6.8.0               ||
+| Google Cloud SQL MySQL      | 8.0                    ||
+| Google Cloud SQL Postgres   | 15                     ||
+| Google Cloud SQL SQL Server | 2019                   ||
 
 ## Supported targets (write-behind)
 
 | Database   |
 | ---------- |
-| Cassandra  |
-| Db2        |
+| Oracle     |
 | MariaDB    |
 | MySQL      |
-| Oracle     |
 | Postgres   |
 | SQL Server |
-
+| Cassandra  |
 
 ## Features
 
