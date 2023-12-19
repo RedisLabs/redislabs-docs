@@ -2,7 +2,7 @@
 Title: View and edit databases
 linkTitle: "Edit and view"
 description:
-weight: 20
+weight: 15
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/viewing-editing-database/
