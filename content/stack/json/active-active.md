@@ -18,7 +18,7 @@ To use JSON in an Active-Active database, you must enable JSON during database c
 
 Active-Active Redis Cloud databases add JSON by default. See [Create an Active-Active subscription]({{<relref "/rc/subscriptions/create-active-active-subscription#select-capabilities">}}) in the Redis Cloud documentation for details.
 
-To create an Active-Active JSON database in Redis Enterprise Software:
+In Redis Enterprise Software, JSON is not enabled by default for Active-Active databases. To create an Active-Active JSON database in Redis Enterprise Software:
 
 1. See [Create an Active-Active geo-replicated database]({{<relref "/rs/databases/active-active/create">}}) in the Redis Enterprise Software documentation for prerequisites and detailed steps.
 
