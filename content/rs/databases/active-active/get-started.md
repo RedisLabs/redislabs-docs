@@ -16,22 +16,24 @@ aliases: [
 categories: ["RS"]
 ---
 
-To get you started, this article will help you set up an Active-Active database, formerly known as CRDB (conflict-free replicated database) spanning across two Redis Enterprise Software
+To get started, this article will help you set up an Active-Active database, formerly known as CRDB (conflict-free replicated database), spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
-- Step 1: Run two Redis Enterprise Software (RS) Docker containers
-- Step 2: Set up each container as a cluster
-- Step 3: Create a new Redis Enterprise Active-Active database
-- Step 4: Test connectivity to the Active-Active database
+1. Run two Redis Enterprise Software Docker containers.
+
+1. Set up each container as a cluster.
+
+1. Create a new Redis Enterprise Active-Active database.
+
+1. Test connectivity to the Active-Active database.
 
 To run an Active-Active database on installations from the [Redis Enterprise Software download package]({{< relref "rs/installing-upgrading/quickstarts/redis-enterprise-software-quickstart" >}}),
 set up two Redis Enterprise Software installations and continue from Step 2.
 
-{{< note >}}
+{{<note>}}
 This getting started guide is for development or demonstration environments.
-To set up an Active-Active database in a production environment, use the instructions for
-[creating an Active-Active database]({{< relref "/rs/databases/active-active/create.md" >}}).
-{{< /note >}}
+For production environments, see [Create an Active-Active geo-replicated database]({{<relref "/rs/databases/active-active/create">}}) for instructions.
+{{</note>}}
 
 ## Run two containers
 
@@ -62,8 +64,7 @@ Depending on your browser, you may see a certificate error. Continue to the webs
 
     {{<image filename="images/rs/screenshots/cluster/setup/create-cluster.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{</image>}}
 
-1. On the next screen, set up a Cluster Administrator account using an
-email for the login and a password:
+1. Enter an email and password for the administrator account, then click **Next** to proceed to cluster setup:
 
     {{<image filename="images/rs/screenshots/cluster/setup/admin-credentials.png" alt="Set the credentials for your admin user." >}}{{</image>}}
 
@@ -75,11 +76,9 @@ email for the login and a password:
 
     {{<image filename="images/rs/screenshots/cluster/setup/config-cluster1.png" alt="Configure the cluster FQDN." >}}{{</image>}}
 
-1. On the **Node** configuration page, select your default settings.
+1. On the node setup screen, keep the default settings and click **Create cluster**:
 
     {{<image filename="images/rs/screenshots/cluster/setup/node-settings.png" alt="Configure the node specific settings." >}}{{</image>}}
-
-1. Click **Create cluster**.
 
 1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
     certificate on the node, and proceed through the browser warning.
@@ -91,7 +90,7 @@ email for the login and a password:
     - For the **Cluster name (FQDN)**, enter a different name, such as `cluster2.local`.
 
 Now you have two Redis Enterprise Software clusters with FQDNs
-**cluster1.local** and **cluster2.local**.
+`cluster1.local` and `cluster2.local`.
 
 {{<note>}}
 Each Active-Active instance must have a unique fully-qualified domain name (FQDN).
@@ -129,21 +128,24 @@ Each Active-Active instance must have a unique fully-qualified domain name (FQDN
 
     1. Click **Join cluster** to add the cluster to the list of participating clusters. 
 
+1. Enter `database1` for **Database name** and `12000` for **Port**:
+
+    {{<image filename="images/rs/screenshots/databases/active-active-databases/quickstart-db-name-port.png" alt="Database name and port text boxes.">}}{{</image>}}
+
 1. Configure additional settings:
 
-    1. For the **database name**, enter: `database1`
-    1. For the **endpoint port number**, enter: `12000`
+    1. In the **High availability & durability** section, turn off **Replication** since each cluster has only one node in this setup:
 
-    1. Turn off **Replication** since each cluster has only one node in this setup.
+        {{<image filename="images/rs/screenshots/databases/active-active-databases/quickstart-ha-turn-off-replication.png" alt="Turn off replication in the High availability & durability section.">}}{{</image>}}
+
 
     1. In the **Clustering** section, either:
 
-        - Make sure that **Sharding** is enabled and select the number of shards
-        that you want to have in the database. When database clustering is enabled,
-        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/databases/durability-ha/clustering" >}}).
+        - Make sure that **Sharding** is enabled and select the number of shards you want to have in the database. When database clustering is enabled,
+        databases are subject to limitations on [Multi-key commands]({{<relref "/rs/databases/durability-ha/clustering">}}).
         You can increase the number of shards in the database at any time.
 
-        - Turn off **Sharding** to use only one shard and to avoid [Multi-key command]({{< relref "/rs/databases/durability-ha/clustering.md" >}}) limitations.
+        - Turn off **Sharding** to use only one shard and avoid [Multi-key command]({{<relref "/rs/databases/durability-ha/clustering">}}) limitations.
 
         {{< note >}}
 You cannot enable or turn off database clustering after the Active-Active database is created.
@@ -155,7 +157,7 @@ You cannot enable or turn off database clustering after the Active-Active databa
     {{< embed-md "docker-memory-limitation.md" >}}
     {{< /note >}}
 
-1. After the Active-Active database is created, sign in to the Cluster Manager UIs for cluster 1 at https://localhost:8443 and cluster 2 at https://localhost:8445.
+1. After the Active-Active database is created, sign in to the Cluster Manager UIs for cluster 1 at `https://localhost:8443` and cluster 2 at `https://localhost:8445`.
 
 1. Make sure each cluster has an Active-Active database member database with the name `database1`.
 
