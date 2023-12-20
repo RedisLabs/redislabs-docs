@@ -58,21 +58,26 @@ host machine to access the Redis Enterprise Software Cluster Manager UI.
 Depending on your browser, you may see a certificate error. Continue to the website.
     {{</note>}}
 
-1. Click the **Create new cluster** button:
+1. Click **Create new cluster**:
 
-    <!-- TODO: add screenshot -->
+    {{<image filename="images/rs/screenshots/cluster/setup/create-cluster.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{</image>}}
 
 1. On the next screen, set up a Cluster Administrator account using an
 email for the login and a password:
 
-    <!-- TODO: add screenshot -->
+    {{<image filename="images/rs/screenshots/cluster/setup/admin-credentials.png" alt="Set the credentials for your admin user." >}}{{</image>}}
 
-1. In the **Configuration** section of the **Cluster** settings page, enter a cluster FQDN, for example `cluster1.local`.
+1. Enter your cluster license key if you have one. Otherwise, a trial version is installed.
 
-1. If you don't have a license key, click the **Next** button to try the
-trial version of the product.
+    {{<image filename="images/rs/screenshots/cluster/setup/cluster-license-key.png" alt="Enter your cluster license key if you have one." >}}{{</image>}}
 
-1. On the **Node** configuration page, select your default settings. 
+1. In the **Configuration** section of the **Cluster** settings page, enter a cluster FQDN, for example `cluster1.local`:
+
+    {{<image filename="images/rs/screenshots/cluster/setup/config-cluster1.png" alt="Configure the cluster FQDN." >}}{{</image>}}
+
+1. On the **Node** configuration page, select your default settings.
+
+    {{<image filename="images/rs/screenshots/cluster/setup/node-settings.png" alt="Configure the node specific settings." >}}{{</image>}}
 
 1. Click **Create cluster**.
 
@@ -108,11 +113,11 @@ Each Active-Active instance must have a unique fully-qualified domain name (FQDN
 
 1. Select **Active-Active database**.
 
-1. Enter the cluster's local admin credentials:
+1. Enter the cluster's local admin credentials, then click **Save**:
 
-    {{<image filename="images/rs/screenshots/databases/active-active-databases/enter-local-admin-credentials.png" alt="Enter the cluster's admin username and password.">}}{{</image>}}
+    {{<image filename="images/rs/screenshots/databases/active-active-databases/enter-local-admin-credentials-cluster1.png" alt="Enter the cluster's admin username and password.">}}{{</image>}}
 
-1. In the **Active-Active cluster configuration** section, add participating clusters:
+1. Add participating clusters that will host instances of the Active-Active database:
 
     1. In the **Participating clusters** section, go to **Other participating clusters** and click **+ Add cluster**.
 
@@ -120,8 +125,7 @@ Each Active-Active instance must have a unique fully-qualified domain name (FQDN
 
         In the **Other participating clusters** list, add the address and admin credentials for the other cluster: `https://cluster2.local:9443`
 
-        <!--TODO: replace screenshot with one that shows the correct cluster FQDN and port-->
-        {{<image filename="images/rs/screenshots/databases/active-active-databases/participating-clusters-add-cluster.png" alt="Add cluster panel.">}}{{</image>}}
+        {{<image filename="images/rs/screenshots/databases/active-active-databases/participating-clusters-add-cluster2.png" alt="Add cluster panel.">}}{{</image>}}
 
     1. Click **Join cluster** to add the cluster to the list of participating clusters. 
 
