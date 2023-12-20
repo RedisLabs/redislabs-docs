@@ -44,11 +44,15 @@ To migrate a database to Active-Active in the same Redis Enterprise cluster:
 
 1. After the Active-Active database is active, click **Edit** on the **Configuration** screen.
 
-1. Expand the **Migrate to Active-Active** section.
+1. Expand the **Migrate to Active-Active** section:
+
+    {{<image filename="images/rs/screenshots/databases/migrate-to-active-active/migrate-to-active-active-section.png" alt="Migrate to Active-Active section.">}}{{</image>}}
 
 1. Click **+ Add source database**.
 
-1. In the **Migrate to Active-Active** dialog, select **Current cluster**
+1. In the **Migrate to Active-Active** dialog, select **Current cluster**:
+
+    {{<image filename="images/rs/screenshots/databases/migrate-to-active-active/migrate-to-active-active-dialog-current-cluster.png" alt="Migrate to Active-Active dialog with Current cluster tab selected.">}}{{</image>}}
 
 1. Select the source database from the list.
 
@@ -85,13 +89,17 @@ To migrate a database to Active-Active in different Redis Enterprise clusters:
 
 1. After the Active-Active database is active, click **Edit** on the **Configuration** screen.
 
-1. Expand the **Migrate to Active-Active** section.
+1. Expand the **Migrate to Active-Active** section:
+
+    {{<image filename="images/rs/screenshots/databases/migrate-to-active-active/migrate-to-active-active-section.png" alt="Migrate to Active-Active section.">}}{{</image>}}
 
 1. Click **+ Add source database**.
 
-1. In the **Migrate to Active-Active** dialog, select **External**.
+1. In the **Migrate to Active-Active** dialog, select **External**:
 
-1. Enter the URL of the source database endpoint (the order has no impact on replication).
+    {{<image filename="images/rs/screenshots/databases/migrate-to-active-active/migrate-to-active-active-dialog-external.png" alt="Migrate to Active-Active dialog with External tab selected.">}}{{</image>}}
+
+1. For **Source database URL**, enter the Replica Of source URL you copied in step 1.
 
 1. Click **Add source**.
 
@@ -105,13 +113,17 @@ To migrate an open source Redis database to Active-Active:
 
 1. After the Active-Active database is active, click **Edit** on the **Configuration** screen.
 
-1. Expand the **Migrate to Active-Active** section.
+1. Expand the **Migrate to Active-Active** section:
+
+    {{<image filename="images/rs/screenshots/databases/migrate-to-active-active/migrate-to-active-active-section.png" alt="Migrate to Active-Active section.">}}{{</image>}}
 
 1. Click **+ Add source database**.
 
-1. In the **Migrate to Active-Active** dialog, select **External**.
+1. In the **Migrate to Active-Active** dialog, select **External**:
 
-1. Enter the source database URL:
+    {{<image filename="images/rs/screenshots/databases/migrate-to-active-active/migrate-to-active-active-dialog-external.png" alt="Migrate to Active-Active dialog with External tab selected.">}}{{</image>}}
+
+1. Enter the **Source database URL**:
 
     - If the database has a password:
 
@@ -141,8 +153,12 @@ Migration can take minutes to hours to complete depending on the dataset size an
 
 1. On the Active-Active database's **Configuration** screen, click **Edit**.
 
-1. In the **Migrate to Active-Active** section, click **Stop sync**.
+1. In the **Migrate to Active-Active** section, click **Stop sync**:
+
+    {{<image filename="images/rs/screenshots/databases/migrate-to-active-active/migrate-to-active-active-synced.png" alt="The Migrate to Active-Active section shows the Active-Active database is synced with the source database.">}}{{</image>}}
 
 1. In the **Stop synchronization** dialog, click **Stop** to proceed.
 
-1. Redirect client connections to the Active-Active database after **Status** changes to _Sync stopped_.
+1. Redirect client connections to the Active-Active database after **Status** changes to _Sync stopped_:
+
+    {{<image filename="images/rs/screenshots/databases/migrate-to-active-active/migrate-to-active-active-sync-stopped.png" alt="The Migrate to Active-Active section shows the Active-Active database stopped syncing with the source database.">}}{{</image>}}
