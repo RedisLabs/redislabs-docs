@@ -42,7 +42,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
     1. In a browser, open the Cluster Manager UI for the participating cluster.
 
-        The default address is: `https://<RS_address>:8443/new`
+        The default address is: `https://<RS_address>:8443`
 
     1. Go to the **Access Control > Users** tab:
 
@@ -65,7 +65,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. In a browser, open the Cluster Manager UI of the cluster where you want to create the Active-Active database.
 
-    The default address is: `https://<RS_address>:8443/new`
+    The default address is: `https://<RS_address>:8443`
 
 1. Open the **Create database** menu with one of the following methods:
 
@@ -79,17 +79,17 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. Select **Active-Active database**.
 
-1. Enter the cluster's local admin credentials:
+1. Enter the cluster's local admin credentials, then click **Save**:
 
     {{<image filename="images/rs/screenshots/databases/active-active-databases/enter-local-admin-credentials.png" alt="Enter the cluster's admin username and password.">}}{{</image>}}
-
-1. In the **Active-Active cluster configuration** section, add participating clusters:
+    
+1. Add participating clusters that will host instances of the Active-Active database:
 
     1. In the **Participating clusters** section, go to **Other participating clusters** and click **+ Add cluster**.
 
     1. In the **Add cluster** configuration panel, enter the new cluster's URL, port number, and the admin username and password for the new participating cluster:
 
-        {{<image filename="images/rs/screenshots/databases/active-active-databases/participating-clusters-add-cluster.png" alt="Add cluster panel.">}}{{</image>}}
+        {{<image filename="images/rs/screenshots/databases/active-active-databases/create-db-add-participating-clusters.png" alt="Add cluster panel.">}}{{</image>}}
 
     1. Click **Join cluster** to add the cluster to the list of participating clusters. 
 
@@ -101,7 +101,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
     See [Configuration settings](#configuration-settings) for more information about each setting.
 
-1. Select **Create**.
+1. Click **Create**.
 
 ## Configuration settings
 
