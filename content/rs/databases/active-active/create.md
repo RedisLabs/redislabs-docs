@@ -48,13 +48,13 @@ Every instance of an Active-Active database can receive write operations, and al
 
         {{<image filename="images/rs/access-control-user-panel.png" alt="Add role with name" >}}{{</image>}}
     
-    1. Select **+ Add user**.
+    1. Click **+ Add user**.
 
     1. Enter the username, email, and password for the user.
     
     1. Select the **Admin** role.
     
-    1. Select **Save**.
+    1. Click **Save**.
 
 1. To verify network connectivity between participating clusters,
     run the following `telnet` command from each participating cluster to all other participating clusters:
