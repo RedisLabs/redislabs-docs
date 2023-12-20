@@ -19,16 +19,16 @@ If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md"
 
 ## Fixed plan subscription tiers
 
-Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated November 2022):
+Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated January 2023):
 
-| **Max DB size &nbsp;** | **Number of<br/>databases** | **Concurrent<br/>connections<br/>per database** | **CIDR<br/> allow rules** |
-|---|---|---|---|
-| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | 1 |
-| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 4-8 |
-| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 16 | 1024 | 4-8 |
-| 2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 24 | Unlimited | 4-8 |
-| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | 32 | Unlimited | 4-16 |
-| 12 GB &nbsp;&nbsp;&nbsp;&nbsp; | 64 | Unlimited | 4-32 |
+| **Max DB size &nbsp;** | **Concurrent<br/>connections<br/>per database** | **CIDR<br/> allow rules** |
+|---|---|---|
+| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 30 | 1 |
+| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 256 | 4-8 |
+| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 1024 | 4-8 |
+| 2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | Unlimited | 4-8 |
+| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | Unlimited | 4-16 |
+| 12 GB &nbsp;&nbsp;&nbsp;&nbsp; | Unlimited | 4-32 |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
