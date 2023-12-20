@@ -44,7 +44,7 @@ To add a new participating cluster to an existing Active-Active configuration us
 
 1. Select the Active-Active database from the **Databases** list and go to its **Configuration** screen.
 
-1. Select **Edit**.
+1. Click **Edit**.
 
 1. In the **Participating clusters** section, go to **Other participating clusters** and click **+ Add cluster**.
 
@@ -65,6 +65,20 @@ If a forcefully removed participating cluster tries to rejoin the cluster,
 its Active-Active database membership will be out of date.
 The joined participating clusters reject updates sent from the removed participating cluster.
 To prevent rejoin attempts, purge the forcefully removed instance from the participating cluster.
+
+To remove a participating cluster using the Cluster Manager UI:
+
+1. Select the Active-Active database from the **Databases** list and go to its **Configuration** screen.
+
+1. Click **Edit**.
+
+1. In the **Participating clusters** section, point to the cluster you want to delete in the **Other participating clusters** list:
+
+    {{<image filename="images/rs/screenshots/databases/active-active-databases/participating-clusters-edit-delete.png" alt="Edit and delete buttons appear when you point to an entry in the Other participating clusters list.">}}{{</image>}}
+
+1. Click <img src="/images/rs/buttons/delete-button.png#no-click" alt="The Delete button" width="25px"> to remove the cluster.
+
+1. Click **Save**.
 
 ## Replication backlog
 
