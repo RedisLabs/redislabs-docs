@@ -19,7 +19,7 @@ If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md"
 
 ## Fixed plan subscription tiers
 
-Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated January 2023):
+Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown here (updated January 2023):
 
 | **Max DB size &nbsp;** | **Concurrent<br/>connections<br/>per database** | **CIDR<br/> allow rules** |
 |---|---|---|
@@ -90,6 +90,6 @@ When you create your subscription, there's a brief pause while your request is p
 
 {{<image filename="images/rc/subscription-fixed-databases-none.png" alt="The Subscription details screen with no databases." >}}{{< /image >}}
 
-To create your first database, select the **New Database** button and then fill in the appropriate details.
+To create your database, select the **New Database** button and then fill in the appropriate details.
 
 To learn more, see [Create a database]({{<relref "rc/databases/create-database.md">}}).
