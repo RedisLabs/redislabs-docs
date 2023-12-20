@@ -27,12 +27,12 @@ To learn how to navigate to your database, see [View and edit databases]({{<relr
 
 Select **Add tags** to open the [tag manager](#tag-manager).
 
-{{<image filename="/images/rc/tags-icon-add-tags.png" alt="The Add tags button." width=60px >}}{{< /image >}}
+![Add tags button](/images/rc/tags-icon-add-tags.png#no-click "Add tags button.")
 
 You can also hover over a tag and select **Edit** to open the [tag manager](#tag-manager), or select **Delete** to delete the tag.
 
-{{<image filename="/images/rc/tags-icon-edit.png" alt="The Edit button." width=50px >}}{{< /image >}}
-{{<image filename="/images/rc/tags-icon-delete.png" alt="The Delete button." width=50px >}}{{< /image >}}
+![Edit button](/images/rc/tags-icon-edit.png#no-click "Edit button.")
+![Delete button](/images/rc/tags-icon-delete.png#no-click "Delete button.")
 
 ### Open tag manager from the database list {#database-list}
 
@@ -44,8 +44,8 @@ To get to the database list, select **Databases** from the main menu.
 
 Hover over the database and select **Manage tags**, or select **More actions** > **Manage tags** to open the [tag manager](#tag-manager).
 
-{{<image filename="/images/rc/tags-icon-manage-tags.png" alt="The Manage tags button." width=40px >}}{{< /image >}}
-{{<image filename="/images/rc/tags-icon-more-actions.png" alt="The More actions button." width=40px >}}{{< /image >}}
+![Manage tags button](/images/rc/tags-icon-manage-tags.png#no-click "Manage tags button.")
+![More actions button](/images/rc/tags-icon-manage-tags.png#no-click "More actions button.")
 
 ### Use the tag manager {#tag-manager}
 
