@@ -82,6 +82,12 @@ ccs-cli hset node:<ID> os_name rhel
 
 This limitation was fixed in [Redis Enterprise Software version 7.2.4-64]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-64">}}).
 
+### OpenSSL compatibility issue for 7.4.2 modules on Amazon Linux 2
+
+Due to an OpenSSL 1.1 compatibility issue between modules and clusters, Redis Enterprise Software version 7.4.2-tba is not fully supported on Amazon Linux 2 clusters with databases that use the following modules: RedisGears, RediSearch, or RedisTimeSeries.
+
+This issue will be fixed in a future maintenance release.
+
 ## Virtualization platforms
 
 Redis Enterprise Software is compatible with VMware and other similar virtualization platforms. Make sure to do the following:
