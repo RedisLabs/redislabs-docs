@@ -53,7 +53,7 @@ Throughout this guide, each command is applied to the namespace in which the Red
   kubectl create namespace <rec-namespace>
   ```
 
-. Change the namespace context to make the newly created namespace default for future commands.
+2. Change the namespace context to make the newly created namespace default for future commands.
 
   ```sh
   kubectl config set-context --current --namespace=<rec-namespace>
