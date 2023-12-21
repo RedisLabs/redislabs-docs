@@ -19,4 +19,4 @@ Customers with Annual subscriptions can also find a breakdown of network data co
 
 ## Deprecations
 
-- New and upgraded Fixed subscriptions are limited to one database per subscription. If you are on a legacy plan, you can add databases up to the plan limit. If you choose to upgrade your plan, you can keep your databases, but you will need to create a new subscription to add another database.
+- {{< embed-md "rc-fixed-upgrade-limitation.md" >}}
