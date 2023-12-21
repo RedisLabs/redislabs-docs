@@ -2,7 +2,7 @@
 Title: View and edit databases
 linkTitle: "Edit and view"
 description:
-weight: 20
+weight: 15
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/viewing-editing-database/
@@ -158,7 +158,7 @@ You can:
 
     {{<image filename="images/rc/database-list-filter.png" alt="Use the filter toggle to display filter options." >}}{{< /image >}}
 
-    You can filter the list on **Status**, **Subscription**, **Capabilities**, and **Options**.  String matches are _not_ case-sensitive.  You can specify more than one filter expression at a time.  
+    You can filter the list on **Status**, **Subscription**, **Capabilities**, **Options**, and **Tags**.  String matches are _not_ case-sensitive.  You can specify more than one filter expression at a time.  
 
     A list of selected filters appears below the filter types.
 
@@ -166,7 +166,7 @@ You can:
 
     {{<image filename="images/rc/database-list-filter-selected.png" alt="Use the filter toggle to display filter options." >}}{{< /image >}}
 
-- Sort the list in descending or ascending order using the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Name**, **Database ID**, and **Memory**.
+- Sort the list in descending or ascending order using the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Database name**, **Memory**, and **Tags**.
 
     {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}
 
@@ -183,6 +183,8 @@ The **View Database** screen also has tabs that let you view:
 - **Metrics**: a series of graphs showing database performance over time.  See [Monitor performance]({{< relref "/rc/databases/monitor-performance.md" >}})
 
 - **Slowlog**: a log showing recent [slow queries](https://redis.io/commands/slowlog) run against your database.  The log displays when the action started, the duration, the complexity of the operation, and any parameters passed to the operation.
+
+- **Tags**: a list of the [tags]({{< relref "/rc/databases/tag-database" >}}) associated with the database. You can also [Manage tags]({{< relref "/rc/databases/tag-database#tags-tab" >}}) from this tab.
 
 ## Edit database details
 
