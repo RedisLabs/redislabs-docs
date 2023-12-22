@@ -16,11 +16,11 @@ Internode encryption is supported for the _data plane_, which encrypts communica
 
 The following diagram shows how this works.
 
-{{<image filename="images/rs/internode-encryption.png" alt="A diagram showing the interaction between data plane encryption, control plane encryption, and various elements of a cluster." >}}{{< /image >}}
+{{<image filename="images/rs/internode-encryption.png" alt="A diagram showing the interaction between data internode encryption, control plane encryption, and various elements of a cluster." >}}{{< /image >}}
 
-Data plane encryption is disabled by default for individual databases in order to optimize for performance.  Encryption adds latency and overhead; the impact is measurable and varies according to the database, its field types, and the details of the underlying use case. 
+Data internode encryption is disabled by default for individual databases in order to optimize for performance.  Encryption adds latency and overhead; the impact is measurable and varies according to the database, its field types, and the details of the underlying use case. 
 
-You can enable data plane encryption for a database by changing the database configuration settings.  This lets you choose when to favor performance and when to encrypt data.
+You can enable data internode encryption for a database by changing the database configuration settings.  This lets you choose when to favor performance and when to encrypt data.
 
 ## Prerequisites
 
@@ -33,9 +33,9 @@ You need to:
 - Open port 3342 for the TLS channel used for encrypted communication.
 
 
-## Enable data plane encryption
+## Enable data internode encryption
 
-To enable internode encryption for a database (also called _data plane encryption_), you need to enable the appropriate setting for each database you wish to encrypt.  To do so, you can:
+To enable internode encryption for a database (also called _data internode encryption_), you need to enable the appropriate setting for each database you wish to encrypt.  To do so, you can:
 
 - Use the admin console to enable the **Internode Encryption** setting from the database **Security** screen.
 
