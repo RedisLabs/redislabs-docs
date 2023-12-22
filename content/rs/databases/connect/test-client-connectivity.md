@@ -15,15 +15,20 @@ aliases: rs/administering/troubleshooting/testing-client-connectivity/
          /rs/databases/connect/test-client-connectivity
 ---
 In various scenarios, such as after creating a new cluster or upgrading
-the cluster, it is highly advisable to verify client connectivity to the
+the cluster, you should verify clients can connect to the
 database.
 
 To test client connectivity:
 
-1. [Create a Redis database]({{<relref "/rs/databases/create">}}) and get the database endpoint, which
-    contains the cluster name (FQDN).
+1. After you [create a Redis database]({{<relref "/rs/databases/create">}}), copy the database endpoint, which contains the cluster name (FQDN).
+
+    To view and copy endpoints for a database in the cluster, see the database’s **Configuration > General** section in the Cluster Manager UI:
+
+    {{<image filename="images/rs/screenshots/databases/config-general-endpoints.png" width="75%" alt="View public and private endpoints from the General section of the database's Configuration screen." >}}{{</image>}}
+
 1. Try to connect to the database endpoint from your client of choice,
     and run database commands.
+
 1. If the database does not respond, try to connect to the database
     endpoint using the IP address rather than the FQDN. If you
     succeed, then DNS is not properly configured. For
@@ -40,7 +45,9 @@ database and store data using one of the following methods:
 
 - [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}), the built-in command-line tool
 
-- An application using a [Redis client library](https://redis.io/resources/clients/), such as [`redis-py`](https://github.com/redis/redis-py) for Python
+- [RedisInsight](https://redis.com/redis-enterprise/redis-insight/), a free Redis GUI that is available for MacOS, Windows, and Linux 
+
+- An application using a Redis client library, such as [`redis-py`](https://github.com/redis/redis-py) for Python. See the [client list](https://redis.io/resources/clients/) to view all Redis clients by language.
 
 ### Connect with redis-cli
 
@@ -55,6 +62,22 @@ OK
 ```
 
 For more `redis-cli` connection examples, see the [`redis-cli` reference]({{<relref "/rs/references/cli-utilities/redis-cli">}}).
+
+### Connect with RedisInsight
+
+RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux.
+
+1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
+
+1. Open RedisInsight and select **Add Redis Database**.
+
+1. Enter the host and port in the **Host** and **Port** fields.
+
+1. Select **Use TLS** if [TLS]({{< relref "/rs/security/encryption/tls" >}}) is set up.
+
+1. Select **Add Redis Database** to connect to the database.
+
+See the [RedisInsight documentation]({{<relref "/ri">}}) for more information.
 
 ### Connect with Python
 
