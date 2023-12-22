@@ -45,7 +45,7 @@ database and store data using one of the following methods:
 
 - [`redis-cli`]({{<relref "/rs/references/cli-utilities/redis-cli">}}), the built-in command-line tool
 
-- [RedisInsight](https://redis.com/redis-enterprise/redis-insight/), a free Redis GUI that is available for MacOS, Windows, and Linux 
+- [RedisInsight](https://redis.com/redis-enterprise/redis-insight/), a free Redis GUI that is available for macOS, Windows, and Linux 
 
 - An application using a Redis client library, such as [`redis-py`](https://github.com/redis/redis-py) for Python. See the [client list](https://redis.io/resources/clients/) to view all Redis clients by language.
 
@@ -65,7 +65,7 @@ For more `redis-cli` connection examples, see the [`redis-cli` reference]({{<rel
 
 ### Connect with RedisInsight
 
-RedisInsight is a free Redis GUI that is available for MacOS, Windows, and Linux.
+RedisInsight is a free Redis GUI that is available for macOS, Windows, and Linux.
 
 1. [Install RedisInsight]({{< relref "/ri/installing/install-redis-desktop" >}}).
 
