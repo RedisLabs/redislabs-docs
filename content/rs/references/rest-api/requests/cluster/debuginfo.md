@@ -1,7 +1,7 @@
 ---
-Title: All nodes debug info requests
-linkTitle: all
-description: Documents the Redis Enterprise Software REST API debuginfo/all requests.
+Title: Cluster debug info requests
+linkTitle: debuginfo
+description: Documents the Redis Enterprise Software REST API /cluster/debuginfo requests.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -9,19 +9,15 @@ headerRange: "[1-2]"
 aliases: 
 ---
 
-{{<banner-article>}}
-This REST API path is deprecated as of Redis Enterprise Software version 7.4.2. Use the new path [`/v1/cluster/debuginfo`]({{<relref "/rs/references/rest-api/requests/cluster/debuginfo">}}) instead.
-{{</banner-article>}}
-
 | Method | Path | Description |
 |--------|------|-------------|
-| [GET](#get-all-debuginfo) | `/v1/debuginfo/all` | Get debug info for all nodes |
+| [GET](#get-cluster-debuginfo) | `/v1/cluster/debuginfo` | Get debug info from all nodes and databases |
 
-## Get debug info for all nodes {#get-all-debuginfo}
+## Get cluster debug info {#get-cluster-debuginfo}
 
-	GET /v1/debuginfo/all
+	GET /v1/cluster/debuginfo
 
-Downloads a tar file that contains debug info from all nodes.
+Downloads a tar file that contains debug info from all nodes and databases.
 
 #### Required permissions
 
@@ -29,13 +25,13 @@ Downloads a tar file that contains debug info from all nodes.
 |-----------------|
 | [view_debugging_info]({{<relref "/rs/references/rest-api/permissions#view_debugging_info">}}) |
 
-### Request {#get-all-request} 
+### Request {#get-request} 
 
 #### Example HTTP request
 
-	GET /debuginfo/all 
+	GET /cluster/debuginfo
 
-### Response {#get-all-response} 
+### Response {#get-response} 
 
 Downloads the debug info in a tar file called `filename.tar.gz`. Extract the files from the tar file to access the debug info for all nodes.
 
@@ -47,7 +43,7 @@ Downloads the debug info in a tar file called `filename.tar.gz`. Extract the fil
 | Content-Length | 653350 | Length of the response body in octets |
 | Content-Disposition | attachment; filename=debuginfo.tar.gz | Display response in browser or download as attachment |
 
-### Status codes {#get-all-status-codes} 
+### Status codes {#get-status-codes} 
 
 | Code | Description |
 |------|-------------|
