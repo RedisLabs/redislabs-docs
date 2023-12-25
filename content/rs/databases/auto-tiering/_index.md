@@ -80,6 +80,7 @@ Implementing Auto Tiering requires pre planning around memory and sizing. Consid
 - Flash memory must be locally attached (as opposed to network attached storage (NAS) and storage area networks (SAN)).
 - Flash memory must be dedicated to Auto Tiering and not shared with other parts of the database, such as durability, binaries, or persistence.
 - For the best performance, the SSDs should be NVMe based, but SATA can also be used.
+- - The available flash space has to be greater or equal to the total DB size (RAM+Flash). The extra space accounts for write buffers as well as for [write amplification]({{<relref "https://en.wikipedia.org/wiki/Write_amplification">}}).
 
 {{<note>}} The Redis Enterprise Software database persistent and ephemeral storage should be on different disks, either local or attached. {{</note>}}
 
