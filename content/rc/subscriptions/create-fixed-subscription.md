@@ -19,7 +19,7 @@ If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md"
 
 ## Fixed plan subscription tiers
 
-Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown here (updated January 2023):
+Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown here (updated January 2024):
 
 | **Max DB size &nbsp;** | **Concurrent<br/>connections<br/>per database** | **CIDR<br/> allow rules** |
 |---|---|---|
