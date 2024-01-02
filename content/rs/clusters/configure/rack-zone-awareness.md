@@ -89,6 +89,7 @@ If you did not configure rack-zone awareness during cluster creation, you can co
 
 Before you can enable rack-zone awareness for a database, you must configure rack-zone awareness for the cluster and its nodes. For more information, see [set up rack-zone awareness](#set-up-rack-zone-awareness).
 
+<!--
 To enable rack-zone awareness for a database using the Cluster Manager UI:
 
 1. From **databases**, [create a new database]({{<relref "/rs/databases/create">}}) or edit an existing database's **configuration**.
@@ -108,6 +109,7 @@ To enable rack-zone awareness for a database using the Cluster Manager UI:
     {{<note>}}
 If you enabled rack-zone awareness during database creation, you can ignore this step.
     {{</note>}}
+-->
 
 ### Rearrange database shards
 
