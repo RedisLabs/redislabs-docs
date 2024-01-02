@@ -52,7 +52,7 @@ Additional factors for Active-Active databases:
 
 Additional factors for  databases with Auto Tiering enabled:
 
-- The available flash space has to be greater or equal to the total DB size (RAM+Flash). The extra space accounts for write buffers as well as for [write amplification]({{<relref "https://en.wikipedia.org/wiki/Write_amplification">}}).
+- The available flash space must be greater than or equal to the total database size (RAM+Flash). The extra space accounts for write buffers and [write amplification](https://en.wikipedia.org/wiki/Write_amplification).
 
 - [**database persistence**]({{<relref "/rs/databases/configure/database-persistence.md">}}): Auto Tiering uses dual database persistence where both the primary and replica shards persist to disk. This may add some processor and network overhead, especially in cloud configurations with network attached storage.
 
