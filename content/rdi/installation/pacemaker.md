@@ -5,7 +5,7 @@ description: Deploy a Debezium Server VM cluster using Pacemaker
 weight: 74
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 This document will guide you through the steps required to deploy a three-node, active/passive cluster of Debezium Server VMs using [Pacemaker](https://wiki.clusterlabs.org/wiki/Pacemaker).
@@ -27,11 +27,11 @@ For other Linux versions please check the [Pacemaker documentation](https://clus
 
 The following ports must be enabled for Pacemaker and Debezium Server:
 
-| Protocol | Port           | Description                                                                                                        |
-| -------- | -------------- | ------------------------------------------------------------------------------------------------------------------ |
-| TCP      | 2224           | pcsd Web UI and node-to-node communication                                                                         |
-| UDP      | 5404-5412      | Required on [corosync](http://corosync.github.io/corosync/) nodes to facilitate communication between nodes        |
-| TCP      | 8088           | Query Debezium Server status                                                                                       |
+| Protocol | Port      | Description                                                                                                 |
+| -------- | --------- | ----------------------------------------------------------------------------------------------------------- |
+| TCP      | 2224      | pcsd Web UI and node-to-node communication                                                                  |
+| UDP      | 5404-5412 | Required on [corosync](http://corosync.github.io/corosync/) nodes to facilitate communication between nodes |
+| TCP      | 8088      | Query Debezium Server status                                                                                |
 
 For further details about Pacemaker, see [Enabling ports for the High Availability Add-On](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_high_availability_clusters/assembly_creating-high-availability-cluster-configuring-and-managing-high-availability-clusters#proc_enabling-ports-for-high-availability-creating-high-availability-cluster) (Red Hat).
 
@@ -279,14 +279,15 @@ mv application.properties conf
 To launch the Debezium Server container use the podman service of Pacemaker (Podman needs to be installed as a prerequisite):
 
 ```bash
-sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf"
+sudo pcs resource create dbz_server ocf:heartbeat:podman image=quay.io/debezium/server:{{<param rdi_debezium_server_version>}} allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf"
 ```
 
 If you are using the Docker resource agent, you should also specify some logging options:
 
 ```bash
-sudo pcs resource create dbz_server ocf:heartbeat:docker image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking"
+sudo pcs resource create dbz_server ocf:heartbeat:docker image=quai.io/debezium/server:{{<param rdi_debezium_server_version>}} allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking"
 ```
+
 You can find details for all available logging options in the [Docker documentation](https://docs.docker.com/config/containers/logging/configure/).
 
 > Take note of the `run_opts` parameter, which allows you to pass various options to the Debezium Server container. One key option is the mapping of the `application.properties` configuration file. For more details on additional options you might need to specify, see the [Containerized Deployment]({{<relref "/rdi/installation/debezium-server-deployment.md#containerized-deployment">}}) section.
@@ -304,7 +305,7 @@ If you are using Oracle as your source database, note that Debezium Server does 
 - Adjust the `pcs resource creation` command:
 
   ```bash
-  sudo pcs resource create dbz_server ocf:heartbeat:podman image=docker.io/debezium/server allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar"
+  sudo pcs resource create dbz_server ocf:heartbeat:podman image=quay.io/debezium/server:{{<param rdi_debezium_server_version>}} allow_pull=yes reuse=yes run_opts="-v $PWD/conf:/debezium/conf -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar"
   ```
 
 #### Verify status
@@ -343,7 +344,7 @@ Verify the container is running with `sudo podman ps -a`. This should result in 
 
 ```shell
 CONTAINER ID   IMAGE             COMMAND              CREATED          STATUS          PORTS     NAMES
-2aecd4e9fa31   debezium/server   "/debezium/run.sh"   2 minutes ago    Up 2 minutes              dbz_server
+2aecd4e9fa31   quay.io/debezium/server:{{<param rdi_debezium_server_version>}}   "/debezium/run.sh"   2 minutes ago    Up 2 minutes              dbz_server
 ```
 
 If the Debezium Server fails to start or doesn’t behave as expected, you can check the log file:
@@ -527,7 +528,7 @@ The following tests can be manually performed to verify the expected behavior.
   This will show the running Debezium Server, for example:
 
   ```shell
-  root     19297     1 79 14:50 ?        00:00:08 java -cp debezium-server-dist-2.0.1.Final-runner.jar:conf:lib/* io.debezium.server.Main
+  root     19297     1 79 14:50 ?        00:00:08 java -cp debezium-server-dist-{{<param rdi_debezium_server_version>}}-runner.jar:conf:lib/* io.debezium.server.Main
   ```
 
   Kill the process - in this example:
