@@ -25,27 +25,6 @@ To edit default database configuration using the Cluster Manager UI:
 
 ## Database defaults {#db-defaults}
 
-### Replica high availability
-
-If [replica high availability]({{<relref "/rs/databases/configure/replica-ha">}}) is enabled, the cluster automatically migrates replica shards to an available node if a replica node fails or is promoted after a primary (master) node fails.
-
-To enable or turn off replica high availability by default, use one of the following methods:
-
-- Cluster Manager UI – Edit **Replica High Availability** in [**Database defaults**](#edit-database-defaults)
-
-- [rladmin tune cluster]({{<relref "/rs/references/cli-utilities/rladmin/tune#tune-cluster">}}): 
-    
-    ```sh
-    rladmin tune cluster slave_ha { enabled | disabled }
-    ```
-
-- [Update cluster policy]({{<relref "/rs/references/rest-api/requests/cluster/policy#put-cluster-policy">}}) REST API request:
-
-    ```sh
-    PUT /v1/cluster/policy 
-    { "slave_ha": <boolean> }
-    ```
-
 ### Database version
 
 When you upgrade an existing database or create a new one, it uses the default Redis version (**Database version**) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}) or [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}).
@@ -66,27 +45,6 @@ To configure the Redis database version, use one of the following methods:
     ```sh
     PUT /v1/cluster/policy 
     { "default_provisioned_redis_version": "x.y" }
-    ```
-
-### S3 URL
-
-The S3 URL is the default S3 host for [importing and exporting data]({{<relref "/rs/databases/import-export">}}).
-
-To configure the default S3 URL, use one of the following methods:
-
-- Cluster Manager UI – Edit **S3 URL** in [**Database defaults**](#edit-database-defaults)
-
-- [rladmin cluster config]({{<relref "/rs/references/cli-utilities/rladmin/cluster/config">}}): 
-    
-    ```sh
-    rladmin cluster config s3_url <URL>
-    ```
-
-- [Update cluster settings]({{<relref "/rs/references/rest-api/requests/cluster#put-cluster">}}) REST API request:
-
-    ```sh
-    PUT /v1/cluster
-    { "s3_url": "<URL>" }
     ```
 
 ### Internode encryption
