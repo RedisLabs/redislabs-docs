@@ -98,13 +98,13 @@ Usage: redis-di reset [OPTIONS]
 
   Force operation. skips verification prompts
 
-- `external_collector`:
+- `prompt`:
 
   - Type: BOOL
   - Default: `false`
-  - Usage: `--external-collector`
+  - Usage: `--prompt`
 
-  Don't handle collector
+  Indicates that the external collector is used
 
 - `help`:
 
@@ -135,6 +135,7 @@ Options:
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
   -f, --force                     Force operation. skips verification prompts
-  --external-collector            Don't handle collector
+  --prompt                        Indicates that the external collector is
+                                  used
   --help                          Show this message and exit.
 ```

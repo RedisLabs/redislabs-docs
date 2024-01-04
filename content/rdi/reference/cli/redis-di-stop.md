@@ -89,14 +89,6 @@ Usage: redis-di stop [OPTIONS]
 
   Password for unlocking an encrypted private key
 
-- `external_collector`:
-
-  - Type: BOOL
-  - Default: `false`
-  - Usage: `--external-collector`
-
-  Don't handle collector
-
 - `help`:
 
   - Type: BOOL
@@ -125,6 +117,5 @@ Options:
   --rdi-cacert TEXT               CA certificate file to verify with
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
-  --external-collector            Don't handle collector
   --help                          Show this message and exit.
 ```
