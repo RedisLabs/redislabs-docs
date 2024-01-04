@@ -343,8 +343,8 @@ Daemon Status:
 Verify the container is running with `sudo podman ps -a`. This should result in output similar to the following:
 
 ```shell
-CONTAINER ID   IMAGE             COMMAND              CREATED          STATUS          PORTS     NAMES
-2aecd4e9fa31   quay.io/debezium/server:{{<param rdi_debezium_server_version>}}   "/debezium/run.sh"   2 minutes ago    Up 2 minutes              dbz_server
+CONTAINER ID               IMAGE                     COMMAND              CREATED          STATUS          PORTS          NAMES
+2aecd4e9fa31    quay.io/debezium/server:{{<param rdi_debezium_server_version>}}   "/debezium/run.sh"     2 minutes ago    Up 2 minutes                     dbz_server
 ```
 
 If the Debezium Server fails to start or doesn’t behave as expected, you can check the log file:
