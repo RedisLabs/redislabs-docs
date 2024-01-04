@@ -138,6 +138,7 @@ and the concepts must explain any background information that is needed to know 
 - Format commands, filenames, and input text in code - `rladmin`
 - Introduce a procedure with the goal of the procedure and a colon (:) - To authenticate to the Swagger UI:
 - Lead the sentence with the subject
+- Lead headings or titles with an action verb, avoiding gerunds - for example, "Configure CIDR allow list" rather than "Configuring CIDR allow list"
 - Use “must” instead of - needs, wants, has to, desire, ...
 - Subject and verb must agree in number - blueprint exists, blueprints exist
 - Don’t start a sentence with “also”
