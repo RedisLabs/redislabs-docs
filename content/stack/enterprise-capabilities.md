@@ -35,7 +35,7 @@ For details about individual features, see the corresponding documentation.
 
 | Feature name/capability   | [Search and query]({{< relref  "/stack/search" >}}) | [JSON]({{< relref  "/stack/json" >}})    |  [Graph]({{< relref  "/stack/deprecated-features/graph" >}})   | 
 |---------------------------|:--------------:|:------------:|:------------:|
-| Active-Active (CRDB)[^4]  | Yes (v2.0)     | Yes (v2.2)   | No           |
+| Active-Active (CRDB)[^5]  | Yes (v2.0)     | Yes (v2.2)   | No           |
 | Backup/Restore            | Yes (v1.4)     | Yes (v1.0)   | Yes (v1.0)   |
 | Clustering                | Yes (v1.6)[^3] | Yes (v1.0)   | Yes (v2.2.3)[^1] |
 | Custom hashing policy     | Yes (v2.0)     | Yes (v1.0)   | Yes (v1.0)   |
@@ -55,13 +55,15 @@ For details about individual features, see the corresponding documentation.
 
 [^3]: You cannot use search and query with the [OSS Cluster API]({{<relref "/rs/databases/configure/oss-cluster-api">}}).
 
-[^4]: You currently cannot combine Auto Tiering and Active-Active with Redis Stack features in Redis Cloud.
+[^4]: You currently cannot combine Auto Tiering with Redis Stack features in Redis Cloud. 
 
-[^5]: Although time series are compatible with Auto Tiering, the entire series either lives in RAM or on flash.
+[^5]: With the exception of JSON, you currently cannot combine Active-Active with Redis Stack features in Redis Cloud.
+
+[^6]: Although time series are compatible with Auto Tiering, the entire series either lives in RAM or on flash.
 
 | Feature name/capability | [Time series]({{< relref  "/stack/timeseries" >}}) | [Probabilistic]({{< relref  "/stack/bloom" >}}) | [Gears]({{< relref  "/stack/gears-v1" >}}) | [Triggers and functions]({{<relref "/stack/triggers-functions">}})<br />(preview) |
 |--------------------------|:--------------:|:------------:|:----------:|:----------:|  
-| Active-Active (CRDB)[^4] | No             | No           | Yes (v1.0) | No |
+| Active-Active (CRDB)[^5] | No             | No           | Yes (v1.0) | No |
 | Backup/Restore           | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes |
 | Clustering               | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes |
 | Custom hashing policy    | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes |
@@ -71,7 +73,7 @@ For details about individual features, see the corresponding documentation.
 | Module data types        | Yes            | Yes          | Yes        | Yes |
 | Persistence (AOF)        | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes |
 | Persistence (snapshot)   | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes |
-| Auto Tiering [^4] | Yes (v1.6)[^5] | Yes (vTBD)   | Yes (vTBD) | No |
+| Auto Tiering [^4]        | Yes (v1.6)[^6] | Yes (vTBD)   | Yes (vTBD) | No |
 | Replica Of               | Yes (v1.2)     | Yes (v2.0)   | No         | Yes |
 | Reshard/rebalance        | Yes (v1.2)     | Yes (v2.0)   | Yes (v1.0) | Yes |
 
