@@ -10,14 +10,14 @@ aliases:
 
 **Properties**
 
-| Name                                                                                                            | Type             | Description | Required |
-| --------------------------------------------------------------------------------------------------------------- | ---------------- | ----------- | -------- |
-| [**stream\-processing**](#stream-processing)<br/>(Configuration details of Redis Data Integration Applier Gear) | `object`, `null` |             |          |
-| [**connections**](#connections)                                                                                 | `object`         |             |          |
+| Name                                                                                                                 | Type             | Description | Required |
+| -------------------------------------------------------------------------------------------------------------------- | ---------------- | ----------- | -------- |
+| [**stream\-processors**](#stream-processors)<br/>(Configuration details of Redis Data Integration Stream Processors) | `object`, `null` |             |          |
+| [**connections**](#connections)                                                                                      | `object`         |             |          |
 
-<a name="stream-processing"></a>
+<a name="stream-processors"></a>
 
-## stream\-processing: Configuration details of Redis Data Integration Applier Gear
+## stream\-processors: Configuration details of Redis Data Integration Stream Processors
 
 **Properties**
 
