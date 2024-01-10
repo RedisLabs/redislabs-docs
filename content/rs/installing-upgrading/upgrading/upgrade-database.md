@@ -36,7 +36,7 @@ The upgrade policy is only relevant for Redis Enterprise Software versions 6.2.4
 
 Before upgrading a database:
 
-- Review the relevant [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for any preparation instructions.
+- Review the relevant [release notes]({{< relref "/rs/release-notes" >}}) for any preparation instructions.
 
 - Verify that the database version meets the minimums specified earlier.
 

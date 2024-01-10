@@ -16,8 +16,6 @@ aliases: []
 [Active-Active databases]({{<relref "rc/databases/active-active-redis">}}) on Redis Cloud now support the [JSON]({{< relref "/stack/json" >}}) data type. 
 
 See [Create an Active-Active subscription]({{<relref "rc/subscriptions/create-active-active-subscription">}}) to learn how to create an Active-Active subscription.
-=======
-See [Create an Active-Active subscription]({{<relref "rc/subscriptions/create-active-active-subscription">}}) to learn how to create an Active-Active subscription.
 
 ### Mutual TLS enhancements
 

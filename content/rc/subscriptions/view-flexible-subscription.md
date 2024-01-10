@@ -84,14 +84,14 @@ The **Overview** summarizes the options use to created the subscription.
     | **Multi-AZ** | Checked when multiple availability zones are enabled |
     | **Active-Active Redis** | Checked when Active-Active Redis is enabled for your subscription |
     | **Region** | Describes the region your subscription is deployed to |
+    | **Availability Zones** | The availability zones your subscription is deployed in (Visible if you selected availability zones on creation) |
+
 
 - The **Price** panel shows the monthly cost of your Flexible subscription.
 
 - The **Payment Method** panel shows the current payment details.
 
     Select the ![**Change Payment Method**](/images/rc/icon-subscription-detail-change-payment-flexible.png) button to change the credit card associated with this subscription.
-
-- The **Redis price** panel breaks down your subscription price.
 
 - The **Maintenance Window** panel shows your current [maintenance window settings]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
 
@@ -100,6 +100,8 @@ The **Overview** summarizes the options use to created the subscription.
 - The **Provisioned cloud resources** panel shows the storage resources used by your subscription.
 
   If your subscription is attached to a cloud account, the details appear in the panel header.
+
+- The **Redis price** panel breaks down your subscription price.
 
 ## **Connectivity** tab
 

@@ -73,7 +73,7 @@ The master branch is published to https://docs.redis.com/staging/dev and represe
 
 Whether you see a typo or you want to suggest a change to the technical content, we encourage you to fork this repository and submit a pull request.
 
-An "Edit on GitHub" link appears in the upper-left corner of every page; it opens the source file in a GitHub editing session, which let you submit changes quickly and easily.
+An "Edit on GitHub" button appears in the lower-left corner of every page; it opens the source file in a GitHub editing session, which lets you submit changes quickly and easily.
 
 ## Content organization
 
