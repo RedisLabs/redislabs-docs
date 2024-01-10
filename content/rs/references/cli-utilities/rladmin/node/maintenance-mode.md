@@ -19,7 +19,11 @@ Migrates shards out of the node and turns the node into a quorum node to prevent
 ```sh
 rladmin node <ID> maintenance_mode on
         [ keep_slave_shards ]
+        [ evict_ha_replica { enabled | disabled } ]
+        [ evict_active_active_replica { enabled | disabled } ]
+        [ evict_dbs <database_id1> [<database_id2> ... <database_idN>] ]
         [ demote_node ]
+        [ overwrite_snapshot ]
         [ max_concurrent_actions <integer> ]
 ```
 
@@ -29,8 +33,12 @@ rladmin node <ID> maintenance_mode on
 |-----------------------|--------------------------------|-------------------------------------------------------------------------------------------|
 | node                  | integer                        | Turns the specified node into a quorum node                                              |
 | demote_node           |                                | If the node is a primary node, changes the node to replica                                |
-| keep_slave_shards     |                                | Keeps replica shards in the node and demotes primary shards to replicas                    |
+| evict_ha_replica | `enabled`<br />`disabled` | Migrates the HA replica shards in the node |
+| evict_active_active_replica | `enabled`<br />`disabled` | Migrates the Active-Active replica shards in the node |
+| evict_dbs | list of database IDs | Specify databases whose shards should be evicted from the node when entering maintenance mode. This is in addition to the enslaving of all master shards on the node. This list marks databases to evict even if other flags state differently. |
+| keep_slave_shards     |                                | Keeps replica shards in the node and demotes primary shards to replicas.<br /><br />Deprecated as of Redis Enterprise Software 7.4.2. Use `evict_ha_replica disabled evict_active_active_replica disabled` instead. |
 | max_concurrent_actions | integer | Maximum number of concurrent actions during node maintenance |
+| overwrite_snapshot | | Overwrites the latest existing node snapshot taken when enabling maintenance mode |
 
 ### Returns
 
