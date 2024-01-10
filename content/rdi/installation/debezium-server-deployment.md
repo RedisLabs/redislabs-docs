@@ -19,7 +19,7 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
 - Run:
 
   ```bash
-  docker run -d --name debezium --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:2.1.1.Final
+  docker run -d --name debezium --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking quay.io/debezium/server:{{<param rdi_debezium_server_version>}}
   ```
 
 - Check the Debezium Server log:
@@ -27,12 +27,13 @@ You can use either [Docker](https://www.docker.com/) or [Podman](https://podman.
   ```bash
   docker logs debezium --follow
   ```
+
 ### Custom timezone
 
 The UTC timezone is used in the Debezium Server container by default. To use another timezone, specify it by setting the `TZ` environment variable when running the container. For example:
 
 ```bash
-docker run -d --name debezium -e TZ=Europe/London --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:2.1.1.Final
+docker run -d --name debezium -e TZ=Europe/London --restart always -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking quay.io/debezium/server:{{<param rdi_debezium_server_version>}}}}
 ```
 
 ### SELinux
@@ -57,6 +58,7 @@ If you are using `Oracle` as your source database, note that Debezium Server doe
 As result, it will fail with an error. You should follow these steps to add the JDBC driver and restart Debezium Server:
 
 - Download the driver:
+
   ```bash
   wget -P oracle https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/21.1.0.0/ojdbc8-21.1.0.0.jar
   ```
@@ -64,7 +66,7 @@ As result, it will fail with an error. You should follow these steps to add the 
 - Bind mount the driver into the container:
 
   ```bash
-  docker run -d --name debezium --restart always -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking debezium/server:2.1.1.Final
+  docker run -d --name debezium --restart always -v $PWD/oracle/ojdbc8-21.1.0.0.jar:/debezium/lib/ojdbc8-21.1.0.0.jar -v $PWD/debezium:/debezium/conf --log-driver local --log-opt max-size=100m --log-opt max-file=4 --log-opt mode=non-blocking quay.io/debezium/server:{{<param rdi_debezium_server_version>}}
   ```
 
 ### Running Docker as a non-root user
