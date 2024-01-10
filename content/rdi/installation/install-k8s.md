@@ -149,7 +149,7 @@ spec:
             name: redis-di-jobs
             optional: true
 EOF
-kubectl apply -f /tmp/redis-di-cli-deployment.yml           
+kubectl apply -f /tmp/redis-di-cli-deployment.yml
 ```
 
 After deployment, the RDI CLI will be available as a pod in the cluster.
@@ -264,7 +264,7 @@ metadata:
 spec:
   containers:
     - name: debezium-server
-      image: docker.io/debezium/server
+      image: quay.io/debezium/server:{{<param rdi_debezium_server_version>}}
       livenessProbe:
         httpGet:
             path: /q/health/live
