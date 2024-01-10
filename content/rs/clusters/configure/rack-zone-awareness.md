@@ -111,6 +111,13 @@ If you enabled rack-zone awareness during database creation, you can ignore this
     {{</note>}}
 -->
 
+To enable rack-zone awareness for a database, use a [REST API request]({{<relref "/rs/references/rest-api/requests/bdbs#put-bdbs">}}):
+
+```sh
+PUT /v1/bdbs/<database-ID>
+{ "rack_aware": true }
+```
+
 ### Rearrange database shards
 
 After you enable rack-zone awareness for an existing database, you should generate an optimized shard placement blueprint using the [REST API]({{<relref "/rs/references/rest-api">}}) and use it to rearrange the shards in different racks or zones.
