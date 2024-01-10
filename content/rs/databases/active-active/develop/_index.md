@@ -65,5 +65,5 @@ in between.
 |  t6 |  | SET key1 “d” |
 
 [Learn more about
-synchronization]({{< relref "/rs/databases/active-active/_index.md" >}}) for
+synchronization]({{< relref "/rs/databases/active-active" >}}) for
 each supported data type and [how to develop]({{< relref "/rs/databases/active-active/develop/develop-for-aa.md" >}}) with them on Redis Enterprise Software.
