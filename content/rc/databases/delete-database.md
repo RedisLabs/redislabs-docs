@@ -11,7 +11,7 @@ aliases: /rc/administration/setup-and-editing/delete-databases/
 
 To delete a database, use the **Delete** button.  It's located in the **Danger zone** section of the database's **Configuration** tab.
 
-Databases must be empty before they can be deleted.  Deleted databases cannot be recovered.  (We recommend [making a backup]({{< relref "rc/databases/back-up-data.md" >}}), just in case.)  
+Deleted databases cannot be recovered.  We recommend [making a backup]({{< relref "rc/databases/back-up-data.md" >}}), just in case.
 
 This command requires the account owner role.
 
