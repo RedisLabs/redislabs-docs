@@ -51,7 +51,7 @@ If pods are stuck in `terminating` or `crashLoopBack` and do not terminate grace
 To work around this, delete the pods manually with:
 
 ```sh
-kubectl delete pods <pod> --grace-period=0 --force
+kubectl delete pods <pod> --now
 ```
 
 When the last pod is manually deleted, the recovery process resumes.
