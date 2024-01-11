@@ -130,7 +130,7 @@ As a workaround to install Redis Enterprise Software without using any root dire
 1. [Create]({{< relref "/rs/clusters/new-cluster-setup.md" >}})
     or [join]({{< relref "/rs/clusters/add-node.md" >}}) an existing Redis Enterprise Software cluster.
 
-1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
+1. [Create a database]({{< relref "/rs/databases/create" >}}).
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/databases/active-active/create.md" >}}) database.
 

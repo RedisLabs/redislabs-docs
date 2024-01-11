@@ -199,19 +199,20 @@ Here's what you can change:
 | Section | Setting                        | Comments |
 |:-----------|:-------------------------------|:---------|
 | General | Database name                  ||
-| Scalability | Memory limit                   | _Flexible and Annual subscriptions only)_ |
-| | Throughput                     | _Flexible and Annual subscriptions only)_ |
-| | Hashing policy                 | _Flexible and Annual subscriptions only)_ |
-| | Cluster OSS                    | _Flexible and Annual subscriptions only)_ |
-| Durability | High-availability              | _paid Fixed, Flexible, and Annual subscriptions only)_ |
-| | Data persistence               | _paid Fixed, Flexible, and Annual subscriptions only)_ |
+| | Supported protocol(s)                  ||
+| Scalability | Memory limit                   | _Flexible and Annual subscriptions only_ |
+| | Throughput                     | _Flexible and Annual subscriptions only_ |
+| | Hashing policy                 | _Flexible and Annual subscriptions only_ |
+| | OSS Cluster API                | _Flexible and Annual subscriptions only_ |
+| Durability | High-availability              | _paid Fixed, Flexible, and Annual subscriptions only_ |
+| | Data persistence               | _paid Fixed, Flexible, and Annual subscriptions only_ |
 | | Data eviction policy           | |
-| | Remote backup                  | _paid Fixed, Flexible,  Annual subscriptions only)_ |
-| | Active-Passive Redis           | _Flexible and Annual subscriptions only)_ |
-| Security | Default user                   |
+| | Remote backup                  | _paid Fixed, Flexible,  Annual subscriptions only_ |
+| | Active-Passive Redis           | _Flexible and Annual subscriptions only_ |
+| Security | Default user                   | |
 | | Default user password          |
-| | CIDR allow list                | _paid Fixed, Flexible, and Annual subscriptions only)_ |
-| | Transport layer security (TLS) | _Flexible and Annual subscriptions only)_ |
+| | CIDR allow list                | _paid Fixed, Flexible, and Annual subscriptions only_ |
+| | Transport layer security (TLS) | _Flexible and Annual subscriptions only_ |
 | Alerts | all available for subscription |
 
 Choose **Save database** to save your changes.
