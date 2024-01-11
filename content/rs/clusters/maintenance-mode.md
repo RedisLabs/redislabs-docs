@@ -180,18 +180,22 @@ Now node 2 has `0/0` shards because shards cannot migrate to it while it is in m
 
 ## Maintenance mode REST API
 
-You can also turn maintenance mode on or off via [REST API requests]({{<relref "/rs/references/rest-api">}}) to [<nobr>POST `/nodes/{node_uid}/actions/{action}`</nobr>]({{<relref "/rs/references/rest-api/requests/nodes/actions#post-node-action">}}).
+You can also turn maintenance mode on or off using [REST API requests]({{<relref "/rs/references/rest-api">}}) to [<nobr>POST `/nodes/{node_uid}/actions/{action}`</nobr>]({{<relref "/rs/references/rest-api/requests/nodes/actions#post-node-action">}}).
 
 ### Activate maintenance mode (REST API)
 
 Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> to activate maintenance mode:
 
-```
+```sh
 POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on
-     '{"keep_slave_shards":true}'
+{
+    "overwrite_snapshot": true,
+    "evict_ha_replica": true,
+    "evict_active_active_replica": true
+}
 ```
 
-The `keep_slave_shards` boolean flag [prevents replica shard migration](#prevent-replica-shard-migration) when set to `true`.
+You can set `evict_ha_replica` and `evict_active_active_replica` to `false` to [prevent replica shard migration](#prevent-replica-shard-migration).
 
 The `maintenance_on` request returns a JSON response body:
 
@@ -206,9 +210,9 @@ The `maintenance_on` request returns a JSON response body:
 
 Use <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> deactivate maintenance mode:
 
-```
+```sh
 POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_off
-     '{"skip_shards_restore":false}'
+{ "skip_shards_restore": false }
 ```
 
 The `skip_shards_restore` boolean flag allows the `maintenance_off` action to [skip shard restoration](#skip-shard-restoration) when set to `true`.
@@ -228,7 +232,7 @@ You can send a request to [<nobr>GET `/nodes/{node_uid}/actions/{action}`</nobr>
 
 This request returns the status of the `maintenance_on` action:
 
-```
+```sh
 GET https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on
 ```
 
