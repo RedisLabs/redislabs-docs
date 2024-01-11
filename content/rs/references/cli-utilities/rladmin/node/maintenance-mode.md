@@ -49,9 +49,10 @@ Use [`rladmin status nodes`]({{<relref "/rs/references/cli-utilities/rladmin/sta
 ### Example
 
 ```sh
-$ rladmin node 2 maintenance_mode on
+$ rladmin node 2 maintenance_mode on overwrite_snapshot
+Found snapshot from 2024-01-06T11:36:47Z, overwriting the snapshot
 Performing maintenance_on action on node:2: 0%
-created snapshot NodeSnapshot<name=maintenance_mode_2022-05-12_20-25-37,time=None,node_uid=2>
+created snapshot NodeSnapshot<name=maintenance_mode_2024-01-11_20-25-37,time=None,node_uid=2>
 
 node:2 will not accept any more shards
 Performing maintenance_on action on node:2: 100%
