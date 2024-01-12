@@ -48,7 +48,7 @@ To configure the default database proxy policy using the Cluster Manager UI:
 
 1. [**Edit database defaults**](#edit-database-defaults). 
 
-1. Select a predefined [**Endpoint Configuration**](#endpoint-configuration) to use a recommended database proxy policy, or choose **Custom** to set the policy manually.
+1. Select a predefined [**Endpoint Configuration**](#endpoint-configuration) to use a recommended database proxy policy, or choose **Custom** to set the policy manually. Changing the database proxy default in the Cluster Manager UI affects both sharded and non-sharded proxy policies.
 
     {{<image filename="images/rs/screenshots/databases/db-defaults-endpoint-config-custom.png" alt="The Database defaults panel lets you select Database proxy and Shards placement if Endpoint Configuration is set to Custom.">}}{{</image>}}
 
@@ -121,7 +121,7 @@ To configure default shard placement, use one of the following methods:
 
 ### Database version
 
-When you upgrade an existing database or create a new one, it uses the default Redis version (**Database version**) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}) or [`rladmin upgrade db`]({{<relref "/rs/references/cli-utilities/rladmin/upgrade#upgrade-db">}}).
+When you create a new database, it uses the default Redis version (**Database version**) unless you specify the database version explicitly with `redis_version` in the [REST API]({{<relref "/rs/references/rest-api/requests/bdbs">}}).
 
 To configure the Redis database version, use one of the following methods:
 
