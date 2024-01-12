@@ -222,9 +222,35 @@ Currently supported actions are:
 
 - `maintenance_on`: Creates a snapshot of the node, migrates shards to other nodes, and prepares the node for maintenance. See [maintenance mode]({{<relref "/rs/clusters/maintenance-mode">}}) for more information.
 
-    - If there aren't enough resources to migrate shards out of the maintained node, set `"evict_ha_replica": false` and `"evict_active_active_replica": false` in the request body to keep the replica shards in place but demote any master shards.
-    
-    - Use `evict_ha_replica` and `evict_active_active_replica` instead of `keep_slave_shards`, which is deprecated as of Redis Enterprise Software version 7.4.2.
+    - As of Redis Enterprise Software version 7.4.2, a new node snapshot is created only if no maintenance mode snapshots already exist or if you set `"overwrite_snapshot": true` in the request body.
+
+        ```sh
+        POST /v1/nodes/1/actions/maintenance_on
+        {
+            "overwrite_snapshot": true
+        }
+        ```
+
+    - If there aren't enough resources to migrate shards out of the maintained node, set `"evict_ha_replica": false` and `"evict_active_active_replica": false` in the request body to keep the replica shards in place but demote any master shards. Use these two parameters instead of `keep_slave_shards`, which is deprecated as of Redis Enterprise Software version 7.4.2.
+
+        ```sh
+        POST /v1/nodes/1/actions/maintenance_on
+        {
+            "overwrite_snapshot": true,
+            "evict_ha_replica": false,
+            "evict_active_active_replica": false
+        }
+        ```
+
+    - To specify databases whose shards should be evicted from the node when entering maintenance mode, set `"evict_dbs": ["List of database ID strings"]` in the request body.
+
+        ```sh
+        POST /v1/nodes/1/actions/maintenance_on
+        {
+            "overwrite_snapshot": true,
+            "evict_dbs": ["1", "3"] 
+        }
+        ```
 
 - `maintenance_off`: Restores node to its previous state before maintenance started. See [maintenance mode]({{<relref "/rs/clusters/maintenance-mode">}}) for more information.
 
