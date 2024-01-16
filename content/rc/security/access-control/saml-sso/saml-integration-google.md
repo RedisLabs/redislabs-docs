@@ -109,7 +109,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
 
    {{<image filename="images/rc/saml/google_workspace_saml_11.png" alt="" >}}{{</image>}}
 
-1. Each user who needs to access Redis Cloud through SAML needs to define the **redisAccountMapping** attribute. The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
+1. Each user who needs to access Redis Cloud through SAML needs to define the **redisAccountMapping** attribute. The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, billing_admin, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
    {{<image filename="images/rc/saml/google_workspace_saml_12.png" alt="" >}}{{</image>}}
 
