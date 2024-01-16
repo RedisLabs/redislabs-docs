@@ -11,20 +11,60 @@ aliases: ["/rs/references/cli-reference/rlcheck/",
 The `rlcheck` utility runs various health checks on a Redis Enterprise Software node and reports any discovered issues.
 You can use this utility to confirm a successful installation or to verify that the node is functioning properly.
 
-You can run `rlcheck` from the host's command-line interface (CLI).
-The output of `rlcheck` shows information specific to the host that you run it on.
+To resolve issues reported by `rlcheck`, [contact Redis support](https://redis.com/company/support/).
 
-To open the `rladmin` CLI:
+## Run rlcheck
+
+You can run `rlcheck` from the node host's command line.
+The output of `rlcheck` shows information specific to the host you run it on.
+
+To run `rlcheck` tests:
 
 1. Sign in to the Redis Enterprise Software host with an account that is a member of the **redislabs** operating system group.
 
-1. Run: `rlcheck`
+1. Run: 
 
-The utility runs and reports the result of each check.
+    ```sh
+    rlcheck
+    ```
 
-{{< note >}}
-To see the `rlcheck` optional flags, run: `rlcheck --help`
-Specifically, the `--continue-on-error` flag runs all tests to completion and shows all errors when complete.
-{{< /note >}}
+## Options
 
-To resolve issues reported by `rlcheck`, [contact Redis support](https://redis.com/company/support/).
+`--suppress-tests TEXT`    
+
+Skip the specified, comma-delimited list of tests. See [Tests](#tests) for the list of tests and descriptions.
+
+`--retry-delay INTEGER`
+
+Delay between retries, in seconds.
+
+`--retry INTEGER`       
+
+Number of retries after a failure.
+
+`--file-path TEXT`             
+
+Custom path to `rlcheck.log`.
+
+`--continue-on-error`          
+
+Continue to run all tests even if a test fails, then show all errors when complete.
+
+`--help`
+
+Return the list of `rlcheck` options.
+
+## Tests
+
+| Test name | Description |
+|-----------|-------------|
+| verify_owner_and_group | Verifies the owner and group for Redis Enterprise Software files are correct. |
+| verify_bootstrap_status | Verifies the local node's bootstrap process completed without errors. |
+| verify_services | Verifies all Redis Enterprise Software services are running. |
+| verify_port_range | Verifies the [`ip_local_port_range`](https://www.kernel.org/doc/html/latest/networking/ip-sysctl.html) doesn't conflict with the ports Redis Enterprise might assign to shards. |
+| verify_pidfiles | Verifies all active local shards have PID files. |
+| verify_capabilities | Verifies all binaries have the proper capability bits. |
+| verify_existing_sockets | Verifies sockets exist for all processes that require them. |
+| verify_host_settings | Verifies the following:<br />• Linux `overcommit_memory` setting is 1.<br />•`transparent_hugepage` is disabled.<br />• Socket maximum connections setting `somaxconn` is 1024. |
+| verify_tcp_connectivity | Verifies this node can connect to all other alive nodes. |
+| verify_encrypted_gossip | Verifies gossip communication is encrypted. |
