@@ -211,7 +211,7 @@ This avoids a full sync that can overwrite your data.
 
 ## Active-Passive replication backlog
 
-In addition to the [database replication backlog]({{<relref "">}}), active-passive databases maintain a replication backlog (per shard) to synchronize the database instances between clusters.
+In addition to the [database replication backlog]({{<relref "/rs/databases/durability-ha/replication#database-replication-backlog">}}), active-passive databases maintain a replication backlog (per shard) to synchronize the database instances between clusters.
 By default, the replication backlog is set to one percent (1%) of the database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
 Use the [`rladmin`]({{<relref "/rs/references/cli-utilities/rladmin">}}) utility to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
 
