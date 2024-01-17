@@ -14,25 +14,20 @@ Tags are key-value pairs that let you categorize your databases. You can create 
 
 You can manage tags from the [Redis Cloud console](https://app.redislabs.com/#/) in the [tag manager](#tag-manager). You can find the tag manager in the following places: 
 
-- [From your database in the **Tags** tab](#tags-tab)
+- [From your database in the **Configuration** tab](#configuration-tab)
 - [From the database list](#database-list)
 
 After you open the [tag manager](#tag-manager), you can use it to add, edit, or delete tags.
 
-### Open tag manager from the Tags tab {#tags-tab}
+### Open tag manager from the Configuration tab {#configuration-tab}
 
-To learn how to navigate to your database, see [View and edit databases]({{<relref "/rc/databases/view-edit-database">}}). Select the **Tags** tab to view the tags that are set for your database.
+To learn how to navigate to your database, see [View and edit databases]({{<relref "/rc/databases/view-edit-database">}}). Select the **Configuration** tab and go to the **General** section to view the tags that are set for your database.
 
-{{<image filename="images/rc/tags-database-tab.png" alt="The Tags tab on the database page." >}}{{< /image >}}
+{{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
-Select **Add tags** to open the [tag manager](#tag-manager).
+Select **Manage Tags** to open the [tag manager](#tag-manager).
 
-![Add tags button](/images/rc/tags-icon-add-tags.png#no-click "Add tags button.")
-
-You can also hover over a tag and select **Edit** to open the [tag manager](#tag-manager), or select **Delete** to delete the tag.
-
-![Edit button](/images/rc/tags-icon-edit.png#no-click "Edit button.")
-![Delete button](/images/rc/tags-icon-delete.png#no-click "Delete button.")
+{{<image filename="images/rc/tags-button-manage-tags.png" width=120px alt="The Manage tags button." >}}{{< /image >}}
 
 ### Open tag manager from the database list {#database-list}
 
@@ -44,8 +39,8 @@ To get to the database list, select **Databases** from the main menu.
 
 Hover over the database and select **Manage tags**, or select **More actions** > **Manage tags** to open the [tag manager](#tag-manager).
 
-![Manage tags button](/images/rc/tags-icon-manage-tags.png#no-click "Manage tags button.")
-![More actions button](/images/rc/tags-icon-more-actions.png#no-click "More actions button.")
+{{<image filename="/images/rc/tags-icon-manage-tags.png" width=30px alt="Manage tags button." >}}{{< /image >}}
+{{<image filename="/images/rc/tags-icon-more-actions.png" width=30px alt="More actions button." >}}{{< /image >}}
 
 ### Use the tag manager {#tag-manager}
 

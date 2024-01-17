@@ -32,9 +32,9 @@ The **Database** screen lets you review:
 
 For help changing database settings, see [Edit database details](#edit-database-details).
 
-## Configuration details tab
+## Configuration tab
 
-The **Configuration details** screen is divided into sections, each dedicated to a specific category.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
+The **Configuration** screen is divided into sections, each dedicated to a specific category.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
 
 ### General settings
 
@@ -47,6 +47,7 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Database Name**         | The name given to your database                                                                                                                             |
 | **Public endpoint**       | Public URI used by any application or client to access the database.                                                                                        |
 | **Private endpoint**      | Private endpoint URI available to approved clients; use CIDR allow list and VPC peering to enabled access (_Flexible or Annual subscriptions only_)         |
+| **Tags**                  | A list of the [tags]({{< relref "/rc/databases/tag-database" >}}) associated with the database. Select [Manage tags]({{< relref "/rc/databases/tag-database#tags-tab" >}}) to manage the database tags. |
 | **Type**                  | Displays 'Redis', 'Redis Stack' or 'memcached' based on the value selected when the database was created                                                    |
 | **Redis version**         | Redis version used to create the database                                                                                                                   |
 | **Auto Tiering**          | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_)                                                               |
@@ -184,7 +185,6 @@ The **View Database** screen also has tabs that let you view:
 
 - **Slowlog**: a log showing recent [slow queries](https://redis.io/commands/slowlog) run against your database.  The log displays when the action started, the duration, the complexity of the operation, and any parameters passed to the operation.
 
-- **Tags**: a list of the [tags]({{< relref "/rc/databases/tag-database" >}}) associated with the database. You can also [Manage tags]({{< relref "/rc/databases/tag-database#tags-tab" >}}) from this tab.
 
 ## Edit database details
 
