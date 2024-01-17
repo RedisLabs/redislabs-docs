@@ -16,4 +16,4 @@ Here, you can:
 
 - Select **Delete** next to a tag to delete it.
 
-    {{<image filename="/images/rc/tags-icon-delete.png" alt="Delete button." >}}{{< /image >}}
+    {{<image filename="images/rc/tags-icon-delete.png" alt="Delete button." >}}{{< /image >}}
