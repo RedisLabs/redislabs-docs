@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: ["/rs/references/cli-reference/rlcheck/",
           "/rs/references/rlcheck/"]
 ---
-The `rlcheck` utility runs various health checks on a Redis Enterprise Software node and reports any discovered issues.
+The `rlcheck` utility runs various [tests](#tests) to check the health of a Redis Enterprise Software node and reports any discovered issues.
 You can use this utility to confirm a successful installation or to verify that the node is functioning properly.
 
 To resolve issues reported by `rlcheck`, [contact Redis support](https://redis.com/company/support/).
@@ -30,31 +30,20 @@ To run `rlcheck` tests:
 
 ## Options
 
-`--suppress-tests TEXT`    
+You can run `rlcheck` with the following options:
 
-Skip the specified, comma-delimited list of tests. See [Tests](#tests) for the list of tests and descriptions.
-
-`--retry-delay INTEGER`
-
-Delay between retries, in seconds.
-
-`--retry INTEGER`       
-
-Number of retries after a failure.
-
-`--file-path TEXT`             
-
-Custom path to `rlcheck.log`.
-
-`--continue-on-error`          
-
-Continue to run all tests even if a test fails, then show all errors when complete.
-
-`--help`
-
-Return the list of `rlcheck` options.
+| Option | Description |
+|--------|-------------|
+| <nobr>`--suppress-tests TEXT`</nobr> | Skip the specified, comma-delimited list of tests. See [Tests](#tests) for the list of tests and descriptions. |
+| <nobr>`--retry-delay INTEGER`</nobr> | Delay between retries, in seconds. |
+| <nobr>`--retry INTEGER`</nobr> | Number of retries after a failure. |
+| <nobr>`--file-path TEXT`</nobr> | Custom path to `rlcheck.log`. |
+| <nobr>`--continue-on-error`</nobr> | Continue to run all tests even if a test fails, then show all errors when complete. |
+| `--help` | Return the list of `rlcheck` options. |
 
 ## Tests
+
+`rlcheck` runs the following tests by default:
 
 | Test name | Description |
 |-----------|-------------|
