@@ -8,7 +8,7 @@ categories: ["RC"]
 aliases: 
 ---
 
-Tags are key-value pairs that let you categorize your databases. You can create tags and add them to your databases to associate them with each other. Once you've added tags, you can filter your databases in the database list by tag key or value.
+Tags are key-value pairs that let you categorize your databases. You can create tags and add them to your databases to associate them with each other. Once you've added tags, you can filter your databases in the [database list]({{<relref "/rc/databases/view-edit-database#manage-the-database-list">}}) by tag key or value.
 
 ## Manage tags
 
