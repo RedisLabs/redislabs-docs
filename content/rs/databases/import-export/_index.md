@@ -30,4 +30,4 @@ Schedule backups of your databases to make sure you always have valid backups.
 
 ## [Migrate to Active-Active]({{< relref "/rs/databases/import-export/migrate-to-active-active.md" >}})
 
-Migrate a database to an [Active-Active]({{< relref "/rs/databases/active-active/_index.md" >}}) database using [Replica Of]({{<relref "/rs/databases/import-export/replica-of/">}}).
+Migrate a database to an [Active-Active]({{< relref "/rs/databases/active-active" >}}) database using [Replica Of]({{<relref "/rs/databases/import-export/replica-of/">}}).

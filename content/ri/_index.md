@@ -27,5 +27,5 @@ RedisInsight also has support for several Redis modules, including [RedisGraph](
 
 ## Start using RedisInsight
 
-- [Install RedisInsight]({{<relref "/ri/installing/_index.md" >}})
+- [Install RedisInsight]({{<relref "/ri/installing" >}})
 - [Add a Redis database]({{<relref "/ri/using-redisinsight/add-instance.md">}})
