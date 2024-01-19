@@ -135,6 +135,7 @@ An API object that represents a managed database in the cluster.
 | port | integer | TCP port on which the database is available. Generated automatically if omitted and returned as 0 |
 | proxy_policy | 'single'<br />'all-master-shards'<br />'all-nodes' | The default policy used for proxy binding to endpoints |
 | rack_aware | boolean (default:&nbsp;false) | Require the database to always replicate across multiple racks |
+| recovery_wait_time | integer (default:&nbsp;-1) | Defines how many seconds to wait for the persistence file to become available during auto recovery. After the wait time expires, auto recovery completes with potential data loss. The default `-1` means to wait forever. |
 | redis_version | string | Version of the redis-server processes: e.g. 6.0, 5.0-big |
 | repl_backlog_size | string | Redis replication backlog size ('auto' or size in bytes) |
 | replica_sources | array of [syncer_sources]({{<relref "/rs/references/rest-api/objects/bdb/syncer_sources">}}) objects | Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section |
