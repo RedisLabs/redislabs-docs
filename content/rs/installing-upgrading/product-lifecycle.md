@@ -49,8 +49,3 @@ This update to the EOL policy ensures customers have a lead time of at least 18 
 | 5.6 – April 2020                          | October 31, 2021  |
 | 5.4 – December 2018                       | December 31, 2020  |
 | 5.2 – June 2018                           | December 31, 2019  |
-
- {{< note >}}
- * EOL of release 6.2 was reset to occur 18 months after the release of version 6.4, in accordance with the updated EOL policy.
- * EOL of release 6.4 will only be determined after the next major version is released and will be set to occur 18 months after that date.
-{{< /note >}}
