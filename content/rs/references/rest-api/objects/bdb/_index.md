@@ -125,7 +125,7 @@ An API object that represents a managed database in the cluster.
   "module_name": string,
   "semantic_version": string
 }, ...]
-{{</code>}} | List of modules associated with database<br />**module_id**: Module UID <br />**module_args**: Module command line arguments (pattern does not allow special characters &,\<,>,")<br />**module_name**: Module's name<br />**semantic_version**: Module's semantic version |
+{{</code>}} | List of modules associated with the database<br /><br />**module_id**: Module UID <br />**module_args**: Module command-line arguments (pattern does not allow special characters &,\<,>,")<br />**module_name**: Module's name<br />**semantic_version**: Module's semantic version<br /><br />As of Redis Enterprise Software v7.4.2, **module_id** and **semantic_version** are optional. |
 | mtls_allow_outdated_certs | boolean | An optional mTLS relaxation flag for certs verification |
 | mtls_allow_weak_hashing | boolean | An optional mTLS relaxation flag for certs verification |
 | name | string | Database name |
