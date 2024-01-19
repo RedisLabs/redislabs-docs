@@ -53,5 +53,5 @@ To learn more about customization and find answers to related questions, see:
 After your cluster is set up with nodes, you can:
 
 - [Add users]({{<relref "/rs/security/access-control/manage-users/add-users">}}) to the cluster with specific permissions.  To begin, start with [Access control]({{<relref "/rs/security/access-control">}}).
-- [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
+- [Create databases]({{< relref "/rs/databases/create" >}}) to use with your applications.
 

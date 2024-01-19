@@ -76,7 +76,7 @@ If you create a database with Auto Tiering enabled, you also need to set the RAM
 for this database. Minimum RAM is 10%. Maximum RAM is 50%.
     {{< /note >}}
 
-- [**Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - When you create a new in-memory database, you can enable multiple Redis modules in the database. For Auto Tiering databases, you can add modules that support Auto Tiering.
+- [**Modules**]({{< relref "/stack" >}}) - When you create a new in-memory database, you can enable multiple Redis modules in the database. For Auto Tiering databases, you can add modules that support Auto Tiering.
         
     {{< note >}}
 To use modules, add them when you create a new database.

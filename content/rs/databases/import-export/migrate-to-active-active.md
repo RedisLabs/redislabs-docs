@@ -14,7 +14,7 @@ aliases: [
 ]
 ---
 
-If you have data in a single-region Redis Enterprise Software database that you want to migrate to an [Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}),
+If you have data in a single-region Redis Enterprise Software database that you want to migrate to an [Active-Active databases]({{< relref "/rs/databases/active-active" >}}),
 you'll need to create a new Active-Active database and migrate the data into the new database as a [Replica Of]({{<relref "/rs/databases/import-export/replica-of/">}}) the existing database.
 This process will gradually populate the data in the Active-Active database.
 
