@@ -35,10 +35,6 @@ From here, you can:
 
     {{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Select the Upgrade plan button to update your subscription settings." >}}{{< /image >}}
 
-- Select the **New Database** button to [create a new database]({{<relref "rc/databases/create-database">}}) for your subscription.
-
-    {{<image filename="images/rc/button-database-new.png" alt="Use the **New database** button to create a new database for your subscription." >}}{{< /image >}}
-
 - Select the **Overview** tab to view and edit subscription details.
 
 The following sections provide more details.
