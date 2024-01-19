@@ -65,7 +65,7 @@ For details on this platform, see the Kubernetes [documentation](https://kuberne
 
 {{</table-scrollable>}}
 
-## OpenShift Containgiter Platform
+## OpenShift Container Platform
 
 For details on this platform, see the [OpenShift documentation](https://docs.openshift.com/container-platform/4.13/welcome/index.html).
 

@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /modules/redisearch/redisearch-active-active/
 ---
-Starting with RediSearch 2.x, supported in Redis Enterprise Software (RS) 6.0 and later, you can [enable search and query]({{<relref "/stack/install/add-module-to-database">}}) for [Active-Active databases]({{< relref "/rs/databases/active-active/_index.md" >}}) at the time of creation.
+Starting with RediSearch 2.x, supported in Redis Enterprise Software (RS) 6.0 and later, you can [enable search and query]({{<relref "/stack/install/add-module-to-database">}}) for [Active-Active databases]({{< relref "/rs/databases/active-active" >}}) at the time of creation.
 
 You can run search operations on any instance of an Active-Active database.
 
