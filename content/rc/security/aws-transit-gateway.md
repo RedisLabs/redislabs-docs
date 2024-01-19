@@ -22,6 +22,24 @@ You can connect your Redis flexible subscription to a Transit Gateway which is a
 Transit Gateway is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
 {{< /note >}}
 
+## Considerations
+
+You can use Transit Gateway as an alternative to [VPC peering]({{<relref "/rc/security/vpc-peering">}}), or you can enable both for your subscription.
+
+Compared to VPC peering, Transit Gateway:
+
+- Supports complex network topologies, such as multiple VPCs or site-to-site VPNs.
+
+- Uses security groups and network ACLs to control traffic between VPCs.
+
+- Has a higher network latency and cost than VPC peering due to Transit Gateway infrastructure costs.
+
+Consider using VPC peering and Transit Gateway in parallel for the following situations:
+
+- When migrating from one connectivity solution to the other.
+
+- If different applications need to connect to the same database but have different latency or security requirements.
+
 ## Prerequisites
 
 Before you can set up Transit Gateway:
