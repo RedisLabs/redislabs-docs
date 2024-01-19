@@ -138,7 +138,7 @@ See [Redis CLI](https://redis.io/docs/connect/cli/) to learn how to use `redis-c
 
 - [Connect your application](https://redis.io/docs/connect/clients/)
 - [Import data]({{< relref "/rc/databases/import-data.md" >}})
-- [Manage databases]({{< relref "/rc/databases/_index.md" >}})
+- [Manage databases]({{< relref "/rc/databases" >}})
 - [Data persistence]({{< relref "/rc/databases/configuration/data-persistence.md" >}})
 - [Secure your Redis Cloud database]({{< relref "/rc/security/" >}})
 - [Back-up Flexible databases]({{< relref "/rc/databases/back-up-data.md" >}})
