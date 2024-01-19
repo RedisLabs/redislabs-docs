@@ -87,11 +87,13 @@ Before you follow this guide, be aware of the following limitations:
 
 1. After your data and connections are migrated, turn off **Active-Passive Redis** from the target database.
 
+1. [Delete the source database]({{<relref "/rc/databases/delete-database">}}) from your Fixed subscription.
+
 Repeat these steps until every database in your Fixed subscription is migrated to the Flexible subscription.
 
 ### Delete Fixed subscription
 
-After you've migrated your databases to the new Flexible subscription, [delete the databases]({{<relref "/rc/databases/delete-database">}}) in your Fixed subscription, and then [delete your Fixed subscription]({{<relref "/rc/subscriptions/delete-subscription">}}).
+After you've migrated your databases to the new Flexible subscription, [delete any remaining databases]({{<relref "/rc/databases/delete-database">}}) in your Fixed subscription, and then [delete your Fixed subscription]({{<relref "/rc/subscriptions/delete-subscription">}}).
 
 
 
