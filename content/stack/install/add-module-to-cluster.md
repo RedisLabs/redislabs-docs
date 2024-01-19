@@ -10,7 +10,7 @@ aliases:
     - /modules/install/add-module-to-cluster/
 ---
 
-[Redis Enterprise]({{<relref "/rs">}}) comes packaged with several modules. You can view the installed modules and their versions from **Cluster > Modules** in the Redis Enterprise admin console.
+[Redis Enterprise]({{<relref "/rs">}}) comes packaged with several modules. As of version 7.4.2, Redis Enterprise includes two feature sets, compatible with different Redis database versions. You can view the installed modules, their versions, and their minimum compatible Redis database versions from **Cluster > Modules** in the Redis Enterprise Cluster Manager UI.
 
 To use other modules or upgrade an existing module to a more recent version, you need to install the new module package on your cluster.
 
@@ -36,7 +36,7 @@ Use one of the following methods to add a module to a Redis Enterprise cluster:
 
 - REST API [`POST` request to the `/v2/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}) endpoint
 
-- Redis Enterprise admin console
+- Redis Enterprise Cluster Manager UI
 
 - For RedisGears, follow these [installation instructions]({{<relref "/stack/gears-v1/installing-redisgears">}})
 
@@ -57,9 +57,9 @@ To add a module to the cluster using the REST API:
 
 1. If the module installation succeeds, the `POST` request returns a [JSON object]({{<relref "/rs/references/rest-api/objects/module">}}) that represents the new module. If it fails, it may return a JSON object with an `error_code` and `description` with more details.
 
-### Admin console method
+### Cluster Manager UI method
 
-To add a module to the cluster using the admin console:
+To add a module to the cluster using the Cluster Manager UI:
 
 1. Go to **Cluster > Modules**.
 

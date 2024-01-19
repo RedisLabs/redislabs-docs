@@ -29,7 +29,7 @@ Modules add additional functionality to Redis databases for specific use cases. 
 You can only add modules to a database when you first create it. You cannot add modules to an existing database.
 {{</note>}}
 
-In the Redis Enterprise admin console, follow these steps to add modules to a database:
+In the Redis Enterprise Cluster Manager UI, follow these steps to add modules to a database:
 
 1. From the **Databases** screen, select **Quick database** or **Create database**.
 

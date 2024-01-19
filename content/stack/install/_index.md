@@ -8,7 +8,7 @@ categories: ["Modules"]
 aliases: /modules/install/
 ---
 
-Several modules, which provide Redis Stack features, come packaged with [Redis Enterprise]({{<relref "/rs">}}). However, if you want to use additional modules or upgrade a module to a more recent version, you need to:
+Several modules, which provide Redis Stack features, come packaged with [Redis Enterprise]({{<relref "/rs">}}). As of version 7.4.2, Redis Enterprise includes two feature sets, compatible with different Redis database versions. However, if you want to use additional modules or upgrade a module to a more recent version, you need to:
 
 1. [Install a module package]({{<relref "/stack/install/add-module-to-cluster">}}) on the cluster.
 1. [Enable a module]({{<relref "/stack/install/add-module-to-database">}}) for a new database or [upgrade a module]({{<relref "/stack/install/upgrade-module">}}) in an existing database.
