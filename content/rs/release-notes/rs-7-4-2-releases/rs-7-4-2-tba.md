@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.4.2-tba (January 2024)
 linkTitle: 7.4.2-tba (January 2024)
-description: New Cluster Manager UI enhancements, including Active-Active database management. Full TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Two feature sets.
+description: New Cluster Manager UI enhancements, including Active-Active database management. Full TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Module management enhancements.
 compatibleOSSVersion: Redis 7.2.0
 weight: 72
 alwaysopen: false
@@ -25,7 +25,7 @@ This version offers:
 
 - Maintenance mode enhancements
 
-- Two feature sets
+- Module management enhancements
 
 ## New in this release
 
