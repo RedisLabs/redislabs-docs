@@ -10,7 +10,7 @@ Here, you can:
 
     A valid tag must follow these guidelines:
     - Tag keys must be between 2 and 64 characters long, and values must be at least 2 characters long.
-    - Tags can only have letters, numbers, spaces, and these special characters: `-`, `_`, `.`, `+`, `@`, and `:`. 
+    - Tags can only have lowercase letters, numbers, spaces, and these special characters: `-`, `_`, `.`, `+`, `@`, and `:`. 
 
 - Select the **Key** or **Value** field of an existing tag and enter new text to edit it.
 
