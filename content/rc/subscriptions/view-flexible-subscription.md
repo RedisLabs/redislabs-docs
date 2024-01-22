@@ -115,4 +115,6 @@ Here, you can:
 
 - Set up a [CIDR allow list]({{<relref "/rc/security/cidr-whitelist.md">}}) containing IP addresses or security groups (_AWS only_) permitted to access your subscription.
 
+- Set up [Private Service Connect]({{<relref "/rc/security/private-service-connect">}}) (*Google Cloud only*) or [Transit Gateway]({{<relref "/rc/security/aws-transit-gateway">}}) (*AWS only*).
+
 See the individual links to learn more.
