@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.4.2-tba (January 2024)
 linkTitle: 7.4.2-tba (January 2024)
-description: New Cluster Manager UI enhancements, including Active-Active database management. TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Two feature sets.
+description: New Cluster Manager UI enhancements, including Active-Active database management. Full TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Two feature sets.
 compatibleOSSVersion: Redis 7.2.0
 weight: 72
 alwaysopen: false
@@ -17,7 +17,7 @@ This version offers:
 
 - New Cluster Manager UI enhancements, including Active-Active database management
 
-- TLS 1.3 support
+- Full TLS 1.3 support
 
 - Automatic recovery configuration
 
@@ -31,7 +31,11 @@ This version offers:
 
 ### New features
 
-- Added support for TLS 1.3 and removed support for deprecated TLS versions, 1.0 and 1.1, and deprecated 3DES and RC4 encryption ciphers.
+- Added full support for TLS 1.3:
+
+    - TLS 1.3 cipher suites are now configurable for database connections. See [Configure cipher suites]({{<relref "/rs/security/encryption/tls/ciphers">}}) for details.
+
+    - TLS 1.3 can be set as the minimum TLS version. See [Configure TLS protocol]({{<relref "/rs/security/encryption/tls/tls-protocols">}}) for details.
 
 - Automatic recovery of databases from persistence files is configurable using the REST API.
 
@@ -44,6 +48,8 @@ This version offers:
     - Create and manage Active-Active databases
 
     - Configure database defaults: endpoint configuration, database proxy, and shards placement
+
+    - Configure [TLS cipher suites]({{<relref "/rs/security/encryption/tls/ciphers#edit-ciphers-ui">}}) and [minimum TLS protocol]({{<relref "/rs/security/encryption/tls/tls-protocols#edit-tls-ui">}})
 
     - Configure LDAP authentication timeout
 

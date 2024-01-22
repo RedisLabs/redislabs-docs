@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.4.2
 linkTitle: 7.4.2 releases
-description: New Cluster Manager UI enhancements, including Active-Active database management. TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Two feature sets.
+description: New Cluster Manager UI enhancements, including Active-Active database management. Full TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Two feature sets.
 compatibleOSSVersion: Redis 7.2.0
 weight: 70
 alwaysopen: false
@@ -17,7 +17,7 @@ This version offers:
  
 - New Cluster Manager UI enhancements, including Active-Active database management
 
-- TLS 1.3 support
+- Full TLS 1.3 support
 
 - Automatic recovery configuration
 
