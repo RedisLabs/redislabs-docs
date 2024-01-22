@@ -45,19 +45,27 @@ This version offers:
 
 - New Cluster Manager UI enhancements:
 
-    - Create and manage Active-Active databases
+    - Create and manage Active-Active databases.
 
-    - Configure database defaults: endpoint configuration, database proxy, and shards placement
+    - Configure database defaults: endpoint configuration, database proxy, and shards placement.
 
-    - Configure [TLS cipher suites]({{<relref "/rs/security/encryption/tls/ciphers#edit-ciphers-ui">}}) and [minimum TLS protocol]({{<relref "/rs/security/encryption/tls/tls-protocols#edit-tls-ui">}})
+    - Configure [TLS cipher suites]({{<relref "/rs/security/encryption/tls/ciphers#edit-ciphers-ui">}}) and [minimum TLS protocol]({{<relref "/rs/security/encryption/tls/tls-protocols#edit-tls-ui">}}).
 
-    - Configure LDAP authentication timeout
+    - Configure LDAP authentication timeout.
 
-- Maintenance mode enhancements
+- Maintenance mode enhancements:
+
+    - Only the latest maintenance mode snapshot is kept.
+    
+    - Use the `overwrite_snapshot` option to create a new snapshot when you turn on maintenance mode.
+
+    - `keep_slave_shards` is deprecated. Use `evict_ha_replica` and `evict_active_active_replica` instead.
+    
+    - View or delete node snapshots using `/v1/nodes/{node_uid}/snapshots` REST API requests.
 
 - Improved `actions` REST API:
 
-    - Improved `progress` fields returned by `GET /v1/actions` requests
+    - Improved `progress` fields returned by `GET /v1/actions` requests.
 
     - New request to get the status of all currently executing, pending, or completed actions for a specific database: `GET /v1/actions/bdb/<bdb_uid>`
 
