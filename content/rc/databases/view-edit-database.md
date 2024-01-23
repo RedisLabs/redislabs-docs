@@ -200,6 +200,7 @@ Here's what you can change:
 |:-----------|:-------------------------------|:---------|
 | General | Database name                  ||
 | | Supported protocol(s)                  ||
+| | Tags                                   ||
 | Scalability | Memory limit                   | _Flexible and Annual subscriptions only_ |
 | | Throughput                     | _Flexible and Annual subscriptions only_ |
 | | Hashing policy                 | _Flexible and Annual subscriptions only_ |
