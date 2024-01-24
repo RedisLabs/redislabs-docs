@@ -2,7 +2,7 @@
 Title: View and edit databases
 linkTitle: "Edit and view"
 description:
-weight: 20
+weight: 15
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/viewing-editing-database/
@@ -32,9 +32,9 @@ The **Database** screen lets you review:
 
 For help changing database settings, see [Edit database details](#edit-database-details).
 
-## Configuration details tab
+## Configuration tab
 
-The **Configuration details** screen is divided into sections, each dedicated to a specific category.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
+The **Configuration** screen is divided into sections, each dedicated to a specific category.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
 
 ### General settings
 
@@ -47,6 +47,7 @@ The available settings vary according to your subscription plan, cloud provider,
 | **Database Name**         | The name given to your database                                                                                                                             |
 | **Public endpoint**       | Public URI used by any application or client to access the database.                                                                                        |
 | **Private endpoint**      | Private endpoint URI available to approved clients; use CIDR allow list and VPC peering to enabled access (_Flexible or Annual subscriptions only_)         |
+| **Tags**                  | A list of the [tags]({{< relref "/rc/databases/tag-database" >}}) associated with the database. Select [Manage tags]({{< relref "/rc/databases/tag-database#tags-tab" >}}) to manage the database tags. |
 | **Type**                  | Displays 'Redis', 'Redis Stack' or 'memcached' based on the value selected when the database was created                                                    |
 | **Redis version**         | Redis version used to create the database                                                                                                                   |
 | **Auto Tiering**          | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_)                                                               |
@@ -158,7 +159,7 @@ You can:
 
     {{<image filename="images/rc/database-list-filter.png" alt="Use the filter toggle to display filter options." >}}{{< /image >}}
 
-    You can filter the list on **Status**, **Subscription**, **Capabilities**, and **Options**.  String matches are _not_ case-sensitive.  You can specify more than one filter expression at a time.  
+    You can filter the list on **Status**, **Subscription**, **Capabilities**, **Options**, and **Tags**.  String matches are _not_ case-sensitive.  You can specify more than one filter expression at a time.  
 
     A list of selected filters appears below the filter types.
 
@@ -166,7 +167,7 @@ You can:
 
     {{<image filename="images/rc/database-list-filter-selected.png" alt="Use the filter toggle to display filter options." >}}{{< /image >}}
 
-- Sort the list in descending or ascending order using the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Name**, **Database ID**, and **Memory**.
+- Sort the list in descending or ascending order using the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Database name**, **Memory**, and **Tags**.
 
     {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}
 
@@ -184,6 +185,7 @@ The **View Database** screen also has tabs that let you view:
 
 - **Slowlog**: a log showing recent [slow queries](https://redis.io/commands/slowlog) run against your database.  The log displays when the action started, the duration, the complexity of the operation, and any parameters passed to the operation.
 
+
 ## Edit database details
 
 Use the **Edit database** button to edit database details.
@@ -198,6 +200,7 @@ Here's what you can change:
 |:-----------|:-------------------------------|:---------|
 | General | Database name                  ||
 | | Supported protocol(s)                  ||
+| | Tags                                   ||
 | Scalability | Memory limit                   | _Flexible and Annual subscriptions only_ |
 | | Throughput                     | _Flexible and Annual subscriptions only_ |
 | | Hashing policy                 | _Flexible and Annual subscriptions only_ |
