@@ -13,26 +13,9 @@ aliases: [
 ]
 ---
 Both Redis Enterprise Software and [Redis Cloud]({{<relref "/rc">}}) are compatible with open source
-Redis (OSS Redis). Redis contributes extensively to the open source Redis
-project and uses it inside of Redis Enterprise. As a rule, we adhere to
-the open source project's specifications and update
-Redis Enterprise with the latest version of open source Redis.
+Redis (OSS Redis). 
 
-## Redis commands
-
-See [Compatibility with open source Redis commands]({{<relref "/rs/references/compatibility/commands">}}) to learn which open source Redis commands are compatible with Redis Enterprise (Software and Cloud).
-
-## Configuration settings
-
-[Compatibility with open source Redis configuration settings]({{<relref "/rs/references/compatibility/config-settings">}}) lists the open source Redis configuration settings supported by Redis Enterprise (Software and Cloud).
-
-## Redis clients
-
-You can use any standard [Redis client](https://redis.io/docs/clients/) with Redis Enterprise.
-
-## RESP compatibility
-
-Redis Enterprise supports RESP2 and RESP3. See [RESP compatibility with Redis Enterprise]({{<relref "/rs/references/compatibility/resp">}}) for more information.
+{{< embed-md "rc-rs-oss-compatibility.md"  >}}
 
 ## Compatibility with open source Redis Cluster API
 
