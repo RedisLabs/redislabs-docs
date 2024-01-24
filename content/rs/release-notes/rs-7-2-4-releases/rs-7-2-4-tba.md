@@ -43,8 +43,13 @@ Redis Enterprise Software versions 7.2.4-tba includes the following Redis Stack 
 
 ### Resolved issues
 
-- TBA
+- RS106070: Cluster upgrade should fail properly after the timeout is exceeded.
 
+- RS107974: Retry if a node fails to join a cluster because the local CCS is down.
+
+- RS117686: Improved visibility of timeout message while waiting for upgrade to complete.
+
+- RS118274: Fixed an issue in the new Cluster Manager UI where a database could not be scaled up to use the maximum shards available for a trial license.
 
 ## Version changes 
 
