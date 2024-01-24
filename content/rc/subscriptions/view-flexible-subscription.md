@@ -1,10 +1,10 @@
 ---
-Title: View Flexible subscription details
+Title: View or edit Flexible subscription
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-linktitle: View Flexible subscription
+linktitle: View or edit Flexible subscription
 aliases:
 ---
 To view the details of a Flexible subscription:
