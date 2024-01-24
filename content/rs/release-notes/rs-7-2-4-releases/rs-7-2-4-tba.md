@@ -23,7 +23,7 @@ This version offers:
 
 ### Enhancements
 
-- LDAP authentication timeout `directory_timeout_s` is now configurable using the REST API.
+- LDAP authentication timeout `directory_timeout_s` is now configurable using a [`PUT /v1/cluster/ldap`]({{<relref "/rs/references/rest-api/requests/cluster/ldap#put-cluster-ldap">}}) REST API request.
 
 - Added support for RHEL 8.9.
 
