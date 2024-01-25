@@ -118,7 +118,7 @@ After you've associated the Redis AWS account with your resource share, you must
 
     {{<image filename="images/rc/tgw-create-attachment-button.png" width="250px" alt="The Create attachment button." >}}{{< /image >}}
 
-    This will request an peering attachment representing Redis's AWS account to the Transit Gateway. 
+    This will request a peering attachment representing Redis's AWS account to the Transit Gateway. 
 
 1. If your transit gateway does not automatically accept peering attachment requests, the attachment will be in **Pending acceptance** status. Follow the guide to [Accept a peering attachment request](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html#tgw-peering-accept-reject) from the [AWS VPC console](https://console.aws.amazon.com/vpc/). 
 
@@ -150,6 +150,6 @@ To finish Transit gateway setup, [update your route tables for the peering conne
 
 1. In the **Target** field, select **Transit Gateway** and select the relevant **Transit gateway ID**.
 
-Once Transit gateway is established, we recommend switching your application connection string to the private endpoint.
+After Transit gateway is established, we recommend switching your application connection string to the private endpoint.
 
 
