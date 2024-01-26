@@ -20,7 +20,7 @@ Here's how to perform a variety of tasks:
 
 - [Delete database]({{<relref "rc/databases/delete-database.md">}})
 
-If you're new to Redis Cloud, consider the [Quick Start]({{<relref "rc/rc-quickstart">}})
+If you're new to Redis Cloud, see the [Quick Start]({{<relref "rc/rc-quickstart">}}).
 
 ## Additional tasks
 

@@ -9,13 +9,11 @@ aliases: /rc/administration/setup-and-editing/delete-databases/
         /rv/administration/setup_and_editing/deleting-database/
 ---
 
-To delete a database, use the **Delete** button.  It's located in the **Danger zone** section of the database's **Configuration** tab.
+To delete a database, use the **Delete** button located in the **Danger zone** section of the database's **Configuration** tab.
+
+Deleting a database requires the Account Owner role.
 
 Deleted databases cannot be recovered.  We recommend [making a backup]({{< relref "rc/databases/back-up-data.md" >}}), just in case.
-
-This command requires the account owner role.
-
-## Step-by-step
 
 1. Sign in to the [Redis Cloud console](https://app.redislabs.com/).
 
