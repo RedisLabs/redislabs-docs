@@ -104,10 +104,6 @@ For more detailed release notes, select a build version from the following table
 
 8. <a name="table-note-8" style="display: block; height: 80px; margin-top: -80px;"></a>Redis Enterprise Software [6.4.2-103]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-103">}}) and later supports RHEL 8.8.
 
-## Known issues
-
-TBA?
-
 ## Known limitations
 
 #### OpenSSL compatibility issue for 7.4.2 modules on Amazon Linux 2
