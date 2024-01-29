@@ -37,23 +37,23 @@ This version offers:
 
     - TLS 1.3 can be set as the minimum TLS version. See [Configure TLS protocol]({{<relref "/rs/security/encryption/tls/tls-protocols">}}) for details.
 
-- Automatic recovery of databases from persistence files is configurable using the REST API.
+- Automatic recovery of databases from persistence files is configurable using the REST API. See [Configure automatic recovery]({{<relref "/rs/databases/recover#configure-automatic-recovery">}}) for details.
 
-- New clusters support IPv6 for internal traffic.
+- New clusters support IPv6 for internal traffic. See [Enable IPv6 for internal traffic]({{<relref "/rs/networking/multi-ip-ipv6#enable-ipv6-for-internal-traffic">}}) for details.
 
 ### Enhancements
 
 - New Cluster Manager UI enhancements:
 
-    - Create and manage Active-Active databases.
+    - [Create]({{<relref "/rs/databases/active-active/create">}}) and [manage]({{<relref "/rs/databases/active-active/manage">}}) Active-Active databases.
 
-    - Configure database defaults: endpoint configuration, database proxy, and shards placement.
+    - [Configure database defaults]({{<relref "/rs/databases/configure/db-defaults">}}): endpoint configuration, database proxy, and shards placement.
 
     - Configure [TLS cipher suites]({{<relref "/rs/security/encryption/tls/ciphers#edit-ciphers-ui">}}) and [minimum TLS protocol]({{<relref "/rs/security/encryption/tls/tls-protocols#edit-tls-ui">}}).
 
-    - Configure LDAP authentication timeout.
+    - Configure LDAP [authentication timeout]({{<relref "/rs/security/access-control/ldap/enable-role-based-ldap#authentication-timeout">}}).
 
-- Maintenance mode enhancements:
+- [Maintenance mode]({{<relref "/rs/clusters/maintenance-mode">}}) enhancements:
 
     - Only the latest maintenance mode snapshot is kept.
     
@@ -61,7 +61,7 @@ This version offers:
 
     - `keep_slave_shards` is deprecated. Use `evict_ha_replica` and `evict_active_active_replica` instead.
     
-    - View or delete node snapshots using `/v1/nodes/{node_uid}/snapshots` REST API requests.
+    - View or delete node snapshots using [`/v1/nodes/{node_uid}/snapshots`]({{<relref "/rs/references/rest-api/requests/nodes/snapshots">}}) REST API requests.
 
 - Improved `actions` REST API:
 
