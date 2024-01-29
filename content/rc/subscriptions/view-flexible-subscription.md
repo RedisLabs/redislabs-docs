@@ -1,10 +1,10 @@
 ---
-Title: View Flexible subscription details
+Title: View or edit Flexible subscription
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-linktitle: View Flexible subscription
+linktitle: View or edit Flexible subscription
 aliases:
 ---
 To view the details of a Flexible subscription:
@@ -114,5 +114,7 @@ Here, you can:
 - Set up a [VPC peering]({{<relref "/rc/security/vpc-peering.md">}}) relationship between the virtual PC (VPC) hosting your subscription and another virtual PC.
 
 - Set up a [CIDR allow list]({{<relref "/rc/security/cidr-whitelist.md">}}) containing IP addresses or security groups (_AWS only_) permitted to access your subscription.
+
+- Set up [Private Service Connect]({{<relref "/rc/security/private-service-connect">}}) (*Google Cloud only*) or [Transit Gateway]({{<relref "/rc/security/aws-transit-gateway">}}) (*AWS only*).
 
 See the individual links to learn more.

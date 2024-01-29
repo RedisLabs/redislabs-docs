@@ -29,7 +29,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
    
    {{<image filename="images/rc/saml/auth0_saml_2.png" alt="" >}}{{</image>}}
 
-   The key-value pair of `redisAccountMapping` consists of a lowercase role name (owner, member, manager, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
+   The key-value pair of `redisAccountMapping` consists of a lowercase role name (owner, member, manager, billing_admin, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
     ```
     {

@@ -120,7 +120,7 @@ To activate SAML, you must have a local user (or social sign-on user) with the `
    * **LastName**: `${user:familyName}`, `unspecified`
    * **redisAccountMapping**: `XXXXXXX=owner`, `unspecified`
 
-The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
+The `redisAccountMapping` key-value pair consists of the lowercase role name (owner, member, manager, billing_admin, or viewer) and your Redis Cloud Account ID found in the [account settings]({{<relref "rc/accounts/account-settings">}}).
 
 {{<image filename="images/rc/saml/aws_iam_identity_center_saml_14.png" alt="" >}}{{</image>}}
 

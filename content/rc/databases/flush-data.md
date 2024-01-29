@@ -1,7 +1,7 @@
 ---
 Title: Flush data
 description:
-weight: 35
+weight: 40
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/how-to/all-memcached-cloud/

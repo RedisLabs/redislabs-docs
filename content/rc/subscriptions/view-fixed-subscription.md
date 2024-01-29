@@ -1,10 +1,10 @@
 ---
-Title: View or change a Fixed subscription
+Title: View or edit Fixed subscription
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-linktitle: View Fixed subscription
+linktitle: View or edit Fixed subscription
 aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
            /rc/administration/setup-and-editing/viewing-subscription/,
            /rc/administration/setup-and-editing/changing-subscription-plan/,
