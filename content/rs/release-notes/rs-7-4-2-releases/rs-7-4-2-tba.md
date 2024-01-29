@@ -69,6 +69,12 @@ This version offers:
 
     - New request to get the status of all currently executing, pending, or completed actions for a specific database: `GET /v1/actions/bdb/<bdb_uid>`
 
+- [`GET /v1/users`]({{<relref "/rs/references/rest-api/requests/users#get-all-users">}}) REST API requests include a new `status` field in the response, which indicates whether the user can sign in:
+
+    - `active`: user can sign in
+
+    - `locked`: user cannot sign in
+
 - Replaced the use of processes for `job_scheduler`, `cnm_http`, and `crdb_coordinator` with threads, which results in significant memory optimization.
 
 #### Redis module feature sets
