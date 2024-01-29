@@ -11,6 +11,12 @@ aliases: []
 
 ## New features
 
+### Billing Admin role
+
+You can now add a user with the Billing Admin role in the [Access Management]({{<relref "/rc/security/access-control/access-management">}}) screen. Billing Admins can view and edit settings related to billing and payments. They can add and remove payment methods and change the payment method for a subscription, but they cannot change any other subscription or database settings.
+
+See [Team Management roles]({{<relref "/rc/security/access-control/access-management#team-management-roles">}}) to see an overview of user roles and their permissions.
+
 ### Database tags
 
 You can now add [tags]({{< relref "/rc/databases/tag-database" >}}) to your database.
