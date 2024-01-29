@@ -89,7 +89,7 @@ Bundled Redis modules compatible with Redis database version 7.2:
 
 - [RedisTimeSeries 1.10.9](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.10.9)
 
-- [RedisBloom 2.6.10](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.10)
+- [RedisBloom 2.6.11](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.11)
 
 - [RedisGears 2.0.17](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.17-m18)
 
@@ -101,7 +101,7 @@ Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
 
 - [RedisTimeSeries 1.8.11](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.8.11)
 
-- [RedisBloom 2.4.7](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.4.7)
+- [RedisBloom 2.4.8](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.4.8)
 
 - [RedisGraph v2.10.12](https://github.com/RedisGraph/RedisGraph/releases/tag/v2.10.12)
 
