@@ -15,6 +15,12 @@ aliases: []
 
 You can now connect your Flexible subscriptions hosted on Amazon Web Services (AWS) to [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/how-transit-gateways-work.html). See [Connect to Transit Gateway]({{<relref "/rc/security/aws-transit-gateway">}}) to learn how to connect your Flexible subscription to Transit Gateway.
 
+### Billing Admin role
+
+You can now add a user with the Billing Admin role in the [Access Management]({{<relref "/rc/security/access-control/access-management">}}) screen. Billing Admins can view and edit settings related to billing and payments. They can add and remove payment methods and change the payment method for a subscription, but they cannot change any other subscription or database settings.
+
+See [Team Management roles]({{<relref "/rc/security/access-control/access-management#team-management-roles">}}) to see an overview of user roles and their permissions.
+
 ### Database tags
 
 You can now add [tags]({{< relref "/rc/databases/tag-database" >}}) to your database.

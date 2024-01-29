@@ -45,7 +45,7 @@ To learn more about Redis Cloud support for SAML, see [SAML single sign-on]({{<r
 
     * **redisAccountMapping**: `{accountID}={role}`
      
-    **accountID** is the account ID from [account settings]({{<relref "rc/accounts/account-settings">}}) and **role** represents the role that the user will be assigned in Redis Cloud console (owner, member, manager, or viewer):
+    **accountID** is the account ID from [account settings]({{<relref "rc/accounts/account-settings">}}) and **role** represents the role that the user will be assigned in Redis Cloud console (owner, member, manager, billing_admin, or viewer):
 
     {{<image filename="images/rc/saml/ping_identity_saml_6.png" alt="" >}}{{</image>}}
 
