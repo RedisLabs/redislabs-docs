@@ -65,9 +65,9 @@ This version offers:
 
 - Improved `actions` REST API:
 
-    - Improved `progress` fields returned by `GET /v1/actions` requests.
+    - Improved `progress` fields returned by [`GET /v1/actions`]({{<relref "/rs/references/rest-api/requests/actions">}}) requests.
 
-    - New request to get the status of all currently executing, pending, or completed actions for a specific database: `GET /v1/actions/bdb/<bdb_uid>`
+    - New request to get the status of all currently executing, pending, or completed actions for a specific database: [`GET /v1/actions/bdb/<bdb_uid>`]({{<relref "/rs/references/rest-api/requests/actions/bdb">}})
 
 - [`GET /v1/users`]({{<relref "/rs/references/rest-api/requests/users#get-all-users">}}) REST API requests include a new `status` field in the response, which indicates whether the user can sign in:
 
@@ -121,7 +121,7 @@ Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
 
     - You can only change the discovery service policy using `sentinel_tls_mode`.
 
-    - When retrieving the value of the current policy using `GET /v1/cluster`, both fields are returned for backward compatibility.
+    - When retrieving the value of the current policy using [`GET /v1/cluster`]({{<relref "/rs/references/rest-api/requests/cluster#get-cluster">}}), both fields are returned for backward compatibility.
 
 - Port 3345 is now reserved for internal use.
 
@@ -205,10 +205,6 @@ The following table shows the MD5 checksums for the available packages:
 | RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
 | RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
 | Amazon Linux 2 |  |
-
-## Known issues
-
-TBA?
 
 ## Known limitations
 
