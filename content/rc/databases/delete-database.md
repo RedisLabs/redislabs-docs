@@ -2,7 +2,7 @@
 Title: Delete database
 linkTitle: Delete database
 description:
-weight: 30
+weight: 45
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/delete-databases/

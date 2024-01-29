@@ -120,10 +120,13 @@ For a list of example values used throughout this article, see the [Example valu
          databaseSecretName: <my-secret>
          memorySize: 200MB
          shardCount: 3
+         tlsMode: enabled 
        participatingClusters:
            - name: rerc-ohare
            - name: rerc-reagan
      ```
+     
+     {{<note>}}Active-Active databases on OpenShift require `tlsMode: enabled`.{{</note>}}
 
      {{<note>}}Sharding is disabled on Active-Active databases created with a `shardCount` of 1. Sharding cannot be enabled after database creation. {{</note>}}
 

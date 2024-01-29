@@ -152,6 +152,14 @@ The **Durability** section helps you keep your database (and your data) availabl
 | **Remote backup**        | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}) |
 | **Active-Passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. See [Migrate data]({{<relref "/rc/databases/migrate-databases.md">}}) for more information.           |
 
+## Tags section
+
+The **Tags** section lets you add [tags]({{< relref "/rc/databases/tag-database" >}}) to the database.
+
+{{<image filename="images/rc/database-new-tags.png" alt="Use the Tag settings to add tags to the database." >}}{{< /image >}}
+
+{{< embed-md "rc-tags-tag-module.md" >}}
+
 ## Security section
 
 The **Security** section helps you control access to your database.
