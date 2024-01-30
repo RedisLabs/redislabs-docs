@@ -109,9 +109,9 @@ Roles and responsibilities are:
 
     Managers can change subscription costs and change payment methods associated with a subscription, but they cannot add or remove available payment methods.
 
-- **Member** can view, create, and edit databases in Fixed accounts.
+- **Member** can view, create, and edit databases in ways that do not impact costs.
 
-    Members cannot impact costs associated with Flexible accounts, which means they cannot create databases or edit databases in ways that impact subscription cost.
+    Members cannot create databases or edit databases in ways that impact costs.
 
 - **Viewer** can view all databases and their configurations, including database secrets.
 
