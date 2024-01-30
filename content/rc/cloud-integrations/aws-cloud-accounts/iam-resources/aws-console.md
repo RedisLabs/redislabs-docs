@@ -92,16 +92,7 @@ First, create a policy to use for the new instance role:
         ],
         "Resource": "*"
     }
-    ]
-}
-```
-    {{% /expand%}}
-
-    If you want to use [AWS Transit Gateway]({{<relref "/rc/security/aws-transit-gateway">}}) with your account, add the following permissions to the policy:
-
-    {{%expand "View TransitGatewayAdditions.json" %}}
-```js
-{
+    {
     "Sid": "ResourceAccessManagerActions",
     "Effect": "Allow",
     "Action": [
@@ -112,26 +103,29 @@ First, create a policy to use for the new instance role:
         "ram:DisassociateResourceShare"
     ],
     "Resource": "*"
-},
-{
-    "Sid": "CreateAndChangeServiceLinkedRoleForTransitGateway",
-    "Effect": "Allow",
-    "Action": "iam:CreateServiceLinkedRole",
-    "Resource": "arn:aws:iam::*:role/"
-                "aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway*",
-    "Condition": {"StringLike": {"iam:AWSServiceName": "transitgateway.amazonaws.com"}}
-},
-{
-    "Effect": "Allow",
-    "Action": [
-        "iam:AttachRolePolicy",
-        "iam:PutRolePolicy"
-    ],
-    "Resource": "arn:aws:iam::*:role/"
-                "aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway*"
+    },
+    {
+        "Sid": "CreateAndChangeServiceLinkedRoleForTransitGateway",
+        "Effect": "Allow",
+        "Action": "iam:CreateServiceLinkedRole",
+        "Resource": "arn:aws:iam::*:role/"
+                    "aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway*",
+        "Condition": {"StringLike": {"iam:AWSServiceName": "transitgateway.amazonaws.com"}}
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
+            "iam:AttachRolePolicy",
+            "iam:PutRolePolicy"
+        ],
+        "Resource": "arn:aws:iam::*:role/"
+                    "aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway*"
+    }
+    ]
 }
 ```
     {{% /expand%}}
+
 
 1. Validate it and then select **Review Policy**.
 1. Enter **RedisLabsInstanceRolePolicy** as the policy name and then select **Create Policy**.
