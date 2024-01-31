@@ -11,7 +11,7 @@ aliases: /ri/release-notes/v2.42.0/
 This is the General Availability (GA) release of RedisInsight 2.42.
 
 ### Highlights
-- Introducing a new dedicated developer enablement area! Explore Redis capabilities and learn easily, among other things, how to leverage the native JSON data structure supporting structured querying and full-text search. Browse the tutorials offline or leverage the in-app provisioning of a free Redis Cloud database to try them interactively.
+- Introducing a new dedicated developer enablement area! Explore Redis capabilities and learn easily, among other things, how to leverage the native JSON data structure supporting structured querying and full-text search, including vector similarity search for your AI use cases. Browse the tutorials offline or leverage the in-app provisioning of a free Redis Cloud database to try them interactively.
 - RedisInsight is now available on Docker. Check out our [Docker repository](https://hub.docker.com/repository/docker/redis/redisinsight/general) if that’s your preferred platform. 
 
 
