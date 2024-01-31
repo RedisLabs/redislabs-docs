@@ -27,7 +27,7 @@ This version offers:
 
 - Module management enhancements
 
-- @rachel can you please add the fact that we are removing RHEL7 and OEL7 support
+- RHEL 7 and Oracle Linux 7, which were previously deprecated, are no longer supported
 
 ## Detailed release notes
 
@@ -46,6 +46,10 @@ For more detailed release notes, select a build version from the following table
 - The maintenance mode option `keep_slave_shards` is deprecated in `rladmin` and the REST API. Use `evict_ha_replica` and `evict_active_active_replica` instead.
 
 - `/v1/debuginfo` REST API paths are deprecated. Use the new paths [`/v1/cluster/debuginfo`]({{<relref "/rs/references/rest-api/requests/cluster/debuginfo">}}), [`/v1/nodes/debuginfo`]({{<relref "/rs/references/rest-api/requests/nodes/debuginfo">}}), and [`/v1/bdbs/debuginfo`]({{<relref "/rs/references/rest-api/requests/bdbs/debuginfo">}}) instead.
+
+#### Operating system retirements
+
+- RHEL 7 and Oracle Linux 7 were previously announced as deprecated in the [Redis Enterprise Software 7.2.4 release notes]({{<relref "/rs/release-notes/rs-7-2-4-releases#deprecations">}}). As of Redis Enterprise Software 7.4.2, RHEL 7 and Oracle Linux 7 are no longer supported.
 
 #### Security retirements
 
