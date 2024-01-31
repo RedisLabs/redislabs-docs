@@ -12,14 +12,14 @@ This is the General Availability (GA) release of RedisInsight 2.42.
 
 ### Highlights
 - Introducing a new dedicated developer enablement area! Explore Redis capabilities and learn easily, among other things, how to leverage the native JSON data structure supporting structured querying and full-text search. Browse the tutorials offline or leverage the in-app provisioning of a free Redis Cloud database to try them interactively.
-- RedisInsight is now available on Docker. Check out our docker [repository](placeholder) if that’s your preferred platform. 
+- RedisInsight is now available on Docker. Check out our [Docker repository](https://hub.docker.com/repository/docker/redis/redisinsight/general) if that’s your preferred platform. 
 
 
 ### Details
 
 **Features and improvements**
 - [#2724](https://github.com/RedisInsight/RedisInsight/pull/2724), [#2752](https://github.com/RedisInsight/RedisInsight/pull/2752), [#2965](https://github.com/RedisInsight/RedisInsight/pull/2965) Introducing a dedicated developer enablement area. Dive into interactive tutorials and level up your Redis game even without a database connected. Start exploring tutorials by clicking on the "Insights" button located in the top-right corner. Interactive tutorials may impact your database by altering data, thus avoid running them in a production environment. For an optimal tutorial experience, create a free [Redis Cloud](https://redis.com/try-free/?utm_source=redisinsight&utm_medium=main&utm_campaign=redisinsight_release_notes) database.
-- [#2972](https://github.com/RedisInsight/RedisInsight/pull/2972), [#2811](https://github.com/RedisInsight/RedisInsight/pull/2811) The long-awaited docker build is now available. Check out our docker [repository](placeholder) if that’s your preferred platform.
+- [#2972](https://github.com/RedisInsight/RedisInsight/pull/2972), [#2811](https://github.com/RedisInsight/RedisInsight/pull/2811) The long-awaited Docker build is now available. Check out our [Docker repository]([placeholder](https://hub.docker.com/repository/docker/redis/redisinsight/general)) if that’s your preferred platform.
 - [#2857](https://github.com/RedisInsight/RedisInsight/pull/2857) Empty Browser and Workbench pages are aligned with the new interactive tutorials.
 - [#2940](https://github.com/RedisInsight/RedisInsight/pull/2940) Recommendations have been renamed to Tips.
 - [#2970](https://github.com/RedisInsight/RedisInsight/pull/2970) A critical vulnerability has been fixed.
