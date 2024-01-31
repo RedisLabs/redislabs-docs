@@ -98,6 +98,14 @@ Usage: redis-di reset [OPTIONS]
 
   Force operation. skips verification prompts
 
+- `pause_for_confirmation`:
+
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--pause-for-confirmation`
+
+  Pause for user confirmation if manual shutdown of collector required
+
 - `help`:
 
   - Type: BOOL
@@ -127,5 +135,7 @@ Options:
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
   -f, --force                     Force operation. skips verification prompts
+  --pause-for-confirmation        Pause for user confirmation if manual
+                                  shutdown of collector required
   --help                          Show this message and exit.
 ```
