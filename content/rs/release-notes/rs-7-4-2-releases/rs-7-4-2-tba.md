@@ -1,6 +1,6 @@
 ---
-Title: Redis Enterprise Software release notes 7.4.2-tba (January 2024)
-linkTitle: 7.4.2-tba (January 2024)
+Title: Redis Enterprise Software release notes 7.4.2-46 (February 2024)
+linkTitle: 7.4.2-46 (February 2024)
 description: New Cluster Manager UI enhancements, including Active-Active database management. Full TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Module management enhancements.
 compatibleOSSVersion: Redis 7.2.0
 weight: 72
@@ -198,19 +198,18 @@ Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
 
 The following table shows the MD5 checksums for the available packages:
 
-| Package | MD5 checksum (7.4.2-tba January release) |
+| Package | MD5 checksum (7.4.2-46 February release) |
 |---------|---------------------------------------|
-| Ubuntu 18 |  |
-| Ubuntu 20 |  |
-| RedHat Enterprise Linux (RHEL) 7<br/>Oracle Enterprise Linux (OL) 7 |  |
-| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
-| Amazon Linux 2 |  |
+| Ubuntu 18 | 0d95491160fedc272b2ba49dcb14b179 |
+| Ubuntu 20 | 2b5df105bfd25cf76968c6a09b9f6eac |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux | c27e75c3bd4517aa8a65667efb759a6b |
+| Amazon Linux 2 | c5885bb551b8ddb027f2d444e04024ad |
 
 ## Known limitations
 
 #### OpenSSL compatibility issue for 7.4.2 modules on Amazon Linux 2
 
-Due to an OpenSSL 1.1 compatibility issue between modules and clusters, Redis Enterprise Software version 7.4.2-tba is not fully supported on Amazon Linux 2 clusters with databases that use the following modules: RedisGears, RediSearch, or RedisTimeSeries.
+Due to an OpenSSL 1.1 compatibility issue between modules and clusters, Redis Enterprise Software version 7.4.2-46 is not fully supported on Amazon Linux 2 clusters with databases that use the following modules: RedisGears, RediSearch, or RedisTimeSeries.
 
 This issue will be fixed in a future maintenance release.
 
