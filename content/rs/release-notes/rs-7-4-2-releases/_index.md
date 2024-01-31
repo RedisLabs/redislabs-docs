@@ -27,6 +27,8 @@ This version offers:
 
 - Module management enhancements
 
+- @rachel can you please add the fact that we are removing RHEL7 and OEL7 support? Also update the os support table?
+
 ## Detailed release notes
 
 For more detailed release notes, select a build version from the following table:
@@ -45,7 +47,7 @@ For more detailed release notes, select a build version from the following table
 
 - `/v1/debuginfo` REST API paths are deprecated. Use the new paths [`/v1/cluster/debuginfo`]({{<relref "/rs/references/rest-api/requests/cluster/debuginfo">}}), [`/v1/nodes/debuginfo`]({{<relref "/rs/references/rest-api/requests/nodes/debuginfo">}}), and [`/v1/bdbs/debuginfo`]({{<relref "/rs/references/rest-api/requests/bdbs/debuginfo">}}) instead.
 
-#### Security deprecations
+#### Security retirements
 
 - The RC4 encryption cipher, which was previously deprecated in favor of stronger ciphers, is no longer supported.
 
