@@ -17,4 +17,4 @@ Redis (OSS Redis).
 
 ## Compatibility with open source Redis Cluster API
 
-Redis Cloud supports [Redis OSS Cluster API]({{< relref "/rs/clusters/optimize/oss-cluster-api" >}}) if it is enabled for a database. For more information, see [Enable OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api" >}}).
+Redis Cloud supports [Redis OSS Cluster API]({{< relref "/rc/databases/create-database#oss-cluster-api" >}}) on Flexible subscriptions if it is enabled for a database. Review [Redis OSS Cluster API architecture]({{< relref "/rs/clusters/optimize/oss-cluster-api" >}}) to determine if you should enable this feature for your database.

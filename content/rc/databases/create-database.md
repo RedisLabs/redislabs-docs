@@ -116,8 +116,8 @@ The **Scalability** section is available only for Flexible and Annual plans.
 |:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Memory limit**    | Maximum size (in GB) for your database                                                                                                                                                                                                                                                                                                        |
 | **Throughput**      | Defines throughput in terms of maximum operations per second for the database <br/><br/>Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). |
-| **Hashing policy**  | Defines the [hashing policy]({{< relref "/rs/databases/durability-ha/clustering#supported-hashing-policies" >}})                                                                                                                                                                                                                              |
-| **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy                                                                                                                                                     |
+| **Hashing policy**  | Defines the [hashing policy]({{< relref "/rc/databases/configuration/clustering#manage-the-hashing-policy" >}})                                                                                                                                                                                                                              |
+| **OSS Cluster API** | Enables the [OSS Cluster API](#oss-cluster-api) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy                                                                                                                                                     |
 
 To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
 
@@ -136,6 +136,12 @@ Here are some general guidelines:
 - Advanced capabilities also consume memory.
 
 Memory limits in Redis Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}})
+
+### OSS Cluster API
+
+{{< embed-md "oss-cluster-api-intro.md"  >}}
+
+Review [Redis OSS Cluster API architecture]({{< relref "/rs/clusters/optimize/oss-cluster-api" >}}) to determine if you should enable this feature for your database.
 
 ## Durability section
 
