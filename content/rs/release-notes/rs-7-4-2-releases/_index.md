@@ -47,6 +47,20 @@ For more detailed release notes, select a build version from the following table
 
 - `/v1/debuginfo` REST API paths are deprecated. Use the new paths [`/v1/cluster/debuginfo`]({{<relref "/rs/references/rest-api/requests/cluster/debuginfo">}}), [`/v1/nodes/debuginfo`]({{<relref "/rs/references/rest-api/requests/nodes/debuginfo">}}), and [`/v1/bdbs/debuginfo`]({{<relref "/rs/references/rest-api/requests/bdbs/debuginfo">}}) instead.
 
+#### Legacy UI deprecation
+
+The legacy UI is deprecated in favor of the new Cluster Manager UI and will be removed in a future release.
+
+#### Redis 6.0 database deprecation
+
+Redis database version 6.0 is deprecated as of Redis Enterprise Software version 7.4.2 and will be removed in a future release.
+
+To prepare for the future removal of Redis 6.0:
+
+- For Redis Enterprise 6.2.* clusters, upgrade Redis 6.0 databases to Redis 6.2. See the [Redis 6.2 release notes](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES) for the list of changes.
+
+- For Redis Enterprise 7.2.4 and 7.4.2 clusters, upgrade Redis 6.0 databases to Redis 7.2. Before you upgrade your databases, see the list of [Redis 7.2 breaking changes]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-52#redis-72-breaking-changes">}}) and update any applications that connect to your database to handle these changes.
+
 #### Operating system retirements
 
 - RHEL 7 and Oracle Linux 7 were previously announced as deprecated in the [Redis Enterprise Software 7.2.4 release notes]({{<relref "/rs/release-notes/rs-7-2-4-releases#deprecations">}}). As of Redis Enterprise Software 7.4.2, RHEL 7 and Oracle Linux 7 are no longer supported.
