@@ -1,6 +1,6 @@
 ---
-Title: Redis Enterprise Software release notes 7.2.4-tba (January 2024)
-linkTitle: 7.2.4-tba (January 2024)
+Title: Redis Enterprise Software release notes 7.2.4-tba (February 2024)
+linkTitle: 7.2.4-tba (February 2024)
 description: LDAP authentication timeout is configurable using the REST API. RHEL 8.9 support.
 compatibleOSSVersion: Redis 7.2.0
 weight: 68
@@ -106,7 +106,7 @@ Redis Enterprise Software versions 7.2.4-tba includes the following Redis Stack 
 
 The following table shows the MD5 checksums for the available packages:
 
-| Package | MD5 checksum (7.2.4-tba January release) |
+| Package | MD5 checksum (7.2.4-tba February release) |
 |---------|---------------------------------------|
 | Ubuntu 18 |  |
 | Ubuntu 20 |  |
