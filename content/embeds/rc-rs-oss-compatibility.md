@@ -11,7 +11,3 @@ See [Compatibility with open source Redis commands]({{<relref "/rs/references/co
 ## Redis clients
 
 You can use any standard [Redis client](https://redis.io/docs/clients/) with Redis Enterprise Software and Redis Cloud.
-
-## RESP compatibility
-
-Redis Enterprise Software and Redis Cloud support RESP2 and RESP3. See [RESP compatibility with Redis Enterprise]({{<relref "/rs/references/compatibility/resp">}}) for more information.

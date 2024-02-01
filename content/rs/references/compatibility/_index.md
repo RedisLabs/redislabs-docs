@@ -17,6 +17,10 @@ Redis (OSS Redis).
 
 {{< embed-md "rc-rs-oss-compatibility.md"  >}}
 
+## RESP compatibility
+
+Redis Enterprise Software and Redis Cloud support RESP2 and RESP3. See [RESP compatibility with Redis Enterprise]({{<relref "/rs/references/compatibility/resp">}}) for more information.
+
 ## Compatibility with open source Redis Cluster API
 
 Redis Enterprise supports [Redis OSS Cluster API]({{< relref "/rs/clusters/optimize/oss-cluster-api" >}}) if it is enabled for a database. For more information, see [Enable OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api" >}}).
