@@ -11,9 +11,9 @@ aliases: []
 
 ## Enhancements
 
-### New Backup location errors
+### New backup location errors
 
-The Redis Cloud console will now notify you through email and on the application if the back up location you specify does not exist or has the wrong permissions. See [Back up databases]({{<relref "rc/databases/back-up-data">}}) to learn how to set the right permissions for your back up locations.
+The Redis Cloud console will now notify you through email and on the application if the backup location you specify does not exist or has the wrong permissions. See [Back up databases]({{<relref "rc/databases/back-up-data">}}) to learn how to set the correct permissions for your backup locations.
 
 ### CIDR overlap detection
 
