@@ -168,11 +168,11 @@ An AWS S3 bucket can be used by only one Redis Cloud account. If you have more t
 
 ### Google Cloud Storage
 
-To store backups in an Google Cloud Storage [bucket](https://cloud.google.com/storage/docs/creating-buckets):
+To store backups in a Google Cloud Storage [bucket](https://cloud.google.com/storage/docs/creating-buckets):
 
 1. Sign in to the Google Cloud console.
 
-1. In the console menu, locate the _Storage_ section than select **Cloud Storage&nbsp;>&nbsp;Buckets**.
+1. In the console menu, locate the _Storage_ section, then select **Cloud Storage&nbsp;>&nbsp;Buckets**.
 
 1. Create or select a bucket.
 
@@ -210,7 +210,7 @@ To store your backup in Microsoft Azure Blob Storage, sign in to the Azure porta
 
 1. [Create a container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container) if you do not already have one.
 
-1. [Manage storage account access keys](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage) to find the primary access key of your storage account.
+1. Find your storage account's primary access key. See [Manage storage account access keys](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage) for instructions.
 
 Set your resource's **Backup Path** to the path of your storage account.
 
