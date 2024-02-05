@@ -67,11 +67,11 @@ The **Scalability** section is primarily for Flexible and Annual plans. Free and
 
 | Setting name          |Description|
 |:----------------------|:----------|
-| **Plan Memory limit** | Maximum size (in GB) for your database |
-| **Memory used**       | Memory currently used for your database  |
+| **Plan Memory limit** | Maximum size (in GB) for your database. |
+| **Memory used**       | Memory currently used for your database.  |
 | **Throughput**        | Defines throughput in terms of maximum operations per second for the database <br/><br/>Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). | |
-| **Hashing policy**    | Defines the [hashing policy]({{< relref "/rc/databases/configuration/clustering#manage-the-hashing-policy" >}})  |
-| **OSS Cluster API**       | Enables the [OSS Cluster API]({{< relref "/rc/databases/create-database#oss-cluster-api" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
+| **Hashing policy**    | Defines the [hashing policy]({{< relref "/rc/databases/configuration/clustering#manage-the-hashing-policy" >}}).  |
+| **OSS Cluster API**       | Enables the [OSS Cluster API]({{< relref "/rc/databases/create-database#oss-cluster-api" >}}) for a database.<br/><br/>When this option is enabled, you cannot define a custom hashing policy.|
 
 To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
 
