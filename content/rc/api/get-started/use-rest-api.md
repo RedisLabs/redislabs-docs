@@ -14,8 +14,12 @@ aliases: /rv/api/how-to/using-curl/
 You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](https://api.redislabs.com/v1/)) with any of the following tools:
 
 - The Swagger user interface
-- The cURL HTTP client
+- The cURL HTTP clientß
 - An HTTP client in any programming language
+
+{{< note >}}
+For the Redis Cloud API, there is a request limit of 400 requests per minute per API key. If you go past this limit, your API requests will fail.
+{{< /note >}}
 
 ## Swagger user interface
 
