@@ -52,7 +52,7 @@ Redis Enterprise Software is supported on several operating systems, cloud envi
 
 8. <a name="table-note-8" style="display: block; height: 80px; margin-top: -80px;"></a>Redis Enterprise Software [6.4.2-103]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-103">}}) and later supports RHEL 8.8.
 
-9. <a name="table-note-9" style="display: block; height: 80px; margin-top: -80px;"></a>Redis Enterprise Software [7.2.4-tba]({{<relref "/rs/release-notes/rs-6-4-2-releases/rs-6-4-2-103">}}) and later supports RHEL 8.9.
+9. <a name="table-note-9" style="display: block; height: 80px; margin-top: -80px;"></a>Redis Enterprise Software [7.2.4-102]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-102">}}) and later supports RHEL 8.9.
 
 ## Operating system limitations
 
