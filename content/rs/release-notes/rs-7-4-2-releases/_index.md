@@ -129,6 +129,20 @@ To prepare for the future removal of Redis 6.0:
 
 ## Known limitations
 
+#### New Cluster Manager UI limitations
+
+The following legacy UI features are not yet available in the new Cluster Manager UI:
+
+- Remove a node.
+
+    Use the REST API or legacy UI instead. See [Remove a cluster node]({{<relref "/rs/clusters/remove-node">}}) for instructions.
+
+- Purge an Active-Active instance.
+
+    Use [`crdb-cli crdb purge-instance`]({{<relref "/rs/references/cli-utilities/crdb-cli/crdb/purge-instance">}}) instead.
+
+- Search and export the log.
+
 #### OpenSSL compatibility issue for 7.4.2 modules on Amazon Linux 2
 
 Due to an OpenSSL 1.1 compatibility issue between modules and clusters, Redis Enterprise Software version 7.4.2-54 is not fully supported on Amazon Linux 2 clusters with databases that use the following modules: RedisGears, RediSearch, or RedisTimeSeries.
