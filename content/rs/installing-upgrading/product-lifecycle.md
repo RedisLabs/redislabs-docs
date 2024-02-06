@@ -43,7 +43,7 @@ This update to the EOL policy ensures customers have a lead time of at least 18 
 | Version - Release date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
 | 7.4 – February 2024				        | - |
-| 7.2 – August 2023				            | August 31, 2026 |
+| 7.2 – August 2023				            | August 31, 2025 |
 | 6.4 – February 2023						| February 28, 2025 |
 | 6.2 – August 2021                         | August 31, 2024  |
 | 6.0 – May 2020                            | May 31, 2022  |
