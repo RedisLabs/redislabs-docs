@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.4.2
 linkTitle: 7.4.2 releases
-description: New Cluster Manager UI enhancements, including Active-Active database management. Full TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Module management enhancements.
+description: New Cluster Manager UI enhancements, including Active-Active database management. Full TLS 1.3 support. Automatic recovery configuration. IPv6 support for internal traffic. Maintenance mode enhancements. Module management enhancements. RHEL 9 support.
 compatibleOSSVersion: Redis 7.2.0
 weight: 70
 alwaysopen: false
@@ -28,6 +28,8 @@ This version offers:
 - Module management enhancements
 
 - RHEL 7 and Oracle Linux 7, which were previously deprecated, are no longer supported
+
+- RHEL 9 support
 
 ## Detailed release notes
 
@@ -90,6 +92,7 @@ To prepare for the future removal of Redis 6.0:
 | 18.04 | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported"><span title="Supported">&#x2705;</span></span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
 | 16.04 | – | <span title="End of life">&#x274c;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
 | **RHEL & CentOS**<sup>[2](#table-note-2)</sup>
+| 9.0-9.3 | <span title="Supported">&#x2705;</span> | – | – | – | – | – | – | – |
 | 8.9| <span title="Supported">&#x2705;</span> | – | – | – | – | – | – | – |
 | 8.8 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span><sup>[8](#table-note-8)</sup> | – | – | – | – | – |
 | 8.7 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – | – | – | – |
@@ -131,3 +134,7 @@ To prepare for the future removal of Redis 6.0:
 Due to an OpenSSL 1.1 compatibility issue between modules and clusters, Redis Enterprise Software version 7.4.2-54 is not fully supported on Amazon Linux 2 clusters with databases that use the following modules: RedisGears, RediSearch, or RedisTimeSeries.
 
 This issue will be fixed in a future maintenance release.
+
+#### RedisGraph prevents upgrade to RHEL 9 
+
+You cannot upgrade from a prior RHEL version to RHEL 9 if the Redis Enterprise cluster contains a RedisGraph module, even if unused by any database. The [RedisGraph module has reached End-of-Life](https://redis.com/blog/redisgraph-eol/) and is completely unavailable in RHEL 9.
