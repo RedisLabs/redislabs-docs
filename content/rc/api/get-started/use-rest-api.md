@@ -18,7 +18,7 @@ You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](ht
 - An HTTP client in any programming language
 
 {{< note >}}
-For the Redis Cloud API, there is a request limit of 400 requests per minute per API key. If you go past this limit, your API requests will fail.
+For the Redis Cloud API, there is a request limit of 400 requests per minute per Account API key. If you go past this limit, your API requests will fail.
 {{< /note >}}
 
 ## Swagger user interface
