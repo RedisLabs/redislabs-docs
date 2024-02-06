@@ -7,11 +7,8 @@ alwaysopen: false
 headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/actions
-         /rs/references/rest-api/actions.md
          /rs/references/restapi/actions
-         /rs/references/restapi/actions.md
          /rs/references/rest_api/actions
-         /rs/references/rest_api/actions.md
 ---
 
 | Method | Path | Description |
