@@ -34,15 +34,6 @@ Usage: redis-di create-k8s-secret [OPTIONS]
 
   K8S Secret type
 
-- `secret_name` (REQUIRED):
-
-  - Type: STRING
-  - Default: `none`
-  - Usage: `--secret-name
--s`
-
-  Secret name
-
 - `namespace`:
 
   - Type: STRING
@@ -72,7 +63,6 @@ Options:
                                   [default: INFO]
   -t, --secret-type [generic|basic-auth|tls]
                                   K8S Secret type  [required]
-  -s, --secret-name TEXT          Secret name  [required]
   -n, --namespace TEXT            Secret name
   --help                          Show this message and exit.
 ```
