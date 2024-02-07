@@ -12,7 +12,6 @@ aliases: /rv/api/how-to/using-curl/
          /rc/api/get-started/use-rest-api.md         
 ---
 You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](https://api.redislabs.com/v1/)) with any of the following tools:
-ß
 - The Swagger user interface
 - The cURL HTTP client
 - An HTTP client in any programming language
