@@ -25,15 +25,6 @@ Usage: redis-di create-k8s-secret [OPTIONS]
   - Usage: `--log-level
 -l`
 
-- `secret_type` (REQUIRED):
-
-  - Type: Choice([<SecretType.GENERIC: 'generic'>, <SecretType.BASIC_AUTH: 'basic-auth'>, <SecretType.TLS: 'tls'>])
-  - Default: `none`
-  - Usage: `--secret-type
--t`
-
-  K8S Secret type
-
 - `namespace`:
 
   - Type: STRING
@@ -61,8 +52,6 @@ Usage: redis-di create-k8s-secret [OPTIONS]
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
-  -t, --secret-type [generic|basic-auth|tls]
-                                  K8S Secret type  [required]
   -n, --namespace TEXT            Secret name
   --help                          Show this message and exit.
 ```
