@@ -17,7 +17,7 @@ Redis (OSS Redis).
 
 ## RESP compatibility
 
-Redis Enterprise Software and Redis Cloud support RESP2 and RESP3. In Redis Cloud, you can choose between RESP2 and RESP3 when you [create a database]({{<relref "/rc/databases/create-database">}}). For more information about the different RESP versions, see the [Redis serialization protocol specification](https://redis.io/docs/reference/protocol-spec/#resp-versions).
+Redis Enterprise Software and Redis Cloud support RESP2 and RESP3. In Redis Cloud, you can choose between RESP2 and RESP3 when you [create a database]({{<relref "/rc/databases/create-database">}}) and you can change it when you [edit a database]({{<relref "/rc/databases/view-edit-database">}}). For more information about the different RESP versions, see the [Redis serialization protocol specification](https://redis.io/docs/reference/protocol-spec/#resp-versions).
 
 ## Compatibility with open source Redis Cluster API
 
