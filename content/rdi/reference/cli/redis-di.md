@@ -48,7 +48,6 @@ Options:
 Commands:
   add-context           Adds a new context
   create                Creates the RDI Database instance
-  create-k8s-secret     Creates secret of specified type inside of K8S
   delete                Deletes RDI database permanently
   delete-all-contexts   Deletes all contexts
   delete-context        Deletes a context
@@ -64,6 +63,7 @@ Commands:
   reset                 Resets the pipeline into initial full sync mode
   scaffold              Generates configuration files for RDI and...
   set-context           Sets a context to be the active one
+  set-secret            Creates secret of a specified type
   start                 Starts the pipeline
   status                Displays the status of the pipeline end to end
   stop                  Stops the pipeline
