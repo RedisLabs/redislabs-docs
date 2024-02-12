@@ -11,9 +11,13 @@ aliases: []
 
 ## Enhancements
 
+### Dataset size alert set by default
+
+When you select [alerts]({{<relref "/rc/databases/create-database#alerts-section">}}) during database creation, the **Dataset size has reached** alert is now set by default.
+
 ### Separated capability selection
 
-When you select advanced capabilities, selecting **Search and query** will no longer automatically select **JSON**. You can still combine the **Search and query** and **JSON** advanced capabilities.
+When you select [advanced capabilities]({{<relref "/rc/databases/create-database#modules">}}) during database creation, selecting **Search and query** will no longer automatically select **JSON**. You can still combine the **Search and query** and **JSON** advanced capabilities.
 
 ### New backup location errors
 
