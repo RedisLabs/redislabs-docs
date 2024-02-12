@@ -70,7 +70,7 @@ The following settings are defined in the **General settings** of the **Setup** 
 
 The **Version** section lets you choose the Redis version of your database. Choose **Redis 7.2** if you want to use the latest advanced features of Redis.
 
-[Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) introduces several changes to existing Redis commands. see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
+[Redis 7.2]({{<relref "/rc/changelog/june-2023#redis-72-preview">}}) introduces several changes to existing Redis commands; see the list of [breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) for more details.
 
 ### Advanced options {#advanced-options}
 

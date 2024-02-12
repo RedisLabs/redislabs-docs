@@ -35,10 +35,6 @@ From here, you can:
 
     {{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Select the Upgrade plan button to update your subscription settings." >}}{{< /image >}}
 
-- Select the **New Database** button to [create a new database]({{<relref "rc/databases/create-database">}}) for your subscription.
-
-    {{<image filename="images/rc/button-database-new.png" alt="Use the **New database** button to create a new database for your subscription." >}}{{< /image >}}
-
 - Select the **Overview** tab to view and edit subscription details.
 
 The following sections provide more details.
@@ -58,7 +54,7 @@ To change your subscription tier, select the desired tier from the list and sele
 {{<image filename="images/rc/subscription-change-fixed-tiers.png" width="100%" alt="Select the desired subscription tier from the ones shown." >}}{{< /image >}}
 
 Each tier in a Fixed plan provides a variety of benefits, including increased memory and number of connections.
-For a comparison of available tiers, see [Fixed size subscription tiers]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}}).
+For a comparison of available tiers, see [Fixed plan subscription tiers]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-plan-subscription-tiers">}}).
 
 When you change your plan tier, your data and endpoints are not disrupted.  
 

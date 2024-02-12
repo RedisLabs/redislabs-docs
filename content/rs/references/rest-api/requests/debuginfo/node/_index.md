@@ -9,6 +9,10 @@ categories: ["RS"]
 aliases: 
 ---
 
+{{<banner-article>}}
+This REST API path is deprecated as of Redis Enterprise Software version 7.4.2. Use the new path [`/v1/nodes/debuginfo`]({{<relref "/rs/references/rest-api/requests/nodes/debuginfo">}}) instead.
+{{</banner-article>}}
+
 | Method | Path | Description |
 |--------|------|-------------|
 | [GET](#get-debuginfo-node) | `/v1/debuginfo/node` | Get debug info for the current node |

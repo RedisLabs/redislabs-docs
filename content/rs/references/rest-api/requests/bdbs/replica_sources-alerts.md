@@ -50,7 +50,7 @@ Get all alert states for all replica sources of all BDBs.
 
 Returns a hash of alert UIDs and the alerts states for each BDB.
 
-See [REST API alerts overview] for a description of the alert state object.
+See [REST API alerts overview]({{<relref "/rs/references/rest-api/objects/alert">}}) for a description of the alert state object.
 
 #### Example JSON body
 

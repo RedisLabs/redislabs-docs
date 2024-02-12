@@ -12,7 +12,7 @@ aliases: /rc/how-to/all-memcached-cloud/
 The [FLUSHALL](https://redis.io/commands/flushall) command provides a fast way to remove all data from a database.
 
 {{< note >}}
-When you _flush_ a database, you remove all data.  This is a prerequisite to deleting a database.<br/><br/>
+When you _flush_ a database, you remove all data.<br/><br/>
 
 This _permanently_ removes all data from the database.  The data cannot be recovered, except by restoring from earlier backups.<br/><br/>
 
@@ -27,10 +27,10 @@ There are several ways to do this, depending on your circumstances and environme
 
 The following sections provide some options:
 
-- [`redis-cli`]({{<relref "rc/databases/flush-data#the-redis-cli-utility">}})
-- [RedisInsight CLI]({{<relref "rc/databases/flush-data#redisinsight-cli">}})
-- [`netcat`]({{<relref "rc/databases/flush-data#the-netcat-utility">}})
-- [SASL connection]({{<relref "rc/databases/flush-data#sasl-connection">}})
+- [`redis-cli`](#redis-cli)
+- [RedisInsight CLI](#redisinsight)
+- [`netcat`](#netcat)
+- [SASL connection](#sasl-connection)
 
 ### redis-cli
 
@@ -48,7 +48,7 @@ redis-cli -h redis-12345.server.cloud.redislabs.example.com -p 12345 -a xyz flus
 
 ### RedisInsight
 
-If you install [RedisInsight]({{<relref "/ri/">}}) and [add your database]({{<relref "rc/rc-quickstart#using-redisinsight">}}), you can use the RedisInsight workbench to run commands:
+If you install [RedisInsight](https://redis.io/docs/connect/insight/) and [add your database]({{<relref "rc/rc-quickstart#using-redisinsight">}}), you can use the RedisInsight workbench to run commands:
 
 1.  Start RedisInsight and connect to your database.
 

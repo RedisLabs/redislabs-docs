@@ -8,12 +8,42 @@
     "RoutingRules": [
         {
             "Condition": {
-                "KeyPrefixEquals": "7.2/"
+                "KeyPrefixEquals": "7.4/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "7.2/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "7.2/ri/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "7.2/rdi/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rdi/"
             }
         },
         {
@@ -178,26 +208,6 @@
         },
         {
             "Condition": {
-                "KeyPrefixEquals": "6.2/platforms/"
-            },
-            "Redirect": {
-                "HostName": "docs.redis.com",
-                "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/platforms/"
-            }
-        },
-        {
-            "Condition": {
-                "KeyPrefixEquals": "6.0/platforms/"
-            },
-            "Redirect": {
-                "HostName": "docs.redis.com",
-                "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/platforms/"
-            }
-        },
-        {
-            "Condition": {
                 "KeyPrefixEquals": "rdi-preview/rc/"
             },
             "Redirect": {
@@ -244,16 +254,6 @@
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/ri/"
-            }
-        },
-        {
-            "Condition": {
-                "KeyPrefixEquals": "5.4/platforms/"
-            },
-            "Redirect": {
-                "HostName": "docs.redis.com",
-                "Protocol": "https",
-                "ReplaceKeyPrefixWith": "5.6/platforms/"
             }
         },
         {
@@ -338,22 +338,12 @@
         },
         {
             "Condition": {
-                "KeyPrefixEquals": "platforms/"
-            },
-            "Redirect": {
-                "HostName": "docs.redis.com",
-                "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/platforms/"
-            }
-        },
-        {
-            "Condition": {
                 "KeyPrefixEquals": "kubernetes/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/platforms/kubernetes"
+                "ReplaceKeyPrefixWith": "latest/kubernetes"
             }
         },
         {
@@ -363,7 +353,7 @@
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/platforms/kubernetes"
+                "ReplaceKeyPrefixWith": "latest/kubernetes"
             }
         },
         {
@@ -454,16 +444,6 @@
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/glossary"
-            }
-        },
-        {
-            "Condition": {
-                "KeyPrefixEquals": "latest/rc/how-to/creating-aws-user-redis-enterprise-vpc/"
-            },
-            "Redirect": {
-                "HostName": "docs.redis.com",
-                "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/rc/how-to/creating-iam-resources/creating-aws-user-redis-enterprise-vpc/"
             }
         },
         {

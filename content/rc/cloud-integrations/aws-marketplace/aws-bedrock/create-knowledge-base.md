@@ -43,7 +43,7 @@ To use your Redis database to create a knowledge base on Amazon Bedrock:
     Fill in the fields with the following information:
 
     - **Endpoint URL**: Public endpoint of your database. This can be found in the Redis Cloud [admin console](https://app.redislabs.com/) from the database list or from the **General** section of the **Configuration** tab for the source database.
-    - **Credentials Secret ARN**: [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your [database credentials secret](#store-database-credentials-in-an-amazon-secret).
+    - **Credentials Secret ARN**: [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) of your [database credentials secret]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/set-up-redis#store-secret" >}}).
     - **Vector Index name**: Name of the [vector index]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/set-up-redis#create-vector-index" >}}) 
     - **Vector field**: Name of the [vector field]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/set-up-redis#create-vector-index" >}}) of the vector index
     - **Text field**: Name of the [text field]({{< relref  "rc/cloud-integrations/aws-marketplace/aws-bedrock/set-up-redis#create-vector-index" >}}x) of the vector index

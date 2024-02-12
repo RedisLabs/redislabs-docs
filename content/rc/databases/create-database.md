@@ -43,7 +43,7 @@ The available settings vary according to your subscription plan:
 | Setting name              | Description                                                                                                                                                                                                                                                                                                       |
 |:--------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Subscription**          | Read-only description of your subscription plan, including cloud provider and region                                                                                                                                                                                                                              |
-| **Active-Active Redis**   | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_)                                                                                                                                                                                             |
+| **Active-Active Redis**   | Checked when the subscription supports Active-Active databases (_Flexible or Annual subscriptions only_)                                                                                                                                                                                             |
 | **Auto Tiering**          | Checked when the subscription supports Auto Tiering (_Flexible or Annual subscriptions only_)                                                                                                                                                                                                                     |
 | **Database name**         | A name for your database (_required_)                                                                                                                                                                                                                                                                             |
 | **Database port**         | Automatically or manually assigns a database port (range: 10000-19999) (_Flexible or Annual subscriptions only_)                                                                                                                                                                                                  |
@@ -114,10 +114,10 @@ The **Scalability** section is available only for Flexible and Annual plans.
 
 | Setting name        | Description                                                                                                                                                                                                                                                                                                                                   |
 |:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Memory limit**    | Maximum size (in GB) for your database                                                                                                                                                                                                                                                                                                        |
+| **Memory limit**    | Maximum size (in GB) for your database.                                                                                                                                                                                                                                                                                                        |
 | **Throughput**      | Defines throughput in terms of maximum operations per second for the database <br/><br/>Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). |
-| **Hashing policy**  | Defines the [hashing policy]({{< relref "/rs/databases/durability-ha/clustering#supported-hashing-policies" >}})                                                                                                                                                                                                                              |
-| **OSS Cluster API** | Enables the [OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy                                                                                                                                                     |
+| **Hashing policy**  | Defines the [hashing policy]({{< relref "/rc/databases/configuration/clustering#manage-the-hashing-policy" >}}).                                                                                                                                                                                                                              |
+| **OSS Cluster API** | Enables the [OSS Cluster API](#oss-cluster-api) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy.                                                                                                                                                     |
 
 To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/durability-ha/clustering.md" >}}).
 
@@ -137,6 +137,12 @@ Here are some general guidelines:
 
 Memory limits in Redis Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}})
 
+### OSS Cluster API
+
+{{< embed-md "oss-cluster-api-intro.md"  >}}
+
+Review [Redis OSS Cluster API architecture]({{< relref "/rs/clusters/optimize/oss-cluster-api" >}}) to determine if you should enable this feature for your database.
+
 ## Durability section
 
 The **Durability** section helps you keep your database (and your data) available when problems occur.
@@ -150,7 +156,7 @@ The **Durability** section helps you keep your database (and your data) availabl
 | **Data persistence**     | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type            |
 | **Data eviction policy** | Configures which [policy]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) is applied when your database reaches its memory limit              |
 | **Remote backup**        | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}) |
-| **Active-Passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database                                                                           |
+| **Active-Passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. See [Migrate data]({{<relref "/rc/databases/migrate-databases.md">}}) for more information.           |
 
 ## Tags section
 
@@ -172,7 +178,7 @@ The **Security** section helps you control access to your database.
 | **Default user**                   | When enabled, permits access using a simple password                                                                                                                                  |
 | **Redis password**                 | Password assigned to the database when created                                                                                                                                        |  
 | **CIDR allow list**                | (_paid Fixed, Flexible, or Annual subscriptions only_) [Allow list]({{< relref "/rc/security/cidr-whitelist.md" >}}) of IP addresses/security groups permitted to access the database |
-| **Transport layer security (TLS)** | (_Flexible or Annual subscriptions only_) Enables [transport security layer]({{< relref "/rc/security/database-security/tls-ssl.md" >}})(TLS) encryption for database access          |
+| **Transport layer security (TLS)** | (_Flexible or Annual subscriptions only_) Enables [transport layer security]({{< relref "/rc/security/database-security/tls-ssl.md" >}}) (TLS) encryption for database access          |
 
 
 ## Alerts section
