@@ -33,7 +33,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 8001 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/databases/durability-ha/discovery-service.md" >}}) |
 | TCP | 8000, 8070, 8071, 9090, 9125 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Metrics exported and managed by the web proxy |
 | TCP | 8443 | <span title="Configurable">&#x2705; Yes</span> | Internal, External | Secure (HTTPS) access to the management web UI |
-| TCP | 9081 | <span title="Not configurable">&#x274c; No</span> | Internal | Active-Active management (internal) |
+| TCP | 9081 | <span title="Configurable">&#x2705; Yes</span> | Internal | CRDB coordinator for Active-Active management (internal) |
 | TCP | 9443 (Recommended), 8080 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | Database traffic |
 | UDP | 53, 5353 | <span title="Not configurable">&#x274c; No</span> | Internal, External | DNS/mDNS traffic |
@@ -76,9 +76,9 @@ Redis Enterprise Software reserves some ports by default (`system_reserved_ports
     { "reserved_ports": ["11000", "13000-13010"] }
     ```
 
-### Change the admin console port
+### Change the Cluster Manager UI port
 
-The Redis Enterprise Software admin console uses port 8443, by default. You can change this to a custom port as long as the new port is not in use by another process.
+The Redis Enterprise Software Cluster Manager UI uses port 8443, by default. You can change this to a custom port as long as the new port is not in use by another process.
 
 To change this port, run:
 
@@ -165,7 +165,7 @@ After you turn off HTTP support, traffic sent to the unencrypted API endpoint is
 
 ### HTTP to HTTPS redirection
 Starting with version 6.0.12, you cannot use automatic HTTP to HTTPS redirection.
-To poll metrics from the `metrics_exporter` or to access the admin console, use HTTPS in your request. HTTP requests won't be automatically redirected to HTTPS for those services. 
+To poll metrics from the `metrics_exporter` or to access the Cluster Manager UI, use HTTPS in your request. HTTP requests won't be automatically redirected to HTTPS for those services. 
 
 ## Nodes on different VLANs
 

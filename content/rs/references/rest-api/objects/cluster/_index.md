@@ -20,6 +20,7 @@ An API object that represents the cluster.
 | cnm_https_port | integer, (range:&nbsp;1024-65535) | API HTTPS listening port |
 | control_cipher_suites | string | Specifies the enabled ciphers for the control plane. The ciphers are specified in the format understood by the BoringSSL library. |
 | control_cipher_suites_tls_1_3 | string | Specifies the enabled TLS 1.3 ciphers for the control plane. The ciphers are specified in the format understood by the BoringSSL library. (read-only) |
+| crdb_coordinator_port | integer, (range:&nbsp;1024-65535) (default:&nbsp;9081) | CRDB coordinator port |
 | crdt_rest_client_retries | integer | Maximum number of retries for the REST client used by the Active-Active management API |
 | crdt_rest_client_timeout | integer | Timeout for REST client used by the Active-Active management API |
 | created_time | string | Cluster creation date (read-only) |
