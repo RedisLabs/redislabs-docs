@@ -34,12 +34,12 @@ Usage: redis-di set-secret [OPTIONS]
 
   Silent install. Do not prompt to enter missing parameters
 
-- `type`:
+- `secret_type`:
 
   - Type: Choice(['GENERIC', 'BASIC_AUTH', 'TLS'])
   - Default: `none`
   - Usage: `-t
---type`
+--secret-type`
 
   Secret type (required in -s mode).
 
@@ -135,7 +135,7 @@ Options:
                                   [default: INFO]
   -s, --silent                    Silent install. Do not prompt to enter
                                   missing parameters
-  -t, --type [GENERIC|BASIC_AUTH|TLS]
+  -t, --secret-type [GENERIC|BASIC_AUTH|TLS]
                                   Secret type (required in -s mode).
   -sn, --secret-name TEXT         Secret name (required in -s mode).
   -u, --user TEXT                 User (required in -s mode when -t is
