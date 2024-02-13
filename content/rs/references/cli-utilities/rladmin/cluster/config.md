@@ -58,7 +58,7 @@ Updates the cluster configuration.
 | control_cipher_suites | list of ciphers | Cipher suites used for TLS connections to the admin console (specified in the format understood by the BoringSSL library)<br />(previously named `cipher_suites`) |
 | cm_port | integer | UI server listening port |
 | cm_session_timeout | integer | Timeout in minutes for the CM session
-| cmn_http_port | integer | HTTP REST API server listening port |
+| cnm_http_port | integer | HTTP REST API server listening port |
 | cnm_https_port | integer | HTTPS REST API server listening port |
 | data_cipher_list | list of ciphers | Cipher suites used by the the data plane (specified in the format understood by the OpenSSL library) |
 | data_cipher_suites_tls_1_3 |  list of ciphers | Specifies the enabled TLS 1.3 ciphers for the data plane |
