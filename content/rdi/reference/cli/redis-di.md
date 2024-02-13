@@ -63,7 +63,6 @@ Commands:
   reset                 Resets the pipeline into initial full sync mode
   scaffold              Generates configuration files for RDI and...
   set-context           Sets a context to be the active one
-  set-secret            Creates secret of a specified type
   start                 Starts the pipeline
   status                Displays the status of the pipeline end to end
   stop                  Stops the pipeline
