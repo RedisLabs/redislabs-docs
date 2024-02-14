@@ -13,7 +13,7 @@ aliases: []
 
 ### Dataset size alert set by default
 
-When you select [alerts]({{<relref "/rc/databases/create-database#alerts-section">}}) during database creation, the **Dataset size has reached** alert is now set by default.
+The **Dataset size has reached** [alert]({{<relref "/rc/databases/create-database#alerts-section">}}) is now set by default when you create your first database in a Flexible subscription.
 
 ### Separated capability selection
 
