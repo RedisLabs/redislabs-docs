@@ -13,7 +13,9 @@ Creates secret of a specified type
 ## Usage
 
 ```
-Usage: redis-di set-secret [OPTIONS]
+Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
+                           password|target-db-username|target-db-password}
+                           [VALUE]
 ```
 
 ## Options
@@ -25,30 +27,17 @@ Usage: redis-di set-secret [OPTIONS]
   - Usage: `--log-level
 -l`
 
-- `silent`:
-
-  - Type: BOOL
-  - Default: `false`
-  - Usage: `-s
---silent`
-
-  Silent install. Do not prompt to enter missing secret value.
-
 - `type` (REQUIRED):
 
   - Type: Choice([<SecretType.SOURCE_DB_USERNAME: 'source-db-username'>, <SecretType.SOURCE_DB_PASSWORD: 'source-db-password'>, <SecretType.TARGET_DB_PASSWORD: 'target-db-username'>, <SecretType.TARGET_DB_USERNAME: 'target-db-password'>])
   - Default: `none`
-  - Usage: `-t
---type`
+  - Usage: `type`
 
 - `value`:
 
   - Type: STRING
   - Default: `none`
-  - Usage: `-v
---value`
-
-  Secret value. Only provide in -s mode
+  - Usage: `value`
 
 - `help`:
 
@@ -61,17 +50,14 @@ Usage: redis-di set-secret [OPTIONS]
 ## CLI help
 
 ```
-Usage: redis-di set-secret [OPTIONS]
+Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
+                           password|target-db-username|target-db-password}
+                           [VALUE]
 
   Creates secret of a specified type
 
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
-  -s, --silent                    Silent install. Do not prompt to enter
-                                  missing secret value.
-  -t, --type [source-db-username|source-db-password|target-db-username|target-db-password]
-                                  [required]
-  -v, --value TEXT                Secret value. Only provide in -s mode
   --help                          Show this message and exit.
 ```
