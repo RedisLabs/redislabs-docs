@@ -23,6 +23,7 @@ Updates the cluster configuration.
         [ cm_session_timeout <minutes> ]
         [ cnm_http_port <number> ]
         [ cnm_https_port <number> ]
+        [ crdb_coordinator_port <number> ]
         [ data_cipher_list <openSSL cipher list> ]
         [ data_cipher_suites_tls_1_3 <openSSL cipher list> ]
         [ debuginfo_path <filepath> ]
@@ -60,6 +61,7 @@ Updates the cluster configuration.
 | cm_session_timeout | integer | Timeout in minutes for the CM session
 | cmn_http_port | integer | HTTP REST API server listening port |
 | cnm_https_port | integer | HTTPS REST API server listening port |
+| crdb_coordinator_port | integer, (range:&nbsp;1024-65535) (default:&nbsp;9081) | CRDB coordinator port |
 | data_cipher_list | list of ciphers | Cipher suites used by the the data plane (specified in the format understood by the OpenSSL library) |
 | data_cipher_suites_tls_1_3 |  list of ciphers | Specifies the enabled TLS 1.3 ciphers for the data plane |
 | debuginfo_path | filepath | Local directory to place generated support package files |
