@@ -47,7 +47,6 @@ Options:
 
 Commands:
   add-context           Adds a new context
-  configure             Configures the RDI Database so it is ready to...
   create                Creates the RDI Database instance
   delete                Deletes RDI database permanently
   delete-all-contexts   Deletes all contexts
@@ -56,13 +55,17 @@ Commands:
   describe-job          Describes a transformation engine's job
   dump-support-package  Dumps RDI support package
   get-rejected          Returns all the stored rejected entries
+  install               Installs RDI
+  install-collector     Installs RDI Redis Collector on Redis BDB with...
+  install-redisgears    Installs RedisGears module on Redis cluster
   list-contexts         Lists all saved contexts
   list-jobs             Lists transformation engine's jobs
   monitor               Monitors RDI by collecting metrics and exporting...
   reset                 Resets the pipeline into initial full sync mode
   scaffold              Generates configuration files for RDI and...
   set-context           Sets a context to be the active one
-  set-secret            Writes a secret to Redis secret store
+  set-secret            Creates secret of a specified type
+  set-secret1           Creates secret of a specified type
   start                 Starts the pipeline
   status                Displays the status of the pipeline end to end
   stop                  Stops the pipeline
