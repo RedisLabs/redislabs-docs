@@ -28,7 +28,7 @@ To install or upgrade a module on a [Redis Enterprise]({{<relref "/rs">}}) clust
 
 - For earlier versions of Redis Enterprise modules that are no longer available from the Redis download center, [contact support](https://redis.com/company/support/).
 
-- For custom-packaged modules, either download a [custom-packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{<relref "/stack/install/packaging-modules">}}).
+- For custom-packaged modules, download a [custom-packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer.
 
 ## Add a module to a cluster
 

@@ -12,5 +12,3 @@ Several modules, which provide Redis Stack features, come packaged with [Redis E
 
 1. [Install a module package]({{<relref "/stack/install/add-module-to-cluster">}}) on the cluster.
 1. [Enable a module]({{<relref "/stack/install/add-module-to-database">}}) for a new database or [upgrade a module]({{<relref "/stack/install/upgrade-module">}}) in an existing database.
-
-For custom modules not packaged and certified by Redis, [package them with the RAMP utility]({{<relref "/stack/install/packaging-modules">}}) before installation on a Redis Enterprise cluster.
