@@ -1,0 +1,57 @@
+---
+Title: redis-di install
+linkTitle: redis-di install
+description: Installs RDI
+weight: 10
+alwaysopen: false
+categories: ["redis-di"]
+aliases:
+---
+
+Installs RDI
+
+## Usage
+
+```
+Usage: redis-di install [OPTIONS]
+```
+
+## Options
+
+- `log_level`:
+
+  - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
+  - Default: `info`
+  - Usage: `--log-level
+-l`
+
+- `file`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `-f
+--file`
+
+  A scaffold for silent installation
+
+- `help`:
+
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--help`
+
+  Show this message and exit.
+
+## CLI help
+
+```
+Usage: redis-di install [OPTIONS]
+
+  Installs RDI
+
+Options:
+  -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
+                                  [default: INFO]
+  -f, --file TEXT                 A scaffold for silent installation
+  --help                          Show this message and exit.
+```
