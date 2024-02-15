@@ -21,14 +21,12 @@ If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md"
 
 Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown here (updated January 2024):
 
-| **Max DB size &nbsp;** | **Concurrent<br/>connections<br/>per database** | **CIDR<br/> allow rules** |
-|---|---|---|
-| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 30 | 1 |
-| 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 256 | 4-8 |
-| 1 GB &nbsp;&nbsp;&nbsp;&nbsp; | 1024 | 4-8 |
-| 2.5 GB &nbsp;&nbsp;&nbsp;&nbsp; | Unlimited | 4-8 |
-| 5 GB &nbsp;&nbsp;&nbsp;&nbsp; | Unlimited | 4-16 |
-| 12 GB &nbsp;&nbsp;&nbsp;&nbsp; | Unlimited | 4-32 |
+| **Max&nbsp;DB&nbsp;size&nbsp;** | **30&nbsp;MB&nbsp;(Free)** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
+|---|---|---|---|---|---|---|
+| **Concurrent<br/>connections<br/>per database** | 30 | 256 | 1024 | Unlimited | Unlimited | Unlimited |
+| **CIDR<br/> allow rules** | 1 | 4-8 | 4-8 | 4-8 | 4-16 | 4-32 |
+| **Monthly<br/> total network<br/> bandwidth** | 5 GB | 100 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
+| **Maximum<br/> throughput** | 100 ops/sec | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
