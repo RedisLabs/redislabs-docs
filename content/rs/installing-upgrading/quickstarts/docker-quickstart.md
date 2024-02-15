@@ -21,7 +21,7 @@ aliases: [
 
 ---
 {{< warning >}}
-Docker containers are currently only supported for development and test environments, not for production. Use [Redis Enterprise on Kubernetes](<relref "/rs-docker-bug-bash/kubernetes/">) for a supported containerized deployment.
+Docker containers are currently only supported for development and test environments, not for production. Use [Redis Enterprise on Kubernetes]({{<relref "/kubernetes">}}) for a supported containerized deployment.
 {{< /warning >}}
 
 For testing purposes, you can run Redis Enterprise Software on Docker containers on
@@ -110,7 +110,7 @@ The database you created uses port `12000`, which is also mapped from the Docker
 ## Test different topologies
 
 {{< warning >}}
-Docker containers are currently only supported for development and test environments, not for production. Use [Redis Enterprise on Kubernetes](<relref "/rs-docker-bug-bash/kubernetes/">) for a supported containerized deployment.
+Docker containers are currently only supported for development and test environments, not for production. Use [Redis Enterprise on Kubernetes]({{<relref "/kubernetes">}}) for a supported containerized deployment.
 {{< /warning >}}
 
 When deploying Redis Enterprise Software using Docker for testing, several common topologies are available, according to your requirements:
