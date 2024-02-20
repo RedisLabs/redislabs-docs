@@ -28,7 +28,7 @@ Fixed plan pricing scales according to the memory size of the database defined i
 | **Monthly<br/> total network<br/> bandwidth**[^1] | 5 GB | 100 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
 | **Maximum<br/> throughput** | 100 ops/sec | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
 
-[^1]: In addition to the monthly total network bandwidth limit, there is also a limit on the maximum bandwidth per second. Each operation takes approximately 1 KiB of bandwidth, so you can find this limit by dividing the maximum throughput for each plan by 1024. 
+[^1]: In addition to the monthly total network bandwidth limit, there is also a limit on the maximum bandwidth per second which is based on the maximum throughput. Each operation takes approximately 1 KiB of bandwidth, so you can find this limit by dividing the maximum throughput for each plan by 1024. 
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
