@@ -19,14 +19,16 @@ If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md"
 
 ## Fixed plan subscription tiers
 
-Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown here (updated January 2024):
+Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown here (updated February 2024):
 
 | **Max&nbsp;DB&nbsp;size&nbsp;** | **30&nbsp;MB&nbsp;(Free)** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
 |---|---|---|---|---|---|---|
 | **Concurrent<br/>connections<br/>per database** | 30 | 256 | 1024 | Unlimited | Unlimited | Unlimited |
 | **CIDR<br/> allow rules** | 1 | 4-8 | 4-8 | 4-8 | 4-16 | 4-32 |
-| **Monthly<br/> total network<br/> bandwidth** | 5 GB | 100 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
+| **Monthly<br/> total network<br/> bandwidth**[^1] | 5 GB | 100 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
 | **Maximum<br/> throughput** | 100 ops/sec | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
+
+[^1]: In addition to the monthly total network bandwidth limit, there is also a limit on the maximum bandwidth per second. Each operation takes approximately 1 KiB of bandwidth, so you can find this limit by dividing the maximum throughput for each plan by 1024. 
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
@@ -91,3 +93,9 @@ When you create your subscription, there's a brief pause while your request is p
 To create your database, select the **New Database** button and then fill in the appropriate details.
 
 To learn more, see [Create a database]({{<relref "rc/databases/create-database.md">}}).
+
+<!-- 
+    Individual footnotes are rendered below the following heading.  
+    Any additional sections need to be placed above this comment.
+-->
+## Footnotes
