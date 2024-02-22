@@ -35,7 +35,8 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 8443 | <span title="Configurable">&#x2705; Yes</span> | Internal, External | Secure (HTTPS) access to the management web UI |
 | TCP | 9081 | <span title="Configurable">&#x2705; Yes</span> | Internal | CRDB coordinator for Active-Active management (internal) |
 | TCP | 9443 (Recommended), 8080 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
-| TCP | 10000-19999 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | Database traffic |
+| TCP | 10050 | <span title="Not configurable">&#x274c; No</span> | Internal, External | Zabbix monitoring |
+| TCP | 10000-10049, 10051-19999 | <span title="Configurable">&#x2705; Yes</span> | Internal, External, Active-Active | Database traffic |
 | UDP | 53, 5353 | <span title="Not configurable">&#x274c; No</span> | Internal, External | DNS/mDNS traffic |
 | ICMP | * | <span title="Not configurable">&#x274c; No</span> | Internal | Connectivity checking between nodes |
 | TCP | 1968 | <span title="Not configurable">&#x274c; No</span> | Internal | Proxy traffic |
