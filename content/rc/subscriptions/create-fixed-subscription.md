@@ -33,8 +33,8 @@ There are some differences between plans for the different replication options. 
 
 | **Max&nbsp;DB&nbsp;size&nbsp;** | **30&nbsp;MB&nbsp;(Free)** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
 |---|---|---|---|---|---|---|
-| **Concurrent<br/>connections<br/>per database** | 30 | 256 | 1024 | Unlimited | Unlimited | Unlimited |
-| **CIDR<br/> allow rules** | 1 | 4-8 | 4-8 | 4-8 | 4-16 | 4-32 |
+| **Concurrent<br/>connections<br/>per database** | 30 | 256 | 1024 | 2500 | 5000 | 10000 |
+| **CIDR<br/> allow rules** | 1 | 4 | 4-8 | 4-8 | 4-16 | 4-32 |
 | **Monthly<br/> total network<br/> bandwidth**[^1] | 5 GB | 100 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
 | **Maximum<br/> throughput** | 100 ops/sec | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
 
@@ -44,8 +44,8 @@ There are some differences between plans for the different replication options. 
 
 | **Max&nbsp;DB&nbsp;size&nbsp;** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
 |---|---|---|---|---|---|
-| **Concurrent<br/>connections<br/>per database** | 256 | 1024 | Unlimited | Unlimited | Unlimited |
-| **CIDR<br/> allow rules** | 4-8 | 4-8 | 4-8 | 4-16 | 4-32 |
+| **Concurrent<br/>connections<br/>per database** | 256 | 1024 | 2500 | 5000 | 10000 |
+| **CIDR<br/> allow rules** | 4 | 8 | 8 | 16 | 32 |
 | **Monthly<br/> total network<br/> bandwidth**[^1] | 64 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
 | **Maximum<br/> throughput** | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
 
