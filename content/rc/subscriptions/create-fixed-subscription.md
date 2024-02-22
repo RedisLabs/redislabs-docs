@@ -23,7 +23,7 @@ Fixed plan pricing scales according to the memory size of the database defined i
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
-All paid (250 MB and above) Fixed plans support replication and backups (daily and instant).
+All paid (250 MB and above) Fixed plans support multi-zone replication and backups (daily and instant).
 
 If you need additional resources, you can update your subscription at any time.
 
