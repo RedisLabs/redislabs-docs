@@ -16,16 +16,15 @@ When creating your subscription, you'll need to know which tier to choose.
 
 If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.
 
-
 ## Fixed plan subscription tiers
 
 Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown in the tables below (updated February 2024). 
 
-The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
+The 30 MB Fixed plan is free; it's designed for learning and building test projects. It gives you enough space to learn Redis concepts and develop application prototypes.
 
-All paid (250 MB and above) Fixed plans support multi-zone replication and backups (daily and instant).
+Our paid plans start at 250 MB and offer extra features, like multi-zone replication and backups (both daily and instant). They are great for bigger projects or production environments that require increased storage, reliability, and other features to support your operational needs.
 
-If you need additional resources, you can update your subscription at any time.
+If you need additional resources, you can [upgrade your subscription]({{<relref "/rc/subscriptions/view-fixed-subscription#upgrade-subscription-plan">}}) at any time.
 
 There are some differences between plans for the different replication options. See the tables for [No replication and single-zone replication](#cache-standard) and [Multi-zone replication](#multi-az) for more details.
 
