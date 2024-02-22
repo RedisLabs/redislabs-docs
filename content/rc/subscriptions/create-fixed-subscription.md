@@ -19,7 +19,17 @@ If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md"
 
 ## Fixed plan subscription tiers
 
-Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown here (updated February 2024):
+Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown in the tables below (updated February 2024). 
+
+The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
+
+All paid (250 MB and above) Fixed plans support replication and backups (daily and instant).
+
+If you need additional resources, you can update your subscription at any time.
+
+There are some differences between plans for the different replication options. See the tables for [No replication and single-zone replication](#cache-standard) and [Multi-zone replication](#multi-az) for more details.
+
+### No replication and single-zone replication {#cache-standard}
 
 | **Max&nbsp;DB&nbsp;size&nbsp;** | **30&nbsp;MB&nbsp;(Free)** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
 |---|---|---|---|---|---|---|
@@ -30,11 +40,14 @@ Fixed plan pricing scales according to the memory size of the database defined i
 
 [^1]: In addition to the monthly total network bandwidth limit, there is also a limit on the maximum bandwidth per second which is based on the maximum throughput. Each operation takes approximately 1 KiB of bandwidth, so you can find this limit by dividing the maximum throughput for each plan by 1024. 
 
-The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
+### Multi-zone replication {#multi-az}
 
-All paid (250 MB and above) Fixed plans support replication and backups (daily and instant).
-
-If you need additional resources, you can update your subscription at any time.
+| **Max&nbsp;DB&nbsp;size&nbsp;** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
+|---|---|---|---|---|---|
+| **Concurrent<br/>connections<br/>per database** | 256 | 1024 | Unlimited | Unlimited | Unlimited |
+| **CIDR<br/> allow rules** | 4-8 | 4-8 | 4-8 | 4-16 | 4-32 |
+| **Monthly<br/> total network<br/> bandwidth**[^1] | 64 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
+| **Maximum<br/> throughput** | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
 
 ## Create a Fixed subscription
 
