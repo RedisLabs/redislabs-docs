@@ -27,11 +27,11 @@ Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
   - Usage: `--log-level
 -l`
 
-- `type` (REQUIRED):
+- `key` (REQUIRED):
 
   - Type: Choice([<SecretKey.SOURCE_DB_USERNAME: 'source-db-username'>, <SecretKey.SOURCE_DB_PASSWORD: 'source-db-password'>, <SecretKey.TARGET_DB_PASSWORD: 'target-db-username'>, <SecretKey.TARGET_DB_USERNAME: 'target-db-password'>])
   - Default: `none`
-  - Usage: `type`
+  - Usage: `key`
 
 - `value`:
 
