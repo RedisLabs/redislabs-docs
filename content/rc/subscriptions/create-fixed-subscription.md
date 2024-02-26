@@ -10,13 +10,13 @@ aliases: /rv/administration/setup_and_editing/create-subscription/
          /rc/administration/setup-and-editing/create-subscription/
          /rc/administration/setup/create-subscription/
 ---
-Fixed Size subscription plans support low throughput workflows.  Several tiers are available, each designed for different memory sizes and integration requirements.
+Fixed Size subscription plans support low throughput workflows.  Several plans are available, each designed for different memory sizes.
 
-When creating your subscription, you'll need to know which tier to choose.
+When creating your subscription, you'll need to choose the plan that suits your needs.
 
 If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create an account with a free subscription and an initial database.  You also learn how to connect to your database.
 
-## Fixed plan subscription tiers
+## Fixed plans
 
 Fixed plan pricing scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown in the tables below (updated February 2024). 
 
@@ -30,23 +30,29 @@ There are some differences between plans for the different replication options. 
 
 ### No replication and single-zone replication {#cache-standard}
 
-| **Max&nbsp;DB&nbsp;size&nbsp;** | **30&nbsp;MB&nbsp;(Free)** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
+| **DB&nbsp;size**<sup>[1](#table-note-1-cache-standard)</sup> | **30&nbsp;MB&nbsp;(Free)** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
 |---|---|---|---|---|---|---|
 | **Concurrent<br/>connections<br/>per database** | 30 | 256 | 1024 | 2500 | 5000 | 10000 |
 | **CIDR<br/> allow rules** | 1 | 4 | 4-8 | 4-8 | 4-16 | 4-32 |
-| **Monthly<br/> total network<br/> bandwidth**[^1] | 5 GB | 100 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
-| **Maximum<br/> throughput** | 100 ops/sec | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
+| **Monthly<br/> total network<br/> bandwidth** | 5&nbsp;GB | 100&nbsp;GB | 200&nbsp;GB | 400&nbsp;GB | 800&nbsp;GB | 2000&nbsp;GB |
+| **Maximum<br/> throughput<sup>[2](#table-note-2-cache-standard)</sup>** | 100&nbsp;ops/sec | 1000&nbsp;ops/sec | 2000&nbsp;ops/sec | 4000&nbsp;ops/sec | 8000&nbsp;ops/sec | 16000&nbsp;ops/sec |
 
-[^1]: In addition to the monthly total network bandwidth limit, there is also a limit on the maximum bandwidth per second which is based on the maximum throughput. Each operation takes approximately 1 KiB of bandwidth, so you can find this limit by dividing the maximum throughput for each plan by 1024. 
+1. <a name="table-note-1-cache-standard" style="display: block; height: 80px; margin-top: -80px;"></a> Database size includes replication where applicable.
+
+2. <a name="table-note-2-cache-standard" style="display: block; height: 80px; margin-top: -80px;"></a> Assumes request size of 1 KiB. Maximums are capped by actual MB/s reach. To find the MB/s limit, divide the Maximum throughput by 1024.
 
 ### Multi-zone replication {#multi-az}
 
-| **Max&nbsp;DB&nbsp;size&nbsp;** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
+| **DB&nbsp;size&nbsp;**<sup>[1](#table-note-1-multi-az)</sup> | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
 |---|---|---|---|---|---|
 | **Concurrent<br/>connections<br/>per database** | 256 | 1024 | 2500 | 5000 | 10000 |
 | **CIDR<br/> allow rules** | 4 | 8 | 8 | 16 | 32 |
-| **Monthly<br/> total network<br/> bandwidth**[^1] | 64 GB | 200 GB | 400 GB | 800 GB | 2000 GB |
-| **Maximum<br/> throughput** | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
+| **Monthly<br/> total network<br/> bandwidth** | 64&nbsp;GB | 200 GB | 400 GB | 800 GB | 2000 GB |
+| **Maximum<br/> throughput<sup>[2](#table-note-2-multi-az)</sup>** | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
+
+1. <a name="table-note-1-multi-az" style="display: block; height: 80px; margin-top: -80px;"></a> Database size includes replication where applicable.
+
+2. <a name="table-note-2-multi-az" style="display: block; height: 80px; margin-top: -80px;"></a> Assumes request size of 1 KiB. Maximums are capped by actual MB/s reach. To find the MB/s limit, divide the Maximum throughput by 1024.
 
 ## Create a Fixed subscription
 
@@ -80,7 +86,7 @@ To create a Fixed subscription:
 
     To create a Free subscription, select the 30 MB plan size.  
 
-    {{<image filename="images/rc/subscription-new-fixed-tiers.png" alt="Available tiers for Fixed size subscription plans." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-new-fixed-tiers.png" alt="Available Fixed subscription plans." >}}{{< /image >}}
 
 6.  Enter a subscription name and payment details.
 
@@ -105,9 +111,3 @@ When you create your subscription, there's a brief pause while your request is p
 To create your database, select the **New Database** button and then fill in the appropriate details.
 
 To learn more, see [Create a database]({{<relref "rc/databases/create-database.md">}}).
-
-<!-- 
-    Individual footnotes are rendered below the following heading.  
-    Any additional sections need to be placed above this comment.
--->
-## Footnotes
