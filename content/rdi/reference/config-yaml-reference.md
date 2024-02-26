@@ -10,14 +10,14 @@ aliases:
 
 **Properties**
 
-| Name                                                                                       | Type             | Description | Required |
-| ------------------------------------------------------------------------------------------ | ---------------- | ----------- | -------- |
-| [**applier**](#applier)<br/>(Configuration details of Redis Data Integration Applier Gear) | `object`, `null` |             |          |
-| [**connections**](#connections)                                                            | `object`         |             |          |
+| Name                                                                                                  | Type             | Description | Required |
+| ----------------------------------------------------------------------------------------------------- | ---------------- | ----------- | -------- |
+| [**processors**](#processors)<br/>(Configuration details of Redis Data Integration Stream Processors) | `object`, `null` |             |          |
+| [**targets**](#targets)<br/>(Target connections)                                                      | `object`         |             |          |
 
-<a name="applier"></a>
+<a name="processors"></a>
 
-## applier: Configuration details of Redis Data Integration Applier Gear
+## processors: Configuration details of Redis Data Integration Stream Processors
 
 **Properties**
 
@@ -36,14 +36,17 @@ aliases:
 | **target_data_type**<br/>(Target data type: hash/json \- RedisJSON module must be in use in the target DB)                           | `string`            | Default: `"hash"`<br/>Pattern: ``^\${.\*}$                                                                                                                                                                       | hash     | json``<br/>  |     |
 | **json_update_strategy**<br/>(Target update strategy: replace/merge \- RedisJSON module must be in use in the target DB)             | `string`            | (DEPRECATED)<br/>Property 'json_update_strategy' will be deprecated in future releases. Use 'on_update' job-level property to define the json update strategy.<br/>Default: `"replace"`<br/>Pattern: ``^\${.\*}$ | replace  | merge``<br/> |     |
 | **initial_sync_processes**<br/>(Number of processes RDI Engine creates to process the initial sync with the source)                  | `integer`, `string` | Default: `4`<br/>Pattern: `^\${.*}$`<br/>Minimum: `1`<br/>Maximum: `32`<br/>                                                                                                                                     |          |
+| **idle_sleep_time_ms**<br/>(Idle sleep time \(in milliseconds\) between batches)                                                     | `integer`, `string` | Default: `200`<br/>Pattern: `^\${.*}$`<br/>Minimum: `1`<br/>Maximum: `999999`<br/>                                                                                                                               |          |
+| **idle_streams_check_interval_ms**<br/>(Interval \(in milliseconds\) for checking new streams when the stream processor is idling)   | `integer`, `string` | Default: `1000`<br/>Pattern: `^\${.*}$`<br/>Minimum: `1`<br/>Maximum: `999999`<br/>                                                                                                                              |          |
+| **busy_streams_check_interval_ms**<br/>(Interval \(in milliseconds\) for checking new streams when the stream processor is busy)     | `integer`, `string` | Default: `5000`<br/>Pattern: `^\${.*}$`<br/>Minimum: `1`<br/>Maximum: `999999`<br/>                                                                                                                              |          |
 | **wait_enabled**<br/>(Checks if the data has been written to the replica shard)                                                      | `boolean`           | Default: `false`<br/>                                                                                                                                                                                            |          |
 | **wait_timeout**<br/>(Timeout in milliseconds when checking write to the replica shard)                                              | `integer`, `string` | Default: `1000`<br/>Pattern: `^\${.*}$`<br/>Minimum: `1`<br/>                                                                                                                                                    |          |
 | **retry_on_replica_failure**<br/>(Ensures that the data has been written to the replica shard and keeps retrying if not)             | `boolean`           | Default: `true`<br/>                                                                                                                                                                                             |          |
 
 **Additional Properties:** not allowed  
-<a name="connections"></a>
+<a name="targets"></a>
 
-## connections: Connections
+## targets: Target connections
 
 **Properties (Pattern)**
 
