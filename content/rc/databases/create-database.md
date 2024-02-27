@@ -114,8 +114,8 @@ The **Scalability** section is available only for Flexible and Annual plans.
 
 | Setting name        | Description                                                                                                                                                                                                                                                                                                                                   |
 |:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Memory limit**    | Maximum size (in GB) for your database.                                                                                                                                                                                                                                                                                                        |
-| **Throughput**      | Defines throughput in terms of maximum operations per second for the database <br/><br/>Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/). |
+| **Memory limit**    | Maximum size (in GB) for your database. See [Memory limit]          (#memory-limit) for sizing considerations. |
+| **Throughput**      | Defines throughput in terms of maximum operations per second for the database. See [Throughput](#throughput) for more information. |
 | **Hashing policy**  | Defines the [hashing policy]({{< relref "/rc/databases/configuration/clustering#manage-the-hashing-policy" >}}).                                                                                                                                                                                                                              |
 | **OSS Cluster API** | Enables the [OSS Cluster API](#oss-cluster-api) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy.                                                                                                                                                     |
 
@@ -136,6 +136,17 @@ Here are some general guidelines:
 - Advanced capabilities also consume memory.
 
 Memory limits in Redis Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/databases/memory-performance/memory-limit.md" >}})
+
+### Throughput
+
+Throughput is the amount of operations a database can handle over a certain period of time. For most Redis Cloud databases, throughput is defined in operations per second (ops/sec).
+
+Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/).
+
+Your actual throughput may not match the throughput you set when you create your database. The following things can affect your database's throughput:
+- **Command complexity**: O(N) and O(log(N)) commands will take more time than O(1) commands, and will affect throughput accordingly.
+- **Key and value sizing**: If your database's keys and values are very large, setting and reading those keys may take more time and affect throughput.
+- **Replication**: Using [Replication]({{<relref "rc/databases/configuration/high-availability.md">}}) affects throughput, as each write to your database is done twice (or more for Multi-zone replication).
 
 ### OSS Cluster API
 
