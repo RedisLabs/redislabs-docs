@@ -146,7 +146,7 @@ Databases with search and query enabled use the number of shards to determine th
 Your actual throughput may not match the throughput you set when you create your database. The following things can affect your database's throughput:
 - **Command complexity**: O(N) and O(log(N)) commands will take more time than O(1) commands, and will affect throughput accordingly.
 - **Key and value sizing**: If your database's keys and values are very large, setting and reading those keys may take more time and affect throughput.
-- **Replication**: Using [Replication]({{<relref "rc/databases/configuration/high-availability.md">}}) affects throughput, as each write to your database is done twice (or more for Multi-zone replication).
+- **Replication**: Using [multi-zone replication]({{<relref "rc/databases/configuration/high-availability">}}) affects throughput as each write operation is executed asynchronously in each zone.
 
 ### OSS Cluster API
 
