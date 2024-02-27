@@ -40,7 +40,7 @@ Replication can affect performance as traffic increases to synchronize all copie
 
 Database storage costs also increase:
 
-- For Fixed plans, single-zone and multi-zone replication effectively doubles storage costs
+- For Fixed plans, single-zone and multi-zone replication doubles storage costs. The size of the plan you choose includes replication. Therefore, if you choose replication, the dataset size you can use is half of the stated plan size.
 
 - For Flexible and Annual plans, replication requires additional shards and can affect subscription costs
 
