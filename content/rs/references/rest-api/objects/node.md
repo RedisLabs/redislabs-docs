@@ -22,6 +22,7 @@ An API object that represents a node in the cluster.
 | ephemeral_storage_path | string | Ephemeral storage path (read-only) |
 | ephemeral_storage_size | number | Ephemeral storage size (bytes) (read-only) |
 | external_addr | complex object | External IP addresses of node. `GET`&nbsp;`/jsonschema` to retrieve the object's structure. |
+| is_primary | boolean | Indicate node is primary or not. |
 | max_listeners | integer | Maximum number of listeners on the node |
 | max_redis_servers | integer | Maximum number of shards on the node |
 | os_family | 'rhel'<br />'ubuntu'<br />'amzn' | Operating system family (read-only) |
