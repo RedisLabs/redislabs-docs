@@ -1,19 +1,19 @@
 ---
-Title: redis-di delete-all-contexts
-linkTitle: redis-di delete-all-contexts
-description: Deletes all contexts
+Title: redis-di install
+linkTitle: redis-di install
+description: Installs RDI
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Deletes all contexts
+Installs RDI
 
 ## Usage
 
 ```
-Usage: redis-di delete-all-contexts [OPTIONS]
+Usage: redis-di install [OPTIONS]
 ```
 
 ## Options
@@ -25,14 +25,14 @@ Usage: redis-di delete-all-contexts [OPTIONS]
   - Usage: `--log-level
 -l`
 
-- `force`:
+- `file`:
 
-  - Type: BOOL
-  - Default: `false`
-  - Usage: `--force
--f`
+  - Type: STRING
+  - Default: `none`
+  - Usage: `-f
+--file`
 
-  Force operation. skips verification prompts
+  A scaffold for silent installation
 
 - `help`:
 
@@ -45,13 +45,13 @@ Usage: redis-di delete-all-contexts [OPTIONS]
 ## CLI help
 
 ```
-Usage: redis-di delete-all-contexts [OPTIONS]
+Usage: redis-di install [OPTIONS]
 
-  Deletes all contexts
+  Installs RDI
 
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
-  -f, --force                     Force operation. skips verification prompts
+  -f, --file TEXT                 A scaffold for silent installation
   --help                          Show this message and exit.
 ```
