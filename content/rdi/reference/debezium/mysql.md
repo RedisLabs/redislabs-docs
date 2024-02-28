@@ -14,7 +14,7 @@ aliases:
 debezium.sink.type=redis
 debezium.sink.redis.message.format=extended
 debezium.sink.redis.address=<RDI_HOST>:<RDI_PORT>
-# Uncomment the following line if you are not using a separate user for Redis Data Integration.
+# Uncomment the following line if you are using a separate user for Redis Data Integration.
 #debezium.sink.redis.user=<RDI_USER>
 # If you are using the default user for authentication, please configure the password below.
 # If you are using a custom user, make sure to specify both the username and password correctly.
