@@ -1,14 +1,14 @@
 ---
 Title: redis-di set-secret
 linkTitle: redis-di set-secret
-description: Creates a secret of a specified type
+description: Creates a secret of a specified key
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Creates a secret of a specified type
+Creates a secret of a specified key
 
 ## Usage
 
@@ -54,7 +54,7 @@ Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
                            password|target-db-username|target-db-password}
                            [VALUE]
 
-  Creates a secret of a specified type
+  Creates a secret of a specified key
 
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
