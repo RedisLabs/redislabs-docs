@@ -39,7 +39,7 @@ There are some differences between plans for the different replication options. 
 
 1. <a name="table-note-1-cache-standard" style="display: block; height: 80px; margin-top: -80px;"></a> Database size includes replication where applicable. See [High availability cost impact]({{<relref "rc/databases/configuration/high-availability#performance-and-cost-impact">}}) for more information.
 
-2. <a name="table-note-2-cache-standard" style="display: block; height: 80px; margin-top: -80px;"></a> Assumes request size of 1 KiB. Maximums are capped by actual MB/s reach. To find the MB/s limit, divide the Maximum throughput by 1024.
+2. <a name="table-note-2-cache-standard" style="display: block; height: 80px; margin-top: -80px;"></a> Assumes request size of 1 KiB. Maximums are capped by actual MB/s reached. To find the MB/s limit, divide the Maximum throughput by 1024.
 
 ### Multi-zone replication {#multi-az}
 
@@ -52,7 +52,7 @@ There are some differences between plans for the different replication options. 
 
 1. <a name="table-note-1-multi-az" style="display: block; height: 80px; margin-top: -80px;"></a> Database size includes replication. See [High availability cost impact]({{<relref "rc/databases/configuration/high-availability#performance-and-cost-impact">}}) for more information.
 
-2. <a name="table-note-2-multi-az" style="display: block; height: 80px; margin-top: -80px;"></a> Assumes request size of 1 KiB. Maximums are capped by actual MB/s reach. To find the MB/s limit, divide the Maximum throughput by 1024.
+2. <a name="table-note-2-multi-az" style="display: block; height: 80px; margin-top: -80px;"></a> Assumes request size of 1 KiB. Maximums are capped by actual MB/s reached. To find the MB/s limit, divide the Maximum throughput by 1024.
 
 ## Create a Fixed subscription
 
