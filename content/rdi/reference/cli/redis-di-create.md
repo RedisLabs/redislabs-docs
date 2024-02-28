@@ -113,13 +113,13 @@ Usage: redis-di create [OPTIONS]
 
   In-memory database replication
 
-- `redisgears_module`:
+- `with_redisgears`:
 
-  - Type: STRING
-  - Default: ``
-  - Usage: `--redisgears-module`
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--with-redisgears`
 
-  RedisGears module file
+  Include RedisGears module in the RDI database
 
 - `with_rejson`:
 
@@ -169,6 +169,5 @@ Options:
   --rdi-shards INTEGER RANGE      Number of database server-side shards
                                   [x>=1]
   --replication                   In-memory database replication
-  --redisgears-module TEXT        RedisGears module file
   --help                          Show this message and exit.
 ```
