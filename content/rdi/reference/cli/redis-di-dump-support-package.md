@@ -119,7 +119,7 @@ Usage: redis-di dump-support-package [OPTIONS]
   - Default: `10`
   - Usage: `--max-change-records`
 
-  Maximum traced change records per shard
+  Maximum traced change records
 
 - `trace_only_rejected`:
 
@@ -163,8 +163,7 @@ Options:
   --trace-timeout INTEGER RANGE   Stops the trace after exceeding this timeout
                                   (in seconds)  [1<=x<=600]
   --max-change-records INTEGER RANGE
-                                  Maximum traced change records per shard
-                                  [x>=1]
+                                  Maximum traced change records  [x>=1]
   --trace-only-rejected           Trace only rejected change records
   --help                          Show this message and exit.
 ```
