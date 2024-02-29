@@ -8,7 +8,7 @@ categories: ["RS"]
 aliases: /rs/installing-upgrading/customize-install-directories/
 ---
 
-When you install Redis Enterprise Software on Red Hat Enterprise Linux versions 7, 8, or 9, you can customize the installation directories.
+When you install Redis Enterprise Software on Red Hat Enterprise Linux, you can customize the installation directories.
 
 The files are installed in the `redislabs` directory located in the path that you specify.
 
