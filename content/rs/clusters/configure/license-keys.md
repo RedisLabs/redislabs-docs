@@ -78,21 +78,17 @@ When the license is expired:
 
 - You cannot do these actions:
 
-    - Change database settings including security and configuration options.
+    - Change database settings, including security and configuration options.
 
-    - Add or remove a database.
-
-    - Upgrade a database to a new version.
-
-    - Add or remove a node.
+    - Add a database.
 
 - You can do these actions:
 
     - Sign in to the admin console and view settings and metrics at all resolutions for the cluster, nodes, and databases.
 
-    - Change cluster settings including license key, security for administrators, and cluster alerts.
+    - Change cluster settings, including the license key, security for administrators, and cluster alerts.
 
-    - Failover when a node fails and explicitly migrate shards between nodes.
+    - Fail over when a node fails and explicitly migrate shards between nodes.
 
     - Upgrade a node to a new version of Redis Enterprise Software.
  
