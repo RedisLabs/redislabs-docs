@@ -27,7 +27,7 @@ Redis Enterprise Software is supported on several operating systems, cloud envi
 
 2. <a name="table-note-2" style="display: block; height: 80px; margin-top: -80px;"></a>The server version of Ubuntu is recommended for production installations. The desktop version is only recommended for development deployments.
 
-3. <a name="table-note-3" style="display: block; height: 80px; margin-top: -80px;"></a>See the [Redis Enterprise for Kubernetes documentation]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) for details about support per version and Kubernetes distibution.
+3. <a name="table-note-3" style="display: block; height: 80px; margin-top: -80px;"></a>See the [Redis Enterprise for Kubernetes documentation]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) for details about support per version and Kubernetes distribution.
 
 4. <a name="table-note-4" style="display: block; height: 80px; margin-top: -80px;"></a>
 [Docker images]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}}) of Redis Enterprise Software are certified for development and testing only.
@@ -46,11 +46,11 @@ The following table shows which Redis Enterprise Software version first tested a
 
 ## Operating system compatibility policy
 
-Redis maintains a list of [supported operating systems](#supported-platforms) for each major version of Redis Enterprise Software and the specific OS versions tested with Redis Enterprise releases. Since we update the list as new OS versions are introduced and old ones become obsolete, we encourage users to check the list and plan upgrades accordingly. We also suggest users keep Redis Enterprise and corresponding supported OS versions up to date.
+Redis maintains a list of [supported operating systems](#supported-platforms) for each major version of Redis Enterprise Software and the specific OS versions tested with Redis Enterprise releases. Because the list is updated as new OS versions are introduced and old ones become obsolete, we encourage you to check the list and plan upgrades accordingly. We also suggest you keep Redis Enterprise and corresponding supported OS versions up to date.
 
-We thoroughly test each supported major OS's most recent minor version to ensure the best compatibility and performance with every Redis Enterprise release. This process helps detect and address potential compatibility issues early on.
+We thoroughly test the most recent minor version of each supported major OS to ensure the best compatibility and performance with every Redis Enterprise release. This process helps detect and address potential compatibility issues early on.
 
-Due to the vast array of minor updates and variations across operating systems, we cannot test compatibility with every minor OS version and each Redis Enterprise version. However, since OS vendors each have an Application Binary Interface (ABI) they support and avoid breaking, except to address severe security issues, newer minor OS versions are generally expected to work correctly. We will add a note to this document if specific OS minor versions have significant ABI or dependency changes. An earlier OS minor version also might work, although it is not guaranteed.
+Due to the vast array of minor updates and variations across operating systems, we cannot test compatibility with every minor OS version and each Redis Enterprise version. However, because OS vendors each have an Application Binary Interface (ABI) they support and avoid breaking, except to address severe security issues, newer minor OS versions are generally expected to work correctly. We will add a note to this document if specific OS minor versions have significant ABI or dependency changes. An earlier OS minor version also might work, although it is not guaranteed.
 
 Despite our rigorous testing, we recommend users test their Redis applications with any new OS update before deploying it in a production environment. This additional testing layer can help identify any unique issues in your setup.
 
