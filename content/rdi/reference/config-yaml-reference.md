@@ -10,14 +10,14 @@ aliases:
 
 **Properties**
 
-| Name                                                                                                                 | Type             | Description | Required |
-| -------------------------------------------------------------------------------------------------------------------- | ---------------- | ----------- | -------- |
-| [**stream\-processors**](#stream-processors)<br/>(Configuration details of Redis Data Integration Stream Processors) | `object`, `null` |             |          |
-| [**connections**](#connections)                                                                                      | `object`         |             |          |
+| Name                                                                                           | Type             | Description | Required |
+| ---------------------------------------------------------------------------------------------- | ---------------- | ----------- | -------- |
+| [**processors**](#processors)<br/>(Configuration details of Redis Data Integration Processors) | `object`, `null` |             |          |
+| [**targets**](#targets)<br/>(Target connections)                                               | `object`         |             |          |
 
-<a name="stream-processors"></a>
+<a name="processors"></a>
 
-## stream\-processors: Configuration details of Redis Data Integration Stream Processors
+## processors: Configuration details of Redis Data Integration Processors
 
 **Properties**
 
@@ -44,9 +44,9 @@ aliases:
 | **retry_on_replica_failure**<br/>(Ensures that the data has been written to the replica shard and keeps retrying if not)             | `boolean`           | Default: `true`<br/>                                                                                                                                                                                             |          |
 
 **Additional Properties:** not allowed  
-<a name="connections"></a>
+<a name="targets"></a>
 
-## connections: Connections
+## targets: Target connections
 
 **Properties (Pattern)**
 
