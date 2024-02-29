@@ -32,7 +32,7 @@ Usage: redis-di install [OPTIONS]
   - Usage: `-f
 --file`
 
-  A scaffold for silent installation
+  Path to a YAML configuration file for silent installation
 
 - `help`:
 
@@ -52,6 +52,7 @@ Usage: redis-di install [OPTIONS]
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
-  -f, --file TEXT                 A scaffold for silent installation
+  -f, --file TEXT                 Path to a YAML configuration file for silent
+                                  installation
   --help                          Show this message and exit.
 ```
