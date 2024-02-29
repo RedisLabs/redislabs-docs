@@ -23,7 +23,7 @@ Redis Enterprise Software is supported on several operating systems, cloud envi
 | Kubernetes<sup>[3](#table-note-3)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
 | Docker<sup>[4](#table-note-4)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
 
-1. <a name="table-note-1" style="display: block; height: 80px; margin-top: -80px;"></a>RHEL-compatible distributions, such as CentOS, CentOS Stream, Alma, and Rocky, are supported if they have full RHEL compatibility. Oracle Linux running the Red Hat Compatible Kernel (RHCK) is supported, but the Unbreakable Enterprise Kernel (UEK) is not supported.
+1. <a name="table-note-1" style="display: block; height: 80px; margin-top: -80px;"></a>The RHEL-compatible distributions CentOS, CentOS Stream, Alma, and Rocky are supported if they have full RHEL compatibility. Oracle Linux running the Red Hat Compatible Kernel (RHCK) is supported, but the Unbreakable Enterprise Kernel (UEK) is not supported.
 
 2. <a name="table-note-2" style="display: block; height: 80px; margin-top: -80px;"></a>The server version of Ubuntu is recommended for production installations. The desktop version is only recommended for development deployments.
 
@@ -66,7 +66,7 @@ We only support what the vendor supports in accordance with their policies. When
 
 The [supported platforms](#supported-platforms) table lists the versions of Red Hat Enterprise Linux (RHEL) that Redis supports. This support extends to the ABI and package compatibility with RHEL of the same version.
 
-RHEL-compatible distributions, such as CentOS, CentOS Stream, Alma Linux, Rocky Linux, and Oracle Linux running the Red Hat Compatible Kernel (RHCK), are supported if they provide full RHEL compatibility. If Redis identifies or questions some incompatibility from a clone, you might be asked to test on another clone or RHEL directly. 
+The RHEL-compatible distributions CentOS, CentOS Stream, Alma Linux, Rocky Linux, and Oracle Linux running the Red Hat Compatible Kernel (RHCK) are supported if they provide full RHEL compatibility. If Redis identifies or questions some incompatibility from a clone, you might be asked to test on another clone or RHEL directly.
 
 ## Operating system limitations
 
