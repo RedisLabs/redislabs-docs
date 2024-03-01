@@ -19,7 +19,7 @@ jobs:
 
       - name: Get modified files using defaults
         id: changed-files
-        uses: tj-actions/changed-files@v4.2
+        uses: tj-actions/changed-files@v41
         
       - name: setup output variable to non-null if there are files to process
         id: step1
