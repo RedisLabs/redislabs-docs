@@ -1,0 +1,225 @@
+---
+Title: Redis Enterprise Software release notes 7.4.2-TBA (March 2024)
+linkTitle: 7.4.2-TBA (March 2024)
+description: New Cluster Manager UI enhancements to change passwords from the sign-in screen, view locked user accounts, and unlock user accounts with password reset. Expired license allows adding nodes to the cluster.
+compatibleOSSVersion: Redis 7.2.0
+weight: 71
+alwaysopen: false
+categories: ["RS"]
+aliases: /rs/release-notes/rs-7-4-2-releases/rs-7-4-2-tba/
+---
+
+This is a maintenance release for ​[​Redis Enterprise Software version 7.4.2](https://redis.com/redis-enterprise-software/download-center/software/).
+
+## Highlights
+
+This version offers:
+
+- New Cluster Manager UI enhancements for managing passwords and unlocking user accounts
+
+- Expired license allows adding nodes to the cluster
+
+## New in this release
+
+### Enhancements
+
+- New Cluster Manager UI enhancements:
+
+    - You can change your password from the sign-in screen.
+    
+    - Administrators can see locked user accounts and reset user passwords to unlock them from the **Access Control > Users** screen.
+
+- Nodes can be added to a cluster with an expired license.
+
+#### Redis module feature sets
+
+Redis Enterprise comes packaged with several modules. As of version 7.4.2, Redis Enterprise includes two feature sets, compatible with different Redis database versions.
+
+Bundled Redis modules compatible with Redis database version 7.2:
+
+- [RediSearch 2.8.11](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.11)
+
+- [RedisJSON 2.6.9](https://github.com/RedisJSON/RedisJSON/releases/tag/v2.6.9)
+
+- [RedisTimeSeries 1.10.11](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.10.11)
+
+- [RedisBloom 2.6.11](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.11)
+
+- [RedisGears 2.0.17](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.17-m18)
+
+Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
+
+- [RediSearch 2.6.15](https://github.com/RediSearch/RediSearch/releases/tag/v2.6.15)
+
+- [RedisJSON 2.4.8](https://github.com/RedisJSON/RedisJSON/releases/tag/v2.4.8)
+
+- [RedisTimeSeries 1.8.12](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.8.12)
+
+- [RedisBloom 2.4.8](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.4.8)
+
+- [RedisGraph v2.10.15](https://github.com/RedisGraph/RedisGraph/releases/tag/v2.10.15)
+
+### Resolved issues
+
+- RS112165: Added `in-oom` syncer status to `metrics_exporter`.
+
+- RS115577: Changed `connect_timeout` and `read_timeout` values for S3 from 30 to 60 seconds.
+
+- RS98042: The master node now logs all `replace_node` errors.
+
+- RS118147: Dynamically allocate buffer size for OSS cluster port mapping configuration.
+
+- RS114971: Update `endpoint` when `oss_cluster_api_preferred_ip_type` changes.
+
+## Version changes
+
+### Deprecations
+
+#### API deprecations
+
+- The BDB REST API object's `background_op` field is deprecated. Use [`GET v1/actions/bdb/<bdb_uid>`]({{<relref "/rs/references/rest-api/requests/actions/bdb">}}) instead.
+
+### Supported platforms
+
+The following table provides a snapshot of supported platforms as of this Redis Enterprise Software release. See the [supported platforms reference](http://localhost:1313/rs/references/supported-platforms/) for more details about operating system compatibility.
+
+<span title="Check mark icon">&#x2705;</span> Supported – The platform is supported for this version of Redis Enterprise Software and Redis Stack modules.
+
+<span title="Warning icon">&#x26A0;&#xFE0F;</span> Deprecation warning – The platform is still supported for this version of Redis Enterprise Software, but support will be removed in a future release.
+
+| Redis Enterprise<br />major versions | 7.4 | 7.2 | 6.4 | 6.2 |
+|---------------------------------|:-----:|:-----:|:-----:|:-----:|
+| **Release date** | Feb 2024 | Aug 2023 | Feb 2023 | Aug 2021 |
+| [**End-of-life date**]({{<relref "/rs/installing-upgrading/product-lifecycle#endoflife-schedule">}}) | Determined after<br />next major release | July 2025 | Feb 2025 | Aug 2024 |
+| **Platforms** | | | | |
+| RHEL 9 &<br />compatible distros<sup>[1](#table-note-1)</sup> | <span title="Supported">&#x2705;</span> | – | – | – |
+| RHEL 8 &<br />compatible distros<sup>[1](#table-note-1)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| RHEL 7 &<br />compatible distros<sup>[1](#table-note-1)</sup> | – | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| Ubuntu 20.04<sup>[2](#table-note-2)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – |
+| Ubuntu 18.04<sup>[2](#table-note-2)</sup> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| Ubuntu 16.04<sup>[2](#table-note-2)</sup> | – | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| Amazon Linux 2 | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – |
+| Amazon Linux 1 | – | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| Kubernetes<sup>[3](#table-note-3)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+| Docker<sup>[4](#table-note-4)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |
+
+1. <a name="table-note-1" style="display: block; height: 80px; margin-top: -80px;"></a>The RHEL-compatible distributions CentOS, CentOS Stream, Alma, and Rocky are supported if they have full RHEL compatibility. Oracle Linux running the Red Hat Compatible Kernel (RHCK) is supported, but the Unbreakable Enterprise Kernel (UEK) is not supported.
+
+2. <a name="table-note-2" style="display: block; height: 80px; margin-top: -80px;"></a>The server version of Ubuntu is recommended for production installations. The desktop version is only recommended for development deployments.
+
+3. <a name="table-note-3" style="display: block; height: 80px; margin-top: -80px;"></a>See the [Redis Enterprise for Kubernetes documentation]({{<relref "/kubernetes/reference/supported_k8s_distributions">}}) for details about support per version and Kubernetes distribution.
+
+4. <a name="table-note-4" style="display: block; height: 80px; margin-top: -80px;"></a>
+[Docker images]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}}) of Redis Enterprise Software are certified for development and testing only.
+
+## Downloads
+
+The following table shows the MD5 checksums for the available packages:
+
+| Package | MD5 checksum (7.4.2-TBA March release) |
+|---------|---------------------------------------|
+| Ubuntu 18 |  |
+| Ubuntu 20 |  |
+| RedHat Enterprise Linux (RHEL) 8<br/>Oracle Enterprise Linux (OL) 8 <br/>Rocky Enterprise Linux |  |
+| RedHat Enterprise Linux (RHEL) 9 |  |
+| Amazon Linux 2 |  |
+
+## Security
+
+#### Open source Redis security fixes compatibility
+
+As part of Redis's commitment to security, Redis Enterprise Software implements the latest [security fixes](https://github.com/redis/redis/releases) available with [open source Redis](https://github.com/redis/redis). Redis Enterprise has already included the fixes for the relevant CVEs.
+
+Some CVEs announced for open source Redis do not affect Redis Enterprise due to different or additional functionality available in Redis Enterprise that is not available in open source Redis.
+
+Redis Enterprise 7.4.2-TBA supports open source Redis 7.2, 6.2, and 6.0. Below is the list of open source Redis CVEs fixed by version.
+
+Redis 7.2.x:
+
+- (CVE-2023-41056) In some cases, Redis may incorrectly handle resizing of memory buffers, which can result in incorrect accounting of buffer sizes and lead to heap overflow and potential remote code execution.
+
+- (CVE-2023-41053) Redis does not correctly identify keys accessed by `SORT_RO` and, as a result, may grant users executing this command access to keys that are not explicitly authorized by the ACL configuration. (Redis 7.2.1)
+
+Redis 7.0.x:
+
+- (CVE-2023-41056) In some cases, Redis may incorrectly handle resizing of memory buffers, which can result in incorrect accounting of buffer sizes and lead to heap overflow and potential remote code execution.
+
+- (CVE-2023-41053) Redis does not correctly identify keys accessed by `SORT_RO` and, as a result, may grant users executing this command access to keys that are not explicitly authorized by the ACL configuration. (Redis 7.0.13)
+
+- (CVE-2023-36824) Extracting key names from a command and a list of arguments may, in some cases, trigger a heap overflow and result in reading random heap memory, heap corruption, and potentially remote code execution. Specifically: using `COMMAND GETKEYS*` and validation of key names in ACL rules. (Redis 7.0.12)
+
+- (CVE-2023-28856) Authenticated users can use the `HINCRBYFLOAT` command to create an invalid hash field that will crash Redis on access. (Redis 7.0.11)
+
+- (CVE-2023-28425) Specially crafted `MSETNX` command can lead to assertion and denial-of-service. (Redis 7.0.10)
+
+- (CVE-2023-25155) Specially crafted `SRANDMEMBER`, `ZRANDMEMBER`, and `HRANDFIELD` commands can trigger an integer overflow, resulting in a runtime assertion and termination of the Redis server process. (Redis 7.0.9)
+
+- (CVE-2023-22458) Integer overflow in the Redis `HRANDFIELD` and `ZRANDMEMBER` commands can lead to denial-of-service. (Redis 7.0.8)
+
+- (CVE-2022-36021) String matching commands (like `SCAN` or `KEYS`) with a specially crafted pattern to trigger a denial-of-service attack on Redis, causing it to hang and consume 100% CPU time. (Redis 7.0.9)
+
+- (CVE-2022-35977) Integer overflow in the Redis `SETRANGE` and `SORT`/`SORT_RO` commands can drive Redis to OOM panic. (Redis 7.0.8)
+
+- (CVE-2022-35951) Executing an `XAUTOCLAIM` command on a stream key in a specific state, with a specially crafted `COUNT` argument, may cause an integer overflow, a subsequent heap overflow, and potentially lead to remote code execution. The problem affects Redis versions 7.0.0 or newer. (Redis 7.0.5)
+
+- (CVE-2022-31144) A specially crafted `XAUTOCLAIM` command on a stream key in a specific state may result in heap overflow and potentially remote code execution. The problem affects Redis versions 7.0.0 or newer. (Redis 7.0.4)
+
+- (CVE-2022-24834) A specially crafted Lua script executing in Redis can trigger a heap overflow in the cjson and cmsgpack libraries, and result in heap corruption and potentially remote code execution. The problem exists in all versions of Redis with Lua scripting support, starting from 2.6, and affects only authenticated and authorized users. (Redis 7.0.12)
+
+- (CVE-2022-24736) An attacker attempting to load a specially crafted Lua script can cause NULL pointer dereference which will result in a crash of the `redis-server` process. This issue affects all versions of Redis. (Redis 7.0.0)
+
+- (CVE-2022-24735) By exploiting weaknesses in the Lua script execution environment, an attacker with access to Redis can inject Lua code that will execute with the (potentially higher) privileges of another Redis user. (Redis 7.0.0)
+
+Redis 6.2.x:
+
+- (CVE-2023-28856) Authenticated users can use the `HINCRBYFLOAT` command to create an invalid hash field that will crash Redis on access. (Redis 6.2.12)
+
+- (CVE-2023-25155) Specially crafted `SRANDMEMBER`, `ZRANDMEMBER`, and `HRANDFIELD` commands can trigger an integer overflow, resulting in a runtime assertion and termination of the Redis server process. (Redis 6.2.11)
+
+- (CVE-2023-22458) Integer overflow in the Redis `HRANDFIELD` and `ZRANDMEMBER` commands can lead to denial-of-service. (Redis 6.2.9)
+
+- (CVE-2022-36021) String matching commands (like `SCAN` or `KEYS`) with a specially crafted pattern to trigger a denial-of-service attack on Redis, causing it to hang and consume 100% CPU time. (Redis 6.2.11)
+
+- (CVE-2022-35977) Integer overflow in the Redis `SETRANGE` and `SORT`/`SORT_RO` commands can drive Redis to OOM panic. (Redis 6.2.9)
+
+- (CVE-2022-24834) A specially crafted Lua script executing in Redis can trigger a heap overflow in the cjson and cmsgpack libraries, and result in heap corruption and potentially remote code execution. The problem exists in all versions of Redis with Lua scripting support, starting from 2.6, and affects only authenticated and authorized users. (Redis 6.2.13)
+
+- (CVE-2022-24736) An attacker attempting to load a specially crafted Lua script can cause NULL pointer dereference which will result in a crash of the `redis-server` process. This issue affects all versions of Redis. (Redis 6.2.7)
+
+- (CVE-2022-24735) By exploiting weaknesses in the Lua script execution environment, an attacker with access to Redis can inject Lua code that will execute with the (potentially higher) privileges of another Redis user. (Redis 6.2.7)
+
+- (CVE-2021-41099) Integer to heap buffer overflow handling certain string commands and network payloads, when `proto-max-bulk-len` is manually configured to a non-default, very large value. (Redis 6.2.6)
+
+- (CVE-2021-32762) Integer to heap buffer overflow issue in `redis-cli` and `redis-sentinel` parsing large multi-bulk replies on some older and less common platforms. (Redis 6.2.6)
+
+- (CVE-2021-32761) An integer overflow bug in Redis version 2.2 or newer can be exploited using the `BITFIELD` command to corrupt the heap and potentially result with remote code execution. (Redis 6.2.5)
+
+- (CVE-2021-32687) Integer to heap buffer overflow with intsets, when `set-max-intset-entries` is manually configured to a non-default, very large value. (Redis 6.2.6)
+
+- (CVE-2021-32675) Denial Of Service when processing RESP request payloads with a large number of elements on many connections. (Redis 6.2.6)
+
+- (CVE-2021-32672) Random heap reading issue with Lua Debugger. (Redis 6.2.6)
+
+- (CVE-2021-32628) Integer to heap buffer overflow handling ziplist-encoded data types, when configuring a large, non-default value for `hash-max-ziplist-entries`, `hash-max-ziplist-value`, `zset-max-ziplist-entries` or `zset-max-ziplist-value`. (Redis 6.2.6)
+
+- (CVE-2021-32627) Integer to heap buffer overflow issue with streams, when configuring a non-default, large value for `proto-max-bulk-len` and `client-query-buffer-limit`. (Redis 6.2.6)
+
+- (CVE-2021-32626) Specially crafted Lua scripts may result with Heap buffer overflow. (Redis 6.2.6)
+
+- (CVE-2021-32625) An integer overflow bug in Redis version 6.0 or newer can be exploited using the STRALGO LCS command to corrupt the heap and potentially result with remote code execution. This is a result of an incomplete fix by CVE-2021-29477. (Redis 6.2.4)
+
+- (CVE-2021-29478) An integer overflow bug in Redis 6.2 could be exploited to corrupt the heap and potentially result with remote code execution. The vulnerability involves changing the default set-max-intset-entries configuration value, creating a large set key that consists of integer values and using the COPY command to duplicate it. The integer overflow bug exists in all versions of Redis starting with 2.6, where it could result with a corrupted RDB or DUMP payload, but not exploited through COPY (which did not exist before 6.2). (Redis 6.2.3)
+
+- (CVE-2021-29477) An integer overflow bug in Redis version 6.0 or newer could be exploited using the STRALGO LCS command to corrupt the heap and potentially result in remote code execution. The integer overflow bug exists in all versions of Redis starting with 6.0. (Redis 6.2.3)
+
+Redis 6.0.x:
+
+- (CVE-2022-24834) A specially crafted Lua script executing in Redis can trigger a heap overflow in the cjson and cmsgpack libraries, and result in heap corruption and potentially remote code execution. The problem exists in all versions of Redis with Lua scripting support, starting from 2.6, and affects only authenticated and authorized users. (Redis 6.0.20)
+
+- (CVE-2023-28856) Authenticated users can use the `HINCRBYFLOAT` command to create an invalid hash field that will crash Redis on access. (Redis 6.0.19)
+
+- (CVE-2023-25155) Specially crafted `SRANDMEMBER`, `ZRANDMEMBER`, and `HRANDFIELD` commands can trigger an integer overflow, resulting in a runtime assertion and termination of the Redis server process. (Redis 6.0.18)
+
+- (CVE-2022-36021) String matching commands (like `SCAN` or `KEYS`) with a specially crafted pattern to trigger a denial-of-service attack on Redis, causing it to hang and consume 100% CPU time. (Redis 6.0.18)
+
+- (CVE-2022-35977) Integer overflow in the Redis `SETRANGE` and `SORT`/`SORT_RO` commands can drive Redis to OOM panic. (Redis 6.0.17)
