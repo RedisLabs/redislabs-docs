@@ -62,13 +62,13 @@ spec:
         image: redislabs/redisinsight:latest #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
         volumeMounts:
-        - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
-          mountPath: /db
+        - name: data #Pod volumes to mount into the container's filesystem. Cannot be updated.
+          mountPath: /data
         ports:
         - containerPort: 5540 #exposed container port and protocol
           protocol: TCP
       volumes:
-      - name: db
+      - name: data
         emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
 ```
 
@@ -162,7 +162,7 @@ spec:
         app: redisinsight #label for pod/s
     spec:
       volumes:
-        - name: db
+        - name: data
           persistentVolumeClaim:
             claimName: redisinsight-pv-claim
       initContainers:
@@ -172,11 +172,11 @@ spec:
             - /bin/sh
             - '-c'
             - |
-              chown -R 1001 /db
+              chown -R 1001 /data
           resources: {}
           volumeMounts:
-            - name: db
-              mountPath: /db
+            - name: data
+              mountPath: /data
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       containers:
@@ -184,8 +184,8 @@ spec:
           image: redislabs/redisinsight:latest #repo/image
           imagePullPolicy: IfNotPresent #Always pull image
           volumeMounts:
-          - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
-            mountPath: /db
+          - name: data #Pod volumes to mount into the container's filesystem. Cannot be updated.
+            mountPath: /data
           ports:
           - containerPort: 5540 #exposed container port and protocol
             protocol: TCP
@@ -235,8 +235,8 @@ spec:
           - name: REDISINSIGHT_PORT
             value: "5540"
         volumeMounts:
-        - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
-          mountPath: /db
+        - name: data #Pod volumes to mount into the container's filesystem. Cannot be updated.
+          mountPath: /data
         ports:
         - containerPort: 5540 #exposed conainer port and protocol
           protocol: TCP
@@ -248,7 +248,7 @@ spec:
            periodSeconds: 5 # period in seconds after which liveness probe is performed
            failureThreshold: 1 # number of liveness probe failures after which container restarts
       volumes:
-      - name: db
+      - name: data
         emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
 ```
 
