@@ -18,9 +18,13 @@ RDI currently supports these scenarios:
 
 * [Ingest scenario]({{<relref "/rdi/quickstart/ingest-guide">}}). RDI mirrors the application's primary database to Redis using a Capture Data Change (CDC) tool. RDI transforms the database model and types to a Redis model and types. This scenario is useful when the application database is not performant and scalable enough to serve the read queries. RDI helps to offload all read queries to Redis.
 
+> Ingest is supported with targets of Redis database or [CRDB](https://redis.com/redis-enterprise/technology/active-active-geo-distribution/) (Active Active Replication)
+
   ![Ingest flow](/images/rdi/ingest.png)
   
 * [Write-behind scenario (Preview)]({{<relref "/rdi/quickstart/write-behind-guide">}}). RDI applies data changes in Redis to one or more downstream data stores. RDI can map and transform Redis types and models to downstream types and models. This scenario is useful when the application needs fast writes and reads for some of the queries, but has to provide data to other downstream services that need them in different models for other uses.
+
+>Write-behind in NOT supported with [CRDB](https://redis.com/redis-enterprise/technology/active-active-geo-distribution/) (Active Active Replication)
 
   ![Write-behind flow](/images/rdi/write-behind.png)  
 
