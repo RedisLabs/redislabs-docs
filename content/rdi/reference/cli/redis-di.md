@@ -55,6 +55,7 @@ Commands:
   describe-job          Describes a transformation engine's job
   dump-support-package  Dumps RDI support package
   get-rejected          Returns all the stored rejected entries
+  install               Installs RDI
   install-collector     Installs RDI Redis Collector on Redis BDB with...
   install-redisgears    Installs RedisGears module on Redis cluster
   list-contexts         Lists all saved contexts
