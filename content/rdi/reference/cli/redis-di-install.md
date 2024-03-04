@@ -27,7 +27,7 @@ Usage: redis-di install [OPTIONS]
 
 - `file`:
 
-  - Type: STRING
+  - Type: <click.types.Path object at 0x7faf007c0a90>
   - Default: `none`
   - Usage: `-f
 --file`
@@ -52,7 +52,7 @@ Usage: redis-di install [OPTIONS]
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
-  -f, --file TEXT                 Path to a YAML configuration file for silent
+  -f, --file FILE                 Path to a YAML configuration file for silent
                                   installation
   --help                          Show this message and exit.
 ```
