@@ -279,8 +279,8 @@ After installing Redis Enterprise Software on the cluster nodes, upload compatib
 
 This limitation was fixed in [Redis Enterprise Software version 7.2.4-64]({{<relref "/rs/release-notes/rs-7-2-4-releases/rs-7-2-4-64">}}).
 
-#### Creating Redis v6.0/v6.2 Active Active database with modules
+#### Cannot create Redis v6.x Active-Active databases with modules
 
-Redis enterprise v7.2.4 offers the option to create databases from versions: v6.0, v6.2, v7.2
-There is a limitation to create Active Active databases from versions v6.0, v6.2 with modules
-This limitation will be fixed in Redis enterprise v7.4.2 maintenance release
+You cannot create Active-Active databases that use Redis version 6.0 or 6.2 with modules. Databases that use Redis version 7.2 do not have this limitation.
+
+This limitation will be fixed in a maintenance release for Redis Enterprise version 7.4.2.
