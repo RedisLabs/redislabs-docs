@@ -27,7 +27,7 @@ This version offers:
 
     - You can change your password from the sign-in screen.
     
-    - Administrators can see locked user accounts and reset user passwords to unlock them from the **Access Control > Users** screen.
+    - Added a “User is locked out” label to the **Access Control > Users** screen to help administrators identify and manage locked users.
 
 - Nodes can be added to a cluster with an expired license.
 
