@@ -17,7 +17,7 @@ Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
                            password|target-db-username|target-db-
                            password|source-db-cacert|source-db-keypair|source-
                            db-keypair-password|rdi-db-cacert|target-db-
-                           cacert|target-db-cert|target-db-key|target-db-
+                           cacert|target-db-cert|target-db-keypair|target-db-
                            keypair-password} [VALUE]
 ```
 
@@ -32,7 +32,7 @@ Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
 
 - `key` (REQUIRED):
 
-  - Type: Choice(['source-db-username', 'source-db-password', 'target-db-username', 'target-db-password', 'source-db-cacert', 'source-db-keypair', 'source-db-keypair-password', 'rdi-db-cacert', 'target-db-cacert', 'target-db-cert', 'target-db-key', 'target-db-keypair-password'])
+  - Type: Choice(['source-db-username', 'source-db-password', 'target-db-username', 'target-db-password', 'source-db-cacert', 'source-db-keypair', 'source-db-keypair-password', 'rdi-db-cacert', 'target-db-cacert', 'target-db-cert', 'target-db-keypair', 'target-db-keypair-password'])
   - Default: `none`
   - Usage: `key`
 
@@ -57,7 +57,7 @@ Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
                            password|target-db-username|target-db-
                            password|source-db-cacert|source-db-keypair|source-
                            db-keypair-password|rdi-db-cacert|target-db-
-                           cacert|target-db-cert|target-db-key|target-db-
+                           cacert|target-db-cert|target-db-keypair|target-db-
                            keypair-password} [VALUE]
 
   Creates a secret of a specified key
