@@ -48,22 +48,6 @@ aliases:
 
 ## targets: Target connections
 
-**Properties**
-
-| Name                                                                 | Type     | Description | Required |
-| -------------------------------------------------------------------- | -------- | ----------- | -------- |
-| [**connection**](#targetsconnection)<br/>(Target connection details) | `object` |             |          |
-
-**Example**
-
-```yaml
-connection: {}
-```
-
-<a name="targetsconnection"></a>
-
-### targets\.connection: Target connection details
-
 **Properties (Pattern)**
 
 | Name                     | Type | Description | Required |
