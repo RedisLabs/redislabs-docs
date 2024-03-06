@@ -42,7 +42,7 @@ Update urgency: `LOW`: No need to upgrade unless there are new features you want
 Details:
 
 > [!IMPORTANT]
-> Since v2.6.8 Ubuntu 16.04 and RHEL 7 are no longer supported.
+> Since v2.6.8 RHEL 7 is no longer supported.
 
 This is a version number alignment with RedisJSON for Redis Enterprise (with Active-Active support).
 
