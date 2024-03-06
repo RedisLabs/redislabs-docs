@@ -19,7 +19,7 @@ RedisJSON v2.6.9 requires:
 
 ## v2.6.9 (January 2024)
 
-This is a maintenance release for RedisJSON 2.6
+This is a maintenance release for RedisJSON 2.6.
 
 Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
 
