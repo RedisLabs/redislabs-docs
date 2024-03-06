@@ -18,7 +18,7 @@ RediSearch v2.6.15 requires:
 
 ## v2.6.15 (December 2023)
 
-This is a maintenance release for RediSearch 2.6
+This is a maintenance release for RediSearch 2.6.
 
 Update urgency: `HIGH` : There is a critical bug that may affect a subset of users. Upgrade!
 
