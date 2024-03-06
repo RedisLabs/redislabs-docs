@@ -50,7 +50,7 @@ Details:
   - [#4235](https://github.com/RediSearch/RediSearch/pull/4235) Memory excessively growing on databases caused by unbalanced nodes on inverted index trie (MOD-5880, MOD-5952, MOD-6003) 
   - [#4190](https://github.com/RediSearch/RediSearch/pull/4190) Profiling `FT.AGGREGATE` causes a crash on RESP3 replies (MOD-6250, MOD-6295)
   - [#4148](https://github.com/RediSearch/RediSearch/pull/4148), [#4038](https://github.com/RediSearch/RediSearch/pull/4038) `ON_TIMEOUT FAIL\RETURN` policies in the cluster setup not being respected (MOD-6035, MOD-5948, MOD-6090)
-  - [#4110](https://github.com/RediSearch/RediSearch/pull/4110) Format of error response contains inconsistencies when timing out(MOD-6011, MOD-5965)
+  - [#4110](https://github.com/RediSearch/RediSearch/pull/4110) Format of error response contains inconsistencies when timing out (MOD-6011, MOD-5965)
   - [#4104](https://github.com/RediSearch/RediSearch/pull/4104) `FT.SEARCH` not responding when using TLS encryption on Amazon Linux 2 (MOD-6012)
   - [#4009](https://github.com/RediSearch/RediSearch/pull/4009) In cluster setup does not return a timeout error for `FT.SEARCH` (MOD-5911)
   - [#3920](https://github.com/RediSearch/RediSearch/pull/3920) In cluster setup does not return a timeout error for `FT.AGGREGATE` (MOD-5209)
