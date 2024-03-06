@@ -18,7 +18,7 @@ RediSearch v2.8.11 requires:
 
 ## v2.8.11 (January 2024)
 
-This is a maintenance release for RediSearch 2.8
+This is a maintenance release for RediSearch 2.8.
 
 Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
 
