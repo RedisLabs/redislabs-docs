@@ -30,7 +30,7 @@ Details:
 
 ## v2.4.7 (January 2024)
 
-This is a maintenance release for RedisBloom 2.4
+This is a maintenance release for RedisBloom 2.4.
 
 Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
 
