@@ -27,7 +27,7 @@ Details:
 
 - Bug fixes:
 
-  - [#727](https://github.com/RedisBloom/RedisBloom/pull/727) Potential crash on `CF.LOADCHUNK` (MOD-6344) - Additional fixes
+  - [#727](https://github.com/RedisBloom/RedisBloom/pull/727) Additional fixes for potential crash on `CF.LOADCHUNK` (MOD-6344)
 
 ## v2.6.10 (January 2024)
 
