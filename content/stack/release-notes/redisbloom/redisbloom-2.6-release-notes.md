@@ -19,7 +19,7 @@ RedisBloom v2.6.11 requires:
 
 ## v2.6.11 (January 2024)
 
-This is a maintenance release for RedisBloom 2.6
+This is a maintenance release for RedisBloom 2.6.
 
 Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
 
