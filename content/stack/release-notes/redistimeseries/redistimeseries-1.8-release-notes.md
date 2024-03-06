@@ -18,7 +18,7 @@ RedisTimeSeries v1.8.12 requires:
 
 ## v1.8.12 (December 2023)
 
-This is a maintenance release for RedisTimeSeries 1.8
+This is a maintenance release for RedisTimeSeries 1.8.
 
 Update urgency: `SECURITY`: There are security fixes in the release.
 
