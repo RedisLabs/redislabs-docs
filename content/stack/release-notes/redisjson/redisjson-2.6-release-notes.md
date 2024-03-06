@@ -41,8 +41,9 @@ Update urgency: `LOW`: No need to upgrade unless there are new features you want
 
 Details:
 
-> [!IMPORTANT]
-> Since v2.6.8 RHEL 7 is no longer supported.
+{{<note>}}
+RHEL 7 is no longer supported as of v2.6.8.
+{{</note>}}
 
 This is a version number alignment with RedisJSON for Redis Enterprise (with Active-Active support).
 
