@@ -22,6 +22,9 @@ This is a maintenance release for RedisJSON 2.4
 
 Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
 
+> [!IMPORTANT]
+> Since v2.4.8 Ubuntu 16.04 and RHEL 7 are no longer supported.
+
 Details:
 
 - Improvements:
