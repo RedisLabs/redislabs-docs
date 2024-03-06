@@ -39,7 +39,7 @@ Details:
 
 ## v2.6.14 (November 2023)
 
-This is a maintenance release for RediSearch 2.6
+This is a maintenance release for RediSearch 2.6.
 
 Update urgency: `SECURITY`: There are security fixes in the release.
 
