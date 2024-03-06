@@ -19,7 +19,7 @@ RedisTimeSeries v1.10.11 requires:
 
 ## v1.10.11 (October 2023)
 
-This is a maintenance release for RedisTimeSeries 1.10
+This is a maintenance release for RedisTimeSeries 1.10.
 
 Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
 
