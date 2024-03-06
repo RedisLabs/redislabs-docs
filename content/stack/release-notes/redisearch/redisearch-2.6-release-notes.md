@@ -22,6 +22,8 @@ This is a maintenance release for RediSearch 2.6
 
 Update urgency: `HIGH` : There is a critical bug that may affect a subset of users. Upgrade!
 
+Details:
+
 - Bug fixes:
 
   - [#4244](https://github.com/RediSearch/RediSearch/pull/4244), [#4255](https://github.com/RediSearch/RediSearch/pull/4255) Profiling `FT.AGGREGATE` using the `WITHCURSOR` flag causes a crash due to timeout (MOD-5512)
@@ -40,6 +42,8 @@ Update urgency: `HIGH` : There is a critical bug that may affect a subset of use
 This is a maintenance release for RediSearch 2.6
 
 Update urgency: `SECURITY`: There are security fixes in the release.
+
+Details:
 
 - Bug fixes:
 
