@@ -35,7 +35,7 @@ Details:
 
 ## v2.8.10 (January 2024)
 
-This is a maintenance release for RediSearch 2.8
+This is a maintenance release for RediSearch 2.8.
 
 Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
 
