@@ -35,7 +35,7 @@ Details:
 
 ## v2.6.8 (November 2023)
 
-This is a maintenance release for RedisJSON 2.6
+This is a maintenance release for RedisJSON 2.6.
 
 Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
 
