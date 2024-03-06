@@ -21,7 +21,7 @@ RedisJSON v2.6.9 requires:
 
 This is a maintenance release for RedisJSON 2.6
 
-Update urgency:  `MODERATE`: Program an upgrade of the server, but it's not urgent.
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
 
 Details:
 
@@ -41,7 +41,10 @@ Update urgency: `LOW`: No need to upgrade unless there are new features you want
 
 Details:
 
-This is just a version number alignment with RedisJSON for Redis Enterprise (with Active-Active support).
+> [!IMPORTANT]
+> Since v2.6.8 Ubuntu 16.04 and RHEL 7 are no longer supported.
+
+This is a version number alignment with RedisJSON for Redis Enterprise (with Active-Active support).
 
 ## v2.6.7 (October 2023)
 
