@@ -54,7 +54,7 @@ Details:
   - [#3928](https://github.com/RediSearch/RediSearch/pull/3928) Queries with `WITHCURSOR` making memory growth since `CURSOR` wasn't invalidated in the shards (MOD-5580)
   - [#3946](https://github.com/RediSearch/RediSearch/pull/3946) Vector range query could cause Out-of-Memory due to memory corruption (MOD-5791)
   - [#3972](https://github.com/RediSearch/RediSearch/pull/3972) Adding new nodes to OSS cluster can cause a crash (MOD-5778)
-  - [#3957](https://github.com/RediSearch/RediSearch/pull/3957) After cleaning the index the GC could cause corruption on unique values (MOD-5815)
+  - [#3957](https://github.com/RediSearch/RediSearch/pull/3957) After cleaning the index, the GC could corrupt unique values (MOD-5815)
   - [#4002](https://github.com/RediSearch/RediSearch/pull/4002) Setting a low `MAXIDLE` parameter value in `FT.AGGREGATE` causes a crash (MOD-5608)
 
 - Security and privacy:
