@@ -44,7 +44,7 @@ Details:
 
 ## v2.6.9 (December 2023)
 
-This is a maintenance release for RedisBloom 2.6
+This is a maintenance release for RedisBloom 2.6.
 
 Update urgency: `LOW`: No need to upgrade unless there are new features you want to use.
 
