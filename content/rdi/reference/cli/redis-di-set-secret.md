@@ -15,10 +15,10 @@ Creates a secret of a specified key
 ```
 Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
                            password|target-db-username|target-db-
-                           password|source-db-cacert|source-db-keypair|source-
-                           db-keypair-password|rdi-db-cacert|target-db-
-                           cacert|target-db-cert|target-db-keypair|target-db-
-                           keypair-password} [VALUE]
+                           password|source-db-cacert|source-db-cert|source-db-
+                           key|source-db-key-password|target-db-cacert|target-
+                           db-cert|target-db-key|target-db-key-password}
+                           [VALUE]
 ```
 
 ## Options
@@ -32,7 +32,7 @@ Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
 
 - `key` (REQUIRED):
 
-  - Type: Choice(['source-db-username', 'source-db-password', 'target-db-username', 'target-db-password', 'source-db-cacert', 'source-db-keypair', 'source-db-keypair-password', 'rdi-db-cacert', 'target-db-cacert', 'target-db-cert', 'target-db-keypair', 'target-db-keypair-password'])
+  - Type: Choice(['source-db-username', 'source-db-password', 'target-db-username', 'target-db-password', 'source-db-cacert', 'source-db-cert', 'source-db-key', 'source-db-key-password', 'target-db-cacert', 'target-db-cert', 'target-db-key', 'target-db-key-password'])
   - Default: `none`
   - Usage: `key`
 
@@ -55,10 +55,10 @@ Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
 ```
 Usage: redis-di set-secret [OPTIONS] {source-db-username|source-db-
                            password|target-db-username|target-db-
-                           password|source-db-cacert|source-db-keypair|source-
-                           db-keypair-password|rdi-db-cacert|target-db-
-                           cacert|target-db-cert|target-db-keypair|target-db-
-                           keypair-password} [VALUE]
+                           password|source-db-cacert|source-db-cert|source-db-
+                           key|source-db-key-password|target-db-cacert|target-
+                           db-cert|target-db-key|target-db-key-password}
+                           [VALUE]
 
   Creates a secret of a specified key
 
