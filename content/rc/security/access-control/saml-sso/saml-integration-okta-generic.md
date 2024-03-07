@@ -160,7 +160,7 @@ Now that your group is populated with its users, you can assign the SAML integra
 
     {{<image filename="images/rc/saml/okta_saml_group_8.png" alt="" >}}{{</image>}}
 
-  The mapping field has now been defined as a default for each member of the group.
+    The mapping field has now been defined as a default for each member of the group.
 
     {{<image filename="images/rc/saml/okta_saml_group_9.png" alt="" >}}{{</image>}}
 
