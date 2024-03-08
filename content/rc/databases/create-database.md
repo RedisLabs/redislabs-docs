@@ -148,7 +148,7 @@ We assume a typical workload that includes a different mix of commands and an av
 - **Key and value sizing**: If your database's keys and values are very large, setting and reading those keys may take more time and affect throughput. If these are lower than the typical workload, the actual throughput might be higher than expected.
 - **Replication**: Using [multi-zone replication]({{<relref "rc/databases/configuration/high-availability">}}) affects throughput as each write operation is executed asynchronously in each zone.
 - **Security**: Some security options, such as [transport layer security]({{< relref "/rc/security/database-security/tls-ssl" >}}), may affect throughput.
-- **Number of client connections**: The number of client connections affects throughput. As connections to the database increase, the throughput decreases.
+- **Number of client connections**: The number of client connections affects throughput. Increasing or decreasing the number of client connections can result in higher or lower throughput.
 
 ### OSS Cluster API
 
