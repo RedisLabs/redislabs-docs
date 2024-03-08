@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software release notes 7.4.2-TBA (March 2024)
 linkTitle: 7.4.2-TBA (March 2024)
-description: New Cluster Manager UI enhancements to change passwords from the sign-in screen, view locked user accounts, and unlock user accounts with password reset. Expired license allows adding nodes to the cluster.
+description: New Cluster Manager UI enhancements to change passwords from the sign-in screen, view locked user accounts, and unlock user accounts with password reset.
 compatibleOSSVersion: Redis 7.2.0
 weight: 71
 alwaysopen: false
@@ -15,9 +15,7 @@ This is a maintenance release for ​[​Redis Enterprise Software version 7.4.2
 
 This version offers:
 
-- New Cluster Manager UI enhancements for managing passwords and unlocking user accounts
-
-- Expired license allows adding nodes to the cluster
+- New Cluster Manager UI enhancements for password management and identifying locked user accounts
 
 ## New in this release
 
@@ -28,8 +26,6 @@ This version offers:
     - You can change your password from the sign-in screen.
     
     - Added a “User is locked out” label to the **Access Control > Users** screen to help administrators identify and manage locked users.
-
-- Nodes can be added to a cluster with an expired license.
 
 #### Redis module feature sets
 
@@ -72,6 +68,10 @@ Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
 - RS114971: Update `endpoint` when `oss_cluster_api_preferred_ip_type` changes.
 
 ## Version changes
+
+- Removed the restriction that prevented adding nodes to a cluster with an expired cluster license, which sometimes caused issues for Kubernetes deployments.
+
+    To avoid issues due to an expired cluster license, we recommend replacing the license before the expiration date. See [Update cluster license]({{<relref "/rs/clusters/configure/license-keys#update-cluster-license">}}) for Cluster Manager UI instructions or use a [`PUT /v1/license`]({{<relref "/rs/references/rest-api/requests/license#put-license">}}) REST API request.
 
 ### Deprecations
 
