@@ -21,7 +21,7 @@ See [Active-Active Redis]({{<relref "/rs/databases/active-active/">}}) for more 
 
 ## Participating clusters
 
-Active-Active databases require you to [set up at least two participating clusters]({{<relref "/rs/clusters/new-cluster-setup.md">}}). If your database requires more than ten participating clusters, contact Redis support. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage#participating-clusters/">}}) after database creation.
+You must [set up at least two participating clusters]({{<relref "/rs/clusters/new-cluster-setup">}}) for an Active-Active database. If your database requires more than ten participating clusters, contact Redis support. You can [add or remove participating clusters]({{<relref "/rs/databases/active-active/manage#participating-clusters/">}}) after database creation.
 
 {{<note>}}
 You cannot add RAM-only clusters and clusters with flash storage enabled for [Auto Tiering]({{<relref "/rs/databases/auto-tiering">}}) to the same Active-Active configuration.
