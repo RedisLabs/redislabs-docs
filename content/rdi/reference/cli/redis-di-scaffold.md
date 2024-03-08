@@ -18,12 +18,12 @@ Usage: redis-di scaffold [OPTIONS]
 
 ## Options
 
-- `loglevel`:
+- `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
   - Default: `info`
-  - Usage: `--loglevel
--log-level`
+  - Usage: `--log-level
+-l`
 
 - `db_type` (REQUIRED):
 
@@ -76,7 +76,7 @@ Usage: redis-di scaffold [OPTIONS]
   Redis)
 
 Options:
-  -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
+  -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --db-type [cassandra|db2|mongodb|mysql|oracle|postgresql|redis|sqlserver]
                                   DB type  [required]
