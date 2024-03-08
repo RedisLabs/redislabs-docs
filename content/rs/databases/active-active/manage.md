@@ -40,6 +40,10 @@ After you add new participating clusters to an existing Active-Active database,
 the new database instance can accept connections and read operations.
 The new instance does not accept write operations until it is in the syncing state.
 
+{{<note>}}
+You cannot add RAM-only clusters and clusters with flash storage enabled for [Auto Tiering]({{<relref "/rs/databases/auto-tiering">}}) to the same Active-Active configuration.
+{{</note>}}
+
 To add a new participating cluster to an existing Active-Active configuration using the Cluster Manager UI:
 
 1. Select the Active-Active database from the **Databases** list and go to its **Configuration** screen.
