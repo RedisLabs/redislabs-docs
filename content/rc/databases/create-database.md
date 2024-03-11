@@ -143,7 +143,7 @@ Throughput is the amount of operations a database can handle over a certain peri
 
 Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/).
 
-We assume a typical workload that includes a different mix of commands and an average key and value size of 1KB. Therefore, your actual throughput be higher or lower than the throughput you set when you create your database. The following properties can affect your database's throughput:
+We assume a typical workload that includes a different mix of commands and an average key and value size of 1KB. Therefore, your actual throughput may be higher or lower than the throughput you set when you create your database. The following properties can affect your database's throughput:
 - **Command complexity**: O(N) and O(log(N)) commands will take more time than O(1) commands, and will affect throughput accordingly.
 - **Key and value sizing**: If your database's keys and values are very large, setting and reading those keys may take more time and affect throughput. If these are lower than the typical workload, the actual throughput might be higher than expected.
 - **Replication**: Using [multi-zone replication]({{<relref "rc/databases/configuration/high-availability">}}) affects throughput as each write operation is executed asynchronously in each zone.
