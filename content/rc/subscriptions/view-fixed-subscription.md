@@ -41,7 +41,7 @@ The following sections provide more details.
 
 ## Upgrade subscription plan
 
-Use the **Upgrade plan** button to update your Fixed subscription plan, your high availability settings, or your payment method.
+Use the **Upgrade plan** button to update your Fixed subscription plan, your high availability settings, or your payment method. Upgrading your database between Fixed plans does not impact database availability during the update.
 
 {{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Use the Upgrade plan button to change selected Fixed subscription detils." >}}{{< /image >}}
 
