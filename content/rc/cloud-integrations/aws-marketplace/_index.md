@@ -1,5 +1,5 @@
 ---
-Title: Flexible subscriptions with AWS Marketplace
+Title: Sign up for Redis Cloud with AWS Marketplace
 LinkTitle: AWS Marketplace 
 description: Shows how to subscribe to Redis Cloud using AWS Marketplace
 weight: $weight
@@ -11,7 +11,7 @@ aliases: /rc/cloud-integrations/aws-marketplace/
 
 You can use AWS Marketplace to subscribe to Redis Cloud through AWS Marketplace.  This lets you provision according to your needs and pay using your AWS account.
 
-Here's how to create a new Flexible subscription as part of your AWS Marketplace commitment.
+Here's how to subscribe to Redis Cloud with AWS Marketplace:
 
 1.  Sign in to the [AWS console](https://console.aws.amazon.com/).
 
