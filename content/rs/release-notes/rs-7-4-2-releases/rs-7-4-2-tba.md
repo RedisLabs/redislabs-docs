@@ -33,27 +33,27 @@ Redis Enterprise comes packaged with several modules. As of version 7.4.2, Redis
 
 Bundled Redis modules compatible with Redis database version 7.2:
 
-- [RediSearch 2.8.11](https://github.com/RediSearch/RediSearch/releases/tag/v2.8.11)
+- [RediSearch 2.8.11]({{<relref "/stack/release-notes/redisearch/redisearch-2.8-release-notes.md">}})
 
-- [RedisJSON 2.6.9](https://github.com/RedisJSON/RedisJSON/releases/tag/v2.6.9)
+- [RedisJSON 2.6.9]({{<relref "/stack/release-notes/redisjson/redisjson-2.6-release-notes.md">}})
 
-- [RedisTimeSeries 1.10.11](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.10.11)
+- [RedisTimeSeries 1.10.11]({{<relref "/stack/release-notes/redistimeseries/redistimeseries-1.10-release-notes.md">}})
 
-- [RedisBloom 2.6.11](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.6.11)
+- [RedisBloom 2.6.11]({{<relref "/stack/release-notes/redisbloom/redisbloom-2.6-release-notes.md">}})
 
 - [RedisGears 2.0.17](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.17-m18)
 
 Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
 
-- [RediSearch 2.6.15](https://github.com/RediSearch/RediSearch/releases/tag/v2.6.15)
+- [RediSearch 2.6.15]({{<relref "/stack/release-notes/redisearch/redisearch-2.6-release-notes.md">}})
 
-- [RedisJSON 2.4.8](https://github.com/RedisJSON/RedisJSON/releases/tag/v2.4.8)
+- [RedisJSON 2.4.8]({{<relref "/stack/release-notes/redisjson/redisjson-2.4-release-notes.md">}})
 
-- [RedisTimeSeries 1.8.12](https://github.com/RedisTimeSeries/RedisTimeSeries/releases/tag/v1.8.12)
+- [RedisTimeSeries 1.8.12]({{<relref "/stack/release-notes/redistimeseries/redistimeseries-1.8-release-notes.md">}})
 
-- [RedisBloom 2.4.8](https://github.com/RedisBloom/RedisBloom/releases/tag/v2.4.8)
+- [RedisBloom 2.4.8]({{<relref "/stack/release-notes/redisbloom/redisbloom-2.4-release-notes.md">}})
 
-- [RedisGraph v2.10.15](https://github.com/RedisGraph/RedisGraph/releases/tag/v2.10.15)
+- [RedisGraph v2.10.15]({{<relref "/stack/release-notes/redisgraph/redisgraph-2.10-release-notes.md">}})
 
 ### Resolved issues
 
