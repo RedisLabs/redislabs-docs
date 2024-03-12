@@ -73,6 +73,10 @@ Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
 
     To avoid issues due to an expired cluster license, we recommend replacing the license before the expiration date. See [Update cluster license]({{<relref "/rs/clusters/configure/license-keys#update-cluster-license">}}) for Cluster Manager UI instructions or use a [`PUT /v1/license`]({{<relref "/rs/references/rest-api/requests/license#put-license">}}) REST API request.
 
+### Breaking changes
+
+- [#1131](https://github.com/RedisJSON/RedisJSON/issues/1131), [#1143](https://github.com/RedisJSON/RedisJSON/pull/1143): Reverted JSONPath default path value from `$` to `.` under RESP3.
+
 ### Deprecations
 
 #### API deprecations
