@@ -58,20 +58,20 @@ Annual plans support the same features as Flexible plans but at significant savi
 
 Create a new subscription:
 
-- The [Redis Cloud quick start]({{<relref "rc/rc-quickstart.md">}}) helps you create a free subscription and your first database.  (Start here if you're new.)
+- The [Redis Cloud quick start]({{<relref "rc/rc-quickstart">}}) helps you create a free subscription and your first database.  (Start here if you're new.)
 
-- [Create a Fixed subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md">}})
+- [Create a Fixed subscription]({{<relref "rc/subscriptions/create-fixed-subscription">}})
 
-- [Create a Flexible subscription]({{<relref "rc/subscriptions/create-flexible-subscription.md">}})
+- [Create a Flexible subscription]({{<relref "rc/subscriptions/create-flexible-subscription">}})
 
 - To create an Annual subscription, contact [support](https://redis.com/company/support).
 
 View subscription details:
 
-- [View or edit a Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription.md">}})
+- [View or edit a Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription">}})
 
-- [View Flexible subscription details]({{<relref "/rc/subscriptions/view-flexible-subscription.md">}})
+- [View Flexible subscription details]({{<relref "/rc/subscriptions/view-flexible-subscription">}})
 
-- [Delete a subscription]({{<relref "/rc/subscriptions/delete-subscription.md">}})
+- [Delete a subscription]({{<relref "/rc/subscriptions/delete-subscription">}})
 
 
