@@ -54,7 +54,7 @@ To change your subscription plan, select the desired plan from the list and sele
 {{<image filename="images/rc/subscription-change-fixed-tiers.png" width="100%" alt="Select the desired subscription plan from the ones shown." >}}{{< /image >}}
 
 Each Fixed plan provides a variety of benefits, including increased memory and number of connections.
-For a comparison of available plans, see [Fixed plans]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-plans">}}).
+For a comparison of available plans, see [Fixed plan details]({{<relref "rc/subscriptions/create-fixed-subscription/fixed-plan-details">}}).
 
 When you change your plan, your data and endpoints are not disrupted.  
 

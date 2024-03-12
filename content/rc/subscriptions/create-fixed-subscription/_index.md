@@ -18,7 +18,7 @@ If you're new to Redis Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md"
 
 ## Fixed plans
 
-Fixed plan [pricing](https://redis.com/cloud/pricing/) scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown in the tables below (updated February 2024). 
+Fixed plan [pricing](https://redis.com/cloud/pricing/) scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown in [Fixed plan details]({{<relref "rc/subscriptions/create-fixed-subscription/fixed-plan-details">}}).
 
 The 30 MB Fixed plan is free; it's designed for learning and building test projects. It gives you enough space to learn Redis concepts and develop application prototypes.
 
@@ -26,33 +26,7 @@ Our paid plans start at 250 MB and offer extra features, like high availability 
 
 If you need additional resources, you can [upgrade your subscription]({{<relref "/rc/subscriptions/view-fixed-subscription#upgrade-subscription-plan">}}) at any time.
 
-There are some differences between plans for the different high availability options. See the tables for [No replication and single-zone replication](#cache-standard) and [Multi-zone replication](#multi-az) for more details.
-
-### No replication and single-zone replication {#cache-standard}
-
-| **DB&nbsp;size**<sup>[1](#table-note-1-cache-standard)</sup> | **30&nbsp;MB&nbsp;(Free)** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
-|---|---|---|---|---|---|---|
-| **Concurrent<br/>connections<br/>per database** | 30 | 256 | 1024 | 2500 | 5000 | 10000 |
-| **CIDR<br/> allow rules** | 1 | 4 | 4-8 | 4-8 | 4-16 | 4-32 |
-| **Monthly<br/> total network<br/> bandwidth** | 5&nbsp;GB | 100&nbsp;GB | 200&nbsp;GB | 400&nbsp;GB | 800&nbsp;GB | 2000&nbsp;GB |
-| **Maximum<br/> throughput<sup>[2](#table-note-2-cache-standard)</sup>** | 100&nbsp;ops/sec | 1000&nbsp;ops/sec | 2000&nbsp;ops/sec | 4000&nbsp;ops/sec | 8000&nbsp;ops/sec | 16000&nbsp;ops/sec |
-
-1. <a name="table-note-1-cache-standard" style="display: block; height: 80px; margin-top: -80px;"></a> Database size includes replication where applicable. See [High availability cost impact]({{<relref "rc/databases/configuration/high-availability#performance-and-cost-impact">}}) for more information.
-
-2. <a name="table-note-2-cache-standard" style="display: block; height: 80px; margin-top: -80px;"></a> Assumes request size of 1 KiB. Maximums are capped by actual MB/s reached. To find the MB/s limit, divide the Maximum throughput by 1024.
-
-### Multi-zone replication {#multi-az}
-
-| **DB&nbsp;size&nbsp;**<sup>[1](#table-note-1-multi-az)</sup> | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
-|---|---|---|---|---|---|
-| **Concurrent<br/>connections<br/>per database** | 256 | 1024 | 2500 | 5000 | 10000 |
-| **CIDR<br/> allow rules** | 4 | 8 | 8 | 16 | 32 |
-| **Monthly<br/> total network<br/> bandwidth** | 64&nbsp;GB | 200 GB | 400 GB | 800 GB | 2000 GB |
-| **Maximum<br/> throughput<sup>[2](#table-note-2-multi-az)</sup>** | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
-
-1. <a name="table-note-1-multi-az" style="display: block; height: 80px; margin-top: -80px;"></a> Database size includes replication. See [High availability cost impact]({{<relref "rc/databases/configuration/high-availability#performance-and-cost-impact">}}) for more information.
-
-2. <a name="table-note-2-multi-az" style="display: block; height: 80px; margin-top: -80px;"></a> Assumes request size of 1 KiB. Maximums are capped by actual MB/s reached. To find the MB/s limit, divide the Maximum throughput by 1024.
+There are some differences between plans for the different high availability options. See [Fixed plan details]({{<relref "/rc/subscriptions/create-fixed-subscription/fixed-plan-details">}}) for more information.
 
 ## Create a Fixed subscription
 
