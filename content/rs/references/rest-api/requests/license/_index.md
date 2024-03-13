@@ -97,7 +97,7 @@ Returns a JSON object that contains the license details:
 
 	PUT /v1/license
 
-Validate and install a new license string.
+Validate and install a new license string. If you do not provide a valid license, the cluster behaves as if the license was deleted.
 
 #### Required permissions
 
