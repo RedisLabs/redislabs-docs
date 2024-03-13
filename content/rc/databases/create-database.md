@@ -143,7 +143,7 @@ Throughput is the amount of operations a database can handle over a certain peri
 
 We assume a typical workload that includes a different mix of commands and an average key and value size of 1KB. Therefore, your actual throughput may be higher or lower than the throughput you set when you create your database. The following properties can affect your database's throughput:
 - **Command complexity**: O(N) and O(log(N)) commands will take more time than O(1) commands, and will affect throughput accordingly.
-- **Key and value sizing**: If your database's keys and values are very large, your actual throughput may be lower than expected. If these are lower than the typical workload, the actual throughput might be higher than expected.
+- **Key and value sizing**: If your database's keys and values are very large, your actual throughput may be lower than expected. If the keys and values are smaller than the typical workload, the actual throughput might be higher than expected.
 - **Replication**: Using [multi-zone replication]({{<relref "rc/databases/configuration/high-availability">}}) affects throughput as each write operation is executed asynchronously in each zone.
 - **Security**: Some security options, such as [transport layer security]({{< relref "/rc/security/database-security/tls-ssl" >}}), may affect throughput.
 - **Number of client connections**: The number of client connections affects throughput. Increasing or decreasing the number of client connections can result in higher or lower throughput.
