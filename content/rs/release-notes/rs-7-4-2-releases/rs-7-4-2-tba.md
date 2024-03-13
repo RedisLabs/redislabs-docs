@@ -75,7 +75,7 @@ Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
 
 ### Breaking changes
 
-- [#1131](https://github.com/RedisJSON/RedisJSON/issues/1131), [#1143](https://github.com/RedisJSON/RedisJSON/pull/1143): Reverted JSONPath default path value from `$` to `.` under RESP3.
+- [#1131](https://github.com/RedisJSON/RedisJSON/issues/1131), [#1143](https://github.com/RedisJSON/RedisJSON/pull/1143): RedisJSON v2.6.9 reverts JSONPath default path value from `$` to `.` under RESP3.
 
 ### Deprecations
 
