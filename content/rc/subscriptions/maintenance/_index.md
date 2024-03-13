@@ -12,7 +12,7 @@ aliases:
 
 Redis will maintain your Redis Cloud subscriptions and databases as needed to ensure your databases are running the most stable and up-to-date version of Redis. During maintenance, you may notice some latency when connecting to your databases. 
 
-Redis will attempt to perform maintenance during low-traffic hours when possible, based on the region where your subscription is located. If you want to control when Redis can perform maintenance for a Flexible subscription, you can [set manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
+By default, Redis will perform maintenance automatically while limiting service disruption as much as possible. If you want to control when Redis can perform maintenance for a Flexible subscription, you can [set manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
 
 ## Maintenance activities
 
@@ -26,11 +26,9 @@ This includes, but is not limited to:
 - Adding more memory to a node
 - Applying security patches
 
-Redis will notify users by email when maintenance starts and ends. If Redis needs an action from a user to start maintenance, Redis will notify users with a reasonable amount of time before planned maintenance.
+Redis will notify users by email when maintenance starts and ends. For more details, see [Notifications](#notifications).
 
-For major upgrades or upgrades that might include breaking changes, users will receive an advance notification with sufficient time to prepare before the upgrade.
-
-If you want to receive notifications by email, make sure **Operational emails** are activated in your user settings in [Access Management]({{<relref "/rc/security/access-control/access-management">}}). 
+During maintenance, your application may disconnect from our service for a few seconds. Most Redis clients are set to refresh their DNS address when they reconnect to the database, and you will not be required to perform any further action. If you encounter connectivity problems for more than a minute during maintenance, please refresh your DNS entries.
 
 ### Urgent maintenance
 
@@ -38,3 +36,22 @@ Urgent maintenance refers to any activity that could affect service and cannot w
 
 Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily skipped maintenance. Redis will notify users by email when urgent maintenance starts and ends.
 
+## Notifications
+
+Redis will notify users by email when maintenance starts and ends. If Redis needs an action from a user to start maintenance, Redis will notify users with a reasonable amount of time before planned maintenance.
+
+For major upgrades or upgrades that might include breaking changes, users will receive an advance notification with sufficient time to prepare before the upgrade.
+
+If you want to receive maintenance notifications by email:
+
+1. Go to [Access Management]({{<relref "/rc/security/access-control/access-management">}}) and select your account in the list.
+
+1. Select the Edit button.
+
+    {{<image filename="images/rc/icon-access-management-edit-user.png" width="30px" alt="Use the Edit button change details for a team member." >}}{{< /image >}}
+
+1. Select **Operational emails** if it is not already turned on.
+
+    {{<image filename="images/rc/access-mgmt-edit-user-dialog.png" width="50%" alt="Use the Edit User dialog to change the details for a user" >}}{{< /image >}}
+
+1. Select **Save user** to save your changes.
