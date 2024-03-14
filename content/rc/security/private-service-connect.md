@@ -163,6 +163,8 @@ To deactivate Private Service Connect for your subscription:
 
     {{<image filename="images/rc/button-subscription-connectivity-psc-remove-service-confirm.png" width="100px" alt="Use the Confirm button to deactivate Private Service Connect." >}}{{< /image >}}
 
+Once you remove all of your Private Service Connect endpoints and deactivate it, you must migrate any connections from a Private Service Connect endpoint to the public or private endpoint of your database.
+
 ## Limitations
 
 Private Service Connect has the following limitations in Redis Cloud:
