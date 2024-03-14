@@ -50,7 +50,7 @@ Here's how to subscribe to Redis Cloud with Google Cloud Marketplace:
 
     {{<image filename="images/rc/gcp-marketplace-manage-on-provider.png" alt="The Manage on Provider button" >}}{{< /image >}}
 
-At this point, you can create a new [Fixed]({{<relref "/rc/subscriptions/create-fixed-subscription">}}) or [Flexible]({{<relref "/rc/subscriptions/create-flexible-subscription">}}) subscription using the standard workflow, with one important change. You don't need to enter a payment method, as it automatically uses your Google Cloud Marketplace account.
+At this point, you can create a new database using the standard workflow, with one important change. You don't need to enter a payment method, as it automatically uses your Google Cloud Marketplace account.
 
 To confirm this, review the payment method associated with your subscription.
 
