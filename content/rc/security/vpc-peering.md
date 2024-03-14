@@ -13,7 +13,7 @@ VPC peering uses private IP addresses to allow network connections between two [
 You can connect your VPC in the Redis Cloud subscription to the VPC of your application. This lets your application connect securely to your Redis Cloud database using VPC peering to optimize the performance of your application.
 
 {{< note >}}
-VPC peering is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
+VPC peering is available only with Redis Cloud Pro.  It is not supported for Redis Cloud Essentials.
 {{< /note >}}
 
 VPC peering configuration requires you to initiate VPC peering on your Redis Cloud subscription and then accept the VPC peering request for the AWS VPC that you want to peer with.

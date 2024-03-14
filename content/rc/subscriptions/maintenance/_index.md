@@ -12,7 +12,7 @@ aliases:
 
 Redis will maintain your Redis Cloud subscriptions and databases as needed to ensure your databases are running the most stable and up-to-date version of Redis. During maintenance, you may notice some latency when connecting to your databases. 
 
-Redis will attempt to perform maintenance during low-traffic hours when possible, based on the region where your subscription is located. If you want to control when Redis can perform maintenance for a Flexible subscription, you can [set manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
+Redis will attempt to perform maintenance during low-traffic hours when possible, based on the region where your subscription is located. If you want to control when Redis can perform maintenance for a Redis Cloud Pro subscription, you can [set manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
 
 ## Maintenance activities
 

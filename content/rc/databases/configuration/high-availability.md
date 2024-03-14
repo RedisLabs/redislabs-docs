@@ -29,8 +29,8 @@ Redis Cloud supports three levels of replication:
 
 Your replication options depend on your [subscription plan]({{<relref "/rc/subscriptions/_index.md">}}):
 
-- _Free_ plans do not support replication.
-- _Fixed_, _Flexible_ and _Annual_ paid plans let you choose between multi-zone or single-zone replication when creating a subscription. You can also turn off replication.
+- Free Redis Cloud Essentials plans support No replication and single-zone replication.
+- Paid Redis Cloud Essentials plans and Redis Cloud Pro plans let you choose between multi-zone or single-zone replication when creating a subscription. You can also turn off replication.
 
 After database creation, you can still enable or turn off replication.  However, [zone settings]({{<relref "/rc/databases/configuration/high-availability#zone-setting-maintenance">}}) are only configurable during database creation.  
 
@@ -38,13 +38,13 @@ After database creation, you can still enable or turn off replication.  However,
 
 Replication can affect performance as traffic increases to synchronize all copies. 
 
-## Memory limit
+## Dataset size
 
-For both Fixed and Flexible plans, replication doubles the memory limit you need for your database. 
+For both Redis Cloud Essentials and Redis Cloud Pro, replication doubles the dataset size you need for your database. 
 
-For Fixed plans, The size of the plan you choose includes replication. Therefore, if you choose replication, the dataset size you can use is half of the stated plan size. For example, if you choose a 1GB plan, Redis allocates 512 GB for the memory limit, and the other 512 MB for Replication.
+For Redis Cloud Essentials, the size of the plan you choose includes replication. Therefore, if you choose replication, the dataset size you can use is half of the stated plan size. For example, if you choose a 1GB plan, Redis allocates 512 GB for the memory limit, and the other 512 MB for Replication.
 
-For Flexible and Annual plans, you also need to double the amount of memory needed if you choose replication.
+For Redis Cloud Pro, you also need to double the amount of memory needed if you choose replication.
 
 ## Zone setting maintenance
 

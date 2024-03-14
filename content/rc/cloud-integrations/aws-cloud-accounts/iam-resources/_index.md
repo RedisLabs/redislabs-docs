@@ -10,7 +10,7 @@ aliases: /rc/how-to/creating-iam-resources
 
 
 ---
-For most Redis Cloud Flexible or Annual subscriptions deployed to Amazon Web Services (AWS), we manage the supporting infrastructure for you in dedicated AWS accounts.
+For most Redis Cloud Pro databases deployed to Amazon Web Services (AWS), we manage the supporting infrastructure for you in dedicated AWS accounts.
 
 You can manage this infrastructure with your own AWS accounts.  
 

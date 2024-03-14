@@ -11,7 +11,7 @@ aliases:
 
 [Private Service Connect](https://cloud.google.com/vpc/docs/private-service-connect) (PSC) creates a private endpoint that allows secure connections to Redis Cloud databases without exposing your application's [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC). 
 
-This feature is only available for Flexible and Annual subscriptions hosted on Google Cloud.
+This feature is only available for Redis Cloud Pro subscriptions hosted on Google Cloud.
 
 ## Considerations
 

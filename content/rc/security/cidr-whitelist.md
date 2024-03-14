@@ -16,7 +16,7 @@ You can configure your database's CIDR allow list to restrict client connections
 
 
 {{< note >}}
-To use the CDIR allow list, you must be on either Redis Cloud Fixed, Flexible, or Annual plans.  This feature is not supported on Redis Cloud Free.
+To use the CDIR allow list, you must be on either paid Redis Cloud Essentials or on Redis Cloud Pro.  This feature is not supported on free Redis Cloud Essentials plans.
 {{< /note >}}
 
 

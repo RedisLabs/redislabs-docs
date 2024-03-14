@@ -26,11 +26,11 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
 ### Sign up for Redis Cloud using AWS Marketplace {#sign-up}
 
-1.  Select the [Redis Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Cloud - Flexible plan listing.
+1.  Select the [Redis Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Cloud plan listing.
 
-    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Cloud listing on AWS Marketplace" >}}{{< /image >}}
 
-1.  Subscribe to Redis Cloud - Flexible plan, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
+1.  Subscribe to Redis Cloud listing, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
 
     {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
 
@@ -48,13 +48,13 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     In addition, AWS Marketplace is reported as the selected payment method.
 
-### [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}) {#create-sub} 
+### [Create a database]({{<relref "/rc/subscriptions/create-flexible-subscription">}}) {#create-sub} 
 
-1. In the [admin console](https://app.redislabs.com/), select **Add new subscription**. 
+1. In the [admin console](https://app.redislabs.com/), select **Create database**. 
 
     {{<image filename="images/rc/button-subscription-new.png" width="50%" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
-1. When the **New subscription** page appears, select **Flexible plans**.
+1. When the **New database** page appears, select **Flexible plans**.
 
     {{<image filename="images/rc/new-subscription-plans-flexible.png" alt="Available subscription plans; Flexible plan is selected." >}}{{< /image >}}
 

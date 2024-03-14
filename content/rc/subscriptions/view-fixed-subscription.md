@@ -1,10 +1,10 @@
 ---
-Title: View or edit Fixed subscription
+Title: View or edit Redis Cloud Essentials subscription
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-linktitle: View or edit Fixed subscription
+linktitle: View or edit Essentials subscription
 aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
            /rc/administration/setup-and-editing/viewing-subscription/,
            /rc/administration/setup-and-editing/changing-subscription-plan/,
@@ -17,11 +17,11 @@ aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
            /rc/administration/setup/change-plan/ ]
 
 ---
-To view the details of a Fixed subscription:
+To view the details of a Redis Cloud Essentials subscription:
 
-1.  Sign in to the [Redis Cloud console](https://app.redislabs.com/).
+1.  Sign in to the [Redis Cloud console](https://app.redislabs.com/) and select the **Subscriptions** list.
 
-1.  If you have more than one subscription, select the target subscription from the subscription list.
+1.  Select the target subscription from the subscription list.
 
     {{<image filename="images/rc/subscription-list-select.png" alt="The Subscription list shows your current subscriptions." >}}{{< /image >}}
 
@@ -39,13 +39,13 @@ From here, you can:
 
 The following sections provide more details.
 
-## Upgrade subscription plan
+## Upgrade plan
 
-Use the **Upgrade plan** button to update your Fixed subscription plan, your high availability settings, or your payment method. Upgrading your database between Fixed plans does not impact database availability during the update.
+Use the **Upgrade plan** button to update your Redis Cloud Essentials plan, your high availability settings, or your payment method. Upgrading your database between Redis Cloud Essentials plans does not impact database availability during the update.
 
-{{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Use the Upgrade plan button to change selected Fixed subscription detils." >}}{{< /image >}}
+{{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Use the Upgrade plan button to change selected Redis Cloud Essentials subscription detils." >}}{{< /image >}}
 
-For information on how to upgrade to a Flexible subscription, see [upgrade subscription plan from Fixed to Flexible]({{<relref "/rc/subscriptions/upgrade-fixed-flexible">}}).
+For information on how to upgrade to Redis Cloud Pro, see [upgrade subscription plan from Essentials to Pro]({{<relref "/rc/subscriptions/upgrade-fixed-flexible">}}).
 
 ### Change subscription plan
 
@@ -53,8 +53,8 @@ To change your subscription plan, select the desired plan from the list and sele
 
 {{<image filename="images/rc/subscription-change-fixed-tiers.png" width="100%" alt="Select the desired subscription plan from the ones shown." >}}{{< /image >}}
 
-Each Fixed plan provides a variety of benefits, including increased memory and number of connections.
-For a comparison of available plans, see [Fixed plans]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-plans">}}).
+Each Redis Cloud Essentials plan provides a variety of benefits, including increased memory and number of connections.
+For a comparison of available plans, see [Redis Cloud Essentials plans]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-plans">}}).
 
 When you change your plan, your data and endpoints are not disrupted.  
 
@@ -70,7 +70,7 @@ If you change your subscription to a lower plan, make sure your data fits within
 
 To change your plan's high availability settings, select the desired setting in the **High availability** panel.
 
-{{<image filename="images/rc/subscription-fixed-high-availability-panel.png" alt="Use the High availability panel to set Fixed subscription replication settings." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-fixed-high-availability-panel.png" alt="Use the High availability panel to set Essentials subscription replication settings." >}}{{< /image >}}
 
 You can switch between **No replication** and **Single-zone replication** at any time, but you cannot choose **Multi-zone replication** after your subscription is created. You also cannot switch from **Multi-zone replication** to another high availability option.
 
@@ -92,7 +92,7 @@ Use the **Upgrade plan** button to save changes.
 
 ## Subscription overview
 
-The **Overview** tab summarizes your Fixed subscription details using a series of panels:
+The **Overview** tab summarizes your Redis Cloud Essentials subscription details using a series of panels:
 
 {{<image filename="images/rc/subscription-details-fixed-overview-tab.png" width="75%" alt="The Overview tab displays the details of your Fixed subscription." >}}{{< /image >}}
 
@@ -100,11 +100,11 @@ The following details are displayed:
 
 | Detail | Description |
 |:---------|:--------------|
-| **Cloud vendor** | Your subscription cloud vendor |
+| **Cloud vendor** | Your database's cloud vendor |
 | **Plan description** | Brief summary of subscription, including the plan type, cloud provider, region, and data size limit |
 | **Availability** | Describes high availability settings |
 | **Region** | The region your subscription is deployed to |
-| **Plan** | The maximum database size of your Fixed plan. Also displays the cost for paid plans. |
+| **Plan** | The maximum database size of your Essentials plan. Also displays the cost for paid plans. |
 | **Databases** | Maximum number of databases for your plan |
 | **Connections** | Maximum number of concurrent connections |
 | **CIDR allow rules** | Maximum number of authorization rules |

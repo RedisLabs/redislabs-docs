@@ -36,8 +36,6 @@ Use the [Quick start]({{<relref "/rc/rc-quickstart">}}) to create a free subscri
 
 ## Subscriptions
 Learn about the [types of subscriptions]({{<relref "/rc/subscriptions">}}).
-- [Create a fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription">}})
-- [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}})
 
 ## Accounts & settings
 Manage Redis Cloud [accounts and settings]({{<relref "/rc/accounts">}}).

@@ -18,7 +18,7 @@ You'll learn how to:
 
 1.  Connect to your database
 
-If you already have an account, see [Create a Fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) to create a Free 30MB subscription. Free plans are a type of fixed plans; this provides an easy upgrade path when you need it.
+If you already have an account, see [Create a Redis Cloud Essentials subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) to create a Free 30MB subscription. Free plans are a type of Essentials plans; this provides an easy upgrade path when you need it.
 
 If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/subscriptions/" >}}) and [Manage databases]({{< relref "/rc/databases/" >}}).
 
@@ -50,7 +50,7 @@ To create a new account with a free subscription and database:
 1. Select **Let's start free** to create your subscription and database.
 
     {{< note >}}
-If you would rather customize your subscription and database, select **Create a custom database** to go to the **New subscription** page. From there, you can [create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) or [create a flexible subscription]({{< relref "/rc/subscriptions/create-flexible-subscription" >}}).
+If you would rather customize your database, select **Create a custom database** to go to the **New subscription** page. From there, you can [Create a database]({{<relref "/rc/databases/create-database">}}).
     {{< /note >}}
 
     You're taken to the **Overview tab** for your new subscription.
@@ -141,5 +141,5 @@ See [Redis CLI](https://redis.io/docs/connect/cli/) to learn how to use `redis-c
 - [Manage databases]({{< relref "/rc/databases" >}})
 - [Data persistence]({{< relref "/rc/databases/configuration/data-persistence.md" >}})
 - [Secure your Redis Cloud database]({{< relref "/rc/security/" >}})
-- [Back-up Flexible databases]({{< relref "/rc/databases/back-up-data.md" >}})
+- [Back-up databases]({{< relref "/rc/databases/back-up-data.md" >}})
 - [Monitor Redis Cloud performance]({{< relref "/rc/databases/monitor-performance.md" >}}).
