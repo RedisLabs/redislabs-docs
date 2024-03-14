@@ -87,6 +87,10 @@ To finish VPC peering setup, [update your route tables for the peering connectio
 
 Once VPC peering is established, we recommend switching your application connection string to the private endpoint.
 
+{{< note >}}
+{{< embed-md "rc-vpc-peering-cidr-list.md"  >}}
+{{< /note >}}
+
 ## Google Cloud VPC peering {#gcp-vpc-peering}
 
 If you want to peer a Redis Cloud VPC with a Google Cloud VPC, you need to:
@@ -126,3 +130,7 @@ To set up VPC peering:
 To approve the VPC peering request between Redis Cloud and Google Cloud, use the [`gcloud` CLI](https://cloud.google.com/sdk/gcloud) to run the **Google cloud command** that you copied before you initiated VPC peering.
 
 Once VPC peering is established, we recommend switching your application connection string to the private endpoint.
+
+{{< note >}}
+{{< embed-md "rc-vpc-peering-cidr-list.md"  >}}
+{{< /note >}}
