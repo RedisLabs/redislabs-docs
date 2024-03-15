@@ -1,7 +1,7 @@
 ---
 Title: Manage databases
 description:
-weight: 35
+weight: 20
 alwaysopen: false
 categories: ["RC"]
 linktitle: "Databases"

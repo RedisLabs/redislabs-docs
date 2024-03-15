@@ -54,6 +54,26 @@ This means you can't convert a multi-zone subscription to a single zone (or vice
 
 To use different zone settings, create a new subscription with the preferred settings and then [migrate data]({{<relref "/rc/databases/migrate-databases.md">}}) from the original subscription.
 
+## Availability zones
+
+You can reduce network transfer costs and network latency by ensuring your Redis Cloud cluster and your application are located in the same availability zone. 
+
+To specify the availability zone for your cluster, select *Manual Selection* under **Allowed Availability Zones**. 
+
+For Google Cloud clusters and [self-managed AWS cloud accounts]({{< relref "/rc/cloud-integrations/aws-cloud-accounts/" >}}), select an availability zone from the **Zone name** list.
+
+{{<image filename="images/rc/availability-zones-no-multi-az.png" width="95%" alt="Select one availability zone when Multi-AZ is turned off." >}}{{< /image >}}
+
+For all other AWS clusters, select an availability zone ID from the **Zone IDs** list. For more information on how to find an availability zone ID, see the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+
+{{<image filename="images/rc/availability-zones-aws-hosted-no-multi-az.png" width="80%" alt="For hosted AWS clusters, select availability zone IDs from the Zone IDs list." >}}{{< /image >}}
+
+If **Multi-AZ** is enabled, you must select three availability zones from the list.
+
+{{<image filename="images/rc/availability-zones-multi-az.png" width="80%" alt="Select Manual selection to select three availability zones when Multi-AZ is enabled." >}}{{< /image >}}
+
+For more information on availability zones, see the [Google Cloud docs](https://cloud.google.com/compute/docs/regions-zones/#available) or the [AWS docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones).
+
 ## More info
 
 To learn more about high availability and replication, see:
