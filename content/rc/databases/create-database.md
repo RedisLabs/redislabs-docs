@@ -46,9 +46,10 @@ To create a database in your Redis Cloud account:
         IMAGE HERE: existing subscription selected
     
 The rest of the database creation process depends on which subscription type you chose. Select your subscription type to view that section of the instructions:
-    - [Create Essentials database](#essentials)
-    - [Create Pro database - new subscription](#pro-new-sub)
-    - [Create Pro database - existing subscription](#pro-existing-sub)
+
+- [Create Essentials database](#essentials)
+- [Create Pro database - new subscription](#pro-new-sub)
+- [Create Pro database - existing subscription](#pro-existing-sub)
     
 ## Create Essentials database {#essentials}
 
@@ -62,7 +63,7 @@ IMAGE HERE: db name, cloud vendor, region, type
 
 1. The **Type** of database controls the protocol and advanced capabilities. Leave this as **Redis Stack** unless you have a legacy application that uses **Memcached**.
 
-    A Redis Stack database gives access to a set of advanced capabilities. For more information, see [Advanced capabilities]().
+    A Redis Stack database gives access to a set of advanced capabilities. For more information, see [Advanced capabilities]({{<relref "rc/databases/configuration/advanced-capabilities#essentials">}}).
 
 1. In the **Durability settings** panel, choose your **High availability settings** and **Data persistence** settings from the list. 
 
@@ -80,7 +81,7 @@ IMAGE HERE: db name, cloud vendor, region, type
 
     - An **Append-Only File** maintains a record (sometimes called a _redo log_ or _journal_) of write operations.  This allows the data to be restored by using the record to reconstruct the database up to the point of failure. For Essentials databases, Redis updates the Append-Only file every second.
 
-    - A **Snapshot** are copies of the in-memory database, taken at periodic intervals (one, six, or twelve hours). You can restore data to the snapshot's point in time. 
+    - A **Snapshot** is a copy of the in-memory database, taken at periodic intervals (one, six, or twelve hours). You can restore data to the snapshot's point in time. 
     
     See [Data persistence]({{<relref "rc/databases/configuration/data-persistence">}}) for more information about these settings.
 
