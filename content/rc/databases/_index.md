@@ -14,7 +14,7 @@ Here's how to perform a variety of tasks:
 
 ## Common database tasks
 
-- [Create a database]({{<relref "rc/databases/create-database.md">}})
+- [Create a database]({{<relref "rc/databases/create-database">}})
 
 - [View and edit databases]({{<relref "rc/databases/view-edit-database.md">}})
 
