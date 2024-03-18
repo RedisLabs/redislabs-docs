@@ -28,13 +28,15 @@ This includes, but is not limited to:
 
 Redis will notify users by email when maintenance starts and ends. For more details, see [Notifications](#notifications).
 
-During maintenance, your database will be operational, but you may notice some latency when connecting to your databases. Your application may also disconnect from your database for a few seconds. Most Redis clients are set to refresh their DNS address when they reconnect to the database, and you will not be required to perform any further action. If you encounter connectivity problems for more than a minute during maintenance, please refresh your DNS entries.
+During maintenance, your database will be operational, but you may notice some latency when connecting to your databases. 
+
+Your application may also disconnect from your database for a few seconds. Most Redis clients are set to refresh their DNS address when they reconnect to the database, and you will not be required to perform any further action. If you encounter connectivity problems for more than a minute during maintenance, please refresh your DNS entries.
 
 ### Urgent maintenance
 
 Urgent maintenance refers to any activity that could affect service and cannot wait for scheduling. This includes applying urgent security patches.
 
-Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily skipped maintenance. Redis will notify users by email when urgent maintenance starts and ends.
+Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily [skipped maintenance]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows#skip-maintenance-temporarily">}}). Redis will notify users by email when urgent maintenance starts and ends.
 
 ## Notifications
 
