@@ -31,7 +31,7 @@ There are some differences between plans for the different high availability opt
 |---|---|---|---|---|---|
 | **Concurrent<br/>connections<br/>per database** | 256 | 1024 | 2500 | 5000 | 10000 |
 | **CIDR<br/> allow rules** | 4 | 8 | 8 | 16 | 32 |
-| **Monthly<br/> total network<br/> bandwidth** | 64&nbsp;GB | 200 GB | 400 GB | 800 GB | 2000 GB |
+| **Monthly<br/> total network<br/> bandwidth** | 100&nbsp;GB | 200 GB | 400 GB | 800 GB | 2000 GB |
 | **Maximum<br/> throughput<sup>[2](#table-note-2-multi-az)</sup>** | 1000 ops/sec | 2000 ops/sec | 4000 ops/sec | 8000 ops/sec | 16000 ops/sec |
 
 1. <a name="table-note-1-multi-az" style="display: block; height: 80px; margin-top: -80px;"></a> Database size includes replication. See [High availability cost impact]({{<relref "rc/databases/configuration/high-availability#performance-and-cost-impact">}}) for more information.
