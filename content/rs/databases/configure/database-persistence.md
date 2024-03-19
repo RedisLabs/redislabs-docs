@@ -104,7 +104,7 @@ crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config \
 
 ## Auto Tiering data persistence
 
-Auto Tiering Flash storage is not considered as persistent storage.
+Auto Tiering flash storage is not considered persistent storage.
 
 Flash-based databases are expected to hold larger datasets and repair
 times for shards can be longer under node failures. To better protect
