@@ -108,6 +108,12 @@ The following table provides a snapshot of supported platforms as of this Redis 
 4. <a name="table-note-4" style="display: block; height: 80px; margin-top: -80px;"></a>
 [Docker images]({{<relref "/rs/installing-upgrading/quickstarts/docker-quickstart">}}) of Redis Enterprise Software are certified for development and testing only.
 
+## Known issues
+
+- RS61676: Full chain certificate update fails if any certificate in the chain does not have a Common Name (CN).
+
+- RS119958: The `debuginfo` script fails with the error `/bin/tar: Argument list too long` if there are too many RocksDB log files.
+
 ## Known limitations
 
 #### New Cluster Manager UI limitations
@@ -137,5 +143,28 @@ You cannot upgrade from a prior RHEL version to RHEL 9 if the Redis Enterprise c
 #### Cannot create Redis v6.x Active-Active databases with modules
 
 You cannot create Active-Active databases that use Redis version 6.0 or 6.2 with modules. Databases that use Redis version 7.2 do not have this limitation.
+
+This limitation will be fixed in a future maintenance release.
+
+### Firewalld configuration fails on RHEL 9 due to file permissions
+
+When you install Redis Enterprise Software version 7.4.2 on RHEL 9, `firewalld` configuration fails to add the `redislabs` service if `/etc/firewalld/services/redislabs-clients.xml` and `/etc/firewalld/services/redislabs.xml` are owned by `redislabs` instead of `root`.
+
+As a workaround:
+
+1. Change the files' owner and group to `root`: 
+
+    ```sh
+    $ chown root:root /etc/firewalld/services/redislabs-clients.xml
+    $ chown root:root /etc/firewalld/services/redislabs.xml
+    ```
+
+1. Add the `redislabs` service to `firewalld`:
+
+    ```sh
+    $ systemctl daemon-reload
+    $ systemctl restart firewalls
+    $ /bin/firewall-cmd --add-service=redislabs
+    ```
 
 This limitation will be fixed in a future maintenance release.
