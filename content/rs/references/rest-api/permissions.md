@@ -106,6 +106,7 @@ Available management roles include:
 | <a name="view_cluster_stats" style="display: block; height: 80px; margin-top: -80px;"></a>view_cluster_stats | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 | <a name="view_crdb" style="display: block; height: 80px; margin-top: -80px;"></a>view_crdb | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 | <a name="view_crdb_list" style="display: block; height: 80px; margin-top: -80px;"></a>view_crdb_list | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
+| <a name="view_debugging_info" style="display: block; height: 80px; margin-top: -80px;"></a>view_debugging_info | admin<br />cluster_member<br />db_member<br /> |
 | <a name="view_endpoint_stats" style="display: block; height: 80px; margin-top: -80px;"></a>view_endpoint_stats | admin<br />cluster_member<br />cluster_viewer<br />db_member<br />db_viewer |
 | <a name="view_ldap_config" style="display: block; height: 80px; margin-top: -80px;"></a>view_ldap_config | admin |
 | <a name="view_ldap_mapping_info" style="display: block; height: 80px; margin-top: -80px;"></a>view_ldap_mapping_info | admin |
