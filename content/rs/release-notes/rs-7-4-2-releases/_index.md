@@ -114,6 +114,8 @@ The following table provides a snapshot of supported platforms as of this Redis 
 
 - RS119958: The `debuginfo` script fails with the error `/bin/tar: Argument list too long` if there are too many RocksDB log files.
 
+- RS122570: REST API `POST /crdbs` responds with a confusing error message if the cluster does not have the requested CRDB-compatible module that complies with the requested featureset.
+
 ## Known limitations
 
 #### New Cluster Manager UI limitations
