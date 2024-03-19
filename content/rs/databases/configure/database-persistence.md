@@ -106,11 +106,7 @@ crdb-cli crdb update --crdb-guid <CRDB_GUID> --default-db-config \
 
 Auto Tiering flash storage is not considered persistent storage.
 
-Flash-based databases are expected to hold larger datasets and repair
-times for shards can be longer under node failures. To better protect
-the database against node failures, users might consider enabling
-master and replica dual data persistence provides better protection
-against failures under these longer repair times.
+Flash-based databases are expected to hold larger datasets, and shard repair times can take longer after node failures. To better protect the database against node failures with longer repair times, consider enabling master and replica dual data persistence.
 
 However, dual data persistence with replication adds some processor
 and network overhead, especially for cloud configurations
