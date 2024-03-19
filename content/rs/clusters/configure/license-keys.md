@@ -39,7 +39,7 @@ To view the cluster license key, use:
     For a list of returned fields, see the [response section]({{<relref "/rs/references/rest-api/requests/license#get-response">}}).
 
 {{<note>}}
-As of version 7.2, Redis Enteprise will enforce the shards limits by their types (RAM, flash) rather than total number of shards. The flash shards limit only appears in the UI if Auto Tiering is enabled.
+As of version 7.2, Redis Enterprise enforces shard limits by shard types, RAM or flash, instead of the total number of shards. The flash shards limit only appears in the UI if Auto Tiering is enabled.
 {{</note>}}
 
 ## Update cluster license
@@ -63,13 +63,13 @@ You can update the cluster license key:
     1. Select **Save**.
 
 You can update an existing cluster key at any time.
-Redis Enterprise checks the validay of it in terms of:
-- cluster name
-- activation and expiration dates
-- shard usage and limits
-- features
+Redis Enterprise checks its validity for the following:
+- Cluster name
+- Activation and expiration dates
+- Shard usage and limits
+- Features
 
-If saving a new cluster key fails, the operation returns an error including failure reason.
+If saving a new cluster key fails, the operation returns an error with the failure's cause.
 In this case, the existing key stays in effect.
 
 ## Expired cluster license
@@ -78,21 +78,17 @@ When the license is expired:
 
 - You cannot do these actions:
 
-    - Change database settings including security and configuration options.
+    - Change database settings, including security and configuration options.
 
-    - Add or remove a database.
-
-    - Upgrade a database to a new version.
-
-    - Add or remove a node.
+    - Add a database.
 
 - You can do these actions:
 
     - Sign in to the admin console and view settings and metrics at all resolutions for the cluster, nodes, and databases.
 
-    - Change cluster settings including license key, security for administrators, and cluster alerts.
+    - Change cluster settings, including the license key, security for administrators, and cluster alerts.
 
-    - Failover when a node fails and explicitly migrate shards between nodes.
+    - Fail over when a node fails and explicitly migrate shards between nodes.
 
     - Upgrade a node to a new version of Redis Enterprise Software.
  
@@ -100,13 +96,15 @@ When the license is expired:
 
 As of version 7.2, Redis Enterprise exposes the license quotas and the shards consumption metrics in the Cluster Manager UI or via the [Prometheus integration]({{< relref "/rs/clusters/monitoring/prometheus-integration.md" >}}).
 
-The 'cluster_shards_limit' metric displays the total shard limit by the license by shard type (ram / flash).
-Examples:
-- cluster_shards_limit{cluster="mycluster.local",shard_type="ram"} 100.0
-- cluster_shards_limit{cluster="mycluster.local",shard_type="flash"} 50.0
+The `cluster_shards_limit` metric displays the total shard limit by shard type.
 
-The 'bdb_shards_used' metric displays the used shard count by database and by shard type (ram / flash).
 Examples:
-- bdb_shards_used{bdb="2",cluster="mycluster.local",shard_type="ram"} 86.0
-- bdb_shards_used{bdb="3",cluster="mycluster.local",shard_type="flash"} 23.0
+- `cluster_shards_limit{cluster="mycluster.local",shard_type="ram"} 100.0`
+- `cluster_shards_limit{cluster="mycluster.local",shard_type="flash"} 50.0`
+
+The `bdb_shards_used` metric displays the used shard count by database and shard type.
+
+Examples:
+- `bdb_shards_used{bdb="2",cluster="mycluster.local",shard_type="ram"} 86.0`
+- `bdb_shards_used{bdb="3",cluster="mycluster.local",shard_type="flash"} 23.0`
 
