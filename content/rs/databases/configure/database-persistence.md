@@ -120,7 +120,7 @@ volumes in AWS.
 There may be times when performance is critical for your use case and
 you don't want to risk data persistence adding latency.
 
-You can enable or disable data-persistence on the master shards using the
+You can enable or turn off data persistence on the master shards using the
 following `rladmin` command:
 
 ```sh
