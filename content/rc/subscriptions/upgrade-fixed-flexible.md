@@ -57,11 +57,17 @@ Before you follow this guide, be aware of the following limitations:
 
     {{<image filename="images/rc/button-database-edit.png" alt="The Edit database button lets you change selected database properties." >}}{{< /image >}}
 
-1. In the **Durability** section, enable **Active-Passive Redis** and then select **Add Account's Path**.
+1. In the **Durability** section, enable **Active-Passive Redis** and then select **Add Source**.
 
-    {{<image filename="images/rc/button-database-add-account-path.png" alt="Use the Add Account's Path button to specify the source of the Active-Passive replica." >}}{{< /image >}}
+    {{<image filename="images/rc/migrate-data-active-passive-enable.png" alt="Active-Passive settings are located in the **Durability** section of the database **Configuration** tab." >}}{{< /image >}}
 
-1. Select the first database in your Fixed subscription from the list. This will be your source database. You can type in the database's name to find it.
+    {{<image filename="images/rc/button-database-uri-add.png" alt="Use the **Add Source** button to specify the source of the Active-Passive replica." width="150px">}}{{< /image >}}
+
+1. This will open the **Add Active-Passive Redis** screen. Select **Current account** to connect a database in your current account.
+
+    {{<image filename="images/rc/migrate-data-add-active-passive.png" alt="The Add Active-Passive Redis screen." >}}{{< /image >}}
+
+1. Select the first database in your Fixed subscription from the **Source database** list. This will be your source database. You can type in the database's name to find it.
 
     {{<image filename="images/rc/database-add-account-path-list.png" alt="Select the Source database from the database list." >}}{{< /image >}}
 

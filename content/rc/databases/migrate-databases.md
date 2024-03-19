@@ -73,7 +73,7 @@ Follow these detailed steps to migrate data using Active-Passive syncing:
 
     {{<image filename="images/rc/migrate-data-active-passive-enable.png" alt="Active-Passive settings are located in the **Durability** section of the database **Configuration** tab." >}}{{< /image >}}
 
-    {{<image filename="images/rc/button-database-uri-add.png" alt="Use the **Add Source** button to specify the source of the Active-Passive replica." >}}{{< /image >}}
+    {{<image filename="images/rc/button-database-uri-add.png" alt="Use the **Add Source** button to specify the source of the Active-Passive replica." width="150px">}}{{< /image >}}
 
 6. This will open the **Add Active-Passive Redis** screen. Select where the source database is located.
 
