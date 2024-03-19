@@ -144,9 +144,9 @@ You cannot upgrade from a prior RHEL version to RHEL 9 if the Redis Enterprise c
 
 You cannot create Active-Active databases that use Redis version 6.0 or 6.2 with modules. Databases that use Redis version 7.2 do not have this limitation.
 
-This limitation will be fixed in a future maintenance release.
+This limitation was fixed in [Redis Enterprise Software version 7.4.2-104]({{<relref "/rs/release-notes/rs-7-4-2-releases/rs-7-4-2-104">}}).
 
-### Firewalld configuration fails on RHEL 9 due to file permissions
+#### Firewalld configuration fails on RHEL 9 due to file permissions
 
 When you install Redis Enterprise Software version 7.4.2 on RHEL 9, `firewalld` configuration fails to add the `redislabs` service if `/etc/firewalld/services/redislabs-clients.xml` and `/etc/firewalld/services/redislabs.xml` are owned by `redislabs` instead of `root`.
 
