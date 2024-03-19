@@ -129,7 +129,7 @@ Here are some general guidelines:
 
 - Memory limit represents an upper limit.  You cannot store more data than the memory limit.  Depending on your other selections, available memory for data may be much less than expected.
 
-- Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory limit when replication is enabled.
+- Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory limit when replication is enabled. This also affects Fixed plans. For example, if you subscribe to a 1 GB Fixed plan, Redis will allocate 512 MB for your dataset and the other 512 MB for replication.
 
 - Active-Active also doubles memory consumption and the effect is cumulative with replication's impact. Since Active-Active requires replication to be turned on, the memory limit impact can be as large as four times (4x) the original data size.
 
@@ -141,12 +141,14 @@ Memory limits in Redis Cloud are subject to the same considerations as Redis Ent
 
 Throughput is the amount of operations a database can handle over a certain period of time. For most Redis Cloud databases, throughput is defined in operations per second (ops/sec).
 
-Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/).
-
-Your actual throughput may not match the throughput you set when you create your database. The following things can affect your database's throughput:
+We assume a typical workload that includes a different mix of commands and an average key and value size of 1KB. Therefore, your actual throughput may be higher or lower than the throughput you set when you create your database. The following properties can affect your database's throughput:
 - **Command complexity**: O(N) and O(log(N)) commands will take more time than O(1) commands, and will affect throughput accordingly.
-- **Key and value sizing**: If your database's keys and values are very large, setting and reading those keys may take more time and affect throughput.
+- **Key and value sizing**: If your database's keys and values are very large, your actual throughput may be lower than expected. If the keys and values are smaller than the typical workload, the actual throughput might be higher than expected.
 - **Replication**: Using [multi-zone replication]({{<relref "rc/databases/configuration/high-availability">}}) affects throughput as each write operation is executed asynchronously in each zone.
+- **Security**: Some security options, such as [transport layer security]({{< relref "/rc/security/database-security/tls-ssl" >}}), may affect throughput.
+- **Number of client connections**: The number of client connections affects throughput. Increasing or decreasing the number of client connections can result in higher or lower throughput.
+
+Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/).
 
 ### OSS Cluster API
 

@@ -25,8 +25,8 @@ Represents a [Redis module]({{<relref "/stack">}}).
 | homepage | string | Module's homepage |
 | is_bundled | boolean | Whether module came bundled with a version of Redis Enterprise |
 | license | string | Module is distributed under this license
-| min_redis_pack_version | string | Minimum Redis pack version required by this module |
-| min_redis_version | string | Minimum Redis version required by this module |
+| min_redis_pack_version | string | Minimum Redis Enterprise Software cluster version required by this module |
+| min_redis_version | string | Minimum Redis database version required by this module |
 | module_file | string | Module filename |
 | module_name | `search`<br />`ReJSON`<br />`graph`<br />`timeseries`<br />`bf` | Module's name<br/> |
 | os | string | Operating system used to compile the module |
