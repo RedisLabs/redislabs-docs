@@ -17,11 +17,11 @@ Available options depend on your subscription and your database **Type**.
 
 All Redis Cloud Essentials databases support [Redis Stack](https://redis.io/docs/stack/), which enables the most frequently used capabilities.
 
-{{<image filename="images/rc/new-database-general-type-free-stack.png" alt="For Essentials databases, the Type setting in the General section includes an option for Redis Stack." width="75%">}}{{< /image >}}
+{{<image filename="images/rc/new-database-general-type-free-stack.png" alt="For Fixed and Free subscriptions, the Type setting in the General section includes an option for Redis Stack." width="75%">}}{{< /image >}}
 
 When the database **Type** is set to _Redis Stack_, the Advanced capabilities section of the database details page displays the advanced capabilities included with the database and their versions.
 
-{{<image filename="images/rc/database-details-modules-stack-free.png" alt="For Essentials databases, the Database details page lists the capabilities and versions added by Redis Stack." width="75%">}}{{< /image >}}
+{{<image filename="images/rc/database-details-modules-stack-free.png" alt="For Fixed and Free subscriptions, the Database details page lists the capabilities and versions added by Redis Stack." width="75%">}}{{< /image >}}
 
 Redis Cloud is updated on a regular basis, which includes the advanced capabilities supported by the service. Versions displayed by the admin console may vary from those shown above.  For the latest details of any capability, see [Redis Stack and Redis Enterprise]({{<relref "/stack">}}). 
 
@@ -29,11 +29,11 @@ Redis Cloud is updated on a regular basis, which includes the advanced capabilit
 
 Redis Cloud Pro subscriptions let you choose advanced capabilities for each database.
 
-{{<image filename="images/rc/database-details-redis-module-select-flexible.png" alt="For Pro databases, you can select the capabilites included in your database." width="75%">}}{{< /image >}}
+{{<image filename="images/rc/database-details-redis-module-select-flexible.png" alt="For Flexible and Annual subscriptions, you can select the capabilites included in your database." width="75%">}}{{< /image >}}
 
 You can select more than one advanced capability for a database, though there are limits:
 
-- The following advanced capabilities can be combined in Pro databases:
+- The following advanced capabilities can be combined in Flexible and Annual subscriptions:
 
     - Search and query
     - JSON
@@ -41,7 +41,7 @@ You can select more than one advanced capability for a database, though there ar
     - Probabilistic
 
 - Graph cannot be combined with other capabilities.
-- JSON is the only capability supported for [Active-Active databases]({{<relref "rc/subscriptions/create-active-active-subscription">}}).
+- JSON is the only capability supported for [Active-Active subscriptions]({{<relref "rc/subscriptions/create-active-active-subscription">}}).
 
 You don't have to combine capabilities.  To remove a selected capability, either clear the checkbox in the menu or select its **Delete** icon.  
 
