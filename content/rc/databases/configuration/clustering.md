@@ -193,8 +193,6 @@ We assume a typical workload that includes a different mix of commands and an av
 - **Security**: Some security options, such as [transport layer security]({{< relref "/rc/security/database-security/tls-ssl" >}}), may affect throughput.
 - **Number of client connections**: The number of client connections affects throughput. Increasing or decreasing the number of client connections can result in higher or lower throughput.
 
-Databases with search and query enabled use the number of shards to determine throughput. To determine how many shards you need for your database, use the [sizing calculator](https://redis.com/modules/redis-search/redisearch-sizing-calculator/).
-
 ## OSS Cluster API
 
 {{< embed-md "oss-cluster-api-intro.md"  >}}
