@@ -12,6 +12,8 @@ aliases:
 
 4. Select the type of [subscription]({{<relref "/rc/subscriptions">}}) you need. For this guide, select **Pro**, select **Existing subscription**, and then select your existing pro subscription from the list.
 
+    {{<image filename="images/rc/create-database-subscription-pro-existing.png" alt="The Subscription selection panel with Pro selected and an existing subscription selected.">}}{{< /image >}}
+
     {{< note >}}
 This guide shows how to create a Pro database in an existing subscription.
 - If you don't yet have a Pro subscription, see [Create a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}).

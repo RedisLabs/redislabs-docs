@@ -15,15 +15,17 @@ aliases: /rv/administration/setup_and_editing/create-databases/
 
 4. Select the type of [subscription]({{<relref "/rc/subscriptions">}}) you need. For this guide, select **Essentials**.
 
+    {{<image filename="images/rc/create-database-subscription-essentials.png" alt="The Subscription selection panel with Essentials selected.">}}{{< /image >}}
+
     {{< note >}}
 This guide shows how to create an Essentials database.
 - If you'd rather create a Pro database, see [Create a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}).
 - If you already have a Pro subscription and want to add a database to it, see [Create a Pro database in an existing subscription]({{<relref "/rc/databases/create-database/create-pro-database-existing">}}).
     {{< /note >}}
-
+    
     Once you select **Essentials**, the rest of the database details will appear.
 
-    IMAGE HERE: db name, cloud vendor, region, type
+    {{<image filename="images/rc/create-database-essentials-cloud-vendor.png" alt="The database name, cloud vendor, region, and type settings.">}}{{< /image >}}
 
 1. Redis will generate a database name for you. If you want to change it, you can do so in the **Database name** field.  
 
@@ -34,6 +36,8 @@ This guide shows how to create an Essentials database.
     A Redis Stack database gives access to a set of advanced capabilities. For more information, see [Advanced capabilities]({{<relref "rc/databases/configuration/advanced-capabilities#essentials">}}).
 
 1. In the **Durability settings** panel, choose your **High availability settings** and **Data persistence** settings from the list. 
+
+    {{<image filename="images/rc/create-database-essentials-durability.png" alt="The durability settings allow you to choose High availability and Data persistence.">}}{{< /image >}}
 
     IMAGE HERE: durability settings panel
 
@@ -57,7 +61,7 @@ This guide shows how to create an Essentials database.
     
 1. Select the desired dataset size. To create a free database, select the 30 MB dataset size. You can only have one free database at a time.
 
-    IMAGE HERE: Essentials plans
+    {{<image filename="images/rc/subscription-new-fixed-tiers.png" alt="Available Essentials plans." >}}{{< /image >}}
 
 1.  Enter your payment details if you chose a paid plan.
 
