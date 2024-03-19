@@ -47,15 +47,15 @@ To create a new account with a free subscription and database:
 
    {{<image filename="images/rc/quickstart-create-free-database.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
 
-1. Select **Let's start free** to create your subscription and database.
+1. Select **Let's start free** to create your database.
 
     {{< note >}}
-If you would rather customize your database, select **Create a custom database** to go to the **New subscription** page. From there, you can [Create a database]({{<relref "/rc/databases/create-database">}}).
+If you would rather customize your database, select **Create a custom database** to go to the **New database** page. From there, you can [Create a database]({{<relref "/rc/databases/create-database">}}).
     {{< /note >}}
 
-    You're taken to the **Overview tab** for your new subscription.
+    You're taken to the **Database list**, where you can see your new database.
 
-    {{<image filename="images/rc/quickstart-subscription-overview.png" width="75%" alt="Overview tab showing your new subscription and database." >}}{{< /image >}}
+    {{<image filename="images/rc/quickstart-database-list.png" width="75%" alt="The database list showing your new Database." >}}{{< /image >}}
 
 1.  Select the database name to view the **Configuration** tab for your new database.
 
