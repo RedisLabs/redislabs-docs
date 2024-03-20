@@ -132,6 +132,10 @@ Once your Private Service Connect endpoint is active, you can connect your appli
 
 1. Copy the endpoint and use it in your application to connect to your database.
 
+{{< note >}}
+Once your Private Service Connect endpoint is active, you must connect to the database from the Private Service Connect endpoint if you want to connect with Private Service connect. If you previously used the public or private endpoint to connect to your database, you must migrate any connections to the Private Service Connect endpoint.
+{{< /note >}}
+
 
 ## Deactivate Private Service Connect {#deactivate-psc}
 
@@ -158,6 +162,8 @@ To deactivate Private Service Connect for your subscription:
 1. Select **Remove service** and then **Confirm**:
 
     {{<image filename="images/rc/button-subscription-connectivity-psc-remove-service-confirm.png" width="100px" alt="Use the Confirm button to deactivate Private Service Connect." >}}{{< /image >}}
+
+Once you remove all of your Private Service Connect endpoints and deactivate it, you must migrate any connections from a Private Service Connect endpoint to the public or private endpoint of your database.
 
 ## Limitations
 
