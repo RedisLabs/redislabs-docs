@@ -53,7 +53,7 @@ To create a new account with a free database:
 If you would rather customize your database, select **Create a custom database** to go to the **New database** page. From there, you can [Create a database]({{<relref "/rc/databases/create-database">}}).
     {{< /note >}}
 
-    You're taken to the **Database list**, where you can see your new database.
+    The **Database list** appears with your new database in the list.
 
     {{<image filename="images/rc/quickstart-database-list.png" width="75%" alt="The database list showing your new Database." >}}{{< /image >}}
 
