@@ -14,17 +14,17 @@ If you're new to Redis Cloud, this quick start helps you get up and running.
 
 You'll learn how to:
 
-1.  Create an account, a free subscription, and a database
+1.  Create an account and a free database
 
 1.  Connect to your database
 
-If you already have an account, see [Create a Redis Cloud Essentials subscription]({{< relref "/rc/subscriptions/create-fixed-subscription" >}}) to create a Free 30MB subscription. Free plans are a type of Essentials plans; this provides an easy upgrade path when you need it.
+If you already have an account, see [Create a database]({{<relref "/rc/databases/create-database">}}) to create a Free 30 MB Essentials database. Free plans are a type of Essentials plans; this provides an easy upgrade path when you need it.
 
-If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/subscriptions/" >}}) and [Manage databases]({{< relref "/rc/databases/" >}}).
+If you already have a database, see [Manage databases]({{< relref "/rc/databases/" >}}).
 
 ## Create an account
 
-To create a new account with a free subscription and database:
+To create a new account with a free database:
 
 1. Go to the [Sign up](https://redis.com/try-free/) page.
 
@@ -34,7 +34,7 @@ To create a new account with a free subscription and database:
 
 1. After you enter your information, you should receive an activation email from Redis. Select **Activate account** to go to the **Get Started** page in the [Redis Cloud console](https://app.redislabs.com).
 
-    {{<image filename="images/rc/quickstart-get-started.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
+    {{<image filename="images/rc/quickstart-get-started.png" width="75%" alt="Dialog to create your free database." >}}{{< /image >}}
 
     1. Choose your role from the **Role** drop-down.
     1. Choose your company size from the **myself/company** drop-down. If you are working on a personal project, select **myself**.
@@ -45,17 +45,17 @@ To create a new account with a free subscription and database:
 
 1. Select your preferred cloud vendor and region.
 
-   {{<image filename="images/rc/quickstart-create-free-database.png" width="75%" alt="Dialog to create your free subscription." >}}{{< /image >}}
+   {{<image filename="images/rc/quickstart-create-free-database.png" width="75%" alt="Dialog to create your free database." >}}{{< /image >}}
 
-1. Select **Let's start free** to create your subscription and database.
+1. Select **Let's start free** to create your database.
 
     {{< note >}}
-If you would rather customize your database, select **Create a custom database** to go to the **New subscription** page. From there, you can [Create a database]({{<relref "/rc/databases/create-database">}}).
+If you would rather customize your database, select **Create a custom database** to go to the **New database** page. From there, you can [Create a database]({{<relref "/rc/databases/create-database">}}).
     {{< /note >}}
 
-    You're taken to the **Overview tab** for your new subscription.
+    The **Database list** appears with your new database in the list.
 
-    {{<image filename="images/rc/quickstart-subscription-overview.png" width="75%" alt="Overview tab showing your new subscription and database." >}}{{< /image >}}
+    {{<image filename="images/rc/quickstart-database-list.png" width="75%" alt="The database list showing your new Database." >}}{{< /image >}}
 
 1.  Select the database name to view the **Configuration** tab for your new database.
 
