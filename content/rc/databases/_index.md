@@ -50,15 +50,15 @@ These topics provide background details that can help you tailor your databases 
 
 - [High availability and replication]({{<relref "rc/databases/configuration/high-availability">}}): Replication allows for automatic failover and greater fault tolerance. It can prevent data loss in the event of a hardware or zone failure.  Learn which options are available for Redis Cloud subscriptions.
 
-- [Advanced Capabilities]({{<relref "rc/databases/configuration/advanced-capabilities">}}): Advanced capabilities extend Redis database functionality by adding new data types and options. Learn what advanced capability options are available for your database.
+- [Advanced Capabilities]({{<relref "rc/databases/configuration/advanced-capabilities">}}): Advanced capabilities extend Redis database functionality by adding new data types and options. Learn about the advanced capability options that are available for your database.
 
 ## Compatibility
 
-Although Redis Cloud follows open source Redis specifications, it does not support certain commands. Instead of using these commands, Redis Cloud automatically handles features like replication and lets you [manage your database]({{<relref "/rc/databases">}}) from the [Redis Cloud console](https://app.redislabs.com/) or [Redis Cloud REST API]({{<relref "/rc/api">}}).
+Redis Cloud does not support certain commands. Instead of using these commands, Redis Cloud automatically handles features like replication and lets you [manage your database]({{<relref "/rc/databases">}}) from the [Redis Cloud console](https://app.redislabs.com/) or [Redis Cloud REST API]({{<relref "/rc/api">}}).
 
 For more details, see:
 
-- [Redis Cloud compatibility with open source Redis]({{<relref "/rc/compatibility">}})
+- [Redis Cloud compatibility]({{<relref "/rc/compatibility">}})
 
 - [Command compatibility]({{<relref "/rs/references/compatibility/commands">}})
 
