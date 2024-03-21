@@ -36,13 +36,13 @@ Your application may also disconnect from your database for a few seconds. Most 
 
 Urgent maintenance refers to any activity that could affect service and cannot wait for scheduling. This includes applying urgent security patches.
 
-Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily [skipped maintenance]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows#skip-maintenance-temporarily">}}). Redis will notify users by email when urgent maintenance starts and ends.
+Redis can perform urgent maintenance at any time, even if you have set a manual maintenance window or have temporarily [skipped maintenance]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows#skip-maintenance-temporarily">}}). Redis will notify you by email when urgent maintenance starts and ends.
 
 ## Notifications
 
-Redis will notify users by email when maintenance starts and ends. If Redis needs an action from a user to start maintenance, Redis will notify users with a reasonable amount of time before planned maintenance.
+Redis will notify you by email when maintenance starts and ends. If Redis needs an action from you to start maintenance, Redis will notify you with a reasonable amount of time before planned maintenance.
 
-For major upgrades or upgrades that might include breaking changes, users will receive an advance notification with sufficient time to prepare before the upgrade.
+For major upgrades or upgrades that might include breaking changes, you will receive an advance notification with sufficient time to prepare before the upgrade.
 
 If you want to receive maintenance notifications by email:
 
