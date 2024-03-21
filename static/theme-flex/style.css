@@ -39,8 +39,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   left: 0;
-  margin-bottom: 0;
-  position: fixed;
+  margin-bottom: -58px;
+  position: relative;
   right: 0;
   top: 0;
   z-index: 999;
@@ -1100,6 +1100,44 @@ article {
   /* flex: 1; */
   margin-top: 57px;
 }
+
+.banner {
+  background-color: #27264d;
+  padding: 1px;
+  z-index: 999;
+}
+
+.banner p {
+  text-align: center;
+  font-size: 16px !important;
+  color: #ffff;
+}
+
+.banner a {
+  color: #ffff;
+  text-decoration: underline;
+}
+
+.banner-article {
+  /*background-color: #f7f7f7;*/
+  background-color: #fff8dc;
+  padding: 1px;
+  margin-left: -3px;
+  z-index: 998;
+}
+
+.banner-article p {
+  text-align: left;
+  font-size: 16px !important;
+  padding-top: 1rem;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.banner-article a {
+  text-decoration: underline;
+}
+
 .cbp-spmenu a.menu__link__title {
   opacity: 0.4;
   font-size: 16px;

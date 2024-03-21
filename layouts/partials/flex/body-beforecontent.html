@@ -4,6 +4,9 @@
   {{ end }}
 {{ end }}
 <div class="header-wrap-outer">
+  {{ if .Site.Params.bannerText }}
+    {{ partial "banner.html" . }}
+  {{ end }}
   <header id="header">
       <div class="header-wrap">
         <div class="logo">
