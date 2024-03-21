@@ -13,7 +13,7 @@ aliases: /rv/api/how-to/update-databases/
 
 The API operation that updates an existing database is: `PUT /subscriptions/{subscription-id}/databases/{database-id}`
 
-This API operation uses the same [provisioning lifecycle]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}) as the [create database]({{< relref "/rc/api/examples/create-database.md" >}}) operation. The examples in this article refer to Redis Cloud Pro databases. 
+This API operation uses the same [provisioning lifecycle]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}) as the [create database]({{< relref "/rc/api/examples/create-database" >}}) operation. The examples in this article refer to Redis Cloud Pro databases. 
 
 ## Database update request JSON body
 

@@ -1,7 +1,7 @@
 ---
 title: Manage subscriptions
 description: 
-weight: 20
+weight: 35
 alwaysopen: false
 categories: ["RC"]
 linktitle: Subscriptions

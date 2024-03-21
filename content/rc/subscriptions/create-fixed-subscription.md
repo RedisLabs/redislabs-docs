@@ -110,4 +110,4 @@ When you create your subscription, there's a brief pause while your request is p
 
 To create your database, select the **New Database** button and then fill in the appropriate details.
 
-To learn more, see [Create a database]({{<relref "rc/databases/create-database.md">}}).
+To learn more, see [Create a database]({{<relref "rc/databases/create-database">}}).
