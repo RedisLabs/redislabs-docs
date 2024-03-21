@@ -39,8 +39,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   left: 0;
-  margin-bottom: 0;
-  position: absolute;
+  margin-bottom: -58px;
+  position: relative;
   right: 0;
   top: 0;
   z-index: 999;
@@ -1156,7 +1156,7 @@ article {
 .banner {
   background-color: #27264d;
   padding: 1px;
-  z-index: 998;
+  z-index: 999;
 }
 
 .banner p {
