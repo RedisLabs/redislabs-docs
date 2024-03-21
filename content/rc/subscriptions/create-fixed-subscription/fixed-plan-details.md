@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-## Current plans
+## Current Fixed plans
 
 These plans are currently offered for all new and upgraded Fixed subscriptions as of February 2024.
 

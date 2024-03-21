@@ -26,7 +26,7 @@ Our paid plans start at 250 MB and offer extra features, like high availability 
 
 If you need additional resources, you can [upgrade your subscription]({{<relref "/rc/subscriptions/view-fixed-subscription#upgrade-subscription-plan">}}) at any time.
 
-There are some differences between plans for the different high availability options. See [Fixed plan details]({{<relref "/rc/subscriptions/create-fixed-subscription/fixed-plan-details">}}) for more information.
+There are some differences between plans for the various high availability options. See [Fixed plan details]({{<relref "/rc/subscriptions/create-fixed-subscription/fixed-plan-details">}}) for more information.
 
 ## Create a Fixed subscription
 
