@@ -26,7 +26,7 @@ Cluster failure can be caused by:
 
 To recover a cluster and re-create it as it was before the failure,
 you must restore the cluster configuration `ccs-redis.rdb` to the cluster nodes.
-To recover databases in the new cluster, you must restore the database from persistence files such as backup files, append-only files (AOF), or RDB snapshots.
+To recover databases in the new cluster, you must restore the databases from persistence files such as backup files, append-only files (AOF), or RDB snapshots.
 These files are stored in the [persistent storage location]({{< relref "/rs/installing-upgrading/install/plan-deployment/persistent-ephemeral-storage" >}}).
 
 The cluster recovery process includes:
