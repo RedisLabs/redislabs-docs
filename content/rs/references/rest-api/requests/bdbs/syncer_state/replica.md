@@ -39,7 +39,7 @@ GET /v1/bdbs/1/syncer_state/replica
 
 | Key | Value |
 |-----|-------|
-| Host | The domain name or IP of the cluster |
+| Host | The domain name or IP of the cluster. |
 | Accept | application/json |
 
 #### URL parameters
