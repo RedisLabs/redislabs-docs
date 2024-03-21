@@ -208,7 +208,7 @@ POST /bootstrap/create_cluster
        },
        "bigstore_driver": "rocksdb"
     },
-    "license": "",
+    "license": "----- LICENSE START -----\ndi+iK...KniI9\n----- LICENSE END -----\n",
     "credentials": {
        "username": "my_username",
        "password": "my_password"

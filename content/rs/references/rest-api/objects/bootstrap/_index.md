@@ -28,7 +28,7 @@ A bootstrap configuration object.
 | envoy_admin_port | integer, (range:&nbsp;1024-65535) | Envoy admin port. Changing this port during runtime might result in an empty response because envoy serves as the cluster gateway.|
 | envoy_mgmt_server_port | integer, (range:&nbsp;1024-65535) | Envoy management server port|
 | gossip_envoy_admin_port | integer, (range:&nbsp;1024-65535) | Gossip envoy admin port|
-| license | string | License string |
+| license | string | License string. If not provided, a trial license is set by default. |
 | max_retries | integer | Max number of retries in case of recoverable errors |
 | node | [node_identity]({{<relref "/rs/references/rest-api/objects/bootstrap/node_identity">}}) object | Node description |
 | policy | [policy]({{<relref "/rs/references/rest-api/objects/bootstrap/policy">}}) object | Policy object |
