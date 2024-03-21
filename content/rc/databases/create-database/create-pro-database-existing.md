@@ -20,9 +20,9 @@ This guide shows how to create a Pro database in an existing subscription.
 - If you'd rather create an Essentials database, see [Create an Essentials database]({{<relref "/rc/databases/create-database/create-essentials-database">}}).
     {{< /note >}}
 
-After you select **Pro** and then select your subscription from the list, you're taken to the **Create database** page. The **Create database** screen is divided into sections, each dedicated to a specific category of settings.
+After you select **Pro** and select your subscription from the list, the **Create database** page appears. The **Create database** screen is divided into sections, each dedicated to a specific category of settings.
 
-When you've configured your new database, use the **Activate database** button to create and activate it.
+When you've configured your new database, click the **Activate database** button to create and activate it.
 
 {{<image filename="images/rc/button-database-activate.png" alt="Use the Activate database button to create and activate your database." width="150px">}}{{< /image >}}
 
@@ -30,7 +30,7 @@ When you've configured your new database, use the **Activate database** button t
 
 The **General** section defines basic properties about your database.
 
-IMAGE HERE: general section
+<!---IMAGE HERE: general section-->
 
 The available settings vary according to your subscription plan:
 
@@ -70,7 +70,7 @@ The **Durability** section helps you keep your database (and your data) availabl
 | Setting name             | Description                                                                                                                                                                |
 |:-------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **High availability**    | Replicates your data across multiple nodes, as allowed by your subscription plan                                                                                           |
-| **Data persistence**     | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type            |
+| **Data persistence**     | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depending on your plan type            |
 | **Data eviction policy** | Configures which [policy]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) is applied when your database reaches its memory limit              |
 | **Remote backup**        | When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data" >}}) |
 | **Active-Passive Redis** | When enabled, identifies a path to the linked database. See [Migrate data]({{<relref "/rc/databases/migrate-databases">}}) for more information.           |

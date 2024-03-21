@@ -21,7 +21,7 @@ This guide shows how to create a Pro database with a new subscription.
     {{< /note >}}
     
 
-Once you select **Pro**, you need to: 
+After you select **Pro**, you need to: 
 
 1. Set up the deployment options, including cloud vendor details, high availability settings, and advanced options.
 
@@ -37,7 +37,7 @@ The **Setup** tab specifies general settings for your Redis deployment.
 
 {{<image filename="images/rc/subscription-new-flexible-tabs-setup.png" width="75%" alt="The Setup tab of the new Pro Database process." >}}{{< /image >}}
 
-The three sections to this tab:
+There are three sections on this tab:
 
 - [General settings](#general-settings) include the cloud provider details, the subscription name, and specific configuration options.
 - [Version](#version) lets you choose the Redis version of your databases.

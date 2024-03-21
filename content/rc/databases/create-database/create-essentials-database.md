@@ -23,7 +23,7 @@ This guide shows how to create an Essentials database.
 - If you already have a Pro subscription and want to add a database to it, see [Create a Pro database in an existing subscription]({{<relref "/rc/databases/create-database/create-pro-database-existing">}}).
     {{< /note >}}
     
-    Once you select **Essentials**, the rest of the database details will appear.
+    After you select **Essentials**, the rest of the database details will appear.
 
     {{<image filename="images/rc/create-database-essentials-cloud-vendor.png" alt="The database name, cloud vendor, region, and type settings.">}}{{< /image >}}
 
@@ -39,7 +39,6 @@ This guide shows how to create an Essentials database.
 
     {{<image filename="images/rc/create-database-essentials-durability.png" alt="The durability settings allow you to choose High availability and Data persistence.">}}{{< /image >}}
 
-    IMAGE HERE: durability settings panel
 
     Redis Cloud supports the following high availability settings:
 
@@ -57,7 +56,7 @@ This guide shows how to create an Essentials database.
     
     See [Data persistence]({{<relref "rc/databases/configuration/data-persistence">}}) for more information about these settings.
 
-    These settings may already be set based on the use case you selected. you can change them now if you like.
+    These settings may already be set based on the use case you selected. You can change them now if you like.
     
 1. Select the desired dataset size. To create a free database, select the 30 MB dataset size. You can only have one free database at a time.
 
@@ -71,7 +70,7 @@ This guide shows how to create an Essentials database.
 
 1. Select **Create database** or **Confirm & pay** to create your database.
 
-When you create your database, there's a brief pause while your request is processed and then you're taken to the **Database details** page.
+When you create your database, there's a brief pause while your request is processed and then the **Database details** page appears.
 
 
 ## Use case settings
