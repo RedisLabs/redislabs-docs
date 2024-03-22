@@ -52,6 +52,7 @@ RDI supports the following database sources using [Debezium Server](https://debe
 | Google Cloud SQL MySQL      | 8.0                    ||
 | Google Cloud SQL Postgres   | 15                     ||
 | Google Cloud SQL SQL Server | 2019                   ||
+| Google Cloud AlloyDB for PostgreSQL | ||
 
 ## Supported targets (write-behind)
 
