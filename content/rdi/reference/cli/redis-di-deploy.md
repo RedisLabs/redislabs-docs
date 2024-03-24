@@ -89,14 +89,6 @@ Usage: redis-di deploy [OPTIONS]
 
   Password for unlocking an encrypted private key
 
-- `rdi_site_name`:
-
-  - Type: STRING
-  - Default: `none`
-  - Usage: `--rdi-site-name`
-
-  Site name to be used as a prefix for WB streams in active active
-
 - `directory`:
 
   - Type: STRING
@@ -133,8 +125,6 @@ Options:
   --rdi-cacert TEXT               CA certificate file to verify with
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
-  --rdi-site-name TEXT            Site name to be used as a prefix for WB
-                                  streams in active active
   --dir TEXT                      Directory containing RDI configuration
                                   [default: .]
   --help                          Show this message and exit.
