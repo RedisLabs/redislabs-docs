@@ -121,6 +121,14 @@ Usage: redis-di upgrade [OPTIONS]
 
   Password for unlocking an encrypted private key
 
+- `rdi_site_name`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-site-name`
+
+  Site name to be used as a prefix for WB streams in active active
+
 - `force`:
 
   - Type: BOOL
@@ -167,6 +175,8 @@ Options:
   --rdi-cacert TEXT               CA certificate file to verify with
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
+  --rdi-site-name TEXT            Site name to be used as a prefix for WB
+                                  streams in active active
   -f, --force                     Force upgrade/downgrade. skips verification
                                   prompts
   --help                          Show this message and exit.
