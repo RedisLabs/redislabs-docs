@@ -14,3 +14,7 @@ aliases: []
 ### Fixed subscriptions through Google Cloud Marketplace
 
 You can now use your [Google Cloud Marketplace]({{<relref "/rc/cloud-integrations/gcp-marketplace/">}}) account to pay for your Fixed subscriptions as well as your Flexible subscriptions. 
+
+### Active-Passive with TLS
+
+[Active-Passive]({{<relref "/rc/databases/migrate-databases#sync-using-active-passive">}}) now supports source databases that require connections over TLS. See [Migrate data]({{<relref "/rc/databases/migrate-databases">}}) for more information.
