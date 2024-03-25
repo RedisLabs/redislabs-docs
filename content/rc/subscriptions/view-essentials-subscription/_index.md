@@ -2,7 +2,7 @@
 Title: View and Upgrade Redis Cloud Essentials plan
 LinkTitle: View and Upgrade Essentials plan
 description:
-weight: 40
+weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
