@@ -171,4 +171,4 @@ Private Service Connect has the following limitations in Redis Cloud:
 
 - Although Redis Cloud supports using Private Service Connect with Enterprise clustering, you cannot use the [OSS Cluster API]({{< relref "/rc/databases/create-database#oss-cluster-api" >}}) with Private Service Connect enabled.
 
-- Private Service Connect is not available for clusters with Redis versions 6.2.12 and earlier. Contact [Redis support](https://redis.com/company/support) to upgrade the cluster to a compatible version or [create a new subscription]({{<relref "/rc/database/create-database/create-pro-database-new">}}).
+- Private Service Connect is not available for clusters with Redis versions 6.2.12 and earlier. Contact [Redis support](https://redis.com/company/support) to upgrade the cluster to a compatible version or [create a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}).

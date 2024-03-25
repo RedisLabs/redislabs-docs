@@ -15,7 +15,7 @@ This changelog lists new features, enhancements, and other changes added to Redi
 
 ### Redis 7.2 flexible opt-in
 
-You can opt in to Redis 7.2 on [Flexible subscriptions]({{<relref "/rc/databases/create-pro-database-new">}}). Redis 7.2 introduces several changes to existing Redis commands; see the [list of breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) published in June's changelog for more details.
+You can opt in to Redis 7.2 on [Flexible subscriptions]({{<relref "/rc/databases/create-database/create-pro-database-new">}}). Redis 7.2 introduces several changes to existing Redis commands; see the [list of breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) published in June's changelog for more details.
 
 ### Triggers and functions preview
 
@@ -26,7 +26,7 @@ A preview of [triggers and functions]({{<relref "/stack/triggers-functions">}}) 
 
 To use it, [create a fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription">}}) in one of these regions. Then, [create your database]({{<relref "/rc/databases/create-database">}}) and set the database Type to Redis and select Triggers and Functions in the drop-down. Or, set the database Type to Redis Stack to get all of our advanced capabilities.
 
-If you'd like to use triggers and functions with a [Flexible subscription]({{<relref "/rc/databases/create-pro-database-new">}}), contact [support](https://redis.com/company/support/).
+If you'd like to use triggers and functions with a [Flexible subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}), contact [support](https://redis.com/company/support/).
 
 For more information about triggers and functions, see the [triggers and functions documentation](https://redis.io/docs/interact/programmability/triggers-and-functions).
 

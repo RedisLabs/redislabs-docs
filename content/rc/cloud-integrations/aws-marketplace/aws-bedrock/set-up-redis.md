@@ -48,7 +48,7 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     In addition, AWS Marketplace is reported as the selected payment method.
 
-### [Create a database]({{<relref "/rc/databases/create-pro-database-new">}}) {#create-sub} 
+### [Create a database]({{<relref "/rc/databases/create-database/create-pro-database-new">}}) {#create-sub} 
 
 1. In the [admin console](https://app.redislabs.com/), select **Create database**. 
 
