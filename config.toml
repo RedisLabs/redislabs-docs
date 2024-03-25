@@ -45,7 +45,7 @@ googleTagManager = "GTM-KNWQXKB"
 mac_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-mac.dmg"
 linux_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-linux64"
 windows_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-win.msi"
-docker_command = "docker run -v redisinsight:/db -p 8001:8001 redislabs/redisinsight:latest"
+docker_command = "docker run -v redisinsight:/db -p 8001:5540 redislabs/redisinsight:latest"
 docker_db_volume_permission = "chown -R 1001 redisinsight"
 
 rdi_rlec_min_version = "6.2.18"
