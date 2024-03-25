@@ -8,9 +8,11 @@ categories: ["RC"]
 aliases: /rc/subscriptions/create-active-active-subscription/
 ---
 
-To deploy Active-Active databases in Redis Cloud, create a Redis Cloud Pro database with Active-Active enabled.
+Active-Active databases store data across multiple regions and availability zones.  This improves scalability, performance, and availability, especially when compared to standalone databases. See [Active-Active Redis]({{<relref "rc/databases/configuration/active-active-redis">}}) for more information.
 
-Overall, the process is similar to [create a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}).  However, there are some additional requirements listed below:
+To deploy Active-Active databases in Redis Cloud, you need a Redis Cloud Pro subscription that enables Active-Active Redis and defines the regions for each copy of your databases.
+
+Overall, the process is similar to [creating a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}).  However, there are some additional requirements listed below:
 
 - Enable Active-Active Redis
 - [Define the regions](#define-regions) for each database instance
@@ -24,9 +26,9 @@ This reduces latency for local users and improves availability should a region f
 Consistency between each instance is maintained in the background; that is, each copy eventually includes updates from every region.  As a result, [memory limit]({{<relref "/rc/databases/create-database#memory-limit">}}) and throughput increase.
 
 
-## Define regions
+### Define regions
 
-When you create a new Flexible subscription, the Active-Active Redis option appears to the right of the cloud providers.
+When you create a new Pro database, the Active-Active Redis option appears to the right of the cloud providers.
 
 {{<image filename="images/rc/create-flexible-sub-active-active-on.png" width="75%" alt="When you enable Active-Actve, you need to specify the regions for each database instance." >}}{{< /image >}}
 
@@ -42,7 +44,7 @@ You can use a region's Remove button to remove it from the list.
 {{<image filename="images/rc/icon-region-delete.png" width="30px" alt="Select the Delete button to remove a region from the list." >}}{{< /image >}}
 
 
-## Define CIDR addresses
+### Define CIDR addresses
 
 To properly route network traffic between each Active-Active database instance and your consumer VPCs, use care to specify unique CIDR address blocks when using VPC peering.  The block regions should _not_ overlap between the Redis server and your app consumer VPCs.
 
@@ -60,15 +62,15 @@ Red exclamation marks indicate error conditions; the tooltip provides additional
 
 {{<image filename="images/rc/icon-cidr-address-error.png" width="30px" alt="Red exclamation points indicate CIDR address problems." >}}{{< /image >}}
 
-## Select capabilities
+### Select capabilities
 
 Active-Active databases support the [JSON]({{< relref "/stack/json" >}}) data type. 
 
 {{<image filename="images/rc/active-active-json-detail.png" width="75%" alt="When you create an Active-Active database, you can select the JSON advanced capability." >}}{{< /image >}}
 
-When you create an Active-Active database, JSON is already selected. Select it again to remove it.
+We select JSON for you when you create an Active-Active database. Select it again to remove it.
 
-## Define throughput
+### Define throughput
 
 Each Active-Active instance coordinates changes with every other instance, which increases memory use and throughput.
 
@@ -92,7 +94,7 @@ The total operations per second:
 
 Throughput requirements grow dramatically as regions increase.  As a result, consider your requirements carefully.
 
-## More info
+### More info
 
 - [Create a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}})
 - Database [memory limit]({{<relref "/rc/databases/create-database#memory-limit">}})
