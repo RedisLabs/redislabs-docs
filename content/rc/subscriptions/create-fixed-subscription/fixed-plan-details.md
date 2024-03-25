@@ -8,7 +8,7 @@ categories: ["RC"]
 
 ## Current Fixed plans
 
-These plans are currently offered for all new and upgraded Fixed subscriptions as of February 2024.
+These plans are currently offered for all new and upgraded Fixed subscriptions (updated March 2024).
 
 | **DB&nbsp;size**<sup>[1](#table-note-1)</sup> | **30&nbsp;MB&nbsp;(Free)** | **250 MB** | **1 GB** | **2.5 GB** | **5 GB** | **12 GB** |
 |---|---|---|---|---|---|---|
