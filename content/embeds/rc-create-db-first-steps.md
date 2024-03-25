@@ -12,7 +12,7 @@ To create a database in your Redis Cloud account:
 
 3. Select your Redis use case. There are four pre-defined use cases:
 
-    {{<image filename="images/rc/create-database-redis-use-cases.png" alt="The Redis Use case panel" width="120px">}}{{< /image >}}
+    {{<image filename="images/rc/create-database-redis-use-cases.png" alt="The Redis Use case panel">}}{{< /image >}}
 
     - **Cache**: Stores short-term or volatile data. Can be used for session management, semantic cache, session store, and other uses where data is short-lived.
     - **Database**: Stores durable and consistent data. Can be used for document databases, feature storage, gaming leaderboards, durable caches, and other uses where your data needs to be highly available and persistent.
