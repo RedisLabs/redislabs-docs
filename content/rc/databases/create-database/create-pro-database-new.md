@@ -12,7 +12,7 @@ aliases:
 
 4. Select the type of [subscription]({{<relref "/rc/subscriptions">}}) you need. For this guide, select **Pro**. 
 
-    {{<image filename="images/rc/create-database-subscription-pro-new.png" alt="The Subscription selection panel with Pro selected and an existing subscription selected.">}}{{< /image >}}
+    {{<image filename="images/rc/create-database-subscription-pro-new.png" alt="The Subscription selection panel with Pro selected.">}}{{< /image >}}
 
     {{< note >}}
 This guide shows how to create a Pro database with a new subscription.
@@ -138,7 +138,7 @@ Redis breaks down your databases to Redis Billing Units (RBUs), each with their 
 
 Select **Back to Sizing** to make changes or **Confirm & Pay** to create your databases.
 
-{{<image filename="images/rc/button-create-db-confirm-pay.png" width="140px" alt="Select Create subscription to create your new subscription." >}}{{< /image >}}
+{{<image filename="images/rc/button-create-db-confirm-pay.png" width="140px" alt="Select Confirm & pay to create your database." >}}{{< /image >}}
 
 Note that databases are created in the background.  While they are provisioning, you aren't allowed to make changes. This process generally takes 10-15 minutes.
 
