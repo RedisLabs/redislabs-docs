@@ -185,6 +185,8 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 ### Supported platforms
 
+The following table provides a snapshot of supported platforms as of this Redis Enterprise Software release. See the [supported platforms reference](http://localhost:1313/rs/references/supported-platforms/) for more details about operating system compatibility.
+
 <span title="Check mark icon">&#x2705;</span> Supported – The platform is supported for this version of Redis Enterprise Software.
 
 <span title="Warning icon">&#x26A0;&#xFE0F;</span> Deprecated – The platform is still supported for this version of Redis Enterprise Software, but support will be removed in a future release.
