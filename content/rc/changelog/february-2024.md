@@ -25,5 +25,5 @@ The Redis Cloud console will now notify you through email and on the application
 
 ### CIDR overlap detection
 
-When you [create a new Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}), the Redis Cloud console will now detect if the Classless Inter-Domain Routing (CIDR) subnet range you specify is in use by another Flexible subscription on the same account. This will allow you to address and resolve CIDR conflicts in your Redis deployment.
+When you [create a new Flexible subscription]({{<relref "/rc/databases/create-pro-database-new">}}), the Redis Cloud console will now detect if the Classless Inter-Domain Routing (CIDR) subnet range you specify is in use by another Flexible subscription on the same account. This will allow you to address and resolve CIDR conflicts in your Redis deployment.
 

@@ -37,7 +37,7 @@ Here's how to subscribe to Redis Cloud with AWS Marketplace:
 
     In addition, AWS Marketplace is reported as the selected payment method.
 
-At this point, you can create a new database using the [standard workflow]({{<relref "/rc/subscriptions/create-flexible-subscription">}}), with one important change. You don't need to enter a payment method, as it's automatically assigned to your AWS Marketplace account.
+At this point, you can create a new database using the [standard workflow]({{<relref "/rc/database/create-database/create-pro-database-new">}}), with one important change. You don't need to enter a payment method, as it's automatically assigned to your AWS Marketplace account.
 
 To confirm this, review the payment method associated with your subscription.
 

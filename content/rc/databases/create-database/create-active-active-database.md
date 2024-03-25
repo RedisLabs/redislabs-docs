@@ -1,16 +1,16 @@
 ---
-Title: Create an Active-Active subscription
-linkTitle: Create Active-Active subscription
-description: Shows what changes when you create an Active-Active subscription (Flexible or Annual)
-weight: 31
+Title: Create an Active-Active database
+linkTitle: Create Active-Active database
+description: Shows how to create an Active-Active database
+weight: 20
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/subscriptions/create-active-active-subscription/
 ---
 
-To deploy Active-Active databases in Redis Cloud, create a Flexible or Annual subscription with Active-Active enabled.
+To deploy Active-Active databases in Redis Cloud, create a Redis Cloud Pro database with Active-Active enabled.
 
-Overall, the process is similar to [create a Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some additional requirements listed below:
+Overall, the process is similar to [create a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}).  However, there are some additional requirements listed below:
 
 - Enable Active-Active Redis
 - [Define the regions](#define-regions) for each database instance
@@ -94,7 +94,7 @@ Throughput requirements grow dramatically as regions increase.  As a result, con
 
 ## More info
 
-- [Create a Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}})
+- [Create a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}})
 - Database [memory limit]({{<relref "/rc/databases/create-database#memory-limit">}})
 - Redis Cloud [subscription plans]({{<relref "/rc/subscriptions/">}})
 - [Redis Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/)
