@@ -5,10 +5,12 @@ description: Shows how to create an Essentials database.
 weight: 5
 alwaysopen: false
 categories: ["RC"]
-aliases: /rv/administration/setup_and_editing/create-databases/
-         /rv/administration/setup_and_editing/creating-databases/
-         /rc/administration/setup_and_editing/create-databases/
-         /rc/administration/setup-and-editing/creating-databases/
+aliases: [ /rc/subscriptions/create-fixed-subscription,
+            /rv/administration/setup_and_editing/create-subscription/,
+            /rv/administration/setup_and_editing/creating-subscription/,
+            /rc/administration/setup_and_editing/create-subscription/,
+            /rc/administration/setup-and-editing/create-subscription/,
+            /rc/administration/setup/create-subscription/ ]
 ---
 
 {{< embed-md "rc-create-db-first-steps.md" >}}
@@ -61,6 +63,8 @@ This guide shows how to create an Essentials database.
 1. Select the desired dataset size. To create a free database, select the 30 MB dataset size. You can only have one free database at a time.
 
     {{<image filename="images/rc/subscription-new-fixed-tiers.png" alt="Available Essentials plans." >}}{{< /image >}}
+
+    For a comparison of available plans, see [Redis Cloud Essentials plans]({{<relref "rc/subscriptions/view-essentials-subscription/essentials-plan-details">}}).
 
 1.  Enter your payment details if you chose a paid plan.
 

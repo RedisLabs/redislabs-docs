@@ -45,7 +45,7 @@ Use the **Upgrade plan** button to update your Redis Cloud Essentials plan, your
 
 {{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Use the Upgrade plan button to change selected Redis Cloud Essentials subscription detils." >}}{{< /image >}}
 
-For information on how to upgrade to Redis Cloud Pro, see [upgrade subscription plan from Essentials to Pro]({{<relref "/rc/subscriptions/upgrade-fixed-flexible">}}).
+For information on how to upgrade to Redis Cloud Pro, see [upgrade subscription plan from Essentials to Pro]({{<relref "/rc/subscriptions/upgrade-essentials-pro">}}).
 
 ### Change subscription plan
 
@@ -54,7 +54,7 @@ To change your subscription plan, select the desired plan from the list and sele
 {{<image filename="images/rc/subscription-change-fixed-tiers.png" width="100%" alt="Select the desired subscription plan from the ones shown." >}}{{< /image >}}
 
 Each Redis Cloud Essentials plan provides a variety of benefits, including increased memory and number of connections.
-For a comparison of available plans, see [Redis Cloud Essentials plans]({{<relref "rc/subscriptions/create-fixed-subscription#fixed-plans">}}).
+For a comparison of available plans, see [Redis Cloud Essentials plans]({{<relref "rc/subscriptions/view-essentials-subscription/essentials-plan-details">}}).
 
 When you change your plan, your data and endpoints are not disrupted.  
 

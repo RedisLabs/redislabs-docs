@@ -13,13 +13,13 @@ aliases: []
 
 ### New Fixed plans
 
-Redis is updating our [Fixed subscriptions]({{<relref "/rc/subscriptions/create-fixed-subscription">}}) on Redis Cloud. These plans offer increased capacity at lower prices compared to legacy plans.
+Redis is updating our [Fixed subscriptions]({{<relref "/rc/databases/create-database/create-essentials-database">}}) on Redis Cloud. These plans offer increased capacity at lower prices compared to legacy plans.
 
-See [Fixed plan subscription tiers]({{<relref "/rc/subscriptions/create-fixed-subscription#fixed-plans">}}) for an updated list of all Fixed plans.
+See [Fixed plan subscription tiers]({{<relref "/rc/databases/create-database/create-essentials-database#fixed-plans">}}) for an updated list of all Fixed plans.
 
 ### Redis 7.2 Fixed region support
 
-You can now use Redis 7.2 on [Fixed subscriptions]({{<relref "/rc/subscriptions/create-fixed-subscription">}}) in `us-east-1` on Amazon Web Services. New Fixed subscriptions created in `us-east-1` will use Redis 7.2, and existing subscriptions will continue to use Redis 6.2.
+You can now use Redis 7.2 on [Fixed subscriptions]({{<relref "/rc/databases/create-database/create-essentials-database">}}) in `us-east-1` on Amazon Web Services. New Fixed subscriptions created in `us-east-1` will use Redis 7.2, and existing subscriptions will continue to use Redis 6.2.
 
 Redis 7.2 introduces several changes to existing Redis commands; see the [list of breaking changes]({{<relref "/rc/changelog/june-2023#redis-72-breaking-changes">}}) published in June's changelog for more details.
 

@@ -1,5 +1,5 @@
 ---
-Title: Essentials plan details
+Title: Redis Cloud Essentials plans
 description: Provides detailed information on Redis Cloud Essentials plans
 weight: $weight
 alwaysopen: false
@@ -11,13 +11,13 @@ aliases: [ /rc/subscriptions/create-fixed-subscription/fixed-plan-details,
 
 Redis Cloud Essentials is cost-efficient and designed for low-throughput scenarios. It support a range of availability, persistence, and backup options.  
 
-Essentials plan [pricing](https://redis.com/cloud/pricing/) scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown in [Fixed plan details]({{<relref "rc/subscriptions/create-fixed-subscription/fixed-plan-details">}}).
+Essentials plan [pricing](https://redis.com/cloud/pricing/) scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown in the tables below.
 
 The 30 MB Essentials plan is free; it's designed for learning and building test projects. It gives you enough space to learn Redis concepts and develop application prototypes.
 
 Our paid plans start at 250 MB and offer extra features, like high availability and backups (both daily and instant). They are great for bigger projects or production environments that require increased storage, reliability, and other features to support your operational needs.
 
-If you need additional resources, you can [upgrade your subscription]({{<relref "/rc/subscriptions/view-fixed-subscription#upgrade-subscription-plan">}}) at any time.
+If you need additional resources, you can [upgrade your subscription]({{<relref "/rc/subscriptions/view-essentials-subscription#upgrade-subscription-plan">}}) at any time.
 
 ## Current plans
 
