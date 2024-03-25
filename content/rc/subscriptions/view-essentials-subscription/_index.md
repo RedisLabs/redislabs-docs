@@ -1,5 +1,6 @@
 ---
 Title: View and Upgrade Redis Cloud Essentials plan
+LinkTitle: View and Upgrade Essentials plan
 description:
 weight: 40
 alwaysopen: false

@@ -1,10 +1,10 @@
 ---
-Title: View or edit Redis Cloud Pro subscription
+Title: View and edit Redis Cloud Pro plan
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-linktitle: View or edit Pro subscription
+linktitle: View and edit Pro plan
 aliases: /rc/subscriptions/view-flexible-subscription
 ---
 To view the details of a Redis Cloud Pro subscription:
