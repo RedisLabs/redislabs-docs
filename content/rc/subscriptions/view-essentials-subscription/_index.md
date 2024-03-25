@@ -1,10 +1,9 @@
 ---
-Title: View or edit Redis Cloud Essentials subscription
+Title: View and Upgrade Redis Cloud Essentials plan
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-linktitle: View or edit Essentials subscription
 aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
            /rc/administration/setup-and-editing/viewing-subscription/,
            /rc/administration/setup-and-editing/changing-subscription-plan/,
@@ -14,7 +13,8 @@ aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
            /rc/administration/setup-and-editing/changing-subscription-plan.md,
            /rc/administration/setup-and-editing/changing-subscription-plan/,
            /rc/administration/setup/change-plan.md,
-           /rc/administration/setup/change-plan/ ]
+           /rc/administration/setup/change-plan/,
+           /rc/subscriptions/view-fixed-subscription ]
 
 ---
 To view the details of a Redis Cloud Essentials subscription:

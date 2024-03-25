@@ -5,7 +5,7 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 linktitle: View or edit Pro subscription
-aliases:
+aliases: /rc/subscriptions/view-flexible-subscription
 ---
 To view the details of a Redis Cloud Pro subscription:
 

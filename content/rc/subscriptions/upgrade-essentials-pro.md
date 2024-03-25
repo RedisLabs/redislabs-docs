@@ -5,7 +5,7 @@ description: Upgrade your Redis Cloud Essentials subscription to a Redis Cloud P
 weight: 45
 alwaysopen: false
 categories: ["RC"]
-aliases: 
+aliases: /rc/subscriptions/upgrade-fixed-flexble
 ---
 
 Redis Cloud Essentials supports low throughput workflows. It supports a range of availability, persistence, and backup options, and can be great for testing and prototyping. However, if your databases need higher throughput, or you're missing features that are not available with Redis Cloud Essentials, you may want to upgrade Redis Cloud Essentials to Redis Cloud Pro.
