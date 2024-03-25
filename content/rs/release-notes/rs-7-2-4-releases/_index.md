@@ -165,7 +165,7 @@ Amazon Linux 1 support is considered deprecated and will be removed in a future 
 
 #### Ubuntu 16.04
 
-The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes](http://localhost:1313/rs/release-notes/rs-6-4-2-releases/#deprecations). As of Redis Enterprise Software 7.2.4, Ubuntu 16.04 is no longer supported.
+The deprecation of Ubuntu 16.04 was announced in the [Redis Enterprise Software 6.4.2 release notes]({{<relref "/rs/release-notes/rs-6-4-2-releases#deprecations">}}). As of Redis Enterprise Software 7.2.4, Ubuntu 16.04 is no longer supported.
 
 #### RC4 encryption cipher
 
@@ -185,7 +185,7 @@ Certain operating systems, such as RHEL 8, have already removed support for the 
 
 ### Supported platforms
 
-The following table provides a snapshot of supported platforms as of this Redis Enterprise Software release. See the [supported platforms reference](http://localhost:1313/rs/references/supported-platforms/) for more details about operating system compatibility.
+The following table provides a snapshot of supported platforms as of this Redis Enterprise Software release. See the [supported platforms reference]({{<relref "/rs/references/supported-platforms">}}) for more details about operating system compatibility.
 
 <span title="Check mark icon">&#x2705;</span> Supported – The platform is supported for this version of Redis Enterprise Software.
 
