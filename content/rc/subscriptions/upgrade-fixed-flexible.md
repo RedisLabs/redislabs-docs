@@ -45,8 +45,6 @@ You can migrate your Redis Cloud Essentials database to your new Redis Cloud Pro
 {{< note >}}
 Before you follow this guide, be aware of the following limitations:
 
-- If your Redis Cloud Essentials database has [Transport Layer Security (TLS)]({{< relref  "/rc/security/database-security/tls-ssl" >}}) enabled, you won't be able to migrate your database between subscriptions using this guide. Use the [Transfer via import]({{<relref "/rc/databases/migrate-databases#transfer-via-import">}}) method or [contact support](https://redis.com/company/support/) if you want to migrate a TLS-enabled database using Active-Passive.
-
 - This guide is for migrating databases between subscriptions in the same Redis Cloud console account. [Contact support](https://redis.com/company/support/) if you want to migrate a database between accounts using Active-Passive.
 
 - As long as Active-Passive is enabled, data in the target database will not expire and will not be evicted regardless of the set [data eviction policy]({{<relref "rc/databases/configuration/data-eviction-policies.md">}}). We recommend that you turn off Active-Passive after the databases are synced. 
@@ -58,11 +56,17 @@ Before you follow this guide, be aware of the following limitations:
 
     {{<image filename="images/rc/button-database-edit.png" alt="The Edit database button lets you change selected database properties." >}}{{< /image >}}
 
-1. In the **Durability** section, enable **Active-Passive Redis** and then select **Add Account's Path**.
+1. In the **Durability** section, enable **Active-Passive Redis** and then select **Add Source**.
 
-    {{<image filename="images/rc/button-database-add-account-path.png" alt="Use the Add Account's Path button to specify the source of the Active-Passive replica." >}}{{< /image >}}
+    {{<image filename="images/rc/migrate-data-active-passive-enable.png" alt="Active-Passive settings are located in the **Durability** section of the database **Configuration** tab." >}}{{< /image >}}
 
-1. Select your Redis Cloud Essentials database from the list. This will be your source database. You can type in the database's name to find it.
+    {{<image filename="images/rc/button-database-uri-add.png" alt="Use the **Add Source** button to specify the source of the Active-Passive replica." width="150px">}}{{< /image >}}
+
+1. This will open the **Add Active-Passive Redis** screen. Select **Current account** to connect a database in your current account.
+
+    {{<image filename="images/rc/migrate-data-add-active-passive.png" alt="The Add Active-Passive Redis screen." >}}{{< /image >}}
+
+1. Select your Redis Cloud Essentials database from the **Source database** list. This will be your source database. You can type in the database's name to find it.
 
     {{<image filename="images/rc/database-add-account-path-list.png" alt="Select the Source database from the database list." >}}{{< /image >}}
 
