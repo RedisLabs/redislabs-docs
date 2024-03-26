@@ -44,7 +44,7 @@ Consider using VPC peering and Transit Gateway in parallel for the following sit
 
 Before you can set up Transit Gateway:
 
-1. [Create a database with Redis Cloud Pro]({{< relref "/rc/subscriptions/create-flexible-subscription" >}}) from the Redis cloud [admin console](https://app.redislabs.com/#/).
+1. [Create a database with Redis Cloud Pro]({{< relref "/rc/databases/create-database/create-pro-database-new" >}}) from the Redis cloud [admin console](https://app.redislabs.com/#/).
 
 1. [Create a transit gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw) from the [AWS VPC console](https://console.aws.amazon.com/vpc/).
 

@@ -22,7 +22,7 @@ After you set up the database, you can use the database information to set it as
 To set up a Redis Cloud instance for Bedrock, you need to:
 
 1. [Sign up for Redis Cloud](#sign-up) if you do not already have an account.
-1. [Create a subscription and database](#create-sub) to use for your Bedrock knowledge base.
+1. [Create a database](#create-sub) to use for your Bedrock knowledge base.
 
 ### Sign up for Redis Cloud using AWS Marketplace {#sign-up}
 
@@ -48,7 +48,7 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     In addition, AWS Marketplace is reported as the selected payment method.
 
-### [Create a database]({{<relref "/rc/subscriptions/create-flexible-subscription">}}) {#create-sub} 
+### [Create a database]({{<relref "/rc/databases/create-database/create-pro-database-new">}}) {#create-sub} 
 
 1. In the [admin console](https://app.redislabs.com/), select **New database**. 
 

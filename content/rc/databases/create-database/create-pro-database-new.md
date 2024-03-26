@@ -5,7 +5,12 @@ description: Shows how to create a Pro database with a new subscription
 weight: 10
 alwaysopen: false
 categories: ["RC"]
-aliases: 
+aliases: /rc/administration/customize-pro/
+         /rc/administration/customize-pro.md          
+         /rc/administration/setup/customize-pro/
+         /rc/administration/setup/customize-pro.md
+         /rc/administration/setup/customize-flexible-plan/
+         /rc/subscriptions/create-flexible-subscription/
 ---
 
 {{< embed-md "rc-create-db-first-steps.md" >}}
