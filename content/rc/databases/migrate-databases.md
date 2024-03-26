@@ -111,9 +111,9 @@ Follow these detailed steps to migrate data using Active-Passive syncing:
 
 7. Select **Save Active-Passive** to save your Active-Passive settings.
 
-    {{<image filename="images/rc/icon-database-save-active-passive.png" alt="The **Save** button verifies the Source URI and you can't save until it validates." >}}{{< /image >}}
+    {{<image filename="images/rc/icon-database-save-active-passive.png" alt="The **Save** button verifies the Source URI and you can't save until it validates." width="200px">}}{{< /image >}}
 
-    For an external database, Redis will verify the endpoint at this step. If the endpoint cannot be verified, make sure that you've copied the details directly from the source database and that the value you entered starts with `redis://`.
+    For an external database, we'll verify the endpoint at this step. If the endpoint can't be verified, make sure that you've copied the details directly from the source database and that the value you entered starts with `redis://`.
 
 8.  Select **Save Database** to begin updating the database.
 
