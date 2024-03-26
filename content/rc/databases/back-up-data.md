@@ -35,17 +35,13 @@ Here, you'll learn how to store backups using different cloud providers.
 
 To turn on database backups:
 
-1. Sign in to the [Redis Cloud console](https://app.redislabs.com/).  (Create an account if you don't already have one.)
+1. Sign in to the [Redis Cloud console](https://app.redislabs.com/). 
 
-2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
-
-    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
-
-3.  Select the database to open the **Database** page and then select **Edit database**.
+1.  Select the database to open the **Database** page and then select **Edit database**.
 
     {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
-4.  In the **Durability** section of the **Configuration** tab, locate the **Remote backup** setting:
+1.  In the **Durability** section of the **Configuration** tab, locate the **Remote backup** setting:
 
     {{<image filename="images/rc/database-details-configuration-tab-durability-flexible.png" alt="The Remote backup setting is located in the Durability section of the Configuration tab of the database details screen." >}}{{< /image >}}
 

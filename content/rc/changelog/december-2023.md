@@ -13,7 +13,7 @@ aliases: []
 
 ### Active-Active JSON support
 
-[Active-Active databases]({{<relref "rc/databases/active-active-redis">}}) on Redis Cloud now support the [JSON]({{< relref "/stack/json" >}}) data type. 
+[Active-Active databases]({{<relref "rc/databases/configuration/active-active-redis">}}) on Redis Cloud now support the [JSON]({{< relref "/stack/json" >}}) data type. 
 
 See [Create an Active-Active subscription]({{<relref "/rc/databases/create-database/create-active-active-database">}}) to learn how to create an Active-Active subscription.
 

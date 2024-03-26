@@ -83,6 +83,10 @@ The **Tags** section lets you add [tags]({{< relref "/rc/databases/tag-database"
 
 {{<image filename="images/rc/database-new-tags.png" alt="Use the Tag settings to add tags to the database." >}}{{< /image >}}
 
+Select **Add tag** to add a tag.
+
+{{<image filename="images/rc/tags-button-add-tag.png" alt="The Add tag button." width=100px >}}{{< /image >}}
+
 {{< embed-md "rc-tags-tag-module.md" >}}
 
 ## Security section
