@@ -3,6 +3,10 @@ Title: Create an Active-Active database
 linkTitle: Create Active-Active database
 description: Shows how to create an Active-Active database
 weight: 20
+Title: Create an Active-Active database
+linkTitle: Create Active-Active database
+description: Shows how to create an Active-Active database
+weight: 20
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/subscriptions/create-active-active-subscription/

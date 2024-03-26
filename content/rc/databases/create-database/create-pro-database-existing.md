@@ -20,7 +20,9 @@ This guide shows how to create a Pro database in an existing subscription.
 - If you'd rather create an Essentials database, see [Create an Essentials database]({{<relref "/rc/databases/create-database/create-essentials-database">}}).
     {{< /note >}}
 
-After you select **Pro** and select your subscription from the list, the **Create database** page appears. The **Create database** screen is divided into sections, each dedicated to a specific category of settings.
+After you select **Pro** and select your existing subscription from the list, select **Continue** to go to the **New database** page. 
+
+The **New database** page is divided into sections, each dedicated to a specific category of settings. The following sections provide more details.
 
 When you've configured your new database, click the **Activate database** button to create and activate it.
 
@@ -30,7 +32,7 @@ When you've configured your new database, click the **Activate database** button
 
 The **General** section defines basic properties about your database.
 
-<!---IMAGE HERE: general section-->
+{{<image filename="images/rc/database-new-flexible.png" alt="The general section of the New Database screen.">}}{{< /image >}}
 
 The available settings vary according to your subscription plan:
 

@@ -74,6 +74,8 @@ This guide shows how to create an Essentials database.
 
 1. Select **Create database** or **Confirm & pay** to create your database.
 
+{{<image filename="images/rc/button-create-db-confirm-pay.png" width="140px" alt="Select Confirm & Pay to create your new database." >}}{{< /image >}}
+
 When you create your database, there's a brief pause while your request is processed and then the **Database details** page appears.
 
 

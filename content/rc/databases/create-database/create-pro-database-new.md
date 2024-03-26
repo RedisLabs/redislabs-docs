@@ -17,7 +17,7 @@ aliases: /rc/administration/customize-pro/
 
 4. Select the type of [subscription]({{<relref "/rc/subscriptions">}}) you need. For this guide, select **Pro**. 
 
-    {{<image filename="images/rc/create-database-subscription-pro-new.png" alt="The Subscription selection panel with Pro selected and an existing subscription selected.">}}{{< /image >}}
+    {{<image filename="images/rc/create-database-subscription-pro-new.png" alt="The Subscription selection panel with Pro selected.">}}{{< /image >}}
 
     {{< note >}}
 This guide shows how to create a Pro database with a new subscription.
@@ -44,7 +44,7 @@ The **Setup** tab specifies general settings for your Redis deployment.
 
 There are three sections on this tab:
 
-- [General settings](#general-settings) include the cloud provider details, the subscription name, and specific configuration options.
+- [General settings](#general-settings) include the cloud provider details and specific configuration options.
 - [Version](#version) lets you choose the Redis version of your databases.
 - [Advanced options](#advanced-options) define settings for high availability and security. Configurable settings vary according to cloud provider.
 
@@ -56,16 +56,16 @@ The following settings are defined in the **General settings** of the **Setup** 
 
 | General setting | Description |
 |:---------|:-----------|
-| **Cloud vendor** | The public cloud vendor to deploy your subscription. (_required_) |
-| **Region** | The vendor region where you wish to deploy your subscription.  (_required_)|
-| **Active-Active Redis** | Hosts your datasets in multiple read-write locations to support distributed applications and disaster recovery. See [Create an Active-Active database]() for specific steps and configuration options exclusive to Active-Active. |
+| **Cloud vendor** | The public cloud vendor to deploy your databases. (_required_) |
+| **Region** | The vendor region where you wish to deploy your databases.  (_required_)|
+| **Active-Active Redis** | Hosts your datasets in multiple read-write locations to support distributed applications and disaster recovery. See [Create an Active-Active database](LINK NEEDED) for specific steps and configuration options exclusive to Active-Active. |
 | **Auto Tiering**| Determines if your databases are stored only in memory (RAM) or are split between memory and Flash storage (RAM+Flash).  See [Auto Tiering]({{< relref "/rs/databases/auto-tiering/" >}})|
 
 ### Version {#version}
 
 {{<image filename="images/rc/subscription-new-flexible-version-section.png" width="75%" alt="Version selection between Redis 6.2 and 7.2" >}}{{< /image >}}
 
-The **Version** section lets you choose the Redis version of your database. Choose **Redis 7.2** if you want to use the latest advanced features of Redis.
+The **Version** section lets you choose the Redis version of your databases. Choose **Redis 7.2** if you want to use the latest advanced features of Redis.
 
 ### Advanced options {#advanced-options}
 
@@ -75,11 +75,11 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 
 | Advanced option | Description |
 |---|---|
-| **Multi-AZ** | Determines if replication spans multiple Availability Zones, which provides automatic failover when problems occur. |
+| **Multi-zone** | Determines if replication spans multiple Availability Zones, which provides automatic failover when problems occur. See [High Availability]({{<relref "rc/databases/configuration/high-availability">}}). |
 | **Allowed Availability Zones** | The availability zones for your selected region.<br/><br/>If you choose **Manual selection**, you must select at least one zone ID from the **Zone IDs** list.  For more information, see [Availability zones]({{<relref "rc/databases/configuration/high-availability">}}). |
-| **Cloud account** | To deploy this subscription to an existing cloud account, select it here.  Use the **Add** button to add a new cloud account.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
-| **VPC configuration** | Select **In a new VPC** to deploy to a new [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC).<br/><br/>To deploy this subscription to an existing virtual private cloud, select **In existing VPC** and then set VPC ID to the appropriate ID value.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
-| **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range of IP addresses for your deployment. Redis creates a new [subnet](https://en.wikipedia.org/wiki/Subnetwork) for the **Deployment CIDR** in your [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC). It cannot overlap with the CIDR ranges of other subnets used by your subscription.<br/><br/>For deployments in an existing VPC, the **Deployment CIDR** must be within your VPC's **primary** CIDR range (secondary CIDRs are not supported). |
+| **Cloud account** | To deploy these databases to an existing cloud account, select it here.  Use the **Add** button to add a new cloud account.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
+| **VPC configuration** | Select **In a new VPC** to deploy to a new [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC).<br/><br/>To deploy these databases to an existing virtual private cloud, select **In existing VPC** and then set VPC ID to the appropriate ID value.<br/><br/>(Available only if [self-managed cloud vendor accounts]({{<relref "/rc/cloud-integrations/aws-cloud-accounts">}}) are enabled) |
+| **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range of IP addresses for your deployment. Redis creates a new [subnet](https://en.wikipedia.org/wiki/Subnetwork) for the **Deployment CIDR** in your [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC). It cannot overlap with the CIDR ranges of other subnets used by your account.<br/><br/>For deployments in an existing VPC, the **Deployment CIDR** must be within your VPC's **primary** CIDR range (secondary CIDRs are not supported). |
 | **Maintenance windows** | Determines when Redis can perform [maintenance]({{<relref "/rc/subscriptions/maintenance">}}) on your databases. Select **Manual** if you want to set [manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}). |
 
 When finished, choose **Continue** to determine your size requirements.
@@ -90,7 +90,7 @@ When finished, choose **Continue** to determine your size requirements.
 
 The **Sizing** tab helps you specify the database, memory, and throughput requirements for your subscription.
 
-{{<image filename="images/rc/subscription-new-flexible-sizing-tab.png" width="75%" alt="The Sizing tab when creating a new Flexible subscription." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-new-flexible-sizing-tab.png" width="75%" alt="The Sizing tab when creating a new Pro subscription." >}}{{< /image >}}
 
 When you first visit the **Sizing** tab, there are no databases defined.  Select the **Add** button to create one.
 
@@ -106,10 +106,10 @@ By default, you're shown basic settings, which include:
 |:---------|:-----------|
 | **Name** | A custom name for your database (_required_) |
 | **Advanced Capabilities** | Advanced data types used by the database. Choose from [Search and query]({{< relref "/stack/search" >}}), [JSON]({{< relref "/stack/json" >}}), [Time series]({{< relref "/stack/timeseries" >}}), [Probabilistic]({{< relref "/stack/bloom" >}}), or [Graph (EOL)]({{< relref "/stack/deprecated-features/graph" >}}). |
-| **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**). See [Throughput]({{< relref "/rc/databases/configuration/clustering#throughput" >}}) for more information. |
+| **Throughput** | Identifies maximum throughput for the database, which is specified in terms of operations per second (**Ops/sec**). See [Throughput]({{< relref "/rc/databases/configuration/clustering#throughput" >}}) for more information. |
 | **Memory Limit (GB)** | The size limit for the database. Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).|
-| **High Availability** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |
-| **Data Persistence** | Defines the data persistence policy, if any. See [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}) |
+| **High Availability** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). See [High Availability]({{<relref "rc/databases/configuration/high-availability">}}).  |
+| **Data Persistence** | Defines the data persistence policy, if any. See [Database persistence]({{< relref "/rs/databases/configure/database-persistence.md" >}}). |
 
 Select **More options** to specify values for the following settings.
 
@@ -143,7 +143,7 @@ Redis breaks down your databases to Redis Billing Units (RBUs), each with their 
 
 Select **Back to Sizing** to make changes or **Confirm & Pay** to create your databases.
 
-{{<image filename="images/rc/button-subscription-create.png" width="140px" alt="Select Create subscription to create your new subscription." >}}{{< /image >}}
+{{<image filename="images/rc/button-create-db-confirm-pay.png" width="140px" alt="Select Confirm & pay to create your database." >}}{{< /image >}}
 
 Note that databases are created in the background.  While they are provisioning, you aren't allowed to make changes. This process generally takes 10-15 minutes.
 
