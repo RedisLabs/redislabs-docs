@@ -16,4 +16,4 @@ After you add your first tag, you can:
 
 - Select **Add additional tag** to add another tag.
 
-    {{<image filename="images/rc/tags-button-add-additional-tag.png" alt="The Add additional tag button." >}}{{< /image >}}
+    {{<image filename="images/rc/tags-button-add-additional-tag.png" alt="The Add additional tag button." width="200px" >}}{{< /image >}}
