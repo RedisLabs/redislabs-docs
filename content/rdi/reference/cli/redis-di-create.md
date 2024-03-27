@@ -135,7 +135,7 @@ Usage: redis-di create [OPTIONS]
   - Default: `none`
   - Usage: `--rdi-site-name`
 
-  Site name to be used as a prefix for WB streams in active active
+  Site name to be used as a prefix for WB streams in active-active
 
 - `help`:
 
@@ -179,6 +179,6 @@ Options:
   --replication                   In-memory database replication
   --redisgears-module TEXT        RedisGears module file
   --rdi-site-name TEXT            Site name to be used as a prefix for WB
-                                  streams in active active
+                                  streams in active-active
   --help                          Show this message and exit.
 ```

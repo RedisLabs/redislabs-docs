@@ -95,7 +95,7 @@ Usage: redis-di configure [OPTIONS]
   - Default: `none`
   - Usage: `--rdi-site-name`
 
-  Site name to be used as a prefix for WB streams in active active
+  Site name to be used as a prefix for WB streams in active-active
 
 - `help`:
 
@@ -126,6 +126,6 @@ Options:
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
   --rdi-site-name TEXT            Site name to be used as a prefix for WB
-                                  streams in active active
+                                  streams in active-active
   --help                          Show this message and exit.
 ```
