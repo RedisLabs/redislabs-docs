@@ -42,7 +42,7 @@ Cluster resources management policy
 | resp3_default | boolean (default:&nbsp;true) | Determines the default value of the `resp3` option upon upgrading a database to version 7.2 |
 | shards_overbooking | boolean | If true, all databases' memory_size is ignored during shards placement |
 | show_internals | boolean | Show internal databases (and their shards and endpoints) REST APIs |
-| slave_ha | boolean | Enable the replica high-availability mechanism |
+| slave_ha | boolean | Enable the replica high-availability mechanism. Deprecated as of Redis Enterprise Software v7.2.4. |
 | slave_ha_bdb_cooldown_period | integer | Time in seconds between runs of the replica high-availability mechanism on different nodes on the same database |
 | slave_ha_cooldown_period | integer | Time in seconds between runs of the replica high-availability mechanism on different nodes on the same database |
 | slave_ha_grace_period | integer | Time in seconds between a node failure and when the replica high-availability mechanism starts relocating shards |

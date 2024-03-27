@@ -72,6 +72,10 @@ For Active-Active databases, replica HA is enabled for the database by default t
 
 ### Configure cluster policy for replica HA
 
+{{<note>}}
+The replica HA cluster policy is deprecated as of Redis Enterprise Software version 7.2.4.
+{{</note>}}
+
 To enable or turn off replica high availability by default for the entire cluster, use one of the following methods:
 
 - Cluster Manager UI:
