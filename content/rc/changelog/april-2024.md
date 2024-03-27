@@ -14,7 +14,3 @@ aliases: []
 ### Search and query throughput in ops/sec
 
 You can now set the throughput for databases with Search and query in operations per second (ops/sec), like all other Redis databases. This will let you seamlessly scale your query workload in and out as needed. 
-
-## Breaking changes
-
-- If you create a database through the Redis Cloud REST API with Search and query, and attempt to set the throughput in `number-of-shards` instead of `operations-per-second`, the database creation will fail.
