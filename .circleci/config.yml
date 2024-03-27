@@ -198,7 +198,7 @@ jobs:
                     export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
                     export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 sync public s3://docs.redis.com/$VERSION --delete --acl public-read --exclude "*rv/*" --exclude "*rc/*" # --size-only
+                    aws s3 sync public s3://docs.redis.com/$VERSION --delete --acl public-read --exclude "*rv/*" # --size-only
             # Purge the site cache to force the deployed changes to display immediately
             - run:
                 name: Purge site cache
