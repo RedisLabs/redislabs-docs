@@ -54,7 +54,7 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     {{<image filename="images/rc/button-database-new.png" alt="The New Database button creates a new database." width="120px">}}{{< /image >}}
 
-1. When the **New database** page appears, select **Vector database** from the use case panel.
+1. When the **New database** page appears, select **Vector search** from the use case panel.
 
     {{<image filename="images/rc/create-database-redis-use-cases.png" alt="The Redis Use case panel">}}{{< /image >}}
 
