@@ -9,7 +9,7 @@ aliases: [ /rc/subscriptions/create-fixed-subscription/fixed-plan-details,
 
 ---
 
-Redis Cloud Essentials is cost-efficient and designed for low-throughput scenarios. It support a range of availability, persistence, and backup options.  
+Redis Cloud Essentials is cost-efficient and designed for low-throughput scenarios. It supports a range of availability, persistence, and backup options.  
 
 Essentials plan [pricing](https://redis.com/cloud/pricing/) scales according to the memory size of the database defined in the subscription.  Additional limits also apply, as shown in the tables below.
 
