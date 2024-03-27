@@ -15,6 +15,7 @@ Disallow: /6.2/
 Disallow: /6.4/
 Disallow: /7.2/
 Disallow: /7.4/
+Disallow: /2024-04-07/
 Disallow: /0.93/
 Disallow: /0.91/
 Disallow: /latest/pdfs/
