@@ -89,6 +89,70 @@ Usage: redis-di deploy [OPTIONS]
 
   Password for unlocking an encrypted private key
 
+- `rdi_host_2`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-host-2`
+
+  Host/IP of RDI Database - 2nd RDI
+
+- `rdi_port_2`:
+
+  - Type: <IntRange 1000<=x<=65535>
+  - Default: `none`
+  - Usage: `--rdi-port-2`
+
+  Port of RDI Database - 2nd RDI
+
+- `rdi_user_2`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-user-2`
+
+  RDI Database Username - 2nd RDI
+
+- `rdi_password_2`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-password-2`
+
+  RDI Database Password - 2nd RDI
+
+- `rdi_key_2`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-key-2`
+
+  Private key file to authenticate with - 2nd RDI
+
+- `rdi_cert_2`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-cert-2`
+
+  Client certificate file to authenticate with - 2nd RDI
+
+- `rdi_cacert_2`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-cacert-2`
+
+  CA certificate file to verify with- 2nd RDI
+
+- `rdi_key_password_2`:
+
+  - Type: STRING
+  - Default: `none`
+  - Usage: `--rdi-key-password-2`
+
+  Password for unlocking an encrypted private key - 2nd RDI
+
 - `directory`:
 
   - Type: STRING
@@ -125,6 +189,18 @@ Options:
   --rdi-cacert TEXT               CA certificate file to verify with
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
+  --rdi-host-2 TEXT               Host/IP of RDI Database - 2nd RDI
+  --rdi-port-2 INTEGER RANGE      Port of RDI Database - 2nd RDI
+                                  [1000<=x<=65535]
+  --rdi-user-2 TEXT               RDI Database Username - 2nd RDI
+  --rdi-password-2 TEXT           RDI Database Password - 2nd RDI
+  --rdi-key-2 TEXT                Private key file to authenticate with - 2nd
+                                  RDI
+  --rdi-cert-2 TEXT               Client certificate file to authenticate with
+                                  - 2nd RDI
+  --rdi-cacert-2 TEXT             CA certificate file to verify with- 2nd RDI
+  --rdi-key-password-2 TEXT       Password for unlocking an encrypted private
+                                  key - 2nd RDI
   --dir TEXT                      Directory containing RDI configuration
                                   [default: .]
   --help                          Show this message and exit.
