@@ -113,6 +113,8 @@ Fields deprecated as of Redis Enterprise v7.2.4:
 
 - `authentication_redis_pass` (replaced with multiple passwords feature in version 6.0.X)
 
+- `slave_ha` cluster policy
+
 Other deprecated fields:
 
 - `import/rdb_url` (deprecated as of Redis Enterprise v4.X)
