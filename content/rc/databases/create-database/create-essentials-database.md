@@ -5,10 +5,12 @@ description: Shows how to create an Essentials database.
 weight: 5
 alwaysopen: false
 categories: ["RC"]
-aliases: /rv/administration/setup_and_editing/create-databases/
-         /rv/administration/setup_and_editing/creating-databases/
-         /rc/administration/setup_and_editing/create-databases/
-         /rc/administration/setup-and-editing/creating-databases/
+aliases: [ /rc/subscriptions/create-fixed-subscription,
+            /rv/administration/setup_and_editing/create-subscription/,
+            /rv/administration/setup_and_editing/creating-subscription/,
+            /rc/administration/setup_and_editing/create-subscription/,
+            /rc/administration/setup-and-editing/create-subscription/,
+            /rc/administration/setup/create-subscription/ ]
 ---
 
 {{< embed-md "rc-create-db-first-steps.md" >}}
@@ -62,6 +64,8 @@ This guide shows how to create an Essentials database.
 
     {{<image filename="images/rc/subscription-new-fixed-tiers.png" alt="Available Essentials plans." >}}{{< /image >}}
 
+    For a comparison of available plans, see [Redis Cloud Essentials plans]({{<relref "rc/subscriptions/view-essentials-subscription/essentials-plan-details">}}).
+
 1.  Enter your payment details if you chose a paid plan.
 
     If you chose a paid plan and haven't previously entered a payment method, use the **Add Credit Card** button to add one.
@@ -69,6 +73,8 @@ This guide shows how to create an Essentials database.
     {{<image filename="images/rc/icon-add-credit-card.png" alt="The Add credit card icon." >}}{{< /image >}}
 
 1. Select **Create database** or **Confirm & pay** to create your database.
+
+{{<image filename="images/rc/button-create-db-confirm-pay.png" width="140px" alt="Select Confirm & Pay to create your new database." >}}{{< /image >}}
 
 When you create your database, there's a brief pause while your request is processed and then the **Database details** page appears.
 

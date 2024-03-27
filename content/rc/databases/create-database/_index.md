@@ -13,13 +13,14 @@ aliases: /rv/administration/setup_and_editing/create-databases/
 
 A database is the heart of any Redis Cloud deployment. 
 
-The process for Creating a database depends on the type of [subscription]({{<relref "/rc/subscriptions">}}) you need.
+The process for Creating a database depends on the type of [subscription plan]({{<relref "/rc/subscriptions">}}) you need.
 
-An **Essentials** subscription is a fixed monthly price for a single database. It is cost-efficient and designed for low-throughput scenarios. It supports a range of availability, persistence, and backup options. Pricing supports low throughput workloads.
+An **Essentials** plan is a fixed monthly price for a single database. It is cost-efficient and designed for low-throughput scenarios. It supports a range of availability, persistence, and backup options. Pricing supports low throughput workloads.
 - [Create an Essentials database]({{<relref "/rc/databases/create-database/create-essentials-database">}})
 
-A **Pro** subscription is an hourly price based on capacity. It supports more databases, larger databases, greater throughput, and unlimited connections. 
+A **Pro** plan is an hourly price based on capacity. It supports more databases, larger databases, greater throughput, and unlimited connections. 
 - [Create a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}})
 - [Create a Pro database in an existing subscription]({{<relref "/rc/databases/create-database/create-pro-database-existing">}})
+- [Create an Active-Active database]({{<relref "/rc/databases/create-database/create-active-active-database">}})
 
 

@@ -29,7 +29,7 @@ To create the Okta SAML integration application:
 
     * **App name**: Redis Cloud
 
-    * **App logo**: Upload a [Redis icon](https://saml-integration-logo.s3.amazonaws.com/redis-cube-red_white-rgb.png).
+    * **App logo**: Upload a Redis icon.
 
     Select **Next**.
 

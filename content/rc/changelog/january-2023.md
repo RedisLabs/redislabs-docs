@@ -17,6 +17,6 @@ This changelog lists new features, enhancements, and other changes added to Redi
 
 - Add users with first name and last name
 
-- Select multiple [availability zones]({{<relref "/rc/subscriptions/create-flexible-subscription#availability-zones">}})
+- Select multiple [availability zones]({{<relref "/rc/databases/configuration/high-availability#availability-zones">}})
 
 - Additional enhancements

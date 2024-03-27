@@ -28,7 +28,7 @@ You can quickly set up Prometheus and Grafana for testing using the Prometheus a
 
 ### Prerequisites
 
-1. Create a [Redis Cloud Pro database]({{< relref "/rc/subscriptions/create-flexible-subscription" >}}). 
+1. Create a [Redis Cloud Pro database]({{< relref "/rc/databases/create-database/create-pro-database-new" >}}). 
 
 1. Set up [VPC peering]({{< relref "/rc/security/vpc-peering" >}}).
 

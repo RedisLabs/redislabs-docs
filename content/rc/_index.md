@@ -34,21 +34,24 @@ Use the [Quick start]({{<relref "/rc/rc-quickstart">}}) to create a free subscri
 - [Connect with Redis client]({{<relref "/rc/rc-quickstart#using-redis-client">}})
 - [Connect with RedisInsight]({{<relref "/rc/rc-quickstart#using-redisinsight">}})
 
-## Subscriptions
-Learn about the [types of subscriptions]({{<relref "/rc/subscriptions">}}).
-
-## Accounts & settings
-Manage Redis Cloud [accounts and settings]({{<relref "/rc/accounts">}}).
-- [Billing and payments]({{<relref "/rc/billing-and-payments">}})
-- [Manage cloud integrations]({{<relref "/rc/cloud-integrations">}})
-
 ## Databases
 Create and manage [Redis databases]({{<relref "/rc/databases">}}) in the cloud.
 - [Create database]({{<relref "/rc/databases/create-database">}})
 - [View and edit databases]({{<relref "/rc/databases/view-edit-database">}})
 - [Monitor performance]({{<relref "/rc/databases/monitor-performance">}})
 - [Manage databases]({{<relref "/rc/databases/configuration">}})
-- [Redis commands](https://redis.io/commands/) & [compatibility]({{<relref "/rs/references/compatibility">}})
+- [Redis commands](https://redis.io/commands/) & [compatibility]({{<relref "/rc/compatibility">}})
+
+## Subscriptions
+Learn about the [types of subscriptions]({{<relref "/rc/subscriptions">}}).
+- [View and upgrade Essentials plan]({{<relref "/rc/subscriptions/view-essentials-subscription">}})
+- [Essentials plans]({{<relref "/rc/subscriptions/view-essentials-subscription/essentials-plan-details">}})
+- [View and edit Pro plan]({{<relref "/rc/subscriptions/view-pro-subscription">}})
+
+## Accounts & settings
+Manage Redis Cloud [accounts and settings]({{<relref "/rc/accounts">}}).
+- [Billing and payments]({{<relref "/rc/billing-and-payments">}})
+- [Manage cloud integrations]({{<relref "/rc/cloud-integrations">}})
 
 ## Security
 Manage [secure connections]({{<relref "/rc/security">}}) to cloud databases.

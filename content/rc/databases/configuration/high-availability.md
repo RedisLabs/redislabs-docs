@@ -29,7 +29,7 @@ Redis Cloud supports three levels of replication:
 
 Your replication options depend on your [subscription plan]({{<relref "/rc/subscriptions/_index.md">}}):
 
-- Free Redis Cloud Essentials plans support No replication and single-zone replication.
+- Free Redis Cloud Essentials plans do not support replication.
 - Paid Redis Cloud Essentials plans and Redis Cloud Pro plans let you choose between multi-zone or single-zone replication when creating a subscription. You can also turn off replication.
 
 After database creation, you can still enable or turn off replication.  However, [zone settings]({{<relref "/rc/databases/configuration/high-availability#zone-setting-maintenance">}}) are only configurable during database creation.  

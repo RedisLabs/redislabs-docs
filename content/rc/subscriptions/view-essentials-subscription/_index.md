@@ -1,10 +1,10 @@
 ---
-Title: View or edit Redis Cloud Essentials subscription
+Title: View and Upgrade Redis Cloud Essentials plan
+LinkTitle: View and Upgrade Essentials plan
 description:
-weight: 40
+weight: 30
 alwaysopen: false
 categories: ["RC"]
-linktitle: View or edit Essentials subscription
 aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
            /rc/administration/setup-and-editing/viewing-subscription/,
            /rc/administration/setup-and-editing/changing-subscription-plan/,
@@ -14,7 +14,8 @@ aliases: [ /rv/administration/setup_and_editing/view-edit-subscription/,
            /rc/administration/setup-and-editing/changing-subscription-plan.md,
            /rc/administration/setup-and-editing/changing-subscription-plan/,
            /rc/administration/setup/change-plan.md,
-           /rc/administration/setup/change-plan/ ]
+           /rc/administration/setup/change-plan/,
+           /rc/subscriptions/view-fixed-subscription ]
 
 ---
 To view the details of a Redis Cloud Essentials subscription:
@@ -45,7 +46,7 @@ Use the **Upgrade plan** button to update your Redis Cloud Essentials plan, your
 
 {{<image filename="images/rc/button-subscription-upgrade-plan.png" alt="Use the Upgrade plan button to change selected Redis Cloud Essentials subscription detils." >}}{{< /image >}}
 
-For information on how to upgrade to Redis Cloud Pro, see [upgrade subscription plan from Essentials to Pro]({{<relref "/rc/subscriptions/upgrade-fixed-flexible">}}).
+For information on how to upgrade to Redis Cloud Pro, see [upgrade subscription plan from Essentials to Pro]({{<relref "/rc/subscriptions/upgrade-essentials-pro">}}).
 
 ### Change subscription plan
 
@@ -54,7 +55,7 @@ To change your subscription plan, select the desired plan from the list and sele
 {{<image filename="images/rc/subscription-change-fixed-tiers.png" width="100%" alt="Select the desired subscription plan from the ones shown." >}}{{< /image >}}
 
 Each Redis Cloud Essentials plan provides a variety of benefits, including increased memory and number of connections.
-For a comparison of available plans, see [Redis Cloud Essentials plans]({{<relref "rc/subscriptions/create-fixed-subscription#fixed-plans">}}).
+For a comparison of available plans, see [Redis Cloud Essentials plans]({{<relref "rc/subscriptions/view-essentials-subscription/essentials-plan-details">}}).
 
 When you change your plan, your data and endpoints are not disrupted.  
 

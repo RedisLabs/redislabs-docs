@@ -5,18 +5,18 @@ description: Upgrade your Redis Cloud Essentials subscription to a Redis Cloud P
 weight: 45
 alwaysopen: false
 categories: ["RC"]
-aliases: 
+aliases: /rc/subscriptions/upgrade-fixed-flexble
 ---
 
 Redis Cloud Essentials supports low throughput workflows. It supports a range of availability, persistence, and backup options, and can be great for testing and prototyping. However, if your databases need higher throughput, or you're missing features that are not available with Redis Cloud Essentials, you may want to upgrade Redis Cloud Essentials to Redis Cloud Pro.
 
 For more information about the different subscription plans, see [Subscription plans]({{<relref "/rc/subscriptions#subscription-plans">}}).
 
-To upgrade your Essentials plan, see [Upgrade subscription plan]({{<relref "/rc/subscriptions/view-fixed-subscription#upgrade-subscription-plan">}}).
+To upgrade your Essentials plan, see [Upgrade subscription plan]({{<relref "/rc/subscriptions/view-essentials-subscription#upgrade-subscription-plan">}}).
 
 ## Upgrade Essentials subscription to Pro
 
-To follow the steps in this guide, you must have a database with [Redis Cloud Essentials]({{<relref "/rc/subscriptions/view-fixed-subscription">}}) that you want to upgrade to Redis Cloud Pro.
+To follow the steps in this guide, you must have a database with [Redis Cloud Essentials]({{<relref "/rc/subscriptions/view-essentials-subscription">}}) that you want to upgrade to Redis Cloud Pro.
 
 To upgrade your Essentials database to Redis Cloud Pro:
 
@@ -26,11 +26,11 @@ To upgrade your Essentials database to Redis Cloud Pro:
 
 ### Create Redis Cloud Pro database {#create-rcp}
 
-[Create a new database]({{<relref "/rc/databases/create-database">}}) with the following specifications:
+[Create a new database]({{<relref "/rc/databases/create-database/create-pro-database-new">}}) with the following specifications:
 
 - Select **Redis Cloud Pro** for your subscription type.
 - Select the **Version** that matches the Redis version your Essentials subscriptions use.
-- In the [**Sizing tab**]({{<relref "/rc/subscriptions/create-flexible-subscription#sizing-tab">}}), create your databases with the following specifications:
+- In the [**Sizing tab**]({{<relref "/rc/databases/create-database/create-pro-database-new#sizing-tab">}}), create your databases with the following specifications:
     - Set the memory limit to comply with [Active-Passive memory requirements]({{<relref "/rc/databases/migrate-databases#active-passive-memory-requirements">}}) if you want to migrate your database using [Active-Passive]({{<relref "/rc/databases/migrate-databases#sync-using-active-passive">}}).
     - Select any advanced capabilities that your Essentials database offers. You can find a list of enabled advanced capabilities in the [Configuration tab]({{< relref "/rc/databases/view-edit-database#configuration-details-tab" >}}) of your database.
 
