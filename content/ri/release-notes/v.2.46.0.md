@@ -11,8 +11,9 @@ aliases: /ri/release-notes/v2.46.0/
 This is the General Availability (GA) release of RedisInsight 2.46.
 
 ### Highlights
-- New formatters for 32-bit and 64-bit vector embeddings in Browser
-- UX enhancements in the database list page for an improved user experience, leading to a cleaner layout and easier navigation
+- New formatters for 32-bit and 64-bit vector embeddings for a more human readable representation in the Browser
+- Cleaner layout on the main page with quick access to JSON and search & query tutorials and Redis Cloud in-app sign-up
+
 
 ### Details
 
@@ -22,5 +23,5 @@ This is the General Availability (GA) release of RedisInsight 2.46.
 - [#3151](https://github.com/RedisInsight/RedisInsight/pull/3151) Launch RedisInsight with the previously used window size.
 
 **Bugs**
-- [#3152](https://github.com/RedisInsight/RedisInsight/pull/3152), [#3156](https://github.com/RedisInsight/RedisInsight/pull/3156) A [fix to support the * wildcard](https://github.com/RedisInsight/RedisInsight/issues/3146) in Stream IDs.
+- [#3152](https://github.com/RedisInsight/RedisInsight/pull/3152), [#3156](https://github.com/RedisInsight/RedisInsight/pull/3156) A fix to [support the * wildcard](https://github.com/RedisInsight/RedisInsight/issues/3146) in Stream IDs.
 - [#3174](https://github.com/RedisInsight/RedisInsight/pull/3174) Display invalid JSONs as unformatted values when a JSON view is set in Workbench results.
