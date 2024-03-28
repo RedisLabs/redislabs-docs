@@ -13,11 +13,11 @@ aliases: /rc/subscriptions/maintenance/set-maintenance-windows
 
 By default, Redis will maintain your Redis Cloud subscriptions and databases as needed. During maintenance, you may notice some latency when connecting to your databases. For more information about the types of maintenance and how Redis maintains your subscriptions, see [Maintenance]({{<relref "/rc/subscriptions/maintenance">}}).
 
-By default, Redis will perform maintenance automatically while limiting service disruption as much as possible. If you want to control when Redis performs maintenance for a Flexible subscription, you can [set manual maintenance windows](#set-manual-maintenance-windows) to ensure non-urgent maintenance will occur at set times. Configuring or altering the maintenance window will not have any impact on your subscription or databases.
+By default, Redis will perform maintenance automatically while limiting service disruption as much as possible. If you want to control when Redis performs maintenance for a Redis Cloud Pro subscription, you can [set manual maintenance windows](#set-manual-maintenance-windows) to ensure non-urgent maintenance will occur at set times. Configuring or altering the maintenance window will not have any impact on your subscription or databases.
 
 ## Set manual maintenance windows
 
-To set manual maintenance windows for a single flexible subscription:
+To set manual maintenance windows for a single Redis Cloud Pro subscription:
 
 1. From the [Redis Cloud console](https://app.redislabs.com/), select the **Subscriptions** menu and then select your subscription from the list.
 

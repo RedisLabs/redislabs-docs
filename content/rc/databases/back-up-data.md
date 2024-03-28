@@ -15,9 +15,9 @@ aliases: [ "/rv/administration/configure/backups/",
 
 The backup options for Redis Cloud databases depend on your plan:
 
-- Flexible and Annual subscriptions can back up a database on-demand and schedule daily backups that occur during a set hour.
+- Redis Cloud Pro subscriptions can back up a database on-demand and schedule daily backups that occur during a set hour.
 
-- Paid Fixed plans can back up a database on-demand and schedule backups that occur every 24 hours.  
+- Paid Redis Cloud Essentials plans can back up a database on-demand and schedule backups that occur every 24 hours.  
 
 - Free plans cannot back up a database through the Redis Cloud console.
 
@@ -35,17 +35,13 @@ Here, you'll learn how to store backups using different cloud providers.
 
 To turn on database backups:
 
-1. Sign in to the [Redis Cloud console](https://app.redislabs.com/).  (Create an account if you don't already have one.)
+1. Sign in to the [Redis Cloud console](https://app.redislabs.com/). 
 
-2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
-
-    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
-
-3.  Select the database to open the **Database** page and then select **Edit database**.
+1.  Select the database to open the **Database** page and then select **Edit database**.
 
     {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
-4.  In the **Durability** section of the **Configuration** tab, locate the **Remote backup** setting:
+1.  In the **Durability** section of the **Configuration** tab, locate the **Remote backup** setting:
 
     {{<image filename="images/rc/database-details-configuration-tab-durability-flexible.png" alt="The Remote backup setting is located in the Durability section of the Configuration tab of the database details screen." >}}{{< /image >}}
 
@@ -55,9 +51,9 @@ When you enable **Remote backup**, additional options appear.  The options vary 
 
 |Setting name|Description|
 |:-----------|:----------|
-| **Interval** | Defines the frequency of automatic backups.  Paid fixed accounts are backed up every 24 hours.  Flexible and Annual subscriptions can be set to 24, 12, 6, 4, 2, or 1 hour backup intervals. |
-| **Set backup time** | When checked, this lets you set the hour of the **Backup time**. (_Flexible and Annual  subscriptions only_) |
-| **Backup time** | Defines the hour automatic backups are made.  Note that actual backup times will vary up in order to minimize customer access disruptions.  (_Flexible and Annual  subscriptions only_)<br/> Times are expressed in [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC).|
+| **Interval** | Defines the frequency of automatic backups.  Paid Redis Cloud Essentials databases are backed up every 24 hours.  Redis Cloud Pro databases can be set to 24, 12, 6, 4, 2, or 1 hour backup intervals. |
+| **Set backup time** | When checked, this lets you set the hour of the **Backup time**. (_Redis Cloud Pro only_) |
+| **Backup time** | Defines the hour automatic backups are made.  Note that actual backup times will vary up in order to minimize customer access disruptions.  (_Redis Cloud Pro only_)<br/> Times are expressed in [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (UTC).|
 | **Storage type** | Defines the provider of the storage location, which can be: `AWS S3`, `Google Cloud Storage`, `Azure Blob Storage`, or `FTP` (FTPS). |
 | **Backup destination** | Defines a URI representing the backup storage location. |
 

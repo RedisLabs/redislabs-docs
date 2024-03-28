@@ -12,7 +12,7 @@ aliases:
 
 Redis will maintain your Redis Cloud subscriptions and databases as needed to ensure your databases are running the most stable and up-to-date version of Redis. 
 
-By default, Redis will perform maintenance automatically while limiting service disruption as much as possible. If you want to control when Redis can perform maintenance for a Flexible subscription, you can [set manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
+By default, Redis will perform maintenance automatically while limiting service disruption as much as possible. If you want to control when Redis can perform maintenance for a Redis Cloud Pro subscription, you can [set manual maintenance windows]({{<relref "/rc/subscriptions/maintenance/set-maintenance-windows">}}).
 
 ## Maintenance activities
 

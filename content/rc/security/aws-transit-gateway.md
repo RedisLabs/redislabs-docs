@@ -16,10 +16,10 @@ aliases:
 - One or more Transit Gateway Connect attachments
 - One or more transit gateway peering connections
 
-You can connect your Redis flexible subscription to a Transit Gateway which is attached to the VPC of your application. This lets your application connect securely to your Redis Cloud database while optimizing performance.
+You can connect your Redis Cloud Pro subscription to a Transit Gateway which is attached to the VPC of your application. This lets your application connect securely to your Redis Cloud database while optimizing performance.
 
 {{< note >}}
-Transit Gateway is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
+Transit Gateway is available only with Redis Cloud Pro.  It is not supported for Redis Cloud Essentials.
 {{< /note >}}
 
 ## Considerations
@@ -44,7 +44,7 @@ Consider using VPC peering and Transit Gateway in parallel for the following sit
 
 Before you can set up Transit Gateway:
 
-1. [Create a flexible subscription]({{< relref "/rc/subscriptions/create-flexible-subscription" >}}) from the Redis cloud [admin console](https://app.redislabs.com/#/).
+1. [Create a database with Redis Cloud Pro]({{< relref "/rc/databases/create-database/create-pro-database-new" >}}) from the Redis cloud [admin console](https://app.redislabs.com/#/).
 
 1. [Create a transit gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw) from the [AWS VPC console](https://console.aws.amazon.com/vpc/).
 

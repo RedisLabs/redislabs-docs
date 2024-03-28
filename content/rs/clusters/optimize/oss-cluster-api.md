@@ -21,4 +21,4 @@ and let applications stay current with cluster topology changes, including add n
 
 For more about working with the OSS Cluster API in Redis Enterprise Software, see [Using the OSS Cluster API]({{< relref "/rs/databases/configure/oss-cluster-api.md" >}}). 
 
-To learn how to enable OSS Cluster API in Redis Cloud, see [OSS Cluster API]({{< relref "/rc/databases/create-database#oss-cluster-api" >}}).
+To learn how to enable OSS Cluster API in Redis Cloud, see [OSS Cluster API]({{< relref "/rc/databases/configuration/clustering#oss-cluster-api" >}}).

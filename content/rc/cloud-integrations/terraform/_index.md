@@ -15,7 +15,7 @@ aliases:
 Redis develops and maintains a [Terraform provider for Redis Cloud](https://registry.terraform.io/providers/RedisLabs/rediscloud/latest). The Redis Cloud Terraform provider allows many of the same actions as found in the [Redis Cloud API]({{< relref  "/rc/api" >}}).
 
 {{< note >}}
-The Redis Cloud Terraform provider supports Flexible subscriptions. It does not support Fixed subscriptions.
+The Redis Cloud Terraform provider supports Redis Cloud Pro. It does not support Redis Cloud Essentials.
 {{< /note >}}
 
 See [Get started with Terraform]({{< relref  "/rc/cloud-integrations/terraform/get-started" >}}) for an example of how to use the Terraform provider.

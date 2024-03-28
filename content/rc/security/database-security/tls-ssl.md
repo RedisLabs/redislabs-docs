@@ -9,7 +9,7 @@ aliases: /rc/administration/security/securing-redis-cloud-connections
 
 Transport Layer Security (TLS) uses encryption to secure [network communications](https://en.wikipedia.org/wiki/Transport_Layer_Security).  
 
-Redis Cloud Fixed, Flexible, and Annual subscriptions can use TLS to encrypt data communications between applications and Redis databases.
+Redis Cloud Essentials and Redis Cloud Pro plans can use TLS to encrypt data communications between applications and Redis databases.
 
 ## Use TLS with Redis Cloud
 
@@ -23,9 +23,8 @@ This table shows TLS recommendations:
 
 | Subscription | Public&nbsp;endpoint | Private endpoint |
 |--------------|----------------------|------------|
-| Fixed        | Enable TLS           | N/A |
-| Flexible     | Enable TLS           | Enable TLS if security outweighs performance impact |
-| Annual       | Enable TLS           | Enable TLS if security outweighs performance impact |
+| Redis Cloud Essentials        | Enable TLS           | N/A |
+| Redis Cloud Pro     | Enable TLS           | Enable TLS if security outweighs performance impact |
 
 ### Client authentication
 
@@ -126,9 +125,9 @@ If you don't have the Redis Cloud CA certificates, you can download them from th
 
 The download contains a file called `redis_ca.pem`, which includes the following certificates:
    
-- Self-signed Redis Cloud Fixed plan Root CA (deprecated but still in use)
+- Self-signed Redis Cloud Essentials plan Root CA (deprecated but still in use)
 
-- Self-signed Redis Cloud Flexible plan Root CA and intermediate CA (deprecated but still in use)
+- Self-signed Redis Cloud Pro plan Root CA and intermediate CA (deprecated but still in use)
 
 - Publicly trusted GlobalSign Root CA
 

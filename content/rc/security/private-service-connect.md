@@ -11,7 +11,7 @@ aliases:
 
 [Private Service Connect](https://cloud.google.com/vpc/docs/private-service-connect) (PSC) creates a private endpoint that allows secure connections to Redis Cloud databases without exposing your application's [virtual private cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC). 
 
-This feature is only available for Flexible and Annual subscriptions hosted on Google Cloud.
+This feature is only available for Redis Cloud Pro subscriptions hosted on Google Cloud.
 
 ## Considerations
 
@@ -171,4 +171,4 @@ Private Service Connect has the following limitations in Redis Cloud:
 
 - Although Redis Cloud supports using Private Service Connect with Enterprise clustering, you cannot use the [OSS Cluster API]({{< relref "/rc/databases/create-database#oss-cluster-api" >}}) with Private Service Connect enabled.
 
-- Private Service Connect is not available for clusters with Redis versions 6.2.12 and earlier. Contact [Redis support](https://redis.com/company/support) to upgrade the cluster to a compatible version or [create a new subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).
+- Private Service Connect is not available for clusters with Redis versions 6.2.12 and earlier. Contact [Redis support](https://redis.com/company/support) to upgrade the cluster to a compatible version or [create a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}).

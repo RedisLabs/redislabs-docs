@@ -33,7 +33,7 @@ This approach also lets you transfer data between databases hosted by different 
 
 ## Sync using Active-Passive
 
-If your target database is hosted on a Flexible (or Annual) subscription, you can use Active-Passive to sync (synchronize) the source database to the target database.  (The source database can be hosted on a Fixed, Flexible, or Annual subscription.)
+If your target database is hosted on Redis Cloud Pro, you can use Active-Passive to sync (synchronize) the source database to the target database.  (The source database can be hosted on Redis Cloud Pro or Redis Cloud Essentials.)
 
 The source database remains active while the data migrates.
 
@@ -111,9 +111,9 @@ Follow these detailed steps to migrate data using Active-Passive syncing:
 
 7. Select **Save Active-Passive** to save your Active-Passive settings.
 
-    {{<image filename="images/rc/icon-database-save-active-passive.png" alt="The **Save** button verifies the Source URI and you can't save until it validates." >}}{{< /image >}}
+    {{<image filename="images/rc/icon-database-save-active-passive.png" alt="The **Save** button verifies the Source URI and you can't save until it validates." width="200px">}}{{< /image >}}
 
-    For an external database, Redis will verify the endpoint at this step. If the endpoint cannot be verified, make sure that you've copied the details directly from the source database and that the value you entered starts with `redis://`.
+    For an external database, we'll verify the endpoint at this step. If the endpoint can't be verified, make sure that you've copied the details directly from the source database and that the value you entered starts with `redis://`.
 
 8.  Select **Save Database** to begin updating the database.
 

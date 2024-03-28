@@ -23,7 +23,7 @@ With the [Redis Cloud Resource Provider](https://www.pulumi.com/registry/package
 The Redis Cloud Pulumi provider is based on the [Redis Cloud Terraform provider]({{<relref "/rc/cloud-integrations/terraform">}}).
 
 {{<note>}}
-The Redis Cloud Pulumi Redis Cloud provider supports Flexible subscriptions. It does not support Fixed subscriptions.
+The Redis Cloud Pulumi Redis Cloud provider supports Redis Cloud Pro. It does not support Redis Cloud Essentials.
 {{</note>}}
 
 See [Get started with Pulumi]({{< relref  "/rc/cloud-integrations/pulumi/get-started" >}}) for an example of how to use the Pulumi provider with Python.

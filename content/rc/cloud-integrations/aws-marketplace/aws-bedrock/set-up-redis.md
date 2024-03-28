@@ -22,15 +22,15 @@ After you set up the database, you can use the database information to set it as
 To set up a Redis Cloud instance for Bedrock, you need to:
 
 1. [Sign up for Redis Cloud](#sign-up) if you do not already have an account.
-1. [Create a subscription and database](#create-sub) to use for your Bedrock knowledge base.
+1. [Create a database](#create-sub) to use for your Bedrock knowledge base.
 
 ### Sign up for Redis Cloud using AWS Marketplace {#sign-up}
 
-1.  Select the [Redis Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Cloud - Flexible plan listing.
+1.  Select the [Redis Cloud](https://aws.amazon.com/marketplace/pp/prodview-mwscixe4ujhkq?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) AWS marketplace link from Bedrock to be taken to the Redis Cloud plan listing.
 
-    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Cloud - Flexible plan listing on AWS Marketplace" >}}{{< /image >}}
+    {{<image filename="images/rc/aws-marketplace-rc-flexible-plan.png" alt="The Redis Cloud listing on AWS Marketplace" >}}{{< /image >}}
 
-1.  Subscribe to Redis Cloud - Flexible plan, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
+1.  Subscribe to Redis Cloud listing, locate the **Set Up Your Account** button, and then select it to begin mapping your Redis Cloud account with your AWS Marketplace account.
 
     {{<image filename="images/rc/aws-marketplace-account-setup-button.png" alt="Use the Set Up Your Account button after subscribing to Redis Cloud with your AWS Marketplace account." width="50%">}}{{< /image >}}
 
@@ -48,15 +48,19 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     In addition, AWS Marketplace is reported as the selected payment method.
 
-### [Create a flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}) {#create-sub} 
+### [Create a database]({{<relref "/rc/databases/create-database/create-pro-database-new">}}) {#create-sub} 
 
-1. In the [admin console](https://app.redislabs.com/), select **Add new subscription**. 
+1. In the [admin console](https://app.redislabs.com/), select **New database**. 
 
-    {{<image filename="images/rc/button-subscription-new.png" width="50%" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
+    {{<image filename="images/rc/button-database-new.png" alt="The New Database button creates a new database." width="120px">}}{{< /image >}}
 
-1. When the **New subscription** page appears, select **Flexible plans**.
+1. When the **New database** page appears, select **Vector search** from the use case panel.
 
-    {{<image filename="images/rc/new-subscription-plans-flexible.png" alt="Available subscription plans; Flexible plan is selected." >}}{{< /image >}}
+    {{<image filename="images/rc/create-database-redis-use-cases.png" alt="The Redis Use case panel">}}{{< /image >}}
+
+1. Select **Pro** to create a Pro plan.
+
+    {{<image filename="images/rc/create-database-subscription-pro-new.png" alt="The Subscription selection panel with Pro selected.">}}{{< /image >}}
 
 1. Select **Amazon Web Services** as the cloud vendor, select a region, and enter a name for your subscription.
 
@@ -66,13 +70,9 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     {{<image filename="images/rc/subscription-new-flexible-version-section.png"  alt="Version selection between Redis 6.2 and 7.2" >}}{{< /image >}}
 
-1. In the **Advanced options** section, select Multi-AZ to ensure [high-availability]({{<relref "rc/databases/configuration/high-availability.md">}}). 
+1. In the **Advanced options** section, select Multi-AZ to ensure [high-availability]({{<relref "rc/databases/configuration/high-availability">}}). 
 
     {{<image filename="images/rc/subscription-new-flexible-advanced-multi-az.png" width="75%" alt="The Multi-AZ toggle set to on." >}}{{< /image >}}
-
-1. Enter a [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) range of IP addresses for your deployment in the **Deployment CIDR** field.
-
-    {{<image filename="images/rc/subscription-new-flexible-advanced-cidr.png" width="75%" alt="The Deployment CIDR field." >}}{{< /image >}}
 
 1. When finished, select **Continue**.
 
@@ -86,9 +86,11 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
     {{<image filename="images/rc/icon-add-database.png" width="30px" alt="Use the Add button to define a new database for your subscription." >}}{{< /image >}}
 
-1. In the **New Database** dialog, name your database and select **Search and query**. 
+1. In the **New Database** dialog, name your database.
 
     {{<image filename="images/rc/flexible-add-database-basic.png" width="75%" alt="The New Database dialog with basic settings." >}}{{< /image >}}
+
+    We selected **Search and query** and **JSON** for you already. You can remove **JSON** if you want.
 
 1. Set the Memory limit of your database based on the amount of data that will be pulled from your Simple Storage Service (S3) [bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html). See [Find out the size of your S3 buckets](https://aws.amazon.com/blogs/storage/find-out-the-size-of-your-amazon-s3-buckets/) to find out how much training data is stored in your S3 bucket and pick the closest size from the table below. 
 
@@ -109,9 +111,9 @@ To set up a Redis Cloud instance for Bedrock, you need to:
 
 1. Review your subscription. You will not need to enter a payment method, as it's automatically assigned to your AWS Marketplace account. 
 
-1. Select **Create subscription** to create your new flexible subscription.
+1. Select **Confirm & pay** to create your new database.
 
-    {{<image filename="images/rc/button-subscription-create.png" width="140px" alt="Select Create subscription to create your new subscription." >}}{{< /image >}}
+    {{<image filename="images/rc/button-create-db-confirm-pay.png" width="140px" alt="Select Confirm & pay to create your new database." >}}{{< /image >}}
 
     Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed to make changes.  (The process generally takes 10-15 minutes.)
 

@@ -1,16 +1,22 @@
 ---
-Title: Create an Active-Active subscription
-linkTitle: Create Active-Active subscription
-description: Shows what changes when you create an Active-Active subscription (Flexible or Annual)
-weight: 31
+Title: Create an Active-Active database
+linkTitle: Create Active-Active database
+description: Shows how to create an Active-Active database
+weight: 20
+Title: Create an Active-Active database
+linkTitle: Create Active-Active database
+description: Shows how to create an Active-Active database
+weight: 20
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/subscriptions/create-active-active-subscription/
 ---
 
-To deploy Active-Active databases in Redis Cloud, create a Flexible or Annual subscription with Active-Active enabled.
+Active-Active databases store data across multiple regions and availability zones.  This improves scalability, performance, and availability, especially when compared to standalone databases. See [Active-Active Redis]({{<relref "rc/databases/configuration/active-active-redis">}}) for more information.
 
-Overall, the process is similar to [create a Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).  However, there are some additional requirements listed below:
+To deploy Active-Active databases in Redis Cloud, you need a Redis Cloud Pro plan that enables Active-Active Redis and defines the regions for each copy of your databases.
+
+Overall, the process is similar to [creating a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}}).  However, there are some additional requirements listed below:
 
 - Enable Active-Active Redis
 - [Define the regions](#define-regions) for each database instance
@@ -26,7 +32,7 @@ Consistency between each instance is maintained in the background; that is, each
 
 ## Define regions
 
-When you create a new Flexible subscription, the Active-Active Redis option appears to the right of the cloud providers.
+When you create a new Pro database, the Active-Active Redis option appears to the right of the cloud providers.
 
 {{<image filename="images/rc/create-flexible-sub-active-active-on.png" width="75%" alt="When you enable Active-Actve, you need to specify the regions for each database instance." >}}{{< /image >}}
 
@@ -66,7 +72,7 @@ Active-Active databases support the [JSON]({{< relref "/stack/json" >}}) data ty
 
 {{<image filename="images/rc/active-active-json-detail.png" width="75%" alt="When you create an Active-Active database, you can select the JSON advanced capability." >}}{{< /image >}}
 
-When you create an Active-Active database, JSON is already selected. Select it again to remove it.
+We select JSON for you when you create an Active-Active database. Select it again to remove it.
 
 ## Define throughput
 
@@ -94,7 +100,8 @@ Throughput requirements grow dramatically as regions increase.  As a result, con
 
 ## More info
 
-- [Create a Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}})
+- [Create a Pro database with a new subscription]({{<relref "/rc/databases/create-database/create-pro-database-new">}})
+- [Active-Active Redis]({{<relref "rc/databases/configuration/active-active-redis">}})
 - Database [memory limit]({{<relref "/rc/databases/create-database#memory-limit">}})
 - Redis Cloud [subscription plans]({{<relref "/rc/subscriptions/">}})
 - [Redis Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/)

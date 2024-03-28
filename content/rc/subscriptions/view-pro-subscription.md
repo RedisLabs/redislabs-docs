@@ -1,13 +1,13 @@
 ---
-Title: View or edit Flexible subscription
+Title: View and edit Redis Cloud Pro plan
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-linktitle: View or edit Flexible subscription
-aliases:
+linktitle: View and edit Pro plan
+aliases: /rc/subscriptions/view-flexible-subscription
 ---
-To view the details of a Flexible subscription:
+To view the details of a Redis Cloud Pro subscription:
 
 1.  Sign in to the [Redis Cloud console](https://app.redislabs.com/#).
 
@@ -37,7 +37,7 @@ In addition, three tabs are available:
 
 1.  The **Databases** tab lists the databases in your subscription and summarizes their settings.
 
-2.  The **Overview** tab displays subscription settings for your Flexible subscription.
+2.  The **Overview** tab displays subscription settings for your Redis Cloud Pro subscription.
 
 3.  The **Connectivity** tab lets you limit access to the subscription by defining a VPC peering relationship or by setting up an allow list.
 
@@ -67,7 +67,7 @@ To view full details of a database, click its name in the list.
 
 The **Overview** summarizes the options use to created the subscription.
 
-{{<image filename="images/rc/subscription-details-overview-flexible.png" alt="The Overview tab displays the settings used to create your Flexible subscription." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-details-overview-flexible.png" alt="The Overview tab displays the settings used to create your Redis Cloud Pro subscription." >}}{{< /image >}}
 
 - The general settings panel describes the cloud vendor, region, and high-availability settings for your subscription.
 
@@ -87,7 +87,7 @@ The **Overview** summarizes the options use to created the subscription.
     | **Availability Zones** | The availability zones your subscription is deployed in (Visible if you selected availability zones on creation) |
 
 
-- The **Price** panel shows the monthly cost of your Flexible subscription.
+- The **Price** panel shows the monthly cost of your Redis Cloud Pro subscription.
 
 - The **Payment Method** panel shows the current payment details.
 
