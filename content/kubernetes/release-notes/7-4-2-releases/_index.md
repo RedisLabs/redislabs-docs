@@ -1,45 +1,22 @@
 ---
 
-title: Redis Enterprise for Kubernetes 7.4.2-2 (Feb 2024) release notes 
-linkTitle: 7.4.2-2 (Feb 2024)
-description: This is a feature release with a new version of Redis Enterprise Software 7.4.2.
-weight: 8
+title: Redis Enterprise for Kubernetes 7.4.2 release notes 
+linkTitle: 7.4.2 releases
+description: Releases with support forRedis Enterprise Software 7.4.2.
+weight: 7
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [ 
-    /kubernetes/release-notes/7-4-2-2/,
+    /kubernetes/release-notes/7-4-2-releases/,
       ]
 ---
-
 ## Highlights
 
-The primary purpose of this release is to support [Redis Enterprise 7.4.2]({{<relref "rs/release-notes/rs-7-4-2-releases/rs-7-4-2-54">}}), which is a major update to Redis Enterprise Software. As such, we have limited the scope of changes to focus on supporting RS 7.4 changes, in addition to implementing a few enhancements and major fixes.
+The primary purpose of this release is to support [Redis Enterprise 7.4.2]({{<relref "rs/release-notes/rs-7-4-2-releases/rs-7-4-2-54">}}), which is a major update to Redis Enterprise Software.
 
-## New in this release
+## Detailed release notes
 
-### Enhancements
-
-- Added RESP3 support in K8s APIs (RED-94601)
-- Added to [supported distributions](#supported-distributions)
-- Added support for Redis Enterprise Software 7.4.2
-- Enhanced resilience of operators to misconfigured REDB namespaces (RED-113908)
-- Both the operator and services rigger are now based on UBI9 (RED-116083)
-
-### Resolved issues
-
-- Fixed the operator to prevent reconciliation of non-REDB custom resources in observed namespaces. This eliminates the need for unnecessary permission rules. (RED-87790)
-- Fixed excessive updates to ingresses and services. (RED-109289)
-- Fixed update issues in rigger after the upgrade in multi-namespace environments. (RED-111732)
-- Fixed Active-Active sharding configuration by adding a new field. (RED-112909)
-- Fixed operator CVE. (RED-115157)
-- Fixed a race condition that could have rarely caused the cluster upgrade to break. (RED-118940)
-
-### API changes
-
-| **CRD** | **Field** | **Change** | **Description** |
-|---|---|---|---|
-| REC | resp3Default | Add | Boolean controlling whether Resp3 should be enabled by default |
-| REDB | resp3 | Add | Controls resp3 for specific REDBs |
+{{<table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes" columnSources="LinkTitle,Description" enableLinks="LinkTitle">}}
 
 ## Version changes
 
@@ -93,24 +70,6 @@ Any distribution not listed below is not supported for production workloads.
 |  | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Deprecated">&#x26A0;&#xFE0F;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
 | **VMware TKGI version** | **1.15** | **1.16** | **1.17** | **1.18** |  |  |
 |  | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> |  |  |
-
-
-
-## Downloads
-
-- **Redis Enterprise**: `redislabs/redis:7.4.2-54`
-- **Operator**: `redislabs/operator:7.4.2-2`
-- **Services Rigger**: `redislabs/k8s-controller:7.4.2-2`
-
-#### OpenShift images
-
-- **Redis Enterprise**: `registry.connect.redhat.com/redislabs/redis-enterprise:7.4.2-54.rhel8-openshift`
-- **Operator**: `registry.connect.redhat.com/redislabs/redis-enterprise-operator:7.4.2-2`
-- **Services Rigger**: `registry.connect.redhat.com/redislabs/services-manager:7.4.2-2`
-
-#### OLM bundle
-
-**Redis Enterprise operator bundle** : `v7.4.2-2`
 
 ## Known limitations
 
