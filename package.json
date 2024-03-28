@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@abrookins-redis/redis-sitesearch-frontend": "^1.0.1"
+    "@abrookins-redis/redis-sitesearch-frontend": "^1.0.2"
   }
 }
