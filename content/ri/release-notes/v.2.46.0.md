@@ -11,7 +11,7 @@ aliases: /ri/release-notes/v2.46.0/
 This is the General Availability (GA) release of RedisInsight 2.46.
 
 ### Highlights
-- New formatters for 32-bit and 64-bit vector embeddings for a more human readable representation in the Browser
+- New formatters for 32-bit and 64-bit vector embeddings for a more human-readable representation in the Browser
 - Cleaner layout on the main page with quick access to JSON and search & query tutorials and Redis Cloud in-app sign-up
 
 
