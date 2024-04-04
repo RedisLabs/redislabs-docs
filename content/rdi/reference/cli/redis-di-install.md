@@ -27,7 +27,7 @@ Usage: redis-di install [OPTIONS]
 
 - `file`:
 
-  - Type: <click.types.Path object at 0x7f4623de5520>
+  - Type: <click.types.Path object at 0x7ffa34b64550>
   - Default: `none`
   - Usage: `-f
 --file`
