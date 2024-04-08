@@ -1,3 +1,6 @@
+> **Important**: This repository got replaced by the new [Redis docs](https://github.com/redis/docs) repository and will be archived soon.
+
+
 _The master branch_ => [![CircleCI](https://circleci.com/gh/RedisLabs/redislabs-docs/tree/master.svg?style=svg)](https://circleci.com/gh/RedisLabs/redislabs-docs/tree/master)
 
 # Redis Documentation Center
