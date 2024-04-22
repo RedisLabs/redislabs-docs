@@ -95,7 +95,7 @@ Usage: redis-di trace [OPTIONS]
   - Default: `10`
   - Usage: `--max-change-records`
 
-  Maximum traced change records per shard
+  Maximum traced change records
 
 - `timeout` (REQUIRED):
 
@@ -142,8 +142,7 @@ Options:
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
   --max-change-records INTEGER RANGE
-                                  Maximum traced change records per shard
-                                  [x>=1]
+                                  Maximum traced change records  [x>=1]
   --timeout INTEGER RANGE         Stops the trace after exceeding this timeout
                                   (in seconds)  [default: 20; 1<=x<=600;
                                   required]
