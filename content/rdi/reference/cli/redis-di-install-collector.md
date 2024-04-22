@@ -1,19 +1,19 @@
 ---
-Title: redis-di configure
-linkTitle: redis-di configure
-description: Configures the RDI Database so it is ready to process data
+Title: redis-di install-collector
+linkTitle: redis-di install-collector
+description: Installs RDI Redis Collector on Redis BDB with RedisGears
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Configures the RDI Database so it is ready to process data
+Installs RDI Redis Collector on Redis BDB with RedisGears
 
 ## Usage
 
 ```
-Usage: redis-di configure [OPTIONS]
+Usage: redis-di install-collector [OPTIONS]
 ```
 
 ## Options
@@ -100,9 +100,9 @@ Usage: redis-di configure [OPTIONS]
 ## CLI help
 
 ```
-Usage: redis-di configure [OPTIONS]
+Usage: redis-di install-collector [OPTIONS]
 
-  Configures the RDI Database so it is ready to process data
+  Installs RDI Redis Collector on Redis BDB with RedisGears
 
 Options:
   -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
