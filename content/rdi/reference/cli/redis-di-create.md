@@ -33,14 +33,6 @@ Usage: redis-di create [OPTIONS]
 
   Silent install. Do not prompt to enter missing parameters
 
-- `no_configure`:
-
-  - Type: BOOL
-  - Default: `false`
-  - Usage: `--no-configure`
-
-  Do not install RDI Engine to the RDI Database
-
 - `cluster_host` (REQUIRED):
 
   - Type: STRING
@@ -113,13 +105,13 @@ Usage: redis-di create [OPTIONS]
 
   In-memory database replication
 
-- `redisgears_module`:
+- `with_redisgears`:
 
-  - Type: STRING
-  - Default: ``
-  - Usage: `--redisgears-module`
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--with-redisgears`
 
-  RedisGears module file
+  Include RedisGears module in the RDI database
 
 - `with_rejson`:
 
@@ -149,8 +141,6 @@ Options:
                                   [default: INFO]
   --silent                        Silent install. Do not prompt to enter
                                   missing parameters
-  --no-configure                  Do not install RDI Engine to the RDI
-                                  Database
   --cluster-host TEXT             Host/IP of Redis Enterprise Cluster (service
                                   name in case of k8s)  [required]
   --cluster-api-port INTEGER RANGE
@@ -169,6 +159,5 @@ Options:
   --rdi-shards INTEGER RANGE      Number of database server-side shards
                                   [x>=1]
   --replication                   In-memory database replication
-  --redisgears-module TEXT        RedisGears module file
   --help                          Show this message and exit.
 ```
