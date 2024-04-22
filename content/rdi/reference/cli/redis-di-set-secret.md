@@ -1,14 +1,14 @@
 ---
 Title: redis-di set-secret
 linkTitle: redis-di set-secret
-description: Writes a secret to Redis secret store
+description: Creates secret of a specified type
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Writes a secret to Redis secret store
+Creates secret of a specified type
 
 ## Usage
 
@@ -18,124 +18,102 @@ Usage: redis-di set-secret [OPTIONS]
 
 ## Options
 
-- `loglevel`:
+- `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
   - Default: `info`
-  - Usage: `--loglevel
--log-level`
+  - Usage: `--log-level
+-l`
 
-- `cluster_host` (REQUIRED):
+- `silent`:
+
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `-s
+--silent`
+
+  Silent install. Do not prompt to enter missing parameters
+
+- `secret_type`:
+
+  - Type: Choice(['GENERIC', 'BASIC_AUTH', 'TLS'])
+  - Default: `none`
+  - Usage: `-t
+--secret-type`
+
+  Secret type (required in -s mode).
+
+- `secret_name`:
 
   - Type: STRING
   - Default: `none`
-  - Usage: `--cluster-host`
+  - Usage: `-sn
+--secret-name`
 
-  Host/IP of Redis Enterprise Cluster (service name in case of k8s)
+  Secret name (required in -s mode).
 
-- `cluster_api_port` (REQUIRED):
-
-  - Type: <IntRange 1000<=x<=65535>
-  - Default: `9443`
-  - Usage: `--cluster-api-port`
-
-  API Port of Redis Enterprise Cluster
-
-- `cluster_user` (REQUIRED):
+- `user`:
 
   - Type: STRING
   - Default: `none`
-  - Usage: `--cluster-user`
+  - Usage: `-u
+--user`
 
-  Redis Enterprise Cluster username with either DB Member, Cluster Member or Cluster Admin roles
+  User (required in -s mode when -t is BASIC_AUTH).
 
-- `cluster_password`:
-
-  - Type: STRING
-  - Default: `none`
-  - Usage: `--cluster-password`
-
-  Redis Enterprise Cluster Password
-
-- `rdi_host` (REQUIRED):
+- `password`:
 
   - Type: STRING
   - Default: `none`
-  - Usage: `--rdi-host`
+  - Usage: `-p
+--password`
 
-  Host/IP of RDI Database
+  Password (required in -s mode when -t is BASIC_AUTH).
 
-- `rdi_port` (REQUIRED):
-
-  - Type: <IntRange 1000<=x<=65535>
-  - Default: `none`
-  - Usage: `--rdi-port`
-
-  Port of RDI Database
-
-- `rdi_user`:
+- `certificate`:
 
   - Type: STRING
   - Default: `none`
-  - Usage: `--rdi-user`
+  - Usage: `-c
+--certificate`
 
-  RDI Database Username
+  Certificate file location (required in -s mode when -t is TLS).
 
-- `rdi_password`:
-
-  - Type: STRING
-  - Default: `none`
-  - Usage: `--rdi-password`
-
-  RDI Database Password
-
-- `rdi_key`:
+- `certificate_key`:
 
   - Type: STRING
   - Default: `none`
-  - Usage: `--rdi-key`
+  - Usage: `-ck
+--certificate-key`
 
-  Private key file to authenticate with
+  Certificate key file location (required in -s mode when -t is TLS).
 
-- `rdi_cert`:
-
-  - Type: STRING
-  - Default: `none`
-  - Usage: `--rdi-cert`
-
-  Client certificate file to authenticate with
-
-- `rdi_cacert`:
+- `secret_key`:
 
   - Type: STRING
   - Default: `none`
-  - Usage: `--rdi-cacert`
+  - Usage: `-sk
+--secret-key`
 
-  CA certificate file to verify with
+  Secret key (required in -s mode when -t is GENERIC).
 
-- `rdi_key_password`:
-
-  - Type: STRING
-  - Default: `none`
-  - Usage: `--rdi-key-password`
-
-  Password for unlocking an encrypted private key
-
-- `secret_name` (REQUIRED):
+- `secret_value`:
 
   - Type: STRING
   - Default: `none`
-  - Usage: `--secret-name`
+  - Usage: `-sv
+--secret-value`
 
-  The name of the secret
+  Secret value (required in -s mode when -t is GENERIC).
 
-- `secret_value` (REQUIRED):
+- `namespace`:
 
   - Type: STRING
-  - Default: `none`
-  - Usage: `--secret-value`
+  - Default: `rdi`
+  - Usage: `--namespace
+-n`
 
-  The value of the secret
+  Namespace name.
 
 - `help`:
 
@@ -150,31 +128,28 @@ Usage: redis-di set-secret [OPTIONS]
 ```
 Usage: redis-di set-secret [OPTIONS]
 
-  Writes a secret to Redis secret store
+  Creates secret of a specified type
 
 Options:
-  -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
+  -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
-  --cluster-host TEXT             Host/IP of Redis Enterprise Cluster (service
-                                  name in case of k8s)  [required]
-  --cluster-api-port INTEGER RANGE
-                                  API Port of Redis Enterprise Cluster
-                                  [default: 9443; 1000<=x<=65535; required]
-  --cluster-user TEXT             Redis Enterprise Cluster username with
-                                  either DB Member, Cluster Member or Cluster
-                                  Admin roles  [required]
-  --cluster-password TEXT         Redis Enterprise Cluster Password
-  --rdi-host TEXT                 Host/IP of RDI Database  [required]
-  --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
-                                  required]
-  --rdi-user TEXT                 RDI Database Username
-  --rdi-password TEXT             RDI Database Password
-  --rdi-key TEXT                  Private key file to authenticate with
-  --rdi-cert TEXT                 Client certificate file to authenticate with
-  --rdi-cacert TEXT               CA certificate file to verify with
-  --rdi-key-password TEXT         Password for unlocking an encrypted private
-                                  key
-  --secret-name TEXT              The name of the secret  [required]
-  --secret-value TEXT             The value of the secret  [required]
+  -s, --silent                    Silent install. Do not prompt to enter
+                                  missing parameters
+  -t, --secret-type [GENERIC|BASIC_AUTH|TLS]
+                                  Secret type (required in -s mode).
+  -sn, --secret-name TEXT         Secret name (required in -s mode).
+  -u, --user TEXT                 User (required in -s mode when -t is
+                                  BASIC_AUTH).
+  -p, --password TEXT             Password (required in -s mode when -t is
+                                  BASIC_AUTH).
+  -c, --certificate TEXT          Certificate file location (required in -s
+                                  mode when -t is TLS).
+  -ck, --certificate-key TEXT     Certificate key file location (required in
+                                  -s mode when -t is TLS).
+  -sk, --secret-key TEXT          Secret key (required in -s mode when -t is
+                                  GENERIC).
+  -sv, --secret-value TEXT        Secret value (required in -s mode when -t is
+                                  GENERIC).
+  -n, --namespace TEXT            Namespace name.
   --help                          Show this message and exit.
 ```
