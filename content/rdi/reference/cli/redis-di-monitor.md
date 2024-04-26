@@ -35,7 +35,7 @@ Usage: redis-di monitor [OPTIONS]
 
 - `rdi_port` (REQUIRED):
 
-  - Type: <IntRange 1000<=x<=65535>
+  - Type: <IntRange 1<=x<=65535>
   - Default: `none`
   - Usage: `--rdi-port`
 
@@ -91,7 +91,7 @@ Usage: redis-di monitor [OPTIONS]
 
 - `exporter_port`:
 
-  - Type: <IntRange 1000<=x<=65535>
+  - Type: <IntRange 1<=x<=65535>
   - Default: `9121`
   - Usage: `--exporter-port`
 
@@ -124,7 +124,7 @@ Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
-  --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
+  --rdi-port INTEGER RANGE        Port of RDI Database  [1<=x<=65535;
                                   required]
   --rdi-user TEXT                 RDI Database Username
   --rdi-password TEXT             RDI Database Password
@@ -134,7 +134,7 @@ Options:
   --rdi-key-password TEXT         Password for unlocking an encrypted private
                                   key
   --exporter-port INTEGER RANGE   HTTP port to start the exporter on
-                                  [1000<=x<=65535]
+                                  [1<=x<=65535]
   --collect-interval INTEGER RANGE
                                   Metrics collection interval (seconds)
                                   [1<=x<=60]

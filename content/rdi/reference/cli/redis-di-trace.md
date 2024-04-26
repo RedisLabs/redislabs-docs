@@ -35,7 +35,7 @@ Usage: redis-di trace [OPTIONS]
 
 - `rdi_port` (REQUIRED):
 
-  - Type: <IntRange 1000<=x<=65535>
+  - Type: <IntRange 1<=x<=65535>
   - Default: `none`
   - Usage: `--rdi-port`
 
@@ -132,7 +132,7 @@ Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
-  --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
+  --rdi-port INTEGER RANGE        Port of RDI Database  [1<=x<=65535;
                                   required]
   --rdi-user TEXT                 RDI Database Username
   --rdi-password TEXT             RDI Database Password
