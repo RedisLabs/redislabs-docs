@@ -1,14 +1,14 @@
 ---
 Title: redis-di scaffold
 linkTitle: redis-di scaffold
-description: Generates configuration files for RDI and Debezium (when ingesting data to Redis)
+description: Generates configuration files for RDI
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Generates configuration files for RDI and Debezium (when ingesting data to Redis)
+Generates configuration files for RDI
 
 ## Usage
 
@@ -18,12 +18,12 @@ Usage: redis-di scaffold [OPTIONS]
 
 ## Options
 
-- `loglevel`:
+- `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
   - Default: `info`
-  - Usage: `--loglevel
--log-level`
+  - Usage: `--log-level
+-l`
 
 - `db_type` (REQUIRED):
 
@@ -53,11 +53,11 @@ Usage: redis-di scaffold [OPTIONS]
 
 - `preview`:
 
-  - Type: Choice(['debezium/application.properties', 'config.yaml'])
+  - Type: STRING
   - Default: `none`
   - Usage: `--preview`
 
-  Print the content of specified config file to CLI output
+  Print the content of the scaffolded config file to CLI output
 
 - `help`:
 
@@ -72,11 +72,10 @@ Usage: redis-di scaffold [OPTIONS]
 ```
 Usage: redis-di scaffold [OPTIONS]
 
-  Generates configuration files for RDI and Debezium (when ingesting data to
-  Redis)
+  Generates configuration files for RDI
 
 Options:
-  -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
+  -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --db-type [cassandra|db2|mongodb|mysql|oracle|postgresql|redis|sqlserver]
                                   DB type  [required]
@@ -85,8 +84,7 @@ Options:
   Output formats: [mutually_exclusive, required]
                                   Output to directory or stdout
     --dir TEXT                    Directory containing RDI configuration
-    --preview [debezium/application.properties|config.yaml]
-                                  Print the content of specified config file
-                                  to CLI output
+    --preview TEXT                Print the content of the scaffolded config
+                                  file to CLI output
   --help                          Show this message and exit.
 ```
