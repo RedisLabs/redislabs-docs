@@ -41,7 +41,7 @@ Usage: redis-di add-context [OPTIONS] CONTEXT_NAME
 
 - `cluster_api_port` (REQUIRED):
 
-  - Type: <IntRange 1000<=x<=65535>
+  - Type: <IntRange 1<=x<=65535>
   - Default: `9443`
   - Usage: `--cluster-api-port`
 
@@ -65,7 +65,7 @@ Usage: redis-di add-context [OPTIONS] CONTEXT_NAME
 
 - `rdi_port` (REQUIRED):
 
-  - Type: <IntRange 1000<=x<=65535>
+  - Type: <IntRange 1<=x<=65535>
   - Default: `none`
   - Usage: `--rdi-port`
 
@@ -125,12 +125,12 @@ Options:
                                   name in case of k8s)  [required]
   --cluster-api-port INTEGER RANGE
                                   API Port of Redis Enterprise Cluster
-                                  [default: 9443; 1000<=x<=65535; required]
+                                  [default: 9443; 1<=x<=65535; required]
   --cluster-user TEXT             Redis Enterprise Cluster username with
                                   either DB Member, Cluster Member or Cluster
                                   Admin roles  [required]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
-  --rdi-port INTEGER RANGE        Port of RDI Database  [1000<=x<=65535;
+  --rdi-port INTEGER RANGE        Port of RDI Database  [1<=x<=65535;
                                   required]
   --rdi-user TEXT                 RDI Database Username
   --rdi-key TEXT                  Private key file to authenticate with

@@ -62,7 +62,7 @@ Commands:
   list-jobs             Lists transformation engine's jobs
   monitor               Monitors RDI by collecting metrics and exporting...
   reset                 Resets the pipeline into initial full sync mode
-  scaffold              Generates configuration files for RDI and...
+  scaffold              Generates configuration files for RDI
   set-context           Sets a context to be the active one
   set-secret            Creates a secret of a specified key
   start                 Starts the pipeline
