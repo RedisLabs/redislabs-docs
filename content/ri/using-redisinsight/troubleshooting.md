@@ -16,7 +16,7 @@ For additional configuration options, such as changing the default port, go to: 
 
 To get detailed information about errors in Redis Insight, you can review the log files with the `.log` extension in:
 
-- **Docker**: In the `/db/` directory *inside the container*.
+- **Docker**: In the `/data/logs` directory *inside the container*.
 - **Mac**: In the `/Users/<your-username>/.redis-insight` directory.
 - **Windows**: In the `C:\Users\<your-username>\.redis-insight` directory.
 - **Linux**: In the `/home/<your-username>/.redis-insight` directory.
