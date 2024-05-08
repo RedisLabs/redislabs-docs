@@ -31,5 +31,5 @@ We are happy to receive your feedback in our repository - https://github.com/Red
 
 When you configure Redis Insight to run behind a reverse proxy like NGINX:
 
-- Since some requests can be long-running, we recommend that the **request timeout is set to over 30 seconds** on the reverse proxy.
+- Since some requests can be long-running, we recommend that the **request timeout is set to over 30 seconds** on the reverse proxy. Redis Insight also allows to manage its connection timeout (30 seconds by default) on the form to manage the connection details, remember to change it accordingly.
 - Hosting Redis Insight behind a prefix path (path-rewriting) is not supported at this time.
