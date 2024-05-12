@@ -18,12 +18,12 @@ Usage: redis-di delete-all-contexts [OPTIONS]
 
 ## Options
 
-- `loglevel`:
+- `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
   - Default: `info`
-  - Usage: `--loglevel
--log-level`
+  - Usage: `--log-level
+-l`
 
 - `force`:
 
@@ -50,7 +50,7 @@ Usage: redis-di delete-all-contexts [OPTIONS]
   Deletes all contexts
 
 Options:
-  -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
+  -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   -f, --force                     Force operation. skips verification prompts
   --help                          Show this message and exit.
