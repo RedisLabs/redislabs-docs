@@ -18,12 +18,12 @@ Usage: redis-di create [OPTIONS]
 
 ## Options
 
-- `loglevel`:
+- `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
   - Default: `info`
-  - Usage: `--loglevel
--log-level`
+  - Usage: `--log-level
+-l`
 
 - `silent`:
 
@@ -32,14 +32,6 @@ Usage: redis-di create [OPTIONS]
   - Usage: `--silent`
 
   Silent install. Do not prompt to enter missing parameters
-
-- `no_configure`:
-
-  - Type: BOOL
-  - Default: `false`
-  - Usage: `--no-configure`
-
-  Do not install RDI Engine to the RDI Database
 
 - `cluster_host` (REQUIRED):
 
@@ -51,7 +43,7 @@ Usage: redis-di create [OPTIONS]
 
 - `cluster_api_port` (REQUIRED):
 
-  - Type: <IntRange 1000<=x<=65535>
+  - Type: <IntRange 1<=x<=65535>
   - Default: `9443`
   - Usage: `--cluster-api-port`
 
@@ -75,7 +67,7 @@ Usage: redis-di create [OPTIONS]
 
 - `rdi_port`:
 
-  - Type: <IntRange 1000<=x<=65535>
+  - Type: <IntRange 1<=x<=65535>
   - Default: `none`
   - Usage: `--rdi-port`
 
@@ -113,13 +105,13 @@ Usage: redis-di create [OPTIONS]
 
   In-memory database replication
 
-- `redisgears_module`:
+- `with_redisgears`:
 
-  - Type: STRING
-  - Default: ``
-  - Usage: `--redisgears-module`
+  - Type: BOOL
+  - Default: `false`
+  - Usage: `--with-redisgears`
 
-  RedisGears module file
+  Include RedisGears module in the RDI database
 
 - `with_rejson`:
 
@@ -145,23 +137,20 @@ Usage: redis-di create [OPTIONS]
   Creates the RDI Database instance
 
 Options:
-  -log-level, --loglevel [DEBUG|INFO|WARN|ERROR|CRITICAL]
+  -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
                                   [default: INFO]
   --silent                        Silent install. Do not prompt to enter
                                   missing parameters
-  --no-configure                  Do not install RDI Engine to the RDI
-                                  Database
   --cluster-host TEXT             Host/IP of Redis Enterprise Cluster (service
                                   name in case of k8s)  [required]
   --cluster-api-port INTEGER RANGE
                                   API Port of Redis Enterprise Cluster
-                                  [default: 9443; 1000<=x<=65535; required]
+                                  [default: 9443; 1<=x<=65535; required]
   --cluster-user TEXT             Redis Enterprise Cluster username with
                                   either DB Member, Cluster Member or Cluster
                                   Admin roles  [required]
   --cluster-password TEXT         Redis Enterprise Cluster Password
-  --rdi-port INTEGER RANGE        Port for the new RDI Database
-                                  [1000<=x<=65535]
+  --rdi-port INTEGER RANGE        Port for the new RDI Database  [1<=x<=65535]
   --rdi-password TEXT             Password for the new RDI Database
                                   (alphanumeric characters with zero or more
                                   of the following: ! & # $ ^ < > -)
@@ -169,6 +158,5 @@ Options:
   --rdi-shards INTEGER RANGE      Number of database server-side shards
                                   [x>=1]
   --replication                   In-memory database replication
-  --redisgears-module TEXT        RedisGears module file
   --help                          Show this message and exit.
 ```
