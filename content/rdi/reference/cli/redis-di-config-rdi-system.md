@@ -21,7 +21,7 @@ Usage: redis-di config-rdi-system [OPTIONS]
 - `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
-  - Default: `warn`
+  - Default: `info`
   - Usage: `--log-level
 -l`
 
@@ -106,7 +106,7 @@ Usage: redis-di config-rdi-system [OPTIONS]
 
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
-                                  [default: WARN]
+                                  [default: INFO]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
   --rdi-port INTEGER RANGE        Port of RDI Database  [1<=x<=65535;
                                   required]
