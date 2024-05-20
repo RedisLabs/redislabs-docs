@@ -1,19 +1,19 @@
 ---
-Title: redis-di start
-linkTitle: redis-di start
-description: Starts the pipeline
+Title: redis-di config-rdi-system
+linkTitle: redis-di config-rdi-system
+description: This command will reconfigure the RDI db configurations
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Starts the pipeline
+This command will reconfigure the RDI db configurations
 
 ## Usage
 
 ```
-Usage: redis-di start [OPTIONS]
+Usage: redis-di config-rdi-system [OPTIONS]
 ```
 
 ## Options
@@ -21,7 +21,7 @@ Usage: redis-di start [OPTIONS]
 - `log_level`:
 
   - Type: Choice(['DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'])
-  - Default: `info`
+  - Default: `warn`
   - Usage: `--log-level
 -l`
 
@@ -100,13 +100,13 @@ Usage: redis-di start [OPTIONS]
 ## CLI help
 
 ```
-Usage: redis-di start [OPTIONS]
+Usage: redis-di config-rdi-system [OPTIONS]
 
-  Starts the pipeline
+  This command will reconfigure the RDI db configurations
 
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
-                                  [default: INFO]
+                                  [default: WARN]
   --rdi-host TEXT                 Host/IP of RDI Database  [required]
   --rdi-port INTEGER RANGE        Port of RDI Database  [1<=x<=65535;
                                   required]
