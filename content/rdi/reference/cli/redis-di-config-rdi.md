@@ -1,14 +1,14 @@
 ---
 Title: redis-di config-rdi
 linkTitle: redis-di config-rdi
-description: Reconfigures RDI db connection credentials
+description: Configures RDI db connection credentials
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Reconfigures RDI db connection credentials
+Configures RDI db connection credentials
 
 ## Usage
 
@@ -102,7 +102,7 @@ Usage: redis-di config-rdi [OPTIONS]
 ```
 Usage: redis-di config-rdi [OPTIONS]
 
-  Reconfigures RDI db connection credentials
+  Configures RDI db connection credentials
 
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
