@@ -1,19 +1,19 @@
 ---
-Title: redis-di config-rdi-system
-linkTitle: redis-di config-rdi-system
-description: This command will reconfigure the RDI db configurations
+Title: redis-di config-rdi
+linkTitle: redis-di config-rdi
+description: Reconfigures RDI db connection credentials
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-This command will reconfigure the RDI db configurations
+Reconfigures RDI db connection credentials
 
 ## Usage
 
 ```
-Usage: redis-di config-rdi-system [OPTIONS]
+Usage: redis-di config-rdi [OPTIONS]
 ```
 
 ## Options
@@ -100,9 +100,9 @@ Usage: redis-di config-rdi-system [OPTIONS]
 ## CLI help
 
 ```
-Usage: redis-di config-rdi-system [OPTIONS]
+Usage: redis-di config-rdi [OPTIONS]
 
-  This command will reconfigure the RDI db configurations
+  Reconfigures RDI db connection credentials
 
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
