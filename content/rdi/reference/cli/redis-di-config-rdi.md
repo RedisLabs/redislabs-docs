@@ -1,19 +1,19 @@
 ---
-Title: redis-di start
-linkTitle: redis-di start
-description: Starts the pipeline
+Title: redis-di config-rdi
+linkTitle: redis-di config-rdi
+description: Configures RDI db connection credentials
 weight: 10
 alwaysopen: false
 categories: ["redis-di"]
 aliases:
 ---
 
-Starts the pipeline
+Configures RDI db connection credentials
 
 ## Usage
 
 ```
-Usage: redis-di start [OPTIONS]
+Usage: redis-di config-rdi [OPTIONS]
 ```
 
 ## Options
@@ -100,9 +100,9 @@ Usage: redis-di start [OPTIONS]
 ## CLI help
 
 ```
-Usage: redis-di start [OPTIONS]
+Usage: redis-di config-rdi [OPTIONS]
 
-  Starts the pipeline
+  Configures RDI db connection credentials
 
 Options:
   -l, --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL]
