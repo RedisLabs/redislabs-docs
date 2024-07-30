@@ -128,7 +128,7 @@ The data-collections array lists tables by their fully-qualified names, using th
 
 ## Example for Adding a Signaling Table for Oracle Database
 
-1. Creating a signaling table `DEBEZIUM_SIGNAL`:
+1. Create a signaling table `DEBEZIUM_SIGNAL`:
 
    ```sql
    CREATE TABLE DEBEZIUM_SIGNAL
@@ -139,7 +139,7 @@ The data-collections array lists tables by their fully-qualified names, using th
    );
    ```
 
-2. Adding the property `debezium.source.signal.data.collection` to the `application.properties` file:
+2. Add the property `debezium.source.signal.data.collection` to the `application.properties` file:
 
    ```properties
       debezium.source.signal.data.collection=ORCLPDB1.C##DBZUSER.DEBEZIUM_SIGNAL
@@ -149,13 +149,13 @@ The data-collections array lists tables by their fully-qualified names, using th
 
 3. Enable supplemental logging for the `DEBEZIUM_SIGNAL` table:
 
-   ```
+   ```sql
    ALTER table c##dbzuser.DEBEZIUM_SIGNAL add SUPPLEMENTAL LOG DATA(ALL) COLUMNS;
    ```
 
    > Note: If the supplemental logging is enabled for the entire database you can skip this step.
 
-4. Restart the Debezium Server
+4. Restart the Debezium Server.
 
 ## Example for Adding the EMP table to the pipeline
 
@@ -170,11 +170,11 @@ The data-collections array lists tables by their fully-qualified names, using th
    To enable supplemental logging for all the table columns:
 
    ```sql
-   ALTER Table c##dbzuser.EMP add SUPPLEMENTAL LOG DATA(ALL)
+   ALTER TABLE c##dbzuser.EMP ADD SUPPLEMENTAL LOG DATA(ALL)
    COLUMNS
    ```
 
-3. Restart the `Debezium Server`
+3. Restart the `Debezium Server`.
 
 4. To trigger the `incremental snapshot` for the `EMP table, run:
 
@@ -185,4 +185,4 @@ The data-collections array lists tables by their fully-qualified names, using th
 
    > Note: The column `id` is a unique string in the DEBEZIUM_SIGNAL table
 
-5. The `EMP` table will be added to the pipeline, and irs keys will be stored in the RDI bdb with no need to run `redis-di reset`
+5. The `EMP` table will be added to the pipeline, and irs keys will be stored in the RDI bdb with no need to run `redis-di reset`.
