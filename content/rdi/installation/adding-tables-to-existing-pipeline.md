@@ -184,4 +184,4 @@ The data-collections array lists tables by their fully-qualified names, using th
 
    > Note: The column `id` is a unique string in the DEBEZIUM_SIGNAL table
 
-5. The `CUSTOMERS` table will be added to the pipeline, and irs keys will be stored in the RDI bdb with no need to run `redis-di reset`.
+5. The `CUSTOMERS` table will be added to the pipeline, and its keys will be stored in the RDI bdb with no need to run `redis-di reset`.
