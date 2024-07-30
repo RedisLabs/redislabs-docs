@@ -157,7 +157,7 @@ The data-collections array lists tables by their fully-qualified names, using th
 
 4. Restart the Debezium Server.
 
-## Example for Adding the EMP table to the pipeline
+## Example for Adding the `CUSTOMERS` table to the pipeline
 
 1. Add the `CUSTOMERS` table to the `debezium.source.table.include.list` property in the `application.properties` file:
 
