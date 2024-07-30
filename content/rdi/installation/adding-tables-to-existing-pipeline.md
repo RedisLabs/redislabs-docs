@@ -5,7 +5,7 @@ description: Set up and use Debezium to add additional tables to an existing pip
 weight: 80
 alwaysopen: false
 categories: ["redis-di"]
-aliases: 
+aliases:
 ---
 
 If you want to add a new table to a pipeline that is already in streaming (CDC) mode, you can do so without resetting Debezium Server and executing a new full snapshot. In Debezium, this is called incremental snapshot and it is performed using a table on the source database as the interface with the Debezium connector.
@@ -114,14 +114,74 @@ The data-collections array lists tables by their fully-qualified names, using th
 
 #### Signaling Table Columns
 
-| Column | Description                                                                       |
-| ------ | --------------------------------------------------------------------------------- |
-| id     | An arbitrary string that is assigned as the identifier for the signal request.    |
-| type   | The type of signal to send.                                                       |
-| data   | An array of table names to include in the snapshot.                               |
+| Column | Description                                                                    |
+| ------ | ------------------------------------------------------------------------------ |
+| id     | An arbitrary string that is assigned as the identifier for the signal request. |
+| type   | The type of signal to send.                                                    |
+| data   | An array of table names to include in the snapshot.                            |
 
 ## SQL Server: `sp_cdc_enable_table` Stored Procedure Arguments
 
 - `@source_name` - Specifies the name of the table that you want to capture.
 - `@role_name` - Specifies a role MyRole to which you can add users to whom you want to grant SELECT permission on the captured columns of the source table. Users in the sysadmin or db_owner role also have access to the specified change tables. Set the value of @role_name to NULL, to allow only members in the sysadmin or db_owner to have full access to captured information.
 - `@filegroup_name` - Specifies the filegroup where SQL Server places the change table for the captured table. The named filegroup must be already exist. It is best not to locate change tables in the same filegroup that you use for source tables.
+
+## Example for Adding a Signaling Table for Oracle Database
+
+1. Create a signaling table `DEBEZIUM_SIGNAL`:
+
+   ```sql
+   CREATE TABLE DEBEZIUM_SIGNAL
+   (
+   id VARCHAR(42) PRIMARY KEY,
+   type VARCHAR(32) NOT NULL,
+   data VARCHAR(2048) NULL
+   );
+   ```
+
+2. Add the property `debezium.source.signal.data.collection` to the `application.properties` file:
+
+   ```properties
+      debezium.source.signal.data.collection=ORCLPDB1.C##DBZUSER.DEBEZIUM_SIGNAL
+   ```
+
+   > Note: The property `debezium.source.signal.data.collection` should be set to the fully qualified name of the table. In `Oracle`, the fully qualified name includes the schema name `C##DBZUSER` and the database name `ORCLPDB1`.
+
+3. Enable supplemental logging for the `DEBEZIUM_SIGNAL` table:
+
+   ```sql
+   ALTER table c##dbzuser.DEBEZIUM_SIGNAL add SUPPLEMENTAL LOG DATA(ALL) COLUMNS;
+   ```
+
+   > Note: If the supplemental logging is enabled for the entire database you can skip this step.
+
+4. Restart the Debezium Server.
+
+## Example for Adding the `CUSTOMERS` table to the pipeline
+
+1. Add the `CUSTOMERS` table to the `debezium.source.table.include.list` property in the `application.properties` file:
+
+   ```properties
+   debezium.source.table.include.list=C##DBZUSER.PRODUCTS,C##DBZUSER.ORDERS,C##DBZUSER.CUSTOMERS
+   ```
+
+2. Enable supplemental logging for the `CUSTOMERS`` table:
+
+   To enable supplemental logging for all the table columns:
+
+   ```sql
+   ALTER TABLE C##DBZUSER.CUSTOMERS ADD SUPPLEMENTAL LOG DATA(ALL) COLUMNS
+   ```
+
+3. Restart the `Debezium Server`.
+
+4. To trigger the `incremental snapshot` for the `CUSTOMERS` table, run:
+
+   ```sql
+   INSERT INTO c##dbzuser.DEBEZIUM_SIGNAL ds (id, type, data)
+   VALUES ('1', 'execute-snapshot', '{"data-collections":["ORCLPDB1.C##DBZUSER.CUSTOMERS"],"type":"incremental"}');
+   ```
+
+   > Note: The column `id` is a unique string in the DEBEZIUM_SIGNAL table
+
+5. The `CUSTOMERS` table will be added to the pipeline, and its keys will be stored in the RDI bdb with no need to run `redis-di reset`.
