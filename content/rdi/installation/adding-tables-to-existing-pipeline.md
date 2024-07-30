@@ -159,30 +159,29 @@ The data-collections array lists tables by their fully-qualified names, using th
 
 ## Example for Adding the EMP table to the pipeline
 
-1. Add the `EMP` table to the `debezium.source.table.include.list` property in the `application.properties` file:
+1. Add the `CUSTOMERS` table to the `debezium.source.table.include.list` property in the `application.properties` file:
 
    ```properties
-   debezium.source.table.include.list=C##DBZUSER.EMP
+   debezium.source.table.include.list=C##DBZUSER.PRODUCTS,C##DBZUSER.ORDERS,C##DBZUSER.CUSTOMERS
    ```
 
-2. Enable supplemental logging for the `EMP`` table:
+2. Enable supplemental logging for the `CUSTOMERS`` table:
 
    To enable supplemental logging for all the table columns:
 
    ```sql
-   ALTER TABLE c##dbzuser.EMP ADD SUPPLEMENTAL LOG DATA(ALL)
-   COLUMNS
+   ALTER TABLE C##DBZUSER.CUSTOMERS ADD SUPPLEMENTAL LOG DATA(ALL) COLUMNS
    ```
 
 3. Restart the `Debezium Server`.
 
-4. To trigger the `incremental snapshot` for the `EMP table, run:
+4. To trigger the `incremental snapshot` for the `CUSTOMERS` table, run:
 
    ```sql
    INSERT INTO c##dbzuser.DEBEZIUM_SIGNAL ds (id, type, data)
-   VALUES ('1', 'execute-snapshot', '{"data-collections":["ORCLPDB1.C##DBZUSER.EMP"],"type":"incremental"}');
+   VALUES ('1', 'execute-snapshot', '{"data-collections":["ORCLPDB1.C##DBZUSER.CUSTOMERS"],"type":"incremental"}');
    ```
 
    > Note: The column `id` is a unique string in the DEBEZIUM_SIGNAL table
 
-5. The `EMP` table will be added to the pipeline, and irs keys will be stored in the RDI bdb with no need to run `redis-di reset`.
+5. The `CUSTOMERS` table will be added to the pipeline, and irs keys will be stored in the RDI bdb with no need to run `redis-di reset`.
